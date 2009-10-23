@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include STEPCAFControl_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public Handle_T
 	return (STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile*)$self->Access();
 	}
 };
-%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile {
-	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile\n");}
-	}
-};
+%feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR;
@@ -87,12 +89,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public Handle_TColl
 	return (STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR*)$self->Access();
 	}
 };
-%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR {
-	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR\n");}
-	}
-};
+%feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile;
@@ -117,12 +117,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public Handle_
 	return (STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile*)$self->Access();
 	}
 };
-%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile {
-	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile\n");}
-	}
-};
+%feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD;
@@ -147,12 +145,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public Handle_TColle
 	return (STEPCAFControl_DataMapNodeOfDataMapOfShapePD*)$self->Access();
 	}
 };
-%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD {
-	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD\n");}
-	}
-};
+%feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPCAFControl_ActorWrite;
@@ -177,12 +173,10 @@ class Handle_STEPCAFControl_ActorWrite : public Handle_STEPControl_ActorWrite {
 	return (STEPCAFControl_ActorWrite*)$self->Access();
 	}
 };
-%extend Handle_STEPCAFControl_ActorWrite {
-	~Handle_STEPCAFControl_ActorWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_ActorWrite\n");}
-	}
-};
+%feature("shadow") Handle_STEPCAFControl_ActorWrite::~Handle_STEPCAFControl_ActorWrite %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPCAFControl_ExternFile;
@@ -207,12 +201,10 @@ class Handle_STEPCAFControl_ExternFile : public Handle_MMgt_TShared {
 	return (STEPCAFControl_ExternFile*)$self->Access();
 	}
 };
-%extend Handle_STEPCAFControl_ExternFile {
-	~Handle_STEPCAFControl_ExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_ExternFile\n");}
-	}
-};
+%feature("shadow") Handle_STEPCAFControl_ExternFile::~Handle_STEPCAFControl_ExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile;
@@ -237,12 +229,10 @@ class Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile : public Handle_MM
 	return (STEPCAFControl_StackItemOfDictionaryOfExternFile*)$self->Access();
 	}
 };
-%extend Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile {
-	~Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile\n");}
-	}
-};
+%feature("shadow") Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile::~Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile;
@@ -267,12 +257,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public Handl
 	return (STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile*)$self->Access();
 	}
 };
-%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile {
-	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile\n");}
-	}
-};
+%feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPCAFControl_DictionaryOfExternFile;
@@ -297,12 +285,10 @@ class Handle_STEPCAFControl_DictionaryOfExternFile : public Handle_MMgt_TShared 
 	return (STEPCAFControl_DictionaryOfExternFile*)$self->Access();
 	}
 };
-%extend Handle_STEPCAFControl_DictionaryOfExternFile {
-	~Handle_STEPCAFControl_DictionaryOfExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DictionaryOfExternFile\n");}
-	}
-};
+%feature("shadow") Handle_STEPCAFControl_DictionaryOfExternFile::~Handle_STEPCAFControl_DictionaryOfExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient;
@@ -327,12 +313,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public Handle
 	return (STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient*)$self->Access();
 	}
 };
-%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient {
-	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient\n");}
-	}
-};
+%feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPCAFControl_Controller;
@@ -357,12 +341,10 @@ class Handle_STEPCAFControl_Controller : public Handle_STEPControl_Controller {
 	return (STEPCAFControl_Controller*)$self->Access();
 	}
 };
-%extend Handle_STEPCAFControl_Controller {
-	~Handle_STEPCAFControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_Controller\n");}
-	}
-};
+%feature("shadow") Handle_STEPCAFControl_Controller::~Handle_STEPCAFControl_Controller %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape;
@@ -387,12 +369,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public Handle_TCo
 	return (STEPCAFControl_DataMapNodeOfDataMapOfLabelShape*)$self->Access();
 	}
 };
-%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape {
-	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape\n");}
-	}
-};
+%feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel;
@@ -417,12 +397,10 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCo
 	return (STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel*)$self->Access();
 	}
 };
-%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel {
-	~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel\n");}
-	}
-};
+%feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile;
@@ -440,12 +418,10 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile : public TCollect
 		const Handle_STEPCAFControl_ExternFile & Value() const;
 
 };
-%extend STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile {
-	~STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile::~STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapOfShapeTransient;
@@ -477,12 +453,10 @@ class STEPCAFControl_DataMapOfShapeTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & operator()(const TopoDS_Shape &K);
 
 };
-%extend STEPCAFControl_DataMapOfShapeTransient {
-	~STEPCAFControl_DataMapOfShapeTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapOfShapeTransient\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapOfShapeTransient::~STEPCAFControl_DataMapOfShapeTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_ExternFile;
@@ -528,12 +502,10 @@ class STEPCAFControl_ExternFile : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPCAFControl_ExternFile {
-	~STEPCAFControl_ExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_ExternFile\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_ExternFile::~STEPCAFControl_ExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapOfShapePD;
@@ -565,12 +537,10 @@ class STEPCAFControl_DataMapOfShapePD : public TCollection_BasicMap {
 		Handle_StepBasic_ProductDefinition & operator()(const TopoDS_Shape &K);
 
 };
-%extend STEPCAFControl_DataMapOfShapePD {
-	~STEPCAFControl_DataMapOfShapePD() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapOfShapePD\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapOfShapePD::~STEPCAFControl_DataMapOfShapePD %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DictionaryOfExternFile;
@@ -626,12 +596,10 @@ class STEPCAFControl_DictionaryOfExternFile : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPCAFControl_DictionaryOfExternFile {
-	~STEPCAFControl_DictionaryOfExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DictionaryOfExternFile\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DictionaryOfExternFile::~STEPCAFControl_DictionaryOfExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_Reader;
@@ -695,12 +663,10 @@ class STEPCAFControl_Reader {
 		Standard_Boolean GetMatMode() const;
 
 };
-%extend STEPCAFControl_Reader {
-	~STEPCAFControl_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_Reader\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_Reader::~STEPCAFControl_Reader %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapOfShapeSDR;
@@ -732,12 +698,10 @@ class STEPCAFControl_DataMapOfShapeSDR : public TCollection_BasicMap {
 		Handle_StepShape_ShapeDefinitionRepresentation & operator()(const TopoDS_Shape &K);
 
 };
-%extend STEPCAFControl_DataMapOfShapeSDR {
-	~STEPCAFControl_DataMapOfShapeSDR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapOfShapeSDR\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapOfShapeSDR::~STEPCAFControl_DataMapOfShapeSDR %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR;
@@ -763,12 +727,10 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public TCollection_MapNode
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR {
-	~STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR::~STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape;
@@ -786,12 +748,10 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape : public TCollection_B
 		const TopoDS_Shape & Value() const;
 
 };
-%extend STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape {
-	~STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape::~STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_ActorWrite;
@@ -821,12 +781,10 @@ class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPCAFControl_ActorWrite {
-	~STEPCAFControl_ActorWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_ActorWrite\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_ActorWrite::~STEPCAFControl_ActorWrite %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_IteratorOfDictionaryOfExternFile;
@@ -850,12 +808,10 @@ class STEPCAFControl_IteratorOfDictionaryOfExternFile {
 		TCollection_AsciiString Name() const;
 
 };
-%extend STEPCAFControl_IteratorOfDictionaryOfExternFile {
-	~STEPCAFControl_IteratorOfDictionaryOfExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_IteratorOfDictionaryOfExternFile\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_IteratorOfDictionaryOfExternFile::~STEPCAFControl_IteratorOfDictionaryOfExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel;
@@ -881,12 +837,10 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel {
-	~STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel::~STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_Controller;
@@ -910,12 +864,10 @@ class STEPCAFControl_Controller : public STEPControl_Controller {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPCAFControl_Controller {
-	~STEPCAFControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_Controller\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_Controller::~STEPCAFControl_Controller %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfLabelShape;
@@ -941,12 +893,10 @@ class STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public TCollection_MapNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPCAFControl_DataMapNodeOfDataMapOfLabelShape {
-	~STEPCAFControl_DataMapNodeOfDataMapOfLabelShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfLabelShape\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfLabelShape::~STEPCAFControl_DataMapNodeOfDataMapOfLabelShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapOfShapeLabel;
@@ -978,12 +928,10 @@ class STEPCAFControl_DataMapOfShapeLabel : public TCollection_BasicMap {
 		TDF_Label & operator()(const TopoDS_Shape &K);
 
 };
-%extend STEPCAFControl_DataMapOfShapeLabel {
-	~STEPCAFControl_DataMapOfShapeLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapOfShapeLabel\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapOfShapeLabel::~STEPCAFControl_DataMapOfShapeLabel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_StackItemOfDictionaryOfExternFile;
@@ -1013,12 +961,10 @@ class STEPCAFControl_StackItemOfDictionaryOfExternFile : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPCAFControl_StackItemOfDictionaryOfExternFile {
-	~STEPCAFControl_StackItemOfDictionaryOfExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_StackItemOfDictionaryOfExternFile\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_StackItemOfDictionaryOfExternFile::~STEPCAFControl_StackItemOfDictionaryOfExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile;
@@ -1044,12 +990,10 @@ class STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public TCollection_
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile {
-	~STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile::~STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient;
@@ -1075,12 +1019,10 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public TCollection_M
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient {
-	~STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient::~STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile;
@@ -1098,12 +1040,10 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile : public TCollectio
 		const Handle_STEPCAFControl_ExternFile & Value() const;
 
 };
-%extend STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile {
-	~STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile::~STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapOfPDExternFile;
@@ -1135,12 +1075,10 @@ class STEPCAFControl_DataMapOfPDExternFile : public TCollection_BasicMap {
 		Handle_STEPCAFControl_ExternFile & operator()(const Handle_StepBasic_ProductDefinition &K);
 
 };
-%extend STEPCAFControl_DataMapOfPDExternFile {
-	~STEPCAFControl_DataMapOfPDExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapOfPDExternFile\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapOfPDExternFile::~STEPCAFControl_DataMapOfPDExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapOfSDRExternFile;
@@ -1172,12 +1110,10 @@ class STEPCAFControl_DataMapOfSDRExternFile : public TCollection_BasicMap {
 		Handle_STEPCAFControl_ExternFile & operator()(const Handle_StepShape_ShapeDefinitionRepresentation &K);
 
 };
-%extend STEPCAFControl_DataMapOfSDRExternFile {
-	~STEPCAFControl_DataMapOfSDRExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapOfSDRExternFile\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapOfSDRExternFile::~STEPCAFControl_DataMapOfSDRExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapOfLabelExternFile;
@@ -1209,12 +1145,10 @@ class STEPCAFControl_DataMapOfLabelExternFile : public TCollection_BasicMap {
 		Handle_STEPCAFControl_ExternFile & operator()(const TDF_Label &K);
 
 };
-%extend STEPCAFControl_DataMapOfLabelExternFile {
-	~STEPCAFControl_DataMapOfLabelExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapOfLabelExternFile\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapOfLabelExternFile::~STEPCAFControl_DataMapOfLabelExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel;
@@ -1232,12 +1166,10 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel : public TCollection_B
 		const TDF_Label & Value() const;
 
 };
-%extend STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel {
-	~STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel::~STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile;
@@ -1263,12 +1195,10 @@ class STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public TCollection_Map
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile {
-	~STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile::~STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile;
@@ -1294,12 +1224,10 @@ class STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public TCollection_Ma
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile {
-	~STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile::~STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapOfLabelShape;
@@ -1331,12 +1259,10 @@ class STEPCAFControl_DataMapOfLabelShape : public TCollection_BasicMap {
 		TopoDS_Shape & operator()(const TDF_Label &K);
 
 };
-%extend STEPCAFControl_DataMapOfLabelShape {
-	~STEPCAFControl_DataMapOfLabelShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapOfLabelShape\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapOfLabelShape::~STEPCAFControl_DataMapOfLabelShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_Writer;
@@ -1398,12 +1324,10 @@ class STEPCAFControl_Writer {
 		Standard_Boolean GetMaterialMode() const;
 
 };
-%extend STEPCAFControl_Writer {
-	~STEPCAFControl_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_Writer\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_Writer::~STEPCAFControl_Writer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient;
@@ -1421,12 +1345,10 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient : public TCollecti
 		const Handle_Standard_Transient & Value() const;
 
 };
-%extend STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient {
-	~STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient::~STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile;
@@ -1444,12 +1366,10 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile : public TCollection
 		const Handle_STEPCAFControl_ExternFile & Value() const;
 
 };
-%extend STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile {
-	~STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile::~STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfShapePD;
@@ -1475,12 +1395,10 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public TCollection_MapNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPCAFControl_DataMapNodeOfDataMapOfShapePD {
-	~STEPCAFControl_DataMapNodeOfDataMapOfShapePD() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfShapePD\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfShapePD::~STEPCAFControl_DataMapNodeOfDataMapOfShapePD %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapePD;
@@ -1498,12 +1416,10 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapePD : public TCollection_Basi
 		const Handle_StepBasic_ProductDefinition & Value() const;
 
 };
-%extend STEPCAFControl_DataMapIteratorOfDataMapOfShapePD {
-	~STEPCAFControl_DataMapIteratorOfDataMapOfShapePD() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfShapePD\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfShapePD::~STEPCAFControl_DataMapIteratorOfDataMapOfShapePD %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR;
@@ -1521,9 +1437,7 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR : public TCollection_Bas
 		const Handle_StepShape_ShapeDefinitionRepresentation & Value() const;
 
 };
-%extend STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR {
-	~STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR\n");}
-	}
-};
+%feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR::~STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

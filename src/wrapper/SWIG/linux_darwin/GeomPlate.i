@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GeomPlate_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_GeomPlate_PointConstraint : public Handle_MMgt_TShared {
 	return (GeomPlate_PointConstraint*)$self->Access();
 	}
 };
-%extend Handle_GeomPlate_PointConstraint {
-	~Handle_GeomPlate_PointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_PointConstraint\n");}
-	}
-};
+%feature("shadow") Handle_GeomPlate_PointConstraint::~Handle_GeomPlate_PointConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint;
@@ -87,12 +89,10 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public Handle_T
 	return (GeomPlate_SequenceNodeOfSequenceOfPointConstraint*)$self->Access();
 	}
 };
-%extend Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
-	~Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint\n");}
-	}
-};
+%feature("shadow") Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint::~Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomPlate_HArray1OfHCurveOnSurface;
@@ -117,12 +117,10 @@ class Handle_GeomPlate_HArray1OfHCurveOnSurface : public Handle_MMgt_TShared {
 	return (GeomPlate_HArray1OfHCurveOnSurface*)$self->Access();
 	}
 };
-%extend Handle_GeomPlate_HArray1OfHCurveOnSurface {
-	~Handle_GeomPlate_HArray1OfHCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_HArray1OfHCurveOnSurface\n");}
-	}
-};
+%feature("shadow") Handle_GeomPlate_HArray1OfHCurveOnSurface::~Handle_GeomPlate_HArray1OfHCurveOnSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfAij;
@@ -147,12 +145,10 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfAij : public Handle_TCollection_S
 	return (GeomPlate_SequenceNodeOfSequenceOfAij*)$self->Access();
 	}
 };
-%extend Handle_GeomPlate_SequenceNodeOfSequenceOfAij {
-	~Handle_GeomPlate_SequenceNodeOfSequenceOfAij() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_SequenceNodeOfSequenceOfAij\n");}
-	}
-};
+%feature("shadow") Handle_GeomPlate_SequenceNodeOfSequenceOfAij::~Handle_GeomPlate_SequenceNodeOfSequenceOfAij %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomPlate_HSequenceOfPointConstraint;
@@ -177,12 +173,10 @@ class Handle_GeomPlate_HSequenceOfPointConstraint : public Handle_MMgt_TShared {
 	return (GeomPlate_HSequenceOfPointConstraint*)$self->Access();
 	}
 };
-%extend Handle_GeomPlate_HSequenceOfPointConstraint {
-	~Handle_GeomPlate_HSequenceOfPointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_HSequenceOfPointConstraint\n");}
-	}
-};
+%feature("shadow") Handle_GeomPlate_HSequenceOfPointConstraint::~Handle_GeomPlate_HSequenceOfPointConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint;
@@ -207,12 +201,10 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public Handle_T
 	return (GeomPlate_SequenceNodeOfSequenceOfCurveConstraint*)$self->Access();
 	}
 };
-%extend Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
-	~Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint\n");}
-	}
-};
+%feature("shadow") Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint::~Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomPlate_Surface;
@@ -237,12 +229,10 @@ class Handle_GeomPlate_Surface : public Handle_Geom_Surface {
 	return (GeomPlate_Surface*)$self->Access();
 	}
 };
-%extend Handle_GeomPlate_Surface {
-	~Handle_GeomPlate_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_Surface\n");}
-	}
-};
+%feature("shadow") Handle_GeomPlate_Surface::~Handle_GeomPlate_Surface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomPlate_HArray1OfSequenceOfReal;
@@ -267,12 +257,10 @@ class Handle_GeomPlate_HArray1OfSequenceOfReal : public Handle_MMgt_TShared {
 	return (GeomPlate_HArray1OfSequenceOfReal*)$self->Access();
 	}
 };
-%extend Handle_GeomPlate_HArray1OfSequenceOfReal {
-	~Handle_GeomPlate_HArray1OfSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_HArray1OfSequenceOfReal\n");}
-	}
-};
+%feature("shadow") Handle_GeomPlate_HArray1OfSequenceOfReal::~Handle_GeomPlate_HArray1OfSequenceOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomPlate_CurveConstraint;
@@ -297,12 +285,10 @@ class Handle_GeomPlate_CurveConstraint : public Handle_MMgt_TShared {
 	return (GeomPlate_CurveConstraint*)$self->Access();
 	}
 };
-%extend Handle_GeomPlate_CurveConstraint {
-	~Handle_GeomPlate_CurveConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_CurveConstraint\n");}
-	}
-};
+%feature("shadow") Handle_GeomPlate_CurveConstraint::~Handle_GeomPlate_CurveConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomPlate_HSequenceOfCurveConstraint;
@@ -327,12 +313,10 @@ class Handle_GeomPlate_HSequenceOfCurveConstraint : public Handle_MMgt_TShared {
 	return (GeomPlate_HSequenceOfCurveConstraint*)$self->Access();
 	}
 };
-%extend Handle_GeomPlate_HSequenceOfCurveConstraint {
-	~Handle_GeomPlate_HSequenceOfCurveConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_HSequenceOfCurveConstraint\n");}
-	}
-};
+%feature("shadow") Handle_GeomPlate_HSequenceOfCurveConstraint::~Handle_GeomPlate_HSequenceOfCurveConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_HArray1OfHCurveOnSurface;
@@ -374,12 +358,10 @@ class GeomPlate_HArray1OfHCurveOnSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomPlate_HArray1OfHCurveOnSurface {
-	~GeomPlate_HArray1OfHCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_HArray1OfHCurveOnSurface\n");}
-	}
-};
+%feature("shadow") GeomPlate_HArray1OfHCurveOnSurface::~GeomPlate_HArray1OfHCurveOnSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_HSequenceOfCurveConstraint;
@@ -445,12 +427,10 @@ class GeomPlate_HSequenceOfCurveConstraint : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomPlate_HSequenceOfCurveConstraint {
-	~GeomPlate_HSequenceOfCurveConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_HSequenceOfCurveConstraint\n");}
-	}
-};
+%feature("shadow") GeomPlate_HSequenceOfCurveConstraint::~GeomPlate_HSequenceOfCurveConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_SequenceNodeOfSequenceOfPointConstraint;
@@ -474,12 +454,10 @@ class GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public TCollection_Seq
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
-	~GeomPlate_SequenceNodeOfSequenceOfPointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceNodeOfSequenceOfPointConstraint\n");}
-	}
-};
+%feature("shadow") GeomPlate_SequenceNodeOfSequenceOfPointConstraint::~GeomPlate_SequenceNodeOfSequenceOfPointConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_Aij;
@@ -491,12 +469,10 @@ class GeomPlate_Aij {
 		GeomPlate_Aij(const Standard_Integer anInd1, const Standard_Integer anInd2, const gp_Vec &aVec);
 
 };
-%extend GeomPlate_Aij {
-	~GeomPlate_Aij() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_Aij\n");}
-	}
-};
+%feature("shadow") GeomPlate_Aij::~GeomPlate_Aij %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_PointConstraint;
@@ -550,12 +526,10 @@ class GeomPlate_PointConstraint : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomPlate_PointConstraint {
-	~GeomPlate_PointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_PointConstraint\n");}
-	}
-};
+%feature("shadow") GeomPlate_PointConstraint::~GeomPlate_PointConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_CurveConstraint;
@@ -625,12 +599,10 @@ class GeomPlate_CurveConstraint : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomPlate_CurveConstraint {
-	~GeomPlate_CurveConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_CurveConstraint\n");}
-	}
-};
+%feature("shadow") GeomPlate_CurveConstraint::~GeomPlate_CurveConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_HSequenceOfPointConstraint;
@@ -696,12 +668,10 @@ class GeomPlate_HSequenceOfPointConstraint : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomPlate_HSequenceOfPointConstraint {
-	~GeomPlate_HSequenceOfPointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_HSequenceOfPointConstraint\n");}
-	}
-};
+%feature("shadow") GeomPlate_HSequenceOfPointConstraint::~GeomPlate_HSequenceOfPointConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_HArray1OfSequenceOfReal;
@@ -743,12 +713,10 @@ class GeomPlate_HArray1OfSequenceOfReal : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomPlate_HArray1OfSequenceOfReal {
-	~GeomPlate_HArray1OfSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_HArray1OfSequenceOfReal\n");}
-	}
-};
+%feature("shadow") GeomPlate_HArray1OfSequenceOfReal::~GeomPlate_HArray1OfSequenceOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_BuildAveragePlane;
@@ -772,12 +740,10 @@ class GeomPlate_BuildAveragePlane {
 		Standard_Boolean HalfSpace(const TColgp_SequenceOfVec &NewNormals, TColgp_SequenceOfVec & Normals, GeomPlate_SequenceOfAij & Bset, const Standard_Real LinTol, const Standard_Real AngTol);
 
 };
-%extend GeomPlate_BuildAveragePlane {
-	~GeomPlate_BuildAveragePlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_BuildAveragePlane\n");}
-	}
-};
+%feature("shadow") GeomPlate_BuildAveragePlane::~GeomPlate_BuildAveragePlane %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_SequenceNodeOfSequenceOfCurveConstraint;
@@ -801,12 +767,10 @@ class GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public TCollection_Seq
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
-	~GeomPlate_SequenceNodeOfSequenceOfCurveConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceNodeOfSequenceOfCurveConstraint\n");}
-	}
-};
+%feature("shadow") GeomPlate_SequenceNodeOfSequenceOfCurveConstraint::~GeomPlate_SequenceNodeOfSequenceOfCurveConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_Surface;
@@ -886,12 +850,10 @@ class GeomPlate_Surface : public Geom_Surface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomPlate_Surface {
-	~GeomPlate_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_Surface\n");}
-	}
-};
+%feature("shadow") GeomPlate_Surface::~GeomPlate_Surface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_PlateG0Criterion;
@@ -905,12 +867,10 @@ class GeomPlate_PlateG0Criterion : public AdvApp2Var_Criterion {
 		virtual		Standard_Boolean IsSatisfied(const AdvApp2Var_Patch &P) const;
 
 };
-%extend GeomPlate_PlateG0Criterion {
-	~GeomPlate_PlateG0Criterion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_PlateG0Criterion\n");}
-	}
-};
+%feature("shadow") GeomPlate_PlateG0Criterion::~GeomPlate_PlateG0Criterion %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_MakeApprox;
@@ -928,12 +888,10 @@ class GeomPlate_MakeApprox {
 		Standard_Real CriterionError() const;
 
 };
-%extend GeomPlate_MakeApprox {
-	~GeomPlate_MakeApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_MakeApprox\n");}
-	}
-};
+%feature("shadow") GeomPlate_MakeApprox::~GeomPlate_MakeApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_SequenceOfPointConstraint;
@@ -985,12 +943,10 @@ class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend GeomPlate_SequenceOfPointConstraint {
-	~GeomPlate_SequenceOfPointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceOfPointConstraint\n");}
-	}
-};
+%feature("shadow") GeomPlate_SequenceOfPointConstraint::~GeomPlate_SequenceOfPointConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_BuildPlateSurface;
@@ -1048,12 +1004,10 @@ class GeomPlate_BuildPlateSurface {
 		Standard_Real G2Error(const Standard_Integer Index);
 
 };
-%extend GeomPlate_BuildPlateSurface {
-	~GeomPlate_BuildPlateSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_BuildPlateSurface\n");}
-	}
-};
+%feature("shadow") GeomPlate_BuildPlateSurface::~GeomPlate_BuildPlateSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_SequenceOfAij;
@@ -1105,12 +1059,10 @@ class GeomPlate_SequenceOfAij : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend GeomPlate_SequenceOfAij {
-	~GeomPlate_SequenceOfAij() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceOfAij\n");}
-	}
-};
+%feature("shadow") GeomPlate_SequenceOfAij::~GeomPlate_SequenceOfAij %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_PlateG1Criterion;
@@ -1124,12 +1076,10 @@ class GeomPlate_PlateG1Criterion : public AdvApp2Var_Criterion {
 		virtual		Standard_Boolean IsSatisfied(const AdvApp2Var_Patch &P) const;
 
 };
-%extend GeomPlate_PlateG1Criterion {
-	~GeomPlate_PlateG1Criterion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_PlateG1Criterion\n");}
-	}
-};
+%feature("shadow") GeomPlate_PlateG1Criterion::~GeomPlate_PlateG1Criterion %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_SequenceNodeOfSequenceOfAij;
@@ -1153,12 +1103,10 @@ class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomPlate_SequenceNodeOfSequenceOfAij {
-	~GeomPlate_SequenceNodeOfSequenceOfAij() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceNodeOfSequenceOfAij\n");}
-	}
-};
+%feature("shadow") GeomPlate_SequenceNodeOfSequenceOfAij::~GeomPlate_SequenceNodeOfSequenceOfAij %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_Array1OfSequenceOfReal;
@@ -1196,12 +1144,10 @@ class GeomPlate_Array1OfSequenceOfReal {
 		TColStd_SequenceOfReal & operator()(const Standard_Integer Index);
 
 };
-%extend GeomPlate_Array1OfSequenceOfReal {
-	~GeomPlate_Array1OfSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_Array1OfSequenceOfReal\n");}
-	}
-};
+%feature("shadow") GeomPlate_Array1OfSequenceOfReal::~GeomPlate_Array1OfSequenceOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_Array1OfHCurveOnSurface;
@@ -1239,12 +1185,10 @@ class GeomPlate_Array1OfHCurveOnSurface {
 		Handle_Adaptor3d_HCurveOnSurface & operator()(const Standard_Integer Index);
 
 };
-%extend GeomPlate_Array1OfHCurveOnSurface {
-	~GeomPlate_Array1OfHCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_Array1OfHCurveOnSurface\n");}
-	}
-};
+%feature("shadow") GeomPlate_Array1OfHCurveOnSurface::~GeomPlate_Array1OfHCurveOnSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomPlate_SequenceOfCurveConstraint;
@@ -1296,9 +1240,7 @@ class GeomPlate_SequenceOfCurveConstraint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend GeomPlate_SequenceOfCurveConstraint {
-	~GeomPlate_SequenceOfCurveConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceOfCurveConstraint\n");}
-	}
-};
+%feature("shadow") GeomPlate_SequenceOfCurveConstraint::~GeomPlate_SequenceOfCurveConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

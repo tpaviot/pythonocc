@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepFilletAPI_dependencies.i
 
 
@@ -76,20 +80,10 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		virtual		Handle_ChFiDS_SecHArray1 Sect(const Standard_Integer IC, const Standard_Integer IS) const;
 
 };
-%extend BRepFilletAPI_LocalOperation {
-	~BRepFilletAPI_LocalOperation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_LocalOperation\n");}
-	}
-};
-
-%extend BRepFilletAPI_LocalOperation {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepFilletAPI_LocalOperation::~BRepFilletAPI_LocalOperation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepFilletAPI_MakeChamfer;
@@ -133,20 +127,10 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &F);
 
 };
-%extend BRepFilletAPI_MakeChamfer {
-	~BRepFilletAPI_MakeChamfer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_MakeChamfer\n");}
-	}
-};
-
-%extend BRepFilletAPI_MakeChamfer {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepFilletAPI_MakeChamfer::~BRepFilletAPI_MakeChamfer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepFilletAPI_MakeFillet2d;
@@ -204,20 +188,10 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		virtual		void Build();
 
 };
-%extend BRepFilletAPI_MakeFillet2d {
-	~BRepFilletAPI_MakeFillet2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_MakeFillet2d\n");}
-	}
-};
-
-%extend BRepFilletAPI_MakeFillet2d {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepFilletAPI_MakeFillet2d::~BRepFilletAPI_MakeFillet2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepFilletAPI_MakeFillet;
@@ -337,17 +311,7 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		ChFiDS_ErrorStatus StripeStatus(const Standard_Integer IC) const;
 
 };
-%extend BRepFilletAPI_MakeFillet {
-	~BRepFilletAPI_MakeFillet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_MakeFillet\n");}
-	}
-};
-
-%extend BRepFilletAPI_MakeFillet {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepFilletAPI_MakeFillet::~BRepFilletAPI_MakeFillet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Geom2dToIGES_dependencies.i
 
 
@@ -52,12 +56,10 @@ class Geom2dToIGES_Geom2dEntity {
 		Standard_Real GetUnit() const;
 
 };
-%extend Geom2dToIGES_Geom2dEntity {
-	~Geom2dToIGES_Geom2dEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dToIGES_Geom2dEntity\n");}
-	}
-};
+%feature("shadow") Geom2dToIGES_Geom2dEntity::~Geom2dToIGES_Geom2dEntity %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dToIGES_Geom2dCurve;
@@ -71,12 +73,10 @@ class Geom2dToIGES_Geom2dCurve : public Geom2dToIGES_Geom2dEntity {
 		Handle_IGESData_IGESEntity Transfer2dCurve(const Handle_Geom2d_Curve &start, const Standard_Real Udeb, const Standard_Real Ufin);
 
 };
-%extend Geom2dToIGES_Geom2dCurve {
-	~Geom2dToIGES_Geom2dCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dToIGES_Geom2dCurve\n");}
-	}
-};
+%feature("shadow") Geom2dToIGES_Geom2dCurve::~Geom2dToIGES_Geom2dCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dToIGES_Geom2dPoint;
@@ -92,12 +92,10 @@ class Geom2dToIGES_Geom2dPoint : public Geom2dToIGES_Geom2dEntity {
 		Handle_IGESGeom_Point Transfer2dPoint(const Handle_Geom2d_CartesianPoint &start);
 
 };
-%extend Geom2dToIGES_Geom2dPoint {
-	~Geom2dToIGES_Geom2dPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dToIGES_Geom2dPoint\n");}
-	}
-};
+%feature("shadow") Geom2dToIGES_Geom2dPoint::~Geom2dToIGES_Geom2dPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dToIGES_Geom2dVector;
@@ -115,9 +113,7 @@ class Geom2dToIGES_Geom2dVector : public Geom2dToIGES_Geom2dEntity {
 		Handle_IGESGeom_Direction Transfer2dVector(const Handle_Geom2d_Direction &start);
 
 };
-%extend Geom2dToIGES_Geom2dVector {
-	~Geom2dToIGES_Geom2dVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dToIGES_Geom2dVector\n");}
-	}
-};
+%feature("shadow") Geom2dToIGES_Geom2dVector::~Geom2dToIGES_Geom2dVector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

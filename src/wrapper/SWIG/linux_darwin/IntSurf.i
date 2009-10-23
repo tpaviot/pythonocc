@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntSurf_dependencies.i
 
 
@@ -70,12 +74,10 @@ class Handle_IntSurf_LineOn2S : public Handle_MMgt_TShared {
 	return (IntSurf_LineOn2S*)$self->Access();
 	}
 };
-%extend Handle_IntSurf_LineOn2S {
-	~Handle_IntSurf_LineOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntSurf_LineOn2S\n");}
-	}
-};
+%feature("shadow") Handle_IntSurf_LineOn2S::~Handle_IntSurf_LineOn2S %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint;
@@ -100,12 +102,10 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public Handle_TColl
 	return (IntSurf_SequenceNodeOfSequenceOfInteriorPoint*)$self->Access();
 	}
 };
-%extend Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
-	~Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint\n");}
-	}
-};
+%feature("shadow") Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint::~Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntSurf_ListNodeOfListOfPntOn2S;
@@ -130,12 +130,10 @@ class Handle_IntSurf_ListNodeOfListOfPntOn2S : public Handle_TCollection_MapNode
 	return (IntSurf_ListNodeOfListOfPntOn2S*)$self->Access();
 	}
 };
-%extend Handle_IntSurf_ListNodeOfListOfPntOn2S {
-	~Handle_IntSurf_ListNodeOfListOfPntOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntSurf_ListNodeOfListOfPntOn2S\n");}
-	}
-};
+%feature("shadow") Handle_IntSurf_ListNodeOfListOfPntOn2S::~Handle_IntSurf_ListNodeOfListOfPntOn2S %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint;
@@ -160,12 +158,10 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint : public Handle_TCollecti
 	return (IntSurf_SequenceNodeOfSequenceOfPathPoint*)$self->Access();
 	}
 };
-%extend Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint {
-	~Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint\n");}
-	}
-};
+%feature("shadow") Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint::~Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfCouple;
@@ -190,12 +186,10 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfCouple : public Handle_TCollection_
 	return (IntSurf_SequenceNodeOfSequenceOfCouple*)$self->Access();
 	}
 };
-%extend Handle_IntSurf_SequenceNodeOfSequenceOfCouple {
-	~Handle_IntSurf_SequenceNodeOfSequenceOfCouple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntSurf_SequenceNodeOfSequenceOfCouple\n");}
-	}
-};
+%feature("shadow") Handle_IntSurf_SequenceNodeOfSequenceOfCouple::~Handle_IntSurf_SequenceNodeOfSequenceOfCouple %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S;
@@ -220,12 +214,10 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S : public Handle_TCollection
 	return (IntSurf_SequenceNodeOfSequenceOfPntOn2S*)$self->Access();
 	}
 };
-%extend Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S {
-	~Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S\n");}
-	}
-};
+%feature("shadow") Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S::~Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_ListNodeOfListOfPntOn2S;
@@ -249,12 +241,10 @@ class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntSurf_ListNodeOfListOfPntOn2S {
-	~IntSurf_ListNodeOfListOfPntOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_ListNodeOfListOfPntOn2S\n");}
-	}
-};
+%feature("shadow") IntSurf_ListNodeOfListOfPntOn2S::~IntSurf_ListNodeOfListOfPntOn2S %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf;
@@ -266,12 +256,10 @@ class IntSurf {
 		void MakeTransition(const gp_Vec &TgFirst, const gp_Vec &TgSecond, const gp_Dir &Normal, IntSurf_Transition & TFirst, IntSurf_Transition & TSecond);
 
 };
-%extend IntSurf {
-	~IntSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf\n");}
-	}
-};
+%feature("shadow") IntSurf::~IntSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_Transition;
@@ -299,12 +287,10 @@ class IntSurf_Transition {
 		Standard_Boolean IsOpposite() const;
 
 };
-%extend IntSurf_Transition {
-	~IntSurf_Transition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_Transition\n");}
-	}
-};
+%feature("shadow") IntSurf_Transition::~IntSurf_Transition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_Quadric;
@@ -358,12 +344,10 @@ class IntSurf_Quadric {
 		gp_Vec Normale(const gp_Pnt &P) const;
 
 };
-%extend IntSurf_Quadric {
-	~IntSurf_Quadric() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_Quadric\n");}
-	}
-};
+%feature("shadow") IntSurf_Quadric::~IntSurf_Quadric %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_ListOfPntOn2S;
@@ -411,12 +395,10 @@ class IntSurf_ListOfPntOn2S {
 		void InsertAfter(IntSurf_ListOfPntOn2S & Other, IntSurf_ListIteratorOfListOfPntOn2S & It);
 
 };
-%extend IntSurf_ListOfPntOn2S {
-	~IntSurf_ListOfPntOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_ListOfPntOn2S\n");}
-	}
-};
+%feature("shadow") IntSurf_ListOfPntOn2S::~IntSurf_ListOfPntOn2S %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_PntOn2S;
@@ -444,12 +426,10 @@ class IntSurf_PntOn2S {
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend IntSurf_PntOn2S {
-	~IntSurf_PntOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_PntOn2S\n");}
-	}
-};
+%feature("shadow") IntSurf_PntOn2S::~IntSurf_PntOn2S %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_PathPoint;
@@ -487,12 +467,10 @@ class IntSurf_PathPoint {
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend IntSurf_PathPoint {
-	~IntSurf_PathPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_PathPoint\n");}
-	}
-};
+%feature("shadow") IntSurf_PathPoint::~IntSurf_PathPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_Couple;
@@ -508,12 +486,10 @@ class IntSurf_Couple {
 		Standard_Integer Second() const;
 
 };
-%extend IntSurf_Couple {
-	~IntSurf_Couple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_Couple\n");}
-	}
-};
+%feature("shadow") IntSurf_Couple::~IntSurf_Couple %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_SequenceOfCouple;
@@ -565,12 +541,10 @@ class IntSurf_SequenceOfCouple : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend IntSurf_SequenceOfCouple {
-	~IntSurf_SequenceOfCouple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_SequenceOfCouple\n");}
-	}
-};
+%feature("shadow") IntSurf_SequenceOfCouple::~IntSurf_SequenceOfCouple %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_PathPointTool;
@@ -596,12 +570,10 @@ class IntSurf_PathPointTool {
 		void Parameters(const IntSurf_PathPoint &PStart, const Standard_Integer Mult, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend IntSurf_PathPointTool {
-	~IntSurf_PathPointTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_PathPointTool\n");}
-	}
-};
+%feature("shadow") IntSurf_PathPointTool::~IntSurf_PathPointTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfPathPoint;
@@ -625,12 +597,10 @@ class IntSurf_SequenceNodeOfSequenceOfPathPoint : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntSurf_SequenceNodeOfSequenceOfPathPoint {
-	~IntSurf_SequenceNodeOfSequenceOfPathPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_SequenceNodeOfSequenceOfPathPoint\n");}
-	}
-};
+%feature("shadow") IntSurf_SequenceNodeOfSequenceOfPathPoint::~IntSurf_SequenceNodeOfSequenceOfPathPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_InteriorPoint;
@@ -656,12 +626,10 @@ class IntSurf_InteriorPoint {
 		const gp_Vec2d & Direction2d() const;
 
 };
-%extend IntSurf_InteriorPoint {
-	~IntSurf_InteriorPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_InteriorPoint\n");}
-	}
-};
+%feature("shadow") IntSurf_InteriorPoint::~IntSurf_InteriorPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfInteriorPoint;
@@ -685,12 +653,10 @@ class IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public TCollection_SeqNode
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
-	~IntSurf_SequenceNodeOfSequenceOfInteriorPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_SequenceNodeOfSequenceOfInteriorPoint\n");}
-	}
-};
+%feature("shadow") IntSurf_SequenceNodeOfSequenceOfInteriorPoint::~IntSurf_SequenceNodeOfSequenceOfInteriorPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfCouple;
@@ -714,12 +680,10 @@ class IntSurf_SequenceNodeOfSequenceOfCouple : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntSurf_SequenceNodeOfSequenceOfCouple {
-	~IntSurf_SequenceNodeOfSequenceOfCouple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_SequenceNodeOfSequenceOfCouple\n");}
-	}
-};
+%feature("shadow") IntSurf_SequenceNodeOfSequenceOfCouple::~IntSurf_SequenceNodeOfSequenceOfCouple %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_SequenceOfPntOn2S;
@@ -771,12 +735,10 @@ class IntSurf_SequenceOfPntOn2S : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend IntSurf_SequenceOfPntOn2S {
-	~IntSurf_SequenceOfPntOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_SequenceOfPntOn2S\n");}
-	}
-};
+%feature("shadow") IntSurf_SequenceOfPntOn2S::~IntSurf_SequenceOfPntOn2S %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_InteriorPointTool;
@@ -794,12 +756,10 @@ class IntSurf_InteriorPointTool {
 		gp_Dir2d Direction2d(const IntSurf_InteriorPoint &PStart);
 
 };
-%extend IntSurf_InteriorPointTool {
-	~IntSurf_InteriorPointTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_InteriorPointTool\n");}
-	}
-};
+%feature("shadow") IntSurf_InteriorPointTool::~IntSurf_InteriorPointTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_LineOn2S;
@@ -841,12 +801,10 @@ class IntSurf_LineOn2S : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntSurf_LineOn2S {
-	~IntSurf_LineOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_LineOn2S\n");}
-	}
-};
+%feature("shadow") IntSurf_LineOn2S::~IntSurf_LineOn2S %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_ListIteratorOfListOfPntOn2S;
@@ -866,12 +824,10 @@ class IntSurf_ListIteratorOfListOfPntOn2S {
 		IntSurf_PntOn2S & Value() const;
 
 };
-%extend IntSurf_ListIteratorOfListOfPntOn2S {
-	~IntSurf_ListIteratorOfListOfPntOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_ListIteratorOfListOfPntOn2S\n");}
-	}
-};
+%feature("shadow") IntSurf_ListIteratorOfListOfPntOn2S::~IntSurf_ListIteratorOfListOfPntOn2S %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfPntOn2S;
@@ -895,12 +851,10 @@ class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
-	~IntSurf_SequenceNodeOfSequenceOfPntOn2S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_SequenceNodeOfSequenceOfPntOn2S\n");}
-	}
-};
+%feature("shadow") IntSurf_SequenceNodeOfSequenceOfPntOn2S::~IntSurf_SequenceNodeOfSequenceOfPntOn2S %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_QuadricTool;
@@ -918,12 +872,10 @@ class IntSurf_QuadricTool {
 		Standard_Real Tolerance(const IntSurf_Quadric &Quad);
 
 };
-%extend IntSurf_QuadricTool {
-	~IntSurf_QuadricTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_QuadricTool\n");}
-	}
-};
+%feature("shadow") IntSurf_QuadricTool::~IntSurf_QuadricTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_SequenceOfPathPoint;
@@ -975,12 +927,10 @@ class IntSurf_SequenceOfPathPoint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend IntSurf_SequenceOfPathPoint {
-	~IntSurf_SequenceOfPathPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_SequenceOfPathPoint\n");}
-	}
-};
+%feature("shadow") IntSurf_SequenceOfPathPoint::~IntSurf_SequenceOfPathPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntSurf_SequenceOfInteriorPoint;
@@ -1032,9 +982,7 @@ class IntSurf_SequenceOfInteriorPoint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend IntSurf_SequenceOfInteriorPoint {
-	~IntSurf_SequenceOfInteriorPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntSurf_SequenceOfInteriorPoint\n");}
-	}
-};
+%feature("shadow") IntSurf_SequenceOfInteriorPoint::~IntSurf_SequenceOfInteriorPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

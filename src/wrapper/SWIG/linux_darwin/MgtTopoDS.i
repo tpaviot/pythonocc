@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MgtTopoDS_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_MgtTopoDS_TranslateTool : public Handle_MMgt_TShared {
 	return (MgtTopoDS_TranslateTool*)$self->Access();
 	}
 };
-%extend Handle_MgtTopoDS_TranslateTool {
-	~Handle_MgtTopoDS_TranslateTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MgtTopoDS_TranslateTool\n");}
-	}
-};
+%feature("shadow") Handle_MgtTopoDS_TranslateTool::~Handle_MgtTopoDS_TranslateTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MgtTopoDS_TranslateTool1;
@@ -87,12 +89,10 @@ class Handle_MgtTopoDS_TranslateTool1 : public Handle_MMgt_TShared {
 	return (MgtTopoDS_TranslateTool1*)$self->Access();
 	}
 };
-%extend Handle_MgtTopoDS_TranslateTool1 {
-	~Handle_MgtTopoDS_TranslateTool1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MgtTopoDS_TranslateTool1\n");}
-	}
-};
+%feature("shadow") Handle_MgtTopoDS_TranslateTool1::~Handle_MgtTopoDS_TranslateTool1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MgtTopoDS_TranslateTool;
@@ -182,12 +182,10 @@ class MgtTopoDS_TranslateTool : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MgtTopoDS_TranslateTool {
-	~MgtTopoDS_TranslateTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MgtTopoDS_TranslateTool\n");}
-	}
-};
+%feature("shadow") MgtTopoDS_TranslateTool::~MgtTopoDS_TranslateTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MgtTopoDS_TranslateTool1;
@@ -277,12 +275,10 @@ class MgtTopoDS_TranslateTool1 : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MgtTopoDS_TranslateTool1 {
-	~MgtTopoDS_TranslateTool1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MgtTopoDS_TranslateTool1\n");}
-	}
-};
+%feature("shadow") MgtTopoDS_TranslateTool1::~MgtTopoDS_TranslateTool1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MgtTopoDS;
@@ -300,9 +296,7 @@ class MgtTopoDS {
 		void Translate1(const PTopoDS_Shape1 &aPShape, const Handle_MgtTopoDS_TranslateTool1 &T, PTColStd_PersistentTransientMap & M, TopoDS_Shape & aShape);
 
 };
-%extend MgtTopoDS {
-	~MgtTopoDS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MgtTopoDS\n");}
-	}
-};
+%feature("shadow") MgtTopoDS::~MgtTopoDS %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

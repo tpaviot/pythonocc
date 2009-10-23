@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PCDM_dependencies.i
 
 
@@ -83,12 +87,10 @@ class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_
 	return (PCDM_SequenceNodeOfSequenceOfReference*)$self->Access();
 	}
 };
-%extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
-	~Handle_PCDM_SequenceNodeOfSequenceOfReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_SequenceNodeOfSequenceOfReference\n");}
-	}
-};
+%feature("shadow") Handle_PCDM_SequenceNodeOfSequenceOfReference::~Handle_PCDM_SequenceNodeOfSequenceOfReference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PCDM_Document;
@@ -113,12 +115,10 @@ class Handle_PCDM_Document : public Handle_Standard_Persistent {
 	return (PCDM_Document*)$self->Access();
 	}
 };
-%extend Handle_PCDM_Document {
-	~Handle_PCDM_Document() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_Document\n");}
-	}
-};
+%feature("shadow") Handle_PCDM_Document::~Handle_PCDM_Document %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PCDM_SequenceNodeOfSequenceOfDocument;
@@ -143,12 +143,10 @@ class Handle_PCDM_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_S
 	return (PCDM_SequenceNodeOfSequenceOfDocument*)$self->Access();
 	}
 };
-%extend Handle_PCDM_SequenceNodeOfSequenceOfDocument {
-	~Handle_PCDM_SequenceNodeOfSequenceOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_SequenceNodeOfSequenceOfDocument\n");}
-	}
-};
+%feature("shadow") Handle_PCDM_SequenceNodeOfSequenceOfDocument::~Handle_PCDM_SequenceNodeOfSequenceOfDocument %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PCDM_DriverError;
@@ -173,12 +171,10 @@ class Handle_PCDM_DriverError : public Handle_Standard_Failure {
 	return (PCDM_DriverError*)$self->Access();
 	}
 };
-%extend Handle_PCDM_DriverError {
-	~Handle_PCDM_DriverError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_DriverError\n");}
-	}
-};
+%feature("shadow") Handle_PCDM_DriverError::~Handle_PCDM_DriverError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PCDM_ReadWriter;
@@ -203,12 +199,10 @@ class Handle_PCDM_ReadWriter : public Handle_Standard_Transient {
 	return (PCDM_ReadWriter*)$self->Access();
 	}
 };
-%extend Handle_PCDM_ReadWriter {
-	~Handle_PCDM_ReadWriter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_ReadWriter\n");}
-	}
-};
+%feature("shadow") Handle_PCDM_ReadWriter::~Handle_PCDM_ReadWriter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PCDM_ReadWriter_1;
@@ -233,12 +227,10 @@ class Handle_PCDM_ReadWriter_1 : public Handle_PCDM_ReadWriter {
 	return (PCDM_ReadWriter_1*)$self->Access();
 	}
 };
-%extend Handle_PCDM_ReadWriter_1 {
-	~Handle_PCDM_ReadWriter_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_ReadWriter_1\n");}
-	}
-};
+%feature("shadow") Handle_PCDM_ReadWriter_1::~Handle_PCDM_ReadWriter_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PCDM_Reader;
@@ -263,12 +255,10 @@ class Handle_PCDM_Reader : public Handle_Standard_Transient {
 	return (PCDM_Reader*)$self->Access();
 	}
 };
-%extend Handle_PCDM_Reader {
-	~Handle_PCDM_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_Reader\n");}
-	}
-};
+%feature("shadow") Handle_PCDM_Reader::~Handle_PCDM_Reader %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PCDM_RetrievalDriver;
@@ -293,12 +283,10 @@ class Handle_PCDM_RetrievalDriver : public Handle_PCDM_Reader {
 	return (PCDM_RetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_PCDM_RetrievalDriver {
-	~Handle_PCDM_RetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_RetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_PCDM_RetrievalDriver::~Handle_PCDM_RetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PCDM_Writer;
@@ -323,12 +311,10 @@ class Handle_PCDM_Writer : public Handle_Standard_Transient {
 	return (PCDM_Writer*)$self->Access();
 	}
 };
-%extend Handle_PCDM_Writer {
-	~Handle_PCDM_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_Writer\n");}
-	}
-};
+%feature("shadow") Handle_PCDM_Writer::~Handle_PCDM_Writer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PCDM_StorageDriver;
@@ -353,12 +339,10 @@ class Handle_PCDM_StorageDriver : public Handle_PCDM_Writer {
 	return (PCDM_StorageDriver*)$self->Access();
 	}
 };
-%extend Handle_PCDM_StorageDriver {
-	~Handle_PCDM_StorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_StorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_PCDM_StorageDriver::~Handle_PCDM_StorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PCDM_ReferenceIterator;
@@ -383,12 +367,10 @@ class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
 	return (PCDM_ReferenceIterator*)$self->Access();
 	}
 };
-%extend Handle_PCDM_ReferenceIterator {
-	~Handle_PCDM_ReferenceIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_ReferenceIterator\n");}
-	}
-};
+%feature("shadow") Handle_PCDM_ReferenceIterator::~Handle_PCDM_ReferenceIterator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM_Writer;
@@ -410,12 +392,10 @@ class PCDM_Writer : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PCDM_Writer {
-	~PCDM_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_Writer\n");}
-	}
-};
+%feature("shadow") PCDM_Writer::~PCDM_Writer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM_DriverError;
@@ -445,12 +425,10 @@ class PCDM_DriverError : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PCDM_DriverError {
-	~PCDM_DriverError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_DriverError\n");}
-	}
-};
+%feature("shadow") PCDM_DriverError::~PCDM_DriverError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM_Reader;
@@ -476,12 +454,10 @@ class PCDM_Reader : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PCDM_Reader {
-	~PCDM_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_Reader\n");}
-	}
-};
+%feature("shadow") PCDM_Reader::~PCDM_Reader %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM_RetrievalDriver;
@@ -515,12 +491,10 @@ class PCDM_RetrievalDriver : public PCDM_Reader {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PCDM_RetrievalDriver {
-	~PCDM_RetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_RetrievalDriver\n");}
-	}
-};
+%feature("shadow") PCDM_RetrievalDriver::~PCDM_RetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM_ReferenceIterator;
@@ -546,12 +520,10 @@ class PCDM_ReferenceIterator : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PCDM_ReferenceIterator {
-	~PCDM_ReferenceIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_ReferenceIterator\n");}
-	}
-};
+%feature("shadow") PCDM_ReferenceIterator::~PCDM_ReferenceIterator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM_SequenceNodeOfSequenceOfReference;
@@ -575,12 +547,10 @@ class PCDM_SequenceNodeOfSequenceOfReference : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PCDM_SequenceNodeOfSequenceOfReference {
-	~PCDM_SequenceNodeOfSequenceOfReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_SequenceNodeOfSequenceOfReference\n");}
-	}
-};
+%feature("shadow") PCDM_SequenceNodeOfSequenceOfReference::~PCDM_SequenceNodeOfSequenceOfReference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM_ReadWriter;
@@ -628,12 +598,10 @@ class PCDM_ReadWriter : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PCDM_ReadWriter {
-	~PCDM_ReadWriter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_ReadWriter\n");}
-	}
-};
+%feature("shadow") PCDM_ReadWriter::~PCDM_ReadWriter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM_ReadWriter_1;
@@ -655,12 +623,10 @@ class PCDM_ReadWriter_1 : public PCDM_ReadWriter {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PCDM_ReadWriter_1 {
-	~PCDM_ReadWriter_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_ReadWriter_1\n");}
-	}
-};
+%feature("shadow") PCDM_ReadWriter_1::~PCDM_ReadWriter_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM_Reference;
@@ -678,12 +644,10 @@ class PCDM_Reference {
 		Standard_Integer DocumentVersion() const;
 
 };
-%extend PCDM_Reference {
-	~PCDM_Reference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_Reference\n");}
-	}
-};
+%feature("shadow") PCDM_Reference::~PCDM_Reference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM;
@@ -697,12 +661,10 @@ class PCDM {
 		Handle_Storage_Schema Schema(const TCollection_ExtendedString &aSchemaName, const Handle_CDM_Application &anApplication);
 
 };
-%extend PCDM {
-	~PCDM() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM\n");}
-	}
-};
+%feature("shadow") PCDM::~PCDM %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM_SequenceOfDocument;
@@ -754,12 +716,10 @@ class PCDM_SequenceOfDocument : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend PCDM_SequenceOfDocument {
-	~PCDM_SequenceOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_SequenceOfDocument\n");}
-	}
-};
+%feature("shadow") PCDM_SequenceOfDocument::~PCDM_SequenceOfDocument %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM_SequenceOfReference;
@@ -811,12 +771,10 @@ class PCDM_SequenceOfReference : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend PCDM_SequenceOfReference {
-	~PCDM_SequenceOfReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_SequenceOfReference\n");}
-	}
-};
+%feature("shadow") PCDM_SequenceOfReference::~PCDM_SequenceOfReference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM_SequenceNodeOfSequenceOfDocument;
@@ -840,12 +798,10 @@ class PCDM_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PCDM_SequenceNodeOfSequenceOfDocument {
-	~PCDM_SequenceNodeOfSequenceOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_SequenceNodeOfSequenceOfDocument\n");}
-	}
-};
+%feature("shadow") PCDM_SequenceNodeOfSequenceOfDocument::~PCDM_SequenceNodeOfSequenceOfDocument %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PCDM_Document;
@@ -869,9 +825,7 @@ class PCDM_Document : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PCDM_Document {
-	~PCDM_Document() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDM_Document\n");}
-	}
-};
+%feature("shadow") PCDM_Document::~PCDM_Document %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

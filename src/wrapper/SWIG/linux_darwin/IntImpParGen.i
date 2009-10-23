@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntImpParGen_dependencies.i
 
 
@@ -50,9 +54,7 @@ class IntImpParGen {
 		Standard_Real NormalizeOnDomain(Standard_Real &OutValue, const IntRes2d_Domain &Dom1);
 
 };
-%extend IntImpParGen {
-	~IntImpParGen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntImpParGen\n");}
-	}
-};
+%feature("shadow") IntImpParGen::~IntImpParGen %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

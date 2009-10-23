@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include UnitsAPI_dependencies.i
 
 
@@ -114,9 +118,7 @@ class UnitsAPI {
 		Standard_Boolean Check(const char * aQuantity, const char * aUnit);
 
 };
-%extend UnitsAPI {
-	~UnitsAPI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of UnitsAPI\n");}
-	}
-};
+%feature("shadow") UnitsAPI::~UnitsAPI %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

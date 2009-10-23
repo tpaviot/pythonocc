@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TopTrans_dependencies.i
 
 
@@ -52,12 +56,10 @@ class TopTrans_CurveTransition {
 		TopAbs_State StateAfter() const;
 
 };
-%extend TopTrans_CurveTransition {
-	~TopTrans_CurveTransition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTrans_CurveTransition\n");}
-	}
-};
+%feature("shadow") TopTrans_CurveTransition::~TopTrans_CurveTransition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTrans_Array2OfOrientation;
@@ -99,12 +101,10 @@ class TopTrans_Array2OfOrientation {
 		TopAbs_Orientation & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend TopTrans_Array2OfOrientation {
-	~TopTrans_Array2OfOrientation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTrans_Array2OfOrientation\n");}
-	}
-};
+%feature("shadow") TopTrans_Array2OfOrientation::~TopTrans_Array2OfOrientation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTrans_SurfaceTransition;
@@ -130,9 +130,7 @@ class TopTrans_SurfaceTransition {
 		TopAbs_State GetAfter(const TopAbs_Orientation Tran);
 
 };
-%extend TopTrans_SurfaceTransition {
-	~TopTrans_SurfaceTransition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTrans_SurfaceTransition\n");}
-	}
-};
+%feature("shadow") TopTrans_SurfaceTransition::~TopTrans_SurfaceTransition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

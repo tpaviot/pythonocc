@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IFGraph_dependencies.i
 
 
@@ -62,12 +66,10 @@ class IFGraph_Compare : public Interface_GraphContent {
 		Interface_EntityIterator SecondOnly() const;
 
 };
-%extend IFGraph_Compare {
-	~IFGraph_Compare() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_Compare\n");}
-	}
-};
+%feature("shadow") IFGraph_Compare::~IFGraph_Compare %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IFGraph_SubPartsIterator;
@@ -125,12 +127,10 @@ class IFGraph_SubPartsIterator {
 		virtual		void Delete();
 
 };
-%extend IFGraph_SubPartsIterator {
-	~IFGraph_SubPartsIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_SubPartsIterator\n");}
-	}
-};
+%feature("shadow") IFGraph_SubPartsIterator::~IFGraph_SubPartsIterator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IFGraph_StrongComponants;
@@ -142,12 +142,10 @@ class IFGraph_StrongComponants : public IFGraph_SubPartsIterator {
 		IFGraph_StrongComponants(const Interface_Graph &agraph, const Standard_Boolean whole);
 
 };
-%extend IFGraph_StrongComponants {
-	~IFGraph_StrongComponants() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_StrongComponants\n");}
-	}
-};
+%feature("shadow") IFGraph_StrongComponants::~IFGraph_StrongComponants %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IFGraph_SCRoots;
@@ -161,12 +159,10 @@ class IFGraph_SCRoots : public IFGraph_StrongComponants {
 		IFGraph_SCRoots(IFGraph_StrongComponants & subparts);
 
 };
-%extend IFGraph_SCRoots {
-	~IFGraph_SCRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_SCRoots\n");}
-	}
-};
+%feature("shadow") IFGraph_SCRoots::~IFGraph_SCRoots %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IFGraph_ConnectedComponants;
@@ -180,12 +176,10 @@ class IFGraph_ConnectedComponants : public IFGraph_SubPartsIterator {
 		virtual		void Evaluate();
 
 };
-%extend IFGraph_ConnectedComponants {
-	~IFGraph_ConnectedComponants() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_ConnectedComponants\n");}
-	}
-};
+%feature("shadow") IFGraph_ConnectedComponants::~IFGraph_ConnectedComponants %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IFGraph_AllConnected;
@@ -203,12 +197,10 @@ class IFGraph_AllConnected : public Interface_GraphContent {
 		virtual		void Evaluate();
 
 };
-%extend IFGraph_AllConnected {
-	~IFGraph_AllConnected() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_AllConnected\n");}
-	}
-};
+%feature("shadow") IFGraph_AllConnected::~IFGraph_AllConnected %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IFGraph_AllShared;
@@ -228,12 +220,10 @@ class IFGraph_AllShared : public Interface_GraphContent {
 		virtual		void Evaluate();
 
 };
-%extend IFGraph_AllShared {
-	~IFGraph_AllShared() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_AllShared\n");}
-	}
-};
+%feature("shadow") IFGraph_AllShared::~IFGraph_AllShared %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IFGraph_ExternalSources;
@@ -253,12 +243,10 @@ class IFGraph_ExternalSources : public Interface_GraphContent {
 		Standard_Boolean IsEmpty();
 
 };
-%extend IFGraph_ExternalSources {
-	~IFGraph_ExternalSources() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_ExternalSources\n");}
-	}
-};
+%feature("shadow") IFGraph_ExternalSources::~IFGraph_ExternalSources %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IFGraph_Articulations;
@@ -276,12 +264,10 @@ class IFGraph_Articulations : public Interface_GraphContent {
 		virtual		void Evaluate();
 
 };
-%extend IFGraph_Articulations {
-	~IFGraph_Articulations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_Articulations\n");}
-	}
-};
+%feature("shadow") IFGraph_Articulations::~IFGraph_Articulations %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IFGraph_Cumulate;
@@ -309,12 +295,10 @@ class IFGraph_Cumulate : public Interface_GraphContent {
 		Standard_Integer HighestNbTimes() const;
 
 };
-%extend IFGraph_Cumulate {
-	~IFGraph_Cumulate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_Cumulate\n");}
-	}
-};
+%feature("shadow") IFGraph_Cumulate::~IFGraph_Cumulate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IFGraph_Cycles;
@@ -330,9 +314,7 @@ class IFGraph_Cycles : public IFGraph_SubPartsIterator {
 		virtual		void Evaluate();
 
 };
-%extend IFGraph_Cycles {
-	~IFGraph_Cycles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IFGraph_Cycles\n");}
-	}
-};
+%feature("shadow") IFGraph_Cycles::~IFGraph_Cycles %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

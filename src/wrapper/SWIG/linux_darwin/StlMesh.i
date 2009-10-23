@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StlMesh_dependencies.i
 
 
@@ -57,42 +61,10 @@ class Handle_StlMesh_MeshDomain : public Handle_MMgt_TShared {
 	return (StlMesh_MeshDomain*)$self->Access();
 	}
 };
-%extend Handle_StlMesh_MeshDomain {
-	~Handle_StlMesh_MeshDomain() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_MeshDomain\n");}
-	}
-};
-
-
-%nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain;
-class Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain();
-		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain &aHandle);
-		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *anItem);
-		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain &aHandle);
-		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *anItem);
-		%feature("autodoc", "1");
-		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain {
-	StlMesh_SequenceNodeOfSequenceOfMeshDomain* GetObject() {
-	return (StlMesh_SequenceNodeOfSequenceOfMeshDomain*)$self->Access();
-	}
-};
-%extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain {
-	~Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain\n");}
-	}
-};
+%feature("shadow") Handle_StlMesh_MeshDomain::~Handle_StlMesh_MeshDomain %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StlMesh_Mesh;
@@ -117,12 +89,10 @@ class Handle_StlMesh_Mesh : public Handle_MMgt_TShared {
 	return (StlMesh_Mesh*)$self->Access();
 	}
 };
-%extend Handle_StlMesh_Mesh {
-	~Handle_StlMesh_Mesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_Mesh\n");}
-	}
-};
+%feature("shadow") Handle_StlMesh_Mesh::~Handle_StlMesh_Mesh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StlMesh_MeshTriangle;
@@ -147,12 +117,38 @@ class Handle_StlMesh_MeshTriangle : public Handle_MMgt_TShared {
 	return (StlMesh_MeshTriangle*)$self->Access();
 	}
 };
-%extend Handle_StlMesh_MeshTriangle {
-	~Handle_StlMesh_MeshTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_MeshTriangle\n");}
+%feature("shadow") Handle_StlMesh_MeshTriangle::~Handle_StlMesh_MeshTriangle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
+
+%nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain;
+class Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain();
+		%feature("autodoc", "1");
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain &aHandle);
+		%feature("autodoc", "1");
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *anItem);
+		%feature("autodoc", "1");
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain &aHandle);
+		%feature("autodoc", "1");
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain & operator=(const StlMesh_SequenceNodeOfSequenceOfMeshDomain *anItem);
+		%feature("autodoc", "1");
+		Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain {
+	StlMesh_SequenceNodeOfSequenceOfMeshDomain* GetObject() {
+	return (StlMesh_SequenceNodeOfSequenceOfMeshDomain*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain::~Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle;
@@ -177,12 +173,10 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public Handle_TColle
 	return (StlMesh_SequenceNodeOfSequenceOfMeshTriangle*)$self->Access();
 	}
 };
-%extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
-	~Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle\n");}
-	}
-};
+%feature("shadow") Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle::~Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMesh;
@@ -207,12 +201,10 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMesh : public Handle_TCollection_Se
 	return (StlMesh_SequenceNodeOfSequenceOfMesh*)$self->Access();
 	}
 };
-%extend Handle_StlMesh_SequenceNodeOfSequenceOfMesh {
-	~Handle_StlMesh_SequenceNodeOfSequenceOfMesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMesh\n");}
-	}
-};
+%feature("shadow") Handle_StlMesh_SequenceNodeOfSequenceOfMesh::~Handle_StlMesh_SequenceNodeOfSequenceOfMesh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StlMesh_MeshDomain;
@@ -252,12 +244,10 @@ class StlMesh_MeshDomain : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StlMesh_MeshDomain {
-	~StlMesh_MeshDomain() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_MeshDomain\n");}
-	}
-};
+%feature("shadow") StlMesh_MeshDomain::~StlMesh_MeshDomain %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StlMesh_SequenceOfMeshDomain;
@@ -309,12 +299,10 @@ class StlMesh_SequenceOfMeshDomain : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend StlMesh_SequenceOfMeshDomain {
-	~StlMesh_SequenceOfMeshDomain() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceOfMeshDomain\n");}
-	}
-};
+%feature("shadow") StlMesh_SequenceOfMeshDomain::~StlMesh_SequenceOfMeshDomain %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StlMesh_MeshExplorer;
@@ -336,12 +324,10 @@ class StlMesh_MeshExplorer {
 		void TriangleOrientation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend StlMesh_MeshExplorer {
-	~StlMesh_MeshExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_MeshExplorer\n");}
-	}
-};
+%feature("shadow") StlMesh_MeshExplorer::~StlMesh_MeshExplorer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StlMesh_SequenceNodeOfSequenceOfMeshDomain;
@@ -365,12 +351,10 @@ class StlMesh_SequenceNodeOfSequenceOfMeshDomain : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
-	~StlMesh_SequenceNodeOfSequenceOfMeshDomain() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMeshDomain\n");}
-	}
-};
+%feature("shadow") StlMesh_SequenceNodeOfSequenceOfMeshDomain::~StlMesh_SequenceNodeOfSequenceOfMeshDomain %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StlMesh_SequenceNodeOfSequenceOfMesh;
@@ -394,12 +378,10 @@ class StlMesh_SequenceNodeOfSequenceOfMesh : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StlMesh_SequenceNodeOfSequenceOfMesh {
-	~StlMesh_SequenceNodeOfSequenceOfMesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMesh\n");}
-	}
-};
+%feature("shadow") StlMesh_SequenceNodeOfSequenceOfMesh::~StlMesh_SequenceNodeOfSequenceOfMesh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StlMesh;
@@ -411,12 +393,10 @@ class StlMesh {
 		Handle_StlMesh_Mesh Merge(const Handle_StlMesh_Mesh &mesh1, const Handle_StlMesh_Mesh &mesh2);
 
 };
-%extend StlMesh {
-	~StlMesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh\n");}
-	}
-};
+%feature("shadow") StlMesh::~StlMesh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StlMesh_Mesh;
@@ -470,12 +450,10 @@ class StlMesh_Mesh : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StlMesh_Mesh {
-	~StlMesh_Mesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_Mesh\n");}
-	}
-};
+%feature("shadow") StlMesh_Mesh::~StlMesh_Mesh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StlMesh_SequenceOfMeshTriangle;
@@ -527,12 +505,10 @@ class StlMesh_SequenceOfMeshTriangle : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend StlMesh_SequenceOfMeshTriangle {
-	~StlMesh_SequenceOfMeshTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceOfMeshTriangle\n");}
-	}
-};
+%feature("shadow") StlMesh_SequenceOfMeshTriangle::~StlMesh_SequenceOfMeshTriangle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StlMesh_MeshTriangle;
@@ -564,12 +540,10 @@ class StlMesh_MeshTriangle : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StlMesh_MeshTriangle {
-	~StlMesh_MeshTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_MeshTriangle\n");}
-	}
-};
+%feature("shadow") StlMesh_MeshTriangle::~StlMesh_MeshTriangle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StlMesh_SequenceNodeOfSequenceOfMeshTriangle;
@@ -593,12 +567,10 @@ class StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public TCollection_SeqNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
-	~StlMesh_SequenceNodeOfSequenceOfMeshTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMeshTriangle\n");}
-	}
-};
+%feature("shadow") StlMesh_SequenceNodeOfSequenceOfMeshTriangle::~StlMesh_SequenceNodeOfSequenceOfMeshTriangle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StlMesh_SequenceOfMesh;
@@ -650,9 +622,7 @@ class StlMesh_SequenceOfMesh : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend StlMesh_SequenceOfMesh {
-	~StlMesh_SequenceOfMesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceOfMesh\n");}
-	}
-};
+%feature("shadow") StlMesh_SequenceOfMesh::~StlMesh_SequenceOfMesh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

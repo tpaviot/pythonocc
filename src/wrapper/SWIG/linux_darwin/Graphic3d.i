@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Graphic3d_dependencies.i
 
 
@@ -272,12 +276,10 @@ class Handle_Graphic3d_GraphicDriver : public Handle_Aspect_GraphicDriver {
 	return (Graphic3d_GraphicDriver*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_GraphicDriver {
-	~Handle_Graphic3d_GraphicDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_GraphicDriver\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_GraphicDriver::~Handle_Graphic3d_GraphicDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_GroupDefinitionError;
@@ -302,12 +304,10 @@ class Handle_Graphic3d_GroupDefinitionError : public Handle_Standard_OutOfRange 
 	return (Graphic3d_GroupDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_GroupDefinitionError {
-	~Handle_Graphic3d_GroupDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_GroupDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_GroupDefinitionError::~Handle_Graphic3d_GroupDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_TextureRoot;
@@ -332,12 +332,10 @@ class Handle_Graphic3d_TextureRoot : public Handle_MMgt_TShared {
 	return (Graphic3d_TextureRoot*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_TextureRoot {
-	~Handle_Graphic3d_TextureRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_TextureRoot\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_TextureRoot::~Handle_Graphic3d_TextureRoot %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_TextureMap;
@@ -362,12 +360,10 @@ class Handle_Graphic3d_TextureMap : public Handle_Graphic3d_TextureRoot {
 	return (Graphic3d_TextureMap*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_TextureMap {
-	~Handle_Graphic3d_TextureMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_TextureMap\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_TextureMap::~Handle_Graphic3d_TextureMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_TextureEnv;
@@ -392,12 +388,10 @@ class Handle_Graphic3d_TextureEnv : public Handle_Graphic3d_TextureRoot {
 	return (Graphic3d_TextureEnv*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_TextureEnv {
-	~Handle_Graphic3d_TextureEnv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_TextureEnv\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_TextureEnv::~Handle_Graphic3d_TextureEnv %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_ArrayOfPrimitives;
@@ -422,12 +416,10 @@ class Handle_Graphic3d_ArrayOfPrimitives : public Handle_MMgt_TShared {
 	return (Graphic3d_ArrayOfPrimitives*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_ArrayOfPrimitives {
-	~Handle_Graphic3d_ArrayOfPrimitives() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfPrimitives\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_ArrayOfPrimitives::~Handle_Graphic3d_ArrayOfPrimitives %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_ArrayOfPoints;
@@ -452,12 +444,10 @@ class Handle_Graphic3d_ArrayOfPoints : public Handle_Graphic3d_ArrayOfPrimitives
 	return (Graphic3d_ArrayOfPoints*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_ArrayOfPoints {
-	~Handle_Graphic3d_ArrayOfPoints() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfPoints\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_ArrayOfPoints::~Handle_Graphic3d_ArrayOfPoints %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_Texture2D;
@@ -482,12 +472,10 @@ class Handle_Graphic3d_Texture2D : public Handle_Graphic3d_TextureMap {
 	return (Graphic3d_Texture2D*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_Texture2D {
-	~Handle_Graphic3d_Texture2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture2D\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_Texture2D::~Handle_Graphic3d_Texture2D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_SequenceNodeOfSequenceOfStructure;
@@ -512,12 +500,10 @@ class Handle_Graphic3d_SequenceNodeOfSequenceOfStructure : public Handle_TCollec
 	return (Graphic3d_SequenceNodeOfSequenceOfStructure*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_SequenceNodeOfSequenceOfStructure {
-	~Handle_Graphic3d_SequenceNodeOfSequenceOfStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_SequenceNodeOfSequenceOfStructure\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_SequenceNodeOfSequenceOfStructure::~Handle_Graphic3d_SequenceNodeOfSequenceOfStructure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup;
@@ -542,12 +528,10 @@ class Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup : public Handle_TCollection
 	return (Graphic3d_ListNodeOfSetListOfSetOfGroup*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup {
-	~Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup::~Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_Texture1D;
@@ -572,12 +556,10 @@ class Handle_Graphic3d_Texture1D : public Handle_Graphic3d_TextureMap {
 	return (Graphic3d_Texture1D*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_Texture1D {
-	~Handle_Graphic3d_Texture1D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture1D\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_Texture1D::~Handle_Graphic3d_Texture1D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_Texture1Dmanual;
@@ -602,12 +584,10 @@ class Handle_Graphic3d_Texture1Dmanual : public Handle_Graphic3d_Texture1D {
 	return (Graphic3d_Texture1Dmanual*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_Texture1Dmanual {
-	~Handle_Graphic3d_Texture1Dmanual() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture1Dmanual\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_Texture1Dmanual::~Handle_Graphic3d_Texture1Dmanual %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_ArrayOfPolygons;
@@ -632,12 +612,10 @@ class Handle_Graphic3d_ArrayOfPolygons : public Handle_Graphic3d_ArrayOfPrimitiv
 	return (Graphic3d_ArrayOfPolygons*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_ArrayOfPolygons {
-	~Handle_Graphic3d_ArrayOfPolygons() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfPolygons\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_ArrayOfPolygons::~Handle_Graphic3d_ArrayOfPolygons %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_AspectMarker3d;
@@ -662,12 +640,10 @@ class Handle_Graphic3d_AspectMarker3d : public Handle_Aspect_AspectMarker {
 	return (Graphic3d_AspectMarker3d*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_AspectMarker3d {
-	~Handle_Graphic3d_AspectMarker3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_AspectMarker3d\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_AspectMarker3d::~Handle_Graphic3d_AspectMarker3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_ArrayOfPolylines;
@@ -692,12 +668,10 @@ class Handle_Graphic3d_ArrayOfPolylines : public Handle_Graphic3d_ArrayOfPrimiti
 	return (Graphic3d_ArrayOfPolylines*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_ArrayOfPolylines {
-	~Handle_Graphic3d_ArrayOfPolylines() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfPolylines\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_ArrayOfPolylines::~Handle_Graphic3d_ArrayOfPolylines %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_AspectText3d;
@@ -722,12 +696,10 @@ class Handle_Graphic3d_AspectText3d : public Handle_MMgt_TShared {
 	return (Graphic3d_AspectText3d*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_AspectText3d {
-	~Handle_Graphic3d_AspectText3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_AspectText3d\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_AspectText3d::~Handle_Graphic3d_AspectText3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_TransformError;
@@ -752,12 +724,10 @@ class Handle_Graphic3d_TransformError : public Handle_Standard_OutOfRange {
 	return (Graphic3d_TransformError*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_TransformError {
-	~Handle_Graphic3d_TransformError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_TransformError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_TransformError::~Handle_Graphic3d_TransformError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_PlotterDefinitionError;
@@ -782,12 +752,10 @@ class Handle_Graphic3d_PlotterDefinitionError : public Handle_Standard_OutOfRang
 	return (Graphic3d_PlotterDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_PlotterDefinitionError {
-	~Handle_Graphic3d_PlotterDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_PlotterDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_PlotterDefinitionError::~Handle_Graphic3d_PlotterDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_Texture1Dsegment;
@@ -812,12 +780,10 @@ class Handle_Graphic3d_Texture1Dsegment : public Handle_Graphic3d_Texture1D {
 	return (Graphic3d_Texture1Dsegment*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_Texture1Dsegment {
-	~Handle_Graphic3d_Texture1Dsegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture1Dsegment\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_Texture1Dsegment::~Handle_Graphic3d_Texture1Dsegment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_AspectLine3d;
@@ -842,12 +808,10 @@ class Handle_Graphic3d_AspectLine3d : public Handle_Aspect_AspectLine {
 	return (Graphic3d_AspectLine3d*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_AspectLine3d {
-	~Handle_Graphic3d_AspectLine3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_AspectLine3d\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_AspectLine3d::~Handle_Graphic3d_AspectLine3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_Plotter;
@@ -872,12 +836,10 @@ class Handle_Graphic3d_Plotter : public Handle_MMgt_TShared {
 	return (Graphic3d_Plotter*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_Plotter {
-	~Handle_Graphic3d_Plotter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Plotter\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_Plotter::~Handle_Graphic3d_Plotter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_DataStructureManager;
@@ -902,12 +864,10 @@ class Handle_Graphic3d_DataStructureManager : public Handle_MMgt_TShared {
 	return (Graphic3d_DataStructureManager*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_DataStructureManager {
-	~Handle_Graphic3d_DataStructureManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_DataStructureManager\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_DataStructureManager::~Handle_Graphic3d_DataStructureManager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_HSequenceOfGroup;
@@ -932,12 +892,10 @@ class Handle_Graphic3d_HSequenceOfGroup : public Handle_MMgt_TShared {
 	return (Graphic3d_HSequenceOfGroup*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_HSequenceOfGroup {
-	~Handle_Graphic3d_HSequenceOfGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_HSequenceOfGroup\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_HSequenceOfGroup::~Handle_Graphic3d_HSequenceOfGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_ArrayOfTriangleFans;
@@ -962,12 +920,10 @@ class Handle_Graphic3d_ArrayOfTriangleFans : public Handle_Graphic3d_ArrayOfPrim
 	return (Graphic3d_ArrayOfTriangleFans*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_ArrayOfTriangleFans {
-	~Handle_Graphic3d_ArrayOfTriangleFans() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfTriangleFans\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_ArrayOfTriangleFans::~Handle_Graphic3d_ArrayOfTriangleFans %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_AspectTextDefinitionError;
@@ -992,12 +948,10 @@ class Handle_Graphic3d_AspectTextDefinitionError : public Handle_Standard_OutOfR
 	return (Graphic3d_AspectTextDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_AspectTextDefinitionError {
-	~Handle_Graphic3d_AspectTextDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_AspectTextDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_AspectTextDefinitionError::~Handle_Graphic3d_AspectTextDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_CycleError;
@@ -1022,12 +976,10 @@ class Handle_Graphic3d_CycleError : public Handle_Standard_DomainError {
 	return (Graphic3d_CycleError*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_CycleError {
-	~Handle_Graphic3d_CycleError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_CycleError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_CycleError::~Handle_Graphic3d_CycleError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_VectorError;
@@ -1052,12 +1004,10 @@ class Handle_Graphic3d_VectorError : public Handle_Standard_OutOfRange {
 	return (Graphic3d_VectorError*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_VectorError {
-	~Handle_Graphic3d_VectorError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_VectorError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_VectorError::~Handle_Graphic3d_VectorError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_Texture2Dmanual;
@@ -1082,12 +1032,10 @@ class Handle_Graphic3d_Texture2Dmanual : public Handle_Graphic3d_Texture2D {
 	return (Graphic3d_Texture2Dmanual*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_Texture2Dmanual {
-	~Handle_Graphic3d_Texture2Dmanual() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture2Dmanual\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_Texture2Dmanual::~Handle_Graphic3d_Texture2Dmanual %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_Group;
@@ -1112,12 +1060,10 @@ class Handle_Graphic3d_Group : public Handle_MMgt_TShared {
 	return (Graphic3d_Group*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_Group {
-	~Handle_Graphic3d_Group() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Group\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_Group::~Handle_Graphic3d_Group %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_PriorityDefinitionError;
@@ -1142,12 +1088,10 @@ class Handle_Graphic3d_PriorityDefinitionError : public Handle_Standard_OutOfRan
 	return (Graphic3d_PriorityDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_PriorityDefinitionError {
-	~Handle_Graphic3d_PriorityDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_PriorityDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_PriorityDefinitionError::~Handle_Graphic3d_PriorityDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_AspectFillArea3d;
@@ -1172,12 +1116,10 @@ class Handle_Graphic3d_AspectFillArea3d : public Handle_Aspect_AspectFillArea {
 	return (Graphic3d_AspectFillArea3d*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_AspectFillArea3d {
-	~Handle_Graphic3d_AspectFillArea3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_AspectFillArea3d\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_AspectFillArea3d::~Handle_Graphic3d_AspectFillArea3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_ListNodeOfListOfShortReal;
@@ -1202,12 +1144,10 @@ class Handle_Graphic3d_ListNodeOfListOfShortReal : public Handle_TCollection_Map
 	return (Graphic3d_ListNodeOfListOfShortReal*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_ListNodeOfListOfShortReal {
-	~Handle_Graphic3d_ListNodeOfListOfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ListNodeOfListOfShortReal\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_ListNodeOfListOfShortReal::~Handle_Graphic3d_ListNodeOfListOfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_ArrayOfQuadrangleStrips;
@@ -1232,12 +1172,10 @@ class Handle_Graphic3d_ArrayOfQuadrangleStrips : public Handle_Graphic3d_ArrayOf
 	return (Graphic3d_ArrayOfQuadrangleStrips*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_ArrayOfQuadrangleStrips {
-	~Handle_Graphic3d_ArrayOfQuadrangleStrips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfQuadrangleStrips\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_ArrayOfQuadrangleStrips::~Handle_Graphic3d_ArrayOfQuadrangleStrips %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_GraphicDevice;
@@ -1262,12 +1200,10 @@ class Handle_Graphic3d_GraphicDevice : public Handle_Xw_GraphicDevice {
 	return (Graphic3d_GraphicDevice*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_GraphicDevice {
-	~Handle_Graphic3d_GraphicDevice() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_GraphicDevice\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_GraphicDevice::~Handle_Graphic3d_GraphicDevice %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_InitialisationError;
@@ -1292,12 +1228,10 @@ class Handle_Graphic3d_InitialisationError : public Handle_Standard_OutOfRange {
 	return (Graphic3d_InitialisationError*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_InitialisationError {
-	~Handle_Graphic3d_InitialisationError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_InitialisationError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_InitialisationError::~Handle_Graphic3d_InitialisationError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_ArrayOfTriangleStrips;
@@ -1322,12 +1256,10 @@ class Handle_Graphic3d_ArrayOfTriangleStrips : public Handle_Graphic3d_ArrayOfPr
 	return (Graphic3d_ArrayOfTriangleStrips*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_ArrayOfTriangleStrips {
-	~Handle_Graphic3d_ArrayOfTriangleStrips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfTriangleStrips\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_ArrayOfTriangleStrips::~Handle_Graphic3d_ArrayOfTriangleStrips %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_ArrayOfTriangles;
@@ -1352,12 +1284,10 @@ class Handle_Graphic3d_ArrayOfTriangles : public Handle_Graphic3d_ArrayOfPrimiti
 	return (Graphic3d_ArrayOfTriangles*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_ArrayOfTriangles {
-	~Handle_Graphic3d_ArrayOfTriangles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfTriangles\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_ArrayOfTriangles::~Handle_Graphic3d_ArrayOfTriangles %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_HSequenceOfStructure;
@@ -1382,12 +1312,10 @@ class Handle_Graphic3d_HSequenceOfStructure : public Handle_MMgt_TShared {
 	return (Graphic3d_HSequenceOfStructure*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_HSequenceOfStructure {
-	~Handle_Graphic3d_HSequenceOfStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_HSequenceOfStructure\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_HSequenceOfStructure::~Handle_Graphic3d_HSequenceOfStructure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_StdMapNodeOfMapOfStructure;
@@ -1412,12 +1340,10 @@ class Handle_Graphic3d_StdMapNodeOfMapOfStructure : public Handle_TCollection_Ma
 	return (Graphic3d_StdMapNodeOfMapOfStructure*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_StdMapNodeOfMapOfStructure {
-	~Handle_Graphic3d_StdMapNodeOfMapOfStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_StdMapNodeOfMapOfStructure\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_StdMapNodeOfMapOfStructure::~Handle_Graphic3d_StdMapNodeOfMapOfStructure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_SequenceNodeOfSequenceOfAddress;
@@ -1442,12 +1368,10 @@ class Handle_Graphic3d_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 	return (Graphic3d_SequenceNodeOfSequenceOfAddress*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_SequenceNodeOfSequenceOfAddress {
-	~Handle_Graphic3d_SequenceNodeOfSequenceOfAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_SequenceNodeOfSequenceOfAddress\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_SequenceNodeOfSequenceOfAddress::~Handle_Graphic3d_SequenceNodeOfSequenceOfAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_StructureManager;
@@ -1472,12 +1396,10 @@ class Handle_Graphic3d_StructureManager : public Handle_MMgt_TShared {
 	return (Graphic3d_StructureManager*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_StructureManager {
-	~Handle_Graphic3d_StructureManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_StructureManager\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_StructureManager::~Handle_Graphic3d_StructureManager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_ArrayOfQuadrangles;
@@ -1502,12 +1424,10 @@ class Handle_Graphic3d_ArrayOfQuadrangles : public Handle_Graphic3d_ArrayOfPrimi
 	return (Graphic3d_ArrayOfQuadrangles*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_ArrayOfQuadrangles {
-	~Handle_Graphic3d_ArrayOfQuadrangles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfQuadrangles\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_ArrayOfQuadrangles::~Handle_Graphic3d_ArrayOfQuadrangles %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_HSetOfGroup;
@@ -1532,12 +1452,10 @@ class Handle_Graphic3d_HSetOfGroup : public Handle_MMgt_TShared {
 	return (Graphic3d_HSetOfGroup*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_HSetOfGroup {
-	~Handle_Graphic3d_HSetOfGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_HSetOfGroup\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_HSetOfGroup::~Handle_Graphic3d_HSetOfGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_ArrayOfSegments;
@@ -1562,12 +1480,10 @@ class Handle_Graphic3d_ArrayOfSegments : public Handle_Graphic3d_ArrayOfPrimitiv
 	return (Graphic3d_ArrayOfSegments*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_ArrayOfSegments {
-	~Handle_Graphic3d_ArrayOfSegments() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfSegments\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_ArrayOfSegments::~Handle_Graphic3d_ArrayOfSegments %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_Structure;
@@ -1592,12 +1508,10 @@ class Handle_Graphic3d_Structure : public Handle_MMgt_TShared {
 	return (Graphic3d_Structure*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_Structure {
-	~Handle_Graphic3d_Structure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Structure\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_Structure::~Handle_Graphic3d_Structure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_StructureDefinitionError;
@@ -1622,12 +1536,10 @@ class Handle_Graphic3d_StructureDefinitionError : public Handle_Standard_OutOfRa
 	return (Graphic3d_StructureDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_StructureDefinitionError {
-	~Handle_Graphic3d_StructureDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_StructureDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_StructureDefinitionError::~Handle_Graphic3d_StructureDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_PickIdDefinitionError;
@@ -1652,12 +1564,10 @@ class Handle_Graphic3d_PickIdDefinitionError : public Handle_Standard_OutOfRange
 	return (Graphic3d_PickIdDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_PickIdDefinitionError {
-	~Handle_Graphic3d_PickIdDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_PickIdDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_PickIdDefinitionError::~Handle_Graphic3d_PickIdDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_HArray1OfBytes;
@@ -1682,12 +1592,10 @@ class Handle_Graphic3d_HArray1OfBytes : public Handle_MMgt_TShared {
 	return (Graphic3d_HArray1OfBytes*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_HArray1OfBytes {
-	~Handle_Graphic3d_HArray1OfBytes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_HArray1OfBytes\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_HArray1OfBytes::~Handle_Graphic3d_HArray1OfBytes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_SequenceNodeOfSequenceOfGroup;
@@ -1712,12 +1620,10 @@ class Handle_Graphic3d_SequenceNodeOfSequenceOfGroup : public Handle_TCollection
 	return (Graphic3d_SequenceNodeOfSequenceOfGroup*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_SequenceNodeOfSequenceOfGroup {
-	~Handle_Graphic3d_SequenceNodeOfSequenceOfGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_SequenceNodeOfSequenceOfGroup\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_SequenceNodeOfSequenceOfGroup::~Handle_Graphic3d_SequenceNodeOfSequenceOfGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_MaterialDefinitionError;
@@ -1742,12 +1648,10 @@ class Handle_Graphic3d_MaterialDefinitionError : public Handle_Standard_OutOfRan
 	return (Graphic3d_MaterialDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_MaterialDefinitionError {
-	~Handle_Graphic3d_MaterialDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_MaterialDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_MaterialDefinitionError::~Handle_Graphic3d_MaterialDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_ListNodeOfListOfPArray;
@@ -1772,12 +1676,10 @@ class Handle_Graphic3d_ListNodeOfListOfPArray : public Handle_TCollection_MapNod
 	return (Graphic3d_ListNodeOfListOfPArray*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_ListNodeOfListOfPArray {
-	~Handle_Graphic3d_ListNodeOfListOfPArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ListNodeOfListOfPArray\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_ListNodeOfListOfPArray::~Handle_Graphic3d_ListNodeOfListOfPArray %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic3d_Texture2Dplane;
@@ -1802,12 +1704,10 @@ class Handle_Graphic3d_Texture2Dplane : public Handle_Graphic3d_Texture2D {
 	return (Graphic3d_Texture2Dplane*)$self->Access();
 	}
 };
-%extend Handle_Graphic3d_Texture2Dplane {
-	~Handle_Graphic3d_Texture2Dplane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture2Dplane\n");}
-	}
-};
+%feature("shadow") Handle_Graphic3d_Texture2Dplane::~Handle_Graphic3d_Texture2Dplane %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_CBitFields20;
@@ -1817,12 +1717,10 @@ class Graphic3d_CBitFields20 {
 		Graphic3d_CBitFields20();
 
 };
-%extend Graphic3d_CBitFields20 {
-	~Graphic3d_CBitFields20() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields20\n");}
-	}
-};
+%feature("shadow") Graphic3d_CBitFields20::~Graphic3d_CBitFields20 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ArrayOfPrimitives;
@@ -1954,12 +1852,10 @@ class Graphic3d_ArrayOfPrimitives : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_ArrayOfPrimitives {
-	~Graphic3d_ArrayOfPrimitives() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfPrimitives\n");}
-	}
-};
+%feature("shadow") Graphic3d_ArrayOfPrimitives::~Graphic3d_ArrayOfPrimitives %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ArrayOfQuadrangleStrips;
@@ -1979,12 +1875,10 @@ class Graphic3d_ArrayOfQuadrangleStrips : public Graphic3d_ArrayOfPrimitives {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_ArrayOfQuadrangleStrips {
-	~Graphic3d_ArrayOfQuadrangleStrips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfQuadrangleStrips\n");}
-	}
-};
+%feature("shadow") Graphic3d_ArrayOfQuadrangleStrips::~Graphic3d_ArrayOfQuadrangleStrips %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_VectorError;
@@ -2014,12 +1908,10 @@ class Graphic3d_VectorError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_VectorError {
-	~Graphic3d_VectorError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_VectorError\n");}
-	}
-};
+%feature("shadow") Graphic3d_VectorError::~Graphic3d_VectorError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Structure;
@@ -2211,12 +2103,10 @@ class Graphic3d_Structure : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_Structure {
-	~Graphic3d_Structure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Structure\n");}
-	}
-};
+%feature("shadow") Graphic3d_Structure::~Graphic3d_Structure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_TextureRoot;
@@ -2252,12 +2142,10 @@ class Graphic3d_TextureRoot : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_TextureRoot {
-	~Graphic3d_TextureRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_TextureRoot\n");}
-	}
-};
+%feature("shadow") Graphic3d_TextureRoot::~Graphic3d_TextureRoot %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_TextureEnv;
@@ -2285,12 +2173,10 @@ class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_TextureEnv {
-	~Graphic3d_TextureEnv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_TextureEnv\n");}
-	}
-};
+%feature("shadow") Graphic3d_TextureEnv::~Graphic3d_TextureEnv %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Array1OfVertexNC;
@@ -2328,12 +2214,10 @@ class Graphic3d_Array1OfVertexNC {
 		Graphic3d_VertexNC & operator()(const Standard_Integer Index);
 
 };
-%extend Graphic3d_Array1OfVertexNC {
-	~Graphic3d_Array1OfVertexNC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfVertexNC\n");}
-	}
-};
+%feature("shadow") Graphic3d_Array1OfVertexNC::~Graphic3d_Array1OfVertexNC %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Array2OfVertex;
@@ -2375,12 +2259,10 @@ class Graphic3d_Array2OfVertex {
 		Graphic3d_Vertex & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend Graphic3d_Array2OfVertex {
-	~Graphic3d_Array2OfVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array2OfVertex\n");}
-	}
-};
+%feature("shadow") Graphic3d_Array2OfVertex::~Graphic3d_Array2OfVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_InitialisationError;
@@ -2410,12 +2292,10 @@ class Graphic3d_InitialisationError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_InitialisationError {
-	~Graphic3d_InitialisationError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_InitialisationError\n");}
-	}
-};
+%feature("shadow") Graphic3d_InitialisationError::~Graphic3d_InitialisationError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_StdMapNodeOfMapOfStructure;
@@ -2439,12 +2319,10 @@ class Graphic3d_StdMapNodeOfMapOfStructure : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_StdMapNodeOfMapOfStructure {
-	~Graphic3d_StdMapNodeOfMapOfStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_StdMapNodeOfMapOfStructure\n");}
-	}
-};
+%feature("shadow") Graphic3d_StdMapNodeOfMapOfStructure::~Graphic3d_StdMapNodeOfMapOfStructure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ListIteratorOfListOfShortReal;
@@ -2464,12 +2342,10 @@ class Graphic3d_ListIteratorOfListOfShortReal {
 		Standard_ShortReal & Value() const;
 
 };
-%extend Graphic3d_ListIteratorOfListOfShortReal {
-	~Graphic3d_ListIteratorOfListOfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ListIteratorOfListOfShortReal\n");}
-	}
-};
+%feature("shadow") Graphic3d_ListIteratorOfListOfShortReal::~Graphic3d_ListIteratorOfListOfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_AspectTextDefinitionError;
@@ -2499,12 +2375,10 @@ class Graphic3d_AspectTextDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_AspectTextDefinitionError {
-	~Graphic3d_AspectTextDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_AspectTextDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic3d_AspectTextDefinitionError::~Graphic3d_AspectTextDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_SequenceNodeOfSequenceOfAddress;
@@ -2528,12 +2402,10 @@ class Graphic3d_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_SequenceNodeOfSequenceOfAddress {
-	~Graphic3d_SequenceNodeOfSequenceOfAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceNodeOfSequenceOfAddress\n");}
-	}
-};
+%feature("shadow") Graphic3d_SequenceNodeOfSequenceOfAddress::~Graphic3d_SequenceNodeOfSequenceOfAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Array1OfBytes;
@@ -2571,12 +2443,10 @@ class Graphic3d_Array1OfBytes {
 		Standard_Byte & operator()(const Standard_Integer Index);
 
 };
-%extend Graphic3d_Array1OfBytes {
-	~Graphic3d_Array1OfBytes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfBytes\n");}
-	}
-};
+%feature("shadow") Graphic3d_Array1OfBytes::~Graphic3d_Array1OfBytes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ListIteratorOfSetListOfSetOfGroup;
@@ -2596,12 +2466,10 @@ class Graphic3d_ListIteratorOfSetListOfSetOfGroup {
 		Handle_Graphic3d_Group & Value() const;
 
 };
-%extend Graphic3d_ListIteratorOfSetListOfSetOfGroup {
-	~Graphic3d_ListIteratorOfSetListOfSetOfGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ListIteratorOfSetListOfSetOfGroup\n");}
-	}
-};
+%feature("shadow") Graphic3d_ListIteratorOfSetListOfSetOfGroup::~Graphic3d_ListIteratorOfSetListOfSetOfGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_PickIdDefinitionError;
@@ -2631,12 +2499,10 @@ class Graphic3d_PickIdDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_PickIdDefinitionError {
-	~Graphic3d_PickIdDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_PickIdDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic3d_PickIdDefinitionError::~Graphic3d_PickIdDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_SetOfGroup;
@@ -2668,12 +2534,10 @@ class Graphic3d_SetOfGroup {
 		Standard_Boolean IsAProperSubset(const Graphic3d_SetOfGroup &S) const;
 
 };
-%extend Graphic3d_SetOfGroup {
-	~Graphic3d_SetOfGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_SetOfGroup\n");}
-	}
-};
+%feature("shadow") Graphic3d_SetOfGroup::~Graphic3d_SetOfGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ArrayOfPoints;
@@ -2695,12 +2559,10 @@ class Graphic3d_ArrayOfPoints : public Graphic3d_ArrayOfPrimitives {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_ArrayOfPoints {
-	~Graphic3d_ArrayOfPoints() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfPoints\n");}
-	}
-};
+%feature("shadow") Graphic3d_ArrayOfPoints::~Graphic3d_ArrayOfPoints %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_CBitFields16;
@@ -2710,12 +2572,10 @@ class Graphic3d_CBitFields16 {
 		Graphic3d_CBitFields16();
 
 };
-%extend Graphic3d_CBitFields16 {
-	~Graphic3d_CBitFields16() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields16\n");}
-	}
-};
+%feature("shadow") Graphic3d_CBitFields16::~Graphic3d_CBitFields16 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_CBitFields8;
@@ -2725,12 +2585,10 @@ class Graphic3d_CBitFields8 {
 		Graphic3d_CBitFields8();
 
 };
-%extend Graphic3d_CBitFields8 {
-	~Graphic3d_CBitFields8() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields8\n");}
-	}
-};
+%feature("shadow") Graphic3d_CBitFields8::~Graphic3d_CBitFields8 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_PlotterDefinitionError;
@@ -2760,12 +2618,10 @@ class Graphic3d_PlotterDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_PlotterDefinitionError {
-	~Graphic3d_PlotterDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_PlotterDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic3d_PlotterDefinitionError::~Graphic3d_PlotterDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_TextureMap;
@@ -2803,12 +2659,10 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_TextureMap {
-	~Graphic3d_TextureMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_TextureMap\n");}
-	}
-};
+%feature("shadow") Graphic3d_TextureMap::~Graphic3d_TextureMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ListOfPArray;
@@ -2856,12 +2710,10 @@ class Graphic3d_ListOfPArray {
 		void InsertAfter(Graphic3d_ListOfPArray & Other, Graphic3d_ListIteratorOfListOfPArray & It);
 
 };
-%extend Graphic3d_ListOfPArray {
-	~Graphic3d_ListOfPArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ListOfPArray\n");}
-	}
-};
+%feature("shadow") Graphic3d_ListOfPArray::~Graphic3d_ListOfPArray %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_SequenceOfAddress;
@@ -2913,12 +2765,10 @@ class Graphic3d_SequenceOfAddress : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Graphic3d_SequenceOfAddress {
-	~Graphic3d_SequenceOfAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceOfAddress\n");}
-	}
-};
+%feature("shadow") Graphic3d_SequenceOfAddress::~Graphic3d_SequenceOfAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_HSequenceOfStructure;
@@ -2984,12 +2834,10 @@ class Graphic3d_HSequenceOfStructure : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_HSequenceOfStructure {
-	~Graphic3d_HSequenceOfStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_HSequenceOfStructure\n");}
-	}
-};
+%feature("shadow") Graphic3d_HSequenceOfStructure::~Graphic3d_HSequenceOfStructure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_SetListOfSetOfGroup;
@@ -3037,12 +2885,10 @@ class Graphic3d_SetListOfSetOfGroup {
 		void InsertAfter(Graphic3d_SetListOfSetOfGroup & Other, Graphic3d_ListIteratorOfSetListOfSetOfGroup & It);
 
 };
-%extend Graphic3d_SetListOfSetOfGroup {
-	~Graphic3d_SetListOfSetOfGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_SetListOfSetOfGroup\n");}
-	}
-};
+%feature("shadow") Graphic3d_SetListOfSetOfGroup::~Graphic3d_SetListOfSetOfGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ListNodeOfListOfShortReal;
@@ -3066,12 +2912,10 @@ class Graphic3d_ListNodeOfListOfShortReal : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_ListNodeOfListOfShortReal {
-	~Graphic3d_ListNodeOfListOfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ListNodeOfListOfShortReal\n");}
-	}
-};
+%feature("shadow") Graphic3d_ListNodeOfListOfShortReal::~Graphic3d_ListNodeOfListOfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Array2OfVertexC;
@@ -3113,12 +2957,10 @@ class Graphic3d_Array2OfVertexC {
 		Graphic3d_VertexC & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend Graphic3d_Array2OfVertexC {
-	~Graphic3d_Array2OfVertexC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array2OfVertexC\n");}
-	}
-};
+%feature("shadow") Graphic3d_Array2OfVertexC::~Graphic3d_Array2OfVertexC %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_HArray1OfBytes;
@@ -3160,12 +3002,10 @@ class Graphic3d_HArray1OfBytes : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_HArray1OfBytes {
-	~Graphic3d_HArray1OfBytes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_HArray1OfBytes\n");}
-	}
-};
+%feature("shadow") Graphic3d_HArray1OfBytes::~Graphic3d_HArray1OfBytes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Texture2D;
@@ -3191,12 +3031,10 @@ class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_Texture2D {
-	~Graphic3d_Texture2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture2D\n");}
-	}
-};
+%feature("shadow") Graphic3d_Texture2D::~Graphic3d_Texture2D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Texture2Dplane;
@@ -3250,12 +3088,10 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_Texture2Dplane {
-	~Graphic3d_Texture2Dplane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture2Dplane\n");}
-	}
-};
+%feature("shadow") Graphic3d_Texture2Dplane::~Graphic3d_Texture2Dplane %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Vertex;
@@ -3287,12 +3123,10 @@ class Graphic3d_Vertex {
 		Standard_Real Distance(const Graphic3d_Vertex &AV1, const Graphic3d_Vertex &AV2);
 
 };
-%extend Graphic3d_Vertex {
-	~Graphic3d_Vertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Vertex\n");}
-	}
-};
+%feature("shadow") Graphic3d_Vertex::~Graphic3d_Vertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_VertexN;
@@ -3310,12 +3144,10 @@ class Graphic3d_VertexN : public Graphic3d_Vertex {
 		void Normal(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend Graphic3d_VertexN {
-	~Graphic3d_VertexN() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_VertexN\n");}
-	}
-};
+%feature("shadow") Graphic3d_VertexN::~Graphic3d_VertexN %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_VertexNC;
@@ -3333,12 +3165,10 @@ class Graphic3d_VertexNC : public Graphic3d_VertexN {
 		Quantity_Color Color() const;
 
 };
-%extend Graphic3d_VertexNC {
-	~Graphic3d_VertexNC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_VertexNC\n");}
-	}
-};
+%feature("shadow") Graphic3d_VertexNC::~Graphic3d_VertexNC %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_GraphicDriver;
@@ -3700,12 +3530,10 @@ class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_GraphicDriver {
-	~Graphic3d_GraphicDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_GraphicDriver\n");}
-	}
-};
+%feature("shadow") Graphic3d_GraphicDriver::~Graphic3d_GraphicDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ArrayOfSegments;
@@ -3727,12 +3555,10 @@ class Graphic3d_ArrayOfSegments : public Graphic3d_ArrayOfPrimitives {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_ArrayOfSegments {
-	~Graphic3d_ArrayOfSegments() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfSegments\n");}
-	}
-};
+%feature("shadow") Graphic3d_ArrayOfSegments::~Graphic3d_ArrayOfSegments %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ListOfShortReal;
@@ -3780,12 +3606,10 @@ class Graphic3d_ListOfShortReal {
 		void InsertAfter(Graphic3d_ListOfShortReal & Other, Graphic3d_ListIteratorOfListOfShortReal & It);
 
 };
-%extend Graphic3d_ListOfShortReal {
-	~Graphic3d_ListOfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ListOfShortReal\n");}
-	}
-};
+%feature("shadow") Graphic3d_ListOfShortReal::~Graphic3d_ListOfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Array1OfVertex;
@@ -3823,12 +3647,10 @@ class Graphic3d_Array1OfVertex {
 		Graphic3d_Vertex & operator()(const Standard_Integer Index);
 
 };
-%extend Graphic3d_Array1OfVertex {
-	~Graphic3d_Array1OfVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfVertex\n");}
-	}
-};
+%feature("shadow") Graphic3d_Array1OfVertex::~Graphic3d_Array1OfVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_SequenceOfStructure;
@@ -3880,12 +3702,10 @@ class Graphic3d_SequenceOfStructure : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Graphic3d_SequenceOfStructure {
-	~Graphic3d_SequenceOfStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceOfStructure\n");}
-	}
-};
+%feature("shadow") Graphic3d_SequenceOfStructure::~Graphic3d_SequenceOfStructure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_StructureManager;
@@ -3975,12 +3795,10 @@ class Graphic3d_StructureManager : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_StructureManager {
-	~Graphic3d_StructureManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_StructureManager\n");}
-	}
-};
+%feature("shadow") Graphic3d_StructureManager::~Graphic3d_StructureManager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Texture2Dmanual;
@@ -4004,12 +3822,10 @@ class Graphic3d_Texture2Dmanual : public Graphic3d_Texture2D {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_Texture2Dmanual {
-	~Graphic3d_Texture2Dmanual() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture2Dmanual\n");}
-	}
-};
+%feature("shadow") Graphic3d_Texture2Dmanual::~Graphic3d_Texture2Dmanual %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_CBitFields4;
@@ -4019,12 +3835,10 @@ class Graphic3d_CBitFields4 {
 		Graphic3d_CBitFields4();
 
 };
-%extend Graphic3d_CBitFields4 {
-	~Graphic3d_CBitFields4() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields4\n");}
-	}
-};
+%feature("shadow") Graphic3d_CBitFields4::~Graphic3d_CBitFields4 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Array1OfVertexC;
@@ -4062,12 +3876,10 @@ class Graphic3d_Array1OfVertexC {
 		Graphic3d_VertexC & operator()(const Standard_Integer Index);
 
 };
-%extend Graphic3d_Array1OfVertexC {
-	~Graphic3d_Array1OfVertexC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfVertexC\n");}
-	}
-};
+%feature("shadow") Graphic3d_Array1OfVertexC::~Graphic3d_Array1OfVertexC %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Array1OfVertexN;
@@ -4105,12 +3917,10 @@ class Graphic3d_Array1OfVertexN {
 		Graphic3d_VertexN & operator()(const Standard_Integer Index);
 
 };
-%extend Graphic3d_Array1OfVertexN {
-	~Graphic3d_Array1OfVertexN() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfVertexN\n");}
-	}
-};
+%feature("shadow") Graphic3d_Array1OfVertexN::~Graphic3d_Array1OfVertexN %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_GraphicDevice;
@@ -4138,12 +3948,10 @@ class Graphic3d_GraphicDevice : public Xw_GraphicDevice {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_GraphicDevice {
-	~Graphic3d_GraphicDevice() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_GraphicDevice\n");}
-	}
-};
+%feature("shadow") Graphic3d_GraphicDevice::~Graphic3d_GraphicDevice %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_SequenceOfGroup;
@@ -4195,12 +4003,10 @@ class Graphic3d_SequenceOfGroup : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Graphic3d_SequenceOfGroup {
-	~Graphic3d_SequenceOfGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceOfGroup\n");}
-	}
-};
+%feature("shadow") Graphic3d_SequenceOfGroup::~Graphic3d_SequenceOfGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Texture1D;
@@ -4226,12 +4032,10 @@ class Graphic3d_Texture1D : public Graphic3d_TextureMap {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_Texture1D {
-	~Graphic3d_Texture1D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture1D\n");}
-	}
-};
+%feature("shadow") Graphic3d_Texture1D::~Graphic3d_Texture1D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Texture1Dmanual;
@@ -4253,12 +4057,10 @@ class Graphic3d_Texture1Dmanual : public Graphic3d_Texture1D {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_Texture1Dmanual {
-	~Graphic3d_Texture1Dmanual() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture1Dmanual\n");}
-	}
-};
+%feature("shadow") Graphic3d_Texture1Dmanual::~Graphic3d_Texture1Dmanual %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_CycleError;
@@ -4288,12 +4090,10 @@ class Graphic3d_CycleError : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_CycleError {
-	~Graphic3d_CycleError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_CycleError\n");}
-	}
-};
+%feature("shadow") Graphic3d_CycleError::~Graphic3d_CycleError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Array2OfVertexNT;
@@ -4335,12 +4135,10 @@ class Graphic3d_Array2OfVertexNT {
 		Graphic3d_VertexNT & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend Graphic3d_Array2OfVertexNT {
-	~Graphic3d_Array2OfVertexNT() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array2OfVertexNT\n");}
-	}
-};
+%feature("shadow") Graphic3d_Array2OfVertexNT::~Graphic3d_Array2OfVertexNT %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_PriorityDefinitionError;
@@ -4370,12 +4168,10 @@ class Graphic3d_PriorityDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_PriorityDefinitionError {
-	~Graphic3d_PriorityDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_PriorityDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic3d_PriorityDefinitionError::~Graphic3d_PriorityDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_DataStructureManager;
@@ -4397,12 +4193,10 @@ class Graphic3d_DataStructureManager : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_DataStructureManager {
-	~Graphic3d_DataStructureManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_DataStructureManager\n");}
-	}
-};
+%feature("shadow") Graphic3d_DataStructureManager::~Graphic3d_DataStructureManager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ArrayOfTriangleFans;
@@ -4424,12 +4218,10 @@ class Graphic3d_ArrayOfTriangleFans : public Graphic3d_ArrayOfPrimitives {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_ArrayOfTriangleFans {
-	~Graphic3d_ArrayOfTriangleFans() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfTriangleFans\n");}
-	}
-};
+%feature("shadow") Graphic3d_ArrayOfTriangleFans::~Graphic3d_ArrayOfTriangleFans %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_AspectFillArea3d;
@@ -4501,12 +4293,10 @@ class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_AspectFillArea3d {
-	~Graphic3d_AspectFillArea3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_AspectFillArea3d\n");}
-	}
-};
+%feature("shadow") Graphic3d_AspectFillArea3d::~Graphic3d_AspectFillArea3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_VertexC;
@@ -4524,12 +4314,10 @@ class Graphic3d_VertexC : public Graphic3d_Vertex {
 		Quantity_Color Color() const;
 
 };
-%extend Graphic3d_VertexC {
-	~Graphic3d_VertexC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_VertexC\n");}
-	}
-};
+%feature("shadow") Graphic3d_VertexC::~Graphic3d_VertexC %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_VertexNT;
@@ -4547,12 +4335,10 @@ class Graphic3d_VertexNT : public Graphic3d_VertexN {
 		void TextureCoordinate(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend Graphic3d_VertexNT {
-	~Graphic3d_VertexNT() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_VertexNT\n");}
-	}
-};
+%feature("shadow") Graphic3d_VertexNT::~Graphic3d_VertexNT %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_HSequenceOfGroup;
@@ -4618,12 +4404,10 @@ class Graphic3d_HSequenceOfGroup : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_HSequenceOfGroup {
-	~Graphic3d_HSequenceOfGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_HSequenceOfGroup\n");}
-	}
-};
+%feature("shadow") Graphic3d_HSequenceOfGroup::~Graphic3d_HSequenceOfGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_MaterialAspect;
@@ -4717,12 +4501,10 @@ class Graphic3d_MaterialAspect {
 		Graphic3d_TypeOfMaterial MaterialType(const Standard_Integer aRank);
 
 };
-%extend Graphic3d_MaterialAspect {
-	~Graphic3d_MaterialAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_MaterialAspect\n");}
-	}
-};
+%feature("shadow") Graphic3d_MaterialAspect::~Graphic3d_MaterialAspect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ListIteratorOfListOfPArray;
@@ -4742,12 +4524,10 @@ class Graphic3d_ListIteratorOfListOfPArray {
 		Handle_Graphic3d_ArrayOfPrimitives & Value() const;
 
 };
-%extend Graphic3d_ListIteratorOfListOfPArray {
-	~Graphic3d_ListIteratorOfListOfPArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ListIteratorOfListOfPArray\n");}
-	}
-};
+%feature("shadow") Graphic3d_ListIteratorOfListOfPArray::~Graphic3d_ListIteratorOfListOfPArray %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_AspectLine3d;
@@ -4771,12 +4551,10 @@ class Graphic3d_AspectLine3d : public Aspect_AspectLine {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_AspectLine3d {
-	~Graphic3d_AspectLine3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_AspectLine3d\n");}
-	}
-};
+%feature("shadow") Graphic3d_AspectLine3d::~Graphic3d_AspectLine3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Array2OfVertexN;
@@ -4818,12 +4596,10 @@ class Graphic3d_Array2OfVertexN {
 		Graphic3d_VertexN & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend Graphic3d_Array2OfVertexN {
-	~Graphic3d_Array2OfVertexN() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array2OfVertexN\n");}
-	}
-};
+%feature("shadow") Graphic3d_Array2OfVertexN::~Graphic3d_Array2OfVertexN %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_TransformError;
@@ -4853,12 +4629,10 @@ class Graphic3d_TransformError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_TransformError {
-	~Graphic3d_TransformError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_TransformError\n");}
-	}
-};
+%feature("shadow") Graphic3d_TransformError::~Graphic3d_TransformError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_SequenceNodeOfSequenceOfStructure;
@@ -4882,12 +4656,10 @@ class Graphic3d_SequenceNodeOfSequenceOfStructure : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_SequenceNodeOfSequenceOfStructure {
-	~Graphic3d_SequenceNodeOfSequenceOfStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceNodeOfSequenceOfStructure\n");}
-	}
-};
+%feature("shadow") Graphic3d_SequenceNodeOfSequenceOfStructure::~Graphic3d_SequenceNodeOfSequenceOfStructure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ArrayOfPolygons;
@@ -4909,12 +4681,10 @@ class Graphic3d_ArrayOfPolygons : public Graphic3d_ArrayOfPrimitives {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_ArrayOfPolygons {
-	~Graphic3d_ArrayOfPolygons() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfPolygons\n");}
-	}
-};
+%feature("shadow") Graphic3d_ArrayOfPolygons::~Graphic3d_ArrayOfPolygons %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ArrayOfTriangleStrips;
@@ -4936,12 +4706,10 @@ class Graphic3d_ArrayOfTriangleStrips : public Graphic3d_ArrayOfPrimitives {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_ArrayOfTriangleStrips {
-	~Graphic3d_ArrayOfTriangleStrips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfTriangleStrips\n");}
-	}
-};
+%feature("shadow") Graphic3d_ArrayOfTriangleStrips::~Graphic3d_ArrayOfTriangleStrips %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Array1OfVertexNT;
@@ -4979,12 +4747,10 @@ class Graphic3d_Array1OfVertexNT {
 		Graphic3d_VertexNT & operator()(const Standard_Integer Index);
 
 };
-%extend Graphic3d_Array1OfVertexNT {
-	~Graphic3d_Array1OfVertexNT() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfVertexNT\n");}
-	}
-};
+%feature("shadow") Graphic3d_Array1OfVertexNT::~Graphic3d_Array1OfVertexNT %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_GroupDefinitionError;
@@ -5014,12 +4780,10 @@ class Graphic3d_GroupDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_GroupDefinitionError {
-	~Graphic3d_GroupDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_GroupDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic3d_GroupDefinitionError::~Graphic3d_GroupDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Texture1Dsegment;
@@ -5047,12 +4811,10 @@ class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_Texture1Dsegment {
-	~Graphic3d_Texture1Dsegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture1Dsegment\n");}
-	}
-};
+%feature("shadow") Graphic3d_Texture1Dsegment::~Graphic3d_Texture1Dsegment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ListNodeOfSetListOfSetOfGroup;
@@ -5076,12 +4838,10 @@ class Graphic3d_ListNodeOfSetListOfSetOfGroup : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_ListNodeOfSetListOfSetOfGroup {
-	~Graphic3d_ListNodeOfSetListOfSetOfGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ListNodeOfSetListOfSetOfGroup\n");}
-	}
-};
+%feature("shadow") Graphic3d_ListNodeOfSetListOfSetOfGroup::~Graphic3d_ListNodeOfSetListOfSetOfGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Group;
@@ -5237,12 +4997,10 @@ class Graphic3d_Group : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_Group {
-	~Graphic3d_Group() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Group\n");}
-	}
-};
+%feature("shadow") Graphic3d_Group::~Graphic3d_Group %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_HSetOfGroup;
@@ -5292,12 +5050,10 @@ class Graphic3d_HSetOfGroup : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_HSetOfGroup {
-	~Graphic3d_HSetOfGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_HSetOfGroup\n");}
-	}
-};
+%feature("shadow") Graphic3d_HSetOfGroup::~Graphic3d_HSetOfGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_SequenceNodeOfSequenceOfGroup;
@@ -5321,12 +5077,10 @@ class Graphic3d_SequenceNodeOfSequenceOfGroup : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_SequenceNodeOfSequenceOfGroup {
-	~Graphic3d_SequenceNodeOfSequenceOfGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceNodeOfSequenceOfGroup\n");}
-	}
-};
+%feature("shadow") Graphic3d_SequenceNodeOfSequenceOfGroup::~Graphic3d_SequenceNodeOfSequenceOfGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ArrayOfQuadrangles;
@@ -5348,12 +5102,10 @@ class Graphic3d_ArrayOfQuadrangles : public Graphic3d_ArrayOfPrimitives {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_ArrayOfQuadrangles {
-	~Graphic3d_ArrayOfQuadrangles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfQuadrangles\n");}
-	}
-};
+%feature("shadow") Graphic3d_ArrayOfQuadrangles::~Graphic3d_ArrayOfQuadrangles %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ArrayOfPolylines;
@@ -5375,12 +5127,10 @@ class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_ArrayOfPolylines {
-	~Graphic3d_ArrayOfPolylines() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfPolylines\n");}
-	}
-};
+%feature("shadow") Graphic3d_ArrayOfPolylines::~Graphic3d_ArrayOfPolylines %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_MapOfStructure;
@@ -5404,12 +5154,10 @@ class Graphic3d_MapOfStructure : public TCollection_BasicMap {
 		Standard_Boolean Remove(const Handle_Graphic3d_Structure &aKey);
 
 };
-%extend Graphic3d_MapOfStructure {
-	~Graphic3d_MapOfStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_MapOfStructure\n");}
-	}
-};
+%feature("shadow") Graphic3d_MapOfStructure::~Graphic3d_MapOfStructure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ListNodeOfListOfPArray;
@@ -5433,12 +5181,10 @@ class Graphic3d_ListNodeOfListOfPArray : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_ListNodeOfListOfPArray {
-	~Graphic3d_ListNodeOfListOfPArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ListNodeOfListOfPArray\n");}
-	}
-};
+%feature("shadow") Graphic3d_ListNodeOfListOfPArray::~Graphic3d_ListNodeOfListOfPArray %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_MaterialDefinitionError;
@@ -5468,12 +5214,10 @@ class Graphic3d_MaterialDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_MaterialDefinitionError {
-	~Graphic3d_MaterialDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_MaterialDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic3d_MaterialDefinitionError::~Graphic3d_MaterialDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_AspectText3d;
@@ -5523,12 +5267,10 @@ class Graphic3d_AspectText3d : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_AspectText3d {
-	~Graphic3d_AspectText3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_AspectText3d\n");}
-	}
-};
+%feature("shadow") Graphic3d_AspectText3d::~Graphic3d_AspectText3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Strips;
@@ -5550,12 +5292,10 @@ class Graphic3d_Strips {
 		void STRIPQ_GET_NEXT(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 };
-%extend Graphic3d_Strips {
-	~Graphic3d_Strips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Strips\n");}
-	}
-};
+%feature("shadow") Graphic3d_Strips::~Graphic3d_Strips %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Array2OfVertexNC;
@@ -5597,12 +5337,10 @@ class Graphic3d_Array2OfVertexNC {
 		Graphic3d_VertexNC & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend Graphic3d_Array2OfVertexNC {
-	~Graphic3d_Array2OfVertexNC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array2OfVertexNC\n");}
-	}
-};
+%feature("shadow") Graphic3d_Array2OfVertexNC::~Graphic3d_Array2OfVertexNC %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_SetIteratorOfSetOfGroup;
@@ -5622,12 +5360,10 @@ class Graphic3d_SetIteratorOfSetOfGroup {
 		const Handle_Graphic3d_Group & Value() const;
 
 };
-%extend Graphic3d_SetIteratorOfSetOfGroup {
-	~Graphic3d_SetIteratorOfSetOfGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_SetIteratorOfSetOfGroup\n");}
-	}
-};
+%feature("shadow") Graphic3d_SetIteratorOfSetOfGroup::~Graphic3d_SetIteratorOfSetOfGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Plotter;
@@ -5655,12 +5391,10 @@ class Graphic3d_Plotter : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_Plotter {
-	~Graphic3d_Plotter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Plotter\n");}
-	}
-};
+%feature("shadow") Graphic3d_Plotter::~Graphic3d_Plotter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_ArrayOfTriangles;
@@ -5682,12 +5416,10 @@ class Graphic3d_ArrayOfTriangles : public Graphic3d_ArrayOfPrimitives {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_ArrayOfTriangles {
-	~Graphic3d_ArrayOfTriangles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfTriangles\n");}
-	}
-};
+%feature("shadow") Graphic3d_ArrayOfTriangles::~Graphic3d_ArrayOfTriangles %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Vector;
@@ -5729,12 +5461,10 @@ class Graphic3d_Vector {
 		Standard_Real NormeOf(const Graphic3d_Vector &AVector);
 
 };
-%extend Graphic3d_Vector {
-	~Graphic3d_Vector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Vector\n");}
-	}
-};
+%feature("shadow") Graphic3d_Vector::~Graphic3d_Vector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_AspectMarker3d;
@@ -5766,12 +5496,10 @@ class Graphic3d_AspectMarker3d : public Aspect_AspectMarker {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_AspectMarker3d {
-	~Graphic3d_AspectMarker3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_AspectMarker3d\n");}
-	}
-};
+%feature("shadow") Graphic3d_AspectMarker3d::~Graphic3d_AspectMarker3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_MapIteratorOfMapOfStructure;
@@ -5787,12 +5515,10 @@ class Graphic3d_MapIteratorOfMapOfStructure : public TCollection_BasicMapIterato
 		const Handle_Graphic3d_Structure & Key() const;
 
 };
-%extend Graphic3d_MapIteratorOfMapOfStructure {
-	~Graphic3d_MapIteratorOfMapOfStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_MapIteratorOfMapOfStructure\n");}
-	}
-};
+%feature("shadow") Graphic3d_MapIteratorOfMapOfStructure::~Graphic3d_MapIteratorOfMapOfStructure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_Array1OfVector;
@@ -5830,12 +5556,10 @@ class Graphic3d_Array1OfVector {
 		Graphic3d_Vector & operator()(const Standard_Integer Index);
 
 };
-%extend Graphic3d_Array1OfVector {
-	~Graphic3d_Array1OfVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfVector\n");}
-	}
-};
+%feature("shadow") Graphic3d_Array1OfVector::~Graphic3d_Array1OfVector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic3d_StructureDefinitionError;
@@ -5865,9 +5589,7 @@ class Graphic3d_StructureDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic3d_StructureDefinitionError {
-	~Graphic3d_StructureDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic3d_StructureDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic3d_StructureDefinitionError::~Graphic3d_StructureDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

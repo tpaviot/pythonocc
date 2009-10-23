@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include LProp3d_dependencies.i
 
 
@@ -54,12 +58,10 @@ class LProp3d_SurfaceTool {
 		void Bounds(const Handle_Adaptor3d_HSurface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend LProp3d_SurfaceTool {
-	~LProp3d_SurfaceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LProp3d_SurfaceTool\n");}
-	}
-};
+%feature("shadow") LProp3d_SurfaceTool::~LProp3d_SurfaceTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LProp3d_CurveTool;
@@ -83,12 +85,10 @@ class LProp3d_CurveTool {
 		Standard_Real LastParameter(const Handle_Adaptor3d_HCurve &C);
 
 };
-%extend LProp3d_CurveTool {
-	~LProp3d_CurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LProp3d_CurveTool\n");}
-	}
-};
+%feature("shadow") LProp3d_CurveTool::~LProp3d_CurveTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LProp3d_CLProps;
@@ -124,12 +124,10 @@ class LProp3d_CLProps {
 		void CentreOfCurvature(gp_Pnt & P);
 
 };
-%extend LProp3d_CLProps {
-	~LProp3d_CLProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LProp3d_CLProps\n");}
-	}
-};
+%feature("shadow") LProp3d_CLProps::~LProp3d_CLProps %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LProp3d_SLProps;
@@ -185,9 +183,7 @@ class LProp3d_SLProps {
 		Standard_Real GaussianCurvature();
 
 };
-%extend LProp3d_SLProps {
-	~LProp3d_SLProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LProp3d_SLProps\n");}
-	}
-};
+%feature("shadow") LProp3d_SLProps::~LProp3d_SLProps %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

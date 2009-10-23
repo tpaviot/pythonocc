@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StepToTopoDS_dependencies.i
 
 
@@ -106,12 +110,10 @@ class Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI : public Handle_TCollection_
 	return (StepToTopoDS_DataMapNodeOfDataMapOfTRI*)$self->Access();
 	}
 };
-%extend Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI {
-	~Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI\n");}
-	}
-};
+%feature("shadow") Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI::~Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepToTopoDS_DataMapNodeOfPointVertexMap;
@@ -136,12 +138,10 @@ class Handle_StepToTopoDS_DataMapNodeOfPointVertexMap : public Handle_TCollectio
 	return (StepToTopoDS_DataMapNodeOfPointVertexMap*)$self->Access();
 	}
 };
-%extend Handle_StepToTopoDS_DataMapNodeOfPointVertexMap {
-	~Handle_StepToTopoDS_DataMapNodeOfPointVertexMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepToTopoDS_DataMapNodeOfPointVertexMap\n");}
-	}
-};
+%feature("shadow") Handle_StepToTopoDS_DataMapNodeOfPointVertexMap::~Handle_StepToTopoDS_DataMapNodeOfPointVertexMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap;
@@ -166,12 +166,10 @@ class Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap : public Handle_TCollection_
 	return (StepToTopoDS_DataMapNodeOfPointEdgeMap*)$self->Access();
 	}
 };
-%extend Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap {
-	~Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap\n");}
-	}
-};
+%feature("shadow") Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap::~Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_GeometricTool;
@@ -189,12 +187,10 @@ class StepToTopoDS_GeometricTool {
 		Standard_Boolean UpdateParam3d(const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real preci);
 
 };
-%extend StepToTopoDS_GeometricTool {
-	~StepToTopoDS_GeometricTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_GeometricTool\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_GeometricTool::~StepToTopoDS_GeometricTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_Root;
@@ -212,12 +208,10 @@ class StepToTopoDS_Root {
 		void SetMaxTol(const Standard_Real maxpreci);
 
 };
-%extend StepToTopoDS_Root {
-	~StepToTopoDS_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_Root\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_Root::~StepToTopoDS_Root %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_MakeTransformed;
@@ -237,12 +231,10 @@ class StepToTopoDS_MakeTransformed : public StepToTopoDS_Root {
 		TopoDS_Shape TranslateMappedItem(const Handle_StepRepr_MappedItem &mapit, const Handle_Transfer_TransientProcess &TP);
 
 };
-%extend StepToTopoDS_MakeTransformed {
-	~StepToTopoDS_MakeTransformed() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_MakeTransformed\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_MakeTransformed::~StepToTopoDS_MakeTransformed %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_DataMapIteratorOfPointEdgeMap;
@@ -260,12 +252,10 @@ class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIt
 		const TopoDS_Edge & Value() const;
 
 };
-%extend StepToTopoDS_DataMapIteratorOfPointEdgeMap {
-	~StepToTopoDS_DataMapIteratorOfPointEdgeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapIteratorOfPointEdgeMap\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_DataMapIteratorOfPointEdgeMap::~StepToTopoDS_DataMapIteratorOfPointEdgeMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_TranslateShell;
@@ -283,12 +273,10 @@ class StepToTopoDS_TranslateShell : public StepToTopoDS_Root {
 		StepToTopoDS_TranslateShellError Error() const;
 
 };
-%extend StepToTopoDS_TranslateShell {
-	~StepToTopoDS_TranslateShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateShell\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_TranslateShell::~StepToTopoDS_TranslateShell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_Tool;
@@ -354,12 +342,10 @@ class StepToTopoDS_Tool {
 		Standard_Integer C2Cur3() const;
 
 };
-%extend StepToTopoDS_Tool {
-	~StepToTopoDS_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_Tool\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_Tool::~StepToTopoDS_Tool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_TranslateEdge;
@@ -381,12 +367,10 @@ class StepToTopoDS_TranslateEdge : public StepToTopoDS_Root {
 		StepToTopoDS_TranslateEdgeError Error() const;
 
 };
-%extend StepToTopoDS_TranslateEdge {
-	~StepToTopoDS_TranslateEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateEdge\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_TranslateEdge::~StepToTopoDS_TranslateEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_DataMapIteratorOfPointVertexMap;
@@ -404,12 +388,10 @@ class StepToTopoDS_DataMapIteratorOfPointVertexMap : public TCollection_BasicMap
 		const TopoDS_Vertex & Value() const;
 
 };
-%extend StepToTopoDS_DataMapIteratorOfPointVertexMap {
-	~StepToTopoDS_DataMapIteratorOfPointVertexMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapIteratorOfPointVertexMap\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_DataMapIteratorOfPointVertexMap::~StepToTopoDS_DataMapIteratorOfPointVertexMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_CartesianPointHasher;
@@ -423,12 +405,10 @@ class StepToTopoDS_CartesianPointHasher {
 		Standard_Boolean IsEqual(const Handle_StepGeom_CartesianPoint &K1, const Handle_StepGeom_CartesianPoint &K2);
 
 };
-%extend StepToTopoDS_CartesianPointHasher {
-	~StepToTopoDS_CartesianPointHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_CartesianPointHasher\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_CartesianPointHasher::~StepToTopoDS_CartesianPointHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_DataMapIteratorOfDataMapOfTRI;
@@ -446,12 +426,10 @@ class StepToTopoDS_DataMapIteratorOfDataMapOfTRI : public TCollection_BasicMapIt
 		const TopoDS_Shape & Value() const;
 
 };
-%extend StepToTopoDS_DataMapIteratorOfDataMapOfTRI {
-	~StepToTopoDS_DataMapIteratorOfDataMapOfTRI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapIteratorOfDataMapOfTRI\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_DataMapIteratorOfDataMapOfTRI::~StepToTopoDS_DataMapIteratorOfDataMapOfTRI %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_PointPairHasher;
@@ -465,12 +443,10 @@ class StepToTopoDS_PointPairHasher {
 		Standard_Boolean IsEqual(const StepToTopoDS_PointPair &K1, const StepToTopoDS_PointPair &K2);
 
 };
-%extend StepToTopoDS_PointPairHasher {
-	~StepToTopoDS_PointPairHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_PointPairHasher\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_PointPairHasher::~StepToTopoDS_PointPairHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_DataMapNodeOfPointVertexMap;
@@ -496,12 +472,10 @@ class StepToTopoDS_DataMapNodeOfPointVertexMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepToTopoDS_DataMapNodeOfPointVertexMap {
-	~StepToTopoDS_DataMapNodeOfPointVertexMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapNodeOfPointVertexMap\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_DataMapNodeOfPointVertexMap::~StepToTopoDS_DataMapNodeOfPointVertexMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_DataMapOfTRI;
@@ -533,12 +507,10 @@ class StepToTopoDS_DataMapOfTRI : public TCollection_BasicMap {
 		TopoDS_Shape & operator()(const Handle_StepShape_TopologicalRepresentationItem &K);
 
 };
-%extend StepToTopoDS_DataMapOfTRI {
-	~StepToTopoDS_DataMapOfTRI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapOfTRI\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_DataMapOfTRI::~StepToTopoDS_DataMapOfTRI %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_TranslateFace;
@@ -556,12 +528,10 @@ class StepToTopoDS_TranslateFace : public StepToTopoDS_Root {
 		StepToTopoDS_TranslateFaceError Error() const;
 
 };
-%extend StepToTopoDS_TranslateFace {
-	~StepToTopoDS_TranslateFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateFace\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_TranslateFace::~StepToTopoDS_TranslateFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_TranslatePolyLoop;
@@ -579,12 +549,10 @@ class StepToTopoDS_TranslatePolyLoop : public StepToTopoDS_Root {
 		StepToTopoDS_TranslatePolyLoopError Error() const;
 
 };
-%extend StepToTopoDS_TranslatePolyLoop {
-	~StepToTopoDS_TranslatePolyLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslatePolyLoop\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_TranslatePolyLoop::~StepToTopoDS_TranslatePolyLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_TranslateCompositeCurve;
@@ -604,12 +572,10 @@ class StepToTopoDS_TranslateCompositeCurve : public StepToTopoDS_Root {
 		const TopoDS_Wire & Value() const;
 
 };
-%extend StepToTopoDS_TranslateCompositeCurve {
-	~StepToTopoDS_TranslateCompositeCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateCompositeCurve\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_TranslateCompositeCurve::~StepToTopoDS_TranslateCompositeCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_PointVertexMap;
@@ -641,12 +607,10 @@ class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
 		TopoDS_Vertex & operator()(const Handle_StepGeom_CartesianPoint &K);
 
 };
-%extend StepToTopoDS_PointVertexMap {
-	~StepToTopoDS_PointVertexMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_PointVertexMap\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_PointVertexMap::~StepToTopoDS_PointVertexMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_PointPair;
@@ -656,12 +620,10 @@ class StepToTopoDS_PointPair {
 		StepToTopoDS_PointPair(const Handle_StepGeom_CartesianPoint &P1, const Handle_StepGeom_CartesianPoint &P2);
 
 };
-%extend StepToTopoDS_PointPair {
-	~StepToTopoDS_PointPair() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_PointPair\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_PointPair::~StepToTopoDS_PointPair %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_PointEdgeMap;
@@ -693,12 +655,10 @@ class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
 		TopoDS_Edge & operator()(const StepToTopoDS_PointPair &K);
 
 };
-%extend StepToTopoDS_PointEdgeMap {
-	~StepToTopoDS_PointEdgeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_PointEdgeMap\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_PointEdgeMap::~StepToTopoDS_PointEdgeMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_TranslateEdgeLoop;
@@ -716,12 +676,10 @@ class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
 		StepToTopoDS_TranslateEdgeLoopError Error() const;
 
 };
-%extend StepToTopoDS_TranslateEdgeLoop {
-	~StepToTopoDS_TranslateEdgeLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateEdgeLoop\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_TranslateEdgeLoop::~StepToTopoDS_TranslateEdgeLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_TranslateVertex;
@@ -739,12 +697,10 @@ class StepToTopoDS_TranslateVertex : public StepToTopoDS_Root {
 		StepToTopoDS_TranslateVertexError Error() const;
 
 };
-%extend StepToTopoDS_TranslateVertex {
-	~StepToTopoDS_TranslateVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateVertex\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_TranslateVertex::~StepToTopoDS_TranslateVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_TranslateCurveBoundedSurface;
@@ -760,12 +716,10 @@ class StepToTopoDS_TranslateCurveBoundedSurface : public StepToTopoDS_Root {
 		const TopoDS_Face & Value() const;
 
 };
-%extend StepToTopoDS_TranslateCurveBoundedSurface {
-	~StepToTopoDS_TranslateCurveBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateCurveBoundedSurface\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_TranslateCurveBoundedSurface::~StepToTopoDS_TranslateCurveBoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_DataMapNodeOfDataMapOfTRI;
@@ -791,12 +745,10 @@ class StepToTopoDS_DataMapNodeOfDataMapOfTRI : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
-	~StepToTopoDS_DataMapNodeOfDataMapOfTRI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapNodeOfDataMapOfTRI\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_DataMapNodeOfDataMapOfTRI::~StepToTopoDS_DataMapNodeOfDataMapOfTRI %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS;
@@ -822,12 +774,10 @@ class StepToTopoDS {
 		char * DecodeGeometricToolError(const StepToTopoDS_GeometricToolError Error);
 
 };
-%extend StepToTopoDS {
-	~StepToTopoDS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS\n");}
-	}
-};
+%feature("shadow") StepToTopoDS::~StepToTopoDS %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_DataMapNodeOfPointEdgeMap;
@@ -853,12 +803,10 @@ class StepToTopoDS_DataMapNodeOfPointEdgeMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
-	~StepToTopoDS_DataMapNodeOfPointEdgeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapNodeOfPointEdgeMap\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_DataMapNodeOfPointEdgeMap::~StepToTopoDS_DataMapNodeOfPointEdgeMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepToTopoDS_TranslateVertexLoop;
@@ -876,9 +824,7 @@ class StepToTopoDS_TranslateVertexLoop : public StepToTopoDS_Root {
 		StepToTopoDS_TranslateVertexLoopError Error() const;
 
 };
-%extend StepToTopoDS_TranslateVertexLoop {
-	~StepToTopoDS_TranslateVertexLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateVertexLoop\n");}
-	}
-};
+%feature("shadow") StepToTopoDS_TranslateVertexLoop::~StepToTopoDS_TranslateVertexLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TopTools_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_TopTools_ListNodeOfListOfShape : public Handle_TCollection_MapNode 
 	return (TopTools_ListNodeOfListOfShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_ListNodeOfListOfShape {
-	~Handle_TopTools_ListNodeOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_ListNodeOfListOfShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_ListNodeOfListOfShape::~Handle_TopTools_ListNodeOfListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape;
@@ -87,12 +89,10 @@ class Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape : public Handle_TCollec
 	return (TopTools_DataMapNodeOfDataMapOfIntegerShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape {
-	~Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape::~Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_HSequenceOfShape;
@@ -117,12 +117,10 @@ class Handle_TopTools_HSequenceOfShape : public Handle_MMgt_TShared {
 	return (TopTools_HSequenceOfShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_HSequenceOfShape {
-	~Handle_TopTools_HSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_HSequenceOfShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_HSequenceOfShape::~Handle_TopTools_HSequenceOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape;
@@ -147,42 +145,10 @@ class Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape : public Handle_TCollect
 	return (TopTools_IndexedMapNodeOfIndexedMapOfShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape {
-	~Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape\n");}
-	}
-};
-
-
-%nodefaultctor Handle_TopTools_SequenceNodeOfSequenceOfShape;
-class Handle_TopTools_SequenceNodeOfSequenceOfShape : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape();
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape & operator=(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape & operator=(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
-	TopTools_SequenceNodeOfSequenceOfShape* GetObject() {
-	return (TopTools_SequenceNodeOfSequenceOfShape*)$self->Access();
-	}
-};
-%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
-	~Handle_TopTools_SequenceNodeOfSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_SequenceNodeOfSequenceOfShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape::~Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_HArray1OfListOfShape;
@@ -207,12 +173,10 @@ class Handle_TopTools_HArray1OfListOfShape : public Handle_MMgt_TShared {
 	return (TopTools_HArray1OfListOfShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_HArray1OfListOfShape {
-	~Handle_TopTools_HArray1OfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_HArray1OfListOfShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_HArray1OfListOfShape::~Handle_TopTools_HArray1OfListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeShape;
@@ -237,12 +201,10 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeShape : public Handle_TCollecti
 	return (TopTools_DataMapNodeOfDataMapOfShapeShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeShape {
-	~Handle_TopTools_DataMapNodeOfDataMapOfShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfShapeShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfShapeShape::~Handle_TopTools_DataMapNodeOfDataMapOfShapeShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape;
@@ -267,12 +229,10 @@ class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape : pub
 	return (TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
-	~Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape::~Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape;
@@ -297,12 +257,10 @@ class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public Ha
 	return (TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
-	~Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape::~Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_HArray1OfShape;
@@ -327,12 +285,10 @@ class Handle_TopTools_HArray1OfShape : public Handle_MMgt_TShared {
 	return (TopTools_HArray1OfShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_HArray1OfShape {
-	~Handle_TopTools_HArray1OfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_HArray1OfShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_HArray1OfShape::~Handle_TopTools_HArray1OfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape;
@@ -357,12 +313,10 @@ class Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape : public Handle_T
 	return (TopTools_DataMapNodeOfDataMapOfIntegerListOfShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape {
-	~Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape::~Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger;
@@ -387,12 +341,10 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_T
 	return (TopTools_DataMapNodeOfDataMapOfShapeListOfInteger*)$self->Access();
 	}
 };
-%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
-	~Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger::~Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger;
@@ -417,12 +369,38 @@ class Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public Handle
 	return (TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger*)$self->Access();
 	}
 };
-%extend Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
-	~Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger\n");}
+%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger::~Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
+
+%nodefaultctor Handle_TopTools_SequenceNodeOfSequenceOfShape;
+class Handle_TopTools_SequenceNodeOfSequenceOfShape : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape();
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape & operator=(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape & operator=(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_TopTools_SequenceNodeOfSequenceOfShape const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
+	TopTools_SequenceNodeOfSequenceOfShape* GetObject() {
+	return (TopTools_SequenceNodeOfSequenceOfShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopTools_SequenceNodeOfSequenceOfShape::~Handle_TopTools_SequenceNodeOfSequenceOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape;
@@ -447,12 +425,10 @@ class Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public Handle_
 	return (TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape {
-	~Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape::~Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger;
@@ -477,12 +453,10 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger : public Handle_TCollec
 	return (TopTools_DataMapNodeOfDataMapOfShapeInteger*)$self->Access();
 	}
 };
-%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger {
-	~Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger::~Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_HArray2OfShape;
@@ -507,12 +481,10 @@ class Handle_TopTools_HArray2OfShape : public Handle_MMgt_TShared {
 	return (TopTools_HArray2OfShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_HArray2OfShape {
-	~Handle_TopTools_HArray2OfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_HArray2OfShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_HArray2OfShape::~Handle_TopTools_HArray2OfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_StdMapNodeOfMapOfShape;
@@ -537,12 +509,10 @@ class Handle_TopTools_StdMapNodeOfMapOfShape : public Handle_TCollection_MapNode
 	return (TopTools_StdMapNodeOfMapOfShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_StdMapNodeOfMapOfShape {
-	~Handle_TopTools_StdMapNodeOfMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_StdMapNodeOfMapOfShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_StdMapNodeOfMapOfShape::~Handle_TopTools_StdMapNodeOfMapOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_StdMapNodeOfMapOfOrientedShape;
@@ -567,12 +537,10 @@ class Handle_TopTools_StdMapNodeOfMapOfOrientedShape : public Handle_TCollection
 	return (TopTools_StdMapNodeOfMapOfOrientedShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_StdMapNodeOfMapOfOrientedShape {
-	~Handle_TopTools_StdMapNodeOfMapOfOrientedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_StdMapNodeOfMapOfOrientedShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_StdMapNodeOfMapOfOrientedShape::~Handle_TopTools_StdMapNodeOfMapOfOrientedShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape;
@@ -597,12 +565,10 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape : public Handle_TCo
 	return (TopTools_DataMapNodeOfDataMapOfShapeListOfShape*)$self->Access();
 	}
 };
-%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape {
-	~Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape\n");}
-	}
-};
+%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape::~Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_LocationSet;
@@ -647,12 +613,10 @@ class TopTools_LocationSet {
 		Handle_Message_ProgressIndicator GetProgress() const;
 
 };
-%extend TopTools_LocationSet {
-	~TopTools_LocationSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_LocationSet\n");}
-	}
-};
+%feature("shadow") TopTools_LocationSet::~TopTools_LocationSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools;
@@ -666,12 +630,10 @@ class TopTools {
 		void Dummy(const Standard_Integer I);
 
 };
-%extend TopTools {
-	~TopTools() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools\n");}
-	}
-};
+%feature("shadow") TopTools::~TopTools %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfIntegerListOfShape;
@@ -707,12 +669,10 @@ class TopTools_DataMapNodeOfDataMapOfIntegerListOfShape : public TCollection_Map
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_DataMapNodeOfDataMapOfIntegerListOfShape {
-	~TopTools_DataMapNodeOfDataMapOfIntegerListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfIntegerListOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapNodeOfDataMapOfIntegerListOfShape::~TopTools_DataMapNodeOfDataMapOfIntegerListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_IndexedDataMapOfShapeShape;
@@ -754,12 +714,10 @@ class TopTools_IndexedDataMapOfShapeShape : public TCollection_BasicMap {
 		TopoDS_Shape & ChangeFromKey(const TopoDS_Shape &K);
 
 };
-%extend TopTools_IndexedDataMapOfShapeShape {
-	~TopTools_IndexedDataMapOfShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_IndexedDataMapOfShapeShape\n");}
-	}
-};
+%feature("shadow") TopTools_IndexedDataMapOfShapeShape::~TopTools_IndexedDataMapOfShapeShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeListOfShape;
@@ -777,12 +735,10 @@ class TopTools_DataMapIteratorOfDataMapOfShapeListOfShape : public TCollection_B
 		const TopTools_ListOfShape & Value() const;
 
 };
-%extend TopTools_DataMapIteratorOfDataMapOfShapeListOfShape {
-	~TopTools_DataMapIteratorOfDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfShapeListOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapIteratorOfDataMapOfShapeListOfShape::~TopTools_DataMapIteratorOfDataMapOfShapeListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeInteger;
@@ -818,12 +774,10 @@ class TopTools_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_DataMapNodeOfDataMapOfShapeInteger {
-	~TopTools_DataMapNodeOfDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfShapeInteger\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeInteger::~TopTools_DataMapNodeOfDataMapOfShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_Array1OfListOfShape;
@@ -861,12 +815,10 @@ class TopTools_Array1OfListOfShape {
 		TopTools_ListOfShape & operator()(const Standard_Integer Index);
 
 };
-%extend TopTools_Array1OfListOfShape {
-	~TopTools_Array1OfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_Array1OfListOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_Array1OfListOfShape::~TopTools_Array1OfListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_MapOfOrientedShape;
@@ -890,12 +842,10 @@ class TopTools_MapOfOrientedShape : public TCollection_BasicMap {
 		Standard_Boolean Remove(const TopoDS_Shape &aKey);
 
 };
-%extend TopTools_MapOfOrientedShape {
-	~TopTools_MapOfOrientedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_MapOfOrientedShape\n");}
-	}
-};
+%feature("shadow") TopTools_MapOfOrientedShape::~TopTools_MapOfOrientedShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape;
@@ -933,12 +883,10 @@ class TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public TCollection_Ma
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape {
-	~TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape\n");}
-	}
-};
+%feature("shadow") TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape::~TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeShape;
@@ -956,12 +904,10 @@ class TopTools_DataMapIteratorOfDataMapOfShapeShape : public TCollection_BasicMa
 		const TopoDS_Shape & Value() const;
 
 };
-%extend TopTools_DataMapIteratorOfDataMapOfShapeShape {
-	~TopTools_DataMapIteratorOfDataMapOfShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfShapeShape\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapIteratorOfDataMapOfShapeShape::~TopTools_DataMapIteratorOfDataMapOfShapeShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_IndexedMapNodeOfIndexedMapOfShape;
@@ -999,12 +945,10 @@ class TopTools_IndexedMapNodeOfIndexedMapOfShape : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_IndexedMapNodeOfIndexedMapOfShape {
-	~TopTools_IndexedMapNodeOfIndexedMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_IndexedMapNodeOfIndexedMapOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_IndexedMapNodeOfIndexedMapOfShape::~TopTools_IndexedMapNodeOfIndexedMapOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_ShapeSet;
@@ -1112,12 +1056,10 @@ class TopTools_ShapeSet {
 		Handle_Message_ProgressIndicator GetProgress() const;
 
 };
-%extend TopTools_ShapeSet {
-	~TopTools_ShapeSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_ShapeSet\n");}
-	}
-};
+%feature("shadow") TopTools_ShapeSet::~TopTools_ShapeSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_Array2OfShape;
@@ -1159,12 +1101,10 @@ class TopTools_Array2OfShape {
 		TopoDS_Shape & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend TopTools_Array2OfShape {
-	~TopTools_Array2OfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_Array2OfShape\n");}
-	}
-};
+%feature("shadow") TopTools_Array2OfShape::~TopTools_Array2OfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeListOfInteger;
@@ -1190,12 +1130,10 @@ class TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_Map
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
-	~TopTools_DataMapNodeOfDataMapOfShapeListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfShapeListOfInteger\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeListOfInteger::~TopTools_DataMapNodeOfDataMapOfShapeListOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_HArray2OfShape;
@@ -1243,12 +1181,10 @@ class TopTools_HArray2OfShape : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_HArray2OfShape {
-	~TopTools_HArray2OfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_HArray2OfShape\n");}
-	}
-};
+%feature("shadow") TopTools_HArray2OfShape::~TopTools_HArray2OfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_ShapeMapHasher;
@@ -1262,12 +1198,10 @@ class TopTools_ShapeMapHasher {
 		Standard_Boolean IsEqual(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 
 };
-%extend TopTools_ShapeMapHasher {
-	~TopTools_ShapeMapHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_ShapeMapHasher\n");}
-	}
-};
+%feature("shadow") TopTools_ShapeMapHasher::~TopTools_ShapeMapHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape;
@@ -1307,12 +1241,10 @@ class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public TCollecti
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
-	~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape\n");}
-	}
-};
+%feature("shadow") TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape::~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapOfShapeShape;
@@ -1344,12 +1276,10 @@ class TopTools_DataMapOfShapeShape : public TCollection_BasicMap {
 		TopoDS_Shape & operator()(const TopoDS_Shape &K);
 
 };
-%extend TopTools_DataMapOfShapeShape {
-	~TopTools_DataMapOfShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapOfShapeShape\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapOfShapeShape::~TopTools_DataMapOfShapeShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_ListIteratorOfListOfShape;
@@ -1369,12 +1299,10 @@ class TopTools_ListIteratorOfListOfShape {
 		TopoDS_Shape & Value() const;
 
 };
-%extend TopTools_ListIteratorOfListOfShape {
-	~TopTools_ListIteratorOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_ListIteratorOfListOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_ListIteratorOfListOfShape::~TopTools_ListIteratorOfListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_IndexedMapOfOrientedShape;
@@ -1406,12 +1334,10 @@ class TopTools_IndexedMapOfOrientedShape : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
 
 };
-%extend TopTools_IndexedMapOfOrientedShape {
-	~TopTools_IndexedMapOfOrientedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_IndexedMapOfOrientedShape\n");}
-	}
-};
+%feature("shadow") TopTools_IndexedMapOfOrientedShape::~TopTools_IndexedMapOfOrientedShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_ListOfShape;
@@ -1459,12 +1385,10 @@ class TopTools_ListOfShape {
 		void InsertAfter(TopTools_ListOfShape & Other, TopTools_ListIteratorOfListOfShape & It);
 
 };
-%extend TopTools_ListOfShape {
-	~TopTools_ListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_ListOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_ListOfShape::~TopTools_ListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_IndexedMapOfShape;
@@ -1496,12 +1420,10 @@ class TopTools_IndexedMapOfShape : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
 
 };
-%extend TopTools_IndexedMapOfShape {
-	~TopTools_IndexedMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_IndexedMapOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_IndexedMapOfShape::~TopTools_IndexedMapOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapOfShapeListOfShape;
@@ -1533,12 +1455,10 @@ class TopTools_DataMapOfShapeListOfShape : public TCollection_BasicMap {
 		TopTools_ListOfShape & operator()(const TopoDS_Shape &K);
 
 };
-%extend TopTools_DataMapOfShapeListOfShape {
-	~TopTools_DataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapOfShapeListOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapOfShapeListOfShape::~TopTools_DataMapOfShapeListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger;
@@ -1574,12 +1494,10 @@ class TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public TCollection_M
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
-	~TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger::~TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_MapIteratorOfMapOfShape;
@@ -1595,12 +1513,10 @@ class TopTools_MapIteratorOfMapOfShape : public TCollection_BasicMapIterator {
 		const TopoDS_Shape & Key() const;
 
 };
-%extend TopTools_MapIteratorOfMapOfShape {
-	~TopTools_MapIteratorOfMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_MapIteratorOfMapOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_MapIteratorOfMapOfShape::~TopTools_MapIteratorOfMapOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_Array1OfShape;
@@ -1638,12 +1554,10 @@ class TopTools_Array1OfShape {
 		TopoDS_Shape & operator()(const Standard_Integer Index);
 
 };
-%extend TopTools_Array1OfShape {
-	~TopTools_Array1OfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_Array1OfShape\n");}
-	}
-};
+%feature("shadow") TopTools_Array1OfShape::~TopTools_Array1OfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_HArray1OfListOfShape;
@@ -1685,12 +1599,10 @@ class TopTools_HArray1OfListOfShape : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_HArray1OfListOfShape {
-	~TopTools_HArray1OfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_HArray1OfListOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_HArray1OfListOfShape::~TopTools_HArray1OfListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_IndexedDataMapOfShapeListOfShape;
@@ -1732,12 +1644,10 @@ class TopTools_IndexedDataMapOfShapeListOfShape : public TCollection_BasicMap {
 		TopTools_ListOfShape & ChangeFromKey(const TopoDS_Shape &K);
 
 };
-%extend TopTools_IndexedDataMapOfShapeListOfShape {
-	~TopTools_IndexedDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_IndexedDataMapOfShapeListOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_IndexedDataMapOfShapeListOfShape::~TopTools_IndexedDataMapOfShapeListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeListOfShape;
@@ -1763,12 +1673,10 @@ class TopTools_DataMapNodeOfDataMapOfShapeListOfShape : public TCollection_MapNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_DataMapNodeOfDataMapOfShapeListOfShape {
-	~TopTools_DataMapNodeOfDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfShapeListOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeListOfShape::~TopTools_DataMapNodeOfDataMapOfShapeListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfIntegerShape;
@@ -1804,12 +1712,10 @@ class TopTools_DataMapNodeOfDataMapOfIntegerShape : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_DataMapNodeOfDataMapOfIntegerShape {
-	~TopTools_DataMapNodeOfDataMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfIntegerShape\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapNodeOfDataMapOfIntegerShape::~TopTools_DataMapNodeOfDataMapOfIntegerShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapOfShapeListOfInteger;
@@ -1841,12 +1747,10 @@ class TopTools_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
 		TColStd_ListOfInteger & operator()(const TopoDS_Shape &K);
 
 };
-%extend TopTools_DataMapOfShapeListOfInteger {
-	~TopTools_DataMapOfShapeListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapOfShapeListOfInteger\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapOfShapeListOfInteger::~TopTools_DataMapOfShapeListOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_OrientedShapeMapHasher;
@@ -1860,12 +1764,10 @@ class TopTools_OrientedShapeMapHasher {
 		Standard_Boolean IsEqual(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
 
 };
-%extend TopTools_OrientedShapeMapHasher {
-	~TopTools_OrientedShapeMapHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_OrientedShapeMapHasher\n");}
-	}
-};
+%feature("shadow") TopTools_OrientedShapeMapHasher::~TopTools_OrientedShapeMapHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_HArray1OfShape;
@@ -1907,12 +1809,10 @@ class TopTools_HArray1OfShape : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_HArray1OfShape {
-	~TopTools_HArray1OfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_HArray1OfShape\n");}
-	}
-};
+%feature("shadow") TopTools_HArray1OfShape::~TopTools_HArray1OfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfIntegerShape;
@@ -1930,12 +1830,10 @@ class TopTools_DataMapIteratorOfDataMapOfIntegerShape : public TCollection_Basic
 		const TopoDS_Shape & Value() const;
 
 };
-%extend TopTools_DataMapIteratorOfDataMapOfIntegerShape {
-	~TopTools_DataMapIteratorOfDataMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfIntegerShape\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapIteratorOfDataMapOfIntegerShape::~TopTools_DataMapIteratorOfDataMapOfIntegerShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_MapIteratorOfMapOfOrientedShape;
@@ -1951,12 +1849,10 @@ class TopTools_MapIteratorOfMapOfOrientedShape : public TCollection_BasicMapIter
 		const TopoDS_Shape & Key() const;
 
 };
-%extend TopTools_MapIteratorOfMapOfOrientedShape {
-	~TopTools_MapIteratorOfMapOfOrientedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_MapIteratorOfMapOfOrientedShape\n");}
-	}
-};
+%feature("shadow") TopTools_MapIteratorOfMapOfOrientedShape::~TopTools_MapIteratorOfMapOfOrientedShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeShape;
@@ -1982,12 +1878,10 @@ class TopTools_DataMapNodeOfDataMapOfShapeShape : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_DataMapNodeOfDataMapOfShapeShape {
-	~TopTools_DataMapNodeOfDataMapOfShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfShapeShape\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeShape::~TopTools_DataMapNodeOfDataMapOfShapeShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapOfIntegerListOfShape;
@@ -2019,12 +1913,10 @@ class TopTools_DataMapOfIntegerListOfShape : public TCollection_BasicMap {
 		TopTools_ListOfShape & operator()(const Standard_Integer &K);
 
 };
-%extend TopTools_DataMapOfIntegerListOfShape {
-	~TopTools_DataMapOfIntegerListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapOfIntegerListOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapOfIntegerListOfShape::~TopTools_DataMapOfIntegerListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapOfIntegerShape;
@@ -2056,12 +1948,10 @@ class TopTools_DataMapOfIntegerShape : public TCollection_BasicMap {
 		TopoDS_Shape & operator()(const Standard_Integer &K);
 
 };
-%extend TopTools_DataMapOfIntegerShape {
-	~TopTools_DataMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapOfIntegerShape\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapOfIntegerShape::~TopTools_DataMapOfIntegerShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_HSequenceOfShape;
@@ -2127,12 +2017,10 @@ class TopTools_HSequenceOfShape : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_HSequenceOfShape {
-	~TopTools_HSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_HSequenceOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_HSequenceOfShape::~TopTools_HSequenceOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger;
@@ -2150,12 +2038,10 @@ class TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection
 		const TColStd_ListOfInteger & Value() const;
 
 };
-%extend TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger {
-	~TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger::~TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeInteger;
@@ -2173,12 +2059,10 @@ class TopTools_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_Basic
 		const Standard_Integer & Value() const;
 
 };
-%extend TopTools_DataMapIteratorOfDataMapOfShapeInteger {
-	~TopTools_DataMapIteratorOfDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfShapeInteger\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapIteratorOfDataMapOfShapeInteger::~TopTools_DataMapIteratorOfDataMapOfShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape;
@@ -2196,12 +2080,10 @@ class TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape : public TCollection
 		const TopTools_ListOfShape & Value() const;
 
 };
-%extend TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape {
-	~TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape::~TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_StdMapNodeOfMapOfOrientedShape;
@@ -2225,12 +2107,10 @@ class TopTools_StdMapNodeOfMapOfOrientedShape : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_StdMapNodeOfMapOfOrientedShape {
-	~TopTools_StdMapNodeOfMapOfOrientedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_StdMapNodeOfMapOfOrientedShape\n");}
-	}
-};
+%feature("shadow") TopTools_StdMapNodeOfMapOfOrientedShape::~TopTools_StdMapNodeOfMapOfOrientedShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_ListNodeOfListOfShape;
@@ -2254,12 +2134,10 @@ class TopTools_ListNodeOfListOfShape : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_ListNodeOfListOfShape {
-	~TopTools_ListNodeOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_ListNodeOfListOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_ListNodeOfListOfShape::~TopTools_ListNodeOfListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapOfShapeInteger;
@@ -2301,12 +2179,10 @@ class TopTools_DataMapOfShapeInteger : public TCollection_BasicMap {
 		Standard_Integer & operator()(const TopoDS_Shape &K);
 
 };
-%extend TopTools_DataMapOfShapeInteger {
-	~TopTools_DataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapOfShapeInteger\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapOfShapeInteger::~TopTools_DataMapOfShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapOfOrientedShapeInteger;
@@ -2348,12 +2224,10 @@ class TopTools_DataMapOfOrientedShapeInteger : public TCollection_BasicMap {
 		Standard_Integer & operator()(const TopoDS_Shape &K);
 
 };
-%extend TopTools_DataMapOfOrientedShapeInteger {
-	~TopTools_DataMapOfOrientedShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapOfOrientedShapeInteger\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapOfOrientedShapeInteger::~TopTools_DataMapOfOrientedShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger;
@@ -2371,12 +2245,10 @@ class TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger : public TCollecti
 		const Standard_Integer & Value() const;
 
 };
-%extend TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger {
-	~TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger\n");}
-	}
-};
+%feature("shadow") TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger::~TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape;
@@ -2416,12 +2288,10 @@ class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape : public TCo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
-	~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape::~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_SequenceNodeOfSequenceOfShape;
@@ -2445,12 +2315,10 @@ class TopTools_SequenceNodeOfSequenceOfShape : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_SequenceNodeOfSequenceOfShape {
-	~TopTools_SequenceNodeOfSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_SequenceNodeOfSequenceOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_SequenceNodeOfSequenceOfShape::~TopTools_SequenceNodeOfSequenceOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_SequenceOfShape;
@@ -2502,12 +2370,10 @@ class TopTools_SequenceOfShape : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TopTools_SequenceOfShape {
-	~TopTools_SequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_SequenceOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_SequenceOfShape::~TopTools_SequenceOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_MapOfShape;
@@ -2531,12 +2397,10 @@ class TopTools_MapOfShape : public TCollection_BasicMap {
 		Standard_Boolean Remove(const TopoDS_Shape &aKey);
 
 };
-%extend TopTools_MapOfShape {
-	~TopTools_MapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_MapOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_MapOfShape::~TopTools_MapOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopTools_StdMapNodeOfMapOfShape;
@@ -2560,9 +2424,7 @@ class TopTools_StdMapNodeOfMapOfShape : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopTools_StdMapNodeOfMapOfShape {
-	~TopTools_StdMapNodeOfMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopTools_StdMapNodeOfMapOfShape\n");}
-	}
-};
+%feature("shadow") TopTools_StdMapNodeOfMapOfShape::~TopTools_StdMapNodeOfMapOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

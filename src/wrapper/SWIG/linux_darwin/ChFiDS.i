@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ChFiDS_dependencies.i
 
 
@@ -81,12 +85,10 @@ class Handle_ChFiDS_SecHArray1 : public Handle_MMgt_TShared {
 	return (ChFiDS_SecHArray1*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_SecHArray1 {
-	~Handle_ChFiDS_SecHArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_SecHArray1\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_SecHArray1::~Handle_ChFiDS_SecHArray1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe;
@@ -111,12 +113,10 @@ class Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : pub
 	return (ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
-	~Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe::~Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ChFiDS_Stripe;
@@ -141,12 +141,10 @@ class Handle_ChFiDS_Stripe : public Handle_MMgt_TShared {
 	return (ChFiDS_Stripe*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_Stripe {
-	~Handle_ChFiDS_Stripe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_Stripe\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_Stripe::~Handle_ChFiDS_Stripe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ChFiDS_ListNodeOfListOfHElSpine;
@@ -171,12 +169,10 @@ class Handle_ChFiDS_ListNodeOfListOfHElSpine : public Handle_TCollection_MapNode
 	return (ChFiDS_ListNodeOfListOfHElSpine*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_ListNodeOfListOfHElSpine {
-	~Handle_ChFiDS_ListNodeOfListOfHElSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_ListNodeOfListOfHElSpine\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_ListNodeOfListOfHElSpine::~Handle_ChFiDS_ListNodeOfListOfHElSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ChFiDS_Spine;
@@ -201,12 +197,10 @@ class Handle_ChFiDS_Spine : public Handle_MMgt_TShared {
 	return (ChFiDS_Spine*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_Spine {
-	~Handle_ChFiDS_Spine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_Spine\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_Spine::~Handle_ChFiDS_Spine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ChFiDS_ChamfSpine;
@@ -231,12 +225,10 @@ class Handle_ChFiDS_ChamfSpine : public Handle_ChFiDS_Spine {
 	return (ChFiDS_ChamfSpine*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_ChamfSpine {
-	~Handle_ChFiDS_ChamfSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_ChamfSpine\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_ChamfSpine::~Handle_ChFiDS_ChamfSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ChFiDS_HElSpine;
@@ -261,12 +253,10 @@ class Handle_ChFiDS_HElSpine : public Handle_Adaptor3d_HCurve {
 	return (ChFiDS_HElSpine*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_HElSpine {
-	~Handle_ChFiDS_HElSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_HElSpine\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_HElSpine::~Handle_ChFiDS_HElSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ChFiDS_ListNodeOfListOfStripe;
@@ -291,12 +281,10 @@ class Handle_ChFiDS_ListNodeOfListOfStripe : public Handle_TCollection_MapNode {
 	return (ChFiDS_ListNodeOfListOfStripe*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_ListNodeOfListOfStripe {
-	~Handle_ChFiDS_ListNodeOfListOfStripe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_ListNodeOfListOfStripe\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_ListNodeOfListOfStripe::~Handle_ChFiDS_ListNodeOfListOfStripe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ChFiDS_FilSpine;
@@ -321,12 +309,10 @@ class Handle_ChFiDS_FilSpine : public Handle_ChFiDS_Spine {
 	return (ChFiDS_FilSpine*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_FilSpine {
-	~Handle_ChFiDS_FilSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_FilSpine\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_FilSpine::~Handle_ChFiDS_FilSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ChFiDS_SequenceNodeOfSequenceOfSpine;
@@ -351,12 +337,10 @@ class Handle_ChFiDS_SequenceNodeOfSequenceOfSpine : public Handle_TCollection_Se
 	return (ChFiDS_SequenceNodeOfSequenceOfSpine*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_SequenceNodeOfSequenceOfSpine {
-	~Handle_ChFiDS_SequenceNodeOfSequenceOfSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_SequenceNodeOfSequenceOfSpine\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_SequenceNodeOfSequenceOfSpine::~Handle_ChFiDS_SequenceNodeOfSequenceOfSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ChFiDS_SurfData;
@@ -381,12 +365,10 @@ class Handle_ChFiDS_SurfData : public Handle_MMgt_TShared {
 	return (ChFiDS_SurfData*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_SurfData {
-	~Handle_ChFiDS_SurfData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_SurfData\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_SurfData::~Handle_ChFiDS_SurfData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData;
@@ -411,12 +393,10 @@ class Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData : public Handle_TCollection
 	return (ChFiDS_SequenceNodeOfSequenceOfSurfData*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData {
-	~Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData::~Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ChFiDS_ListNodeOfRegularities;
@@ -441,12 +421,10 @@ class Handle_ChFiDS_ListNodeOfRegularities : public Handle_TCollection_MapNode {
 	return (ChFiDS_ListNodeOfRegularities*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_ListNodeOfRegularities {
-	~Handle_ChFiDS_ListNodeOfRegularities() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_ListNodeOfRegularities\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_ListNodeOfRegularities::~Handle_ChFiDS_ListNodeOfRegularities %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ChFiDS_HData;
@@ -471,12 +449,10 @@ class Handle_ChFiDS_HData : public Handle_MMgt_TShared {
 	return (ChFiDS_HData*)$self->Access();
 	}
 };
-%extend Handle_ChFiDS_HData {
-	~Handle_ChFiDS_HData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_HData\n");}
-	}
-};
+%feature("shadow") Handle_ChFiDS_HData::~Handle_ChFiDS_HData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_ListIteratorOfListOfHElSpine;
@@ -496,12 +472,10 @@ class ChFiDS_ListIteratorOfListOfHElSpine {
 		Handle_ChFiDS_HElSpine & Value() const;
 
 };
-%extend ChFiDS_ListIteratorOfListOfHElSpine {
-	~ChFiDS_ListIteratorOfListOfHElSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListIteratorOfListOfHElSpine\n");}
-	}
-};
+%feature("shadow") ChFiDS_ListIteratorOfListOfHElSpine::~ChFiDS_ListIteratorOfListOfHElSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_CircSection;
@@ -519,12 +493,10 @@ class ChFiDS_CircSection {
 		void Get(gp_Lin & C, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend ChFiDS_CircSection {
-	~ChFiDS_CircSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_CircSection\n");}
-	}
-};
+%feature("shadow") ChFiDS_CircSection::~ChFiDS_CircSection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_CommonPoint;
@@ -570,12 +542,10 @@ class ChFiDS_CommonPoint {
 		const gp_Vec & Vector() const;
 
 };
-%extend ChFiDS_CommonPoint {
-	~ChFiDS_CommonPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_CommonPoint\n");}
-	}
-};
+%feature("shadow") ChFiDS_CommonPoint::~ChFiDS_CommonPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_Spine;
@@ -719,12 +689,10 @@ class ChFiDS_Spine : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_Spine {
-	~ChFiDS_Spine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_Spine\n");}
-	}
-};
+%feature("shadow") ChFiDS_Spine::~ChFiDS_Spine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_FilSpine;
@@ -776,12 +744,10 @@ class ChFiDS_FilSpine : public ChFiDS_Spine {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_FilSpine {
-	~ChFiDS_FilSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_FilSpine\n");}
-	}
-};
+%feature("shadow") ChFiDS_FilSpine::~ChFiDS_FilSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe;
@@ -821,12 +787,10 @@ class ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public TCo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
-	~ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe\n");}
-	}
-};
+%feature("shadow") ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe::~ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_SequenceOfSpine;
@@ -878,12 +842,10 @@ class ChFiDS_SequenceOfSpine : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend ChFiDS_SequenceOfSpine {
-	~ChFiDS_SequenceOfSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_SequenceOfSpine\n");}
-	}
-};
+%feature("shadow") ChFiDS_SequenceOfSpine::~ChFiDS_SequenceOfSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_ChamfSpine;
@@ -921,12 +883,10 @@ class ChFiDS_ChamfSpine : public ChFiDS_Spine {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_ChamfSpine {
-	~ChFiDS_ChamfSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_ChamfSpine\n");}
-	}
-};
+%feature("shadow") ChFiDS_ChamfSpine::~ChFiDS_ChamfSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_SurfData;
@@ -1052,12 +1012,10 @@ class ChFiDS_SurfData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_SurfData {
-	~ChFiDS_SurfData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_SurfData\n");}
-	}
-};
+%feature("shadow") ChFiDS_SurfData::~ChFiDS_SurfData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_ListNodeOfListOfHElSpine;
@@ -1081,12 +1039,10 @@ class ChFiDS_ListNodeOfListOfHElSpine : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_ListNodeOfListOfHElSpine {
-	~ChFiDS_ListNodeOfListOfHElSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListNodeOfListOfHElSpine\n");}
-	}
-};
+%feature("shadow") ChFiDS_ListNodeOfListOfHElSpine::~ChFiDS_ListNodeOfListOfHElSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_IndexedDataMapOfVertexListOfStripe;
@@ -1128,12 +1084,10 @@ class ChFiDS_IndexedDataMapOfVertexListOfStripe : public TCollection_BasicMap {
 		ChFiDS_ListOfStripe & ChangeFromKey(const TopoDS_Vertex &K);
 
 };
-%extend ChFiDS_IndexedDataMapOfVertexListOfStripe {
-	~ChFiDS_IndexedDataMapOfVertexListOfStripe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_IndexedDataMapOfVertexListOfStripe\n");}
-	}
-};
+%feature("shadow") ChFiDS_IndexedDataMapOfVertexListOfStripe::~ChFiDS_IndexedDataMapOfVertexListOfStripe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_Regul;
@@ -1159,12 +1113,10 @@ class ChFiDS_Regul {
 		Standard_Integer S2() const;
 
 };
-%extend ChFiDS_Regul {
-	~ChFiDS_Regul() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_Regul\n");}
-	}
-};
+%feature("shadow") ChFiDS_Regul::~ChFiDS_Regul %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_ElSpine;
@@ -1244,12 +1196,10 @@ class ChFiDS_ElSpine : public Adaptor3d_Curve {
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
 
 };
-%extend ChFiDS_ElSpine {
-	~ChFiDS_ElSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_ElSpine\n");}
-	}
-};
+%feature("shadow") ChFiDS_ElSpine::~ChFiDS_ElSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_StripeMap;
@@ -1275,12 +1225,10 @@ class ChFiDS_StripeMap {
 		void Clear();
 
 };
-%extend ChFiDS_StripeMap {
-	~ChFiDS_StripeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_StripeMap\n");}
-	}
-};
+%feature("shadow") ChFiDS_StripeMap::~ChFiDS_StripeMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_ListNodeOfRegularities;
@@ -1304,12 +1252,10 @@ class ChFiDS_ListNodeOfRegularities : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_ListNodeOfRegularities {
-	~ChFiDS_ListNodeOfRegularities() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListNodeOfRegularities\n");}
-	}
-};
+%feature("shadow") ChFiDS_ListNodeOfRegularities::~ChFiDS_ListNodeOfRegularities %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_ListOfStripe;
@@ -1357,12 +1303,10 @@ class ChFiDS_ListOfStripe {
 		void InsertAfter(ChFiDS_ListOfStripe & Other, ChFiDS_ListIteratorOfListOfStripe & It);
 
 };
-%extend ChFiDS_ListOfStripe {
-	~ChFiDS_ListOfStripe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListOfStripe\n");}
-	}
-};
+%feature("shadow") ChFiDS_ListOfStripe::~ChFiDS_ListOfStripe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_FaceInterference;
@@ -1402,12 +1346,10 @@ class ChFiDS_FaceInterference {
 		Standard_Real Parameter(const Standard_Boolean IsFirst) const;
 
 };
-%extend ChFiDS_FaceInterference {
-	~ChFiDS_FaceInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_FaceInterference\n");}
-	}
-};
+%feature("shadow") ChFiDS_FaceInterference::~ChFiDS_FaceInterference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_HData;
@@ -1473,12 +1415,10 @@ class ChFiDS_HData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_HData {
-	~ChFiDS_HData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_HData\n");}
-	}
-};
+%feature("shadow") ChFiDS_HData::~ChFiDS_HData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_ListIteratorOfListOfStripe;
@@ -1498,12 +1438,10 @@ class ChFiDS_ListIteratorOfListOfStripe {
 		Handle_ChFiDS_Stripe & Value() const;
 
 };
-%extend ChFiDS_ListIteratorOfListOfStripe {
-	~ChFiDS_ListIteratorOfListOfStripe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListIteratorOfListOfStripe\n");}
-	}
-};
+%feature("shadow") ChFiDS_ListIteratorOfListOfStripe::~ChFiDS_ListIteratorOfListOfStripe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_Regularities;
@@ -1551,12 +1489,10 @@ class ChFiDS_Regularities {
 		void InsertAfter(ChFiDS_Regularities & Other, ChFiDS_ListIteratorOfRegularities & It);
 
 };
-%extend ChFiDS_Regularities {
-	~ChFiDS_Regularities() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_Regularities\n");}
-	}
-};
+%feature("shadow") ChFiDS_Regularities::~ChFiDS_Regularities %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_SequenceNodeOfSequenceOfSpine;
@@ -1580,12 +1516,10 @@ class ChFiDS_SequenceNodeOfSequenceOfSpine : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_SequenceNodeOfSequenceOfSpine {
-	~ChFiDS_SequenceNodeOfSequenceOfSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_SequenceNodeOfSequenceOfSpine\n");}
-	}
-};
+%feature("shadow") ChFiDS_SequenceNodeOfSequenceOfSpine::~ChFiDS_SequenceNodeOfSequenceOfSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_ListNodeOfListOfStripe;
@@ -1609,12 +1543,10 @@ class ChFiDS_ListNodeOfListOfStripe : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_ListNodeOfListOfStripe {
-	~ChFiDS_ListNodeOfListOfStripe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListNodeOfListOfStripe\n");}
-	}
-};
+%feature("shadow") ChFiDS_ListNodeOfListOfStripe::~ChFiDS_ListNodeOfListOfStripe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_StripeArray1;
@@ -1652,12 +1584,10 @@ class ChFiDS_StripeArray1 {
 		Handle_ChFiDS_Stripe & operator()(const Standard_Integer Index);
 
 };
-%extend ChFiDS_StripeArray1 {
-	~ChFiDS_StripeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_StripeArray1\n");}
-	}
-};
+%feature("shadow") ChFiDS_StripeArray1::~ChFiDS_StripeArray1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_SequenceOfSurfData;
@@ -1709,12 +1639,10 @@ class ChFiDS_SequenceOfSurfData : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend ChFiDS_SequenceOfSurfData {
-	~ChFiDS_SequenceOfSurfData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_SequenceOfSurfData\n");}
-	}
-};
+%feature("shadow") ChFiDS_SequenceOfSurfData::~ChFiDS_SequenceOfSurfData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_HElSpine;
@@ -1746,12 +1674,10 @@ class ChFiDS_HElSpine : public Adaptor3d_HCurve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_HElSpine {
-	~ChFiDS_HElSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_HElSpine\n");}
-	}
-};
+%feature("shadow") ChFiDS_HElSpine::~ChFiDS_HElSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_SecHArray1;
@@ -1793,12 +1719,10 @@ class ChFiDS_SecHArray1 : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_SecHArray1 {
-	~ChFiDS_SecHArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_SecHArray1\n");}
-	}
-};
+%feature("shadow") ChFiDS_SecHArray1::~ChFiDS_SecHArray1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_ListOfHElSpine;
@@ -1846,12 +1770,10 @@ class ChFiDS_ListOfHElSpine {
 		void InsertAfter(ChFiDS_ListOfHElSpine & Other, ChFiDS_ListIteratorOfListOfHElSpine & It);
 
 };
-%extend ChFiDS_ListOfHElSpine {
-	~ChFiDS_ListOfHElSpine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListOfHElSpine\n");}
-	}
-};
+%feature("shadow") ChFiDS_ListOfHElSpine::~ChFiDS_ListOfHElSpine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_Stripe;
@@ -1975,12 +1897,10 @@ class ChFiDS_Stripe : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_Stripe {
-	~ChFiDS_Stripe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_Stripe\n");}
-	}
-};
+%feature("shadow") ChFiDS_Stripe::~ChFiDS_Stripe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_SecArray1;
@@ -2018,12 +1938,10 @@ class ChFiDS_SecArray1 {
 		ChFiDS_CircSection & operator()(const Standard_Integer Index);
 
 };
-%extend ChFiDS_SecArray1 {
-	~ChFiDS_SecArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_SecArray1\n");}
-	}
-};
+%feature("shadow") ChFiDS_SecArray1::~ChFiDS_SecArray1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_Map;
@@ -2045,12 +1963,10 @@ class ChFiDS_Map {
 		const TopTools_ListOfShape & operator()(const Standard_Integer I) const;
 
 };
-%extend ChFiDS_Map {
-	~ChFiDS_Map() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_Map\n");}
-	}
-};
+%feature("shadow") ChFiDS_Map::~ChFiDS_Map %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_ListIteratorOfRegularities;
@@ -2070,12 +1986,10 @@ class ChFiDS_ListIteratorOfRegularities {
 		ChFiDS_Regul & Value() const;
 
 };
-%extend ChFiDS_ListIteratorOfRegularities {
-	~ChFiDS_ListIteratorOfRegularities() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListIteratorOfRegularities\n");}
-	}
-};
+%feature("shadow") ChFiDS_ListIteratorOfRegularities::~ChFiDS_ListIteratorOfRegularities %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFiDS_SequenceNodeOfSequenceOfSurfData;
@@ -2099,9 +2013,7 @@ class ChFiDS_SequenceNodeOfSequenceOfSurfData : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ChFiDS_SequenceNodeOfSequenceOfSurfData {
-	~ChFiDS_SequenceNodeOfSequenceOfSurfData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFiDS_SequenceNodeOfSequenceOfSurfData\n");}
-	}
-};
+%feature("shadow") ChFiDS_SequenceNodeOfSequenceOfSurfData::~ChFiDS_SequenceNodeOfSequenceOfSurfData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

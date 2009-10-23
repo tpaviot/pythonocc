@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GccAna_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_GccAna_NoSolution : public Handle_Standard_Failure {
 	return (GccAna_NoSolution*)$self->Access();
 	}
 };
-%extend Handle_GccAna_NoSolution {
-	~Handle_GccAna_NoSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GccAna_NoSolution\n");}
-	}
-};
+%feature("shadow") Handle_GccAna_NoSolution::~Handle_GccAna_NoSolution %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_CircLin2dBisec;
@@ -78,12 +80,10 @@ class GccAna_CircLin2dBisec {
 		Handle_GccInt_Bisec ThisSolution(const Standard_Integer Index) const;
 
 };
-%extend GccAna_CircLin2dBisec {
-	~GccAna_CircLin2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_CircLin2dBisec\n");}
-	}
-};
+%feature("shadow") GccAna_CircLin2dBisec::~GccAna_CircLin2dBisec %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_Lin2dTanObl;
@@ -107,12 +107,10 @@ class GccAna_Lin2dTanObl {
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
-%extend GccAna_Lin2dTanObl {
-	~GccAna_Lin2dTanObl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanObl\n");}
-	}
-};
+%feature("shadow") GccAna_Lin2dTanObl::~GccAna_Lin2dTanObl %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_Lin2dBisec;
@@ -132,12 +130,10 @@ class GccAna_Lin2dBisec {
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
-%extend GccAna_Lin2dBisec {
-	~GccAna_Lin2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dBisec\n");}
-	}
-};
+%feature("shadow") GccAna_Lin2dBisec::~GccAna_Lin2dBisec %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_Pnt2dBisec;
@@ -153,12 +149,10 @@ class GccAna_Pnt2dBisec {
 		gp_Lin2d ThisSolution() const;
 
 };
-%extend GccAna_Pnt2dBisec {
-	~GccAna_Pnt2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Pnt2dBisec\n");}
-	}
-};
+%feature("shadow") GccAna_Pnt2dBisec::~GccAna_Pnt2dBisec %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_Circ2dTanOnRad;
@@ -192,12 +186,10 @@ class GccAna_Circ2dTanOnRad {
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
 };
-%extend GccAna_Circ2dTanOnRad {
-	~GccAna_Circ2dTanOnRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dTanOnRad\n");}
-	}
-};
+%feature("shadow") GccAna_Circ2dTanOnRad::~GccAna_Circ2dTanOnRad %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_Circ2dTanCen;
@@ -223,12 +215,10 @@ class GccAna_Circ2dTanCen {
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
 };
-%extend GccAna_Circ2dTanCen {
-	~GccAna_Circ2dTanCen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dTanCen\n");}
-	}
-};
+%feature("shadow") GccAna_Circ2dTanCen::~GccAna_Circ2dTanCen %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_Lin2dTanPer;
@@ -256,12 +246,10 @@ class GccAna_Lin2dTanPer {
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
-%extend GccAna_Lin2dTanPer {
-	~GccAna_Lin2dTanPer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanPer\n");}
-	}
-};
+%feature("shadow") GccAna_Lin2dTanPer::~GccAna_Lin2dTanPer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_Circ2d3Tan;
@@ -309,12 +297,10 @@ class GccAna_Circ2d3Tan {
 		Standard_Boolean IsTheSame3(const Standard_Integer Index) const;
 
 };
-%extend GccAna_Circ2d3Tan {
-	~GccAna_Circ2d3Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d3Tan\n");}
-	}
-};
+%feature("shadow") GccAna_Circ2d3Tan::~GccAna_Circ2d3Tan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_NoSolution;
@@ -344,12 +330,10 @@ class GccAna_NoSolution : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GccAna_NoSolution {
-	~GccAna_NoSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_NoSolution\n");}
-	}
-};
+%feature("shadow") GccAna_NoSolution::~GccAna_NoSolution %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_LinPnt2dBisec;
@@ -363,12 +347,10 @@ class GccAna_LinPnt2dBisec {
 		Handle_GccInt_Bisec ThisSolution() const;
 
 };
-%extend GccAna_LinPnt2dBisec {
-	~GccAna_LinPnt2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_LinPnt2dBisec\n");}
-	}
-};
+%feature("shadow") GccAna_LinPnt2dBisec::~GccAna_LinPnt2dBisec %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_Circ2d2TanRad;
@@ -404,12 +386,10 @@ class GccAna_Circ2d2TanRad {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
-%extend GccAna_Circ2d2TanRad {
-	~GccAna_Circ2d2TanRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d2TanRad\n");}
-	}
-};
+%feature("shadow") GccAna_Circ2d2TanRad::~GccAna_Circ2d2TanRad %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_Lin2d2Tan;
@@ -435,12 +415,10 @@ class GccAna_Lin2d2Tan {
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
-%extend GccAna_Lin2d2Tan {
-	~GccAna_Lin2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2d2Tan\n");}
-	}
-};
+%feature("shadow") GccAna_Lin2d2Tan::~GccAna_Lin2d2Tan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_Lin2dTanPar;
@@ -462,12 +440,10 @@ class GccAna_Lin2dTanPar {
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & Pnt) const;
 
 };
-%extend GccAna_Lin2dTanPar {
-	~GccAna_Lin2dTanPar() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanPar\n");}
-	}
-};
+%feature("shadow") GccAna_Lin2dTanPar::~GccAna_Lin2dTanPar %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_CircPnt2dBisec;
@@ -483,12 +459,10 @@ class GccAna_CircPnt2dBisec {
 		Handle_GccInt_Bisec ThisSolution(const Standard_Integer Index) const;
 
 };
-%extend GccAna_CircPnt2dBisec {
-	~GccAna_CircPnt2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_CircPnt2dBisec\n");}
-	}
-};
+%feature("shadow") GccAna_CircPnt2dBisec::~GccAna_CircPnt2dBisec %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_Circ2dBisec;
@@ -504,12 +478,10 @@ class GccAna_Circ2dBisec {
 		Handle_GccInt_Bisec ThisSolution(const Standard_Integer Index) const;
 
 };
-%extend GccAna_Circ2dBisec {
-	~GccAna_Circ2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dBisec\n");}
-	}
-};
+%feature("shadow") GccAna_Circ2dBisec::~GccAna_Circ2dBisec %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccAna_Circ2d2TanOn;
@@ -559,9 +531,7 @@ class GccAna_Circ2d2TanOn {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
-%extend GccAna_Circ2d2TanOn {
-	~GccAna_Circ2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d2TanOn\n");}
-	}
-};
+%feature("shadow") GccAna_Circ2d2TanOn::~GccAna_Circ2d2TanOn %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

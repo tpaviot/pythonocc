@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include XmlMDF_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_XmlMDF_ADriver : public Handle_MMgt_TShared {
 	return (XmlMDF_ADriver*)$self->Access();
 	}
 };
-%extend Handle_XmlMDF_ADriver {
-	~Handle_XmlMDF_ADriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDF_ADriver\n");}
-	}
-};
+%feature("shadow") Handle_XmlMDF_ADriver::~Handle_XmlMDF_ADriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XmlMDF_TagSourceDriver;
@@ -87,12 +89,10 @@ class Handle_XmlMDF_TagSourceDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMDF_TagSourceDriver*)$self->Access();
 	}
 };
-%extend Handle_XmlMDF_TagSourceDriver {
-	~Handle_XmlMDF_TagSourceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDF_TagSourceDriver\n");}
-	}
-};
+%feature("shadow") Handle_XmlMDF_TagSourceDriver::~Handle_XmlMDF_TagSourceDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XmlMDF_DataMapNodeOfMapOfDriver;
@@ -117,12 +117,10 @@ class Handle_XmlMDF_DataMapNodeOfMapOfDriver : public Handle_TCollection_MapNode
 	return (XmlMDF_DataMapNodeOfMapOfDriver*)$self->Access();
 	}
 };
-%extend Handle_XmlMDF_DataMapNodeOfMapOfDriver {
-	~Handle_XmlMDF_DataMapNodeOfMapOfDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDF_DataMapNodeOfMapOfDriver\n");}
-	}
-};
+%feature("shadow") Handle_XmlMDF_DataMapNodeOfMapOfDriver::~Handle_XmlMDF_DataMapNodeOfMapOfDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XmlMDF_ReferenceDriver;
@@ -147,12 +145,10 @@ class Handle_XmlMDF_ReferenceDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMDF_ReferenceDriver*)$self->Access();
 	}
 };
-%extend Handle_XmlMDF_ReferenceDriver {
-	~Handle_XmlMDF_ReferenceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDF_ReferenceDriver\n");}
-	}
-};
+%feature("shadow") Handle_XmlMDF_ReferenceDriver::~Handle_XmlMDF_ReferenceDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XmlMDF_DataMapNodeOfTypeADriverMap;
@@ -177,12 +173,10 @@ class Handle_XmlMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapN
 	return (XmlMDF_DataMapNodeOfTypeADriverMap*)$self->Access();
 	}
 };
-%extend Handle_XmlMDF_DataMapNodeOfTypeADriverMap {
-	~Handle_XmlMDF_DataMapNodeOfTypeADriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDF_DataMapNodeOfTypeADriverMap\n");}
-	}
-};
+%feature("shadow") Handle_XmlMDF_DataMapNodeOfTypeADriverMap::~Handle_XmlMDF_DataMapNodeOfTypeADriverMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XmlMDF_ADriverTable;
@@ -207,12 +201,10 @@ class Handle_XmlMDF_ADriverTable : public Handle_MMgt_TShared {
 	return (XmlMDF_ADriverTable*)$self->Access();
 	}
 };
-%extend Handle_XmlMDF_ADriverTable {
-	~Handle_XmlMDF_ADriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDF_ADriverTable\n");}
-	}
-};
+%feature("shadow") Handle_XmlMDF_ADriverTable::~Handle_XmlMDF_ADriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMDF_DataMapNodeOfTypeADriverMap;
@@ -238,12 +230,10 @@ class XmlMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlMDF_DataMapNodeOfTypeADriverMap {
-	~XmlMDF_DataMapNodeOfTypeADriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDF_DataMapNodeOfTypeADriverMap\n");}
-	}
-};
+%feature("shadow") XmlMDF_DataMapNodeOfTypeADriverMap::~XmlMDF_DataMapNodeOfTypeADriverMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMDF_DataMapNodeOfMapOfDriver;
@@ -269,12 +259,10 @@ class XmlMDF_DataMapNodeOfMapOfDriver : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlMDF_DataMapNodeOfMapOfDriver {
-	~XmlMDF_DataMapNodeOfMapOfDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDF_DataMapNodeOfMapOfDriver\n");}
-	}
-};
+%feature("shadow") XmlMDF_DataMapNodeOfMapOfDriver::~XmlMDF_DataMapNodeOfMapOfDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMDF_TypeADriverMap;
@@ -306,12 +294,10 @@ class XmlMDF_TypeADriverMap : public TCollection_BasicMap {
 		Handle_XmlMDF_ADriver & operator()(const Handle_Standard_Type &K);
 
 };
-%extend XmlMDF_TypeADriverMap {
-	~XmlMDF_TypeADriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDF_TypeADriverMap\n");}
-	}
-};
+%feature("shadow") XmlMDF_TypeADriverMap::~XmlMDF_TypeADriverMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMDF_ADriver;
@@ -345,12 +331,10 @@ class XmlMDF_ADriver : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlMDF_ADriver {
-	~XmlMDF_ADriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDF_ADriver\n");}
-	}
-};
+%feature("shadow") XmlMDF_ADriver::~XmlMDF_ADriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMDF_TagSourceDriver;
@@ -378,12 +362,10 @@ class XmlMDF_TagSourceDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlMDF_TagSourceDriver {
-	~XmlMDF_TagSourceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDF_TagSourceDriver\n");}
-	}
-};
+%feature("shadow") XmlMDF_TagSourceDriver::~XmlMDF_TagSourceDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMDF;
@@ -399,12 +381,10 @@ class XmlMDF {
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };
-%extend XmlMDF {
-	~XmlMDF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDF\n");}
-	}
-};
+%feature("shadow") XmlMDF::~XmlMDF %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMDF_DataMapIteratorOfMapOfDriver;
@@ -422,12 +402,10 @@ class XmlMDF_DataMapIteratorOfMapOfDriver : public TCollection_BasicMapIterator 
 		const Handle_XmlMDF_ADriver & Value() const;
 
 };
-%extend XmlMDF_DataMapIteratorOfMapOfDriver {
-	~XmlMDF_DataMapIteratorOfMapOfDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDF_DataMapIteratorOfMapOfDriver\n");}
-	}
-};
+%feature("shadow") XmlMDF_DataMapIteratorOfMapOfDriver::~XmlMDF_DataMapIteratorOfMapOfDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMDF_MapOfDriver;
@@ -459,12 +437,10 @@ class XmlMDF_MapOfDriver : public TCollection_BasicMap {
 		Handle_XmlMDF_ADriver & operator()(const TCollection_AsciiString &K);
 
 };
-%extend XmlMDF_MapOfDriver {
-	~XmlMDF_MapOfDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDF_MapOfDriver\n");}
-	}
-};
+%feature("shadow") XmlMDF_MapOfDriver::~XmlMDF_MapOfDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMDF_ADriverTable;
@@ -492,12 +468,10 @@ class XmlMDF_ADriverTable : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlMDF_ADriverTable {
-	~XmlMDF_ADriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDF_ADriverTable\n");}
-	}
-};
+%feature("shadow") XmlMDF_ADriverTable::~XmlMDF_ADriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMDF_ReferenceDriver;
@@ -525,12 +499,10 @@ class XmlMDF_ReferenceDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlMDF_ReferenceDriver {
-	~XmlMDF_ReferenceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDF_ReferenceDriver\n");}
-	}
-};
+%feature("shadow") XmlMDF_ReferenceDriver::~XmlMDF_ReferenceDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMDF_DataMapIteratorOfTypeADriverMap;
@@ -548,9 +520,7 @@ class XmlMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterat
 		const Handle_XmlMDF_ADriver & Value() const;
 
 };
-%extend XmlMDF_DataMapIteratorOfTypeADriverMap {
-	~XmlMDF_DataMapIteratorOfTypeADriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMDF_DataMapIteratorOfTypeADriverMap\n");}
-	}
-};
+%feature("shadow") XmlMDF_DataMapIteratorOfTypeADriverMap::~XmlMDF_DataMapIteratorOfTypeADriverMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

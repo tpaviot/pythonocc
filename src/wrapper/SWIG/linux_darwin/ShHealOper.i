@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ShHealOper_dependencies.i
 
 
@@ -63,12 +67,10 @@ class Handle_ShHealOper_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve3d {
 	return (ShHealOper_SplitCurve3d*)$self->Access();
 	}
 };
-%extend Handle_ShHealOper_SplitCurve3d {
-	~Handle_ShHealOper_SplitCurve3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShHealOper_SplitCurve3d\n");}
-	}
-};
+%feature("shadow") Handle_ShHealOper_SplitCurve3d::~Handle_ShHealOper_SplitCurve3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShHealOper_SplitCurve2d;
@@ -93,12 +95,10 @@ class Handle_ShHealOper_SplitCurve2d : public Handle_ShapeUpgrade_SplitCurve2d {
 	return (ShHealOper_SplitCurve2d*)$self->Access();
 	}
 };
-%extend Handle_ShHealOper_SplitCurve2d {
-	~Handle_ShHealOper_SplitCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShHealOper_SplitCurve2d\n");}
-	}
-};
+%feature("shadow") Handle_ShHealOper_SplitCurve2d::~Handle_ShHealOper_SplitCurve2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShHealOper_Tool;
@@ -124,12 +124,10 @@ class ShHealOper_Tool {
 		Standard_Integer GetErrorStatus();
 
 };
-%extend ShHealOper_Tool {
-	~ShHealOper_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShHealOper_Tool\n");}
-	}
-};
+%feature("shadow") ShHealOper_Tool::~ShHealOper_Tool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShHealOper_Sewing;
@@ -165,12 +163,10 @@ class ShHealOper_Sewing : public ShHealOper_Tool {
 		TopAbs_ShapeEnum GetHistoryLevel();
 
 };
-%extend ShHealOper_Sewing {
-	~ShHealOper_Sewing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShHealOper_Sewing\n");}
-	}
-};
+%feature("shadow") ShHealOper_Sewing::~ShHealOper_Sewing %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShHealOper_RemoveInternalWires;
@@ -188,12 +184,10 @@ class ShHealOper_RemoveInternalWires : public ShHealOper_Tool {
 		Standard_Boolean Remove(const TopTools_SequenceOfShape &theRemovedShapes);
 
 };
-%extend ShHealOper_RemoveInternalWires {
-	~ShHealOper_RemoveInternalWires() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShHealOper_RemoveInternalWires\n");}
-	}
-};
+%feature("shadow") ShHealOper_RemoveInternalWires::~ShHealOper_RemoveInternalWires %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShHealOper_SplitCurve2d;
@@ -219,12 +213,10 @@ class ShHealOper_SplitCurve2d : public ShapeUpgrade_SplitCurve2d {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShHealOper_SplitCurve2d {
-	~ShHealOper_SplitCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShHealOper_SplitCurve2d\n");}
-	}
-};
+%feature("shadow") ShHealOper_SplitCurve2d::~ShHealOper_SplitCurve2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShHealOper_ShapeProcess;
@@ -254,12 +246,10 @@ class ShHealOper_ShapeProcess {
 		Standard_Boolean isDone();
 
 };
-%extend ShHealOper_ShapeProcess {
-	~ShHealOper_ShapeProcess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShHealOper_ShapeProcess\n");}
-	}
-};
+%feature("shadow") ShHealOper_ShapeProcess::~ShHealOper_ShapeProcess %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShHealOper_CloseContour;
@@ -289,12 +279,10 @@ class ShHealOper_CloseContour : public ShHealOper_Tool {
 		Standard_Boolean GetModeVertex();
 
 };
-%extend ShHealOper_CloseContour {
-	~ShHealOper_CloseContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShHealOper_CloseContour\n");}
-	}
-};
+%feature("shadow") ShHealOper_CloseContour::~ShHealOper_CloseContour %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShHealOper_FillHoles;
@@ -314,12 +302,10 @@ class ShHealOper_FillHoles : public ShHealOper_Tool {
 		Standard_Boolean Fill(const TopTools_SequenceOfShape &theFillShapes);
 
 };
-%extend ShHealOper_FillHoles {
-	~ShHealOper_FillHoles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShHealOper_FillHoles\n");}
-	}
-};
+%feature("shadow") ShHealOper_FillHoles::~ShHealOper_FillHoles %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShHealOper_ChangeOrientation;
@@ -335,12 +321,10 @@ class ShHealOper_ChangeOrientation : public ShHealOper_Tool {
 		Standard_Boolean Perform();
 
 };
-%extend ShHealOper_ChangeOrientation {
-	~ShHealOper_ChangeOrientation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShHealOper_ChangeOrientation\n");}
-	}
-};
+%feature("shadow") ShHealOper_ChangeOrientation::~ShHealOper_ChangeOrientation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShHealOper_RemoveFace;
@@ -358,12 +342,10 @@ class ShHealOper_RemoveFace : public ShHealOper_Tool {
 		Standard_Boolean Perform(const TopTools_SequenceOfShape &theRemovedFaces);
 
 };
-%extend ShHealOper_RemoveFace {
-	~ShHealOper_RemoveFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShHealOper_RemoveFace\n");}
-	}
-};
+%feature("shadow") ShHealOper_RemoveFace::~ShHealOper_RemoveFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShHealOper_EdgeDivide;
@@ -381,12 +363,10 @@ class ShHealOper_EdgeDivide : public ShHealOper_Tool {
 		Standard_Boolean Perform(const TopoDS_Shape &theEdge, const TColStd_SequenceOfReal &theValues, const Standard_Boolean theDivideParamMode=1);
 
 };
-%extend ShHealOper_EdgeDivide {
-	~ShHealOper_EdgeDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShHealOper_EdgeDivide\n");}
-	}
-};
+%feature("shadow") ShHealOper_EdgeDivide::~ShHealOper_EdgeDivide %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShHealOper_SplitCurve3d;
@@ -412,9 +392,7 @@ class ShHealOper_SplitCurve3d : public ShapeUpgrade_SplitCurve3d {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShHealOper_SplitCurve3d {
-	~ShHealOper_SplitCurve3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShHealOper_SplitCurve3d\n");}
-	}
-};
+%feature("shadow") ShHealOper_SplitCurve3d::~ShHealOper_SplitCurve3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

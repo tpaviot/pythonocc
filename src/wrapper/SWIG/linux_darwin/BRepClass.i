@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepClass_dependencies.i
 
 
@@ -52,20 +56,10 @@ class BRepClass_Edge {
 		const TopoDS_Face & Face() const;
 
 };
-%extend BRepClass_Edge {
-	~BRepClass_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass_Edge\n");}
-	}
-};
-
-%extend BRepClass_Edge {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepClass_Edge::~BRepClass_Edge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepClass_Intersector;
@@ -79,20 +73,10 @@ class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
 		void LocalGeometry(const BRepClass_Edge &E, const Standard_Real U, gp_Dir2d & T, gp_Dir2d & N, Standard_Real &OutValue) const;
 
 };
-%extend BRepClass_Intersector {
-	~BRepClass_Intersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass_Intersector\n");}
-	}
-};
-
-%extend BRepClass_Intersector {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepClass_Intersector::~BRepClass_Intersector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepClass_FClassifier;
@@ -118,20 +102,10 @@ class BRepClass_FClassifier {
 		IntRes2d_Position Position() const;
 
 };
-%extend BRepClass_FClassifier {
-	~BRepClass_FClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass_FClassifier\n");}
-	}
-};
-
-%extend BRepClass_FClassifier {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepClass_FClassifier::~BRepClass_FClassifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepClass_FaceClassifier;
@@ -143,20 +117,10 @@ class BRepClass_FaceClassifier : public BRepClass_FClassifier {
 		void Perform(const TopoDS_Face &F, const gp_Pnt &P, const Standard_Real Tol);
 
 };
-%extend BRepClass_FaceClassifier {
-	~BRepClass_FaceClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass_FaceClassifier\n");}
-	}
-};
-
-%extend BRepClass_FaceClassifier {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepClass_FaceClassifier::~BRepClass_FaceClassifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepClass_FClass2dOfFClassifier;
@@ -180,20 +144,10 @@ class BRepClass_FClass2dOfFClassifier {
 		Standard_Boolean IsHeadOrEnd() const;
 
 };
-%extend BRepClass_FClass2dOfFClassifier {
-	~BRepClass_FClass2dOfFClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass_FClass2dOfFClassifier\n");}
-	}
-};
-
-%extend BRepClass_FClass2dOfFClassifier {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepClass_FClass2dOfFClassifier::~BRepClass_FClass2dOfFClassifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepClass_FaceExplorer;
@@ -227,20 +181,10 @@ class BRepClass_FaceExplorer {
 		void CurrentEdge(BRepClass_Edge & E, TopAbs_Orientation & Or) const;
 
 };
-%extend BRepClass_FaceExplorer {
-	~BRepClass_FaceExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass_FaceExplorer\n");}
-	}
-};
-
-%extend BRepClass_FaceExplorer {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepClass_FaceExplorer::~BRepClass_FaceExplorer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepClass_FacePassiveClassifier;
@@ -264,17 +208,7 @@ class BRepClass_FacePassiveClassifier {
 		Standard_Boolean IsHeadOrEnd() const;
 
 };
-%extend BRepClass_FacePassiveClassifier {
-	~BRepClass_FacePassiveClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass_FacePassiveClassifier\n");}
-	}
-};
-
-%extend BRepClass_FacePassiveClassifier {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepClass_FacePassiveClassifier::~BRepClass_FacePassiveClassifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

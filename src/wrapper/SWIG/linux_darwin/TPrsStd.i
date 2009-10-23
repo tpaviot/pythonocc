@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TPrsStd_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_TPrsStd_Driver : public Handle_MMgt_TShared {
 	return (TPrsStd_Driver*)$self->Access();
 	}
 };
-%extend Handle_TPrsStd_Driver {
-	~Handle_TPrsStd_Driver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_Driver\n");}
-	}
-};
+%feature("shadow") Handle_TPrsStd_Driver::~Handle_TPrsStd_Driver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TPrsStd_ConstraintDriver;
@@ -87,12 +89,10 @@ class Handle_TPrsStd_ConstraintDriver : public Handle_TPrsStd_Driver {
 	return (TPrsStd_ConstraintDriver*)$self->Access();
 	}
 };
-%extend Handle_TPrsStd_ConstraintDriver {
-	~Handle_TPrsStd_ConstraintDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_ConstraintDriver\n");}
-	}
-};
+%feature("shadow") Handle_TPrsStd_ConstraintDriver::~Handle_TPrsStd_ConstraintDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TPrsStd_DriverTable;
@@ -117,12 +117,10 @@ class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
 	return (TPrsStd_DriverTable*)$self->Access();
 	}
 };
-%extend Handle_TPrsStd_DriverTable {
-	~Handle_TPrsStd_DriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_DriverTable\n");}
-	}
-};
+%feature("shadow") Handle_TPrsStd_DriverTable::~Handle_TPrsStd_DriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TPrsStd_PlaneDriver;
@@ -147,12 +145,10 @@ class Handle_TPrsStd_PlaneDriver : public Handle_TPrsStd_Driver {
 	return (TPrsStd_PlaneDriver*)$self->Access();
 	}
 };
-%extend Handle_TPrsStd_PlaneDriver {
-	~Handle_TPrsStd_PlaneDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_PlaneDriver\n");}
-	}
-};
+%feature("shadow") Handle_TPrsStd_PlaneDriver::~Handle_TPrsStd_PlaneDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TPrsStd_AISPresentation;
@@ -177,12 +173,10 @@ class Handle_TPrsStd_AISPresentation : public Handle_TDF_Attribute {
 	return (TPrsStd_AISPresentation*)$self->Access();
 	}
 };
-%extend Handle_TPrsStd_AISPresentation {
-	~Handle_TPrsStd_AISPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_AISPresentation\n");}
-	}
-};
+%feature("shadow") Handle_TPrsStd_AISPresentation::~Handle_TPrsStd_AISPresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver;
@@ -207,12 +201,10 @@ class Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollectio
 	return (TPrsStd_DataMapNodeOfDataMapOfGUIDDriver*)$self->Access();
 	}
 };
-%extend Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
-	~Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver\n");}
-	}
-};
+%feature("shadow") Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver::~Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TPrsStd_AxisDriver;
@@ -237,12 +229,10 @@ class Handle_TPrsStd_AxisDriver : public Handle_TPrsStd_Driver {
 	return (TPrsStd_AxisDriver*)$self->Access();
 	}
 };
-%extend Handle_TPrsStd_AxisDriver {
-	~Handle_TPrsStd_AxisDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_AxisDriver\n");}
-	}
-};
+%feature("shadow") Handle_TPrsStd_AxisDriver::~Handle_TPrsStd_AxisDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TPrsStd_PointDriver;
@@ -267,12 +257,10 @@ class Handle_TPrsStd_PointDriver : public Handle_TPrsStd_Driver {
 	return (TPrsStd_PointDriver*)$self->Access();
 	}
 };
-%extend Handle_TPrsStd_PointDriver {
-	~Handle_TPrsStd_PointDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_PointDriver\n");}
-	}
-};
+%feature("shadow") Handle_TPrsStd_PointDriver::~Handle_TPrsStd_PointDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TPrsStd_AISViewer;
@@ -297,12 +285,10 @@ class Handle_TPrsStd_AISViewer : public Handle_TDF_Attribute {
 	return (TPrsStd_AISViewer*)$self->Access();
 	}
 };
-%extend Handle_TPrsStd_AISViewer {
-	~Handle_TPrsStd_AISViewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_AISViewer\n");}
-	}
-};
+%feature("shadow") Handle_TPrsStd_AISViewer::~Handle_TPrsStd_AISViewer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TPrsStd_GeometryDriver;
@@ -327,12 +313,10 @@ class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 	return (TPrsStd_GeometryDriver*)$self->Access();
 	}
 };
-%extend Handle_TPrsStd_GeometryDriver {
-	~Handle_TPrsStd_GeometryDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_GeometryDriver\n");}
-	}
-};
+%feature("shadow") Handle_TPrsStd_GeometryDriver::~Handle_TPrsStd_GeometryDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TPrsStd_NamedShapeDriver;
@@ -357,12 +341,10 @@ class Handle_TPrsStd_NamedShapeDriver : public Handle_TPrsStd_Driver {
 	return (TPrsStd_NamedShapeDriver*)$self->Access();
 	}
 };
-%extend Handle_TPrsStd_NamedShapeDriver {
-	~Handle_TPrsStd_NamedShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_NamedShapeDriver\n");}
-	}
-};
+%feature("shadow") Handle_TPrsStd_NamedShapeDriver::~Handle_TPrsStd_NamedShapeDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_ConstraintTools;
@@ -418,12 +400,10 @@ class TPrsStd_ConstraintTools {
 		void ComputeAngleForOneFace(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 
 };
-%extend TPrsStd_ConstraintTools {
-	~TPrsStd_ConstraintTools() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_ConstraintTools\n");}
-	}
-};
+%feature("shadow") TPrsStd_ConstraintTools::~TPrsStd_ConstraintTools %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_Driver;
@@ -445,12 +425,10 @@ class TPrsStd_Driver : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TPrsStd_Driver {
-	~TPrsStd_Driver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_Driver\n");}
-	}
-};
+%feature("shadow") TPrsStd_Driver::~TPrsStd_Driver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_NamedShapeDriver;
@@ -472,12 +450,10 @@ class TPrsStd_NamedShapeDriver : public TPrsStd_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TPrsStd_NamedShapeDriver {
-	~TPrsStd_NamedShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_NamedShapeDriver\n");}
-	}
-};
+%feature("shadow") TPrsStd_NamedShapeDriver::~TPrsStd_NamedShapeDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver;
@@ -495,12 +471,10 @@ class TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicMap
 		const Handle_TPrsStd_Driver & Value() const;
 
 };
-%extend TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver {
-	~TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver\n");}
-	}
-};
+%feature("shadow") TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver::~TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_PointDriver;
@@ -524,12 +498,10 @@ class TPrsStd_PointDriver : public TPrsStd_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TPrsStd_PointDriver {
-	~TPrsStd_PointDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_PointDriver\n");}
-	}
-};
+%feature("shadow") TPrsStd_PointDriver::~TPrsStd_PointDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_AxisDriver;
@@ -553,12 +525,10 @@ class TPrsStd_AxisDriver : public TPrsStd_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TPrsStd_AxisDriver {
-	~TPrsStd_AxisDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_AxisDriver\n");}
-	}
-};
+%feature("shadow") TPrsStd_AxisDriver::~TPrsStd_AxisDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_AISViewer;
@@ -610,12 +580,10 @@ class TPrsStd_AISViewer : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TPrsStd_AISViewer {
-	~TPrsStd_AISViewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_AISViewer\n");}
-	}
-};
+%feature("shadow") TPrsStd_AISViewer::~TPrsStd_AISViewer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_ConstraintDriver;
@@ -639,12 +607,10 @@ class TPrsStd_ConstraintDriver : public TPrsStd_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TPrsStd_ConstraintDriver {
-	~TPrsStd_ConstraintDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_ConstraintDriver\n");}
-	}
-};
+%feature("shadow") TPrsStd_ConstraintDriver::~TPrsStd_ConstraintDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_DataMapNodeOfDataMapOfGUIDDriver;
@@ -670,12 +636,10 @@ class TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
-	~TPrsStd_DataMapNodeOfDataMapOfGUIDDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_DataMapNodeOfDataMapOfGUIDDriver\n");}
-	}
-};
+%feature("shadow") TPrsStd_DataMapNodeOfDataMapOfGUIDDriver::~TPrsStd_DataMapNodeOfDataMapOfGUIDDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_AISPresentation;
@@ -791,12 +755,10 @@ class TPrsStd_AISPresentation : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TPrsStd_AISPresentation {
-	~TPrsStd_AISPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_AISPresentation\n");}
-	}
-};
+%feature("shadow") TPrsStd_AISPresentation::~TPrsStd_AISPresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_PlaneDriver;
@@ -820,12 +782,10 @@ class TPrsStd_PlaneDriver : public TPrsStd_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TPrsStd_PlaneDriver {
-	~TPrsStd_PlaneDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_PlaneDriver\n");}
-	}
-};
+%feature("shadow") TPrsStd_PlaneDriver::~TPrsStd_PlaneDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_GeometryDriver;
@@ -849,12 +809,10 @@ class TPrsStd_GeometryDriver : public TPrsStd_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TPrsStd_GeometryDriver {
-	~TPrsStd_GeometryDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_GeometryDriver\n");}
-	}
-};
+%feature("shadow") TPrsStd_GeometryDriver::~TPrsStd_GeometryDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_DataMapOfGUIDDriver;
@@ -886,12 +844,10 @@ class TPrsStd_DataMapOfGUIDDriver : public TCollection_BasicMap {
 		Handle_TPrsStd_Driver & operator()(const Standard_GUID &K);
 
 };
-%extend TPrsStd_DataMapOfGUIDDriver {
-	~TPrsStd_DataMapOfGUIDDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_DataMapOfGUIDDriver\n");}
-	}
-};
+%feature("shadow") TPrsStd_DataMapOfGUIDDriver::~TPrsStd_DataMapOfGUIDDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TPrsStd_DriverTable;
@@ -925,9 +881,7 @@ class TPrsStd_DriverTable : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TPrsStd_DriverTable {
-	~TPrsStd_DriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TPrsStd_DriverTable\n");}
-	}
-};
+%feature("shadow") TPrsStd_DriverTable::~TPrsStd_DriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

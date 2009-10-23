@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GccInt_dependencies.i
 
 
@@ -66,12 +70,10 @@ class Handle_GccInt_Bisec : public Handle_MMgt_TShared {
 	return (GccInt_Bisec*)$self->Access();
 	}
 };
-%extend Handle_GccInt_Bisec {
-	~Handle_GccInt_Bisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_Bisec\n");}
-	}
-};
+%feature("shadow") Handle_GccInt_Bisec::~Handle_GccInt_Bisec %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GccInt_BLine;
@@ -96,12 +98,10 @@ class Handle_GccInt_BLine : public Handle_GccInt_Bisec {
 	return (GccInt_BLine*)$self->Access();
 	}
 };
-%extend Handle_GccInt_BLine {
-	~Handle_GccInt_BLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BLine\n");}
-	}
-};
+%feature("shadow") Handle_GccInt_BLine::~Handle_GccInt_BLine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GccInt_BParab;
@@ -126,12 +126,10 @@ class Handle_GccInt_BParab : public Handle_GccInt_Bisec {
 	return (GccInt_BParab*)$self->Access();
 	}
 };
-%extend Handle_GccInt_BParab {
-	~Handle_GccInt_BParab() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BParab\n");}
-	}
-};
+%feature("shadow") Handle_GccInt_BParab::~Handle_GccInt_BParab %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GccInt_BElips;
@@ -156,12 +154,10 @@ class Handle_GccInt_BElips : public Handle_GccInt_Bisec {
 	return (GccInt_BElips*)$self->Access();
 	}
 };
-%extend Handle_GccInt_BElips {
-	~Handle_GccInt_BElips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BElips\n");}
-	}
-};
+%feature("shadow") Handle_GccInt_BElips::~Handle_GccInt_BElips %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GccInt_BPoint;
@@ -186,12 +182,10 @@ class Handle_GccInt_BPoint : public Handle_GccInt_Bisec {
 	return (GccInt_BPoint*)$self->Access();
 	}
 };
-%extend Handle_GccInt_BPoint {
-	~Handle_GccInt_BPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BPoint\n");}
-	}
-};
+%feature("shadow") Handle_GccInt_BPoint::~Handle_GccInt_BPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GccInt_BCirc;
@@ -216,12 +210,10 @@ class Handle_GccInt_BCirc : public Handle_GccInt_Bisec {
 	return (GccInt_BCirc*)$self->Access();
 	}
 };
-%extend Handle_GccInt_BCirc {
-	~Handle_GccInt_BCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BCirc\n");}
-	}
-};
+%feature("shadow") Handle_GccInt_BCirc::~Handle_GccInt_BCirc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GccInt_BHyper;
@@ -246,12 +238,10 @@ class Handle_GccInt_BHyper : public Handle_GccInt_Bisec {
 	return (GccInt_BHyper*)$self->Access();
 	}
 };
-%extend Handle_GccInt_BHyper {
-	~Handle_GccInt_BHyper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BHyper\n");}
-	}
-};
+%feature("shadow") Handle_GccInt_BHyper::~Handle_GccInt_BHyper %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccInt_Bisec;
@@ -285,12 +275,10 @@ class GccInt_Bisec : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GccInt_Bisec {
-	~GccInt_Bisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccInt_Bisec\n");}
-	}
-};
+%feature("shadow") GccInt_Bisec::~GccInt_Bisec %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccInt_BParab;
@@ -310,12 +298,10 @@ class GccInt_BParab : public GccInt_Bisec {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GccInt_BParab {
-	~GccInt_BParab() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccInt_BParab\n");}
-	}
-};
+%feature("shadow") GccInt_BParab::~GccInt_BParab %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccInt_BCirc;
@@ -341,12 +327,10 @@ class GccInt_BCirc : public GccInt_Bisec {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GccInt_BCirc {
-	~GccInt_BCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccInt_BCirc\n");}
-	}
-};
+%feature("shadow") GccInt_BCirc::~GccInt_BCirc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccInt_BElips;
@@ -372,12 +356,10 @@ class GccInt_BElips : public GccInt_Bisec {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GccInt_BElips {
-	~GccInt_BElips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccInt_BElips\n");}
-	}
-};
+%feature("shadow") GccInt_BElips::~GccInt_BElips %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccInt_BPoint;
@@ -403,12 +385,10 @@ class GccInt_BPoint : public GccInt_Bisec {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GccInt_BPoint {
-	~GccInt_BPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccInt_BPoint\n");}
-	}
-};
+%feature("shadow") GccInt_BPoint::~GccInt_BPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccInt_BLine;
@@ -434,12 +414,10 @@ class GccInt_BLine : public GccInt_Bisec {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GccInt_BLine {
-	~GccInt_BLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccInt_BLine\n");}
-	}
-};
+%feature("shadow") GccInt_BLine::~GccInt_BLine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccInt_BHyper;
@@ -465,9 +443,7 @@ class GccInt_BHyper : public GccInt_Bisec {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GccInt_BHyper {
-	~GccInt_BHyper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccInt_BHyper\n");}
-	}
-};
+%feature("shadow") GccInt_BHyper::~GccInt_BHyper %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

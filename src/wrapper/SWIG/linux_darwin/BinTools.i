@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BinTools_dependencies.i
 
 
@@ -67,12 +71,10 @@ class BinTools_LocationSet {
 		};
 
 };
-%extend BinTools_LocationSet {
-	~BinTools_LocationSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTools_LocationSet\n");}
-	}
-};
+%feature("shadow") BinTools_LocationSet::~BinTools_LocationSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinTools;
@@ -98,12 +100,10 @@ class BinTools {
 		std::istream & GetExtChar(std::istream & IS, Standard_ExtCharacter & theValue);
 
 };
-%extend BinTools {
-	~BinTools() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTools\n");}
-	}
-};
+%feature("shadow") BinTools::~BinTools %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinTools_ShapeSet;
@@ -220,12 +220,10 @@ class BinTools_ShapeSet {
 		};
 
 };
-%extend BinTools_ShapeSet {
-	~BinTools_ShapeSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTools_ShapeSet\n");}
-	}
-};
+%feature("shadow") BinTools_ShapeSet::~BinTools_ShapeSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinTools_SurfaceSet;
@@ -262,12 +260,10 @@ class BinTools_SurfaceSet {
 		std::istream & ReadSurface(std::istream & IS, Handle_Geom_Surface & S);
 
 };
-%extend BinTools_SurfaceSet {
-	~BinTools_SurfaceSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTools_SurfaceSet\n");}
-	}
-};
+%feature("shadow") BinTools_SurfaceSet::~BinTools_SurfaceSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinTools_CurveSet;
@@ -304,12 +300,10 @@ class BinTools_CurveSet {
 		std::istream & ReadCurve(std::istream & IS, Handle_Geom_Curve & C);
 
 };
-%extend BinTools_CurveSet {
-	~BinTools_CurveSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTools_CurveSet\n");}
-	}
-};
+%feature("shadow") BinTools_CurveSet::~BinTools_CurveSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinTools_Curve2dSet;
@@ -346,9 +340,7 @@ class BinTools_Curve2dSet {
 		std::istream & ReadCurve2d(std::istream & IS, Handle_Geom2d_Curve & C);
 
 };
-%extend BinTools_Curve2dSet {
-	~BinTools_Curve2dSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTools_Curve2dSet\n");}
-	}
-};
+%feature("shadow") BinTools_Curve2dSet::~BinTools_Curve2dSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

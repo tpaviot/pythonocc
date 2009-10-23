@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntCurvesFace_dependencies.i
 
 
@@ -72,12 +76,10 @@ class IntCurvesFace_Intersector {
 		void Destroy();
 
 };
-%extend IntCurvesFace_Intersector {
-	~IntCurvesFace_Intersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurvesFace_Intersector\n");}
-	}
-};
+%feature("shadow") IntCurvesFace_Intersector::~IntCurvesFace_Intersector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntCurvesFace_ShapeIntersector;
@@ -117,9 +119,7 @@ class IntCurvesFace_ShapeIntersector {
 		void Destroy();
 
 };
-%extend IntCurvesFace_ShapeIntersector {
-	~IntCurvesFace_ShapeIntersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurvesFace_ShapeIntersector\n");}
-	}
-};
+%feature("shadow") IntCurvesFace_ShapeIntersector::~IntCurvesFace_ShapeIntersector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

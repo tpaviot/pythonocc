@@ -26,7 +26,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../ExceptionCatcher.i
 %include ../FunctionTransformers.i
 %include ../Operators.i
-%include ../GarbageCollector.i
+
+%pythoncode {
+import GarbageCollector
+};
 
 %include gp_dependencies.i
 
@@ -72,8 +75,7 @@ class Handle_gp_VectorWithNullMagnitude : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_gp_VectorWithNullMagnitude::~Handle_gp_VectorWithNullMagnitude %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -164,8 +166,7 @@ class gp_Cone {
 };
 %feature("shadow") gp_Cone::~gp_Cone %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -276,8 +277,7 @@ class gp_Hypr2d {
 };
 %feature("shadow") gp_Hypr2d::~gp_Hypr2d %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -358,8 +358,7 @@ class gp_Dir2d {
 };
 %feature("shadow") gp_Dir2d::~gp_Dir2d %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -444,8 +443,7 @@ class gp_Parab2d {
 };
 %feature("shadow") gp_Parab2d::~gp_Parab2d %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -570,8 +568,7 @@ class gp_Mat2d {
 };
 %feature("shadow") gp_Mat2d::~gp_Mat2d %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -604,8 +601,7 @@ class gp_VectorWithNullMagnitude : public Standard_DomainError {
 };
 %feature("shadow") gp_VectorWithNullMagnitude::~gp_VectorWithNullMagnitude %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -680,8 +676,7 @@ class gp_Ax22d {
 };
 %feature("shadow") gp_Ax22d::~gp_Ax22d %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -762,8 +757,7 @@ class gp_Parab {
 };
 %feature("shadow") gp_Parab::~gp_Parab %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -904,8 +898,7 @@ class gp_XYZ {
 };
 %feature("shadow") gp_XYZ::~gp_XYZ %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -950,8 +943,7 @@ class gp {
 };
 %feature("shadow") gp::~gp %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1090,8 +1082,7 @@ class gp_Vec2d {
 };
 %feature("shadow") gp_Vec2d::~gp_Vec2d %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1188,8 +1179,7 @@ class gp_Elips {
 };
 %feature("shadow") gp_Elips::~gp_Elips %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1352,8 +1342,7 @@ class gp_Vec {
 };
 %feature("shadow") gp_Vec::~gp_Vec %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1434,8 +1423,7 @@ class gp_Ax2 {
 };
 %feature("shadow") gp_Ax2::~gp_Ax2 %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1528,8 +1516,7 @@ class gp_Torus {
 };
 %feature("shadow") gp_Torus::~gp_Torus %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1620,8 +1607,7 @@ class gp_Circ2d {
 };
 %feature("shadow") gp_Circ2d::~gp_Circ2d %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1702,8 +1688,7 @@ class gp_Lin {
 };
 %feature("shadow") gp_Lin::~gp_Lin %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1824,8 +1809,7 @@ class gp_XY {
 };
 %feature("shadow") gp_XY::~gp_XY %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1906,8 +1890,7 @@ class gp_Lin2d {
 };
 %feature("shadow") gp_Lin2d::~gp_Lin2d %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2010,8 +1993,7 @@ class gp_Elips2d {
 };
 %feature("shadow") gp_Elips2d::~gp_Elips2d %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2096,8 +2078,7 @@ class gp_Trsf2d {
 };
 %feature("shadow") gp_Trsf2d::~gp_Trsf2d %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2178,8 +2159,7 @@ class gp_Cylinder {
 };
 %feature("shadow") gp_Cylinder::~gp_Cylinder %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2252,8 +2232,7 @@ class gp_Ax1 {
 };
 %feature("shadow") gp_Ax1::~gp_Ax1 %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2334,8 +2313,7 @@ class gp_Sphere {
 };
 %feature("shadow") gp_Sphere::~gp_Sphere %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2412,8 +2390,7 @@ class gp_GTrsf {
 };
 %feature("shadow") gp_GTrsf::~gp_GTrsf %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2506,8 +2483,7 @@ class gp_Pln {
 };
 %feature("shadow") gp_Pln::~gp_Pln %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2600,8 +2576,7 @@ class gp_Ax3 {
 };
 %feature("shadow") gp_Ax3::~gp_Ax3 %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2688,8 +2663,7 @@ class gp_Pnt {
 };
 %feature("shadow") gp_Pnt::~gp_Pnt %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2766,8 +2740,7 @@ class gp_Pnt2d {
 };
 %feature("shadow") gp_Pnt2d::~gp_Pnt2d %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2868,8 +2841,7 @@ class gp_Dir {
 };
 %feature("shadow") gp_Dir::~gp_Dir %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2952,8 +2924,7 @@ class gp_Circ {
 };
 %feature("shadow") gp_Circ::~gp_Circ %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -3086,8 +3057,7 @@ class gp_Mat {
 };
 %feature("shadow") gp_Mat::~gp_Mat %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -3156,8 +3126,7 @@ class gp_Ax2d {
 };
 %feature("shadow") gp_Ax2d::~gp_Ax2d %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -3262,8 +3231,7 @@ class gp_Hypr {
 };
 %feature("shadow") gp_Hypr::~gp_Hypr %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -3354,8 +3322,7 @@ class gp_Trsf {
 };
 %feature("shadow") gp_Trsf::~gp_Trsf %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -3434,6 +3401,5 @@ class gp_GTrsf2d {
 };
 %feature("shadow") gp_GTrsf2d::~gp_GTrsf2d %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IGESAppli_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_IGESAppli_NodalConstraint : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_NodalConstraint*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_NodalConstraint {
-	~Handle_IGESAppli_NodalConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_NodalConstraint\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_NodalConstraint::~Handle_IGESAppli_NodalConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_PinNumber;
@@ -87,12 +89,10 @@ class Handle_IGESAppli_PinNumber : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_PinNumber*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_PinNumber {
-	~Handle_IGESAppli_PinNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PinNumber\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_PinNumber::~Handle_IGESAppli_PinNumber %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_ReadWriteModule;
@@ -117,12 +117,10 @@ class Handle_IGESAppli_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	return (IGESAppli_ReadWriteModule*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_ReadWriteModule {
-	~Handle_IGESAppli_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_ReadWriteModule\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_ReadWriteModule::~Handle_IGESAppli_ReadWriteModule %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_PartNumber;
@@ -147,12 +145,10 @@ class Handle_IGESAppli_PartNumber : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_PartNumber*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_PartNumber {
-	~Handle_IGESAppli_PartNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PartNumber\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_PartNumber::~Handle_IGESAppli_PartNumber %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_HArray1OfNode;
@@ -177,12 +173,10 @@ class Handle_IGESAppli_HArray1OfNode : public Handle_MMgt_TShared {
 	return (IGESAppli_HArray1OfNode*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_HArray1OfNode {
-	~Handle_IGESAppli_HArray1OfNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_HArray1OfNode\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_HArray1OfNode::~Handle_IGESAppli_HArray1OfNode %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_Node;
@@ -207,12 +201,10 @@ class Handle_IGESAppli_Node : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_Node*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_Node {
-	~Handle_IGESAppli_Node() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_Node\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_Node::~Handle_IGESAppli_Node %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_ElementResults;
@@ -237,12 +229,10 @@ class Handle_IGESAppli_ElementResults : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_ElementResults*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_ElementResults {
-	~Handle_IGESAppli_ElementResults() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_ElementResults\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_ElementResults::~Handle_IGESAppli_ElementResults %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_LevelFunction;
@@ -267,12 +257,10 @@ class Handle_IGESAppli_LevelFunction : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_LevelFunction*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_LevelFunction {
-	~Handle_IGESAppli_LevelFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_LevelFunction\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_LevelFunction::~Handle_IGESAppli_LevelFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_PWBArtworkStackup;
@@ -297,12 +285,10 @@ class Handle_IGESAppli_PWBArtworkStackup : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_PWBArtworkStackup*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_PWBArtworkStackup {
-	~Handle_IGESAppli_PWBArtworkStackup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PWBArtworkStackup\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_PWBArtworkStackup::~Handle_IGESAppli_PWBArtworkStackup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_DrilledHole;
@@ -327,12 +313,10 @@ class Handle_IGESAppli_DrilledHole : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_DrilledHole*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_DrilledHole {
-	~Handle_IGESAppli_DrilledHole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_DrilledHole\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_DrilledHole::~Handle_IGESAppli_DrilledHole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_LevelToPWBLayerMap;
@@ -357,12 +341,10 @@ class Handle_IGESAppli_LevelToPWBLayerMap : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_LevelToPWBLayerMap*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_LevelToPWBLayerMap {
-	~Handle_IGESAppli_LevelToPWBLayerMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_LevelToPWBLayerMap\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_LevelToPWBLayerMap::~Handle_IGESAppli_LevelToPWBLayerMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_NodalDisplAndRot;
@@ -387,12 +369,10 @@ class Handle_IGESAppli_NodalDisplAndRot : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_NodalDisplAndRot*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_NodalDisplAndRot {
-	~Handle_IGESAppli_NodalDisplAndRot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_NodalDisplAndRot\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_NodalDisplAndRot::~Handle_IGESAppli_NodalDisplAndRot %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_FiniteElement;
@@ -417,12 +397,10 @@ class Handle_IGESAppli_FiniteElement : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_FiniteElement*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_FiniteElement {
-	~Handle_IGESAppli_FiniteElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_FiniteElement\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_FiniteElement::~Handle_IGESAppli_FiniteElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_ReferenceDesignator;
@@ -447,12 +425,10 @@ class Handle_IGESAppli_ReferenceDesignator : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_ReferenceDesignator*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_ReferenceDesignator {
-	~Handle_IGESAppli_ReferenceDesignator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_ReferenceDesignator\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_ReferenceDesignator::~Handle_IGESAppli_ReferenceDesignator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_FlowLineSpec;
@@ -477,12 +453,10 @@ class Handle_IGESAppli_FlowLineSpec : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_FlowLineSpec*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_FlowLineSpec {
-	~Handle_IGESAppli_FlowLineSpec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_FlowLineSpec\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_FlowLineSpec::~Handle_IGESAppli_FlowLineSpec %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_RegionRestriction;
@@ -507,12 +481,10 @@ class Handle_IGESAppli_RegionRestriction : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_RegionRestriction*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_RegionRestriction {
-	~Handle_IGESAppli_RegionRestriction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_RegionRestriction\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_RegionRestriction::~Handle_IGESAppli_RegionRestriction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_LineWidening;
@@ -537,12 +509,10 @@ class Handle_IGESAppli_LineWidening : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_LineWidening*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_LineWidening {
-	~Handle_IGESAppli_LineWidening() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_LineWidening\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_LineWidening::~Handle_IGESAppli_LineWidening %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_PipingFlow;
@@ -567,12 +537,10 @@ class Handle_IGESAppli_PipingFlow : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_PipingFlow*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_PipingFlow {
-	~Handle_IGESAppli_PipingFlow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PipingFlow\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_PipingFlow::~Handle_IGESAppli_PipingFlow %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_HArray1OfFlow;
@@ -597,12 +565,10 @@ class Handle_IGESAppli_HArray1OfFlow : public Handle_MMgt_TShared {
 	return (IGESAppli_HArray1OfFlow*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_HArray1OfFlow {
-	~Handle_IGESAppli_HArray1OfFlow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_HArray1OfFlow\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_HArray1OfFlow::~Handle_IGESAppli_HArray1OfFlow %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_HArray1OfFiniteElement;
@@ -627,12 +593,10 @@ class Handle_IGESAppli_HArray1OfFiniteElement : public Handle_MMgt_TShared {
 	return (IGESAppli_HArray1OfFiniteElement*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_HArray1OfFiniteElement {
-	~Handle_IGESAppli_HArray1OfFiniteElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_HArray1OfFiniteElement\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_HArray1OfFiniteElement::~Handle_IGESAppli_HArray1OfFiniteElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_PWBDrilledHole;
@@ -657,12 +621,10 @@ class Handle_IGESAppli_PWBDrilledHole : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_PWBDrilledHole*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_PWBDrilledHole {
-	~Handle_IGESAppli_PWBDrilledHole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PWBDrilledHole\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_PWBDrilledHole::~Handle_IGESAppli_PWBDrilledHole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_Flow;
@@ -687,12 +649,10 @@ class Handle_IGESAppli_Flow : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_Flow*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_Flow {
-	~Handle_IGESAppli_Flow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_Flow\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_Flow::~Handle_IGESAppli_Flow %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_Protocol;
@@ -717,12 +677,10 @@ class Handle_IGESAppli_Protocol : public Handle_IGESData_Protocol {
 	return (IGESAppli_Protocol*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_Protocol {
-	~Handle_IGESAppli_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_Protocol\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_Protocol::~Handle_IGESAppli_Protocol %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_GeneralModule;
@@ -747,12 +705,10 @@ class Handle_IGESAppli_GeneralModule : public Handle_IGESData_GeneralModule {
 	return (IGESAppli_GeneralModule*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_GeneralModule {
-	~Handle_IGESAppli_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_GeneralModule\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_GeneralModule::~Handle_IGESAppli_GeneralModule %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_NodalResults;
@@ -777,12 +733,10 @@ class Handle_IGESAppli_NodalResults : public Handle_IGESData_IGESEntity {
 	return (IGESAppli_NodalResults*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_NodalResults {
-	~Handle_IGESAppli_NodalResults() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_NodalResults\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_NodalResults::~Handle_IGESAppli_NodalResults %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESAppli_SpecificModule;
@@ -807,12 +761,10 @@ class Handle_IGESAppli_SpecificModule : public Handle_IGESData_SpecificModule {
 	return (IGESAppli_SpecificModule*)$self->Access();
 	}
 };
-%extend Handle_IGESAppli_SpecificModule {
-	~Handle_IGESAppli_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_SpecificModule\n");}
-	}
-};
+%feature("shadow") Handle_IGESAppli_SpecificModule::~Handle_IGESAppli_SpecificModule %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ReadWriteModule;
@@ -840,12 +792,10 @@ class IGESAppli_ReadWriteModule : public IGESData_ReadWriteModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_ReadWriteModule {
-	~IGESAppli_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ReadWriteModule\n");}
-	}
-};
+%feature("shadow") IGESAppli_ReadWriteModule::~IGESAppli_ReadWriteModule %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolPipingFlow;
@@ -871,12 +821,10 @@ class IGESAppli_ToolPipingFlow {
 		void OwnDump(const Handle_IGESAppli_PipingFlow &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolPipingFlow {
-	~IGESAppli_ToolPipingFlow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolPipingFlow\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolPipingFlow::~IGESAppli_ToolPipingFlow %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolNodalResults;
@@ -900,12 +848,10 @@ class IGESAppli_ToolNodalResults {
 		void OwnDump(const Handle_IGESAppli_NodalResults &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolNodalResults {
-	~IGESAppli_ToolNodalResults() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolNodalResults\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolNodalResults::~IGESAppli_ToolNodalResults %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolFlowLineSpec;
@@ -929,12 +875,10 @@ class IGESAppli_ToolFlowLineSpec {
 		void OwnDump(const Handle_IGESAppli_FlowLineSpec &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolFlowLineSpec {
-	~IGESAppli_ToolFlowLineSpec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolFlowLineSpec\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolFlowLineSpec::~IGESAppli_ToolFlowLineSpec %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_SpecificModule;
@@ -960,12 +904,10 @@ class IGESAppli_SpecificModule : public IGESData_SpecificModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_SpecificModule {
-	~IGESAppli_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_SpecificModule\n");}
-	}
-};
+%feature("shadow") IGESAppli_SpecificModule::~IGESAppli_SpecificModule %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_FiniteElement;
@@ -997,12 +939,10 @@ class IGESAppli_FiniteElement : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_FiniteElement {
-	~IGESAppli_FiniteElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_FiniteElement\n");}
-	}
-};
+%feature("shadow") IGESAppli_FiniteElement::~IGESAppli_FiniteElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_HArray1OfNode;
@@ -1044,12 +984,10 @@ class IGESAppli_HArray1OfNode : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_HArray1OfNode {
-	~IGESAppli_HArray1OfNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_HArray1OfNode\n");}
-	}
-};
+%feature("shadow") IGESAppli_HArray1OfNode::~IGESAppli_HArray1OfNode %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_Flow;
@@ -1105,12 +1043,10 @@ class IGESAppli_Flow : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_Flow {
-	~IGESAppli_Flow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_Flow\n");}
-	}
-};
+%feature("shadow") IGESAppli_Flow::~IGESAppli_Flow %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli;
@@ -1124,12 +1060,10 @@ class IGESAppli {
 		Handle_IGESAppli_Protocol Protocol();
 
 };
-%extend IGESAppli {
-	~IGESAppli() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli\n");}
-	}
-};
+%feature("shadow") IGESAppli::~IGESAppli %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_NodalResults;
@@ -1171,12 +1105,10 @@ class IGESAppli_NodalResults : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_NodalResults {
-	~IGESAppli_NodalResults() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_NodalResults\n");}
-	}
-};
+%feature("shadow") IGESAppli_NodalResults::~IGESAppli_NodalResults %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_FlowLineSpec;
@@ -1206,12 +1138,10 @@ class IGESAppli_FlowLineSpec : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_FlowLineSpec {
-	~IGESAppli_FlowLineSpec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_FlowLineSpec\n");}
-	}
-};
+%feature("shadow") IGESAppli_FlowLineSpec::~IGESAppli_FlowLineSpec %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolNodalConstraint;
@@ -1235,12 +1165,10 @@ class IGESAppli_ToolNodalConstraint {
 		void OwnDump(const Handle_IGESAppli_NodalConstraint &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolNodalConstraint {
-	~IGESAppli_ToolNodalConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolNodalConstraint\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolNodalConstraint::~IGESAppli_ToolNodalConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_Array1OfFlow;
@@ -1278,12 +1206,10 @@ class IGESAppli_Array1OfFlow {
 		Handle_IGESAppli_Flow & operator()(const Standard_Integer Index);
 
 };
-%extend IGESAppli_Array1OfFlow {
-	~IGESAppli_Array1OfFlow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_Array1OfFlow\n");}
-	}
-};
+%feature("shadow") IGESAppli_Array1OfFlow::~IGESAppli_Array1OfFlow %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_LevelToPWBLayerMap;
@@ -1319,12 +1245,10 @@ class IGESAppli_LevelToPWBLayerMap : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_LevelToPWBLayerMap {
-	~IGESAppli_LevelToPWBLayerMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_LevelToPWBLayerMap\n");}
-	}
-};
+%feature("shadow") IGESAppli_LevelToPWBLayerMap::~IGESAppli_LevelToPWBLayerMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_Array1OfNode;
@@ -1362,12 +1286,10 @@ class IGESAppli_Array1OfNode {
 		Handle_IGESAppli_Node & operator()(const Standard_Integer Index);
 
 };
-%extend IGESAppli_Array1OfNode {
-	~IGESAppli_Array1OfNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_Array1OfNode\n");}
-	}
-};
+%feature("shadow") IGESAppli_Array1OfNode::~IGESAppli_Array1OfNode %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolFiniteElement;
@@ -1391,12 +1313,10 @@ class IGESAppli_ToolFiniteElement {
 		void OwnDump(const Handle_IGESAppli_FiniteElement &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolFiniteElement {
-	~IGESAppli_ToolFiniteElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolFiniteElement\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolFiniteElement::~IGESAppli_ToolFiniteElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_PWBDrilledHole;
@@ -1428,12 +1348,10 @@ class IGESAppli_PWBDrilledHole : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_PWBDrilledHole {
-	~IGESAppli_PWBDrilledHole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_PWBDrilledHole\n");}
-	}
-};
+%feature("shadow") IGESAppli_PWBDrilledHole::~IGESAppli_PWBDrilledHole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_PartNumber;
@@ -1467,12 +1385,10 @@ class IGESAppli_PartNumber : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_PartNumber {
-	~IGESAppli_PartNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_PartNumber\n");}
-	}
-};
+%feature("shadow") IGESAppli_PartNumber::~IGESAppli_PartNumber %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolNodalDisplAndRot;
@@ -1496,12 +1412,10 @@ class IGESAppli_ToolNodalDisplAndRot {
 		void OwnDump(const Handle_IGESAppli_NodalDisplAndRot &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolNodalDisplAndRot {
-	~IGESAppli_ToolNodalDisplAndRot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolNodalDisplAndRot\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolNodalDisplAndRot::~IGESAppli_ToolNodalDisplAndRot %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolReferenceDesignator;
@@ -1527,12 +1441,10 @@ class IGESAppli_ToolReferenceDesignator {
 		void OwnDump(const Handle_IGESAppli_ReferenceDesignator &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolReferenceDesignator {
-	~IGESAppli_ToolReferenceDesignator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolReferenceDesignator\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolReferenceDesignator::~IGESAppli_ToolReferenceDesignator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolElementResults;
@@ -1556,12 +1468,10 @@ class IGESAppli_ToolElementResults {
 		void OwnDump(const Handle_IGESAppli_ElementResults &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolElementResults {
-	~IGESAppli_ToolElementResults() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolElementResults\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolElementResults::~IGESAppli_ToolElementResults %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ElementResults;
@@ -1623,12 +1533,10 @@ class IGESAppli_ElementResults : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_ElementResults {
-	~IGESAppli_ElementResults() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ElementResults\n");}
-	}
-};
+%feature("shadow") IGESAppli_ElementResults::~IGESAppli_ElementResults %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolRegionRestriction;
@@ -1654,12 +1562,10 @@ class IGESAppli_ToolRegionRestriction {
 		void OwnDump(const Handle_IGESAppli_RegionRestriction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolRegionRestriction {
-	~IGESAppli_ToolRegionRestriction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolRegionRestriction\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolRegionRestriction::~IGESAppli_ToolRegionRestriction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_DrilledHole;
@@ -1695,12 +1601,10 @@ class IGESAppli_DrilledHole : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_DrilledHole {
-	~IGESAppli_DrilledHole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_DrilledHole\n");}
-	}
-};
+%feature("shadow") IGESAppli_DrilledHole::~IGESAppli_DrilledHole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_LevelFunction;
@@ -1730,12 +1634,10 @@ class IGESAppli_LevelFunction : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_LevelFunction {
-	~IGESAppli_LevelFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_LevelFunction\n");}
-	}
-};
+%feature("shadow") IGESAppli_LevelFunction::~IGESAppli_LevelFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_PipingFlow;
@@ -1789,12 +1691,10 @@ class IGESAppli_PipingFlow : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_PipingFlow {
-	~IGESAppli_PipingFlow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_PipingFlow\n");}
-	}
-};
+%feature("shadow") IGESAppli_PipingFlow::~IGESAppli_PipingFlow %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_Array1OfFiniteElement;
@@ -1832,12 +1732,10 @@ class IGESAppli_Array1OfFiniteElement {
 		Handle_IGESAppli_FiniteElement & operator()(const Standard_Integer Index);
 
 };
-%extend IGESAppli_Array1OfFiniteElement {
-	~IGESAppli_Array1OfFiniteElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_Array1OfFiniteElement\n");}
-	}
-};
+%feature("shadow") IGESAppli_Array1OfFiniteElement::~IGESAppli_Array1OfFiniteElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolDrilledHole;
@@ -1863,12 +1761,10 @@ class IGESAppli_ToolDrilledHole {
 		void OwnDump(const Handle_IGESAppli_DrilledHole &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolDrilledHole {
-	~IGESAppli_ToolDrilledHole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolDrilledHole\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolDrilledHole::~IGESAppli_ToolDrilledHole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_GeneralModule;
@@ -1902,12 +1798,10 @@ class IGESAppli_GeneralModule : public IGESData_GeneralModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_GeneralModule {
-	~IGESAppli_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_GeneralModule\n");}
-	}
-};
+%feature("shadow") IGESAppli_GeneralModule::~IGESAppli_GeneralModule %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_PWBArtworkStackup;
@@ -1939,12 +1833,10 @@ class IGESAppli_PWBArtworkStackup : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_PWBArtworkStackup {
-	~IGESAppli_PWBArtworkStackup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_PWBArtworkStackup\n");}
-	}
-};
+%feature("shadow") IGESAppli_PWBArtworkStackup::~IGESAppli_PWBArtworkStackup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_NodalDisplAndRot;
@@ -1982,12 +1874,10 @@ class IGESAppli_NodalDisplAndRot : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_NodalDisplAndRot {
-	~IGESAppli_NodalDisplAndRot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_NodalDisplAndRot\n");}
-	}
-};
+%feature("shadow") IGESAppli_NodalDisplAndRot::~IGESAppli_NodalDisplAndRot %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolNode;
@@ -2011,12 +1901,10 @@ class IGESAppli_ToolNode {
 		void OwnDump(const Handle_IGESAppli_Node &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolNode {
-	~IGESAppli_ToolNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolNode\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolNode::~IGESAppli_ToolNode %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_HArray1OfFiniteElement;
@@ -2058,12 +1946,10 @@ class IGESAppli_HArray1OfFiniteElement : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_HArray1OfFiniteElement {
-	~IGESAppli_HArray1OfFiniteElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_HArray1OfFiniteElement\n");}
-	}
-};
+%feature("shadow") IGESAppli_HArray1OfFiniteElement::~IGESAppli_HArray1OfFiniteElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_PinNumber;
@@ -2091,12 +1977,10 @@ class IGESAppli_PinNumber : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_PinNumber {
-	~IGESAppli_PinNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_PinNumber\n");}
-	}
-};
+%feature("shadow") IGESAppli_PinNumber::~IGESAppli_PinNumber %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_NodalConstraint;
@@ -2128,12 +2012,10 @@ class IGESAppli_NodalConstraint : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_NodalConstraint {
-	~IGESAppli_NodalConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_NodalConstraint\n");}
-	}
-};
+%feature("shadow") IGESAppli_NodalConstraint::~IGESAppli_NodalConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolLevelFunction;
@@ -2159,12 +2041,10 @@ class IGESAppli_ToolLevelFunction {
 		void OwnDump(const Handle_IGESAppli_LevelFunction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolLevelFunction {
-	~IGESAppli_ToolLevelFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolLevelFunction\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolLevelFunction::~IGESAppli_ToolLevelFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_Node;
@@ -2196,12 +2076,10 @@ class IGESAppli_Node : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_Node {
-	~IGESAppli_Node() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_Node\n");}
-	}
-};
+%feature("shadow") IGESAppli_Node::~IGESAppli_Node %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolPinNumber;
@@ -2227,12 +2105,10 @@ class IGESAppli_ToolPinNumber {
 		void OwnDump(const Handle_IGESAppli_PinNumber &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolPinNumber {
-	~IGESAppli_ToolPinNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolPinNumber\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolPinNumber::~IGESAppli_ToolPinNumber %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolPWBDrilledHole;
@@ -2258,12 +2134,10 @@ class IGESAppli_ToolPWBDrilledHole {
 		void OwnDump(const Handle_IGESAppli_PWBDrilledHole &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolPWBDrilledHole {
-	~IGESAppli_ToolPWBDrilledHole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolPWBDrilledHole\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolPWBDrilledHole::~IGESAppli_ToolPWBDrilledHole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolLevelToPWBLayerMap;
@@ -2287,12 +2161,10 @@ class IGESAppli_ToolLevelToPWBLayerMap {
 		void OwnDump(const Handle_IGESAppli_LevelToPWBLayerMap &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolLevelToPWBLayerMap {
-	~IGESAppli_ToolLevelToPWBLayerMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolLevelToPWBLayerMap\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolLevelToPWBLayerMap::~IGESAppli_ToolLevelToPWBLayerMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ReferenceDesignator;
@@ -2320,12 +2192,10 @@ class IGESAppli_ReferenceDesignator : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_ReferenceDesignator {
-	~IGESAppli_ReferenceDesignator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ReferenceDesignator\n");}
-	}
-};
+%feature("shadow") IGESAppli_ReferenceDesignator::~IGESAppli_ReferenceDesignator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_RegionRestriction;
@@ -2357,12 +2227,10 @@ class IGESAppli_RegionRestriction : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_RegionRestriction {
-	~IGESAppli_RegionRestriction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_RegionRestriction\n");}
-	}
-};
+%feature("shadow") IGESAppli_RegionRestriction::~IGESAppli_RegionRestriction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolLineWidening;
@@ -2388,12 +2256,10 @@ class IGESAppli_ToolLineWidening {
 		void OwnDump(const Handle_IGESAppli_LineWidening &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolLineWidening {
-	~IGESAppli_ToolLineWidening() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolLineWidening\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolLineWidening::~IGESAppli_ToolLineWidening %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolPWBArtworkStackup;
@@ -2417,12 +2283,10 @@ class IGESAppli_ToolPWBArtworkStackup {
 		void OwnDump(const Handle_IGESAppli_PWBArtworkStackup &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolPWBArtworkStackup {
-	~IGESAppli_ToolPWBArtworkStackup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolPWBArtworkStackup\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolPWBArtworkStackup::~IGESAppli_ToolPWBArtworkStackup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_HArray1OfFlow;
@@ -2464,12 +2328,10 @@ class IGESAppli_HArray1OfFlow : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_HArray1OfFlow {
-	~IGESAppli_HArray1OfFlow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_HArray1OfFlow\n");}
-	}
-};
+%feature("shadow") IGESAppli_HArray1OfFlow::~IGESAppli_HArray1OfFlow %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_LineWidening;
@@ -2505,12 +2367,10 @@ class IGESAppli_LineWidening : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESAppli_LineWidening {
-	~IGESAppli_LineWidening() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_LineWidening\n");}
-	}
-};
+%feature("shadow") IGESAppli_LineWidening::~IGESAppli_LineWidening %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolFlow;
@@ -2536,12 +2396,10 @@ class IGESAppli_ToolFlow {
 		void OwnDump(const Handle_IGESAppli_Flow &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolFlow {
-	~IGESAppli_ToolFlow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolFlow\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolFlow::~IGESAppli_ToolFlow %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESAppli_ToolPartNumber;
@@ -2567,9 +2425,7 @@ class IGESAppli_ToolPartNumber {
 		void OwnDump(const Handle_IGESAppli_PartNumber &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESAppli_ToolPartNumber {
-	~IGESAppli_ToolPartNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolPartNumber\n");}
-	}
-};
+%feature("shadow") IGESAppli_ToolPartNumber::~IGESAppli_ToolPartNumber %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

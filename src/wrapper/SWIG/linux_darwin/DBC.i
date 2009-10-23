@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include DBC_dependencies.i
 
 
@@ -58,12 +62,10 @@ class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode
 	return (DBC_VArrayNodeOfVArrayOfInteger*)$self->Access();
 	}
 };
-%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
-	~Handle_DBC_VArrayNodeOfVArrayOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_DBC_VArrayNodeOfVArrayOfInteger::~Handle_DBC_VArrayNodeOfVArrayOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfExtCharacter;
@@ -88,12 +90,10 @@ class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_Arra
 	return (DBC_VArrayNodeOfVArrayOfExtCharacter*)$self->Access();
 	}
 };
-%extend Handle_DBC_VArrayNodeOfVArrayOfExtCharacter {
-	~Handle_DBC_VArrayNodeOfVArrayOfExtCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfExtCharacter\n");}
-	}
-};
+%feature("shadow") Handle_DBC_VArrayNodeOfVArrayOfExtCharacter::~Handle_DBC_VArrayNodeOfVArrayOfExtCharacter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfCharacter;
@@ -118,12 +118,10 @@ class Handle_DBC_VArrayNodeOfVArrayOfCharacter : public Handle_PStandard_ArrayNo
 	return (DBC_VArrayNodeOfVArrayOfCharacter*)$self->Access();
 	}
 };
-%extend Handle_DBC_VArrayNodeOfVArrayOfCharacter {
-	~Handle_DBC_VArrayNodeOfVArrayOfCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfCharacter\n");}
-	}
-};
+%feature("shadow") Handle_DBC_VArrayNodeOfVArrayOfCharacter::~Handle_DBC_VArrayNodeOfVArrayOfCharacter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfReal;
@@ -148,12 +146,10 @@ class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 	return (DBC_VArrayNodeOfVArrayOfReal*)$self->Access();
 	}
 };
-%extend Handle_DBC_VArrayNodeOfVArrayOfReal {
-	~Handle_DBC_VArrayNodeOfVArrayOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfReal\n");}
-	}
-};
+%feature("shadow") Handle_DBC_VArrayNodeOfVArrayOfReal::~Handle_DBC_VArrayNodeOfVArrayOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfCharacter;
@@ -169,12 +165,10 @@ class DBC_VArrayTNodeOfVArrayOfCharacter {
 		Standard_Address Value() const;
 
 };
-%extend DBC_VArrayTNodeOfVArrayOfCharacter {
-	~DBC_VArrayTNodeOfVArrayOfCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfCharacter\n");}
-	}
-};
+%feature("shadow") DBC_VArrayTNodeOfVArrayOfCharacter::~DBC_VArrayTNodeOfVArrayOfCharacter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor DBC_BaseArray;
@@ -214,12 +208,10 @@ class DBC_BaseArray {
 		void _CSFDB_SetDBC_BaseArraymyData(const DBC_DBVArray p);
 
 };
-%extend DBC_BaseArray {
-	~DBC_BaseArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_BaseArray\n");}
-	}
-};
+%feature("shadow") DBC_BaseArray::~DBC_BaseArray %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfInteger;
@@ -235,12 +227,10 @@ class DBC_VArrayTNodeOfVArrayOfInteger {
 		Standard_Address Value() const;
 
 };
-%extend DBC_VArrayTNodeOfVArrayOfInteger {
-	~DBC_VArrayTNodeOfVArrayOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfInteger\n");}
-	}
-};
+%feature("shadow") DBC_VArrayTNodeOfVArrayOfInteger::~DBC_VArrayTNodeOfVArrayOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfExtCharacter;
@@ -256,12 +246,10 @@ class DBC_VArrayTNodeOfVArrayOfExtCharacter {
 		Standard_Address Value() const;
 
 };
-%extend DBC_VArrayTNodeOfVArrayOfExtCharacter {
-	~DBC_VArrayTNodeOfVArrayOfExtCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfExtCharacter\n");}
-	}
-};
+%feature("shadow") DBC_VArrayTNodeOfVArrayOfExtCharacter::~DBC_VArrayTNodeOfVArrayOfExtCharacter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor DBC_VArrayOfReal;
@@ -299,12 +287,10 @@ class DBC_VArrayOfReal : public DBC_BaseArray {
 		void Destroy();
 
 };
-%extend DBC_VArrayOfReal {
-	~DBC_VArrayOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayOfReal\n");}
-	}
-};
+%feature("shadow") DBC_VArrayOfReal::~DBC_VArrayOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor DBC_VArrayOfCharacter;
@@ -332,12 +318,10 @@ class DBC_VArrayOfCharacter : public DBC_BaseArray {
 		void Destroy();
 
 };
-%extend DBC_VArrayOfCharacter {
-	~DBC_VArrayOfCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayOfCharacter\n");}
-	}
-};
+%feature("shadow") DBC_VArrayOfCharacter::~DBC_VArrayOfCharacter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfCharacter;
@@ -371,12 +355,10 @@ class DBC_VArrayNodeOfVArrayOfCharacter : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend DBC_VArrayNodeOfVArrayOfCharacter {
-	~DBC_VArrayNodeOfVArrayOfCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayNodeOfVArrayOfCharacter\n");}
-	}
-};
+%feature("shadow") DBC_VArrayNodeOfVArrayOfCharacter::~DBC_VArrayNodeOfVArrayOfCharacter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor DBC_VArrayOfInteger;
@@ -414,12 +396,10 @@ class DBC_VArrayOfInteger : public DBC_BaseArray {
 		void Destroy();
 
 };
-%extend DBC_VArrayOfInteger {
-	~DBC_VArrayOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayOfInteger\n");}
-	}
-};
+%feature("shadow") DBC_VArrayOfInteger::~DBC_VArrayOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfReal;
@@ -453,12 +433,10 @@ class DBC_VArrayNodeOfVArrayOfReal : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend DBC_VArrayNodeOfVArrayOfReal {
-	~DBC_VArrayNodeOfVArrayOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayNodeOfVArrayOfReal\n");}
-	}
-};
+%feature("shadow") DBC_VArrayNodeOfVArrayOfReal::~DBC_VArrayNodeOfVArrayOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfReal;
@@ -474,12 +452,10 @@ class DBC_VArrayTNodeOfVArrayOfReal {
 		Standard_Address Value() const;
 
 };
-%extend DBC_VArrayTNodeOfVArrayOfReal {
-	~DBC_VArrayTNodeOfVArrayOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfReal\n");}
-	}
-};
+%feature("shadow") DBC_VArrayTNodeOfVArrayOfReal::~DBC_VArrayTNodeOfVArrayOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor DBC_VArrayOfExtCharacter;
@@ -507,12 +483,10 @@ class DBC_VArrayOfExtCharacter : public DBC_BaseArray {
 		void Destroy();
 
 };
-%extend DBC_VArrayOfExtCharacter {
-	~DBC_VArrayOfExtCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayOfExtCharacter\n");}
-	}
-};
+%feature("shadow") DBC_VArrayOfExtCharacter::~DBC_VArrayOfExtCharacter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfInteger;
@@ -546,12 +520,10 @@ class DBC_VArrayNodeOfVArrayOfInteger : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend DBC_VArrayNodeOfVArrayOfInteger {
-	~DBC_VArrayNodeOfVArrayOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayNodeOfVArrayOfInteger\n");}
-	}
-};
+%feature("shadow") DBC_VArrayNodeOfVArrayOfInteger::~DBC_VArrayNodeOfVArrayOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfExtCharacter;
@@ -585,9 +557,7 @@ class DBC_VArrayNodeOfVArrayOfExtCharacter : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend DBC_VArrayNodeOfVArrayOfExtCharacter {
-	~DBC_VArrayNodeOfVArrayOfExtCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of DBC_VArrayNodeOfVArrayOfExtCharacter\n");}
-	}
-};
+%feature("shadow") DBC_VArrayNodeOfVArrayOfExtCharacter::~DBC_VArrayNodeOfVArrayOfExtCharacter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

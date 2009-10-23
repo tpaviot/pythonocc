@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Adaptor3d_dependencies.i
 
 
@@ -60,12 +64,10 @@ class Handle_Adaptor3d_HCurve : public Handle_MMgt_TShared {
 	return (Adaptor3d_HCurve*)$self->Access();
 	}
 };
-%extend Handle_Adaptor3d_HCurve {
-	~Handle_Adaptor3d_HCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor3d_HCurve\n");}
-	}
-};
+%feature("shadow") Handle_Adaptor3d_HCurve::~Handle_Adaptor3d_HCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Adaptor3d_HIsoCurve;
@@ -90,12 +92,10 @@ class Handle_Adaptor3d_HIsoCurve : public Handle_Adaptor3d_HCurve {
 	return (Adaptor3d_HIsoCurve*)$self->Access();
 	}
 };
-%extend Handle_Adaptor3d_HIsoCurve {
-	~Handle_Adaptor3d_HIsoCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor3d_HIsoCurve\n");}
-	}
-};
+%feature("shadow") Handle_Adaptor3d_HIsoCurve::~Handle_Adaptor3d_HIsoCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Adaptor3d_HSurface;
@@ -120,12 +120,10 @@ class Handle_Adaptor3d_HSurface : public Handle_MMgt_TShared {
 	return (Adaptor3d_HSurface*)$self->Access();
 	}
 };
-%extend Handle_Adaptor3d_HSurface {
-	~Handle_Adaptor3d_HSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor3d_HSurface\n");}
-	}
-};
+%feature("shadow") Handle_Adaptor3d_HSurface::~Handle_Adaptor3d_HSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Adaptor3d_HSurfaceOfLinearExtrusion;
@@ -150,12 +148,10 @@ class Handle_Adaptor3d_HSurfaceOfLinearExtrusion : public Handle_Adaptor3d_HSurf
 	return (Adaptor3d_HSurfaceOfLinearExtrusion*)$self->Access();
 	}
 };
-%extend Handle_Adaptor3d_HSurfaceOfLinearExtrusion {
-	~Handle_Adaptor3d_HSurfaceOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor3d_HSurfaceOfLinearExtrusion\n");}
-	}
-};
+%feature("shadow") Handle_Adaptor3d_HSurfaceOfLinearExtrusion::~Handle_Adaptor3d_HSurfaceOfLinearExtrusion %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Adaptor3d_HSurfaceOfRevolution;
@@ -180,12 +176,10 @@ class Handle_Adaptor3d_HSurfaceOfRevolution : public Handle_Adaptor3d_HSurface {
 	return (Adaptor3d_HSurfaceOfRevolution*)$self->Access();
 	}
 };
-%extend Handle_Adaptor3d_HSurfaceOfRevolution {
-	~Handle_Adaptor3d_HSurfaceOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor3d_HSurfaceOfRevolution\n");}
-	}
-};
+%feature("shadow") Handle_Adaptor3d_HSurfaceOfRevolution::~Handle_Adaptor3d_HSurfaceOfRevolution %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Adaptor3d_HCurveOnSurface;
@@ -210,12 +204,10 @@ class Handle_Adaptor3d_HCurveOnSurface : public Handle_Adaptor3d_HCurve {
 	return (Adaptor3d_HCurveOnSurface*)$self->Access();
 	}
 };
-%extend Handle_Adaptor3d_HCurveOnSurface {
-	~Handle_Adaptor3d_HCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor3d_HCurveOnSurface\n");}
-	}
-};
+%feature("shadow") Handle_Adaptor3d_HCurveOnSurface::~Handle_Adaptor3d_HCurveOnSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Adaptor3d_HOffsetCurve;
@@ -240,12 +232,10 @@ class Handle_Adaptor3d_HOffsetCurve : public Handle_Adaptor2d_HCurve2d {
 	return (Adaptor3d_HOffsetCurve*)$self->Access();
 	}
 };
-%extend Handle_Adaptor3d_HOffsetCurve {
-	~Handle_Adaptor3d_HOffsetCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor3d_HOffsetCurve\n");}
-	}
-};
+%feature("shadow") Handle_Adaptor3d_HOffsetCurve::~Handle_Adaptor3d_HOffsetCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Adaptor3d_HVertex;
@@ -270,12 +260,10 @@ class Handle_Adaptor3d_HVertex : public Handle_MMgt_TShared {
 	return (Adaptor3d_HVertex*)$self->Access();
 	}
 };
-%extend Handle_Adaptor3d_HVertex {
-	~Handle_Adaptor3d_HVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor3d_HVertex\n");}
-	}
-};
+%feature("shadow") Handle_Adaptor3d_HVertex::~Handle_Adaptor3d_HVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Adaptor3d_TopolTool;
@@ -300,12 +288,10 @@ class Handle_Adaptor3d_TopolTool : public Handle_MMgt_TShared {
 	return (Adaptor3d_TopolTool*)$self->Access();
 	}
 };
-%extend Handle_Adaptor3d_TopolTool {
-	~Handle_Adaptor3d_TopolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor3d_TopolTool\n");}
-	}
-};
+%feature("shadow") Handle_Adaptor3d_TopolTool::~Handle_Adaptor3d_TopolTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_HSurface;
@@ -421,12 +407,10 @@ class Adaptor3d_HSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Adaptor3d_HSurface {
-	~Adaptor3d_HSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HSurface\n");}
-	}
-};
+%feature("shadow") Adaptor3d_HSurface::~Adaptor3d_HSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_HSurfaceOfLinearExtrusion;
@@ -452,12 +436,10 @@ class Adaptor3d_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Adaptor3d_HSurfaceOfLinearExtrusion {
-	~Adaptor3d_HSurfaceOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HSurfaceOfLinearExtrusion\n");}
-	}
-};
+%feature("shadow") Adaptor3d_HSurfaceOfLinearExtrusion::~Adaptor3d_HSurfaceOfLinearExtrusion %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_TopolTool;
@@ -545,12 +527,10 @@ class Adaptor3d_TopolTool : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Adaptor3d_TopolTool {
-	~Adaptor3d_TopolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_TopolTool\n");}
-	}
-};
+%feature("shadow") Adaptor3d_TopolTool::~Adaptor3d_TopolTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_Surface;
@@ -656,12 +636,10 @@ class Adaptor3d_Surface {
 		virtual		Standard_Real OffsetValue() const;
 
 };
-%extend Adaptor3d_Surface {
-	~Adaptor3d_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_Surface\n");}
-	}
-};
+%feature("shadow") Adaptor3d_Surface::~Adaptor3d_Surface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_SurfaceOfRevolution;
@@ -681,12 +659,10 @@ class Adaptor3d_SurfaceOfRevolution : public Adaptor3d_Surface {
 		gp_Ax3 Axis() const;
 
 };
-%extend Adaptor3d_SurfaceOfRevolution {
-	~Adaptor3d_SurfaceOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_SurfaceOfRevolution\n");}
-	}
-};
+%feature("shadow") Adaptor3d_SurfaceOfRevolution::~Adaptor3d_SurfaceOfRevolution %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_HCurve;
@@ -766,12 +742,10 @@ class Adaptor3d_HCurve : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Adaptor3d_HCurve {
-	~Adaptor3d_HCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HCurve\n");}
-	}
-};
+%feature("shadow") Adaptor3d_HCurve::~Adaptor3d_HCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_HIsoCurve;
@@ -797,12 +771,10 @@ class Adaptor3d_HIsoCurve : public Adaptor3d_HCurve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Adaptor3d_HIsoCurve {
-	~Adaptor3d_HIsoCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HIsoCurve\n");}
-	}
-};
+%feature("shadow") Adaptor3d_HIsoCurve::~Adaptor3d_HIsoCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_InterFunc;
@@ -818,12 +790,10 @@ class Adaptor3d_InterFunc : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend Adaptor3d_InterFunc {
-	~Adaptor3d_InterFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_InterFunc\n");}
-	}
-};
+%feature("shadow") Adaptor3d_InterFunc::~Adaptor3d_InterFunc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_HVertex;
@@ -857,12 +827,10 @@ class Adaptor3d_HVertex : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Adaptor3d_HVertex {
-	~Adaptor3d_HVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HVertex\n");}
-	}
-};
+%feature("shadow") Adaptor3d_HVertex::~Adaptor3d_HVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_Curve;
@@ -930,12 +898,10 @@ class Adaptor3d_Curve {
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
 
 };
-%extend Adaptor3d_Curve {
-	~Adaptor3d_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_Curve\n");}
-	}
-};
+%feature("shadow") Adaptor3d_Curve::~Adaptor3d_Curve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_CurveOnSurface;
@@ -961,12 +927,10 @@ class Adaptor3d_CurveOnSurface : public Adaptor3d_Curve {
 		Handle_Adaptor3d_HSurface & ChangeSurface();
 
 };
-%extend Adaptor3d_CurveOnSurface {
-	~Adaptor3d_CurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_CurveOnSurface\n");}
-	}
-};
+%feature("shadow") Adaptor3d_CurveOnSurface::~Adaptor3d_CurveOnSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_HCurveOnSurface;
@@ -998,12 +962,10 @@ class Adaptor3d_HCurveOnSurface : public Adaptor3d_HCurve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Adaptor3d_HCurveOnSurface {
-	~Adaptor3d_HCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HCurveOnSurface\n");}
-	}
-};
+%feature("shadow") Adaptor3d_HCurveOnSurface::~Adaptor3d_HCurveOnSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_SurfaceOfLinearExtrusion;
@@ -1111,12 +1073,10 @@ class Adaptor3d_SurfaceOfLinearExtrusion : public Adaptor3d_Surface {
 		virtual		Handle_Adaptor3d_HCurve BasisCurve() const;
 
 };
-%extend Adaptor3d_SurfaceOfLinearExtrusion {
-	~Adaptor3d_SurfaceOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_SurfaceOfLinearExtrusion\n");}
-	}
-};
+%feature("shadow") Adaptor3d_SurfaceOfLinearExtrusion::~Adaptor3d_SurfaceOfLinearExtrusion %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_HOffsetCurve;
@@ -1146,12 +1106,10 @@ class Adaptor3d_HOffsetCurve : public Adaptor2d_HCurve2d {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Adaptor3d_HOffsetCurve {
-	~Adaptor3d_HOffsetCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HOffsetCurve\n");}
-	}
-};
+%feature("shadow") Adaptor3d_HOffsetCurve::~Adaptor3d_HOffsetCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_OffsetCurve;
@@ -1233,12 +1191,10 @@ class Adaptor3d_OffsetCurve : public Adaptor2d_Curve2d {
 		virtual		Handle_Geom2d_BSplineCurve BSpline() const;
 
 };
-%extend Adaptor3d_OffsetCurve {
-	~Adaptor3d_OffsetCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_OffsetCurve\n");}
-	}
-};
+%feature("shadow") Adaptor3d_OffsetCurve::~Adaptor3d_OffsetCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_IsoCurve;
@@ -1322,12 +1278,10 @@ class Adaptor3d_IsoCurve : public Adaptor3d_Curve {
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
 
 };
-%extend Adaptor3d_IsoCurve {
-	~Adaptor3d_IsoCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_IsoCurve\n");}
-	}
-};
+%feature("shadow") Adaptor3d_IsoCurve::~Adaptor3d_IsoCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor3d_HSurfaceOfRevolution;
@@ -1357,9 +1311,7 @@ class Adaptor3d_HSurfaceOfRevolution : public Adaptor3d_HSurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Adaptor3d_HSurfaceOfRevolution {
-	~Adaptor3d_HSurfaceOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HSurfaceOfRevolution\n");}
-	}
-};
+%feature("shadow") Adaptor3d_HSurfaceOfRevolution::~Adaptor3d_HSurfaceOfRevolution %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

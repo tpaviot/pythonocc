@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include XmlMPrsStd_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_XmlMPrsStd_PositionDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMPrsStd_PositionDriver*)$self->Access();
 	}
 };
-%extend Handle_XmlMPrsStd_PositionDriver {
-	~Handle_XmlMPrsStd_PositionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMPrsStd_PositionDriver\n");}
-	}
-};
+%feature("shadow") Handle_XmlMPrsStd_PositionDriver::~Handle_XmlMPrsStd_PositionDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XmlMPrsStd_AISPresentationDriver;
@@ -87,12 +89,10 @@ class Handle_XmlMPrsStd_AISPresentationDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMPrsStd_AISPresentationDriver*)$self->Access();
 	}
 };
-%extend Handle_XmlMPrsStd_AISPresentationDriver {
-	~Handle_XmlMPrsStd_AISPresentationDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMPrsStd_AISPresentationDriver\n");}
-	}
-};
+%feature("shadow") Handle_XmlMPrsStd_AISPresentationDriver::~Handle_XmlMPrsStd_AISPresentationDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMPrsStd;
@@ -104,12 +104,10 @@ class XmlMPrsStd {
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };
-%extend XmlMPrsStd {
-	~XmlMPrsStd() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMPrsStd\n");}
-	}
-};
+%feature("shadow") XmlMPrsStd::~XmlMPrsStd %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMPrsStd_AISPresentationDriver;
@@ -137,12 +135,10 @@ class XmlMPrsStd_AISPresentationDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlMPrsStd_AISPresentationDriver {
-	~XmlMPrsStd_AISPresentationDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMPrsStd_AISPresentationDriver\n");}
-	}
-};
+%feature("shadow") XmlMPrsStd_AISPresentationDriver::~XmlMPrsStd_AISPresentationDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlMPrsStd_PositionDriver;
@@ -170,9 +166,7 @@ class XmlMPrsStd_PositionDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlMPrsStd_PositionDriver {
-	~XmlMPrsStd_PositionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMPrsStd_PositionDriver\n");}
-	}
-};
+%feature("shadow") XmlMPrsStd_PositionDriver::~XmlMPrsStd_PositionDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Dico_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_Dico_DictionaryOfTransient : public Handle_MMgt_TShared {
 	return (Dico_DictionaryOfTransient*)$self->Access();
 	}
 };
-%extend Handle_Dico_DictionaryOfTransient {
-	~Handle_Dico_DictionaryOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Dico_DictionaryOfTransient\n");}
-	}
-};
+%feature("shadow") Handle_Dico_DictionaryOfTransient::~Handle_Dico_DictionaryOfTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Dico_StackItemOfDictionaryOfTransient;
@@ -87,12 +89,10 @@ class Handle_Dico_StackItemOfDictionaryOfTransient : public Handle_MMgt_TShared 
 	return (Dico_StackItemOfDictionaryOfTransient*)$self->Access();
 	}
 };
-%extend Handle_Dico_StackItemOfDictionaryOfTransient {
-	~Handle_Dico_StackItemOfDictionaryOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Dico_StackItemOfDictionaryOfTransient\n");}
-	}
-};
+%feature("shadow") Handle_Dico_StackItemOfDictionaryOfTransient::~Handle_Dico_StackItemOfDictionaryOfTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Dico_DictionaryOfInteger;
@@ -117,12 +117,10 @@ class Handle_Dico_DictionaryOfInteger : public Handle_MMgt_TShared {
 	return (Dico_DictionaryOfInteger*)$self->Access();
 	}
 };
-%extend Handle_Dico_DictionaryOfInteger {
-	~Handle_Dico_DictionaryOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Dico_DictionaryOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_Dico_DictionaryOfInteger::~Handle_Dico_DictionaryOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Dico_StackItemOfDictionaryOfInteger;
@@ -147,12 +145,10 @@ class Handle_Dico_StackItemOfDictionaryOfInteger : public Handle_MMgt_TShared {
 	return (Dico_StackItemOfDictionaryOfInteger*)$self->Access();
 	}
 };
-%extend Handle_Dico_StackItemOfDictionaryOfInteger {
-	~Handle_Dico_StackItemOfDictionaryOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Dico_StackItemOfDictionaryOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_Dico_StackItemOfDictionaryOfInteger::~Handle_Dico_StackItemOfDictionaryOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Dico_DictionaryOfInteger;
@@ -228,12 +224,10 @@ class Dico_DictionaryOfInteger : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Dico_DictionaryOfInteger {
-	~Dico_DictionaryOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Dico_DictionaryOfInteger\n");}
-	}
-};
+%feature("shadow") Dico_DictionaryOfInteger::~Dico_DictionaryOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Dico_IteratorOfDictionaryOfTransient;
@@ -257,12 +251,10 @@ class Dico_IteratorOfDictionaryOfTransient {
 		TCollection_AsciiString Name() const;
 
 };
-%extend Dico_IteratorOfDictionaryOfTransient {
-	~Dico_IteratorOfDictionaryOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Dico_IteratorOfDictionaryOfTransient\n");}
-	}
-};
+%feature("shadow") Dico_IteratorOfDictionaryOfTransient::~Dico_IteratorOfDictionaryOfTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Dico_StackItemOfDictionaryOfTransient;
@@ -292,12 +284,10 @@ class Dico_StackItemOfDictionaryOfTransient : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Dico_StackItemOfDictionaryOfTransient {
-	~Dico_StackItemOfDictionaryOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Dico_StackItemOfDictionaryOfTransient\n");}
-	}
-};
+%feature("shadow") Dico_StackItemOfDictionaryOfTransient::~Dico_StackItemOfDictionaryOfTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Dico_DictionaryOfTransient;
@@ -353,12 +343,10 @@ class Dico_DictionaryOfTransient : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Dico_DictionaryOfTransient {
-	~Dico_DictionaryOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Dico_DictionaryOfTransient\n");}
-	}
-};
+%feature("shadow") Dico_DictionaryOfTransient::~Dico_DictionaryOfTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Dico_IteratorOfDictionaryOfInteger;
@@ -382,12 +370,10 @@ class Dico_IteratorOfDictionaryOfInteger {
 		TCollection_AsciiString Name() const;
 
 };
-%extend Dico_IteratorOfDictionaryOfInteger {
-	~Dico_IteratorOfDictionaryOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Dico_IteratorOfDictionaryOfInteger\n");}
-	}
-};
+%feature("shadow") Dico_IteratorOfDictionaryOfInteger::~Dico_IteratorOfDictionaryOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Dico_StackItemOfDictionaryOfInteger;
@@ -417,9 +403,7 @@ class Dico_StackItemOfDictionaryOfInteger : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Dico_StackItemOfDictionaryOfInteger {
-	~Dico_StackItemOfDictionaryOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Dico_StackItemOfDictionaryOfInteger\n");}
-	}
-};
+%feature("shadow") Dico_StackItemOfDictionaryOfInteger::~Dico_StackItemOfDictionaryOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

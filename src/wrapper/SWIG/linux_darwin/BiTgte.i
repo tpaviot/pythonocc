@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BiTgte_dependencies.i
 
 
@@ -66,12 +70,10 @@ class Handle_BiTgte_HCurveOnEdge : public Handle_Adaptor3d_HCurve {
 	return (BiTgte_HCurveOnEdge*)$self->Access();
 	}
 };
-%extend Handle_BiTgte_HCurveOnEdge {
-	~Handle_BiTgte_HCurveOnEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BiTgte_HCurveOnEdge\n");}
-	}
-};
+%feature("shadow") Handle_BiTgte_HCurveOnEdge::~Handle_BiTgte_HCurveOnEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BiTgte_HCurveOnVertex;
@@ -96,12 +98,10 @@ class Handle_BiTgte_HCurveOnVertex : public Handle_Adaptor3d_HCurve {
 	return (BiTgte_HCurveOnVertex*)$self->Access();
 	}
 };
-%extend Handle_BiTgte_HCurveOnVertex {
-	~Handle_BiTgte_HCurveOnVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BiTgte_HCurveOnVertex\n");}
-	}
-};
+%feature("shadow") Handle_BiTgte_HCurveOnVertex::~Handle_BiTgte_HCurveOnVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox;
@@ -126,12 +126,10 @@ class Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox : public Handle_TCollection_M
 	return (BiTgte_DataMapNodeOfDataMapOfShapeBox*)$self->Access();
 	}
 };
-%extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {
-	~Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox\n");}
-	}
-};
+%feature("shadow") Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox::~Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BiTgte_CurveOnVertex;
@@ -201,12 +199,10 @@ class BiTgte_CurveOnVertex : public Adaptor3d_Curve {
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
 
 };
-%extend BiTgte_CurveOnVertex {
-	~BiTgte_CurveOnVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BiTgte_CurveOnVertex\n");}
-	}
-};
+%feature("shadow") BiTgte_CurveOnVertex::~BiTgte_CurveOnVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BiTgte_HCurveOnEdge;
@@ -238,12 +234,10 @@ class BiTgte_HCurveOnEdge : public Adaptor3d_HCurve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BiTgte_HCurveOnEdge {
-	~BiTgte_HCurveOnEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BiTgte_HCurveOnEdge\n");}
-	}
-};
+%feature("shadow") BiTgte_HCurveOnEdge::~BiTgte_HCurveOnEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BiTgte_HCurveOnVertex;
@@ -275,12 +269,10 @@ class BiTgte_HCurveOnVertex : public Adaptor3d_HCurve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BiTgte_HCurveOnVertex {
-	~BiTgte_HCurveOnVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BiTgte_HCurveOnVertex\n");}
-	}
-};
+%feature("shadow") BiTgte_HCurveOnVertex::~BiTgte_HCurveOnVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BiTgte_DataMapNodeOfDataMapOfShapeBox;
@@ -306,12 +298,10 @@ class BiTgte_DataMapNodeOfDataMapOfShapeBox : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
-	~BiTgte_DataMapNodeOfDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapNodeOfDataMapOfShapeBox\n");}
-	}
-};
+%feature("shadow") BiTgte_DataMapNodeOfDataMapOfShapeBox::~BiTgte_DataMapNodeOfDataMapOfShapeBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BiTgte_Blend;
@@ -375,12 +365,10 @@ class BiTgte_Blend {
 		void ComputeCenters();
 
 };
-%extend BiTgte_Blend {
-	~BiTgte_Blend() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BiTgte_Blend\n");}
-	}
-};
+%feature("shadow") BiTgte_Blend::~BiTgte_Blend %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BiTgte_DataMapOfShapeBox;
@@ -412,12 +400,10 @@ class BiTgte_DataMapOfShapeBox : public TCollection_BasicMap {
 		Bnd_Box & operator()(const TopoDS_Shape &K);
 
 };
-%extend BiTgte_DataMapOfShapeBox {
-	~BiTgte_DataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapOfShapeBox\n");}
-	}
-};
+%feature("shadow") BiTgte_DataMapOfShapeBox::~BiTgte_DataMapOfShapeBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BiTgte_DataMapIteratorOfDataMapOfShapeBox;
@@ -435,12 +421,10 @@ class BiTgte_DataMapIteratorOfDataMapOfShapeBox : public TCollection_BasicMapIte
 		const Bnd_Box & Value() const;
 
 };
-%extend BiTgte_DataMapIteratorOfDataMapOfShapeBox {
-	~BiTgte_DataMapIteratorOfDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapIteratorOfDataMapOfShapeBox\n");}
-	}
-};
+%feature("shadow") BiTgte_DataMapIteratorOfDataMapOfShapeBox::~BiTgte_DataMapIteratorOfDataMapOfShapeBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BiTgte_CurveOnEdge;
@@ -510,9 +494,7 @@ class BiTgte_CurveOnEdge : public Adaptor3d_Curve {
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
 
 };
-%extend BiTgte_CurveOnEdge {
-	~BiTgte_CurveOnEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BiTgte_CurveOnEdge\n");}
-	}
-};
+%feature("shadow") BiTgte_CurveOnEdge::~BiTgte_CurveOnEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

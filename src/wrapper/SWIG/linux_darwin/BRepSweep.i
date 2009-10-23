@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepSweep_dependencies.i
 
 
@@ -57,20 +61,10 @@ class Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : p
 	return (BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep*)$self->Access();
 	}
 };
-%extend Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
-	~Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep\n");}
-	}
-};
-
-%extend Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep::~Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepSweep_Tool;
@@ -92,20 +86,10 @@ class BRepSweep_Tool {
 		void SetOrientation(TopoDS_Shape & aShape, const TopAbs_Orientation Or) const;
 
 };
-%extend BRepSweep_Tool {
-	~BRepSweep_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Tool\n");}
-	}
-};
-
-%extend BRepSweep_Tool {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepSweep_Tool::~BRepSweep_Tool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepSweep_NumLinearRegularSweep;
@@ -165,20 +149,10 @@ class BRepSweep_NumLinearRegularSweep {
 		Standard_Boolean Closed() const;
 
 };
-%extend BRepSweep_NumLinearRegularSweep {
-	~BRepSweep_NumLinearRegularSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_NumLinearRegularSweep\n");}
-	}
-};
-
-%extend BRepSweep_NumLinearRegularSweep {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepSweep_NumLinearRegularSweep::~BRepSweep_NumLinearRegularSweep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepSweep_Trsf;
@@ -224,20 +198,10 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		virtual		void SetContinuity(const TopoDS_Shape &aGenS, const Sweep_NumShape &aDirS);
 
 };
-%extend BRepSweep_Trsf {
-	~BRepSweep_Trsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Trsf\n");}
-	}
-};
-
-%extend BRepSweep_Trsf {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepSweep_Trsf::~BRepSweep_Trsf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepSweep_Translation;
@@ -251,20 +215,10 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		gp_Vec Vec() const;
 
 };
-%extend BRepSweep_Translation {
-	~BRepSweep_Translation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Translation\n");}
-	}
-};
-
-%extend BRepSweep_Translation {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepSweep_Translation::~BRepSweep_Translation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepSweep_SequenceOfShapesOfNumLinearRegularSweep;
@@ -316,20 +270,10 @@ class BRepSweep_SequenceOfShapesOfNumLinearRegularSweep : public TCollection_Bas
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend BRepSweep_SequenceOfShapesOfNumLinearRegularSweep {
-	~BRepSweep_SequenceOfShapesOfNumLinearRegularSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_SequenceOfShapesOfNumLinearRegularSweep\n");}
-	}
-};
-
-%extend BRepSweep_SequenceOfShapesOfNumLinearRegularSweep {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepSweep_SequenceOfShapesOfNumLinearRegularSweep::~BRepSweep_SequenceOfShapesOfNumLinearRegularSweep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepSweep_Array2OfShapesOfNumLinearRegularSweep;
@@ -371,20 +315,10 @@ class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 		TopoDS_Shape & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
-	~BRepSweep_Array2OfShapesOfNumLinearRegularSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Array2OfShapesOfNumLinearRegularSweep\n");}
-	}
-};
-
-%extend BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepSweep_Array2OfShapesOfNumLinearRegularSweep::~BRepSweep_Array2OfShapesOfNumLinearRegularSweep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepSweep_Revol;
@@ -412,20 +346,10 @@ class BRepSweep_Revol {
 		Quantity_PlaneAngle Angle() const;
 
 };
-%extend BRepSweep_Revol {
-	~BRepSweep_Revol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Revol\n");}
-	}
-};
-
-%extend BRepSweep_Revol {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepSweep_Revol::~BRepSweep_Revol %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepSweep_Builder;
@@ -451,20 +375,10 @@ class BRepSweep_Builder {
 		void Add(TopoDS_Shape & aShape1, const TopoDS_Shape &aShape2) const;
 
 };
-%extend BRepSweep_Builder {
-	~BRepSweep_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Builder\n");}
-	}
-};
-
-%extend BRepSweep_Builder {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepSweep_Builder::~BRepSweep_Builder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepSweep_Iterator;
@@ -484,20 +398,10 @@ class BRepSweep_Iterator {
 		TopAbs_Orientation Orientation() const;
 
 };
-%extend BRepSweep_Iterator {
-	~BRepSweep_Iterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Iterator\n");}
-	}
-};
-
-%extend BRepSweep_Iterator {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepSweep_Iterator::~BRepSweep_Iterator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepSweep_Rotation;
@@ -545,20 +449,10 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		Quantity_PlaneAngle Angle() const;
 
 };
-%extend BRepSweep_Rotation {
-	~BRepSweep_Rotation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Rotation\n");}
-	}
-};
-
-%extend BRepSweep_Rotation {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepSweep_Rotation::~BRepSweep_Rotation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep;
@@ -582,20 +476,10 @@ class BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : public T
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
-	~BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep\n");}
-	}
-};
-
-%extend BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep::~BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepSweep_Prism;
@@ -621,17 +505,7 @@ class BRepSweep_Prism {
 		gp_Vec Vec() const;
 
 };
-%extend BRepSweep_Prism {
-	~BRepSweep_Prism() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Prism\n");}
-	}
-};
-
-%extend BRepSweep_Prism {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepSweep_Prism::~BRepSweep_Prism %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

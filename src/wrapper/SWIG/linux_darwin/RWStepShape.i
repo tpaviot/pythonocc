@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include RWStepShape_dependencies.i
 
 
@@ -48,12 +52,10 @@ class RWStepShape_RWFacetedBrep {
 		void Share(const Handle_StepShape_FacetedBrep &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWFacetedBrep {
-	~RWStepShape_RWFacetedBrep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWFacetedBrep\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWFacetedBrep::~RWStepShape_RWFacetedBrep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWVertexPoint;
@@ -69,12 +71,10 @@ class RWStepShape_RWVertexPoint {
 		void Share(const Handle_StepShape_VertexPoint &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWVertexPoint {
-	~RWStepShape_RWVertexPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWVertexPoint\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWVertexPoint::~RWStepShape_RWVertexPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWPath;
@@ -90,12 +90,10 @@ class RWStepShape_RWPath {
 		void Share(const Handle_StepShape_Path &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWPath {
-	~RWStepShape_RWPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWPath\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWPath::~RWStepShape_RWPath %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWDimensionalSizeWithPath;
@@ -111,12 +109,10 @@ class RWStepShape_RWDimensionalSizeWithPath {
 		void Share(const Handle_StepShape_DimensionalSizeWithPath &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWDimensionalSizeWithPath {
-	~RWStepShape_RWDimensionalSizeWithPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWDimensionalSizeWithPath\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWDimensionalSizeWithPath::~RWStepShape_RWDimensionalSizeWithPath %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWTransitionalShapeRepresentation;
@@ -132,12 +128,10 @@ class RWStepShape_RWTransitionalShapeRepresentation {
 		void Share(const Handle_StepShape_TransitionalShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWTransitionalShapeRepresentation {
-	~RWStepShape_RWTransitionalShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWTransitionalShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWTransitionalShapeRepresentation::~RWStepShape_RWTransitionalShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWBoxedHalfSpace;
@@ -153,12 +147,10 @@ class RWStepShape_RWBoxedHalfSpace {
 		void Share(const Handle_StepShape_BoxedHalfSpace &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWBoxedHalfSpace {
-	~RWStepShape_RWBoxedHalfSpace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWBoxedHalfSpace\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWBoxedHalfSpace::~RWStepShape_RWBoxedHalfSpace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWBooleanResult;
@@ -174,12 +166,10 @@ class RWStepShape_RWBooleanResult {
 		void Share(const Handle_StepShape_BooleanResult &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWBooleanResult {
-	~RWStepShape_RWBooleanResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWBooleanResult\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWBooleanResult::~RWStepShape_RWBooleanResult %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWSolidReplica;
@@ -195,12 +185,10 @@ class RWStepShape_RWSolidReplica {
 		void Share(const Handle_StepShape_SolidReplica &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWSolidReplica {
-	~RWStepShape_RWSolidReplica() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWSolidReplica\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWSolidReplica::~RWStepShape_RWSolidReplica %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWFaceSurface;
@@ -216,12 +204,10 @@ class RWStepShape_RWFaceSurface {
 		void Share(const Handle_StepShape_FaceSurface &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWFaceSurface {
-	~RWStepShape_RWFaceSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWFaceSurface\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWFaceSurface::~RWStepShape_RWFaceSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWOrientedFace;
@@ -237,12 +223,10 @@ class RWStepShape_RWOrientedFace {
 		void Share(const Handle_StepShape_OrientedFace &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWOrientedFace {
-	~RWStepShape_RWOrientedFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWOrientedFace\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWOrientedFace::~RWStepShape_RWOrientedFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWDimensionalCharacteristicRepresentation;
@@ -258,12 +242,10 @@ class RWStepShape_RWDimensionalCharacteristicRepresentation {
 		void Share(const Handle_StepShape_DimensionalCharacteristicRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWDimensionalCharacteristicRepresentation {
-	~RWStepShape_RWDimensionalCharacteristicRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWDimensionalCharacteristicRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWDimensionalCharacteristicRepresentation::~RWStepShape_RWDimensionalCharacteristicRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWOrientedEdge;
@@ -279,12 +261,10 @@ class RWStepShape_RWOrientedEdge {
 		void Share(const Handle_StepShape_OrientedEdge &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWOrientedEdge {
-	~RWStepShape_RWOrientedEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWOrientedEdge\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWOrientedEdge::~RWStepShape_RWOrientedEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWMeasureQualification;
@@ -300,12 +280,10 @@ class RWStepShape_RWMeasureQualification {
 		void Share(const Handle_StepShape_MeasureQualification &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWMeasureQualification {
-	~RWStepShape_RWMeasureQualification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWMeasureQualification\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWMeasureQualification::~RWStepShape_RWMeasureQualification %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWSubedge;
@@ -321,12 +299,10 @@ class RWStepShape_RWSubedge {
 		void Share(const Handle_StepShape_Subedge &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWSubedge {
-	~RWStepShape_RWSubedge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWSubedge\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWSubedge::~RWStepShape_RWSubedge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWPolyLoop;
@@ -342,12 +318,10 @@ class RWStepShape_RWPolyLoop {
 		void Share(const Handle_StepShape_PolyLoop &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWPolyLoop {
-	~RWStepShape_RWPolyLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWPolyLoop\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWPolyLoop::~RWStepShape_RWPolyLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWManifoldSolidBrep;
@@ -363,12 +337,10 @@ class RWStepShape_RWManifoldSolidBrep {
 		void Share(const Handle_StepShape_ManifoldSolidBrep &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWManifoldSolidBrep {
-	~RWStepShape_RWManifoldSolidBrep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWManifoldSolidBrep\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWManifoldSolidBrep::~RWStepShape_RWManifoldSolidBrep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWRevolvedFaceSolid;
@@ -384,12 +356,10 @@ class RWStepShape_RWRevolvedFaceSolid {
 		void Share(const Handle_StepShape_RevolvedFaceSolid &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWRevolvedFaceSolid {
-	~RWStepShape_RWRevolvedFaceSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWRevolvedFaceSolid\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWRevolvedFaceSolid::~RWStepShape_RWRevolvedFaceSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation;
@@ -405,12 +375,10 @@ class RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation {
 		void Share(const Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation {
-	~RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation::~RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWEdgeBasedWireframeShapeRepresentation;
@@ -426,12 +394,10 @@ class RWStepShape_RWEdgeBasedWireframeShapeRepresentation {
 		void Share(const Handle_StepShape_EdgeBasedWireframeShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWEdgeBasedWireframeShapeRepresentation {
-	~RWStepShape_RWEdgeBasedWireframeShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWEdgeBasedWireframeShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWEdgeBasedWireframeShapeRepresentation::~RWStepShape_RWEdgeBasedWireframeShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWOrientedClosedShell;
@@ -447,12 +413,10 @@ class RWStepShape_RWOrientedClosedShell {
 		void Share(const Handle_StepShape_OrientedClosedShell &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWOrientedClosedShell {
-	~RWStepShape_RWOrientedClosedShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWOrientedClosedShell\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWOrientedClosedShell::~RWStepShape_RWOrientedClosedShell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWPrecisionQualifier;
@@ -466,12 +430,10 @@ class RWStepShape_RWPrecisionQualifier {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_PrecisionQualifier &ent) const;
 
 };
-%extend RWStepShape_RWPrecisionQualifier {
-	~RWStepShape_RWPrecisionQualifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWPrecisionQualifier\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWPrecisionQualifier::~RWStepShape_RWPrecisionQualifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWFaceOuterBound;
@@ -487,12 +449,10 @@ class RWStepShape_RWFaceOuterBound {
 		void Share(const Handle_StepShape_FaceOuterBound &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWFaceOuterBound {
-	~RWStepShape_RWFaceOuterBound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWFaceOuterBound\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWFaceOuterBound::~RWStepShape_RWFaceOuterBound %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWGeometricSet;
@@ -508,12 +468,10 @@ class RWStepShape_RWGeometricSet {
 		void Share(const Handle_StepShape_GeometricSet &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWGeometricSet {
-	~RWStepShape_RWGeometricSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWGeometricSet\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWGeometricSet::~RWStepShape_RWGeometricSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWEdgeBasedWireframeModel;
@@ -529,12 +487,10 @@ class RWStepShape_RWEdgeBasedWireframeModel {
 		void Share(const Handle_StepShape_EdgeBasedWireframeModel &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWEdgeBasedWireframeModel {
-	~RWStepShape_RWEdgeBasedWireframeModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWEdgeBasedWireframeModel\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWEdgeBasedWireframeModel::~RWStepShape_RWEdgeBasedWireframeModel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWGeometricCurveSet;
@@ -550,12 +506,10 @@ class RWStepShape_RWGeometricCurveSet {
 		void Share(const Handle_StepShape_GeometricCurveSet &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWGeometricCurveSet {
-	~RWStepShape_RWGeometricCurveSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWGeometricCurveSet\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWGeometricCurveSet::~RWStepShape_RWGeometricCurveSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWExtrudedAreaSolid;
@@ -571,12 +525,10 @@ class RWStepShape_RWExtrudedAreaSolid {
 		void Share(const Handle_StepShape_ExtrudedAreaSolid &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWExtrudedAreaSolid {
-	~RWStepShape_RWExtrudedAreaSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWExtrudedAreaSolid\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWExtrudedAreaSolid::~RWStepShape_RWExtrudedAreaSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWCompoundShapeRepresentation;
@@ -592,12 +544,10 @@ class RWStepShape_RWCompoundShapeRepresentation {
 		void Share(const Handle_StepShape_CompoundShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWCompoundShapeRepresentation {
-	~RWStepShape_RWCompoundShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWCompoundShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWCompoundShapeRepresentation::~RWStepShape_RWCompoundShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWSweptFaceSolid;
@@ -613,12 +563,10 @@ class RWStepShape_RWSweptFaceSolid {
 		void Share(const Handle_StepShape_SweptFaceSolid &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWSweptFaceSolid {
-	~RWStepShape_RWSweptFaceSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWSweptFaceSolid\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWSweptFaceSolid::~RWStepShape_RWSweptFaceSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWSubface;
@@ -634,12 +582,10 @@ class RWStepShape_RWSubface {
 		void Share(const Handle_StepShape_Subface &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWSubface {
-	~RWStepShape_RWSubface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWSubface\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWSubface::~RWStepShape_RWSubface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWBlock;
@@ -655,12 +601,10 @@ class RWStepShape_RWBlock {
 		void Share(const Handle_StepShape_Block &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWBlock {
-	~RWStepShape_RWBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWBlock\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWBlock::~RWStepShape_RWBlock %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWAdvancedBrepShapeRepresentation;
@@ -676,12 +620,10 @@ class RWStepShape_RWAdvancedBrepShapeRepresentation {
 		void Share(const Handle_StepShape_AdvancedBrepShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWAdvancedBrepShapeRepresentation {
-	~RWStepShape_RWAdvancedBrepShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWAdvancedBrepShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWAdvancedBrepShapeRepresentation::~RWStepShape_RWAdvancedBrepShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWShellBasedSurfaceModel;
@@ -697,12 +639,10 @@ class RWStepShape_RWShellBasedSurfaceModel {
 		void Share(const Handle_StepShape_ShellBasedSurfaceModel &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWShellBasedSurfaceModel {
-	~RWStepShape_RWShellBasedSurfaceModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWShellBasedSurfaceModel\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWShellBasedSurfaceModel::~RWStepShape_RWShellBasedSurfaceModel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWShapeDimensionRepresentation;
@@ -718,12 +658,10 @@ class RWStepShape_RWShapeDimensionRepresentation {
 		void Share(const Handle_StepShape_ShapeDimensionRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWShapeDimensionRepresentation {
-	~RWStepShape_RWShapeDimensionRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWShapeDimensionRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWShapeDimensionRepresentation::~RWStepShape_RWShapeDimensionRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWToleranceValue;
@@ -739,12 +677,10 @@ class RWStepShape_RWToleranceValue {
 		void Share(const Handle_StepShape_ToleranceValue &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWToleranceValue {
-	~RWStepShape_RWToleranceValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWToleranceValue\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWToleranceValue::~RWStepShape_RWToleranceValue %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWEdge;
@@ -760,12 +696,10 @@ class RWStepShape_RWEdge {
 		void Share(const Handle_StepShape_Edge &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWEdge {
-	~RWStepShape_RWEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWEdge\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWEdge::~RWStepShape_RWEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWFace;
@@ -781,12 +715,10 @@ class RWStepShape_RWFace {
 		void Share(const Handle_StepShape_Face &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWFace {
-	~RWStepShape_RWFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWFace\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWFace::~RWStepShape_RWFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWCsgSolid;
@@ -802,12 +734,10 @@ class RWStepShape_RWCsgSolid {
 		void Share(const Handle_StepShape_CsgSolid &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWCsgSolid {
-	~RWStepShape_RWCsgSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWCsgSolid\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWCsgSolid::~RWStepShape_RWCsgSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWVertexLoop;
@@ -823,12 +753,10 @@ class RWStepShape_RWVertexLoop {
 		void Share(const Handle_StepShape_VertexLoop &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWVertexLoop {
-	~RWStepShape_RWVertexLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWVertexLoop\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWVertexLoop::~RWStepShape_RWVertexLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWSweptAreaSolid;
@@ -844,12 +772,10 @@ class RWStepShape_RWSweptAreaSolid {
 		void Share(const Handle_StepShape_SweptAreaSolid &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWSweptAreaSolid {
-	~RWStepShape_RWSweptAreaSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWSweptAreaSolid\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWSweptAreaSolid::~RWStepShape_RWSweptAreaSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWFacetedBrepAndBrepWithVoids;
@@ -865,12 +791,10 @@ class RWStepShape_RWFacetedBrepAndBrepWithVoids {
 		void Share(const Handle_StepShape_FacetedBrepAndBrepWithVoids &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWFacetedBrepAndBrepWithVoids {
-	~RWStepShape_RWFacetedBrepAndBrepWithVoids() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWFacetedBrepAndBrepWithVoids\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWFacetedBrepAndBrepWithVoids::~RWStepShape_RWFacetedBrepAndBrepWithVoids %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWClosedShell;
@@ -886,12 +810,10 @@ class RWStepShape_RWClosedShell {
 		void Share(const Handle_StepShape_ClosedShell &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWClosedShell {
-	~RWStepShape_RWClosedShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWClosedShell\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWClosedShell::~RWStepShape_RWClosedShell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWShapeRepresentation;
@@ -907,12 +829,10 @@ class RWStepShape_RWShapeRepresentation {
 		void Share(const Handle_StepShape_ShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWShapeRepresentation {
-	~RWStepShape_RWShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWShapeRepresentation::~RWStepShape_RWShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWManifoldSurfaceShapeRepresentation;
@@ -928,12 +848,10 @@ class RWStepShape_RWManifoldSurfaceShapeRepresentation {
 		void Share(const Handle_StepShape_ManifoldSurfaceShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWManifoldSurfaceShapeRepresentation {
-	~RWStepShape_RWManifoldSurfaceShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWManifoldSurfaceShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWManifoldSurfaceShapeRepresentation::~RWStepShape_RWManifoldSurfaceShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWPlusMinusTolerance;
@@ -949,12 +867,10 @@ class RWStepShape_RWPlusMinusTolerance {
 		void Share(const Handle_StepShape_PlusMinusTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWPlusMinusTolerance {
-	~RWStepShape_RWPlusMinusTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWPlusMinusTolerance\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWPlusMinusTolerance::~RWStepShape_RWPlusMinusTolerance %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWOrientedOpenShell;
@@ -970,12 +886,10 @@ class RWStepShape_RWOrientedOpenShell {
 		void Share(const Handle_StepShape_OrientedOpenShell &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWOrientedOpenShell {
-	~RWStepShape_RWOrientedOpenShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWOrientedOpenShell\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWOrientedOpenShell::~RWStepShape_RWOrientedOpenShell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWConnectedEdgeSet;
@@ -991,12 +905,10 @@ class RWStepShape_RWConnectedEdgeSet {
 		void Share(const Handle_StepShape_ConnectedEdgeSet &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWConnectedEdgeSet {
-	~RWStepShape_RWConnectedEdgeSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWConnectedEdgeSet\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWConnectedEdgeSet::~RWStepShape_RWConnectedEdgeSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWHalfSpaceSolid;
@@ -1012,12 +924,10 @@ class RWStepShape_RWHalfSpaceSolid {
 		void Share(const Handle_StepShape_HalfSpaceSolid &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWHalfSpaceSolid {
-	~RWStepShape_RWHalfSpaceSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWHalfSpaceSolid\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWHalfSpaceSolid::~RWStepShape_RWHalfSpaceSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWFaceBasedSurfaceModel;
@@ -1033,12 +943,10 @@ class RWStepShape_RWFaceBasedSurfaceModel {
 		void Share(const Handle_StepShape_FaceBasedSurfaceModel &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWFaceBasedSurfaceModel {
-	~RWStepShape_RWFaceBasedSurfaceModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWFaceBasedSurfaceModel\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWFaceBasedSurfaceModel::~RWStepShape_RWFaceBasedSurfaceModel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWQualifiedRepresentationItem;
@@ -1054,12 +962,10 @@ class RWStepShape_RWQualifiedRepresentationItem {
 		void Share(const Handle_StepShape_QualifiedRepresentationItem &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWQualifiedRepresentationItem {
-	~RWStepShape_RWQualifiedRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWQualifiedRepresentationItem\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWQualifiedRepresentationItem::~RWStepShape_RWQualifiedRepresentationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWSphere;
@@ -1075,12 +981,10 @@ class RWStepShape_RWSphere {
 		void Share(const Handle_StepShape_Sphere &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWSphere {
-	~RWStepShape_RWSphere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWSphere\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWSphere::~RWStepShape_RWSphere %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWOpenShell;
@@ -1096,12 +1000,10 @@ class RWStepShape_RWOpenShell {
 		void Share(const Handle_StepShape_OpenShell &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWOpenShell {
-	~RWStepShape_RWOpenShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWOpenShell\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWOpenShell::~RWStepShape_RWOpenShell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWConnectedFaceShapeRepresentation;
@@ -1117,12 +1019,10 @@ class RWStepShape_RWConnectedFaceShapeRepresentation {
 		void Share(const Handle_StepShape_ConnectedFaceShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWConnectedFaceShapeRepresentation {
-	~RWStepShape_RWConnectedFaceShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWConnectedFaceShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWConnectedFaceShapeRepresentation::~RWStepShape_RWConnectedFaceShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWAngularSize;
@@ -1138,12 +1038,10 @@ class RWStepShape_RWAngularSize {
 		void Share(const Handle_StepShape_AngularSize &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWAngularSize {
-	~RWStepShape_RWAngularSize() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWAngularSize\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWAngularSize::~RWStepShape_RWAngularSize %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWExtrudedFaceSolid;
@@ -1159,12 +1057,10 @@ class RWStepShape_RWExtrudedFaceSolid {
 		void Share(const Handle_StepShape_ExtrudedFaceSolid &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWExtrudedFaceSolid {
-	~RWStepShape_RWExtrudedFaceSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWExtrudedFaceSolid\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWExtrudedFaceSolid::~RWStepShape_RWExtrudedFaceSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWVertex;
@@ -1178,12 +1074,10 @@ class RWStepShape_RWVertex {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_Vertex &ent) const;
 
 };
-%extend RWStepShape_RWVertex {
-	~RWStepShape_RWVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWVertex\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWVertex::~RWStepShape_RWVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWCsgShapeRepresentation;
@@ -1199,12 +1093,10 @@ class RWStepShape_RWCsgShapeRepresentation {
 		void Share(const Handle_StepShape_CsgShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWCsgShapeRepresentation {
-	~RWStepShape_RWCsgShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWCsgShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWCsgShapeRepresentation::~RWStepShape_RWCsgShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWAngularLocation;
@@ -1220,12 +1112,10 @@ class RWStepShape_RWAngularLocation {
 		void Share(const Handle_StepShape_AngularLocation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWAngularLocation {
-	~RWStepShape_RWAngularLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWAngularLocation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWAngularLocation::~RWStepShape_RWAngularLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWOrientedPath;
@@ -1241,12 +1131,10 @@ class RWStepShape_RWOrientedPath {
 		void Share(const Handle_StepShape_OrientedPath &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWOrientedPath {
-	~RWStepShape_RWOrientedPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWOrientedPath\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWOrientedPath::~RWStepShape_RWOrientedPath %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWLoopAndPath;
@@ -1262,12 +1150,10 @@ class RWStepShape_RWLoopAndPath {
 		void Share(const Handle_StepShape_LoopAndPath &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWLoopAndPath {
-	~RWStepShape_RWLoopAndPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWLoopAndPath\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWLoopAndPath::~RWStepShape_RWLoopAndPath %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWShapeDefinitionRepresentation;
@@ -1283,12 +1169,10 @@ class RWStepShape_RWShapeDefinitionRepresentation {
 		void Share(const Handle_StepShape_ShapeDefinitionRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWShapeDefinitionRepresentation {
-	~RWStepShape_RWShapeDefinitionRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWShapeDefinitionRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWShapeDefinitionRepresentation::~RWStepShape_RWShapeDefinitionRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWDimensionalLocation;
@@ -1304,12 +1188,10 @@ class RWStepShape_RWDimensionalLocation {
 		void Share(const Handle_StepShape_DimensionalLocation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWDimensionalLocation {
-	~RWStepShape_RWDimensionalLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWDimensionalLocation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWDimensionalLocation::~RWStepShape_RWDimensionalLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWTopologicalRepresentationItem;
@@ -1323,12 +1205,10 @@ class RWStepShape_RWTopologicalRepresentationItem {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_TopologicalRepresentationItem &ent) const;
 
 };
-%extend RWStepShape_RWTopologicalRepresentationItem {
-	~RWStepShape_RWTopologicalRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWTopologicalRepresentationItem\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWTopologicalRepresentationItem::~RWStepShape_RWTopologicalRepresentationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWDimensionalSize;
@@ -1344,12 +1224,10 @@ class RWStepShape_RWDimensionalSize {
 		void Share(const Handle_StepShape_DimensionalSize &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWDimensionalSize {
-	~RWStepShape_RWDimensionalSize() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWDimensionalSize\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWDimensionalSize::~RWStepShape_RWDimensionalSize %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWNonManifoldSurfaceShapeRepresentation;
@@ -1365,12 +1243,10 @@ class RWStepShape_RWNonManifoldSurfaceShapeRepresentation {
 		void Share(const Handle_StepShape_NonManifoldSurfaceShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWNonManifoldSurfaceShapeRepresentation {
-	~RWStepShape_RWNonManifoldSurfaceShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWNonManifoldSurfaceShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWNonManifoldSurfaceShapeRepresentation::~RWStepShape_RWNonManifoldSurfaceShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWConnectedFaceSubSet;
@@ -1386,12 +1262,10 @@ class RWStepShape_RWConnectedFaceSubSet {
 		void Share(const Handle_StepShape_ConnectedFaceSubSet &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWConnectedFaceSubSet {
-	~RWStepShape_RWConnectedFaceSubSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWConnectedFaceSubSet\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWConnectedFaceSubSet::~RWStepShape_RWConnectedFaceSubSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWSolidModel;
@@ -1405,12 +1279,10 @@ class RWStepShape_RWSolidModel {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_SolidModel &ent) const;
 
 };
-%extend RWStepShape_RWSolidModel {
-	~RWStepShape_RWSolidModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWSolidModel\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWSolidModel::~RWStepShape_RWSolidModel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation;
@@ -1426,12 +1298,10 @@ class RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation {
 		void Share(const Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation {
-	~RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation::~RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWEdgeLoop;
@@ -1449,12 +1319,10 @@ class RWStepShape_RWEdgeLoop {
 		void Check(const Handle_StepShape_EdgeLoop &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
-%extend RWStepShape_RWEdgeLoop {
-	~RWStepShape_RWEdgeLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWEdgeLoop\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWEdgeLoop::~RWStepShape_RWEdgeLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWTypeQualifier;
@@ -1468,12 +1336,10 @@ class RWStepShape_RWTypeQualifier {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_TypeQualifier &ent) const;
 
 };
-%extend RWStepShape_RWTypeQualifier {
-	~RWStepShape_RWTypeQualifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWTypeQualifier\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWTypeQualifier::~RWStepShape_RWTypeQualifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWRightAngularWedge;
@@ -1489,12 +1355,10 @@ class RWStepShape_RWRightAngularWedge {
 		void Share(const Handle_StepShape_RightAngularWedge &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWRightAngularWedge {
-	~RWStepShape_RWRightAngularWedge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWRightAngularWedge\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWRightAngularWedge::~RWStepShape_RWRightAngularWedge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWConnectedFaceSet;
@@ -1510,12 +1374,10 @@ class RWStepShape_RWConnectedFaceSet {
 		void Share(const Handle_StepShape_ConnectedFaceSet &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWConnectedFaceSet {
-	~RWStepShape_RWConnectedFaceSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWConnectedFaceSet\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWConnectedFaceSet::~RWStepShape_RWConnectedFaceSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWFacetedBrepShapeRepresentation;
@@ -1531,12 +1393,10 @@ class RWStepShape_RWFacetedBrepShapeRepresentation {
 		void Share(const Handle_StepShape_FacetedBrepShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWFacetedBrepShapeRepresentation {
-	~RWStepShape_RWFacetedBrepShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWFacetedBrepShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWFacetedBrepShapeRepresentation::~RWStepShape_RWFacetedBrepShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWLimitsAndFits;
@@ -1550,12 +1410,10 @@ class RWStepShape_RWLimitsAndFits {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_LimitsAndFits &ent) const;
 
 };
-%extend RWStepShape_RWLimitsAndFits {
-	~RWStepShape_RWLimitsAndFits() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWLimitsAndFits\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWLimitsAndFits::~RWStepShape_RWLimitsAndFits %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWTorus;
@@ -1571,12 +1429,10 @@ class RWStepShape_RWTorus {
 		void Share(const Handle_StepShape_Torus &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWTorus {
-	~RWStepShape_RWTorus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWTorus\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWTorus::~RWStepShape_RWTorus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWDimensionalLocationWithPath;
@@ -1592,12 +1448,10 @@ class RWStepShape_RWDimensionalLocationWithPath {
 		void Share(const Handle_StepShape_DimensionalLocationWithPath &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWDimensionalLocationWithPath {
-	~RWStepShape_RWDimensionalLocationWithPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWDimensionalLocationWithPath\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWDimensionalLocationWithPath::~RWStepShape_RWDimensionalLocationWithPath %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWEdgeCurve;
@@ -1615,12 +1469,10 @@ class RWStepShape_RWEdgeCurve {
 		void Check(const Handle_StepShape_EdgeCurve &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
-%extend RWStepShape_RWEdgeCurve {
-	~RWStepShape_RWEdgeCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWEdgeCurve\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWEdgeCurve::~RWStepShape_RWEdgeCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWRightCircularCylinder;
@@ -1636,12 +1488,10 @@ class RWStepShape_RWRightCircularCylinder {
 		void Share(const Handle_StepShape_RightCircularCylinder &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWRightCircularCylinder {
-	~RWStepShape_RWRightCircularCylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWRightCircularCylinder\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWRightCircularCylinder::~RWStepShape_RWRightCircularCylinder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWRightCircularCone;
@@ -1657,12 +1507,10 @@ class RWStepShape_RWRightCircularCone {
 		void Share(const Handle_StepShape_RightCircularCone &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWRightCircularCone {
-	~RWStepShape_RWRightCircularCone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWRightCircularCone\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWRightCircularCone::~RWStepShape_RWRightCircularCone %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWRevolvedAreaSolid;
@@ -1678,12 +1526,10 @@ class RWStepShape_RWRevolvedAreaSolid {
 		void Share(const Handle_StepShape_RevolvedAreaSolid &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWRevolvedAreaSolid {
-	~RWStepShape_RWRevolvedAreaSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWRevolvedAreaSolid\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWRevolvedAreaSolid::~RWStepShape_RWRevolvedAreaSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWBoxDomain;
@@ -1699,12 +1545,10 @@ class RWStepShape_RWBoxDomain {
 		void Share(const Handle_StepShape_BoxDomain &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWBoxDomain {
-	~RWStepShape_RWBoxDomain() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWBoxDomain\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWBoxDomain::~RWStepShape_RWBoxDomain %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWFaceBound;
@@ -1722,12 +1566,10 @@ class RWStepShape_RWFaceBound {
 		void Check(const Handle_StepShape_FaceBound &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
-%extend RWStepShape_RWFaceBound {
-	~RWStepShape_RWFaceBound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWFaceBound\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWFaceBound::~RWStepShape_RWFaceBound %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWContextDependentShapeRepresentation;
@@ -1743,12 +1585,10 @@ class RWStepShape_RWContextDependentShapeRepresentation {
 		void Share(const Handle_StepShape_ContextDependentShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWContextDependentShapeRepresentation {
-	~RWStepShape_RWContextDependentShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWContextDependentShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWContextDependentShapeRepresentation::~RWStepShape_RWContextDependentShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation;
@@ -1764,12 +1604,10 @@ class RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation {
 		void Share(const Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation {
-	~RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation::~RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem;
@@ -1785,12 +1623,10 @@ class RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem {
 		void Share(const Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem {
-	~RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem::~RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWAdvancedFace;
@@ -1806,12 +1642,10 @@ class RWStepShape_RWAdvancedFace {
 		void Share(const Handle_StepShape_AdvancedFace &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWAdvancedFace {
-	~RWStepShape_RWAdvancedFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWAdvancedFace\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWAdvancedFace::~RWStepShape_RWAdvancedFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWSeamEdge;
@@ -1827,12 +1661,10 @@ class RWStepShape_RWSeamEdge {
 		void Share(const Handle_StepShape_SeamEdge &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWSeamEdge {
-	~RWStepShape_RWSeamEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWSeamEdge\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWSeamEdge::~RWStepShape_RWSeamEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWBrepWithVoids;
@@ -1850,12 +1682,10 @@ class RWStepShape_RWBrepWithVoids {
 		void Check(const Handle_StepShape_BrepWithVoids &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 
 };
-%extend RWStepShape_RWBrepWithVoids {
-	~RWStepShape_RWBrepWithVoids() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWBrepWithVoids\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWBrepWithVoids::~RWStepShape_RWBrepWithVoids %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWLoop;
@@ -1869,12 +1699,10 @@ class RWStepShape_RWLoop {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_Loop &ent) const;
 
 };
-%extend RWStepShape_RWLoop {
-	~RWStepShape_RWLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWLoop\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWLoop::~RWStepShape_RWLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWShapeRepresentationWithParameters;
@@ -1890,12 +1718,10 @@ class RWStepShape_RWShapeRepresentationWithParameters {
 		void Share(const Handle_StepShape_ShapeRepresentationWithParameters &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWShapeRepresentationWithParameters {
-	~RWStepShape_RWShapeRepresentationWithParameters() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWShapeRepresentationWithParameters\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWShapeRepresentationWithParameters::~RWStepShape_RWShapeRepresentationWithParameters %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepShape_RWPointRepresentation;
@@ -1911,9 +1737,7 @@ class RWStepShape_RWPointRepresentation {
 		void Share(const Handle_StepShape_PointRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepShape_RWPointRepresentation {
-	~RWStepShape_RWPointRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWPointRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepShape_RWPointRepresentation::~RWStepShape_RWPointRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

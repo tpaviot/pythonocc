@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Quantity_dependencies.i
 
 
@@ -714,8 +718,6 @@ enum Quantity_NameOfColor {
 class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		~Handle_Quantity_ColorDefinitionError();
-		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Quantity_ColorDefinitionError(const Handle_Quantity_ColorDefinitionError &aHandle);
@@ -734,12 +736,15 @@ class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError 
 	return (Quantity_ColorDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Quantity_ColorDefinitionError::~Handle_Quantity_ColorDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Handle_Quantity_PeriodDefinitionError;
 class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Quantity_PeriodDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Quantity_PeriodDefinitionError();
 		%feature("autodoc", "1");
@@ -759,12 +764,15 @@ class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError
 	return (Quantity_PeriodDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Quantity_PeriodDefinitionError::~Handle_Quantity_PeriodDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Handle_Quantity_HArray1OfColor;
 class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Quantity_HArray1OfColor();
 		%feature("autodoc", "1");
 		Handle_Quantity_HArray1OfColor();
 		%feature("autodoc", "1");
@@ -784,12 +792,15 @@ class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 	return (Quantity_HArray1OfColor*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Quantity_HArray1OfColor::~Handle_Quantity_HArray1OfColor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Handle_Quantity_DateDefinitionError;
 class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 	public:
-		%feature("autodoc", "1");
-		~Handle_Quantity_DateDefinitionError();
 		%feature("autodoc", "1");
 		Handle_Quantity_DateDefinitionError();
 		%feature("autodoc", "1");
@@ -809,6 +820,11 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 	return (Quantity_DateDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Quantity_DateDefinitionError::~Handle_Quantity_DateDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Quantity_Array2OfColor;
 class Quantity_Array2OfColor {
@@ -821,8 +837,6 @@ class Quantity_Array2OfColor {
 		void Init(const Quantity_Color &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Quantity_Array2OfColor();
 		%feature("autodoc", "1");
 		const Quantity_Array2OfColor & Assign(const Quantity_Array2OfColor &Other);
 		%feature("autodoc", "1");
@@ -851,6 +865,11 @@ class Quantity_Array2OfColor {
 		Quantity_Color & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%feature("shadow") Quantity_Array2OfColor::~Quantity_Array2OfColor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Quantity_Array1OfCoefficient;
 class Quantity_Array1OfCoefficient {
@@ -863,8 +882,6 @@ class Quantity_Array1OfCoefficient {
 		void Init(const Quantity_Coefficient &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Quantity_Array1OfCoefficient();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -889,12 +906,15 @@ class Quantity_Array1OfCoefficient {
 		Quantity_Coefficient & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Quantity_Array1OfCoefficient::~Quantity_Array1OfCoefficient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Quantity_Period;
 class Quantity_Period {
 	public:
-		%feature("autodoc", "1");
-		~Quantity_Period();
 		%feature("autodoc", "1");
 		Quantity_Period(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
 		%feature("autodoc", "1");
@@ -943,6 +963,11 @@ class Quantity_Period {
 		void _CSFDB_SetQuantity_PeriodmyUSec(const Standard_Integer p);
 
 };
+%feature("shadow") Quantity_Period::~Quantity_Period %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Quantity_ColorDefinitionError;
 class Quantity_ColorDefinitionError : public Standard_DomainError {
@@ -959,8 +984,6 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Quantity_ColorDefinitionError();
 
 };
 %extend Quantity_ColorDefinitionError {
@@ -973,6 +996,11 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Quantity_ColorDefinitionError::~Quantity_ColorDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Quantity_PeriodDefinitionError;
 class Quantity_PeriodDefinitionError : public Standard_DomainError {
@@ -989,8 +1017,6 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 		Handle_Quantity_PeriodDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Quantity_PeriodDefinitionError();
 
 };
 %extend Quantity_PeriodDefinitionError {
@@ -1003,6 +1029,11 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Quantity_PeriodDefinitionError::~Quantity_PeriodDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Quantity_Array1OfColor;
 class Quantity_Array1OfColor {
@@ -1015,8 +1046,6 @@ class Quantity_Array1OfColor {
 		void Init(const Quantity_Color &V);
 		%feature("autodoc", "1");
 		void Destroy();
-		%feature("autodoc", "1");
-		~Quantity_Array1OfColor();
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
@@ -1041,12 +1070,15 @@ class Quantity_Array1OfColor {
 		Quantity_Color & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Quantity_Array1OfColor::~Quantity_Array1OfColor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Quantity_Color;
 class Quantity_Color {
 	public:
-		%feature("autodoc", "1");
-		~Quantity_Color();
 		%feature("autodoc", "1");
 		Quantity_Color();
 		%feature("autodoc", "1");
@@ -1123,6 +1155,11 @@ class Quantity_Color {
 		void _CSFDB_SetQuantity_ColorMyBlue(const Standard_ShortReal p);
 
 };
+%feature("shadow") Quantity_Color::~Quantity_Color %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Quantity_HArray1OfColor;
 class Quantity_HArray1OfColor : public MMgt_TShared {
@@ -1151,8 +1188,6 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 		Quantity_Array1OfColor & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Quantity_HArray1OfColor();
 
 };
 %extend Quantity_HArray1OfColor {
@@ -1165,12 +1200,15 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Quantity_HArray1OfColor::~Quantity_HArray1OfColor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Quantity_Date;
 class Quantity_Date {
 	public:
-		%feature("autodoc", "1");
-		~Quantity_Date();
 		%feature("autodoc", "1");
 		Quantity_Date();
 		%feature("autodoc", "1");
@@ -1231,6 +1269,11 @@ class Quantity_Date {
 		void _CSFDB_SetQuantity_DatemyUSec(const Standard_Integer p);
 
 };
+%feature("shadow") Quantity_Date::~Quantity_Date %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Quantity_DateDefinitionError;
 class Quantity_DateDefinitionError : public Standard_DomainError {
@@ -1247,8 +1290,6 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 		Handle_Quantity_DateDefinitionError NewInstance(const char * aMessage);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		virtual		~Quantity_DateDefinitionError();
 
 };
 %extend Quantity_DateDefinitionError {
@@ -1261,12 +1302,15 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Quantity_DateDefinitionError::~Quantity_DateDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
 
 %nodefaultctor Quantity_Convert;
 class Quantity_Convert {
 	public:
-		%feature("autodoc", "1");
-		~Quantity_Convert();
 		%feature("autodoc", "1");
 		Quantity_Convert();
 		%feature("autodoc", "1");
@@ -1279,3 +1323,7 @@ class Quantity_Convert {
 		Standard_Boolean IsPhysicalQuantity(const TCollection_AsciiString &aTypeName, TCollection_AsciiString & anEnum);
 
 };
+%feature("shadow") Quantity_Convert::~Quantity_Convert %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

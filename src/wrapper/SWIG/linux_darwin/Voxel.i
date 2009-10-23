@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Voxel_dependencies.i
 
 
@@ -64,12 +68,10 @@ class Handle_Voxel_Prs : public Handle_AIS_InteractiveObject {
 	return (Voxel_Prs*)$self->Access();
 	}
 };
-%extend Handle_Voxel_Prs {
-	~Handle_Voxel_Prs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Voxel_Prs\n");}
-	}
-};
+%feature("shadow") Handle_Voxel_Prs::~Handle_Voxel_Prs %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Voxel_DS;
@@ -111,12 +113,10 @@ class Voxel_DS {
 		Standard_Boolean GetVoxelZ(const Standard_Real z, Standard_Integer &OutValue) const;
 
 };
-%extend Voxel_DS {
-	~Voxel_DS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Voxel_DS\n");}
-	}
-};
+%feature("shadow") Voxel_DS::~Voxel_DS %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Voxel_BoolDS;
@@ -136,12 +136,10 @@ class Voxel_BoolDS : public Voxel_DS {
 		Standard_Boolean Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
 
 };
-%extend Voxel_BoolDS {
-	~Voxel_BoolDS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Voxel_BoolDS\n");}
-	}
-};
+%feature("shadow") Voxel_BoolDS::~Voxel_BoolDS %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Voxel_FloatDS;
@@ -163,12 +161,10 @@ class Voxel_FloatDS : public Voxel_DS {
 		Standard_ShortReal Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
 
 };
-%extend Voxel_FloatDS {
-	~Voxel_FloatDS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Voxel_FloatDS\n");}
-	}
-};
+%feature("shadow") Voxel_FloatDS::~Voxel_FloatDS %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Voxel_CollisionDetection;
@@ -204,12 +200,10 @@ class Voxel_CollisionDetection {
 		void Destroy();
 
 };
-%extend Voxel_CollisionDetection {
-	~Voxel_CollisionDetection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Voxel_CollisionDetection\n");}
-	}
-};
+%feature("shadow") Voxel_CollisionDetection::~Voxel_CollisionDetection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Voxel_Prs;
@@ -263,12 +257,10 @@ class Voxel_Prs : public AIS_InteractiveObject {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Voxel_Prs {
-	~Voxel_Prs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Voxel_Prs\n");}
-	}
-};
+%feature("shadow") Voxel_Prs::~Voxel_Prs %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Voxel_FastConverter;
@@ -286,12 +278,10 @@ class Voxel_FastConverter {
 		void Destroy();
 
 };
-%extend Voxel_FastConverter {
-	~Voxel_FastConverter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Voxel_FastConverter\n");}
-	}
-};
+%feature("shadow") Voxel_FastConverter::~Voxel_FastConverter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Voxel_ColorDS;
@@ -313,12 +303,10 @@ class Voxel_ColorDS : public Voxel_DS {
 		Standard_Byte Get(const Standard_Integer ix, const Standard_Integer iy, const Standard_Integer iz) const;
 
 };
-%extend Voxel_ColorDS {
-	~Voxel_ColorDS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Voxel_ColorDS\n");}
-	}
-};
+%feature("shadow") Voxel_ColorDS::~Voxel_ColorDS %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Voxel_BooleanOperation;
@@ -340,12 +328,10 @@ class Voxel_BooleanOperation {
 		Standard_Boolean Cut(Voxel_FloatDS & theVoxels1, const Voxel_FloatDS &theVoxels2) const;
 
 };
-%extend Voxel_BooleanOperation {
-	~Voxel_BooleanOperation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Voxel_BooleanOperation\n");}
-	}
-};
+%feature("shadow") Voxel_BooleanOperation::~Voxel_BooleanOperation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Voxel_Selector;
@@ -365,9 +351,7 @@ class Voxel_Selector {
 		Standard_Boolean Detect(const Standard_Integer winx, const Standard_Integer winy, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 };
-%extend Voxel_Selector {
-	~Voxel_Selector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Voxel_Selector\n");}
-	}
-};
+%feature("shadow") Voxel_Selector::~Voxel_Selector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

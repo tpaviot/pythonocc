@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StepSelect_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_StepSelect_ModelModifier : public Handle_IFSelect_Modifier {
 	return (StepSelect_ModelModifier*)$self->Access();
 	}
 };
-%extend Handle_StepSelect_ModelModifier {
-	~Handle_StepSelect_ModelModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_ModelModifier\n");}
-	}
-};
+%feature("shadow") Handle_StepSelect_ModelModifier::~Handle_StepSelect_ModelModifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepSelect_FileModifier;
@@ -87,12 +89,10 @@ class Handle_StepSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 	return (StepSelect_FileModifier*)$self->Access();
 	}
 };
-%extend Handle_StepSelect_FileModifier {
-	~Handle_StepSelect_FileModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_FileModifier\n");}
-	}
-};
+%feature("shadow") Handle_StepSelect_FileModifier::~Handle_StepSelect_FileModifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepSelect_FloatFormat;
@@ -117,12 +117,10 @@ class Handle_StepSelect_FloatFormat : public Handle_StepSelect_FileModifier {
 	return (StepSelect_FloatFormat*)$self->Access();
 	}
 };
-%extend Handle_StepSelect_FloatFormat {
-	~Handle_StepSelect_FloatFormat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_FloatFormat\n");}
-	}
-};
+%feature("shadow") Handle_StepSelect_FloatFormat::~Handle_StepSelect_FloatFormat %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepSelect_WorkLibrary;
@@ -147,12 +145,10 @@ class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 	return (StepSelect_WorkLibrary*)$self->Access();
 	}
 };
-%extend Handle_StepSelect_WorkLibrary {
-	~Handle_StepSelect_WorkLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_WorkLibrary\n");}
-	}
-};
+%feature("shadow") Handle_StepSelect_WorkLibrary::~Handle_StepSelect_WorkLibrary %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepSelect_Activator;
@@ -177,12 +173,10 @@ class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 	return (StepSelect_Activator*)$self->Access();
 	}
 };
-%extend Handle_StepSelect_Activator {
-	~Handle_StepSelect_Activator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_Activator\n");}
-	}
-};
+%feature("shadow") Handle_StepSelect_Activator::~Handle_StepSelect_Activator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepSelect_StepType;
@@ -207,12 +201,10 @@ class Handle_StepSelect_StepType : public Handle_IFSelect_Signature {
 	return (StepSelect_StepType*)$self->Access();
 	}
 };
-%extend Handle_StepSelect_StepType {
-	~Handle_StepSelect_StepType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_StepType\n");}
-	}
-};
+%feature("shadow") Handle_StepSelect_StepType::~Handle_StepSelect_StepType %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepSelect_FileModifier;
@@ -234,12 +226,10 @@ class StepSelect_FileModifier : public IFSelect_GeneralModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepSelect_FileModifier {
-	~StepSelect_FileModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_FileModifier\n");}
-	}
-};
+%feature("shadow") StepSelect_FileModifier::~StepSelect_FileModifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepSelect_WorkLibrary;
@@ -271,12 +261,10 @@ class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepSelect_WorkLibrary {
-	~StepSelect_WorkLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_WorkLibrary\n");}
-	}
-};
+%feature("shadow") StepSelect_WorkLibrary::~StepSelect_WorkLibrary %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepSelect_Activator;
@@ -302,12 +290,10 @@ class StepSelect_Activator : public IFSelect_Activator {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepSelect_Activator {
-	~StepSelect_Activator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_Activator\n");}
-	}
-};
+%feature("shadow") StepSelect_Activator::~StepSelect_Activator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepSelect_StepType;
@@ -333,12 +319,10 @@ class StepSelect_StepType : public IFSelect_Signature {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepSelect_StepType {
-	~StepSelect_StepType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_StepType\n");}
-	}
-};
+%feature("shadow") StepSelect_StepType::~StepSelect_StepType %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepSelect_FloatFormat;
@@ -374,12 +358,10 @@ class StepSelect_FloatFormat : public StepSelect_FileModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepSelect_FloatFormat {
-	~StepSelect_FloatFormat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_FloatFormat\n");}
-	}
-};
+%feature("shadow") StepSelect_FloatFormat::~StepSelect_FloatFormat %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepSelect_ModelModifier;
@@ -405,9 +387,7 @@ class StepSelect_ModelModifier : public IFSelect_Modifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepSelect_ModelModifier {
-	~StepSelect_ModelModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_ModelModifier\n");}
-	}
-};
+%feature("shadow") StepSelect_ModelModifier::~StepSelect_ModelModifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

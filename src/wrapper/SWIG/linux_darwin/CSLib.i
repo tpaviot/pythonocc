@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include CSLib_dependencies.i
 
 
@@ -70,12 +74,10 @@ class CSLib_NormalPolyDef : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend CSLib_NormalPolyDef {
-	~CSLib_NormalPolyDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CSLib_NormalPolyDef\n");}
-	}
-};
+%feature("shadow") CSLib_NormalPolyDef::~CSLib_NormalPolyDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor CSLib_Class2d;
@@ -99,12 +101,10 @@ class CSLib_Class2d {
 		void Destroy();
 
 };
-%extend CSLib_Class2d {
-	~CSLib_Class2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CSLib_Class2d\n");}
-	}
-};
+%feature("shadow") CSLib_Class2d::~CSLib_Class2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor CSLib;
@@ -128,9 +128,7 @@ class CSLib {
 		gp_Vec DNNormal(const Standard_Integer Nu, const Standard_Integer Nv, const TColgp_Array2OfVec &DerNUV, const Standard_Integer Iduref=0, const Standard_Integer Idvref=0);
 
 };
-%extend CSLib {
-	~CSLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CSLib\n");}
-	}
-};
+%feature("shadow") CSLib::~CSLib %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

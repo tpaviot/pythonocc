@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Geom2dHatch_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public Handle_TCollec
 	return (Geom2dHatch_DataMapNodeOfHatchingsOfHatcher*)$self->Access();
 	}
 };
-%extend Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
-	~Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher\n");}
-	}
-};
+%feature("shadow") Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher::~Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher;
@@ -87,12 +89,10 @@ class Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public 
 	return (Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher*)$self->Access();
 	}
 };
-%extend Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
-	~Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher\n");}
-	}
-};
+%feature("shadow") Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher::~Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dHatch_ElementOfHatcher;
@@ -114,12 +114,10 @@ class Geom2dHatch_ElementOfHatcher {
 		TopAbs_Orientation Orientation() const;
 
 };
-%extend Geom2dHatch_ElementOfHatcher {
-	~Geom2dHatch_ElementOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_ElementOfHatcher\n");}
-	}
-};
+%feature("shadow") Geom2dHatch_ElementOfHatcher::~Geom2dHatch_ElementOfHatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dHatch_MapOfElementsOfElementsOfHatcher;
@@ -151,12 +149,10 @@ class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap
 		Geom2dHatch_ElementOfHatcher & operator()(const Standard_Integer &K);
 
 };
-%extend Geom2dHatch_MapOfElementsOfElementsOfHatcher {
-	~Geom2dHatch_MapOfElementsOfElementsOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_MapOfElementsOfElementsOfHatcher\n");}
-	}
-};
+%feature("shadow") Geom2dHatch_MapOfElementsOfElementsOfHatcher::~Geom2dHatch_MapOfElementsOfElementsOfHatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dHatch_FClass2dOfClassifierOfHatcher;
@@ -180,12 +176,10 @@ class Geom2dHatch_FClass2dOfClassifierOfHatcher {
 		Standard_Boolean IsHeadOrEnd() const;
 
 };
-%extend Geom2dHatch_FClass2dOfClassifierOfHatcher {
-	~Geom2dHatch_FClass2dOfClassifierOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_FClass2dOfClassifierOfHatcher\n");}
-	}
-};
+%feature("shadow") Geom2dHatch_FClass2dOfClassifierOfHatcher::~Geom2dHatch_FClass2dOfClassifierOfHatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dHatch_DataMapNodeOfHatchingsOfHatcher;
@@ -221,12 +215,10 @@ class Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
-	~Geom2dHatch_DataMapNodeOfHatchingsOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_DataMapNodeOfHatchingsOfHatcher\n");}
-	}
-};
+%feature("shadow") Geom2dHatch_DataMapNodeOfHatchingsOfHatcher::~Geom2dHatch_DataMapNodeOfHatchingsOfHatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dHatch_Intersector;
@@ -252,12 +244,10 @@ class Geom2dHatch_Intersector : public Geom2dInt_GInter {
 		void LocalGeometry(const Geom2dAdaptor_Curve &E, const Standard_Real U, gp_Dir2d & T, gp_Dir2d & N, Standard_Real &OutValue) const;
 
 };
-%extend Geom2dHatch_Intersector {
-	~Geom2dHatch_Intersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_Intersector\n");}
-	}
-};
+%feature("shadow") Geom2dHatch_Intersector::~Geom2dHatch_Intersector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dHatch_HatchingsOfHatcher;
@@ -289,12 +279,10 @@ class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
 		Geom2dHatch_HatchingOfHatcher & operator()(const Standard_Integer &K);
 
 };
-%extend Geom2dHatch_HatchingsOfHatcher {
-	~Geom2dHatch_HatchingsOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_HatchingsOfHatcher\n");}
-	}
-};
+%feature("shadow") Geom2dHatch_HatchingsOfHatcher::~Geom2dHatch_HatchingsOfHatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dHatch_HatchingOfHatcher;
@@ -350,12 +338,10 @@ class Geom2dHatch_HatchingOfHatcher {
 		gp_Pnt2d ClassificationPoint() const;
 
 };
-%extend Geom2dHatch_HatchingOfHatcher {
-	~Geom2dHatch_HatchingOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_HatchingOfHatcher\n");}
-	}
-};
+%feature("shadow") Geom2dHatch_HatchingOfHatcher::~Geom2dHatch_HatchingOfHatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher;
@@ -391,12 +377,10 @@ class Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public TCollec
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
-	~Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher\n");}
-	}
-};
+%feature("shadow") Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher::~Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dHatch_ElementsOfHatcher;
@@ -448,12 +432,10 @@ class Geom2dHatch_ElementsOfHatcher {
 		void CurrentEdge(Geom2dAdaptor_Curve & E, TopAbs_Orientation & Or) const;
 
 };
-%extend Geom2dHatch_ElementsOfHatcher {
-	~Geom2dHatch_ElementsOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_ElementsOfHatcher\n");}
-	}
-};
+%feature("shadow") Geom2dHatch_ElementsOfHatcher::~Geom2dHatch_ElementsOfHatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dHatch_ClassifierOfHatcher;
@@ -479,12 +461,10 @@ class Geom2dHatch_ClassifierOfHatcher {
 		IntRes2d_Position Position() const;
 
 };
-%extend Geom2dHatch_ClassifierOfHatcher {
-	~Geom2dHatch_ClassifierOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_ClassifierOfHatcher\n");}
-	}
-};
+%feature("shadow") Geom2dHatch_ClassifierOfHatcher::~Geom2dHatch_ClassifierOfHatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dHatch_Hatcher;
@@ -560,12 +540,10 @@ class Geom2dHatch_Hatcher {
 		void Dump() const;
 
 };
-%extend Geom2dHatch_Hatcher {
-	~Geom2dHatch_Hatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_Hatcher\n");}
-	}
-};
+%feature("shadow") Geom2dHatch_Hatcher::~Geom2dHatch_Hatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher;
@@ -583,12 +561,10 @@ class Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher : public TCollection_Basic
 		const Geom2dHatch_HatchingOfHatcher & Value() const;
 
 };
-%extend Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher {
-	~Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher\n");}
-	}
-};
+%feature("shadow") Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher::~Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher;
@@ -606,9 +582,7 @@ class Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher : public TCo
 		const Geom2dHatch_ElementOfHatcher & Value() const;
 
 };
-%extend Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher {
-	~Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher\n");}
-	}
-};
+%feature("shadow") Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher::~Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

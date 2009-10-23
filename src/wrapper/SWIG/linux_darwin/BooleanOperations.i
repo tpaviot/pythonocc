@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BooleanOperations_dependencies.i
 
 
@@ -84,12 +88,10 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger 
 	return (BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger*)$self->Access();
 	}
 };
-%extend Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger {
-	~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger\n");}
-	}
-};
+%feature("shadow") Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger::~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors;
@@ -114,12 +116,10 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestor
 	return (BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors*)$self->Access();
 	}
 };
-%extend Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {
-	~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors\n");}
-	}
-};
+%feature("shadow") Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors::~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors;
@@ -161,12 +161,10 @@ class BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors : public TColle
 		BooleanOperations_AncestorsSeqAndSuccessorsSeq & ChangeFromKey(const TopoDS_Shape &K);
 
 };
-%extend BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors {
-	~BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors\n");}
-	}
-};
+%feature("shadow") BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors::~BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BooleanOperations_ShapeAndInterferences;
@@ -202,12 +200,10 @@ class BooleanOperations_ShapeAndInterferences {
 		void GetOrientations(Standard_Address & theArrayOfOrientations, Standard_Integer &OutValue) const;
 
 };
-%extend BooleanOperations_ShapeAndInterferences {
-	~BooleanOperations_ShapeAndInterferences() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_ShapeAndInterferences\n");}
-	}
-};
+%feature("shadow") BooleanOperations_ShapeAndInterferences::~BooleanOperations_ShapeAndInterferences %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BooleanOperations_Explorer;
@@ -235,12 +231,10 @@ class BooleanOperations_Explorer {
 		};
 
 };
-%extend BooleanOperations_Explorer {
-	~BooleanOperations_Explorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_Explorer\n");}
-	}
-};
+%feature("shadow") BooleanOperations_Explorer::~BooleanOperations_Explorer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger;
@@ -290,12 +284,10 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger : publi
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger {
-	~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger\n");}
-	}
-};
+%feature("shadow") BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger::~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BooleanOperations_OnceExplorer;
@@ -321,12 +313,10 @@ class BooleanOperations_OnceExplorer : public BooleanOperations_Explorer {
 		};
 
 };
-%extend BooleanOperations_OnceExplorer {
-	~BooleanOperations_OnceExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_OnceExplorer\n");}
-	}
-};
+%feature("shadow") BooleanOperations_OnceExplorer::~BooleanOperations_OnceExplorer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BooleanOperations_ShapesDataStructure;
@@ -420,12 +410,10 @@ class BooleanOperations_ShapesDataStructure {
 		void GetOrientations(const Standard_Integer index, Standard_Address & theArrayOfOrientations, Standard_Integer &OutValue) const;
 
 };
-%extend BooleanOperations_ShapesDataStructure {
-	~BooleanOperations_ShapesDataStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_ShapesDataStructure\n");}
-	}
-};
+%feature("shadow") BooleanOperations_ShapesDataStructure::~BooleanOperations_ShapesDataStructure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BooleanOperations_AncestorsSeqAndSuccessorsSeq;
@@ -453,12 +441,10 @@ class BooleanOperations_AncestorsSeqAndSuccessorsSeq {
 		void SetNewOrientation(const TopAbs_Orientation OrientationNumber);
 
 };
-%extend BooleanOperations_AncestorsSeqAndSuccessorsSeq {
-	~BooleanOperations_AncestorsSeqAndSuccessorsSeq() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_AncestorsSeqAndSuccessorsSeq\n");}
-	}
-};
+%feature("shadow") BooleanOperations_AncestorsSeqAndSuccessorsSeq::~BooleanOperations_AncestorsSeqAndSuccessorsSeq %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BooleanOperations_IndexedDataMapOfShapeInteger;
@@ -520,12 +506,10 @@ class BooleanOperations_IndexedDataMapOfShapeInteger : public TCollection_BasicM
 		};
 
 };
-%extend BooleanOperations_IndexedDataMapOfShapeInteger {
-	~BooleanOperations_IndexedDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_IndexedDataMapOfShapeInteger\n");}
-	}
-};
+%feature("shadow") BooleanOperations_IndexedDataMapOfShapeInteger::~BooleanOperations_IndexedDataMapOfShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BooleanOperations_AncestorsAndSuccessors;
@@ -563,12 +547,10 @@ class BooleanOperations_AncestorsAndSuccessors {
 		Standard_Integer NumberOfSuccessors() const;
 
 };
-%extend BooleanOperations_AncestorsAndSuccessors {
-	~BooleanOperations_AncestorsAndSuccessors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_AncestorsAndSuccessors\n");}
-	}
-};
+%feature("shadow") BooleanOperations_AncestorsAndSuccessors::~BooleanOperations_AncestorsAndSuccessors %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors;
@@ -608,9 +590,7 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSucces
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {
-	~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors\n");}
-	}
-};
+%feature("shadow") BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors::~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PPrsStd_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_PPrsStd_AISPresentation : public Handle_PDF_Attribute {
 	return (PPrsStd_AISPresentation*)$self->Access();
 	}
 };
-%extend Handle_PPrsStd_AISPresentation {
-	~Handle_PPrsStd_AISPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PPrsStd_AISPresentation\n");}
-	}
-};
+%feature("shadow") Handle_PPrsStd_AISPresentation::~Handle_PPrsStd_AISPresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PPrsStd_AISPresentation_1;
@@ -87,12 +89,10 @@ class Handle_PPrsStd_AISPresentation_1 : public Handle_PDF_Attribute {
 	return (PPrsStd_AISPresentation_1*)$self->Access();
 	}
 };
-%extend Handle_PPrsStd_AISPresentation_1 {
-	~Handle_PPrsStd_AISPresentation_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PPrsStd_AISPresentation_1\n");}
-	}
-};
+%feature("shadow") Handle_PPrsStd_AISPresentation_1::~Handle_PPrsStd_AISPresentation_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PPrsStd_AISPresentation_1;
@@ -172,12 +172,10 @@ class PPrsStd_AISPresentation_1 : public PDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PPrsStd_AISPresentation_1 {
-	~PPrsStd_AISPresentation_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPrsStd_AISPresentation_1\n");}
-	}
-};
+%feature("shadow") PPrsStd_AISPresentation_1::~PPrsStd_AISPresentation_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PPrsStd_AISPresentation;
@@ -249,9 +247,7 @@ class PPrsStd_AISPresentation : public PDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PPrsStd_AISPresentation {
-	~PPrsStd_AISPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPrsStd_AISPresentation\n");}
-	}
-};
+%feature("shadow") PPrsStd_AISPresentation::~PPrsStd_AISPresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

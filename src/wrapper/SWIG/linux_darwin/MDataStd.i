@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MDataStd_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_MDataStd_DirectoryRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_DirectoryRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_DirectoryRetrievalDriver {
-	~Handle_MDataStd_DirectoryRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_DirectoryRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_DirectoryRetrievalDriver::~Handle_MDataStd_DirectoryRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_RealArrayRetrievalDriver_1;
@@ -87,12 +89,10 @@ class Handle_MDataStd_RealArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 	return (MDataStd_RealArrayRetrievalDriver_1*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_RealArrayRetrievalDriver_1 {
-	~Handle_MDataStd_RealArrayRetrievalDriver_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RealArrayRetrievalDriver_1\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_RealArrayRetrievalDriver_1::~Handle_MDataStd_RealArrayRetrievalDriver_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ByteArrayRetrievalDriver_1;
@@ -117,12 +117,10 @@ class Handle_MDataStd_ByteArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 	return (MDataStd_ByteArrayRetrievalDriver_1*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ByteArrayRetrievalDriver_1 {
-	~Handle_MDataStd_ByteArrayRetrievalDriver_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ByteArrayRetrievalDriver_1\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ByteArrayRetrievalDriver_1::~Handle_MDataStd_ByteArrayRetrievalDriver_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ReferenceListStorageDriver;
@@ -147,12 +145,10 @@ class Handle_MDataStd_ReferenceListStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ReferenceListStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ReferenceListStorageDriver {
-	~Handle_MDataStd_ReferenceListStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ReferenceListStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ReferenceListStorageDriver::~Handle_MDataStd_ReferenceListStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_IntegerListStorageDriver;
@@ -177,12 +173,10 @@ class Handle_MDataStd_IntegerListStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_IntegerListStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_IntegerListStorageDriver {
-	~Handle_MDataStd_IntegerListStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntegerListStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_IntegerListStorageDriver::~Handle_MDataStd_IntegerListStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_BooleanListRetrievalDriver;
@@ -207,12 +201,10 @@ class Handle_MDataStd_BooleanListRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_BooleanListRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_BooleanListRetrievalDriver {
-	~Handle_MDataStd_BooleanListRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_BooleanListRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_BooleanListRetrievalDriver::~Handle_MDataStd_BooleanListRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ExtStringArrayRetrievalDriver_1;
@@ -237,12 +229,10 @@ class Handle_MDataStd_ExtStringArrayRetrievalDriver_1 : public Handle_MDF_ARDriv
 	return (MDataStd_ExtStringArrayRetrievalDriver_1*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ExtStringArrayRetrievalDriver_1 {
-	~Handle_MDataStd_ExtStringArrayRetrievalDriver_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ExtStringArrayRetrievalDriver_1\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ExtStringArrayRetrievalDriver_1::~Handle_MDataStd_ExtStringArrayRetrievalDriver_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_PlacementRetrievalDriver;
@@ -267,12 +257,10 @@ class Handle_MDataStd_PlacementRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_PlacementRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_PlacementRetrievalDriver {
-	~Handle_MDataStd_PlacementRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_PlacementRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_PlacementRetrievalDriver::~Handle_MDataStd_PlacementRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_TreeNodeRetrievalDriver;
@@ -297,12 +285,10 @@ class Handle_MDataStd_TreeNodeRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_TreeNodeRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_TreeNodeRetrievalDriver {
-	~Handle_MDataStd_TreeNodeRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_TreeNodeRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_TreeNodeRetrievalDriver::~Handle_MDataStd_TreeNodeRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_RealListRetrievalDriver;
@@ -327,12 +313,10 @@ class Handle_MDataStd_RealListRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_RealListRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_RealListRetrievalDriver {
-	~Handle_MDataStd_RealListRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RealListRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_RealListRetrievalDriver::~Handle_MDataStd_RealListRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_PlaneRetrievalDriver;
@@ -357,12 +341,10 @@ class Handle_MDataStd_PlaneRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_PlaneRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_PlaneRetrievalDriver {
-	~Handle_MDataStd_PlaneRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_PlaneRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_PlaneRetrievalDriver::~Handle_MDataStd_PlaneRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_NoteBookStorageDriver;
@@ -387,12 +369,10 @@ class Handle_MDataStd_NoteBookStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_NoteBookStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_NoteBookStorageDriver {
-	~Handle_MDataStd_NoteBookStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_NoteBookStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_NoteBookStorageDriver::~Handle_MDataStd_NoteBookStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ExtStringListRetrievalDriver;
@@ -417,12 +397,10 @@ class Handle_MDataStd_ExtStringListRetrievalDriver : public Handle_MDF_ARDriver 
 	return (MDataStd_ExtStringListRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ExtStringListRetrievalDriver {
-	~Handle_MDataStd_ExtStringListRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ExtStringListRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ExtStringListRetrievalDriver::~Handle_MDataStd_ExtStringListRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_TickRetrievalDriver;
@@ -447,12 +425,10 @@ class Handle_MDataStd_TickRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_TickRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_TickRetrievalDriver {
-	~Handle_MDataStd_TickRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_TickRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_TickRetrievalDriver::~Handle_MDataStd_TickRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_AxisStorageDriver;
@@ -477,12 +453,10 @@ class Handle_MDataStd_AxisStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_AxisStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_AxisStorageDriver {
-	~Handle_MDataStd_AxisStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_AxisStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_AxisStorageDriver::~Handle_MDataStd_AxisStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_DirectoryStorageDriver;
@@ -507,12 +481,10 @@ class Handle_MDataStd_DirectoryStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_DirectoryStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_DirectoryStorageDriver {
-	~Handle_MDataStd_DirectoryStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_DirectoryStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_DirectoryStorageDriver::~Handle_MDataStd_DirectoryStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_GeometryStorageDriver;
@@ -537,12 +509,10 @@ class Handle_MDataStd_GeometryStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_GeometryStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_GeometryStorageDriver {
-	~Handle_MDataStd_GeometryStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_GeometryStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_GeometryStorageDriver::~Handle_MDataStd_GeometryStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_NoteBookRetrievalDriver;
@@ -567,12 +537,10 @@ class Handle_MDataStd_NoteBookRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_NoteBookRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_NoteBookRetrievalDriver {
-	~Handle_MDataStd_NoteBookRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_NoteBookRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_NoteBookRetrievalDriver::~Handle_MDataStd_NoteBookRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_RealStorageDriver;
@@ -597,12 +565,10 @@ class Handle_MDataStd_RealStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_RealStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_RealStorageDriver {
-	~Handle_MDataStd_RealStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RealStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_RealStorageDriver::~Handle_MDataStd_RealStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_PlacementStorageDriver;
@@ -627,12 +593,10 @@ class Handle_MDataStd_PlacementStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_PlacementStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_PlacementStorageDriver {
-	~Handle_MDataStd_PlacementStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_PlacementStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_PlacementStorageDriver::~Handle_MDataStd_PlacementStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ShapeRetrievalDriver;
@@ -657,12 +621,10 @@ class Handle_MDataStd_ShapeRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_ShapeRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ShapeRetrievalDriver {
-	~Handle_MDataStd_ShapeRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ShapeRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ShapeRetrievalDriver::~Handle_MDataStd_ShapeRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ShapeStorageDriver;
@@ -687,12 +649,10 @@ class Handle_MDataStd_ShapeStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ShapeStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ShapeStorageDriver {
-	~Handle_MDataStd_ShapeStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ShapeStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ShapeStorageDriver::~Handle_MDataStd_ShapeStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ConstraintRetrievalDriver;
@@ -717,12 +677,10 @@ class Handle_MDataStd_ConstraintRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_ConstraintRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ConstraintRetrievalDriver {
-	~Handle_MDataStd_ConstraintRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ConstraintRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ConstraintRetrievalDriver::~Handle_MDataStd_ConstraintRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_PatternStdRetrievalDriver;
@@ -747,12 +705,10 @@ class Handle_MDataStd_PatternStdRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_PatternStdRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_PatternStdRetrievalDriver {
-	~Handle_MDataStd_PatternStdRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_PatternStdRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_PatternStdRetrievalDriver::~Handle_MDataStd_PatternStdRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_AsciiStringStorageDriver;
@@ -777,12 +733,10 @@ class Handle_MDataStd_AsciiStringStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_AsciiStringStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_AsciiStringStorageDriver {
-	~Handle_MDataStd_AsciiStringStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_AsciiStringStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_AsciiStringStorageDriver::~Handle_MDataStd_AsciiStringStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_AsciiStringRetrievalDriver;
@@ -807,12 +761,10 @@ class Handle_MDataStd_AsciiStringRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_AsciiStringRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_AsciiStringRetrievalDriver {
-	~Handle_MDataStd_AsciiStringRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_AsciiStringRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_AsciiStringRetrievalDriver::~Handle_MDataStd_AsciiStringRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_IntPackedMapRetrievalDriver_1;
@@ -837,12 +789,10 @@ class Handle_MDataStd_IntPackedMapRetrievalDriver_1 : public Handle_MDF_ARDriver
 	return (MDataStd_IntPackedMapRetrievalDriver_1*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_IntPackedMapRetrievalDriver_1 {
-	~Handle_MDataStd_IntPackedMapRetrievalDriver_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntPackedMapRetrievalDriver_1\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_IntPackedMapRetrievalDriver_1::~Handle_MDataStd_IntPackedMapRetrievalDriver_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_IntegerStorageDriver;
@@ -867,12 +817,10 @@ class Handle_MDataStd_IntegerStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_IntegerStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_IntegerStorageDriver {
-	~Handle_MDataStd_IntegerStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntegerStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_IntegerStorageDriver::~Handle_MDataStd_IntegerStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_IntegerListRetrievalDriver;
@@ -897,12 +845,10 @@ class Handle_MDataStd_IntegerListRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_IntegerListRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_IntegerListRetrievalDriver {
-	~Handle_MDataStd_IntegerListRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntegerListRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_IntegerListRetrievalDriver::~Handle_MDataStd_IntegerListRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ReferenceArrayStorageDriver;
@@ -927,12 +873,10 @@ class Handle_MDataStd_ReferenceArrayStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ReferenceArrayStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ReferenceArrayStorageDriver {
-	~Handle_MDataStd_ReferenceArrayStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ReferenceArrayStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ReferenceArrayStorageDriver::~Handle_MDataStd_ReferenceArrayStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ExtStringArrayStorageDriver;
@@ -957,12 +901,10 @@ class Handle_MDataStd_ExtStringArrayStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ExtStringArrayStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ExtStringArrayStorageDriver {
-	~Handle_MDataStd_ExtStringArrayStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ExtStringArrayStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ExtStringArrayStorageDriver::~Handle_MDataStd_ExtStringArrayStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_UAttributeRetrievalDriver;
@@ -987,12 +929,10 @@ class Handle_MDataStd_UAttributeRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_UAttributeRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_UAttributeRetrievalDriver {
-	~Handle_MDataStd_UAttributeRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_UAttributeRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_UAttributeRetrievalDriver::~Handle_MDataStd_UAttributeRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_CommentRetrievalDriver;
@@ -1017,12 +957,10 @@ class Handle_MDataStd_CommentRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_CommentRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_CommentRetrievalDriver {
-	~Handle_MDataStd_CommentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_CommentRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_CommentRetrievalDriver::~Handle_MDataStd_CommentRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_RelationRetrievalDriver;
@@ -1047,12 +985,10 @@ class Handle_MDataStd_RelationRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_RelationRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_RelationRetrievalDriver {
-	~Handle_MDataStd_RelationRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RelationRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_RelationRetrievalDriver::~Handle_MDataStd_RelationRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_PointRetrievalDriver;
@@ -1077,12 +1013,10 @@ class Handle_MDataStd_PointRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_PointRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_PointRetrievalDriver {
-	~Handle_MDataStd_PointRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_PointRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_PointRetrievalDriver::~Handle_MDataStd_PointRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_AxisRetrievalDriver;
@@ -1107,12 +1041,10 @@ class Handle_MDataStd_AxisRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_AxisRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_AxisRetrievalDriver {
-	~Handle_MDataStd_AxisRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_AxisRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_AxisRetrievalDriver::~Handle_MDataStd_AxisRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_NameRetrievalDriver;
@@ -1137,12 +1069,10 @@ class Handle_MDataStd_NameRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_NameRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_NameRetrievalDriver {
-	~Handle_MDataStd_NameRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_NameRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_NameRetrievalDriver::~Handle_MDataStd_NameRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ExpressionRetrievalDriver;
@@ -1167,12 +1097,10 @@ class Handle_MDataStd_ExpressionRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_ExpressionRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ExpressionRetrievalDriver {
-	~Handle_MDataStd_ExpressionRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ExpressionRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ExpressionRetrievalDriver::~Handle_MDataStd_ExpressionRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_IntPackedMapRetrievalDriver;
@@ -1197,12 +1125,10 @@ class Handle_MDataStd_IntPackedMapRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_IntPackedMapRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_IntPackedMapRetrievalDriver {
-	~Handle_MDataStd_IntPackedMapRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntPackedMapRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_IntPackedMapRetrievalDriver::~Handle_MDataStd_IntPackedMapRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_PatternStdStorageDriver;
@@ -1227,12 +1153,10 @@ class Handle_MDataStd_PatternStdStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_PatternStdStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_PatternStdStorageDriver {
-	~Handle_MDataStd_PatternStdStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_PatternStdStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_PatternStdStorageDriver::~Handle_MDataStd_PatternStdStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_RealArrayRetrievalDriver;
@@ -1257,12 +1181,10 @@ class Handle_MDataStd_RealArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_RealArrayRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_RealArrayRetrievalDriver {
-	~Handle_MDataStd_RealArrayRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RealArrayRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_RealArrayRetrievalDriver::~Handle_MDataStd_RealArrayRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ReferenceArrayRetrievalDriver;
@@ -1287,12 +1209,10 @@ class Handle_MDataStd_ReferenceArrayRetrievalDriver : public Handle_MDF_ARDriver
 	return (MDataStd_ReferenceArrayRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ReferenceArrayRetrievalDriver {
-	~Handle_MDataStd_ReferenceArrayRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ReferenceArrayRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ReferenceArrayRetrievalDriver::~Handle_MDataStd_ReferenceArrayRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_NamedDataRetrievalDriver;
@@ -1317,12 +1237,10 @@ class Handle_MDataStd_NamedDataRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_NamedDataRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_NamedDataRetrievalDriver {
-	~Handle_MDataStd_NamedDataRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_NamedDataRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_NamedDataRetrievalDriver::~Handle_MDataStd_NamedDataRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ExtStringArrayRetrievalDriver;
@@ -1347,12 +1265,10 @@ class Handle_MDataStd_ExtStringArrayRetrievalDriver : public Handle_MDF_ARDriver
 	return (MDataStd_ExtStringArrayRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ExtStringArrayRetrievalDriver {
-	~Handle_MDataStd_ExtStringArrayRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ExtStringArrayRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ExtStringArrayRetrievalDriver::~Handle_MDataStd_ExtStringArrayRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_NameStorageDriver;
@@ -1377,12 +1293,10 @@ class Handle_MDataStd_NameStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_NameStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_NameStorageDriver {
-	~Handle_MDataStd_NameStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_NameStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_NameStorageDriver::~Handle_MDataStd_NameStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_PointStorageDriver;
@@ -1407,12 +1321,10 @@ class Handle_MDataStd_PointStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_PointStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_PointStorageDriver {
-	~Handle_MDataStd_PointStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_PointStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_PointStorageDriver::~Handle_MDataStd_PointStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_IntegerRetrievalDriver;
@@ -1437,12 +1349,10 @@ class Handle_MDataStd_IntegerRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_IntegerRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_IntegerRetrievalDriver {
-	~Handle_MDataStd_IntegerRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntegerRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_IntegerRetrievalDriver::~Handle_MDataStd_IntegerRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_BooleanArrayStorageDriver;
@@ -1467,12 +1377,10 @@ class Handle_MDataStd_BooleanArrayStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_BooleanArrayStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_BooleanArrayStorageDriver {
-	~Handle_MDataStd_BooleanArrayStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_BooleanArrayStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_BooleanArrayStorageDriver::~Handle_MDataStd_BooleanArrayStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_IntPackedMapStorageDriver;
@@ -1497,12 +1405,10 @@ class Handle_MDataStd_IntPackedMapStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_IntPackedMapStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_IntPackedMapStorageDriver {
-	~Handle_MDataStd_IntPackedMapStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntPackedMapStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_IntPackedMapStorageDriver::~Handle_MDataStd_IntPackedMapStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ExpressionStorageDriver;
@@ -1527,12 +1433,10 @@ class Handle_MDataStd_ExpressionStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ExpressionStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ExpressionStorageDriver {
-	~Handle_MDataStd_ExpressionStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ExpressionStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ExpressionStorageDriver::~Handle_MDataStd_ExpressionStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_NamedDataStorageDriver;
@@ -1557,12 +1461,10 @@ class Handle_MDataStd_NamedDataStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_NamedDataStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_NamedDataStorageDriver {
-	~Handle_MDataStd_NamedDataStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_NamedDataStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_NamedDataStorageDriver::~Handle_MDataStd_NamedDataStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_RealArrayStorageDriver;
@@ -1587,12 +1489,10 @@ class Handle_MDataStd_RealArrayStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_RealArrayStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_RealArrayStorageDriver {
-	~Handle_MDataStd_RealArrayStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RealArrayStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_RealArrayStorageDriver::~Handle_MDataStd_RealArrayStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ExtStringListStorageDriver;
@@ -1617,12 +1517,10 @@ class Handle_MDataStd_ExtStringListStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ExtStringListStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ExtStringListStorageDriver {
-	~Handle_MDataStd_ExtStringListStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ExtStringListStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ExtStringListStorageDriver::~Handle_MDataStd_ExtStringListStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_RelationStorageDriver;
@@ -1647,12 +1545,10 @@ class Handle_MDataStd_RelationStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_RelationStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_RelationStorageDriver {
-	~Handle_MDataStd_RelationStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RelationStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_RelationStorageDriver::~Handle_MDataStd_RelationStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_BooleanArrayRetrievalDriver;
@@ -1677,12 +1573,10 @@ class Handle_MDataStd_BooleanArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_BooleanArrayRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_BooleanArrayRetrievalDriver {
-	~Handle_MDataStd_BooleanArrayRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_BooleanArrayRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_BooleanArrayRetrievalDriver::~Handle_MDataStd_BooleanArrayRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_RealListStorageDriver;
@@ -1707,12 +1601,10 @@ class Handle_MDataStd_RealListStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_RealListStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_RealListStorageDriver {
-	~Handle_MDataStd_RealListStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RealListStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_RealListStorageDriver::~Handle_MDataStd_RealListStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_PlaneStorageDriver;
@@ -1737,12 +1629,10 @@ class Handle_MDataStd_PlaneStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_PlaneStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_PlaneStorageDriver {
-	~Handle_MDataStd_PlaneStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_PlaneStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_PlaneStorageDriver::~Handle_MDataStd_PlaneStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_UAttributeStorageDriver;
@@ -1767,12 +1657,10 @@ class Handle_MDataStd_UAttributeStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_UAttributeStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_UAttributeStorageDriver {
-	~Handle_MDataStd_UAttributeStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_UAttributeStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_UAttributeStorageDriver::~Handle_MDataStd_UAttributeStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_BooleanListStorageDriver;
@@ -1797,12 +1685,10 @@ class Handle_MDataStd_BooleanListStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_BooleanListStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_BooleanListStorageDriver {
-	~Handle_MDataStd_BooleanListStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_BooleanListStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_BooleanListStorageDriver::~Handle_MDataStd_BooleanListStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_VariableStorageDriver;
@@ -1827,12 +1713,10 @@ class Handle_MDataStd_VariableStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_VariableStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_VariableStorageDriver {
-	~Handle_MDataStd_VariableStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_VariableStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_VariableStorageDriver::~Handle_MDataStd_VariableStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_IntegerArrayRetrievalDriver_1;
@@ -1857,12 +1741,10 @@ class Handle_MDataStd_IntegerArrayRetrievalDriver_1 : public Handle_MDF_ARDriver
 	return (MDataStd_IntegerArrayRetrievalDriver_1*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_IntegerArrayRetrievalDriver_1 {
-	~Handle_MDataStd_IntegerArrayRetrievalDriver_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntegerArrayRetrievalDriver_1\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_IntegerArrayRetrievalDriver_1::~Handle_MDataStd_IntegerArrayRetrievalDriver_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_GeometryRetrievalDriver;
@@ -1887,12 +1769,10 @@ class Handle_MDataStd_GeometryRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_GeometryRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_GeometryRetrievalDriver {
-	~Handle_MDataStd_GeometryRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_GeometryRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_GeometryRetrievalDriver::~Handle_MDataStd_GeometryRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_RealRetrievalDriver;
@@ -1917,12 +1797,10 @@ class Handle_MDataStd_RealRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_RealRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_RealRetrievalDriver {
-	~Handle_MDataStd_RealRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RealRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_RealRetrievalDriver::~Handle_MDataStd_RealRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ByteArrayStorageDriver;
@@ -1947,12 +1825,10 @@ class Handle_MDataStd_ByteArrayStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ByteArrayStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ByteArrayStorageDriver {
-	~Handle_MDataStd_ByteArrayStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ByteArrayStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ByteArrayStorageDriver::~Handle_MDataStd_ByteArrayStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_CommentStorageDriver;
@@ -1977,12 +1853,10 @@ class Handle_MDataStd_CommentStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_CommentStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_CommentStorageDriver {
-	~Handle_MDataStd_CommentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_CommentStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_CommentStorageDriver::~Handle_MDataStd_CommentStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_IntegerArrayStorageDriver;
@@ -2007,12 +1881,10 @@ class Handle_MDataStd_IntegerArrayStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_IntegerArrayStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_IntegerArrayStorageDriver {
-	~Handle_MDataStd_IntegerArrayStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntegerArrayStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_IntegerArrayStorageDriver::~Handle_MDataStd_IntegerArrayStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ReferenceListRetrievalDriver;
@@ -2037,12 +1909,10 @@ class Handle_MDataStd_ReferenceListRetrievalDriver : public Handle_MDF_ARDriver 
 	return (MDataStd_ReferenceListRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ReferenceListRetrievalDriver {
-	~Handle_MDataStd_ReferenceListRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ReferenceListRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ReferenceListRetrievalDriver::~Handle_MDataStd_ReferenceListRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_IntegerArrayRetrievalDriver;
@@ -2067,12 +1937,10 @@ class Handle_MDataStd_IntegerArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_IntegerArrayRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_IntegerArrayRetrievalDriver {
-	~Handle_MDataStd_IntegerArrayRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntegerArrayRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_IntegerArrayRetrievalDriver::~Handle_MDataStd_IntegerArrayRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ByteArrayRetrievalDriver;
@@ -2097,12 +1965,10 @@ class Handle_MDataStd_ByteArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_ByteArrayRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ByteArrayRetrievalDriver {
-	~Handle_MDataStd_ByteArrayRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ByteArrayRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ByteArrayRetrievalDriver::~Handle_MDataStd_ByteArrayRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_ConstraintStorageDriver;
@@ -2127,12 +1993,10 @@ class Handle_MDataStd_ConstraintStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_ConstraintStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_ConstraintStorageDriver {
-	~Handle_MDataStd_ConstraintStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ConstraintStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_ConstraintStorageDriver::~Handle_MDataStd_ConstraintStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_TickStorageDriver;
@@ -2157,12 +2021,10 @@ class Handle_MDataStd_TickStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_TickStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_TickStorageDriver {
-	~Handle_MDataStd_TickStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_TickStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_TickStorageDriver::~Handle_MDataStd_TickStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_TreeNodeStorageDriver;
@@ -2187,12 +2049,10 @@ class Handle_MDataStd_TreeNodeStorageDriver : public Handle_MDF_ASDriver {
 	return (MDataStd_TreeNodeStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_TreeNodeStorageDriver {
-	~Handle_MDataStd_TreeNodeStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_TreeNodeStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_TreeNodeStorageDriver::~Handle_MDataStd_TreeNodeStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDataStd_VariableRetrievalDriver;
@@ -2217,12 +2077,10 @@ class Handle_MDataStd_VariableRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDataStd_VariableRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDataStd_VariableRetrievalDriver {
-	~Handle_MDataStd_VariableRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_VariableRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDataStd_VariableRetrievalDriver::~Handle_MDataStd_VariableRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ExtStringArrayRetrievalDriver;
@@ -2252,12 +2110,10 @@ class MDataStd_ExtStringArrayRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ExtStringArrayRetrievalDriver {
-	~MDataStd_ExtStringArrayRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ExtStringArrayRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ExtStringArrayRetrievalDriver::~MDataStd_ExtStringArrayRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ExpressionStorageDriver;
@@ -2287,12 +2143,10 @@ class MDataStd_ExpressionStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ExpressionStorageDriver {
-	~MDataStd_ExpressionStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ExpressionStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ExpressionStorageDriver::~MDataStd_ExpressionStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_RealStorageDriver;
@@ -2322,12 +2176,10 @@ class MDataStd_RealStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_RealStorageDriver {
-	~MDataStd_RealStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_RealStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_RealStorageDriver::~MDataStd_RealStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ReferenceArrayRetrievalDriver;
@@ -2357,12 +2209,10 @@ class MDataStd_ReferenceArrayRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ReferenceArrayRetrievalDriver {
-	~MDataStd_ReferenceArrayRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ReferenceArrayRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ReferenceArrayRetrievalDriver::~MDataStd_ReferenceArrayRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_PlacementRetrievalDriver;
@@ -2392,12 +2242,10 @@ class MDataStd_PlacementRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_PlacementRetrievalDriver {
-	~MDataStd_PlacementRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_PlacementRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_PlacementRetrievalDriver::~MDataStd_PlacementRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ConstraintRetrievalDriver;
@@ -2427,12 +2275,10 @@ class MDataStd_ConstraintRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ConstraintRetrievalDriver {
-	~MDataStd_ConstraintRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ConstraintRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ConstraintRetrievalDriver::~MDataStd_ConstraintRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_NameRetrievalDriver;
@@ -2462,12 +2308,10 @@ class MDataStd_NameRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_NameRetrievalDriver {
-	~MDataStd_NameRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_NameRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_NameRetrievalDriver::~MDataStd_NameRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_PointStorageDriver;
@@ -2497,12 +2341,10 @@ class MDataStd_PointStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_PointStorageDriver {
-	~MDataStd_PointStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_PointStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_PointStorageDriver::~MDataStd_PointStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_IntPackedMapStorageDriver;
@@ -2532,12 +2374,10 @@ class MDataStd_IntPackedMapStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_IntPackedMapStorageDriver {
-	~MDataStd_IntPackedMapStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_IntPackedMapStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_IntPackedMapStorageDriver::~MDataStd_IntPackedMapStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_TreeNodeStorageDriver;
@@ -2567,12 +2407,10 @@ class MDataStd_TreeNodeStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_TreeNodeStorageDriver {
-	~MDataStd_TreeNodeStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_TreeNodeStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_TreeNodeStorageDriver::~MDataStd_TreeNodeStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ExtStringArrayStorageDriver;
@@ -2602,12 +2440,10 @@ class MDataStd_ExtStringArrayStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ExtStringArrayStorageDriver {
-	~MDataStd_ExtStringArrayStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ExtStringArrayStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ExtStringArrayStorageDriver::~MDataStd_ExtStringArrayStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_AxisStorageDriver;
@@ -2637,12 +2473,10 @@ class MDataStd_AxisStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_AxisStorageDriver {
-	~MDataStd_AxisStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_AxisStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_AxisStorageDriver::~MDataStd_AxisStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ExpressionRetrievalDriver;
@@ -2672,12 +2506,10 @@ class MDataStd_ExpressionRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ExpressionRetrievalDriver {
-	~MDataStd_ExpressionRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ExpressionRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ExpressionRetrievalDriver::~MDataStd_ExpressionRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_TickRetrievalDriver;
@@ -2707,12 +2539,10 @@ class MDataStd_TickRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_TickRetrievalDriver {
-	~MDataStd_TickRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_TickRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_TickRetrievalDriver::~MDataStd_TickRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_CommentStorageDriver;
@@ -2742,12 +2572,10 @@ class MDataStd_CommentStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_CommentStorageDriver {
-	~MDataStd_CommentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_CommentStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_CommentStorageDriver::~MDataStd_CommentStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_UAttributeRetrievalDriver;
@@ -2777,12 +2605,10 @@ class MDataStd_UAttributeRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_UAttributeRetrievalDriver {
-	~MDataStd_UAttributeRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_UAttributeRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_UAttributeRetrievalDriver::~MDataStd_UAttributeRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_PlaneRetrievalDriver;
@@ -2812,12 +2638,10 @@ class MDataStd_PlaneRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_PlaneRetrievalDriver {
-	~MDataStd_PlaneRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_PlaneRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_PlaneRetrievalDriver::~MDataStd_PlaneRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_PatternStdStorageDriver;
@@ -2847,12 +2671,10 @@ class MDataStd_PatternStdStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_PatternStdStorageDriver {
-	~MDataStd_PatternStdStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_PatternStdStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_PatternStdStorageDriver::~MDataStd_PatternStdStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_DirectoryStorageDriver;
@@ -2882,12 +2704,10 @@ class MDataStd_DirectoryStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_DirectoryStorageDriver {
-	~MDataStd_DirectoryStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_DirectoryStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_DirectoryStorageDriver::~MDataStd_DirectoryStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ReferenceListStorageDriver;
@@ -2917,12 +2737,10 @@ class MDataStd_ReferenceListStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ReferenceListStorageDriver {
-	~MDataStd_ReferenceListStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ReferenceListStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ReferenceListStorageDriver::~MDataStd_ReferenceListStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_BooleanListRetrievalDriver;
@@ -2952,12 +2770,10 @@ class MDataStd_BooleanListRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_BooleanListRetrievalDriver {
-	~MDataStd_BooleanListRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_BooleanListRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_BooleanListRetrievalDriver::~MDataStd_BooleanListRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_AxisRetrievalDriver;
@@ -2987,12 +2803,10 @@ class MDataStd_AxisRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_AxisRetrievalDriver {
-	~MDataStd_AxisRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_AxisRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_AxisRetrievalDriver::~MDataStd_AxisRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_RealArrayRetrievalDriver;
@@ -3022,12 +2836,10 @@ class MDataStd_RealArrayRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_RealArrayRetrievalDriver {
-	~MDataStd_RealArrayRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_RealArrayRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_RealArrayRetrievalDriver::~MDataStd_RealArrayRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_RealArrayRetrievalDriver_1;
@@ -3057,12 +2869,10 @@ class MDataStd_RealArrayRetrievalDriver_1 : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_RealArrayRetrievalDriver_1 {
-	~MDataStd_RealArrayRetrievalDriver_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_RealArrayRetrievalDriver_1\n");}
-	}
-};
+%feature("shadow") MDataStd_RealArrayRetrievalDriver_1::~MDataStd_RealArrayRetrievalDriver_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_IntegerListRetrievalDriver;
@@ -3092,12 +2902,10 @@ class MDataStd_IntegerListRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_IntegerListRetrievalDriver {
-	~MDataStd_IntegerListRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_IntegerListRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_IntegerListRetrievalDriver::~MDataStd_IntegerListRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_DirectoryRetrievalDriver;
@@ -3127,12 +2935,10 @@ class MDataStd_DirectoryRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_DirectoryRetrievalDriver {
-	~MDataStd_DirectoryRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_DirectoryRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_DirectoryRetrievalDriver::~MDataStd_DirectoryRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ByteArrayRetrievalDriver_1;
@@ -3162,12 +2968,10 @@ class MDataStd_ByteArrayRetrievalDriver_1 : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ByteArrayRetrievalDriver_1 {
-	~MDataStd_ByteArrayRetrievalDriver_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ByteArrayRetrievalDriver_1\n");}
-	}
-};
+%feature("shadow") MDataStd_ByteArrayRetrievalDriver_1::~MDataStd_ByteArrayRetrievalDriver_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_AsciiStringRetrievalDriver;
@@ -3197,12 +3001,10 @@ class MDataStd_AsciiStringRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_AsciiStringRetrievalDriver {
-	~MDataStd_AsciiStringRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_AsciiStringRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_AsciiStringRetrievalDriver::~MDataStd_AsciiStringRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_BooleanListStorageDriver;
@@ -3232,12 +3034,10 @@ class MDataStd_BooleanListStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_BooleanListStorageDriver {
-	~MDataStd_BooleanListStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_BooleanListStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_BooleanListStorageDriver::~MDataStd_BooleanListStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ShapeStorageDriver;
@@ -3267,12 +3067,10 @@ class MDataStd_ShapeStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ShapeStorageDriver {
-	~MDataStd_ShapeStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ShapeStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ShapeStorageDriver::~MDataStd_ShapeStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_NoteBookRetrievalDriver;
@@ -3302,12 +3100,10 @@ class MDataStd_NoteBookRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_NoteBookRetrievalDriver {
-	~MDataStd_NoteBookRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_NoteBookRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_NoteBookRetrievalDriver::~MDataStd_NoteBookRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_IntegerListStorageDriver;
@@ -3337,12 +3133,10 @@ class MDataStd_IntegerListStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_IntegerListStorageDriver {
-	~MDataStd_IntegerListStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_IntegerListStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_IntegerListStorageDriver::~MDataStd_IntegerListStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_IntPackedMapRetrievalDriver_1;
@@ -3372,12 +3166,10 @@ class MDataStd_IntPackedMapRetrievalDriver_1 : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_IntPackedMapRetrievalDriver_1 {
-	~MDataStd_IntPackedMapRetrievalDriver_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_IntPackedMapRetrievalDriver_1\n");}
-	}
-};
+%feature("shadow") MDataStd_IntPackedMapRetrievalDriver_1::~MDataStd_IntPackedMapRetrievalDriver_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_IntegerArrayStorageDriver;
@@ -3407,12 +3199,10 @@ class MDataStd_IntegerArrayStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_IntegerArrayStorageDriver {
-	~MDataStd_IntegerArrayStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_IntegerArrayStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_IntegerArrayStorageDriver::~MDataStd_IntegerArrayStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_IntegerRetrievalDriver;
@@ -3442,12 +3232,10 @@ class MDataStd_IntegerRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_IntegerRetrievalDriver {
-	~MDataStd_IntegerRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_IntegerRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_IntegerRetrievalDriver::~MDataStd_IntegerRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_BooleanArrayStorageDriver;
@@ -3477,12 +3265,10 @@ class MDataStd_BooleanArrayStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_BooleanArrayStorageDriver {
-	~MDataStd_BooleanArrayStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_BooleanArrayStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_BooleanArrayStorageDriver::~MDataStd_BooleanArrayStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ReferenceArrayStorageDriver;
@@ -3512,12 +3298,10 @@ class MDataStd_ReferenceArrayStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ReferenceArrayStorageDriver {
-	~MDataStd_ReferenceArrayStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ReferenceArrayStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ReferenceArrayStorageDriver::~MDataStd_ReferenceArrayStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ConstraintStorageDriver;
@@ -3547,12 +3331,10 @@ class MDataStd_ConstraintStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ConstraintStorageDriver {
-	~MDataStd_ConstraintStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ConstraintStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ConstraintStorageDriver::~MDataStd_ConstraintStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_NamedDataStorageDriver;
@@ -3582,12 +3364,10 @@ class MDataStd_NamedDataStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_NamedDataStorageDriver {
-	~MDataStd_NamedDataStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_NamedDataStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_NamedDataStorageDriver::~MDataStd_NamedDataStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_IntegerStorageDriver;
@@ -3617,12 +3397,10 @@ class MDataStd_IntegerStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_IntegerStorageDriver {
-	~MDataStd_IntegerStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_IntegerStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_IntegerStorageDriver::~MDataStd_IntegerStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_NoteBookStorageDriver;
@@ -3652,12 +3430,10 @@ class MDataStd_NoteBookStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_NoteBookStorageDriver {
-	~MDataStd_NoteBookStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_NoteBookStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_NoteBookStorageDriver::~MDataStd_NoteBookStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_UAttributeStorageDriver;
@@ -3687,12 +3463,10 @@ class MDataStd_UAttributeStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_UAttributeStorageDriver {
-	~MDataStd_UAttributeStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_UAttributeStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_UAttributeStorageDriver::~MDataStd_UAttributeStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_PatternStdRetrievalDriver;
@@ -3722,12 +3496,10 @@ class MDataStd_PatternStdRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_PatternStdRetrievalDriver {
-	~MDataStd_PatternStdRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_PatternStdRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_PatternStdRetrievalDriver::~MDataStd_PatternStdRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_IntPackedMapRetrievalDriver;
@@ -3757,12 +3529,10 @@ class MDataStd_IntPackedMapRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_IntPackedMapRetrievalDriver {
-	~MDataStd_IntPackedMapRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_IntPackedMapRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_IntPackedMapRetrievalDriver::~MDataStd_IntPackedMapRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_PointRetrievalDriver;
@@ -3792,12 +3562,10 @@ class MDataStd_PointRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_PointRetrievalDriver {
-	~MDataStd_PointRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_PointRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_PointRetrievalDriver::~MDataStd_PointRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ByteArrayRetrievalDriver;
@@ -3827,12 +3595,10 @@ class MDataStd_ByteArrayRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ByteArrayRetrievalDriver {
-	~MDataStd_ByteArrayRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ByteArrayRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ByteArrayRetrievalDriver::~MDataStd_ByteArrayRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_NameStorageDriver;
@@ -3862,12 +3628,10 @@ class MDataStd_NameStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_NameStorageDriver {
-	~MDataStd_NameStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_NameStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_NameStorageDriver::~MDataStd_NameStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_RelationStorageDriver;
@@ -3897,12 +3661,10 @@ class MDataStd_RelationStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_RelationStorageDriver {
-	~MDataStd_RelationStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_RelationStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_RelationStorageDriver::~MDataStd_RelationStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ExtStringListRetrievalDriver;
@@ -3932,12 +3694,10 @@ class MDataStd_ExtStringListRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ExtStringListRetrievalDriver {
-	~MDataStd_ExtStringListRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ExtStringListRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ExtStringListRetrievalDriver::~MDataStd_ExtStringListRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_RealListStorageDriver;
@@ -3967,12 +3727,10 @@ class MDataStd_RealListStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_RealListStorageDriver {
-	~MDataStd_RealListStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_RealListStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_RealListStorageDriver::~MDataStd_RealListStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_RealRetrievalDriver;
@@ -4002,12 +3760,10 @@ class MDataStd_RealRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_RealRetrievalDriver {
-	~MDataStd_RealRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_RealRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_RealRetrievalDriver::~MDataStd_RealRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_TickStorageDriver;
@@ -4037,12 +3793,10 @@ class MDataStd_TickStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_TickStorageDriver {
-	~MDataStd_TickStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_TickStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_TickStorageDriver::~MDataStd_TickStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ExtStringArrayRetrievalDriver_1;
@@ -4072,12 +3826,10 @@ class MDataStd_ExtStringArrayRetrievalDriver_1 : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ExtStringArrayRetrievalDriver_1 {
-	~MDataStd_ExtStringArrayRetrievalDriver_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ExtStringArrayRetrievalDriver_1\n");}
-	}
-};
+%feature("shadow") MDataStd_ExtStringArrayRetrievalDriver_1::~MDataStd_ExtStringArrayRetrievalDriver_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_PlacementStorageDriver;
@@ -4107,12 +3859,10 @@ class MDataStd_PlacementStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_PlacementStorageDriver {
-	~MDataStd_PlacementStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_PlacementStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_PlacementStorageDriver::~MDataStd_PlacementStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_TreeNodeRetrievalDriver;
@@ -4142,12 +3892,10 @@ class MDataStd_TreeNodeRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_TreeNodeRetrievalDriver {
-	~MDataStd_TreeNodeRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_TreeNodeRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_TreeNodeRetrievalDriver::~MDataStd_TreeNodeRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_RealArrayStorageDriver;
@@ -4177,12 +3925,10 @@ class MDataStd_RealArrayStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_RealArrayStorageDriver {
-	~MDataStd_RealArrayStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_RealArrayStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_RealArrayStorageDriver::~MDataStd_RealArrayStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_CommentRetrievalDriver;
@@ -4212,12 +3958,10 @@ class MDataStd_CommentRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_CommentRetrievalDriver {
-	~MDataStd_CommentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_CommentRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_CommentRetrievalDriver::~MDataStd_CommentRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_AsciiStringStorageDriver;
@@ -4247,12 +3991,10 @@ class MDataStd_AsciiStringStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_AsciiStringStorageDriver {
-	~MDataStd_AsciiStringStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_AsciiStringStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_AsciiStringStorageDriver::~MDataStd_AsciiStringStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_VariableStorageDriver;
@@ -4282,12 +4024,10 @@ class MDataStd_VariableStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_VariableStorageDriver {
-	~MDataStd_VariableStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_VariableStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_VariableStorageDriver::~MDataStd_VariableStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ReferenceListRetrievalDriver;
@@ -4317,12 +4057,10 @@ class MDataStd_ReferenceListRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ReferenceListRetrievalDriver {
-	~MDataStd_ReferenceListRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ReferenceListRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ReferenceListRetrievalDriver::~MDataStd_ReferenceListRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_GeometryStorageDriver;
@@ -4352,12 +4090,10 @@ class MDataStd_GeometryStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_GeometryStorageDriver {
-	~MDataStd_GeometryStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_GeometryStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_GeometryStorageDriver::~MDataStd_GeometryStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd;
@@ -4387,12 +4123,10 @@ class MDataStd {
 		TDataStd_GeometryEnum IntegerToGeometryType(const Standard_Integer i);
 
 };
-%extend MDataStd {
-	~MDataStd() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd\n");}
-	}
-};
+%feature("shadow") MDataStd::~MDataStd %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ByteArrayStorageDriver;
@@ -4422,12 +4156,10 @@ class MDataStd_ByteArrayStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ByteArrayStorageDriver {
-	~MDataStd_ByteArrayStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ByteArrayStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ByteArrayStorageDriver::~MDataStd_ByteArrayStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_IntegerArrayRetrievalDriver_1;
@@ -4457,12 +4189,10 @@ class MDataStd_IntegerArrayRetrievalDriver_1 : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_IntegerArrayRetrievalDriver_1 {
-	~MDataStd_IntegerArrayRetrievalDriver_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_IntegerArrayRetrievalDriver_1\n");}
-	}
-};
+%feature("shadow") MDataStd_IntegerArrayRetrievalDriver_1::~MDataStd_IntegerArrayRetrievalDriver_1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_RealListRetrievalDriver;
@@ -4492,12 +4222,10 @@ class MDataStd_RealListRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_RealListRetrievalDriver {
-	~MDataStd_RealListRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_RealListRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_RealListRetrievalDriver::~MDataStd_RealListRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ShapeRetrievalDriver;
@@ -4527,12 +4255,10 @@ class MDataStd_ShapeRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ShapeRetrievalDriver {
-	~MDataStd_ShapeRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ShapeRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ShapeRetrievalDriver::~MDataStd_ShapeRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_BooleanArrayRetrievalDriver;
@@ -4562,12 +4288,10 @@ class MDataStd_BooleanArrayRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_BooleanArrayRetrievalDriver {
-	~MDataStd_BooleanArrayRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_BooleanArrayRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_BooleanArrayRetrievalDriver::~MDataStd_BooleanArrayRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_NamedDataRetrievalDriver;
@@ -4597,12 +4321,10 @@ class MDataStd_NamedDataRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_NamedDataRetrievalDriver {
-	~MDataStd_NamedDataRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_NamedDataRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_NamedDataRetrievalDriver::~MDataStd_NamedDataRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_IntegerArrayRetrievalDriver;
@@ -4632,12 +4354,10 @@ class MDataStd_IntegerArrayRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_IntegerArrayRetrievalDriver {
-	~MDataStd_IntegerArrayRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_IntegerArrayRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_IntegerArrayRetrievalDriver::~MDataStd_IntegerArrayRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_ExtStringListStorageDriver;
@@ -4667,12 +4387,10 @@ class MDataStd_ExtStringListStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_ExtStringListStorageDriver {
-	~MDataStd_ExtStringListStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_ExtStringListStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_ExtStringListStorageDriver::~MDataStd_ExtStringListStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_GeometryRetrievalDriver;
@@ -4702,12 +4420,10 @@ class MDataStd_GeometryRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_GeometryRetrievalDriver {
-	~MDataStd_GeometryRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_GeometryRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_GeometryRetrievalDriver::~MDataStd_GeometryRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_RelationRetrievalDriver;
@@ -4737,12 +4453,10 @@ class MDataStd_RelationRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_RelationRetrievalDriver {
-	~MDataStd_RelationRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_RelationRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_RelationRetrievalDriver::~MDataStd_RelationRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_PlaneStorageDriver;
@@ -4772,12 +4486,10 @@ class MDataStd_PlaneStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_PlaneStorageDriver {
-	~MDataStd_PlaneStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_PlaneStorageDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_PlaneStorageDriver::~MDataStd_PlaneStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDataStd_VariableRetrievalDriver;
@@ -4807,9 +4519,7 @@ class MDataStd_VariableRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDataStd_VariableRetrievalDriver {
-	~MDataStd_VariableRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDataStd_VariableRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDataStd_VariableRetrievalDriver::~MDataStd_VariableRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

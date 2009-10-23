@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include FilletSurf_dependencies.i
 
 
@@ -105,12 +109,10 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 		void Section(const Standard_Integer IndexSurf, const Standard_Integer IndexSec, Handle_Geom_TrimmedCurve & Circ) const;
 
 };
-%extend FilletSurf_InternalBuilder {
-	~FilletSurf_InternalBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FilletSurf_InternalBuilder\n");}
-	}
-};
+%feature("shadow") FilletSurf_InternalBuilder::~FilletSurf_InternalBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor FilletSurf_Builder;
@@ -162,9 +164,7 @@ class FilletSurf_Builder {
 		void Section(const Standard_Integer IndexSurf, const Standard_Integer IndexSec, Handle_Geom_TrimmedCurve & Circ) const;
 
 };
-%extend FilletSurf_Builder {
-	~FilletSurf_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FilletSurf_Builder\n");}
-	}
-};
+%feature("shadow") FilletSurf_Builder::~FilletSurf_Builder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

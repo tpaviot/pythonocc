@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BSplSLib_dependencies.i
 
 
@@ -110,9 +114,7 @@ class BSplSLib {
 		void Interpolate(const Standard_Integer UDegree, const Standard_Integer VDegree, const TColStd_Array1OfReal &UFlatKnots, const TColStd_Array1OfReal &VFlatKnots, const TColStd_Array1OfReal &UParameters, const TColStd_Array1OfReal &VParameters, TColgp_Array2OfPnt & Poles, Standard_Integer &OutValue);
 
 };
-%extend BSplSLib {
-	~BSplSLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BSplSLib\n");}
-	}
-};
+%feature("shadow") BSplSLib::~BSplSLib %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

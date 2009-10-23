@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Geom_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_Geom_UndefinedValue : public Handle_Standard_DomainError {
 	return (Geom_UndefinedValue*)$self->Access();
 	}
 };
-%extend Handle_Geom_UndefinedValue {
-	~Handle_Geom_UndefinedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_UndefinedValue\n");}
-	}
-};
+%feature("shadow") Handle_Geom_UndefinedValue::~Handle_Geom_UndefinedValue %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Geometry;
@@ -87,12 +89,10 @@ class Handle_Geom_Geometry : public Handle_MMgt_TShared {
 	return (Geom_Geometry*)$self->Access();
 	}
 };
-%extend Handle_Geom_Geometry {
-	~Handle_Geom_Geometry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Geometry\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Geometry::~Handle_Geom_Geometry %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Vector;
@@ -117,12 +117,10 @@ class Handle_Geom_Vector : public Handle_Geom_Geometry {
 	return (Geom_Vector*)$self->Access();
 	}
 };
-%extend Handle_Geom_Vector {
-	~Handle_Geom_Vector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Vector\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Vector::~Handle_Geom_Vector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_VectorWithMagnitude;
@@ -147,12 +145,10 @@ class Handle_Geom_VectorWithMagnitude : public Handle_Geom_Vector {
 	return (Geom_VectorWithMagnitude*)$self->Access();
 	}
 };
-%extend Handle_Geom_VectorWithMagnitude {
-	~Handle_Geom_VectorWithMagnitude() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_VectorWithMagnitude\n");}
-	}
-};
+%feature("shadow") Handle_Geom_VectorWithMagnitude::~Handle_Geom_VectorWithMagnitude %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Surface;
@@ -177,12 +173,10 @@ class Handle_Geom_Surface : public Handle_Geom_Geometry {
 	return (Geom_Surface*)$self->Access();
 	}
 };
-%extend Handle_Geom_Surface {
-	~Handle_Geom_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Surface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Surface::~Handle_Geom_Surface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_ElementarySurface;
@@ -207,12 +201,10 @@ class Handle_Geom_ElementarySurface : public Handle_Geom_Surface {
 	return (Geom_ElementarySurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_ElementarySurface {
-	~Handle_Geom_ElementarySurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_ElementarySurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_ElementarySurface::~Handle_Geom_ElementarySurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_ToroidalSurface;
@@ -237,12 +229,10 @@ class Handle_Geom_ToroidalSurface : public Handle_Geom_ElementarySurface {
 	return (Geom_ToroidalSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_ToroidalSurface {
-	~Handle_Geom_ToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_ToroidalSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_ToroidalSurface::~Handle_Geom_ToroidalSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Curve;
@@ -267,12 +257,10 @@ class Handle_Geom_Curve : public Handle_Geom_Geometry {
 	return (Geom_Curve*)$self->Access();
 	}
 };
-%extend Handle_Geom_Curve {
-	~Handle_Geom_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Curve\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Curve::~Handle_Geom_Curve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Conic;
@@ -297,12 +285,10 @@ class Handle_Geom_Conic : public Handle_Geom_Curve {
 	return (Geom_Conic*)$self->Access();
 	}
 };
-%extend Handle_Geom_Conic {
-	~Handle_Geom_Conic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Conic\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Conic::~Handle_Geom_Conic %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Circle;
@@ -327,12 +313,10 @@ class Handle_Geom_Circle : public Handle_Geom_Conic {
 	return (Geom_Circle*)$self->Access();
 	}
 };
-%extend Handle_Geom_Circle {
-	~Handle_Geom_Circle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Circle\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Circle::~Handle_Geom_Circle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_BoundedCurve;
@@ -357,12 +341,10 @@ class Handle_Geom_BoundedCurve : public Handle_Geom_Curve {
 	return (Geom_BoundedCurve*)$self->Access();
 	}
 };
-%extend Handle_Geom_BoundedCurve {
-	~Handle_Geom_BoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_BoundedCurve\n");}
-	}
-};
+%feature("shadow") Handle_Geom_BoundedCurve::~Handle_Geom_BoundedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_AxisPlacement;
@@ -387,12 +369,10 @@ class Handle_Geom_AxisPlacement : public Handle_Geom_Geometry {
 	return (Geom_AxisPlacement*)$self->Access();
 	}
 };
-%extend Handle_Geom_AxisPlacement {
-	~Handle_Geom_AxisPlacement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_AxisPlacement\n");}
-	}
-};
+%feature("shadow") Handle_Geom_AxisPlacement::~Handle_Geom_AxisPlacement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Axis1Placement;
@@ -417,12 +397,10 @@ class Handle_Geom_Axis1Placement : public Handle_Geom_AxisPlacement {
 	return (Geom_Axis1Placement*)$self->Access();
 	}
 };
-%extend Handle_Geom_Axis1Placement {
-	~Handle_Geom_Axis1Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Axis1Placement\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Axis1Placement::~Handle_Geom_Axis1Placement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_SequenceNodeOfSequenceOfSurface;
@@ -447,12 +425,10 @@ class Handle_Geom_SequenceNodeOfSequenceOfSurface : public Handle_TCollection_Se
 	return (Geom_SequenceNodeOfSequenceOfSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_SequenceNodeOfSequenceOfSurface {
-	~Handle_Geom_SequenceNodeOfSequenceOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SequenceNodeOfSequenceOfSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_SequenceNodeOfSequenceOfSurface::~Handle_Geom_SequenceNodeOfSequenceOfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Axis2Placement;
@@ -477,12 +453,10 @@ class Handle_Geom_Axis2Placement : public Handle_Geom_AxisPlacement {
 	return (Geom_Axis2Placement*)$self->Access();
 	}
 };
-%extend Handle_Geom_Axis2Placement {
-	~Handle_Geom_Axis2Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Axis2Placement\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Axis2Placement::~Handle_Geom_Axis2Placement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Transformation;
@@ -507,12 +481,10 @@ class Handle_Geom_Transformation : public Handle_MMgt_TShared {
 	return (Geom_Transformation*)$self->Access();
 	}
 };
-%extend Handle_Geom_Transformation {
-	~Handle_Geom_Transformation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Transformation\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Transformation::~Handle_Geom_Transformation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Hyperbola;
@@ -537,12 +509,10 @@ class Handle_Geom_Hyperbola : public Handle_Geom_Conic {
 	return (Geom_Hyperbola*)$self->Access();
 	}
 };
-%extend Handle_Geom_Hyperbola {
-	~Handle_Geom_Hyperbola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Hyperbola\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Hyperbola::~Handle_Geom_Hyperbola %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Point;
@@ -567,12 +537,10 @@ class Handle_Geom_Point : public Handle_Geom_Geometry {
 	return (Geom_Point*)$self->Access();
 	}
 };
-%extend Handle_Geom_Point {
-	~Handle_Geom_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Point\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Point::~Handle_Geom_Point %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Parabola;
@@ -597,12 +565,10 @@ class Handle_Geom_Parabola : public Handle_Geom_Conic {
 	return (Geom_Parabola*)$self->Access();
 	}
 };
-%extend Handle_Geom_Parabola {
-	~Handle_Geom_Parabola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Parabola\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Parabola::~Handle_Geom_Parabola %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_BoundedSurface;
@@ -627,12 +593,10 @@ class Handle_Geom_BoundedSurface : public Handle_Geom_Surface {
 	return (Geom_BoundedSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_BoundedSurface {
-	~Handle_Geom_BoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_BoundedSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_BoundedSurface::~Handle_Geom_BoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_RectangularTrimmedSurface;
@@ -657,12 +621,10 @@ class Handle_Geom_RectangularTrimmedSurface : public Handle_Geom_BoundedSurface 
 	return (Geom_RectangularTrimmedSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_RectangularTrimmedSurface {
-	~Handle_Geom_RectangularTrimmedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_RectangularTrimmedSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_RectangularTrimmedSurface::~Handle_Geom_RectangularTrimmedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_TrimmedCurve;
@@ -687,12 +649,10 @@ class Handle_Geom_TrimmedCurve : public Handle_Geom_BoundedCurve {
 	return (Geom_TrimmedCurve*)$self->Access();
 	}
 };
-%extend Handle_Geom_TrimmedCurve {
-	~Handle_Geom_TrimmedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_TrimmedCurve\n");}
-	}
-};
+%feature("shadow") Handle_Geom_TrimmedCurve::~Handle_Geom_TrimmedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_BezierSurface;
@@ -717,12 +677,10 @@ class Handle_Geom_BezierSurface : public Handle_Geom_BoundedSurface {
 	return (Geom_BezierSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_BezierSurface {
-	~Handle_Geom_BezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_BezierSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_BezierSurface::~Handle_Geom_BezierSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_SphericalSurface;
@@ -747,12 +705,10 @@ class Handle_Geom_SphericalSurface : public Handle_Geom_ElementarySurface {
 	return (Geom_SphericalSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_SphericalSurface {
-	~Handle_Geom_SphericalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SphericalSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_SphericalSurface::~Handle_Geom_SphericalSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_SweptSurface;
@@ -777,12 +733,10 @@ class Handle_Geom_SweptSurface : public Handle_Geom_Surface {
 	return (Geom_SweptSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_SweptSurface {
-	~Handle_Geom_SweptSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SweptSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_SweptSurface::~Handle_Geom_SweptSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_SurfaceOfLinearExtrusion;
@@ -807,12 +761,10 @@ class Handle_Geom_SurfaceOfLinearExtrusion : public Handle_Geom_SweptSurface {
 	return (Geom_SurfaceOfLinearExtrusion*)$self->Access();
 	}
 };
-%extend Handle_Geom_SurfaceOfLinearExtrusion {
-	~Handle_Geom_SurfaceOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SurfaceOfLinearExtrusion\n");}
-	}
-};
+%feature("shadow") Handle_Geom_SurfaceOfLinearExtrusion::~Handle_Geom_SurfaceOfLinearExtrusion %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_CartesianPoint;
@@ -837,12 +789,10 @@ class Handle_Geom_CartesianPoint : public Handle_Geom_Point {
 	return (Geom_CartesianPoint*)$self->Access();
 	}
 };
-%extend Handle_Geom_CartesianPoint {
-	~Handle_Geom_CartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_CartesianPoint\n");}
-	}
-};
+%feature("shadow") Handle_Geom_CartesianPoint::~Handle_Geom_CartesianPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_BSplineSurface;
@@ -867,12 +817,10 @@ class Handle_Geom_BSplineSurface : public Handle_Geom_BoundedSurface {
 	return (Geom_BSplineSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_BSplineSurface {
-	~Handle_Geom_BSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_BSplineSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_BSplineSurface::~Handle_Geom_BSplineSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface;
@@ -897,12 +845,10 @@ class Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface : public Handle_TCollec
 	return (Geom_SequenceNodeOfSequenceOfBSplineSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface {
-	~Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface::~Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_CylindricalSurface;
@@ -927,12 +873,10 @@ class Handle_Geom_CylindricalSurface : public Handle_Geom_ElementarySurface {
 	return (Geom_CylindricalSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_CylindricalSurface {
-	~Handle_Geom_CylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_CylindricalSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_CylindricalSurface::~Handle_Geom_CylindricalSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_OffsetCurve;
@@ -957,12 +901,10 @@ class Handle_Geom_OffsetCurve : public Handle_Geom_Curve {
 	return (Geom_OffsetCurve*)$self->Access();
 	}
 };
-%extend Handle_Geom_OffsetCurve {
-	~Handle_Geom_OffsetCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_OffsetCurve\n");}
-	}
-};
+%feature("shadow") Handle_Geom_OffsetCurve::~Handle_Geom_OffsetCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_HSequenceOfBSplineSurface;
@@ -987,12 +929,10 @@ class Handle_Geom_HSequenceOfBSplineSurface : public Handle_MMgt_TShared {
 	return (Geom_HSequenceOfBSplineSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_HSequenceOfBSplineSurface {
-	~Handle_Geom_HSequenceOfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_HSequenceOfBSplineSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_HSequenceOfBSplineSurface::~Handle_Geom_HSequenceOfBSplineSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_ConicalSurface;
@@ -1017,12 +957,10 @@ class Handle_Geom_ConicalSurface : public Handle_Geom_ElementarySurface {
 	return (Geom_ConicalSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_ConicalSurface {
-	~Handle_Geom_ConicalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_ConicalSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_ConicalSurface::~Handle_Geom_ConicalSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_OffsetSurface;
@@ -1047,12 +985,10 @@ class Handle_Geom_OffsetSurface : public Handle_Geom_Surface {
 	return (Geom_OffsetSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_OffsetSurface {
-	~Handle_Geom_OffsetSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_OffsetSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_OffsetSurface::~Handle_Geom_OffsetSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_BSplineCurve;
@@ -1077,12 +1013,10 @@ class Handle_Geom_BSplineCurve : public Handle_Geom_BoundedCurve {
 	return (Geom_BSplineCurve*)$self->Access();
 	}
 };
-%extend Handle_Geom_BSplineCurve {
-	~Handle_Geom_BSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_BSplineCurve\n");}
-	}
-};
+%feature("shadow") Handle_Geom_BSplineCurve::~Handle_Geom_BSplineCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Line;
@@ -1107,12 +1041,10 @@ class Handle_Geom_Line : public Handle_Geom_Curve {
 	return (Geom_Line*)$self->Access();
 	}
 };
-%extend Handle_Geom_Line {
-	~Handle_Geom_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Line\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Line::~Handle_Geom_Line %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Direction;
@@ -1137,12 +1069,10 @@ class Handle_Geom_Direction : public Handle_Geom_Vector {
 	return (Geom_Direction*)$self->Access();
 	}
 };
-%extend Handle_Geom_Direction {
-	~Handle_Geom_Direction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Direction\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Direction::~Handle_Geom_Direction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_HSequenceOfSurface;
@@ -1167,12 +1097,10 @@ class Handle_Geom_HSequenceOfSurface : public Handle_MMgt_TShared {
 	return (Geom_HSequenceOfSurface*)$self->Access();
 	}
 };
-%extend Handle_Geom_HSequenceOfSurface {
-	~Handle_Geom_HSequenceOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_HSequenceOfSurface\n");}
-	}
-};
+%feature("shadow") Handle_Geom_HSequenceOfSurface::~Handle_Geom_HSequenceOfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_BezierCurve;
@@ -1197,12 +1125,10 @@ class Handle_Geom_BezierCurve : public Handle_Geom_BoundedCurve {
 	return (Geom_BezierCurve*)$self->Access();
 	}
 };
-%extend Handle_Geom_BezierCurve {
-	~Handle_Geom_BezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_BezierCurve\n");}
-	}
-};
+%feature("shadow") Handle_Geom_BezierCurve::~Handle_Geom_BezierCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_UndefinedDerivative;
@@ -1227,12 +1153,10 @@ class Handle_Geom_UndefinedDerivative : public Handle_Standard_DomainError {
 	return (Geom_UndefinedDerivative*)$self->Access();
 	}
 };
-%extend Handle_Geom_UndefinedDerivative {
-	~Handle_Geom_UndefinedDerivative() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_UndefinedDerivative\n");}
-	}
-};
+%feature("shadow") Handle_Geom_UndefinedDerivative::~Handle_Geom_UndefinedDerivative %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Ellipse;
@@ -1257,12 +1181,10 @@ class Handle_Geom_Ellipse : public Handle_Geom_Conic {
 	return (Geom_Ellipse*)$self->Access();
 	}
 };
-%extend Handle_Geom_Ellipse {
-	~Handle_Geom_Ellipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Ellipse\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Ellipse::~Handle_Geom_Ellipse %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_SurfaceOfRevolution;
@@ -1287,12 +1209,10 @@ class Handle_Geom_SurfaceOfRevolution : public Handle_Geom_SweptSurface {
 	return (Geom_SurfaceOfRevolution*)$self->Access();
 	}
 };
-%extend Handle_Geom_SurfaceOfRevolution {
-	~Handle_Geom_SurfaceOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SurfaceOfRevolution\n");}
-	}
-};
+%feature("shadow") Handle_Geom_SurfaceOfRevolution::~Handle_Geom_SurfaceOfRevolution %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom_Plane;
@@ -1317,12 +1237,10 @@ class Handle_Geom_Plane : public Handle_Geom_ElementarySurface {
 	return (Geom_Plane*)$self->Access();
 	}
 };
-%extend Handle_Geom_Plane {
-	~Handle_Geom_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Plane\n");}
-	}
-};
+%feature("shadow") Handle_Geom_Plane::~Handle_Geom_Plane %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_SequenceOfSurface;
@@ -1374,12 +1292,10 @@ class Geom_SequenceOfSurface : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Geom_SequenceOfSurface {
-	~Geom_SequenceOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_SequenceOfSurface\n");}
-	}
-};
+%feature("shadow") Geom_SequenceOfSurface::~Geom_SequenceOfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Geometry;
@@ -1433,12 +1349,10 @@ class Geom_Geometry : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Geometry {
-	~Geom_Geometry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Geometry\n");}
-	}
-};
+%feature("shadow") Geom_Geometry::~Geom_Geometry %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Surface;
@@ -1508,12 +1422,10 @@ class Geom_Surface : public Geom_Geometry {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Surface {
-	~Geom_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Surface\n");}
-	}
-};
+%feature("shadow") Geom_Surface::~Geom_Surface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_BoundedSurface;
@@ -1531,12 +1443,10 @@ class Geom_BoundedSurface : public Geom_Surface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_BoundedSurface {
-	~Geom_BoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_BoundedSurface\n");}
-	}
-};
+%feature("shadow") Geom_BoundedSurface::~Geom_BoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_OffsetSurface;
@@ -1638,12 +1548,10 @@ class Geom_OffsetSurface : public Geom_Surface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_OffsetSurface {
-	~Geom_OffsetSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_OffsetSurface\n");}
-	}
-};
+%feature("shadow") Geom_OffsetSurface::~Geom_OffsetSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_BezierSurface;
@@ -1777,12 +1685,10 @@ class Geom_BezierSurface : public Geom_BoundedSurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_BezierSurface {
-	~Geom_BezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_BezierSurface\n");}
-	}
-};
+%feature("shadow") Geom_BezierSurface::~Geom_BezierSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Curve;
@@ -1838,12 +1744,10 @@ class Geom_Curve : public Geom_Geometry {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Curve {
-	~Geom_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Curve\n");}
-	}
-};
+%feature("shadow") Geom_Curve::~Geom_Curve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_BoundedCurve;
@@ -1865,12 +1769,10 @@ class Geom_BoundedCurve : public Geom_Curve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_BoundedCurve {
-	~Geom_BoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_BoundedCurve\n");}
-	}
-};
+%feature("shadow") Geom_BoundedCurve::~Geom_BoundedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_BezierCurve;
@@ -1934,12 +1836,10 @@ class Geom_BezierCurve : public Geom_BoundedCurve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_BezierCurve {
-	~Geom_BezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_BezierCurve\n");}
-	}
-};
+%feature("shadow") Geom_BezierCurve::~Geom_BezierCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Vector;
@@ -1993,12 +1893,10 @@ class Geom_Vector : public Geom_Geometry {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Vector {
-	~Geom_Vector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Vector\n");}
-	}
-};
+%feature("shadow") Geom_Vector::~Geom_Vector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Direction;
@@ -2036,12 +1934,10 @@ class Geom_Direction : public Geom_Vector {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Direction {
-	~Geom_Direction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Direction\n");}
-	}
-};
+%feature("shadow") Geom_Direction::~Geom_Direction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Conic;
@@ -2087,12 +1983,10 @@ class Geom_Conic : public Geom_Curve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Conic {
-	~Geom_Conic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Conic\n");}
-	}
-};
+%feature("shadow") Geom_Conic::~Geom_Conic %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Circle;
@@ -2144,12 +2038,10 @@ class Geom_Circle : public Geom_Conic {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Circle {
-	~Geom_Circle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Circle\n");}
-	}
-};
+%feature("shadow") Geom_Circle::~Geom_Circle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_SequenceNodeOfSequenceOfSurface;
@@ -2173,12 +2065,10 @@ class Geom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_SequenceNodeOfSequenceOfSurface {
-	~Geom_SequenceNodeOfSequenceOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_SequenceNodeOfSequenceOfSurface\n");}
-	}
-};
+%feature("shadow") Geom_SequenceNodeOfSequenceOfSurface::~Geom_SequenceNodeOfSequenceOfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_AxisPlacement;
@@ -2212,12 +2102,10 @@ class Geom_AxisPlacement : public Geom_Geometry {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_AxisPlacement {
-	~Geom_AxisPlacement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_AxisPlacement\n");}
-	}
-};
+%feature("shadow") Geom_AxisPlacement::~Geom_AxisPlacement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Axis2Placement;
@@ -2255,12 +2143,10 @@ class Geom_Axis2Placement : public Geom_AxisPlacement {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Axis2Placement {
-	~Geom_Axis2Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Axis2Placement\n");}
-	}
-};
+%feature("shadow") Geom_Axis2Placement::~Geom_Axis2Placement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_OffsetCurve;
@@ -2338,12 +2224,10 @@ class Geom_OffsetCurve : public Geom_Curve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_OffsetCurve {
-	~Geom_OffsetCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_OffsetCurve\n");}
-	}
-};
+%feature("shadow") Geom_OffsetCurve::~Geom_OffsetCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_SweptSurface;
@@ -2369,12 +2253,10 @@ class Geom_SweptSurface : public Geom_Surface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_SweptSurface {
-	~Geom_SweptSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_SweptSurface\n");}
-	}
-};
+%feature("shadow") Geom_SweptSurface::~Geom_SweptSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_VectorWithMagnitude;
@@ -2446,12 +2328,10 @@ class Geom_VectorWithMagnitude : public Geom_Vector {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_VectorWithMagnitude {
-	~Geom_VectorWithMagnitude() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_VectorWithMagnitude\n");}
-	}
-};
+%feature("shadow") Geom_VectorWithMagnitude::~Geom_VectorWithMagnitude %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_SequenceOfBSplineSurface;
@@ -2503,12 +2383,10 @@ class Geom_SequenceOfBSplineSurface : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Geom_SequenceOfBSplineSurface {
-	~Geom_SequenceOfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_SequenceOfBSplineSurface\n");}
-	}
-};
+%feature("shadow") Geom_SequenceOfBSplineSurface::~Geom_SequenceOfBSplineSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Point;
@@ -2542,12 +2420,10 @@ class Geom_Point : public Geom_Geometry {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Point {
-	~Geom_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Point\n");}
-	}
-};
+%feature("shadow") Geom_Point::~Geom_Point %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_SurfaceOfRevolution;
@@ -2637,12 +2513,10 @@ class Geom_SurfaceOfRevolution : public Geom_SweptSurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_SurfaceOfRevolution {
-	~Geom_SurfaceOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_SurfaceOfRevolution\n");}
-	}
-};
+%feature("shadow") Geom_SurfaceOfRevolution::~Geom_SurfaceOfRevolution %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_UndefinedValue;
@@ -2672,12 +2546,10 @@ class Geom_UndefinedValue : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_UndefinedValue {
-	~Geom_UndefinedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_UndefinedValue\n");}
-	}
-};
+%feature("shadow") Geom_UndefinedValue::~Geom_UndefinedValue %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_RectangularTrimmedSurface;
@@ -2757,12 +2629,10 @@ class Geom_RectangularTrimmedSurface : public Geom_BoundedSurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_RectangularTrimmedSurface {
-	~Geom_RectangularTrimmedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_RectangularTrimmedSurface\n");}
-	}
-};
+%feature("shadow") Geom_RectangularTrimmedSurface::~Geom_RectangularTrimmedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Line;
@@ -2834,12 +2704,10 @@ class Geom_Line : public Geom_Curve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Line {
-	~Geom_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Line\n");}
-	}
-};
+%feature("shadow") Geom_Line::~Geom_Line %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Axis1Placement;
@@ -2875,12 +2743,10 @@ class Geom_Axis1Placement : public Geom_AxisPlacement {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Axis1Placement {
-	~Geom_Axis1Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Axis1Placement\n");}
-	}
-};
+%feature("shadow") Geom_Axis1Placement::~Geom_Axis1Placement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_ElementarySurface;
@@ -2926,12 +2792,10 @@ class Geom_ElementarySurface : public Geom_Surface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_ElementarySurface {
-	~Geom_ElementarySurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_ElementarySurface\n");}
-	}
-};
+%feature("shadow") Geom_ElementarySurface::~Geom_ElementarySurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_CylindricalSurface;
@@ -2995,12 +2859,10 @@ class Geom_CylindricalSurface : public Geom_ElementarySurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_CylindricalSurface {
-	~Geom_CylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_CylindricalSurface\n");}
-	}
-};
+%feature("shadow") Geom_CylindricalSurface::~Geom_CylindricalSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_HSequenceOfBSplineSurface;
@@ -3066,12 +2928,10 @@ class Geom_HSequenceOfBSplineSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_HSequenceOfBSplineSurface {
-	~Geom_HSequenceOfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_HSequenceOfBSplineSurface\n");}
-	}
-};
+%feature("shadow") Geom_HSequenceOfBSplineSurface::~Geom_HSequenceOfBSplineSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_OsculatingSurface;
@@ -3093,12 +2953,10 @@ class Geom_OsculatingSurface {
 		Standard_Boolean VOscSurf(const Standard_Real U, const Standard_Real V, Standard_Boolean & t, Handle_Geom_BSplineSurface & L) const;
 
 };
-%extend Geom_OsculatingSurface {
-	~Geom_OsculatingSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_OsculatingSurface\n");}
-	}
-};
+%feature("shadow") Geom_OsculatingSurface::~Geom_OsculatingSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_SphericalSurface;
@@ -3168,12 +3026,10 @@ class Geom_SphericalSurface : public Geom_ElementarySurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_SphericalSurface {
-	~Geom_SphericalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_SphericalSurface\n");}
-	}
-};
+%feature("shadow") Geom_SphericalSurface::~Geom_SphericalSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_ConicalSurface;
@@ -3251,12 +3107,10 @@ class Geom_ConicalSurface : public Geom_ElementarySurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_ConicalSurface {
-	~Geom_ConicalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_ConicalSurface\n");}
-	}
-};
+%feature("shadow") Geom_ConicalSurface::~Geom_ConicalSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Ellipse;
@@ -3330,12 +3184,10 @@ class Geom_Ellipse : public Geom_Conic {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Ellipse {
-	~Geom_Ellipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Ellipse\n");}
-	}
-};
+%feature("shadow") Geom_Ellipse::~Geom_Ellipse %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_TrimmedCurve;
@@ -3401,12 +3253,10 @@ class Geom_TrimmedCurve : public Geom_BoundedCurve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_TrimmedCurve {
-	~Geom_TrimmedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_TrimmedCurve\n");}
-	}
-};
+%feature("shadow") Geom_TrimmedCurve::~Geom_TrimmedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_ToroidalSurface;
@@ -3480,12 +3330,10 @@ class Geom_ToroidalSurface : public Geom_ElementarySurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_ToroidalSurface {
-	~Geom_ToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_ToroidalSurface\n");}
-	}
-};
+%feature("shadow") Geom_ToroidalSurface::~Geom_ToroidalSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Plane;
@@ -3559,12 +3407,10 @@ class Geom_Plane : public Geom_ElementarySurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Plane {
-	~Geom_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Plane\n");}
-	}
-};
+%feature("shadow") Geom_Plane::~Geom_Plane %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_SequenceNodeOfSequenceOfBSplineSurface;
@@ -3588,12 +3434,10 @@ class Geom_SequenceNodeOfSequenceOfBSplineSurface : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_SequenceNodeOfSequenceOfBSplineSurface {
-	~Geom_SequenceNodeOfSequenceOfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_SequenceNodeOfSequenceOfBSplineSurface\n");}
-	}
-};
+%feature("shadow") Geom_SequenceNodeOfSequenceOfBSplineSurface::~Geom_SequenceNodeOfSequenceOfBSplineSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_UndefinedDerivative;
@@ -3623,12 +3467,10 @@ class Geom_UndefinedDerivative : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_UndefinedDerivative {
-	~Geom_UndefinedDerivative() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_UndefinedDerivative\n");}
-	}
-};
+%feature("shadow") Geom_UndefinedDerivative::~Geom_UndefinedDerivative %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_BSplineCurve;
@@ -3778,12 +3620,10 @@ class Geom_BSplineCurve : public Geom_BoundedCurve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_BSplineCurve {
-	~Geom_BSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_BSplineCurve\n");}
-	}
-};
+%feature("shadow") Geom_BSplineCurve::~Geom_BSplineCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Parabola;
@@ -3853,12 +3693,10 @@ class Geom_Parabola : public Geom_Conic {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Parabola {
-	~Geom_Parabola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Parabola\n");}
-	}
-};
+%feature("shadow") Geom_Parabola::~Geom_Parabola %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_SurfaceOfLinearExtrusion;
@@ -3938,12 +3776,10 @@ class Geom_SurfaceOfLinearExtrusion : public Geom_SweptSurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_SurfaceOfLinearExtrusion {
-	~Geom_SurfaceOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_SurfaceOfLinearExtrusion\n");}
-	}
-};
+%feature("shadow") Geom_SurfaceOfLinearExtrusion::~Geom_SurfaceOfLinearExtrusion %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_HSequenceOfSurface;
@@ -4009,12 +3845,10 @@ class Geom_HSequenceOfSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_HSequenceOfSurface {
-	~Geom_HSequenceOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_HSequenceOfSurface\n");}
-	}
-};
+%feature("shadow") Geom_HSequenceOfSurface::~Geom_HSequenceOfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Transformation;
@@ -4086,12 +3920,10 @@ class Geom_Transformation : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Transformation {
-	~Geom_Transformation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Transformation\n");}
-	}
-};
+%feature("shadow") Geom_Transformation::~Geom_Transformation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_Hyperbola;
@@ -4175,12 +4007,10 @@ class Geom_Hyperbola : public Geom_Conic {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_Hyperbola {
-	~Geom_Hyperbola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_Hyperbola\n");}
-	}
-};
+%feature("shadow") Geom_Hyperbola::~Geom_Hyperbola %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_CartesianPoint;
@@ -4228,12 +4058,10 @@ class Geom_CartesianPoint : public Geom_Point {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_CartesianPoint {
-	~Geom_CartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_CartesianPoint\n");}
-	}
-};
+%feature("shadow") Geom_CartesianPoint::~Geom_CartesianPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom_BSplineSurface;
@@ -4459,9 +4287,7 @@ class Geom_BSplineSurface : public Geom_BoundedSurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom_BSplineSurface {
-	~Geom_BSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom_BSplineSurface\n");}
-	}
-};
+%feature("shadow") Geom_BSplineSurface::~Geom_BSplineSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

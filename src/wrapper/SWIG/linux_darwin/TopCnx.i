@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TopCnx_dependencies.i
 
 
@@ -52,9 +56,7 @@ class TopCnx_EdgeFaceTransition {
 		TopAbs_Orientation BoundaryTransition() const;
 
 };
-%extend TopCnx_EdgeFaceTransition {
-	~TopCnx_EdgeFaceTransition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopCnx_EdgeFaceTransition\n");}
-	}
-};
+%feature("shadow") TopCnx_EdgeFaceTransition::~TopCnx_EdgeFaceTransition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

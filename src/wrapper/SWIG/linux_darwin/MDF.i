@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MDF_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_MDF_ARDriverHSequence : public Handle_MMgt_TShared {
 	return (MDF_ARDriverHSequence*)$self->Access();
 	}
 };
-%extend Handle_MDF_ARDriverHSequence {
-	~Handle_MDF_ARDriverHSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ARDriverHSequence\n");}
-	}
-};
+%feature("shadow") Handle_MDF_ARDriverHSequence::~Handle_MDF_ARDriverHSequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_ListNodeOfDriverListOfARDriverTable;
@@ -87,12 +89,10 @@ class Handle_MDF_ListNodeOfDriverListOfARDriverTable : public Handle_TCollection
 	return (MDF_ListNodeOfDriverListOfARDriverTable*)$self->Access();
 	}
 };
-%extend Handle_MDF_ListNodeOfDriverListOfARDriverTable {
-	~Handle_MDF_ListNodeOfDriverListOfARDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ListNodeOfDriverListOfARDriverTable\n");}
-	}
-};
+%feature("shadow") Handle_MDF_ListNodeOfDriverListOfARDriverTable::~Handle_MDF_ListNodeOfDriverListOfARDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_ASDriver;
@@ -117,12 +117,10 @@ class Handle_MDF_ASDriver : public Handle_MMgt_TShared {
 	return (MDF_ASDriver*)$self->Access();
 	}
 };
-%extend Handle_MDF_ASDriver {
-	~Handle_MDF_ASDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ASDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDF_ASDriver::~Handle_MDF_ASDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_TagSourceStorageDriver;
@@ -147,12 +145,10 @@ class Handle_MDF_TagSourceStorageDriver : public Handle_MDF_ASDriver {
 	return (MDF_TagSourceStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDF_TagSourceStorageDriver {
-	~Handle_MDF_TagSourceStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_TagSourceStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDF_TagSourceStorageDriver::~Handle_MDF_TagSourceStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_ReferenceStorageDriver;
@@ -177,12 +173,10 @@ class Handle_MDF_ReferenceStorageDriver : public Handle_MDF_ASDriver {
 	return (MDF_ReferenceStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDF_ReferenceStorageDriver {
-	~Handle_MDF_ReferenceStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ReferenceStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDF_ReferenceStorageDriver::~Handle_MDF_ReferenceStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_ARDriver;
@@ -207,12 +201,10 @@ class Handle_MDF_ARDriver : public Handle_MMgt_TShared {
 	return (MDF_ARDriver*)$self->Access();
 	}
 };
-%extend Handle_MDF_ARDriver {
-	~Handle_MDF_ARDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ARDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDF_ARDriver::~Handle_MDF_ARDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_ReferenceRetrievalDriver;
@@ -237,12 +229,10 @@ class Handle_MDF_ReferenceRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDF_ReferenceRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDF_ReferenceRetrievalDriver {
-	~Handle_MDF_ReferenceRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ReferenceRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDF_ReferenceRetrievalDriver::~Handle_MDF_ReferenceRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_ListNodeOfDriverListOfASDriverTable;
@@ -267,12 +257,10 @@ class Handle_MDF_ListNodeOfDriverListOfASDriverTable : public Handle_TCollection
 	return (MDF_ListNodeOfDriverListOfASDriverTable*)$self->Access();
 	}
 };
-%extend Handle_MDF_ListNodeOfDriverListOfASDriverTable {
-	~Handle_MDF_ListNodeOfDriverListOfASDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ListNodeOfDriverListOfASDriverTable\n");}
-	}
-};
+%feature("shadow") Handle_MDF_ListNodeOfDriverListOfASDriverTable::~Handle_MDF_ListNodeOfDriverListOfASDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_SequenceNodeOfASDriverSequence;
@@ -297,12 +285,10 @@ class Handle_MDF_SequenceNodeOfASDriverSequence : public Handle_TCollection_SeqN
 	return (MDF_SequenceNodeOfASDriverSequence*)$self->Access();
 	}
 };
-%extend Handle_MDF_SequenceNodeOfASDriverSequence {
-	~Handle_MDF_SequenceNodeOfASDriverSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_SequenceNodeOfASDriverSequence\n");}
-	}
-};
+%feature("shadow") Handle_MDF_SequenceNodeOfASDriverSequence::~Handle_MDF_SequenceNodeOfASDriverSequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_TagSourceRetrievalDriver;
@@ -327,12 +313,10 @@ class Handle_MDF_TagSourceRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDF_TagSourceRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDF_TagSourceRetrievalDriver {
-	~Handle_MDF_TagSourceRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_TagSourceRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDF_TagSourceRetrievalDriver::~Handle_MDF_TagSourceRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_ASDriverTable;
@@ -357,12 +341,10 @@ class Handle_MDF_ASDriverTable : public Handle_MMgt_TShared {
 	return (MDF_ASDriverTable*)$self->Access();
 	}
 };
-%extend Handle_MDF_ASDriverTable {
-	~Handle_MDF_ASDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ASDriverTable\n");}
-	}
-};
+%feature("shadow") Handle_MDF_ASDriverTable::~Handle_MDF_ASDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_RRelocationTable;
@@ -387,12 +369,10 @@ class Handle_MDF_RRelocationTable : public Handle_MMgt_TShared {
 	return (MDF_RRelocationTable*)$self->Access();
 	}
 };
-%extend Handle_MDF_RRelocationTable {
-	~Handle_MDF_RRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_RRelocationTable\n");}
-	}
-};
+%feature("shadow") Handle_MDF_RRelocationTable::~Handle_MDF_RRelocationTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_SRelocationTable;
@@ -417,12 +397,10 @@ class Handle_MDF_SRelocationTable : public Handle_MMgt_TShared {
 	return (MDF_SRelocationTable*)$self->Access();
 	}
 };
-%extend Handle_MDF_SRelocationTable {
-	~Handle_MDF_SRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_SRelocationTable\n");}
-	}
-};
+%feature("shadow") Handle_MDF_SRelocationTable::~Handle_MDF_SRelocationTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable;
@@ -447,12 +425,10 @@ class Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public Handle_T
 	return (MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable*)$self->Access();
 	}
 };
-%extend Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable {
-	~Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable\n");}
-	}
-};
+%feature("shadow") Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable::~Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_SequenceNodeOfARDriverSequence;
@@ -477,12 +453,10 @@ class Handle_MDF_SequenceNodeOfARDriverSequence : public Handle_TCollection_SeqN
 	return (MDF_SequenceNodeOfARDriverSequence*)$self->Access();
 	}
 };
-%extend Handle_MDF_SequenceNodeOfARDriverSequence {
-	~Handle_MDF_SequenceNodeOfARDriverSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_SequenceNodeOfARDriverSequence\n");}
-	}
-};
+%feature("shadow") Handle_MDF_SequenceNodeOfARDriverSequence::~Handle_MDF_SequenceNodeOfARDriverSequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_ASDriverHSequence;
@@ -507,12 +481,10 @@ class Handle_MDF_ASDriverHSequence : public Handle_MMgt_TShared {
 	return (MDF_ASDriverHSequence*)$self->Access();
 	}
 };
-%extend Handle_MDF_ASDriverHSequence {
-	~Handle_MDF_ASDriverHSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ASDriverHSequence\n");}
-	}
-};
+%feature("shadow") Handle_MDF_ASDriverHSequence::~Handle_MDF_ASDriverHSequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_DataMapNodeOfTypeARDriverMap;
@@ -537,12 +509,10 @@ class Handle_MDF_DataMapNodeOfTypeARDriverMap : public Handle_TCollection_MapNod
 	return (MDF_DataMapNodeOfTypeARDriverMap*)$self->Access();
 	}
 };
-%extend Handle_MDF_DataMapNodeOfTypeARDriverMap {
-	~Handle_MDF_DataMapNodeOfTypeARDriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_DataMapNodeOfTypeARDriverMap\n");}
-	}
-};
+%feature("shadow") Handle_MDF_DataMapNodeOfTypeARDriverMap::~Handle_MDF_DataMapNodeOfTypeARDriverMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_ARDriverTable;
@@ -567,12 +537,10 @@ class Handle_MDF_ARDriverTable : public Handle_MMgt_TShared {
 	return (MDF_ARDriverTable*)$self->Access();
 	}
 };
-%extend Handle_MDF_ARDriverTable {
-	~Handle_MDF_ARDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ARDriverTable\n");}
-	}
-};
+%feature("shadow") Handle_MDF_ARDriverTable::~Handle_MDF_ARDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_DataMapNodeOfTypeASDriverMap;
@@ -597,12 +565,10 @@ class Handle_MDF_DataMapNodeOfTypeASDriverMap : public Handle_TCollection_MapNod
 	return (MDF_DataMapNodeOfTypeASDriverMap*)$self->Access();
 	}
 };
-%extend Handle_MDF_DataMapNodeOfTypeASDriverMap {
-	~Handle_MDF_DataMapNodeOfTypeASDriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_DataMapNodeOfTypeASDriverMap\n");}
-	}
-};
+%feature("shadow") Handle_MDF_DataMapNodeOfTypeASDriverMap::~Handle_MDF_DataMapNodeOfTypeASDriverMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable;
@@ -627,12 +593,10 @@ class Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable : public Handle_T
 	return (MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable*)$self->Access();
 	}
 };
-%extend Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable {
-	~Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable\n");}
-	}
-};
+%feature("shadow") Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable::~Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_DataMapNodeOfTypeARDriverMap;
@@ -658,12 +622,10 @@ class MDF_DataMapNodeOfTypeARDriverMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_DataMapNodeOfTypeARDriverMap {
-	~MDF_DataMapNodeOfTypeARDriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_DataMapNodeOfTypeARDriverMap\n");}
-	}
-};
+%feature("shadow") MDF_DataMapNodeOfTypeARDriverMap::~MDF_DataMapNodeOfTypeARDriverMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_SequenceNodeOfARDriverSequence;
@@ -687,12 +649,10 @@ class MDF_SequenceNodeOfARDriverSequence : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_SequenceNodeOfARDriverSequence {
-	~MDF_SequenceNodeOfARDriverSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_SequenceNodeOfARDriverSequence\n");}
-	}
-};
+%feature("shadow") MDF_SequenceNodeOfARDriverSequence::~MDF_SequenceNodeOfARDriverSequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_TypeDriverListMapOfASDriverTable;
@@ -724,12 +684,10 @@ class MDF_TypeDriverListMapOfASDriverTable : public TCollection_BasicMap {
 		MDF_DriverListOfASDriverTable & operator()(const Handle_Standard_Type &K);
 
 };
-%extend MDF_TypeDriverListMapOfASDriverTable {
-	~MDF_TypeDriverListMapOfASDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_TypeDriverListMapOfASDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_TypeDriverListMapOfASDriverTable::~MDF_TypeDriverListMapOfASDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ListNodeOfDriverListOfARDriverTable;
@@ -753,12 +711,10 @@ class MDF_ListNodeOfDriverListOfARDriverTable : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_ListNodeOfDriverListOfARDriverTable {
-	~MDF_ListNodeOfDriverListOfARDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ListNodeOfDriverListOfARDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_ListNodeOfDriverListOfARDriverTable::~MDF_ListNodeOfDriverListOfARDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ListIteratorOfDriverListOfARDriverTable;
@@ -778,12 +734,10 @@ class MDF_ListIteratorOfDriverListOfARDriverTable {
 		Handle_MDF_ARDriver & Value() const;
 
 };
-%extend MDF_ListIteratorOfDriverListOfARDriverTable {
-	~MDF_ListIteratorOfDriverListOfARDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ListIteratorOfDriverListOfARDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_ListIteratorOfDriverListOfARDriverTable::~MDF_ListIteratorOfDriverListOfARDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_DriverListOfARDriverTable;
@@ -831,12 +785,10 @@ class MDF_DriverListOfARDriverTable {
 		void InsertAfter(MDF_DriverListOfARDriverTable & Other, MDF_ListIteratorOfDriverListOfARDriverTable & It);
 
 };
-%extend MDF_DriverListOfARDriverTable {
-	~MDF_DriverListOfARDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_DriverListOfARDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_DriverListOfARDriverTable::~MDF_DriverListOfARDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_DataMapIteratorOfTypeARDriverMap;
@@ -854,12 +806,10 @@ class MDF_DataMapIteratorOfTypeARDriverMap : public TCollection_BasicMapIterator
 		const Handle_MDF_ARDriver & Value() const;
 
 };
-%extend MDF_DataMapIteratorOfTypeARDriverMap {
-	~MDF_DataMapIteratorOfTypeARDriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_DataMapIteratorOfTypeARDriverMap\n");}
-	}
-};
+%feature("shadow") MDF_DataMapIteratorOfTypeARDriverMap::~MDF_DataMapIteratorOfTypeARDriverMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ASDriverTable;
@@ -889,12 +839,10 @@ class MDF_ASDriverTable : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_ASDriverTable {
-	~MDF_ASDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ASDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_ASDriverTable::~MDF_ASDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable;
@@ -912,12 +860,10 @@ class MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable : public TCollection
 		const MDF_DriverListOfARDriverTable & Value() const;
 
 };
-%extend MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable {
-	~MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable::~MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_TypeDriverListMapOfARDriverTable;
@@ -949,12 +895,10 @@ class MDF_TypeDriverListMapOfARDriverTable : public TCollection_BasicMap {
 		MDF_DriverListOfARDriverTable & operator()(const Handle_Standard_Type &K);
 
 };
-%extend MDF_TypeDriverListMapOfARDriverTable {
-	~MDF_TypeDriverListMapOfARDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_TypeDriverListMapOfARDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_TypeDriverListMapOfARDriverTable::~MDF_TypeDriverListMapOfARDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_TypeARDriverMap;
@@ -986,12 +930,10 @@ class MDF_TypeARDriverMap : public TCollection_BasicMap {
 		Handle_MDF_ARDriver & operator()(const Handle_Standard_Type &K);
 
 };
-%extend MDF_TypeARDriverMap {
-	~MDF_TypeARDriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_TypeARDriverMap\n");}
-	}
-};
+%feature("shadow") MDF_TypeARDriverMap::~MDF_TypeARDriverMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF;
@@ -1009,12 +951,10 @@ class MDF {
 		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };
-%extend MDF {
-	~MDF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF\n");}
-	}
-};
+%feature("shadow") MDF::~MDF %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ARDriver;
@@ -1044,12 +984,10 @@ class MDF_ARDriver : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_ARDriver {
-	~MDF_ARDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ARDriver\n");}
-	}
-};
+%feature("shadow") MDF_ARDriver::~MDF_ARDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_TagSourceRetrievalDriver;
@@ -1071,12 +1009,10 @@ class MDF_TagSourceRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_TagSourceRetrievalDriver {
-	~MDF_TagSourceRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_TagSourceRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDF_TagSourceRetrievalDriver::~MDF_TagSourceRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ListIteratorOfDriverListOfASDriverTable;
@@ -1096,12 +1032,10 @@ class MDF_ListIteratorOfDriverListOfASDriverTable {
 		Handle_MDF_ASDriver & Value() const;
 
 };
-%extend MDF_ListIteratorOfDriverListOfASDriverTable {
-	~MDF_ListIteratorOfDriverListOfASDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ListIteratorOfDriverListOfASDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_ListIteratorOfDriverListOfASDriverTable::~MDF_ListIteratorOfDriverListOfASDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable;
@@ -1127,12 +1061,10 @@ class MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable : public TCollection_Map
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable {
-	~MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable::~MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ListNodeOfDriverListOfASDriverTable;
@@ -1156,12 +1088,10 @@ class MDF_ListNodeOfDriverListOfASDriverTable : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_ListNodeOfDriverListOfASDriverTable {
-	~MDF_ListNodeOfDriverListOfASDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ListNodeOfDriverListOfASDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_ListNodeOfDriverListOfASDriverTable::~MDF_ListNodeOfDriverListOfASDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ASDriver;
@@ -1191,12 +1121,10 @@ class MDF_ASDriver : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_ASDriver {
-	~MDF_ASDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ASDriver\n");}
-	}
-};
+%feature("shadow") MDF_ASDriver::~MDF_ASDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ReferenceStorageDriver;
@@ -1218,12 +1146,10 @@ class MDF_ReferenceStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_ReferenceStorageDriver {
-	~MDF_ReferenceStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ReferenceStorageDriver\n");}
-	}
-};
+%feature("shadow") MDF_ReferenceStorageDriver::~MDF_ReferenceStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ASDriverSequence;
@@ -1275,12 +1201,10 @@ class MDF_ASDriverSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend MDF_ASDriverSequence {
-	~MDF_ASDriverSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ASDriverSequence\n");}
-	}
-};
+%feature("shadow") MDF_ASDriverSequence::~MDF_ASDriverSequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_DriverListOfASDriverTable;
@@ -1328,12 +1252,10 @@ class MDF_DriverListOfASDriverTable {
 		void InsertAfter(MDF_DriverListOfASDriverTable & Other, MDF_ListIteratorOfDriverListOfASDriverTable & It);
 
 };
-%extend MDF_DriverListOfASDriverTable {
-	~MDF_DriverListOfASDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_DriverListOfASDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_DriverListOfASDriverTable::~MDF_DriverListOfASDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_SRelocationTable;
@@ -1371,12 +1293,10 @@ class MDF_SRelocationTable : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_SRelocationTable {
-	~MDF_SRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_SRelocationTable\n");}
-	}
-};
+%feature("shadow") MDF_SRelocationTable::~MDF_SRelocationTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_Tool;
@@ -1398,12 +1318,10 @@ class MDF_Tool {
 		void ReadAttributes(const MDF_TypeARDriverMap &aDriverMap, const Handle_MDF_RRelocationTable &aReloc);
 
 };
-%extend MDF_Tool {
-	~MDF_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_Tool\n");}
-	}
-};
+%feature("shadow") MDF_Tool::~MDF_Tool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable;
@@ -1421,12 +1339,10 @@ class MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable : public TCollection
 		const MDF_DriverListOfASDriverTable & Value() const;
 
 };
-%extend MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable {
-	~MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable::~MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ReferenceRetrievalDriver;
@@ -1456,12 +1372,10 @@ class MDF_ReferenceRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_ReferenceRetrievalDriver {
-	~MDF_ReferenceRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ReferenceRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDF_ReferenceRetrievalDriver::~MDF_ReferenceRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ASDriverHSequence;
@@ -1527,12 +1441,10 @@ class MDF_ASDriverHSequence : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_ASDriverHSequence {
-	~MDF_ASDriverHSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ASDriverHSequence\n");}
-	}
-};
+%feature("shadow") MDF_ASDriverHSequence::~MDF_ASDriverHSequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_SequenceNodeOfASDriverSequence;
@@ -1556,12 +1468,10 @@ class MDF_SequenceNodeOfASDriverSequence : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_SequenceNodeOfASDriverSequence {
-	~MDF_SequenceNodeOfASDriverSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_SequenceNodeOfASDriverSequence\n");}
-	}
-};
+%feature("shadow") MDF_SequenceNodeOfASDriverSequence::~MDF_SequenceNodeOfASDriverSequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_TypeASDriverMap;
@@ -1593,12 +1503,10 @@ class MDF_TypeASDriverMap : public TCollection_BasicMap {
 		Handle_MDF_ASDriver & operator()(const Handle_Standard_Type &K);
 
 };
-%extend MDF_TypeASDriverMap {
-	~MDF_TypeASDriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_TypeASDriverMap\n");}
-	}
-};
+%feature("shadow") MDF_TypeASDriverMap::~MDF_TypeASDriverMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable;
@@ -1624,12 +1532,10 @@ class MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public TCollection_Map
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable {
-	~MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable::~MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_RRelocationTable;
@@ -1667,12 +1573,10 @@ class MDF_RRelocationTable : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_RRelocationTable {
-	~MDF_RRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_RRelocationTable\n");}
-	}
-};
+%feature("shadow") MDF_RRelocationTable::~MDF_RRelocationTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_TagSourceStorageDriver;
@@ -1702,12 +1606,10 @@ class MDF_TagSourceStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_TagSourceStorageDriver {
-	~MDF_TagSourceStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_TagSourceStorageDriver\n");}
-	}
-};
+%feature("shadow") MDF_TagSourceStorageDriver::~MDF_TagSourceStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_DataMapNodeOfTypeASDriverMap;
@@ -1733,12 +1635,10 @@ class MDF_DataMapNodeOfTypeASDriverMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_DataMapNodeOfTypeASDriverMap {
-	~MDF_DataMapNodeOfTypeASDriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_DataMapNodeOfTypeASDriverMap\n");}
-	}
-};
+%feature("shadow") MDF_DataMapNodeOfTypeASDriverMap::~MDF_DataMapNodeOfTypeASDriverMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ARDriverSequence;
@@ -1790,12 +1690,10 @@ class MDF_ARDriverSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend MDF_ARDriverSequence {
-	~MDF_ARDriverSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ARDriverSequence\n");}
-	}
-};
+%feature("shadow") MDF_ARDriverSequence::~MDF_ARDriverSequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ARDriverTable;
@@ -1825,12 +1723,10 @@ class MDF_ARDriverTable : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_ARDriverTable {
-	~MDF_ARDriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ARDriverTable\n");}
-	}
-};
+%feature("shadow") MDF_ARDriverTable::~MDF_ARDriverTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_ARDriverHSequence;
@@ -1896,12 +1792,10 @@ class MDF_ARDriverHSequence : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDF_ARDriverHSequence {
-	~MDF_ARDriverHSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_ARDriverHSequence\n");}
-	}
-};
+%feature("shadow") MDF_ARDriverHSequence::~MDF_ARDriverHSequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDF_DataMapIteratorOfTypeASDriverMap;
@@ -1919,9 +1813,7 @@ class MDF_DataMapIteratorOfTypeASDriverMap : public TCollection_BasicMapIterator
 		const Handle_MDF_ASDriver & Value() const;
 
 };
-%extend MDF_DataMapIteratorOfTypeASDriverMap {
-	~MDF_DataMapIteratorOfTypeASDriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDF_DataMapIteratorOfTypeASDriverMap\n");}
-	}
-};
+%feature("shadow") MDF_DataMapIteratorOfTypeASDriverMap::~MDF_DataMapIteratorOfTypeASDriverMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

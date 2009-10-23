@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BOP_dependencies.i
 
 
@@ -87,12 +91,10 @@ class Handle_BOP_HistoryCollector : public Handle_MMgt_TShared {
 	return (BOP_HistoryCollector*)$self->Access();
 	}
 };
-%extend Handle_BOP_HistoryCollector {
-	~Handle_BOP_HistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_HistoryCollector\n");}
-	}
-};
+%feature("shadow") Handle_BOP_HistoryCollector::~Handle_BOP_HistoryCollector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_ShellSolidHistoryCollector;
@@ -117,12 +119,10 @@ class Handle_BOP_ShellSolidHistoryCollector : public Handle_BOP_HistoryCollector
 	return (BOP_ShellSolidHistoryCollector*)$self->Access();
 	}
 };
-%extend Handle_BOP_ShellSolidHistoryCollector {
-	~Handle_BOP_ShellSolidHistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ShellSolidHistoryCollector\n");}
-	}
-};
+%feature("shadow") Handle_BOP_ShellSolidHistoryCollector::~Handle_BOP_ShellSolidHistoryCollector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_SolidSolidHistoryCollector;
@@ -147,12 +147,10 @@ class Handle_BOP_SolidSolidHistoryCollector : public Handle_BOP_HistoryCollector
 	return (BOP_SolidSolidHistoryCollector*)$self->Access();
 	}
 };
-%extend Handle_BOP_SolidSolidHistoryCollector {
-	~Handle_BOP_SolidSolidHistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_SolidSolidHistoryCollector\n");}
-	}
-};
+%feature("shadow") Handle_BOP_SolidSolidHistoryCollector::~Handle_BOP_SolidSolidHistoryCollector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfListOfLoop;
@@ -177,12 +175,10 @@ class Handle_BOP_ListNodeOfListOfListOfLoop : public Handle_TCollection_MapNode 
 	return (BOP_ListNodeOfListOfListOfLoop*)$self->Access();
 	}
 };
-%extend Handle_BOP_ListNodeOfListOfListOfLoop {
-	~Handle_BOP_ListNodeOfListOfListOfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfListOfLoop\n");}
-	}
-};
+%feature("shadow") Handle_BOP_ListNodeOfListOfListOfLoop::~Handle_BOP_ListNodeOfListOfListOfLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_WireSolidHistoryCollector;
@@ -207,12 +203,10 @@ class Handle_BOP_WireSolidHistoryCollector : public Handle_BOP_HistoryCollector 
 	return (BOP_WireSolidHistoryCollector*)$self->Access();
 	}
 };
-%extend Handle_BOP_WireSolidHistoryCollector {
-	~Handle_BOP_WireSolidHistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_WireSolidHistoryCollector\n");}
-	}
-};
+%feature("shadow") Handle_BOP_WireSolidHistoryCollector::~Handle_BOP_WireSolidHistoryCollector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
@@ -237,12 +231,10 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public Ha
 	return (BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier*)$self->Access();
 	}
 };
-%extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
-	~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");}
-	}
-};
+%feature("shadow") Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier::~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo;
@@ -267,12 +259,10 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public H
 	return (BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo*)$self->Access();
 	}
 };
-%extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
-	~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo\n");}
-	}
-};
+%feature("shadow") Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo::~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo;
@@ -297,12 +287,10 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public
 	return (BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo*)$self->Access();
 	}
 };
-%extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
-	~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo\n");}
-	}
-};
+%feature("shadow") Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo::~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfCheckResult;
@@ -327,12 +315,10 @@ class Handle_BOP_ListNodeOfListOfCheckResult : public Handle_TCollection_MapNode
 	return (BOP_ListNodeOfListOfCheckResult*)$self->Access();
 	}
 };
-%extend Handle_BOP_ListNodeOfListOfCheckResult {
-	~Handle_BOP_ListNodeOfListOfCheckResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfCheckResult\n");}
-	}
-};
+%feature("shadow") Handle_BOP_ListNodeOfListOfCheckResult::~Handle_BOP_ListNodeOfListOfCheckResult %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfLoop;
@@ -357,12 +343,10 @@ class Handle_BOP_ListNodeOfListOfLoop : public Handle_TCollection_MapNode {
 	return (BOP_ListNodeOfListOfLoop*)$self->Access();
 	}
 };
-%extend Handle_BOP_ListNodeOfListOfLoop {
-	~Handle_BOP_ListNodeOfListOfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfLoop\n");}
-	}
-};
+%feature("shadow") Handle_BOP_ListNodeOfListOfLoop::~Handle_BOP_ListNodeOfListOfLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_SequenceNodeOfSeqOfSeqOfShape;
@@ -387,12 +371,10 @@ class Handle_BOP_SequenceNodeOfSeqOfSeqOfShape : public Handle_TCollection_SeqNo
 	return (BOP_SequenceNodeOfSeqOfSeqOfShape*)$self->Access();
 	}
 };
-%extend Handle_BOP_SequenceNodeOfSeqOfSeqOfShape {
-	~Handle_BOP_SequenceNodeOfSeqOfSeqOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_SequenceNodeOfSeqOfSeqOfShape\n");}
-	}
-};
+%feature("shadow") Handle_BOP_SequenceNodeOfSeqOfSeqOfShape::~Handle_BOP_SequenceNodeOfSeqOfSeqOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_Loop;
@@ -417,12 +399,10 @@ class Handle_BOP_Loop : public Handle_MMgt_TShared {
 	return (BOP_Loop*)$self->Access();
 	}
 };
-%extend Handle_BOP_Loop {
-	~Handle_BOP_Loop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_Loop\n");}
-	}
-};
+%feature("shadow") Handle_BOP_Loop::~Handle_BOP_Loop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_SectionHistoryCollector;
@@ -447,12 +427,10 @@ class Handle_BOP_SectionHistoryCollector : public Handle_BOP_HistoryCollector {
 	return (BOP_SectionHistoryCollector*)$self->Access();
 	}
 };
-%extend Handle_BOP_SectionHistoryCollector {
-	~Handle_BOP_SectionHistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_SectionHistoryCollector\n");}
-	}
-};
+%feature("shadow") Handle_BOP_SectionHistoryCollector::~Handle_BOP_SectionHistoryCollector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfFaceInfo;
@@ -477,12 +455,10 @@ class Handle_BOP_ListNodeOfListOfFaceInfo : public Handle_TCollection_MapNode {
 	return (BOP_ListNodeOfListOfFaceInfo*)$self->Access();
 	}
 };
-%extend Handle_BOP_ListNodeOfListOfFaceInfo {
-	~Handle_BOP_ListNodeOfListOfFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfFaceInfo\n");}
-	}
-};
+%feature("shadow") Handle_BOP_ListNodeOfListOfFaceInfo::~Handle_BOP_ListNodeOfListOfFaceInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfConnexityBlock;
@@ -507,12 +483,10 @@ class Handle_BOP_ListNodeOfListOfConnexityBlock : public Handle_TCollection_MapN
 	return (BOP_ListNodeOfListOfConnexityBlock*)$self->Access();
 	}
 };
-%extend Handle_BOP_ListNodeOfListOfConnexityBlock {
-	~Handle_BOP_ListNodeOfListOfConnexityBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfConnexityBlock\n");}
-	}
-};
+%feature("shadow") Handle_BOP_ListNodeOfListOfConnexityBlock::~Handle_BOP_ListNodeOfListOfConnexityBlock %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfEdgeInfo;
@@ -537,12 +511,10 @@ class Handle_BOP_ListNodeOfListOfEdgeInfo : public Handle_TCollection_MapNode {
 	return (BOP_ListNodeOfListOfEdgeInfo*)$self->Access();
 	}
 };
-%extend Handle_BOP_ListNodeOfListOfEdgeInfo {
-	~Handle_BOP_ListNodeOfListOfEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfEdgeInfo\n");}
-	}
-};
+%feature("shadow") Handle_BOP_ListNodeOfListOfEdgeInfo::~Handle_BOP_ListNodeOfListOfEdgeInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListIteratorOfListOfListOfLoop;
@@ -562,12 +534,10 @@ class BOP_ListIteratorOfListOfListOfLoop {
 		BOP_ListOfLoop & Value() const;
 
 };
-%extend BOP_ListIteratorOfListOfListOfLoop {
-	~BOP_ListIteratorOfListOfListOfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfListOfLoop\n");}
-	}
-};
+%feature("shadow") BOP_ListIteratorOfListOfListOfLoop::~BOP_ListIteratorOfListOfListOfLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo;
@@ -607,12 +577,10 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public TColle
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
-	~BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo\n");}
-	}
-};
+%feature("shadow") BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo::~BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListNodeOfListOfFaceInfo;
@@ -636,12 +604,10 @@ class BOP_ListNodeOfListOfFaceInfo : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_ListNodeOfListOfFaceInfo {
-	~BOP_ListNodeOfListOfFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfFaceInfo\n");}
-	}
-};
+%feature("shadow") BOP_ListNodeOfListOfFaceInfo::~BOP_ListNodeOfListOfFaceInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_Builder;
@@ -689,12 +655,10 @@ class BOP_Builder {
 		Handle_BOP_HistoryCollector GetHistoryCollector() const;
 
 };
-%extend BOP_Builder {
-	~BOP_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_Builder\n");}
-	}
-};
+%feature("shadow") BOP_Builder::~BOP_Builder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_HistoryCollector;
@@ -728,12 +692,10 @@ class BOP_HistoryCollector : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_HistoryCollector {
-	~BOP_HistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_HistoryCollector\n");}
-	}
-};
+%feature("shadow") BOP_HistoryCollector::~BOP_HistoryCollector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_WireSolidHistoryCollector;
@@ -753,12 +715,10 @@ class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_WireSolidHistoryCollector {
-	~BOP_WireSolidHistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireSolidHistoryCollector\n");}
-	}
-};
+%feature("shadow") BOP_WireSolidHistoryCollector::~BOP_WireSolidHistoryCollector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_AreaBuilder;
@@ -794,12 +754,10 @@ class BOP_AreaBuilder {
 		virtual		void ADD_LISTOFLoop_TO_LISTOFLoop(BOP_ListOfLoop & LOL1, BOP_ListOfLoop & LOL2) const;
 
 };
-%extend BOP_AreaBuilder {
-	~BOP_AreaBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_AreaBuilder\n");}
-	}
-};
+%feature("shadow") BOP_AreaBuilder::~BOP_AreaBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_Area3dBuilder;
@@ -813,12 +771,10 @@ class BOP_Area3dBuilder : public BOP_AreaBuilder {
 		virtual		void InitAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClass);
 
 };
-%extend BOP_Area3dBuilder {
-	~BOP_Area3dBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_Area3dBuilder\n");}
-	}
-};
+%feature("shadow") BOP_Area3dBuilder::~BOP_Area3dBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListIteratorOfListOfFaceInfo;
@@ -838,12 +794,10 @@ class BOP_ListIteratorOfListOfFaceInfo {
 		BOP_FaceInfo & Value() const;
 
 };
-%extend BOP_ListIteratorOfListOfFaceInfo {
-	~BOP_ListIteratorOfListOfFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfFaceInfo\n");}
-	}
-};
+%feature("shadow") BOP_ListIteratorOfListOfFaceInfo::~BOP_ListIteratorOfListOfFaceInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_SFSCorrector;
@@ -865,12 +819,10 @@ class BOP_SFSCorrector {
 		BOP_ShellFaceSet & NewSFS();
 
 };
-%extend BOP_SFSCorrector {
-	~BOP_SFSCorrector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SFSCorrector\n");}
-	}
-};
+%feature("shadow") BOP_SFSCorrector::~BOP_SFSCorrector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_SolidSolidHistoryCollector;
@@ -896,12 +848,10 @@ class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_SolidSolidHistoryCollector {
-	~BOP_SolidSolidHistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SolidSolidHistoryCollector\n");}
-	}
-};
+%feature("shadow") BOP_SolidSolidHistoryCollector::~BOP_SolidSolidHistoryCollector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListIteratorOfListOfEdgeInfo;
@@ -921,12 +871,10 @@ class BOP_ListIteratorOfListOfEdgeInfo {
 		BOP_EdgeInfo & Value() const;
 
 };
-%extend BOP_ListIteratorOfListOfEdgeInfo {
-	~BOP_ListIteratorOfListOfEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfEdgeInfo\n");}
-	}
-};
+%feature("shadow") BOP_ListIteratorOfListOfEdgeInfo::~BOP_ListIteratorOfListOfEdgeInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_IndexedDataMapOfSolidClassifier;
@@ -968,12 +916,10 @@ class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
 		BOP_PSoClassif & ChangeFromKey(const TopoDS_Shape &K);
 
 };
-%extend BOP_IndexedDataMapOfSolidClassifier {
-	~BOP_IndexedDataMapOfSolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapOfSolidClassifier\n");}
-	}
-};
+%feature("shadow") BOP_IndexedDataMapOfSolidClassifier::~BOP_IndexedDataMapOfSolidClassifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ShellSplitter;
@@ -997,12 +943,10 @@ class BOP_ShellSplitter {
 		const BOPTColStd_ListOfListOfShape & Shapes() const;
 
 };
-%extend BOP_ShellSplitter {
-	~BOP_ShellSplitter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShellSplitter\n");}
-	}
-};
+%feature("shadow") BOP_ShellSplitter::~BOP_ShellSplitter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_Draw;
@@ -1022,12 +966,10 @@ class BOP_Draw {
 		void Wait();
 
 };
-%extend BOP_Draw {
-	~BOP_Draw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_Draw\n");}
-	}
-};
+%feature("shadow") BOP_Draw::~BOP_Draw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListOfLoop;
@@ -1075,12 +1017,10 @@ class BOP_ListOfLoop {
 		void InsertAfter(BOP_ListOfLoop & Other, BOP_ListIteratorOfListOfLoop & It);
 
 };
-%extend BOP_ListOfLoop {
-	~BOP_ListOfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListOfLoop\n");}
-	}
-};
+%feature("shadow") BOP_ListOfLoop::~BOP_ListOfLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_WireShape;
@@ -1096,12 +1036,10 @@ class BOP_WireShape : public BOP_Builder {
 		void MakeResult();
 
 };
-%extend BOP_WireShape {
-	~BOP_WireShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireShape\n");}
-	}
-};
+%feature("shadow") BOP_WireShape::~BOP_WireShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_WireShell;
@@ -1121,12 +1059,10 @@ class BOP_WireShell : public BOP_WireShape {
 		Standard_Boolean CheckArgTypes(const TopAbs_ShapeEnum theType1, const TopAbs_ShapeEnum theType2, const BOP_Operation theOperation);
 
 };
-%extend BOP_WireShell {
-	~BOP_WireShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireShell\n");}
-	}
-};
+%feature("shadow") BOP_WireShell::~BOP_WireShell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_WESCorrector;
@@ -1148,12 +1084,10 @@ class BOP_WESCorrector {
 		BOP_WireEdgeSet & NewWES();
 
 };
-%extend BOP_WESCorrector {
-	~BOP_WESCorrector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WESCorrector\n");}
-	}
-};
+%feature("shadow") BOP_WESCorrector::~BOP_WESCorrector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_Area2dBuilder;
@@ -1167,12 +1101,10 @@ class BOP_Area2dBuilder : public BOP_AreaBuilder {
 		virtual		void InitAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
 
 };
-%extend BOP_Area2dBuilder {
-	~BOP_Area2dBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_Area2dBuilder\n");}
-	}
-};
+%feature("shadow") BOP_Area2dBuilder::~BOP_Area2dBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_FaceAreaBuilder;
@@ -1186,12 +1118,10 @@ class BOP_FaceAreaBuilder : public BOP_Area2dBuilder {
 		void InitFaceAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
 
 };
-%extend BOP_FaceAreaBuilder {
-	~BOP_FaceAreaBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_FaceAreaBuilder\n");}
-	}
-};
+%feature("shadow") BOP_FaceAreaBuilder::~BOP_FaceAreaBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_SectionHistoryCollector;
@@ -1215,12 +1145,10 @@ class BOP_SectionHistoryCollector : public BOP_HistoryCollector {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_SectionHistoryCollector {
-	~BOP_SectionHistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SectionHistoryCollector\n");}
-	}
-};
+%feature("shadow") BOP_SectionHistoryCollector::~BOP_SectionHistoryCollector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_Loop;
@@ -1250,12 +1178,10 @@ class BOP_Loop : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_Loop {
-	~BOP_Loop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_Loop\n");}
-	}
-};
+%feature("shadow") BOP_Loop::~BOP_Loop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_Refiner;
@@ -1283,12 +1209,10 @@ class BOP_Refiner {
 		Standard_Integer NbRemovedEdges() const;
 
 };
-%extend BOP_Refiner {
-	~BOP_Refiner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_Refiner\n");}
-	}
-};
+%feature("shadow") BOP_Refiner::~BOP_Refiner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo;
@@ -1328,12 +1252,10 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollect
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
-	~BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo\n");}
-	}
-};
+%feature("shadow") BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo::~BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ConnexityBlock;
@@ -1353,12 +1275,10 @@ class BOP_ConnexityBlock {
 		Standard_Boolean IsRegular() const;
 
 };
-%extend BOP_ConnexityBlock {
-	~BOP_ConnexityBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ConnexityBlock\n");}
-	}
-};
+%feature("shadow") BOP_ConnexityBlock::~BOP_ConnexityBlock %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListOfEdgeInfo;
@@ -1406,12 +1326,10 @@ class BOP_ListOfEdgeInfo {
 		void InsertAfter(BOP_ListOfEdgeInfo & Other, BOP_ListIteratorOfListOfEdgeInfo & It);
 
 };
-%extend BOP_ListOfEdgeInfo {
-	~BOP_ListOfEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListOfEdgeInfo\n");}
-	}
-};
+%feature("shadow") BOP_ListOfEdgeInfo::~BOP_ListOfEdgeInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListNodeOfListOfEdgeInfo;
@@ -1435,12 +1353,10 @@ class BOP_ListNodeOfListOfEdgeInfo : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_ListNodeOfListOfEdgeInfo {
-	~BOP_ListNodeOfListOfEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfEdgeInfo\n");}
-	}
-};
+%feature("shadow") BOP_ListNodeOfListOfEdgeInfo::~BOP_ListNodeOfListOfEdgeInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListNodeOfListOfListOfLoop;
@@ -1464,12 +1380,10 @@ class BOP_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_ListNodeOfListOfListOfLoop {
-	~BOP_ListNodeOfListOfListOfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfListOfLoop\n");}
-	}
-};
+%feature("shadow") BOP_ListNodeOfListOfListOfLoop::~BOP_ListNodeOfListOfListOfLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListOfFaceInfo;
@@ -1517,12 +1431,10 @@ class BOP_ListOfFaceInfo {
 		void InsertAfter(BOP_ListOfFaceInfo & Other, BOP_ListIteratorOfListOfFaceInfo & It);
 
 };
-%extend BOP_ListOfFaceInfo {
-	~BOP_ListOfFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListOfFaceInfo\n");}
-	}
-};
+%feature("shadow") BOP_ListOfFaceInfo::~BOP_ListOfFaceInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_BuilderTools;
@@ -1550,12 +1462,10 @@ class BOP_BuilderTools {
 		void MakeConnexityBlocks(const TopTools_ListOfShape &aLE, const TopAbs_ShapeEnum aType, BOP_ListOfConnexityBlock & aLConBlks);
 
 };
-%extend BOP_BuilderTools {
-	~BOP_BuilderTools() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_BuilderTools\n");}
-	}
-};
+%feature("shadow") BOP_BuilderTools::~BOP_BuilderTools %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ShapeSet;
@@ -1609,12 +1519,10 @@ class BOP_ShapeSet {
 		void ClearContents();
 
 };
-%extend BOP_ShapeSet {
-	~BOP_ShapeSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShapeSet\n");}
-	}
-};
+%feature("shadow") BOP_ShapeSet::~BOP_ShapeSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ShellFaceSet;
@@ -1628,12 +1536,10 @@ class BOP_ShellFaceSet : public BOP_ShapeSet {
 		const TopoDS_Solid & Solid() const;
 
 };
-%extend BOP_ShellFaceSet {
-	~BOP_ShellFaceSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShellFaceSet\n");}
-	}
-};
+%feature("shadow") BOP_ShellFaceSet::~BOP_ShellFaceSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_SolidBuilder;
@@ -1671,12 +1577,10 @@ class BOP_SolidBuilder {
 		const TopoDS_Face & Face() const;
 
 };
-%extend BOP_SolidBuilder {
-	~BOP_SolidBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SolidBuilder\n");}
-	}
-};
+%feature("shadow") BOP_SolidBuilder::~BOP_SolidBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ShellSolid;
@@ -1706,12 +1610,10 @@ class BOP_ShellSolid : public BOP_Builder {
 		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
 
 };
-%extend BOP_ShellSolid {
-	~BOP_ShellSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShellSolid\n");}
-	}
-};
+%feature("shadow") BOP_ShellSolid::~BOP_ShellSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_SolidClassifier;
@@ -1735,12 +1637,10 @@ class BOP_SolidClassifier {
 		void Destroy();
 
 };
-%extend BOP_SolidClassifier {
-	~BOP_SolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SolidClassifier\n");}
-	}
-};
+%feature("shadow") BOP_SolidClassifier::~BOP_SolidClassifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_IndexedDataMapOfEdgeListFaceInfo;
@@ -1782,12 +1682,10 @@ class BOP_IndexedDataMapOfEdgeListFaceInfo : public TCollection_BasicMap {
 		BOP_ListOfFaceInfo & ChangeFromKey(const TopoDS_Shape &K);
 
 };
-%extend BOP_IndexedDataMapOfEdgeListFaceInfo {
-	~BOP_IndexedDataMapOfEdgeListFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapOfEdgeListFaceInfo\n");}
-	}
-};
+%feature("shadow") BOP_IndexedDataMapOfEdgeListFaceInfo::~BOP_IndexedDataMapOfEdgeListFaceInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_EmptyBuilder;
@@ -1805,12 +1703,10 @@ class BOP_EmptyBuilder : public BOP_Builder {
 		virtual		void BuildResult();
 
 };
-%extend BOP_EmptyBuilder {
-	~BOP_EmptyBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_EmptyBuilder\n");}
-	}
-};
+%feature("shadow") BOP_EmptyBuilder::~BOP_EmptyBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
@@ -1850,12 +1746,10 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public TCollecti
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
-	~BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");}
-	}
-};
+%feature("shadow") BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier::~BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListOfConnexityBlock;
@@ -1903,12 +1797,10 @@ class BOP_ListOfConnexityBlock {
 		void InsertAfter(BOP_ListOfConnexityBlock & Other, BOP_ListIteratorOfListOfConnexityBlock & It);
 
 };
-%extend BOP_ListOfConnexityBlock {
-	~BOP_ListOfConnexityBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListOfConnexityBlock\n");}
-	}
-};
+%feature("shadow") BOP_ListOfConnexityBlock::~BOP_ListOfConnexityBlock %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListNodeOfListOfCheckResult;
@@ -1932,12 +1824,10 @@ class BOP_ListNodeOfListOfCheckResult : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_ListNodeOfListOfCheckResult {
-	~BOP_ListNodeOfListOfCheckResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfCheckResult\n");}
-	}
-};
+%feature("shadow") BOP_ListNodeOfListOfCheckResult::~BOP_ListNodeOfListOfCheckResult %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_CheckResult;
@@ -1967,12 +1857,10 @@ class BOP_CheckResult {
 		BOP_CheckStatus GetCheckStatus() const;
 
 };
-%extend BOP_CheckResult {
-	~BOP_CheckResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_CheckResult\n");}
-	}
-};
+%feature("shadow") BOP_CheckResult::~BOP_CheckResult %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_LoopClassifier;
@@ -1984,12 +1872,10 @@ class BOP_LoopClassifier {
 		virtual		TopAbs_State Compare(const Handle_BOP_Loop &L1, const Handle_BOP_Loop &L2);
 
 };
-%extend BOP_LoopClassifier {
-	~BOP_LoopClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_LoopClassifier\n");}
-	}
-};
+%feature("shadow") BOP_LoopClassifier::~BOP_LoopClassifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_CompositeClassifier;
@@ -2009,12 +1895,10 @@ class BOP_CompositeClassifier : public BOP_LoopClassifier {
 		virtual		TopAbs_State State();
 
 };
-%extend BOP_CompositeClassifier {
-	~BOP_CompositeClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_CompositeClassifier\n");}
-	}
-};
+%feature("shadow") BOP_CompositeClassifier::~BOP_CompositeClassifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListIteratorOfListOfCheckResult;
@@ -2034,12 +1918,10 @@ class BOP_ListIteratorOfListOfCheckResult {
 		BOP_CheckResult & Value() const;
 
 };
-%extend BOP_ListIteratorOfListOfCheckResult {
-	~BOP_ListIteratorOfListOfCheckResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfCheckResult\n");}
-	}
-};
+%feature("shadow") BOP_ListIteratorOfListOfCheckResult::~BOP_ListIteratorOfListOfCheckResult %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_SequenceNodeOfSeqOfSeqOfShape;
@@ -2063,12 +1945,10 @@ class BOP_SequenceNodeOfSeqOfSeqOfShape : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_SequenceNodeOfSeqOfSeqOfShape {
-	~BOP_SequenceNodeOfSeqOfSeqOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SequenceNodeOfSeqOfSeqOfShape\n");}
-	}
-};
+%feature("shadow") BOP_SequenceNodeOfSeqOfSeqOfShape::~BOP_SequenceNodeOfSeqOfSeqOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_IndexedDataMapOfVertexListEdgeInfo;
@@ -2110,12 +1990,10 @@ class BOP_IndexedDataMapOfVertexListEdgeInfo : public TCollection_BasicMap {
 		BOP_ListOfEdgeInfo & ChangeFromKey(const TopoDS_Shape &K);
 
 };
-%extend BOP_IndexedDataMapOfVertexListEdgeInfo {
-	~BOP_IndexedDataMapOfVertexListEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapOfVertexListEdgeInfo\n");}
-	}
-};
+%feature("shadow") BOP_IndexedDataMapOfVertexListEdgeInfo::~BOP_IndexedDataMapOfVertexListEdgeInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ShellShell;
@@ -2133,12 +2011,10 @@ class BOP_ShellShell : public BOP_ShellSolid {
 		virtual		void DoNewFaces();
 
 };
-%extend BOP_ShellShell {
-	~BOP_ShellShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShellShell\n");}
-	}
-};
+%feature("shadow") BOP_ShellShell::~BOP_ShellShell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_Section;
@@ -2158,12 +2034,10 @@ class BOP_Section : public BOP_Builder {
 		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
 
 };
-%extend BOP_Section {
-	~BOP_Section() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_Section\n");}
-	}
-};
+%feature("shadow") BOP_Section::~BOP_Section %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListOfCheckResult;
@@ -2211,12 +2085,10 @@ class BOP_ListOfCheckResult {
 		void InsertAfter(BOP_ListOfCheckResult & Other, BOP_ListIteratorOfListOfCheckResult & It);
 
 };
-%extend BOP_ListOfCheckResult {
-	~BOP_ListOfCheckResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListOfCheckResult\n");}
-	}
-};
+%feature("shadow") BOP_ListOfCheckResult::~BOP_ListOfCheckResult %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ShellFaceClassifier;
@@ -2240,12 +2112,10 @@ class BOP_ShellFaceClassifier : public BOP_CompositeClassifier {
 		virtual		TopAbs_State State();
 
 };
-%extend BOP_ShellFaceClassifier {
-	~BOP_ShellFaceClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShellFaceClassifier\n");}
-	}
-};
+%feature("shadow") BOP_ShellFaceClassifier::~BOP_ShellFaceClassifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_FaceBuilder;
@@ -2301,12 +2171,10 @@ class BOP_FaceBuilder {
 		const TopoDS_Edge & Edge() const;
 
 };
-%extend BOP_FaceBuilder {
-	~BOP_FaceBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_FaceBuilder\n");}
-	}
-};
+%feature("shadow") BOP_FaceBuilder::~BOP_FaceBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListOfListOfLoop;
@@ -2354,12 +2222,10 @@ class BOP_ListOfListOfLoop {
 		void InsertAfter(BOP_ListOfListOfLoop & Other, BOP_ListIteratorOfListOfListOfLoop & It);
 
 };
-%extend BOP_ListOfListOfLoop {
-	~BOP_ListOfListOfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListOfListOfLoop\n");}
-	}
-};
+%feature("shadow") BOP_ListOfListOfLoop::~BOP_ListOfListOfLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_BlockBuilder;
@@ -2399,12 +2265,10 @@ class BOP_BlockBuilder {
 		Standard_Boolean CurrentBlockIsRegular();
 
 };
-%extend BOP_BlockBuilder {
-	~BOP_BlockBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_BlockBuilder\n");}
-	}
-};
+%feature("shadow") BOP_BlockBuilder::~BOP_BlockBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_CorrectTolerances;
@@ -2420,12 +2284,10 @@ class BOP_CorrectTolerances {
 		void CorrectPointOnCurve(const TopoDS_Shape &aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
 
 };
-%extend BOP_CorrectTolerances {
-	~BOP_CorrectTolerances() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_CorrectTolerances\n");}
-	}
-};
+%feature("shadow") BOP_CorrectTolerances::~BOP_CorrectTolerances %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListIteratorOfListOfConnexityBlock;
@@ -2445,12 +2307,10 @@ class BOP_ListIteratorOfListOfConnexityBlock {
 		BOP_ConnexityBlock & Value() const;
 
 };
-%extend BOP_ListIteratorOfListOfConnexityBlock {
-	~BOP_ListIteratorOfListOfConnexityBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfConnexityBlock\n");}
-	}
-};
+%feature("shadow") BOP_ListIteratorOfListOfConnexityBlock::~BOP_ListIteratorOfListOfConnexityBlock %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_BlockIterator;
@@ -2472,12 +2332,10 @@ class BOP_BlockIterator {
 		Standard_Integer Extent() const;
 
 };
-%extend BOP_BlockIterator {
-	~BOP_BlockIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_BlockIterator\n");}
-	}
-};
+%feature("shadow") BOP_BlockIterator::~BOP_BlockIterator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_SolidSolid;
@@ -2497,12 +2355,10 @@ class BOP_SolidSolid : public BOP_ShellSolid {
 		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
 
 };
-%extend BOP_SolidSolid {
-	~BOP_SolidSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SolidSolid\n");}
-	}
-};
+%feature("shadow") BOP_SolidSolid::~BOP_SolidSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_SeqOfSeqOfShape;
@@ -2554,12 +2410,10 @@ class BOP_SeqOfSeqOfShape : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend BOP_SeqOfSeqOfShape {
-	~BOP_SeqOfSeqOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SeqOfSeqOfShape\n");}
-	}
-};
+%feature("shadow") BOP_SeqOfSeqOfShape::~BOP_SeqOfSeqOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_WireSolid;
@@ -2581,12 +2435,10 @@ class BOP_WireSolid : public BOP_WireShape {
 		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
 
 };
-%extend BOP_WireSolid {
-	~BOP_WireSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireSolid\n");}
-	}
-};
+%feature("shadow") BOP_WireSolid::~BOP_WireSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_LoopSet;
@@ -2608,12 +2460,10 @@ class BOP_LoopSet {
 		virtual		const Handle_BOP_Loop & Loop() const;
 
 };
-%extend BOP_LoopSet {
-	~BOP_LoopSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_LoopSet\n");}
-	}
-};
+%feature("shadow") BOP_LoopSet::~BOP_LoopSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_WireEdgeClassifier;
@@ -2639,12 +2489,10 @@ class BOP_WireEdgeClassifier : public BOP_CompositeClassifier {
 		virtual		TopAbs_State State();
 
 };
-%extend BOP_WireEdgeClassifier {
-	~BOP_WireEdgeClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireEdgeClassifier\n");}
-	}
-};
+%feature("shadow") BOP_WireEdgeClassifier::~BOP_WireEdgeClassifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_WireWire;
@@ -2662,12 +2510,10 @@ class BOP_WireWire : public BOP_WireShape {
 		virtual		void BuildResult();
 
 };
-%extend BOP_WireWire {
-	~BOP_WireWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireWire\n");}
-	}
-};
+%feature("shadow") BOP_WireWire::~BOP_WireWire %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ShellSolidHistoryCollector;
@@ -2693,12 +2539,10 @@ class BOP_ShellSolidHistoryCollector : public BOP_HistoryCollector {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_ShellSolidHistoryCollector {
-	~BOP_ShellSolidHistoryCollector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ShellSolidHistoryCollector\n");}
-	}
-};
+%feature("shadow") BOP_ShellSolidHistoryCollector::~BOP_ShellSolidHistoryCollector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_WireEdgeSet;
@@ -2732,12 +2576,10 @@ class BOP_WireEdgeSet : public BOP_ShapeSet {
 		Standard_Boolean KeptTwice(const TopoDS_Edge &aE) const;
 
 };
-%extend BOP_WireEdgeSet {
-	~BOP_WireEdgeSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireEdgeSet\n");}
-	}
-};
+%feature("shadow") BOP_WireEdgeSet::~BOP_WireEdgeSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_SolidAreaBuilder;
@@ -2751,12 +2593,10 @@ class BOP_SolidAreaBuilder : public BOP_Area3dBuilder {
 		void InitSolidAreaBuilder(BOP_LoopSet & LS, BOP_LoopClassifier & LC, const Standard_Boolean ForceClassFlag);
 
 };
-%extend BOP_SolidAreaBuilder {
-	~BOP_SolidAreaBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SolidAreaBuilder\n");}
-	}
-};
+%feature("shadow") BOP_SolidAreaBuilder::~BOP_SolidAreaBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListIteratorOfListOfLoop;
@@ -2776,12 +2616,10 @@ class BOP_ListIteratorOfListOfLoop {
 		Handle_BOP_Loop & Value() const;
 
 };
-%extend BOP_ListIteratorOfListOfLoop {
-	~BOP_ListIteratorOfListOfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfLoop\n");}
-	}
-};
+%feature("shadow") BOP_ListIteratorOfListOfLoop::~BOP_ListIteratorOfListOfLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_WireSplitter;
@@ -2805,12 +2643,10 @@ class BOP_WireSplitter {
 		const BOPTColStd_ListOfListOfShape & Shapes() const;
 
 };
-%extend BOP_WireSplitter {
-	~BOP_WireSplitter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_WireSplitter\n");}
-	}
-};
+%feature("shadow") BOP_WireSplitter::~BOP_WireSplitter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_FaceInfo;
@@ -2848,12 +2684,10 @@ class BOP_FaceInfo {
 		Standard_Real Angle() const;
 
 };
-%extend BOP_FaceInfo {
-	~BOP_FaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_FaceInfo\n");}
-	}
-};
+%feature("shadow") BOP_FaceInfo::~BOP_FaceInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_SDFWESFiller;
@@ -2891,12 +2725,10 @@ class BOP_SDFWESFiller {
 		void UpdateDEStates3D();
 
 };
-%extend BOP_SDFWESFiller {
-	~BOP_SDFWESFiller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_SDFWESFiller\n");}
-	}
-};
+%feature("shadow") BOP_SDFWESFiller::~BOP_SDFWESFiller %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListNodeOfListOfConnexityBlock;
@@ -2920,12 +2752,10 @@ class BOP_ListNodeOfListOfConnexityBlock : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_ListNodeOfListOfConnexityBlock {
-	~BOP_ListNodeOfListOfConnexityBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfConnexityBlock\n");}
-	}
-};
+%feature("shadow") BOP_ListNodeOfListOfConnexityBlock::~BOP_ListNodeOfListOfConnexityBlock %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ArgumentAnalyzer;
@@ -2967,12 +2797,10 @@ class BOP_ArgumentAnalyzer {
 		const BOP_ListOfCheckResult & GetCheckResult() const;
 
 };
-%extend BOP_ArgumentAnalyzer {
-	~BOP_ArgumentAnalyzer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ArgumentAnalyzer\n");}
-	}
-};
+%feature("shadow") BOP_ArgumentAnalyzer::~BOP_ArgumentAnalyzer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_EdgeInfo;
@@ -2998,12 +2826,10 @@ class BOP_EdgeInfo {
 		Standard_Boolean IsIn() const;
 
 };
-%extend BOP_EdgeInfo {
-	~BOP_EdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_EdgeInfo\n");}
-	}
-};
+%feature("shadow") BOP_EdgeInfo::~BOP_EdgeInfo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOP_ListNodeOfListOfLoop;
@@ -3027,9 +2853,7 @@ class BOP_ListNodeOfListOfLoop : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOP_ListNodeOfListOfLoop {
-	~BOP_ListNodeOfListOfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfLoop\n");}
-	}
-};
+%feature("shadow") BOP_ListNodeOfListOfLoop::~BOP_ListNodeOfListOfLoop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

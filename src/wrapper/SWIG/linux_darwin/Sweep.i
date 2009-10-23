@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Sweep_dependencies.i
 
 
@@ -60,12 +64,10 @@ class Sweep_NumShapeTool {
 		Sweep_NumShape LastVertex() const;
 
 };
-%extend Sweep_NumShapeTool {
-	~Sweep_NumShapeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Sweep_NumShapeTool\n");}
-	}
-};
+%feature("shadow") Sweep_NumShapeTool::~Sweep_NumShapeTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Sweep_NumShape;
@@ -91,12 +93,10 @@ class Sweep_NumShape {
 		TopAbs_Orientation Orientation() const;
 
 };
-%extend Sweep_NumShape {
-	~Sweep_NumShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Sweep_NumShape\n");}
-	}
-};
+%feature("shadow") Sweep_NumShape::~Sweep_NumShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Sweep_NumShapeIterator;
@@ -116,9 +116,7 @@ class Sweep_NumShapeIterator {
 		TopAbs_Orientation Orientation() const;
 
 };
-%extend Sweep_NumShapeIterator {
-	~Sweep_NumShapeIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Sweep_NumShapeIterator\n");}
-	}
-};
+%feature("shadow") Sweep_NumShapeIterator::~Sweep_NumShapeIterator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

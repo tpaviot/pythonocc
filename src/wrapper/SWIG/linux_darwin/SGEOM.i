@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include SGEOM_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_GEOM_Application : public Handle_TDocStd_Application {
 	return (GEOM_Application*)$self->Access();
 	}
 };
-%extend Handle_GEOM_Application {
-	~Handle_GEOM_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOM_Application\n");}
-	}
-};
+%feature("shadow") Handle_GEOM_Application::~Handle_GEOM_Application %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GEOM_Object;
@@ -87,12 +89,10 @@ class Handle_GEOM_Object : public Handle_MMgt_TShared {
 	return (GEOM_Object*)$self->Access();
 	}
 };
-%extend Handle_GEOM_Object {
-	~Handle_GEOM_Object() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOM_Object\n");}
-	}
-};
+%feature("shadow") Handle_GEOM_Object::~Handle_GEOM_Object %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient;
@@ -117,12 +117,10 @@ class Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public Handle_TCo
 	return (GEOM_DataMapNodeOfDataMapOfAsciiStringTransient*)$self->Access();
 	}
 };
-%extend Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
-	~Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient\n");}
-	}
-};
+%feature("shadow") Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient::~Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GEOM_SubShapeDriver;
@@ -147,12 +145,10 @@ class Handle_GEOM_SubShapeDriver : public Handle_TFunction_Driver {
 	return (GEOM_SubShapeDriver*)$self->Access();
 	}
 };
-%extend Handle_GEOM_SubShapeDriver {
-	~Handle_GEOM_SubShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOM_SubShapeDriver\n");}
-	}
-};
+%feature("shadow") Handle_GEOM_SubShapeDriver::~Handle_GEOM_SubShapeDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GEOM_Function;
@@ -177,12 +173,10 @@ class Handle_GEOM_Function : public Handle_MMgt_TShared {
 	return (GEOM_Function*)$self->Access();
 	}
 };
-%extend Handle_GEOM_Function {
-	~Handle_GEOM_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOM_Function\n");}
-	}
-};
+%feature("shadow") Handle_GEOM_Function::~Handle_GEOM_Function %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GEOM_SubShapeDriver;
@@ -212,12 +206,10 @@ class GEOM_SubShapeDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GEOM_SubShapeDriver {
-	~GEOM_SubShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_SubShapeDriver\n");}
-	}
-};
+%feature("shadow") GEOM_SubShapeDriver::~GEOM_SubShapeDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GEOM_Solver;
@@ -235,12 +227,10 @@ class GEOM_Solver {
 		bool ComputeFunction(Handle_GEOM_Function );
 
 };
-%extend GEOM_Solver {
-	~GEOM_Solver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_Solver\n");}
-	}
-};
+%feature("shadow") GEOM_Solver::~GEOM_Solver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GEOM_Parameter;
@@ -266,12 +256,10 @@ class GEOM_Parameter {
 		void operator=(const TCollection_AsciiString &anAsciiString);
 
 };
-%extend GEOM_Parameter {
-	~GEOM_Parameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_Parameter\n");}
-	}
-};
+%feature("shadow") GEOM_Parameter::~GEOM_Parameter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GEOM_DataMapOfAsciiStringTransient;
@@ -303,12 +291,10 @@ class GEOM_DataMapOfAsciiStringTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & operator()(const TCollection_AsciiString &K);
 
 };
-%extend GEOM_DataMapOfAsciiStringTransient {
-	~GEOM_DataMapOfAsciiStringTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_DataMapOfAsciiStringTransient\n");}
-	}
-};
+%feature("shadow") GEOM_DataMapOfAsciiStringTransient::~GEOM_DataMapOfAsciiStringTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GEOM_ISubShape;
@@ -326,12 +312,10 @@ class GEOM_ISubShape {
 		Handle_TColStd_HArray1OfInteger GetIndices();
 
 };
-%extend GEOM_ISubShape {
-	~GEOM_ISubShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_ISubShape\n");}
-	}
-};
+%feature("shadow") GEOM_ISubShape::~GEOM_ISubShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GEOM_Engine;
@@ -387,12 +371,10 @@ class GEOM_Engine {
 		TDF_Label GetUserDataLabel(int );
 
 };
-%extend GEOM_Engine {
-	~GEOM_Engine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_Engine\n");}
-	}
-};
+%feature("shadow") GEOM_Engine::~GEOM_Engine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GEOM_Application;
@@ -420,12 +402,10 @@ class GEOM_Application : public TDocStd_Application {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GEOM_Application {
-	~GEOM_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_Application\n");}
-	}
-};
+%feature("shadow") GEOM_Application::~GEOM_Application %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GEOM_Function;
@@ -531,12 +511,10 @@ class GEOM_Function : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GEOM_Function {
-	~GEOM_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_Function\n");}
-	}
-};
+%feature("shadow") GEOM_Function::~GEOM_Function %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GEOM_DataMapNodeOfDataMapOfAsciiStringTransient;
@@ -564,12 +542,10 @@ class GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public TCollection_MapNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
-	~GEOM_DataMapNodeOfDataMapOfAsciiStringTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_DataMapNodeOfDataMapOfAsciiStringTransient\n");}
-	}
-};
+%feature("shadow") GEOM_DataMapNodeOfDataMapOfAsciiStringTransient::~GEOM_DataMapNodeOfDataMapOfAsciiStringTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GEOM_Object;
@@ -667,12 +643,10 @@ class GEOM_Object : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GEOM_Object {
-	~GEOM_Object() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_Object\n");}
-	}
-};
+%feature("shadow") GEOM_Object::~GEOM_Object %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient;
@@ -690,12 +664,10 @@ class GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient : public TCollection_B
 		const Handle_Standard_Transient & Value() const;
 
 };
-%extend GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient {
-	~GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient\n");}
-	}
-};
+%feature("shadow") GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient::~GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GEOM_IOperations;
@@ -725,9 +697,7 @@ class GEOM_IOperations {
 		int GetDocID();
 
 };
-%extend GEOM_IOperations {
-	~GEOM_IOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOM_IOperations\n");}
-	}
-};
+%feature("shadow") GEOM_IOperations::~GEOM_IOperations %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

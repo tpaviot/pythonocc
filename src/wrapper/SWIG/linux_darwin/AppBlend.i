@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include AppBlend_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TCol
 	return (AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d*)$self->Access();
 	}
 };
-%extend Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d {
-	~Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d\n");}
-	}
-};
+%feature("shadow") Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d::~Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d;
@@ -86,12 +88,10 @@ class AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d {
-	~AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d\n");}
-	}
-};
+%feature("shadow") AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d::~AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AppBlend_Approx;
@@ -141,12 +141,10 @@ class AppBlend_Approx {
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
 
 };
-%extend AppBlend_Approx {
-	~AppBlend_Approx() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppBlend_Approx\n");}
-	}
-};
+%feature("shadow") AppBlend_Approx::~AppBlend_Approx %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AppBlend_SequenceOfArray1OfPnt2d;
@@ -198,9 +196,7 @@ class AppBlend_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend AppBlend_SequenceOfArray1OfPnt2d {
-	~AppBlend_SequenceOfArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppBlend_SequenceOfArray1OfPnt2d\n");}
-	}
-};
+%feature("shadow") AppBlend_SequenceOfArray1OfPnt2d::~AppBlend_SequenceOfArray1OfPnt2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

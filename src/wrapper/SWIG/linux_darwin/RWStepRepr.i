@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include RWStepRepr_dependencies.i
 
 
@@ -48,12 +52,10 @@ class RWStepRepr_RWShapeAspectRelationship {
 		void Share(const Handle_StepRepr_ShapeAspectRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWShapeAspectRelationship {
-	~RWStepRepr_RWShapeAspectRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWShapeAspectRelationship\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWShapeAspectRelationship::~RWStepRepr_RWShapeAspectRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWQuantifiedAssemblyComponentUsage;
@@ -69,12 +71,10 @@ class RWStepRepr_RWQuantifiedAssemblyComponentUsage {
 		void Share(const Handle_StepRepr_QuantifiedAssemblyComponentUsage &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWQuantifiedAssemblyComponentUsage {
-	~RWStepRepr_RWQuantifiedAssemblyComponentUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWQuantifiedAssemblyComponentUsage\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWQuantifiedAssemblyComponentUsage::~RWStepRepr_RWQuantifiedAssemblyComponentUsage %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWDefinitionalRepresentation;
@@ -90,12 +90,10 @@ class RWStepRepr_RWDefinitionalRepresentation {
 		void Share(const Handle_StepRepr_DefinitionalRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWDefinitionalRepresentation {
-	~RWStepRepr_RWDefinitionalRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWDefinitionalRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWDefinitionalRepresentation::~RWStepRepr_RWDefinitionalRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWCompoundRepresentationItem;
@@ -111,12 +109,10 @@ class RWStepRepr_RWCompoundRepresentationItem {
 		void Share(const Handle_StepRepr_CompoundRepresentationItem &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWCompoundRepresentationItem {
-	~RWStepRepr_RWCompoundRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWCompoundRepresentationItem\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWCompoundRepresentationItem::~RWStepRepr_RWCompoundRepresentationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWDerivedShapeAspect;
@@ -132,12 +128,10 @@ class RWStepRepr_RWDerivedShapeAspect {
 		void Share(const Handle_StepRepr_DerivedShapeAspect &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWDerivedShapeAspect {
-	~RWStepRepr_RWDerivedShapeAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWDerivedShapeAspect\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWDerivedShapeAspect::~RWStepRepr_RWDerivedShapeAspect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWCompositeShapeAspect;
@@ -153,12 +147,10 @@ class RWStepRepr_RWCompositeShapeAspect {
 		void Share(const Handle_StepRepr_CompositeShapeAspect &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWCompositeShapeAspect {
-	~RWStepRepr_RWCompositeShapeAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWCompositeShapeAspect\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWCompositeShapeAspect::~RWStepRepr_RWCompositeShapeAspect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWExtension;
@@ -174,12 +166,10 @@ class RWStepRepr_RWExtension {
 		void Share(const Handle_StepRepr_Extension &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWExtension {
-	~RWStepRepr_RWExtension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWExtension\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWExtension::~RWStepRepr_RWExtension %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWShapeAspectDerivingRelationship;
@@ -195,12 +185,10 @@ class RWStepRepr_RWShapeAspectDerivingRelationship {
 		void Share(const Handle_StepRepr_ShapeAspectDerivingRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWShapeAspectDerivingRelationship {
-	~RWStepRepr_RWShapeAspectDerivingRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWShapeAspectDerivingRelationship\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWShapeAspectDerivingRelationship::~RWStepRepr_RWShapeAspectDerivingRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWRepresentationRelationship;
@@ -216,12 +204,10 @@ class RWStepRepr_RWRepresentationRelationship {
 		void Share(const Handle_StepRepr_RepresentationRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWRepresentationRelationship {
-	~RWStepRepr_RWRepresentationRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWRepresentationRelationship\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWRepresentationRelationship::~RWStepRepr_RWRepresentationRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWAssemblyComponentUsageSubstitute;
@@ -237,12 +223,10 @@ class RWStepRepr_RWAssemblyComponentUsageSubstitute {
 		void Share(const Handle_StepRepr_AssemblyComponentUsageSubstitute &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWAssemblyComponentUsageSubstitute {
-	~RWStepRepr_RWAssemblyComponentUsageSubstitute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWAssemblyComponentUsageSubstitute\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWAssemblyComponentUsageSubstitute::~RWStepRepr_RWAssemblyComponentUsageSubstitute %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWConfigurationItem;
@@ -258,12 +242,10 @@ class RWStepRepr_RWConfigurationItem {
 		void Share(const Handle_StepRepr_ConfigurationItem &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWConfigurationItem {
-	~RWStepRepr_RWConfigurationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWConfigurationItem\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWConfigurationItem::~RWStepRepr_RWConfigurationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWFunctionallyDefinedTransformation;
@@ -277,12 +259,10 @@ class RWStepRepr_RWFunctionallyDefinedTransformation {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_FunctionallyDefinedTransformation &ent) const;
 
 };
-%extend RWStepRepr_RWFunctionallyDefinedTransformation {
-	~RWStepRepr_RWFunctionallyDefinedTransformation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWFunctionallyDefinedTransformation\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWFunctionallyDefinedTransformation::~RWStepRepr_RWFunctionallyDefinedTransformation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation;
@@ -298,12 +278,10 @@ class RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation {
 		void Share(const Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation {
-	~RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation::~RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWConfigurationEffectivity;
@@ -319,12 +297,10 @@ class RWStepRepr_RWConfigurationEffectivity {
 		void Share(const Handle_StepRepr_ConfigurationEffectivity &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWConfigurationEffectivity {
-	~RWStepRepr_RWConfigurationEffectivity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWConfigurationEffectivity\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWConfigurationEffectivity::~RWStepRepr_RWConfigurationEffectivity %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWMakeFromUsageOption;
@@ -340,12 +316,10 @@ class RWStepRepr_RWMakeFromUsageOption {
 		void Share(const Handle_StepRepr_MakeFromUsageOption &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWMakeFromUsageOption {
-	~RWStepRepr_RWMakeFromUsageOption() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWMakeFromUsageOption\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWMakeFromUsageOption::~RWStepRepr_RWMakeFromUsageOption %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWMappedItem;
@@ -361,12 +335,10 @@ class RWStepRepr_RWMappedItem {
 		void Share(const Handle_StepRepr_MappedItem &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWMappedItem {
-	~RWStepRepr_RWMappedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWMappedItem\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWMappedItem::~RWStepRepr_RWMappedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWRepresentationContext;
@@ -380,12 +352,10 @@ class RWStepRepr_RWRepresentationContext {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_RepresentationContext &ent) const;
 
 };
-%extend RWStepRepr_RWRepresentationContext {
-	~RWStepRepr_RWRepresentationContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWRepresentationContext\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWRepresentationContext::~RWStepRepr_RWRepresentationContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWReprItemAndLengthMeasureWithUnit;
@@ -399,12 +369,10 @@ class RWStepRepr_RWReprItemAndLengthMeasureWithUnit {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ReprItemAndLengthMeasureWithUnit &ent) const;
 
 };
-%extend RWStepRepr_RWReprItemAndLengthMeasureWithUnit {
-	~RWStepRepr_RWReprItemAndLengthMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWReprItemAndLengthMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWReprItemAndLengthMeasureWithUnit::~RWStepRepr_RWReprItemAndLengthMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWMaterialPropertyRepresentation;
@@ -420,12 +388,10 @@ class RWStepRepr_RWMaterialPropertyRepresentation {
 		void Share(const Handle_StepRepr_MaterialPropertyRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWMaterialPropertyRepresentation {
-	~RWStepRepr_RWMaterialPropertyRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWMaterialPropertyRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWMaterialPropertyRepresentation::~RWStepRepr_RWMaterialPropertyRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWStructuralResponseProperty;
@@ -441,12 +407,10 @@ class RWStepRepr_RWStructuralResponseProperty {
 		void Share(const Handle_StepRepr_StructuralResponseProperty &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWStructuralResponseProperty {
-	~RWStepRepr_RWStructuralResponseProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWStructuralResponseProperty\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWStructuralResponseProperty::~RWStepRepr_RWStructuralResponseProperty %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWParametricRepresentationContext;
@@ -460,12 +424,10 @@ class RWStepRepr_RWParametricRepresentationContext {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_ParametricRepresentationContext &ent) const;
 
 };
-%extend RWStepRepr_RWParametricRepresentationContext {
-	~RWStepRepr_RWParametricRepresentationContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWParametricRepresentationContext\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWParametricRepresentationContext::~RWStepRepr_RWParametricRepresentationContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWMaterialDesignation;
@@ -481,12 +443,10 @@ class RWStepRepr_RWMaterialDesignation {
 		void Share(const Handle_StepRepr_MaterialDesignation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWMaterialDesignation {
-	~RWStepRepr_RWMaterialDesignation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWMaterialDesignation\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWMaterialDesignation::~RWStepRepr_RWMaterialDesignation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWProductDefinitionShape;
@@ -502,12 +462,10 @@ class RWStepRepr_RWProductDefinitionShape {
 		void Share(const Handle_StepRepr_ProductDefinitionShape &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWProductDefinitionShape {
-	~RWStepRepr_RWProductDefinitionShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWProductDefinitionShape\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWProductDefinitionShape::~RWStepRepr_RWProductDefinitionShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWDataEnvironment;
@@ -523,12 +481,10 @@ class RWStepRepr_RWDataEnvironment {
 		void Share(const Handle_StepRepr_DataEnvironment &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWDataEnvironment {
-	~RWStepRepr_RWDataEnvironment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWDataEnvironment\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWDataEnvironment::~RWStepRepr_RWDataEnvironment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWPropertyDefinition;
@@ -544,12 +500,10 @@ class RWStepRepr_RWPropertyDefinition {
 		void Share(const Handle_StepRepr_PropertyDefinition &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWPropertyDefinition {
-	~RWStepRepr_RWPropertyDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWPropertyDefinition\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWPropertyDefinition::~RWStepRepr_RWPropertyDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWConfigurationDesign;
@@ -565,12 +519,10 @@ class RWStepRepr_RWConfigurationDesign {
 		void Share(const Handle_StepRepr_ConfigurationDesign &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWConfigurationDesign {
-	~RWStepRepr_RWConfigurationDesign() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWConfigurationDesign\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWConfigurationDesign::~RWStepRepr_RWConfigurationDesign %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWRepresentationMap;
@@ -586,12 +538,10 @@ class RWStepRepr_RWRepresentationMap {
 		void Share(const Handle_StepRepr_RepresentationMap &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWRepresentationMap {
-	~RWStepRepr_RWRepresentationMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWRepresentationMap\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWRepresentationMap::~RWStepRepr_RWRepresentationMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWMaterialProperty;
@@ -607,12 +557,10 @@ class RWStepRepr_RWMaterialProperty {
 		void Share(const Handle_StepRepr_MaterialProperty &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWMaterialProperty {
-	~RWStepRepr_RWMaterialProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWMaterialProperty\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWMaterialProperty::~RWStepRepr_RWMaterialProperty %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWDescriptiveRepresentationItem;
@@ -626,12 +574,10 @@ class RWStepRepr_RWDescriptiveRepresentationItem {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_DescriptiveRepresentationItem &ent) const;
 
 };
-%extend RWStepRepr_RWDescriptiveRepresentationItem {
-	~RWStepRepr_RWDescriptiveRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWDescriptiveRepresentationItem\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWDescriptiveRepresentationItem::~RWStepRepr_RWDescriptiveRepresentationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWShapeAspectTransition;
@@ -647,12 +593,10 @@ class RWStepRepr_RWShapeAspectTransition {
 		void Share(const Handle_StepRepr_ShapeAspectTransition &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWShapeAspectTransition {
-	~RWStepRepr_RWShapeAspectTransition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWShapeAspectTransition\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWShapeAspectTransition::~RWStepRepr_RWShapeAspectTransition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWSpecifiedHigherUsageOccurrence;
@@ -668,12 +612,10 @@ class RWStepRepr_RWSpecifiedHigherUsageOccurrence {
 		void Share(const Handle_StepRepr_SpecifiedHigherUsageOccurrence &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWSpecifiedHigherUsageOccurrence {
-	~RWStepRepr_RWSpecifiedHigherUsageOccurrence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWSpecifiedHigherUsageOccurrence\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWSpecifiedHigherUsageOccurrence::~RWStepRepr_RWSpecifiedHigherUsageOccurrence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWGlobalUncertaintyAssignedContext;
@@ -689,12 +631,10 @@ class RWStepRepr_RWGlobalUncertaintyAssignedContext {
 		void Share(const Handle_StepRepr_GlobalUncertaintyAssignedContext &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWGlobalUncertaintyAssignedContext {
-	~RWStepRepr_RWGlobalUncertaintyAssignedContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWGlobalUncertaintyAssignedContext\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWGlobalUncertaintyAssignedContext::~RWStepRepr_RWGlobalUncertaintyAssignedContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWShapeAspect;
@@ -710,12 +650,10 @@ class RWStepRepr_RWShapeAspect {
 		void Share(const Handle_StepRepr_ShapeAspect &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWShapeAspect {
-	~RWStepRepr_RWShapeAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWShapeAspect\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWShapeAspect::~RWStepRepr_RWShapeAspect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWGlobalUnitAssignedContext;
@@ -731,12 +669,10 @@ class RWStepRepr_RWGlobalUnitAssignedContext {
 		void Share(const Handle_StepRepr_GlobalUnitAssignedContext &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWGlobalUnitAssignedContext {
-	~RWStepRepr_RWGlobalUnitAssignedContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWGlobalUnitAssignedContext\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWGlobalUnitAssignedContext::~RWStepRepr_RWGlobalUnitAssignedContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWPropertyDefinitionRelationship;
@@ -752,12 +688,10 @@ class RWStepRepr_RWPropertyDefinitionRelationship {
 		void Share(const Handle_StepRepr_PropertyDefinitionRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWPropertyDefinitionRelationship {
-	~RWStepRepr_RWPropertyDefinitionRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWPropertyDefinitionRelationship\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWPropertyDefinitionRelationship::~RWStepRepr_RWPropertyDefinitionRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWPropertyDefinitionRepresentation;
@@ -773,12 +707,10 @@ class RWStepRepr_RWPropertyDefinitionRepresentation {
 		void Share(const Handle_StepRepr_PropertyDefinitionRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWPropertyDefinitionRepresentation {
-	~RWStepRepr_RWPropertyDefinitionRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWPropertyDefinitionRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWPropertyDefinitionRepresentation::~RWStepRepr_RWPropertyDefinitionRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWRepresentation;
@@ -794,12 +726,10 @@ class RWStepRepr_RWRepresentation {
 		void Share(const Handle_StepRepr_Representation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWRepresentation {
-	~RWStepRepr_RWRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWRepresentation\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWRepresentation::~RWStepRepr_RWRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWShapeRepresentationRelationshipWithTransformation;
@@ -815,12 +745,10 @@ class RWStepRepr_RWShapeRepresentationRelationshipWithTransformation {
 		void Share(const Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWShapeRepresentationRelationshipWithTransformation {
-	~RWStepRepr_RWShapeRepresentationRelationshipWithTransformation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWShapeRepresentationRelationshipWithTransformation\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWShapeRepresentationRelationshipWithTransformation::~RWStepRepr_RWShapeRepresentationRelationshipWithTransformation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWRepresentationItem;
@@ -834,12 +762,10 @@ class RWStepRepr_RWRepresentationItem {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepRepr_RepresentationItem &ent) const;
 
 };
-%extend RWStepRepr_RWRepresentationItem {
-	~RWStepRepr_RWRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWRepresentationItem\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWRepresentationItem::~RWStepRepr_RWRepresentationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWRepresentationRelationshipWithTransformation;
@@ -855,12 +781,10 @@ class RWStepRepr_RWRepresentationRelationshipWithTransformation {
 		void Share(const Handle_StepRepr_RepresentationRelationshipWithTransformation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWRepresentationRelationshipWithTransformation {
-	~RWStepRepr_RWRepresentationRelationshipWithTransformation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWRepresentationRelationshipWithTransformation\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWRepresentationRelationshipWithTransformation::~RWStepRepr_RWRepresentationRelationshipWithTransformation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWItemDefinedTransformation;
@@ -876,12 +800,10 @@ class RWStepRepr_RWItemDefinedTransformation {
 		void Share(const Handle_StepRepr_ItemDefinedTransformation &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWItemDefinedTransformation {
-	~RWStepRepr_RWItemDefinedTransformation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWItemDefinedTransformation\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWItemDefinedTransformation::~RWStepRepr_RWItemDefinedTransformation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWMeasureRepresentationItem;
@@ -897,12 +819,10 @@ class RWStepRepr_RWMeasureRepresentationItem {
 		void Share(const Handle_StepRepr_MeasureRepresentationItem &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWMeasureRepresentationItem {
-	~RWStepRepr_RWMeasureRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWMeasureRepresentationItem\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWMeasureRepresentationItem::~RWStepRepr_RWMeasureRepresentationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWProductConcept;
@@ -918,12 +838,10 @@ class RWStepRepr_RWProductConcept {
 		void Share(const Handle_StepRepr_ProductConcept &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWProductConcept {
-	~RWStepRepr_RWProductConcept() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWProductConcept\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWProductConcept::~RWStepRepr_RWProductConcept %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor RWStepRepr_RWAssemblyComponentUsage;
@@ -939,9 +857,7 @@ class RWStepRepr_RWAssemblyComponentUsage {
 		void Share(const Handle_StepRepr_AssemblyComponentUsage &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepRepr_RWAssemblyComponentUsage {
-	~RWStepRepr_RWAssemblyComponentUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWAssemblyComponentUsage\n");}
-	}
-};
+%feature("shadow") RWStepRepr_RWAssemblyComponentUsage::~RWStepRepr_RWAssemblyComponentUsage %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

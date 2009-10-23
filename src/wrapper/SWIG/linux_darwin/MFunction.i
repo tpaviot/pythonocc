@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MFunction_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_MFunction_FunctionRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MFunction_FunctionRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MFunction_FunctionRetrievalDriver {
-	~Handle_MFunction_FunctionRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MFunction_FunctionRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MFunction_FunctionRetrievalDriver::~Handle_MFunction_FunctionRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MFunction_FunctionStorageDriver;
@@ -87,12 +89,10 @@ class Handle_MFunction_FunctionStorageDriver : public Handle_MDF_ASDriver {
 	return (MFunction_FunctionStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MFunction_FunctionStorageDriver {
-	~Handle_MFunction_FunctionStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MFunction_FunctionStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MFunction_FunctionStorageDriver::~Handle_MFunction_FunctionStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MFunction_FunctionStorageDriver;
@@ -122,12 +122,10 @@ class MFunction_FunctionStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MFunction_FunctionStorageDriver {
-	~MFunction_FunctionStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFunction_FunctionStorageDriver\n");}
-	}
-};
+%feature("shadow") MFunction_FunctionStorageDriver::~MFunction_FunctionStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MFunction_FunctionRetrievalDriver;
@@ -157,12 +155,10 @@ class MFunction_FunctionRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MFunction_FunctionRetrievalDriver {
-	~MFunction_FunctionRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFunction_FunctionRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MFunction_FunctionRetrievalDriver::~MFunction_FunctionRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MFunction;
@@ -176,9 +172,7 @@ class MFunction {
 		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };
-%extend MFunction {
-	~MFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFunction\n");}
-	}
-};
+%feature("shadow") MFunction::~MFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

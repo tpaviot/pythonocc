@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntTools_dependencies.i
 
 
@@ -58,12 +62,10 @@ class Handle_IntTools_TopolTool : public Handle_Adaptor3d_TopolTool {
 	return (IntTools_TopolTool*)$self->Access();
 	}
 };
-%extend Handle_IntTools_TopolTool {
-	~Handle_IntTools_TopolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_TopolTool\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_TopolTool::~Handle_IntTools_TopolTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_ListNodeOfListOfSurfaceRangeSample;
@@ -88,12 +90,10 @@ class Handle_IntTools_ListNodeOfListOfSurfaceRangeSample : public Handle_TCollec
 	return (IntTools_ListNodeOfListOfSurfaceRangeSample*)$self->Access();
 	}
 };
-%extend Handle_IntTools_ListNodeOfListOfSurfaceRangeSample {
-	~Handle_IntTools_ListNodeOfListOfSurfaceRangeSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_ListNodeOfListOfSurfaceRangeSample\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_ListNodeOfListOfSurfaceRangeSample::~Handle_IntTools_ListNodeOfListOfSurfaceRangeSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_StdMapNodeOfMapOfCurveSample;
@@ -118,12 +118,10 @@ class Handle_IntTools_StdMapNodeOfMapOfCurveSample : public Handle_TCollection_M
 	return (IntTools_StdMapNodeOfMapOfCurveSample*)$self->Access();
 	}
 };
-%extend Handle_IntTools_StdMapNodeOfMapOfCurveSample {
-	~Handle_IntTools_StdMapNodeOfMapOfCurveSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_StdMapNodeOfMapOfCurveSample\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_StdMapNodeOfMapOfCurveSample::~Handle_IntTools_StdMapNodeOfMapOfCurveSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_ListNodeOfListOfBox;
@@ -148,12 +146,10 @@ class Handle_IntTools_ListNodeOfListOfBox : public Handle_TCollection_MapNode {
 	return (IntTools_ListNodeOfListOfBox*)$self->Access();
 	}
 };
-%extend Handle_IntTools_ListNodeOfListOfBox {
-	~Handle_IntTools_ListNodeOfListOfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_ListNodeOfListOfBox\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_ListNodeOfListOfBox::~Handle_IntTools_ListNodeOfListOfBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress;
@@ -178,12 +174,10 @@ class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress : pub
 	return (IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress*)$self->Access();
 	}
 };
-%extend Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress {
-	~Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress::~Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox;
@@ -208,12 +202,10 @@ class Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public Handle_TCo
 	return (IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox*)$self->Access();
 	}
 };
-%extend Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
-	~Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox::~Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_SequenceNodeOfSequenceOfRanges;
@@ -238,12 +230,10 @@ class Handle_IntTools_SequenceNodeOfSequenceOfRanges : public Handle_TCollection
 	return (IntTools_SequenceNodeOfSequenceOfRanges*)$self->Access();
 	}
 };
-%extend Handle_IntTools_SequenceNodeOfSequenceOfRanges {
-	~Handle_IntTools_SequenceNodeOfSequenceOfRanges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfRanges\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_SequenceNodeOfSequenceOfRanges::~Handle_IntTools_SequenceNodeOfSequenceOfRanges %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_ListNodeOfListOfCurveRangeSample;
@@ -268,12 +258,10 @@ class Handle_IntTools_ListNodeOfListOfCurveRangeSample : public Handle_TCollecti
 	return (IntTools_ListNodeOfListOfCurveRangeSample*)$self->Access();
 	}
 };
-%extend Handle_IntTools_ListNodeOfListOfCurveRangeSample {
-	~Handle_IntTools_ListNodeOfListOfCurveRangeSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_ListNodeOfListOfCurveRangeSample\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_ListNodeOfListOfCurveRangeSample::~Handle_IntTools_ListNodeOfListOfCurveRangeSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_SequenceNodeOfSequenceOfCurves;
@@ -298,12 +286,10 @@ class Handle_IntTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection
 	return (IntTools_SequenceNodeOfSequenceOfCurves*)$self->Access();
 	}
 };
-%extend Handle_IntTools_SequenceNodeOfSequenceOfCurves {
-	~Handle_IntTools_SequenceNodeOfSequenceOfCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfCurves\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_SequenceNodeOfSequenceOfCurves::~Handle_IntTools_SequenceNodeOfSequenceOfCurves %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts;
@@ -328,12 +314,10 @@ class Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts : public Handle_TCollec
 	return (IntTools_SequenceNodeOfSequenceOfCommonPrts*)$self->Access();
 	}
 };
-%extend Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts {
-	~Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts::~Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_StdMapNodeOfMapOfSurfaceSample;
@@ -358,12 +342,10 @@ class Handle_IntTools_StdMapNodeOfMapOfSurfaceSample : public Handle_TCollection
 	return (IntTools_StdMapNodeOfMapOfSurfaceSample*)$self->Access();
 	}
 };
-%extend Handle_IntTools_StdMapNodeOfMapOfSurfaceSample {
-	~Handle_IntTools_StdMapNodeOfMapOfSurfaceSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_StdMapNodeOfMapOfSurfaceSample\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_StdMapNodeOfMapOfSurfaceSample::~Handle_IntTools_StdMapNodeOfMapOfSurfaceSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox;
@@ -388,12 +370,10 @@ class Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public Handle_TColl
 	return (IntTools_DataMapNodeOfDataMapOfCurveSampleBox*)$self->Access();
 	}
 };
-%extend Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox {
-	~Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox::~Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_SequenceNodeOfSequenceOfRoots;
@@ -418,12 +398,10 @@ class Handle_IntTools_SequenceNodeOfSequenceOfRoots : public Handle_TCollection_
 	return (IntTools_SequenceNodeOfSequenceOfRoots*)$self->Access();
 	}
 };
-%extend Handle_IntTools_SequenceNodeOfSequenceOfRoots {
-	~Handle_IntTools_SequenceNodeOfSequenceOfRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfRoots\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_SequenceNodeOfSequenceOfRoots::~Handle_IntTools_SequenceNodeOfSequenceOfRoots %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
@@ -448,12 +426,10 @@ class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public 
 	return (IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress*)$self->Access();
 	}
 };
-%extend Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
-	~Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress::~Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces;
@@ -478,12 +454,10 @@ class Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public Handle_TColle
 	return (IntTools_SequenceNodeOfSequenceOfPntOn2Faces*)$self->Access();
 	}
 };
-%extend Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces {
-	~Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces\n");}
-	}
-};
+%feature("shadow") Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces::~Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_SurfaceRangeSampleMapHasher;
@@ -497,12 +471,10 @@ class IntTools_SurfaceRangeSampleMapHasher {
 		Standard_Boolean IsEqual(const IntTools_SurfaceRangeSample &S1, const IntTools_SurfaceRangeSample &S2);
 
 };
-%extend IntTools_SurfaceRangeSampleMapHasher {
-	~IntTools_SurfaceRangeSampleMapHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_SurfaceRangeSampleMapHasher\n");}
-	}
-};
+%feature("shadow") IntTools_SurfaceRangeSampleMapHasher::~IntTools_SurfaceRangeSampleMapHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_CArray1OfReal;
@@ -548,12 +520,10 @@ class IntTools_CArray1OfReal {
 		Standard_Boolean operator==(const IntTools_CArray1OfReal &Other) const;
 
 };
-%extend IntTools_CArray1OfReal {
-	~IntTools_CArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_CArray1OfReal\n");}
-	}
-};
+%feature("shadow") IntTools_CArray1OfReal::~IntTools_CArray1OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfCurves;
@@ -577,12 +547,10 @@ class IntTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_SequenceNodeOfSequenceOfCurves {
-	~IntTools_SequenceNodeOfSequenceOfCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfCurves\n");}
-	}
-};
+%feature("shadow") IntTools_SequenceNodeOfSequenceOfCurves::~IntTools_SequenceNodeOfSequenceOfCurves %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfRoots;
@@ -606,12 +574,10 @@ class IntTools_SequenceNodeOfSequenceOfRoots : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_SequenceNodeOfSequenceOfRoots {
-	~IntTools_SequenceNodeOfSequenceOfRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfRoots\n");}
-	}
-};
+%feature("shadow") IntTools_SequenceNodeOfSequenceOfRoots::~IntTools_SequenceNodeOfSequenceOfRoots %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_CommonPrt;
@@ -673,12 +639,10 @@ class IntTools_CommonPrt {
 		void BoundingPoints(gp_Pnt & aP1, gp_Pnt & aP2) const;
 
 };
-%extend IntTools_CommonPrt {
-	~IntTools_CommonPrt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_CommonPrt\n");}
-	}
-};
+%feature("shadow") IntTools_CommonPrt::~IntTools_CommonPrt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_CurveRangeLocalizeData;
@@ -702,12 +666,10 @@ class IntTools_CurveRangeLocalizeData {
 		void ListRangeOut(IntTools_ListOfCurveRangeSample & theList) const;
 
 };
-%extend IntTools_CurveRangeLocalizeData {
-	~IntTools_CurveRangeLocalizeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_CurveRangeLocalizeData\n");}
-	}
-};
+%feature("shadow") IntTools_CurveRangeLocalizeData::~IntTools_CurveRangeLocalizeData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_ListOfBox;
@@ -755,12 +717,10 @@ class IntTools_ListOfBox {
 		void InsertAfter(IntTools_ListOfBox & Other, IntTools_ListIteratorOfListOfBox & It);
 
 };
-%extend IntTools_ListOfBox {
-	~IntTools_ListOfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_ListOfBox\n");}
-	}
-};
+%feature("shadow") IntTools_ListOfBox::~IntTools_ListOfBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_BaseRangeSample;
@@ -776,12 +736,10 @@ class IntTools_BaseRangeSample {
 		Standard_Integer GetDepth() const;
 
 };
-%extend IntTools_BaseRangeSample {
-	~IntTools_BaseRangeSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_BaseRangeSample\n");}
-	}
-};
+%feature("shadow") IntTools_BaseRangeSample::~IntTools_BaseRangeSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_IndexedDataMapOfShapeAddress;
@@ -823,12 +781,10 @@ class IntTools_IndexedDataMapOfShapeAddress : public TCollection_BasicMap {
 		Standard_Address & ChangeFromKey(const TopoDS_Shape &K);
 
 };
-%extend IntTools_IndexedDataMapOfShapeAddress {
-	~IntTools_IndexedDataMapOfShapeAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_IndexedDataMapOfShapeAddress\n");}
-	}
-};
+%feature("shadow") IntTools_IndexedDataMapOfShapeAddress::~IntTools_IndexedDataMapOfShapeAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_ListNodeOfListOfBox;
@@ -852,12 +808,10 @@ class IntTools_ListNodeOfListOfBox : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_ListNodeOfListOfBox {
-	~IntTools_ListNodeOfListOfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_ListNodeOfListOfBox\n");}
-	}
-};
+%feature("shadow") IntTools_ListNodeOfListOfBox::~IntTools_ListNodeOfListOfBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_CurveRangeSampleMapHasher;
@@ -871,12 +825,10 @@ class IntTools_CurveRangeSampleMapHasher {
 		Standard_Boolean IsEqual(const IntTools_CurveRangeSample &S1, const IntTools_CurveRangeSample &S2);
 
 };
-%extend IntTools_CurveRangeSampleMapHasher {
-	~IntTools_CurveRangeSampleMapHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_CurveRangeSampleMapHasher\n");}
-	}
-};
+%feature("shadow") IntTools_CurveRangeSampleMapHasher::~IntTools_CurveRangeSampleMapHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_IndexedDataMapOfTransientAddress;
@@ -918,12 +870,10 @@ class IntTools_IndexedDataMapOfTransientAddress : public TCollection_BasicMap {
 		Standard_Address & ChangeFromKey(const Handle_Standard_Transient &K);
 
 };
-%extend IntTools_IndexedDataMapOfTransientAddress {
-	~IntTools_IndexedDataMapOfTransientAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_IndexedDataMapOfTransientAddress\n");}
-	}
-};
+%feature("shadow") IntTools_IndexedDataMapOfTransientAddress::~IntTools_IndexedDataMapOfTransientAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_TopolTool;
@@ -963,12 +913,10 @@ class IntTools_TopolTool : public Adaptor3d_TopolTool {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_TopolTool {
-	~IntTools_TopolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_TopolTool\n");}
-	}
-};
+%feature("shadow") IntTools_TopolTool::~IntTools_TopolTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_EdgeEdge;
@@ -1016,12 +964,10 @@ class IntTools_EdgeEdge {
 		const IntTools_Range & Range2() const;
 
 };
-%extend IntTools_EdgeEdge {
-	~IntTools_EdgeEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_EdgeEdge\n");}
-	}
-};
+%feature("shadow") IntTools_EdgeEdge::~IntTools_EdgeEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_Compare;
@@ -1039,12 +985,10 @@ class IntTools_Compare {
 		Standard_Boolean IsEqual(const IntTools_Root &Left, const IntTools_Root &Right) const;
 
 };
-%extend IntTools_Compare {
-	~IntTools_Compare() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_Compare\n");}
-	}
-};
+%feature("shadow") IntTools_Compare::~IntTools_Compare %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_SequenceOfCurves;
@@ -1096,12 +1040,10 @@ class IntTools_SequenceOfCurves : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend IntTools_SequenceOfCurves {
-	~IntTools_SequenceOfCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_SequenceOfCurves\n");}
-	}
-};
+%feature("shadow") IntTools_SequenceOfCurves::~IntTools_SequenceOfCurves %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_ListOfSurfaceRangeSample;
@@ -1149,12 +1091,10 @@ class IntTools_ListOfSurfaceRangeSample {
 		void InsertAfter(IntTools_ListOfSurfaceRangeSample & Other, IntTools_ListIteratorOfListOfSurfaceRangeSample & It);
 
 };
-%extend IntTools_ListOfSurfaceRangeSample {
-	~IntTools_ListOfSurfaceRangeSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_ListOfSurfaceRangeSample\n");}
-	}
-};
+%feature("shadow") IntTools_ListOfSurfaceRangeSample::~IntTools_ListOfSurfaceRangeSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_Range;
@@ -1176,12 +1116,10 @@ class IntTools_Range {
 		void Range(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend IntTools_Range {
-	~IntTools_Range() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_Range\n");}
-	}
-};
+%feature("shadow") IntTools_Range::~IntTools_Range %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_SequenceOfPntOn2Faces;
@@ -1233,12 +1171,10 @@ class IntTools_SequenceOfPntOn2Faces : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend IntTools_SequenceOfPntOn2Faces {
-	~IntTools_SequenceOfPntOn2Faces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_SequenceOfPntOn2Faces\n");}
-	}
-};
+%feature("shadow") IntTools_SequenceOfPntOn2Faces::~IntTools_SequenceOfPntOn2Faces %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_Array1OfRoots;
@@ -1276,12 +1212,10 @@ class IntTools_Array1OfRoots {
 		IntTools_Root & operator()(const Standard_Integer Index);
 
 };
-%extend IntTools_Array1OfRoots {
-	~IntTools_Array1OfRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_Array1OfRoots\n");}
-	}
-};
+%feature("shadow") IntTools_Array1OfRoots::~IntTools_Array1OfRoots %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_CompareRange;
@@ -1299,12 +1233,10 @@ class IntTools_CompareRange {
 		Standard_Boolean IsEqual(const IntTools_Range &Left, const IntTools_Range &Right) const;
 
 };
-%extend IntTools_CompareRange {
-	~IntTools_CompareRange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_CompareRange\n");}
-	}
-};
+%feature("shadow") IntTools_CompareRange::~IntTools_CompareRange %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfPntOn2Faces;
@@ -1328,12 +1260,10 @@ class IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public TCollection_SeqNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_SequenceNodeOfSequenceOfPntOn2Faces {
-	~IntTools_SequenceNodeOfSequenceOfPntOn2Faces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfPntOn2Faces\n");}
-	}
-};
+%feature("shadow") IntTools_SequenceNodeOfSequenceOfPntOn2Faces::~IntTools_SequenceNodeOfSequenceOfPntOn2Faces %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_LineConstructor;
@@ -1353,12 +1283,10 @@ class IntTools_LineConstructor {
 		void Part(const Standard_Integer I, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend IntTools_LineConstructor {
-	~IntTools_LineConstructor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_LineConstructor\n");}
-	}
-};
+%feature("shadow") IntTools_LineConstructor::~IntTools_LineConstructor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_MapOfCurveSample;
@@ -1382,12 +1310,10 @@ class IntTools_MapOfCurveSample : public TCollection_BasicMap {
 		Standard_Boolean Remove(const IntTools_CurveRangeSample &aKey);
 
 };
-%extend IntTools_MapOfCurveSample {
-	~IntTools_MapOfCurveSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_MapOfCurveSample\n");}
-	}
-};
+%feature("shadow") IntTools_MapOfCurveSample::~IntTools_MapOfCurveSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_SequenceOfCommonPrts;
@@ -1439,12 +1365,10 @@ class IntTools_SequenceOfCommonPrts : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend IntTools_SequenceOfCommonPrts {
-	~IntTools_SequenceOfCommonPrts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_SequenceOfCommonPrts\n");}
-	}
-};
+%feature("shadow") IntTools_SequenceOfCommonPrts::~IntTools_SequenceOfCommonPrts %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_MarkedRangeSet;
@@ -1484,12 +1408,10 @@ class IntTools_MarkedRangeSet {
 		IntTools_Range Range(const Standard_Integer theIndex) const;
 
 };
-%extend IntTools_MarkedRangeSet {
-	~IntTools_MarkedRangeSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_MarkedRangeSet\n");}
-	}
-};
+%feature("shadow") IntTools_MarkedRangeSet::~IntTools_MarkedRangeSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_SurfaceRangeLocalizeData;
@@ -1565,12 +1487,10 @@ class IntTools_SurfaceRangeLocalizeData {
 		void ClearGrid();
 
 };
-%extend IntTools_SurfaceRangeLocalizeData {
-	~IntTools_SurfaceRangeLocalizeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_SurfaceRangeLocalizeData\n");}
-	}
-};
+%feature("shadow") IntTools_SurfaceRangeLocalizeData::~IntTools_SurfaceRangeLocalizeData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfRanges;
@@ -1594,12 +1514,10 @@ class IntTools_SequenceNodeOfSequenceOfRanges : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_SequenceNodeOfSequenceOfRanges {
-	~IntTools_SequenceNodeOfSequenceOfRanges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfRanges\n");}
-	}
-};
+%feature("shadow") IntTools_SequenceNodeOfSequenceOfRanges::~IntTools_SequenceNodeOfSequenceOfRanges %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_FClass2d;
@@ -1623,12 +1541,10 @@ class IntTools_FClass2d {
 		Standard_Boolean IsHole() const;
 
 };
-%extend IntTools_FClass2d {
-	~IntTools_FClass2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_FClass2d\n");}
-	}
-};
+%feature("shadow") IntTools_FClass2d::~IntTools_FClass2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_ListOfCurveRangeSample;
@@ -1676,12 +1592,10 @@ class IntTools_ListOfCurveRangeSample {
 		void InsertAfter(IntTools_ListOfCurveRangeSample & Other, IntTools_ListIteratorOfListOfCurveRangeSample & It);
 
 };
-%extend IntTools_ListOfCurveRangeSample {
-	~IntTools_ListOfCurveRangeSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_ListOfCurveRangeSample\n");}
-	}
-};
+%feature("shadow") IntTools_ListOfCurveRangeSample::~IntTools_ListOfCurveRangeSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_MapIteratorOfMapOfSurfaceSample;
@@ -1697,12 +1611,10 @@ class IntTools_MapIteratorOfMapOfSurfaceSample : public TCollection_BasicMapIter
 		const IntTools_SurfaceRangeSample & Key() const;
 
 };
-%extend IntTools_MapIteratorOfMapOfSurfaceSample {
-	~IntTools_MapIteratorOfMapOfSurfaceSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_MapIteratorOfMapOfSurfaceSample\n");}
-	}
-};
+%feature("shadow") IntTools_MapIteratorOfMapOfSurfaceSample::~IntTools_MapIteratorOfMapOfSurfaceSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_StdMapNodeOfMapOfCurveSample;
@@ -1726,12 +1638,10 @@ class IntTools_StdMapNodeOfMapOfCurveSample : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_StdMapNodeOfMapOfCurveSample {
-	~IntTools_StdMapNodeOfMapOfCurveSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_StdMapNodeOfMapOfCurveSample\n");}
-	}
-};
+%feature("shadow") IntTools_StdMapNodeOfMapOfCurveSample::~IntTools_StdMapNodeOfMapOfCurveSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_CArray1OfInteger;
@@ -1777,12 +1687,10 @@ class IntTools_CArray1OfInteger {
 		Standard_Boolean operator==(const IntTools_CArray1OfInteger &Other) const;
 
 };
-%extend IntTools_CArray1OfInteger {
-	~IntTools_CArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_CArray1OfInteger\n");}
-	}
-};
+%feature("shadow") IntTools_CArray1OfInteger::~IntTools_CArray1OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_ListIteratorOfListOfCurveRangeSample;
@@ -1802,12 +1710,10 @@ class IntTools_ListIteratorOfListOfCurveRangeSample {
 		IntTools_CurveRangeSample & Value() const;
 
 };
-%extend IntTools_ListIteratorOfListOfCurveRangeSample {
-	~IntTools_ListIteratorOfListOfCurveRangeSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_ListIteratorOfListOfCurveRangeSample\n");}
-	}
-};
+%feature("shadow") IntTools_ListIteratorOfListOfCurveRangeSample::~IntTools_ListIteratorOfListOfCurveRangeSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_DataMapOfSurfaceSampleBox;
@@ -1839,12 +1745,10 @@ class IntTools_DataMapOfSurfaceSampleBox : public TCollection_BasicMap {
 		Bnd_Box & operator()(const IntTools_SurfaceRangeSample &K);
 
 };
-%extend IntTools_DataMapOfSurfaceSampleBox {
-	~IntTools_DataMapOfSurfaceSampleBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_DataMapOfSurfaceSampleBox\n");}
-	}
-};
+%feature("shadow") IntTools_DataMapOfSurfaceSampleBox::~IntTools_DataMapOfSurfaceSampleBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_ListNodeOfListOfSurfaceRangeSample;
@@ -1868,12 +1772,10 @@ class IntTools_ListNodeOfListOfSurfaceRangeSample : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_ListNodeOfListOfSurfaceRangeSample {
-	~IntTools_ListNodeOfListOfSurfaceRangeSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_ListNodeOfListOfSurfaceRangeSample\n");}
-	}
-};
+%feature("shadow") IntTools_ListNodeOfListOfSurfaceRangeSample::~IntTools_ListNodeOfListOfSurfaceRangeSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_MapOfSurfaceSample;
@@ -1897,12 +1799,10 @@ class IntTools_MapOfSurfaceSample : public TCollection_BasicMap {
 		Standard_Boolean Remove(const IntTools_SurfaceRangeSample &aKey);
 
 };
-%extend IntTools_MapOfSurfaceSample {
-	~IntTools_MapOfSurfaceSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_MapOfSurfaceSample\n");}
-	}
-};
+%feature("shadow") IntTools_MapOfSurfaceSample::~IntTools_MapOfSurfaceSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_StdMapNodeOfMapOfSurfaceSample;
@@ -1926,12 +1826,10 @@ class IntTools_StdMapNodeOfMapOfSurfaceSample : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_StdMapNodeOfMapOfSurfaceSample {
-	~IntTools_StdMapNodeOfMapOfSurfaceSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_StdMapNodeOfMapOfSurfaceSample\n");}
-	}
-};
+%feature("shadow") IntTools_StdMapNodeOfMapOfSurfaceSample::~IntTools_StdMapNodeOfMapOfSurfaceSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_PntOnFace;
@@ -1959,12 +1857,10 @@ class IntTools_PntOnFace {
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend IntTools_PntOnFace {
-	~IntTools_PntOnFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_PntOnFace\n");}
-	}
-};
+%feature("shadow") IntTools_PntOnFace::~IntTools_PntOnFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfCommonPrts;
@@ -1988,12 +1884,10 @@ class IntTools_SequenceNodeOfSequenceOfCommonPrts : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_SequenceNodeOfSequenceOfCommonPrts {
-	~IntTools_SequenceNodeOfSequenceOfCommonPrts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfCommonPrts\n");}
-	}
-};
+%feature("shadow") IntTools_SequenceNodeOfSequenceOfCommonPrts::~IntTools_SequenceNodeOfSequenceOfCommonPrts %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
@@ -2033,12 +1927,10 @@ class IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public TCollec
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
-	~IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress\n");}
-	}
-};
+%feature("shadow") IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress::~IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_SurfaceRangeSample;
@@ -2102,12 +1994,10 @@ class IntTools_SurfaceRangeSample {
 		Standard_Integer GetRangeIndexVDeeper(const Standard_Integer theNbSampleV) const;
 
 };
-%extend IntTools_SurfaceRangeSample {
-	~IntTools_SurfaceRangeSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_SurfaceRangeSample\n");}
-	}
-};
+%feature("shadow") IntTools_SurfaceRangeSample::~IntTools_SurfaceRangeSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_SequenceOfRoots;
@@ -2159,12 +2049,10 @@ class IntTools_SequenceOfRoots : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend IntTools_SequenceOfRoots {
-	~IntTools_SequenceOfRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_SequenceOfRoots\n");}
-	}
-};
+%feature("shadow") IntTools_SequenceOfRoots::~IntTools_SequenceOfRoots %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox;
@@ -2190,12 +2078,10 @@ class IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public TCollection_MapNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
-	~IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox\n");}
-	}
-};
+%feature("shadow") IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox::~IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_BeanBeanIntersector;
@@ -2227,12 +2113,10 @@ class IntTools_BeanBeanIntersector {
 		void Result(IntTools_SequenceOfRanges & theResults) const;
 
 };
-%extend IntTools_BeanBeanIntersector {
-	~IntTools_BeanBeanIntersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_BeanBeanIntersector\n");}
-	}
-};
+%feature("shadow") IntTools_BeanBeanIntersector::~IntTools_BeanBeanIntersector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_DataMapIteratorOfDataMapOfCurveSampleBox;
@@ -2250,12 +2134,10 @@ class IntTools_DataMapIteratorOfDataMapOfCurveSampleBox : public TCollection_Bas
 		const Bnd_Box & Value() const;
 
 };
-%extend IntTools_DataMapIteratorOfDataMapOfCurveSampleBox {
-	~IntTools_DataMapIteratorOfDataMapOfCurveSampleBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_DataMapIteratorOfDataMapOfCurveSampleBox\n");}
-	}
-};
+%feature("shadow") IntTools_DataMapIteratorOfDataMapOfCurveSampleBox::~IntTools_DataMapIteratorOfDataMapOfCurveSampleBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_QuickSort;
@@ -2267,12 +2149,10 @@ class IntTools_QuickSort {
 		void Sort(IntTools_Array1OfRoots & TheArray, const IntTools_Compare &Comp);
 
 };
-%extend IntTools_QuickSort {
-	~IntTools_QuickSort() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_QuickSort\n");}
-	}
-};
+%feature("shadow") IntTools_QuickSort::~IntTools_QuickSort %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_QuickSortRange;
@@ -2284,12 +2164,10 @@ class IntTools_QuickSortRange {
 		void Sort(IntTools_Array1OfRange & TheArray, const IntTools_CompareRange &Comp);
 
 };
-%extend IntTools_QuickSortRange {
-	~IntTools_QuickSortRange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_QuickSortRange\n");}
-	}
-};
+%feature("shadow") IntTools_QuickSortRange::~IntTools_QuickSortRange %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_BeanFaceIntersector;
@@ -2325,12 +2203,10 @@ class IntTools_BeanFaceIntersector {
 		void Result(IntTools_SequenceOfRanges & theResults) const;
 
 };
-%extend IntTools_BeanFaceIntersector {
-	~IntTools_BeanFaceIntersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_BeanFaceIntersector\n");}
-	}
-};
+%feature("shadow") IntTools_BeanFaceIntersector::~IntTools_BeanFaceIntersector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_ListNodeOfListOfCurveRangeSample;
@@ -2354,12 +2230,10 @@ class IntTools_ListNodeOfListOfCurveRangeSample : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_ListNodeOfListOfCurveRangeSample {
-	~IntTools_ListNodeOfListOfCurveRangeSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_ListNodeOfListOfCurveRangeSample\n");}
-	}
-};
+%feature("shadow") IntTools_ListNodeOfListOfCurveRangeSample::~IntTools_ListNodeOfListOfCurveRangeSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_Root;
@@ -2397,12 +2271,10 @@ class IntTools_Root {
 		void Interval(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend IntTools_Root {
-	~IntTools_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_Root\n");}
-	}
-};
+%feature("shadow") IntTools_Root::~IntTools_Root %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_Tools;
@@ -2444,12 +2316,10 @@ class IntTools_Tools {
 		Standard_Real CurveTolerance(const Handle_Geom_Curve &aC, const Standard_Real aTolBase);
 
 };
-%extend IntTools_Tools {
-	~IntTools_Tools() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_Tools\n");}
-	}
-};
+%feature("shadow") IntTools_Tools::~IntTools_Tools %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_EdgeFace;
@@ -2493,12 +2363,10 @@ class IntTools_EdgeFace {
 		Standard_Boolean IsEqDistance(const gp_Pnt &aP, const BRepAdaptor_Surface &aS, const Standard_Real aT, Standard_Real &OutValue);
 
 };
-%extend IntTools_EdgeFace {
-	~IntTools_EdgeFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_EdgeFace\n");}
-	}
-};
+%feature("shadow") IntTools_EdgeFace::~IntTools_EdgeFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_ListIteratorOfListOfSurfaceRangeSample;
@@ -2518,12 +2386,10 @@ class IntTools_ListIteratorOfListOfSurfaceRangeSample {
 		IntTools_SurfaceRangeSample & Value() const;
 
 };
-%extend IntTools_ListIteratorOfListOfSurfaceRangeSample {
-	~IntTools_ListIteratorOfListOfSurfaceRangeSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_ListIteratorOfListOfSurfaceRangeSample\n");}
-	}
-};
+%feature("shadow") IntTools_ListIteratorOfListOfSurfaceRangeSample::~IntTools_ListIteratorOfListOfSurfaceRangeSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox;
@@ -2541,12 +2407,10 @@ class IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox : public TCollection_B
 		const Bnd_Box & Value() const;
 
 };
-%extend IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox {
-	~IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox\n");}
-	}
-};
+%feature("shadow") IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox::~IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_ShrunkRange;
@@ -2572,12 +2436,10 @@ class IntTools_ShrunkRange {
 		Standard_Integer ErrorStatus() const;
 
 };
-%extend IntTools_ShrunkRange {
-	~IntTools_ShrunkRange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_ShrunkRange\n");}
-	}
-};
+%feature("shadow") IntTools_ShrunkRange::~IntTools_ShrunkRange %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_MapIteratorOfMapOfCurveSample;
@@ -2593,12 +2455,10 @@ class IntTools_MapIteratorOfMapOfCurveSample : public TCollection_BasicMapIterat
 		const IntTools_CurveRangeSample & Key() const;
 
 };
-%extend IntTools_MapIteratorOfMapOfCurveSample {
-	~IntTools_MapIteratorOfMapOfCurveSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_MapIteratorOfMapOfCurveSample\n");}
-	}
-};
+%feature("shadow") IntTools_MapIteratorOfMapOfCurveSample::~IntTools_MapIteratorOfMapOfCurveSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_SequenceOfRanges;
@@ -2650,12 +2510,10 @@ class IntTools_SequenceOfRanges : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend IntTools_SequenceOfRanges {
-	~IntTools_SequenceOfRanges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_SequenceOfRanges\n");}
-	}
-};
+%feature("shadow") IntTools_SequenceOfRanges::~IntTools_SequenceOfRanges %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_Array1OfRange;
@@ -2693,12 +2551,10 @@ class IntTools_Array1OfRange {
 		IntTools_Range & operator()(const Standard_Integer Index);
 
 };
-%extend IntTools_Array1OfRange {
-	~IntTools_Array1OfRange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_Array1OfRange\n");}
-	}
-};
+%feature("shadow") IntTools_Array1OfRange::~IntTools_Array1OfRange %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_DataMapOfCurveSampleBox;
@@ -2730,12 +2586,10 @@ class IntTools_DataMapOfCurveSampleBox : public TCollection_BasicMap {
 		Bnd_Box & operator()(const IntTools_CurveRangeSample &K);
 
 };
-%extend IntTools_DataMapOfCurveSampleBox {
-	~IntTools_DataMapOfCurveSampleBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_DataMapOfCurveSampleBox\n");}
-	}
-};
+%feature("shadow") IntTools_DataMapOfCurveSampleBox::~IntTools_DataMapOfCurveSampleBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_Context;
@@ -2783,12 +2637,10 @@ class IntTools_Context {
 		Standard_Boolean ProjectPointOnEdge(const gp_Pnt &aP, const TopoDS_Edge &aE, Standard_Real &OutValue);
 
 };
-%extend IntTools_Context {
-	~IntTools_Context() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_Context\n");}
-	}
-};
+%feature("shadow") IntTools_Context::~IntTools_Context %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_FaceFace;
@@ -2822,12 +2674,10 @@ class IntTools_FaceFace {
 		void SetList(IntSurf_ListOfPntOn2S & ListOfPnts);
 
 };
-%extend IntTools_FaceFace {
-	~IntTools_FaceFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_FaceFace\n");}
-	}
-};
+%feature("shadow") IntTools_FaceFace::~IntTools_FaceFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_DataMapNodeOfDataMapOfCurveSampleBox;
@@ -2853,12 +2703,10 @@ class IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public TCollection_MapNode
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_DataMapNodeOfDataMapOfCurveSampleBox {
-	~IntTools_DataMapNodeOfDataMapOfCurveSampleBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_DataMapNodeOfDataMapOfCurveSampleBox\n");}
-	}
-};
+%feature("shadow") IntTools_DataMapNodeOfDataMapOfCurveSampleBox::~IntTools_DataMapNodeOfDataMapOfCurveSampleBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_CurveRangeSample;
@@ -2880,12 +2728,10 @@ class IntTools_CurveRangeSample : public IntTools_BaseRangeSample {
 		Standard_Integer GetRangeIndexDeeper(const Standard_Integer theNbSample) const;
 
 };
-%extend IntTools_CurveRangeSample {
-	~IntTools_CurveRangeSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_CurveRangeSample\n");}
-	}
-};
+%feature("shadow") IntTools_CurveRangeSample::~IntTools_CurveRangeSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_Curve;
@@ -2919,12 +2765,10 @@ class IntTools_Curve {
 		GeomAbs_CurveType Type() const;
 
 };
-%extend IntTools_Curve {
-	~IntTools_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_Curve\n");}
-	}
-};
+%feature("shadow") IntTools_Curve::~IntTools_Curve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_PntOn2Faces;
@@ -2948,12 +2792,10 @@ class IntTools_PntOn2Faces {
 		Standard_Boolean IsValid() const;
 
 };
-%extend IntTools_PntOn2Faces {
-	~IntTools_PntOn2Faces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_PntOn2Faces\n");}
-	}
-};
+%feature("shadow") IntTools_PntOn2Faces::~IntTools_PntOn2Faces %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress;
@@ -2993,12 +2835,10 @@ class IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress : public TCo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress {
-	~IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress\n");}
-	}
-};
+%feature("shadow") IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress::~IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools;
@@ -3022,12 +2862,10 @@ class IntTools {
 		Standard_Integer PrepareArgs(BRepAdaptor_Curve & C, const Standard_Real tMax, const Standard_Real tMin, const Standard_Integer Discret, const Standard_Real Deflect, IntTools_CArray1OfReal & anArgs);
 
 };
-%extend IntTools {
-	~IntTools() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools\n");}
-	}
-};
+%feature("shadow") IntTools::~IntTools %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntTools_ListIteratorOfListOfBox;
@@ -3047,9 +2885,7 @@ class IntTools_ListIteratorOfListOfBox {
 		Bnd_Box & Value() const;
 
 };
-%extend IntTools_ListIteratorOfListOfBox {
-	~IntTools_ListIteratorOfListOfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntTools_ListIteratorOfListOfBox\n");}
-	}
-};
+%feature("shadow") IntTools_ListIteratorOfListOfBox::~IntTools_ListIteratorOfListOfBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

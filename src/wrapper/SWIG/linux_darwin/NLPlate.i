@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include NLPlate_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_NLPlate_HGPPConstraint : public Handle_MMgt_TShared {
 	return (NLPlate_HGPPConstraint*)$self->Access();
 	}
 };
-%extend Handle_NLPlate_HGPPConstraint {
-	~Handle_NLPlate_HGPPConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HGPPConstraint\n");}
-	}
-};
+%feature("shadow") Handle_NLPlate_HGPPConstraint::~Handle_NLPlate_HGPPConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NLPlate_HPG0Constraint;
@@ -87,12 +89,10 @@ class Handle_NLPlate_HPG0Constraint : public Handle_NLPlate_HGPPConstraint {
 	return (NLPlate_HPG0Constraint*)$self->Access();
 	}
 };
-%extend Handle_NLPlate_HPG0Constraint {
-	~Handle_NLPlate_HPG0Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG0Constraint\n");}
-	}
-};
+%feature("shadow") Handle_NLPlate_HPG0Constraint::~Handle_NLPlate_HPG0Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NLPlate_HPG0G1Constraint;
@@ -117,12 +117,10 @@ class Handle_NLPlate_HPG0G1Constraint : public Handle_NLPlate_HPG0Constraint {
 	return (NLPlate_HPG0G1Constraint*)$self->Access();
 	}
 };
-%extend Handle_NLPlate_HPG0G1Constraint {
-	~Handle_NLPlate_HPG0G1Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG0G1Constraint\n");}
-	}
-};
+%feature("shadow") Handle_NLPlate_HPG0G1Constraint::~Handle_NLPlate_HPG0G1Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint;
@@ -147,12 +145,10 @@ class Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public Handle_TCol
 	return (NLPlate_SequenceNodeOfSequenceOfHGPPConstraint*)$self->Access();
 	}
 };
-%extend Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
-	~Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint\n");}
-	}
-};
+%feature("shadow") Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint::~Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NLPlate_HPG0G2Constraint;
@@ -177,12 +173,10 @@ class Handle_NLPlate_HPG0G2Constraint : public Handle_NLPlate_HPG0G1Constraint {
 	return (NLPlate_HPG0G2Constraint*)$self->Access();
 	}
 };
-%extend Handle_NLPlate_HPG0G2Constraint {
-	~Handle_NLPlate_HPG0G2Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG0G2Constraint\n");}
-	}
-};
+%feature("shadow") Handle_NLPlate_HPG0G2Constraint::~Handle_NLPlate_HPG0G2Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NLPlate_HPG0G3Constraint;
@@ -207,12 +201,10 @@ class Handle_NLPlate_HPG0G3Constraint : public Handle_NLPlate_HPG0G2Constraint {
 	return (NLPlate_HPG0G3Constraint*)$self->Access();
 	}
 };
-%extend Handle_NLPlate_HPG0G3Constraint {
-	~Handle_NLPlate_HPG0G3Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG0G3Constraint\n");}
-	}
-};
+%feature("shadow") Handle_NLPlate_HPG0G3Constraint::~Handle_NLPlate_HPG0G3Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NLPlate_HPG1Constraint;
@@ -237,12 +229,10 @@ class Handle_NLPlate_HPG1Constraint : public Handle_NLPlate_HGPPConstraint {
 	return (NLPlate_HPG1Constraint*)$self->Access();
 	}
 };
-%extend Handle_NLPlate_HPG1Constraint {
-	~Handle_NLPlate_HPG1Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG1Constraint\n");}
-	}
-};
+%feature("shadow") Handle_NLPlate_HPG1Constraint::~Handle_NLPlate_HPG1Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NLPlate_HPG2Constraint;
@@ -267,12 +257,10 @@ class Handle_NLPlate_HPG2Constraint : public Handle_NLPlate_HPG1Constraint {
 	return (NLPlate_HPG2Constraint*)$self->Access();
 	}
 };
-%extend Handle_NLPlate_HPG2Constraint {
-	~Handle_NLPlate_HPG2Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG2Constraint\n");}
-	}
-};
+%feature("shadow") Handle_NLPlate_HPG2Constraint::~Handle_NLPlate_HPG2Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NLPlate_HPG3Constraint;
@@ -297,12 +285,10 @@ class Handle_NLPlate_HPG3Constraint : public Handle_NLPlate_HPG2Constraint {
 	return (NLPlate_HPG3Constraint*)$self->Access();
 	}
 };
-%extend Handle_NLPlate_HPG3Constraint {
-	~Handle_NLPlate_HPG3Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG3Constraint\n");}
-	}
-};
+%feature("shadow") Handle_NLPlate_HPG3Constraint::~Handle_NLPlate_HPG3Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NLPlate_StackNodeOfStackOfPlate;
@@ -327,12 +313,10 @@ class Handle_NLPlate_StackNodeOfStackOfPlate : public Handle_TCollection_MapNode
 	return (NLPlate_StackNodeOfStackOfPlate*)$self->Access();
 	}
 };
-%extend Handle_NLPlate_StackNodeOfStackOfPlate {
-	~Handle_NLPlate_StackNodeOfStackOfPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_StackNodeOfStackOfPlate\n");}
-	}
-};
+%feature("shadow") Handle_NLPlate_StackNodeOfStackOfPlate::~Handle_NLPlate_StackNodeOfStackOfPlate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_SequenceOfHGPPConstraint;
@@ -384,12 +368,10 @@ class NLPlate_SequenceOfHGPPConstraint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend NLPlate_SequenceOfHGPPConstraint {
-	~NLPlate_SequenceOfHGPPConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_SequenceOfHGPPConstraint\n");}
-	}
-};
+%feature("shadow") NLPlate_SequenceOfHGPPConstraint::~NLPlate_SequenceOfHGPPConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_HGPPConstraint;
@@ -455,12 +437,10 @@ class NLPlate_HGPPConstraint : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NLPlate_HGPPConstraint {
-	~NLPlate_HGPPConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_HGPPConstraint\n");}
-	}
-};
+%feature("shadow") NLPlate_HGPPConstraint::~NLPlate_HGPPConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_HPG0Constraint;
@@ -480,12 +460,10 @@ class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NLPlate_HPG0Constraint {
-	~NLPlate_HPG0Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0Constraint\n");}
-	}
-};
+%feature("shadow") NLPlate_HPG0Constraint::~NLPlate_HPG0Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_HPG0G1Constraint;
@@ -505,12 +483,10 @@ class NLPlate_HPG0G1Constraint : public NLPlate_HPG0Constraint {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NLPlate_HPG0G1Constraint {
-	~NLPlate_HPG0G1Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0G1Constraint\n");}
-	}
-};
+%feature("shadow") NLPlate_HPG0G1Constraint::~NLPlate_HPG0G1Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_HPG0G2Constraint;
@@ -530,12 +506,10 @@ class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NLPlate_HPG0G2Constraint {
-	~NLPlate_HPG0G2Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0G2Constraint\n");}
-	}
-};
+%feature("shadow") NLPlate_HPG0G2Constraint::~NLPlate_HPG0G2Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_StackOfPlate;
@@ -563,12 +537,10 @@ class NLPlate_StackOfPlate {
 		Plate_Plate & ChangeTop();
 
 };
-%extend NLPlate_StackOfPlate {
-	~NLPlate_StackOfPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_StackOfPlate\n");}
-	}
-};
+%feature("shadow") NLPlate_StackOfPlate::~NLPlate_StackOfPlate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_NLPlate;
@@ -602,12 +574,10 @@ class NLPlate_NLPlate {
 		Standard_Integer MaxActiveConstraintOrder() const;
 
 };
-%extend NLPlate_NLPlate {
-	~NLPlate_NLPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_NLPlate\n");}
-	}
-};
+%feature("shadow") NLPlate_NLPlate::~NLPlate_NLPlate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_HPG1Constraint;
@@ -643,12 +613,10 @@ class NLPlate_HPG1Constraint : public NLPlate_HGPPConstraint {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NLPlate_HPG1Constraint {
-	~NLPlate_HPG1Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG1Constraint\n");}
-	}
-};
+%feature("shadow") NLPlate_HPG1Constraint::~NLPlate_HPG1Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_HPG2Constraint;
@@ -670,12 +638,10 @@ class NLPlate_HPG2Constraint : public NLPlate_HPG1Constraint {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NLPlate_HPG2Constraint {
-	~NLPlate_HPG2Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG2Constraint\n");}
-	}
-};
+%feature("shadow") NLPlate_HPG2Constraint::~NLPlate_HPG2Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_HPG3Constraint;
@@ -701,12 +667,10 @@ class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NLPlate_HPG3Constraint {
-	~NLPlate_HPG3Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG3Constraint\n");}
-	}
-};
+%feature("shadow") NLPlate_HPG3Constraint::~NLPlate_HPG3Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_SequenceNodeOfSequenceOfHGPPConstraint;
@@ -730,12 +694,10 @@ class NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public TCollection_SeqNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
-	~NLPlate_SequenceNodeOfSequenceOfHGPPConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_SequenceNodeOfSequenceOfHGPPConstraint\n");}
-	}
-};
+%feature("shadow") NLPlate_SequenceNodeOfSequenceOfHGPPConstraint::~NLPlate_SequenceNodeOfSequenceOfHGPPConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_HPG0G3Constraint;
@@ -761,12 +723,10 @@ class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NLPlate_HPG0G3Constraint {
-	~NLPlate_HPG0G3Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0G3Constraint\n");}
-	}
-};
+%feature("shadow") NLPlate_HPG0G3Constraint::~NLPlate_HPG0G3Constraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_StackNodeOfStackOfPlate;
@@ -790,12 +750,10 @@ class NLPlate_StackNodeOfStackOfPlate : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NLPlate_StackNodeOfStackOfPlate {
-	~NLPlate_StackNodeOfStackOfPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_StackNodeOfStackOfPlate\n");}
-	}
-};
+%feature("shadow") NLPlate_StackNodeOfStackOfPlate::~NLPlate_StackNodeOfStackOfPlate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NLPlate_StackIteratorOfStackOfPlate;
@@ -815,9 +773,7 @@ class NLPlate_StackIteratorOfStackOfPlate {
 		const Plate_Plate & Value() const;
 
 };
-%extend NLPlate_StackIteratorOfStackOfPlate {
-	~NLPlate_StackIteratorOfStackOfPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NLPlate_StackIteratorOfStackOfPlate\n");}
-	}
-};
+%feature("shadow") NLPlate_StackIteratorOfStackOfPlate::~NLPlate_StackIteratorOfStackOfPlate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

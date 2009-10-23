@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include FairCurve_dependencies.i
 
 
@@ -53,12 +57,10 @@ class FairCurve_Newton : public math_NewtonMinimum {
 		virtual		Standard_Boolean IsConverged() const;
 
 };
-%extend FairCurve_Newton {
-	~FairCurve_Newton() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_Newton\n");}
-	}
-};
+%feature("shadow") FairCurve_Newton::~FairCurve_Newton %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor FairCurve_Batten;
@@ -124,12 +126,10 @@ class FairCurve_Batten {
 		};
 
 };
-%extend FairCurve_Batten {
-	~FairCurve_Batten() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_Batten\n");}
-	}
-};
+%feature("shadow") FairCurve_Batten::~FairCurve_Batten %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor FairCurve_Energy;
@@ -151,12 +151,10 @@ class FairCurve_Energy : public math_MultipleVarFunctionWithHessian {
 		const Handle_TColgp_HArray1OfPnt2d & Poles() const;
 
 };
-%extend FairCurve_Energy {
-	~FairCurve_Energy() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_Energy\n");}
-	}
-};
+%feature("shadow") FairCurve_Energy::~FairCurve_Energy %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor FairCurve_EnergyOfMVC;
@@ -170,12 +168,10 @@ class FairCurve_EnergyOfMVC : public FairCurve_Energy {
 		FairCurve_AnalysisCode Status() const;
 
 };
-%extend FairCurve_EnergyOfMVC {
-	~FairCurve_EnergyOfMVC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_EnergyOfMVC\n");}
-	}
-};
+%feature("shadow") FairCurve_EnergyOfMVC::~FairCurve_EnergyOfMVC %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor FairCurve_DistributionOfEnergy;
@@ -189,12 +185,10 @@ class FairCurve_DistributionOfEnergy : public math_FunctionSet {
 		void SetDerivativeOrder(const Standard_Integer DerivativeOrder);
 
 };
-%extend FairCurve_DistributionOfEnergy {
-	~FairCurve_DistributionOfEnergy() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfEnergy\n");}
-	}
-};
+%feature("shadow") FairCurve_DistributionOfEnergy::~FairCurve_DistributionOfEnergy %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor FairCurve_DistributionOfSagging;
@@ -206,12 +200,10 @@ class FairCurve_DistributionOfSagging : public FairCurve_DistributionOfEnergy {
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
 
 };
-%extend FairCurve_DistributionOfSagging {
-	~FairCurve_DistributionOfSagging() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfSagging\n");}
-	}
-};
+%feature("shadow") FairCurve_DistributionOfSagging::~FairCurve_DistributionOfSagging %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor FairCurve_BattenLaw;
@@ -229,12 +221,10 @@ class FairCurve_BattenLaw : public math_Function {
 		virtual		Standard_Boolean Value(const Standard_Real T, Standard_Real &OutValue);
 
 };
-%extend FairCurve_BattenLaw {
-	~FairCurve_BattenLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_BattenLaw\n");}
-	}
-};
+%feature("shadow") FairCurve_BattenLaw::~FairCurve_BattenLaw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor FairCurve_DistributionOfJerk;
@@ -246,12 +236,10 @@ class FairCurve_DistributionOfJerk : public FairCurve_DistributionOfEnergy {
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
 
 };
-%extend FairCurve_DistributionOfJerk {
-	~FairCurve_DistributionOfJerk() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfJerk\n");}
-	}
-};
+%feature("shadow") FairCurve_DistributionOfJerk::~FairCurve_DistributionOfJerk %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor FairCurve_MinimalVariation;
@@ -283,12 +271,10 @@ class FairCurve_MinimalVariation : public FairCurve_Batten {
 		};
 
 };
-%extend FairCurve_MinimalVariation {
-	~FairCurve_MinimalVariation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_MinimalVariation\n");}
-	}
-};
+%feature("shadow") FairCurve_MinimalVariation::~FairCurve_MinimalVariation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor FairCurve_DistributionOfTension;
@@ -302,12 +288,10 @@ class FairCurve_DistributionOfTension : public FairCurve_DistributionOfEnergy {
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
 
 };
-%extend FairCurve_DistributionOfTension {
-	~FairCurve_DistributionOfTension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfTension\n");}
-	}
-};
+%feature("shadow") FairCurve_DistributionOfTension::~FairCurve_DistributionOfTension %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor FairCurve_EnergyOfBatten;
@@ -323,9 +307,7 @@ class FairCurve_EnergyOfBatten : public FairCurve_Energy {
 		virtual		Standard_Boolean Variable(math_Vector & X) const;
 
 };
-%extend FairCurve_EnergyOfBatten {
-	~FairCurve_EnergyOfBatten() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_EnergyOfBatten\n");}
-	}
-};
+%feature("shadow") FairCurve_EnergyOfBatten::~FairCurve_EnergyOfBatten %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ApproxInt_dependencies.i
 
 
@@ -52,9 +56,7 @@ class ApproxInt_SvSurfaces {
 		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
 
 };
-%extend ApproxInt_SvSurfaces {
-	~ApproxInt_SvSurfaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ApproxInt_SvSurfaces\n");}
-	}
-};
+%feature("shadow") ApproxInt_SvSurfaces::~ApproxInt_SvSurfaces %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

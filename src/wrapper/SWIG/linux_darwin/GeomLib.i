@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GeomLib_dependencies.i
 
 
@@ -58,12 +62,10 @@ class GeomLib_CheckBSplineCurve {
 		Handle_Geom_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
 
 };
-%extend GeomLib_CheckBSplineCurve {
-	~GeomLib_CheckBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_CheckBSplineCurve\n");}
-	}
-};
+%feature("shadow") GeomLib_CheckBSplineCurve::~GeomLib_CheckBSplineCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomLib_DenominatorMultiplier;
@@ -75,12 +77,10 @@ class GeomLib_DenominatorMultiplier {
 		Standard_Real Value(const Standard_Real UParameter, const Standard_Real VParameter) const;
 
 };
-%extend GeomLib_DenominatorMultiplier {
-	~GeomLib_DenominatorMultiplier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_DenominatorMultiplier\n");}
-	}
-};
+%feature("shadow") GeomLib_DenominatorMultiplier::~GeomLib_DenominatorMultiplier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomLib_Tool;
@@ -96,12 +96,10 @@ class GeomLib_Tool {
 		Standard_Boolean Parameter(const Handle_Geom2d_Curve &Curve, const gp_Pnt2d &Point, const Standard_Real Tolerance, Standard_Real &OutValue);
 
 };
-%extend GeomLib_Tool {
-	~GeomLib_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_Tool\n");}
-	}
-};
+%feature("shadow") GeomLib_Tool::~GeomLib_Tool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomLib_PolyFunc;
@@ -117,12 +115,10 @@ class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend GeomLib_PolyFunc {
-	~GeomLib_PolyFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_PolyFunc\n");}
-	}
-};
+%feature("shadow") GeomLib_PolyFunc::~GeomLib_PolyFunc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomLib_LogSample;
@@ -134,12 +130,10 @@ class GeomLib_LogSample : public math_FunctionSample {
 		virtual		Standard_Real GetParameter(const Standard_Integer Index) const;
 
 };
-%extend GeomLib_LogSample {
-	~GeomLib_LogSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_LogSample\n");}
-	}
-};
+%feature("shadow") GeomLib_LogSample::~GeomLib_LogSample %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomLib_MakeCurvefromApprox;
@@ -167,12 +161,10 @@ class GeomLib_MakeCurvefromApprox {
 		Handle_Geom_BSplineCurve Curve(const Standard_Integer Index1D, const Standard_Integer Index3D) const;
 
 };
-%extend GeomLib_MakeCurvefromApprox {
-	~GeomLib_MakeCurvefromApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_MakeCurvefromApprox\n");}
-	}
-};
+%feature("shadow") GeomLib_MakeCurvefromApprox::~GeomLib_MakeCurvefromApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomLib_IsPlanarSurface;
@@ -186,12 +178,10 @@ class GeomLib_IsPlanarSurface {
 		const gp_Pln & Plan() const;
 
 };
-%extend GeomLib_IsPlanarSurface {
-	~GeomLib_IsPlanarSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_IsPlanarSurface\n");}
-	}
-};
+%feature("shadow") GeomLib_IsPlanarSurface::~GeomLib_IsPlanarSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomLib_Interpolate;
@@ -207,12 +197,10 @@ class GeomLib_Interpolate {
 		Handle_Geom_BSplineCurve Curve() const;
 
 };
-%extend GeomLib_Interpolate {
-	~GeomLib_Interpolate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_Interpolate\n");}
-	}
-};
+%feature("shadow") GeomLib_Interpolate::~GeomLib_Interpolate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomLib_Check2dBSplineCurve;
@@ -230,12 +218,10 @@ class GeomLib_Check2dBSplineCurve {
 		Handle_Geom2d_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
 
 };
-%extend GeomLib_Check2dBSplineCurve {
-	~GeomLib_Check2dBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_Check2dBSplineCurve\n");}
-	}
-};
+%feature("shadow") GeomLib_Check2dBSplineCurve::~GeomLib_Check2dBSplineCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomLib_Array1OfMat;
@@ -273,12 +259,10 @@ class GeomLib_Array1OfMat {
 		gp_Mat & operator()(const Standard_Integer Index);
 
 };
-%extend GeomLib_Array1OfMat {
-	~GeomLib_Array1OfMat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib_Array1OfMat\n");}
-	}
-};
+%feature("shadow") GeomLib_Array1OfMat::~GeomLib_Array1OfMat %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomLib;
@@ -320,9 +304,7 @@ class GeomLib {
 		Standard_Integer NormEstim(const Handle_Geom_Surface &S, const gp_Pnt2d &UV, const Standard_Real Tol, gp_Dir & N);
 
 };
-%extend GeomLib {
-	~GeomLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLib\n");}
-	}
-};
+%feature("shadow") GeomLib::~GeomLib %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

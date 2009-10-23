@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Graphic2d_dependencies.i
 
 
@@ -116,12 +120,10 @@ class Handle_Graphic2d_Primitive : public Handle_MMgt_TShared {
 	return (Graphic2d_Primitive*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_Primitive {
-	~Handle_Graphic2d_Primitive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Primitive\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_Primitive::~Handle_Graphic2d_Primitive %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_Line;
@@ -146,12 +148,10 @@ class Handle_Graphic2d_Line : public Handle_Graphic2d_Primitive {
 	return (Graphic2d_Line*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_Line {
-	~Handle_Graphic2d_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Line\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_Line::~Handle_Graphic2d_Line %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_VectorialMarker;
@@ -176,12 +176,10 @@ class Handle_Graphic2d_VectorialMarker : public Handle_Graphic2d_Line {
 	return (Graphic2d_VectorialMarker*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_VectorialMarker {
-	~Handle_Graphic2d_VectorialMarker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_VectorialMarker\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_VectorialMarker::~Handle_Graphic2d_VectorialMarker %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_PolylineMarker;
@@ -206,12 +204,10 @@ class Handle_Graphic2d_PolylineMarker : public Handle_Graphic2d_VectorialMarker 
 	return (Graphic2d_PolylineMarker*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_PolylineMarker {
-	~Handle_Graphic2d_PolylineMarker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_PolylineMarker\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_PolylineMarker::~Handle_Graphic2d_PolylineMarker %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline;
@@ -236,12 +232,10 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline : public Handle_TCollect
 	return (Graphic2d_SequenceNodeOfSequenceOfPolyline*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline {
-	~Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline::~Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_Image;
@@ -266,12 +260,10 @@ class Handle_Graphic2d_Image : public Handle_Graphic2d_Primitive {
 	return (Graphic2d_Image*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_Image {
-	~Handle_Graphic2d_Image() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Image\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_Image::~Handle_Graphic2d_Image %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_SetOfSegments;
@@ -296,12 +288,10 @@ class Handle_Graphic2d_SetOfSegments : public Handle_Graphic2d_Line {
 	return (Graphic2d_SetOfSegments*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_SetOfSegments {
-	~Handle_Graphic2d_SetOfSegments() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SetOfSegments\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_SetOfSegments::~Handle_Graphic2d_SetOfSegments %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_Polyline;
@@ -326,12 +316,10 @@ class Handle_Graphic2d_Polyline : public Handle_Graphic2d_Line {
 	return (Graphic2d_Polyline*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_Polyline {
-	~Handle_Graphic2d_Polyline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Polyline\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_Polyline::~Handle_Graphic2d_Polyline %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_Segment;
@@ -356,12 +344,10 @@ class Handle_Graphic2d_Segment : public Handle_Graphic2d_Line {
 	return (Graphic2d_Segment*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_Segment {
-	~Handle_Graphic2d_Segment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Segment\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_Segment::~Handle_Graphic2d_Segment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_Drawer;
@@ -386,12 +372,10 @@ class Handle_Graphic2d_Drawer : public Handle_Standard_Transient {
 	return (Graphic2d_Drawer*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_Drawer {
-	~Handle_Graphic2d_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Drawer\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_Drawer::~Handle_Graphic2d_Drawer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_Text;
@@ -416,12 +400,10 @@ class Handle_Graphic2d_Text : public Handle_Graphic2d_Primitive {
 	return (Graphic2d_Text*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_Text {
-	~Handle_Graphic2d_Text() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Text\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_Text::~Handle_Graphic2d_Text %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_OverrideColorError;
@@ -446,12 +428,10 @@ class Handle_Graphic2d_OverrideColorError : public Handle_Standard_OutOfRange {
 	return (Graphic2d_OverrideColorError*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_OverrideColorError {
-	~Handle_Graphic2d_OverrideColorError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_OverrideColorError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_OverrideColorError::~Handle_Graphic2d_OverrideColorError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_ViewMapping;
@@ -476,12 +456,10 @@ class Handle_Graphic2d_ViewMapping : public Handle_MMgt_TShared {
 	return (Graphic2d_ViewMapping*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_ViewMapping {
-	~Handle_Graphic2d_ViewMapping() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_ViewMapping\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_ViewMapping::~Handle_Graphic2d_ViewMapping %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_EllipsMarker;
@@ -506,12 +484,10 @@ class Handle_Graphic2d_EllipsMarker : public Handle_Graphic2d_VectorialMarker {
 	return (Graphic2d_EllipsMarker*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_EllipsMarker {
-	~Handle_Graphic2d_EllipsMarker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_EllipsMarker\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_EllipsMarker::~Handle_Graphic2d_EllipsMarker %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_HSequenceOfVertex;
@@ -536,12 +512,10 @@ class Handle_Graphic2d_HSequenceOfVertex : public Handle_MMgt_TShared {
 	return (Graphic2d_HSequenceOfVertex*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_HSequenceOfVertex {
-	~Handle_Graphic2d_HSequenceOfVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_HSequenceOfVertex\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_HSequenceOfVertex::~Handle_Graphic2d_HSequenceOfVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_View;
@@ -566,12 +540,10 @@ class Handle_Graphic2d_View : public Handle_MMgt_TShared {
 	return (Graphic2d_View*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_View {
-	~Handle_Graphic2d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_View\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_View::~Handle_Graphic2d_View %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_GraphicObject;
@@ -596,12 +568,10 @@ class Handle_Graphic2d_GraphicObject : public Handle_MMgt_TShared {
 	return (Graphic2d_GraphicObject*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_GraphicObject {
-	~Handle_Graphic2d_GraphicObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_GraphicObject\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_GraphicObject::~Handle_Graphic2d_GraphicObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_BufferList;
@@ -626,12 +596,10 @@ class Handle_Graphic2d_BufferList : public Handle_MMgt_TShared {
 	return (Graphic2d_BufferList*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_BufferList {
-	~Handle_Graphic2d_BufferList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_BufferList\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_BufferList::~Handle_Graphic2d_BufferList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer;
@@ -656,12 +624,10 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer : public Handle_TCollectio
 	return (Graphic2d_SequenceNodeOfSequenceOfBuffer*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer {
-	~Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer::~Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_Circle;
@@ -686,12 +652,10 @@ class Handle_Graphic2d_Circle : public Handle_Graphic2d_Line {
 	return (Graphic2d_Circle*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_Circle {
-	~Handle_Graphic2d_Circle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Circle\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_Circle::~Handle_Graphic2d_Circle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_TextDefinitionError;
@@ -716,12 +680,10 @@ class Handle_Graphic2d_TextDefinitionError : public Handle_Standard_OutOfRange {
 	return (Graphic2d_TextDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_TextDefinitionError {
-	~Handle_Graphic2d_TextDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_TextDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_TextDefinitionError::~Handle_Graphic2d_TextDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_DetectionColorError;
@@ -746,12 +708,10 @@ class Handle_Graphic2d_DetectionColorError : public Handle_Standard_OutOfRange {
 	return (Graphic2d_DetectionColorError*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_DetectionColorError {
-	~Handle_Graphic2d_DetectionColorError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_DetectionColorError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_DetectionColorError::~Handle_Graphic2d_DetectionColorError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_HArray1OfVertex;
@@ -776,12 +736,10 @@ class Handle_Graphic2d_HArray1OfVertex : public Handle_MMgt_TShared {
 	return (Graphic2d_HArray1OfVertex*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_HArray1OfVertex {
-	~Handle_Graphic2d_HArray1OfVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_HArray1OfVertex\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_HArray1OfVertex::~Handle_Graphic2d_HArray1OfVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_HSequenceOfPrimitives;
@@ -806,12 +764,10 @@ class Handle_Graphic2d_HSequenceOfPrimitives : public Handle_MMgt_TShared {
 	return (Graphic2d_HSequenceOfPrimitives*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_HSequenceOfPrimitives {
-	~Handle_Graphic2d_HSequenceOfPrimitives() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_HSequenceOfPrimitives\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_HSequenceOfPrimitives::~Handle_Graphic2d_HSequenceOfPrimitives %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_CircleDefinitionError;
@@ -836,12 +792,10 @@ class Handle_Graphic2d_CircleDefinitionError : public Handle_Standard_OutOfRange
 	return (Graphic2d_CircleDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_CircleDefinitionError {
-	~Handle_Graphic2d_CircleDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_CircleDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_CircleDefinitionError::~Handle_Graphic2d_CircleDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_SetOfPolylines;
@@ -866,12 +820,10 @@ class Handle_Graphic2d_SetOfPolylines : public Handle_Graphic2d_Line {
 	return (Graphic2d_SetOfPolylines*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_SetOfPolylines {
-	~Handle_Graphic2d_SetOfPolylines() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SetOfPolylines\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_SetOfPolylines::~Handle_Graphic2d_SetOfPolylines %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_SegmentDefinitionError;
@@ -896,12 +848,10 @@ class Handle_Graphic2d_SegmentDefinitionError : public Handle_Standard_OutOfRang
 	return (Graphic2d_SegmentDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_SegmentDefinitionError {
-	~Handle_Graphic2d_SegmentDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SegmentDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_SegmentDefinitionError::~Handle_Graphic2d_SegmentDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_SetOfMarkers;
@@ -926,12 +876,10 @@ class Handle_Graphic2d_SetOfMarkers : public Handle_Graphic2d_Line {
 	return (Graphic2d_SetOfMarkers*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_SetOfMarkers {
-	~Handle_Graphic2d_SetOfMarkers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SetOfMarkers\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_SetOfMarkers::~Handle_Graphic2d_SetOfMarkers %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_DisplayList;
@@ -956,12 +904,10 @@ class Handle_Graphic2d_DisplayList : public Handle_MMgt_TShared {
 	return (Graphic2d_DisplayList*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_DisplayList {
-	~Handle_Graphic2d_DisplayList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_DisplayList\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_DisplayList::~Handle_Graphic2d_DisplayList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_HidingGraphicObject;
@@ -986,12 +932,10 @@ class Handle_Graphic2d_HidingGraphicObject : public Handle_Graphic2d_GraphicObje
 	return (Graphic2d_HidingGraphicObject*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_HidingGraphicObject {
-	~Handle_Graphic2d_HidingGraphicObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_HidingGraphicObject\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_HidingGraphicObject::~Handle_Graphic2d_HidingGraphicObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_InfiniteLineDefinitionError;
@@ -1016,12 +960,10 @@ class Handle_Graphic2d_InfiniteLineDefinitionError : public Handle_Standard_OutO
 	return (Graphic2d_InfiniteLineDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_InfiniteLineDefinitionError {
-	~Handle_Graphic2d_InfiniteLineDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_InfiniteLineDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_InfiniteLineDefinitionError::~Handle_Graphic2d_InfiniteLineDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_PolylineDefinitionError;
@@ -1046,12 +988,10 @@ class Handle_Graphic2d_PolylineDefinitionError : public Handle_Standard_OutOfRan
 	return (Graphic2d_PolylineDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_PolylineDefinitionError {
-	~Handle_Graphic2d_PolylineDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_PolylineDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_PolylineDefinitionError::~Handle_Graphic2d_PolylineDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfVertex;
@@ -1076,12 +1016,10 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfVertex : public Handle_TCollectio
 	return (Graphic2d_SequenceNodeOfSequenceOfVertex*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_SequenceNodeOfSequenceOfVertex {
-	~Handle_Graphic2d_SequenceNodeOfSequenceOfVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfVertex\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_SequenceNodeOfSequenceOfVertex::~Handle_Graphic2d_SequenceNodeOfSequenceOfVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_Paragraph;
@@ -1106,12 +1044,10 @@ class Handle_Graphic2d_Paragraph : public Handle_Graphic2d_Primitive {
 	return (Graphic2d_Paragraph*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_Paragraph {
-	~Handle_Graphic2d_Paragraph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Paragraph\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_Paragraph::~Handle_Graphic2d_Paragraph %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_TransientManager;
@@ -1136,12 +1072,10 @@ class Handle_Graphic2d_TransientManager : public Handle_Graphic2d_Drawer {
 	return (Graphic2d_TransientManager*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_TransientManager {
-	~Handle_Graphic2d_TransientManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_TransientManager\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_TransientManager::~Handle_Graphic2d_TransientManager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_MarkerDefinitionError;
@@ -1166,12 +1100,10 @@ class Handle_Graphic2d_MarkerDefinitionError : public Handle_Standard_OutOfRange
 	return (Graphic2d_MarkerDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_MarkerDefinitionError {
-	~Handle_Graphic2d_MarkerDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_MarkerDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_MarkerDefinitionError::~Handle_Graphic2d_MarkerDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_ImageDefinitionError;
@@ -1196,12 +1128,10 @@ class Handle_Graphic2d_ImageDefinitionError : public Handle_Standard_OutOfRange 
 	return (Graphic2d_ImageDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_ImageDefinitionError {
-	~Handle_Graphic2d_ImageDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_ImageDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_ImageDefinitionError::~Handle_Graphic2d_ImageDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_Ellips;
@@ -1226,12 +1156,10 @@ class Handle_Graphic2d_Ellips : public Handle_Graphic2d_Line {
 	return (Graphic2d_Ellips*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_Ellips {
-	~Handle_Graphic2d_Ellips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Ellips\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_Ellips::~Handle_Graphic2d_Ellips %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_HidingText;
@@ -1256,12 +1184,10 @@ class Handle_Graphic2d_HidingText : public Handle_Graphic2d_Text {
 	return (Graphic2d_HidingText*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_HidingText {
-	~Handle_Graphic2d_HidingText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_HidingText\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_HidingText::~Handle_Graphic2d_HidingText %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_DrawerDefinitionError;
@@ -1286,12 +1212,10 @@ class Handle_Graphic2d_DrawerDefinitionError : public Handle_Standard_OutOfRange
 	return (Graphic2d_DrawerDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_DrawerDefinitionError {
-	~Handle_Graphic2d_DrawerDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_DrawerDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_DrawerDefinitionError::~Handle_Graphic2d_DrawerDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_Buffer;
@@ -1316,12 +1240,10 @@ class Handle_Graphic2d_Buffer : public Handle_MMgt_TShared {
 	return (Graphic2d_Buffer*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_Buffer {
-	~Handle_Graphic2d_Buffer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Buffer\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_Buffer::~Handle_Graphic2d_Buffer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_InfiniteLine;
@@ -1346,12 +1268,10 @@ class Handle_Graphic2d_InfiniteLine : public Handle_Graphic2d_Line {
 	return (Graphic2d_InfiniteLine*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_InfiniteLine {
-	~Handle_Graphic2d_InfiniteLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_InfiniteLine\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_InfiniteLine::~Handle_Graphic2d_InfiniteLine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives;
@@ -1376,12 +1296,10 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives : public Handle_TColle
 	return (Graphic2d_SequenceNodeOfSequenceOfPrimitives*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives {
-	~Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives::~Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_TransientDefinitionError;
@@ -1406,12 +1324,10 @@ class Handle_Graphic2d_TransientDefinitionError : public Handle_Standard_OutOfRa
 	return (Graphic2d_TransientDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_TransientDefinitionError {
-	~Handle_Graphic2d_TransientDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_TransientDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_TransientDefinitionError::~Handle_Graphic2d_TransientDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_Marker;
@@ -1436,12 +1352,10 @@ class Handle_Graphic2d_Marker : public Handle_Graphic2d_Line {
 	return (Graphic2d_Marker*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_Marker {
-	~Handle_Graphic2d_Marker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Marker\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_Marker::~Handle_Graphic2d_Marker %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_FramedText;
@@ -1466,12 +1380,10 @@ class Handle_Graphic2d_FramedText : public Handle_Graphic2d_Text {
 	return (Graphic2d_FramedText*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_FramedText {
-	~Handle_Graphic2d_FramedText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_FramedText\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_FramedText::~Handle_Graphic2d_FramedText %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_EllipsDefinitionError;
@@ -1496,12 +1408,10 @@ class Handle_Graphic2d_EllipsDefinitionError : public Handle_Standard_OutOfRange
 	return (Graphic2d_EllipsDefinitionError*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_EllipsDefinitionError {
-	~Handle_Graphic2d_EllipsDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_EllipsDefinitionError\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_EllipsDefinitionError::~Handle_Graphic2d_EllipsDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_CircleMarker;
@@ -1526,12 +1436,10 @@ class Handle_Graphic2d_CircleMarker : public Handle_Graphic2d_VectorialMarker {
 	return (Graphic2d_CircleMarker*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_CircleMarker {
-	~Handle_Graphic2d_CircleMarker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_CircleMarker\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_CircleMarker::~Handle_Graphic2d_CircleMarker %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject;
@@ -1556,12 +1464,10 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public Handle_TCo
 	return (Graphic2d_SequenceNodeOfSequenceOfGraphicObject*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject {
-	~Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject::~Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Graphic2d_ImageFile;
@@ -1586,12 +1492,10 @@ class Handle_Graphic2d_ImageFile : public Handle_Graphic2d_Primitive {
 	return (Graphic2d_ImageFile*)$self->Access();
 	}
 };
-%extend Handle_Graphic2d_ImageFile {
-	~Handle_Graphic2d_ImageFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_ImageFile\n");}
-	}
-};
+%feature("shadow") Handle_Graphic2d_ImageFile::~Handle_Graphic2d_ImageFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_InfiniteLineDefinitionError;
@@ -1621,12 +1525,10 @@ class Graphic2d_InfiniteLineDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_InfiniteLineDefinitionError {
-	~Graphic2d_InfiniteLineDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_InfiniteLineDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic2d_InfiniteLineDefinitionError::~Graphic2d_InfiniteLineDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_PolylineDefinitionError;
@@ -1656,12 +1558,10 @@ class Graphic2d_PolylineDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_PolylineDefinitionError {
-	~Graphic2d_PolylineDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_PolylineDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic2d_PolylineDefinitionError::~Graphic2d_PolylineDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Primitive;
@@ -1719,12 +1619,10 @@ class Graphic2d_Primitive : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_Primitive {
-	~Graphic2d_Primitive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Primitive\n");}
-	}
-};
+%feature("shadow") Graphic2d_Primitive::~Graphic2d_Primitive %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Line;
@@ -1766,12 +1664,10 @@ class Graphic2d_Line : public Graphic2d_Primitive {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_Line {
-	~Graphic2d_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Line\n");}
-	}
-};
+%feature("shadow") Graphic2d_Line::~Graphic2d_Line %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Polyline;
@@ -1799,12 +1695,10 @@ class Graphic2d_Polyline : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_Polyline {
-	~Graphic2d_Polyline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Polyline\n");}
-	}
-};
+%feature("shadow") Graphic2d_Polyline::~Graphic2d_Polyline %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_ViewMapping;
@@ -1844,12 +1738,10 @@ class Graphic2d_ViewMapping : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_ViewMapping {
-	~Graphic2d_ViewMapping() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_ViewMapping\n");}
-	}
-};
+%feature("shadow") Graphic2d_ViewMapping::~Graphic2d_ViewMapping %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfGraphicObject;
@@ -1873,12 +1765,10 @@ class Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public TCollection_SeqNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_SequenceNodeOfSequenceOfGraphicObject {
-	~Graphic2d_SequenceNodeOfSequenceOfGraphicObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfGraphicObject\n");}
-	}
-};
+%feature("shadow") Graphic2d_SequenceNodeOfSequenceOfGraphicObject::~Graphic2d_SequenceNodeOfSequenceOfGraphicObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_VectorialMarker;
@@ -1904,12 +1794,10 @@ class Graphic2d_VectorialMarker : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_VectorialMarker {
-	~Graphic2d_VectorialMarker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_VectorialMarker\n");}
-	}
-};
+%feature("shadow") Graphic2d_VectorialMarker::~Graphic2d_VectorialMarker %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_PolylineMarker;
@@ -1939,12 +1827,10 @@ class Graphic2d_PolylineMarker : public Graphic2d_VectorialMarker {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_PolylineMarker {
-	~Graphic2d_PolylineMarker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_PolylineMarker\n");}
-	}
-};
+%feature("shadow") Graphic2d_PolylineMarker::~Graphic2d_PolylineMarker %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_View;
@@ -2026,12 +1912,10 @@ class Graphic2d_View : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_View {
-	~Graphic2d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_View\n");}
-	}
-};
+%feature("shadow") Graphic2d_View::~Graphic2d_View %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Image;
@@ -2077,12 +1961,10 @@ class Graphic2d_Image : public Graphic2d_Primitive {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_Image {
-	~Graphic2d_Image() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Image\n");}
-	}
-};
+%feature("shadow") Graphic2d_Image::~Graphic2d_Image %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Text;
@@ -2148,12 +2030,10 @@ class Graphic2d_Text : public Graphic2d_Primitive {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_Text {
-	~Graphic2d_Text() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Text\n");}
-	}
-};
+%feature("shadow") Graphic2d_Text::~Graphic2d_Text %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_FramedText;
@@ -2183,12 +2063,10 @@ class Graphic2d_FramedText : public Graphic2d_Text {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_FramedText {
-	~Graphic2d_FramedText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_FramedText\n");}
-	}
-};
+%feature("shadow") Graphic2d_FramedText::~Graphic2d_FramedText %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_TextDefinitionError;
@@ -2218,12 +2096,10 @@ class Graphic2d_TextDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_TextDefinitionError {
-	~Graphic2d_TextDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_TextDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic2d_TextDefinitionError::~Graphic2d_TextDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_GraphicObject;
@@ -2325,12 +2201,10 @@ class Graphic2d_GraphicObject : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_GraphicObject {
-	~Graphic2d_GraphicObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_GraphicObject\n");}
-	}
-};
+%feature("shadow") Graphic2d_GraphicObject::~Graphic2d_GraphicObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Array1OfVertex;
@@ -2368,12 +2242,10 @@ class Graphic2d_Array1OfVertex {
 		Graphic2d_Vertex & operator()(const Standard_Integer Index);
 
 };
-%extend Graphic2d_Array1OfVertex {
-	~Graphic2d_Array1OfVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Array1OfVertex\n");}
-	}
-};
+%feature("shadow") Graphic2d_Array1OfVertex::~Graphic2d_Array1OfVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SegmentDefinitionError;
@@ -2403,12 +2275,10 @@ class Graphic2d_SegmentDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_SegmentDefinitionError {
-	~Graphic2d_SegmentDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SegmentDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic2d_SegmentDefinitionError::~Graphic2d_SegmentDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_ImageFile;
@@ -2462,12 +2332,10 @@ class Graphic2d_ImageFile : public Graphic2d_Primitive {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_ImageFile {
-	~Graphic2d_ImageFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_ImageFile\n");}
-	}
-};
+%feature("shadow") Graphic2d_ImageFile::~Graphic2d_ImageFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_CBitFields8;
@@ -2477,12 +2345,10 @@ class Graphic2d_CBitFields8 {
 		Graphic2d_CBitFields8();
 
 };
-%extend Graphic2d_CBitFields8 {
-	~Graphic2d_CBitFields8() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_CBitFields8\n");}
-	}
-};
+%feature("shadow") Graphic2d_CBitFields8::~Graphic2d_CBitFields8 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SetOfSegments;
@@ -2512,12 +2378,10 @@ class Graphic2d_SetOfSegments : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_SetOfSegments {
-	~Graphic2d_SetOfSegments() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SetOfSegments\n");}
-	}
-};
+%feature("shadow") Graphic2d_SetOfSegments::~Graphic2d_SetOfSegments %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SetOfMarkers;
@@ -2563,12 +2427,10 @@ class Graphic2d_SetOfMarkers : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_SetOfMarkers {
-	~Graphic2d_SetOfMarkers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SetOfMarkers\n");}
-	}
-};
+%feature("shadow") Graphic2d_SetOfMarkers::~Graphic2d_SetOfMarkers %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_HidingText;
@@ -2612,12 +2474,10 @@ class Graphic2d_HidingText : public Graphic2d_Text {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_HidingText {
-	~Graphic2d_HidingText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_HidingText\n");}
-	}
-};
+%feature("shadow") Graphic2d_HidingText::~Graphic2d_HidingText %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_CircleDefinitionError;
@@ -2647,12 +2507,10 @@ class Graphic2d_CircleDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_CircleDefinitionError {
-	~Graphic2d_CircleDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_CircleDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic2d_CircleDefinitionError::~Graphic2d_CircleDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfPolyline;
@@ -2676,12 +2534,10 @@ class Graphic2d_SequenceNodeOfSequenceOfPolyline : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_SequenceNodeOfSequenceOfPolyline {
-	~Graphic2d_SequenceNodeOfSequenceOfPolyline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfPolyline\n");}
-	}
-};
+%feature("shadow") Graphic2d_SequenceNodeOfSequenceOfPolyline::~Graphic2d_SequenceNodeOfSequenceOfPolyline %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_EllipsDefinitionError;
@@ -2711,12 +2567,10 @@ class Graphic2d_EllipsDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_EllipsDefinitionError {
-	~Graphic2d_EllipsDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_EllipsDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic2d_EllipsDefinitionError::~Graphic2d_EllipsDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Drawer;
@@ -2870,12 +2724,10 @@ class Graphic2d_Drawer : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_Drawer {
-	~Graphic2d_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Drawer\n");}
-	}
-};
+%feature("shadow") Graphic2d_Drawer::~Graphic2d_Drawer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_TransientManager;
@@ -2953,12 +2805,10 @@ class Graphic2d_TransientManager : public Graphic2d_Drawer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_TransientManager {
-	~Graphic2d_TransientManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_TransientManager\n");}
-	}
-};
+%feature("shadow") Graphic2d_TransientManager::~Graphic2d_TransientManager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_HSequenceOfPrimitives;
@@ -3024,12 +2874,10 @@ class Graphic2d_HSequenceOfPrimitives : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_HSequenceOfPrimitives {
-	~Graphic2d_HSequenceOfPrimitives() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_HSequenceOfPrimitives\n");}
-	}
-};
+%feature("shadow") Graphic2d_HSequenceOfPrimitives::~Graphic2d_HSequenceOfPrimitives %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_HSequenceOfVertex;
@@ -3095,12 +2943,10 @@ class Graphic2d_HSequenceOfVertex : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_HSequenceOfVertex {
-	~Graphic2d_HSequenceOfVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_HSequenceOfVertex\n");}
-	}
-};
+%feature("shadow") Graphic2d_HSequenceOfVertex::~Graphic2d_HSequenceOfVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SequenceOfBuffer;
@@ -3152,12 +2998,10 @@ class Graphic2d_SequenceOfBuffer : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Graphic2d_SequenceOfBuffer {
-	~Graphic2d_SequenceOfBuffer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceOfBuffer\n");}
-	}
-};
+%feature("shadow") Graphic2d_SequenceOfBuffer::~Graphic2d_SequenceOfBuffer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_InfiniteLine;
@@ -3187,12 +3031,10 @@ class Graphic2d_InfiniteLine : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_InfiniteLine {
-	~Graphic2d_InfiniteLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_InfiniteLine\n");}
-	}
-};
+%feature("shadow") Graphic2d_InfiniteLine::~Graphic2d_InfiniteLine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_OverrideColorError;
@@ -3222,12 +3064,10 @@ class Graphic2d_OverrideColorError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_OverrideColorError {
-	~Graphic2d_OverrideColorError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_OverrideColorError\n");}
-	}
-};
+%feature("shadow") Graphic2d_OverrideColorError::~Graphic2d_OverrideColorError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SetOfPolylines;
@@ -3261,12 +3101,10 @@ class Graphic2d_SetOfPolylines : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_SetOfPolylines {
-	~Graphic2d_SetOfPolylines() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SetOfPolylines\n");}
-	}
-};
+%feature("shadow") Graphic2d_SetOfPolylines::~Graphic2d_SetOfPolylines %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_ImageDefinitionError;
@@ -3296,12 +3134,10 @@ class Graphic2d_ImageDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_ImageDefinitionError {
-	~Graphic2d_ImageDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_ImageDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic2d_ImageDefinitionError::~Graphic2d_ImageDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Buffer;
@@ -3371,12 +3207,10 @@ class Graphic2d_Buffer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_Buffer {
-	~Graphic2d_Buffer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Buffer\n");}
-	}
-};
+%feature("shadow") Graphic2d_Buffer::~Graphic2d_Buffer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_DetectionColorError;
@@ -3406,12 +3240,10 @@ class Graphic2d_DetectionColorError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_DetectionColorError {
-	~Graphic2d_DetectionColorError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_DetectionColorError\n");}
-	}
-};
+%feature("shadow") Graphic2d_DetectionColorError::~Graphic2d_DetectionColorError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_DisplayList;
@@ -3477,12 +3309,10 @@ class Graphic2d_DisplayList : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_DisplayList {
-	~Graphic2d_DisplayList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_DisplayList\n");}
-	}
-};
+%feature("shadow") Graphic2d_DisplayList::~Graphic2d_DisplayList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfPrimitives;
@@ -3506,12 +3336,10 @@ class Graphic2d_SequenceNodeOfSequenceOfPrimitives : public TCollection_SeqNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_SequenceNodeOfSequenceOfPrimitives {
-	~Graphic2d_SequenceNodeOfSequenceOfPrimitives() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfPrimitives\n");}
-	}
-};
+%feature("shadow") Graphic2d_SequenceNodeOfSequenceOfPrimitives::~Graphic2d_SequenceNodeOfSequenceOfPrimitives %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfBuffer;
@@ -3535,12 +3363,10 @@ class Graphic2d_SequenceNodeOfSequenceOfBuffer : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_SequenceNodeOfSequenceOfBuffer {
-	~Graphic2d_SequenceNodeOfSequenceOfBuffer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfBuffer\n");}
-	}
-};
+%feature("shadow") Graphic2d_SequenceNodeOfSequenceOfBuffer::~Graphic2d_SequenceNodeOfSequenceOfBuffer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_BufferList;
@@ -3606,12 +3432,10 @@ class Graphic2d_BufferList : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_BufferList {
-	~Graphic2d_BufferList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_BufferList\n");}
-	}
-};
+%feature("shadow") Graphic2d_BufferList::~Graphic2d_BufferList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_CircleMarker;
@@ -3647,12 +3471,10 @@ class Graphic2d_CircleMarker : public Graphic2d_VectorialMarker {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_CircleMarker {
-	~Graphic2d_CircleMarker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_CircleMarker\n");}
-	}
-};
+%feature("shadow") Graphic2d_CircleMarker::~Graphic2d_CircleMarker %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfVertex;
@@ -3676,12 +3498,10 @@ class Graphic2d_SequenceNodeOfSequenceOfVertex : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_SequenceNodeOfSequenceOfVertex {
-	~Graphic2d_SequenceNodeOfSequenceOfVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfVertex\n");}
-	}
-};
+%feature("shadow") Graphic2d_SequenceNodeOfSequenceOfVertex::~Graphic2d_SequenceNodeOfSequenceOfVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SequenceOfVertex;
@@ -3733,12 +3553,10 @@ class Graphic2d_SequenceOfVertex : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Graphic2d_SequenceOfVertex {
-	~Graphic2d_SequenceOfVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceOfVertex\n");}
-	}
-};
+%feature("shadow") Graphic2d_SequenceOfVertex::~Graphic2d_SequenceOfVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Marker;
@@ -3772,12 +3590,10 @@ class Graphic2d_Marker : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_Marker {
-	~Graphic2d_Marker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Marker\n");}
-	}
-};
+%feature("shadow") Graphic2d_Marker::~Graphic2d_Marker %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Vertex;
@@ -3809,12 +3625,10 @@ class Graphic2d_Vertex {
 		Quantity_Length Distance(const Graphic2d_Vertex &AV1, const Graphic2d_Vertex &AV2);
 
 };
-%extend Graphic2d_Vertex {
-	~Graphic2d_Vertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Vertex\n");}
-	}
-};
+%feature("shadow") Graphic2d_Vertex::~Graphic2d_Vertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_DrawerDefinitionError;
@@ -3844,12 +3658,10 @@ class Graphic2d_DrawerDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_DrawerDefinitionError {
-	~Graphic2d_DrawerDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_DrawerDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic2d_DrawerDefinitionError::~Graphic2d_DrawerDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_HidingGraphicObject;
@@ -3901,12 +3713,10 @@ class Graphic2d_HidingGraphicObject : public Graphic2d_GraphicObject {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_HidingGraphicObject {
-	~Graphic2d_HidingGraphicObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_HidingGraphicObject\n");}
-	}
-};
+%feature("shadow") Graphic2d_HidingGraphicObject::~Graphic2d_HidingGraphicObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Segment;
@@ -3936,12 +3746,10 @@ class Graphic2d_Segment : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_Segment {
-	~Graphic2d_Segment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Segment\n");}
-	}
-};
+%feature("shadow") Graphic2d_Segment::~Graphic2d_Segment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Paragraph;
@@ -4027,12 +3835,10 @@ class Graphic2d_Paragraph : public Graphic2d_Primitive {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_Paragraph {
-	~Graphic2d_Paragraph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Paragraph\n");}
-	}
-};
+%feature("shadow") Graphic2d_Paragraph::~Graphic2d_Paragraph %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_EllipsMarker;
@@ -4066,12 +3872,10 @@ class Graphic2d_EllipsMarker : public Graphic2d_VectorialMarker {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_EllipsMarker {
-	~Graphic2d_EllipsMarker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_EllipsMarker\n");}
-	}
-};
+%feature("shadow") Graphic2d_EllipsMarker::~Graphic2d_EllipsMarker %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_HArray1OfVertex;
@@ -4113,12 +3917,10 @@ class Graphic2d_HArray1OfVertex : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_HArray1OfVertex {
-	~Graphic2d_HArray1OfVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_HArray1OfVertex\n");}
-	}
-};
+%feature("shadow") Graphic2d_HArray1OfVertex::~Graphic2d_HArray1OfVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SequenceOfPolyline;
@@ -4170,12 +3972,10 @@ class Graphic2d_SequenceOfPolyline : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Graphic2d_SequenceOfPolyline {
-	~Graphic2d_SequenceOfPolyline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceOfPolyline\n");}
-	}
-};
+%feature("shadow") Graphic2d_SequenceOfPolyline::~Graphic2d_SequenceOfPolyline %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SequenceOfPrimitives;
@@ -4227,12 +4027,10 @@ class Graphic2d_SequenceOfPrimitives : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Graphic2d_SequenceOfPrimitives {
-	~Graphic2d_SequenceOfPrimitives() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceOfPrimitives\n");}
-	}
-};
+%feature("shadow") Graphic2d_SequenceOfPrimitives::~Graphic2d_SequenceOfPrimitives %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Ellips;
@@ -4266,12 +4064,10 @@ class Graphic2d_Ellips : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_Ellips {
-	~Graphic2d_Ellips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Ellips\n");}
-	}
-};
+%feature("shadow") Graphic2d_Ellips::~Graphic2d_Ellips %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_Circle;
@@ -4313,12 +4109,10 @@ class Graphic2d_Circle : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_Circle {
-	~Graphic2d_Circle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_Circle\n");}
-	}
-};
+%feature("shadow") Graphic2d_Circle::~Graphic2d_Circle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_MarkerDefinitionError;
@@ -4348,12 +4142,10 @@ class Graphic2d_MarkerDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_MarkerDefinitionError {
-	~Graphic2d_MarkerDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_MarkerDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic2d_MarkerDefinitionError::~Graphic2d_MarkerDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_SequenceOfGraphicObject;
@@ -4405,12 +4197,10 @@ class Graphic2d_SequenceOfGraphicObject : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Graphic2d_SequenceOfGraphicObject {
-	~Graphic2d_SequenceOfGraphicObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceOfGraphicObject\n");}
-	}
-};
+%feature("shadow") Graphic2d_SequenceOfGraphicObject::~Graphic2d_SequenceOfGraphicObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Graphic2d_TransientDefinitionError;
@@ -4440,9 +4230,7 @@ class Graphic2d_TransientDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Graphic2d_TransientDefinitionError {
-	~Graphic2d_TransientDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Graphic2d_TransientDefinitionError\n");}
-	}
-};
+%feature("shadow") Graphic2d_TransientDefinitionError::~Graphic2d_TransientDefinitionError %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

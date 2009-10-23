@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TColGeom_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_
 	return (TColGeom_SequenceNodeOfSequenceOfCurve*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_SequenceNodeOfSequenceOfCurve {
-	~Handle_TColGeom_SequenceNodeOfSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_SequenceNodeOfSequenceOfCurve\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_SequenceNodeOfSequenceOfCurve::~Handle_TColGeom_SequenceNodeOfSequenceOfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HSequenceOfSurface;
@@ -87,12 +89,10 @@ class Handle_TColGeom_HSequenceOfSurface : public Handle_MMgt_TShared {
 	return (TColGeom_HSequenceOfSurface*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HSequenceOfSurface {
-	~Handle_TColGeom_HSequenceOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HSequenceOfSurface\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HSequenceOfSurface::~Handle_TColGeom_HSequenceOfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HArray1OfBoundedSurface;
@@ -117,12 +117,10 @@ class Handle_TColGeom_HArray1OfBoundedSurface : public Handle_MMgt_TShared {
 	return (TColGeom_HArray1OfBoundedSurface*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HArray1OfBoundedSurface {
-	~Handle_TColGeom_HArray1OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray1OfBoundedSurface\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HArray1OfBoundedSurface::~Handle_TColGeom_HArray1OfBoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HArray2OfBoundedSurface;
@@ -147,12 +145,10 @@ class Handle_TColGeom_HArray2OfBoundedSurface : public Handle_MMgt_TShared {
 	return (TColGeom_HArray2OfBoundedSurface*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HArray2OfBoundedSurface {
-	~Handle_TColGeom_HArray2OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray2OfBoundedSurface\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HArray2OfBoundedSurface::~Handle_TColGeom_HArray2OfBoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HArray1OfCurve;
@@ -177,12 +173,10 @@ class Handle_TColGeom_HArray1OfCurve : public Handle_MMgt_TShared {
 	return (TColGeom_HArray1OfCurve*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HArray1OfCurve {
-	~Handle_TColGeom_HArray1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray1OfCurve\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HArray1OfCurve::~Handle_TColGeom_HArray1OfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_SequenceNodeOfSequenceOfSurface;
@@ -207,12 +201,10 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfSurface : public Handle_TCollectio
 	return (TColGeom_SequenceNodeOfSequenceOfSurface*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_SequenceNodeOfSequenceOfSurface {
-	~Handle_TColGeom_SequenceNodeOfSequenceOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_SequenceNodeOfSequenceOfSurface\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_SequenceNodeOfSequenceOfSurface::~Handle_TColGeom_SequenceNodeOfSequenceOfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HArray1OfBoundedCurve;
@@ -237,12 +229,10 @@ class Handle_TColGeom_HArray1OfBoundedCurve : public Handle_MMgt_TShared {
 	return (TColGeom_HArray1OfBoundedCurve*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HArray1OfBoundedCurve {
-	~Handle_TColGeom_HArray1OfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray1OfBoundedCurve\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HArray1OfBoundedCurve::~Handle_TColGeom_HArray1OfBoundedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HArray2OfBSplineSurface;
@@ -267,12 +257,10 @@ class Handle_TColGeom_HArray2OfBSplineSurface : public Handle_MMgt_TShared {
 	return (TColGeom_HArray2OfBSplineSurface*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HArray2OfBSplineSurface {
-	~Handle_TColGeom_HArray2OfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray2OfBSplineSurface\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HArray2OfBSplineSurface::~Handle_TColGeom_HArray2OfBSplineSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HSequenceOfCurve;
@@ -297,12 +285,10 @@ class Handle_TColGeom_HSequenceOfCurve : public Handle_MMgt_TShared {
 	return (TColGeom_HSequenceOfCurve*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HSequenceOfCurve {
-	~Handle_TColGeom_HSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HSequenceOfCurve\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HSequenceOfCurve::~Handle_TColGeom_HSequenceOfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface;
@@ -327,12 +313,10 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface : public Handle_TCo
 	return (TColGeom_SequenceNodeOfSequenceOfBoundedSurface*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface {
-	~Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface::~Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve;
@@ -357,12 +341,10 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve : public Handle_TColl
 	return (TColGeom_SequenceNodeOfSequenceOfBoundedCurve*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve {
-	~Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve::~Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HArray1OfSurface;
@@ -387,12 +369,10 @@ class Handle_TColGeom_HArray1OfSurface : public Handle_MMgt_TShared {
 	return (TColGeom_HArray1OfSurface*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HArray1OfSurface {
-	~Handle_TColGeom_HArray1OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray1OfSurface\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HArray1OfSurface::~Handle_TColGeom_HArray1OfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HArray1OfBezierCurve;
@@ -417,12 +397,10 @@ class Handle_TColGeom_HArray1OfBezierCurve : public Handle_MMgt_TShared {
 	return (TColGeom_HArray1OfBezierCurve*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HArray1OfBezierCurve {
-	~Handle_TColGeom_HArray1OfBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray1OfBezierCurve\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HArray1OfBezierCurve::~Handle_TColGeom_HArray1OfBezierCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HArray2OfBezierSurface;
@@ -447,12 +425,10 @@ class Handle_TColGeom_HArray2OfBezierSurface : public Handle_MMgt_TShared {
 	return (TColGeom_HArray2OfBezierSurface*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HArray2OfBezierSurface {
-	~Handle_TColGeom_HArray2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray2OfBezierSurface\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HArray2OfBezierSurface::~Handle_TColGeom_HArray2OfBezierSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HArray1OfBSplineCurve;
@@ -477,12 +453,10 @@ class Handle_TColGeom_HArray1OfBSplineCurve : public Handle_MMgt_TShared {
 	return (TColGeom_HArray1OfBSplineCurve*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HArray1OfBSplineCurve {
-	~Handle_TColGeom_HArray1OfBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray1OfBSplineCurve\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HArray1OfBSplineCurve::~Handle_TColGeom_HArray1OfBSplineCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HArray2OfSurface;
@@ -507,12 +481,10 @@ class Handle_TColGeom_HArray2OfSurface : public Handle_MMgt_TShared {
 	return (TColGeom_HArray2OfSurface*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HArray2OfSurface {
-	~Handle_TColGeom_HArray2OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray2OfSurface\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HArray2OfSurface::~Handle_TColGeom_HArray2OfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HSequenceOfBoundedSurface;
@@ -537,12 +509,10 @@ class Handle_TColGeom_HSequenceOfBoundedSurface : public Handle_MMgt_TShared {
 	return (TColGeom_HSequenceOfBoundedSurface*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HSequenceOfBoundedSurface {
-	~Handle_TColGeom_HSequenceOfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HSequenceOfBoundedSurface\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HSequenceOfBoundedSurface::~Handle_TColGeom_HSequenceOfBoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TColGeom_HSequenceOfBoundedCurve;
@@ -567,12 +537,10 @@ class Handle_TColGeom_HSequenceOfBoundedCurve : public Handle_MMgt_TShared {
 	return (TColGeom_HSequenceOfBoundedCurve*)$self->Access();
 	}
 };
-%extend Handle_TColGeom_HSequenceOfBoundedCurve {
-	~Handle_TColGeom_HSequenceOfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HSequenceOfBoundedCurve\n");}
-	}
-};
+%feature("shadow") Handle_TColGeom_HSequenceOfBoundedCurve::~Handle_TColGeom_HSequenceOfBoundedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_Array1OfBoundedCurve;
@@ -610,12 +578,10 @@ class TColGeom_Array1OfBoundedCurve {
 		Handle_Geom_BoundedCurve & operator()(const Standard_Integer Index);
 
 };
-%extend TColGeom_Array1OfBoundedCurve {
-	~TColGeom_Array1OfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfBoundedCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_Array1OfBoundedCurve::~TColGeom_Array1OfBoundedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_Array1OfCurve;
@@ -653,12 +619,10 @@ class TColGeom_Array1OfCurve {
 		Handle_Geom_Curve & operator()(const Standard_Integer Index);
 
 };
-%extend TColGeom_Array1OfCurve {
-	~TColGeom_Array1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_Array1OfCurve::~TColGeom_Array1OfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HSequenceOfCurve;
@@ -724,12 +688,10 @@ class TColGeom_HSequenceOfCurve : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HSequenceOfCurve {
-	~TColGeom_HSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HSequenceOfCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_HSequenceOfCurve::~TColGeom_HSequenceOfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HArray1OfSurface;
@@ -771,12 +733,10 @@ class TColGeom_HArray1OfSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HArray1OfSurface {
-	~TColGeom_HArray1OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_HArray1OfSurface::~TColGeom_HArray1OfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HArray1OfCurve;
@@ -818,12 +778,10 @@ class TColGeom_HArray1OfCurve : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HArray1OfCurve {
-	~TColGeom_HArray1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_HArray1OfCurve::~TColGeom_HArray1OfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfBoundedSurface;
@@ -847,12 +805,10 @@ class TColGeom_SequenceNodeOfSequenceOfBoundedSurface : public TCollection_SeqNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_SequenceNodeOfSequenceOfBoundedSurface {
-	~TColGeom_SequenceNodeOfSequenceOfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceNodeOfSequenceOfBoundedSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_SequenceNodeOfSequenceOfBoundedSurface::~TColGeom_SequenceNodeOfSequenceOfBoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfCurve;
@@ -876,12 +832,10 @@ class TColGeom_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_SequenceNodeOfSequenceOfCurve {
-	~TColGeom_SequenceNodeOfSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceNodeOfSequenceOfCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_SequenceNodeOfSequenceOfCurve::~TColGeom_SequenceNodeOfSequenceOfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_Array2OfSurface;
@@ -923,12 +877,10 @@ class TColGeom_Array2OfSurface {
 		Handle_Geom_Surface & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend TColGeom_Array2OfSurface {
-	~TColGeom_Array2OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_Array2OfSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_Array2OfSurface::~TColGeom_Array2OfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_Array2OfBezierSurface;
@@ -970,12 +922,10 @@ class TColGeom_Array2OfBezierSurface {
 		Handle_Geom_BezierSurface & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend TColGeom_Array2OfBezierSurface {
-	~TColGeom_Array2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_Array2OfBezierSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_Array2OfBezierSurface::~TColGeom_Array2OfBezierSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HSequenceOfBoundedCurve;
@@ -1041,12 +991,10 @@ class TColGeom_HSequenceOfBoundedCurve : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HSequenceOfBoundedCurve {
-	~TColGeom_HSequenceOfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HSequenceOfBoundedCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_HSequenceOfBoundedCurve::~TColGeom_HSequenceOfBoundedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HArray1OfBSplineCurve;
@@ -1088,12 +1036,10 @@ class TColGeom_HArray1OfBSplineCurve : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HArray1OfBSplineCurve {
-	~TColGeom_HArray1OfBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfBSplineCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_HArray1OfBSplineCurve::~TColGeom_HArray1OfBSplineCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_SequenceOfCurve;
@@ -1145,12 +1091,10 @@ class TColGeom_SequenceOfCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TColGeom_SequenceOfCurve {
-	~TColGeom_SequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceOfCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_SequenceOfCurve::~TColGeom_SequenceOfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_Array1OfBoundedSurface;
@@ -1188,12 +1132,10 @@ class TColGeom_Array1OfBoundedSurface {
 		Handle_Geom_BoundedSurface & operator()(const Standard_Integer Index);
 
 };
-%extend TColGeom_Array1OfBoundedSurface {
-	~TColGeom_Array1OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfBoundedSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_Array1OfBoundedSurface::~TColGeom_Array1OfBoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_Array1OfSurface;
@@ -1231,12 +1173,10 @@ class TColGeom_Array1OfSurface {
 		Handle_Geom_Surface & operator()(const Standard_Integer Index);
 
 };
-%extend TColGeom_Array1OfSurface {
-	~TColGeom_Array1OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_Array1OfSurface::~TColGeom_Array1OfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HArray2OfBezierSurface;
@@ -1284,12 +1224,10 @@ class TColGeom_HArray2OfBezierSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HArray2OfBezierSurface {
-	~TColGeom_HArray2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray2OfBezierSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_HArray2OfBezierSurface::~TColGeom_HArray2OfBezierSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_SequenceOfBoundedSurface;
@@ -1341,12 +1279,10 @@ class TColGeom_SequenceOfBoundedSurface : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TColGeom_SequenceOfBoundedSurface {
-	~TColGeom_SequenceOfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceOfBoundedSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_SequenceOfBoundedSurface::~TColGeom_SequenceOfBoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HArray1OfBoundedSurface;
@@ -1388,12 +1324,10 @@ class TColGeom_HArray1OfBoundedSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HArray1OfBoundedSurface {
-	~TColGeom_HArray1OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfBoundedSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_HArray1OfBoundedSurface::~TColGeom_HArray1OfBoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HArray2OfSurface;
@@ -1441,12 +1375,10 @@ class TColGeom_HArray2OfSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HArray2OfSurface {
-	~TColGeom_HArray2OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray2OfSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_HArray2OfSurface::~TColGeom_HArray2OfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HArray2OfBoundedSurface;
@@ -1494,12 +1426,10 @@ class TColGeom_HArray2OfBoundedSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HArray2OfBoundedSurface {
-	~TColGeom_HArray2OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray2OfBoundedSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_HArray2OfBoundedSurface::~TColGeom_HArray2OfBoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfBoundedCurve;
@@ -1523,12 +1453,10 @@ class TColGeom_SequenceNodeOfSequenceOfBoundedCurve : public TCollection_SeqNode
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_SequenceNodeOfSequenceOfBoundedCurve {
-	~TColGeom_SequenceNodeOfSequenceOfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceNodeOfSequenceOfBoundedCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_SequenceNodeOfSequenceOfBoundedCurve::~TColGeom_SequenceNodeOfSequenceOfBoundedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HSequenceOfBoundedSurface;
@@ -1594,12 +1522,10 @@ class TColGeom_HSequenceOfBoundedSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HSequenceOfBoundedSurface {
-	~TColGeom_HSequenceOfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HSequenceOfBoundedSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_HSequenceOfBoundedSurface::~TColGeom_HSequenceOfBoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_SequenceOfBoundedCurve;
@@ -1651,12 +1577,10 @@ class TColGeom_SequenceOfBoundedCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TColGeom_SequenceOfBoundedCurve {
-	~TColGeom_SequenceOfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceOfBoundedCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_SequenceOfBoundedCurve::~TColGeom_SequenceOfBoundedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_SequenceOfSurface;
@@ -1708,12 +1632,10 @@ class TColGeom_SequenceOfSurface : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TColGeom_SequenceOfSurface {
-	~TColGeom_SequenceOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceOfSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_SequenceOfSurface::~TColGeom_SequenceOfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HArray2OfBSplineSurface;
@@ -1761,12 +1683,10 @@ class TColGeom_HArray2OfBSplineSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HArray2OfBSplineSurface {
-	~TColGeom_HArray2OfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray2OfBSplineSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_HArray2OfBSplineSurface::~TColGeom_HArray2OfBSplineSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_Array2OfBoundedSurface;
@@ -1808,12 +1728,10 @@ class TColGeom_Array2OfBoundedSurface {
 		Handle_Geom_BoundedSurface & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend TColGeom_Array2OfBoundedSurface {
-	~TColGeom_Array2OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_Array2OfBoundedSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_Array2OfBoundedSurface::~TColGeom_Array2OfBoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HArray1OfBezierCurve;
@@ -1855,12 +1773,10 @@ class TColGeom_HArray1OfBezierCurve : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HArray1OfBezierCurve {
-	~TColGeom_HArray1OfBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfBezierCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_HArray1OfBezierCurve::~TColGeom_HArray1OfBezierCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_Array1OfBSplineCurve;
@@ -1898,12 +1814,10 @@ class TColGeom_Array1OfBSplineCurve {
 		Handle_Geom_BSplineCurve & operator()(const Standard_Integer Index);
 
 };
-%extend TColGeom_Array1OfBSplineCurve {
-	~TColGeom_Array1OfBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfBSplineCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_Array1OfBSplineCurve::~TColGeom_Array1OfBSplineCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_Array1OfBezierCurve;
@@ -1941,12 +1855,10 @@ class TColGeom_Array1OfBezierCurve {
 		Handle_Geom_BezierCurve & operator()(const Standard_Integer Index);
 
 };
-%extend TColGeom_Array1OfBezierCurve {
-	~TColGeom_Array1OfBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfBezierCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_Array1OfBezierCurve::~TColGeom_Array1OfBezierCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HArray1OfBoundedCurve;
@@ -1988,12 +1900,10 @@ class TColGeom_HArray1OfBoundedCurve : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HArray1OfBoundedCurve {
-	~TColGeom_HArray1OfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfBoundedCurve\n");}
-	}
-};
+%feature("shadow") TColGeom_HArray1OfBoundedCurve::~TColGeom_HArray1OfBoundedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_Array2OfBSplineSurface;
@@ -2035,12 +1945,10 @@ class TColGeom_Array2OfBSplineSurface {
 		Handle_Geom_BSplineSurface & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend TColGeom_Array2OfBSplineSurface {
-	~TColGeom_Array2OfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_Array2OfBSplineSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_Array2OfBSplineSurface::~TColGeom_Array2OfBSplineSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_HSequenceOfSurface;
@@ -2106,12 +2014,10 @@ class TColGeom_HSequenceOfSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_HSequenceOfSurface {
-	~TColGeom_HSequenceOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_HSequenceOfSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_HSequenceOfSurface::~TColGeom_HSequenceOfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfSurface;
@@ -2135,9 +2041,7 @@ class TColGeom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TColGeom_SequenceNodeOfSequenceOfSurface {
-	~TColGeom_SequenceNodeOfSequenceOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceNodeOfSequenceOfSurface\n");}
-	}
-};
+%feature("shadow") TColGeom_SequenceNodeOfSequenceOfSurface::~TColGeom_SequenceNodeOfSequenceOfSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

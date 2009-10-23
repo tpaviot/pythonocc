@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BSplCLib_dependencies.i
 
 
@@ -327,9 +331,7 @@ class BSplCLib {
 		void Resolution(const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, const Standard_Integer NumPoles, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer Degree, const Standard_Real Tolerance3D, Standard_Real &OutValue);
 
 };
-%extend BSplCLib {
-	~BSplCLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BSplCLib\n");}
-	}
-};
+%feature("shadow") BSplCLib::~BSplCLib %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

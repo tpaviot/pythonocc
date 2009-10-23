@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BinMPrsStd_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_BinMPrsStd_PositionDriver : public Handle_BinMDF_ADriver {
 	return (BinMPrsStd_PositionDriver*)$self->Access();
 	}
 };
-%extend Handle_BinMPrsStd_PositionDriver {
-	~Handle_BinMPrsStd_PositionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMPrsStd_PositionDriver\n");}
-	}
-};
+%feature("shadow") Handle_BinMPrsStd_PositionDriver::~Handle_BinMPrsStd_PositionDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BinMPrsStd_AISPresentationDriver;
@@ -87,12 +89,10 @@ class Handle_BinMPrsStd_AISPresentationDriver : public Handle_BinMDF_ADriver {
 	return (BinMPrsStd_AISPresentationDriver*)$self->Access();
 	}
 };
-%extend Handle_BinMPrsStd_AISPresentationDriver {
-	~Handle_BinMPrsStd_AISPresentationDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMPrsStd_AISPresentationDriver\n");}
-	}
-};
+%feature("shadow") Handle_BinMPrsStd_AISPresentationDriver::~Handle_BinMPrsStd_AISPresentationDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinMPrsStd;
@@ -104,12 +104,10 @@ class BinMPrsStd {
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };
-%extend BinMPrsStd {
-	~BinMPrsStd() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMPrsStd\n");}
-	}
-};
+%feature("shadow") BinMPrsStd::~BinMPrsStd %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinMPrsStd_AISPresentationDriver;
@@ -137,12 +135,10 @@ class BinMPrsStd_AISPresentationDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BinMPrsStd_AISPresentationDriver {
-	~BinMPrsStd_AISPresentationDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMPrsStd_AISPresentationDriver\n");}
-	}
-};
+%feature("shadow") BinMPrsStd_AISPresentationDriver::~BinMPrsStd_AISPresentationDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinMPrsStd_PositionDriver;
@@ -170,9 +166,7 @@ class BinMPrsStd_PositionDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BinMPrsStd_PositionDriver {
-	~BinMPrsStd_PositionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMPrsStd_PositionDriver\n");}
-	}
-};
+%feature("shadow") BinMPrsStd_PositionDriver::~BinMPrsStd_PositionDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

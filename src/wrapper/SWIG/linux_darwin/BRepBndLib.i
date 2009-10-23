@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepBndLib_dependencies.i
 
 
@@ -46,17 +50,7 @@ class BRepBndLib {
 		void AddClose(const TopoDS_Shape &S, Bnd_Box & B);
 
 };
-%extend BRepBndLib {
-	~BRepBndLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBndLib\n");}
-	}
-};
-
-%extend BRepBndLib {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepBndLib::~BRepBndLib %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

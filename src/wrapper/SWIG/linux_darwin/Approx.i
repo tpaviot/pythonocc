@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Approx_dependencies.i
 
 
@@ -69,12 +73,10 @@ class Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TColle
 	return (Approx_SequenceNodeOfSequenceOfArray1OfPnt2d*)$self->Access();
 	}
 };
-%extend Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
-	~Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d\n");}
-	}
-};
+%feature("shadow") Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d::~Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Approx_CurvlinFunc;
@@ -99,12 +101,10 @@ class Handle_Approx_CurvlinFunc : public Handle_MMgt_TShared {
 	return (Approx_CurvlinFunc*)$self->Access();
 	}
 };
-%extend Handle_Approx_CurvlinFunc {
-	~Handle_Approx_CurvlinFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Approx_CurvlinFunc\n");}
-	}
-};
+%feature("shadow") Handle_Approx_CurvlinFunc::~Handle_Approx_CurvlinFunc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Approx_SweepFunction;
@@ -129,12 +129,10 @@ class Handle_Approx_SweepFunction : public Handle_MMgt_TShared {
 	return (Approx_SweepFunction*)$self->Access();
 	}
 };
-%extend Handle_Approx_SweepFunction {
-	~Handle_Approx_SweepFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Approx_SweepFunction\n");}
-	}
-};
+%feature("shadow") Handle_Approx_SweepFunction::~Handle_Approx_SweepFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Approx_HArray1OfAdHSurface;
@@ -159,12 +157,10 @@ class Handle_Approx_HArray1OfAdHSurface : public Handle_MMgt_TShared {
 	return (Approx_HArray1OfAdHSurface*)$self->Access();
 	}
 };
-%extend Handle_Approx_HArray1OfAdHSurface {
-	~Handle_Approx_HArray1OfAdHSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Approx_HArray1OfAdHSurface\n");}
-	}
-};
+%feature("shadow") Handle_Approx_HArray1OfAdHSurface::~Handle_Approx_HArray1OfAdHSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Approx_HArray1OfGTrsf2d;
@@ -189,12 +185,10 @@ class Handle_Approx_HArray1OfGTrsf2d : public Handle_MMgt_TShared {
 	return (Approx_HArray1OfGTrsf2d*)$self->Access();
 	}
 };
-%extend Handle_Approx_HArray1OfGTrsf2d {
-	~Handle_Approx_HArray1OfGTrsf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Approx_HArray1OfGTrsf2d\n");}
-	}
-};
+%feature("shadow") Handle_Approx_HArray1OfGTrsf2d::~Handle_Approx_HArray1OfGTrsf2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal;
@@ -219,12 +213,10 @@ class Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal : public Handle_TColle
 	return (Approx_SequenceNodeOfSequenceOfHArray1OfReal*)$self->Access();
 	}
 };
-%extend Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal {
-	~Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal\n");}
-	}
-};
+%feature("shadow") Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal::~Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_SequenceNodeOfSequenceOfArray1OfPnt2d;
@@ -248,12 +240,10 @@ class Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
-	~Approx_SequenceNodeOfSequenceOfArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_SequenceNodeOfSequenceOfArray1OfPnt2d\n");}
-	}
-};
+%feature("shadow") Approx_SequenceNodeOfSequenceOfArray1OfPnt2d::~Approx_SequenceNodeOfSequenceOfArray1OfPnt2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_Curve3d;
@@ -279,12 +269,10 @@ class Approx_Curve3d {
 		};
 
 };
-%extend Approx_Curve3d {
-	~Approx_Curve3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_Curve3d\n");}
-	}
-};
+%feature("shadow") Approx_Curve3d::~Approx_Curve3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_MyLeastSquareOfFitAndDivide2d;
@@ -300,12 +288,10 @@ class Approx_MyLeastSquareOfFitAndDivide2d {
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend Approx_MyLeastSquareOfFitAndDivide2d {
-	~Approx_MyLeastSquareOfFitAndDivide2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide2d\n");}
-	}
-};
+%feature("shadow") Approx_MyLeastSquareOfFitAndDivide2d::~Approx_MyLeastSquareOfFitAndDivide2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_SweepFunction;
@@ -359,12 +345,10 @@ class Approx_SweepFunction : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Approx_SweepFunction {
-	~Approx_SweepFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_SweepFunction\n");}
-	}
-};
+%feature("shadow") Approx_SweepFunction::~Approx_SweepFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_CurvilinearParameter;
@@ -402,12 +386,10 @@ class Approx_CurvilinearParameter {
 		};
 
 };
-%extend Approx_CurvilinearParameter {
-	~Approx_CurvilinearParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_CurvilinearParameter\n");}
-	}
-};
+%feature("shadow") Approx_CurvilinearParameter::~Approx_CurvilinearParameter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_MCurvesToBSpCurve;
@@ -429,12 +411,10 @@ class Approx_MCurvesToBSpCurve {
 		const AppParCurves_MultiBSpCurve & ChangeValue();
 
 };
-%extend Approx_MCurvesToBSpCurve {
-	~Approx_MCurvesToBSpCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_MCurvesToBSpCurve\n");}
-	}
-};
+%feature("shadow") Approx_MCurvesToBSpCurve::~Approx_MCurvesToBSpCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_SequenceNodeOfSequenceOfHArray1OfReal;
@@ -458,12 +438,10 @@ class Approx_SequenceNodeOfSequenceOfHArray1OfReal : public TCollection_SeqNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
-	~Approx_SequenceNodeOfSequenceOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_SequenceNodeOfSequenceOfHArray1OfReal\n");}
-	}
-};
+%feature("shadow") Approx_SequenceNodeOfSequenceOfHArray1OfReal::~Approx_SequenceNodeOfSequenceOfHArray1OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_Array1OfGTrsf2d;
@@ -501,12 +479,10 @@ class Approx_Array1OfGTrsf2d {
 		gp_GTrsf2d & operator()(const Standard_Integer Index);
 
 };
-%extend Approx_Array1OfGTrsf2d {
-	~Approx_Array1OfGTrsf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_Array1OfGTrsf2d\n");}
-	}
-};
+%feature("shadow") Approx_Array1OfGTrsf2d::~Approx_Array1OfGTrsf2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_HArray1OfAdHSurface;
@@ -548,12 +524,10 @@ class Approx_HArray1OfAdHSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Approx_HArray1OfAdHSurface {
-	~Approx_HArray1OfAdHSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_HArray1OfAdHSurface\n");}
-	}
-};
+%feature("shadow") Approx_HArray1OfAdHSurface::~Approx_HArray1OfAdHSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_Curve2d;
@@ -573,12 +547,10 @@ class Approx_Curve2d {
 		Standard_Real MaxError2dV() const;
 
 };
-%extend Approx_Curve2d {
-	~Approx_Curve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_Curve2d\n");}
-	}
-};
+%feature("shadow") Approx_Curve2d::~Approx_Curve2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_FitAndDivide;
@@ -610,12 +582,10 @@ class Approx_FitAndDivide {
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend Approx_FitAndDivide {
-	~Approx_FitAndDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_FitAndDivide\n");}
-	}
-};
+%feature("shadow") Approx_FitAndDivide::~Approx_FitAndDivide %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_HArray1OfGTrsf2d;
@@ -657,12 +627,10 @@ class Approx_HArray1OfGTrsf2d : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Approx_HArray1OfGTrsf2d {
-	~Approx_HArray1OfGTrsf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_HArray1OfGTrsf2d\n");}
-	}
-};
+%feature("shadow") Approx_HArray1OfGTrsf2d::~Approx_HArray1OfGTrsf2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_FitAndDivide2d;
@@ -694,12 +662,10 @@ class Approx_FitAndDivide2d {
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend Approx_FitAndDivide2d {
-	~Approx_FitAndDivide2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_FitAndDivide2d\n");}
-	}
-};
+%feature("shadow") Approx_FitAndDivide2d::~Approx_FitAndDivide2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_CurveOnSurface;
@@ -723,12 +689,10 @@ class Approx_CurveOnSurface {
 		Standard_Real MaxError2dV() const;
 
 };
-%extend Approx_CurveOnSurface {
-	~Approx_CurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_CurveOnSurface\n");}
-	}
-};
+%feature("shadow") Approx_CurveOnSurface::~Approx_CurveOnSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_CurvlinFunc;
@@ -782,12 +746,10 @@ class Approx_CurvlinFunc : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Approx_CurvlinFunc {
-	~Approx_CurvlinFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_CurvlinFunc\n");}
-	}
-};
+%feature("shadow") Approx_CurvlinFunc::~Approx_CurvlinFunc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_MyLeastSquareOfFitAndDivide;
@@ -803,12 +765,10 @@ class Approx_MyLeastSquareOfFitAndDivide {
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend Approx_MyLeastSquareOfFitAndDivide {
-	~Approx_MyLeastSquareOfFitAndDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide\n");}
-	}
-};
+%feature("shadow") Approx_MyLeastSquareOfFitAndDivide::~Approx_MyLeastSquareOfFitAndDivide %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_Array1OfAdHSurface;
@@ -846,12 +806,10 @@ class Approx_Array1OfAdHSurface {
 		Handle_Adaptor3d_HSurface & operator()(const Standard_Integer Index);
 
 };
-%extend Approx_Array1OfAdHSurface {
-	~Approx_Array1OfAdHSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_Array1OfAdHSurface\n");}
-	}
-};
+%feature("shadow") Approx_Array1OfAdHSurface::~Approx_Array1OfAdHSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_SequenceOfArray1OfPnt2d;
@@ -903,12 +861,10 @@ class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Approx_SequenceOfArray1OfPnt2d {
-	~Approx_SequenceOfArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_SequenceOfArray1OfPnt2d\n");}
-	}
-};
+%feature("shadow") Approx_SequenceOfArray1OfPnt2d::~Approx_SequenceOfArray1OfPnt2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_SameParameter;
@@ -930,12 +886,10 @@ class Approx_SameParameter {
 		Handle_Geom2d_BSplineCurve Curve2d() const;
 
 };
-%extend Approx_SameParameter {
-	~Approx_SameParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_SameParameter\n");}
-	}
-};
+%feature("shadow") Approx_SameParameter::~Approx_SameParameter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_SequenceOfHArray1OfReal;
@@ -987,12 +941,10 @@ class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Approx_SequenceOfHArray1OfReal {
-	~Approx_SequenceOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_SequenceOfHArray1OfReal\n");}
-	}
-};
+%feature("shadow") Approx_SequenceOfHArray1OfReal::~Approx_SequenceOfHArray1OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Approx_SweepApproximation;
@@ -1060,9 +1012,7 @@ class Approx_SweepApproximation {
 		};
 
 };
-%extend Approx_SweepApproximation {
-	~Approx_SweepApproximation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Approx_SweepApproximation\n");}
-	}
-};
+%feature("shadow") Approx_SweepApproximation::~Approx_SweepApproximation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

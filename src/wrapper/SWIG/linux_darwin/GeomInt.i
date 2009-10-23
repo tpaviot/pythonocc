@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GeomInt_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public Ha
 	return (GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation*)$self->Access();
 	}
 };
-%extend Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
-	~Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation\n");}
-	}
-};
+%feature("shadow") Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation::~Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox;
@@ -84,12 +86,10 @@ class GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
 		Standard_Real AverageError() const;
 
 };
-%extend GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
-	~GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox::~GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox;
@@ -113,12 +113,10 @@ class GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
 		Standard_Real AverageError() const;
 
 };
-%extend GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
-	~GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox::~GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox;
@@ -164,12 +162,10 @@ class GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox : public math_Functio
 		const IntSurf_Quadric & ISurface() const;
 
 };
-%extend GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox {
-	~GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox::~GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox;
@@ -211,12 +207,10 @@ class GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox : public 
 		void SetLastLambda(const Standard_Real l2);
 
 };
-%extend GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox {
-	~GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox::~GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_MyGradientbisOfTheComputeLineOfWLApprox;
@@ -238,12 +232,10 @@ class GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
 		Standard_Real AverageError() const;
 
 };
-%extend GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
-	~GeomInt_MyGradientbisOfTheComputeLineOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_MyGradientbisOfTheComputeLineOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_MyGradientbisOfTheComputeLineOfWLApprox::~GeomInt_MyGradientbisOfTheComputeLineOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox;
@@ -275,12 +267,10 @@ class GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox : public m
 		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
 
 };
-%extend GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox {
-	~GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox::~GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_SequenceOfParameterAndOrientation;
@@ -332,12 +322,10 @@ class GeomInt_SequenceOfParameterAndOrientation : public TCollection_BaseSequenc
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend GeomInt_SequenceOfParameterAndOrientation {
-	~GeomInt_SequenceOfParameterAndOrientation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_SequenceOfParameterAndOrientation\n");}
-	}
-};
+%feature("shadow") GeomInt_SequenceOfParameterAndOrientation::~GeomInt_SequenceOfParameterAndOrientation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation;
@@ -361,12 +349,10 @@ class GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public TCollecti
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
-	~GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation\n");}
-	}
-};
+%feature("shadow") GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation::~GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_TheMultiLineOfWLApprox;
@@ -402,12 +388,10 @@ class GeomInt_TheMultiLineOfWLApprox {
 		GeomInt_TheMultiLineOfWLApprox MakeMLBetween(const Standard_Integer Low, const Standard_Integer High, const Standard_Integer NbPointsToInsert) const;
 
 };
-%extend GeomInt_TheMultiLineOfWLApprox {
-	~GeomInt_TheMultiLineOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_TheMultiLineOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_TheMultiLineOfWLApprox::~GeomInt_TheMultiLineOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox;
@@ -419,12 +403,10 @@ class GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox : public ma
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
 
 };
-%extend GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox {
-	~GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox::~GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox;
@@ -456,12 +438,10 @@ class GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox : public math
 		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
 
 };
-%extend GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox {
-	~GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox::~GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
@@ -501,12 +481,10 @@ class GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox : public math
 		const Handle_Adaptor3d_HSurface & AuxillarSurface2() const;
 
 };
-%extend GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
-	~GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox::~GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
@@ -556,12 +534,10 @@ class GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox {
 		const math_IntegerVector & KIndex() const;
 
 };
-%extend GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox {
-	~GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox::~GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_ThePrmPrmSvSurfacesOfWLApprox;
@@ -581,12 +557,10 @@ class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
 
 };
-%extend GeomInt_ThePrmPrmSvSurfacesOfWLApprox {
-	~GeomInt_ThePrmPrmSvSurfacesOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_ThePrmPrmSvSurfacesOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_ThePrmPrmSvSurfacesOfWLApprox::~GeomInt_ThePrmPrmSvSurfacesOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
@@ -636,12 +610,10 @@ class GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox {
 		const math_IntegerVector & KIndex() const;
 
 };
-%extend GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox {
-	~GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox::~GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_TheComputeLineBezierOfWLApprox;
@@ -685,12 +657,10 @@ class GeomInt_TheComputeLineBezierOfWLApprox {
 		const TColStd_Array1OfReal & Parameters(const Standard_Integer Index=1) const;
 
 };
-%extend GeomInt_TheComputeLineBezierOfWLApprox {
-	~GeomInt_TheComputeLineBezierOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_TheComputeLineBezierOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_TheComputeLineBezierOfWLApprox::~GeomInt_TheComputeLineBezierOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
@@ -740,12 +710,10 @@ class GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
 		const math_IntegerVector & KIndex() const;
 
 };
-%extend GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
-	~GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox::~GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox;
@@ -757,12 +725,10 @@ class GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox : public
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
 
 };
-%extend GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox {
-	~GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox::~GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_LineTool;
@@ -780,12 +746,10 @@ class GeomInt_LineTool {
 		Standard_Real LastParameter(const Handle_IntPatch_Line &L);
 
 };
-%extend GeomInt_LineTool {
-	~GeomInt_LineTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_LineTool\n");}
-	}
-};
+%feature("shadow") GeomInt_LineTool::~GeomInt_LineTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_TheComputeLineOfWLApprox;
@@ -833,12 +797,10 @@ class GeomInt_TheComputeLineOfWLApprox {
 		const TColStd_Array1OfReal & Parameters() const;
 
 };
-%extend GeomInt_TheComputeLineOfWLApprox {
-	~GeomInt_TheComputeLineOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_TheComputeLineOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_TheComputeLineOfWLApprox::~GeomInt_TheComputeLineOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox;
@@ -850,12 +812,10 @@ class GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox : publi
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
 
 };
-%extend GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox {
-	~GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox::~GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_ParameterAndOrientation;
@@ -877,12 +837,10 @@ class GeomInt_ParameterAndOrientation {
 		TopAbs_Orientation Orientation2() const;
 
 };
-%extend GeomInt_ParameterAndOrientation {
-	~GeomInt_ParameterAndOrientation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_ParameterAndOrientation\n");}
-	}
-};
+%feature("shadow") GeomInt_ParameterAndOrientation::~GeomInt_ParameterAndOrientation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_TheMultiLineToolOfWLApprox;
@@ -922,12 +880,10 @@ class GeomInt_TheMultiLineToolOfWLApprox {
 		Approx_Status WhatStatus(const GeomInt_TheMultiLineOfWLApprox &ML, const Standard_Integer arg1, const Standard_Integer arg2);
 
 };
-%extend GeomInt_TheMultiLineToolOfWLApprox {
-	~GeomInt_TheMultiLineToolOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_TheMultiLineToolOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_TheMultiLineToolOfWLApprox::~GeomInt_TheMultiLineToolOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_LineConstructor;
@@ -947,12 +903,10 @@ class GeomInt_LineConstructor {
 		void Part(const Standard_Integer I, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend GeomInt_LineConstructor {
-	~GeomInt_LineConstructor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_LineConstructor\n");}
-	}
-};
+%feature("shadow") GeomInt_LineConstructor::~GeomInt_LineConstructor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
@@ -986,12 +940,10 @@ class GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
 		GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox & Function();
 
 };
-%extend GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
-	~GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox::~GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomInt_TheImpPrmSvSurfacesOfWLApprox;
@@ -1013,9 +965,7 @@ class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
 
 };
-%extend GeomInt_TheImpPrmSvSurfacesOfWLApprox {
-	~GeomInt_TheImpPrmSvSurfacesOfWLApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomInt_TheImpPrmSvSurfacesOfWLApprox\n");}
-	}
-};
+%feature("shadow") GeomInt_TheImpPrmSvSurfacesOfWLApprox::~GeomInt_TheImpPrmSvSurfacesOfWLApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

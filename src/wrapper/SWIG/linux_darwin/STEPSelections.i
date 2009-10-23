@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include STEPSelections_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_STEPSelections_AssemblyLink : public Handle_MMgt_TShared {
 	return (STEPSelections_AssemblyLink*)$self->Access();
 	}
 };
-%extend Handle_STEPSelections_AssemblyLink {
-	~Handle_STEPSelections_AssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_AssemblyLink\n");}
-	}
-};
+%feature("shadow") Handle_STEPSelections_AssemblyLink::~Handle_STEPSelections_AssemblyLink %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPSelections_SelectForTransfer;
@@ -87,12 +89,10 @@ class Handle_STEPSelections_SelectForTransfer : public Handle_XSControl_SelectFo
 	return (STEPSelections_SelectForTransfer*)$self->Access();
 	}
 };
-%extend Handle_STEPSelections_SelectForTransfer {
-	~Handle_STEPSelections_SelectForTransfer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectForTransfer\n");}
-	}
-};
+%feature("shadow") Handle_STEPSelections_SelectForTransfer::~Handle_STEPSelections_SelectForTransfer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPSelections_SelectGSCurves;
@@ -117,12 +117,10 @@ class Handle_STEPSelections_SelectGSCurves : public Handle_IFSelect_SelectExplor
 	return (STEPSelections_SelectGSCurves*)$self->Access();
 	}
 };
-%extend Handle_STEPSelections_SelectGSCurves {
-	~Handle_STEPSelections_SelectGSCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectGSCurves\n");}
-	}
-};
+%feature("shadow") Handle_STEPSelections_SelectGSCurves::~Handle_STEPSelections_SelectGSCurves %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPSelections_SelectDerived;
@@ -147,12 +145,10 @@ class Handle_STEPSelections_SelectDerived : public Handle_StepSelect_StepType {
 	return (STEPSelections_SelectDerived*)$self->Access();
 	}
 };
-%extend Handle_STEPSelections_SelectDerived {
-	~Handle_STEPSelections_SelectDerived() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectDerived\n");}
-	}
-};
+%feature("shadow") Handle_STEPSelections_SelectDerived::~Handle_STEPSelections_SelectDerived %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPSelections_SelectInstances;
@@ -177,12 +173,10 @@ class Handle_STEPSelections_SelectInstances : public Handle_IFSelect_SelectExplo
 	return (STEPSelections_SelectInstances*)$self->Access();
 	}
 };
-%extend Handle_STEPSelections_SelectInstances {
-	~Handle_STEPSelections_SelectInstances() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectInstances\n");}
-	}
-};
+%feature("shadow") Handle_STEPSelections_SelectInstances::~Handle_STEPSelections_SelectInstances %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPSelections_SelectAssembly;
@@ -207,12 +201,10 @@ class Handle_STEPSelections_SelectAssembly : public Handle_IFSelect_SelectExplor
 	return (STEPSelections_SelectAssembly*)$self->Access();
 	}
 };
-%extend Handle_STEPSelections_SelectAssembly {
-	~Handle_STEPSelections_SelectAssembly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectAssembly\n");}
-	}
-};
+%feature("shadow") Handle_STEPSelections_SelectAssembly::~Handle_STEPSelections_SelectAssembly %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPSelections_HSequenceOfAssemblyLink;
@@ -237,12 +229,10 @@ class Handle_STEPSelections_HSequenceOfAssemblyLink : public Handle_MMgt_TShared
 	return (STEPSelections_HSequenceOfAssemblyLink*)$self->Access();
 	}
 };
-%extend Handle_STEPSelections_HSequenceOfAssemblyLink {
-	~Handle_STEPSelections_HSequenceOfAssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_HSequenceOfAssemblyLink\n");}
-	}
-};
+%feature("shadow") Handle_STEPSelections_HSequenceOfAssemblyLink::~Handle_STEPSelections_HSequenceOfAssemblyLink %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPSelections_AssemblyComponent;
@@ -267,12 +257,10 @@ class Handle_STEPSelections_AssemblyComponent : public Handle_MMgt_TShared {
 	return (STEPSelections_AssemblyComponent*)$self->Access();
 	}
 };
-%extend Handle_STEPSelections_AssemblyComponent {
-	~Handle_STEPSelections_AssemblyComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_AssemblyComponent\n");}
-	}
-};
+%feature("shadow") Handle_STEPSelections_AssemblyComponent::~Handle_STEPSelections_AssemblyComponent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink;
@@ -297,12 +285,10 @@ class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public Handle
 	return (STEPSelections_SequenceNodeOfSequenceOfAssemblyLink*)$self->Access();
 	}
 };
-%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
-	~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink\n");}
-	}
-};
+%feature("shadow") Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink::~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPSelections_SelectFaces;
@@ -327,12 +313,10 @@ class Handle_STEPSelections_SelectFaces : public Handle_IFSelect_SelectExplore {
 	return (STEPSelections_SelectFaces*)$self->Access();
 	}
 };
-%extend Handle_STEPSelections_SelectFaces {
-	~Handle_STEPSelections_SelectFaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectFaces\n");}
-	}
-};
+%feature("shadow") Handle_STEPSelections_SelectFaces::~Handle_STEPSelections_SelectFaces %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
@@ -357,12 +341,10 @@ class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public H
 	return (STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent*)$self->Access();
 	}
 };
-%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
-	~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent\n");}
-	}
-};
+%feature("shadow") Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent::~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_SequenceOfAssemblyComponent;
@@ -414,12 +396,10 @@ class STEPSelections_SequenceOfAssemblyComponent : public TCollection_BaseSequen
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend STEPSelections_SequenceOfAssemblyComponent {
-	~STEPSelections_SequenceOfAssemblyComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceOfAssemblyComponent\n");}
-	}
-};
+%feature("shadow") STEPSelections_SequenceOfAssemblyComponent::~STEPSelections_SequenceOfAssemblyComponent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_AssemblyExplorer;
@@ -449,12 +429,10 @@ class STEPSelections_AssemblyExplorer {
 		Handle_STEPSelections_AssemblyComponent Root(const Standard_Integer rank=1) const;
 
 };
-%extend STEPSelections_AssemblyExplorer {
-	~STEPSelections_AssemblyExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_AssemblyExplorer\n");}
-	}
-};
+%feature("shadow") STEPSelections_AssemblyExplorer::~STEPSelections_AssemblyExplorer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_AssemblyComponent;
@@ -486,12 +464,10 @@ class STEPSelections_AssemblyComponent : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPSelections_AssemblyComponent {
-	~STEPSelections_AssemblyComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_AssemblyComponent\n");}
-	}
-};
+%feature("shadow") STEPSelections_AssemblyComponent::~STEPSelections_AssemblyComponent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
@@ -515,12 +491,10 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollect
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
-	~STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent\n");}
-	}
-};
+%feature("shadow") STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent::~STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_SequenceNodeOfSequenceOfAssemblyLink;
@@ -544,12 +518,10 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_S
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
-	~STEPSelections_SequenceNodeOfSequenceOfAssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceNodeOfSequenceOfAssemblyLink\n");}
-	}
-};
+%feature("shadow") STEPSelections_SequenceNodeOfSequenceOfAssemblyLink::~STEPSelections_SequenceNodeOfSequenceOfAssemblyLink %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_Counter;
@@ -583,12 +555,10 @@ class STEPSelections_Counter {
 		Standard_Integer NbSourceWires() const;
 
 };
-%extend STEPSelections_Counter {
-	~STEPSelections_Counter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_Counter\n");}
-	}
-};
+%feature("shadow") STEPSelections_Counter::~STEPSelections_Counter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_SelectInstances;
@@ -616,12 +586,10 @@ class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPSelections_SelectInstances {
-	~STEPSelections_SelectInstances() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectInstances\n");}
-	}
-};
+%feature("shadow") STEPSelections_SelectInstances::~STEPSelections_SelectInstances %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_SelectDerived;
@@ -645,12 +613,10 @@ class STEPSelections_SelectDerived : public StepSelect_StepType {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPSelections_SelectDerived {
-	~STEPSelections_SelectDerived() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectDerived\n");}
-	}
-};
+%feature("shadow") STEPSelections_SelectDerived::~STEPSelections_SelectDerived %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_SelectForTransfer;
@@ -676,12 +642,10 @@ class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPSelections_SelectForTransfer {
-	~STEPSelections_SelectForTransfer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectForTransfer\n");}
-	}
-};
+%feature("shadow") STEPSelections_SelectForTransfer::~STEPSelections_SelectForTransfer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_HSequenceOfAssemblyLink;
@@ -747,12 +711,10 @@ class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPSelections_HSequenceOfAssemblyLink {
-	~STEPSelections_HSequenceOfAssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_HSequenceOfAssemblyLink\n");}
-	}
-};
+%feature("shadow") STEPSelections_HSequenceOfAssemblyLink::~STEPSelections_HSequenceOfAssemblyLink %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_SelectGSCurves;
@@ -778,12 +740,10 @@ class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPSelections_SelectGSCurves {
-	~STEPSelections_SelectGSCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectGSCurves\n");}
-	}
-};
+%feature("shadow") STEPSelections_SelectGSCurves::~STEPSelections_SelectGSCurves %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_SequenceOfAssemblyLink;
@@ -835,12 +795,10 @@ class STEPSelections_SequenceOfAssemblyLink : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend STEPSelections_SequenceOfAssemblyLink {
-	~STEPSelections_SequenceOfAssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceOfAssemblyLink\n");}
-	}
-};
+%feature("shadow") STEPSelections_SequenceOfAssemblyLink::~STEPSelections_SequenceOfAssemblyLink %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_SelectAssembly;
@@ -866,12 +824,10 @@ class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPSelections_SelectAssembly {
-	~STEPSelections_SelectAssembly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectAssembly\n");}
-	}
-};
+%feature("shadow") STEPSelections_SelectAssembly::~STEPSelections_SelectAssembly %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_AssemblyLink;
@@ -907,12 +863,10 @@ class STEPSelections_AssemblyLink : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPSelections_AssemblyLink {
-	~STEPSelections_AssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_AssemblyLink\n");}
-	}
-};
+%feature("shadow") STEPSelections_AssemblyLink::~STEPSelections_AssemblyLink %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor STEPSelections_SelectFaces;
@@ -938,9 +892,7 @@ class STEPSelections_SelectFaces : public IFSelect_SelectExplore {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend STEPSelections_SelectFaces {
-	~STEPSelections_SelectFaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectFaces\n");}
-	}
-};
+%feature("shadow") STEPSelections_SelectFaces::~STEPSelections_SelectFaces %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

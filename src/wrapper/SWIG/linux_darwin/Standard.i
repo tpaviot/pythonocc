@@ -27,15 +27,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
 
 %include Standard_dependencies.i
 
 
 %include Standard_headers.i
-
-%pythoncode {
-import GarbageCollector
-};
 
 typedef unsigned char Standard_Byte;
 typedef jmp_buf Standard_JmpBuf;
@@ -146,8 +145,7 @@ class Handle_Standard_Transient {
 };
 %feature("shadow") Handle_Standard_Transient::~Handle_Standard_Transient %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -175,8 +173,7 @@ class Handle_Standard_Failure : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_Standard_Failure::~Handle_Standard_Failure %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -204,8 +201,7 @@ class Handle_Standard_DomainError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Standard_DomainError::~Handle_Standard_DomainError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -233,8 +229,7 @@ class Handle_Standard_RangeError : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_RangeError::~Handle_Standard_RangeError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -262,8 +257,7 @@ class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 };
 %feature("shadow") Handle_Standard_NullValue::~Handle_Standard_NullValue %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -291,8 +285,7 @@ class Handle_Standard_LicenseError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Standard_LicenseError::~Handle_Standard_LicenseError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -320,8 +313,7 @@ class Handle_Standard_LicenseNotFound : public Handle_Standard_LicenseError {
 };
 %feature("shadow") Handle_Standard_LicenseNotFound::~Handle_Standard_LicenseNotFound %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -349,8 +341,7 @@ class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_TypeMismatch::~Handle_Standard_TypeMismatch %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -378,8 +369,7 @@ class Handle_Standard_OutOfRange : public Handle_Standard_RangeError {
 };
 %feature("shadow") Handle_Standard_OutOfRange::~Handle_Standard_OutOfRange %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -407,8 +397,7 @@ class Handle_Standard_NumericError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Standard_NumericError::~Handle_Standard_NumericError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -436,8 +425,7 @@ class Handle_Standard_NoMoreObject : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_NoMoreObject::~Handle_Standard_NoMoreObject %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -465,8 +453,7 @@ class Handle_Standard_ProgramError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Standard_ProgramError::~Handle_Standard_ProgramError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -494,8 +481,7 @@ class Handle_Standard_NotImplemented : public Handle_Standard_ProgramError {
 };
 %feature("shadow") Handle_Standard_NotImplemented::~Handle_Standard_NotImplemented %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -523,8 +509,7 @@ class Handle_Standard_NullObject : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_NullObject::~Handle_Standard_NullObject %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -574,8 +559,7 @@ class Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_Standard_Persistent::~Handle_Standard_Persistent %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -603,8 +587,7 @@ class Handle_Standard_AbortiveTransaction : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Standard_AbortiveTransaction::~Handle_Standard_AbortiveTransaction %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -632,8 +615,7 @@ class Handle_Standard_DimensionError : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_DimensionError::~Handle_Standard_DimensionError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -661,8 +643,7 @@ class Handle_Standard_DivideByZero : public Handle_Standard_NumericError {
 };
 %feature("shadow") Handle_Standard_DivideByZero::~Handle_Standard_DivideByZero %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -690,8 +671,7 @@ class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_NoSuchObject::~Handle_Standard_NoSuchObject %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -719,8 +699,7 @@ class Handle_Standard_ConstructionError : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_ConstructionError::~Handle_Standard_ConstructionError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -748,8 +727,7 @@ class Handle_Standard_DimensionMismatch : public Handle_Standard_DimensionError 
 };
 %feature("shadow") Handle_Standard_DimensionMismatch::~Handle_Standard_DimensionMismatch %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -777,8 +755,7 @@ class Handle_Standard_OutOfMemory : public Handle_Standard_ProgramError {
 };
 %feature("shadow") Handle_Standard_OutOfMemory::~Handle_Standard_OutOfMemory %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -806,8 +783,7 @@ class Handle_Standard_Type : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_Standard_Type::~Handle_Standard_Type %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -835,8 +811,7 @@ class Handle_Standard_Overflow : public Handle_Standard_NumericError {
 };
 %feature("shadow") Handle_Standard_Overflow::~Handle_Standard_Overflow %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -864,8 +839,7 @@ class Handle_Standard_NegativeValue : public Handle_Standard_RangeError {
 };
 %feature("shadow") Handle_Standard_NegativeValue::~Handle_Standard_NegativeValue %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -893,8 +867,7 @@ class Handle_Standard_ImmutableObject : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_ImmutableObject::~Handle_Standard_ImmutableObject %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -922,8 +895,7 @@ class Handle_Standard_Underflow : public Handle_Standard_NumericError {
 };
 %feature("shadow") Handle_Standard_Underflow::~Handle_Standard_Underflow %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -951,8 +923,7 @@ class Handle_Standard_MultiplyDefined : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_MultiplyDefined::~Handle_Standard_MultiplyDefined %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -980,8 +951,7 @@ class Handle_Standard_TooManyUsers : public Handle_Standard_LicenseError {
 };
 %feature("shadow") Handle_Standard_TooManyUsers::~Handle_Standard_TooManyUsers %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1030,8 +1000,7 @@ class Standard_Transient {
 };
 %feature("shadow") Standard_Transient::~Standard_Transient %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1086,8 +1055,7 @@ class Standard_Failure : public Standard_Transient {
 };
 %feature("shadow") Standard_Failure::~Standard_Failure %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1114,8 +1082,7 @@ class Standard_DomainError : public Standard_Failure {
 };
 %feature("shadow") Standard_DomainError::~Standard_DomainError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1142,8 +1109,7 @@ class Standard_NoSuchObject : public Standard_DomainError {
 };
 %feature("shadow") Standard_NoSuchObject::~Standard_NoSuchObject %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1176,8 +1142,7 @@ class Standard_RangeError : public Standard_DomainError {
 };
 %feature("shadow") Standard_RangeError::~Standard_RangeError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1204,8 +1169,7 @@ class Standard_NullValue : public Standard_RangeError {
 };
 %feature("shadow") Standard_NullValue::~Standard_NullValue %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1238,8 +1202,7 @@ class Standard_NumericError : public Standard_Failure {
 };
 %feature("shadow") Standard_NumericError::~Standard_NumericError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1260,8 +1223,7 @@ class Standard_MMgrRoot {
 };
 %feature("shadow") Standard_MMgrRoot::~Standard_MMgrRoot %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1280,8 +1242,7 @@ class Standard_MMgrRaw : public Standard_MMgrRoot {
 };
 %feature("shadow") Standard_MMgrRaw::~Standard_MMgrRaw %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1314,8 +1275,7 @@ class Standard_NoMoreObject : public Standard_DomainError {
 };
 %feature("shadow") Standard_NoMoreObject::~Standard_NoMoreObject %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1348,8 +1308,7 @@ class Standard_ProgramError : public Standard_Failure {
 };
 %feature("shadow") Standard_ProgramError::~Standard_ProgramError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1376,8 +1335,7 @@ class Standard_NotImplemented : public Standard_ProgramError {
 };
 %feature("shadow") Standard_NotImplemented::~Standard_NotImplemented %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1410,8 +1368,7 @@ class Standard_ConstructionError : public Standard_DomainError {
 };
 %feature("shadow") Standard_ConstructionError::~Standard_ConstructionError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1444,8 +1401,7 @@ class Standard_TypeMismatch : public Standard_DomainError {
 };
 %feature("shadow") Standard_TypeMismatch::~Standard_TypeMismatch %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1468,8 +1424,7 @@ class Standard_MMgrOpt : public Standard_MMgrRoot {
 };
 %feature("shadow") Standard_MMgrOpt::~Standard_MMgrOpt %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1505,8 +1460,7 @@ class Standard_Storable {
 };
 %feature("shadow") Standard_Storable::~Standard_Storable %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1539,8 +1493,7 @@ class Standard_DimensionError : public Standard_DomainError {
 };
 %feature("shadow") Standard_DimensionError::~Standard_DimensionError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1567,8 +1520,7 @@ class Standard_DimensionMismatch : public Standard_DimensionError {
 };
 %feature("shadow") Standard_DimensionMismatch::~Standard_DimensionMismatch %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1637,8 +1589,7 @@ class Standard_Type : public Standard_Transient {
 };
 %feature("shadow") Standard_Type::~Standard_Type %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1655,8 +1606,7 @@ class Standard_ErrorHandlerCallback {
 };
 %feature("shadow") Standard_ErrorHandlerCallback::~Standard_ErrorHandlerCallback %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1689,8 +1639,7 @@ class Standard_NegativeValue : public Standard_RangeError {
 };
 %feature("shadow") Standard_NegativeValue::~Standard_NegativeValue %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1709,8 +1658,7 @@ class Standard_Mutex : public Standard_ErrorHandlerCallback {
 };
 %feature("shadow") Standard_Mutex::~Standard_Mutex %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1743,8 +1691,7 @@ class Standard_ImmutableObject : public Standard_DomainError {
 };
 %feature("shadow") Standard_ImmutableObject::~Standard_ImmutableObject %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1777,8 +1724,7 @@ class Standard_AbortiveTransaction : public Standard_Failure {
 };
 %feature("shadow") Standard_AbortiveTransaction::~Standard_AbortiveTransaction %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1805,8 +1751,7 @@ class Standard_AncestorIterator {
 };
 %feature("shadow") Standard_AncestorIterator::~Standard_AncestorIterator %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1839,8 +1784,7 @@ class Standard_MultiplyDefined : public Standard_DomainError {
 };
 %feature("shadow") Standard_MultiplyDefined::~Standard_MultiplyDefined %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1873,8 +1817,7 @@ class Standard_LicenseError : public Standard_Failure {
 };
 %feature("shadow") Standard_LicenseError::~Standard_LicenseError %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1901,8 +1844,7 @@ class Standard_TooManyUsers : public Standard_LicenseError {
 };
 %feature("shadow") Standard_TooManyUsers::~Standard_TooManyUsers %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1935,8 +1877,7 @@ class Standard_LicenseNotFound : public Standard_LicenseError {
 };
 %feature("shadow") Standard_LicenseNotFound::~Standard_LicenseNotFound %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1961,8 +1902,7 @@ class Standard {
 };
 %feature("shadow") Standard::~Standard %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -1995,8 +1935,7 @@ class Standard_Underflow : public Standard_NumericError {
 };
 %feature("shadow") Standard_Underflow::~Standard_Underflow %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2029,8 +1968,7 @@ class Standard_Overflow : public Standard_NumericError {
 };
 %feature("shadow") Standard_Overflow::~Standard_Overflow %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2063,8 +2001,7 @@ class Standard_NullObject : public Standard_DomainError {
 };
 %feature("shadow") Standard_NullObject::~Standard_NullObject %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2165,8 +2102,7 @@ class Standard_GUID {
 };
 %feature("shadow") Standard_GUID::~Standard_GUID %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 %extend Standard_GUID {
 	Standard_PCharacter ToString() {
@@ -2200,8 +2136,7 @@ class Standard_ErrorHandler {
 };
 %feature("shadow") Standard_ErrorHandler::~Standard_ErrorHandler %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2246,8 +2181,7 @@ class Standard_Persistent {
 };
 %feature("shadow") Standard_Persistent::~Standard_Persistent %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2280,8 +2214,7 @@ class Standard_OutOfRange : public Standard_RangeError {
 };
 %feature("shadow") Standard_OutOfRange::~Standard_OutOfRange %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2314,8 +2247,7 @@ class Standard_DivideByZero : public Standard_NumericError {
 };
 %feature("shadow") Standard_DivideByZero::~Standard_DivideByZero %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}
 
 
@@ -2348,6 +2280,5 @@ class Standard_OutOfMemory : public Standard_ProgramError {
 };
 %feature("shadow") Standard_OutOfMemory::~Standard_OutOfMemory %{
 def __del__(self):
-	global occ_gc
-	occ_gc.append(self)
+	GarbageCollector.occ_gc.append(self)
 %}

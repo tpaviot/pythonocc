@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BinObjMgt_dependencies.i
 
 
@@ -64,12 +68,10 @@ class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 	return (BinObjMgt_DataMapNodeOfRRelocationTable*)$self->Access();
 	}
 };
-%extend Handle_BinObjMgt_DataMapNodeOfRRelocationTable {
-	~Handle_BinObjMgt_DataMapNodeOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinObjMgt_DataMapNodeOfRRelocationTable\n");}
-	}
-};
+%feature("shadow") Handle_BinObjMgt_DataMapNodeOfRRelocationTable::~Handle_BinObjMgt_DataMapNodeOfRRelocationTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress;
@@ -94,12 +96,10 @@ class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 	return (BinObjMgt_SequenceNodeOfSequenceOfAddress*)$self->Access();
 	}
 };
-%extend Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress {
-	~Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress\n");}
-	}
-};
+%feature("shadow") Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress::~Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinObjMgt_Persistent;
@@ -220,12 +220,10 @@ class BinObjMgt_Persistent {
 		void Destroy();
 
 };
-%extend BinObjMgt_Persistent {
-	~BinObjMgt_Persistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinObjMgt_Persistent\n");}
-	}
-};
+%feature("shadow") BinObjMgt_Persistent::~BinObjMgt_Persistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinObjMgt_DataMapNodeOfRRelocationTable;
@@ -261,12 +259,10 @@ class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BinObjMgt_DataMapNodeOfRRelocationTable {
-	~BinObjMgt_DataMapNodeOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinObjMgt_DataMapNodeOfRRelocationTable\n");}
-	}
-};
+%feature("shadow") BinObjMgt_DataMapNodeOfRRelocationTable::~BinObjMgt_DataMapNodeOfRRelocationTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinObjMgt_RRelocationTable;
@@ -298,12 +294,10 @@ class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
 		Handle_Standard_Transient & operator()(const Standard_Integer &K);
 
 };
-%extend BinObjMgt_RRelocationTable {
-	~BinObjMgt_RRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinObjMgt_RRelocationTable\n");}
-	}
-};
+%feature("shadow") BinObjMgt_RRelocationTable::~BinObjMgt_RRelocationTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinObjMgt_SequenceOfAddress;
@@ -355,12 +349,10 @@ class BinObjMgt_SequenceOfAddress : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend BinObjMgt_SequenceOfAddress {
-	~BinObjMgt_SequenceOfAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinObjMgt_SequenceOfAddress\n");}
-	}
-};
+%feature("shadow") BinObjMgt_SequenceOfAddress::~BinObjMgt_SequenceOfAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinObjMgt_DataMapIteratorOfRRelocationTable;
@@ -378,12 +370,10 @@ class BinObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapI
 		const Handle_Standard_Transient & Value() const;
 
 };
-%extend BinObjMgt_DataMapIteratorOfRRelocationTable {
-	~BinObjMgt_DataMapIteratorOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinObjMgt_DataMapIteratorOfRRelocationTable\n");}
-	}
-};
+%feature("shadow") BinObjMgt_DataMapIteratorOfRRelocationTable::~BinObjMgt_DataMapIteratorOfRRelocationTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinObjMgt_SequenceNodeOfSequenceOfAddress;
@@ -407,9 +397,7 @@ class BinObjMgt_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BinObjMgt_SequenceNodeOfSequenceOfAddress {
-	~BinObjMgt_SequenceNodeOfSequenceOfAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinObjMgt_SequenceNodeOfSequenceOfAddress\n");}
-	}
-};
+%feature("shadow") BinObjMgt_SequenceNodeOfSequenceOfAddress::~BinObjMgt_SequenceNodeOfSequenceOfAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

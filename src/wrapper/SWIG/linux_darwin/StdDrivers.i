@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StdDrivers_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_StdDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentSt
 	return (StdDrivers_DocumentStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_StdDrivers_DocumentStorageDriver {
-	~Handle_StdDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdDrivers_DocumentStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_StdDrivers_DocumentStorageDriver::~Handle_StdDrivers_DocumentStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StdDrivers_DocumentRetrievalDriver;
@@ -87,12 +89,10 @@ class Handle_StdDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Document
 	return (StdDrivers_DocumentRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_StdDrivers_DocumentRetrievalDriver {
-	~Handle_StdDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdDrivers_DocumentRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_StdDrivers_DocumentRetrievalDriver::~Handle_StdDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StdDrivers;
@@ -104,12 +104,10 @@ class StdDrivers {
 		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 
 };
-%extend StdDrivers {
-	~StdDrivers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdDrivers\n");}
-	}
-};
+%feature("shadow") StdDrivers::~StdDrivers %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StdDrivers_DocumentRetrievalDriver;
@@ -133,12 +131,10 @@ class StdDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDrive
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StdDrivers_DocumentRetrievalDriver {
-	~StdDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdDrivers_DocumentRetrievalDriver\n");}
-	}
-};
+%feature("shadow") StdDrivers_DocumentRetrievalDriver::~StdDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StdDrivers_DocumentStorageDriver;
@@ -164,9 +160,7 @@ class StdDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StdDrivers_DocumentStorageDriver {
-	~StdDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdDrivers_DocumentStorageDriver\n");}
-	}
-};
+%feature("shadow") StdDrivers_DocumentStorageDriver::~StdDrivers_DocumentStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

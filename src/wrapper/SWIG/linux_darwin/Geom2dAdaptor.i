@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Geom2dAdaptor_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_Geom2dAdaptor_GHCurve : public Handle_Adaptor2d_HCurve2d {
 	return (Geom2dAdaptor_GHCurve*)$self->Access();
 	}
 };
-%extend Handle_Geom2dAdaptor_GHCurve {
-	~Handle_Geom2dAdaptor_GHCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom2dAdaptor_GHCurve\n");}
-	}
-};
+%feature("shadow") Handle_Geom2dAdaptor_GHCurve::~Handle_Geom2dAdaptor_GHCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Geom2dAdaptor_HCurve;
@@ -87,12 +89,10 @@ class Handle_Geom2dAdaptor_HCurve : public Handle_Geom2dAdaptor_GHCurve {
 	return (Geom2dAdaptor_HCurve*)$self->Access();
 	}
 };
-%extend Handle_Geom2dAdaptor_HCurve {
-	~Handle_Geom2dAdaptor_HCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom2dAdaptor_HCurve\n");}
-	}
-};
+%feature("shadow") Handle_Geom2dAdaptor_HCurve::~Handle_Geom2dAdaptor_HCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dAdaptor_Curve;
@@ -168,12 +168,10 @@ class Geom2dAdaptor_Curve : public Adaptor2d_Curve2d {
 		virtual		Handle_Geom2d_BSplineCurve BSpline() const;
 
 };
-%extend Geom2dAdaptor_Curve {
-	~Geom2dAdaptor_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAdaptor_Curve\n");}
-	}
-};
+%feature("shadow") Geom2dAdaptor_Curve::~Geom2dAdaptor_Curve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dAdaptor;
@@ -185,12 +183,10 @@ class Geom2dAdaptor {
 		Handle_Geom2d_Curve MakeCurve(const Adaptor2d_Curve2d &HC);
 
 };
-%extend Geom2dAdaptor {
-	~Geom2dAdaptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAdaptor\n");}
-	}
-};
+%feature("shadow") Geom2dAdaptor::~Geom2dAdaptor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dAdaptor_GHCurve;
@@ -220,12 +216,10 @@ class Geom2dAdaptor_GHCurve : public Adaptor2d_HCurve2d {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom2dAdaptor_GHCurve {
-	~Geom2dAdaptor_GHCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAdaptor_GHCurve\n");}
-	}
-};
+%feature("shadow") Geom2dAdaptor_GHCurve::~Geom2dAdaptor_GHCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dAdaptor_HCurve;
@@ -251,9 +245,7 @@ class Geom2dAdaptor_HCurve : public Geom2dAdaptor_GHCurve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Geom2dAdaptor_HCurve {
-	~Geom2dAdaptor_HCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAdaptor_HCurve\n");}
-	}
-};
+%feature("shadow") Geom2dAdaptor_HCurve::~Geom2dAdaptor_HCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include CPnts_dependencies.i
 
 
@@ -68,12 +72,10 @@ class CPnts_UniformDeflection {
 		gp_Pnt Point() const;
 
 };
-%extend CPnts_UniformDeflection {
-	~CPnts_UniformDeflection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CPnts_UniformDeflection\n");}
-	}
-};
+%feature("shadow") CPnts_UniformDeflection::~CPnts_UniformDeflection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor CPnts_MyGaussFunction;
@@ -85,12 +87,10 @@ class CPnts_MyGaussFunction : public math_Function {
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 
 };
-%extend CPnts_MyGaussFunction {
-	~CPnts_MyGaussFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CPnts_MyGaussFunction\n");}
-	}
-};
+%feature("shadow") CPnts_MyGaussFunction::~CPnts_MyGaussFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor CPnts_AbscissaPoint;
@@ -152,12 +152,10 @@ class CPnts_AbscissaPoint {
 		void SetParameter(const Standard_Real P);
 
 };
-%extend CPnts_AbscissaPoint {
-	~CPnts_AbscissaPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CPnts_AbscissaPoint\n");}
-	}
-};
+%feature("shadow") CPnts_AbscissaPoint::~CPnts_AbscissaPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor CPnts_MyRootFunction;
@@ -177,9 +175,7 @@ class CPnts_MyRootFunction : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend CPnts_MyRootFunction {
-	~CPnts_MyRootFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CPnts_MyRootFunction\n");}
-	}
-};
+%feature("shadow") CPnts_MyRootFunction::~CPnts_MyRootFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

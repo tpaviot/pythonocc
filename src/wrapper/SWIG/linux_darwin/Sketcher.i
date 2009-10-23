@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Sketcher_dependencies.i
 
 
@@ -52,9 +56,7 @@ class Sketcher_Profile {
 		bool IsDone();
 
 };
-%extend Sketcher_Profile {
-	~Sketcher_Profile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Sketcher_Profile\n");}
-	}
-};
+%feature("shadow") Sketcher_Profile::~Sketcher_Profile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

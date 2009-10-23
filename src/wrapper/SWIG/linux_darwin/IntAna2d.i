@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntAna2d_dependencies.i
 
 
@@ -72,12 +76,10 @@ class IntAna2d_IntPoint {
 		void _CSFDB_SetIntAna2d_IntPointmyimplicit(const Standard_Boolean p);
 
 };
-%extend IntAna2d_IntPoint {
-	~IntAna2d_IntPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna2d_IntPoint\n");}
-	}
-};
+%feature("shadow") IntAna2d_IntPoint::~IntAna2d_IntPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntAna2d_Conic;
@@ -105,12 +107,10 @@ class IntAna2d_Conic {
 		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax2d &Axis) const;
 
 };
-%extend IntAna2d_Conic {
-	~IntAna2d_Conic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna2d_Conic\n");}
-	}
-};
+%feature("shadow") IntAna2d_Conic::~IntAna2d_Conic %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntAna2d_AnaIntersection;
@@ -164,9 +164,7 @@ class IntAna2d_AnaIntersection {
 		const IntAna2d_IntPoint & Point(const Standard_Integer N) const;
 
 };
-%extend IntAna2d_AnaIntersection {
-	~IntAna2d_AnaIntersection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna2d_AnaIntersection\n");}
-	}
-};
+%feature("shadow") IntAna2d_AnaIntersection::~IntAna2d_AnaIntersection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

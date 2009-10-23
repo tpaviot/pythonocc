@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PColStd_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_PColStd_HSingleListOfReal : public Handle_PMMgt_PManaged {
 	return (PColStd_HSingleListOfReal*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HSingleListOfReal {
-	~Handle_PColStd_HSingleListOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSingleListOfReal\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HSingleListOfReal::~Handle_PColStd_HSingleListOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HArray1OfExtendedString;
@@ -87,12 +89,10 @@ class Handle_PColStd_HArray1OfExtendedString : public Handle_Standard_Persistent
 	return (PColStd_HArray1OfExtendedString*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HArray1OfExtendedString {
-	~Handle_PColStd_HArray1OfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray1OfExtendedString\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HArray1OfExtendedString::~Handle_PColStd_HArray1OfExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HDoubleListOfInteger;
@@ -117,12 +117,10 @@ class Handle_PColStd_HDoubleListOfInteger : public Handle_PMMgt_PManaged {
 	return (PColStd_HDoubleListOfInteger*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HDoubleListOfInteger {
-	~Handle_PColStd_HDoubleListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HDoubleListOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HDoubleListOfInteger::~Handle_PColStd_HDoubleListOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent;
@@ -147,12 +145,10 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent : public Handle_PSta
 	return (PColStd_VArrayNodeOfFieldOfHArray2OfPersistent*)$self->Access();
 	}
 };
-%extend Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent::~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HArray2OfPersistent;
@@ -177,12 +173,10 @@ class Handle_PColStd_HArray2OfPersistent : public Handle_Standard_Persistent {
 	return (PColStd_HArray2OfPersistent*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HArray2OfPersistent {
-	~Handle_PColStd_HArray2OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray2OfPersistent\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HArray2OfPersistent::~Handle_PColStd_HArray2OfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal;
@@ -207,12 +201,10 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal : public Handle_PStandard_
 	return (PColStd_VArrayNodeOfFieldOfHArray1OfReal*)$self->Access();
 	}
 };
-%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal::~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HDoubleListOfReal;
@@ -237,12 +229,10 @@ class Handle_PColStd_HDoubleListOfReal : public Handle_PMMgt_PManaged {
 	return (PColStd_HDoubleListOfReal*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HDoubleListOfReal {
-	~Handle_PColStd_HDoubleListOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HDoubleListOfReal\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HDoubleListOfReal::~Handle_PColStd_HDoubleListOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HArray1OfReal;
@@ -267,12 +257,10 @@ class Handle_PColStd_HArray1OfReal : public Handle_Standard_Persistent {
 	return (PColStd_HArray1OfReal*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HArray1OfReal {
-	~Handle_PColStd_HArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray1OfReal\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HArray1OfReal::~Handle_PColStd_HArray1OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfInteger;
@@ -297,12 +285,10 @@ class Handle_PColStd_SeqNodeOfHSequenceOfInteger : public Handle_PMMgt_PManaged 
 	return (PColStd_SeqNodeOfHSequenceOfInteger*)$self->Access();
 	}
 };
-%extend Handle_PColStd_SeqNodeOfHSequenceOfInteger {
-	~Handle_PColStd_SeqNodeOfHSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_SeqNodeOfHSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfInteger::~Handle_PColStd_SeqNodeOfHSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HSequenceOfReal;
@@ -327,12 +313,10 @@ class Handle_PColStd_HSequenceOfReal : public Handle_Standard_Persistent {
 	return (PColStd_HSequenceOfReal*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HSequenceOfReal {
-	~Handle_PColStd_HSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSequenceOfReal\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HSequenceOfReal::~Handle_PColStd_HSequenceOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HSequenceOfHAsciiString;
@@ -357,12 +341,10 @@ class Handle_PColStd_HSequenceOfHAsciiString : public Handle_Standard_Persistent
 	return (PColStd_HSequenceOfHAsciiString*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HSequenceOfHAsciiString {
-	~Handle_PColStd_HSequenceOfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSequenceOfHAsciiString\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HSequenceOfHAsciiString::~Handle_PColStd_HSequenceOfHAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger;
@@ -387,12 +369,10 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public Handle_PStanda
 	return (PColStd_VArrayNodeOfFieldOfHArray2OfInteger*)$self->Access();
 	}
 };
-%extend Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger::~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HSequenceOfHExtendedString;
@@ -417,12 +397,10 @@ class Handle_PColStd_HSequenceOfHExtendedString : public Handle_Standard_Persist
 	return (PColStd_HSequenceOfHExtendedString*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HSequenceOfHExtendedString {
-	~Handle_PColStd_HSequenceOfHExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSequenceOfHExtendedString\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HSequenceOfHExtendedString::~Handle_PColStd_HSequenceOfHExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HSequenceOfInteger;
@@ -447,12 +425,10 @@ class Handle_PColStd_HSequenceOfInteger : public Handle_Standard_Persistent {
 	return (PColStd_HSequenceOfInteger*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HSequenceOfInteger {
-	~Handle_PColStd_HSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HSequenceOfInteger::~Handle_PColStd_HSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent;
@@ -477,12 +453,10 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public Handle_PSta
 	return (PColStd_VArrayNodeOfFieldOfHArray1OfPersistent*)$self->Access();
 	}
 };
-%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent::~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfReal;
@@ -507,12 +481,10 @@ class Handle_PColStd_SeqNodeOfHSequenceOfReal : public Handle_PMMgt_PManaged {
 	return (PColStd_SeqNodeOfHSequenceOfReal*)$self->Access();
 	}
 };
-%extend Handle_PColStd_SeqNodeOfHSequenceOfReal {
-	~Handle_PColStd_SeqNodeOfHSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_SeqNodeOfHSequenceOfReal\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfReal::~Handle_PColStd_SeqNodeOfHSequenceOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HArray1OfPersistent;
@@ -537,12 +509,10 @@ class Handle_PColStd_HArray1OfPersistent : public Handle_Standard_Persistent {
 	return (PColStd_HArray1OfPersistent*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HArray1OfPersistent {
-	~Handle_PColStd_HArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray1OfPersistent\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HArray1OfPersistent::~Handle_PColStd_HArray1OfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HSequenceOfPersistent;
@@ -567,12 +537,10 @@ class Handle_PColStd_HSequenceOfPersistent : public Handle_Standard_Persistent {
 	return (PColStd_HSequenceOfPersistent*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HSequenceOfPersistent {
-	~Handle_PColStd_HSequenceOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSequenceOfPersistent\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HSequenceOfPersistent::~Handle_PColStd_HSequenceOfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HArray2OfInteger;
@@ -597,12 +565,10 @@ class Handle_PColStd_HArray2OfInteger : public Handle_Standard_Persistent {
 	return (PColStd_HArray2OfInteger*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HArray2OfInteger {
-	~Handle_PColStd_HArray2OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray2OfInteger\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HArray2OfInteger::~Handle_PColStd_HArray2OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HArray2OfReal;
@@ -627,12 +593,10 @@ class Handle_PColStd_HArray2OfReal : public Handle_Standard_Persistent {
 	return (PColStd_HArray2OfReal*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HArray2OfReal {
-	~Handle_PColStd_HArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray2OfReal\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HArray2OfReal::~Handle_PColStd_HArray2OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString;
@@ -657,12 +621,10 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public Handle_
 	return (PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString*)$self->Access();
 	}
 };
-%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString::~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString;
@@ -687,12 +649,10 @@ class Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString : public Handle_PMMgt_PMan
 	return (PColStd_SeqNodeOfHSequenceOfHAsciiString*)$self->Access();
 	}
 };
-%extend Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString {
-	~Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString::~Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString;
@@ -717,12 +677,10 @@ class Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString : public Handle_PMMgt_P
 	return (PColStd_SeqNodeOfHSequenceOfHExtendedString*)$self->Access();
 	}
 };
-%extend Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString {
-	~Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString::~Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HSingleListOfPersistent;
@@ -747,12 +705,10 @@ class Handle_PColStd_HSingleListOfPersistent : public Handle_PMMgt_PManaged {
 	return (PColStd_HSingleListOfPersistent*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HSingleListOfPersistent {
-	~Handle_PColStd_HSingleListOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSingleListOfPersistent\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HSingleListOfPersistent::~Handle_PColStd_HSingleListOfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger;
@@ -777,12 +733,10 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger : public Handle_PStanda
 	return (PColStd_VArrayNodeOfFieldOfHArray1OfInteger*)$self->Access();
 	}
 };
-%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger::~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfPersistent;
@@ -807,12 +761,10 @@ class Handle_PColStd_SeqNodeOfHSequenceOfPersistent : public Handle_PMMgt_PManag
 	return (PColStd_SeqNodeOfHSequenceOfPersistent*)$self->Access();
 	}
 };
-%extend Handle_PColStd_SeqNodeOfHSequenceOfPersistent {
-	~Handle_PColStd_SeqNodeOfHSequenceOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_SeqNodeOfHSequenceOfPersistent\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfPersistent::~Handle_PColStd_SeqNodeOfHSequenceOfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HArray1OfInteger;
@@ -837,12 +789,10 @@ class Handle_PColStd_HArray1OfInteger : public Handle_Standard_Persistent {
 	return (PColStd_HArray1OfInteger*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HArray1OfInteger {
-	~Handle_PColStd_HArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray1OfInteger\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HArray1OfInteger::~Handle_PColStd_HArray1OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HSingleListOfInteger;
@@ -867,12 +817,10 @@ class Handle_PColStd_HSingleListOfInteger : public Handle_PMMgt_PManaged {
 	return (PColStd_HSingleListOfInteger*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HSingleListOfInteger {
-	~Handle_PColStd_HSingleListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSingleListOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HSingleListOfInteger::~Handle_PColStd_HSingleListOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal;
@@ -897,12 +845,10 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal : public Handle_PStandard_
 	return (PColStd_VArrayNodeOfFieldOfHArray2OfReal*)$self->Access();
 	}
 };
-%extend Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal::~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PColStd_HDoubleListOfPersistent;
@@ -927,12 +873,10 @@ class Handle_PColStd_HDoubleListOfPersistent : public Handle_PMMgt_PManaged {
 	return (PColStd_HDoubleListOfPersistent*)$self->Access();
 	}
 };
-%extend Handle_PColStd_HDoubleListOfPersistent {
-	~Handle_PColStd_HDoubleListOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HDoubleListOfPersistent\n");}
-	}
-};
+%feature("shadow") Handle_PColStd_HDoubleListOfPersistent::~Handle_PColStd_HDoubleListOfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfReal;
@@ -948,12 +892,10 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfReal {
 		Standard_Address Value() const;
 
 };
-%extend PColStd_VArrayTNodeOfFieldOfHArray1OfReal {
-	~PColStd_VArrayTNodeOfFieldOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfReal\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray1OfReal::~PColStd_VArrayTNodeOfFieldOfHArray1OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HDoubleListOfInteger;
@@ -1019,12 +961,10 @@ class PColStd_HDoubleListOfInteger : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HDoubleListOfInteger {
-	~PColStd_HDoubleListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HDoubleListOfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_HDoubleListOfInteger::~PColStd_HDoubleListOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfInteger;
@@ -1042,12 +982,10 @@ class PColStd_SeqExplorerOfHSequenceOfInteger {
 		Standard_Integer Location(const Standard_Integer N, const Standard_Integer &T);
 
 };
-%extend PColStd_SeqExplorerOfHSequenceOfInteger {
-	~PColStd_SeqExplorerOfHSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_SeqExplorerOfHSequenceOfInteger::~PColStd_SeqExplorerOfHSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent;
@@ -1063,12 +1001,10 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
 		Standard_Address Value() const;
 
 };
-%extend PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
-	~PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent::~PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HSequenceOfInteger;
@@ -1164,12 +1100,10 @@ class PColStd_HSequenceOfInteger : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HSequenceOfInteger {
-	~PColStd_HSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_HSequenceOfInteger::~PColStd_HSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_FieldOfHArray2OfInteger;
@@ -1207,12 +1141,10 @@ class PColStd_FieldOfHArray2OfInteger : public DBC_BaseArray {
 		void Destroy();
 
 };
-%extend PColStd_FieldOfHArray2OfInteger {
-	~PColStd_FieldOfHArray2OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray2OfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_FieldOfHArray2OfInteger::~PColStd_FieldOfHArray2OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfHAsciiString;
@@ -1266,12 +1198,10 @@ class PColStd_SeqNodeOfHSequenceOfHAsciiString : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_SeqNodeOfHSequenceOfHAsciiString {
-	~PColStd_SeqNodeOfHSequenceOfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfHAsciiString\n");}
-	}
-};
+%feature("shadow") PColStd_SeqNodeOfHSequenceOfHAsciiString::~PColStd_SeqNodeOfHSequenceOfHAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_FieldOfHArray1OfExtendedString;
@@ -1299,12 +1229,10 @@ class PColStd_FieldOfHArray1OfExtendedString : public DBC_BaseArray {
 		void Destroy();
 
 };
-%extend PColStd_FieldOfHArray1OfExtendedString {
-	~PColStd_FieldOfHArray1OfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray1OfExtendedString\n");}
-	}
-};
+%feature("shadow") PColStd_FieldOfHArray1OfExtendedString::~PColStd_FieldOfHArray1OfExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfInteger;
@@ -1320,12 +1248,10 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfInteger {
 		Standard_Address Value() const;
 
 };
-%extend PColStd_VArrayTNodeOfFieldOfHArray2OfInteger {
-	~PColStd_VArrayTNodeOfFieldOfHArray2OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray2OfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray2OfInteger::~PColStd_VArrayTNodeOfFieldOfHArray2OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_FieldOfHArray2OfReal;
@@ -1363,12 +1289,10 @@ class PColStd_FieldOfHArray2OfReal : public DBC_BaseArray {
 		void Destroy();
 
 };
-%extend PColStd_FieldOfHArray2OfReal {
-	~PColStd_FieldOfHArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray2OfReal\n");}
-	}
-};
+%feature("shadow") PColStd_FieldOfHArray2OfReal::~PColStd_FieldOfHArray2OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HArray1OfReal;
@@ -1426,12 +1350,10 @@ class PColStd_HArray1OfReal : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HArray1OfReal {
-	~PColStd_HArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray1OfReal\n");}
-	}
-};
+%feature("shadow") PColStd_HArray1OfReal::~PColStd_HArray1OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HSequenceOfPersistent;
@@ -1527,12 +1449,10 @@ class PColStd_HSequenceOfPersistent : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HSequenceOfPersistent {
-	~PColStd_HSequenceOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSequenceOfPersistent\n");}
-	}
-};
+%feature("shadow") PColStd_HSequenceOfPersistent::~PColStd_HSequenceOfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString;
@@ -1566,12 +1486,10 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public PStandard_Arra
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
-	~PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString::~PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfReal;
@@ -1625,12 +1543,10 @@ class PColStd_SeqNodeOfHSequenceOfReal : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_SeqNodeOfHSequenceOfReal {
-	~PColStd_SeqNodeOfHSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfReal\n");}
-	}
-};
+%feature("shadow") PColStd_SeqNodeOfHSequenceOfReal::~PColStd_SeqNodeOfHSequenceOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfInteger;
@@ -1646,12 +1562,10 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfInteger {
 		Standard_Address Value() const;
 
 };
-%extend PColStd_VArrayTNodeOfFieldOfHArray1OfInteger {
-	~PColStd_VArrayTNodeOfFieldOfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray1OfInteger::~PColStd_VArrayTNodeOfFieldOfHArray1OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HOfAsciiString;
@@ -1665,12 +1579,10 @@ class PColStd_HOfAsciiString {
 		virtual		Standard_Boolean Compare(const Handle_PCollection_HAsciiString &One, const Handle_PCollection_HAsciiString &Two) const;
 
 };
-%extend PColStd_HOfAsciiString {
-	~PColStd_HOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HOfAsciiString\n");}
-	}
-};
+%feature("shadow") PColStd_HOfAsciiString::~PColStd_HOfAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_FieldOfHArray2OfPersistent;
@@ -1698,12 +1610,10 @@ class PColStd_FieldOfHArray2OfPersistent : public DBC_BaseArray {
 		void Destroy();
 
 };
-%extend PColStd_FieldOfHArray2OfPersistent {
-	~PColStd_FieldOfHArray2OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray2OfPersistent\n");}
-	}
-};
+%feature("shadow") PColStd_FieldOfHArray2OfPersistent::~PColStd_FieldOfHArray2OfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfHAsciiString;
@@ -1721,12 +1631,10 @@ class PColStd_SeqExplorerOfHSequenceOfHAsciiString {
 		Standard_Integer Location(const Standard_Integer N, const Handle_PCollection_HAsciiString &T);
 
 };
-%extend PColStd_SeqExplorerOfHSequenceOfHAsciiString {
-	~PColStd_SeqExplorerOfHSequenceOfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfHAsciiString\n");}
-	}
-};
+%feature("shadow") PColStd_SeqExplorerOfHSequenceOfHAsciiString::~PColStd_SeqExplorerOfHSequenceOfHAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HArray1OfInteger;
@@ -1784,12 +1692,10 @@ class PColStd_HArray1OfInteger : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HArray1OfInteger {
-	~PColStd_HArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray1OfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_HArray1OfInteger::~PColStd_HArray1OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfInteger;
@@ -1823,12 +1729,10 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
-	~PColStd_VArrayNodeOfFieldOfHArray2OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray2OfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray2OfInteger::~PColStd_VArrayNodeOfFieldOfHArray2OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfReal;
@@ -1862,12 +1766,10 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfReal : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
-	~PColStd_VArrayNodeOfFieldOfHArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray2OfReal\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray2OfReal::~PColStd_VArrayNodeOfFieldOfHArray2OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HSingleListOfPersistent;
@@ -1923,12 +1825,10 @@ class PColStd_HSingleListOfPersistent : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HSingleListOfPersistent {
-	~PColStd_HSingleListOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSingleListOfPersistent\n");}
-	}
-};
+%feature("shadow") PColStd_HSingleListOfPersistent::~PColStd_HSingleListOfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfPersistent;
@@ -1962,12 +1862,10 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public PStandard_ArrayNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
-	~PColStd_VArrayNodeOfFieldOfHArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfPersistent\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray1OfPersistent::~PColStd_VArrayNodeOfFieldOfHArray1OfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HSequenceOfHAsciiString;
@@ -2063,12 +1961,10 @@ class PColStd_HSequenceOfHAsciiString : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HSequenceOfHAsciiString {
-	~PColStd_HSequenceOfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSequenceOfHAsciiString\n");}
-	}
-};
+%feature("shadow") PColStd_HSequenceOfHAsciiString::~PColStd_HSequenceOfHAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HArray2OfPersistent;
@@ -2140,12 +2036,10 @@ class PColStd_HArray2OfPersistent : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HArray2OfPersistent {
-	~PColStd_HArray2OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray2OfPersistent\n");}
-	}
-};
+%feature("shadow") PColStd_HArray2OfPersistent::~PColStd_HArray2OfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfReal;
@@ -2163,12 +2057,10 @@ class PColStd_SeqExplorerOfHSequenceOfReal {
 		Standard_Integer Location(const Standard_Integer N, const Standard_Real &T);
 
 };
-%extend PColStd_SeqExplorerOfHSequenceOfReal {
-	~PColStd_SeqExplorerOfHSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfReal\n");}
-	}
-};
+%feature("shadow") PColStd_SeqExplorerOfHSequenceOfReal::~PColStd_SeqExplorerOfHSequenceOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfReal;
@@ -2184,12 +2076,10 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
 		Standard_Address Value() const;
 
 };
-%extend PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
-	~PColStd_VArrayTNodeOfFieldOfHArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray2OfReal\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray2OfReal::~PColStd_VArrayTNodeOfFieldOfHArray2OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfHExtendedString;
@@ -2207,12 +2097,10 @@ class PColStd_SeqExplorerOfHSequenceOfHExtendedString {
 		Standard_Integer Location(const Standard_Integer N, const Handle_PCollection_HExtendedString &T);
 
 };
-%extend PColStd_SeqExplorerOfHSequenceOfHExtendedString {
-	~PColStd_SeqExplorerOfHSequenceOfHExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfHExtendedString\n");}
-	}
-};
+%feature("shadow") PColStd_SeqExplorerOfHSequenceOfHExtendedString::~PColStd_SeqExplorerOfHSequenceOfHExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HOfInteger;
@@ -2226,12 +2114,10 @@ class PColStd_HOfInteger {
 		virtual		Standard_Boolean Compare(const Standard_Integer &One, const Standard_Integer &Two) const;
 
 };
-%extend PColStd_HOfInteger {
-	~PColStd_HOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HOfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_HOfInteger::~PColStd_HOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfInteger;
@@ -2285,12 +2171,10 @@ class PColStd_SeqNodeOfHSequenceOfInteger : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_SeqNodeOfHSequenceOfInteger {
-	~PColStd_SeqNodeOfHSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_SeqNodeOfHSequenceOfInteger::~PColStd_SeqNodeOfHSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HDoubleListOfPersistent;
@@ -2356,12 +2240,10 @@ class PColStd_HDoubleListOfPersistent : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HDoubleListOfPersistent {
-	~PColStd_HDoubleListOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HDoubleListOfPersistent\n");}
-	}
-};
+%feature("shadow") PColStd_HDoubleListOfPersistent::~PColStd_HDoubleListOfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfReal;
@@ -2395,12 +2277,10 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfReal : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_VArrayNodeOfFieldOfHArray1OfReal {
-	~PColStd_VArrayNodeOfFieldOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfReal\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray1OfReal::~PColStd_VArrayNodeOfFieldOfHArray1OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HSingleListOfReal;
@@ -2456,12 +2336,10 @@ class PColStd_HSingleListOfReal : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HSingleListOfReal {
-	~PColStd_HSingleListOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSingleListOfReal\n");}
-	}
-};
+%feature("shadow") PColStd_HSingleListOfReal::~PColStd_HSingleListOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HDoubleListOfReal;
@@ -2527,12 +2405,10 @@ class PColStd_HDoubleListOfReal : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HDoubleListOfReal {
-	~PColStd_HDoubleListOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HDoubleListOfReal\n");}
-	}
-};
+%feature("shadow") PColStd_HDoubleListOfReal::~PColStd_HDoubleListOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_FieldOfHArray1OfInteger;
@@ -2570,12 +2446,10 @@ class PColStd_FieldOfHArray1OfInteger : public DBC_BaseArray {
 		void Destroy();
 
 };
-%extend PColStd_FieldOfHArray1OfInteger {
-	~PColStd_FieldOfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray1OfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_FieldOfHArray1OfInteger::~PColStd_FieldOfHArray1OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HashAsciiString;
@@ -2589,12 +2463,10 @@ class PColStd_HashAsciiString : public PColStd_HOfAsciiString {
 		virtual		Standard_Boolean Compare(const Handle_PCollection_HAsciiString &One, const Handle_PCollection_HAsciiString &Two) const;
 
 };
-%extend PColStd_HashAsciiString {
-	~PColStd_HashAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HashAsciiString\n");}
-	}
-};
+%feature("shadow") PColStd_HashAsciiString::~PColStd_HashAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HOfReal;
@@ -2608,12 +2480,10 @@ class PColStd_HOfReal {
 		virtual		Standard_Boolean Compare(const Standard_Real &One, const Standard_Real &Two) const;
 
 };
-%extend PColStd_HOfReal {
-	~PColStd_HOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HOfReal\n");}
-	}
-};
+%feature("shadow") PColStd_HOfReal::~PColStd_HOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfPersistent;
@@ -2631,12 +2501,10 @@ class PColStd_SeqExplorerOfHSequenceOfPersistent {
 		Standard_Integer Location(const Standard_Integer N, const Handle_Standard_Persistent &T);
 
 };
-%extend PColStd_SeqExplorerOfHSequenceOfPersistent {
-	~PColStd_SeqExplorerOfHSequenceOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfPersistent\n");}
-	}
-};
+%feature("shadow") PColStd_SeqExplorerOfHSequenceOfPersistent::~PColStd_SeqExplorerOfHSequenceOfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_FieldOfHArray1OfReal;
@@ -2674,12 +2542,10 @@ class PColStd_FieldOfHArray1OfReal : public DBC_BaseArray {
 		void Destroy();
 
 };
-%extend PColStd_FieldOfHArray1OfReal {
-	~PColStd_FieldOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray1OfReal\n");}
-	}
-};
+%feature("shadow") PColStd_FieldOfHArray1OfReal::~PColStd_FieldOfHArray1OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent;
@@ -2695,12 +2561,10 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
 		Standard_Address Value() const;
 
 };
-%extend PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
-	~PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent::~PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString;
@@ -2716,12 +2580,10 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
 		Standard_Address Value() const;
 
 };
-%extend PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
-	~PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString::~PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HArray1OfPersistent;
@@ -2779,12 +2641,10 @@ class PColStd_HArray1OfPersistent : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HArray1OfPersistent {
-	~PColStd_HArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray1OfPersistent\n");}
-	}
-};
+%feature("shadow") PColStd_HArray1OfPersistent::~PColStd_HArray1OfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HSequenceOfHExtendedString;
@@ -2880,12 +2740,10 @@ class PColStd_HSequenceOfHExtendedString : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HSequenceOfHExtendedString {
-	~PColStd_HSequenceOfHExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSequenceOfHExtendedString\n");}
-	}
-};
+%feature("shadow") PColStd_HSequenceOfHExtendedString::~PColStd_HSequenceOfHExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfInteger;
@@ -2919,12 +2777,10 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfInteger : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
-	~PColStd_VArrayNodeOfFieldOfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray1OfInteger::~PColStd_VArrayNodeOfFieldOfHArray1OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_FieldOfHArray1OfPersistent;
@@ -2952,12 +2808,10 @@ class PColStd_FieldOfHArray1OfPersistent : public DBC_BaseArray {
 		void Destroy();
 
 };
-%extend PColStd_FieldOfHArray1OfPersistent {
-	~PColStd_FieldOfHArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray1OfPersistent\n");}
-	}
-};
+%feature("shadow") PColStd_FieldOfHArray1OfPersistent::~PColStd_FieldOfHArray1OfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HSingleListOfInteger;
@@ -3013,12 +2867,10 @@ class PColStd_HSingleListOfInteger : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HSingleListOfInteger {
-	~PColStd_HSingleListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSingleListOfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_HSingleListOfInteger::~PColStd_HSingleListOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfPersistent;
@@ -3052,12 +2904,10 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfPersistent : public PStandard_ArrayNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_VArrayNodeOfFieldOfHArray2OfPersistent {
-	~PColStd_VArrayNodeOfFieldOfHArray2OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray2OfPersistent\n");}
-	}
-};
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray2OfPersistent::~PColStd_VArrayNodeOfFieldOfHArray2OfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HArray2OfInteger;
@@ -3129,12 +2979,10 @@ class PColStd_HArray2OfInteger : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HArray2OfInteger {
-	~PColStd_HArray2OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray2OfInteger\n");}
-	}
-};
+%feature("shadow") PColStd_HArray2OfInteger::~PColStd_HArray2OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfHExtendedString;
@@ -3188,12 +3036,10 @@ class PColStd_SeqNodeOfHSequenceOfHExtendedString : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_SeqNodeOfHSequenceOfHExtendedString {
-	~PColStd_SeqNodeOfHSequenceOfHExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfHExtendedString\n");}
-	}
-};
+%feature("shadow") PColStd_SeqNodeOfHSequenceOfHExtendedString::~PColStd_SeqNodeOfHSequenceOfHExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfPersistent;
@@ -3247,12 +3093,10 @@ class PColStd_SeqNodeOfHSequenceOfPersistent : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_SeqNodeOfHSequenceOfPersistent {
-	~PColStd_SeqNodeOfHSequenceOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfPersistent\n");}
-	}
-};
+%feature("shadow") PColStd_SeqNodeOfHSequenceOfPersistent::~PColStd_SeqNodeOfHSequenceOfPersistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HOfExtendedString;
@@ -3266,12 +3110,10 @@ class PColStd_HOfExtendedString {
 		virtual		Standard_Boolean Compare(const Handle_PCollection_HExtendedString &One, const Handle_PCollection_HExtendedString &Two) const;
 
 };
-%extend PColStd_HOfExtendedString {
-	~PColStd_HOfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HOfExtendedString\n");}
-	}
-};
+%feature("shadow") PColStd_HOfExtendedString::~PColStd_HOfExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HArray2OfReal;
@@ -3343,12 +3185,10 @@ class PColStd_HArray2OfReal : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HArray2OfReal {
-	~PColStd_HArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray2OfReal\n");}
-	}
-};
+%feature("shadow") PColStd_HArray2OfReal::~PColStd_HArray2OfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HSequenceOfReal;
@@ -3444,12 +3284,10 @@ class PColStd_HSequenceOfReal : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HSequenceOfReal {
-	~PColStd_HSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSequenceOfReal\n");}
-	}
-};
+%feature("shadow") PColStd_HSequenceOfReal::~PColStd_HSequenceOfReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HashExtendedString;
@@ -3463,12 +3301,10 @@ class PColStd_HashExtendedString : public PColStd_HOfExtendedString {
 		virtual		Standard_Boolean Compare(const Handle_PCollection_HExtendedString &One, const Handle_PCollection_HExtendedString &Two) const;
 
 };
-%extend PColStd_HashExtendedString {
-	~PColStd_HashExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HashExtendedString\n");}
-	}
-};
+%feature("shadow") PColStd_HashExtendedString::~PColStd_HashExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PColStd_HArray1OfExtendedString;
@@ -3526,9 +3362,7 @@ class PColStd_HArray1OfExtendedString : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PColStd_HArray1OfExtendedString {
-	~PColStd_HArray1OfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray1OfExtendedString\n");}
-	}
-};
+%feature("shadow") PColStd_HArray1OfExtendedString::~PColStd_HArray1OfExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

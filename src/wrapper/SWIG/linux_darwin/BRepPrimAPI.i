@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepPrimAPI_dependencies.i
 
 
@@ -50,18 +54,10 @@ class BRepPrimAPI_MakeOneAxis : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Solid & Solid();
 
 };
-%extend BRepPrimAPI_MakeOneAxis {
-	~BRepPrimAPI_MakeOneAxis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeOneAxis\n");}
-	}
-};
-
-%extend BRepPrimAPI_MakeOneAxis {
-	void KillPointed() {
-		delete $self;
-	}
-};
+%feature("shadow") BRepPrimAPI_MakeOneAxis::~BRepPrimAPI_MakeOneAxis %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepPrimAPI_MakeTorus;
@@ -87,18 +83,10 @@ class BRepPrimAPI_MakeTorus : public BRepPrimAPI_MakeOneAxis {
 		BRepPrim_Torus & Torus();
 
 };
-%extend BRepPrimAPI_MakeTorus {
-	~BRepPrimAPI_MakeTorus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeTorus\n");}
-	}
-};
-
-%extend BRepPrimAPI_MakeTorus {
-	void KillPointed() {
-		delete $self;
-	}
-};
+%feature("shadow") BRepPrimAPI_MakeTorus::~BRepPrimAPI_MakeTorus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepPrimAPI_MakeRevolution;
@@ -126,18 +114,10 @@ class BRepPrimAPI_MakeRevolution : public BRepPrimAPI_MakeOneAxis {
 		BRepPrim_Revolution & Revolution();
 
 };
-%extend BRepPrimAPI_MakeRevolution {
-	~BRepPrimAPI_MakeRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeRevolution\n");}
-	}
-};
-
-%extend BRepPrimAPI_MakeRevolution {
-	void KillPointed() {
-		delete $self;
-	}
-};
+%feature("shadow") BRepPrimAPI_MakeRevolution::~BRepPrimAPI_MakeRevolution %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepPrimAPI_MakeSweep;
@@ -149,18 +129,10 @@ class BRepPrimAPI_MakeSweep : public BRepBuilderAPI_MakeShape {
 		virtual		TopoDS_Shape LastShape();
 
 };
-%extend BRepPrimAPI_MakeSweep {
-	~BRepPrimAPI_MakeSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeSweep\n");}
-	}
-};
-
-%extend BRepPrimAPI_MakeSweep {
-	void KillPointed() {
-		delete $self;
-	}
-};
+%feature("shadow") BRepPrimAPI_MakeSweep::~BRepPrimAPI_MakeSweep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepPrimAPI_MakeWedge;
@@ -184,18 +156,10 @@ class BRepPrimAPI_MakeWedge : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Solid & Solid();
 
 };
-%extend BRepPrimAPI_MakeWedge {
-	~BRepPrimAPI_MakeWedge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeWedge\n");}
-	}
-};
-
-%extend BRepPrimAPI_MakeWedge {
-	void KillPointed() {
-		delete $self;
-	}
-};
+%feature("shadow") BRepPrimAPI_MakeWedge::~BRepPrimAPI_MakeWedge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepPrimAPI_MakeCylinder;
@@ -215,18 +179,10 @@ class BRepPrimAPI_MakeCylinder : public BRepPrimAPI_MakeOneAxis {
 		BRepPrim_Cylinder & Cylinder();
 
 };
-%extend BRepPrimAPI_MakeCylinder {
-	~BRepPrimAPI_MakeCylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeCylinder\n");}
-	}
-};
-
-%extend BRepPrimAPI_MakeCylinder {
-	void KillPointed() {
-		delete $self;
-	}
-};
+%feature("shadow") BRepPrimAPI_MakeCylinder::~BRepPrimAPI_MakeCylinder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepPrimAPI_MakeHalfSpace;
@@ -240,18 +196,10 @@ class BRepPrimAPI_MakeHalfSpace : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Solid & Solid() const;
 
 };
-%extend BRepPrimAPI_MakeHalfSpace {
-	~BRepPrimAPI_MakeHalfSpace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeHalfSpace\n");}
-	}
-};
-
-%extend BRepPrimAPI_MakeHalfSpace {
-	void KillPointed() {
-		delete $self;
-	}
-};
+%feature("shadow") BRepPrimAPI_MakeHalfSpace::~BRepPrimAPI_MakeHalfSpace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepPrimAPI_MakeBox;
@@ -287,18 +235,10 @@ class BRepPrimAPI_MakeBox : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Face & TopFace();
 
 };
-%extend BRepPrimAPI_MakeBox {
-	~BRepPrimAPI_MakeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeBox\n");}
-	}
-};
-
-%extend BRepPrimAPI_MakeBox {
-	void KillPointed() {
-		delete $self;
-	}
-};
+%feature("shadow") BRepPrimAPI_MakeBox::~BRepPrimAPI_MakeBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepPrimAPI_MakeSphere;
@@ -334,18 +274,10 @@ class BRepPrimAPI_MakeSphere : public BRepPrimAPI_MakeOneAxis {
 		BRepPrim_Sphere & Sphere();
 
 };
-%extend BRepPrimAPI_MakeSphere {
-	~BRepPrimAPI_MakeSphere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeSphere\n");}
-	}
-};
-
-%extend BRepPrimAPI_MakeSphere {
-	void KillPointed() {
-		delete $self;
-	}
-};
+%feature("shadow") BRepPrimAPI_MakeSphere::~BRepPrimAPI_MakeSphere %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepPrimAPI_MakeRevol;
@@ -375,18 +307,10 @@ class BRepPrimAPI_MakeRevol : public BRepPrimAPI_MakeSweep {
 		const TopTools_ListOfShape & Degenerated() const;
 
 };
-%extend BRepPrimAPI_MakeRevol {
-	~BRepPrimAPI_MakeRevol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeRevol\n");}
-	}
-};
-
-%extend BRepPrimAPI_MakeRevol {
-	void KillPointed() {
-		delete $self;
-	}
-};
+%feature("shadow") BRepPrimAPI_MakeRevol::~BRepPrimAPI_MakeRevol %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepPrimAPI_MakeCone;
@@ -406,18 +330,10 @@ class BRepPrimAPI_MakeCone : public BRepPrimAPI_MakeOneAxis {
 		BRepPrim_Cone & Cone();
 
 };
-%extend BRepPrimAPI_MakeCone {
-	~BRepPrimAPI_MakeCone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeCone\n");}
-	}
-};
-
-%extend BRepPrimAPI_MakeCone {
-	void KillPointed() {
-		delete $self;
-	}
-};
+%feature("shadow") BRepPrimAPI_MakeCone::~BRepPrimAPI_MakeCone %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepPrimAPI_MakePrism;
@@ -443,15 +359,7 @@ class BRepPrimAPI_MakePrism : public BRepPrimAPI_MakeSweep {
 		TopoDS_Shape LastShape(const TopoDS_Shape &theShape);
 
 };
-%extend BRepPrimAPI_MakePrism {
-	~BRepPrimAPI_MakePrism() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakePrism\n");}
-	}
-};
-
-%extend BRepPrimAPI_MakePrism {
-	void KillPointed() {
-		delete $self;
-	}
-};
+%feature("shadow") BRepPrimAPI_MakePrism::~BRepPrimAPI_MakePrism %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

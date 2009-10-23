@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BOPTColStd_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : pub
 	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger*)$self->Access();
 	}
 };
-%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
-	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger\n");}
-	}
-};
+%feature("shadow") Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger::~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger;
@@ -87,12 +89,10 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public 
 	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger*)$self->Access();
 	}
 };
-%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
-	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger\n");}
-	}
-};
+%feature("shadow") Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger::~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOPTColStd_ListNodeOfListOfListOfShape;
@@ -117,12 +117,10 @@ class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_
 	return (BOPTColStd_ListNodeOfListOfListOfShape*)$self->Access();
 	}
 };
-%extend Handle_BOPTColStd_ListNodeOfListOfListOfShape {
-	~Handle_BOPTColStd_ListNodeOfListOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_ListNodeOfListOfListOfShape\n");}
-	}
-};
+%feature("shadow") Handle_BOPTColStd_ListNodeOfListOfListOfShape::~Handle_BOPTColStd_ListNodeOfListOfListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
@@ -147,12 +145,10 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfI
 	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger*)$self->Access();
 	}
 };
-%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
-	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger::~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_CArray1OfShape;
@@ -188,12 +184,10 @@ class BOPTColStd_CArray1OfShape {
 		Standard_Integer BlockLength() const;
 
 };
-%extend BOPTColStd_CArray1OfShape {
-	~BOPTColStd_CArray1OfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_CArray1OfShape\n");}
-	}
-};
+%feature("shadow") BOPTColStd_CArray1OfShape::~BOPTColStd_CArray1OfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger;
@@ -235,12 +229,10 @@ class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection
 		TColStd_IndexedMapOfInteger & ChangeFromKey(const Standard_Integer &K);
 
 };
-%extend BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger {
-	~BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger\n");}
-	}
-};
+%feature("shadow") BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger::~BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_ShapeWithRankHasher;
@@ -254,12 +246,10 @@ class BOPTColStd_ShapeWithRankHasher {
 		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &SR1, const BOPTColStd_ShapeWithRank &SR2);
 
 };
-%extend BOPTColStd_ShapeWithRankHasher {
-	~BOPTColStd_ShapeWithRankHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ShapeWithRankHasher\n");}
-	}
-};
+%feature("shadow") BOPTColStd_ShapeWithRankHasher::~BOPTColStd_ShapeWithRankHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfIntegerInteger;
@@ -321,12 +311,10 @@ class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
 		};
 
 };
-%extend BOPTColStd_IndexedDataMapOfIntegerInteger {
-	~BOPTColStd_IndexedDataMapOfIntegerInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapOfIntegerInteger\n");}
-	}
-};
+%feature("shadow") BOPTColStd_IndexedDataMapOfIntegerInteger::~BOPTColStd_IndexedDataMapOfIntegerInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_ShapeWithRank;
@@ -353,12 +341,10 @@ class BOPTColStd_ShapeWithRank {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOPTColStd_ShapeWithRank {
-	~BOPTColStd_ShapeWithRank() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ShapeWithRank\n");}
-	}
-};
+%feature("shadow") BOPTColStd_ShapeWithRank::~BOPTColStd_ShapeWithRank %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_CArray1OfPnt2d;
@@ -394,12 +380,10 @@ class BOPTColStd_CArray1OfPnt2d {
 		Standard_Integer BlockLength() const;
 
 };
-%extend BOPTColStd_CArray1OfPnt2d {
-	~BOPTColStd_CArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_CArray1OfPnt2d\n");}
-	}
-};
+%feature("shadow") BOPTColStd_CArray1OfPnt2d::~BOPTColStd_CArray1OfPnt2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger;
@@ -459,12 +443,10 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public TCo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
-	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger\n");}
-	}
-};
+%feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfSWRInteger;
@@ -526,12 +508,10 @@ class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
 		};
 
 };
-%extend BOPTColStd_IndexedDataMapOfSWRInteger {
-	~BOPTColStd_IndexedDataMapOfSWRInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapOfSWRInteger\n");}
-	}
-};
+%feature("shadow") BOPTColStd_IndexedDataMapOfSWRInteger::~BOPTColStd_IndexedDataMapOfSWRInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_ListIteratorOfListOfListOfShape;
@@ -551,12 +531,10 @@ class BOPTColStd_ListIteratorOfListOfListOfShape {
 		TopTools_ListOfShape & Value() const;
 
 };
-%extend BOPTColStd_ListIteratorOfListOfListOfShape {
-	~BOPTColStd_ListIteratorOfListOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ListIteratorOfListOfListOfShape\n");}
-	}
-};
+%feature("shadow") BOPTColStd_ListIteratorOfListOfListOfShape::~BOPTColStd_ListIteratorOfListOfListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_ListOfListOfShape;
@@ -604,12 +582,10 @@ class BOPTColStd_ListOfListOfShape {
 		void InsertAfter(BOPTColStd_ListOfListOfShape & Other, BOPTColStd_ListIteratorOfListOfListOfShape & It);
 
 };
-%extend BOPTColStd_ListOfListOfShape {
-	~BOPTColStd_ListOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ListOfListOfShape\n");}
-	}
-};
+%feature("shadow") BOPTColStd_ListOfListOfShape::~BOPTColStd_ListOfListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_CArray1OfInteger;
@@ -655,12 +631,10 @@ class BOPTColStd_CArray1OfInteger {
 		Standard_Integer BlockLength() const;
 
 };
-%extend BOPTColStd_CArray1OfInteger {
-	~BOPTColStd_CArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_CArray1OfInteger\n");}
-	}
-};
+%feature("shadow") BOPTColStd_CArray1OfInteger::~BOPTColStd_CArray1OfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_ListNodeOfListOfListOfShape;
@@ -684,12 +658,10 @@ class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOPTColStd_ListNodeOfListOfListOfShape {
-	~BOPTColStd_ListNodeOfListOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ListNodeOfListOfListOfShape\n");}
-	}
-};
+%feature("shadow") BOPTColStd_ListNodeOfListOfListOfShape::~BOPTColStd_ListNodeOfListOfListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger;
@@ -739,12 +711,10 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public TCollec
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
-	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger\n");}
-	}
-};
+%feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_Failure;
@@ -756,12 +726,10 @@ class BOPTColStd_Failure {
 		char * Message() const;
 
 };
-%extend BOPTColStd_Failure {
-	~BOPTColStd_Failure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_Failure\n");}
-	}
-};
+%feature("shadow") BOPTColStd_Failure::~BOPTColStd_Failure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
@@ -811,12 +779,10 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
-	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger\n");}
-	}
-};
+%feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BOPTColStd_Dump;
@@ -830,9 +796,7 @@ class BOPTColStd_Dump {
 		void PrintMessage(const char * aMessage);
 
 };
-%extend BOPTColStd_Dump {
-	~BOPTColStd_Dump() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_Dump\n");}
-	}
-};
+%feature("shadow") BOPTColStd_Dump::~BOPTColStd_Dump %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

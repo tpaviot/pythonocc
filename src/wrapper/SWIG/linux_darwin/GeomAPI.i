@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GeomAPI_dependencies.i
 
 
@@ -54,12 +58,10 @@ class GeomAPI_Interpolate {
 		Standard_Boolean IsDone() const;
 
 };
-%extend GeomAPI_Interpolate {
-	~GeomAPI_Interpolate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_Interpolate\n");}
-	}
-};
+%feature("shadow") GeomAPI_Interpolate::~GeomAPI_Interpolate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomAPI_ExtremaSurfaceSurface;
@@ -93,12 +95,10 @@ class GeomAPI_ExtremaSurfaceSurface {
 		const Extrema_ExtSS & Extrema() const;
 
 };
-%extend GeomAPI_ExtremaSurfaceSurface {
-	~GeomAPI_ExtremaSurfaceSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaSurfaceSurface\n");}
-	}
-};
+%feature("shadow") GeomAPI_ExtremaSurfaceSurface::~GeomAPI_ExtremaSurfaceSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomAPI_ProjectPointOnCurve;
@@ -138,12 +138,10 @@ class GeomAPI_ProjectPointOnCurve {
 		const Extrema_ExtPC & Extrema() const;
 
 };
-%extend GeomAPI_ProjectPointOnCurve {
-	~GeomAPI_ProjectPointOnCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_ProjectPointOnCurve\n");}
-	}
-};
+%feature("shadow") GeomAPI_ProjectPointOnCurve::~GeomAPI_ProjectPointOnCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomAPI;
@@ -157,12 +155,10 @@ class GeomAPI {
 		Handle_Geom_Curve To3d(const Handle_Geom2d_Curve &C, const gp_Pln &P);
 
 };
-%extend GeomAPI {
-	~GeomAPI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI\n");}
-	}
-};
+%feature("shadow") GeomAPI::~GeomAPI %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomAPI_IntSS;
@@ -182,12 +178,10 @@ class GeomAPI_IntSS {
 		const Handle_Geom_Curve & Line(const Standard_Integer I) const;
 
 };
-%extend GeomAPI_IntSS {
-	~GeomAPI_IntSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_IntSS\n");}
-	}
-};
+%feature("shadow") GeomAPI_IntSS::~GeomAPI_IntSS %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomAPI_ExtremaCurveSurface;
@@ -221,12 +215,10 @@ class GeomAPI_ExtremaCurveSurface {
 		const Extrema_ExtCS & Extrema() const;
 
 };
-%extend GeomAPI_ExtremaCurveSurface {
-	~GeomAPI_ExtremaCurveSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaCurveSurface\n");}
-	}
-};
+%feature("shadow") GeomAPI_ExtremaCurveSurface::~GeomAPI_ExtremaCurveSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomAPI_IntCS;
@@ -254,12 +246,10 @@ class GeomAPI_IntCS {
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend GeomAPI_IntCS {
-	~GeomAPI_IntCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_IntCS\n");}
-	}
-};
+%feature("shadow") GeomAPI_IntCS::~GeomAPI_IntCS %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomAPI_PointsToBSpline;
@@ -279,12 +269,10 @@ class GeomAPI_PointsToBSpline {
 		const Handle_Geom_BSplineCurve & Curve() const;
 
 };
-%extend GeomAPI_PointsToBSpline {
-	~GeomAPI_PointsToBSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_PointsToBSpline\n");}
-	}
-};
+%feature("shadow") GeomAPI_PointsToBSpline::~GeomAPI_PointsToBSpline %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomAPI_PointsToBSplineSurface;
@@ -308,12 +296,10 @@ class GeomAPI_PointsToBSplineSurface {
 		const Handle_Geom_BSplineSurface & Surface() const;
 
 };
-%extend GeomAPI_PointsToBSplineSurface {
-	~GeomAPI_PointsToBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_PointsToBSplineSurface\n");}
-	}
-};
+%feature("shadow") GeomAPI_PointsToBSplineSurface::~GeomAPI_PointsToBSplineSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomAPI_ExtremaCurveCurve;
@@ -353,12 +339,10 @@ class GeomAPI_ExtremaCurveCurve {
 		Quantity_Length TotalLowerDistance();
 
 };
-%extend GeomAPI_ExtremaCurveCurve {
-	~GeomAPI_ExtremaCurveCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaCurveCurve\n");}
-	}
-};
+%feature("shadow") GeomAPI_ExtremaCurveCurve::~GeomAPI_ExtremaCurveCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomAPI_ProjectPointOnSurf;
@@ -408,9 +392,7 @@ class GeomAPI_ProjectPointOnSurf {
 		const Extrema_ExtPS & Extrema() const;
 
 };
-%extend GeomAPI_ProjectPointOnSurf {
-	~GeomAPI_ProjectPointOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomAPI_ProjectPointOnSurf\n");}
-	}
-};
+%feature("shadow") GeomAPI_ProjectPointOnSurf::~GeomAPI_ProjectPointOnSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

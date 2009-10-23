@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Xw_dependencies.i
 
 
@@ -88,12 +92,10 @@ class Handle_Xw_HListOfMFTFonts : public Handle_MMgt_TShared {
 	return (Xw_HListOfMFTFonts*)$self->Access();
 	}
 };
-%extend Handle_Xw_HListOfMFTFonts {
-	~Handle_Xw_HListOfMFTFonts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfMFTFonts\n");}
-	}
-};
+%feature("shadow") Handle_Xw_HListOfMFTFonts::~Handle_Xw_HListOfMFTFonts %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Xw_ColorMap;
@@ -118,12 +120,10 @@ class Handle_Xw_ColorMap : public Handle_MMgt_TShared {
 	return (Xw_ColorMap*)$self->Access();
 	}
 };
-%extend Handle_Xw_ColorMap {
-	~Handle_Xw_ColorMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_ColorMap\n");}
-	}
-};
+%feature("shadow") Handle_Xw_ColorMap::~Handle_Xw_ColorMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Xw_TextManager;
@@ -148,12 +148,10 @@ class Handle_Xw_TextManager : public Handle_MFT_TextManager {
 	return (Xw_TextManager*)$self->Access();
 	}
 };
-%extend Handle_Xw_TextManager {
-	~Handle_Xw_TextManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_TextManager\n");}
-	}
-};
+%feature("shadow") Handle_Xw_TextManager::~Handle_Xw_TextManager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Xw_Driver;
@@ -178,12 +176,10 @@ class Handle_Xw_Driver : public Handle_Aspect_WindowDriver {
 	return (Xw_Driver*)$self->Access();
 	}
 };
-%extend Handle_Xw_Driver {
-	~Handle_Xw_Driver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_Driver\n");}
-	}
-};
+%feature("shadow") Handle_Xw_Driver::~Handle_Xw_Driver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Xw_WidthMap;
@@ -208,12 +204,10 @@ class Handle_Xw_WidthMap : public Handle_Standard_Transient {
 	return (Xw_WidthMap*)$self->Access();
 	}
 };
-%extend Handle_Xw_WidthMap {
-	~Handle_Xw_WidthMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_WidthMap\n");}
-	}
-};
+%feature("shadow") Handle_Xw_WidthMap::~Handle_Xw_WidthMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Xw_HListOfMFTSizes;
@@ -238,12 +232,10 @@ class Handle_Xw_HListOfMFTSizes : public Handle_MMgt_TShared {
 	return (Xw_HListOfMFTSizes*)$self->Access();
 	}
 };
-%extend Handle_Xw_HListOfMFTSizes {
-	~Handle_Xw_HListOfMFTSizes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfMFTSizes\n");}
-	}
-};
+%feature("shadow") Handle_Xw_HListOfMFTSizes::~Handle_Xw_HListOfMFTSizes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Xw_GraphicDevice;
@@ -268,12 +260,10 @@ class Handle_Xw_GraphicDevice : public Handle_Aspect_GraphicDevice {
 	return (Xw_GraphicDevice*)$self->Access();
 	}
 };
-%extend Handle_Xw_GraphicDevice {
-	~Handle_Xw_GraphicDevice() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_GraphicDevice\n");}
-	}
-};
+%feature("shadow") Handle_Xw_GraphicDevice::~Handle_Xw_GraphicDevice %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Xw_FontMap;
@@ -298,12 +288,10 @@ class Handle_Xw_FontMap : public Handle_Standard_Transient {
 	return (Xw_FontMap*)$self->Access();
 	}
 };
-%extend Handle_Xw_FontMap {
-	~Handle_Xw_FontMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_FontMap\n");}
-	}
-};
+%feature("shadow") Handle_Xw_FontMap::~Handle_Xw_FontMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Xw_MarkMap;
@@ -328,12 +316,10 @@ class Handle_Xw_MarkMap : public Handle_Standard_Transient {
 	return (Xw_MarkMap*)$self->Access();
 	}
 };
-%extend Handle_Xw_MarkMap {
-	~Handle_Xw_MarkMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_MarkMap\n");}
-	}
-};
+%feature("shadow") Handle_Xw_MarkMap::~Handle_Xw_MarkMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Xw_HListOfIndexs;
@@ -358,12 +344,10 @@ class Handle_Xw_HListOfIndexs : public Handle_MMgt_TShared {
 	return (Xw_HListOfIndexs*)$self->Access();
 	}
 };
-%extend Handle_Xw_HListOfIndexs {
-	~Handle_Xw_HListOfIndexs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfIndexs\n");}
-	}
-};
+%feature("shadow") Handle_Xw_HListOfIndexs::~Handle_Xw_HListOfIndexs %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Xw_Window;
@@ -388,12 +372,10 @@ class Handle_Xw_Window : public Handle_Aspect_Window {
 	return (Xw_Window*)$self->Access();
 	}
 };
-%extend Handle_Xw_Window {
-	~Handle_Xw_Window() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_Window\n");}
-	}
-};
+%feature("shadow") Handle_Xw_Window::~Handle_Xw_Window %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Xw_IconBox;
@@ -418,12 +400,10 @@ class Handle_Xw_IconBox : public Handle_Xw_Window {
 	return (Xw_IconBox*)$self->Access();
 	}
 };
-%extend Handle_Xw_IconBox {
-	~Handle_Xw_IconBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_IconBox\n");}
-	}
-};
+%feature("shadow") Handle_Xw_IconBox::~Handle_Xw_IconBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Xw_TypeMap;
@@ -448,12 +428,10 @@ class Handle_Xw_TypeMap : public Handle_Standard_Transient {
 	return (Xw_TypeMap*)$self->Access();
 	}
 };
-%extend Handle_Xw_TypeMap {
-	~Handle_Xw_TypeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_TypeMap\n");}
-	}
-};
+%feature("shadow") Handle_Xw_TypeMap::~Handle_Xw_TypeMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Xw_PixMap;
@@ -478,12 +456,10 @@ class Handle_Xw_PixMap : public Handle_Aspect_PixMap {
 	return (Xw_PixMap*)$self->Access();
 	}
 };
-%extend Handle_Xw_PixMap {
-	~Handle_Xw_PixMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Xw_PixMap\n");}
-	}
-};
+%feature("shadow") Handle_Xw_PixMap::~Handle_Xw_PixMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_GraphicDevice;
@@ -539,12 +515,10 @@ class Xw_GraphicDevice : public Aspect_GraphicDevice {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_GraphicDevice {
-	~Xw_GraphicDevice() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_GraphicDevice\n");}
-	}
-};
+%feature("shadow") Xw_GraphicDevice::~Xw_GraphicDevice %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_HListOfMFTFonts;
@@ -586,12 +560,10 @@ class Xw_HListOfMFTFonts : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_HListOfMFTFonts {
-	~Xw_HListOfMFTFonts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_HListOfMFTFonts\n");}
-	}
-};
+%feature("shadow") Xw_HListOfMFTFonts::~Xw_HListOfMFTFonts %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_Driver;
@@ -751,12 +723,10 @@ class Xw_Driver : public Aspect_WindowDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_Driver {
-	~Xw_Driver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_Driver\n");}
-	}
-};
+%feature("shadow") Xw_Driver::~Xw_Driver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_WidthMap;
@@ -786,12 +756,10 @@ class Xw_WidthMap : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_WidthMap {
-	~Xw_WidthMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_WidthMap\n");}
-	}
-};
+%feature("shadow") Xw_WidthMap::~Xw_WidthMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_ColorMap;
@@ -861,12 +829,10 @@ class Xw_ColorMap : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_ColorMap {
-	~Xw_ColorMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_ColorMap\n");}
-	}
-};
+%feature("shadow") Xw_ColorMap::~Xw_ColorMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_TextManager;
@@ -908,12 +874,10 @@ class Xw_TextManager : public MFT_TextManager {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_TextManager {
-	~Xw_TextManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_TextManager\n");}
-	}
-};
+%feature("shadow") Xw_TextManager::~Xw_TextManager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_HListOfMFTSizes;
@@ -955,12 +919,10 @@ class Xw_HListOfMFTSizes : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_HListOfMFTSizes {
-	~Xw_HListOfMFTSizes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_HListOfMFTSizes\n");}
-	}
-};
+%feature("shadow") Xw_HListOfMFTSizes::~Xw_HListOfMFTSizes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_Window;
@@ -1096,12 +1058,10 @@ class Xw_Window : public Aspect_Window {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_Window {
-	~Xw_Window() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_Window\n");}
-	}
-};
+%feature("shadow") Xw_Window::~Xw_Window %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_IconBox;
@@ -1141,12 +1101,10 @@ class Xw_IconBox : public Xw_Window {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_IconBox {
-	~Xw_IconBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_IconBox\n");}
-	}
-};
+%feature("shadow") Xw_IconBox::~Xw_IconBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_HListOfIndexs;
@@ -1198,12 +1156,10 @@ class Xw_HListOfIndexs : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_HListOfIndexs {
-	~Xw_HListOfIndexs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_HListOfIndexs\n");}
-	}
-};
+%feature("shadow") Xw_HListOfIndexs::~Xw_HListOfIndexs %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_PixMap;
@@ -1231,12 +1187,10 @@ class Xw_PixMap : public Aspect_PixMap {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_PixMap {
-	~Xw_PixMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_PixMap\n");}
-	}
-};
+%feature("shadow") Xw_PixMap::~Xw_PixMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_FontMap;
@@ -1266,12 +1220,10 @@ class Xw_FontMap : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_FontMap {
-	~Xw_FontMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_FontMap\n");}
-	}
-};
+%feature("shadow") Xw_FontMap::~Xw_FontMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_ListOfMFTFonts;
@@ -1309,12 +1261,10 @@ class Xw_ListOfMFTFonts {
 		Handle_MFT_FontManager & operator()(const Standard_Integer Index);
 
 };
-%extend Xw_ListOfMFTFonts {
-	~Xw_ListOfMFTFonts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_ListOfMFTFonts\n");}
-	}
-};
+%feature("shadow") Xw_ListOfMFTFonts::~Xw_ListOfMFTFonts %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_TypeMap;
@@ -1344,12 +1294,10 @@ class Xw_TypeMap : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_TypeMap {
-	~Xw_TypeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_TypeMap\n");}
-	}
-};
+%feature("shadow") Xw_TypeMap::~Xw_TypeMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_ListOfIndexs;
@@ -1397,12 +1345,10 @@ class Xw_ListOfIndexs {
 		Standard_Integer & operator()(const Standard_Integer Index);
 
 };
-%extend Xw_ListOfIndexs {
-	~Xw_ListOfIndexs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_ListOfIndexs\n");}
-	}
-};
+%feature("shadow") Xw_ListOfIndexs::~Xw_ListOfIndexs %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_MarkMap;
@@ -1432,12 +1378,10 @@ class Xw_MarkMap : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Xw_MarkMap {
-	~Xw_MarkMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_MarkMap\n");}
-	}
-};
+%feature("shadow") Xw_MarkMap::~Xw_MarkMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw;
@@ -1449,12 +1393,10 @@ class Xw {
 		void SetTrace(const Standard_Integer TraceLevel, const Standard_Integer ErrorLevel);
 
 };
-%extend Xw {
-	~Xw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw\n");}
-	}
-};
+%feature("shadow") Xw::~Xw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Xw_ListOfMFTSizes;
@@ -1492,9 +1434,7 @@ class Xw_ListOfMFTSizes {
 		Standard_ShortReal & operator()(const Standard_Integer Index);
 
 };
-%extend Xw_ListOfMFTSizes {
-	~Xw_ListOfMFTSizes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Xw_ListOfMFTSizes\n");}
-	}
-};
+%feature("shadow") Xw_ListOfMFTSizes::~Xw_ListOfMFTSizes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

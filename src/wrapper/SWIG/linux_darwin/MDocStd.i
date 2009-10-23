@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MDocStd_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 	return (MDocStd_DocumentStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDocStd_DocumentStorageDriver {
-	~Handle_MDocStd_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_DocumentStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDocStd_DocumentStorageDriver::~Handle_MDocStd_DocumentStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDocStd_DocumentRetrievalDriver;
@@ -87,12 +89,10 @@ class Handle_MDocStd_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDrive
 	return (MDocStd_DocumentRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDocStd_DocumentRetrievalDriver {
-	~Handle_MDocStd_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_DocumentRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDocStd_DocumentRetrievalDriver::~Handle_MDocStd_DocumentRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDocStd_XLinkRetrievalDriver;
@@ -117,12 +117,10 @@ class Handle_MDocStd_XLinkRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MDocStd_XLinkRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MDocStd_XLinkRetrievalDriver {
-	~Handle_MDocStd_XLinkRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_XLinkRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDocStd_XLinkRetrievalDriver::~Handle_MDocStd_XLinkRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDocStd_XLinkStorageDriver;
@@ -147,12 +145,10 @@ class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
 	return (MDocStd_XLinkStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MDocStd_XLinkStorageDriver {
-	~Handle_MDocStd_XLinkStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_XLinkStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MDocStd_XLinkStorageDriver::~Handle_MDocStd_XLinkStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDocStd_ListNodeOfDocEntryList;
@@ -177,12 +173,10 @@ class Handle_MDocStd_ListNodeOfDocEntryList : public Handle_TCollection_MapNode 
 	return (MDocStd_ListNodeOfDocEntryList*)$self->Access();
 	}
 };
-%extend Handle_MDocStd_ListNodeOfDocEntryList {
-	~Handle_MDocStd_ListNodeOfDocEntryList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_ListNodeOfDocEntryList\n");}
-	}
-};
+%feature("shadow") Handle_MDocStd_ListNodeOfDocEntryList::~Handle_MDocStd_ListNodeOfDocEntryList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MDocStd_StdMapNodeOfPersistentMap;
@@ -207,12 +201,10 @@ class Handle_MDocStd_StdMapNodeOfPersistentMap : public Handle_TCollection_MapNo
 	return (MDocStd_StdMapNodeOfPersistentMap*)$self->Access();
 	}
 };
-%extend Handle_MDocStd_StdMapNodeOfPersistentMap {
-	~Handle_MDocStd_StdMapNodeOfPersistentMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_StdMapNodeOfPersistentMap\n");}
-	}
-};
+%feature("shadow") Handle_MDocStd_StdMapNodeOfPersistentMap::~Handle_MDocStd_StdMapNodeOfPersistentMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDocStd;
@@ -230,12 +222,10 @@ class MDocStd {
 		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 
 };
-%extend MDocStd {
-	~MDocStd() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd\n");}
-	}
-};
+%feature("shadow") MDocStd::~MDocStd %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDocStd_ListNodeOfDocEntryList;
@@ -259,12 +249,10 @@ class MDocStd_ListNodeOfDocEntryList : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDocStd_ListNodeOfDocEntryList {
-	~MDocStd_ListNodeOfDocEntryList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_ListNodeOfDocEntryList\n");}
-	}
-};
+%feature("shadow") MDocStd_ListNodeOfDocEntryList::~MDocStd_ListNodeOfDocEntryList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDocStd_DocumentStorageDriver;
@@ -296,12 +284,10 @@ class MDocStd_DocumentStorageDriver : public PCDM_StorageDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDocStd_DocumentStorageDriver {
-	~MDocStd_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_DocumentStorageDriver\n");}
-	}
-};
+%feature("shadow") MDocStd_DocumentStorageDriver::~MDocStd_DocumentStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDocStd_PersistentMap;
@@ -325,12 +311,10 @@ class MDocStd_PersistentMap : public TCollection_BasicMap {
 		Standard_Boolean Remove(const Handle_Standard_Persistent &aKey);
 
 };
-%extend MDocStd_PersistentMap {
-	~MDocStd_PersistentMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_PersistentMap\n");}
-	}
-};
+%feature("shadow") MDocStd_PersistentMap::~MDocStd_PersistentMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDocStd_DocumentRetrievalDriver;
@@ -362,12 +346,10 @@ class MDocStd_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDocStd_DocumentRetrievalDriver {
-	~MDocStd_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_DocumentRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDocStd_DocumentRetrievalDriver::~MDocStd_DocumentRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDocStd_XLinkRetrievalDriver;
@@ -397,12 +379,10 @@ class MDocStd_XLinkRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDocStd_XLinkRetrievalDriver {
-	~MDocStd_XLinkRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_XLinkRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MDocStd_XLinkRetrievalDriver::~MDocStd_XLinkRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDocStd_MapIteratorOfPersistentMap;
@@ -418,12 +398,10 @@ class MDocStd_MapIteratorOfPersistentMap : public TCollection_BasicMapIterator {
 		const Handle_Standard_Persistent & Key() const;
 
 };
-%extend MDocStd_MapIteratorOfPersistentMap {
-	~MDocStd_MapIteratorOfPersistentMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_MapIteratorOfPersistentMap\n");}
-	}
-};
+%feature("shadow") MDocStd_MapIteratorOfPersistentMap::~MDocStd_MapIteratorOfPersistentMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDocStd_XLinkStorageDriver;
@@ -453,12 +431,10 @@ class MDocStd_XLinkStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDocStd_XLinkStorageDriver {
-	~MDocStd_XLinkStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_XLinkStorageDriver\n");}
-	}
-};
+%feature("shadow") MDocStd_XLinkStorageDriver::~MDocStd_XLinkStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDocStd_ListIteratorOfDocEntryList;
@@ -478,12 +454,10 @@ class MDocStd_ListIteratorOfDocEntryList {
 		TCollection_AsciiString & Value() const;
 
 };
-%extend MDocStd_ListIteratorOfDocEntryList {
-	~MDocStd_ListIteratorOfDocEntryList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_ListIteratorOfDocEntryList\n");}
-	}
-};
+%feature("shadow") MDocStd_ListIteratorOfDocEntryList::~MDocStd_ListIteratorOfDocEntryList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDocStd_DocEntryList;
@@ -531,12 +505,10 @@ class MDocStd_DocEntryList {
 		void InsertAfter(MDocStd_DocEntryList & Other, MDocStd_ListIteratorOfDocEntryList & It);
 
 };
-%extend MDocStd_DocEntryList {
-	~MDocStd_DocEntryList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_DocEntryList\n");}
-	}
-};
+%feature("shadow") MDocStd_DocEntryList::~MDocStd_DocEntryList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MDocStd_StdMapNodeOfPersistentMap;
@@ -560,9 +532,7 @@ class MDocStd_StdMapNodeOfPersistentMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MDocStd_StdMapNodeOfPersistentMap {
-	~MDocStd_StdMapNodeOfPersistentMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MDocStd_StdMapNodeOfPersistentMap\n");}
-	}
-};
+%feature("shadow") MDocStd_StdMapNodeOfPersistentMap::~MDocStd_StdMapNodeOfPersistentMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

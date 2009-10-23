@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ShapeAlgo_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
 	return (ShapeAlgo_ToolContainer*)$self->Access();
 	}
 };
-%extend Handle_ShapeAlgo_ToolContainer {
-	~Handle_ShapeAlgo_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAlgo_ToolContainer\n");}
-	}
-};
+%feature("shadow") Handle_ShapeAlgo_ToolContainer::~Handle_ShapeAlgo_ToolContainer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeAlgo_AlgoContainer;
@@ -87,12 +89,10 @@ class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 	return (ShapeAlgo_AlgoContainer*)$self->Access();
 	}
 };
-%extend Handle_ShapeAlgo_AlgoContainer {
-	~Handle_ShapeAlgo_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAlgo_AlgoContainer\n");}
-	}
-};
+%feature("shadow") Handle_ShapeAlgo_AlgoContainer::~Handle_ShapeAlgo_AlgoContainer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeAlgo_ToolContainer;
@@ -118,12 +118,10 @@ class ShapeAlgo_ToolContainer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeAlgo_ToolContainer {
-	~ShapeAlgo_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeAlgo_ToolContainer\n");}
-	}
-};
+%feature("shadow") ShapeAlgo_ToolContainer::~ShapeAlgo_ToolContainer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeAlgo_AlgoContainer;
@@ -173,9 +171,7 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeAlgo_AlgoContainer {
-	~ShapeAlgo_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeAlgo_AlgoContainer\n");}
-	}
-};
+%feature("shadow") ShapeAlgo_AlgoContainer::~ShapeAlgo_AlgoContainer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

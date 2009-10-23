@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BndLib_dependencies.i
 
 
@@ -46,12 +50,10 @@ class BndLib_AddSurface {
 		void Add(const Adaptor3d_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
 
 };
-%extend BndLib_AddSurface {
-	~BndLib_AddSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BndLib_AddSurface\n");}
-	}
-};
+%feature("shadow") BndLib_AddSurface::~BndLib_AddSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BndLib_Add3dCurve;
@@ -65,12 +67,10 @@ class BndLib_Add3dCurve {
 		void Add(const Adaptor3d_Curve &C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, Bnd_Box & B);
 
 };
-%extend BndLib_Add3dCurve {
-	~BndLib_Add3dCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BndLib_Add3dCurve\n");}
-	}
-};
+%feature("shadow") BndLib_Add3dCurve::~BndLib_Add3dCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BndLib;
@@ -124,12 +124,10 @@ class BndLib {
 		void Add(const gp_Torus &P, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real Tol, Bnd_Box & B);
 
 };
-%extend BndLib {
-	~BndLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BndLib\n");}
-	}
-};
+%feature("shadow") BndLib::~BndLib %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BndLib_Add2dCurve;
@@ -143,9 +141,7 @@ class BndLib_Add2dCurve {
 		void Add(const Adaptor2d_Curve2d &C, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, Bnd_Box2d & B);
 
 };
-%extend BndLib_Add2dCurve {
-	~BndLib_Add2dCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BndLib_Add2dCurve\n");}
-	}
-};
+%feature("shadow") BndLib_Add2dCurve::~BndLib_Add2dCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepMAT2d_dependencies.i
 
 
@@ -57,20 +61,10 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public Ha
 	return (BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt*)$self->Access();
 	}
 };
-%extend Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt {
-	~Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt\n");}
-	}
-};
-
-%extend Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt::~Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape;
@@ -95,20 +89,10 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public Handle_TColl
 	return (BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape*)$self->Access();
 	}
 };
-%extend Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape {
-	~Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape\n");}
-	}
-};
-
-%extend Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape::~Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt;
@@ -133,20 +117,10 @@ class Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollect
 	return (BRepMAT2d_SequenceNodeOfSequenceOfBasicElt*)$self->Access();
 	}
 };
-%extend Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
-	~Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt\n");}
-	}
-};
-
-%extend Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt::~Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepMAT2d_BisectingLocus;
@@ -176,20 +150,10 @@ class BRepMAT2d_BisectingLocus {
 		Bisector_Bisec GeomBis(const Handle_MAT_Arc &anArc, Standard_Boolean & Reverse) const;
 
 };
-%extend BRepMAT2d_BisectingLocus {
-	~BRepMAT2d_BisectingLocus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_BisectingLocus\n");}
-	}
-};
-
-%extend BRepMAT2d_BisectingLocus {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepMAT2d_BisectingLocus::~BRepMAT2d_BisectingLocus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepMAT2d_SequenceNodeOfSequenceOfBasicElt;
@@ -213,20 +177,10 @@ class BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
-	~BRepMAT2d_SequenceNodeOfSequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_SequenceNodeOfSequenceOfBasicElt\n");}
-	}
-};
-
-%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepMAT2d_SequenceNodeOfSequenceOfBasicElt::~BRepMAT2d_SequenceNodeOfSequenceOfBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt;
@@ -244,20 +198,10 @@ class BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt : public TColl
 		const BRepMAT2d_SequenceOfBasicElt & Value() const;
 
 };
-%extend BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt {
-	~BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt\n");}
-	}
-};
-
-%extend BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt::~BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt;
@@ -283,20 +227,10 @@ class BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public TCollecti
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt {
-	~BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt\n");}
-	}
-};
-
-%extend BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt::~BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepMAT2d_DataMapOfShapeSequenceOfBasicElt;
@@ -328,20 +262,10 @@ class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
 		BRepMAT2d_SequenceOfBasicElt & operator()(const TopoDS_Shape &K);
 
 };
-%extend BRepMAT2d_DataMapOfShapeSequenceOfBasicElt {
-	~BRepMAT2d_DataMapOfShapeSequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapOfShapeSequenceOfBasicElt\n");}
-	}
-};
-
-%extend BRepMAT2d_DataMapOfShapeSequenceOfBasicElt {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepMAT2d_DataMapOfShapeSequenceOfBasicElt::~BRepMAT2d_DataMapOfShapeSequenceOfBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepMAT2d_Explorer;
@@ -379,20 +303,10 @@ class BRepMAT2d_Explorer {
 		const MAT2d_SequenceOfBoolean & GetIsClosed() const;
 
 };
-%extend BRepMAT2d_Explorer {
-	~BRepMAT2d_Explorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_Explorer\n");}
-	}
-};
-
-%extend BRepMAT2d_Explorer {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepMAT2d_Explorer::~BRepMAT2d_Explorer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape;
@@ -410,20 +324,10 @@ class BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape : public TCollection_Bas
 		const TopoDS_Shape & Value() const;
 
 };
-%extend BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape {
-	~BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape\n");}
-	}
-};
-
-%extend BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape::~BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape;
@@ -449,20 +353,10 @@ class BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public TCollection_MapNode
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape {
-	~BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape\n");}
-	}
-};
-
-%extend BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape::~BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepMAT2d_DataMapOfBasicEltShape;
@@ -494,20 +388,10 @@ class BRepMAT2d_DataMapOfBasicEltShape : public TCollection_BasicMap {
 		TopoDS_Shape & operator()(const Handle_MAT_BasicElt &K);
 
 };
-%extend BRepMAT2d_DataMapOfBasicEltShape {
-	~BRepMAT2d_DataMapOfBasicEltShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapOfBasicEltShape\n");}
-	}
-};
-
-%extend BRepMAT2d_DataMapOfBasicEltShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepMAT2d_DataMapOfBasicEltShape::~BRepMAT2d_DataMapOfBasicEltShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepMAT2d_LinkTopoBilo;
@@ -531,20 +415,10 @@ class BRepMAT2d_LinkTopoBilo {
 		TopoDS_Shape GeneratingShape(const Handle_MAT_BasicElt &aBE) const;
 
 };
-%extend BRepMAT2d_LinkTopoBilo {
-	~BRepMAT2d_LinkTopoBilo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_LinkTopoBilo\n");}
-	}
-};
-
-%extend BRepMAT2d_LinkTopoBilo {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepMAT2d_LinkTopoBilo::~BRepMAT2d_LinkTopoBilo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepMAT2d_SequenceOfBasicElt;
@@ -596,17 +470,7 @@ class BRepMAT2d_SequenceOfBasicElt : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend BRepMAT2d_SequenceOfBasicElt {
-	~BRepMAT2d_SequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_SequenceOfBasicElt\n");}
-	}
-};
-
-%extend BRepMAT2d_SequenceOfBasicElt {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepMAT2d_SequenceOfBasicElt::~BRepMAT2d_SequenceOfBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

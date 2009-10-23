@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include XCAFDoc_dependencies.i
 
 
@@ -63,12 +67,10 @@ class Handle_XCAFDoc_DocumentTool : public Handle_TDF_Attribute {
 	return (XCAFDoc_DocumentTool*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_DocumentTool {
-	~Handle_XCAFDoc_DocumentTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_DocumentTool\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_DocumentTool::~Handle_XCAFDoc_DocumentTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_DimTolTool;
@@ -93,12 +95,10 @@ class Handle_XCAFDoc_DimTolTool : public Handle_TDF_Attribute {
 	return (XCAFDoc_DimTolTool*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_DimTolTool {
-	~Handle_XCAFDoc_DimTolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_DimTolTool\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_DimTolTool::~Handle_XCAFDoc_DimTolTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel;
@@ -123,12 +123,10 @@ class Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCollectio
 	return (XCAFDoc_DataMapNodeOfDataMapOfShapeLabel*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
-	~Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel::~Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_Volume;
@@ -153,12 +151,10 @@ class Handle_XCAFDoc_Volume : public Handle_TDF_Attribute {
 	return (XCAFDoc_Volume*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_Volume {
-	~Handle_XCAFDoc_Volume() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_Volume\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_Volume::~Handle_XCAFDoc_Volume %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_DimTol;
@@ -183,12 +179,10 @@ class Handle_XCAFDoc_DimTol : public Handle_TDF_Attribute {
 	return (XCAFDoc_DimTol*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_DimTol {
-	~Handle_XCAFDoc_DimTol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_DimTol\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_DimTol::~Handle_XCAFDoc_DimTol %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_Centroid;
@@ -213,12 +207,10 @@ class Handle_XCAFDoc_Centroid : public Handle_TDF_Attribute {
 	return (XCAFDoc_Centroid*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_Centroid {
-	~Handle_XCAFDoc_Centroid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_Centroid\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_Centroid::~Handle_XCAFDoc_Centroid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence;
@@ -243,12 +235,10 @@ class Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence : public Handle_TCollection
 	return (XCAFDoc_SequenceNodeOfGraphNodeSequence*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence {
-	~Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence::~Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_Area;
@@ -273,12 +263,10 @@ class Handle_XCAFDoc_Area : public Handle_TDF_Attribute {
 	return (XCAFDoc_Area*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_Area {
-	~Handle_XCAFDoc_Area() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_Area\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_Area::~Handle_XCAFDoc_Area %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_Color;
@@ -303,12 +291,10 @@ class Handle_XCAFDoc_Color : public Handle_TDF_Attribute {
 	return (XCAFDoc_Color*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_Color {
-	~Handle_XCAFDoc_Color() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_Color\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_Color::~Handle_XCAFDoc_Color %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_ColorTool;
@@ -333,12 +319,10 @@ class Handle_XCAFDoc_ColorTool : public Handle_TDF_Attribute {
 	return (XCAFDoc_ColorTool*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_ColorTool {
-	~Handle_XCAFDoc_ColorTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_ColorTool\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_ColorTool::~Handle_XCAFDoc_ColorTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_Material;
@@ -363,12 +347,10 @@ class Handle_XCAFDoc_Material : public Handle_TDF_Attribute {
 	return (XCAFDoc_Material*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_Material {
-	~Handle_XCAFDoc_Material() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_Material\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_Material::~Handle_XCAFDoc_Material %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_LayerTool;
@@ -393,12 +375,10 @@ class Handle_XCAFDoc_LayerTool : public Handle_TDF_Attribute {
 	return (XCAFDoc_LayerTool*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_LayerTool {
-	~Handle_XCAFDoc_LayerTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_LayerTool\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_LayerTool::~Handle_XCAFDoc_LayerTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_MaterialTool;
@@ -423,12 +403,10 @@ class Handle_XCAFDoc_MaterialTool : public Handle_TDF_Attribute {
 	return (XCAFDoc_MaterialTool*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_MaterialTool {
-	~Handle_XCAFDoc_MaterialTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_MaterialTool\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_MaterialTool::~Handle_XCAFDoc_MaterialTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_GraphNode;
@@ -453,12 +431,10 @@ class Handle_XCAFDoc_GraphNode : public Handle_TDF_Attribute {
 	return (XCAFDoc_GraphNode*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_GraphNode {
-	~Handle_XCAFDoc_GraphNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_GraphNode\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_GraphNode::~Handle_XCAFDoc_GraphNode %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_Location;
@@ -483,12 +459,10 @@ class Handle_XCAFDoc_Location : public Handle_TDF_Attribute {
 	return (XCAFDoc_Location*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_Location {
-	~Handle_XCAFDoc_Location() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_Location\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_Location::~Handle_XCAFDoc_Location %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_Datum;
@@ -513,12 +487,10 @@ class Handle_XCAFDoc_Datum : public Handle_TDF_Attribute {
 	return (XCAFDoc_Datum*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_Datum {
-	~Handle_XCAFDoc_Datum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_Datum\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_Datum::~Handle_XCAFDoc_Datum %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_ShapeTool;
@@ -543,12 +515,10 @@ class Handle_XCAFDoc_ShapeTool : public Handle_TDF_Attribute {
 	return (XCAFDoc_ShapeTool*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_ShapeTool {
-	~Handle_XCAFDoc_ShapeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_ShapeTool\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_ShapeTool::~Handle_XCAFDoc_ShapeTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFDoc_ShapeMapTool;
@@ -573,12 +543,10 @@ class Handle_XCAFDoc_ShapeMapTool : public Handle_TDF_Attribute {
 	return (XCAFDoc_ShapeMapTool*)$self->Access();
 	}
 };
-%extend Handle_XCAFDoc_ShapeMapTool {
-	~Handle_XCAFDoc_ShapeMapTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_ShapeMapTool\n");}
-	}
-};
+%feature("shadow") Handle_XCAFDoc_ShapeMapTool::~Handle_XCAFDoc_ShapeMapTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_DocumentTool;
@@ -638,12 +606,10 @@ class XCAFDoc_DocumentTool : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_DocumentTool {
-	~XCAFDoc_DocumentTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_DocumentTool\n");}
-	}
-};
+%feature("shadow") XCAFDoc_DocumentTool::~XCAFDoc_DocumentTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc;
@@ -675,12 +641,10 @@ class XCAFDoc {
 		Standard_GUID SHUORefGUID();
 
 };
-%extend XCAFDoc {
-	~XCAFDoc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc\n");}
-	}
-};
+%feature("shadow") XCAFDoc::~XCAFDoc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_DataMapOfShapeLabel;
@@ -712,12 +676,10 @@ class XCAFDoc_DataMapOfShapeLabel : public TCollection_BasicMap {
 		TDF_Label & operator()(const TopoDS_Shape &K);
 
 };
-%extend XCAFDoc_DataMapOfShapeLabel {
-	~XCAFDoc_DataMapOfShapeLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_DataMapOfShapeLabel\n");}
-	}
-};
+%feature("shadow") XCAFDoc_DataMapOfShapeLabel::~XCAFDoc_DataMapOfShapeLabel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_Volume;
@@ -765,12 +727,10 @@ class XCAFDoc_Volume : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_Volume {
-	~XCAFDoc_Volume() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Volume\n");}
-	}
-};
+%feature("shadow") XCAFDoc_Volume::~XCAFDoc_Volume %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_DimTol;
@@ -814,12 +774,10 @@ class XCAFDoc_DimTol : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_DimTol {
-	~XCAFDoc_DimTol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_DimTol\n");}
-	}
-};
+%feature("shadow") XCAFDoc_DimTol::~XCAFDoc_DimTol %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_DimTolTool;
@@ -891,12 +849,10 @@ class XCAFDoc_DimTolTool : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_DimTolTool {
-	~XCAFDoc_DimTolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_DimTolTool\n");}
-	}
-};
+%feature("shadow") XCAFDoc_DimTolTool::~XCAFDoc_DimTolTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_ShapeTool;
@@ -1044,12 +1000,10 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_ShapeTool {
-	~XCAFDoc_ShapeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_ShapeTool\n");}
-	}
-};
+%feature("shadow") XCAFDoc_ShapeTool::~XCAFDoc_ShapeTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel;
@@ -1067,12 +1021,10 @@ class XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel : public TCollection_BasicMap
 		const TDF_Label & Value() const;
 
 };
-%extend XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel {
-	~XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel\n");}
-	}
-};
+%feature("shadow") XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel::~XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_Datum;
@@ -1114,12 +1066,10 @@ class XCAFDoc_Datum : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_Datum {
-	~XCAFDoc_Datum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Datum\n");}
-	}
-};
+%feature("shadow") XCAFDoc_Datum::~XCAFDoc_Datum %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_LayerTool;
@@ -1205,12 +1155,10 @@ class XCAFDoc_LayerTool : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_LayerTool {
-	~XCAFDoc_LayerTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_LayerTool\n");}
-	}
-};
+%feature("shadow") XCAFDoc_LayerTool::~XCAFDoc_LayerTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_GraphNode;
@@ -1290,12 +1238,10 @@ class XCAFDoc_GraphNode : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_GraphNode {
-	~XCAFDoc_GraphNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_GraphNode\n");}
-	}
-};
+%feature("shadow") XCAFDoc_GraphNode::~XCAFDoc_GraphNode %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_Area;
@@ -1343,12 +1289,10 @@ class XCAFDoc_Area : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_Area {
-	~XCAFDoc_Area() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Area\n");}
-	}
-};
+%feature("shadow") XCAFDoc_Area::~XCAFDoc_Area %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_Color;
@@ -1398,12 +1342,10 @@ class XCAFDoc_Color : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_Color {
-	~XCAFDoc_Color() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Color\n");}
-	}
-};
+%feature("shadow") XCAFDoc_Color::~XCAFDoc_Color %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_Location;
@@ -1441,12 +1383,10 @@ class XCAFDoc_Location : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_Location {
-	~XCAFDoc_Location() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Location\n");}
-	}
-};
+%feature("shadow") XCAFDoc_Location::~XCAFDoc_Location %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_Material;
@@ -1492,12 +1432,10 @@ class XCAFDoc_Material : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_Material {
-	~XCAFDoc_Material() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Material\n");}
-	}
-};
+%feature("shadow") XCAFDoc_Material::~XCAFDoc_Material %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_GraphNodeSequence;
@@ -1549,12 +1487,10 @@ class XCAFDoc_GraphNodeSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend XCAFDoc_GraphNodeSequence {
-	~XCAFDoc_GraphNodeSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_GraphNodeSequence\n");}
-	}
-};
+%feature("shadow") XCAFDoc_GraphNodeSequence::~XCAFDoc_GraphNodeSequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_DataMapNodeOfDataMapOfShapeLabel;
@@ -1580,12 +1516,10 @@ class XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
-	~XCAFDoc_DataMapNodeOfDataMapOfShapeLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_DataMapNodeOfDataMapOfShapeLabel\n");}
-	}
-};
+%feature("shadow") XCAFDoc_DataMapNodeOfDataMapOfShapeLabel::~XCAFDoc_DataMapNodeOfDataMapOfShapeLabel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_ShapeMapTool;
@@ -1625,12 +1559,10 @@ class XCAFDoc_ShapeMapTool : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_ShapeMapTool {
-	~XCAFDoc_ShapeMapTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_ShapeMapTool\n");}
-	}
-};
+%feature("shadow") XCAFDoc_ShapeMapTool::~XCAFDoc_ShapeMapTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_Centroid;
@@ -1678,12 +1610,10 @@ class XCAFDoc_Centroid : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_Centroid {
-	~XCAFDoc_Centroid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Centroid\n");}
-	}
-};
+%feature("shadow") XCAFDoc_Centroid::~XCAFDoc_Centroid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_ColorTool;
@@ -1771,12 +1701,10 @@ class XCAFDoc_ColorTool : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_ColorTool {
-	~XCAFDoc_ColorTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_ColorTool\n");}
-	}
-};
+%feature("shadow") XCAFDoc_ColorTool::~XCAFDoc_ColorTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_SequenceNodeOfGraphNodeSequence;
@@ -1800,12 +1728,10 @@ class XCAFDoc_SequenceNodeOfGraphNodeSequence : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_SequenceNodeOfGraphNodeSequence {
-	~XCAFDoc_SequenceNodeOfGraphNodeSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_SequenceNodeOfGraphNodeSequence\n");}
-	}
-};
+%feature("shadow") XCAFDoc_SequenceNodeOfGraphNodeSequence::~XCAFDoc_SequenceNodeOfGraphNodeSequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFDoc_MaterialTool;
@@ -1857,9 +1783,7 @@ class XCAFDoc_MaterialTool : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFDoc_MaterialTool {
-	~XCAFDoc_MaterialTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDoc_MaterialTool\n");}
-	}
-};
+%feature("shadow") XCAFDoc_MaterialTool::~XCAFDoc_MaterialTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

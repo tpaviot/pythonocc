@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include XCAFPrs_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient : public Handle_TColle
 	return (XCAFPrs_DataMapNodeOfDataMapOfStyleTransient*)$self->Access();
 	}
 };
-%extend Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient {
-	~Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient\n");}
-	}
-};
+%feature("shadow") Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient::~Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFPrs_AISObject;
@@ -87,12 +89,10 @@ class Handle_XCAFPrs_AISObject : public Handle_AIS_Shape {
 	return (XCAFPrs_AISObject*)$self->Access();
 	}
 };
-%extend Handle_XCAFPrs_AISObject {
-	~Handle_XCAFPrs_AISObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFPrs_AISObject\n");}
-	}
-};
+%feature("shadow") Handle_XCAFPrs_AISObject::~Handle_XCAFPrs_AISObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle;
@@ -117,12 +117,10 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public Handle_TCollectio
 	return (XCAFPrs_DataMapNodeOfDataMapOfShapeStyle*)$self->Access();
 	}
 };
-%extend Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
-	~Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle\n");}
-	}
-};
+%feature("shadow") Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle::~Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFPrs_Driver;
@@ -147,12 +145,10 @@ class Handle_XCAFPrs_Driver : public Handle_TPrsStd_Driver {
 	return (XCAFPrs_Driver*)$self->Access();
 	}
 };
-%extend Handle_XCAFPrs_Driver {
-	~Handle_XCAFPrs_Driver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFPrs_Driver\n");}
-	}
-};
+%feature("shadow") Handle_XCAFPrs_Driver::~Handle_XCAFPrs_Driver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape;
@@ -177,12 +173,10 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public Handle_TCollectio
 	return (XCAFPrs_DataMapNodeOfDataMapOfStyleShape*)$self->Access();
 	}
 };
-%extend Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape {
-	~Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape\n");}
-	}
-};
+%feature("shadow") Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape::~Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFPrs_DataMapOfStyleShape;
@@ -214,12 +208,10 @@ class XCAFPrs_DataMapOfStyleShape : public TCollection_BasicMap {
 		TopoDS_Shape & operator()(const XCAFPrs_Style &K);
 
 };
-%extend XCAFPrs_DataMapOfStyleShape {
-	~XCAFPrs_DataMapOfStyleShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapOfStyleShape\n");}
-	}
-};
+%feature("shadow") XCAFPrs_DataMapOfStyleShape::~XCAFPrs_DataMapOfStyleShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient;
@@ -237,12 +229,10 @@ class XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient : public TCollection_Basi
 		const Handle_Standard_Transient & Value() const;
 
 };
-%extend XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient {
-	~XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient\n");}
-	}
-};
+%feature("shadow") XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient::~XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFPrs_AISObject;
@@ -264,12 +254,10 @@ class XCAFPrs_AISObject : public AIS_Shape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFPrs_AISObject {
-	~XCAFPrs_AISObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_AISObject\n");}
-	}
-};
+%feature("shadow") XCAFPrs_AISObject::~XCAFPrs_AISObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFPrs_DataMapOfShapeStyle;
@@ -301,12 +289,10 @@ class XCAFPrs_DataMapOfShapeStyle : public TCollection_BasicMap {
 		XCAFPrs_Style & operator()(const TopoDS_Shape &K);
 
 };
-%extend XCAFPrs_DataMapOfShapeStyle {
-	~XCAFPrs_DataMapOfShapeStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapOfShapeStyle\n");}
-	}
-};
+%feature("shadow") XCAFPrs_DataMapOfShapeStyle::~XCAFPrs_DataMapOfShapeStyle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFPrs;
@@ -324,12 +310,10 @@ class XCAFPrs {
 		Standard_Boolean GetViewNameMode();
 
 };
-%extend XCAFPrs {
-	~XCAFPrs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs\n");}
-	}
-};
+%feature("shadow") XCAFPrs::~XCAFPrs %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFPrs_DataMapNodeOfDataMapOfStyleTransient;
@@ -355,12 +339,10 @@ class XCAFPrs_DataMapNodeOfDataMapOfStyleTransient : public TCollection_MapNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFPrs_DataMapNodeOfDataMapOfStyleTransient {
-	~XCAFPrs_DataMapNodeOfDataMapOfStyleTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapNodeOfDataMapOfStyleTransient\n");}
-	}
-};
+%feature("shadow") XCAFPrs_DataMapNodeOfDataMapOfStyleTransient::~XCAFPrs_DataMapNodeOfDataMapOfStyleTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFPrs_DataMapOfStyleTransient;
@@ -392,12 +374,10 @@ class XCAFPrs_DataMapOfStyleTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & operator()(const XCAFPrs_Style &K);
 
 };
-%extend XCAFPrs_DataMapOfStyleTransient {
-	~XCAFPrs_DataMapOfStyleTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapOfStyleTransient\n");}
-	}
-};
+%feature("shadow") XCAFPrs_DataMapOfStyleTransient::~XCAFPrs_DataMapOfStyleTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFPrs_DataMapNodeOfDataMapOfStyleShape;
@@ -423,12 +403,10 @@ class XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFPrs_DataMapNodeOfDataMapOfStyleShape {
-	~XCAFPrs_DataMapNodeOfDataMapOfStyleShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapNodeOfDataMapOfStyleShape\n");}
-	}
-};
+%feature("shadow") XCAFPrs_DataMapNodeOfDataMapOfStyleShape::~XCAFPrs_DataMapNodeOfDataMapOfStyleShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFPrs_Driver;
@@ -454,12 +432,10 @@ class XCAFPrs_Driver : public TPrsStd_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFPrs_Driver {
-	~XCAFPrs_Driver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_Driver\n");}
-	}
-};
+%feature("shadow") XCAFPrs_Driver::~XCAFPrs_Driver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFPrs_Style;
@@ -497,12 +473,10 @@ class XCAFPrs_Style {
 		Standard_Boolean IsEqual(const XCAFPrs_Style &S1, const XCAFPrs_Style &S2);
 
 };
-%extend XCAFPrs_Style {
-	~XCAFPrs_Style() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_Style\n");}
-	}
-};
+%feature("shadow") XCAFPrs_Style::~XCAFPrs_Style %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle;
@@ -520,12 +494,10 @@ class XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle : public TCollection_BasicMap
 		const XCAFPrs_Style & Value() const;
 
 };
-%extend XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle {
-	~XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle\n");}
-	}
-};
+%feature("shadow") XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle::~XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfStyleShape;
@@ -543,12 +515,10 @@ class XCAFPrs_DataMapIteratorOfDataMapOfStyleShape : public TCollection_BasicMap
 		const TopoDS_Shape & Value() const;
 
 };
-%extend XCAFPrs_DataMapIteratorOfDataMapOfStyleShape {
-	~XCAFPrs_DataMapIteratorOfDataMapOfStyleShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapIteratorOfDataMapOfStyleShape\n");}
-	}
-};
+%feature("shadow") XCAFPrs_DataMapIteratorOfDataMapOfStyleShape::~XCAFPrs_DataMapIteratorOfDataMapOfStyleShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XCAFPrs_DataMapNodeOfDataMapOfShapeStyle;
@@ -574,9 +544,7 @@ class XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
-	~XCAFPrs_DataMapNodeOfDataMapOfShapeStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapNodeOfDataMapOfShapeStyle\n");}
-	}
-};
+%feature("shadow") XCAFPrs_DataMapNodeOfDataMapOfShapeStyle::~XCAFPrs_DataMapNodeOfDataMapOfShapeStyle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

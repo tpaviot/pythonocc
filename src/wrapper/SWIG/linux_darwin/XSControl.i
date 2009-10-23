@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include XSControl_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_XSControl_TransferWriter : public Handle_MMgt_TShared {
 	return (XSControl_TransferWriter*)$self->Access();
 	}
 };
-%extend Handle_XSControl_TransferWriter {
-	~Handle_XSControl_TransferWriter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XSControl_TransferWriter\n");}
-	}
-};
+%feature("shadow") Handle_XSControl_TransferWriter::~Handle_XSControl_TransferWriter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XSControl_SignTransferStatus;
@@ -87,12 +89,10 @@ class Handle_XSControl_SignTransferStatus : public Handle_IFSelect_Signature {
 	return (XSControl_SignTransferStatus*)$self->Access();
 	}
 };
-%extend Handle_XSControl_SignTransferStatus {
-	~Handle_XSControl_SignTransferStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XSControl_SignTransferStatus\n");}
-	}
-};
+%feature("shadow") Handle_XSControl_SignTransferStatus::~Handle_XSControl_SignTransferStatus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XSControl_TransferReader;
@@ -117,12 +117,10 @@ class Handle_XSControl_TransferReader : public Handle_MMgt_TShared {
 	return (XSControl_TransferReader*)$self->Access();
 	}
 };
-%extend Handle_XSControl_TransferReader {
-	~Handle_XSControl_TransferReader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XSControl_TransferReader\n");}
-	}
-};
+%feature("shadow") Handle_XSControl_TransferReader::~Handle_XSControl_TransferReader %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XSControl_Vars;
@@ -147,12 +145,10 @@ class Handle_XSControl_Vars : public Handle_MMgt_TShared {
 	return (XSControl_Vars*)$self->Access();
 	}
 };
-%extend Handle_XSControl_Vars {
-	~Handle_XSControl_Vars() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XSControl_Vars\n");}
-	}
-};
+%feature("shadow") Handle_XSControl_Vars::~Handle_XSControl_Vars %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XSControl_SelectForTransfer;
@@ -177,12 +173,10 @@ class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract 
 	return (XSControl_SelectForTransfer*)$self->Access();
 	}
 };
-%extend Handle_XSControl_SelectForTransfer {
-	~Handle_XSControl_SelectForTransfer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XSControl_SelectForTransfer\n");}
-	}
-};
+%feature("shadow") Handle_XSControl_SelectForTransfer::~Handle_XSControl_SelectForTransfer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XSControl_WorkSession;
@@ -207,12 +201,10 @@ class Handle_XSControl_WorkSession : public Handle_IFSelect_WorkSession {
 	return (XSControl_WorkSession*)$self->Access();
 	}
 };
-%extend Handle_XSControl_WorkSession {
-	~Handle_XSControl_WorkSession() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XSControl_WorkSession\n");}
-	}
-};
+%feature("shadow") Handle_XSControl_WorkSession::~Handle_XSControl_WorkSession %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XSControl_Controller;
@@ -237,12 +229,10 @@ class Handle_XSControl_Controller : public Handle_MMgt_TShared {
 	return (XSControl_Controller*)$self->Access();
 	}
 };
-%extend Handle_XSControl_Controller {
-	~Handle_XSControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XSControl_Controller\n");}
-	}
-};
+%feature("shadow") Handle_XSControl_Controller::~Handle_XSControl_Controller %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XSControl_ConnectedShapes;
@@ -267,12 +257,10 @@ class Handle_XSControl_ConnectedShapes : public Handle_IFSelect_SelectExplore {
 	return (XSControl_ConnectedShapes*)$self->Access();
 	}
 };
-%extend Handle_XSControl_ConnectedShapes {
-	~Handle_XSControl_ConnectedShapes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XSControl_ConnectedShapes\n");}
-	}
-};
+%feature("shadow") Handle_XSControl_ConnectedShapes::~Handle_XSControl_ConnectedShapes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XSControl_SignTransferStatus;
@@ -306,12 +294,10 @@ class XSControl_SignTransferStatus : public IFSelect_Signature {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XSControl_SignTransferStatus {
-	~XSControl_SignTransferStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_SignTransferStatus\n");}
-	}
-};
+%feature("shadow") XSControl_SignTransferStatus::~XSControl_SignTransferStatus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XSControl_Writer;
@@ -339,12 +325,10 @@ class XSControl_Writer {
 		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode=0) const;
 
 };
-%extend XSControl_Writer {
-	~XSControl_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_Writer\n");}
-	}
-};
+%feature("shadow") XSControl_Writer::~XSControl_Writer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XSControl_Functions;
@@ -356,12 +340,10 @@ class XSControl_Functions {
 		void Init();
 
 };
-%extend XSControl_Functions {
-	~XSControl_Functions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_Functions\n");}
-	}
-};
+%feature("shadow") XSControl_Functions::~XSControl_Functions %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XSControl_ConnectedShapes;
@@ -393,12 +375,10 @@ class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XSControl_ConnectedShapes {
-	~XSControl_ConnectedShapes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_ConnectedShapes\n");}
-	}
-};
+%feature("shadow") XSControl_ConnectedShapes::~XSControl_ConnectedShapes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XSControl_Utils;
@@ -492,12 +472,10 @@ class XSControl_Utils {
 		Standard_Integer SeqIntValue(const Handle_TColStd_HSequenceOfInteger &list, const Standard_Integer num) const;
 
 };
-%extend XSControl_Utils {
-	~XSControl_Utils() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_Utils\n");}
-	}
-};
+%feature("shadow") XSControl_Utils::~XSControl_Utils %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XSControl_FuncShape;
@@ -513,12 +491,10 @@ class XSControl_FuncShape {
 		Standard_Boolean FileAndVar(const Handle_XSControl_WorkSession &session, const char * file, const char * var, const char * def, TCollection_AsciiString & resfile, TCollection_AsciiString & resvar);
 
 };
-%extend XSControl_FuncShape {
-	~XSControl_FuncShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_FuncShape\n");}
-	}
-};
+%feature("shadow") XSControl_FuncShape::~XSControl_FuncShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XSControl_Controller;
@@ -616,12 +592,10 @@ class XSControl_Controller : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XSControl_Controller {
-	~XSControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_Controller\n");}
-	}
-};
+%feature("shadow") XSControl_Controller::~XSControl_Controller %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XSControl_Reader;
@@ -679,12 +653,10 @@ class XSControl_Reader {
 		void GetStatsTransfer(const Handle_TColStd_HSequenceOfTransient &list, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 
 };
-%extend XSControl_Reader {
-	~XSControl_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_Reader\n");}
-	}
-};
+%feature("shadow") XSControl_Reader::~XSControl_Reader %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XSControl_TransferWriter;
@@ -736,12 +708,10 @@ class XSControl_TransferWriter : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XSControl_TransferWriter {
-	~XSControl_TransferWriter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_TransferWriter\n");}
-	}
-};
+%feature("shadow") XSControl_TransferWriter::~XSControl_TransferWriter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XSControl_WorkSession;
@@ -821,12 +791,10 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XSControl_WorkSession {
-	~XSControl_WorkSession() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_WorkSession\n");}
-	}
-};
+%feature("shadow") XSControl_WorkSession::~XSControl_WorkSession %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XSControl_TransferReader;
@@ -940,12 +908,10 @@ class XSControl_TransferReader : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XSControl_TransferReader {
-	~XSControl_TransferReader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_TransferReader\n");}
-	}
-};
+%feature("shadow") XSControl_TransferReader::~XSControl_TransferReader %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XSControl;
@@ -959,12 +925,10 @@ class XSControl {
 		Handle_XSControl_Vars Vars(const Handle_IFSelect_SessionPilot &pilot);
 
 };
-%extend XSControl {
-	~XSControl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl\n");}
-	}
-};
+%feature("shadow") XSControl::~XSControl %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XSControl_SelectForTransfer;
@@ -1000,9 +964,7 @@ class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XSControl_SelectForTransfer {
-	~XSControl_SelectForTransfer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSControl_SelectForTransfer\n");}
-	}
-};
+%feature("shadow") XSControl_SelectForTransfer::~XSControl_SelectForTransfer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

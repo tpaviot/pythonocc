@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ShapeFix_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_ShapeFix_EdgeProjAux : public Handle_MMgt_TShared {
 	return (ShapeFix_EdgeProjAux*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_EdgeProjAux {
-	~Handle_ShapeFix_EdgeProjAux() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_EdgeProjAux\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_EdgeProjAux::~Handle_ShapeFix_EdgeProjAux %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeFix_Root;
@@ -87,12 +89,10 @@ class Handle_ShapeFix_Root : public Handle_MMgt_TShared {
 	return (ShapeFix_Root*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_Root {
-	~Handle_ShapeFix_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Root\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_Root::~Handle_ShapeFix_Root %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeFix_Face;
@@ -117,12 +117,10 @@ class Handle_ShapeFix_Face : public Handle_ShapeFix_Root {
 	return (ShapeFix_Face*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_Face {
-	~Handle_ShapeFix_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Face\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_Face::~Handle_ShapeFix_Face %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeFix_Edge;
@@ -147,12 +145,10 @@ class Handle_ShapeFix_Edge : public Handle_MMgt_TShared {
 	return (ShapeFix_Edge*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_Edge {
-	~Handle_ShapeFix_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Edge\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_Edge::~Handle_ShapeFix_Edge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeFix_ComposeShell;
@@ -177,12 +173,10 @@ class Handle_ShapeFix_ComposeShell : public Handle_ShapeFix_Root {
 	return (ShapeFix_ComposeShell*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_ComposeShell {
-	~Handle_ShapeFix_ComposeShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_ComposeShell\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_ComposeShell::~Handle_ShapeFix_ComposeShell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeFix_Solid;
@@ -207,12 +201,10 @@ class Handle_ShapeFix_Solid : public Handle_ShapeFix_Root {
 	return (ShapeFix_Solid*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_Solid {
-	~Handle_ShapeFix_Solid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Solid\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_Solid::~Handle_ShapeFix_Solid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeFix_Wire;
@@ -237,12 +229,10 @@ class Handle_ShapeFix_Wire : public Handle_ShapeFix_Root {
 	return (ShapeFix_Wire*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_Wire {
-	~Handle_ShapeFix_Wire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Wire\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_Wire::~Handle_ShapeFix_Wire %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment;
@@ -267,12 +257,10 @@ class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TColle
 	return (ShapeFix_SequenceNodeOfSequenceOfWireSegment*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment {
-	~Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment::~Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeFix_Wireframe;
@@ -297,12 +285,10 @@ class Handle_ShapeFix_Wireframe : public Handle_ShapeFix_Root {
 	return (ShapeFix_Wireframe*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_Wireframe {
-	~Handle_ShapeFix_Wireframe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Wireframe\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_Wireframe::~Handle_ShapeFix_Wireframe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
@@ -327,12 +313,10 @@ class Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public Handle_TCollecti
 	return (ShapeFix_DataMapNodeOfDataMapOfShapeBox2d*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
-	~Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d::~Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeFix_Shape;
@@ -357,12 +341,10 @@ class Handle_ShapeFix_Shape : public Handle_ShapeFix_Root {
 	return (ShapeFix_Shape*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_Shape {
-	~Handle_ShapeFix_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Shape\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_Shape::~Handle_ShapeFix_Shape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeFix_FixSmallFace;
@@ -387,12 +369,10 @@ class Handle_ShapeFix_FixSmallFace : public Handle_ShapeFix_Root {
 	return (ShapeFix_FixSmallFace*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_FixSmallFace {
-	~Handle_ShapeFix_FixSmallFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_FixSmallFace\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_FixSmallFace::~Handle_ShapeFix_FixSmallFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeFix_Shell;
@@ -417,12 +397,10 @@ class Handle_ShapeFix_Shell : public Handle_ShapeFix_Root {
 	return (ShapeFix_Shell*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_Shell {
-	~Handle_ShapeFix_Shell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Shell\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_Shell::~Handle_ShapeFix_Shell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeFix_SplitCommonVertex;
@@ -447,12 +425,10 @@ class Handle_ShapeFix_SplitCommonVertex : public Handle_ShapeFix_Root {
 	return (ShapeFix_SplitCommonVertex*)$self->Access();
 	}
 };
-%extend Handle_ShapeFix_SplitCommonVertex {
-	~Handle_ShapeFix_SplitCommonVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_SplitCommonVertex\n");}
-	}
-};
+%feature("shadow") Handle_ShapeFix_SplitCommonVertex::~Handle_ShapeFix_SplitCommonVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_Root;
@@ -510,12 +486,10 @@ class ShapeFix_Root : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_Root {
-	~ShapeFix_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Root\n");}
-	}
-};
+%feature("shadow") ShapeFix_Root::~ShapeFix_Root %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_ComposeShell;
@@ -555,12 +529,10 @@ class ShapeFix_ComposeShell : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_ComposeShell {
-	~ShapeFix_ComposeShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_ComposeShell\n");}
-	}
-};
+%feature("shadow") ShapeFix_ComposeShell::~ShapeFix_ComposeShell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_EdgeProjAux;
@@ -598,12 +570,10 @@ class ShapeFix_EdgeProjAux : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_EdgeProjAux {
-	~ShapeFix_EdgeProjAux() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_EdgeProjAux\n");}
-	}
-};
+%feature("shadow") ShapeFix_EdgeProjAux::~ShapeFix_EdgeProjAux %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_FreeBounds;
@@ -623,12 +593,10 @@ class ShapeFix_FreeBounds {
 		const TopoDS_Shape & GetShape() const;
 
 };
-%extend ShapeFix_FreeBounds {
-	~ShapeFix_FreeBounds() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_FreeBounds\n");}
-	}
-};
+%feature("shadow") ShapeFix_FreeBounds::~ShapeFix_FreeBounds %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_Wire;
@@ -1044,12 +1012,10 @@ class ShapeFix_Wire : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_Wire {
-	~ShapeFix_Wire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Wire\n");}
-	}
-};
+%feature("shadow") ShapeFix_Wire::~ShapeFix_Wire %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_Solid;
@@ -1109,12 +1075,10 @@ class ShapeFix_Solid : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_Solid {
-	~ShapeFix_Solid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Solid\n");}
-	}
-};
+%feature("shadow") ShapeFix_Solid::~ShapeFix_Solid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d;
@@ -1132,12 +1096,10 @@ class ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d : public TCollection_BasicMa
 		const Bnd_Box2d & Value() const;
 
 };
-%extend ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d {
-	~ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d\n");}
-	}
-};
+%feature("shadow") ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d::~ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_SequenceNodeOfSequenceOfWireSegment;
@@ -1161,12 +1123,10 @@ class ShapeFix_SequenceNodeOfSequenceOfWireSegment : public TCollection_SeqNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_SequenceNodeOfSequenceOfWireSegment {
-	~ShapeFix_SequenceNodeOfSequenceOfWireSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_SequenceNodeOfSequenceOfWireSegment\n");}
-	}
-};
+%feature("shadow") ShapeFix_SequenceNodeOfSequenceOfWireSegment::~ShapeFix_SequenceNodeOfSequenceOfWireSegment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_DataMapOfShapeBox2d;
@@ -1198,12 +1158,10 @@ class ShapeFix_DataMapOfShapeBox2d : public TCollection_BasicMap {
 		Bnd_Box2d & operator()(const TopoDS_Shape &K);
 
 };
-%extend ShapeFix_DataMapOfShapeBox2d {
-	~ShapeFix_DataMapOfShapeBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_DataMapOfShapeBox2d\n");}
-	}
-};
+%feature("shadow") ShapeFix_DataMapOfShapeBox2d::~ShapeFix_DataMapOfShapeBox2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_EdgeConnect;
@@ -1221,12 +1179,10 @@ class ShapeFix_EdgeConnect {
 		void Clear();
 
 };
-%extend ShapeFix_EdgeConnect {
-	~ShapeFix_EdgeConnect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_EdgeConnect\n");}
-	}
-};
+%feature("shadow") ShapeFix_EdgeConnect::~ShapeFix_EdgeConnect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
@@ -1252,12 +1208,10 @@ class ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
-	~ShapeFix_DataMapNodeOfDataMapOfShapeBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_DataMapNodeOfDataMapOfShapeBox2d\n");}
-	}
-};
+%feature("shadow") ShapeFix_DataMapNodeOfDataMapOfShapeBox2d::~ShapeFix_DataMapNodeOfDataMapOfShapeBox2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_Wireframe;
@@ -1305,12 +1259,10 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_Wireframe {
-	~ShapeFix_Wireframe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Wireframe\n");}
-	}
-};
+%feature("shadow") ShapeFix_Wireframe::~ShapeFix_Wireframe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix;
@@ -1328,12 +1280,10 @@ class ShapeFix {
 		Standard_Boolean FixVertexPosition(TopoDS_Shape & theshape, const Standard_Real theTolerance, const Handle_ShapeBuild_ReShape &thecontext);
 
 };
-%extend ShapeFix {
-	~ShapeFix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix\n");}
-	}
-};
+%feature("shadow") ShapeFix::~ShapeFix %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_IntersectionTool;
@@ -1353,12 +1303,10 @@ class ShapeFix_IntersectionTool {
 		Standard_Boolean FixIntersectingWires(TopoDS_Face & face) const;
 
 };
-%extend ShapeFix_IntersectionTool {
-	~ShapeFix_IntersectionTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_IntersectionTool\n");}
-	}
-};
+%feature("shadow") ShapeFix_IntersectionTool::~ShapeFix_IntersectionTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_WireVertex;
@@ -1384,12 +1332,10 @@ class ShapeFix_WireVertex {
 		Standard_Integer Fix();
 
 };
-%extend ShapeFix_WireVertex {
-	~ShapeFix_WireVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_WireVertex\n");}
-	}
-};
+%feature("shadow") ShapeFix_WireVertex::~ShapeFix_WireVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_FixSmallFace;
@@ -1445,12 +1391,10 @@ class ShapeFix_FixSmallFace : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_FixSmallFace {
-	~ShapeFix_FixSmallFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_FixSmallFace\n");}
-	}
-};
+%feature("shadow") ShapeFix_FixSmallFace::~ShapeFix_FixSmallFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_ShapeTolerance;
@@ -1464,12 +1408,10 @@ class ShapeFix_ShapeTolerance {
 		void SetTolerance(const TopoDS_Shape &shape, const Standard_Real preci, const TopAbs_ShapeEnum styp=TopAbs_SHAPE) const;
 
 };
-%extend ShapeFix_ShapeTolerance {
-	~ShapeFix_ShapeTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_ShapeTolerance\n");}
-	}
-};
+%feature("shadow") ShapeFix_ShapeTolerance::~ShapeFix_ShapeTolerance %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_SequenceOfWireSegment;
@@ -1521,12 +1463,10 @@ class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend ShapeFix_SequenceOfWireSegment {
-	~ShapeFix_SequenceOfWireSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_SequenceOfWireSegment\n");}
-	}
-};
+%feature("shadow") ShapeFix_SequenceOfWireSegment::~ShapeFix_SequenceOfWireSegment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_Shell;
@@ -1600,12 +1540,10 @@ class ShapeFix_Shell : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_Shell {
-	~ShapeFix_Shell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Shell\n");}
-	}
-};
+%feature("shadow") ShapeFix_Shell::~ShapeFix_Shell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_Face;
@@ -1771,12 +1709,10 @@ class ShapeFix_Face : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_Face {
-	~ShapeFix_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Face\n");}
-	}
-};
+%feature("shadow") ShapeFix_Face::~ShapeFix_Face %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_Shape;
@@ -1898,12 +1834,10 @@ class ShapeFix_Shape : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_Shape {
-	~ShapeFix_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Shape\n");}
-	}
-};
+%feature("shadow") ShapeFix_Shape::~ShapeFix_Shape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_SplitTool;
@@ -1921,12 +1855,10 @@ class ShapeFix_SplitTool {
 		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real fp, const TopoDS_Vertex &V1, const Standard_Real lp, const TopoDS_Vertex &V2, const TopoDS_Face &face, TopTools_SequenceOfShape & SeqE, Standard_Integer &OutValue, const Handle_ShapeBuild_ReShape &context, const Standard_Real tol3d, const Standard_Real tol2d) const;
 
 };
-%extend ShapeFix_SplitTool {
-	~ShapeFix_SplitTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_SplitTool\n");}
-	}
-};
+%feature("shadow") ShapeFix_SplitTool::~ShapeFix_SplitTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_FaceConnect;
@@ -1942,12 +1874,10 @@ class ShapeFix_FaceConnect {
 		void Clear();
 
 };
-%extend ShapeFix_FaceConnect {
-	~ShapeFix_FaceConnect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_FaceConnect\n");}
-	}
-};
+%feature("shadow") ShapeFix_FaceConnect::~ShapeFix_FaceConnect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_SplitCommonVertex;
@@ -1975,12 +1905,10 @@ class ShapeFix_SplitCommonVertex : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_SplitCommonVertex {
-	~ShapeFix_SplitCommonVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_SplitCommonVertex\n");}
-	}
-};
+%feature("shadow") ShapeFix_SplitCommonVertex::~ShapeFix_SplitCommonVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeFix_Edge;
@@ -2032,9 +1960,7 @@ class ShapeFix_Edge : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeFix_Edge {
-	~ShapeFix_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Edge\n");}
-	}
-};
+%feature("shadow") ShapeFix_Edge::~ShapeFix_Edge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

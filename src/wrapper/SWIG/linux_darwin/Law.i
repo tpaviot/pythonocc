@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Law_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 	return (Law_ListNodeOfLaws*)$self->Access();
 	}
 };
-%extend Handle_Law_ListNodeOfLaws {
-	~Handle_Law_ListNodeOfLaws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_ListNodeOfLaws\n");}
-	}
-};
+%feature("shadow") Handle_Law_ListNodeOfLaws::~Handle_Law_ListNodeOfLaws %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Law_Function;
@@ -87,12 +89,10 @@ class Handle_Law_Function : public Handle_MMgt_TShared {
 	return (Law_Function*)$self->Access();
 	}
 };
-%extend Handle_Law_Function {
-	~Handle_Law_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Function\n");}
-	}
-};
+%feature("shadow") Handle_Law_Function::~Handle_Law_Function %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Law_BSpFunc;
@@ -117,12 +117,10 @@ class Handle_Law_BSpFunc : public Handle_Law_Function {
 	return (Law_BSpFunc*)$self->Access();
 	}
 };
-%extend Handle_Law_BSpFunc {
-	~Handle_Law_BSpFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_BSpFunc\n");}
-	}
-};
+%feature("shadow") Handle_Law_BSpFunc::~Handle_Law_BSpFunc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Law_Interpol;
@@ -147,12 +145,10 @@ class Handle_Law_Interpol : public Handle_Law_BSpFunc {
 	return (Law_Interpol*)$self->Access();
 	}
 };
-%extend Handle_Law_Interpol {
-	~Handle_Law_Interpol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Interpol\n");}
-	}
-};
+%feature("shadow") Handle_Law_Interpol::~Handle_Law_Interpol %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Law_BSpline;
@@ -177,12 +173,10 @@ class Handle_Law_BSpline : public Handle_MMgt_TShared {
 	return (Law_BSpline*)$self->Access();
 	}
 };
-%extend Handle_Law_BSpline {
-	~Handle_Law_BSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_BSpline\n");}
-	}
-};
+%feature("shadow") Handle_Law_BSpline::~Handle_Law_BSpline %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Law_S;
@@ -207,12 +201,10 @@ class Handle_Law_S : public Handle_Law_BSpFunc {
 	return (Law_S*)$self->Access();
 	}
 };
-%extend Handle_Law_S {
-	~Handle_Law_S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_S\n");}
-	}
-};
+%feature("shadow") Handle_Law_S::~Handle_Law_S %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Law_Linear;
@@ -237,12 +229,10 @@ class Handle_Law_Linear : public Handle_Law_Function {
 	return (Law_Linear*)$self->Access();
 	}
 };
-%extend Handle_Law_Linear {
-	~Handle_Law_Linear() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Linear\n");}
-	}
-};
+%feature("shadow") Handle_Law_Linear::~Handle_Law_Linear %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Law_Constant;
@@ -267,12 +257,10 @@ class Handle_Law_Constant : public Handle_Law_Function {
 	return (Law_Constant*)$self->Access();
 	}
 };
-%extend Handle_Law_Constant {
-	~Handle_Law_Constant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Constant\n");}
-	}
-};
+%feature("shadow") Handle_Law_Constant::~Handle_Law_Constant %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Law_Composite;
@@ -297,12 +285,10 @@ class Handle_Law_Composite : public Handle_Law_Function {
 	return (Law_Composite*)$self->Access();
 	}
 };
-%extend Handle_Law_Composite {
-	~Handle_Law_Composite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Composite\n");}
-	}
-};
+%feature("shadow") Handle_Law_Composite::~Handle_Law_Composite %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law_ListNodeOfLaws;
@@ -326,12 +312,10 @@ class Law_ListNodeOfLaws : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Law_ListNodeOfLaws {
-	~Law_ListNodeOfLaws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_ListNodeOfLaws\n");}
-	}
-};
+%feature("shadow") Law_ListNodeOfLaws::~Law_ListNodeOfLaws %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law_Function;
@@ -367,12 +351,10 @@ class Law_Function : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Law_Function {
-	~Law_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Function\n");}
-	}
-};
+%feature("shadow") Law_Function::~Law_Function %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law_BSpFunc;
@@ -398,12 +380,10 @@ class Law_BSpFunc : public Law_Function {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Law_BSpFunc {
-	~Law_BSpFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_BSpFunc\n");}
-	}
-};
+%feature("shadow") Law_BSpFunc::~Law_BSpFunc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law_Interpol;
@@ -433,12 +413,10 @@ class Law_Interpol : public Law_BSpFunc {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Law_Interpol {
-	~Law_Interpol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Interpol\n");}
-	}
-};
+%feature("shadow") Law_Interpol::~Law_Interpol %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law_ListIteratorOfLaws;
@@ -458,12 +436,10 @@ class Law_ListIteratorOfLaws {
 		Handle_Law_Function & Value() const;
 
 };
-%extend Law_ListIteratorOfLaws {
-	~Law_ListIteratorOfLaws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_ListIteratorOfLaws\n");}
-	}
-};
+%feature("shadow") Law_ListIteratorOfLaws::~Law_ListIteratorOfLaws %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law_Interpolate;
@@ -485,12 +461,10 @@ class Law_Interpolate {
 		Standard_Boolean IsDone() const;
 
 };
-%extend Law_Interpolate {
-	~Law_Interpolate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Interpolate\n");}
-	}
-};
+%feature("shadow") Law_Interpolate::~Law_Interpolate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law_Composite;
@@ -538,12 +512,10 @@ class Law_Composite : public Law_Function {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Law_Composite {
-	~Law_Composite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Composite\n");}
-	}
-};
+%feature("shadow") Law_Composite::~Law_Composite %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law_BSpline;
@@ -689,12 +661,10 @@ class Law_BSpline : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Law_BSpline {
-	~Law_BSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_BSpline\n");}
-	}
-};
+%feature("shadow") Law_BSpline::~Law_BSpline %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law_BSplineKnotSplitting;
@@ -710,12 +680,10 @@ class Law_BSplineKnotSplitting {
 		Standard_Integer SplitValue(const Standard_Integer Index) const;
 
 };
-%extend Law_BSplineKnotSplitting {
-	~Law_BSplineKnotSplitting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_BSplineKnotSplitting\n");}
-	}
-};
+%feature("shadow") Law_BSplineKnotSplitting::~Law_BSplineKnotSplitting %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law_S;
@@ -741,12 +709,10 @@ class Law_S : public Law_BSpFunc {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Law_S {
-	~Law_S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_S\n");}
-	}
-};
+%feature("shadow") Law_S::~Law_S %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law_Laws;
@@ -794,12 +760,10 @@ class Law_Laws {
 		void InsertAfter(Law_Laws & Other, Law_ListIteratorOfLaws & It);
 
 };
-%extend Law_Laws {
-	~Law_Laws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Laws\n");}
-	}
-};
+%feature("shadow") Law_Laws::~Law_Laws %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law;
@@ -821,12 +785,10 @@ class Law {
 		Handle_Law_BSpline ScaleCub(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
 
 };
-%extend Law {
-	~Law() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law\n");}
-	}
-};
+%feature("shadow") Law::~Law %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law_Linear;
@@ -866,12 +828,10 @@ class Law_Linear : public Law_Function {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Law_Linear {
-	~Law_Linear() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Linear\n");}
-	}
-};
+%feature("shadow") Law_Linear::~Law_Linear %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Law_Constant;
@@ -911,9 +871,7 @@ class Law_Constant : public Law_Function {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Law_Constant {
-	~Law_Constant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Constant\n");}
-	}
-};
+%feature("shadow") Law_Constant::~Law_Constant %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

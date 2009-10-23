@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Partition_dependencies.i
 
 
@@ -56,12 +60,10 @@ class Partition_Spliter {
 		void Clear();
 
 };
-%extend Partition_Spliter {
-	~Partition_Spliter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Spliter\n");}
-	}
-};
+%feature("shadow") Partition_Spliter::~Partition_Spliter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Partition_Loop2d;
@@ -85,12 +87,10 @@ class Partition_Loop2d {
 		const TopTools_ListOfShape & NewFaces() const;
 
 };
-%extend Partition_Loop2d {
-	~Partition_Loop2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Loop2d\n");}
-	}
-};
+%feature("shadow") Partition_Loop2d::~Partition_Loop2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Partition_Loop3d;
@@ -110,12 +110,10 @@ class Partition_Loop3d {
 		gp_Vec Normal(const TopoDS_Edge &E, const TopoDS_Face &F);
 
 };
-%extend Partition_Loop3d {
-	~Partition_Loop3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Loop3d\n");}
-	}
-};
+%feature("shadow") Partition_Loop3d::~Partition_Loop3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Partition_Loop;
@@ -137,12 +135,10 @@ class Partition_Loop {
 		const TopTools_ListOfShape & NewFaces() const;
 
 };
-%extend Partition_Loop {
-	~Partition_Loop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Loop\n");}
-	}
-};
+%feature("shadow") Partition_Loop::~Partition_Loop %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Partition_Inter3d;
@@ -184,12 +180,10 @@ class Partition_Inter3d {
 		const TopTools_ListOfShape & SectionEdgeFaces(const TopoDS_Edge &SecE) const;
 
 };
-%extend Partition_Inter3d {
-	~Partition_Inter3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Inter3d\n");}
-	}
-};
+%feature("shadow") Partition_Inter3d::~Partition_Inter3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Partition_Inter2d;
@@ -207,9 +201,7 @@ class Partition_Inter2d {
 		Standard_Real GetTolerance(const TopoDS_Vertex &theV, const Standard_Real theU, const TopoDS_Edge &theE, const Handle_BRepAlgo_AsDes &theAsDes);
 
 };
-%extend Partition_Inter2d {
-	~Partition_Inter2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Inter2d\n");}
-	}
-};
+%feature("shadow") Partition_Inter2d::~Partition_Inter2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

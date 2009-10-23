@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PTopLoc_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_PTopLoc_Datum3D : public Handle_Standard_Persistent {
 	return (PTopLoc_Datum3D*)$self->Access();
 	}
 };
-%extend Handle_PTopLoc_Datum3D {
-	~Handle_PTopLoc_Datum3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopLoc_Datum3D\n");}
-	}
-};
+%feature("shadow") Handle_PTopLoc_Datum3D::~Handle_PTopLoc_Datum3D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PTopLoc_ItemLocation;
@@ -87,12 +89,10 @@ class Handle_PTopLoc_ItemLocation : public Handle_Standard_Persistent {
 	return (PTopLoc_ItemLocation*)$self->Access();
 	}
 };
-%extend Handle_PTopLoc_ItemLocation {
-	~Handle_PTopLoc_ItemLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopLoc_ItemLocation\n");}
-	}
-};
+%feature("shadow") Handle_PTopLoc_ItemLocation::~Handle_PTopLoc_ItemLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PTopLoc_Datum3D;
@@ -122,12 +122,10 @@ class PTopLoc_Datum3D : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PTopLoc_Datum3D {
-	~PTopLoc_Datum3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopLoc_Datum3D\n");}
-	}
-};
+%feature("shadow") PTopLoc_Datum3D::~PTopLoc_Datum3D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PTopLoc_Location;
@@ -151,12 +149,10 @@ class PTopLoc_Location {
 		void _CSFDB_SetPTopLoc_LocationmyData(const Handle_PTopLoc_ItemLocation &p);
 
 };
-%extend PTopLoc_Location {
-	~PTopLoc_Location() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopLoc_Location\n");}
-	}
-};
+%feature("shadow") PTopLoc_Location::~PTopLoc_Location %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PTopLoc_ItemLocation;
@@ -198,9 +194,7 @@ class PTopLoc_ItemLocation : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PTopLoc_ItemLocation {
-	~PTopLoc_ItemLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopLoc_ItemLocation\n");}
-	}
-};
+%feature("shadow") PTopLoc_ItemLocation::~PTopLoc_ItemLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

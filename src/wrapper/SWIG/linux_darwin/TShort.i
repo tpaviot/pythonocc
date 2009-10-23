@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TShort_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_TShort_HSequenceOfShortReal : public Handle_MMgt_TShared {
 	return (TShort_HSequenceOfShortReal*)$self->Access();
 	}
 };
-%extend Handle_TShort_HSequenceOfShortReal {
-	~Handle_TShort_HSequenceOfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TShort_HSequenceOfShortReal\n");}
-	}
-};
+%feature("shadow") Handle_TShort_HSequenceOfShortReal::~Handle_TShort_HSequenceOfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TShort_HArray1OfShortReal;
@@ -87,12 +89,10 @@ class Handle_TShort_HArray1OfShortReal : public Handle_MMgt_TShared {
 	return (TShort_HArray1OfShortReal*)$self->Access();
 	}
 };
-%extend Handle_TShort_HArray1OfShortReal {
-	~Handle_TShort_HArray1OfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TShort_HArray1OfShortReal\n");}
-	}
-};
+%feature("shadow") Handle_TShort_HArray1OfShortReal::~Handle_TShort_HArray1OfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TShort_SequenceNodeOfSequenceOfShortReal;
@@ -117,12 +117,10 @@ class Handle_TShort_SequenceNodeOfSequenceOfShortReal : public Handle_TCollectio
 	return (TShort_SequenceNodeOfSequenceOfShortReal*)$self->Access();
 	}
 };
-%extend Handle_TShort_SequenceNodeOfSequenceOfShortReal {
-	~Handle_TShort_SequenceNodeOfSequenceOfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TShort_SequenceNodeOfSequenceOfShortReal\n");}
-	}
-};
+%feature("shadow") Handle_TShort_SequenceNodeOfSequenceOfShortReal::~Handle_TShort_SequenceNodeOfSequenceOfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TShort_HArray2OfShortReal;
@@ -147,12 +145,10 @@ class Handle_TShort_HArray2OfShortReal : public Handle_MMgt_TShared {
 	return (TShort_HArray2OfShortReal*)$self->Access();
 	}
 };
-%extend Handle_TShort_HArray2OfShortReal {
-	~Handle_TShort_HArray2OfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TShort_HArray2OfShortReal\n");}
-	}
-};
+%feature("shadow") Handle_TShort_HArray2OfShortReal::~Handle_TShort_HArray2OfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TShort_HArray1OfShortReal;
@@ -194,12 +190,10 @@ class TShort_HArray1OfShortReal : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TShort_HArray1OfShortReal {
-	~TShort_HArray1OfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TShort_HArray1OfShortReal\n");}
-	}
-};
+%feature("shadow") TShort_HArray1OfShortReal::~TShort_HArray1OfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TShort_SequenceOfShortReal;
@@ -251,12 +245,10 @@ class TShort_SequenceOfShortReal : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TShort_SequenceOfShortReal {
-	~TShort_SequenceOfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TShort_SequenceOfShortReal\n");}
-	}
-};
+%feature("shadow") TShort_SequenceOfShortReal::~TShort_SequenceOfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TShort_Array1OfShortReal;
@@ -294,12 +286,10 @@ class TShort_Array1OfShortReal {
 		Standard_ShortReal & operator()(const Standard_Integer Index);
 
 };
-%extend TShort_Array1OfShortReal {
-	~TShort_Array1OfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TShort_Array1OfShortReal\n");}
-	}
-};
+%feature("shadow") TShort_Array1OfShortReal::~TShort_Array1OfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TShort_HArray2OfShortReal;
@@ -347,12 +337,10 @@ class TShort_HArray2OfShortReal : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TShort_HArray2OfShortReal {
-	~TShort_HArray2OfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TShort_HArray2OfShortReal\n");}
-	}
-};
+%feature("shadow") TShort_HArray2OfShortReal::~TShort_HArray2OfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TShort_Array2OfShortReal;
@@ -394,12 +382,10 @@ class TShort_Array2OfShortReal {
 		Standard_ShortReal & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend TShort_Array2OfShortReal {
-	~TShort_Array2OfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TShort_Array2OfShortReal\n");}
-	}
-};
+%feature("shadow") TShort_Array2OfShortReal::~TShort_Array2OfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TShort_SequenceNodeOfSequenceOfShortReal;
@@ -423,12 +409,10 @@ class TShort_SequenceNodeOfSequenceOfShortReal : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TShort_SequenceNodeOfSequenceOfShortReal {
-	~TShort_SequenceNodeOfSequenceOfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TShort_SequenceNodeOfSequenceOfShortReal\n");}
-	}
-};
+%feature("shadow") TShort_SequenceNodeOfSequenceOfShortReal::~TShort_SequenceNodeOfSequenceOfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TShort_HSequenceOfShortReal;
@@ -494,9 +478,7 @@ class TShort_HSequenceOfShortReal : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TShort_HSequenceOfShortReal {
-	~TShort_HSequenceOfShortReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TShort_HSequenceOfShortReal\n");}
-	}
-};
+%feature("shadow") TShort_HSequenceOfShortReal::~TShort_HSequenceOfShortReal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

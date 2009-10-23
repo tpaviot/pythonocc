@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepToIGES_dependencies.i
 
 
@@ -82,20 +86,10 @@ class BRepToIGES_BREntity {
 		virtual		void Delete();
 
 };
-%extend BRepToIGES_BREntity {
-	~BRepToIGES_BREntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepToIGES_BREntity\n");}
-	}
-};
-
-%extend BRepToIGES_BREntity {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepToIGES_BREntity::~BRepToIGES_BREntity %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepToIGES_BRShell;
@@ -113,20 +107,10 @@ class BRepToIGES_BRShell : public BRepToIGES_BREntity {
 		Handle_IGESData_IGESEntity TransferFace(const TopoDS_Face &start);
 
 };
-%extend BRepToIGES_BRShell {
-	~BRepToIGES_BRShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepToIGES_BRShell\n");}
-	}
-};
-
-%extend BRepToIGES_BRShell {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepToIGES_BRShell::~BRepToIGES_BRShell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepToIGES_BRSolid;
@@ -146,20 +130,10 @@ class BRepToIGES_BRSolid : public BRepToIGES_BREntity {
 		Handle_IGESData_IGESEntity TransferCompound(const TopoDS_Compound &start);
 
 };
-%extend BRepToIGES_BRSolid {
-	~BRepToIGES_BRSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepToIGES_BRSolid\n");}
-	}
-};
-
-%extend BRepToIGES_BRSolid {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepToIGES_BRSolid::~BRepToIGES_BRSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepToIGES_BRWire;
@@ -191,17 +165,7 @@ class BRepToIGES_BRWire : public BRepToIGES_BREntity {
 		Handle_IGESData_IGESEntity TransferWire(const TopoDS_Wire &mywire, const TopoDS_Face &myface, Handle_IGESData_IGESEntity & mycurve2d, const Standard_Real length);
 
 };
-%extend BRepToIGES_BRWire {
-	~BRepToIGES_BRWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepToIGES_BRWire\n");}
-	}
-};
-
-%extend BRepToIGES_BRWire {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepToIGES_BRWire::~BRepToIGES_BRWire %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MAT_dependencies.i
 
 
@@ -62,12 +66,10 @@ class Handle_MAT_ListOfBisector : public Handle_MMgt_TShared {
 	return (MAT_ListOfBisector*)$self->Access();
 	}
 };
-%extend Handle_MAT_ListOfBisector {
-	~Handle_MAT_ListOfBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_ListOfBisector\n");}
-	}
-};
+%feature("shadow") Handle_MAT_ListOfBisector::~Handle_MAT_ListOfBisector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt;
@@ -92,12 +94,10 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt : public Handle_TCollecti
 	return (MAT_DataMapNodeOfDataMapOfIntegerBasicElt*)$self->Access();
 	}
 };
-%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
-	~Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt\n");}
-	}
-};
+%feature("shadow") Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt::~Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_SequenceNodeOfSequenceOfArc;
@@ -122,12 +122,10 @@ class Handle_MAT_SequenceNodeOfSequenceOfArc : public Handle_TCollection_SeqNode
 	return (MAT_SequenceNodeOfSequenceOfArc*)$self->Access();
 	}
 };
-%extend Handle_MAT_SequenceNodeOfSequenceOfArc {
-	~Handle_MAT_SequenceNodeOfSequenceOfArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_SequenceNodeOfSequenceOfArc\n");}
-	}
-};
+%feature("shadow") Handle_MAT_SequenceNodeOfSequenceOfArc::~Handle_MAT_SequenceNodeOfSequenceOfArc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_DataMapNodeOfDataMapOfIntegerArc;
@@ -152,12 +150,10 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerArc : public Handle_TCollection_Ma
 	return (MAT_DataMapNodeOfDataMapOfIntegerArc*)$self->Access();
 	}
 };
-%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerArc {
-	~Handle_MAT_DataMapNodeOfDataMapOfIntegerArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerArc\n");}
-	}
-};
+%feature("shadow") Handle_MAT_DataMapNodeOfDataMapOfIntegerArc::~Handle_MAT_DataMapNodeOfDataMapOfIntegerArc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_BasicElt;
@@ -182,12 +178,10 @@ class Handle_MAT_BasicElt : public Handle_MMgt_TShared {
 	return (MAT_BasicElt*)$self->Access();
 	}
 };
-%extend Handle_MAT_BasicElt {
-	~Handle_MAT_BasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_BasicElt\n");}
-	}
-};
+%feature("shadow") Handle_MAT_BasicElt::~Handle_MAT_BasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_Bisector;
@@ -212,12 +206,10 @@ class Handle_MAT_Bisector : public Handle_MMgt_TShared {
 	return (MAT_Bisector*)$self->Access();
 	}
 };
-%extend Handle_MAT_Bisector {
-	~Handle_MAT_Bisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Bisector\n");}
-	}
-};
+%feature("shadow") Handle_MAT_Bisector::~Handle_MAT_Bisector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector;
@@ -242,12 +234,10 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector : public Handle_TCollecti
 	return (MAT_DataMapNodeOfDataMapOfIntegerBisector*)$self->Access();
 	}
 };
-%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector {
-	~Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector\n");}
-	}
-};
+%feature("shadow") Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector::~Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_DataMapNodeOfDataMapOfIntegerNode;
@@ -272,12 +262,10 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerNode : public Handle_TCollection_M
 	return (MAT_DataMapNodeOfDataMapOfIntegerNode*)$self->Access();
 	}
 };
-%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerNode {
-	~Handle_MAT_DataMapNodeOfDataMapOfIntegerNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerNode\n");}
-	}
-};
+%feature("shadow") Handle_MAT_DataMapNodeOfDataMapOfIntegerNode::~Handle_MAT_DataMapNodeOfDataMapOfIntegerNode %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_Zone;
@@ -302,12 +290,10 @@ class Handle_MAT_Zone : public Handle_MMgt_TShared {
 	return (MAT_Zone*)$self->Access();
 	}
 };
-%extend Handle_MAT_Zone {
-	~Handle_MAT_Zone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Zone\n");}
-	}
-};
+%feature("shadow") Handle_MAT_Zone::~Handle_MAT_Zone %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_Graph;
@@ -332,12 +318,10 @@ class Handle_MAT_Graph : public Handle_MMgt_TShared {
 	return (MAT_Graph*)$self->Access();
 	}
 };
-%extend Handle_MAT_Graph {
-	~Handle_MAT_Graph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Graph\n");}
-	}
-};
+%feature("shadow") Handle_MAT_Graph::~Handle_MAT_Graph %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_TListNodeOfListOfBisector;
@@ -362,12 +346,10 @@ class Handle_MAT_TListNodeOfListOfBisector : public Handle_MMgt_TShared {
 	return (MAT_TListNodeOfListOfBisector*)$self->Access();
 	}
 };
-%extend Handle_MAT_TListNodeOfListOfBisector {
-	~Handle_MAT_TListNodeOfListOfBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_TListNodeOfListOfBisector\n");}
-	}
-};
+%feature("shadow") Handle_MAT_TListNodeOfListOfBisector::~Handle_MAT_TListNodeOfListOfBisector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_SequenceNodeOfSequenceOfBasicElt;
@@ -392,12 +374,10 @@ class Handle_MAT_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollection_Se
 	return (MAT_SequenceNodeOfSequenceOfBasicElt*)$self->Access();
 	}
 };
-%extend Handle_MAT_SequenceNodeOfSequenceOfBasicElt {
-	~Handle_MAT_SequenceNodeOfSequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_SequenceNodeOfSequenceOfBasicElt\n");}
-	}
-};
+%feature("shadow") Handle_MAT_SequenceNodeOfSequenceOfBasicElt::~Handle_MAT_SequenceNodeOfSequenceOfBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_ListOfEdge;
@@ -422,12 +402,10 @@ class Handle_MAT_ListOfEdge : public Handle_MMgt_TShared {
 	return (MAT_ListOfEdge*)$self->Access();
 	}
 };
-%extend Handle_MAT_ListOfEdge {
-	~Handle_MAT_ListOfEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_ListOfEdge\n");}
-	}
-};
+%feature("shadow") Handle_MAT_ListOfEdge::~Handle_MAT_ListOfEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_Arc;
@@ -452,12 +430,10 @@ class Handle_MAT_Arc : public Handle_MMgt_TShared {
 	return (MAT_Arc*)$self->Access();
 	}
 };
-%extend Handle_MAT_Arc {
-	~Handle_MAT_Arc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Arc\n");}
-	}
-};
+%feature("shadow") Handle_MAT_Arc::~Handle_MAT_Arc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_TListNodeOfListOfEdge;
@@ -482,12 +458,10 @@ class Handle_MAT_TListNodeOfListOfEdge : public Handle_MMgt_TShared {
 	return (MAT_TListNodeOfListOfEdge*)$self->Access();
 	}
 };
-%extend Handle_MAT_TListNodeOfListOfEdge {
-	~Handle_MAT_TListNodeOfListOfEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_TListNodeOfListOfEdge\n");}
-	}
-};
+%feature("shadow") Handle_MAT_TListNodeOfListOfEdge::~Handle_MAT_TListNodeOfListOfEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_Edge;
@@ -512,12 +486,10 @@ class Handle_MAT_Edge : public Handle_MMgt_TShared {
 	return (MAT_Edge*)$self->Access();
 	}
 };
-%extend Handle_MAT_Edge {
-	~Handle_MAT_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Edge\n");}
-	}
-};
+%feature("shadow") Handle_MAT_Edge::~Handle_MAT_Edge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MAT_Node;
@@ -542,12 +514,10 @@ class Handle_MAT_Node : public Handle_MMgt_TShared {
 	return (MAT_Node*)$self->Access();
 	}
 };
-%extend Handle_MAT_Node {
-	~Handle_MAT_Node() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Node\n");}
-	}
-};
+%feature("shadow") Handle_MAT_Node::~Handle_MAT_Node %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_DataMapOfIntegerBasicElt;
@@ -579,12 +549,10 @@ class MAT_DataMapOfIntegerBasicElt : public TCollection_BasicMap {
 		Handle_MAT_BasicElt & operator()(const Standard_Integer &K);
 
 };
-%extend MAT_DataMapOfIntegerBasicElt {
-	~MAT_DataMapOfIntegerBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapOfIntegerBasicElt\n");}
-	}
-};
+%feature("shadow") MAT_DataMapOfIntegerBasicElt::~MAT_DataMapOfIntegerBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_SequenceNodeOfSequenceOfArc;
@@ -608,12 +576,10 @@ class MAT_SequenceNodeOfSequenceOfArc : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_SequenceNodeOfSequenceOfArc {
-	~MAT_SequenceNodeOfSequenceOfArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_SequenceNodeOfSequenceOfArc\n");}
-	}
-};
+%feature("shadow") MAT_SequenceNodeOfSequenceOfArc::~MAT_SequenceNodeOfSequenceOfArc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerArc;
@@ -631,12 +597,10 @@ class MAT_DataMapIteratorOfDataMapOfIntegerArc : public TCollection_BasicMapIter
 		const Handle_MAT_Arc & Value() const;
 
 };
-%extend MAT_DataMapIteratorOfDataMapOfIntegerArc {
-	~MAT_DataMapIteratorOfDataMapOfIntegerArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerArc\n");}
-	}
-};
+%feature("shadow") MAT_DataMapIteratorOfDataMapOfIntegerArc::~MAT_DataMapIteratorOfDataMapOfIntegerArc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_DataMapOfIntegerBisector;
@@ -668,12 +632,10 @@ class MAT_DataMapOfIntegerBisector : public TCollection_BasicMap {
 		Handle_MAT_Bisector & operator()(const Standard_Integer &K);
 
 };
-%extend MAT_DataMapOfIntegerBisector {
-	~MAT_DataMapOfIntegerBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapOfIntegerBisector\n");}
-	}
-};
+%feature("shadow") MAT_DataMapOfIntegerBisector::~MAT_DataMapOfIntegerBisector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerNode;
@@ -709,12 +671,10 @@ class MAT_DataMapNodeOfDataMapOfIntegerNode : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_DataMapNodeOfDataMapOfIntegerNode {
-	~MAT_DataMapNodeOfDataMapOfIntegerNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerNode\n");}
-	}
-};
+%feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerNode::~MAT_DataMapNodeOfDataMapOfIntegerNode %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_Arc;
@@ -772,12 +732,10 @@ class MAT_Arc : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_Arc {
-	~MAT_Arc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_Arc\n");}
-	}
-};
+%feature("shadow") MAT_Arc::~MAT_Arc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_Edge;
@@ -821,12 +779,10 @@ class MAT_Edge : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_Edge {
-	~MAT_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_Edge\n");}
-	}
-};
+%feature("shadow") MAT_Edge::~MAT_Edge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerBisector;
@@ -862,12 +818,10 @@ class MAT_DataMapNodeOfDataMapOfIntegerBisector : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_DataMapNodeOfDataMapOfIntegerBisector {
-	~MAT_DataMapNodeOfDataMapOfIntegerBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerBisector\n");}
-	}
-};
+%feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerBisector::~MAT_DataMapNodeOfDataMapOfIntegerBisector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_SequenceOfArc;
@@ -919,12 +873,10 @@ class MAT_SequenceOfArc : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend MAT_SequenceOfArc {
-	~MAT_SequenceOfArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_SequenceOfArc\n");}
-	}
-};
+%feature("shadow") MAT_SequenceOfArc::~MAT_SequenceOfArc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_Graph;
@@ -972,12 +924,10 @@ class MAT_Graph : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_Graph {
-	~MAT_Graph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_Graph\n");}
-	}
-};
+%feature("shadow") MAT_Graph::~MAT_Graph %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerBisector;
@@ -995,12 +945,10 @@ class MAT_DataMapIteratorOfDataMapOfIntegerBisector : public TCollection_BasicMa
 		const Handle_MAT_Bisector & Value() const;
 
 };
-%extend MAT_DataMapIteratorOfDataMapOfIntegerBisector {
-	~MAT_DataMapIteratorOfDataMapOfIntegerBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerBisector\n");}
-	}
-};
+%feature("shadow") MAT_DataMapIteratorOfDataMapOfIntegerBisector::~MAT_DataMapIteratorOfDataMapOfIntegerBisector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_ListOfBisector;
@@ -1072,12 +1020,10 @@ class MAT_ListOfBisector : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_ListOfBisector {
-	~MAT_ListOfBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_ListOfBisector\n");}
-	}
-};
+%feature("shadow") MAT_ListOfBisector::~MAT_ListOfBisector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerBasicElt;
@@ -1113,12 +1059,10 @@ class MAT_DataMapNodeOfDataMapOfIntegerBasicElt : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
-	~MAT_DataMapNodeOfDataMapOfIntegerBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerBasicElt\n");}
-	}
-};
+%feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerBasicElt::~MAT_DataMapNodeOfDataMapOfIntegerBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_TListNodeOfListOfBisector;
@@ -1156,12 +1100,10 @@ class MAT_TListNodeOfListOfBisector : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_TListNodeOfListOfBisector {
-	~MAT_TListNodeOfListOfBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_TListNodeOfListOfBisector\n");}
-	}
-};
+%feature("shadow") MAT_TListNodeOfListOfBisector::~MAT_TListNodeOfListOfBisector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_Node;
@@ -1203,12 +1145,10 @@ class MAT_Node : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_Node {
-	~MAT_Node() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_Node\n");}
-	}
-};
+%feature("shadow") MAT_Node::~MAT_Node %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_SequenceOfBasicElt;
@@ -1260,12 +1200,10 @@ class MAT_SequenceOfBasicElt : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend MAT_SequenceOfBasicElt {
-	~MAT_SequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_SequenceOfBasicElt\n");}
-	}
-};
+%feature("shadow") MAT_SequenceOfBasicElt::~MAT_SequenceOfBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerArc;
@@ -1301,12 +1239,10 @@ class MAT_DataMapNodeOfDataMapOfIntegerArc : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
-	~MAT_DataMapNodeOfDataMapOfIntegerArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerArc\n");}
-	}
-};
+%feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerArc::~MAT_DataMapNodeOfDataMapOfIntegerArc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_SequenceNodeOfSequenceOfBasicElt;
@@ -1330,12 +1266,10 @@ class MAT_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_SequenceNodeOfSequenceOfBasicElt {
-	~MAT_SequenceNodeOfSequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_SequenceNodeOfSequenceOfBasicElt\n");}
-	}
-};
+%feature("shadow") MAT_SequenceNodeOfSequenceOfBasicElt::~MAT_SequenceNodeOfSequenceOfBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_DataMapOfIntegerNode;
@@ -1367,12 +1301,10 @@ class MAT_DataMapOfIntegerNode : public TCollection_BasicMap {
 		Handle_MAT_Node & operator()(const Standard_Integer &K);
 
 };
-%extend MAT_DataMapOfIntegerNode {
-	~MAT_DataMapOfIntegerNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapOfIntegerNode\n");}
-	}
-};
+%feature("shadow") MAT_DataMapOfIntegerNode::~MAT_DataMapOfIntegerNode %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_BasicElt;
@@ -1410,12 +1342,10 @@ class MAT_BasicElt : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_BasicElt {
-	~MAT_BasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_BasicElt\n");}
-	}
-};
+%feature("shadow") MAT_BasicElt::~MAT_BasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_Zone;
@@ -1449,12 +1379,10 @@ class MAT_Zone : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_Zone {
-	~MAT_Zone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_Zone\n");}
-	}
-};
+%feature("shadow") MAT_Zone::~MAT_Zone %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerBasicElt;
@@ -1472,12 +1400,10 @@ class MAT_DataMapIteratorOfDataMapOfIntegerBasicElt : public TCollection_BasicMa
 		const Handle_MAT_BasicElt & Value() const;
 
 };
-%extend MAT_DataMapIteratorOfDataMapOfIntegerBasicElt {
-	~MAT_DataMapIteratorOfDataMapOfIntegerBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerBasicElt\n");}
-	}
-};
+%feature("shadow") MAT_DataMapIteratorOfDataMapOfIntegerBasicElt::~MAT_DataMapIteratorOfDataMapOfIntegerBasicElt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_TListNodeOfListOfEdge;
@@ -1515,12 +1441,10 @@ class MAT_TListNodeOfListOfEdge : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_TListNodeOfListOfEdge {
-	~MAT_TListNodeOfListOfEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_TListNodeOfListOfEdge\n");}
-	}
-};
+%feature("shadow") MAT_TListNodeOfListOfEdge::~MAT_TListNodeOfListOfEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_ListOfEdge;
@@ -1592,12 +1516,10 @@ class MAT_ListOfEdge : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_ListOfEdge {
-	~MAT_ListOfEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_ListOfEdge\n");}
-	}
-};
+%feature("shadow") MAT_ListOfEdge::~MAT_ListOfEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_DataMapOfIntegerArc;
@@ -1629,12 +1551,10 @@ class MAT_DataMapOfIntegerArc : public TCollection_BasicMap {
 		Handle_MAT_Arc & operator()(const Standard_Integer &K);
 
 };
-%extend MAT_DataMapOfIntegerArc {
-	~MAT_DataMapOfIntegerArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapOfIntegerArc\n");}
-	}
-};
+%feature("shadow") MAT_DataMapOfIntegerArc::~MAT_DataMapOfIntegerArc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_Bisector;
@@ -1714,12 +1634,10 @@ class MAT_Bisector : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MAT_Bisector {
-	~MAT_Bisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_Bisector\n");}
-	}
-};
+%feature("shadow") MAT_Bisector::~MAT_Bisector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerNode;
@@ -1737,9 +1655,7 @@ class MAT_DataMapIteratorOfDataMapOfIntegerNode : public TCollection_BasicMapIte
 		const Handle_MAT_Node & Value() const;
 
 };
-%extend MAT_DataMapIteratorOfDataMapOfIntegerNode {
-	~MAT_DataMapIteratorOfDataMapOfIntegerNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerNode\n");}
-	}
-};
+%feature("shadow") MAT_DataMapIteratorOfDataMapOfIntegerNode::~MAT_DataMapIteratorOfDataMapOfIntegerNode %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

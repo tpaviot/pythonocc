@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BlendFunc_dependencies.i
 
 
@@ -55,12 +59,10 @@ class BlendFunc {
 		GeomAbs_Shape NextShape(const GeomAbs_Shape S);
 
 };
-%extend BlendFunc {
-	~BlendFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlendFunc\n");}
-	}
-};
+%feature("shadow") BlendFunc::~BlendFunc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BlendFunc_Tensor;
@@ -92,9 +94,7 @@ class BlendFunc_Tensor {
 		void Multiply(const math_Vector &Right, math_Matrix & Product) const;
 
 };
-%extend BlendFunc_Tensor {
-	~BlendFunc_Tensor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlendFunc_Tensor\n");}
-	}
-};
+%feature("shadow") BlendFunc_Tensor::~BlendFunc_Tensor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

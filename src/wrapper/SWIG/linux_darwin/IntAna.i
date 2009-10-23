@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntAna_dependencies.i
 
 
@@ -70,12 +74,10 @@ class Handle_IntAna_ListNodeOfListOfCurve : public Handle_TCollection_MapNode {
 	return (IntAna_ListNodeOfListOfCurve*)$self->Access();
 	}
 };
-%extend Handle_IntAna_ListNodeOfListOfCurve {
-	~Handle_IntAna_ListNodeOfListOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntAna_ListNodeOfListOfCurve\n");}
-	}
-};
+%feature("shadow") Handle_IntAna_ListNodeOfListOfCurve::~Handle_IntAna_ListNodeOfListOfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntAna_QuadQuadGeo;
@@ -147,12 +149,10 @@ class IntAna_QuadQuadGeo {
 		const gp_Pnt & PChar() const;
 
 };
-%extend IntAna_QuadQuadGeo {
-	~IntAna_QuadQuadGeo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_QuadQuadGeo\n");}
-	}
-};
+%feature("shadow") IntAna_QuadQuadGeo::~IntAna_QuadQuadGeo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntAna_ListOfCurve;
@@ -200,12 +200,10 @@ class IntAna_ListOfCurve {
 		void InsertAfter(IntAna_ListOfCurve & Other, IntAna_ListIteratorOfListOfCurve & It);
 
 };
-%extend IntAna_ListOfCurve {
-	~IntAna_ListOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_ListOfCurve\n");}
-	}
-};
+%feature("shadow") IntAna_ListOfCurve::~IntAna_ListOfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntAna_Int3Pln;
@@ -225,12 +223,10 @@ class IntAna_Int3Pln {
 		const gp_Pnt & Value() const;
 
 };
-%extend IntAna_Int3Pln {
-	~IntAna_Int3Pln() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_Int3Pln\n");}
-	}
-};
+%feature("shadow") IntAna_Int3Pln::~IntAna_Int3Pln %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntAna_ListIteratorOfListOfCurve;
@@ -250,12 +246,10 @@ class IntAna_ListIteratorOfListOfCurve {
 		IntAna_Curve & Value() const;
 
 };
-%extend IntAna_ListIteratorOfListOfCurve {
-	~IntAna_ListIteratorOfListOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_ListIteratorOfListOfCurve\n");}
-	}
-};
+%feature("shadow") IntAna_ListIteratorOfListOfCurve::~IntAna_ListIteratorOfListOfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntAna_ListNodeOfListOfCurve;
@@ -279,12 +273,10 @@ class IntAna_ListNodeOfListOfCurve : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntAna_ListNodeOfListOfCurve {
-	~IntAna_ListNodeOfListOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_ListNodeOfListOfCurve\n");}
-	}
-};
+%feature("shadow") IntAna_ListNodeOfListOfCurve::~IntAna_ListNodeOfListOfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntAna_IntQuadQuad;
@@ -324,12 +316,10 @@ class IntAna_IntQuadQuad {
 		Standard_Integer PreviousCurve(const Standard_Integer I, Standard_Boolean & Opposite) const;
 
 };
-%extend IntAna_IntQuadQuad {
-	~IntAna_IntQuadQuad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_IntQuadQuad\n");}
-	}
-};
+%feature("shadow") IntAna_IntQuadQuad::~IntAna_IntQuadQuad %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntAna_Curve;
@@ -367,12 +357,10 @@ class IntAna_Curve {
 		void SetDomain(const Standard_Real Theta1, const Standard_Real Theta2);
 
 };
-%extend IntAna_Curve {
-	~IntAna_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_Curve\n");}
-	}
-};
+%feature("shadow") IntAna_Curve::~IntAna_Curve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntAna_IntConicQuad;
@@ -434,12 +422,10 @@ class IntAna_IntConicQuad {
 		Standard_Real ParamOnConic(const Standard_Integer i) const;
 
 };
-%extend IntAna_IntConicQuad {
-	~IntAna_IntConicQuad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_IntConicQuad\n");}
-	}
-};
+%feature("shadow") IntAna_IntConicQuad::~IntAna_IntConicQuad %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntAna_Quadric;
@@ -469,12 +455,10 @@ class IntAna_Quadric {
 		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax3 &Axis) const;
 
 };
-%extend IntAna_Quadric {
-	~IntAna_Quadric() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_Quadric\n");}
-	}
-};
+%feature("shadow") IntAna_Quadric::~IntAna_Quadric %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntAna_IntLinTorus;
@@ -498,9 +482,7 @@ class IntAna_IntLinTorus {
 		void ParamOnTorus(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend IntAna_IntLinTorus {
-	~IntAna_IntLinTorus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_IntLinTorus\n");}
-	}
-};
+%feature("shadow") IntAna_IntLinTorus::~IntAna_IntLinTorus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

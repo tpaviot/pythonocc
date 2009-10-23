@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StepElement_dependencies.i
 
 
@@ -120,12 +124,10 @@ class Handle_StepElement_ElementDescriptor : public Handle_MMgt_TShared {
 	return (StepElement_ElementDescriptor*)$self->Access();
 	}
 };
-%extend Handle_StepElement_ElementDescriptor {
-	~Handle_StepElement_ElementDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_ElementDescriptor\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_ElementDescriptor::~Handle_StepElement_ElementDescriptor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_Surface3dElementDescriptor;
@@ -150,12 +152,10 @@ class Handle_StepElement_Surface3dElementDescriptor : public Handle_StepElement_
 	return (StepElement_Surface3dElementDescriptor*)$self->Access();
 	}
 };
-%extend Handle_StepElement_Surface3dElementDescriptor {
-	~Handle_StepElement_Surface3dElementDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_Surface3dElementDescriptor\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_Surface3dElementDescriptor::~Handle_StepElement_Surface3dElementDescriptor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HArray1OfCurveElementSectionDefinition;
@@ -180,12 +180,10 @@ class Handle_StepElement_HArray1OfCurveElementSectionDefinition : public Handle_
 	return (StepElement_HArray1OfCurveElementSectionDefinition*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HArray1OfCurveElementSectionDefinition {
-	~Handle_StepElement_HArray1OfCurveElementSectionDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray1OfCurveElementSectionDefinition\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HArray1OfCurveElementSectionDefinition::~Handle_StepElement_HArray1OfCurveElementSectionDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_SurfaceElementPurposeMember;
@@ -210,12 +208,10 @@ class Handle_StepElement_SurfaceElementPurposeMember : public Handle_StepData_Se
 	return (StepElement_SurfaceElementPurposeMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_SurfaceElementPurposeMember {
-	~Handle_StepElement_SurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SurfaceElementPurposeMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_SurfaceElementPurposeMember::~Handle_StepElement_SurfaceElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HArray1OfVolumeElementPurposeMember;
@@ -240,12 +236,10 @@ class Handle_StepElement_HArray1OfVolumeElementPurposeMember : public Handle_MMg
 	return (StepElement_HArray1OfVolumeElementPurposeMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HArray1OfVolumeElementPurposeMember {
-	~Handle_StepElement_HArray1OfVolumeElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray1OfVolumeElementPurposeMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HArray1OfVolumeElementPurposeMember::~Handle_StepElement_HArray1OfVolumeElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_SurfaceSection;
@@ -270,12 +264,10 @@ class Handle_StepElement_SurfaceSection : public Handle_MMgt_TShared {
 	return (StepElement_SurfaceSection*)$self->Access();
 	}
 };
-%extend Handle_StepElement_SurfaceSection {
-	~Handle_StepElement_SurfaceSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SurfaceSection\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_SurfaceSection::~Handle_StepElement_SurfaceSection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_SurfaceSectionField;
@@ -300,12 +292,10 @@ class Handle_StepElement_SurfaceSectionField : public Handle_MMgt_TShared {
 	return (StepElement_SurfaceSectionField*)$self->Access();
 	}
 };
-%extend Handle_StepElement_SurfaceSectionField {
-	~Handle_StepElement_SurfaceSectionField() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SurfaceSectionField\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_SurfaceSectionField::~Handle_StepElement_SurfaceSectionField %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HArray1OfSurfaceSection;
@@ -330,12 +320,10 @@ class Handle_StepElement_HArray1OfSurfaceSection : public Handle_MMgt_TShared {
 	return (StepElement_HArray1OfSurfaceSection*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HArray1OfSurfaceSection {
-	~Handle_StepElement_HArray1OfSurfaceSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray1OfSurfaceSection\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HArray1OfSurfaceSection::~Handle_StepElement_HArray1OfSurfaceSection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_CurveElementSectionDefinition;
@@ -360,12 +348,10 @@ class Handle_StepElement_CurveElementSectionDefinition : public Handle_MMgt_TSha
 	return (StepElement_CurveElementSectionDefinition*)$self->Access();
 	}
 };
-%extend Handle_StepElement_CurveElementSectionDefinition {
-	~Handle_StepElement_CurveElementSectionDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_CurveElementSectionDefinition\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_CurveElementSectionDefinition::~Handle_StepElement_CurveElementSectionDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial;
@@ -390,12 +376,10 @@ class Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial : public Handle
 	return (StepElement_SequenceNodeOfSequenceOfElementMaterial*)$self->Access();
 	}
 };
-%extend Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial {
-	~Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial::~Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember;
@@ -420,12 +404,10 @@ class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : pub
 	return (StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember {
-	~Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember::~Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_AnalysisItemWithinRepresentation;
@@ -450,12 +432,10 @@ class Handle_StepElement_AnalysisItemWithinRepresentation : public Handle_MMgt_T
 	return (StepElement_AnalysisItemWithinRepresentation*)$self->Access();
 	}
 };
-%extend Handle_StepElement_AnalysisItemWithinRepresentation {
-	~Handle_StepElement_AnalysisItemWithinRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_AnalysisItemWithinRepresentation\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_AnalysisItemWithinRepresentation::~Handle_StepElement_AnalysisItemWithinRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HArray2OfSurfaceElementPurpose;
@@ -480,12 +460,10 @@ class Handle_StepElement_HArray2OfSurfaceElementPurpose : public Handle_MMgt_TSh
 	return (StepElement_HArray2OfSurfaceElementPurpose*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HArray2OfSurfaceElementPurpose {
-	~Handle_StepElement_HArray2OfSurfaceElementPurpose() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray2OfSurfaceElementPurpose\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HArray2OfSurfaceElementPurpose::~Handle_StepElement_HArray2OfSurfaceElementPurpose %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HArray2OfSurfaceElementPurposeMember;
@@ -510,12 +488,10 @@ class Handle_StepElement_HArray2OfSurfaceElementPurposeMember : public Handle_MM
 	return (StepElement_HArray2OfSurfaceElementPurposeMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HArray2OfSurfaceElementPurposeMember {
-	~Handle_StepElement_HArray2OfSurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray2OfSurfaceElementPurposeMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HArray2OfSurfaceElementPurposeMember::~Handle_StepElement_HArray2OfSurfaceElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue;
@@ -540,12 +516,10 @@ class Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue : public Handle_MMgt
 	return (StepElement_HArray1OfMeasureOrUnspecifiedValue*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue {
-	~Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue::~Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_CurveElementEndReleasePacket;
@@ -570,12 +544,10 @@ class Handle_StepElement_CurveElementEndReleasePacket : public Handle_MMgt_TShar
 	return (StepElement_CurveElementEndReleasePacket*)$self->Access();
 	}
 };
-%extend Handle_StepElement_CurveElementEndReleasePacket {
-	~Handle_StepElement_CurveElementEndReleasePacket() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_CurveElementEndReleasePacket\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_CurveElementEndReleasePacket::~Handle_StepElement_CurveElementEndReleasePacket %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HSequenceOfCurveElementPurposeMember;
@@ -600,12 +572,10 @@ class Handle_StepElement_HSequenceOfCurveElementPurposeMember : public Handle_MM
 	return (StepElement_HSequenceOfCurveElementPurposeMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HSequenceOfCurveElementPurposeMember {
-	~Handle_StepElement_HSequenceOfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HSequenceOfCurveElementPurposeMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HSequenceOfCurveElementPurposeMember::~Handle_StepElement_HSequenceOfCurveElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HSequenceOfCurveElementSectionDefinition;
@@ -630,12 +600,10 @@ class Handle_StepElement_HSequenceOfCurveElementSectionDefinition : public Handl
 	return (StepElement_HSequenceOfCurveElementSectionDefinition*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HSequenceOfCurveElementSectionDefinition {
-	~Handle_StepElement_HSequenceOfCurveElementSectionDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HSequenceOfCurveElementSectionDefinition\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HSequenceOfCurveElementSectionDefinition::~Handle_StepElement_HSequenceOfCurveElementSectionDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember;
@@ -660,12 +628,10 @@ class Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : p
 	return (StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember {
-	~Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember::~Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_SurfaceElementProperty;
@@ -690,12 +656,10 @@ class Handle_StepElement_SurfaceElementProperty : public Handle_MMgt_TShared {
 	return (StepElement_SurfaceElementProperty*)$self->Access();
 	}
 };
-%extend Handle_StepElement_SurfaceElementProperty {
-	~Handle_StepElement_SurfaceElementProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SurfaceElementProperty\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_SurfaceElementProperty::~Handle_StepElement_SurfaceElementProperty %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HSequenceOfElementMaterial;
@@ -720,12 +684,10 @@ class Handle_StepElement_HSequenceOfElementMaterial : public Handle_MMgt_TShared
 	return (StepElement_HSequenceOfElementMaterial*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HSequenceOfElementMaterial {
-	~Handle_StepElement_HSequenceOfElementMaterial() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HSequenceOfElementMaterial\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HSequenceOfElementMaterial::~Handle_StepElement_HSequenceOfElementMaterial %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HArray2OfCurveElementPurposeMember;
@@ -750,12 +712,10 @@ class Handle_StepElement_HArray2OfCurveElementPurposeMember : public Handle_MMgt
 	return (StepElement_HArray2OfCurveElementPurposeMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HArray2OfCurveElementPurposeMember {
-	~Handle_StepElement_HArray2OfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray2OfCurveElementPurposeMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HArray2OfCurveElementPurposeMember::~Handle_StepElement_HArray2OfCurveElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_UniformSurfaceSection;
@@ -780,12 +740,10 @@ class Handle_StepElement_UniformSurfaceSection : public Handle_StepElement_Surfa
 	return (StepElement_UniformSurfaceSection*)$self->Access();
 	}
 };
-%extend Handle_StepElement_UniformSurfaceSection {
-	~Handle_StepElement_UniformSurfaceSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_UniformSurfaceSection\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_UniformSurfaceSection::~Handle_StepElement_UniformSurfaceSection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_Curve3dElementDescriptor;
@@ -810,12 +768,10 @@ class Handle_StepElement_Curve3dElementDescriptor : public Handle_StepElement_El
 	return (StepElement_Curve3dElementDescriptor*)$self->Access();
 	}
 };
-%extend Handle_StepElement_Curve3dElementDescriptor {
-	~Handle_StepElement_Curve3dElementDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_Curve3dElementDescriptor\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_Curve3dElementDescriptor::~Handle_StepElement_Curve3dElementDescriptor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_VolumeElementPurposeMember;
@@ -840,12 +796,10 @@ class Handle_StepElement_VolumeElementPurposeMember : public Handle_StepData_Sel
 	return (StepElement_VolumeElementPurposeMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_VolumeElementPurposeMember {
-	~Handle_StepElement_VolumeElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_VolumeElementPurposeMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_VolumeElementPurposeMember::~Handle_StepElement_VolumeElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_MeasureOrUnspecifiedValueMember;
@@ -870,12 +824,10 @@ class Handle_StepElement_MeasureOrUnspecifiedValueMember : public Handle_StepDat
 	return (StepElement_MeasureOrUnspecifiedValueMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_MeasureOrUnspecifiedValueMember {
-	~Handle_StepElement_MeasureOrUnspecifiedValueMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_MeasureOrUnspecifiedValueMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_MeasureOrUnspecifiedValueMember::~Handle_StepElement_MeasureOrUnspecifiedValueMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HSequenceOfSurfaceElementPurposeMember;
@@ -900,12 +852,10 @@ class Handle_StepElement_HSequenceOfSurfaceElementPurposeMember : public Handle_
 	return (StepElement_HSequenceOfSurfaceElementPurposeMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HSequenceOfSurfaceElementPurposeMember {
-	~Handle_StepElement_HSequenceOfSurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HSequenceOfSurfaceElementPurposeMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HSequenceOfSurfaceElementPurposeMember::~Handle_StepElement_HSequenceOfSurfaceElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_CurveElementPurposeMember;
@@ -930,12 +880,10 @@ class Handle_StepElement_CurveElementPurposeMember : public Handle_StepData_Sele
 	return (StepElement_CurveElementPurposeMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_CurveElementPurposeMember {
-	~Handle_StepElement_CurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_CurveElementPurposeMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_CurveElementPurposeMember::~Handle_StepElement_CurveElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_ElementAspectMember;
@@ -960,12 +908,10 @@ class Handle_StepElement_ElementAspectMember : public Handle_StepData_SelectName
 	return (StepElement_ElementAspectMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_ElementAspectMember {
-	~Handle_StepElement_ElementAspectMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_ElementAspectMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_ElementAspectMember::~Handle_StepElement_ElementAspectMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_CurveElementFreedomMember;
@@ -990,12 +936,10 @@ class Handle_StepElement_CurveElementFreedomMember : public Handle_StepData_Sele
 	return (StepElement_CurveElementFreedomMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_CurveElementFreedomMember {
-	~Handle_StepElement_CurveElementFreedomMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_CurveElementFreedomMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_CurveElementFreedomMember::~Handle_StepElement_CurveElementFreedomMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_Volume3dElementDescriptor;
@@ -1020,12 +964,10 @@ class Handle_StepElement_Volume3dElementDescriptor : public Handle_StepElement_E
 	return (StepElement_Volume3dElementDescriptor*)$self->Access();
 	}
 };
-%extend Handle_StepElement_Volume3dElementDescriptor {
-	~Handle_StepElement_Volume3dElementDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_Volume3dElementDescriptor\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_Volume3dElementDescriptor::~Handle_StepElement_Volume3dElementDescriptor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_SurfaceSectionFieldVarying;
@@ -1050,12 +992,10 @@ class Handle_StepElement_SurfaceSectionFieldVarying : public Handle_StepElement_
 	return (StepElement_SurfaceSectionFieldVarying*)$self->Access();
 	}
 };
-%extend Handle_StepElement_SurfaceSectionFieldVarying {
-	~Handle_StepElement_SurfaceSectionFieldVarying() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SurfaceSectionFieldVarying\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_SurfaceSectionFieldVarying::~Handle_StepElement_SurfaceSectionFieldVarying %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember;
@@ -1080,12 +1020,10 @@ class Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember : publi
 	return (StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember {
-	~Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember::~Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_CurveElementSectionDerivedDefinitions;
@@ -1110,12 +1048,10 @@ class Handle_StepElement_CurveElementSectionDerivedDefinitions : public Handle_S
 	return (StepElement_CurveElementSectionDerivedDefinitions*)$self->Access();
 	}
 };
-%extend Handle_StepElement_CurveElementSectionDerivedDefinitions {
-	~Handle_StepElement_CurveElementSectionDerivedDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_CurveElementSectionDerivedDefinitions\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_CurveElementSectionDerivedDefinitions::~Handle_StepElement_CurveElementSectionDerivedDefinitions %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HArray1OfVolumeElementPurpose;
@@ -1140,12 +1076,10 @@ class Handle_StepElement_HArray1OfVolumeElementPurpose : public Handle_MMgt_TSha
 	return (StepElement_HArray1OfVolumeElementPurpose*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HArray1OfVolumeElementPurpose {
-	~Handle_StepElement_HArray1OfVolumeElementPurpose() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray1OfVolumeElementPurpose\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HArray1OfVolumeElementPurpose::~Handle_StepElement_HArray1OfVolumeElementPurpose %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_ElementMaterial;
@@ -1170,12 +1104,10 @@ class Handle_StepElement_ElementMaterial : public Handle_MMgt_TShared {
 	return (StepElement_ElementMaterial*)$self->Access();
 	}
 };
-%extend Handle_StepElement_ElementMaterial {
-	~Handle_StepElement_ElementMaterial() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_ElementMaterial\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_ElementMaterial::~Handle_StepElement_ElementMaterial %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition;
@@ -1200,12 +1132,10 @@ class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition :
 	return (StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition*)$self->Access();
 	}
 };
-%extend Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition {
-	~Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition::~Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HArray1OfCurveElementEndReleasePacket;
@@ -1230,12 +1160,10 @@ class Handle_StepElement_HArray1OfCurveElementEndReleasePacket : public Handle_M
 	return (StepElement_HArray1OfCurveElementEndReleasePacket*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HArray1OfCurveElementEndReleasePacket {
-	~Handle_StepElement_HArray1OfCurveElementEndReleasePacket() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray1OfCurveElementEndReleasePacket\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HArray1OfCurveElementEndReleasePacket::~Handle_StepElement_HArray1OfCurveElementEndReleasePacket %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember;
@@ -1260,12 +1188,10 @@ class Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public 
 	return (StepElement_HArray1OfHSequenceOfCurveElementPurposeMember*)$self->Access();
 	}
 };
-%extend Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember {
-	~Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember::~Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepElement_SurfaceSectionFieldConstant;
@@ -1290,12 +1216,10 @@ class Handle_StepElement_SurfaceSectionFieldConstant : public Handle_StepElement
 	return (StepElement_SurfaceSectionFieldConstant*)$self->Access();
 	}
 };
-%extend Handle_StepElement_SurfaceSectionFieldConstant {
-	~Handle_StepElement_SurfaceSectionFieldConstant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SurfaceSectionFieldConstant\n");}
-	}
-};
+%feature("shadow") Handle_StepElement_SurfaceSectionFieldConstant::~Handle_StepElement_SurfaceSectionFieldConstant %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SequenceOfSurfaceElementPurposeMember;
@@ -1347,12 +1271,10 @@ class StepElement_SequenceOfSurfaceElementPurposeMember : public TCollection_Bas
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend StepElement_SequenceOfSurfaceElementPurposeMember {
-	~StepElement_SequenceOfSurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SequenceOfSurfaceElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_SequenceOfSurfaceElementPurposeMember::~StepElement_SequenceOfSurfaceElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfElementMaterial;
@@ -1376,12 +1298,10 @@ class StepElement_SequenceNodeOfSequenceOfElementMaterial : public TCollection_S
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_SequenceNodeOfSequenceOfElementMaterial {
-	~StepElement_SequenceNodeOfSequenceOfElementMaterial() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SequenceNodeOfSequenceOfElementMaterial\n");}
-	}
-};
+%feature("shadow") StepElement_SequenceNodeOfSequenceOfElementMaterial::~StepElement_SequenceNodeOfSequenceOfElementMaterial %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember;
@@ -1423,12 +1343,10 @@ class StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember : public MMgt_
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember {
-	~StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember::~StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SequenceOfCurveElementPurposeMember;
@@ -1480,12 +1398,10 @@ class StepElement_SequenceOfCurveElementPurposeMember : public TCollection_BaseS
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend StepElement_SequenceOfCurveElementPurposeMember {
-	~StepElement_SequenceOfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SequenceOfCurveElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_SequenceOfCurveElementPurposeMember::~StepElement_SequenceOfCurveElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HSequenceOfSurfaceElementPurposeMember;
@@ -1551,12 +1467,10 @@ class StepElement_HSequenceOfSurfaceElementPurposeMember : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HSequenceOfSurfaceElementPurposeMember {
-	~StepElement_HSequenceOfSurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HSequenceOfSurfaceElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_HSequenceOfSurfaceElementPurposeMember::~StepElement_HSequenceOfSurfaceElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SurfaceSection;
@@ -1592,12 +1506,10 @@ class StepElement_SurfaceSection : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_SurfaceSection {
-	~StepElement_SurfaceSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceSection\n");}
-	}
-};
+%feature("shadow") StepElement_SurfaceSection::~StepElement_SurfaceSection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_UniformSurfaceSection;
@@ -1631,12 +1543,10 @@ class StepElement_UniformSurfaceSection : public StepElement_SurfaceSection {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_UniformSurfaceSection {
-	~StepElement_UniformSurfaceSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_UniformSurfaceSection\n");}
-	}
-};
+%feature("shadow") StepElement_UniformSurfaceSection::~StepElement_UniformSurfaceSection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Array2OfSurfaceElementPurpose;
@@ -1678,12 +1588,10 @@ class StepElement_Array2OfSurfaceElementPurpose {
 		StepElement_SurfaceElementPurpose & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend StepElement_Array2OfSurfaceElementPurpose {
-	~StepElement_Array2OfSurfaceElementPurpose() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array2OfSurfaceElementPurpose\n");}
-	}
-};
+%feature("shadow") StepElement_Array2OfSurfaceElementPurpose::~StepElement_Array2OfSurfaceElementPurpose %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember;
@@ -1707,12 +1615,10 @@ class StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : public T
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember {
-	~StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember::~StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HArray1OfVolumeElementPurposeMember;
@@ -1754,12 +1660,10 @@ class StepElement_HArray1OfVolumeElementPurposeMember : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HArray1OfVolumeElementPurposeMember {
-	~StepElement_HArray1OfVolumeElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfVolumeElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_HArray1OfVolumeElementPurposeMember::~StepElement_HArray1OfVolumeElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Array1OfCurveElementEndReleasePacket;
@@ -1797,12 +1701,10 @@ class StepElement_Array1OfCurveElementEndReleasePacket {
 		Handle_StepElement_CurveElementEndReleasePacket & operator()(const Standard_Integer Index);
 
 };
-%extend StepElement_Array1OfCurveElementEndReleasePacket {
-	~StepElement_Array1OfCurveElementEndReleasePacket() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfCurveElementEndReleasePacket\n");}
-	}
-};
+%feature("shadow") StepElement_Array1OfCurveElementEndReleasePacket::~StepElement_Array1OfCurveElementEndReleasePacket %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_ElementAspect;
@@ -1858,12 +1760,10 @@ class StepElement_ElementAspect : public StepData_SelectType {
 		StepElement_CurveEdge CurveEdge() const;
 
 };
-%extend StepElement_ElementAspect {
-	~StepElement_ElementAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_ElementAspect\n");}
-	}
-};
+%feature("shadow") StepElement_ElementAspect::~StepElement_ElementAspect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Array2OfSurfaceElementPurposeMember;
@@ -1905,12 +1805,10 @@ class StepElement_Array2OfSurfaceElementPurposeMember {
 		Handle_StepElement_SurfaceElementPurposeMember & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend StepElement_Array2OfSurfaceElementPurposeMember {
-	~StepElement_Array2OfSurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array2OfSurfaceElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_Array2OfSurfaceElementPurposeMember::~StepElement_Array2OfSurfaceElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember;
@@ -1948,12 +1846,10 @@ class StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember {
 		Handle_StepElement_HSequenceOfSurfaceElementPurposeMember & operator()(const Standard_Integer Index);
 
 };
-%extend StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember {
-	~StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember::~StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Array1OfHSequenceOfCurveElementPurposeMember;
@@ -1991,12 +1887,10 @@ class StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
 		Handle_StepElement_HSequenceOfCurveElementPurposeMember & operator()(const Standard_Integer Index);
 
 };
-%extend StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
-	~StepElement_Array1OfHSequenceOfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfHSequenceOfCurveElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_Array1OfHSequenceOfCurveElementPurposeMember::~StepElement_Array1OfHSequenceOfCurveElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_ElementDescriptor;
@@ -2028,12 +1922,10 @@ class StepElement_ElementDescriptor : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_ElementDescriptor {
-	~StepElement_ElementDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_ElementDescriptor\n");}
-	}
-};
+%feature("shadow") StepElement_ElementDescriptor::~StepElement_ElementDescriptor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Volume3dElementDescriptor;
@@ -2063,12 +1955,10 @@ class StepElement_Volume3dElementDescriptor : public StepElement_ElementDescript
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_Volume3dElementDescriptor {
-	~StepElement_Volume3dElementDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Volume3dElementDescriptor\n");}
-	}
-};
+%feature("shadow") StepElement_Volume3dElementDescriptor::~StepElement_Volume3dElementDescriptor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_ElementAspectMember;
@@ -2098,12 +1988,10 @@ class StepElement_ElementAspectMember : public StepData_SelectNamed {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_ElementAspectMember {
-	~StepElement_ElementAspectMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_ElementAspectMember\n");}
-	}
-};
+%feature("shadow") StepElement_ElementAspectMember::~StepElement_ElementAspectMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SurfaceSectionField;
@@ -2125,12 +2013,10 @@ class StepElement_SurfaceSectionField : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_SurfaceSectionField {
-	~StepElement_SurfaceSectionField() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceSectionField\n");}
-	}
-};
+%feature("shadow") StepElement_SurfaceSectionField::~StepElement_SurfaceSectionField %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SurfaceSectionFieldConstant;
@@ -2156,12 +2042,10 @@ class StepElement_SurfaceSectionFieldConstant : public StepElement_SurfaceSectio
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_SurfaceSectionFieldConstant {
-	~StepElement_SurfaceSectionFieldConstant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceSectionFieldConstant\n");}
-	}
-};
+%feature("shadow") StepElement_SurfaceSectionFieldConstant::~StepElement_SurfaceSectionFieldConstant %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SurfaceElementProperty;
@@ -2197,12 +2081,10 @@ class StepElement_SurfaceElementProperty : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_SurfaceElementProperty {
-	~StepElement_SurfaceElementProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceElementProperty\n");}
-	}
-};
+%feature("shadow") StepElement_SurfaceElementProperty::~StepElement_SurfaceElementProperty %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Array2OfCurveElementPurposeMember;
@@ -2244,12 +2126,10 @@ class StepElement_Array2OfCurveElementPurposeMember {
 		Handle_StepElement_CurveElementPurposeMember & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
-%extend StepElement_Array2OfCurveElementPurposeMember {
-	~StepElement_Array2OfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array2OfCurveElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_Array2OfCurveElementPurposeMember::~StepElement_Array2OfCurveElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HSequenceOfCurveElementPurposeMember;
@@ -2315,12 +2195,10 @@ class StepElement_HSequenceOfCurveElementPurposeMember : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HSequenceOfCurveElementPurposeMember {
-	~StepElement_HSequenceOfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HSequenceOfCurveElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_HSequenceOfCurveElementPurposeMember::~StepElement_HSequenceOfCurveElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HArray2OfSurfaceElementPurposeMember;
@@ -2368,12 +2246,10 @@ class StepElement_HArray2OfSurfaceElementPurposeMember : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HArray2OfSurfaceElementPurposeMember {
-	~StepElement_HArray2OfSurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HArray2OfSurfaceElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_HArray2OfSurfaceElementPurposeMember::~StepElement_HArray2OfSurfaceElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HArray1OfVolumeElementPurpose;
@@ -2415,12 +2291,10 @@ class StepElement_HArray1OfVolumeElementPurpose : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HArray1OfVolumeElementPurpose {
-	~StepElement_HArray1OfVolumeElementPurpose() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfVolumeElementPurpose\n");}
-	}
-};
+%feature("shadow") StepElement_HArray1OfVolumeElementPurpose::~StepElement_HArray1OfVolumeElementPurpose %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HArray1OfCurveElementEndReleasePacket;
@@ -2462,12 +2336,10 @@ class StepElement_HArray1OfCurveElementEndReleasePacket : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HArray1OfCurveElementEndReleasePacket {
-	~StepElement_HArray1OfCurveElementEndReleasePacket() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfCurveElementEndReleasePacket\n");}
-	}
-};
+%feature("shadow") StepElement_HArray1OfCurveElementEndReleasePacket::~StepElement_HArray1OfCurveElementEndReleasePacket %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HArray1OfSurfaceSection;
@@ -2509,12 +2381,10 @@ class StepElement_HArray1OfSurfaceSection : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HArray1OfSurfaceSection {
-	~StepElement_HArray1OfSurfaceSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfSurfaceSection\n");}
-	}
-};
+%feature("shadow") StepElement_HArray1OfSurfaceSection::~StepElement_HArray1OfSurfaceSection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_MeasureOrUnspecifiedValue;
@@ -2538,12 +2408,10 @@ class StepElement_MeasureOrUnspecifiedValue : public StepData_SelectType {
 		StepElement_UnspecifiedValue UnspecifiedValue() const;
 
 };
-%extend StepElement_MeasureOrUnspecifiedValue {
-	~StepElement_MeasureOrUnspecifiedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_MeasureOrUnspecifiedValue\n");}
-	}
-};
+%feature("shadow") StepElement_MeasureOrUnspecifiedValue::~StepElement_MeasureOrUnspecifiedValue %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_CurveElementPurposeMember;
@@ -2573,12 +2441,10 @@ class StepElement_CurveElementPurposeMember : public StepData_SelectNamed {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_CurveElementPurposeMember {
-	~StepElement_CurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_CurveElementPurposeMember::~StepElement_CurveElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SequenceOfCurveElementSectionDefinition;
@@ -2630,12 +2496,10 @@ class StepElement_SequenceOfCurveElementSectionDefinition : public TCollection_B
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend StepElement_SequenceOfCurveElementSectionDefinition {
-	~StepElement_SequenceOfCurveElementSectionDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SequenceOfCurveElementSectionDefinition\n");}
-	}
-};
+%feature("shadow") StepElement_SequenceOfCurveElementSectionDefinition::~StepElement_SequenceOfCurveElementSectionDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HSequenceOfCurveElementSectionDefinition;
@@ -2701,12 +2565,10 @@ class StepElement_HSequenceOfCurveElementSectionDefinition : public MMgt_TShared
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HSequenceOfCurveElementSectionDefinition {
-	~StepElement_HSequenceOfCurveElementSectionDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HSequenceOfCurveElementSectionDefinition\n");}
-	}
-};
+%feature("shadow") StepElement_HSequenceOfCurveElementSectionDefinition::~StepElement_HSequenceOfCurveElementSectionDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_MeasureOrUnspecifiedValueMember;
@@ -2736,12 +2598,10 @@ class StepElement_MeasureOrUnspecifiedValueMember : public StepData_SelectNamed 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_MeasureOrUnspecifiedValueMember {
-	~StepElement_MeasureOrUnspecifiedValueMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_MeasureOrUnspecifiedValueMember\n");}
-	}
-};
+%feature("shadow") StepElement_MeasureOrUnspecifiedValueMember::~StepElement_MeasureOrUnspecifiedValueMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_CurveElementSectionDefinition;
@@ -2773,12 +2633,10 @@ class StepElement_CurveElementSectionDefinition : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_CurveElementSectionDefinition {
-	~StepElement_CurveElementSectionDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementSectionDefinition\n");}
-	}
-};
+%feature("shadow") StepElement_CurveElementSectionDefinition::~StepElement_CurveElementSectionDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HSequenceOfElementMaterial;
@@ -2844,12 +2702,10 @@ class StepElement_HSequenceOfElementMaterial : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HSequenceOfElementMaterial {
-	~StepElement_HSequenceOfElementMaterial() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HSequenceOfElementMaterial\n");}
-	}
-};
+%feature("shadow") StepElement_HSequenceOfElementMaterial::~StepElement_HSequenceOfElementMaterial %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_CurveElementFreedom;
@@ -2873,12 +2729,10 @@ class StepElement_CurveElementFreedom : public StepData_SelectType {
 		Handle_TCollection_HAsciiString ApplicationDefinedDegreeOfFreedom() const;
 
 };
-%extend StepElement_CurveElementFreedom {
-	~StepElement_CurveElementFreedom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementFreedom\n");}
-	}
-};
+%feature("shadow") StepElement_CurveElementFreedom::~StepElement_CurveElementFreedom %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_AnalysisItemWithinRepresentation;
@@ -2918,12 +2772,10 @@ class StepElement_AnalysisItemWithinRepresentation : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_AnalysisItemWithinRepresentation {
-	~StepElement_AnalysisItemWithinRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_AnalysisItemWithinRepresentation\n");}
-	}
-};
+%feature("shadow") StepElement_AnalysisItemWithinRepresentation::~StepElement_AnalysisItemWithinRepresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Curve3dElementDescriptor;
@@ -2951,12 +2803,10 @@ class StepElement_Curve3dElementDescriptor : public StepElement_ElementDescripto
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_Curve3dElementDescriptor {
-	~StepElement_Curve3dElementDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Curve3dElementDescriptor\n");}
-	}
-};
+%feature("shadow") StepElement_Curve3dElementDescriptor::~StepElement_Curve3dElementDescriptor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Array1OfSurfaceSection;
@@ -2994,12 +2844,10 @@ class StepElement_Array1OfSurfaceSection {
 		Handle_StepElement_SurfaceSection & operator()(const Standard_Integer Index);
 
 };
-%extend StepElement_Array1OfSurfaceSection {
-	~StepElement_Array1OfSurfaceSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfSurfaceSection\n");}
-	}
-};
+%feature("shadow") StepElement_Array1OfSurfaceSection::~StepElement_Array1OfSurfaceSection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HArray2OfSurfaceElementPurpose;
@@ -3047,12 +2895,10 @@ class StepElement_HArray2OfSurfaceElementPurpose : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HArray2OfSurfaceElementPurpose {
-	~StepElement_HArray2OfSurfaceElementPurpose() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HArray2OfSurfaceElementPurpose\n");}
-	}
-};
+%feature("shadow") StepElement_HArray2OfSurfaceElementPurpose::~StepElement_HArray2OfSurfaceElementPurpose %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SurfaceElementPurpose;
@@ -3076,12 +2922,10 @@ class StepElement_SurfaceElementPurpose : public StepData_SelectType {
 		Handle_TCollection_HAsciiString ApplicationDefinedElementPurpose() const;
 
 };
-%extend StepElement_SurfaceElementPurpose {
-	~StepElement_SurfaceElementPurpose() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceElementPurpose\n");}
-	}
-};
+%feature("shadow") StepElement_SurfaceElementPurpose::~StepElement_SurfaceElementPurpose %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_VolumeElementPurpose;
@@ -3105,12 +2949,10 @@ class StepElement_VolumeElementPurpose : public StepData_SelectType {
 		Handle_TCollection_HAsciiString ApplicationDefinedElementPurpose() const;
 
 };
-%extend StepElement_VolumeElementPurpose {
-	~StepElement_VolumeElementPurpose() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_VolumeElementPurpose\n");}
-	}
-};
+%feature("shadow") StepElement_VolumeElementPurpose::~StepElement_VolumeElementPurpose %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Array1OfVolumeElementPurpose;
@@ -3148,12 +2990,10 @@ class StepElement_Array1OfVolumeElementPurpose {
 		StepElement_VolumeElementPurpose & operator()(const Standard_Integer Index);
 
 };
-%extend StepElement_Array1OfVolumeElementPurpose {
-	~StepElement_Array1OfVolumeElementPurpose() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfVolumeElementPurpose\n");}
-	}
-};
+%feature("shadow") StepElement_Array1OfVolumeElementPurpose::~StepElement_Array1OfVolumeElementPurpose %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_VolumeElementPurposeMember;
@@ -3183,12 +3023,10 @@ class StepElement_VolumeElementPurposeMember : public StepData_SelectNamed {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_VolumeElementPurposeMember {
-	~StepElement_VolumeElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_VolumeElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_VolumeElementPurposeMember::~StepElement_VolumeElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_CurveElementPurpose;
@@ -3212,12 +3050,10 @@ class StepElement_CurveElementPurpose : public StepData_SelectType {
 		Handle_TCollection_HAsciiString ApplicationDefinedElementPurpose() const;
 
 };
-%extend StepElement_CurveElementPurpose {
-	~StepElement_CurveElementPurpose() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementPurpose\n");}
-	}
-};
+%feature("shadow") StepElement_CurveElementPurpose::~StepElement_CurveElementPurpose %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SurfaceElementPurposeMember;
@@ -3247,12 +3083,10 @@ class StepElement_SurfaceElementPurposeMember : public StepData_SelectNamed {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_SurfaceElementPurposeMember {
-	~StepElement_SurfaceElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_SurfaceElementPurposeMember::~StepElement_SurfaceElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Array1OfMeasureOrUnspecifiedValue;
@@ -3290,12 +3124,10 @@ class StepElement_Array1OfMeasureOrUnspecifiedValue {
 		StepElement_MeasureOrUnspecifiedValue & operator()(const Standard_Integer Index);
 
 };
-%extend StepElement_Array1OfMeasureOrUnspecifiedValue {
-	~StepElement_Array1OfMeasureOrUnspecifiedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfMeasureOrUnspecifiedValue\n");}
-	}
-};
+%feature("shadow") StepElement_Array1OfMeasureOrUnspecifiedValue::~StepElement_Array1OfMeasureOrUnspecifiedValue %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_CurveElementSectionDerivedDefinitions;
@@ -3359,12 +3191,10 @@ class StepElement_CurveElementSectionDerivedDefinitions : public StepElement_Cur
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_CurveElementSectionDerivedDefinitions {
-	~StepElement_CurveElementSectionDerivedDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementSectionDerivedDefinitions\n");}
-	}
-};
+%feature("shadow") StepElement_CurveElementSectionDerivedDefinitions::~StepElement_CurveElementSectionDerivedDefinitions %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember;
@@ -3388,12 +3218,10 @@ class StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : public TCo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember {
-	~StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember::~StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HArray1OfHSequenceOfCurveElementPurposeMember;
@@ -3435,12 +3263,10 @@ class StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public MMgt_TS
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HArray1OfHSequenceOfCurveElementPurposeMember {
-	~StepElement_HArray1OfHSequenceOfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfHSequenceOfCurveElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_HArray1OfHSequenceOfCurveElementPurposeMember::~StepElement_HArray1OfHSequenceOfCurveElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SequenceOfElementMaterial;
@@ -3492,12 +3318,10 @@ class StepElement_SequenceOfElementMaterial : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend StepElement_SequenceOfElementMaterial {
-	~StepElement_SequenceOfElementMaterial() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SequenceOfElementMaterial\n");}
-	}
-};
+%feature("shadow") StepElement_SequenceOfElementMaterial::~StepElement_SequenceOfElementMaterial %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Array1OfVolumeElementPurposeMember;
@@ -3535,12 +3359,10 @@ class StepElement_Array1OfVolumeElementPurposeMember {
 		Handle_StepElement_VolumeElementPurposeMember & operator()(const Standard_Integer Index);
 
 };
-%extend StepElement_Array1OfVolumeElementPurposeMember {
-	~StepElement_Array1OfVolumeElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfVolumeElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_Array1OfVolumeElementPurposeMember::~StepElement_Array1OfVolumeElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_CurveElementFreedomMember;
@@ -3570,12 +3392,10 @@ class StepElement_CurveElementFreedomMember : public StepData_SelectNamed {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_CurveElementFreedomMember {
-	~StepElement_CurveElementFreedomMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementFreedomMember\n");}
-	}
-};
+%feature("shadow") StepElement_CurveElementFreedomMember::~StepElement_CurveElementFreedomMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SurfaceSectionFieldVarying;
@@ -3607,12 +3427,10 @@ class StepElement_SurfaceSectionFieldVarying : public StepElement_SurfaceSection
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_SurfaceSectionFieldVarying {
-	~StepElement_SurfaceSectionFieldVarying() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceSectionFieldVarying\n");}
-	}
-};
+%feature("shadow") StepElement_SurfaceSectionFieldVarying::~StepElement_SurfaceSectionFieldVarying %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Array1OfCurveElementSectionDefinition;
@@ -3650,12 +3468,10 @@ class StepElement_Array1OfCurveElementSectionDefinition {
 		Handle_StepElement_CurveElementSectionDefinition & operator()(const Standard_Integer Index);
 
 };
-%extend StepElement_Array1OfCurveElementSectionDefinition {
-	~StepElement_Array1OfCurveElementSectionDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfCurveElementSectionDefinition\n");}
-	}
-};
+%feature("shadow") StepElement_Array1OfCurveElementSectionDefinition::~StepElement_Array1OfCurveElementSectionDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HArray2OfCurveElementPurposeMember;
@@ -3703,12 +3519,10 @@ class StepElement_HArray2OfCurveElementPurposeMember : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HArray2OfCurveElementPurposeMember {
-	~StepElement_HArray2OfCurveElementPurposeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HArray2OfCurveElementPurposeMember\n");}
-	}
-};
+%feature("shadow") StepElement_HArray2OfCurveElementPurposeMember::~StepElement_HArray2OfCurveElementPurposeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition;
@@ -3732,12 +3546,10 @@ class StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition : public
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition {
-	~StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition\n");}
-	}
-};
+%feature("shadow") StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition::~StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HArray1OfCurveElementSectionDefinition;
@@ -3779,12 +3591,10 @@ class StepElement_HArray1OfCurveElementSectionDefinition : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HArray1OfCurveElementSectionDefinition {
-	~StepElement_HArray1OfCurveElementSectionDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfCurveElementSectionDefinition\n");}
-	}
-};
+%feature("shadow") StepElement_HArray1OfCurveElementSectionDefinition::~StepElement_HArray1OfCurveElementSectionDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_Surface3dElementDescriptor;
@@ -3816,12 +3626,10 @@ class StepElement_Surface3dElementDescriptor : public StepElement_ElementDescrip
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_Surface3dElementDescriptor {
-	~StepElement_Surface3dElementDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_Surface3dElementDescriptor\n");}
-	}
-};
+%feature("shadow") StepElement_Surface3dElementDescriptor::~StepElement_Surface3dElementDescriptor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_ElementMaterial;
@@ -3857,12 +3665,10 @@ class StepElement_ElementMaterial : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_ElementMaterial {
-	~StepElement_ElementMaterial() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_ElementMaterial\n");}
-	}
-};
+%feature("shadow") StepElement_ElementMaterial::~StepElement_ElementMaterial %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_CurveElementEndReleasePacket;
@@ -3894,12 +3700,10 @@ class StepElement_CurveElementEndReleasePacket : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_CurveElementEndReleasePacket {
-	~StepElement_CurveElementEndReleasePacket() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementEndReleasePacket\n");}
-	}
-};
+%feature("shadow") StepElement_CurveElementEndReleasePacket::~StepElement_CurveElementEndReleasePacket %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepElement_HArray1OfMeasureOrUnspecifiedValue;
@@ -3941,9 +3745,7 @@ class StepElement_HArray1OfMeasureOrUnspecifiedValue : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepElement_HArray1OfMeasureOrUnspecifiedValue {
-	~StepElement_HArray1OfMeasureOrUnspecifiedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfMeasureOrUnspecifiedValue\n");}
-	}
-};
+%feature("shadow") StepElement_HArray1OfMeasureOrUnspecifiedValue::~StepElement_HArray1OfMeasureOrUnspecifiedValue %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

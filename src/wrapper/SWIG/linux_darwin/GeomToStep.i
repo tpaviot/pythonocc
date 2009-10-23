@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GeomToStep_dependencies.i
 
 
@@ -44,12 +48,10 @@ class GeomToStep_Root {
 		Standard_Boolean IsDone() const;
 
 };
-%extend GeomToStep_Root {
-	~GeomToStep_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_Root\n");}
-	}
-};
+%feature("shadow") GeomToStep_Root::~GeomToStep_Root %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeLine;
@@ -67,12 +69,10 @@ class GeomToStep_MakeLine : public GeomToStep_Root {
 		const Handle_StepGeom_Line & Value() const;
 
 };
-%extend GeomToStep_MakeLine {
-	~GeomToStep_MakeLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeLine\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeLine::~GeomToStep_MakeLine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeSurface;
@@ -84,12 +84,10 @@ class GeomToStep_MakeSurface : public GeomToStep_Root {
 		const Handle_StepGeom_Surface & Value() const;
 
 };
-%extend GeomToStep_MakeSurface {
-	~GeomToStep_MakeSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSurface\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeSurface::~GeomToStep_MakeSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeSurfaceOfLinearExtrusion;
@@ -101,12 +99,10 @@ class GeomToStep_MakeSurfaceOfLinearExtrusion : public GeomToStep_Root {
 		const Handle_StepGeom_SurfaceOfLinearExtrusion & Value() const;
 
 };
-%extend GeomToStep_MakeSurfaceOfLinearExtrusion {
-	~GeomToStep_MakeSurfaceOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSurfaceOfLinearExtrusion\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeSurfaceOfLinearExtrusion::~GeomToStep_MakeSurfaceOfLinearExtrusion %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeAxis1Placement;
@@ -124,12 +120,10 @@ class GeomToStep_MakeAxis1Placement : public GeomToStep_Root {
 		const Handle_StepGeom_Axis1Placement & Value() const;
 
 };
-%extend GeomToStep_MakeAxis1Placement {
-	~GeomToStep_MakeAxis1Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeAxis1Placement\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeAxis1Placement::~GeomToStep_MakeAxis1Placement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeAxis2Placement2d;
@@ -143,12 +137,10 @@ class GeomToStep_MakeAxis2Placement2d : public GeomToStep_Root {
 		const Handle_StepGeom_Axis2Placement2d & Value() const;
 
 };
-%extend GeomToStep_MakeAxis2Placement2d {
-	~GeomToStep_MakeAxis2Placement2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeAxis2Placement2d\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeAxis2Placement2d::~GeomToStep_MakeAxis2Placement2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeElementarySurface;
@@ -160,12 +152,10 @@ class GeomToStep_MakeElementarySurface : public GeomToStep_Root {
 		const Handle_StepGeom_ElementarySurface & Value() const;
 
 };
-%extend GeomToStep_MakeElementarySurface {
-	~GeomToStep_MakeElementarySurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeElementarySurface\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeElementarySurface::~GeomToStep_MakeElementarySurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface;
@@ -177,12 +167,10 @@ class GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface : public G
 		const Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface & Value() const;
 
 };
-%extend GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface {
-	~GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface::~GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeParabola;
@@ -196,12 +184,10 @@ class GeomToStep_MakeParabola : public GeomToStep_Root {
 		const Handle_StepGeom_Parabola & Value() const;
 
 };
-%extend GeomToStep_MakeParabola {
-	~GeomToStep_MakeParabola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeParabola\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeParabola::~GeomToStep_MakeParabola %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeDirection;
@@ -219,12 +205,10 @@ class GeomToStep_MakeDirection : public GeomToStep_Root {
 		const Handle_StepGeom_Direction & Value() const;
 
 };
-%extend GeomToStep_MakeDirection {
-	~GeomToStep_MakeDirection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeDirection\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeDirection::~GeomToStep_MakeDirection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeSweptSurface;
@@ -236,12 +220,10 @@ class GeomToStep_MakeSweptSurface : public GeomToStep_Root {
 		const Handle_StepGeom_SweptSurface & Value() const;
 
 };
-%extend GeomToStep_MakeSweptSurface {
-	~GeomToStep_MakeSweptSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSweptSurface\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeSweptSurface::~GeomToStep_MakeSweptSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeSurfaceOfRevolution;
@@ -253,12 +235,10 @@ class GeomToStep_MakeSurfaceOfRevolution : public GeomToStep_Root {
 		const Handle_StepGeom_SurfaceOfRevolution & Value() const;
 
 };
-%extend GeomToStep_MakeSurfaceOfRevolution {
-	~GeomToStep_MakeSurfaceOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSurfaceOfRevolution\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeSurfaceOfRevolution::~GeomToStep_MakeSurfaceOfRevolution %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakePlane;
@@ -272,12 +252,10 @@ class GeomToStep_MakePlane : public GeomToStep_Root {
 		const Handle_StepGeom_Plane & Value() const;
 
 };
-%extend GeomToStep_MakePlane {
-	~GeomToStep_MakePlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakePlane\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakePlane::~GeomToStep_MakePlane %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeConicalSurface;
@@ -289,12 +267,10 @@ class GeomToStep_MakeConicalSurface : public GeomToStep_Root {
 		const Handle_StepGeom_ConicalSurface & Value() const;
 
 };
-%extend GeomToStep_MakeConicalSurface {
-	~GeomToStep_MakeConicalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeConicalSurface\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeConicalSurface::~GeomToStep_MakeConicalSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeToroidalSurface;
@@ -306,12 +282,10 @@ class GeomToStep_MakeToroidalSurface : public GeomToStep_Root {
 		const Handle_StepGeom_ToroidalSurface & Value() const;
 
 };
-%extend GeomToStep_MakeToroidalSurface {
-	~GeomToStep_MakeToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeToroidalSurface\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeToroidalSurface::~GeomToStep_MakeToroidalSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve;
@@ -325,12 +299,10 @@ class GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve : public GeomT
 		const Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve & Value() const;
 
 };
-%extend GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve {
-	~GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve::~GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeHyperbola;
@@ -344,12 +316,10 @@ class GeomToStep_MakeHyperbola : public GeomToStep_Root {
 		const Handle_StepGeom_Hyperbola & Value() const;
 
 };
-%extend GeomToStep_MakeHyperbola {
-	~GeomToStep_MakeHyperbola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeHyperbola\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeHyperbola::~GeomToStep_MakeHyperbola %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeAxis2Placement3d;
@@ -369,12 +339,10 @@ class GeomToStep_MakeAxis2Placement3d : public GeomToStep_Root {
 		const Handle_StepGeom_Axis2Placement3d & Value() const;
 
 };
-%extend GeomToStep_MakeAxis2Placement3d {
-	~GeomToStep_MakeAxis2Placement3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeAxis2Placement3d\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeAxis2Placement3d::~GeomToStep_MakeAxis2Placement3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeRectangularTrimmedSurface;
@@ -386,12 +354,10 @@ class GeomToStep_MakeRectangularTrimmedSurface : public GeomToStep_Root {
 		const Handle_StepGeom_RectangularTrimmedSurface & Value() const;
 
 };
-%extend GeomToStep_MakeRectangularTrimmedSurface {
-	~GeomToStep_MakeRectangularTrimmedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeRectangularTrimmedSurface\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeRectangularTrimmedSurface::~GeomToStep_MakeRectangularTrimmedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeBSplineSurfaceWithKnots;
@@ -403,12 +369,10 @@ class GeomToStep_MakeBSplineSurfaceWithKnots : public GeomToStep_Root {
 		const Handle_StepGeom_BSplineSurfaceWithKnots & Value() const;
 
 };
-%extend GeomToStep_MakeBSplineSurfaceWithKnots {
-	~GeomToStep_MakeBSplineSurfaceWithKnots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBSplineSurfaceWithKnots\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeBSplineSurfaceWithKnots::~GeomToStep_MakeBSplineSurfaceWithKnots %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakePolyline;
@@ -422,12 +386,10 @@ class GeomToStep_MakePolyline : public GeomToStep_Root {
 		const Handle_StepGeom_Polyline & Value() const;
 
 };
-%extend GeomToStep_MakePolyline {
-	~GeomToStep_MakePolyline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakePolyline\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakePolyline::~GeomToStep_MakePolyline %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeCartesianPoint;
@@ -445,12 +407,10 @@ class GeomToStep_MakeCartesianPoint : public GeomToStep_Root {
 		const Handle_StepGeom_CartesianPoint & Value() const;
 
 };
-%extend GeomToStep_MakeCartesianPoint {
-	~GeomToStep_MakeCartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeCartesianPoint\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeCartesianPoint::~GeomToStep_MakeCartesianPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeEllipse;
@@ -466,12 +426,10 @@ class GeomToStep_MakeEllipse : public GeomToStep_Root {
 		const Handle_StepGeom_Ellipse & Value() const;
 
 };
-%extend GeomToStep_MakeEllipse {
-	~GeomToStep_MakeEllipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeEllipse\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeEllipse::~GeomToStep_MakeEllipse %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeSphericalSurface;
@@ -483,12 +441,10 @@ class GeomToStep_MakeSphericalSurface : public GeomToStep_Root {
 		const Handle_StepGeom_SphericalSurface & Value() const;
 
 };
-%extend GeomToStep_MakeSphericalSurface {
-	~GeomToStep_MakeSphericalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSphericalSurface\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeSphericalSurface::~GeomToStep_MakeSphericalSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeBoundedSurface;
@@ -500,12 +456,10 @@ class GeomToStep_MakeBoundedSurface : public GeomToStep_Root {
 		const Handle_StepGeom_BoundedSurface & Value() const;
 
 };
-%extend GeomToStep_MakeBoundedSurface {
-	~GeomToStep_MakeBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBoundedSurface\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeBoundedSurface::~GeomToStep_MakeBoundedSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeCircle;
@@ -521,12 +475,10 @@ class GeomToStep_MakeCircle : public GeomToStep_Root {
 		const Handle_StepGeom_Circle & Value() const;
 
 };
-%extend GeomToStep_MakeCircle {
-	~GeomToStep_MakeCircle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeCircle\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeCircle::~GeomToStep_MakeCircle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeCylindricalSurface;
@@ -538,12 +490,10 @@ class GeomToStep_MakeCylindricalSurface : public GeomToStep_Root {
 		const Handle_StepGeom_CylindricalSurface & Value() const;
 
 };
-%extend GeomToStep_MakeCylindricalSurface {
-	~GeomToStep_MakeCylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeCylindricalSurface\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeCylindricalSurface::~GeomToStep_MakeCylindricalSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeBoundedCurve;
@@ -557,12 +507,10 @@ class GeomToStep_MakeBoundedCurve : public GeomToStep_Root {
 		const Handle_StepGeom_BoundedCurve & Value() const;
 
 };
-%extend GeomToStep_MakeBoundedCurve {
-	~GeomToStep_MakeBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBoundedCurve\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeBoundedCurve::~GeomToStep_MakeBoundedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeBSplineCurveWithKnots;
@@ -576,12 +524,10 @@ class GeomToStep_MakeBSplineCurveWithKnots : public GeomToStep_Root {
 		const Handle_StepGeom_BSplineCurveWithKnots & Value() const;
 
 };
-%extend GeomToStep_MakeBSplineCurveWithKnots {
-	~GeomToStep_MakeBSplineCurveWithKnots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBSplineCurveWithKnots\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeBSplineCurveWithKnots::~GeomToStep_MakeBSplineCurveWithKnots %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeConic;
@@ -595,12 +541,10 @@ class GeomToStep_MakeConic : public GeomToStep_Root {
 		const Handle_StepGeom_Conic & Value() const;
 
 };
-%extend GeomToStep_MakeConic {
-	~GeomToStep_MakeConic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeConic\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeConic::~GeomToStep_MakeConic %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeCurve;
@@ -614,12 +558,10 @@ class GeomToStep_MakeCurve : public GeomToStep_Root {
 		const Handle_StepGeom_Curve & Value() const;
 
 };
-%extend GeomToStep_MakeCurve {
-	~GeomToStep_MakeCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeCurve\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeCurve::~GeomToStep_MakeCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToStep_MakeVector;
@@ -637,9 +579,7 @@ class GeomToStep_MakeVector : public GeomToStep_Root {
 		const Handle_StepGeom_Vector & Value() const;
 
 };
-%extend GeomToStep_MakeVector {
-	~GeomToStep_MakeVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeVector\n");}
-	}
-};
+%feature("shadow") GeomToStep_MakeVector::~GeomToStep_MakeVector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Adaptor2d_dependencies.i
 
 
@@ -58,12 +62,10 @@ class Handle_Adaptor2d_HCurve2d : public Handle_MMgt_TShared {
 	return (Adaptor2d_HCurve2d*)$self->Access();
 	}
 };
-%extend Handle_Adaptor2d_HCurve2d {
-	~Handle_Adaptor2d_HCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor2d_HCurve2d\n");}
-	}
-};
+%feature("shadow") Handle_Adaptor2d_HCurve2d::~Handle_Adaptor2d_HCurve2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Adaptor2d_HLine2d;
@@ -88,12 +90,10 @@ class Handle_Adaptor2d_HLine2d : public Handle_Adaptor2d_HCurve2d {
 	return (Adaptor2d_HLine2d*)$self->Access();
 	}
 };
-%extend Handle_Adaptor2d_HLine2d {
-	~Handle_Adaptor2d_HLine2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor2d_HLine2d\n");}
-	}
-};
+%feature("shadow") Handle_Adaptor2d_HLine2d::~Handle_Adaptor2d_HLine2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor2d_HCurve2d;
@@ -171,12 +171,10 @@ class Adaptor2d_HCurve2d : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Adaptor2d_HCurve2d {
-	~Adaptor2d_HCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor2d_HCurve2d\n");}
-	}
-};
+%feature("shadow") Adaptor2d_HCurve2d::~Adaptor2d_HCurve2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor2d_Curve2d;
@@ -244,12 +242,10 @@ class Adaptor2d_Curve2d {
 		virtual		Handle_Geom2d_BSplineCurve BSpline() const;
 
 };
-%extend Adaptor2d_Curve2d {
-	~Adaptor2d_Curve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor2d_Curve2d\n");}
-	}
-};
+%feature("shadow") Adaptor2d_Curve2d::~Adaptor2d_Curve2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor2d_Line2d;
@@ -275,12 +271,10 @@ class Adaptor2d_Line2d : public Adaptor2d_Curve2d {
 		virtual		void D3(const Standard_Real X, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3) const;
 
 };
-%extend Adaptor2d_Line2d {
-	~Adaptor2d_Line2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor2d_Line2d\n");}
-	}
-};
+%feature("shadow") Adaptor2d_Line2d::~Adaptor2d_Line2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Adaptor2d_HLine2d;
@@ -310,9 +304,7 @@ class Adaptor2d_HLine2d : public Adaptor2d_HCurve2d {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Adaptor2d_HLine2d {
-	~Adaptor2d_HLine2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Adaptor2d_HLine2d\n");}
-	}
-};
+%feature("shadow") Adaptor2d_HLine2d::~Adaptor2d_HLine2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

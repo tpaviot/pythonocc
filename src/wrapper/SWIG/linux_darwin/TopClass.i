@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TopClass_dependencies.i
 
 
@@ -50,12 +54,10 @@ class TopClass_Intersection3d {
 		virtual		TopAbs_State State() const;
 
 };
-%extend TopClass_Intersection3d {
-	~TopClass_Intersection3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopClass_Intersection3d\n");}
-	}
-};
+%feature("shadow") TopClass_Intersection3d::~TopClass_Intersection3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopClass_SolidExplorer;
@@ -87,9 +89,7 @@ class TopClass_SolidExplorer {
 		virtual		Standard_Boolean RejectFace(const gp_Lin &L, const Standard_Real Par) const;
 
 };
-%extend TopClass_SolidExplorer {
-	~TopClass_SolidExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopClass_SolidExplorer\n");}
-	}
-};
+%feature("shadow") TopClass_SolidExplorer::~TopClass_SolidExplorer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

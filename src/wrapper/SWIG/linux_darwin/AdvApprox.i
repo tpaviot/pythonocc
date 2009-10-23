@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include AdvApprox_dependencies.i
 
 
@@ -88,12 +92,10 @@ class AdvApprox_ApproxAFunction {
 		};
 
 };
-%extend AdvApprox_ApproxAFunction {
-	~AdvApprox_ApproxAFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApprox_ApproxAFunction\n");}
-	}
-};
+%feature("shadow") AdvApprox_ApproxAFunction::~AdvApprox_ApproxAFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AdvApprox_Cutting;
@@ -105,12 +107,10 @@ class AdvApprox_Cutting {
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
 
 };
-%extend AdvApprox_Cutting {
-	~AdvApprox_Cutting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApprox_Cutting\n");}
-	}
-};
+%feature("shadow") AdvApprox_Cutting::~AdvApprox_Cutting %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AdvApprox_PrefAndRec;
@@ -122,12 +122,10 @@ class AdvApprox_PrefAndRec : public AdvApprox_Cutting {
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
 
 };
-%extend AdvApprox_PrefAndRec {
-	~AdvApprox_PrefAndRec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApprox_PrefAndRec\n");}
-	}
-};
+%feature("shadow") AdvApprox_PrefAndRec::~AdvApprox_PrefAndRec %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AdvApprox_PrefCutting;
@@ -139,12 +137,10 @@ class AdvApprox_PrefCutting : public AdvApprox_Cutting {
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
 
 };
-%extend AdvApprox_PrefCutting {
-	~AdvApprox_PrefCutting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApprox_PrefCutting\n");}
-	}
-};
+%feature("shadow") AdvApprox_PrefCutting::~AdvApprox_PrefCutting %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AdvApprox_DichoCutting;
@@ -156,12 +152,10 @@ class AdvApprox_DichoCutting : public AdvApprox_Cutting {
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
 
 };
-%extend AdvApprox_DichoCutting {
-	~AdvApprox_DichoCutting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApprox_DichoCutting\n");}
-	}
-};
+%feature("shadow") AdvApprox_DichoCutting::~AdvApprox_DichoCutting %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AdvApprox_SimpleApprox;
@@ -199,9 +193,7 @@ class AdvApprox_SimpleApprox {
 		};
 
 };
-%extend AdvApprox_SimpleApprox {
-	~AdvApprox_SimpleApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApprox_SimpleApprox\n");}
-	}
-};
+%feature("shadow") AdvApprox_SimpleApprox::~AdvApprox_SimpleApprox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TopLoc_dependencies.i
 
 
@@ -58,12 +62,10 @@ class Handle_TopLoc_SListNodeOfSListOfItemLocation : public Handle_MMgt_TShared 
 	return (TopLoc_SListNodeOfSListOfItemLocation*)$self->Access();
 	}
 };
-%extend Handle_TopLoc_SListNodeOfSListOfItemLocation {
-	~Handle_TopLoc_SListNodeOfSListOfItemLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopLoc_SListNodeOfSListOfItemLocation\n");}
-	}
-};
+%feature("shadow") Handle_TopLoc_SListNodeOfSListOfItemLocation::~Handle_TopLoc_SListNodeOfSListOfItemLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopLoc_Datum3D;
@@ -88,12 +90,10 @@ class Handle_TopLoc_Datum3D : public Handle_MMgt_TShared {
 	return (TopLoc_Datum3D*)$self->Access();
 	}
 };
-%extend Handle_TopLoc_Datum3D {
-	~Handle_TopLoc_Datum3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopLoc_Datum3D\n");}
-	}
-};
+%feature("shadow") Handle_TopLoc_Datum3D::~Handle_TopLoc_Datum3D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopLoc_StdMapNodeOfMapOfLocation;
@@ -118,12 +118,10 @@ class Handle_TopLoc_StdMapNodeOfMapOfLocation : public Handle_TCollection_MapNod
 	return (TopLoc_StdMapNodeOfMapOfLocation*)$self->Access();
 	}
 };
-%extend Handle_TopLoc_StdMapNodeOfMapOfLocation {
-	~Handle_TopLoc_StdMapNodeOfMapOfLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopLoc_StdMapNodeOfMapOfLocation\n");}
-	}
-};
+%feature("shadow") Handle_TopLoc_StdMapNodeOfMapOfLocation::~Handle_TopLoc_StdMapNodeOfMapOfLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
@@ -148,12 +146,10 @@ class Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public Handle_TCollec
 	return (TopLoc_IndexedMapNodeOfIndexedMapOfLocation*)$self->Access();
 	}
 };
-%extend Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
-	~Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation\n");}
-	}
-};
+%feature("shadow") Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation::~Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
@@ -191,12 +187,10 @@ class TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
-	~TopLoc_IndexedMapNodeOfIndexedMapOfLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_IndexedMapNodeOfIndexedMapOfLocation\n");}
-	}
-};
+%feature("shadow") TopLoc_IndexedMapNodeOfIndexedMapOfLocation::~TopLoc_IndexedMapNodeOfIndexedMapOfLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopLoc_MapOfLocation;
@@ -220,12 +214,10 @@ class TopLoc_MapOfLocation : public TCollection_BasicMap {
 		Standard_Boolean Remove(const TopLoc_Location &aKey);
 
 };
-%extend TopLoc_MapOfLocation {
-	~TopLoc_MapOfLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_MapOfLocation\n");}
-	}
-};
+%feature("shadow") TopLoc_MapOfLocation::~TopLoc_MapOfLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopLoc_StdMapNodeOfMapOfLocation;
@@ -249,12 +241,10 @@ class TopLoc_StdMapNodeOfMapOfLocation : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopLoc_StdMapNodeOfMapOfLocation {
-	~TopLoc_StdMapNodeOfMapOfLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_StdMapNodeOfMapOfLocation\n");}
-	}
-};
+%feature("shadow") TopLoc_StdMapNodeOfMapOfLocation::~TopLoc_StdMapNodeOfMapOfLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopLoc_Location;
@@ -317,12 +307,10 @@ class TopLoc_Location {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopLoc_Location {
-	~TopLoc_Location() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_Location\n");}
-	}
-};
+%feature("shadow") TopLoc_Location::~TopLoc_Location %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopLoc_MapIteratorOfMapOfLocation;
@@ -338,12 +326,10 @@ class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
 		const TopLoc_Location & Key() const;
 
 };
-%extend TopLoc_MapIteratorOfMapOfLocation {
-	~TopLoc_MapIteratorOfMapOfLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_MapIteratorOfMapOfLocation\n");}
-	}
-};
+%feature("shadow") TopLoc_MapIteratorOfMapOfLocation::~TopLoc_MapIteratorOfMapOfLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopLoc_IndexedMapOfLocation;
@@ -375,12 +361,10 @@ class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const TopLoc_Location &K) const;
 
 };
-%extend TopLoc_IndexedMapOfLocation {
-	~TopLoc_IndexedMapOfLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_IndexedMapOfLocation\n");}
-	}
-};
+%feature("shadow") TopLoc_IndexedMapOfLocation::~TopLoc_IndexedMapOfLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopLoc_SListOfItemLocation;
@@ -426,12 +410,10 @@ class TopLoc_SListOfItemLocation {
 		void Next();
 
 };
-%extend TopLoc_SListOfItemLocation {
-	~TopLoc_SListOfItemLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_SListOfItemLocation\n");}
-	}
-};
+%feature("shadow") TopLoc_SListOfItemLocation::~TopLoc_SListOfItemLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopLoc_Datum3D;
@@ -465,12 +447,10 @@ class TopLoc_Datum3D : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopLoc_Datum3D {
-	~TopLoc_Datum3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_Datum3D\n");}
-	}
-};
+%feature("shadow") TopLoc_Datum3D::~TopLoc_Datum3D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopLoc_MapLocationHasher;
@@ -484,12 +464,10 @@ class TopLoc_MapLocationHasher {
 		Standard_Boolean IsEqual(const TopLoc_Location &K1, const TopLoc_Location &K2);
 
 };
-%extend TopLoc_MapLocationHasher {
-	~TopLoc_MapLocationHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_MapLocationHasher\n");}
-	}
-};
+%feature("shadow") TopLoc_MapLocationHasher::~TopLoc_MapLocationHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopLoc_ItemLocation;
@@ -507,9 +485,7 @@ class TopLoc_ItemLocation {
 		void Destroy();
 
 };
-%extend TopLoc_ItemLocation {
-	~TopLoc_ItemLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopLoc_ItemLocation\n");}
-	}
-};
+%feature("shadow") TopLoc_ItemLocation::~TopLoc_ItemLocation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

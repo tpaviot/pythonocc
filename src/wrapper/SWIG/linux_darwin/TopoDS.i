@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TopoDS_dependencies.i
 
 
@@ -57,20 +61,10 @@ class Handle_TopoDS_TShape : public Handle_MMgt_TShared {
 	return (TopoDS_TShape*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_TShape {
-	~Handle_TopoDS_TShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TShape\n");}
-	}
-};
-
-%extend Handle_TopoDS_TShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_TopoDS_TShape::~Handle_TopoDS_TShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopoDS_TVertex;
@@ -95,20 +89,10 @@ class Handle_TopoDS_TVertex : public Handle_TopoDS_TShape {
 	return (TopoDS_TVertex*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_TVertex {
-	~Handle_TopoDS_TVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TVertex\n");}
-	}
-};
-
-%extend Handle_TopoDS_TVertex {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_TopoDS_TVertex::~Handle_TopoDS_TVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopoDS_FrozenShape;
@@ -133,20 +117,10 @@ class Handle_TopoDS_FrozenShape : public Handle_Standard_DomainError {
 	return (TopoDS_FrozenShape*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_FrozenShape {
-	~Handle_TopoDS_FrozenShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_FrozenShape\n");}
-	}
-};
-
-%extend Handle_TopoDS_FrozenShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_TopoDS_FrozenShape::~Handle_TopoDS_FrozenShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopoDS_ListNodeOfListOfShape;
@@ -171,20 +145,10 @@ class Handle_TopoDS_ListNodeOfListOfShape : public Handle_TCollection_MapNode {
 	return (TopoDS_ListNodeOfListOfShape*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_ListNodeOfListOfShape {
-	~Handle_TopoDS_ListNodeOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_ListNodeOfListOfShape\n");}
-	}
-};
-
-%extend Handle_TopoDS_ListNodeOfListOfShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_TopoDS_ListNodeOfListOfShape::~Handle_TopoDS_ListNodeOfListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopoDS_TFace;
@@ -209,20 +173,10 @@ class Handle_TopoDS_TFace : public Handle_TopoDS_TShape {
 	return (TopoDS_TFace*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_TFace {
-	~Handle_TopoDS_TFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TFace\n");}
-	}
-};
-
-%extend Handle_TopoDS_TFace {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_TopoDS_TFace::~Handle_TopoDS_TFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopoDS_TCompSolid;
@@ -247,20 +201,10 @@ class Handle_TopoDS_TCompSolid : public Handle_TopoDS_TShape {
 	return (TopoDS_TCompSolid*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_TCompSolid {
-	~Handle_TopoDS_TCompSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TCompSolid\n");}
-	}
-};
-
-%extend Handle_TopoDS_TCompSolid {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_TopoDS_TCompSolid::~Handle_TopoDS_TCompSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopoDS_TCompound;
@@ -285,20 +229,10 @@ class Handle_TopoDS_TCompound : public Handle_TopoDS_TShape {
 	return (TopoDS_TCompound*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_TCompound {
-	~Handle_TopoDS_TCompound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TCompound\n");}
-	}
-};
-
-%extend Handle_TopoDS_TCompound {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_TopoDS_TCompound::~Handle_TopoDS_TCompound %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopoDS_HShape;
@@ -323,20 +257,10 @@ class Handle_TopoDS_HShape : public Handle_MMgt_TShared {
 	return (TopoDS_HShape*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_HShape {
-	~Handle_TopoDS_HShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_HShape\n");}
-	}
-};
-
-%extend Handle_TopoDS_HShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_TopoDS_HShape::~Handle_TopoDS_HShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopoDS_UnCompatibleShapes;
@@ -361,20 +285,10 @@ class Handle_TopoDS_UnCompatibleShapes : public Handle_Standard_DomainError {
 	return (TopoDS_UnCompatibleShapes*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_UnCompatibleShapes {
-	~Handle_TopoDS_UnCompatibleShapes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_UnCompatibleShapes\n");}
-	}
-};
-
-%extend Handle_TopoDS_UnCompatibleShapes {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_TopoDS_UnCompatibleShapes::~Handle_TopoDS_UnCompatibleShapes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopoDS_TEdge;
@@ -399,20 +313,10 @@ class Handle_TopoDS_TEdge : public Handle_TopoDS_TShape {
 	return (TopoDS_TEdge*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_TEdge {
-	~Handle_TopoDS_TEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TEdge\n");}
-	}
-};
-
-%extend Handle_TopoDS_TEdge {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_TopoDS_TEdge::~Handle_TopoDS_TEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopoDS_TShell;
@@ -437,20 +341,10 @@ class Handle_TopoDS_TShell : public Handle_TopoDS_TShape {
 	return (TopoDS_TShell*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_TShell {
-	~Handle_TopoDS_TShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TShell\n");}
-	}
-};
-
-%extend Handle_TopoDS_TShell {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_TopoDS_TShell::~Handle_TopoDS_TShell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopoDS_TSolid;
@@ -475,20 +369,10 @@ class Handle_TopoDS_TSolid : public Handle_TopoDS_TShape {
 	return (TopoDS_TSolid*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_TSolid {
-	~Handle_TopoDS_TSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TSolid\n");}
-	}
-};
-
-%extend Handle_TopoDS_TSolid {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_TopoDS_TSolid::~Handle_TopoDS_TSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TopoDS_TWire;
@@ -513,20 +397,10 @@ class Handle_TopoDS_TWire : public Handle_TopoDS_TShape {
 	return (TopoDS_TWire*)$self->Access();
 	}
 };
-%extend Handle_TopoDS_TWire {
-	~Handle_TopoDS_TWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TWire\n");}
-	}
-};
-
-%extend Handle_TopoDS_TWire {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_TopoDS_TWire::~Handle_TopoDS_TWire %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_ListNodeOfListOfShape;
@@ -550,20 +424,10 @@ class TopoDS_ListNodeOfListOfShape : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_ListNodeOfListOfShape {
-	~TopoDS_ListNodeOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_ListNodeOfListOfShape\n");}
-	}
-};
-
-%extend TopoDS_ListNodeOfListOfShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_ListNodeOfListOfShape::~TopoDS_ListNodeOfListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_Shape;
@@ -662,20 +526,10 @@ class TopoDS_Shape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_Shape {
-	~TopoDS_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_Shape\n");}
-	}
-};
-
-%extend TopoDS_Shape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_Shape::~TopoDS_Shape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 %extend TopoDS_Shape {
 %pythoncode {
 	def __getstate__(self):
@@ -701,20 +555,10 @@ class TopoDS_Vertex : public TopoDS_Shape {
 		TopoDS_Vertex();
 
 };
-%extend TopoDS_Vertex {
-	~TopoDS_Vertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_Vertex\n");}
-	}
-};
-
-%extend TopoDS_Vertex {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_Vertex::~TopoDS_Vertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_FrozenShape;
@@ -744,20 +588,10 @@ class TopoDS_FrozenShape : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_FrozenShape {
-	~TopoDS_FrozenShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_FrozenShape\n");}
-	}
-};
-
-%extend TopoDS_FrozenShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_FrozenShape::~TopoDS_FrozenShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_Iterator;
@@ -777,20 +611,10 @@ class TopoDS_Iterator {
 		const TopoDS_Shape & Value() const;
 
 };
-%extend TopoDS_Iterator {
-	~TopoDS_Iterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_Iterator\n");}
-	}
-};
-
-%extend TopoDS_Iterator {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_Iterator::~TopoDS_Iterator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_TShape;
@@ -842,20 +666,10 @@ class TopoDS_TShape : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_TShape {
-	~TopoDS_TShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_TShape\n");}
-	}
-};
-
-%extend TopoDS_TShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_TShape::~TopoDS_TShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_CompSolid;
@@ -865,20 +679,10 @@ class TopoDS_CompSolid : public TopoDS_Shape {
 		TopoDS_CompSolid();
 
 };
-%extend TopoDS_CompSolid {
-	~TopoDS_CompSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_CompSolid\n");}
-	}
-};
-
-%extend TopoDS_CompSolid {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_CompSolid::~TopoDS_CompSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_ListOfShape;
@@ -926,20 +730,10 @@ class TopoDS_ListOfShape {
 		void InsertAfter(TopoDS_ListOfShape & Other, TopoDS_ListIteratorOfListOfShape & It);
 
 };
-%extend TopoDS_ListOfShape {
-	~TopoDS_ListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_ListOfShape\n");}
-	}
-};
-
-%extend TopoDS_ListOfShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_ListOfShape::~TopoDS_ListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS;
@@ -981,20 +775,10 @@ class TopoDS {
 		TopoDS_Compound & Compound(TopoDS_Shape & S);
 
 };
-%extend TopoDS {
-	~TopoDS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS\n");}
-	}
-};
-
-%extend TopoDS {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS::~TopoDS %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_TWire;
@@ -1020,20 +804,10 @@ class TopoDS_TWire : public TopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_TWire {
-	~TopoDS_TWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_TWire\n");}
-	}
-};
-
-%extend TopoDS_TWire {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_TWire::~TopoDS_TWire %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_Edge;
@@ -1043,20 +817,10 @@ class TopoDS_Edge : public TopoDS_Shape {
 		TopoDS_Edge();
 
 };
-%extend TopoDS_Edge {
-	~TopoDS_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_Edge\n");}
-	}
-};
-
-%extend TopoDS_Edge {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_Edge::~TopoDS_Edge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_Shell;
@@ -1066,20 +830,10 @@ class TopoDS_Shell : public TopoDS_Shape {
 		TopoDS_Shell();
 
 };
-%extend TopoDS_Shell {
-	~TopoDS_Shell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_Shell\n");}
-	}
-};
-
-%extend TopoDS_Shell {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_Shell::~TopoDS_Shell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_UnCompatibleShapes;
@@ -1109,20 +863,10 @@ class TopoDS_UnCompatibleShapes : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_UnCompatibleShapes {
-	~TopoDS_UnCompatibleShapes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_UnCompatibleShapes\n");}
-	}
-};
-
-%extend TopoDS_UnCompatibleShapes {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_UnCompatibleShapes::~TopoDS_UnCompatibleShapes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_ListIteratorOfListOfShape;
@@ -1142,20 +886,10 @@ class TopoDS_ListIteratorOfListOfShape {
 		TopoDS_Shape & Value() const;
 
 };
-%extend TopoDS_ListIteratorOfListOfShape {
-	~TopoDS_ListIteratorOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_ListIteratorOfListOfShape\n");}
-	}
-};
-
-%extend TopoDS_ListIteratorOfListOfShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_ListIteratorOfListOfShape::~TopoDS_ListIteratorOfListOfShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_HShape;
@@ -1185,20 +919,10 @@ class TopoDS_HShape : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_HShape {
-	~TopoDS_HShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_HShape\n");}
-	}
-};
-
-%extend TopoDS_HShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_HShape::~TopoDS_HShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_Solid;
@@ -1208,20 +932,10 @@ class TopoDS_Solid : public TopoDS_Shape {
 		TopoDS_Solid();
 
 };
-%extend TopoDS_Solid {
-	~TopoDS_Solid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_Solid\n");}
-	}
-};
-
-%extend TopoDS_Solid {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_Solid::~TopoDS_Solid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_TCompound;
@@ -1247,20 +961,10 @@ class TopoDS_TCompound : public TopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_TCompound {
-	~TopoDS_TCompound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_TCompound\n");}
-	}
-};
-
-%extend TopoDS_TCompound {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_TCompound::~TopoDS_TCompound %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_TEdge;
@@ -1282,20 +986,10 @@ class TopoDS_TEdge : public TopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_TEdge {
-	~TopoDS_TEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_TEdge\n");}
-	}
-};
-
-%extend TopoDS_TEdge {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_TEdge::~TopoDS_TEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_Compound;
@@ -1305,20 +999,10 @@ class TopoDS_Compound : public TopoDS_Shape {
 		TopoDS_Compound();
 
 };
-%extend TopoDS_Compound {
-	~TopoDS_Compound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_Compound\n");}
-	}
-};
-
-%extend TopoDS_Compound {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_Compound::~TopoDS_Compound %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_TShell;
@@ -1344,20 +1028,10 @@ class TopoDS_TShell : public TopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_TShell {
-	~TopoDS_TShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_TShell\n");}
-	}
-};
-
-%extend TopoDS_TShell {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_TShell::~TopoDS_TShell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_Builder;
@@ -1373,20 +1047,10 @@ class TopoDS_Builder {
 		void Remove(TopoDS_Shape & S, const TopoDS_Shape &C) const;
 
 };
-%extend TopoDS_Builder {
-	~TopoDS_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_Builder\n");}
-	}
-};
-
-%extend TopoDS_Builder {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_Builder::~TopoDS_Builder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_Builder3D;
@@ -1400,20 +1064,10 @@ class TopoDS_Builder3D : public TopoDS_Builder {
 		void MakeCompSolid(TopoDS_CompSolid & C) const;
 
 };
-%extend TopoDS_Builder3D {
-	~TopoDS_Builder3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_Builder3D\n");}
-	}
-};
-
-%extend TopoDS_Builder3D {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_Builder3D::~TopoDS_Builder3D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_TFace;
@@ -1439,20 +1093,10 @@ class TopoDS_TFace : public TopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_TFace {
-	~TopoDS_TFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_TFace\n");}
-	}
-};
-
-%extend TopoDS_TFace {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_TFace::~TopoDS_TFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_TCompSolid;
@@ -1478,20 +1122,10 @@ class TopoDS_TCompSolid : public TopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_TCompSolid {
-	~TopoDS_TCompSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_TCompSolid\n");}
-	}
-};
-
-%extend TopoDS_TCompSolid {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_TCompSolid::~TopoDS_TCompSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_Wire;
@@ -1501,20 +1135,10 @@ class TopoDS_Wire : public TopoDS_Shape {
 		TopoDS_Wire();
 
 };
-%extend TopoDS_Wire {
-	~TopoDS_Wire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_Wire\n");}
-	}
-};
-
-%extend TopoDS_Wire {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_Wire::~TopoDS_Wire %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_TVertex;
@@ -1536,20 +1160,10 @@ class TopoDS_TVertex : public TopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_TVertex {
-	~TopoDS_TVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_TVertex\n");}
-	}
-};
-
-%extend TopoDS_TVertex {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_TVertex::~TopoDS_TVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_Face;
@@ -1559,20 +1173,10 @@ class TopoDS_Face : public TopoDS_Shape {
 		TopoDS_Face();
 
 };
-%extend TopoDS_Face {
-	~TopoDS_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_Face\n");}
-	}
-};
-
-%extend TopoDS_Face {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_Face::~TopoDS_Face %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDS_TSolid;
@@ -1598,17 +1202,7 @@ class TopoDS_TSolid : public TopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopoDS_TSolid {
-	~TopoDS_TSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDS_TSolid\n");}
-	}
-};
-
-%extend TopoDS_TSolid {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDS_TSolid::~TopoDS_TSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

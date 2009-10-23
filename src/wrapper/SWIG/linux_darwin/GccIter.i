@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GccIter_dependencies.i
 
 
@@ -86,12 +90,10 @@ class Handle_GccIter_IsParallel : public Handle_Standard_DomainError {
 	return (GccIter_IsParallel*)$self->Access();
 	}
 };
-%extend Handle_GccIter_IsParallel {
-	~Handle_GccIter_IsParallel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GccIter_IsParallel\n");}
-	}
-};
+%feature("shadow") Handle_GccIter_IsParallel::~Handle_GccIter_IsParallel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GccIter_IsParallel;
@@ -121,9 +123,7 @@ class GccIter_IsParallel : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GccIter_IsParallel {
-	~GccIter_IsParallel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccIter_IsParallel\n");}
-	}
-};
+%feature("shadow") GccIter_IsParallel::~GccIter_IsParallel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

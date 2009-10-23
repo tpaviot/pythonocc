@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TopoDSToStep_dependencies.i
 
 
@@ -91,20 +95,10 @@ class TopoDSToStep_Root {
 		Standard_Boolean IsDone() const;
 
 };
-%extend TopoDSToStep_Root {
-	~TopoDSToStep_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_Root\n");}
-	}
-};
-
-%extend TopoDSToStep_Root {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_Root::~TopoDSToStep_Root %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_MakeStepVertex;
@@ -122,20 +116,10 @@ class TopoDSToStep_MakeStepVertex : public TopoDSToStep_Root {
 		TopoDSToStep_MakeVertexError Error() const;
 
 };
-%extend TopoDSToStep_MakeStepVertex {
-	~TopoDSToStep_MakeStepVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeStepVertex\n");}
-	}
-};
-
-%extend TopoDSToStep_MakeStepVertex {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_MakeStepVertex::~TopoDSToStep_MakeStepVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_MakeFacetedBrep;
@@ -149,20 +133,10 @@ class TopoDSToStep_MakeFacetedBrep : public TopoDSToStep_Root {
 		const Handle_StepShape_FacetedBrep & Value() const;
 
 };
-%extend TopoDSToStep_MakeFacetedBrep {
-	~TopoDSToStep_MakeFacetedBrep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeFacetedBrep\n");}
-	}
-};
-
-%extend TopoDSToStep_MakeFacetedBrep {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_MakeFacetedBrep::~TopoDSToStep_MakeFacetedBrep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_MakeStepWire;
@@ -180,20 +154,10 @@ class TopoDSToStep_MakeStepWire : public TopoDSToStep_Root {
 		TopoDSToStep_MakeWireError Error() const;
 
 };
-%extend TopoDSToStep_MakeStepWire {
-	~TopoDSToStep_MakeStepWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeStepWire\n");}
-	}
-};
-
-%extend TopoDSToStep_MakeStepWire {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_MakeStepWire::~TopoDSToStep_MakeStepWire %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_MakeFacetedBrepAndBrepWithVoids;
@@ -205,20 +169,10 @@ class TopoDSToStep_MakeFacetedBrepAndBrepWithVoids : public TopoDSToStep_Root {
 		const Handle_StepShape_FacetedBrepAndBrepWithVoids & Value() const;
 
 };
-%extend TopoDSToStep_MakeFacetedBrepAndBrepWithVoids {
-	~TopoDSToStep_MakeFacetedBrepAndBrepWithVoids() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeFacetedBrepAndBrepWithVoids\n");}
-	}
-};
-
-%extend TopoDSToStep_MakeFacetedBrepAndBrepWithVoids {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_MakeFacetedBrepAndBrepWithVoids::~TopoDSToStep_MakeFacetedBrepAndBrepWithVoids %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_MakeManifoldSolidBrep;
@@ -232,20 +186,10 @@ class TopoDSToStep_MakeManifoldSolidBrep : public TopoDSToStep_Root {
 		const Handle_StepShape_ManifoldSolidBrep & Value() const;
 
 };
-%extend TopoDSToStep_MakeManifoldSolidBrep {
-	~TopoDSToStep_MakeManifoldSolidBrep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeManifoldSolidBrep\n");}
-	}
-};
-
-%extend TopoDSToStep_MakeManifoldSolidBrep {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_MakeManifoldSolidBrep::~TopoDSToStep_MakeManifoldSolidBrep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_MakeShellBasedSurfaceModel;
@@ -261,20 +205,10 @@ class TopoDSToStep_MakeShellBasedSurfaceModel : public TopoDSToStep_Root {
 		const Handle_StepShape_ShellBasedSurfaceModel & Value() const;
 
 };
-%extend TopoDSToStep_MakeShellBasedSurfaceModel {
-	~TopoDSToStep_MakeShellBasedSurfaceModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeShellBasedSurfaceModel\n");}
-	}
-};
-
-%extend TopoDSToStep_MakeShellBasedSurfaceModel {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_MakeShellBasedSurfaceModel::~TopoDSToStep_MakeShellBasedSurfaceModel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_MakeStepEdge;
@@ -292,20 +226,10 @@ class TopoDSToStep_MakeStepEdge : public TopoDSToStep_Root {
 		TopoDSToStep_MakeEdgeError Error() const;
 
 };
-%extend TopoDSToStep_MakeStepEdge {
-	~TopoDSToStep_MakeStepEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeStepEdge\n");}
-	}
-};
-
-%extend TopoDSToStep_MakeStepEdge {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_MakeStepEdge::~TopoDSToStep_MakeStepEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_Tool;
@@ -357,20 +281,10 @@ class TopoDSToStep_Tool {
 		Standard_Integer PCurveMode() const;
 
 };
-%extend TopoDSToStep_Tool {
-	~TopoDSToStep_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_Tool\n");}
-	}
-};
-
-%extend TopoDSToStep_Tool {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_Tool::~TopoDSToStep_Tool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_WireframeBuilder;
@@ -394,20 +308,10 @@ class TopoDSToStep_WireframeBuilder : public TopoDSToStep_Root {
 		Standard_Boolean GetTrimmedCurveFromShape(const TopoDS_Shape &S, MoniTool_DataMapOfShapeTransient & M, Handle_TColStd_HSequenceOfTransient & L) const;
 
 };
-%extend TopoDSToStep_WireframeBuilder {
-	~TopoDSToStep_WireframeBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_WireframeBuilder\n");}
-	}
-};
-
-%extend TopoDSToStep_WireframeBuilder {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_WireframeBuilder::~TopoDSToStep_WireframeBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_MakeBrepWithVoids;
@@ -419,20 +323,10 @@ class TopoDSToStep_MakeBrepWithVoids : public TopoDSToStep_Root {
 		const Handle_StepShape_BrepWithVoids & Value() const;
 
 };
-%extend TopoDSToStep_MakeBrepWithVoids {
-	~TopoDSToStep_MakeBrepWithVoids() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeBrepWithVoids\n");}
-	}
-};
-
-%extend TopoDSToStep_MakeBrepWithVoids {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_MakeBrepWithVoids::~TopoDSToStep_MakeBrepWithVoids %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep;
@@ -456,20 +350,10 @@ class TopoDSToStep {
 		void AddResult(const Handle_Transfer_FinderProcess &FP, const TopoDSToStep_Tool &Tool);
 
 };
-%extend TopoDSToStep {
-	~TopoDSToStep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep\n");}
-	}
-};
-
-%extend TopoDSToStep {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep::~TopoDSToStep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_Builder;
@@ -487,20 +371,10 @@ class TopoDSToStep_Builder : public TopoDSToStep_Root {
 		const Handle_StepShape_TopologicalRepresentationItem & Value() const;
 
 };
-%extend TopoDSToStep_Builder {
-	~TopoDSToStep_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_Builder\n");}
-	}
-};
-
-%extend TopoDSToStep_Builder {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_Builder::~TopoDSToStep_Builder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_MakeStepFace;
@@ -518,20 +392,10 @@ class TopoDSToStep_MakeStepFace : public TopoDSToStep_Root {
 		TopoDSToStep_MakeFaceError Error() const;
 
 };
-%extend TopoDSToStep_MakeStepFace {
-	~TopoDSToStep_MakeStepFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeStepFace\n");}
-	}
-};
-
-%extend TopoDSToStep_MakeStepFace {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_MakeStepFace::~TopoDSToStep_MakeStepFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_FacetedTool;
@@ -543,20 +407,10 @@ class TopoDSToStep_FacetedTool {
 		TopoDSToStep_FacetedError CheckTopoDSShape(const TopoDS_Shape &SH);
 
 };
-%extend TopoDSToStep_FacetedTool {
-	~TopoDSToStep_FacetedTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_FacetedTool\n");}
-	}
-};
-
-%extend TopoDSToStep_FacetedTool {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_FacetedTool::~TopoDSToStep_FacetedTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopoDSToStep_MakeGeometricCurveSet;
@@ -568,17 +422,7 @@ class TopoDSToStep_MakeGeometricCurveSet : public TopoDSToStep_Root {
 		const Handle_StepShape_GeometricCurveSet & Value() const;
 
 };
-%extend TopoDSToStep_MakeGeometricCurveSet {
-	~TopoDSToStep_MakeGeometricCurveSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeGeometricCurveSet\n");}
-	}
-};
-
-%extend TopoDSToStep_MakeGeometricCurveSet {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") TopoDSToStep_MakeGeometricCurveSet::~TopoDSToStep_MakeGeometricCurveSet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include XmlLDrivers_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_XmlLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 	return (XmlLDrivers_DocumentStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_XmlLDrivers_DocumentStorageDriver {
-	~Handle_XmlLDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlLDrivers_DocumentStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_XmlLDrivers_DocumentStorageDriver::~Handle_XmlLDrivers_DocumentStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef;
@@ -87,12 +89,10 @@ class Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public Handle_TC
 	return (XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef*)$self->Access();
 	}
 };
-%extend Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
-	~Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef\n");}
-	}
-};
+%feature("shadow") Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef::~Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_XmlLDrivers_DocumentRetrievalDriver;
@@ -117,12 +117,10 @@ class Handle_XmlLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 	return (XmlLDrivers_DocumentRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_XmlLDrivers_DocumentRetrievalDriver {
-	~Handle_XmlLDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlLDrivers_DocumentRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_XmlLDrivers_DocumentRetrievalDriver::~Handle_XmlLDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlLDrivers_DocumentRetrievalDriver;
@@ -154,12 +152,10 @@ class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlLDrivers_DocumentRetrievalDriver {
-	~XmlLDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlLDrivers_DocumentRetrievalDriver\n");}
-	}
-};
+%feature("shadow") XmlLDrivers_DocumentRetrievalDriver::~XmlLDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlLDrivers_DocumentStorageDriver;
@@ -189,12 +185,10 @@ class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlLDrivers_DocumentStorageDriver {
-	~XmlLDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlLDrivers_DocumentStorageDriver\n");}
-	}
-};
+%feature("shadow") XmlLDrivers_DocumentStorageDriver::~XmlLDrivers_DocumentStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlLDrivers_SequenceOfNamespaceDef;
@@ -246,12 +240,10 @@ class XmlLDrivers_SequenceOfNamespaceDef : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend XmlLDrivers_SequenceOfNamespaceDef {
-	~XmlLDrivers_SequenceOfNamespaceDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlLDrivers_SequenceOfNamespaceDef\n");}
-	}
-};
+%feature("shadow") XmlLDrivers_SequenceOfNamespaceDef::~XmlLDrivers_SequenceOfNamespaceDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef;
@@ -275,12 +267,10 @@ class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqN
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
-	~XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef\n");}
-	}
-};
+%feature("shadow") XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef::~XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlLDrivers_NamespaceDef;
@@ -296,12 +286,10 @@ class XmlLDrivers_NamespaceDef {
 		const TCollection_AsciiString & URI() const;
 
 };
-%extend XmlLDrivers_NamespaceDef {
-	~XmlLDrivers_NamespaceDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlLDrivers_NamespaceDef\n");}
-	}
-};
+%feature("shadow") XmlLDrivers_NamespaceDef::~XmlLDrivers_NamespaceDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlLDrivers;
@@ -319,9 +307,7 @@ class XmlLDrivers {
 		TCollection_AsciiString StorageVersion();
 
 };
-%extend XmlLDrivers {
-	~XmlLDrivers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlLDrivers\n");}
-	}
-};
+%feature("shadow") XmlLDrivers::~XmlLDrivers %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

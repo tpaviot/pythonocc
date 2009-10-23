@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include HLRBRep_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_HLRBRep_InternalAlgo : public Handle_MMgt_TShared {
 	return (HLRBRep_InternalAlgo*)$self->Access();
 	}
 };
-%extend Handle_HLRBRep_InternalAlgo {
-	~Handle_HLRBRep_InternalAlgo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRBRep_InternalAlgo\n");}
-	}
-};
+%feature("shadow") Handle_HLRBRep_InternalAlgo::~Handle_HLRBRep_InternalAlgo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_HLRBRep_Algo;
@@ -87,12 +89,10 @@ class Handle_HLRBRep_Algo : public Handle_HLRBRep_InternalAlgo {
 	return (HLRBRep_Algo*)$self->Access();
 	}
 };
-%extend Handle_HLRBRep_Algo {
-	~Handle_HLRBRep_Algo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRBRep_Algo\n");}
-	}
-};
+%feature("shadow") Handle_HLRBRep_Algo::~Handle_HLRBRep_Algo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_HLRBRep_ListNodeOfListOfBPoint;
@@ -117,12 +117,10 @@ class Handle_HLRBRep_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode 
 	return (HLRBRep_ListNodeOfListOfBPoint*)$self->Access();
 	}
 };
-%extend Handle_HLRBRep_ListNodeOfListOfBPoint {
-	~Handle_HLRBRep_ListNodeOfListOfBPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRBRep_ListNodeOfListOfBPoint\n");}
-	}
-};
+%feature("shadow") Handle_HLRBRep_ListNodeOfListOfBPoint::~Handle_HLRBRep_ListNodeOfListOfBPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_HLRBRep_AreaLimit;
@@ -147,12 +145,10 @@ class Handle_HLRBRep_AreaLimit : public Handle_MMgt_TShared {
 	return (HLRBRep_AreaLimit*)$self->Access();
 	}
 };
-%extend Handle_HLRBRep_AreaLimit {
-	~Handle_HLRBRep_AreaLimit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRBRep_AreaLimit\n");}
-	}
-};
+%feature("shadow") Handle_HLRBRep_AreaLimit::~Handle_HLRBRep_AreaLimit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_HLRBRep_ListNodeOfListOfBPnt2D;
@@ -177,12 +173,10 @@ class Handle_HLRBRep_ListNodeOfListOfBPnt2D : public Handle_TCollection_MapNode 
 	return (HLRBRep_ListNodeOfListOfBPnt2D*)$self->Access();
 	}
 };
-%extend Handle_HLRBRep_ListNodeOfListOfBPnt2D {
-	~Handle_HLRBRep_ListNodeOfListOfBPnt2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRBRep_ListNodeOfListOfBPnt2D\n");}
-	}
-};
+%feature("shadow") Handle_HLRBRep_ListNodeOfListOfBPnt2D::~Handle_HLRBRep_ListNodeOfListOfBPnt2D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_HLRBRep_PolyAlgo;
@@ -207,12 +201,10 @@ class Handle_HLRBRep_PolyAlgo : public Handle_MMgt_TShared {
 	return (HLRBRep_PolyAlgo*)$self->Access();
 	}
 };
-%extend Handle_HLRBRep_PolyAlgo {
-	~Handle_HLRBRep_PolyAlgo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRBRep_PolyAlgo\n");}
-	}
-};
+%feature("shadow") Handle_HLRBRep_PolyAlgo::~Handle_HLRBRep_PolyAlgo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds;
@@ -237,12 +229,10 @@ class Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds : public Handle_TCollection_
 	return (HLRBRep_SequenceNodeOfSeqOfShapeBounds*)$self->Access();
 	}
 };
-%extend Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds {
-	~Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds\n");}
-	}
-};
+%feature("shadow") Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds::~Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
@@ -267,12 +257,10 @@ class Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfC
 	return (HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter*)$self->Access();
 	}
 };
-%extend Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
-	~Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter\n");}
-	}
-};
+%feature("shadow") Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter::~Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_HLRBRep_Data;
@@ -297,12 +285,10 @@ class Handle_HLRBRep_Data : public Handle_MMgt_TShared {
 	return (HLRBRep_Data*)$self->Access();
 	}
 };
-%extend Handle_HLRBRep_Data {
-	~Handle_HLRBRep_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRBRep_Data\n");}
-	}
-};
+%feature("shadow") Handle_HLRBRep_Data::~Handle_HLRBRep_Data %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter;
@@ -322,12 +308,10 @@ class HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter : public Intf_Inter
 		gp_Pnt2d Pnt2dValue(const Standard_Integer Index) const;
 
 };
-%extend HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter {
-	~HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter::~HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ListIteratorOfListOfBPoint;
@@ -347,12 +331,10 @@ class HLRBRep_ListIteratorOfListOfBPoint {
 		HLRBRep_BiPoint & Value() const;
 
 };
-%extend HLRBRep_ListIteratorOfListOfBPoint {
-	~HLRBRep_ListIteratorOfListOfBPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ListIteratorOfListOfBPoint\n");}
-	}
-};
+%feature("shadow") HLRBRep_ListIteratorOfListOfBPoint::~HLRBRep_ListIteratorOfListOfBPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_TheIntConicCurveOfCInter;
@@ -382,12 +364,10 @@ class HLRBRep_TheIntConicCurveOfCInter : public IntRes2d_Intersection {
 		void Perform(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 
 };
-%extend HLRBRep_TheIntConicCurveOfCInter {
-	~HLRBRep_TheIntConicCurveOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheIntConicCurveOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_TheIntConicCurveOfCInter::~HLRBRep_TheIntConicCurveOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_SeqOfShapeBounds;
@@ -439,12 +419,10 @@ class HLRBRep_SeqOfShapeBounds : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend HLRBRep_SeqOfShapeBounds {
-	~HLRBRep_SeqOfShapeBounds() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_SeqOfShapeBounds\n");}
-	}
-};
+%feature("shadow") HLRBRep_SeqOfShapeBounds::~HLRBRep_SeqOfShapeBounds %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_TheProjPCurOfCInter;
@@ -458,12 +436,10 @@ class HLRBRep_TheProjPCurOfCInter {
 		Standard_Real FindParameter(const Standard_Address &C, const gp_Pnt2d &Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
 
 };
-%extend HLRBRep_TheProjPCurOfCInter {
-	~HLRBRep_TheProjPCurOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheProjPCurOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_TheProjPCurOfCInter::~HLRBRep_TheProjPCurOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_InternalAlgo;
@@ -541,12 +517,10 @@ class HLRBRep_InternalAlgo : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend HLRBRep_InternalAlgo {
-	~HLRBRep_InternalAlgo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_InternalAlgo\n");}
-	}
-};
+%feature("shadow") HLRBRep_InternalAlgo::~HLRBRep_InternalAlgo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
@@ -598,12 +572,10 @@ class HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public TColle
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
-	~HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter::~HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_InterCSurf;
@@ -623,12 +595,10 @@ class HLRBRep_InterCSurf : public IntCurveSurface_Intersection {
 		void Perform(const gp_Lin &Curve, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
 
 };
-%extend HLRBRep_InterCSurf {
-	~HLRBRep_InterCSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_InterCSurf\n");}
-	}
-};
+%feature("shadow") HLRBRep_InterCSurf::~HLRBRep_InterCSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_LineTool;
@@ -668,12 +638,10 @@ class HLRBRep_LineTool {
 		void SamplePars(const gp_Lin &C, const Standard_Real U0, const Standard_Real U1, const Standard_Real Defl, const Standard_Integer NbMin, Handle_TColStd_HArray1OfReal & Pars);
 
 };
-%extend HLRBRep_LineTool {
-	~HLRBRep_LineTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_LineTool\n");}
-	}
-};
+%feature("shadow") HLRBRep_LineTool::~HLRBRep_LineTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ShapeToHLR;
@@ -685,12 +653,10 @@ class HLRBRep_ShapeToHLR {
 		Handle_HLRBRep_Data Load(const Handle_HLRTopoBRep_OutLiner &S, const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso=0);
 
 };
-%extend HLRBRep_ShapeToHLR {
-	~HLRBRep_ShapeToHLR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ShapeToHLR\n");}
-	}
-};
+%feature("shadow") HLRBRep_ShapeToHLR::~HLRBRep_ShapeToHLR %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ThePolygonToolOfInterCSurf;
@@ -714,12 +680,10 @@ class HLRBRep_ThePolygonToolOfInterCSurf {
 		void Dump(const HLRBRep_ThePolygonOfInterCSurf &thePolygon);
 
 };
-%extend HLRBRep_ThePolygonToolOfInterCSurf {
-	~HLRBRep_ThePolygonToolOfInterCSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ThePolygonToolOfInterCSurf\n");}
-	}
-};
+%feature("shadow") HLRBRep_ThePolygonToolOfInterCSurf::~HLRBRep_ThePolygonToolOfInterCSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_Curve;
@@ -811,12 +775,10 @@ class HLRBRep_Curve {
 		void Multiplicities(TColStd_Array1OfInteger & mu) const;
 
 };
-%extend HLRBRep_Curve {
-	~HLRBRep_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_Curve\n");}
-	}
-};
+%feature("shadow") HLRBRep_Curve::~HLRBRep_Curve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf;
@@ -832,12 +794,10 @@ class HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf : public math_Function
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf {
-	~HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf\n");}
-	}
-};
+%feature("shadow") HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf::~HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_Hider;
@@ -851,12 +811,10 @@ class HLRBRep_Hider {
 		void Hide(const Standard_Integer FI, BRepTopAdaptor_MapOfShapeTool & MST);
 
 };
-%extend HLRBRep_Hider {
-	~HLRBRep_Hider() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_Hider\n");}
-	}
-};
+%feature("shadow") HLRBRep_Hider::~HLRBRep_Hider %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_Array1OfFData;
@@ -894,12 +852,10 @@ class HLRBRep_Array1OfFData {
 		HLRBRep_FaceData & operator()(const Standard_Integer Index);
 
 };
-%extend HLRBRep_Array1OfFData {
-	~HLRBRep_Array1OfFData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_Array1OfFData\n");}
-	}
-};
+%feature("shadow") HLRBRep_Array1OfFData::~HLRBRep_Array1OfFData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_IntConicCurveOfCInter;
@@ -929,12 +885,10 @@ class HLRBRep_IntConicCurveOfCInter : public IntRes2d_Intersection {
 		void Perform(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Standard_Address &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 
 };
-%extend HLRBRep_IntConicCurveOfCInter {
-	~HLRBRep_IntConicCurveOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_IntConicCurveOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_IntConicCurveOfCInter::~HLRBRep_IntConicCurveOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter;
@@ -976,12 +930,10 @@ class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
 		void Dump() const;
 
 };
-%extend HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
-	~HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter::~HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_Array1OfEData;
@@ -1019,12 +971,10 @@ class HLRBRep_Array1OfEData {
 		HLRBRep_EdgeData & operator()(const Standard_Integer Index);
 
 };
-%extend HLRBRep_Array1OfEData {
-	~HLRBRep_Array1OfEData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_Array1OfEData\n");}
-	}
-};
+%feature("shadow") HLRBRep_Array1OfEData::~HLRBRep_Array1OfEData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_HLRToShape;
@@ -1074,12 +1024,10 @@ class HLRBRep_HLRToShape {
 		TopoDS_Shape IsoLineHCompound(const TopoDS_Shape &S);
 
 };
-%extend HLRBRep_HLRToShape {
-	~HLRBRep_HLRToShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_HLRToShape\n");}
-	}
-};
+%feature("shadow") HLRBRep_HLRToShape::~HLRBRep_HLRToShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_VertexList;
@@ -1107,12 +1055,10 @@ class HLRBRep_VertexList {
 		TopAbs_Orientation BoundaryTransition() const;
 
 };
-%extend HLRBRep_VertexList {
-	~HLRBRep_VertexList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_VertexList\n");}
-	}
-};
+%feature("shadow") HLRBRep_VertexList::~HLRBRep_VertexList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter;
@@ -1132,12 +1078,10 @@ class HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter {
 		Standard_Boolean AnErrorOccurred() const;
 
 };
-%extend HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter {
-	~HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter::~HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ThePolygonOfInterCSurf;
@@ -1175,12 +1119,10 @@ class HLRBRep_ThePolygonOfInterCSurf {
 		void Dump() const;
 
 };
-%extend HLRBRep_ThePolygonOfInterCSurf {
-	~HLRBRep_ThePolygonOfInterCSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ThePolygonOfInterCSurf\n");}
-	}
-};
+%feature("shadow") HLRBRep_ThePolygonOfInterCSurf::~HLRBRep_ThePolygonOfInterCSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_Algo;
@@ -1212,12 +1154,10 @@ class HLRBRep_Algo : public HLRBRep_InternalAlgo {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend HLRBRep_Algo {
-	~HLRBRep_Algo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_Algo\n");}
-	}
-};
+%feature("shadow") HLRBRep_Algo::~HLRBRep_Algo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ThePolyhedronToolOfInterCSurf;
@@ -1247,12 +1187,10 @@ class HLRBRep_ThePolyhedronToolOfInterCSurf {
 		void Dump(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
 
 };
-%extend HLRBRep_ThePolyhedronToolOfInterCSurf {
-	~HLRBRep_ThePolyhedronToolOfInterCSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ThePolyhedronToolOfInterCSurf\n");}
-	}
-};
+%feature("shadow") HLRBRep_ThePolyhedronToolOfInterCSurf::~HLRBRep_ThePolyhedronToolOfInterCSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter;
@@ -1262,12 +1200,10 @@ class HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter {
 		HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter();
 
 };
-%extend HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter {
-	~HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter::~HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_SLPropsATool;
@@ -1289,12 +1225,10 @@ class HLRBRep_SLPropsATool {
 		void Bounds(const Standard_Address arg0, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend HLRBRep_SLPropsATool {
-	~HLRBRep_SLPropsATool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_SLPropsATool\n");}
-	}
-};
+%feature("shadow") HLRBRep_SLPropsATool::~HLRBRep_SLPropsATool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ListIteratorOfListOfBPnt2D;
@@ -1314,12 +1248,10 @@ class HLRBRep_ListIteratorOfListOfBPnt2D {
 		HLRBRep_BiPnt2D & Value() const;
 
 };
-%extend HLRBRep_ListIteratorOfListOfBPnt2D {
-	~HLRBRep_ListIteratorOfListOfBPnt2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ListIteratorOfListOfBPnt2D\n");}
-	}
-};
+%feature("shadow") HLRBRep_ListIteratorOfListOfBPnt2D::~HLRBRep_ListIteratorOfListOfBPnt2D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_SequenceNodeOfSeqOfShapeBounds;
@@ -1343,12 +1275,10 @@ class HLRBRep_SequenceNodeOfSeqOfShapeBounds : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend HLRBRep_SequenceNodeOfSeqOfShapeBounds {
-	~HLRBRep_SequenceNodeOfSeqOfShapeBounds() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_SequenceNodeOfSeqOfShapeBounds\n");}
-	}
-};
+%feature("shadow") HLRBRep_SequenceNodeOfSeqOfShapeBounds::~HLRBRep_SequenceNodeOfSeqOfShapeBounds %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter;
@@ -1368,12 +1298,10 @@ class HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter : public math_Fu
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 
 };
-%extend HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter {
-	~HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter::~HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_BiPoint;
@@ -1409,12 +1337,10 @@ class HLRBRep_BiPoint {
 		void IntLine(const Standard_Boolean B);
 
 };
-%extend HLRBRep_BiPoint {
-	~HLRBRep_BiPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_BiPoint\n");}
-	}
-};
+%feature("shadow") HLRBRep_BiPoint::~HLRBRep_BiPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_TheCSFunctionOfInterCSurf;
@@ -1442,12 +1368,10 @@ class HLRBRep_TheCSFunctionOfInterCSurf : public math_FunctionSetWithDerivatives
 		const gp_Lin & AuxillarCurve() const;
 
 };
-%extend HLRBRep_TheCSFunctionOfInterCSurf {
-	~HLRBRep_TheCSFunctionOfInterCSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheCSFunctionOfInterCSurf\n");}
-	}
-};
+%feature("shadow") HLRBRep_TheCSFunctionOfInterCSurf::~HLRBRep_TheCSFunctionOfInterCSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_Surface;
@@ -1533,12 +1457,10 @@ class HLRBRep_Surface {
 		gp_Ax1 Axis() const;
 
 };
-%extend HLRBRep_Surface {
-	~HLRBRep_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_Surface\n");}
-	}
-};
+%feature("shadow") HLRBRep_Surface::~HLRBRep_Surface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_EdgeIList;
@@ -1552,12 +1474,10 @@ class HLRBRep_EdgeIList {
 		void ProcessComplex(HLRAlgo_InterferenceList & IL, const HLRBRep_EdgeInterferenceTool &T);
 
 };
-%extend HLRBRep_EdgeIList {
-	~HLRBRep_EdgeIList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_EdgeIList\n");}
-	}
-};
+%feature("shadow") HLRBRep_EdgeIList::~HLRBRep_EdgeIList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_EdgeData;
@@ -1647,12 +1567,10 @@ class HLRBRep_EdgeData {
 		Standard_ShortReal Tolerance() const;
 
 };
-%extend HLRBRep_EdgeData {
-	~HLRBRep_EdgeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_EdgeData\n");}
-	}
-};
+%feature("shadow") HLRBRep_EdgeData::~HLRBRep_EdgeData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_EdgeBuilder;
@@ -1698,12 +1616,10 @@ class HLRBRep_EdgeBuilder {
 		void Destroy();
 
 };
-%extend HLRBRep_EdgeBuilder {
-	~HLRBRep_EdgeBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_EdgeBuilder\n");}
-	}
-};
+%feature("shadow") HLRBRep_EdgeBuilder::~HLRBRep_EdgeBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_Data;
@@ -1791,12 +1707,10 @@ class HLRBRep_Data : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend HLRBRep_Data {
-	~HLRBRep_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_Data\n");}
-	}
-};
+%feature("shadow") HLRBRep_Data::~HLRBRep_Data %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_BCurveTool;
@@ -1866,12 +1780,10 @@ class HLRBRep_BCurveTool {
 		Standard_Integer NbSamples(const BRepAdaptor_Curve &C, const Standard_Real U0, const Standard_Real U1);
 
 };
-%extend HLRBRep_BCurveTool {
-	~HLRBRep_BCurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_BCurveTool\n");}
-	}
-};
+%feature("shadow") HLRBRep_BCurveTool::~HLRBRep_BCurveTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_CInter;
@@ -1907,12 +1819,10 @@ class HLRBRep_CInter : public IntRes2d_Intersection {
 		IntRes2d_Domain ComputeDomain(const Standard_Address &C1, const Standard_Real TolDomain) const;
 
 };
-%extend HLRBRep_CInter {
-	~HLRBRep_CInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_CInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_CInter::~HLRBRep_CInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_EdgeInterferenceTool;
@@ -1948,12 +1858,10 @@ class HLRBRep_EdgeInterferenceTool {
 		void InterferenceBoundaryGeometry(const HLRAlgo_Interference &I, gp_Dir & Tang, gp_Dir & Norm, Standard_Real &OutValue) const;
 
 };
-%extend HLRBRep_EdgeInterferenceTool {
-	~HLRBRep_EdgeInterferenceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_EdgeInterferenceTool\n");}
-	}
-};
+%feature("shadow") HLRBRep_EdgeInterferenceTool::~HLRBRep_EdgeInterferenceTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ListOfBPoint;
@@ -2001,12 +1909,10 @@ class HLRBRep_ListOfBPoint {
 		void InsertAfter(HLRBRep_ListOfBPoint & Other, HLRBRep_ListIteratorOfListOfBPoint & It);
 
 };
-%extend HLRBRep_ListOfBPoint {
-	~HLRBRep_ListOfBPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ListOfBPoint\n");}
-	}
-};
+%feature("shadow") HLRBRep_ListOfBPoint::~HLRBRep_ListOfBPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_SLProps;
@@ -2062,12 +1968,10 @@ class HLRBRep_SLProps {
 		Standard_Real GaussianCurvature();
 
 };
-%extend HLRBRep_SLProps {
-	~HLRBRep_SLProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_SLProps\n");}
-	}
-};
+%feature("shadow") HLRBRep_SLProps::~HLRBRep_SLProps %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_TheIntPCurvePCurveOfCInter;
@@ -2081,12 +1985,10 @@ class HLRBRep_TheIntPCurvePCurveOfCInter : public IntRes2d_Intersection {
 		void Perform(const Standard_Address &Curve1, const IntRes2d_Domain &Domain1, const Standard_Real TolConf, const Standard_Real Tol);
 
 };
-%extend HLRBRep_TheIntPCurvePCurveOfCInter {
-	~HLRBRep_TheIntPCurvePCurveOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheIntPCurvePCurveOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_TheIntPCurvePCurveOfCInter::~HLRBRep_TheIntPCurvePCurveOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_AreaLimit;
@@ -2140,12 +2042,10 @@ class HLRBRep_AreaLimit : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend HLRBRep_AreaLimit {
-	~HLRBRep_AreaLimit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_AreaLimit\n");}
-	}
-};
+%feature("shadow") HLRBRep_AreaLimit::~HLRBRep_AreaLimit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_PolyAlgo;
@@ -2223,12 +2123,10 @@ class HLRBRep_PolyAlgo : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend HLRBRep_PolyAlgo {
-	~HLRBRep_PolyAlgo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_PolyAlgo\n");}
-	}
-};
+%feature("shadow") HLRBRep_PolyAlgo::~HLRBRep_PolyAlgo %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_BSurfaceTool;
@@ -2336,12 +2234,10 @@ class HLRBRep_BSurfaceTool {
 		Standard_Integer NbSamplesV(const BRepAdaptor_Surface &S, const Standard_Real v1, const Standard_Real v2);
 
 };
-%extend HLRBRep_BSurfaceTool {
-	~HLRBRep_BSurfaceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_BSurfaceTool\n");}
-	}
-};
+%feature("shadow") HLRBRep_BSurfaceTool::~HLRBRep_BSurfaceTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter;
@@ -2367,12 +2263,10 @@ class HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
 		Extrema_POnCurv2d Point() const;
 
 };
-%extend HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
-	~HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter::~HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_CLProps;
@@ -2408,12 +2302,10 @@ class HLRBRep_CLProps {
 		void CentreOfCurvature(gp_Pnt2d & P);
 
 };
-%extend HLRBRep_CLProps {
-	~HLRBRep_CLProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_CLProps\n");}
-	}
-};
+%feature("shadow") HLRBRep_CLProps::~HLRBRep_CLProps %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_BiPnt2D;
@@ -2449,12 +2341,10 @@ class HLRBRep_BiPnt2D {
 		void IntLine(const Standard_Boolean B);
 
 };
-%extend HLRBRep_BiPnt2D {
-	~HLRBRep_BiPnt2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_BiPnt2D\n");}
-	}
-};
+%feature("shadow") HLRBRep_BiPnt2D::~HLRBRep_BiPnt2D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep;
@@ -2468,12 +2358,10 @@ class HLRBRep {
 		void PolyHLRAngleAndDeflection(const Standard_Real InAngl, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend HLRBRep {
-	~HLRBRep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep\n");}
-	}
-};
+%feature("shadow") HLRBRep::~HLRBRep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_FaceIterator;
@@ -2509,12 +2397,10 @@ class HLRBRep_FaceIterator {
 		Standard_Boolean IsoLine() const;
 
 };
-%extend HLRBRep_FaceIterator {
-	~HLRBRep_FaceIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_FaceIterator\n");}
-	}
-};
+%feature("shadow") HLRBRep_FaceIterator::~HLRBRep_FaceIterator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ListNodeOfListOfBPoint;
@@ -2538,12 +2424,10 @@ class HLRBRep_ListNodeOfListOfBPoint : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend HLRBRep_ListNodeOfListOfBPoint {
-	~HLRBRep_ListNodeOfListOfBPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ListNodeOfListOfBPoint\n");}
-	}
-};
+%feature("shadow") HLRBRep_ListNodeOfListOfBPoint::~HLRBRep_ListNodeOfListOfBPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter;
@@ -2565,12 +2449,10 @@ class HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
 		const gp_Pnt2d & EndOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
 
 };
-%extend HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
-	~HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::~HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_FaceData;
@@ -2652,12 +2534,10 @@ class HLRBRep_FaceData {
 		Standard_ShortReal Tolerance() const;
 
 };
-%extend HLRBRep_FaceData {
-	~HLRBRep_FaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_FaceData\n");}
-	}
-};
+%feature("shadow") HLRBRep_FaceData::~HLRBRep_FaceData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter;
@@ -2677,12 +2557,10 @@ class HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter : public IntRes2d_Interse
 		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool &IntCurve_IConicTool, const Standard_Address &TheParCurve, const IntRes2d_Domain &TheImpCurveDomain, const IntRes2d_Domain &TheParCurveDomain, Standard_Integer &OutValue, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul) const;
 
 };
-%extend HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter {
-	~HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter::~HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_PolyHLRToShape;
@@ -2730,12 +2608,10 @@ class HLRBRep_PolyHLRToShape {
 		TopoDS_Shape OutLineHCompound(const TopoDS_Shape &S);
 
 };
-%extend HLRBRep_PolyHLRToShape {
-	~HLRBRep_PolyHLRToShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_PolyHLRToShape\n");}
-	}
-};
+%feature("shadow") HLRBRep_PolyHLRToShape::~HLRBRep_PolyHLRToShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ListOfBPnt2D;
@@ -2783,12 +2659,10 @@ class HLRBRep_ListOfBPnt2D {
 		void InsertAfter(HLRBRep_ListOfBPnt2D & Other, HLRBRep_ListIteratorOfListOfBPnt2D & It);
 
 };
-%extend HLRBRep_ListOfBPnt2D {
-	~HLRBRep_ListOfBPnt2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ListOfBPnt2D\n");}
-	}
-};
+%feature("shadow") HLRBRep_ListOfBPnt2D::~HLRBRep_ListOfBPnt2D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_CLPropsATool;
@@ -2812,12 +2686,10 @@ class HLRBRep_CLPropsATool {
 		Standard_Real LastParameter(const Standard_Address A);
 
 };
-%extend HLRBRep_CLPropsATool {
-	~HLRBRep_CLPropsATool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_CLPropsATool\n");}
-	}
-};
+%feature("shadow") HLRBRep_CLPropsATool::~HLRBRep_CLPropsATool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_EdgeFaceTool;
@@ -2831,12 +2703,10 @@ class HLRBRep_EdgeFaceTool {
 		Standard_Boolean UVPoint(const Standard_Real Par, const Standard_Address E, const Standard_Address F, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend HLRBRep_EdgeFaceTool {
-	~HLRBRep_EdgeFaceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_EdgeFaceTool\n");}
-	}
-};
+%feature("shadow") HLRBRep_EdgeFaceTool::~HLRBRep_EdgeFaceTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_TheExactInterCSurf;
@@ -2862,12 +2732,10 @@ class HLRBRep_TheExactInterCSurf {
 		HLRBRep_TheCSFunctionOfInterCSurf & Function();
 
 };
-%extend HLRBRep_TheExactInterCSurf {
-	~HLRBRep_TheExactInterCSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheExactInterCSurf\n");}
-	}
-};
+%feature("shadow") HLRBRep_TheExactInterCSurf::~HLRBRep_TheExactInterCSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
@@ -2891,12 +2759,10 @@ class HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter :
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
-	~HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter::~HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ShapeBounds;
@@ -2932,12 +2798,10 @@ class HLRBRep_ShapeBounds {
 		Standard_Address MinMax() const;
 
 };
-%extend HLRBRep_ShapeBounds {
-	~HLRBRep_ShapeBounds() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ShapeBounds\n");}
-	}
-};
+%feature("shadow") HLRBRep_ShapeBounds::~HLRBRep_ShapeBounds %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_ListNodeOfListOfBPnt2D;
@@ -2961,12 +2825,10 @@ class HLRBRep_ListNodeOfListOfBPnt2D : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend HLRBRep_ListNodeOfListOfBPnt2D {
-	~HLRBRep_ListNodeOfListOfBPnt2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_ListNodeOfListOfBPnt2D\n");}
-	}
-};
+%feature("shadow") HLRBRep_ListNodeOfListOfBPnt2D::~HLRBRep_ListNodeOfListOfBPnt2D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_TheQuadCurvExactInterCSurf;
@@ -2986,12 +2848,10 @@ class HLRBRep_TheQuadCurvExactInterCSurf {
 		void Intervals(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend HLRBRep_TheQuadCurvExactInterCSurf {
-	~HLRBRep_TheQuadCurvExactInterCSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheQuadCurvExactInterCSurf\n");}
-	}
-};
+%feature("shadow") HLRBRep_TheQuadCurvExactInterCSurf::~HLRBRep_TheQuadCurvExactInterCSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_CurveTool;
@@ -3057,12 +2917,10 @@ class HLRBRep_CurveTool {
 		Standard_Integer NbSamples(const Standard_Address C);
 
 };
-%extend HLRBRep_CurveTool {
-	~HLRBRep_CurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_CurveTool\n");}
-	}
-};
+%feature("shadow") HLRBRep_CurveTool::~HLRBRep_CurveTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_TheInterferenceOfInterCSurf;
@@ -3100,12 +2958,10 @@ class HLRBRep_TheInterferenceOfInterCSurf : public Intf_Interference {
 		void Interference(const HLRBRep_ThePolygonOfInterCSurf &thePolyg, const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
 
 };
-%extend HLRBRep_TheInterferenceOfInterCSurf {
-	~HLRBRep_TheInterferenceOfInterCSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheInterferenceOfInterCSurf\n");}
-	}
-};
+%feature("shadow") HLRBRep_TheInterferenceOfInterCSurf::~HLRBRep_TheInterferenceOfInterCSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter;
@@ -3121,12 +2977,10 @@ class HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter : public ma
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter {
-	~HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter::~HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_SurfaceTool;
@@ -3218,12 +3072,10 @@ class HLRBRep_SurfaceTool {
 		Standard_Integer NbSamplesV(const Standard_Address S, const Standard_Real v1, const Standard_Real v2);
 
 };
-%extend HLRBRep_SurfaceTool {
-	~HLRBRep_SurfaceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_SurfaceTool\n");}
-	}
-};
+%feature("shadow") HLRBRep_SurfaceTool::~HLRBRep_SurfaceTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_Intersector;
@@ -3259,12 +3111,10 @@ class HLRBRep_Intersector {
 		void Destroy();
 
 };
-%extend HLRBRep_Intersector {
-	~HLRBRep_Intersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_Intersector\n");}
-	}
-};
+%feature("shadow") HLRBRep_Intersector::~HLRBRep_Intersector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
@@ -3296,9 +3146,7 @@ class HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public math_Function
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 
 };
-%extend HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
-	~HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter\n");}
-	}
-};
+%feature("shadow") HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter::~HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Image_dependencies.i
 
 
@@ -79,12 +83,10 @@ class Handle_Image_Image : public Handle_MMgt_TShared {
 	return (Image_Image*)$self->Access();
 	}
 };
-%extend Handle_Image_Image {
-	~Handle_Image_Image() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Image_Image\n");}
-	}
-};
+%feature("shadow") Handle_Image_Image::~Handle_Image_Image %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Image_DColorImage;
@@ -109,12 +111,10 @@ class Handle_Image_DColorImage : public Handle_Image_Image {
 	return (Image_DColorImage*)$self->Access();
 	}
 };
-%extend Handle_Image_DColorImage {
-	~Handle_Image_DColorImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Image_DColorImage\n");}
-	}
-};
+%feature("shadow") Handle_Image_DColorImage::~Handle_Image_DColorImage %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Image_DIndexedImage;
@@ -139,12 +139,10 @@ class Handle_Image_DIndexedImage : public Handle_Image_Image {
 	return (Image_DIndexedImage*)$self->Access();
 	}
 };
-%extend Handle_Image_DIndexedImage {
-	~Handle_Image_DIndexedImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Image_DIndexedImage\n");}
-	}
-};
+%feature("shadow") Handle_Image_DIndexedImage::~Handle_Image_DIndexedImage %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Image_PseudoColorImage;
@@ -169,12 +167,10 @@ class Handle_Image_PseudoColorImage : public Handle_Image_DIndexedImage {
 	return (Image_PseudoColorImage*)$self->Access();
 	}
 };
-%extend Handle_Image_PseudoColorImage {
-	~Handle_Image_PseudoColorImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Image_PseudoColorImage\n");}
-	}
-};
+%feature("shadow") Handle_Image_PseudoColorImage::~Handle_Image_PseudoColorImage %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Image_DataMapNodeOfLookupTable;
@@ -199,12 +195,10 @@ class Handle_Image_DataMapNodeOfLookupTable : public Handle_TCollection_MapNode 
 	return (Image_DataMapNodeOfLookupTable*)$self->Access();
 	}
 };
-%extend Handle_Image_DataMapNodeOfLookupTable {
-	~Handle_Image_DataMapNodeOfLookupTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Image_DataMapNodeOfLookupTable\n");}
-	}
-};
+%feature("shadow") Handle_Image_DataMapNodeOfLookupTable::~Handle_Image_DataMapNodeOfLookupTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Image_DataMapNodeOfColorPixelDataMap;
@@ -229,12 +223,10 @@ class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_Ma
 	return (Image_DataMapNodeOfColorPixelDataMap*)$self->Access();
 	}
 };
-%extend Handle_Image_DataMapNodeOfColorPixelDataMap {
-	~Handle_Image_DataMapNodeOfColorPixelDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Image_DataMapNodeOfColorPixelDataMap\n");}
-	}
-};
+%feature("shadow") Handle_Image_DataMapNodeOfColorPixelDataMap::~Handle_Image_DataMapNodeOfColorPixelDataMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Image_ColorImage;
@@ -259,12 +251,10 @@ class Handle_Image_ColorImage : public Handle_Image_DColorImage {
 	return (Image_ColorImage*)$self->Access();
 	}
 };
-%extend Handle_Image_ColorImage {
-	~Handle_Image_ColorImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Image_ColorImage\n");}
-	}
-};
+%feature("shadow") Handle_Image_ColorImage::~Handle_Image_ColorImage %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_PixelRowOfDIndexedImage;
@@ -302,12 +292,10 @@ class Image_PixelRowOfDIndexedImage {
 		Aspect_IndexPixel & operator()(const Standard_Integer Index);
 
 };
-%extend Image_PixelRowOfDIndexedImage {
-	~Image_PixelRowOfDIndexedImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_PixelRowOfDIndexedImage\n");}
-	}
-};
+%feature("shadow") Image_PixelRowOfDIndexedImage::~Image_PixelRowOfDIndexedImage %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_Image;
@@ -385,12 +373,10 @@ class Image_Image : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Image_Image {
-	~Image_Image() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_Image\n");}
-	}
-};
+%feature("shadow") Image_Image::~Image_Image %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_IndexPixelMapHasher;
@@ -404,12 +390,10 @@ class Image_IndexPixelMapHasher {
 		Standard_Boolean IsEqual(const Aspect_IndexPixel &K1, const Aspect_IndexPixel &K2);
 
 };
-%extend Image_IndexPixelMapHasher {
-	~Image_IndexPixelMapHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_IndexPixelMapHasher\n");}
-	}
-};
+%feature("shadow") Image_IndexPixelMapHasher::~Image_IndexPixelMapHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_PixelInterpolation;
@@ -425,12 +409,10 @@ class Image_PixelInterpolation {
 		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
 };
-%extend Image_PixelInterpolation {
-	~Image_PixelInterpolation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_PixelInterpolation\n");}
-	}
-};
+%feature("shadow") Image_PixelInterpolation::~Image_PixelInterpolation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_PlanarPixelInterpolation;
@@ -444,12 +426,10 @@ class Image_PlanarPixelInterpolation : public Image_PixelInterpolation {
 		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real X, const Standard_Real Y, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
 };
-%extend Image_PlanarPixelInterpolation {
-	~Image_PlanarPixelInterpolation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_PlanarPixelInterpolation\n");}
-	}
-};
+%feature("shadow") Image_PlanarPixelInterpolation::~Image_PlanarPixelInterpolation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_LookupTable;
@@ -481,12 +461,10 @@ class Image_LookupTable : public TCollection_BasicMap {
 		Aspect_IndexPixel & operator()(const Aspect_IndexPixel &K);
 
 };
-%extend Image_LookupTable {
-	~Image_LookupTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_LookupTable\n");}
-	}
-};
+%feature("shadow") Image_LookupTable::~Image_LookupTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_DColorImage;
@@ -590,12 +568,10 @@ class Image_DColorImage : public Image_Image {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Image_DColorImage {
-	~Image_DColorImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_DColorImage\n");}
-	}
-};
+%feature("shadow") Image_DColorImage::~Image_DColorImage %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_ColorImage;
@@ -623,12 +599,10 @@ class Image_ColorImage : public Image_DColorImage {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Image_ColorImage {
-	~Image_ColorImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_ColorImage\n");}
-	}
-};
+%feature("shadow") Image_ColorImage::~Image_ColorImage %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image;
@@ -658,12 +632,10 @@ class Image {
 		void Affine(const Handle_Image_Image &aImage, const gp_Trsf &Trsf);
 
 };
-%extend Image {
-	~Image() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image\n");}
-	}
-};
+%feature("shadow") Image::~Image %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_AveragePixelInterpolation;
@@ -679,12 +651,10 @@ class Image_AveragePixelInterpolation : public Image_PixelInterpolation {
 		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
 };
-%extend Image_AveragePixelInterpolation {
-	~Image_AveragePixelInterpolation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_AveragePixelInterpolation\n");}
-	}
-};
+%feature("shadow") Image_AveragePixelInterpolation::~Image_AveragePixelInterpolation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_DataMapNodeOfLookupTable;
@@ -710,12 +680,10 @@ class Image_DataMapNodeOfLookupTable : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Image_DataMapNodeOfLookupTable {
-	~Image_DataMapNodeOfLookupTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_DataMapNodeOfLookupTable\n");}
-	}
-};
+%feature("shadow") Image_DataMapNodeOfLookupTable::~Image_DataMapNodeOfLookupTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_BilinearPixelInterpolation;
@@ -731,12 +699,10 @@ class Image_BilinearPixelInterpolation : public Image_PixelInterpolation {
 		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
 };
-%extend Image_BilinearPixelInterpolation {
-	~Image_BilinearPixelInterpolation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_BilinearPixelInterpolation\n");}
-	}
-};
+%feature("shadow") Image_BilinearPixelInterpolation::~Image_BilinearPixelInterpolation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_Convertor;
@@ -754,12 +720,10 @@ class Image_Convertor {
 		Handle_Image_ColorImage Convert(const Handle_Image_PseudoColorImage &aPseudoColorImage) const;
 
 };
-%extend Image_Convertor {
-	~Image_Convertor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_Convertor\n");}
-	}
-};
+%feature("shadow") Image_Convertor::~Image_Convertor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_ColorPixelMapHasher;
@@ -773,12 +737,10 @@ class Image_ColorPixelMapHasher {
 		Standard_Boolean IsEqual(const Aspect_ColorPixel &K1, const Aspect_ColorPixel &K2);
 
 };
-%extend Image_ColorPixelMapHasher {
-	~Image_ColorPixelMapHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_ColorPixelMapHasher\n");}
-	}
-};
+%feature("shadow") Image_ColorPixelMapHasher::~Image_ColorPixelMapHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_DataMapIteratorOfLookupTable;
@@ -796,12 +758,10 @@ class Image_DataMapIteratorOfLookupTable : public TCollection_BasicMapIterator {
 		const Aspect_IndexPixel & Value() const;
 
 };
-%extend Image_DataMapIteratorOfLookupTable {
-	~Image_DataMapIteratorOfLookupTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_DataMapIteratorOfLookupTable\n");}
-	}
-};
+%feature("shadow") Image_DataMapIteratorOfLookupTable::~Image_DataMapIteratorOfLookupTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_PixelRowOfDColorImage;
@@ -839,12 +799,10 @@ class Image_PixelRowOfDColorImage {
 		Aspect_ColorPixel & operator()(const Standard_Integer Index);
 
 };
-%extend Image_PixelRowOfDColorImage {
-	~Image_PixelRowOfDColorImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_PixelRowOfDColorImage\n");}
-	}
-};
+%feature("shadow") Image_PixelRowOfDColorImage::~Image_PixelRowOfDColorImage %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_ColorPixelDataMap;
@@ -886,12 +844,10 @@ class Image_ColorPixelDataMap : public TCollection_BasicMap {
 		Standard_Integer & operator()(const Aspect_ColorPixel &K);
 
 };
-%extend Image_ColorPixelDataMap {
-	~Image_ColorPixelDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_ColorPixelDataMap\n");}
-	}
-};
+%feature("shadow") Image_ColorPixelDataMap::~Image_ColorPixelDataMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_BalancedPixelInterpolation;
@@ -907,12 +863,10 @@ class Image_BalancedPixelInterpolation : public Image_PixelInterpolation {
 		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
 
 };
-%extend Image_BalancedPixelInterpolation {
-	~Image_BalancedPixelInterpolation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_BalancedPixelInterpolation\n");}
-	}
-};
+%feature("shadow") Image_BalancedPixelInterpolation::~Image_BalancedPixelInterpolation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_DIndexedImage;
@@ -1016,12 +970,10 @@ class Image_DIndexedImage : public Image_Image {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Image_DIndexedImage {
-	~Image_DIndexedImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_DIndexedImage\n");}
-	}
-};
+%feature("shadow") Image_DIndexedImage::~Image_DIndexedImage %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_DataMapIteratorOfColorPixelDataMap;
@@ -1039,12 +991,10 @@ class Image_DataMapIteratorOfColorPixelDataMap : public TCollection_BasicMapIter
 		const Standard_Integer & Value() const;
 
 };
-%extend Image_DataMapIteratorOfColorPixelDataMap {
-	~Image_DataMapIteratorOfColorPixelDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_DataMapIteratorOfColorPixelDataMap\n");}
-	}
-};
+%feature("shadow") Image_DataMapIteratorOfColorPixelDataMap::~Image_DataMapIteratorOfColorPixelDataMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_PseudoColorImage;
@@ -1092,12 +1042,10 @@ class Image_PseudoColorImage : public Image_DIndexedImage {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Image_PseudoColorImage {
-	~Image_PseudoColorImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_PseudoColorImage\n");}
-	}
-};
+%feature("shadow") Image_PseudoColorImage::~Image_PseudoColorImage %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_PixelFieldOfDColorImage;
@@ -1129,12 +1077,10 @@ class Image_PixelFieldOfDColorImage {
 		Aspect_ColorPixel & operator()(const Standard_Integer X, const Standard_Integer Y);
 
 };
-%extend Image_PixelFieldOfDColorImage {
-	~Image_PixelFieldOfDColorImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_PixelFieldOfDColorImage\n");}
-	}
-};
+%feature("shadow") Image_PixelFieldOfDColorImage::~Image_PixelFieldOfDColorImage %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Image_DataMapNodeOfColorPixelDataMap;
@@ -1170,9 +1116,7 @@ class Image_DataMapNodeOfColorPixelDataMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Image_DataMapNodeOfColorPixelDataMap {
-	~Image_DataMapNodeOfColorPixelDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Image_DataMapNodeOfColorPixelDataMap\n");}
-	}
-};
+%feature("shadow") Image_DataMapNodeOfColorPixelDataMap::~Image_DataMapNodeOfColorPixelDataMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

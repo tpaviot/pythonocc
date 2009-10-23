@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BinMFunction_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_BinMFunction_GraphNodeDriver : public Handle_BinMDF_ADriver {
 	return (BinMFunction_GraphNodeDriver*)$self->Access();
 	}
 };
-%extend Handle_BinMFunction_GraphNodeDriver {
-	~Handle_BinMFunction_GraphNodeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMFunction_GraphNodeDriver\n");}
-	}
-};
+%feature("shadow") Handle_BinMFunction_GraphNodeDriver::~Handle_BinMFunction_GraphNodeDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BinMFunction_FunctionDriver;
@@ -87,12 +89,10 @@ class Handle_BinMFunction_FunctionDriver : public Handle_BinMDF_ADriver {
 	return (BinMFunction_FunctionDriver*)$self->Access();
 	}
 };
-%extend Handle_BinMFunction_FunctionDriver {
-	~Handle_BinMFunction_FunctionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMFunction_FunctionDriver\n");}
-	}
-};
+%feature("shadow") Handle_BinMFunction_FunctionDriver::~Handle_BinMFunction_FunctionDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BinMFunction_ScopeDriver;
@@ -117,12 +117,10 @@ class Handle_BinMFunction_ScopeDriver : public Handle_BinMDF_ADriver {
 	return (BinMFunction_ScopeDriver*)$self->Access();
 	}
 };
-%extend Handle_BinMFunction_ScopeDriver {
-	~Handle_BinMFunction_ScopeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMFunction_ScopeDriver\n");}
-	}
-};
+%feature("shadow") Handle_BinMFunction_ScopeDriver::~Handle_BinMFunction_ScopeDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinMFunction_FunctionDriver;
@@ -150,12 +148,10 @@ class BinMFunction_FunctionDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BinMFunction_FunctionDriver {
-	~BinMFunction_FunctionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMFunction_FunctionDriver\n");}
-	}
-};
+%feature("shadow") BinMFunction_FunctionDriver::~BinMFunction_FunctionDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinMFunction;
@@ -167,12 +163,10 @@ class BinMFunction {
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
 };
-%extend BinMFunction {
-	~BinMFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMFunction\n");}
-	}
-};
+%feature("shadow") BinMFunction::~BinMFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinMFunction_GraphNodeDriver;
@@ -200,12 +194,10 @@ class BinMFunction_GraphNodeDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BinMFunction_GraphNodeDriver {
-	~BinMFunction_GraphNodeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMFunction_GraphNodeDriver\n");}
-	}
-};
+%feature("shadow") BinMFunction_GraphNodeDriver::~BinMFunction_GraphNodeDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BinMFunction_ScopeDriver;
@@ -233,9 +225,7 @@ class BinMFunction_ScopeDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BinMFunction_ScopeDriver {
-	~BinMFunction_ScopeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMFunction_ScopeDriver\n");}
-	}
-};
+%feature("shadow") BinMFunction_ScopeDriver::~BinMFunction_ScopeDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

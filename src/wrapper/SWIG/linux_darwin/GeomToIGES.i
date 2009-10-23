@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GeomToIGES_dependencies.i
 
 
@@ -52,12 +56,10 @@ class GeomToIGES_GeomEntity {
 		Standard_Real GetUnit() const;
 
 };
-%extend GeomToIGES_GeomEntity {
-	~GeomToIGES_GeomEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomEntity\n");}
-	}
-};
+%feature("shadow") GeomToIGES_GeomEntity::~GeomToIGES_GeomEntity %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToIGES_GeomCurve;
@@ -93,12 +95,10 @@ class GeomToIGES_GeomCurve : public GeomToIGES_GeomEntity {
 		Handle_IGESData_IGESEntity TransferCurve(const Handle_Geom_OffsetCurve &start, const Standard_Real Udeb, const Standard_Real Ufin);
 
 };
-%extend GeomToIGES_GeomCurve {
-	~GeomToIGES_GeomCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomCurve\n");}
-	}
-};
+%feature("shadow") GeomToIGES_GeomCurve::~GeomToIGES_GeomCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToIGES_GeomPoint;
@@ -114,12 +114,10 @@ class GeomToIGES_GeomPoint : public GeomToIGES_GeomEntity {
 		Handle_IGESGeom_Point TransferPoint(const Handle_Geom_CartesianPoint &start);
 
 };
-%extend GeomToIGES_GeomPoint {
-	~GeomToIGES_GeomPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomPoint\n");}
-	}
-};
+%feature("shadow") GeomToIGES_GeomPoint::~GeomToIGES_GeomPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToIGES_GeomSurface;
@@ -181,12 +179,10 @@ class GeomToIGES_GeomSurface : public GeomToIGES_GeomEntity {
 		void SetAnalyticMode(const Standard_Boolean flag);
 
 };
-%extend GeomToIGES_GeomSurface {
-	~GeomToIGES_GeomSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomSurface\n");}
-	}
-};
+%feature("shadow") GeomToIGES_GeomSurface::~GeomToIGES_GeomSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomToIGES_GeomVector;
@@ -204,9 +200,7 @@ class GeomToIGES_GeomVector : public GeomToIGES_GeomEntity {
 		Handle_IGESGeom_Direction TransferVector(const Handle_Geom_Direction &start);
 
 };
-%extend GeomToIGES_GeomVector {
-	~GeomToIGES_GeomVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomVector\n");}
-	}
-};
+%feature("shadow") GeomToIGES_GeomVector::~GeomToIGES_GeomVector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

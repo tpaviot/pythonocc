@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntCurve_dependencies.i
 
 
@@ -68,12 +72,10 @@ class IntCurve_PConic {
 		Standard_Real Param2() const;
 
 };
-%extend IntCurve_PConic {
-	~IntCurve_PConic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurve_PConic\n");}
-	}
-};
+%feature("shadow") IntCurve_PConic::~IntCurve_PConic %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntCurve_MyImpParToolOfIntImpConicParConic;
@@ -89,12 +91,10 @@ class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDeriv
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend IntCurve_MyImpParToolOfIntImpConicParConic {
-	~IntCurve_MyImpParToolOfIntImpConicParConic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurve_MyImpParToolOfIntImpConicParConic\n");}
-	}
-};
+%feature("shadow") IntCurve_MyImpParToolOfIntImpConicParConic::~IntCurve_MyImpParToolOfIntImpConicParConic %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntCurve_IntImpConicParConic;
@@ -114,12 +114,10 @@ class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
 		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool &TheImpTool, const IntCurve_PConic &TheParCurve, const IntRes2d_Domain &TheImpCurveDomain, const IntRes2d_Domain &TheParCurveDomain, Standard_Integer &OutValue, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul) const;
 
 };
-%extend IntCurve_IntImpConicParConic {
-	~IntCurve_IntImpConicParConic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurve_IntImpConicParConic\n");}
-	}
-};
+%feature("shadow") IntCurve_IntImpConicParConic::~IntCurve_IntImpConicParConic %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntCurve_IntConicConic;
@@ -189,12 +187,10 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 		void Perform(const gp_Hypr2d &H1, const IntRes2d_Domain &D1, const gp_Hypr2d &H2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 
 };
-%extend IntCurve_IntConicConic {
-	~IntCurve_IntConicConic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurve_IntConicConic\n");}
-	}
-};
+%feature("shadow") IntCurve_IntConicConic::~IntCurve_IntConicConic %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntCurve_ProjectOnPConicTool;
@@ -208,12 +204,10 @@ class IntCurve_ProjectOnPConicTool {
 		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d &Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
 
 };
-%extend IntCurve_ProjectOnPConicTool {
-	~IntCurve_ProjectOnPConicTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurve_ProjectOnPConicTool\n");}
-	}
-};
+%feature("shadow") IntCurve_ProjectOnPConicTool::~IntCurve_ProjectOnPConicTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntCurve_IConicTool;
@@ -247,12 +241,10 @@ class IntCurve_IConicTool {
 		Standard_Real FindParameter(const gp_Pnt2d &P) const;
 
 };
-%extend IntCurve_IConicTool {
-	~IntCurve_IConicTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurve_IConicTool\n");}
-	}
-};
+%feature("shadow") IntCurve_IConicTool::~IntCurve_IConicTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntCurve_PConicTool;
@@ -274,9 +266,7 @@ class IntCurve_PConicTool {
 		void D2(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
 
 };
-%extend IntCurve_PConicTool {
-	~IntCurve_PConicTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntCurve_PConicTool\n");}
-	}
-};
+%feature("shadow") IntCurve_PConicTool::~IntCurve_PConicTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

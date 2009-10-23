@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MeshVS_dependencies.i
 
 
@@ -131,12 +135,10 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner : public Handle
 	return (MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
-	~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_PrsBuilder;
@@ -161,12 +163,10 @@ class Handle_MeshVS_PrsBuilder : public Handle_MMgt_TShared {
 	return (MeshVS_PrsBuilder*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_PrsBuilder {
-	~Handle_MeshVS_PrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_PrsBuilder\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_PrsBuilder::~Handle_MeshVS_PrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_MeshPrsBuilder;
@@ -191,12 +191,10 @@ class Handle_MeshVS_MeshPrsBuilder : public Handle_MeshVS_PrsBuilder {
 	return (MeshVS_MeshPrsBuilder*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_MeshPrsBuilder {
-	~Handle_MeshVS_MeshPrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_MeshPrsBuilder\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_MeshPrsBuilder::~Handle_MeshVS_MeshPrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_Mesh;
@@ -221,12 +219,10 @@ class Handle_MeshVS_Mesh : public Handle_AIS_InteractiveObject {
 	return (MeshVS_Mesh*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_Mesh {
-	~Handle_MeshVS_Mesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_Mesh\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_Mesh::~Handle_MeshVS_Mesh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_TextPrsBuilder;
@@ -251,12 +247,10 @@ class Handle_MeshVS_TextPrsBuilder : public Handle_MeshVS_PrsBuilder {
 	return (MeshVS_TextPrsBuilder*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_TextPrsBuilder {
-	~Handle_MeshVS_TextPrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_TextPrsBuilder\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_TextPrsBuilder::~Handle_MeshVS_TextPrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_SensitivePolyhedron;
@@ -281,12 +275,10 @@ class Handle_MeshVS_SensitivePolyhedron : public Handle_Select3D_SensitiveEntity
 	return (MeshVS_SensitivePolyhedron*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_SensitivePolyhedron {
-	~Handle_MeshVS_SensitivePolyhedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_SensitivePolyhedron\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_SensitivePolyhedron::~Handle_MeshVS_SensitivePolyhedron %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_NodalColorPrsBuilder;
@@ -311,12 +303,10 @@ class Handle_MeshVS_NodalColorPrsBuilder : public Handle_MeshVS_PrsBuilder {
 	return (MeshVS_NodalColorPrsBuilder*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_NodalColorPrsBuilder {
-	~Handle_MeshVS_NodalColorPrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_NodalColorPrsBuilder\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_NodalColorPrsBuilder::~Handle_MeshVS_NodalColorPrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger;
@@ -341,12 +331,10 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger : public Ha
 	return (MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger {
-	~Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger::~Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_MeshOwner;
@@ -371,12 +359,10 @@ class Handle_MeshVS_MeshOwner : public Handle_SelectMgr_EntityOwner {
 	return (MeshVS_MeshOwner*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_MeshOwner {
-	~Handle_MeshVS_MeshOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_MeshOwner\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_MeshOwner::~Handle_MeshVS_MeshOwner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString;
@@ -401,12 +387,10 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString : public Handle_TCo
 	return (MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString {
-	~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder;
@@ -431,12 +415,10 @@ class Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public Handle_TCollecti
 	return (MeshVS_SequenceNodeOfSequenceOfPrsBuilder*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
-	~Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder::~Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_MeshEntityOwner;
@@ -461,12 +443,10 @@ class Handle_MeshVS_MeshEntityOwner : public Handle_SelectMgr_EntityOwner {
 	return (MeshVS_MeshEntityOwner*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_MeshEntityOwner {
-	~Handle_MeshVS_MeshEntityOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_MeshEntityOwner\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_MeshEntityOwner::~Handle_MeshVS_MeshEntityOwner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DummySensitiveEntity;
@@ -491,12 +471,10 @@ class Handle_MeshVS_DummySensitiveEntity : public Handle_SelectBasics_SensitiveE
 	return (MeshVS_DummySensitiveEntity*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DummySensitiveEntity {
-	~Handle_MeshVS_DummySensitiveEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DummySensitiveEntity\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DummySensitiveEntity::~Handle_MeshVS_DummySensitiveEntity %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger;
@@ -521,12 +499,10 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger : public Handle_TCol
 	return (MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger {
-	~Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger::~Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_ElementalColorPrsBuilder;
@@ -551,12 +527,10 @@ class Handle_MeshVS_ElementalColorPrsBuilder : public Handle_MeshVS_PrsBuilder {
 	return (MeshVS_ElementalColorPrsBuilder*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_ElementalColorPrsBuilder {
-	~Handle_MeshVS_ElementalColorPrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_ElementalColorPrsBuilder\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_ElementalColorPrsBuilder::~Handle_MeshVS_ElementalColorPrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_StdMapNodeOfMapOfTwoNodes;
@@ -581,12 +555,10 @@ class Handle_MeshVS_StdMapNodeOfMapOfTwoNodes : public Handle_TCollection_MapNod
 	return (MeshVS_StdMapNodeOfMapOfTwoNodes*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_StdMapNodeOfMapOfTwoNodes {
-	~Handle_MeshVS_StdMapNodeOfMapOfTwoNodes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_StdMapNodeOfMapOfTwoNodes\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_StdMapNodeOfMapOfTwoNodes::~Handle_MeshVS_StdMapNodeOfMapOfTwoNodes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor;
@@ -611,12 +583,10 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor : public Handle_TCollecti
 	return (MeshVS_DataMapNodeOfDataMapOfIntegerColor*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor {
-	~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DataSource;
@@ -641,12 +611,10 @@ class Handle_MeshVS_DataSource : public Handle_MMgt_TShared {
 	return (MeshVS_DataSource*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DataSource {
-	~Handle_MeshVS_DataSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DataSource\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DataSource::~Handle_MeshVS_DataSource %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial;
@@ -671,12 +639,10 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial : public Handle_TColle
 	return (MeshVS_DataMapNodeOfDataMapOfIntegerMaterial*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
-	~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DeformedDataSource;
@@ -701,12 +667,10 @@ class Handle_MeshVS_DeformedDataSource : public Handle_MeshVS_DataSource {
 	return (MeshVS_DeformedDataSource*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DeformedDataSource {
-	~Handle_MeshVS_DeformedDataSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DeformedDataSource\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DeformedDataSource::~Handle_MeshVS_DeformedDataSource %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors;
@@ -731,12 +695,10 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors : public Handle_TColl
 	return (MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors {
-	~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_SensitiveMesh;
@@ -761,12 +723,10 @@ class Handle_MeshVS_SensitiveMesh : public Handle_Select3D_SensitiveEntity {
 	return (MeshVS_SensitiveMesh*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_SensitiveMesh {
-	~Handle_MeshVS_SensitiveMesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_SensitiveMesh\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_SensitiveMesh::~Handle_MeshVS_SensitiveMesh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_Drawer;
@@ -791,12 +751,10 @@ class Handle_MeshVS_Drawer : public Handle_MMgt_TShared {
 	return (MeshVS_Drawer*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_Drawer {
-	~Handle_MeshVS_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_Drawer\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_Drawer::~Handle_MeshVS_Drawer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger;
@@ -821,12 +779,10 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger : public Handle_
 	return (MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
-	~Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger::~Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_SensitiveSegment;
@@ -851,12 +807,10 @@ class Handle_MeshVS_SensitiveSegment : public Handle_Select3D_SensitiveSegment {
 	return (MeshVS_SensitiveSegment*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_SensitiveSegment {
-	~Handle_MeshVS_SensitiveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_SensitiveSegment\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_SensitiveSegment::~Handle_MeshVS_SensitiveSegment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DataSource3D;
@@ -881,12 +835,10 @@ class Handle_MeshVS_DataSource3D : public Handle_MeshVS_DataSource {
 	return (MeshVS_DataSource3D*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DataSource3D {
-	~Handle_MeshVS_DataSource3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DataSource3D\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DataSource3D::~Handle_MeshVS_DataSource3D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner;
@@ -911,12 +863,10 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner : public Handle_TCollecti
 	return (MeshVS_DataMapNodeOfDataMapOfIntegerOwner*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
-	~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector;
@@ -941,12 +891,10 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector : public Handle_TCollect
 	return (MeshVS_DataMapNodeOfDataMapOfIntegerVector*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector {
-	~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_SensitiveFace;
@@ -971,12 +919,10 @@ class Handle_MeshVS_SensitiveFace : public Handle_Select3D_SensitiveFace {
 	return (MeshVS_SensitiveFace*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_SensitiveFace {
-	~Handle_MeshVS_SensitiveFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_SensitiveFace\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_SensitiveFace::~Handle_MeshVS_SensitiveFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_VectorPrsBuilder;
@@ -1001,12 +947,10 @@ class Handle_MeshVS_VectorPrsBuilder : public Handle_MeshVS_PrsBuilder {
 	return (MeshVS_VectorPrsBuilder*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_VectorPrsBuilder {
-	~Handle_MeshVS_VectorPrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_VectorPrsBuilder\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_VectorPrsBuilder::~Handle_MeshVS_VectorPrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_HArray1OfSequenceOfInteger;
@@ -1031,12 +975,10 @@ class Handle_MeshVS_HArray1OfSequenceOfInteger : public Handle_MMgt_TShared {
 	return (MeshVS_HArray1OfSequenceOfInteger*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_HArray1OfSequenceOfInteger {
-	~Handle_MeshVS_HArray1OfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_HArray1OfSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_HArray1OfSequenceOfInteger::~Handle_MeshVS_HArray1OfSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean;
@@ -1061,12 +1003,10 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean : public Handle_TCollec
 	return (MeshVS_DataMapNodeOfDataMapOfIntegerBoolean*)$self->Access();
 	}
 };
-%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean {
-	~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean\n");}
-	}
-};
+%feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_Tool;
@@ -1090,12 +1030,10 @@ class MeshVS_Tool {
 		Standard_Boolean GetAverageNormal(const TColStd_Array1OfReal &Nodes, gp_Vec & Norm);
 
 };
-%extend MeshVS_Tool {
-	~MeshVS_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_Tool\n");}
-	}
-};
+%feature("shadow") MeshVS_Tool::~MeshVS_Tool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_TwoNodes;
@@ -1105,12 +1043,10 @@ class MeshVS_TwoNodes {
 		MeshVS_TwoNodes(Standard_Integer =0, Standard_Integer =0);
 
 };
-%extend MeshVS_TwoNodes {
-	~MeshVS_TwoNodes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_TwoNodes\n");}
-	}
-};
+%feature("shadow") MeshVS_TwoNodes::~MeshVS_TwoNodes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerOwner;
@@ -1128,12 +1064,10 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerOwner : public TCollection_BasicMa
 		const Handle_SelectMgr_EntityOwner & Value() const;
 
 };
-%extend MeshVS_DataMapIteratorOfDataMapOfIntegerOwner {
-	~MeshVS_DataMapIteratorOfDataMapOfIntegerOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapIteratorOfDataMapOfIntegerOwner\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerOwner::~MeshVS_DataMapIteratorOfDataMapOfIntegerOwner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataSource;
@@ -1191,12 +1125,10 @@ class MeshVS_DataSource : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DataSource {
-	~MeshVS_DataSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataSource\n");}
-	}
-};
+%feature("shadow") MeshVS_DataSource::~MeshVS_DataSource %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DeformedDataSource;
@@ -1232,12 +1164,10 @@ class MeshVS_DeformedDataSource : public MeshVS_DataSource {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DeformedDataSource {
-	~MeshVS_DeformedDataSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DeformedDataSource\n");}
-	}
-};
+%feature("shadow") MeshVS_DeformedDataSource::~MeshVS_DeformedDataSource %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerVector;
@@ -1255,12 +1185,10 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerVector : public TCollection_BasicM
 		const gp_Vec & Value() const;
 
 };
-%extend MeshVS_DataMapIteratorOfDataMapOfIntegerVector {
-	~MeshVS_DataMapIteratorOfDataMapOfIntegerVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapIteratorOfDataMapOfIntegerVector\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerVector::~MeshVS_DataMapIteratorOfDataMapOfIntegerVector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_SequenceNodeOfSequenceOfPrsBuilder;
@@ -1284,12 +1212,10 @@ class MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
-	~MeshVS_SequenceNodeOfSequenceOfPrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_SequenceNodeOfSequenceOfPrsBuilder\n");}
-	}
-};
+%feature("shadow") MeshVS_SequenceNodeOfSequenceOfPrsBuilder::~MeshVS_SequenceNodeOfSequenceOfPrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_TwoColors;
@@ -1299,12 +1225,10 @@ class MeshVS_TwoColors {
 		MeshVS_TwoColors();
 
 };
-%extend MeshVS_TwoColors {
-	~MeshVS_TwoColors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_TwoColors\n");}
-	}
-};
+%feature("shadow") MeshVS_TwoColors::~MeshVS_TwoColors %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_PrsBuilder;
@@ -1354,12 +1278,10 @@ class MeshVS_PrsBuilder : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_PrsBuilder {
-	~MeshVS_PrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_PrsBuilder\n");}
-	}
-};
+%feature("shadow") MeshVS_PrsBuilder::~MeshVS_PrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_VectorPrsBuilder;
@@ -1401,12 +1323,10 @@ class MeshVS_VectorPrsBuilder : public MeshVS_PrsBuilder {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_VectorPrsBuilder {
-	~MeshVS_VectorPrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_VectorPrsBuilder\n");}
-	}
-};
+%feature("shadow") MeshVS_VectorPrsBuilder::~MeshVS_VectorPrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapOfTwoColorsMapOfInteger;
@@ -1438,12 +1358,10 @@ class MeshVS_DataMapOfTwoColorsMapOfInteger : public TCollection_BasicMap {
 		TColStd_MapOfInteger & operator()(const MeshVS_TwoColors &K);
 
 };
-%extend MeshVS_DataMapOfTwoColorsMapOfInteger {
-	~MeshVS_DataMapOfTwoColorsMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapOfTwoColorsMapOfInteger\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapOfTwoColorsMapOfInteger::~MeshVS_DataMapOfTwoColorsMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerColor;
@@ -1479,12 +1397,10 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerColor : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerColor {
-	~MeshVS_DataMapNodeOfDataMapOfIntegerColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapNodeOfDataMapOfIntegerColor\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerColor::~MeshVS_DataMapNodeOfDataMapOfIntegerColor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerBoolean;
@@ -1520,12 +1436,10 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerBoolean : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerBoolean {
-	~MeshVS_DataMapNodeOfDataMapOfIntegerBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapNodeOfDataMapOfIntegerBoolean\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerBoolean::~MeshVS_DataMapNodeOfDataMapOfIntegerBoolean %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner;
@@ -1543,12 +1457,10 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner : public TCollecti
 		const Handle_MeshVS_MeshEntityOwner & Value() const;
 
 };
-%extend MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner {
-	~MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner::~MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_SequenceOfPrsBuilder;
@@ -1600,12 +1512,10 @@ class MeshVS_SequenceOfPrsBuilder : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend MeshVS_SequenceOfPrsBuilder {
-	~MeshVS_SequenceOfPrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_SequenceOfPrsBuilder\n");}
-	}
-};
+%feature("shadow") MeshVS_SequenceOfPrsBuilder::~MeshVS_SequenceOfPrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_SensitiveSegment;
@@ -1633,12 +1543,10 @@ class MeshVS_SensitiveSegment : public Select3D_SensitiveSegment {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_SensitiveSegment {
-	~MeshVS_SensitiveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_SensitiveSegment\n");}
-	}
-};
+%feature("shadow") MeshVS_SensitiveSegment::~MeshVS_SensitiveSegment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerMeshEntityOwner;
@@ -1670,12 +1578,10 @@ class MeshVS_DataMapOfIntegerMeshEntityOwner : public TCollection_BasicMap {
 		Handle_MeshVS_MeshEntityOwner & operator()(const Standard_Integer &K);
 
 };
-%extend MeshVS_DataMapOfIntegerMeshEntityOwner {
-	~MeshVS_DataMapOfIntegerMeshEntityOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapOfIntegerMeshEntityOwner\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapOfIntegerMeshEntityOwner::~MeshVS_DataMapOfIntegerMeshEntityOwner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapOfColorMapOfInteger;
@@ -1707,12 +1613,10 @@ class MeshVS_DataMapOfColorMapOfInteger : public TCollection_BasicMap {
 		TColStd_MapOfInteger & operator()(const Quantity_Color &K);
 
 };
-%extend MeshVS_DataMapOfColorMapOfInteger {
-	~MeshVS_DataMapOfColorMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapOfColorMapOfInteger\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapOfColorMapOfInteger::~MeshVS_DataMapOfColorMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapOfHArray1OfSequenceOfInteger;
@@ -1744,12 +1648,10 @@ class MeshVS_DataMapOfHArray1OfSequenceOfInteger : public TCollection_BasicMap {
 		Handle_MeshVS_HArray1OfSequenceOfInteger & operator()(const Standard_Integer &K);
 
 };
-%extend MeshVS_DataMapOfHArray1OfSequenceOfInteger {
-	~MeshVS_DataMapOfHArray1OfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapOfHArray1OfSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapOfHArray1OfSequenceOfInteger::~MeshVS_DataMapOfHArray1OfSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_Drawer;
@@ -1803,12 +1705,10 @@ class MeshVS_Drawer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_Drawer {
-	~MeshVS_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_Drawer\n");}
-	}
-};
+%feature("shadow") MeshVS_Drawer::~MeshVS_Drawer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerVector;
@@ -1844,12 +1744,10 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerVector : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerVector {
-	~MeshVS_DataMapNodeOfDataMapOfIntegerVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapNodeOfDataMapOfIntegerVector\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerVector::~MeshVS_DataMapNodeOfDataMapOfIntegerVector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString;
@@ -1885,12 +1783,10 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString : public TCollection_MapNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString {
-	~MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString::~MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerMaterial;
@@ -1922,12 +1818,10 @@ class MeshVS_DataMapOfIntegerMaterial : public TCollection_BasicMap {
 		Graphic3d_MaterialAspect & operator()(const Standard_Integer &K);
 
 };
-%extend MeshVS_DataMapOfIntegerMaterial {
-	~MeshVS_DataMapOfIntegerMaterial() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapOfIntegerMaterial\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapOfIntegerMaterial::~MeshVS_DataMapOfIntegerMaterial %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_TwoNodesHasher;
@@ -1941,12 +1835,10 @@ class MeshVS_TwoNodesHasher {
 		Standard_Boolean IsEqual(const MeshVS_TwoNodes &K1, const MeshVS_TwoNodes &K2);
 
 };
-%extend MeshVS_TwoNodesHasher {
-	~MeshVS_TwoNodesHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_TwoNodesHasher\n");}
-	}
-};
+%feature("shadow") MeshVS_TwoNodesHasher::~MeshVS_TwoNodesHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger;
@@ -1964,12 +1856,10 @@ class MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger : public TCollectio
 		const TColStd_MapOfInteger & Value() const;
 
 };
-%extend MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger {
-	~MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger::~MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_TwoColorsHasher;
@@ -1983,12 +1873,10 @@ class MeshVS_TwoColorsHasher {
 		Standard_Boolean IsEqual(const MeshVS_TwoColors &K1, const MeshVS_TwoColors &K2);
 
 };
-%extend MeshVS_TwoColorsHasher {
-	~MeshVS_TwoColorsHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_TwoColorsHasher\n");}
-	}
-};
+%feature("shadow") MeshVS_TwoColorsHasher::~MeshVS_TwoColorsHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_Mesh;
@@ -2084,12 +1972,10 @@ class MeshVS_Mesh : public AIS_InteractiveObject {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_Mesh {
-	~MeshVS_Mesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_Mesh\n");}
-	}
-};
+%feature("shadow") MeshVS_Mesh::~MeshVS_Mesh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger;
@@ -2115,12 +2001,10 @@ class MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger : public TCollection_Ma
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
-	~MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger::~MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerOwner;
@@ -2156,12 +2040,10 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerOwner : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
-	~MeshVS_DataMapNodeOfDataMapOfIntegerOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapNodeOfDataMapOfIntegerOwner\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerOwner::~MeshVS_DataMapNodeOfDataMapOfIntegerOwner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_TextPrsBuilder;
@@ -2195,12 +2077,10 @@ class MeshVS_TextPrsBuilder : public MeshVS_PrsBuilder {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_TextPrsBuilder {
-	~MeshVS_TextPrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_TextPrsBuilder\n");}
-	}
-};
+%feature("shadow") MeshVS_TextPrsBuilder::~MeshVS_TextPrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_StdMapNodeOfMapOfTwoNodes;
@@ -2224,12 +2104,10 @@ class MeshVS_StdMapNodeOfMapOfTwoNodes : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_StdMapNodeOfMapOfTwoNodes {
-	~MeshVS_StdMapNodeOfMapOfTwoNodes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_StdMapNodeOfMapOfTwoNodes\n");}
-	}
-};
+%feature("shadow") MeshVS_StdMapNodeOfMapOfTwoNodes::~MeshVS_StdMapNodeOfMapOfTwoNodes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_Array1OfSequenceOfInteger;
@@ -2267,12 +2145,10 @@ class MeshVS_Array1OfSequenceOfInteger {
 		TColStd_SequenceOfInteger & operator()(const Standard_Integer Index);
 
 };
-%extend MeshVS_Array1OfSequenceOfInteger {
-	~MeshVS_Array1OfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_Array1OfSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") MeshVS_Array1OfSequenceOfInteger::~MeshVS_Array1OfSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors;
@@ -2290,12 +2166,10 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors : public TCollection_Bas
 		const MeshVS_TwoColors & Value() const;
 
 };
-%extend MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors {
-	~MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors::~MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerAsciiString;
@@ -2327,12 +2201,10 @@ class MeshVS_DataMapOfIntegerAsciiString : public TCollection_BasicMap {
 		TCollection_AsciiString & operator()(const Standard_Integer &K);
 
 };
-%extend MeshVS_DataMapOfIntegerAsciiString {
-	~MeshVS_DataMapOfIntegerAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapOfIntegerAsciiString\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapOfIntegerAsciiString::~MeshVS_DataMapOfIntegerAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString;
@@ -2350,12 +2222,10 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString : public TCollection_B
 		const TCollection_AsciiString & Value() const;
 
 };
-%extend MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString {
-	~MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString::~MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataSource3D;
@@ -2383,12 +2253,10 @@ class MeshVS_DataSource3D : public MeshVS_DataSource {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DataSource3D {
-	~MeshVS_DataSource3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataSource3D\n");}
-	}
-};
+%feature("shadow") MeshVS_DataSource3D::~MeshVS_DataSource3D %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial;
@@ -2406,12 +2274,10 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial : public TCollection_Basi
 		const Graphic3d_MaterialAspect & Value() const;
 
 };
-%extend MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial {
-	~MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial::~MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean;
@@ -2429,12 +2295,10 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean : public TCollection_Basic
 		const Standard_Boolean & Value() const;
 
 };
-%extend MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean {
-	~MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean::~MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_Buffer;
@@ -2444,12 +2308,10 @@ class MeshVS_Buffer {
 		MeshVS_Buffer(const Standard_Size theSize);
 
 };
-%extend MeshVS_Buffer {
-	~MeshVS_Buffer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_Buffer\n");}
-	}
-};
+%feature("shadow") MeshVS_Buffer::~MeshVS_Buffer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_HArray1OfSequenceOfInteger;
@@ -2491,12 +2353,10 @@ class MeshVS_HArray1OfSequenceOfInteger : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_HArray1OfSequenceOfInteger {
-	~MeshVS_HArray1OfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_HArray1OfSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") MeshVS_HArray1OfSequenceOfInteger::~MeshVS_HArray1OfSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger;
@@ -2514,12 +2374,10 @@ class MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger : public TCollection_Ba
 		const TColStd_MapOfInteger & Value() const;
 
 };
-%extend MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger {
-	~MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger::~MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_MeshEntityOwner;
@@ -2561,12 +2419,10 @@ class MeshVS_MeshEntityOwner : public SelectMgr_EntityOwner {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_MeshEntityOwner {
-	~MeshVS_MeshEntityOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_MeshEntityOwner\n");}
-	}
-};
+%feature("shadow") MeshVS_MeshEntityOwner::~MeshVS_MeshEntityOwner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerBoolean;
@@ -2598,12 +2454,10 @@ class MeshVS_DataMapOfIntegerBoolean : public TCollection_BasicMap {
 		Standard_Boolean & operator()(const Standard_Integer &K);
 
 };
-%extend MeshVS_DataMapOfIntegerBoolean {
-	~MeshVS_DataMapOfIntegerBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapOfIntegerBoolean\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapOfIntegerBoolean::~MeshVS_DataMapOfIntegerBoolean %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_SensitivePolyhedron;
@@ -2639,12 +2493,10 @@ class MeshVS_SensitivePolyhedron : public Select3D_SensitiveEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_SensitivePolyhedron {
-	~MeshVS_SensitivePolyhedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_SensitivePolyhedron\n");}
-	}
-};
+%feature("shadow") MeshVS_SensitivePolyhedron::~MeshVS_SensitivePolyhedron %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_SensitiveMesh;
@@ -2682,12 +2534,10 @@ class MeshVS_SensitiveMesh : public Select3D_SensitiveEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_SensitiveMesh {
-	~MeshVS_SensitiveMesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_SensitiveMesh\n");}
-	}
-};
+%feature("shadow") MeshVS_SensitiveMesh::~MeshVS_SensitiveMesh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors;
@@ -2723,12 +2573,10 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors : public TCollection_MapNode
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors {
-	~MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors::~MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger;
@@ -2764,12 +2612,10 @@ class MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger : public TCollecti
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger {
-	~MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger::~MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerColor;
@@ -2801,12 +2647,10 @@ class MeshVS_DataMapOfIntegerColor : public TCollection_BasicMap {
 		Quantity_Color & operator()(const Standard_Integer &K);
 
 };
-%extend MeshVS_DataMapOfIntegerColor {
-	~MeshVS_DataMapOfIntegerColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapOfIntegerColor\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapOfIntegerColor::~MeshVS_DataMapOfIntegerColor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_ColorHasher;
@@ -2820,12 +2664,10 @@ class MeshVS_ColorHasher : public TColStd_MapIntegerHasher {
 		Standard_Boolean IsEqual(const Quantity_Color &K1, const Quantity_Color &K2);
 
 };
-%extend MeshVS_ColorHasher {
-	~MeshVS_ColorHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_ColorHasher\n");}
-	}
-};
+%feature("shadow") MeshVS_ColorHasher::~MeshVS_ColorHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerVector;
@@ -2857,12 +2699,10 @@ class MeshVS_DataMapOfIntegerVector : public TCollection_BasicMap {
 		gp_Vec & operator()(const Standard_Integer &K);
 
 };
-%extend MeshVS_DataMapOfIntegerVector {
-	~MeshVS_DataMapOfIntegerVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapOfIntegerVector\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapOfIntegerVector::~MeshVS_DataMapOfIntegerVector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_NodalColorPrsBuilder;
@@ -2916,12 +2756,10 @@ class MeshVS_NodalColorPrsBuilder : public MeshVS_PrsBuilder {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_NodalColorPrsBuilder {
-	~MeshVS_NodalColorPrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_NodalColorPrsBuilder\n");}
-	}
-};
+%feature("shadow") MeshVS_NodalColorPrsBuilder::~MeshVS_NodalColorPrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_MapOfTwoNodes;
@@ -2945,12 +2783,10 @@ class MeshVS_MapOfTwoNodes : public TCollection_BasicMap {
 		Standard_Boolean Remove(const MeshVS_TwoNodes &aKey);
 
 };
-%extend MeshVS_MapOfTwoNodes {
-	~MeshVS_MapOfTwoNodes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_MapOfTwoNodes\n");}
-	}
-};
+%feature("shadow") MeshVS_MapOfTwoNodes::~MeshVS_MapOfTwoNodes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_ElementalColorPrsBuilder;
@@ -2998,12 +2834,10 @@ class MeshVS_ElementalColorPrsBuilder : public MeshVS_PrsBuilder {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_ElementalColorPrsBuilder {
-	~MeshVS_ElementalColorPrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_ElementalColorPrsBuilder\n");}
-	}
-};
+%feature("shadow") MeshVS_ElementalColorPrsBuilder::~MeshVS_ElementalColorPrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger;
@@ -3029,12 +2863,10 @@ class MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger : public TCollection_MapNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger {
-	~MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger::~MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerColor;
@@ -3052,12 +2884,10 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerColor : public TCollection_BasicMa
 		const Quantity_Color & Value() const;
 
 };
-%extend MeshVS_DataMapIteratorOfDataMapOfIntegerColor {
-	~MeshVS_DataMapIteratorOfDataMapOfIntegerColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapIteratorOfDataMapOfIntegerColor\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerColor::~MeshVS_DataMapIteratorOfDataMapOfIntegerColor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_SensitiveFace;
@@ -3085,12 +2915,10 @@ class MeshVS_SensitiveFace : public Select3D_SensitiveFace {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_SensitiveFace {
-	~MeshVS_SensitiveFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_SensitiveFace\n");}
-	}
-};
+%feature("shadow") MeshVS_SensitiveFace::~MeshVS_SensitiveFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerMaterial;
@@ -3126,12 +2954,10 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerMaterial : public TCollection_MapNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
-	~MeshVS_DataMapNodeOfDataMapOfIntegerMaterial() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapNodeOfDataMapOfIntegerMaterial\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerMaterial::~MeshVS_DataMapNodeOfDataMapOfIntegerMaterial %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerTwoColors;
@@ -3163,12 +2989,10 @@ class MeshVS_DataMapOfIntegerTwoColors : public TCollection_BasicMap {
 		MeshVS_TwoColors & operator()(const Standard_Integer &K);
 
 };
-%extend MeshVS_DataMapOfIntegerTwoColors {
-	~MeshVS_DataMapOfIntegerTwoColors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapOfIntegerTwoColors\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapOfIntegerTwoColors::~MeshVS_DataMapOfIntegerTwoColors %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_MapIteratorOfMapOfTwoNodes;
@@ -3184,12 +3008,10 @@ class MeshVS_MapIteratorOfMapOfTwoNodes : public TCollection_BasicMapIterator {
 		const MeshVS_TwoNodes & Key() const;
 
 };
-%extend MeshVS_MapIteratorOfMapOfTwoNodes {
-	~MeshVS_MapIteratorOfMapOfTwoNodes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_MapIteratorOfMapOfTwoNodes\n");}
-	}
-};
+%feature("shadow") MeshVS_MapIteratorOfMapOfTwoNodes::~MeshVS_MapIteratorOfMapOfTwoNodes %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner;
@@ -3225,12 +3047,10 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner : public TCollection_M
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
-	~MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner::~MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerOwner;
@@ -3262,12 +3082,10 @@ class MeshVS_DataMapOfIntegerOwner : public TCollection_BasicMap {
 		Handle_SelectMgr_EntityOwner & operator()(const Standard_Integer &K);
 
 };
-%extend MeshVS_DataMapOfIntegerOwner {
-	~MeshVS_DataMapOfIntegerOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapOfIntegerOwner\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapOfIntegerOwner::~MeshVS_DataMapOfIntegerOwner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_MeshOwner;
@@ -3311,12 +3129,10 @@ class MeshVS_MeshOwner : public SelectMgr_EntityOwner {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_MeshOwner {
-	~MeshVS_MeshOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_MeshOwner\n");}
-	}
-};
+%feature("shadow") MeshVS_MeshOwner::~MeshVS_MeshOwner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger;
@@ -3334,12 +3150,10 @@ class MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger : public TColl
 		const Handle_MeshVS_HArray1OfSequenceOfInteger & Value() const;
 
 };
-%extend MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger {
-	~MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger::~MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_DummySensitiveEntity;
@@ -3375,12 +3189,10 @@ class MeshVS_DummySensitiveEntity : public SelectBasics_SensitiveEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_DummySensitiveEntity {
-	~MeshVS_DummySensitiveEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_DummySensitiveEntity\n");}
-	}
-};
+%feature("shadow") MeshVS_DummySensitiveEntity::~MeshVS_DummySensitiveEntity %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MeshVS_MeshPrsBuilder;
@@ -3414,9 +3226,7 @@ class MeshVS_MeshPrsBuilder : public MeshVS_PrsBuilder {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MeshVS_MeshPrsBuilder {
-	~MeshVS_MeshPrsBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshVS_MeshPrsBuilder\n");}
-	}
-};
+%feature("shadow") MeshVS_MeshPrsBuilder::~MeshVS_MeshPrsBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

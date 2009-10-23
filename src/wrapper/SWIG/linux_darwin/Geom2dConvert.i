@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Geom2dConvert_dependencies.i
 
 
@@ -60,12 +64,10 @@ class Geom2dConvert {
 		void C0BSplineToArrayOfC1BSplineCurve(const Handle_Geom2d_BSplineCurve &BS, Handle_TColGeom2d_HArray1OfBSplineCurve & tabBS, const Standard_Real AngularTolerance, const Standard_Real Tolerance);
 
 };
-%extend Geom2dConvert {
-	~Geom2dConvert() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dConvert\n");}
-	}
-};
+%feature("shadow") Geom2dConvert::~Geom2dConvert %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dConvert_CompCurveToBSplineCurve;
@@ -79,12 +81,10 @@ class Geom2dConvert_CompCurveToBSplineCurve {
 		Handle_Geom2d_BSplineCurve BSplineCurve() const;
 
 };
-%extend Geom2dConvert_CompCurveToBSplineCurve {
-	~Geom2dConvert_CompCurveToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_CompCurveToBSplineCurve\n");}
-	}
-};
+%feature("shadow") Geom2dConvert_CompCurveToBSplineCurve::~Geom2dConvert_CompCurveToBSplineCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dConvert_BSplineCurveKnotSplitting;
@@ -100,12 +100,10 @@ class Geom2dConvert_BSplineCurveKnotSplitting {
 		Standard_Integer SplitValue(const Standard_Integer Index) const;
 
 };
-%extend Geom2dConvert_BSplineCurveKnotSplitting {
-	~Geom2dConvert_BSplineCurveKnotSplitting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_BSplineCurveKnotSplitting\n");}
-	}
-};
+%feature("shadow") Geom2dConvert_BSplineCurveKnotSplitting::~Geom2dConvert_BSplineCurveKnotSplitting %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dConvert_BSplineCurveToBezierCurve;
@@ -125,12 +123,10 @@ class Geom2dConvert_BSplineCurveToBezierCurve {
 		Standard_Integer NbArcs() const;
 
 };
-%extend Geom2dConvert_BSplineCurveToBezierCurve {
-	~Geom2dConvert_BSplineCurveToBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_BSplineCurveToBezierCurve\n");}
-	}
-};
+%feature("shadow") Geom2dConvert_BSplineCurveToBezierCurve::~Geom2dConvert_BSplineCurveToBezierCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dConvert_ApproxCurve;
@@ -156,9 +152,7 @@ class Geom2dConvert_ApproxCurve {
 		};
 
 };
-%extend Geom2dConvert_ApproxCurve {
-	~Geom2dConvert_ApproxCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_ApproxCurve\n");}
-	}
-};
+%feature("shadow") Geom2dConvert_ApproxCurve::~Geom2dConvert_ApproxCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

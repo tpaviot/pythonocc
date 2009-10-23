@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include APIHeaderSection_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_APIHeaderSection_EditHeader : public Handle_IFSelect_Editor {
 	return (APIHeaderSection_EditHeader*)$self->Access();
 	}
 };
-%extend Handle_APIHeaderSection_EditHeader {
-	~Handle_APIHeaderSection_EditHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_APIHeaderSection_EditHeader\n");}
-	}
-};
+%feature("shadow") Handle_APIHeaderSection_EditHeader::~Handle_APIHeaderSection_EditHeader %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor APIHeaderSection_EditHeader;
@@ -94,12 +96,10 @@ class APIHeaderSection_EditHeader : public IFSelect_Editor {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend APIHeaderSection_EditHeader {
-	~APIHeaderSection_EditHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of APIHeaderSection_EditHeader\n");}
-	}
-};
+%feature("shadow") APIHeaderSection_EditHeader::~APIHeaderSection_EditHeader %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor APIHeaderSection_MakeHeader;
@@ -197,9 +197,7 @@ class APIHeaderSection_MakeHeader {
 		Handle_TCollection_HAsciiString ImplementationLevel() const;
 
 };
-%extend APIHeaderSection_MakeHeader {
-	~APIHeaderSection_MakeHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of APIHeaderSection_MakeHeader\n");}
-	}
-};
+%feature("shadow") APIHeaderSection_MakeHeader::~APIHeaderSection_MakeHeader %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

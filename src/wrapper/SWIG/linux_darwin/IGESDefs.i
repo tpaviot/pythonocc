@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IGESDefs_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_IGESDefs_Protocol : public Handle_IGESData_Protocol {
 	return (IGESDefs_Protocol*)$self->Access();
 	}
 };
-%extend Handle_IGESDefs_Protocol {
-	~Handle_IGESDefs_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_Protocol\n");}
-	}
-};
+%feature("shadow") Handle_IGESDefs_Protocol::~Handle_IGESDefs_Protocol %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate;
@@ -87,12 +89,10 @@ class Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public Handle_MMgt
 	return (IGESDefs_HArray1OfHArray1OfTextDisplayTemplate*)$self->Access();
 	}
 };
-%extend Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
-	~Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate\n");}
-	}
-};
+%feature("shadow") Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate::~Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESDefs_GeneralModule;
@@ -117,12 +117,10 @@ class Handle_IGESDefs_GeneralModule : public Handle_IGESData_GeneralModule {
 	return (IGESDefs_GeneralModule*)$self->Access();
 	}
 };
-%extend Handle_IGESDefs_GeneralModule {
-	~Handle_IGESDefs_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_GeneralModule\n");}
-	}
-};
+%feature("shadow") Handle_IGESDefs_GeneralModule::~Handle_IGESDefs_GeneralModule %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESDefs_SpecificModule;
@@ -147,12 +145,10 @@ class Handle_IGESDefs_SpecificModule : public Handle_IGESData_SpecificModule {
 	return (IGESDefs_SpecificModule*)$self->Access();
 	}
 };
-%extend Handle_IGESDefs_SpecificModule {
-	~Handle_IGESDefs_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_SpecificModule\n");}
-	}
-};
+%feature("shadow") Handle_IGESDefs_SpecificModule::~Handle_IGESDefs_SpecificModule %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESDefs_HArray1OfTabularData;
@@ -177,12 +173,10 @@ class Handle_IGESDefs_HArray1OfTabularData : public Handle_MMgt_TShared {
 	return (IGESDefs_HArray1OfTabularData*)$self->Access();
 	}
 };
-%extend Handle_IGESDefs_HArray1OfTabularData {
-	~Handle_IGESDefs_HArray1OfTabularData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_HArray1OfTabularData\n");}
-	}
-};
+%feature("shadow") Handle_IGESDefs_HArray1OfTabularData::~Handle_IGESDefs_HArray1OfTabularData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESDefs_AttributeTable;
@@ -207,12 +201,10 @@ class Handle_IGESDefs_AttributeTable : public Handle_IGESData_IGESEntity {
 	return (IGESDefs_AttributeTable*)$self->Access();
 	}
 };
-%extend Handle_IGESDefs_AttributeTable {
-	~Handle_IGESDefs_AttributeTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_AttributeTable\n");}
-	}
-};
+%feature("shadow") Handle_IGESDefs_AttributeTable::~Handle_IGESDefs_AttributeTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESDefs_GenericData;
@@ -237,12 +229,10 @@ class Handle_IGESDefs_GenericData : public Handle_IGESData_IGESEntity {
 	return (IGESDefs_GenericData*)$self->Access();
 	}
 };
-%extend Handle_IGESDefs_GenericData {
-	~Handle_IGESDefs_GenericData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_GenericData\n");}
-	}
-};
+%feature("shadow") Handle_IGESDefs_GenericData::~Handle_IGESDefs_GenericData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESDefs_TabularData;
@@ -267,12 +257,10 @@ class Handle_IGESDefs_TabularData : public Handle_IGESData_IGESEntity {
 	return (IGESDefs_TabularData*)$self->Access();
 	}
 };
-%extend Handle_IGESDefs_TabularData {
-	~Handle_IGESDefs_TabularData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_TabularData\n");}
-	}
-};
+%feature("shadow") Handle_IGESDefs_TabularData::~Handle_IGESDefs_TabularData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESDefs_AssociativityDef;
@@ -297,12 +285,10 @@ class Handle_IGESDefs_AssociativityDef : public Handle_IGESData_IGESEntity {
 	return (IGESDefs_AssociativityDef*)$self->Access();
 	}
 };
-%extend Handle_IGESDefs_AssociativityDef {
-	~Handle_IGESDefs_AssociativityDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_AssociativityDef\n");}
-	}
-};
+%feature("shadow") Handle_IGESDefs_AssociativityDef::~Handle_IGESDefs_AssociativityDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESDefs_AttributeDef;
@@ -327,12 +313,10 @@ class Handle_IGESDefs_AttributeDef : public Handle_IGESData_IGESEntity {
 	return (IGESDefs_AttributeDef*)$self->Access();
 	}
 };
-%extend Handle_IGESDefs_AttributeDef {
-	~Handle_IGESDefs_AttributeDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_AttributeDef\n");}
-	}
-};
+%feature("shadow") Handle_IGESDefs_AttributeDef::~Handle_IGESDefs_AttributeDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESDefs_UnitsData;
@@ -357,12 +341,10 @@ class Handle_IGESDefs_UnitsData : public Handle_IGESData_IGESEntity {
 	return (IGESDefs_UnitsData*)$self->Access();
 	}
 };
-%extend Handle_IGESDefs_UnitsData {
-	~Handle_IGESDefs_UnitsData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_UnitsData\n");}
-	}
-};
+%feature("shadow") Handle_IGESDefs_UnitsData::~Handle_IGESDefs_UnitsData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESDefs_ReadWriteModule;
@@ -387,12 +369,10 @@ class Handle_IGESDefs_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	return (IGESDefs_ReadWriteModule*)$self->Access();
 	}
 };
-%extend Handle_IGESDefs_ReadWriteModule {
-	~Handle_IGESDefs_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_ReadWriteModule\n");}
-	}
-};
+%feature("shadow") Handle_IGESDefs_ReadWriteModule::~Handle_IGESDefs_ReadWriteModule %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESDefs_MacroDef;
@@ -417,12 +397,10 @@ class Handle_IGESDefs_MacroDef : public Handle_IGESData_IGESEntity {
 	return (IGESDefs_MacroDef*)$self->Access();
 	}
 };
-%extend Handle_IGESDefs_MacroDef {
-	~Handle_IGESDefs_MacroDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_MacroDef\n");}
-	}
-};
+%feature("shadow") Handle_IGESDefs_MacroDef::~Handle_IGESDefs_MacroDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_ToolAttributeDef;
@@ -446,12 +424,10 @@ class IGESDefs_ToolAttributeDef {
 		void OwnDump(const Handle_IGESDefs_AttributeDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESDefs_ToolAttributeDef {
-	~IGESDefs_ToolAttributeDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAttributeDef\n");}
-	}
-};
+%feature("shadow") IGESDefs_ToolAttributeDef::~IGESDefs_ToolAttributeDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_GenericData;
@@ -495,12 +471,10 @@ class IGESDefs_GenericData : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESDefs_GenericData {
-	~IGESDefs_GenericData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_GenericData\n");}
-	}
-};
+%feature("shadow") IGESDefs_GenericData::~IGESDefs_GenericData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_HArray1OfTabularData;
@@ -542,12 +516,10 @@ class IGESDefs_HArray1OfTabularData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESDefs_HArray1OfTabularData {
-	~IGESDefs_HArray1OfTabularData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_HArray1OfTabularData\n");}
-	}
-};
+%feature("shadow") IGESDefs_HArray1OfTabularData::~IGESDefs_HArray1OfTabularData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_GeneralModule;
@@ -581,12 +553,10 @@ class IGESDefs_GeneralModule : public IGESData_GeneralModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESDefs_GeneralModule {
-	~IGESDefs_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_GeneralModule\n");}
-	}
-};
+%feature("shadow") IGESDefs_GeneralModule::~IGESDefs_GeneralModule %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_SpecificModule;
@@ -610,12 +580,10 @@ class IGESDefs_SpecificModule : public IGESData_SpecificModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESDefs_SpecificModule {
-	~IGESDefs_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_SpecificModule\n");}
-	}
-};
+%feature("shadow") IGESDefs_SpecificModule::~IGESDefs_SpecificModule %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_ToolAssociativityDef;
@@ -639,12 +607,10 @@ class IGESDefs_ToolAssociativityDef {
 		void OwnDump(const Handle_IGESDefs_AssociativityDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESDefs_ToolAssociativityDef {
-	~IGESDefs_ToolAssociativityDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAssociativityDef\n");}
-	}
-};
+%feature("shadow") IGESDefs_ToolAssociativityDef::~IGESDefs_ToolAssociativityDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_ToolUnitsData;
@@ -668,12 +634,10 @@ class IGESDefs_ToolUnitsData {
 		void OwnDump(const Handle_IGESDefs_UnitsData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESDefs_ToolUnitsData {
-	~IGESDefs_ToolUnitsData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolUnitsData\n");}
-	}
-};
+%feature("shadow") IGESDefs_ToolUnitsData::~IGESDefs_ToolUnitsData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_ReadWriteModule;
@@ -701,12 +665,10 @@ class IGESDefs_ReadWriteModule : public IGESData_ReadWriteModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESDefs_ReadWriteModule {
-	~IGESDefs_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ReadWriteModule\n");}
-	}
-};
+%feature("shadow") IGESDefs_ReadWriteModule::~IGESDefs_ReadWriteModule %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_AssociativityDef;
@@ -746,12 +708,10 @@ class IGESDefs_AssociativityDef : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESDefs_AssociativityDef {
-	~IGESDefs_AssociativityDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_AssociativityDef\n");}
-	}
-};
+%feature("shadow") IGESDefs_AssociativityDef::~IGESDefs_AssociativityDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs;
@@ -765,12 +725,10 @@ class IGESDefs {
 		Handle_IGESDefs_Protocol Protocol();
 
 };
-%extend IGESDefs {
-	~IGESDefs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs\n");}
-	}
-};
+%feature("shadow") IGESDefs::~IGESDefs %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_ToolGenericData;
@@ -794,12 +752,10 @@ class IGESDefs_ToolGenericData {
 		void OwnDump(const Handle_IGESDefs_GenericData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESDefs_ToolGenericData {
-	~IGESDefs_ToolGenericData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolGenericData\n");}
-	}
-};
+%feature("shadow") IGESDefs_ToolGenericData::~IGESDefs_ToolGenericData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_ToolTabularData;
@@ -823,12 +779,10 @@ class IGESDefs_ToolTabularData {
 		void OwnDump(const Handle_IGESDefs_TabularData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESDefs_ToolTabularData {
-	~IGESDefs_ToolTabularData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolTabularData\n");}
-	}
-};
+%feature("shadow") IGESDefs_ToolTabularData::~IGESDefs_ToolTabularData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_ToolMacroDef;
@@ -852,12 +806,10 @@ class IGESDefs_ToolMacroDef {
 		void OwnDump(const Handle_IGESDefs_MacroDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESDefs_ToolMacroDef {
-	~IGESDefs_ToolMacroDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolMacroDef\n");}
-	}
-};
+%feature("shadow") IGESDefs_ToolMacroDef::~IGESDefs_ToolMacroDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_ToolAttributeTable;
@@ -881,12 +833,10 @@ class IGESDefs_ToolAttributeTable {
 		void OwnDump(const Handle_IGESDefs_AttributeTable &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESDefs_ToolAttributeTable {
-	~IGESDefs_ToolAttributeTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAttributeTable\n");}
-	}
-};
+%feature("shadow") IGESDefs_ToolAttributeTable::~IGESDefs_ToolAttributeTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_MacroDef;
@@ -920,12 +870,10 @@ class IGESDefs_MacroDef : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESDefs_MacroDef {
-	~IGESDefs_MacroDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_MacroDef\n");}
-	}
-};
+%feature("shadow") IGESDefs_MacroDef::~IGESDefs_MacroDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_UnitsData;
@@ -957,12 +905,10 @@ class IGESDefs_UnitsData : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESDefs_UnitsData {
-	~IGESDefs_UnitsData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_UnitsData\n");}
-	}
-};
+%feature("shadow") IGESDefs_UnitsData::~IGESDefs_UnitsData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_AttributeDef;
@@ -1018,12 +964,10 @@ class IGESDefs_AttributeDef : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESDefs_AttributeDef {
-	~IGESDefs_AttributeDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_AttributeDef\n");}
-	}
-};
+%feature("shadow") IGESDefs_AttributeDef::~IGESDefs_AttributeDef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_HArray1OfHArray1OfTextDisplayTemplate;
@@ -1055,12 +999,10 @@ class IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
-	~IGESDefs_HArray1OfHArray1OfTextDisplayTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_HArray1OfHArray1OfTextDisplayTemplate\n");}
-	}
-};
+%feature("shadow") IGESDefs_HArray1OfHArray1OfTextDisplayTemplate::~IGESDefs_HArray1OfHArray1OfTextDisplayTemplate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_TabularData;
@@ -1106,12 +1048,10 @@ class IGESDefs_TabularData : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESDefs_TabularData {
-	~IGESDefs_TabularData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_TabularData\n");}
-	}
-};
+%feature("shadow") IGESDefs_TabularData::~IGESDefs_TabularData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_Array1OfTabularData;
@@ -1149,12 +1089,10 @@ class IGESDefs_Array1OfTabularData {
 		Handle_IGESDefs_TabularData & operator()(const Standard_Integer Index);
 
 };
-%extend IGESDefs_Array1OfTabularData {
-	~IGESDefs_Array1OfTabularData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_Array1OfTabularData\n");}
-	}
-};
+%feature("shadow") IGESDefs_Array1OfTabularData::~IGESDefs_Array1OfTabularData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESDefs_AttributeTable;
@@ -1202,9 +1140,7 @@ class IGESDefs_AttributeTable : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESDefs_AttributeTable {
-	~IGESDefs_AttributeTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDefs_AttributeTable\n");}
-	}
-};
+%feature("shadow") IGESDefs_AttributeTable::~IGESDefs_AttributeTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

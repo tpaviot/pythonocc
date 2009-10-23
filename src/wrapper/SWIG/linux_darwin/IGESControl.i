@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IGESControl_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_IGESControl_AlgoContainer : public Handle_IGESToBRep_AlgoContainer 
 	return (IGESControl_AlgoContainer*)$self->Access();
 	}
 };
-%extend Handle_IGESControl_AlgoContainer {
-	~Handle_IGESControl_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_AlgoContainer\n");}
-	}
-};
+%feature("shadow") Handle_IGESControl_AlgoContainer::~Handle_IGESControl_AlgoContainer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESControl_ActorWrite;
@@ -87,12 +89,10 @@ class Handle_IGESControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 	return (IGESControl_ActorWrite*)$self->Access();
 	}
 };
-%extend Handle_IGESControl_ActorWrite {
-	~Handle_IGESControl_ActorWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_ActorWrite\n");}
-	}
-};
+%feature("shadow") Handle_IGESControl_ActorWrite::~Handle_IGESControl_ActorWrite %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESControl_Controller;
@@ -117,12 +117,10 @@ class Handle_IGESControl_Controller : public Handle_XSControl_Controller {
 	return (IGESControl_Controller*)$self->Access();
 	}
 };
-%extend Handle_IGESControl_Controller {
-	~Handle_IGESControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_Controller\n");}
-	}
-};
+%feature("shadow") Handle_IGESControl_Controller::~Handle_IGESControl_Controller %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESControl_IGESBoundary;
@@ -147,12 +145,10 @@ class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
 	return (IGESControl_IGESBoundary*)$self->Access();
 	}
 };
-%extend Handle_IGESControl_IGESBoundary {
-	~Handle_IGESControl_IGESBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_IGESBoundary\n");}
-	}
-};
+%feature("shadow") Handle_IGESControl_IGESBoundary::~Handle_IGESControl_IGESBoundary %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IGESControl_ToolContainer;
@@ -177,12 +173,10 @@ class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer 
 	return (IGESControl_ToolContainer*)$self->Access();
 	}
 };
-%extend Handle_IGESControl_ToolContainer {
-	~Handle_IGESControl_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_ToolContainer\n");}
-	}
-};
+%feature("shadow") Handle_IGESControl_ToolContainer::~Handle_IGESControl_ToolContainer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESControl_Reader;
@@ -204,12 +198,10 @@ class IGESControl_Reader : public XSControl_Reader {
 		void PrintTransferInfo(const IFSelect_PrintFail failwarn, const IFSelect_PrintCount mode) const;
 
 };
-%extend IGESControl_Reader {
-	~IGESControl_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_Reader\n");}
-	}
-};
+%feature("shadow") IGESControl_Reader::~IGESControl_Reader %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESControl_ActorWrite;
@@ -235,12 +227,10 @@ class IGESControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESControl_ActorWrite {
-	~IGESControl_ActorWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_ActorWrite\n");}
-	}
-};
+%feature("shadow") IGESControl_ActorWrite::~IGESControl_ActorWrite %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESControl_ToolContainer;
@@ -264,12 +254,10 @@ class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESControl_ToolContainer {
-	~IGESControl_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_ToolContainer\n");}
-	}
-};
+%feature("shadow") IGESControl_ToolContainer::~IGESControl_ToolContainer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESControl_AlgoContainer;
@@ -291,12 +279,10 @@ class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESControl_AlgoContainer {
-	~IGESControl_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_AlgoContainer\n");}
-	}
-};
+%feature("shadow") IGESControl_AlgoContainer::~IGESControl_AlgoContainer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESControl_IGESBoundary;
@@ -322,12 +308,10 @@ class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESControl_IGESBoundary {
-	~IGESControl_IGESBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_IGESBoundary\n");}
-	}
-};
+%feature("shadow") IGESControl_IGESBoundary::~IGESControl_IGESBoundary %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESControl_Writer;
@@ -361,12 +345,10 @@ class IGESControl_Writer {
 		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode=0) const;
 
 };
-%extend IGESControl_Writer {
-	~IGESControl_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_Writer\n");}
-	}
-};
+%feature("shadow") IGESControl_Writer::~IGESControl_Writer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESControl_Controller;
@@ -398,9 +380,7 @@ class IGESControl_Controller : public XSControl_Controller {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IGESControl_Controller {
-	~IGESControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_Controller\n");}
-	}
-};
+%feature("shadow") IGESControl_Controller::~IGESControl_Controller %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

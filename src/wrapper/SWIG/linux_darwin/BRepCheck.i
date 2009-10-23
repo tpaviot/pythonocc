@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepCheck_dependencies.i
 
 
@@ -94,20 +98,10 @@ class Handle_BRepCheck_Result : public Handle_MMgt_TShared {
 	return (BRepCheck_Result*)$self->Access();
 	}
 };
-%extend Handle_BRepCheck_Result {
-	~Handle_BRepCheck_Result() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Result\n");}
-	}
-};
-
-%extend Handle_BRepCheck_Result {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_BRepCheck_Result::~Handle_BRepCheck_Result %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BRepCheck_Vertex;
@@ -132,20 +126,10 @@ class Handle_BRepCheck_Vertex : public Handle_BRepCheck_Result {
 	return (BRepCheck_Vertex*)$self->Access();
 	}
 };
-%extend Handle_BRepCheck_Vertex {
-	~Handle_BRepCheck_Vertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Vertex\n");}
-	}
-};
-
-%extend Handle_BRepCheck_Vertex {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_BRepCheck_Vertex::~Handle_BRepCheck_Vertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BRepCheck_Shell;
@@ -170,20 +154,10 @@ class Handle_BRepCheck_Shell : public Handle_BRepCheck_Result {
 	return (BRepCheck_Shell*)$self->Access();
 	}
 };
-%extend Handle_BRepCheck_Shell {
-	~Handle_BRepCheck_Shell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Shell\n");}
-	}
-};
-
-%extend Handle_BRepCheck_Shell {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_BRepCheck_Shell::~Handle_BRepCheck_Shell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BRepCheck_Face;
@@ -208,20 +182,10 @@ class Handle_BRepCheck_Face : public Handle_BRepCheck_Result {
 	return (BRepCheck_Face*)$self->Access();
 	}
 };
-%extend Handle_BRepCheck_Face {
-	~Handle_BRepCheck_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Face\n");}
-	}
-};
-
-%extend Handle_BRepCheck_Face {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_BRepCheck_Face::~Handle_BRepCheck_Face %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus;
@@ -246,20 +210,10 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public Handle_T
 	return (BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus*)$self->Access();
 	}
 };
-%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
-	~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus\n");}
-	}
-};
-
-%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus::~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BRepCheck_Wire;
@@ -284,20 +238,10 @@ class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
 	return (BRepCheck_Wire*)$self->Access();
 	}
 };
-%extend Handle_BRepCheck_Wire {
-	~Handle_BRepCheck_Wire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Wire\n");}
-	}
-};
-
-%extend Handle_BRepCheck_Wire {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_BRepCheck_Wire::~Handle_BRepCheck_Wire %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BRepCheck_ListNodeOfListOfStatus;
@@ -322,20 +266,10 @@ class Handle_BRepCheck_ListNodeOfListOfStatus : public Handle_TCollection_MapNod
 	return (BRepCheck_ListNodeOfListOfStatus*)$self->Access();
 	}
 };
-%extend Handle_BRepCheck_ListNodeOfListOfStatus {
-	~Handle_BRepCheck_ListNodeOfListOfStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_ListNodeOfListOfStatus\n");}
-	}
-};
-
-%extend Handle_BRepCheck_ListNodeOfListOfStatus {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_BRepCheck_ListNodeOfListOfStatus::~Handle_BRepCheck_ListNodeOfListOfStatus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BRepCheck_Edge;
@@ -360,20 +294,10 @@ class Handle_BRepCheck_Edge : public Handle_BRepCheck_Result {
 	return (BRepCheck_Edge*)$self->Access();
 	}
 };
-%extend Handle_BRepCheck_Edge {
-	~Handle_BRepCheck_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Edge\n");}
-	}
-};
-
-%extend Handle_BRepCheck_Edge {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_BRepCheck_Edge::~Handle_BRepCheck_Edge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult;
@@ -398,20 +322,10 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult : public Handle_TCollec
 	return (BRepCheck_DataMapNodeOfDataMapOfShapeResult*)$self->Access();
 	}
 };
-%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult {
-	~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult\n");}
-	}
-};
-
-%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult::~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_ListNodeOfListOfStatus;
@@ -435,20 +349,10 @@ class BRepCheck_ListNodeOfListOfStatus : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepCheck_ListNodeOfListOfStatus {
-	~BRepCheck_ListNodeOfListOfStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_ListNodeOfListOfStatus\n");}
-	}
-};
-
-%extend BRepCheck_ListNodeOfListOfStatus {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_ListNodeOfListOfStatus::~BRepCheck_ListNodeOfListOfStatus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_Result;
@@ -496,20 +400,10 @@ class BRepCheck_Result : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepCheck_Result {
-	~BRepCheck_Result() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_Result\n");}
-	}
-};
-
-%extend BRepCheck_Result {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_Result::~BRepCheck_Result %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_Shell;
@@ -547,20 +441,10 @@ class BRepCheck_Shell : public BRepCheck_Result {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepCheck_Shell {
-	~BRepCheck_Shell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_Shell\n");}
-	}
-};
-
-%extend BRepCheck_Shell {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_Shell::~BRepCheck_Shell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_DataMapIteratorOfDataMapOfShapeResult;
@@ -578,20 +462,10 @@ class BRepCheck_DataMapIteratorOfDataMapOfShapeResult : public TCollection_Basic
 		const Handle_BRepCheck_Result & Value() const;
 
 };
-%extend BRepCheck_DataMapIteratorOfDataMapOfShapeResult {
-	~BRepCheck_DataMapIteratorOfDataMapOfShapeResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapIteratorOfDataMapOfShapeResult\n");}
-	}
-};
-
-%extend BRepCheck_DataMapIteratorOfDataMapOfShapeResult {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_DataMapIteratorOfDataMapOfShapeResult::~BRepCheck_DataMapIteratorOfDataMapOfShapeResult %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_DataMapOfShapeResult;
@@ -623,20 +497,10 @@ class BRepCheck_DataMapOfShapeResult : public TCollection_BasicMap {
 		Handle_BRepCheck_Result & operator()(const TopoDS_Shape &K);
 
 };
-%extend BRepCheck_DataMapOfShapeResult {
-	~BRepCheck_DataMapOfShapeResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapOfShapeResult\n");}
-	}
-};
-
-%extend BRepCheck_DataMapOfShapeResult {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_DataMapOfShapeResult::~BRepCheck_DataMapOfShapeResult %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_Face;
@@ -678,20 +542,10 @@ class BRepCheck_Face : public BRepCheck_Result {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepCheck_Face {
-	~BRepCheck_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_Face\n");}
-	}
-};
-
-%extend BRepCheck_Face {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_Face::~BRepCheck_Face %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_DataMapNodeOfDataMapOfShapeResult;
@@ -717,20 +571,10 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeResult : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepCheck_DataMapNodeOfDataMapOfShapeResult {
-	~BRepCheck_DataMapNodeOfDataMapOfShapeResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapNodeOfDataMapOfShapeResult\n");}
-	}
-};
-
-%extend BRepCheck_DataMapNodeOfDataMapOfShapeResult {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_DataMapNodeOfDataMapOfShapeResult::~BRepCheck_DataMapNodeOfDataMapOfShapeResult %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_Vertex;
@@ -760,20 +604,10 @@ class BRepCheck_Vertex : public BRepCheck_Result {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepCheck_Vertex {
-	~BRepCheck_Vertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_Vertex\n");}
-	}
-};
-
-%extend BRepCheck_Vertex {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_Vertex::~BRepCheck_Vertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck;
@@ -789,20 +623,10 @@ class BRepCheck {
 		Standard_Boolean SelfIntersection(const TopoDS_Wire &W, const TopoDS_Face &F, TopoDS_Edge & E1, TopoDS_Edge & E2);
 
 };
-%extend BRepCheck {
-	~BRepCheck() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck\n");}
-	}
-};
-
-%extend BRepCheck {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck::~BRepCheck %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_Wire;
@@ -842,20 +666,10 @@ class BRepCheck_Wire : public BRepCheck_Result {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepCheck_Wire {
-	~BRepCheck_Wire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_Wire\n");}
-	}
-};
-
-%extend BRepCheck_Wire {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_Wire::~BRepCheck_Wire %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_DataMapOfShapeListOfStatus;
@@ -887,20 +701,10 @@ class BRepCheck_DataMapOfShapeListOfStatus : public TCollection_BasicMap {
 		BRepCheck_ListOfStatus & operator()(const TopoDS_Shape &K);
 
 };
-%extend BRepCheck_DataMapOfShapeListOfStatus {
-	~BRepCheck_DataMapOfShapeListOfStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapOfShapeListOfStatus\n");}
-	}
-};
-
-%extend BRepCheck_DataMapOfShapeListOfStatus {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_DataMapOfShapeListOfStatus::~BRepCheck_DataMapOfShapeListOfStatus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_Edge;
@@ -934,20 +738,10 @@ class BRepCheck_Edge : public BRepCheck_Result {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepCheck_Edge {
-	~BRepCheck_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_Edge\n");}
-	}
-};
-
-%extend BRepCheck_Edge {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_Edge::~BRepCheck_Edge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus;
@@ -973,20 +767,10 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public TCollection_Map
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
-	~BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus\n");}
-	}
-};
-
-%extend BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus::~BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus;
@@ -1004,20 +788,10 @@ class BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus : public TCollection
 		const BRepCheck_ListOfStatus & Value() const;
 
 };
-%extend BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus {
-	~BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus\n");}
-	}
-};
-
-%extend BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus::~BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_ListOfStatus;
@@ -1065,20 +839,10 @@ class BRepCheck_ListOfStatus {
 		void InsertAfter(BRepCheck_ListOfStatus & Other, BRepCheck_ListIteratorOfListOfStatus & It);
 
 };
-%extend BRepCheck_ListOfStatus {
-	~BRepCheck_ListOfStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_ListOfStatus\n");}
-	}
-};
-
-%extend BRepCheck_ListOfStatus {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_ListOfStatus::~BRepCheck_ListOfStatus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_ListIteratorOfListOfStatus;
@@ -1098,20 +862,10 @@ class BRepCheck_ListIteratorOfListOfStatus {
 		BRepCheck_Status & Value() const;
 
 };
-%extend BRepCheck_ListIteratorOfListOfStatus {
-	~BRepCheck_ListIteratorOfListOfStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_ListIteratorOfListOfStatus\n");}
-	}
-};
-
-%extend BRepCheck_ListIteratorOfListOfStatus {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_ListIteratorOfListOfStatus::~BRepCheck_ListIteratorOfListOfStatus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepCheck_Analyzer;
@@ -1129,17 +883,7 @@ class BRepCheck_Analyzer {
 		const Handle_BRepCheck_Result & Result(const TopoDS_Shape &S) const;
 
 };
-%extend BRepCheck_Analyzer {
-	~BRepCheck_Analyzer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepCheck_Analyzer\n");}
-	}
-};
-
-%extend BRepCheck_Analyzer {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepCheck_Analyzer::~BRepCheck_Analyzer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

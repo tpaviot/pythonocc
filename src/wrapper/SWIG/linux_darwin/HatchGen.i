@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include HatchGen_dependencies.i
 
 
@@ -72,12 +76,10 @@ class Handle_HatchGen_SequenceNodeOfDomains : public Handle_TCollection_SeqNode 
 	return (HatchGen_SequenceNodeOfDomains*)$self->Access();
 	}
 };
-%extend Handle_HatchGen_SequenceNodeOfDomains {
-	~Handle_HatchGen_SequenceNodeOfDomains() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfDomains\n");}
-	}
-};
+%feature("shadow") Handle_HatchGen_SequenceNodeOfDomains::~Handle_HatchGen_SequenceNodeOfDomains %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_HatchGen_SequenceNodeOfPointsOnElement;
@@ -102,12 +104,10 @@ class Handle_HatchGen_SequenceNodeOfPointsOnElement : public Handle_TCollection_
 	return (HatchGen_SequenceNodeOfPointsOnElement*)$self->Access();
 	}
 };
-%extend Handle_HatchGen_SequenceNodeOfPointsOnElement {
-	~Handle_HatchGen_SequenceNodeOfPointsOnElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfPointsOnElement\n");}
-	}
-};
+%feature("shadow") Handle_HatchGen_SequenceNodeOfPointsOnElement::~Handle_HatchGen_SequenceNodeOfPointsOnElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_HatchGen_SequenceNodeOfPointsOnHatching;
@@ -132,12 +132,10 @@ class Handle_HatchGen_SequenceNodeOfPointsOnHatching : public Handle_TCollection
 	return (HatchGen_SequenceNodeOfPointsOnHatching*)$self->Access();
 	}
 };
-%extend Handle_HatchGen_SequenceNodeOfPointsOnHatching {
-	~Handle_HatchGen_SequenceNodeOfPointsOnHatching() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfPointsOnHatching\n");}
-	}
-};
+%feature("shadow") Handle_HatchGen_SequenceNodeOfPointsOnHatching::~Handle_HatchGen_SequenceNodeOfPointsOnHatching %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HatchGen_PointsOnHatching;
@@ -189,12 +187,10 @@ class HatchGen_PointsOnHatching : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend HatchGen_PointsOnHatching {
-	~HatchGen_PointsOnHatching() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_PointsOnHatching\n");}
-	}
-};
+%feature("shadow") HatchGen_PointsOnHatching::~HatchGen_PointsOnHatching %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HatchGen_PointsOnElement;
@@ -246,12 +242,10 @@ class HatchGen_PointsOnElement : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend HatchGen_PointsOnElement {
-	~HatchGen_PointsOnElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_PointsOnElement\n");}
-	}
-};
+%feature("shadow") HatchGen_PointsOnElement::~HatchGen_PointsOnElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HatchGen_Domain;
@@ -287,12 +281,10 @@ class HatchGen_Domain {
 		void Dump(const Standard_Integer Index=0) const;
 
 };
-%extend HatchGen_Domain {
-	~HatchGen_Domain() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_Domain\n");}
-	}
-};
+%feature("shadow") HatchGen_Domain::~HatchGen_Domain %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HatchGen_IntersectionPoint;
@@ -330,12 +322,10 @@ class HatchGen_IntersectionPoint {
 		virtual		void Dump(const Standard_Integer Index=0) const;
 
 };
-%extend HatchGen_IntersectionPoint {
-	~HatchGen_IntersectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_IntersectionPoint\n");}
-	}
-};
+%feature("shadow") HatchGen_IntersectionPoint::~HatchGen_IntersectionPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HatchGen_PointOnHatching;
@@ -367,12 +357,10 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		Standard_Boolean IsGreater(const HatchGen_PointOnHatching &Point, const Standard_Real Confusion) const;
 
 };
-%extend HatchGen_PointOnHatching {
-	~HatchGen_PointOnHatching() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_PointOnHatching\n");}
-	}
-};
+%feature("shadow") HatchGen_PointOnHatching::~HatchGen_PointOnHatching %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HatchGen_SequenceNodeOfPointsOnElement;
@@ -396,12 +384,10 @@ class HatchGen_SequenceNodeOfPointsOnElement : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend HatchGen_SequenceNodeOfPointsOnElement {
-	~HatchGen_SequenceNodeOfPointsOnElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_SequenceNodeOfPointsOnElement\n");}
-	}
-};
+%feature("shadow") HatchGen_SequenceNodeOfPointsOnElement::~HatchGen_SequenceNodeOfPointsOnElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HatchGen_SequenceNodeOfDomains;
@@ -425,12 +411,10 @@ class HatchGen_SequenceNodeOfDomains : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend HatchGen_SequenceNodeOfDomains {
-	~HatchGen_SequenceNodeOfDomains() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_SequenceNodeOfDomains\n");}
-	}
-};
+%feature("shadow") HatchGen_SequenceNodeOfDomains::~HatchGen_SequenceNodeOfDomains %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HatchGen_SequenceNodeOfPointsOnHatching;
@@ -454,12 +438,10 @@ class HatchGen_SequenceNodeOfPointsOnHatching : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend HatchGen_SequenceNodeOfPointsOnHatching {
-	~HatchGen_SequenceNodeOfPointsOnHatching() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_SequenceNodeOfPointsOnHatching\n");}
-	}
-};
+%feature("shadow") HatchGen_SequenceNodeOfPointsOnHatching::~HatchGen_SequenceNodeOfPointsOnHatching %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HatchGen_PointOnElement;
@@ -483,12 +465,10 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 		virtual		void Dump(const Standard_Integer Index=0) const;
 
 };
-%extend HatchGen_PointOnElement {
-	~HatchGen_PointOnElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_PointOnElement\n");}
-	}
-};
+%feature("shadow") HatchGen_PointOnElement::~HatchGen_PointOnElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor HatchGen_Domains;
@@ -540,9 +520,7 @@ class HatchGen_Domains : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend HatchGen_Domains {
-	~HatchGen_Domains() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_Domains\n");}
-	}
-};
+%feature("shadow") HatchGen_Domains::~HatchGen_Domains %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

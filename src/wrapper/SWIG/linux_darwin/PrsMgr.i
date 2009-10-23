@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PrsMgr_dependencies.i
 
 
@@ -69,12 +73,10 @@ class Handle_PrsMgr_Prs : public Handle_Prs3d_Presentation {
 	return (PrsMgr_Prs*)$self->Access();
 	}
 };
-%extend Handle_PrsMgr_Prs {
-	~Handle_PrsMgr_Prs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Prs\n");}
-	}
-};
+%feature("shadow") Handle_PrsMgr_Prs::~Handle_PrsMgr_Prs %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PrsMgr_PresentationManager;
@@ -99,12 +101,10 @@ class Handle_PrsMgr_PresentationManager : public Handle_MMgt_TShared {
 	return (PrsMgr_PresentationManager*)$self->Access();
 	}
 };
-%extend Handle_PrsMgr_PresentationManager {
-	~Handle_PrsMgr_PresentationManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager\n");}
-	}
-};
+%feature("shadow") Handle_PrsMgr_PresentationManager::~Handle_PrsMgr_PresentationManager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PrsMgr_PresentationManager3d;
@@ -129,12 +129,10 @@ class Handle_PrsMgr_PresentationManager3d : public Handle_PrsMgr_PresentationMan
 	return (PrsMgr_PresentationManager3d*)$self->Access();
 	}
 };
-%extend Handle_PrsMgr_PresentationManager3d {
-	~Handle_PrsMgr_PresentationManager3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager3d\n");}
-	}
-};
+%feature("shadow") Handle_PrsMgr_PresentationManager3d::~Handle_PrsMgr_PresentationManager3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PrsMgr_Presentation;
@@ -159,12 +157,10 @@ class Handle_PrsMgr_Presentation : public Handle_MMgt_TShared {
 	return (PrsMgr_Presentation*)$self->Access();
 	}
 };
-%extend Handle_PrsMgr_Presentation {
-	~Handle_PrsMgr_Presentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation\n");}
-	}
-};
+%feature("shadow") Handle_PrsMgr_Presentation::~Handle_PrsMgr_Presentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PrsMgr_Presentation2d;
@@ -189,12 +185,10 @@ class Handle_PrsMgr_Presentation2d : public Handle_PrsMgr_Presentation {
 	return (PrsMgr_Presentation2d*)$self->Access();
 	}
 };
-%extend Handle_PrsMgr_Presentation2d {
-	~Handle_PrsMgr_Presentation2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation2d\n");}
-	}
-};
+%feature("shadow") Handle_PrsMgr_Presentation2d::~Handle_PrsMgr_Presentation2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PrsMgr_PresentableObject;
@@ -219,12 +213,10 @@ class Handle_PrsMgr_PresentableObject : public Handle_MMgt_TShared {
 	return (PrsMgr_PresentableObject*)$self->Access();
 	}
 };
-%extend Handle_PrsMgr_PresentableObject {
-	~Handle_PrsMgr_PresentableObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentableObject\n");}
-	}
-};
+%feature("shadow") Handle_PrsMgr_PresentableObject::~Handle_PrsMgr_PresentableObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PrsMgr_PresentationManager2d;
@@ -249,12 +241,10 @@ class Handle_PrsMgr_PresentationManager2d : public Handle_PrsMgr_PresentationMan
 	return (PrsMgr_PresentationManager2d*)$self->Access();
 	}
 };
-%extend Handle_PrsMgr_PresentationManager2d {
-	~Handle_PrsMgr_PresentationManager2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager2d\n");}
-	}
-};
+%feature("shadow") Handle_PrsMgr_PresentationManager2d::~Handle_PrsMgr_PresentationManager2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PrsMgr_SequenceNodeOfPresentations;
@@ -279,12 +269,10 @@ class Handle_PrsMgr_SequenceNodeOfPresentations : public Handle_TCollection_SeqN
 	return (PrsMgr_SequenceNodeOfPresentations*)$self->Access();
 	}
 };
-%extend Handle_PrsMgr_SequenceNodeOfPresentations {
-	~Handle_PrsMgr_SequenceNodeOfPresentations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_SequenceNodeOfPresentations\n");}
-	}
-};
+%feature("shadow") Handle_PrsMgr_SequenceNodeOfPresentations::~Handle_PrsMgr_SequenceNodeOfPresentations %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_PrsMgr_Presentation3d;
@@ -309,12 +297,10 @@ class Handle_PrsMgr_Presentation3d : public Handle_PrsMgr_Presentation {
 	return (PrsMgr_Presentation3d*)$self->Access();
 	}
 };
-%extend Handle_PrsMgr_Presentation3d {
-	~Handle_PrsMgr_Presentation3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation3d\n");}
-	}
-};
+%feature("shadow") Handle_PrsMgr_Presentation3d::~Handle_PrsMgr_Presentation3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PrsMgr_ModedPresentation;
@@ -330,12 +316,10 @@ class PrsMgr_ModedPresentation {
 		Standard_Integer Mode() const;
 
 };
-%extend PrsMgr_ModedPresentation {
-	~PrsMgr_ModedPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_ModedPresentation\n");}
-	}
-};
+%feature("shadow") PrsMgr_ModedPresentation::~PrsMgr_ModedPresentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PrsMgr_Presentation;
@@ -363,12 +347,10 @@ class PrsMgr_Presentation : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PrsMgr_Presentation {
-	~PrsMgr_Presentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation\n");}
-	}
-};
+%feature("shadow") PrsMgr_Presentation::~PrsMgr_Presentation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PrsMgr_Presentation2d;
@@ -394,12 +376,10 @@ class PrsMgr_Presentation2d : public PrsMgr_Presentation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PrsMgr_Presentation2d {
-	~PrsMgr_Presentation2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation2d\n");}
-	}
-};
+%feature("shadow") PrsMgr_Presentation2d::~PrsMgr_Presentation2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PrsMgr_Prs;
@@ -429,12 +409,10 @@ class PrsMgr_Prs : public Prs3d_Presentation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PrsMgr_Prs {
-	~PrsMgr_Prs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_Prs\n");}
-	}
-};
+%feature("shadow") PrsMgr_Prs::~PrsMgr_Prs %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PrsMgr_Presentations;
@@ -486,12 +464,10 @@ class PrsMgr_Presentations : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend PrsMgr_Presentations {
-	~PrsMgr_Presentations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentations\n");}
-	}
-};
+%feature("shadow") PrsMgr_Presentations::~PrsMgr_Presentations %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PrsMgr_SequenceNodeOfPresentations;
@@ -515,12 +491,10 @@ class PrsMgr_SequenceNodeOfPresentations : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PrsMgr_SequenceNodeOfPresentations {
-	~PrsMgr_SequenceNodeOfPresentations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_SequenceNodeOfPresentations\n");}
-	}
-};
+%feature("shadow") PrsMgr_SequenceNodeOfPresentations::~PrsMgr_SequenceNodeOfPresentations %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PrsMgr_PresentableObject;
@@ -570,12 +544,10 @@ class PrsMgr_PresentableObject : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PrsMgr_PresentableObject {
-	~PrsMgr_PresentableObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentableObject\n");}
-	}
-};
+%feature("shadow") PrsMgr_PresentableObject::~PrsMgr_PresentableObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PrsMgr_Presentation3d;
@@ -599,12 +571,10 @@ class PrsMgr_Presentation3d : public PrsMgr_Presentation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PrsMgr_Presentation3d {
-	~PrsMgr_Presentation3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation3d\n");}
-	}
-};
+%feature("shadow") PrsMgr_Presentation3d::~PrsMgr_Presentation3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PrsMgr_PresentationManager;
@@ -660,12 +630,10 @@ class PrsMgr_PresentationManager : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PrsMgr_PresentationManager {
-	~PrsMgr_PresentationManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentationManager\n");}
-	}
-};
+%feature("shadow") PrsMgr_PresentationManager::~PrsMgr_PresentationManager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PrsMgr_PresentationManager2d;
@@ -723,12 +691,10 @@ class PrsMgr_PresentationManager2d : public PrsMgr_PresentationManager {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PrsMgr_PresentationManager2d {
-	~PrsMgr_PresentationManager2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentationManager2d\n");}
-	}
-};
+%feature("shadow") PrsMgr_PresentationManager2d::~PrsMgr_PresentationManager2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor PrsMgr_PresentationManager3d;
@@ -780,9 +746,7 @@ class PrsMgr_PresentationManager3d : public PrsMgr_PresentationManager {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend PrsMgr_PresentationManager3d {
-	~PrsMgr_PresentationManager3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentationManager3d\n");}
-	}
-};
+%feature("shadow") PrsMgr_PresentationManager3d::~PrsMgr_PresentationManager3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

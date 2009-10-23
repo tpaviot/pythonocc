@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include AppStdL_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_AppStdL_Application : public Handle_TDocStd_Application {
 	return (AppStdL_Application*)$self->Access();
 	}
 };
-%extend Handle_AppStdL_Application {
-	~Handle_AppStdL_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AppStdL_Application\n");}
-	}
-};
+%feature("shadow") Handle_AppStdL_Application::~Handle_AppStdL_Application %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AppStdL_Application;
@@ -90,9 +92,7 @@ class AppStdL_Application : public TDocStd_Application {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend AppStdL_Application {
-	~AppStdL_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppStdL_Application\n");}
-	}
-};
+%feature("shadow") AppStdL_Application::~AppStdL_Application %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

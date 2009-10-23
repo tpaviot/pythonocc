@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepLib_dependencies.i
 
 
@@ -87,20 +91,10 @@ class BRepLib_Command {
 		void Check() const;
 
 };
-%extend BRepLib_Command {
-	~BRepLib_Command() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_Command\n");}
-	}
-};
-
-%extend BRepLib_Command {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLib_Command::~BRepLib_Command %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLib_MakeShape;
@@ -124,20 +118,10 @@ class BRepLib_MakeShape : public BRepLib_Command {
 		virtual		const TopTools_ListOfShape & FacesFromEdges(const TopoDS_Edge &E);
 
 };
-%extend BRepLib_MakeShape {
-	~BRepLib_MakeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeShape\n");}
-	}
-};
-
-%extend BRepLib_MakeShape {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLib_MakeShape::~BRepLib_MakeShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLib_MakeVertex;
@@ -149,20 +133,10 @@ class BRepLib_MakeVertex : public BRepLib_MakeShape {
 		const TopoDS_Vertex & Vertex() const;
 
 };
-%extend BRepLib_MakeVertex {
-	~BRepLib_MakeVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeVertex\n");}
-	}
-};
-
-%extend BRepLib_MakeVertex {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLib_MakeVertex::~BRepLib_MakeVertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLib_MakeEdge;
@@ -272,20 +246,10 @@ class BRepLib_MakeEdge : public BRepLib_MakeShape {
 		const TopoDS_Vertex & Vertex2() const;
 
 };
-%extend BRepLib_MakeEdge {
-	~BRepLib_MakeEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeEdge\n");}
-	}
-};
-
-%extend BRepLib_MakeEdge {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLib_MakeEdge::~BRepLib_MakeEdge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLib_MakeEdge2d;
@@ -369,20 +333,10 @@ class BRepLib_MakeEdge2d : public BRepLib_MakeShape {
 		const TopoDS_Vertex & Vertex2() const;
 
 };
-%extend BRepLib_MakeEdge2d {
-	~BRepLib_MakeEdge2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeEdge2d\n");}
-	}
-};
-
-%extend BRepLib_MakeEdge2d {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLib_MakeEdge2d::~BRepLib_MakeEdge2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLib_MakeShell;
@@ -402,20 +356,10 @@ class BRepLib_MakeShell : public BRepLib_MakeShape {
 		const TopoDS_Shell & Shell() const;
 
 };
-%extend BRepLib_MakeShell {
-	~BRepLib_MakeShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeShell\n");}
-	}
-};
-
-%extend BRepLib_MakeShell {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLib_MakeShell::~BRepLib_MakeShell %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLib_FuseEdges;
@@ -441,20 +385,10 @@ class BRepLib_FuseEdges {
 		void Perform();
 
 };
-%extend BRepLib_FuseEdges {
-	~BRepLib_FuseEdges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_FuseEdges\n");}
-	}
-};
-
-%extend BRepLib_FuseEdges {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLib_FuseEdges::~BRepLib_FuseEdges %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLib;
@@ -502,20 +436,10 @@ class BRepLib {
 		void ReverseSortFaces(const TopoDS_Shape &S, TopTools_ListOfShape & LF);
 
 };
-%extend BRepLib {
-	~BRepLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib\n");}
-	}
-};
-
-%extend BRepLib {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLib::~BRepLib %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLib_FindSurface;
@@ -541,20 +465,10 @@ class BRepLib_FindSurface {
 		TopLoc_Location Location() const;
 
 };
-%extend BRepLib_FindSurface {
-	~BRepLib_FindSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_FindSurface\n");}
-	}
-};
-
-%extend BRepLib_FindSurface {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLib_FindSurface::~BRepLib_FindSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLib_MakePolygon;
@@ -592,20 +506,10 @@ class BRepLib_MakePolygon : public BRepLib_MakeShape {
 		const TopoDS_Wire & Wire() const;
 
 };
-%extend BRepLib_MakePolygon {
-	~BRepLib_MakePolygon() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_MakePolygon\n");}
-	}
-};
-
-%extend BRepLib_MakePolygon {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLib_MakePolygon::~BRepLib_MakePolygon %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLib_MakeFace;
@@ -669,20 +573,10 @@ class BRepLib_MakeFace : public BRepLib_MakeShape {
 		const TopoDS_Face & Face() const;
 
 };
-%extend BRepLib_MakeFace {
-	~BRepLib_MakeFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeFace\n");}
-	}
-};
-
-%extend BRepLib_MakeFace {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLib_MakeFace::~BRepLib_MakeFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLib_MakeSolid;
@@ -710,20 +604,10 @@ class BRepLib_MakeSolid : public BRepLib_MakeShape {
 		virtual		BRepLib_ShapeModification FaceStatus(const TopoDS_Face &F) const;
 
 };
-%extend BRepLib_MakeSolid {
-	~BRepLib_MakeSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeSolid\n");}
-	}
-};
-
-%extend BRepLib_MakeSolid {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLib_MakeSolid::~BRepLib_MakeSolid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLib_MakeWire;
@@ -759,17 +643,7 @@ class BRepLib_MakeWire : public BRepLib_MakeShape {
 		const TopoDS_Vertex & Vertex() const;
 
 };
-%extend BRepLib_MakeWire {
-	~BRepLib_MakeWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeWire\n");}
-	}
-};
-
-%extend BRepLib_MakeWire {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLib_MakeWire::~BRepLib_MakeWire %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

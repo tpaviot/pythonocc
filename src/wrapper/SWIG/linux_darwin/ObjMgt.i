@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ObjMgt_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_ObjMgt_SeqNodeOfPSeqOfExtRef : public Handle_PMMgt_PManaged {
 	return (ObjMgt_SeqNodeOfPSeqOfExtRef*)$self->Access();
 	}
 };
-%extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
-	~Handle_ObjMgt_SeqNodeOfPSeqOfExtRef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ObjMgt_SeqNodeOfPSeqOfExtRef\n");}
-	}
-};
+%feature("shadow") Handle_ObjMgt_SeqNodeOfPSeqOfExtRef::~Handle_ObjMgt_SeqNodeOfPSeqOfExtRef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ObjMgt_ExternRef;
@@ -87,12 +89,10 @@ class Handle_ObjMgt_ExternRef : public Handle_Standard_Persistent {
 	return (ObjMgt_ExternRef*)$self->Access();
 	}
 };
-%extend Handle_ObjMgt_ExternRef {
-	~Handle_ObjMgt_ExternRef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ObjMgt_ExternRef\n");}
-	}
-};
+%feature("shadow") Handle_ObjMgt_ExternRef::~Handle_ObjMgt_ExternRef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ObjMgt_ExternShareable;
@@ -117,12 +117,10 @@ class Handle_ObjMgt_ExternShareable : public Handle_Standard_Persistent {
 	return (ObjMgt_ExternShareable*)$self->Access();
 	}
 };
-%extend Handle_ObjMgt_ExternShareable {
-	~Handle_ObjMgt_ExternShareable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ObjMgt_ExternShareable\n");}
-	}
-};
+%feature("shadow") Handle_ObjMgt_ExternShareable::~Handle_ObjMgt_ExternShareable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ObjMgt_PSeqOfExtRef;
@@ -147,12 +145,10 @@ class Handle_ObjMgt_PSeqOfExtRef : public Handle_Standard_Persistent {
 	return (ObjMgt_PSeqOfExtRef*)$self->Access();
 	}
 };
-%extend Handle_ObjMgt_PSeqOfExtRef {
-	~Handle_ObjMgt_PSeqOfExtRef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ObjMgt_PSeqOfExtRef\n");}
-	}
-};
+%feature("shadow") Handle_ObjMgt_PSeqOfExtRef::~Handle_ObjMgt_PSeqOfExtRef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ObjMgt_SeqExplorerOfPSeqOfExtRef;
@@ -170,12 +166,10 @@ class ObjMgt_SeqExplorerOfPSeqOfExtRef {
 		Standard_Integer Location(const Standard_Integer N, const Handle_ObjMgt_ExternRef &T);
 
 };
-%extend ObjMgt_SeqExplorerOfPSeqOfExtRef {
-	~ObjMgt_SeqExplorerOfPSeqOfExtRef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ObjMgt_SeqExplorerOfPSeqOfExtRef\n");}
-	}
-};
+%feature("shadow") ObjMgt_SeqExplorerOfPSeqOfExtRef::~ObjMgt_SeqExplorerOfPSeqOfExtRef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ObjMgt_SeqNodeOfPSeqOfExtRef;
@@ -229,12 +223,10 @@ class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
-	~ObjMgt_SeqNodeOfPSeqOfExtRef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ObjMgt_SeqNodeOfPSeqOfExtRef\n");}
-	}
-};
+%feature("shadow") ObjMgt_SeqNodeOfPSeqOfExtRef::~ObjMgt_SeqNodeOfPSeqOfExtRef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ObjMgt_PSeqOfExtRef;
@@ -330,12 +322,10 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ObjMgt_PSeqOfExtRef {
-	~ObjMgt_PSeqOfExtRef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ObjMgt_PSeqOfExtRef\n");}
-	}
-};
+%feature("shadow") ObjMgt_PSeqOfExtRef::~ObjMgt_PSeqOfExtRef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ObjMgt_ExternRef;
@@ -367,12 +357,10 @@ class ObjMgt_ExternRef : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ObjMgt_ExternRef {
-	~ObjMgt_ExternRef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ObjMgt_ExternRef\n");}
-	}
-};
+%feature("shadow") ObjMgt_ExternRef::~ObjMgt_ExternRef %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ObjMgt_ExternShareable;
@@ -400,9 +388,7 @@ class ObjMgt_ExternShareable : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ObjMgt_ExternShareable {
-	~ObjMgt_ExternShareable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ObjMgt_ExternShareable\n");}
-	}
-};
+%feature("shadow") ObjMgt_ExternShareable::~ObjMgt_ExternShareable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

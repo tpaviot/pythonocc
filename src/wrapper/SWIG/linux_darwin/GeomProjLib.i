@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GeomProjLib_dependencies.i
 
 
@@ -58,9 +62,7 @@ class GeomProjLib {
 		Handle_Geom_Curve ProjectOnPlane(const Handle_Geom_Curve &Curve, const Handle_Geom_Plane &Plane, const gp_Dir &Dir, const Standard_Boolean KeepParametrization);
 
 };
-%extend GeomProjLib {
-	~GeomProjLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomProjLib\n");}
-	}
-};
+%feature("shadow") GeomProjLib::~GeomProjLib %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

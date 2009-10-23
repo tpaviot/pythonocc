@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepGProp_dependencies.i
 
 
@@ -62,20 +66,10 @@ class BRepGProp_Sinert : public GProp_GProps {
 		Standard_Real GetEpsilon();
 
 };
-%extend BRepGProp_Sinert {
-	~BRepGProp_Sinert() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepGProp_Sinert\n");}
-	}
-};
-
-%extend BRepGProp_Sinert {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepGProp_Sinert::~BRepGProp_Sinert %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepGProp;
@@ -99,20 +93,10 @@ class BRepGProp {
 		Standard_Real VolumePropertiesGK(const TopoDS_Shape &S, GProp_GProps & VProps, const gp_Pln &thePln, const Standard_Real Eps=1.0000000000000000208166817117216851329430937767e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
 
 };
-%extend BRepGProp {
-	~BRepGProp() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepGProp\n");}
-	}
-};
-
-%extend BRepGProp {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepGProp::~BRepGProp %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepGProp_EdgeTool;
@@ -136,20 +120,10 @@ class BRepGProp_EdgeTool {
 		void Intervals(const BRepAdaptor_Curve &C, TColStd_Array1OfReal & T, const GeomAbs_Shape S);
 
 };
-%extend BRepGProp_EdgeTool {
-	~BRepGProp_EdgeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepGProp_EdgeTool\n");}
-	}
-};
-
-%extend BRepGProp_EdgeTool {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepGProp_EdgeTool::~BRepGProp_EdgeTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepGProp_Vinert;
@@ -211,20 +185,10 @@ class BRepGProp_Vinert : public GProp_GProps {
 		Standard_Real GetEpsilon();
 
 };
-%extend BRepGProp_Vinert {
-	~BRepGProp_Vinert() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepGProp_Vinert\n");}
-	}
-};
-
-%extend BRepGProp_Vinert {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepGProp_Vinert::~BRepGProp_Vinert %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepGProp_UFunctionOfVinertGK;
@@ -240,20 +204,10 @@ class BRepGProp_UFunctionOfVinertGK : public math_Function {
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 
 };
-%extend BRepGProp_UFunctionOfVinertGK {
-	~BRepGProp_UFunctionOfVinertGK() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepGProp_UFunctionOfVinertGK\n");}
-	}
-};
-
-%extend BRepGProp_UFunctionOfVinertGK {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepGProp_UFunctionOfVinertGK::~BRepGProp_UFunctionOfVinertGK %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepGProp_Cinert;
@@ -269,20 +223,10 @@ class BRepGProp_Cinert : public GProp_GProps {
 		void Perform(const BRepAdaptor_Curve &C);
 
 };
-%extend BRepGProp_Cinert {
-	~BRepGProp_Cinert() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepGProp_Cinert\n");}
-	}
-};
-
-%extend BRepGProp_Cinert {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepGProp_Cinert::~BRepGProp_Cinert %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepGProp_Domain;
@@ -304,20 +248,10 @@ class BRepGProp_Domain {
 		void Next();
 
 };
-%extend BRepGProp_Domain {
-	~BRepGProp_Domain() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepGProp_Domain\n");}
-	}
-};
-
-%extend BRepGProp_Domain {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepGProp_Domain::~BRepGProp_Domain %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepGProp_TFunctionOfVinertGK;
@@ -343,20 +277,10 @@ class BRepGProp_TFunctionOfVinertGK : public math_Function {
 		virtual		Standard_Integer GetStateNumber();
 
 };
-%extend BRepGProp_TFunctionOfVinertGK {
-	~BRepGProp_TFunctionOfVinertGK() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepGProp_TFunctionOfVinertGK\n");}
-	}
-};
-
-%extend BRepGProp_TFunctionOfVinertGK {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepGProp_TFunctionOfVinertGK::~BRepGProp_TFunctionOfVinertGK %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepGProp_Face;
@@ -414,17 +338,7 @@ class BRepGProp_Face {
 		void GetTKnots(const Standard_Real theTMin, const Standard_Real theTMax, Handle_TColStd_HArray1OfReal & theTKnots) const;
 
 };
-%extend BRepGProp_Face {
-	~BRepGProp_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepGProp_Face\n");}
-	}
-};
-
-%extend BRepGProp_Face {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepGProp_Face::~BRepGProp_Face %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

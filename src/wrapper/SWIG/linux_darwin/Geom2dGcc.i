@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Geom2dGcc_dependencies.i
 
 
@@ -68,12 +72,10 @@ class Geom2dGcc_Circ2d2TanOn {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
-%extend Geom2dGcc_Circ2d2TanOn {
-	~Geom2dGcc_Circ2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2d2TanOn\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_Circ2d2TanOn::~Geom2dGcc_Circ2d2TanOn %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_MyL2dTanObl;
@@ -95,12 +97,10 @@ class Geom2dGcc_MyL2dTanObl {
 		Standard_Boolean IsParallel2() const;
 
 };
-%extend Geom2dGcc_MyL2dTanObl {
-	~Geom2dGcc_MyL2dTanObl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyL2dTanObl\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_MyL2dTanObl::~Geom2dGcc_MyL2dTanObl %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_FuncTOblOfMyL2dTanObl;
@@ -116,12 +116,10 @@ class Geom2dGcc_FuncTOblOfMyL2dTanObl : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend Geom2dGcc_FuncTOblOfMyL2dTanObl {
-	~Geom2dGcc_FuncTOblOfMyL2dTanObl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTOblOfMyL2dTanObl\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_FuncTOblOfMyL2dTanObl::~Geom2dGcc_FuncTOblOfMyL2dTanObl %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn;
@@ -165,12 +163,10 @@ class Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn : public math_FunctionSetWithDerivati
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 
 };
-%extend Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn {
-	~Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn::~Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_QualifiedCurve;
@@ -192,12 +188,10 @@ class Geom2dGcc_QualifiedCurve {
 		Standard_Boolean IsOutside() const;
 
 };
-%extend Geom2dGcc_QualifiedCurve {
-	~Geom2dGcc_QualifiedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_QualifiedCurve\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_QualifiedCurve::~Geom2dGcc_QualifiedCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_MyCirc2dTanCen;
@@ -217,12 +211,10 @@ class Geom2dGcc_MyCirc2dTanCen {
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
-%extend Geom2dGcc_MyCirc2dTanCen {
-	~Geom2dGcc_MyCirc2dTanCen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2dTanCen\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_MyCirc2dTanCen::~Geom2dGcc_MyCirc2dTanCen %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_FuncTCirCuOfMyL2d2Tan;
@@ -238,12 +230,10 @@ class Geom2dGcc_FuncTCirCuOfMyL2d2Tan : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend Geom2dGcc_FuncTCirCuOfMyL2d2Tan {
-	~Geom2dGcc_FuncTCirCuOfMyL2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCirCuOfMyL2d2Tan\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_FuncTCirCuOfMyL2d2Tan::~Geom2dGcc_FuncTCirCuOfMyL2d2Tan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_MyQCurve;
@@ -265,12 +255,10 @@ class Geom2dGcc_MyQCurve {
 		Standard_Boolean IsOutside() const;
 
 };
-%extend Geom2dGcc_MyQCurve {
-	~Geom2dGcc_MyQCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyQCurve\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_MyQCurve::~Geom2dGcc_MyQCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_Circ2d3Tan;
@@ -308,12 +296,10 @@ class Geom2dGcc_Circ2d3Tan {
 		Standard_Boolean IsTheSame3(const Standard_Integer Index) const;
 
 };
-%extend Geom2dGcc_Circ2d3Tan {
-	~Geom2dGcc_Circ2d3Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2d3Tan\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_Circ2d3Tan::~Geom2dGcc_Circ2d3Tan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_FuncTCuPtOfMyL2d2Tan;
@@ -329,12 +315,10 @@ class Geom2dGcc_FuncTCuPtOfMyL2d2Tan : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend Geom2dGcc_FuncTCuPtOfMyL2d2Tan {
-	~Geom2dGcc_FuncTCuPtOfMyL2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuPtOfMyL2d2Tan\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_FuncTCuPtOfMyL2d2Tan::~Geom2dGcc_FuncTCuPtOfMyL2d2Tan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_MyCurveTool;
@@ -378,12 +362,10 @@ class Geom2dGcc_MyCurveTool {
 		void SetCurrentInterval(Adaptor3d_OffsetCurve & C, const Standard_Integer Index);
 
 };
-%extend Geom2dGcc_MyCurveTool {
-	~Geom2dGcc_MyCurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCurveTool\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_MyCurveTool::~Geom2dGcc_MyCurveTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_Lin2d2Tan;
@@ -411,12 +393,10 @@ class Geom2dGcc_Lin2d2Tan {
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
-%extend Geom2dGcc_Lin2d2Tan {
-	~Geom2dGcc_Lin2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Lin2d2Tan\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_Lin2d2Tan::~Geom2dGcc_Lin2d2Tan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_MyCirc2d2TanRad;
@@ -448,12 +428,10 @@ class Geom2dGcc_MyCirc2d2TanRad {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
-%extend Geom2dGcc_MyCirc2d2TanRad {
-	~Geom2dGcc_MyCirc2d2TanRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2d2TanRad\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_MyCirc2d2TanRad::~Geom2dGcc_MyCirc2d2TanRad %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_MyCirc2d2TanOn;
@@ -491,12 +469,10 @@ class Geom2dGcc_MyCirc2d2TanOn {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
-%extend Geom2dGcc_MyCirc2d2TanOn {
-	~Geom2dGcc_MyCirc2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2d2TanOn\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_MyCirc2d2TanOn::~Geom2dGcc_MyCirc2d2TanOn %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_Circ2dTanCen;
@@ -518,12 +494,10 @@ class Geom2dGcc_Circ2dTanCen {
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
 };
-%extend Geom2dGcc_Circ2dTanCen {
-	~Geom2dGcc_Circ2dTanCen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2dTanCen\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_Circ2dTanCen::~Geom2dGcc_Circ2dTanCen %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_FuncTCuCuOfMyL2d2Tan;
@@ -547,12 +521,10 @@ class Geom2dGcc_FuncTCuCuOfMyL2d2Tan : public math_FunctionSetWithDerivatives {
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & Deriv);
 
 };
-%extend Geom2dGcc_FuncTCuCuOfMyL2d2Tan {
-	~Geom2dGcc_FuncTCuCuOfMyL2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuCuOfMyL2d2Tan\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_FuncTCuCuOfMyL2d2Tan::~Geom2dGcc_FuncTCuCuOfMyL2d2Tan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_MyC2d3Tan;
@@ -598,12 +570,10 @@ class Geom2dGcc_MyC2d3Tan {
 		Standard_Boolean IsTheSame3() const;
 
 };
-%extend Geom2dGcc_MyC2d3Tan {
-	~Geom2dGcc_MyC2d3Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyC2d3Tan\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_MyC2d3Tan::~Geom2dGcc_MyC2d3Tan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_MyC2d2TanOn;
@@ -651,12 +621,10 @@ class Geom2dGcc_MyC2d2TanOn {
 		Standard_Boolean IsTheSame2() const;
 
 };
-%extend Geom2dGcc_MyC2d2TanOn {
-	~Geom2dGcc_MyC2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyC2d2TanOn\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_MyC2d2TanOn::~Geom2dGcc_MyC2d2TanOn %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_MyL2d2Tan;
@@ -680,12 +648,10 @@ class Geom2dGcc_MyL2d2Tan {
 		void Tangency2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
-%extend Geom2dGcc_MyL2d2Tan {
-	~Geom2dGcc_MyL2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyL2d2Tan\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_MyL2d2Tan::~Geom2dGcc_MyL2d2Tan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_MyCirc2dTanOnRad;
@@ -719,12 +685,10 @@ class Geom2dGcc_MyCirc2dTanOnRad {
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
 };
-%extend Geom2dGcc_MyCirc2dTanOnRad {
-	~Geom2dGcc_MyCirc2dTanOnRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2dTanOnRad\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_MyCirc2dTanOnRad::~Geom2dGcc_MyCirc2dTanOnRad %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_Circ2d2TanRad;
@@ -758,12 +722,10 @@ class Geom2dGcc_Circ2d2TanRad {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
-%extend Geom2dGcc_Circ2d2TanRad {
-	~Geom2dGcc_Circ2d2TanRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2d2TanRad\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_Circ2d2TanRad::~Geom2dGcc_Circ2d2TanRad %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_Lin2dTanObl;
@@ -787,12 +749,10 @@ class Geom2dGcc_Lin2dTanObl {
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
-%extend Geom2dGcc_Lin2dTanObl {
-	~Geom2dGcc_Lin2dTanObl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Lin2dTanObl\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_Lin2dTanObl::~Geom2dGcc_Lin2dTanObl %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_CurveTool;
@@ -818,12 +778,10 @@ class Geom2dGcc_CurveTool {
 		void D3(const Geom2dAdaptor_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N, gp_Vec2d & dN);
 
 };
-%extend Geom2dGcc_CurveTool {
-	~Geom2dGcc_CurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_CurveTool\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_CurveTool::~Geom2dGcc_CurveTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc_Circ2dTanOnRad;
@@ -853,12 +811,10 @@ class Geom2dGcc_Circ2dTanOnRad {
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
 };
-%extend Geom2dGcc_Circ2dTanOnRad {
-	~Geom2dGcc_Circ2dTanOnRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2dTanOnRad\n");}
-	}
-};
+%feature("shadow") Geom2dGcc_Circ2dTanOnRad::~Geom2dGcc_Circ2dTanOnRad %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dGcc;
@@ -876,9 +832,7 @@ class Geom2dGcc {
 		Geom2dGcc_QualifiedCurve Outside(const Geom2dAdaptor_Curve &Obj);
 
 };
-%extend Geom2dGcc {
-	~Geom2dGcc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc\n");}
-	}
-};
+%feature("shadow") Geom2dGcc::~Geom2dGcc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

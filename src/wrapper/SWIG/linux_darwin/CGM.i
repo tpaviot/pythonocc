@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include CGM_dependencies.i
 
 
@@ -57,9 +61,7 @@ class Handle_CGM_Driver : public Handle_PlotMgt_PlotterDriver {
 	return (CGM_Driver*)$self->Access();
 	}
 };
-%extend Handle_CGM_Driver {
-	~Handle_CGM_Driver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CGM_Driver\n");}
-	}
-};
+%feature("shadow") Handle_CGM_Driver::~Handle_CGM_Driver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

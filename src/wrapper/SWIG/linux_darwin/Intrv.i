@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Intrv_dependencies.i
 
 
@@ -73,12 +77,10 @@ class Handle_Intrv_SequenceNodeOfSequenceOfInterval : public Handle_TCollection_
 	return (Intrv_SequenceNodeOfSequenceOfInterval*)$self->Access();
 	}
 };
-%extend Handle_Intrv_SequenceNodeOfSequenceOfInterval {
-	~Handle_Intrv_SequenceNodeOfSequenceOfInterval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Intrv_SequenceNodeOfSequenceOfInterval\n");}
-	}
-};
+%feature("shadow") Handle_Intrv_SequenceNodeOfSequenceOfInterval::~Handle_Intrv_SequenceNodeOfSequenceOfInterval %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Intrv_Intervals;
@@ -112,12 +114,10 @@ class Intrv_Intervals {
 		const Intrv_Interval & Value(const Standard_Integer Index) const;
 
 };
-%extend Intrv_Intervals {
-	~Intrv_Intervals() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intrv_Intervals\n");}
-	}
-};
+%feature("shadow") Intrv_Intervals::~Intrv_Intervals %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Intrv_SequenceOfInterval;
@@ -169,12 +169,10 @@ class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Intrv_SequenceOfInterval {
-	~Intrv_SequenceOfInterval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intrv_SequenceOfInterval\n");}
-	}
-};
+%feature("shadow") Intrv_SequenceOfInterval::~Intrv_SequenceOfInterval %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Intrv_SequenceNodeOfSequenceOfInterval;
@@ -198,12 +196,10 @@ class Intrv_SequenceNodeOfSequenceOfInterval : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Intrv_SequenceNodeOfSequenceOfInterval {
-	~Intrv_SequenceNodeOfSequenceOfInterval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intrv_SequenceNodeOfSequenceOfInterval\n");}
-	}
-};
+%feature("shadow") Intrv_SequenceNodeOfSequenceOfInterval::~Intrv_SequenceNodeOfSequenceOfInterval %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Intrv_Interval;
@@ -269,9 +265,7 @@ class Intrv_Interval {
 		Standard_Boolean IsSimilar(const Intrv_Interval &Other) const;
 
 };
-%extend Intrv_Interval {
-	~Intrv_Interval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intrv_Interval\n");}
-	}
-};
+%feature("shadow") Intrv_Interval::~Intrv_Interval %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

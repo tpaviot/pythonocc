@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ShapeBuild_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_ShapeBuild_ReShape : public Handle_BRepTools_ReShape {
 	return (ShapeBuild_ReShape*)$self->Access();
 	}
 };
-%extend Handle_ShapeBuild_ReShape {
-	~Handle_ShapeBuild_ReShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeBuild_ReShape\n");}
-	}
-};
+%feature("shadow") Handle_ShapeBuild_ReShape::~Handle_ShapeBuild_ReShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeBuild;
@@ -74,12 +76,10 @@ class ShapeBuild {
 		Handle_Geom_Plane PlaneXOY();
 
 };
-%extend ShapeBuild {
-	~ShapeBuild() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeBuild\n");}
-	}
-};
+%feature("shadow") ShapeBuild::~ShapeBuild %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeBuild_ReShape;
@@ -109,12 +109,10 @@ class ShapeBuild_ReShape : public BRepTools_ReShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeBuild_ReShape {
-	~ShapeBuild_ReShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeBuild_ReShape\n");}
-	}
-};
+%feature("shadow") ShapeBuild_ReShape::~ShapeBuild_ReShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeBuild_Edge;
@@ -162,12 +160,10 @@ class ShapeBuild_Edge {
 		void MakeEdge(TopoDS_Edge & edge, const Handle_Geom2d_Curve &pcurve, const Handle_Geom_Surface &S, const TopLoc_Location &L, const Standard_Real p1, const Standard_Real p2) const;
 
 };
-%extend ShapeBuild_Edge {
-	~ShapeBuild_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeBuild_Edge\n");}
-	}
-};
+%feature("shadow") ShapeBuild_Edge::~ShapeBuild_Edge %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeBuild_Vertex;
@@ -181,9 +177,7 @@ class ShapeBuild_Vertex {
 		TopoDS_Vertex CombineVertex(const gp_Pnt &pnt1, const gp_Pnt &pnt2, const Standard_Real tol1, const Standard_Real tol2, const Standard_Real tolFactor=1.00009999999999998898658759571844711899757385254e+0) const;
 
 };
-%extend ShapeBuild_Vertex {
-	~ShapeBuild_Vertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeBuild_Vertex\n");}
-	}
-};
+%feature("shadow") ShapeBuild_Vertex::~ShapeBuild_Vertex %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

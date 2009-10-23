@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Blend_dependencies.i
 
 
@@ -75,12 +79,10 @@ class Handle_Blend_SequenceNodeOfSequenceOfPoint : public Handle_TCollection_Seq
 	return (Blend_SequenceNodeOfSequenceOfPoint*)$self->Access();
 	}
 };
-%extend Handle_Blend_SequenceNodeOfSequenceOfPoint {
-	~Handle_Blend_SequenceNodeOfSequenceOfPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Blend_SequenceNodeOfSequenceOfPoint\n");}
-	}
-};
+%feature("shadow") Handle_Blend_SequenceNodeOfSequenceOfPoint::~Handle_Blend_SequenceNodeOfSequenceOfPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Blend_SurfCurvFuncInv;
@@ -106,12 +108,10 @@ class Blend_SurfCurvFuncInv : public math_FunctionSetWithDerivatives {
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
 
 };
-%extend Blend_SurfCurvFuncInv {
-	~Blend_SurfCurvFuncInv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Blend_SurfCurvFuncInv\n");}
-	}
-};
+%feature("shadow") Blend_SurfCurvFuncInv::~Blend_SurfCurvFuncInv %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Blend_SurfPointFuncInv;
@@ -137,12 +137,10 @@ class Blend_SurfPointFuncInv : public math_FunctionSetWithDerivatives {
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
 
 };
-%extend Blend_SurfPointFuncInv {
-	~Blend_SurfPointFuncInv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Blend_SurfPointFuncInv\n");}
-	}
-};
+%feature("shadow") Blend_SurfPointFuncInv::~Blend_SurfPointFuncInv %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Blend_AppFunction;
@@ -204,12 +202,10 @@ class Blend_AppFunction : public math_FunctionSetWithDerivatives {
 		Standard_Real Parameter(const Blend_Point &P) const;
 
 };
-%extend Blend_AppFunction {
-	~Blend_AppFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Blend_AppFunction\n");}
-	}
-};
+%feature("shadow") Blend_AppFunction::~Blend_AppFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Blend_CSFunction;
@@ -235,12 +231,10 @@ class Blend_CSFunction : public Blend_AppFunction {
 		virtual		void Tangent(const Standard_Real U, const Standard_Real V, gp_Vec & TgS, gp_Vec & NormS) const;
 
 };
-%extend Blend_CSFunction {
-	~Blend_CSFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Blend_CSFunction\n");}
-	}
-};
+%feature("shadow") Blend_CSFunction::~Blend_CSFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Blend_RstRstFunction;
@@ -322,12 +316,10 @@ class Blend_RstRstFunction : public Blend_AppFunction {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 
 };
-%extend Blend_RstRstFunction {
-	~Blend_RstRstFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Blend_RstRstFunction\n");}
-	}
-};
+%feature("shadow") Blend_RstRstFunction::~Blend_RstRstFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Blend_CurvPointFuncInv;
@@ -353,12 +345,10 @@ class Blend_CurvPointFuncInv : public math_FunctionSetWithDerivatives {
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
 
 };
-%extend Blend_CurvPointFuncInv {
-	~Blend_CurvPointFuncInv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Blend_CurvPointFuncInv\n");}
-	}
-};
+%feature("shadow") Blend_CurvPointFuncInv::~Blend_CurvPointFuncInv %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Blend_SequenceOfPoint;
@@ -410,12 +400,10 @@ class Blend_SequenceOfPoint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Blend_SequenceOfPoint {
-	~Blend_SequenceOfPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Blend_SequenceOfPoint\n");}
-	}
-};
+%feature("shadow") Blend_SequenceOfPoint::~Blend_SequenceOfPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Blend_FuncInv;
@@ -441,12 +429,10 @@ class Blend_FuncInv : public math_FunctionSetWithDerivatives {
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
 
 };
-%extend Blend_FuncInv {
-	~Blend_FuncInv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Blend_FuncInv\n");}
-	}
-};
+%feature("shadow") Blend_FuncInv::~Blend_FuncInv %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Blend_SequenceNodeOfSequenceOfPoint;
@@ -470,12 +456,10 @@ class Blend_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Blend_SequenceNodeOfSequenceOfPoint {
-	~Blend_SequenceNodeOfSequenceOfPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Blend_SequenceNodeOfSequenceOfPoint\n");}
-	}
-};
+%feature("shadow") Blend_SequenceNodeOfSequenceOfPoint::~Blend_SequenceNodeOfSequenceOfPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Blend_SurfRstFunction;
@@ -555,12 +539,10 @@ class Blend_SurfRstFunction : public Blend_AppFunction {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 
 };
-%extend Blend_SurfRstFunction {
-	~Blend_SurfRstFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Blend_SurfRstFunction\n");}
-	}
-};
+%feature("shadow") Blend_SurfRstFunction::~Blend_SurfRstFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Blend_Point;
@@ -650,12 +632,10 @@ class Blend_Point {
 		const gp_Vec & TangentOnC2() const;
 
 };
-%extend Blend_Point {
-	~Blend_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Blend_Point\n");}
-	}
-};
+%feature("shadow") Blend_Point::~Blend_Point %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Blend_Function;
@@ -721,9 +701,7 @@ class Blend_Function : public Blend_AppFunction {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 
 };
-%extend Blend_Function {
-	~Blend_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Blend_Function\n");}
-	}
-};
+%feature("shadow") Blend_Function::~Blend_Function %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include NMTDS_dependencies.i
 
 
@@ -71,12 +75,10 @@ class Handle_NMTDS_StdMapNodeOfMapOfPassKey : public Handle_TCollection_MapNode 
 	return (NMTDS_StdMapNodeOfMapOfPassKey*)$self->Access();
 	}
 };
-%extend Handle_NMTDS_StdMapNodeOfMapOfPassKey {
-	~Handle_NMTDS_StdMapNodeOfMapOfPassKey() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTDS_StdMapNodeOfMapOfPassKey\n");}
-	}
-};
+%feature("shadow") Handle_NMTDS_StdMapNodeOfMapOfPassKey::~Handle_NMTDS_StdMapNodeOfMapOfPassKey %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean;
@@ -101,12 +103,10 @@ class Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean : public Handle_TCollection_M
 	return (NMTDS_StdMapNodeOfMapOfPassKeyBoolean*)$self->Access();
 	}
 };
-%extend Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean {
-	~Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean\n");}
-	}
-};
+%feature("shadow") Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean::~Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NMTDS_ListNodeOfListOfPassKey;
@@ -131,12 +131,10 @@ class Handle_NMTDS_ListNodeOfListOfPassKey : public Handle_TCollection_MapNode {
 	return (NMTDS_ListNodeOfListOfPassKey*)$self->Access();
 	}
 };
-%extend Handle_NMTDS_ListNodeOfListOfPassKey {
-	~Handle_NMTDS_ListNodeOfListOfPassKey() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTDS_ListNodeOfListOfPassKey\n");}
-	}
-};
+%feature("shadow") Handle_NMTDS_ListNodeOfListOfPassKey::~Handle_NMTDS_ListNodeOfListOfPassKey %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger;
@@ -161,12 +159,10 @@ class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfSh
 	return (NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger*)$self->Access();
 	}
 };
-%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
-	~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger\n");}
-	}
-};
+%feature("shadow") Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger::~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger;
@@ -191,12 +187,10 @@ class Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TCo
 	return (NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger*)$self->Access();
 	}
 };
-%extend Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
-	~Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger::~Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors;
@@ -221,12 +215,10 @@ class Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors : pu
 	return (NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors*)$self->Access();
 	}
 };
-%extend Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
-	~Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors\n");}
-	}
-};
+%feature("shadow") Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors::~Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
@@ -251,12 +243,10 @@ class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public Handle_
 	return (NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox*)$self->Access();
 	}
 };
-%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
-	~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox\n");}
-	}
-};
+%feature("shadow") Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape;
@@ -281,12 +271,10 @@ class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public Han
 	return (NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape*)$self->Access();
 	}
 };
-%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
-	~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape\n");}
-	}
-};
+%feature("shadow") Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape::~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_NMTDS_ListNodeOfListOfPassKeyBoolean;
@@ -311,12 +299,10 @@ class Handle_NMTDS_ListNodeOfListOfPassKeyBoolean : public Handle_TCollection_Ma
 	return (NMTDS_ListNodeOfListOfPassKeyBoolean*)$self->Access();
 	}
 };
-%extend Handle_NMTDS_ListNodeOfListOfPassKeyBoolean {
-	~Handle_NMTDS_ListNodeOfListOfPassKeyBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTDS_ListNodeOfListOfPassKeyBoolean\n");}
-	}
-};
+%feature("shadow") Handle_NMTDS_ListNodeOfListOfPassKeyBoolean::~Handle_NMTDS_ListNodeOfListOfPassKeyBoolean %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger;
@@ -366,12 +352,10 @@ class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInte
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
-	~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger\n");}
-	}
-};
+%feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors;
@@ -419,12 +403,10 @@ class NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors {
 		void InsertAfter(NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors & Other, NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors & It);
 
 };
-%extend NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors {
-	~NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors\n");}
-	}
-};
+%feature("shadow") NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors::~NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_PassKeyShapeMapHasher;
@@ -438,12 +420,10 @@ class NMTDS_PassKeyShapeMapHasher {
 		Standard_Boolean IsEqual(const NMTDS_PassKeyShape &aPKey1, const NMTDS_PassKeyShape &aPKey2);
 
 };
-%extend NMTDS_PassKeyShapeMapHasher {
-	~NMTDS_PassKeyShapeMapHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_PassKeyShapeMapHasher\n");}
-	}
-};
+%feature("shadow") NMTDS_PassKeyShapeMapHasher::~NMTDS_PassKeyShapeMapHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger;
@@ -485,12 +465,10 @@ class NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger : public TCollec
 		BooleanOperations_IndexedDataMapOfShapeInteger & ChangeFromKey(const Standard_Integer &K);
 
 };
-%extend NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
-	~NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger\n");}
-	}
-};
+%feature("shadow") NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger::~NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger;
@@ -526,12 +504,10 @@ class NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public TCollection_MapNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
-	~NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger\n");}
-	}
-};
+%feature("shadow") NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger::~NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors;
@@ -555,12 +531,10 @@ class NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors : public TC
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
-	~NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors\n");}
-	}
-};
+%feature("shadow") NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors::~NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_StdMapNodeOfMapOfPassKeyBoolean;
@@ -584,12 +558,10 @@ class NMTDS_StdMapNodeOfMapOfPassKeyBoolean : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NMTDS_StdMapNodeOfMapOfPassKeyBoolean {
-	~NMTDS_StdMapNodeOfMapOfPassKeyBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_StdMapNodeOfMapOfPassKeyBoolean\n");}
-	}
-};
+%feature("shadow") NMTDS_StdMapNodeOfMapOfPassKeyBoolean::~NMTDS_StdMapNodeOfMapOfPassKeyBoolean %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_ListIteratorOfListOfPassKey;
@@ -609,12 +581,10 @@ class NMTDS_ListIteratorOfListOfPassKey {
 		NMTDS_PassKey & Value() const;
 
 };
-%extend NMTDS_ListIteratorOfListOfPassKey {
-	~NMTDS_ListIteratorOfListOfPassKey() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_ListIteratorOfListOfPassKey\n");}
-	}
-};
+%feature("shadow") NMTDS_ListIteratorOfListOfPassKey::~NMTDS_ListIteratorOfListOfPassKey %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_DataMapOfIntegerMapOfInteger;
@@ -646,12 +616,10 @@ class NMTDS_DataMapOfIntegerMapOfInteger : public TCollection_BasicMap {
 		TColStd_MapOfInteger & operator()(const Standard_Integer &K);
 
 };
-%extend NMTDS_DataMapOfIntegerMapOfInteger {
-	~NMTDS_DataMapOfIntegerMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_DataMapOfIntegerMapOfInteger\n");}
-	}
-};
+%feature("shadow") NMTDS_DataMapOfIntegerMapOfInteger::~NMTDS_DataMapOfIntegerMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger;
@@ -669,12 +637,10 @@ class NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger : public TCollection_B
 		const TColStd_MapOfInteger & Value() const;
 
 };
-%extend NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger {
-	~NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger\n");}
-	}
-};
+%feature("shadow") NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger::~NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_IndexedDataMapOfShapeBox;
@@ -716,12 +682,10 @@ class NMTDS_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 		Bnd_Box & ChangeFromKey(const TopoDS_Shape &K);
 
 };
-%extend NMTDS_IndexedDataMapOfShapeBox {
-	~NMTDS_IndexedDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_IndexedDataMapOfShapeBox\n");}
-	}
-};
+%feature("shadow") NMTDS_IndexedDataMapOfShapeBox::~NMTDS_IndexedDataMapOfShapeBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
@@ -761,12 +725,10 @@ class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TCollection_Ma
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
-	~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox\n");}
-	}
-};
+%feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_ListOfPassKeyBoolean;
@@ -814,12 +776,10 @@ class NMTDS_ListOfPassKeyBoolean {
 		void InsertAfter(NMTDS_ListOfPassKeyBoolean & Other, NMTDS_ListIteratorOfListOfPassKeyBoolean & It);
 
 };
-%extend NMTDS_ListOfPassKeyBoolean {
-	~NMTDS_ListOfPassKeyBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_ListOfPassKeyBoolean\n");}
-	}
-};
+%feature("shadow") NMTDS_ListOfPassKeyBoolean::~NMTDS_ListOfPassKeyBoolean %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_CArray1OfIndexRange;
@@ -855,12 +815,10 @@ class NMTDS_CArray1OfIndexRange {
 		Standard_Integer BlockLength() const;
 
 };
-%extend NMTDS_CArray1OfIndexRange {
-	~NMTDS_CArray1OfIndexRange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_CArray1OfIndexRange\n");}
-	}
-};
+%feature("shadow") NMTDS_CArray1OfIndexRange::~NMTDS_CArray1OfIndexRange %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_InterfPool;
@@ -900,12 +858,10 @@ class NMTDS_InterfPool {
 		BOPTools_CArray1OfVVInterference & VVInterferences();
 
 };
-%extend NMTDS_InterfPool {
-	~NMTDS_InterfPool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_InterfPool\n");}
-	}
-};
+%feature("shadow") NMTDS_InterfPool::~NMTDS_InterfPool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_ListIteratorOfListOfPassKeyBoolean;
@@ -925,12 +881,10 @@ class NMTDS_ListIteratorOfListOfPassKeyBoolean {
 		NMTDS_PassKeyBoolean & Value() const;
 
 };
-%extend NMTDS_ListIteratorOfListOfPassKeyBoolean {
-	~NMTDS_ListIteratorOfListOfPassKeyBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_ListIteratorOfListOfPassKeyBoolean\n");}
-	}
-};
+%feature("shadow") NMTDS_ListIteratorOfListOfPassKeyBoolean::~NMTDS_ListIteratorOfListOfPassKeyBoolean %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_BoxBndTreeSelector;
@@ -946,12 +900,10 @@ class NMTDS_BoxBndTreeSelector : public Selector {
 		const TColStd_ListOfInteger & Indices() const;
 
 };
-%extend NMTDS_BoxBndTreeSelector {
-	~NMTDS_BoxBndTreeSelector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_BoxBndTreeSelector\n");}
-	}
-};
+%feature("shadow") NMTDS_BoxBndTreeSelector::~NMTDS_BoxBndTreeSelector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_IndexedDataMapOfIntegerShape;
@@ -993,12 +945,10 @@ class NMTDS_IndexedDataMapOfIntegerShape : public TCollection_BasicMap {
 		TopoDS_Shape & ChangeFromKey(const Standard_Integer &K);
 
 };
-%extend NMTDS_IndexedDataMapOfIntegerShape {
-	~NMTDS_IndexedDataMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_IndexedDataMapOfIntegerShape\n");}
-	}
-};
+%feature("shadow") NMTDS_IndexedDataMapOfIntegerShape::~NMTDS_IndexedDataMapOfIntegerShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_PassKey;
@@ -1041,12 +991,10 @@ class NMTDS_PassKey {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NMTDS_PassKey {
-	~NMTDS_PassKey() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_PassKey\n");}
-	}
-};
+%feature("shadow") NMTDS_PassKey::~NMTDS_PassKey %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_MapOfPassKeyBoolean;
@@ -1070,12 +1018,10 @@ class NMTDS_MapOfPassKeyBoolean : public TCollection_BasicMap {
 		Standard_Boolean Remove(const NMTDS_PassKeyBoolean &aKey);
 
 };
-%extend NMTDS_MapOfPassKeyBoolean {
-	~NMTDS_MapOfPassKeyBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_MapOfPassKeyBoolean\n");}
-	}
-};
+%feature("shadow") NMTDS_MapOfPassKeyBoolean::~NMTDS_MapOfPassKeyBoolean %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors;
@@ -1095,12 +1041,10 @@ class NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
 		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & Value() const;
 
 };
-%extend NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
-	~NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors\n");}
-	}
-};
+%feature("shadow") NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors::~NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_ListNodeOfListOfPassKeyBoolean;
@@ -1124,12 +1068,10 @@ class NMTDS_ListNodeOfListOfPassKeyBoolean : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NMTDS_ListNodeOfListOfPassKeyBoolean {
-	~NMTDS_ListNodeOfListOfPassKeyBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_ListNodeOfListOfPassKeyBoolean\n");}
-	}
-};
+%feature("shadow") NMTDS_ListNodeOfListOfPassKeyBoolean::~NMTDS_ListNodeOfListOfPassKeyBoolean %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_PassKeyMapHasher;
@@ -1143,12 +1085,10 @@ class NMTDS_PassKeyMapHasher {
 		Standard_Boolean IsEqual(const NMTDS_PassKey &aPKey1, const NMTDS_PassKey &aPKey2);
 
 };
-%extend NMTDS_PassKeyMapHasher {
-	~NMTDS_PassKeyMapHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_PassKeyMapHasher\n");}
-	}
-};
+%feature("shadow") NMTDS_PassKeyMapHasher::~NMTDS_PassKeyMapHasher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_Iterator;
@@ -1180,12 +1120,10 @@ class NMTDS_Iterator {
 		void FillMVSD(const TColStd_DataMapOfIntegerListOfInteger &aMVSD1, TColStd_DataMapOfIntegerListOfInteger & aMVSD2);
 
 };
-%extend NMTDS_Iterator {
-	~NMTDS_Iterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_Iterator\n");}
-	}
-};
+%feature("shadow") NMTDS_Iterator::~NMTDS_Iterator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_StdMapNodeOfMapOfPassKey;
@@ -1209,12 +1147,10 @@ class NMTDS_StdMapNodeOfMapOfPassKey : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NMTDS_StdMapNodeOfMapOfPassKey {
-	~NMTDS_StdMapNodeOfMapOfPassKey() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_StdMapNodeOfMapOfPassKey\n");}
-	}
-};
+%feature("shadow") NMTDS_StdMapNodeOfMapOfPassKey::~NMTDS_StdMapNodeOfMapOfPassKey %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_ShapesDataStructure;
@@ -1246,12 +1182,10 @@ class NMTDS_ShapesDataStructure : public BooleanOperations_ShapesDataStructure {
 		void ComputeBoxEx(const Standard_Integer anIndex, Bnd_Box & aBox) const;
 
 };
-%extend NMTDS_ShapesDataStructure {
-	~NMTDS_ShapesDataStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_ShapesDataStructure\n");}
-	}
-};
+%feature("shadow") NMTDS_ShapesDataStructure::~NMTDS_ShapesDataStructure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_IndexRange;
@@ -1271,12 +1205,10 @@ class NMTDS_IndexRange {
 		Standard_Boolean IsInRange(const Standard_Integer aIndex) const;
 
 };
-%extend NMTDS_IndexRange {
-	~NMTDS_IndexRange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_IndexRange\n");}
-	}
-};
+%feature("shadow") NMTDS_IndexRange::~NMTDS_IndexRange %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_ListOfPassKey;
@@ -1324,12 +1256,10 @@ class NMTDS_ListOfPassKey {
 		void InsertAfter(NMTDS_ListOfPassKey & Other, NMTDS_ListIteratorOfListOfPassKey & It);
 
 };
-%extend NMTDS_ListOfPassKey {
-	~NMTDS_ListOfPassKey() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_ListOfPassKey\n");}
-	}
-};
+%feature("shadow") NMTDS_ListOfPassKey::~NMTDS_ListOfPassKey %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_PassKeyShape;
@@ -1370,12 +1300,10 @@ class NMTDS_PassKeyShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NMTDS_PassKeyShape {
-	~NMTDS_PassKeyShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_PassKeyShape\n");}
-	}
-};
+%feature("shadow") NMTDS_PassKeyShape::~NMTDS_PassKeyShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_Tools;
@@ -1395,12 +1323,10 @@ class NMTDS_Tools {
 		void CopyShape(const TopoDS_Shape &aS, TopoDS_Shape & aSC, TopTools_IndexedDataMapOfShapeShape & aMSS);
 
 };
-%extend NMTDS_Tools {
-	~NMTDS_Tools() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_Tools\n");}
-	}
-};
+%feature("shadow") NMTDS_Tools::~NMTDS_Tools %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_PassKeyBoolean;
@@ -1416,12 +1342,10 @@ class NMTDS_PassKeyBoolean : public NMTDS_PassKey {
 		Standard_Boolean Flag() const;
 
 };
-%extend NMTDS_PassKeyBoolean {
-	~NMTDS_PassKeyBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_PassKeyBoolean\n");}
-	}
-};
+%feature("shadow") NMTDS_PassKeyBoolean::~NMTDS_PassKeyBoolean %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_MapOfPassKey;
@@ -1445,12 +1369,10 @@ class NMTDS_MapOfPassKey : public TCollection_BasicMap {
 		Standard_Boolean Remove(const NMTDS_PassKey &aKey);
 
 };
-%extend NMTDS_MapOfPassKey {
-	~NMTDS_MapOfPassKey() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_MapOfPassKey\n");}
-	}
-};
+%feature("shadow") NMTDS_MapOfPassKey::~NMTDS_MapOfPassKey %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_ListNodeOfListOfPassKey;
@@ -1474,12 +1396,10 @@ class NMTDS_ListNodeOfListOfPassKey : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NMTDS_ListNodeOfListOfPassKey {
-	~NMTDS_ListNodeOfListOfPassKey() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_ListNodeOfListOfPassKey\n");}
-	}
-};
+%feature("shadow") NMTDS_ListNodeOfListOfPassKey::~NMTDS_ListNodeOfListOfPassKey %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_IteratorCheckerSI;
@@ -1489,12 +1409,10 @@ class NMTDS_IteratorCheckerSI : public NMTDS_Iterator {
 		NMTDS_IteratorCheckerSI();
 
 };
-%extend NMTDS_IteratorCheckerSI {
-	~NMTDS_IteratorCheckerSI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_IteratorCheckerSI\n");}
-	}
-};
+%feature("shadow") NMTDS_IteratorCheckerSI::~NMTDS_IteratorCheckerSI %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_MapIteratorOfMapOfPassKey;
@@ -1510,12 +1428,10 @@ class NMTDS_MapIteratorOfMapOfPassKey : public TCollection_BasicMapIterator {
 		const NMTDS_PassKey & Key() const;
 
 };
-%extend NMTDS_MapIteratorOfMapOfPassKey {
-	~NMTDS_MapIteratorOfMapOfPassKey() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_MapIteratorOfMapOfPassKey\n");}
-	}
-};
+%feature("shadow") NMTDS_MapIteratorOfMapOfPassKey::~NMTDS_MapIteratorOfMapOfPassKey %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_MapIteratorOfMapOfPassKeyBoolean;
@@ -1531,12 +1447,10 @@ class NMTDS_MapIteratorOfMapOfPassKeyBoolean : public TCollection_BasicMapIterat
 		const NMTDS_PassKeyBoolean & Key() const;
 
 };
-%extend NMTDS_MapIteratorOfMapOfPassKeyBoolean {
-	~NMTDS_MapIteratorOfMapOfPassKeyBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_MapIteratorOfMapOfPassKeyBoolean\n");}
-	}
-};
+%feature("shadow") NMTDS_MapIteratorOfMapOfPassKeyBoolean::~NMTDS_MapIteratorOfMapOfPassKeyBoolean %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape;
@@ -1586,9 +1500,7 @@ class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public TCollectio
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
-	~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape\n");}
-	}
-};
+%feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

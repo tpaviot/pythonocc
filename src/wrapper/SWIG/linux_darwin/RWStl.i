@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include RWStl_dependencies.i
 
 
@@ -52,9 +56,7 @@ class RWStl {
 		Handle_StlMesh_Mesh ReadAscii(const OSD_Path &aPath);
 
 };
-%extend RWStl {
-	~RWStl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStl\n");}
-	}
-};
+%feature("shadow") RWStl::~RWStl %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ShapeCustom_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_ShapeCustom_BSplineRestriction : public Handle_BRepTools_Modificati
 	return (ShapeCustom_BSplineRestriction*)$self->Access();
 	}
 };
-%extend Handle_ShapeCustom_BSplineRestriction {
-	~Handle_ShapeCustom_BSplineRestriction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_BSplineRestriction\n");}
-	}
-};
+%feature("shadow") Handle_ShapeCustom_BSplineRestriction::~Handle_ShapeCustom_BSplineRestriction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeCustom_TrsfModification;
@@ -87,12 +89,10 @@ class Handle_ShapeCustom_TrsfModification : public Handle_BRepTools_TrsfModifica
 	return (ShapeCustom_TrsfModification*)$self->Access();
 	}
 };
-%extend Handle_ShapeCustom_TrsfModification {
-	~Handle_ShapeCustom_TrsfModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_TrsfModification\n");}
-	}
-};
+%feature("shadow") Handle_ShapeCustom_TrsfModification::~Handle_ShapeCustom_TrsfModification %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeCustom_SweptToElementary;
@@ -117,12 +117,10 @@ class Handle_ShapeCustom_SweptToElementary : public Handle_BRepTools_Modificatio
 	return (ShapeCustom_SweptToElementary*)$self->Access();
 	}
 };
-%extend Handle_ShapeCustom_SweptToElementary {
-	~Handle_ShapeCustom_SweptToElementary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_SweptToElementary\n");}
-	}
-};
+%feature("shadow") Handle_ShapeCustom_SweptToElementary::~Handle_ShapeCustom_SweptToElementary %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeCustom_RestrictionParameters;
@@ -147,12 +145,10 @@ class Handle_ShapeCustom_RestrictionParameters : public Handle_MMgt_TShared {
 	return (ShapeCustom_RestrictionParameters*)$self->Access();
 	}
 };
-%extend Handle_ShapeCustom_RestrictionParameters {
-	~Handle_ShapeCustom_RestrictionParameters() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_RestrictionParameters\n");}
-	}
-};
+%feature("shadow") Handle_ShapeCustom_RestrictionParameters::~Handle_ShapeCustom_RestrictionParameters %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeCustom_ConvertToBSpline;
@@ -177,12 +173,10 @@ class Handle_ShapeCustom_ConvertToBSpline : public Handle_BRepTools_Modification
 	return (ShapeCustom_ConvertToBSpline*)$self->Access();
 	}
 };
-%extend Handle_ShapeCustom_ConvertToBSpline {
-	~Handle_ShapeCustom_ConvertToBSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_ConvertToBSpline\n");}
-	}
-};
+%feature("shadow") Handle_ShapeCustom_ConvertToBSpline::~Handle_ShapeCustom_ConvertToBSpline %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeCustom_ConvertToRevolution;
@@ -207,12 +201,10 @@ class Handle_ShapeCustom_ConvertToRevolution : public Handle_BRepTools_Modificat
 	return (ShapeCustom_ConvertToRevolution*)$self->Access();
 	}
 };
-%extend Handle_ShapeCustom_ConvertToRevolution {
-	~Handle_ShapeCustom_ConvertToRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_ConvertToRevolution\n");}
-	}
-};
+%feature("shadow") Handle_ShapeCustom_ConvertToRevolution::~Handle_ShapeCustom_ConvertToRevolution %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeCustom_DirectModification;
@@ -237,12 +229,10 @@ class Handle_ShapeCustom_DirectModification : public Handle_BRepTools_Modificati
 	return (ShapeCustom_DirectModification*)$self->Access();
 	}
 };
-%extend Handle_ShapeCustom_DirectModification {
-	~Handle_ShapeCustom_DirectModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_DirectModification\n");}
-	}
-};
+%feature("shadow") Handle_ShapeCustom_DirectModification::~Handle_ShapeCustom_DirectModification %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeCustom_ConvertToBSpline;
@@ -282,12 +272,10 @@ class ShapeCustom_ConvertToBSpline : public BRepTools_Modification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeCustom_ConvertToBSpline {
-	~ShapeCustom_ConvertToBSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeCustom_ConvertToBSpline\n");}
-	}
-};
+%feature("shadow") ShapeCustom_ConvertToBSpline::~ShapeCustom_ConvertToBSpline %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeCustom_ConvertToRevolution;
@@ -321,12 +309,10 @@ class ShapeCustom_ConvertToRevolution : public BRepTools_Modification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeCustom_ConvertToRevolution {
-	~ShapeCustom_ConvertToRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeCustom_ConvertToRevolution\n");}
-	}
-};
+%feature("shadow") ShapeCustom_ConvertToRevolution::~ShapeCustom_ConvertToRevolution %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeCustom_Curve2d;
@@ -342,12 +328,10 @@ class ShapeCustom_Curve2d {
 		Standard_Boolean SimplifyBSpline2d(Handle_Geom2d_BSplineCurve & theBSpline2d, const Standard_Real theTolerance);
 
 };
-%extend ShapeCustom_Curve2d {
-	~ShapeCustom_Curve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeCustom_Curve2d\n");}
-	}
-};
+%feature("shadow") ShapeCustom_Curve2d::~ShapeCustom_Curve2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeCustom_TrsfModification;
@@ -379,12 +363,10 @@ class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeCustom_TrsfModification {
-	~ShapeCustom_TrsfModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeCustom_TrsfModification\n");}
-	}
-};
+%feature("shadow") ShapeCustom_TrsfModification::~ShapeCustom_TrsfModification %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeCustom_RestrictionParameters;
@@ -450,12 +432,10 @@ class ShapeCustom_RestrictionParameters : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeCustom_RestrictionParameters {
-	~ShapeCustom_RestrictionParameters() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeCustom_RestrictionParameters\n");}
-	}
-};
+%feature("shadow") ShapeCustom_RestrictionParameters::~ShapeCustom_RestrictionParameters %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeCustom_Curve;
@@ -471,12 +451,10 @@ class ShapeCustom_Curve {
 		Handle_Geom_Curve ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x000000001);
 
 };
-%extend ShapeCustom_Curve {
-	~ShapeCustom_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeCustom_Curve\n");}
-	}
-};
+%feature("shadow") ShapeCustom_Curve::~ShapeCustom_Curve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeCustom_Surface;
@@ -496,12 +474,10 @@ class ShapeCustom_Surface {
 		Handle_Geom_Surface ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x000000001);
 
 };
-%extend ShapeCustom_Surface {
-	~ShapeCustom_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeCustom_Surface\n");}
-	}
-};
+%feature("shadow") ShapeCustom_Surface::~ShapeCustom_Surface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeCustom_SweptToElementary;
@@ -535,12 +511,10 @@ class ShapeCustom_SweptToElementary : public BRepTools_Modification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeCustom_SweptToElementary {
-	~ShapeCustom_SweptToElementary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeCustom_SweptToElementary\n");}
-	}
-};
+%feature("shadow") ShapeCustom_SweptToElementary::~ShapeCustom_SweptToElementary %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeCustom;
@@ -556,12 +530,10 @@ class ShapeCustom {
 		TopoDS_Shape ScaleShape(const TopoDS_Shape &S, const Standard_Real scale);
 
 };
-%extend ShapeCustom {
-	~ShapeCustom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeCustom\n");}
-	}
-};
+%feature("shadow") ShapeCustom::~ShapeCustom %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeCustom_BSplineRestriction;
@@ -641,12 +613,10 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeCustom_BSplineRestriction {
-	~ShapeCustom_BSplineRestriction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeCustom_BSplineRestriction\n");}
-	}
-};
+%feature("shadow") ShapeCustom_BSplineRestriction::~ShapeCustom_BSplineRestriction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeCustom_DirectModification;
@@ -680,9 +650,7 @@ class ShapeCustom_DirectModification : public BRepTools_Modification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeCustom_DirectModification {
-	~ShapeCustom_DirectModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeCustom_DirectModification\n");}
-	}
-};
+%feature("shadow") ShapeCustom_DirectModification::~ShapeCustom_DirectModification %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

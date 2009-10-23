@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GeomConvert_dependencies.i
 
 
@@ -52,12 +56,10 @@ class GeomConvert_BSplineSurfaceKnotSplitting {
 		Standard_Integer VSplitValue(const Standard_Integer VIndex) const;
 
 };
-%extend GeomConvert_BSplineSurfaceKnotSplitting {
-	~GeomConvert_BSplineSurfaceKnotSplitting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineSurfaceKnotSplitting\n");}
-	}
-};
+%feature("shadow") GeomConvert_BSplineSurfaceKnotSplitting::~GeomConvert_BSplineSurfaceKnotSplitting %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomConvert_CompBezierSurfacesToBSplineSurface;
@@ -95,12 +97,10 @@ class GeomConvert_CompBezierSurfacesToBSplineSurface {
 		Standard_Boolean IsDone() const;
 
 };
-%extend GeomConvert_CompBezierSurfacesToBSplineSurface {
-	~GeomConvert_CompBezierSurfacesToBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomConvert_CompBezierSurfacesToBSplineSurface\n");}
-	}
-};
+%feature("shadow") GeomConvert_CompBezierSurfacesToBSplineSurface::~GeomConvert_CompBezierSurfacesToBSplineSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomConvert_BSplineCurveKnotSplitting;
@@ -116,12 +116,10 @@ class GeomConvert_BSplineCurveKnotSplitting {
 		Standard_Integer SplitValue(const Standard_Integer Index) const;
 
 };
-%extend GeomConvert_BSplineCurveKnotSplitting {
-	~GeomConvert_BSplineCurveKnotSplitting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineCurveKnotSplitting\n");}
-	}
-};
+%feature("shadow") GeomConvert_BSplineCurveKnotSplitting::~GeomConvert_BSplineCurveKnotSplitting %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomConvert;
@@ -159,12 +157,10 @@ class GeomConvert {
 		void C0BSplineToArrayOfC1BSplineCurve(const Handle_Geom_BSplineCurve &BS, Handle_TColGeom_HArray1OfBSplineCurve & tabBS, const Standard_Real AngularTolerance, const Standard_Real tolerance);
 
 };
-%extend GeomConvert {
-	~GeomConvert() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomConvert\n");}
-	}
-};
+%feature("shadow") GeomConvert::~GeomConvert %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomConvert_ApproxCurve;
@@ -190,12 +186,10 @@ class GeomConvert_ApproxCurve {
 		};
 
 };
-%extend GeomConvert_ApproxCurve {
-	~GeomConvert_ApproxCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomConvert_ApproxCurve\n");}
-	}
-};
+%feature("shadow") GeomConvert_ApproxCurve::~GeomConvert_ApproxCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomConvert_BSplineCurveToBezierCurve;
@@ -215,12 +209,10 @@ class GeomConvert_BSplineCurveToBezierCurve {
 		Standard_Integer NbArcs() const;
 
 };
-%extend GeomConvert_BSplineCurveToBezierCurve {
-	~GeomConvert_BSplineCurveToBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineCurveToBezierCurve\n");}
-	}
-};
+%feature("shadow") GeomConvert_BSplineCurveToBezierCurve::~GeomConvert_BSplineCurveToBezierCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomConvert_BSplineSurfaceToBezierSurface;
@@ -244,12 +236,10 @@ class GeomConvert_BSplineSurfaceToBezierSurface {
 		Standard_Integer NbVPatches() const;
 
 };
-%extend GeomConvert_BSplineSurfaceToBezierSurface {
-	~GeomConvert_BSplineSurfaceToBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineSurfaceToBezierSurface\n");}
-	}
-};
+%feature("shadow") GeomConvert_BSplineSurfaceToBezierSurface::~GeomConvert_BSplineSurfaceToBezierSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomConvert_CompCurveToBSplineCurve;
@@ -263,12 +253,10 @@ class GeomConvert_CompCurveToBSplineCurve {
 		Handle_Geom_BSplineCurve BSplineCurve() const;
 
 };
-%extend GeomConvert_CompCurveToBSplineCurve {
-	~GeomConvert_CompCurveToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomConvert_CompCurveToBSplineCurve\n");}
-	}
-};
+%feature("shadow") GeomConvert_CompCurveToBSplineCurve::~GeomConvert_CompCurveToBSplineCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomConvert_ApproxSurface;
@@ -294,9 +282,7 @@ class GeomConvert_ApproxSurface {
 		};
 
 };
-%extend GeomConvert_ApproxSurface {
-	~GeomConvert_ApproxSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomConvert_ApproxSurface\n");}
-	}
-};
+%feature("shadow") GeomConvert_ApproxSurface::~GeomConvert_ApproxSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

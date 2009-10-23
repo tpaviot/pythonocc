@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Resource_dependencies.i
 
 
@@ -64,12 +68,10 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public H
 	return (Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString*)$self->Access();
 	}
 };
-%extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
-	~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");}
-	}
-};
+%feature("shadow") Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString::~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
@@ -94,12 +96,10 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public Hand
 	return (Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString*)$self->Access();
 	}
 };
-%extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
-	~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString\n");}
-	}
-};
+%feature("shadow") Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString::~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Resource_NoSuchResource;
@@ -124,12 +124,10 @@ class Handle_Resource_NoSuchResource : public Handle_Standard_NoSuchObject {
 	return (Resource_NoSuchResource*)$self->Access();
 	}
 };
-%extend Handle_Resource_NoSuchResource {
-	~Handle_Resource_NoSuchResource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Resource_NoSuchResource\n");}
-	}
-};
+%feature("shadow") Handle_Resource_NoSuchResource::~Handle_Resource_NoSuchResource %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Resource_Manager;
@@ -154,12 +152,10 @@ class Handle_Resource_Manager : public Handle_MMgt_TShared {
 	return (Resource_Manager*)$self->Access();
 	}
 };
-%extend Handle_Resource_Manager {
-	~Handle_Resource_Manager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Resource_Manager\n");}
-	}
-};
+%feature("shadow") Handle_Resource_Manager::~Handle_Resource_Manager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Resource_Array1OfAsciiString;
@@ -197,12 +193,10 @@ class Resource_Array1OfAsciiString {
 		TCollection_AsciiString & operator()(const Standard_Integer Index);
 
 };
-%extend Resource_Array1OfAsciiString {
-	~Resource_Array1OfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_Array1OfAsciiString\n");}
-	}
-};
+%feature("shadow") Resource_Array1OfAsciiString::~Resource_Array1OfAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Resource_DataMapOfAsciiStringAsciiString;
@@ -234,12 +228,10 @@ class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 		TCollection_AsciiString & operator()(const TCollection_AsciiString &K);
 
 };
-%extend Resource_DataMapOfAsciiStringAsciiString {
-	~Resource_DataMapOfAsciiStringAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_DataMapOfAsciiStringAsciiString\n");}
-	}
-};
+%feature("shadow") Resource_DataMapOfAsciiStringAsciiString::~Resource_DataMapOfAsciiStringAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString;
@@ -257,12 +249,10 @@ class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCol
 		const TCollection_ExtendedString & Value() const;
 
 };
-%extend Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString {
-	~Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString\n");}
-	}
-};
+%feature("shadow") Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString::~Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
@@ -288,12 +278,10 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
-	~Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString\n");}
-	}
-};
+%feature("shadow") Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString::~Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString;
@@ -319,12 +307,10 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollect
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
-	~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");}
-	}
-};
+%feature("shadow") Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString::~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Resource_Manager;
@@ -368,12 +354,10 @@ class Resource_Manager : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Resource_Manager {
-	~Resource_Manager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_Manager\n");}
-	}
-};
+%feature("shadow") Resource_Manager::~Resource_Manager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Resource_QuickSortOfArray1;
@@ -385,12 +369,10 @@ class Resource_QuickSortOfArray1 {
 		void Sort(Resource_Array1OfAsciiString & TheArray, const Resource_LexicalCompare &Comp);
 
 };
-%extend Resource_QuickSortOfArray1 {
-	~Resource_QuickSortOfArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_QuickSortOfArray1\n");}
-	}
-};
+%feature("shadow") Resource_QuickSortOfArray1::~Resource_QuickSortOfArray1 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Resource_LexicalCompare;
@@ -402,12 +384,10 @@ class Resource_LexicalCompare {
 		Standard_Boolean IsLower(const TCollection_AsciiString &Left, const TCollection_AsciiString &Right) const;
 
 };
-%extend Resource_LexicalCompare {
-	~Resource_LexicalCompare() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_LexicalCompare\n");}
-	}
-};
+%feature("shadow") Resource_LexicalCompare::~Resource_LexicalCompare %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Resource_NoSuchResource;
@@ -437,12 +417,10 @@ class Resource_NoSuchResource : public Standard_NoSuchObject {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Resource_NoSuchResource {
-	~Resource_NoSuchResource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_NoSuchResource\n");}
-	}
-};
+%feature("shadow") Resource_NoSuchResource::~Resource_NoSuchResource %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Resource_DataMapOfAsciiStringExtendedString;
@@ -474,12 +452,10 @@ class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap 
 		TCollection_ExtendedString & operator()(const TCollection_AsciiString &K);
 
 };
-%extend Resource_DataMapOfAsciiStringExtendedString {
-	~Resource_DataMapOfAsciiStringExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_DataMapOfAsciiStringExtendedString\n");}
-	}
-};
+%feature("shadow") Resource_DataMapOfAsciiStringExtendedString::~Resource_DataMapOfAsciiStringExtendedString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Resource_Unicode;
@@ -515,12 +491,10 @@ class Resource_Unicode {
 		Standard_Boolean ConvertUnicodeToFormat(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
 
 };
-%extend Resource_Unicode {
-	~Resource_Unicode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_Unicode\n");}
-	}
-};
+%feature("shadow") Resource_Unicode::~Resource_Unicode %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString;
@@ -538,9 +512,7 @@ class Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString : public TCollec
 		const TCollection_AsciiString & Value() const;
 
 };
-%extend Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString {
-	~Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString\n");}
-	}
-};
+%feature("shadow") Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString::~Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

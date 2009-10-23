@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TopAbs_dependencies.i
 
 
@@ -80,9 +84,7 @@ class TopAbs {
 		Standard_OStream & Print(const TopAbs_State St, Standard_OStream & S);
 
 };
-%extend TopAbs {
-	~TopAbs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopAbs\n");}
-	}
-};
+%feature("shadow") TopAbs::~TopAbs %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

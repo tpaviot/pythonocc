@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Select3D_dependencies.i
 
 
@@ -63,12 +67,10 @@ class Handle_Select3D_ListNodeOfListOfSensitive : public Handle_TCollection_MapN
 	return (Select3D_ListNodeOfListOfSensitive*)$self->Access();
 	}
 };
-%extend Handle_Select3D_ListNodeOfListOfSensitive {
-	~Handle_Select3D_ListNodeOfListOfSensitive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_ListNodeOfListOfSensitive\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_ListNodeOfListOfSensitive::~Handle_Select3D_ListNodeOfListOfSensitive %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_SensitiveEntity;
@@ -93,12 +95,10 @@ class Handle_Select3D_SensitiveEntity : public Handle_SelectBasics_SensitiveEnti
 	return (Select3D_SensitiveEntity*)$self->Access();
 	}
 };
-%extend Handle_Select3D_SensitiveEntity {
-	~Handle_Select3D_SensitiveEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveEntity\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_SensitiveEntity::~Handle_Select3D_SensitiveEntity %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_SensitivePoly;
@@ -123,12 +123,10 @@ class Handle_Select3D_SensitivePoly : public Handle_Select3D_SensitiveEntity {
 	return (Select3D_SensitivePoly*)$self->Access();
 	}
 };
-%extend Handle_Select3D_SensitivePoly {
-	~Handle_Select3D_SensitivePoly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitivePoly\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_SensitivePoly::~Handle_Select3D_SensitivePoly %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_SensitiveCircle;
@@ -153,12 +151,10 @@ class Handle_Select3D_SensitiveCircle : public Handle_Select3D_SensitivePoly {
 	return (Select3D_SensitiveCircle*)$self->Access();
 	}
 };
-%extend Handle_Select3D_SensitiveCircle {
-	~Handle_Select3D_SensitiveCircle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveCircle\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_SensitiveCircle::~Handle_Select3D_SensitiveCircle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_SensitiveBox;
@@ -183,12 +179,10 @@ class Handle_Select3D_SensitiveBox : public Handle_Select3D_SensitiveEntity {
 	return (Select3D_SensitiveBox*)$self->Access();
 	}
 };
-%extend Handle_Select3D_SensitiveBox {
-	~Handle_Select3D_SensitiveBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveBox\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_SensitiveBox::~Handle_Select3D_SensitiveBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_SensitiveFace;
@@ -213,12 +207,10 @@ class Handle_Select3D_SensitiveFace : public Handle_Select3D_SensitivePoly {
 	return (Select3D_SensitiveFace*)$self->Access();
 	}
 };
-%extend Handle_Select3D_SensitiveFace {
-	~Handle_Select3D_SensitiveFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveFace\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_SensitiveFace::~Handle_Select3D_SensitiveFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_SensitiveTriangle;
@@ -243,12 +235,10 @@ class Handle_Select3D_SensitiveTriangle : public Handle_Select3D_SensitivePoly {
 	return (Select3D_SensitiveTriangle*)$self->Access();
 	}
 };
-%extend Handle_Select3D_SensitiveTriangle {
-	~Handle_Select3D_SensitiveTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveTriangle\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_SensitiveTriangle::~Handle_Select3D_SensitiveTriangle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_SensitiveCurve;
@@ -273,12 +263,10 @@ class Handle_Select3D_SensitiveCurve : public Handle_Select3D_SensitivePoly {
 	return (Select3D_SensitiveCurve*)$self->Access();
 	}
 };
-%extend Handle_Select3D_SensitiveCurve {
-	~Handle_Select3D_SensitiveCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveCurve\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_SensitiveCurve::~Handle_Select3D_SensitiveCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_SensitiveWire;
@@ -303,12 +291,10 @@ class Handle_Select3D_SensitiveWire : public Handle_Select3D_SensitiveEntity {
 	return (Select3D_SensitiveWire*)$self->Access();
 	}
 };
-%extend Handle_Select3D_SensitiveWire {
-	~Handle_Select3D_SensitiveWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveWire\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_SensitiveWire::~Handle_Select3D_SensitiveWire %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_ListNodeOfListOfSensitiveTriangle;
@@ -333,12 +319,10 @@ class Handle_Select3D_ListNodeOfListOfSensitiveTriangle : public Handle_TCollect
 	return (Select3D_ListNodeOfListOfSensitiveTriangle*)$self->Access();
 	}
 };
-%extend Handle_Select3D_ListNodeOfListOfSensitiveTriangle {
-	~Handle_Select3D_ListNodeOfListOfSensitiveTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_ListNodeOfListOfSensitiveTriangle\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_ListNodeOfListOfSensitiveTriangle::~Handle_Select3D_ListNodeOfListOfSensitiveTriangle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_SensitiveTriangulation;
@@ -363,12 +347,10 @@ class Handle_Select3D_SensitiveTriangulation : public Handle_Select3D_SensitiveE
 	return (Select3D_SensitiveTriangulation*)$self->Access();
 	}
 };
-%extend Handle_Select3D_SensitiveTriangulation {
-	~Handle_Select3D_SensitiveTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveTriangulation\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_SensitiveTriangulation::~Handle_Select3D_SensitiveTriangulation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_SensitiveGroup;
@@ -393,12 +375,10 @@ class Handle_Select3D_SensitiveGroup : public Handle_Select3D_SensitiveEntity {
 	return (Select3D_SensitiveGroup*)$self->Access();
 	}
 };
-%extend Handle_Select3D_SensitiveGroup {
-	~Handle_Select3D_SensitiveGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveGroup\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_SensitiveGroup::~Handle_Select3D_SensitiveGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_SensitiveSegment;
@@ -423,12 +403,10 @@ class Handle_Select3D_SensitiveSegment : public Handle_Select3D_SensitiveEntity 
 	return (Select3D_SensitiveSegment*)$self->Access();
 	}
 };
-%extend Handle_Select3D_SensitiveSegment {
-	~Handle_Select3D_SensitiveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveSegment\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_SensitiveSegment::~Handle_Select3D_SensitiveSegment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_SensitivePoint;
@@ -453,12 +431,10 @@ class Handle_Select3D_SensitivePoint : public Handle_Select3D_SensitiveEntity {
 	return (Select3D_SensitivePoint*)$self->Access();
 	}
 };
-%extend Handle_Select3D_SensitivePoint {
-	~Handle_Select3D_SensitivePoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitivePoint\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_SensitivePoint::~Handle_Select3D_SensitivePoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Select3D_SequenceNodeOfSensitiveEntitySequence;
@@ -483,12 +459,10 @@ class Handle_Select3D_SequenceNodeOfSensitiveEntitySequence : public Handle_TCol
 	return (Select3D_SequenceNodeOfSensitiveEntitySequence*)$self->Access();
 	}
 };
-%extend Handle_Select3D_SequenceNodeOfSensitiveEntitySequence {
-	~Handle_Select3D_SequenceNodeOfSensitiveEntitySequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SequenceNodeOfSensitiveEntitySequence\n");}
-	}
-};
+%feature("shadow") Handle_Select3D_SequenceNodeOfSensitiveEntitySequence::~Handle_Select3D_SequenceNodeOfSensitiveEntitySequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SensitiveEntity;
@@ -546,12 +520,10 @@ class Select3D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_SensitiveEntity {
-	~Select3D_SensitiveEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveEntity\n");}
-	}
-};
+%feature("shadow") Select3D_SensitiveEntity::~Select3D_SensitiveEntity %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SensitiveBox;
@@ -577,12 +549,10 @@ class Select3D_SensitiveBox : public Select3D_SensitiveEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_SensitiveBox {
-	~Select3D_SensitiveBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveBox\n");}
-	}
-};
+%feature("shadow") Select3D_SensitiveBox::~Select3D_SensitiveBox %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_ListNodeOfListOfSensitiveTriangle;
@@ -606,12 +576,10 @@ class Select3D_ListNodeOfListOfSensitiveTriangle : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_ListNodeOfListOfSensitiveTriangle {
-	~Select3D_ListNodeOfListOfSensitiveTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_ListNodeOfListOfSensitiveTriangle\n");}
-	}
-};
+%feature("shadow") Select3D_ListNodeOfListOfSensitiveTriangle::~Select3D_ListNodeOfListOfSensitiveTriangle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SensitivePoint;
@@ -651,12 +619,10 @@ class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_SensitivePoint {
-	~Select3D_SensitivePoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitivePoint\n");}
-	}
-};
+%feature("shadow") Select3D_SensitivePoint::~Select3D_SensitivePoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_Pnt;
@@ -668,12 +634,10 @@ class Select3D_Pnt {
 		gp_Pnt operator=(const gp_Pnt &thePnt);
 
 };
-%extend Select3D_Pnt {
-	~Select3D_Pnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_Pnt\n");}
-	}
-};
+%feature("shadow") Select3D_Pnt::~Select3D_Pnt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_Projector;
@@ -735,12 +699,10 @@ class Select3D_Projector {
 		virtual		void Transform(gp_Lin & Lin, const gp_GTrsf &T) const;
 
 };
-%extend Select3D_Projector {
-	~Select3D_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_Projector\n");}
-	}
-};
+%feature("shadow") Select3D_Projector::~Select3D_Projector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SensitiveSegment;
@@ -790,12 +752,10 @@ class Select3D_SensitiveSegment : public Select3D_SensitiveEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_SensitiveSegment {
-	~Select3D_SensitiveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveSegment\n");}
-	}
-};
+%feature("shadow") Select3D_SensitiveSegment::~Select3D_SensitiveSegment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SensitivePoly;
@@ -825,12 +785,10 @@ class Select3D_SensitivePoly : public Select3D_SensitiveEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_SensitivePoly {
-	~Select3D_SensitivePoly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitivePoly\n");}
-	}
-};
+%feature("shadow") Select3D_SensitivePoly::~Select3D_SensitivePoly %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SensitiveTriangle;
@@ -870,12 +828,10 @@ class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_SensitiveTriangle {
-	~Select3D_SensitiveTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveTriangle\n");}
-	}
-};
+%feature("shadow") Select3D_SensitiveTriangle::~Select3D_SensitiveTriangle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SensitiveGroup;
@@ -935,12 +891,10 @@ class Select3D_SensitiveGroup : public Select3D_SensitiveEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_SensitiveGroup {
-	~Select3D_SensitiveGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveGroup\n");}
-	}
-};
+%feature("shadow") Select3D_SensitiveGroup::~Select3D_SensitiveGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SensitiveFace;
@@ -974,12 +928,10 @@ class Select3D_SensitiveFace : public Select3D_SensitivePoly {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_SensitiveFace {
-	~Select3D_SensitiveFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveFace\n");}
-	}
-};
+%feature("shadow") Select3D_SensitiveFace::~Select3D_SensitiveFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SensitiveEntitySequence;
@@ -1031,12 +983,10 @@ class Select3D_SensitiveEntitySequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Select3D_SensitiveEntitySequence {
-	~Select3D_SensitiveEntitySequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveEntitySequence\n");}
-	}
-};
+%feature("shadow") Select3D_SensitiveEntitySequence::~Select3D_SensitiveEntitySequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_ListOfSensitive;
@@ -1084,12 +1034,10 @@ class Select3D_ListOfSensitive {
 		void InsertAfter(Select3D_ListOfSensitive & Other, Select3D_ListIteratorOfListOfSensitive & It);
 
 };
-%extend Select3D_ListOfSensitive {
-	~Select3D_ListOfSensitive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_ListOfSensitive\n");}
-	}
-};
+%feature("shadow") Select3D_ListOfSensitive::~Select3D_ListOfSensitive %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SensitiveCurve;
@@ -1125,12 +1073,10 @@ class Select3D_SensitiveCurve : public Select3D_SensitivePoly {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_SensitiveCurve {
-	~Select3D_SensitiveCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveCurve\n");}
-	}
-};
+%feature("shadow") Select3D_SensitiveCurve::~Select3D_SensitiveCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_Pnt2d;
@@ -1142,12 +1088,10 @@ class Select3D_Pnt2d {
 		gp_Pnt2d operator=(const gp_Pnt2d &thePnt);
 
 };
-%extend Select3D_Pnt2d {
-	~Select3D_Pnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_Pnt2d\n");}
-	}
-};
+%feature("shadow") Select3D_Pnt2d::~Select3D_Pnt2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_ListIteratorOfListOfSensitiveTriangle;
@@ -1167,12 +1111,10 @@ class Select3D_ListIteratorOfListOfSensitiveTriangle {
 		Handle_Select3D_SensitiveTriangle & Value() const;
 
 };
-%extend Select3D_ListIteratorOfListOfSensitiveTriangle {
-	~Select3D_ListIteratorOfListOfSensitiveTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_ListIteratorOfListOfSensitiveTriangle\n");}
-	}
-};
+%feature("shadow") Select3D_ListIteratorOfListOfSensitiveTriangle::~Select3D_ListIteratorOfListOfSensitiveTriangle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SequenceNodeOfSensitiveEntitySequence;
@@ -1196,12 +1138,10 @@ class Select3D_SequenceNodeOfSensitiveEntitySequence : public TCollection_SeqNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_SequenceNodeOfSensitiveEntitySequence {
-	~Select3D_SequenceNodeOfSensitiveEntitySequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SequenceNodeOfSensitiveEntitySequence\n");}
-	}
-};
+%feature("shadow") Select3D_SequenceNodeOfSensitiveEntitySequence::~Select3D_SequenceNodeOfSensitiveEntitySequence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SensitiveTriangulation;
@@ -1257,12 +1197,10 @@ class Select3D_SensitiveTriangulation : public Select3D_SensitiveEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_SensitiveTriangulation {
-	~Select3D_SensitiveTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveTriangulation\n");}
-	}
-};
+%feature("shadow") Select3D_SensitiveTriangulation::~Select3D_SensitiveTriangulation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_ListOfSensitiveTriangle;
@@ -1310,12 +1248,10 @@ class Select3D_ListOfSensitiveTriangle {
 		void InsertAfter(Select3D_ListOfSensitiveTriangle & Other, Select3D_ListIteratorOfListOfSensitiveTriangle & It);
 
 };
-%extend Select3D_ListOfSensitiveTriangle {
-	~Select3D_ListOfSensitiveTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_ListOfSensitiveTriangle\n");}
-	}
-};
+%feature("shadow") Select3D_ListOfSensitiveTriangle::~Select3D_ListOfSensitiveTriangle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SensitiveWire;
@@ -1363,12 +1299,10 @@ class Select3D_SensitiveWire : public Select3D_SensitiveEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_SensitiveWire {
-	~Select3D_SensitiveWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveWire\n");}
-	}
-};
+%feature("shadow") Select3D_SensitiveWire::~Select3D_SensitiveWire %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_SensitiveCircle;
@@ -1410,12 +1344,10 @@ class Select3D_SensitiveCircle : public Select3D_SensitivePoly {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_SensitiveCircle {
-	~Select3D_SensitiveCircle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveCircle\n");}
-	}
-};
+%feature("shadow") Select3D_SensitiveCircle::~Select3D_SensitiveCircle %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_ListIteratorOfListOfSensitive;
@@ -1435,12 +1367,10 @@ class Select3D_ListIteratorOfListOfSensitive {
 		Handle_Select3D_SensitiveEntity & Value() const;
 
 };
-%extend Select3D_ListIteratorOfListOfSensitive {
-	~Select3D_ListIteratorOfListOfSensitive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_ListIteratorOfListOfSensitive\n");}
-	}
-};
+%feature("shadow") Select3D_ListIteratorOfListOfSensitive::~Select3D_ListIteratorOfListOfSensitive %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_ListNodeOfListOfSensitive;
@@ -1464,12 +1394,10 @@ class Select3D_ListNodeOfListOfSensitive : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Select3D_ListNodeOfListOfSensitive {
-	~Select3D_ListNodeOfListOfSensitive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_ListNodeOfListOfSensitive\n");}
-	}
-};
+%feature("shadow") Select3D_ListNodeOfListOfSensitive::~Select3D_ListNodeOfListOfSensitive %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Select3D_Box2d;
@@ -1489,9 +1417,7 @@ class Select3D_Box2d {
 		Standard_Boolean IsVoid() const;
 
 };
-%extend Select3D_Box2d {
-	~Select3D_Box2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Select3D_Box2d\n");}
-	}
-};
+%feature("shadow") Select3D_Box2d::~Select3D_Box2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

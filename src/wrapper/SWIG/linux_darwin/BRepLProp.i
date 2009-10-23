@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepLProp_dependencies.i
 
 
@@ -54,20 +58,10 @@ class BRepLProp_SurfaceTool {
 		void Bounds(const BRepAdaptor_Surface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend BRepLProp_SurfaceTool {
-	~BRepLProp_SurfaceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLProp_SurfaceTool\n");}
-	}
-};
-
-%extend BRepLProp_SurfaceTool {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLProp_SurfaceTool::~BRepLProp_SurfaceTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLProp_SLProps;
@@ -123,20 +117,10 @@ class BRepLProp_SLProps {
 		Standard_Real GaussianCurvature();
 
 };
-%extend BRepLProp_SLProps {
-	~BRepLProp_SLProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLProp_SLProps\n");}
-	}
-};
-
-%extend BRepLProp_SLProps {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLProp_SLProps::~BRepLProp_SLProps %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLProp_CurveTool;
@@ -160,20 +144,10 @@ class BRepLProp_CurveTool {
 		Standard_Real LastParameter(const BRepAdaptor_Curve &C);
 
 };
-%extend BRepLProp_CurveTool {
-	~BRepLProp_CurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLProp_CurveTool\n");}
-	}
-};
-
-%extend BRepLProp_CurveTool {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLProp_CurveTool::~BRepLProp_CurveTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLProp_CLProps;
@@ -209,20 +183,10 @@ class BRepLProp_CLProps {
 		void CentreOfCurvature(gp_Pnt & P);
 
 };
-%extend BRepLProp_CLProps {
-	~BRepLProp_CLProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLProp_CLProps\n");}
-	}
-};
-
-%extend BRepLProp_CLProps {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLProp_CLProps::~BRepLProp_CLProps %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BRepLProp;
@@ -236,17 +200,7 @@ class BRepLProp {
 		GeomAbs_Shape Continuity(const BRepAdaptor_Curve &C1, const BRepAdaptor_Curve &C2, const Standard_Real u1, const Standard_Real u2);
 
 };
-%extend BRepLProp {
-	~BRepLProp() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepLProp\n");}
-	}
-};
-
-%extend BRepLProp {
-	KillPointed() {
-	
-	delete $self->this;
-
-	}
-};
+%feature("shadow") BRepLProp::~BRepLProp %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

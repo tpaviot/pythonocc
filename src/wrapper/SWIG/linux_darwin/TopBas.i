@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TopBas_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_TopBas_ListNodeOfListOfTestInterference : public Handle_TCollection
 	return (TopBas_ListNodeOfListOfTestInterference*)$self->Access();
 	}
 };
-%extend Handle_TopBas_ListNodeOfListOfTestInterference {
-	~Handle_TopBas_ListNodeOfListOfTestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopBas_ListNodeOfListOfTestInterference\n");}
-	}
-};
+%feature("shadow") Handle_TopBas_ListNodeOfListOfTestInterference::~Handle_TopBas_ListNodeOfListOfTestInterference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopBas_ListOfTestInterference;
@@ -110,12 +112,10 @@ class TopBas_ListOfTestInterference {
 		void InsertAfter(TopBas_ListOfTestInterference & Other, TopBas_ListIteratorOfListOfTestInterference & It);
 
 };
-%extend TopBas_ListOfTestInterference {
-	~TopBas_ListOfTestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopBas_ListOfTestInterference\n");}
-	}
-};
+%feature("shadow") TopBas_ListOfTestInterference::~TopBas_ListOfTestInterference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopBas_ListIteratorOfListOfTestInterference;
@@ -135,12 +135,10 @@ class TopBas_ListIteratorOfListOfTestInterference {
 		TopBas_TestInterference & Value() const;
 
 };
-%extend TopBas_ListIteratorOfListOfTestInterference {
-	~TopBas_ListIteratorOfListOfTestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopBas_ListIteratorOfListOfTestInterference\n");}
-	}
-};
+%feature("shadow") TopBas_ListIteratorOfListOfTestInterference::~TopBas_ListIteratorOfListOfTestInterference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopBas_ListNodeOfListOfTestInterference;
@@ -164,12 +162,10 @@ class TopBas_ListNodeOfListOfTestInterference : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TopBas_ListNodeOfListOfTestInterference {
-	~TopBas_ListNodeOfListOfTestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopBas_ListNodeOfListOfTestInterference\n");}
-	}
-};
+%feature("shadow") TopBas_ListNodeOfListOfTestInterference::~TopBas_ListNodeOfListOfTestInterference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TopBas_TestInterference;
@@ -225,9 +221,7 @@ class TopBas_TestInterference {
 		TopAbs_Orientation BoundaryTransition() const;
 
 };
-%extend TopBas_TestInterference {
-	~TopBas_TestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopBas_TestInterference\n");}
-	}
-};
+%feature("shadow") TopBas_TestInterference::~TopBas_TestInterference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

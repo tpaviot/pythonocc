@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Expr_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_Expr_ExprFailure : public Handle_Standard_Failure {
 	return (Expr_ExprFailure*)$self->Access();
 	}
 };
-%extend Handle_Expr_ExprFailure {
-	~Handle_Expr_ExprFailure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_ExprFailure\n");}
-	}
-};
+%feature("shadow") Handle_Expr_ExprFailure::~Handle_Expr_ExprFailure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_NotAssigned;
@@ -87,12 +89,10 @@ class Handle_Expr_NotAssigned : public Handle_Expr_ExprFailure {
 	return (Expr_NotAssigned*)$self->Access();
 	}
 };
-%extend Handle_Expr_NotAssigned {
-	~Handle_Expr_NotAssigned() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_NotAssigned\n");}
-	}
-};
+%feature("shadow") Handle_Expr_NotAssigned::~Handle_Expr_NotAssigned %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_GeneralExpression;
@@ -117,12 +117,10 @@ class Handle_Expr_GeneralExpression : public Handle_MMgt_TShared {
 	return (Expr_GeneralExpression*)$self->Access();
 	}
 };
-%extend Handle_Expr_GeneralExpression {
-	~Handle_Expr_GeneralExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_GeneralExpression\n");}
-	}
-};
+%feature("shadow") Handle_Expr_GeneralExpression::~Handle_Expr_GeneralExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_UnaryExpression;
@@ -147,12 +145,10 @@ class Handle_Expr_UnaryExpression : public Handle_Expr_GeneralExpression {
 	return (Expr_UnaryExpression*)$self->Access();
 	}
 };
-%extend Handle_Expr_UnaryExpression {
-	~Handle_Expr_UnaryExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_UnaryExpression\n");}
-	}
-};
+%feature("shadow") Handle_Expr_UnaryExpression::~Handle_Expr_UnaryExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_LogOf10;
@@ -177,12 +173,10 @@ class Handle_Expr_LogOf10 : public Handle_Expr_UnaryExpression {
 	return (Expr_LogOf10*)$self->Access();
 	}
 };
-%extend Handle_Expr_LogOf10 {
-	~Handle_Expr_LogOf10() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_LogOf10\n");}
-	}
-};
+%feature("shadow") Handle_Expr_LogOf10::~Handle_Expr_LogOf10 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_SquareRoot;
@@ -207,12 +201,10 @@ class Handle_Expr_SquareRoot : public Handle_Expr_UnaryExpression {
 	return (Expr_SquareRoot*)$self->Access();
 	}
 };
-%extend Handle_Expr_SquareRoot {
-	~Handle_Expr_SquareRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_SquareRoot\n");}
-	}
-};
+%feature("shadow") Handle_Expr_SquareRoot::~Handle_Expr_SquareRoot %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Tanh;
@@ -237,12 +229,10 @@ class Handle_Expr_Tanh : public Handle_Expr_UnaryExpression {
 	return (Expr_Tanh*)$self->Access();
 	}
 };
-%extend Handle_Expr_Tanh {
-	~Handle_Expr_Tanh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Tanh\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Tanh::~Handle_Expr_Tanh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_ArcSine;
@@ -267,12 +257,10 @@ class Handle_Expr_ArcSine : public Handle_Expr_UnaryExpression {
 	return (Expr_ArcSine*)$self->Access();
 	}
 };
-%extend Handle_Expr_ArcSine {
-	~Handle_Expr_ArcSine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_ArcSine\n");}
-	}
-};
+%feature("shadow") Handle_Expr_ArcSine::~Handle_Expr_ArcSine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_UnaryMinus;
@@ -297,12 +285,10 @@ class Handle_Expr_UnaryMinus : public Handle_Expr_UnaryExpression {
 	return (Expr_UnaryMinus*)$self->Access();
 	}
 };
-%extend Handle_Expr_UnaryMinus {
-	~Handle_Expr_UnaryMinus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_UnaryMinus\n");}
-	}
-};
+%feature("shadow") Handle_Expr_UnaryMinus::~Handle_Expr_UnaryMinus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_NotEvaluable;
@@ -327,12 +313,10 @@ class Handle_Expr_NotEvaluable : public Handle_Expr_ExprFailure {
 	return (Expr_NotEvaluable*)$self->Access();
 	}
 };
-%extend Handle_Expr_NotEvaluable {
-	~Handle_Expr_NotEvaluable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_NotEvaluable\n");}
-	}
-};
+%feature("shadow") Handle_Expr_NotEvaluable::~Handle_Expr_NotEvaluable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_NumericValue;
@@ -357,12 +341,10 @@ class Handle_Expr_NumericValue : public Handle_Expr_GeneralExpression {
 	return (Expr_NumericValue*)$self->Access();
 	}
 };
-%extend Handle_Expr_NumericValue {
-	~Handle_Expr_NumericValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_NumericValue\n");}
-	}
-};
+%feature("shadow") Handle_Expr_NumericValue::~Handle_Expr_NumericValue %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_InvalidAssignment;
@@ -387,12 +369,10 @@ class Handle_Expr_InvalidAssignment : public Handle_Expr_ExprFailure {
 	return (Expr_InvalidAssignment*)$self->Access();
 	}
 };
-%extend Handle_Expr_InvalidAssignment {
-	~Handle_Expr_InvalidAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_InvalidAssignment\n");}
-	}
-};
+%feature("shadow") Handle_Expr_InvalidAssignment::~Handle_Expr_InvalidAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_ArcCosine;
@@ -417,12 +397,10 @@ class Handle_Expr_ArcCosine : public Handle_Expr_UnaryExpression {
 	return (Expr_ArcCosine*)$self->Access();
 	}
 };
-%extend Handle_Expr_ArcCosine {
-	~Handle_Expr_ArcCosine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_ArcCosine\n");}
-	}
-};
+%feature("shadow") Handle_Expr_ArcCosine::~Handle_Expr_ArcCosine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_GeneralRelation;
@@ -447,12 +425,10 @@ class Handle_Expr_GeneralRelation : public Handle_MMgt_TShared {
 	return (Expr_GeneralRelation*)$self->Access();
 	}
 };
-%extend Handle_Expr_GeneralRelation {
-	~Handle_Expr_GeneralRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_GeneralRelation\n");}
-	}
-};
+%feature("shadow") Handle_Expr_GeneralRelation::~Handle_Expr_GeneralRelation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_SingleRelation;
@@ -477,12 +453,10 @@ class Handle_Expr_SingleRelation : public Handle_Expr_GeneralRelation {
 	return (Expr_SingleRelation*)$self->Access();
 	}
 };
-%extend Handle_Expr_SingleRelation {
-	~Handle_Expr_SingleRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_SingleRelation\n");}
-	}
-};
+%feature("shadow") Handle_Expr_SingleRelation::~Handle_Expr_SingleRelation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Different;
@@ -507,12 +481,10 @@ class Handle_Expr_Different : public Handle_Expr_SingleRelation {
 	return (Expr_Different*)$self->Access();
 	}
 };
-%extend Handle_Expr_Different {
-	~Handle_Expr_Different() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Different\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Different::~Handle_Expr_Different %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_BinaryExpression;
@@ -537,12 +509,10 @@ class Handle_Expr_BinaryExpression : public Handle_Expr_GeneralExpression {
 	return (Expr_BinaryExpression*)$self->Access();
 	}
 };
-%extend Handle_Expr_BinaryExpression {
-	~Handle_Expr_BinaryExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_BinaryExpression\n");}
-	}
-};
+%feature("shadow") Handle_Expr_BinaryExpression::~Handle_Expr_BinaryExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Division;
@@ -567,12 +537,10 @@ class Handle_Expr_Division : public Handle_Expr_BinaryExpression {
 	return (Expr_Division*)$self->Access();
 	}
 };
-%extend Handle_Expr_Division {
-	~Handle_Expr_Division() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Division\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Division::~Handle_Expr_Division %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_ArgSinh;
@@ -597,12 +565,10 @@ class Handle_Expr_ArgSinh : public Handle_Expr_UnaryExpression {
 	return (Expr_ArgSinh*)$self->Access();
 	}
 };
-%extend Handle_Expr_ArgSinh {
-	~Handle_Expr_ArgSinh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_ArgSinh\n");}
-	}
-};
+%feature("shadow") Handle_Expr_ArgSinh::~Handle_Expr_ArgSinh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_PolyExpression;
@@ -627,12 +593,10 @@ class Handle_Expr_PolyExpression : public Handle_Expr_GeneralExpression {
 	return (Expr_PolyExpression*)$self->Access();
 	}
 };
-%extend Handle_Expr_PolyExpression {
-	~Handle_Expr_PolyExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_PolyExpression\n");}
-	}
-};
+%feature("shadow") Handle_Expr_PolyExpression::~Handle_Expr_PolyExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Exponential;
@@ -657,12 +621,10 @@ class Handle_Expr_Exponential : public Handle_Expr_UnaryExpression {
 	return (Expr_Exponential*)$self->Access();
 	}
 };
-%extend Handle_Expr_Exponential {
-	~Handle_Expr_Exponential() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Exponential\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Exponential::~Handle_Expr_Exponential %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Absolute;
@@ -687,12 +649,10 @@ class Handle_Expr_Absolute : public Handle_Expr_UnaryExpression {
 	return (Expr_Absolute*)$self->Access();
 	}
 };
-%extend Handle_Expr_Absolute {
-	~Handle_Expr_Absolute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Absolute\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Absolute::~Handle_Expr_Absolute %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_NamedExpression;
@@ -717,12 +677,10 @@ class Handle_Expr_NamedExpression : public Handle_Expr_GeneralExpression {
 	return (Expr_NamedExpression*)$self->Access();
 	}
 };
-%extend Handle_Expr_NamedExpression {
-	~Handle_Expr_NamedExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_NamedExpression\n");}
-	}
-};
+%feature("shadow") Handle_Expr_NamedExpression::~Handle_Expr_NamedExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_NamedConstant;
@@ -747,12 +705,10 @@ class Handle_Expr_NamedConstant : public Handle_Expr_NamedExpression {
 	return (Expr_NamedConstant*)$self->Access();
 	}
 };
-%extend Handle_Expr_NamedConstant {
-	~Handle_Expr_NamedConstant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_NamedConstant\n");}
-	}
-};
+%feature("shadow") Handle_Expr_NamedConstant::~Handle_Expr_NamedConstant %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Difference;
@@ -777,12 +733,10 @@ class Handle_Expr_Difference : public Handle_Expr_BinaryExpression {
 	return (Expr_Difference*)$self->Access();
 	}
 };
-%extend Handle_Expr_Difference {
-	~Handle_Expr_Difference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Difference\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Difference::~Handle_Expr_Difference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_NamedUnknown;
@@ -807,12 +761,10 @@ class Handle_Expr_NamedUnknown : public Handle_Expr_NamedExpression {
 	return (Expr_NamedUnknown*)$self->Access();
 	}
 };
-%extend Handle_Expr_NamedUnknown {
-	~Handle_Expr_NamedUnknown() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_NamedUnknown\n");}
-	}
-};
+%feature("shadow") Handle_Expr_NamedUnknown::~Handle_Expr_NamedUnknown %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Sinh;
@@ -837,12 +789,10 @@ class Handle_Expr_Sinh : public Handle_Expr_UnaryExpression {
 	return (Expr_Sinh*)$self->Access();
 	}
 };
-%extend Handle_Expr_Sinh {
-	~Handle_Expr_Sinh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Sinh\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Sinh::~Handle_Expr_Sinh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Sum;
@@ -867,12 +817,10 @@ class Handle_Expr_Sum : public Handle_Expr_PolyExpression {
 	return (Expr_Sum*)$self->Access();
 	}
 };
-%extend Handle_Expr_Sum {
-	~Handle_Expr_Sum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Sum\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Sum::~Handle_Expr_Sum %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_LessThan;
@@ -897,12 +845,10 @@ class Handle_Expr_LessThan : public Handle_Expr_SingleRelation {
 	return (Expr_LessThan*)$self->Access();
 	}
 };
-%extend Handle_Expr_LessThan {
-	~Handle_Expr_LessThan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_LessThan\n");}
-	}
-};
+%feature("shadow") Handle_Expr_LessThan::~Handle_Expr_LessThan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Sign;
@@ -927,12 +873,10 @@ class Handle_Expr_Sign : public Handle_Expr_UnaryExpression {
 	return (Expr_Sign*)$self->Access();
 	}
 };
-%extend Handle_Expr_Sign {
-	~Handle_Expr_Sign() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Sign\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Sign::~Handle_Expr_Sign %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_InvalidFunction;
@@ -957,12 +901,10 @@ class Handle_Expr_InvalidFunction : public Handle_Expr_ExprFailure {
 	return (Expr_InvalidFunction*)$self->Access();
 	}
 };
-%extend Handle_Expr_InvalidFunction {
-	~Handle_Expr_InvalidFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_InvalidFunction\n");}
-	}
-};
+%feature("shadow") Handle_Expr_InvalidFunction::~Handle_Expr_InvalidFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_GreaterThanOrEqual;
@@ -987,12 +929,10 @@ class Handle_Expr_GreaterThanOrEqual : public Handle_Expr_SingleRelation {
 	return (Expr_GreaterThanOrEqual*)$self->Access();
 	}
 };
-%extend Handle_Expr_GreaterThanOrEqual {
-	~Handle_Expr_GreaterThanOrEqual() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_GreaterThanOrEqual\n");}
-	}
-};
+%feature("shadow") Handle_Expr_GreaterThanOrEqual::~Handle_Expr_GreaterThanOrEqual %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Tangent;
@@ -1017,12 +957,10 @@ class Handle_Expr_Tangent : public Handle_Expr_UnaryExpression {
 	return (Expr_Tangent*)$self->Access();
 	}
 };
-%extend Handle_Expr_Tangent {
-	~Handle_Expr_Tangent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Tangent\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Tangent::~Handle_Expr_Tangent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Equal;
@@ -1047,12 +985,10 @@ class Handle_Expr_Equal : public Handle_Expr_SingleRelation {
 	return (Expr_Equal*)$self->Access();
 	}
 };
-%extend Handle_Expr_Equal {
-	~Handle_Expr_Equal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Equal\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Equal::~Handle_Expr_Equal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Sine;
@@ -1077,12 +1013,10 @@ class Handle_Expr_Sine : public Handle_Expr_UnaryExpression {
 	return (Expr_Sine*)$self->Access();
 	}
 };
-%extend Handle_Expr_Sine {
-	~Handle_Expr_Sine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Sine\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Sine::~Handle_Expr_Sine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression;
@@ -1107,12 +1041,10 @@ class Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression : public Handle_TCol
 	return (Expr_SequenceNodeOfSequenceOfGeneralExpression*)$self->Access();
 	}
 };
-%extend Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression {
-	~Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression\n");}
-	}
-};
+%feature("shadow") Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression::~Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_InvalidOperand;
@@ -1137,12 +1069,10 @@ class Handle_Expr_InvalidOperand : public Handle_Expr_ExprFailure {
 	return (Expr_InvalidOperand*)$self->Access();
 	}
 };
-%extend Handle_Expr_InvalidOperand {
-	~Handle_Expr_InvalidOperand() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_InvalidOperand\n");}
-	}
-};
+%feature("shadow") Handle_Expr_InvalidOperand::~Handle_Expr_InvalidOperand %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_ArgCosh;
@@ -1167,12 +1097,10 @@ class Handle_Expr_ArgCosh : public Handle_Expr_UnaryExpression {
 	return (Expr_ArgCosh*)$self->Access();
 	}
 };
-%extend Handle_Expr_ArgCosh {
-	~Handle_Expr_ArgCosh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_ArgCosh\n");}
-	}
-};
+%feature("shadow") Handle_Expr_ArgCosh::~Handle_Expr_ArgCosh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_PolyFunction;
@@ -1197,12 +1125,10 @@ class Handle_Expr_PolyFunction : public Handle_Expr_PolyExpression {
 	return (Expr_PolyFunction*)$self->Access();
 	}
 };
-%extend Handle_Expr_PolyFunction {
-	~Handle_Expr_PolyFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_PolyFunction\n");}
-	}
-};
+%feature("shadow") Handle_Expr_PolyFunction::~Handle_Expr_PolyFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_ArcTangent;
@@ -1227,12 +1153,10 @@ class Handle_Expr_ArcTangent : public Handle_Expr_UnaryExpression {
 	return (Expr_ArcTangent*)$self->Access();
 	}
 };
-%extend Handle_Expr_ArcTangent {
-	~Handle_Expr_ArcTangent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_ArcTangent\n");}
-	}
-};
+%feature("shadow") Handle_Expr_ArcTangent::~Handle_Expr_ArcTangent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_LogOfe;
@@ -1257,12 +1181,10 @@ class Handle_Expr_LogOfe : public Handle_Expr_UnaryExpression {
 	return (Expr_LogOfe*)$self->Access();
 	}
 };
-%extend Handle_Expr_LogOfe {
-	~Handle_Expr_LogOfe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_LogOfe\n");}
-	}
-};
+%feature("shadow") Handle_Expr_LogOfe::~Handle_Expr_LogOfe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_UnaryFunction;
@@ -1287,12 +1209,10 @@ class Handle_Expr_UnaryFunction : public Handle_Expr_UnaryExpression {
 	return (Expr_UnaryFunction*)$self->Access();
 	}
 };
-%extend Handle_Expr_UnaryFunction {
-	~Handle_Expr_UnaryFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_UnaryFunction\n");}
-	}
-};
+%feature("shadow") Handle_Expr_UnaryFunction::~Handle_Expr_UnaryFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_GreaterThan;
@@ -1317,12 +1237,10 @@ class Handle_Expr_GreaterThan : public Handle_Expr_SingleRelation {
 	return (Expr_GreaterThan*)$self->Access();
 	}
 };
-%extend Handle_Expr_GreaterThan {
-	~Handle_Expr_GreaterThan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_GreaterThan\n");}
-	}
-};
+%feature("shadow") Handle_Expr_GreaterThan::~Handle_Expr_GreaterThan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Cosh;
@@ -1347,12 +1265,10 @@ class Handle_Expr_Cosh : public Handle_Expr_UnaryExpression {
 	return (Expr_Cosh*)$self->Access();
 	}
 };
-%extend Handle_Expr_Cosh {
-	~Handle_Expr_Cosh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Cosh\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Cosh::~Handle_Expr_Cosh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown;
@@ -1377,12 +1293,10 @@ class Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown : public Handle_TCollection_
 	return (Expr_IndexedMapNodeOfMapOfNamedUnknown*)$self->Access();
 	}
 };
-%extend Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown {
-	~Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown\n");}
-	}
-};
+%feature("shadow") Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown::~Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Exponentiate;
@@ -1407,12 +1321,10 @@ class Handle_Expr_Exponentiate : public Handle_Expr_BinaryExpression {
 	return (Expr_Exponentiate*)$self->Access();
 	}
 };
-%extend Handle_Expr_Exponentiate {
-	~Handle_Expr_Exponentiate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Exponentiate\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Exponentiate::~Handle_Expr_Exponentiate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_GeneralFunction;
@@ -1437,12 +1349,10 @@ class Handle_Expr_GeneralFunction : public Handle_MMgt_TShared {
 	return (Expr_GeneralFunction*)$self->Access();
 	}
 };
-%extend Handle_Expr_GeneralFunction {
-	~Handle_Expr_GeneralFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_GeneralFunction\n");}
-	}
-};
+%feature("shadow") Handle_Expr_GeneralFunction::~Handle_Expr_GeneralFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_NamedFunction;
@@ -1467,12 +1377,10 @@ class Handle_Expr_NamedFunction : public Handle_Expr_GeneralFunction {
 	return (Expr_NamedFunction*)$self->Access();
 	}
 };
-%extend Handle_Expr_NamedFunction {
-	~Handle_Expr_NamedFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_NamedFunction\n");}
-	}
-};
+%feature("shadow") Handle_Expr_NamedFunction::~Handle_Expr_NamedFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_SystemRelation;
@@ -1497,12 +1405,10 @@ class Handle_Expr_SystemRelation : public Handle_Expr_GeneralRelation {
 	return (Expr_SystemRelation*)$self->Access();
 	}
 };
-%extend Handle_Expr_SystemRelation {
-	~Handle_Expr_SystemRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_SystemRelation\n");}
-	}
-};
+%feature("shadow") Handle_Expr_SystemRelation::~Handle_Expr_SystemRelation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_LessThanOrEqual;
@@ -1527,12 +1433,10 @@ class Handle_Expr_LessThanOrEqual : public Handle_Expr_SingleRelation {
 	return (Expr_LessThanOrEqual*)$self->Access();
 	}
 };
-%extend Handle_Expr_LessThanOrEqual {
-	~Handle_Expr_LessThanOrEqual() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_LessThanOrEqual\n");}
-	}
-};
+%feature("shadow") Handle_Expr_LessThanOrEqual::~Handle_Expr_LessThanOrEqual %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_FunctionDerivative;
@@ -1557,12 +1461,10 @@ class Handle_Expr_FunctionDerivative : public Handle_Expr_GeneralFunction {
 	return (Expr_FunctionDerivative*)$self->Access();
 	}
 };
-%extend Handle_Expr_FunctionDerivative {
-	~Handle_Expr_FunctionDerivative() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_FunctionDerivative\n");}
-	}
-};
+%feature("shadow") Handle_Expr_FunctionDerivative::~Handle_Expr_FunctionDerivative %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_BinaryFunction;
@@ -1587,12 +1489,10 @@ class Handle_Expr_BinaryFunction : public Handle_Expr_BinaryExpression {
 	return (Expr_BinaryFunction*)$self->Access();
 	}
 };
-%extend Handle_Expr_BinaryFunction {
-	~Handle_Expr_BinaryFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_BinaryFunction\n");}
-	}
-};
+%feature("shadow") Handle_Expr_BinaryFunction::~Handle_Expr_BinaryFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation;
@@ -1617,12 +1517,10 @@ class Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation : public Handle_TColle
 	return (Expr_SequenceNodeOfSequenceOfGeneralRelation*)$self->Access();
 	}
 };
-%extend Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation {
-	~Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation\n");}
-	}
-};
+%feature("shadow") Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation::~Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Product;
@@ -1647,12 +1545,10 @@ class Handle_Expr_Product : public Handle_Expr_PolyExpression {
 	return (Expr_Product*)$self->Access();
 	}
 };
-%extend Handle_Expr_Product {
-	~Handle_Expr_Product() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Product\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Product::~Handle_Expr_Product %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_ArgTanh;
@@ -1677,12 +1573,10 @@ class Handle_Expr_ArgTanh : public Handle_Expr_UnaryExpression {
 	return (Expr_ArgTanh*)$self->Access();
 	}
 };
-%extend Handle_Expr_ArgTanh {
-	~Handle_Expr_ArgTanh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_ArgTanh\n");}
-	}
-};
+%feature("shadow") Handle_Expr_ArgTanh::~Handle_Expr_ArgTanh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Cosine;
@@ -1707,12 +1601,10 @@ class Handle_Expr_Cosine : public Handle_Expr_UnaryExpression {
 	return (Expr_Cosine*)$self->Access();
 	}
 };
-%extend Handle_Expr_Cosine {
-	~Handle_Expr_Cosine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Cosine\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Cosine::~Handle_Expr_Cosine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Expr_Square;
@@ -1737,12 +1629,10 @@ class Handle_Expr_Square : public Handle_Expr_UnaryExpression {
 	return (Expr_Square*)$self->Access();
 	}
 };
-%extend Handle_Expr_Square {
-	~Handle_Expr_Square() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Square\n");}
-	}
-};
+%feature("shadow") Handle_Expr_Square::~Handle_Expr_Square %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_MapOfNamedUnknown;
@@ -1774,12 +1664,10 @@ class Expr_MapOfNamedUnknown : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const Handle_Expr_NamedUnknown &K) const;
 
 };
-%extend Expr_MapOfNamedUnknown {
-	~Expr_MapOfNamedUnknown() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_MapOfNamedUnknown\n");}
-	}
-};
+%feature("shadow") Expr_MapOfNamedUnknown::~Expr_MapOfNamedUnknown %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_IndexedMapNodeOfMapOfNamedUnknown;
@@ -1817,12 +1705,10 @@ class Expr_IndexedMapNodeOfMapOfNamedUnknown : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_IndexedMapNodeOfMapOfNamedUnknown {
-	~Expr_IndexedMapNodeOfMapOfNamedUnknown() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_IndexedMapNodeOfMapOfNamedUnknown\n");}
-	}
-};
+%feature("shadow") Expr_IndexedMapNodeOfMapOfNamedUnknown::~Expr_IndexedMapNodeOfMapOfNamedUnknown %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_GeneralExpression;
@@ -1874,12 +1760,10 @@ class Expr_GeneralExpression : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_GeneralExpression {
-	~Expr_GeneralExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_GeneralExpression\n");}
-	}
-};
+%feature("shadow") Expr_GeneralExpression::~Expr_GeneralExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_BinaryExpression;
@@ -1905,12 +1789,10 @@ class Expr_BinaryExpression : public Expr_GeneralExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_BinaryExpression {
-	~Expr_BinaryExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_BinaryExpression\n");}
-	}
-};
+%feature("shadow") Expr_BinaryExpression::~Expr_BinaryExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Division;
@@ -1930,12 +1812,10 @@ class Expr_Division : public Expr_BinaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Division {
-	~Expr_Division() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Division\n");}
-	}
-};
+%feature("shadow") Expr_Division::~Expr_Division %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_UnaryExpression;
@@ -1971,12 +1851,10 @@ class Expr_UnaryExpression : public Expr_GeneralExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_UnaryExpression {
-	~Expr_UnaryExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_UnaryExpression\n");}
-	}
-};
+%feature("shadow") Expr_UnaryExpression::~Expr_UnaryExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Sinh;
@@ -2010,12 +1888,10 @@ class Expr_Sinh : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Sinh {
-	~Expr_Sinh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Sinh\n");}
-	}
-};
+%feature("shadow") Expr_Sinh::~Expr_Sinh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_ArgSinh;
@@ -2051,12 +1927,10 @@ class Expr_ArgSinh : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_ArgSinh {
-	~Expr_ArgSinh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_ArgSinh\n");}
-	}
-};
+%feature("shadow") Expr_ArgSinh::~Expr_ArgSinh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Exponential;
@@ -2092,12 +1966,10 @@ class Expr_Exponential : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Exponential {
-	~Expr_Exponential() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Exponential\n");}
-	}
-};
+%feature("shadow") Expr_Exponential::~Expr_Exponential %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_GeneralRelation;
@@ -2139,12 +2011,10 @@ class Expr_GeneralRelation : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_GeneralRelation {
-	~Expr_GeneralRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_GeneralRelation\n");}
-	}
-};
+%feature("shadow") Expr_GeneralRelation::~Expr_GeneralRelation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_SingleRelation;
@@ -2170,12 +2040,10 @@ class Expr_SingleRelation : public Expr_GeneralRelation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_SingleRelation {
-	~Expr_SingleRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_SingleRelation\n");}
-	}
-};
+%feature("shadow") Expr_SingleRelation::~Expr_SingleRelation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_GreaterThanOrEqual;
@@ -2195,12 +2063,10 @@ class Expr_GreaterThanOrEqual : public Expr_SingleRelation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_GreaterThanOrEqual {
-	~Expr_GreaterThanOrEqual() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_GreaterThanOrEqual\n");}
-	}
-};
+%feature("shadow") Expr_GreaterThanOrEqual::~Expr_GreaterThanOrEqual %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Cosine;
@@ -2236,12 +2102,10 @@ class Expr_Cosine : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Cosine {
-	~Expr_Cosine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Cosine\n");}
-	}
-};
+%feature("shadow") Expr_Cosine::~Expr_Cosine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_ArcCosine;
@@ -2277,12 +2141,10 @@ class Expr_ArcCosine : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_ArcCosine {
-	~Expr_ArcCosine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_ArcCosine\n");}
-	}
-};
+%feature("shadow") Expr_ArcCosine::~Expr_ArcCosine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Tanh;
@@ -2318,12 +2180,10 @@ class Expr_Tanh : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Tanh {
-	~Expr_Tanh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Tanh\n");}
-	}
-};
+%feature("shadow") Expr_Tanh::~Expr_Tanh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_LessThan;
@@ -2355,12 +2215,10 @@ class Expr_LessThan : public Expr_SingleRelation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_LessThan {
-	~Expr_LessThan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_LessThan\n");}
-	}
-};
+%feature("shadow") Expr_LessThan::~Expr_LessThan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_LogOfe;
@@ -2396,12 +2254,10 @@ class Expr_LogOfe : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_LogOfe {
-	~Expr_LogOfe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_LogOfe\n");}
-	}
-};
+%feature("shadow") Expr_LogOfe::~Expr_LogOfe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_BinaryFunction;
@@ -2439,12 +2295,10 @@ class Expr_BinaryFunction : public Expr_BinaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_BinaryFunction {
-	~Expr_BinaryFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_BinaryFunction\n");}
-	}
-};
+%feature("shadow") Expr_BinaryFunction::~Expr_BinaryFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_RelationIterator;
@@ -2460,12 +2314,10 @@ class Expr_RelationIterator {
 		Handle_Expr_SingleRelation Value() const;
 
 };
-%extend Expr_RelationIterator {
-	~Expr_RelationIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_RelationIterator\n");}
-	}
-};
+%feature("shadow") Expr_RelationIterator::~Expr_RelationIterator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_ExprFailure;
@@ -2495,12 +2347,10 @@ class Expr_ExprFailure : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_ExprFailure {
-	~Expr_ExprFailure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_ExprFailure\n");}
-	}
-};
+%feature("shadow") Expr_ExprFailure::~Expr_ExprFailure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_NotEvaluable;
@@ -2524,12 +2374,10 @@ class Expr_NotEvaluable : public Expr_ExprFailure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_NotEvaluable {
-	~Expr_NotEvaluable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_NotEvaluable\n");}
-	}
-};
+%feature("shadow") Expr_NotEvaluable::~Expr_NotEvaluable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr;
@@ -2547,12 +2395,10 @@ class Expr {
 		Standard_Real Sign(const Standard_Real val);
 
 };
-%extend Expr {
-	~Expr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr\n");}
-	}
-};
+%feature("shadow") Expr::~Expr %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_SequenceNodeOfSequenceOfGeneralRelation;
@@ -2576,12 +2422,10 @@ class Expr_SequenceNodeOfSequenceOfGeneralRelation : public TCollection_SeqNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_SequenceNodeOfSequenceOfGeneralRelation {
-	~Expr_SequenceNodeOfSequenceOfGeneralRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_SequenceNodeOfSequenceOfGeneralRelation\n");}
-	}
-};
+%feature("shadow") Expr_SequenceNodeOfSequenceOfGeneralRelation::~Expr_SequenceNodeOfSequenceOfGeneralRelation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_NamedExpression;
@@ -2611,12 +2455,10 @@ class Expr_NamedExpression : public Expr_GeneralExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_NamedExpression {
-	~Expr_NamedExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_NamedExpression\n");}
-	}
-};
+%feature("shadow") Expr_NamedExpression::~Expr_NamedExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_NamedConstant;
@@ -2662,12 +2504,10 @@ class Expr_NamedConstant : public Expr_NamedExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_NamedConstant {
-	~Expr_NamedConstant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_NamedConstant\n");}
-	}
-};
+%feature("shadow") Expr_NamedConstant::~Expr_NamedConstant %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_UnaryMinus;
@@ -2705,12 +2545,10 @@ class Expr_UnaryMinus : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_UnaryMinus {
-	~Expr_UnaryMinus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_UnaryMinus\n");}
-	}
-};
+%feature("shadow") Expr_UnaryMinus::~Expr_UnaryMinus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_PolyExpression;
@@ -2748,12 +2586,10 @@ class Expr_PolyExpression : public Expr_GeneralExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_PolyExpression {
-	~Expr_PolyExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_PolyExpression\n");}
-	}
-};
+%feature("shadow") Expr_PolyExpression::~Expr_PolyExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_PolyFunction;
@@ -2789,12 +2625,10 @@ class Expr_PolyFunction : public Expr_PolyExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_PolyFunction {
-	~Expr_PolyFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_PolyFunction\n");}
-	}
-};
+%feature("shadow") Expr_PolyFunction::~Expr_PolyFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_ArcSine;
@@ -2830,12 +2664,10 @@ class Expr_ArcSine : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_ArcSine {
-	~Expr_ArcSine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_ArcSine\n");}
-	}
-};
+%feature("shadow") Expr_ArcSine::~Expr_ArcSine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_UnaryFunction;
@@ -2873,12 +2705,10 @@ class Expr_UnaryFunction : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_UnaryFunction {
-	~Expr_UnaryFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_UnaryFunction\n");}
-	}
-};
+%feature("shadow") Expr_UnaryFunction::~Expr_UnaryFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_SquareRoot;
@@ -2914,12 +2744,10 @@ class Expr_SquareRoot : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_SquareRoot {
-	~Expr_SquareRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_SquareRoot\n");}
-	}
-};
+%feature("shadow") Expr_SquareRoot::~Expr_SquareRoot %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_SequenceOfGeneralRelation;
@@ -2971,12 +2799,10 @@ class Expr_SequenceOfGeneralRelation : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Expr_SequenceOfGeneralRelation {
-	~Expr_SequenceOfGeneralRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_SequenceOfGeneralRelation\n");}
-	}
-};
+%feature("shadow") Expr_SequenceOfGeneralRelation::~Expr_SequenceOfGeneralRelation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_NamedUnknown;
@@ -3028,12 +2854,10 @@ class Expr_NamedUnknown : public Expr_NamedExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_NamedUnknown {
-	~Expr_NamedUnknown() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_NamedUnknown\n");}
-	}
-};
+%feature("shadow") Expr_NamedUnknown::~Expr_NamedUnknown %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_ArgCosh;
@@ -3069,12 +2893,10 @@ class Expr_ArgCosh : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_ArgCosh {
-	~Expr_ArgCosh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_ArgCosh\n");}
-	}
-};
+%feature("shadow") Expr_ArgCosh::~Expr_ArgCosh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_SystemRelation;
@@ -3122,12 +2944,10 @@ class Expr_SystemRelation : public Expr_GeneralRelation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_SystemRelation {
-	~Expr_SystemRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_SystemRelation\n");}
-	}
-};
+%feature("shadow") Expr_SystemRelation::~Expr_SystemRelation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Different;
@@ -3159,12 +2979,10 @@ class Expr_Different : public Expr_SingleRelation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Different {
-	~Expr_Different() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Different\n");}
-	}
-};
+%feature("shadow") Expr_Different::~Expr_Different %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Array1OfNamedUnknown;
@@ -3202,12 +3020,10 @@ class Expr_Array1OfNamedUnknown {
 		Handle_Expr_NamedUnknown & operator()(const Standard_Integer Index);
 
 };
-%extend Expr_Array1OfNamedUnknown {
-	~Expr_Array1OfNamedUnknown() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Array1OfNamedUnknown\n");}
-	}
-};
+%feature("shadow") Expr_Array1OfNamedUnknown::~Expr_Array1OfNamedUnknown %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_InvalidFunction;
@@ -3237,12 +3053,10 @@ class Expr_InvalidFunction : public Expr_ExprFailure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_InvalidFunction {
-	~Expr_InvalidFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_InvalidFunction\n");}
-	}
-};
+%feature("shadow") Expr_InvalidFunction::~Expr_InvalidFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Product;
@@ -3280,12 +3094,10 @@ class Expr_Product : public Expr_PolyExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Product {
-	~Expr_Product() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Product\n");}
-	}
-};
+%feature("shadow") Expr_Product::~Expr_Product %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Equal;
@@ -3317,12 +3129,10 @@ class Expr_Equal : public Expr_SingleRelation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Equal {
-	~Expr_Equal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Equal\n");}
-	}
-};
+%feature("shadow") Expr_Equal::~Expr_Equal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_GeneralFunction;
@@ -3360,12 +3170,10 @@ class Expr_GeneralFunction : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_GeneralFunction {
-	~Expr_GeneralFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_GeneralFunction\n");}
-	}
-};
+%feature("shadow") Expr_GeneralFunction::~Expr_GeneralFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_NamedFunction;
@@ -3395,12 +3203,10 @@ class Expr_NamedFunction : public Expr_GeneralFunction {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_NamedFunction {
-	~Expr_NamedFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_NamedFunction\n");}
-	}
-};
+%feature("shadow") Expr_NamedFunction::~Expr_NamedFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_SequenceNodeOfSequenceOfGeneralExpression;
@@ -3424,12 +3230,10 @@ class Expr_SequenceNodeOfSequenceOfGeneralExpression : public TCollection_SeqNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_SequenceNodeOfSequenceOfGeneralExpression {
-	~Expr_SequenceNodeOfSequenceOfGeneralExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_SequenceNodeOfSequenceOfGeneralExpression\n");}
-	}
-};
+%feature("shadow") Expr_SequenceNodeOfSequenceOfGeneralExpression::~Expr_SequenceNodeOfSequenceOfGeneralExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Tangent;
@@ -3465,12 +3269,10 @@ class Expr_Tangent : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Tangent {
-	~Expr_Tangent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Tangent\n");}
-	}
-};
+%feature("shadow") Expr_Tangent::~Expr_Tangent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Array1OfGeneralExpression;
@@ -3508,12 +3310,10 @@ class Expr_Array1OfGeneralExpression {
 		Handle_Expr_GeneralExpression & operator()(const Standard_Integer Index);
 
 };
-%extend Expr_Array1OfGeneralExpression {
-	~Expr_Array1OfGeneralExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Array1OfGeneralExpression\n");}
-	}
-};
+%feature("shadow") Expr_Array1OfGeneralExpression::~Expr_Array1OfGeneralExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_InvalidOperand;
@@ -3543,12 +3343,10 @@ class Expr_InvalidOperand : public Expr_ExprFailure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_InvalidOperand {
-	~Expr_InvalidOperand() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_InvalidOperand\n");}
-	}
-};
+%feature("shadow") Expr_InvalidOperand::~Expr_InvalidOperand %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_UnknownIterator;
@@ -3564,12 +3362,10 @@ class Expr_UnknownIterator {
 		Handle_Expr_NamedUnknown Value() const;
 
 };
-%extend Expr_UnknownIterator {
-	~Expr_UnknownIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_UnknownIterator\n");}
-	}
-};
+%feature("shadow") Expr_UnknownIterator::~Expr_UnknownIterator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_SequenceOfGeneralExpression;
@@ -3621,12 +3417,10 @@ class Expr_SequenceOfGeneralExpression : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Expr_SequenceOfGeneralExpression {
-	~Expr_SequenceOfGeneralExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_SequenceOfGeneralExpression\n");}
-	}
-};
+%feature("shadow") Expr_SequenceOfGeneralExpression::~Expr_SequenceOfGeneralExpression %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Array1OfSingleRelation;
@@ -3664,12 +3458,10 @@ class Expr_Array1OfSingleRelation {
 		Handle_Expr_SingleRelation & operator()(const Standard_Integer Index);
 
 };
-%extend Expr_Array1OfSingleRelation {
-	~Expr_Array1OfSingleRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Array1OfSingleRelation\n");}
-	}
-};
+%feature("shadow") Expr_Array1OfSingleRelation::~Expr_Array1OfSingleRelation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_ArgTanh;
@@ -3705,12 +3497,10 @@ class Expr_ArgTanh : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_ArgTanh {
-	~Expr_ArgTanh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_ArgTanh\n");}
-	}
-};
+%feature("shadow") Expr_ArgTanh::~Expr_ArgTanh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Sum;
@@ -3750,12 +3540,10 @@ class Expr_Sum : public Expr_PolyExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Sum {
-	~Expr_Sum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Sum\n");}
-	}
-};
+%feature("shadow") Expr_Sum::~Expr_Sum %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Difference;
@@ -3793,12 +3581,10 @@ class Expr_Difference : public Expr_BinaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Difference {
-	~Expr_Difference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Difference\n");}
-	}
-};
+%feature("shadow") Expr_Difference::~Expr_Difference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Square;
@@ -3834,12 +3620,10 @@ class Expr_Square : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Square {
-	~Expr_Square() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Square\n");}
-	}
-};
+%feature("shadow") Expr_Square::~Expr_Square %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_GreaterThan;
@@ -3871,12 +3655,10 @@ class Expr_GreaterThan : public Expr_SingleRelation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_GreaterThan {
-	~Expr_GreaterThan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_GreaterThan\n");}
-	}
-};
+%feature("shadow") Expr_GreaterThan::~Expr_GreaterThan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Exponentiate;
@@ -3912,12 +3694,10 @@ class Expr_Exponentiate : public Expr_BinaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Exponentiate {
-	~Expr_Exponentiate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Exponentiate\n");}
-	}
-};
+%feature("shadow") Expr_Exponentiate::~Expr_Exponentiate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_RUIterator;
@@ -3933,12 +3713,10 @@ class Expr_RUIterator {
 		Handle_Expr_NamedUnknown Value() const;
 
 };
-%extend Expr_RUIterator {
-	~Expr_RUIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_RUIterator\n");}
-	}
-};
+%feature("shadow") Expr_RUIterator::~Expr_RUIterator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_NotAssigned;
@@ -3968,12 +3746,10 @@ class Expr_NotAssigned : public Expr_ExprFailure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_NotAssigned {
-	~Expr_NotAssigned() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_NotAssigned\n");}
-	}
-};
+%feature("shadow") Expr_NotAssigned::~Expr_NotAssigned %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_InvalidAssignment;
@@ -4003,12 +3779,10 @@ class Expr_InvalidAssignment : public Expr_ExprFailure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_InvalidAssignment {
-	~Expr_InvalidAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_InvalidAssignment\n");}
-	}
-};
+%feature("shadow") Expr_InvalidAssignment::~Expr_InvalidAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_ArcTangent;
@@ -4044,12 +3818,10 @@ class Expr_ArcTangent : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_ArcTangent {
-	~Expr_ArcTangent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_ArcTangent\n");}
-	}
-};
+%feature("shadow") Expr_ArcTangent::~Expr_ArcTangent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Cosh;
@@ -4085,12 +3857,10 @@ class Expr_Cosh : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Cosh {
-	~Expr_Cosh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Cosh\n");}
-	}
-};
+%feature("shadow") Expr_Cosh::~Expr_Cosh %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_FunctionDerivative;
@@ -4140,12 +3910,10 @@ class Expr_FunctionDerivative : public Expr_GeneralFunction {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_FunctionDerivative {
-	~Expr_FunctionDerivative() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_FunctionDerivative\n");}
-	}
-};
+%feature("shadow") Expr_FunctionDerivative::~Expr_FunctionDerivative %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Absolute;
@@ -4181,12 +3949,10 @@ class Expr_Absolute : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Absolute {
-	~Expr_Absolute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Absolute\n");}
-	}
-};
+%feature("shadow") Expr_Absolute::~Expr_Absolute %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_LogOf10;
@@ -4222,12 +3988,10 @@ class Expr_LogOf10 : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_LogOf10 {
-	~Expr_LogOf10() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_LogOf10\n");}
-	}
-};
+%feature("shadow") Expr_LogOf10::~Expr_LogOf10 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_NumericValue;
@@ -4281,12 +4045,10 @@ class Expr_NumericValue : public Expr_GeneralExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_NumericValue {
-	~Expr_NumericValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_NumericValue\n");}
-	}
-};
+%feature("shadow") Expr_NumericValue::~Expr_NumericValue %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_Sine;
@@ -4322,12 +4084,10 @@ class Expr_Sine : public Expr_UnaryExpression {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_Sine {
-	~Expr_Sine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_Sine\n");}
-	}
-};
+%feature("shadow") Expr_Sine::~Expr_Sine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Expr_LessThanOrEqual;
@@ -4359,9 +4119,7 @@ class Expr_LessThanOrEqual : public Expr_SingleRelation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Expr_LessThanOrEqual {
-	~Expr_LessThanOrEqual() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Expr_LessThanOrEqual\n");}
-	}
-};
+%feature("shadow") Expr_LessThanOrEqual::~Expr_LessThanOrEqual %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

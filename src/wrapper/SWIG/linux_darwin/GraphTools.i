@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GraphTools_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_GraphTools_SC : public Handle_MMgt_TShared {
 	return (GraphTools_SC*)$self->Access();
 	}
 };
-%extend Handle_GraphTools_SC {
-	~Handle_GraphTools_SC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_SC\n");}
-	}
-};
+%feature("shadow") Handle_GraphTools_SC::~Handle_GraphTools_SC %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GraphTools_ListNodeOfSCList;
@@ -87,12 +89,10 @@ class Handle_GraphTools_ListNodeOfSCList : public Handle_TCollection_MapNode {
 	return (GraphTools_ListNodeOfSCList*)$self->Access();
 	}
 };
-%extend Handle_GraphTools_ListNodeOfSCList {
-	~Handle_GraphTools_ListNodeOfSCList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_ListNodeOfSCList\n");}
-	}
-};
+%feature("shadow") Handle_GraphTools_ListNodeOfSCList::~Handle_GraphTools_ListNodeOfSCList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GraphTools_ListNodeOfListOfSequenceOfInteger;
@@ -117,12 +117,10 @@ class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TColle
 	return (GraphTools_ListNodeOfListOfSequenceOfInteger*)$self->Access();
 	}
 };
-%extend Handle_GraphTools_ListNodeOfListOfSequenceOfInteger {
-	~Handle_GraphTools_ListNodeOfListOfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_ListNodeOfListOfSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") Handle_GraphTools_ListNodeOfListOfSequenceOfInteger::~Handle_GraphTools_ListNodeOfListOfSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GraphTools_SC;
@@ -160,12 +158,10 @@ class GraphTools_SC : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GraphTools_SC {
-	~GraphTools_SC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_SC\n");}
-	}
-};
+%feature("shadow") GraphTools_SC::~GraphTools_SC %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GraphTools_SCList;
@@ -213,12 +209,10 @@ class GraphTools_SCList {
 		void InsertAfter(GraphTools_SCList & Other, GraphTools_ListIteratorOfSCList & It);
 
 };
-%extend GraphTools_SCList {
-	~GraphTools_SCList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_SCList\n");}
-	}
-};
+%feature("shadow") GraphTools_SCList::~GraphTools_SCList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GraphTools_ListOfSequenceOfInteger;
@@ -266,12 +260,10 @@ class GraphTools_ListOfSequenceOfInteger {
 		void InsertAfter(GraphTools_ListOfSequenceOfInteger & Other, GraphTools_ListIteratorOfListOfSequenceOfInteger & It);
 
 };
-%extend GraphTools_ListOfSequenceOfInteger {
-	~GraphTools_ListOfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_ListOfSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") GraphTools_ListOfSequenceOfInteger::~GraphTools_ListOfSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GraphTools_ListIteratorOfListOfSequenceOfInteger;
@@ -291,12 +283,10 @@ class GraphTools_ListIteratorOfListOfSequenceOfInteger {
 		TColStd_SequenceOfInteger & Value() const;
 
 };
-%extend GraphTools_ListIteratorOfListOfSequenceOfInteger {
-	~GraphTools_ListIteratorOfListOfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_ListIteratorOfListOfSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") GraphTools_ListIteratorOfListOfSequenceOfInteger::~GraphTools_ListIteratorOfListOfSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GraphTools_TSNode;
@@ -320,12 +310,10 @@ class GraphTools_TSNode {
 		Standard_Integer GetSuccessor(const Standard_Integer index) const;
 
 };
-%extend GraphTools_TSNode {
-	~GraphTools_TSNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_TSNode\n");}
-	}
-};
+%feature("shadow") GraphTools_TSNode::~GraphTools_TSNode %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GraphTools_RGNode;
@@ -351,12 +339,10 @@ class GraphTools_RGNode {
 		Handle_GraphTools_SC GetSC() const;
 
 };
-%extend GraphTools_RGNode {
-	~GraphTools_RGNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_RGNode\n");}
-	}
-};
+%feature("shadow") GraphTools_RGNode::~GraphTools_RGNode %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GraphTools_ListIteratorOfSCList;
@@ -376,12 +362,10 @@ class GraphTools_ListIteratorOfSCList {
 		Handle_GraphTools_SC & Value() const;
 
 };
-%extend GraphTools_ListIteratorOfSCList {
-	~GraphTools_ListIteratorOfSCList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_ListIteratorOfSCList\n");}
-	}
-};
+%feature("shadow") GraphTools_ListIteratorOfSCList::~GraphTools_ListIteratorOfSCList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GraphTools_ListNodeOfSCList;
@@ -405,12 +389,10 @@ class GraphTools_ListNodeOfSCList : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GraphTools_ListNodeOfSCList {
-	~GraphTools_ListNodeOfSCList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_ListNodeOfSCList\n");}
-	}
-};
+%feature("shadow") GraphTools_ListNodeOfSCList::~GraphTools_ListNodeOfSCList %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GraphTools_ListNodeOfListOfSequenceOfInteger;
@@ -434,9 +416,7 @@ class GraphTools_ListNodeOfListOfSequenceOfInteger : public TCollection_MapNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GraphTools_ListNodeOfListOfSequenceOfInteger {
-	~GraphTools_ListNodeOfListOfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphTools_ListNodeOfListOfSequenceOfInteger\n");}
-	}
-};
+%feature("shadow") GraphTools_ListNodeOfListOfSequenceOfInteger::~GraphTools_ListNodeOfListOfSequenceOfInteger %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

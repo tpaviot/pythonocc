@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include AppCont_dependencies.i
 
 
@@ -48,12 +52,10 @@ class AppCont_FitFunction {
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend AppCont_FitFunction {
-	~AppCont_FitFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppCont_FitFunction\n");}
-	}
-};
+%feature("shadow") AppCont_FitFunction::~AppCont_FitFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AppCont_Function;
@@ -71,12 +73,10 @@ class AppCont_Function {
 		virtual		Standard_Boolean D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
 
 };
-%extend AppCont_Function {
-	~AppCont_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppCont_Function\n");}
-	}
-};
+%feature("shadow") AppCont_Function::~AppCont_Function %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AppCont_FunctionTool;
@@ -106,12 +106,10 @@ class AppCont_FunctionTool {
 		Standard_Boolean D1(const AppCont_Function &C, const Standard_Real U, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
 
 };
-%extend AppCont_FunctionTool {
-	~AppCont_FunctionTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppCont_FunctionTool\n");}
-	}
-};
+%feature("shadow") AppCont_FunctionTool::~AppCont_FunctionTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AppCont_Function2d;
@@ -129,12 +127,10 @@ class AppCont_Function2d {
 		virtual		Standard_Boolean D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V) const;
 
 };
-%extend AppCont_Function2d {
-	~AppCont_Function2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppCont_Function2d\n");}
-	}
-};
+%feature("shadow") AppCont_Function2d::~AppCont_Function2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AppCont_FunctionTool2d;
@@ -164,12 +160,10 @@ class AppCont_FunctionTool2d {
 		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
 
 };
-%extend AppCont_FunctionTool2d {
-	~AppCont_FunctionTool2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppCont_FunctionTool2d\n");}
-	}
-};
+%feature("shadow") AppCont_FunctionTool2d::~AppCont_FunctionTool2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor AppCont_FitFunction2d;
@@ -185,9 +179,7 @@ class AppCont_FitFunction2d {
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend AppCont_FitFunction2d {
-	~AppCont_FitFunction2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppCont_FitFunction2d\n");}
-	}
-};
+%feature("shadow") AppCont_FitFunction2d::~AppCont_FitFunction2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

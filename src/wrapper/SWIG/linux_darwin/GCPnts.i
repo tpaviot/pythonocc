@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GCPnts_dependencies.i
 
 
@@ -77,12 +81,10 @@ class GCPnts_TangentialDeflection {
 		gp_Pnt Value(const Standard_Integer I) const;
 
 };
-%extend GCPnts_TangentialDeflection {
-	~GCPnts_TangentialDeflection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCPnts_TangentialDeflection\n");}
-	}
-};
+%feature("shadow") GCPnts_TangentialDeflection::~GCPnts_TangentialDeflection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GCPnts_UniformAbscissa;
@@ -132,12 +134,10 @@ class GCPnts_UniformAbscissa {
 		Standard_Real Abscissa() const;
 
 };
-%extend GCPnts_UniformAbscissa {
-	~GCPnts_UniformAbscissa() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCPnts_UniformAbscissa\n");}
-	}
-};
+%feature("shadow") GCPnts_UniformAbscissa::~GCPnts_UniformAbscissa %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GCPnts_UniformDeflection;
@@ -173,12 +173,10 @@ class GCPnts_UniformDeflection {
 		Standard_Real Deflection() const;
 
 };
-%extend GCPnts_UniformDeflection {
-	~GCPnts_UniformDeflection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCPnts_UniformDeflection\n");}
-	}
-};
+%feature("shadow") GCPnts_UniformDeflection::~GCPnts_UniformDeflection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GCPnts_QuasiUniformAbscissa;
@@ -210,12 +208,10 @@ class GCPnts_QuasiUniformAbscissa {
 		Standard_Real Parameter(const Standard_Integer Index) const;
 
 };
-%extend GCPnts_QuasiUniformAbscissa {
-	~GCPnts_QuasiUniformAbscissa() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCPnts_QuasiUniformAbscissa\n");}
-	}
-};
+%feature("shadow") GCPnts_QuasiUniformAbscissa::~GCPnts_QuasiUniformAbscissa %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GCPnts_QuasiUniformDeflection;
@@ -251,12 +247,10 @@ class GCPnts_QuasiUniformDeflection {
 		Standard_Real Deflection() const;
 
 };
-%extend GCPnts_QuasiUniformDeflection {
-	~GCPnts_QuasiUniformDeflection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCPnts_QuasiUniformDeflection\n");}
-	}
-};
+%feature("shadow") GCPnts_QuasiUniformDeflection::~GCPnts_QuasiUniformDeflection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GCPnts_AbscissaPoint;
@@ -302,9 +296,7 @@ class GCPnts_AbscissaPoint {
 		Standard_Real Parameter() const;
 
 };
-%extend GCPnts_AbscissaPoint {
-	~GCPnts_AbscissaPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCPnts_AbscissaPoint\n");}
-	}
-};
+%feature("shadow") GCPnts_AbscissaPoint::~GCPnts_AbscissaPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

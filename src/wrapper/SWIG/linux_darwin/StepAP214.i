@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StepAP214_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_StepAP214_Class : public Handle_StepBasic_Group {
 	return (StepAP214_Class*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_Class {
-	~Handle_StepAP214_Class() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_Class\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_Class::~Handle_StepAP214_Class %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfDateItem;
@@ -87,12 +89,10 @@ class Handle_StepAP214_HArray1OfDateItem : public Handle_MMgt_TShared {
 	return (StepAP214_HArray1OfDateItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfDateItem {
-	~Handle_StepAP214_HArray1OfDateItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfDateItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfDateItem::~Handle_StepAP214_HArray1OfDateItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AutoDesignApprovalAssignment;
@@ -117,12 +117,10 @@ class Handle_StepAP214_AutoDesignApprovalAssignment : public Handle_StepBasic_Ap
 	return (StepAP214_AutoDesignApprovalAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AutoDesignApprovalAssignment {
-	~Handle_StepAP214_AutoDesignApprovalAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignApprovalAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AutoDesignApprovalAssignment::~Handle_StepAP214_AutoDesignApprovalAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AppliedSecurityClassificationAssignment;
@@ -147,12 +145,10 @@ class Handle_StepAP214_AppliedSecurityClassificationAssignment : public Handle_S
 	return (StepAP214_AppliedSecurityClassificationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedSecurityClassificationAssignment {
-	~Handle_StepAP214_AppliedSecurityClassificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedSecurityClassificationAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AppliedSecurityClassificationAssignment::~Handle_StepAP214_AppliedSecurityClassificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AutoDesignPresentedItem;
@@ -177,12 +173,10 @@ class Handle_StepAP214_AutoDesignPresentedItem : public Handle_StepVisual_Presen
 	return (StepAP214_AutoDesignPresentedItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AutoDesignPresentedItem {
-	~Handle_StepAP214_AutoDesignPresentedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignPresentedItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AutoDesignPresentedItem::~Handle_StepAP214_AutoDesignPresentedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_ExternallyDefinedClass;
@@ -207,12 +201,10 @@ class Handle_StepAP214_ExternallyDefinedClass : public Handle_StepAP214_Class {
 	return (StepAP214_ExternallyDefinedClass*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_ExternallyDefinedClass {
-	~Handle_StepAP214_ExternallyDefinedClass() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_ExternallyDefinedClass\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_ExternallyDefinedClass::~Handle_StepAP214_ExternallyDefinedClass %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfApprovalItem;
@@ -237,12 +229,10 @@ class Handle_StepAP214_HArray1OfApprovalItem : public Handle_MMgt_TShared {
 	return (StepAP214_HArray1OfApprovalItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfApprovalItem {
-	~Handle_StepAP214_HArray1OfApprovalItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfApprovalItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfApprovalItem::~Handle_StepAP214_HArray1OfApprovalItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfSecurityClassificationItem;
@@ -267,12 +257,10 @@ class Handle_StepAP214_HArray1OfSecurityClassificationItem : public Handle_MMgt_
 	return (StepAP214_HArray1OfSecurityClassificationItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfSecurityClassificationItem {
-	~Handle_StepAP214_HArray1OfSecurityClassificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfSecurityClassificationItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfSecurityClassificationItem::~Handle_StepAP214_HArray1OfSecurityClassificationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AppliedPersonAndOrganizationAssignment;
@@ -297,12 +285,10 @@ class Handle_StepAP214_AppliedPersonAndOrganizationAssignment : public Handle_St
 	return (StepAP214_AppliedPersonAndOrganizationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedPersonAndOrganizationAssignment {
-	~Handle_StepAP214_AppliedPersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedPersonAndOrganizationAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AppliedPersonAndOrganizationAssignment::~Handle_StepAP214_AppliedPersonAndOrganizationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AppliedGroupAssignment;
@@ -327,12 +313,10 @@ class Handle_StepAP214_AppliedGroupAssignment : public Handle_StepBasic_GroupAss
 	return (StepAP214_AppliedGroupAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedGroupAssignment {
-	~Handle_StepAP214_AppliedGroupAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedGroupAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AppliedGroupAssignment::~Handle_StepAP214_AppliedGroupAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AutoDesignNominalDateAssignment;
@@ -357,12 +341,10 @@ class Handle_StepAP214_AutoDesignNominalDateAssignment : public Handle_StepBasic
 	return (StepAP214_AutoDesignNominalDateAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AutoDesignNominalDateAssignment {
-	~Handle_StepAP214_AutoDesignNominalDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignNominalDateAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AutoDesignNominalDateAssignment::~Handle_StepAP214_AutoDesignNominalDateAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_Protocol;
@@ -387,12 +369,10 @@ class Handle_StepAP214_Protocol : public Handle_StepData_Protocol {
 	return (StepAP214_Protocol*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_Protocol {
-	~Handle_StepAP214_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_Protocol\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_Protocol::~Handle_StepAP214_Protocol %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfDateAndTimeItem;
@@ -417,12 +397,10 @@ class Handle_StepAP214_HArray1OfDateAndTimeItem : public Handle_MMgt_TShared {
 	return (StepAP214_HArray1OfDateAndTimeItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfDateAndTimeItem {
-	~Handle_StepAP214_HArray1OfDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfDateAndTimeItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfDateAndTimeItem::~Handle_StepAP214_HArray1OfDateAndTimeItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AppliedDateAndTimeAssignment;
@@ -447,12 +425,10 @@ class Handle_StepAP214_AppliedDateAndTimeAssignment : public Handle_StepBasic_Da
 	return (StepAP214_AppliedDateAndTimeAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedDateAndTimeAssignment {
-	~Handle_StepAP214_AppliedDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedDateAndTimeAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AppliedDateAndTimeAssignment::~Handle_StepAP214_AppliedDateAndTimeAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_RepItemGroup;
@@ -477,12 +453,10 @@ class Handle_StepAP214_RepItemGroup : public Handle_StepBasic_Group {
 	return (StepAP214_RepItemGroup*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_RepItemGroup {
-	~Handle_StepAP214_RepItemGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_RepItemGroup\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_RepItemGroup::~Handle_StepAP214_RepItemGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfDocumentReferenceItem;
@@ -507,12 +481,10 @@ class Handle_StepAP214_HArray1OfDocumentReferenceItem : public Handle_MMgt_TShar
 	return (StepAP214_HArray1OfDocumentReferenceItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfDocumentReferenceItem {
-	~Handle_StepAP214_HArray1OfDocumentReferenceItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfDocumentReferenceItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfDocumentReferenceItem::~Handle_StepAP214_HArray1OfDocumentReferenceItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfPresentedItemSelect;
@@ -537,12 +509,10 @@ class Handle_StepAP214_HArray1OfPresentedItemSelect : public Handle_MMgt_TShared
 	return (StepAP214_HArray1OfPresentedItemSelect*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfPresentedItemSelect {
-	~Handle_StepAP214_HArray1OfPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfPresentedItemSelect\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfPresentedItemSelect::~Handle_StepAP214_HArray1OfPresentedItemSelect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AppliedDocumentReference;
@@ -567,12 +537,10 @@ class Handle_StepAP214_AppliedDocumentReference : public Handle_StepBasic_Docume
 	return (StepAP214_AppliedDocumentReference*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedDocumentReference {
-	~Handle_StepAP214_AppliedDocumentReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedDocumentReference\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AppliedDocumentReference::~Handle_StepAP214_AppliedDocumentReference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfGroupItem;
@@ -597,12 +565,10 @@ class Handle_StepAP214_HArray1OfGroupItem : public Handle_MMgt_TShared {
 	return (StepAP214_HArray1OfGroupItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfGroupItem {
-	~Handle_StepAP214_HArray1OfGroupItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfGroupItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfGroupItem::~Handle_StepAP214_HArray1OfGroupItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfOrganizationItem;
@@ -627,12 +593,10 @@ class Handle_StepAP214_HArray1OfOrganizationItem : public Handle_MMgt_TShared {
 	return (StepAP214_HArray1OfOrganizationItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfOrganizationItem {
-	~Handle_StepAP214_HArray1OfOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfOrganizationItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfOrganizationItem::~Handle_StepAP214_HArray1OfOrganizationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AutoDesignActualDateAndTimeAssignment;
@@ -657,12 +621,10 @@ class Handle_StepAP214_AutoDesignActualDateAndTimeAssignment : public Handle_Ste
 	return (StepAP214_AutoDesignActualDateAndTimeAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AutoDesignActualDateAndTimeAssignment {
-	~Handle_StepAP214_AutoDesignActualDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignActualDateAndTimeAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AutoDesignActualDateAndTimeAssignment::~Handle_StepAP214_AutoDesignActualDateAndTimeAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AppliedExternalIdentificationAssignment;
@@ -687,12 +649,10 @@ class Handle_StepAP214_AppliedExternalIdentificationAssignment : public Handle_S
 	return (StepAP214_AppliedExternalIdentificationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedExternalIdentificationAssignment {
-	~Handle_StepAP214_AppliedExternalIdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedExternalIdentificationAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AppliedExternalIdentificationAssignment::~Handle_StepAP214_AppliedExternalIdentificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfAutoDesignReferencingItem;
@@ -717,12 +677,10 @@ class Handle_StepAP214_HArray1OfAutoDesignReferencingItem : public Handle_MMgt_T
 	return (StepAP214_HArray1OfAutoDesignReferencingItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfAutoDesignReferencingItem {
-	~Handle_StepAP214_HArray1OfAutoDesignReferencingItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignReferencingItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignReferencingItem::~Handle_StepAP214_HArray1OfAutoDesignReferencingItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect;
@@ -747,12 +705,10 @@ class Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect : public Handle_MM
 	return (StepAP214_HArray1OfAutoDesignPresentedItemSelect*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect {
-	~Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect::~Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AutoDesignActualDateAssignment;
@@ -777,12 +733,10 @@ class Handle_StepAP214_AutoDesignActualDateAssignment : public Handle_StepBasic_
 	return (StepAP214_AutoDesignActualDateAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AutoDesignActualDateAssignment {
-	~Handle_StepAP214_AutoDesignActualDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignActualDateAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AutoDesignActualDateAssignment::~Handle_StepAP214_AutoDesignActualDateAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem;
@@ -807,12 +761,10 @@ class Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem : public Handle_MMgt_TS
 	return (StepAP214_HArray1OfAutoDesignGeneralOrgItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem {
-	~Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem::~Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem;
@@ -837,12 +789,10 @@ class Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem : public Handle_MMgt_T
 	return (StepAP214_HArray1OfAutoDesignDateAndTimeItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem {
-	~Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem::~Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment;
@@ -867,12 +817,10 @@ class Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment : public Handle
 	return (StepAP214_AutoDesignPersonAndOrganizationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment {
-	~Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment::~Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfAutoDesignDatedItem;
@@ -897,12 +845,10 @@ class Handle_StepAP214_HArray1OfAutoDesignDatedItem : public Handle_MMgt_TShared
 	return (StepAP214_HArray1OfAutoDesignDatedItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfAutoDesignDatedItem {
-	~Handle_StepAP214_HArray1OfAutoDesignDatedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDatedItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignDatedItem::~Handle_StepAP214_HArray1OfAutoDesignDatedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_ExternallyDefinedGeneralProperty;
@@ -927,12 +873,10 @@ class Handle_StepAP214_ExternallyDefinedGeneralProperty : public Handle_StepBasi
 	return (StepAP214_ExternallyDefinedGeneralProperty*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_ExternallyDefinedGeneralProperty {
-	~Handle_StepAP214_ExternallyDefinedGeneralProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_ExternallyDefinedGeneralProperty\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_ExternallyDefinedGeneralProperty::~Handle_StepAP214_ExternallyDefinedGeneralProperty %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AppliedDateAssignment;
@@ -957,12 +901,10 @@ class Handle_StepAP214_AppliedDateAssignment : public Handle_StepBasic_DateAssig
 	return (StepAP214_AppliedDateAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedDateAssignment {
-	~Handle_StepAP214_AppliedDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedDateAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AppliedDateAssignment::~Handle_StepAP214_AppliedDateAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AutoDesignSecurityClassificationAssignment;
@@ -987,12 +929,10 @@ class Handle_StepAP214_AutoDesignSecurityClassificationAssignment : public Handl
 	return (StepAP214_AutoDesignSecurityClassificationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AutoDesignSecurityClassificationAssignment {
-	~Handle_StepAP214_AutoDesignSecurityClassificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignSecurityClassificationAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AutoDesignSecurityClassificationAssignment::~Handle_StepAP214_AutoDesignSecurityClassificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AppliedOrganizationAssignment;
@@ -1017,12 +957,10 @@ class Handle_StepAP214_AppliedOrganizationAssignment : public Handle_StepBasic_O
 	return (StepAP214_AppliedOrganizationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedOrganizationAssignment {
-	~Handle_StepAP214_AppliedOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedOrganizationAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AppliedOrganizationAssignment::~Handle_StepAP214_AppliedOrganizationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AutoDesignDateAndPersonAssignment;
@@ -1047,12 +985,10 @@ class Handle_StepAP214_AutoDesignDateAndPersonAssignment : public Handle_StepBas
 	return (StepAP214_AutoDesignDateAndPersonAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AutoDesignDateAndPersonAssignment {
-	~Handle_StepAP214_AutoDesignDateAndPersonAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignDateAndPersonAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AutoDesignDateAndPersonAssignment::~Handle_StepAP214_AutoDesignDateAndPersonAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AutoDesignDocumentReference;
@@ -1077,12 +1013,10 @@ class Handle_StepAP214_AutoDesignDocumentReference : public Handle_StepBasic_Doc
 	return (StepAP214_AutoDesignDocumentReference*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AutoDesignDocumentReference {
-	~Handle_StepAP214_AutoDesignDocumentReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignDocumentReference\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AutoDesignDocumentReference::~Handle_StepAP214_AutoDesignDocumentReference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfAutoDesignGroupedItem;
@@ -1107,12 +1041,10 @@ class Handle_StepAP214_HArray1OfAutoDesignGroupedItem : public Handle_MMgt_TShar
 	return (StepAP214_HArray1OfAutoDesignGroupedItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfAutoDesignGroupedItem {
-	~Handle_StepAP214_HArray1OfAutoDesignGroupedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignGroupedItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignGroupedItem::~Handle_StepAP214_HArray1OfAutoDesignGroupedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem;
@@ -1137,12 +1069,10 @@ class Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem : public Handle_MMgt
 	return (StepAP214_HArray1OfAutoDesignDateAndPersonItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem {
-	~Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem::~Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AutoDesignGroupAssignment;
@@ -1167,12 +1097,10 @@ class Handle_StepAP214_AutoDesignGroupAssignment : public Handle_StepBasic_Group
 	return (StepAP214_AutoDesignGroupAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AutoDesignGroupAssignment {
-	~Handle_StepAP214_AutoDesignGroupAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignGroupAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AutoDesignGroupAssignment::~Handle_StepAP214_AutoDesignGroupAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment;
@@ -1197,12 +1125,10 @@ class Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment : public Handle_St
 	return (StepAP214_AutoDesignNominalDateAndTimeAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment {
-	~Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment::~Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfExternalIdentificationItem;
@@ -1227,12 +1153,10 @@ class Handle_StepAP214_HArray1OfExternalIdentificationItem : public Handle_MMgt_
 	return (StepAP214_HArray1OfExternalIdentificationItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfExternalIdentificationItem {
-	~Handle_StepAP214_HArray1OfExternalIdentificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfExternalIdentificationItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfExternalIdentificationItem::~Handle_StepAP214_HArray1OfExternalIdentificationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AppliedPresentedItem;
@@ -1257,12 +1181,10 @@ class Handle_StepAP214_AppliedPresentedItem : public Handle_StepVisual_Presented
 	return (StepAP214_AppliedPresentedItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedPresentedItem {
-	~Handle_StepAP214_AppliedPresentedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedPresentedItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AppliedPresentedItem::~Handle_StepAP214_AppliedPresentedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AppliedApprovalAssignment;
@@ -1287,12 +1209,10 @@ class Handle_StepAP214_AppliedApprovalAssignment : public Handle_StepBasic_Appro
 	return (StepAP214_AppliedApprovalAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AppliedApprovalAssignment {
-	~Handle_StepAP214_AppliedApprovalAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedApprovalAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AppliedApprovalAssignment::~Handle_StepAP214_AppliedApprovalAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_AutoDesignOrganizationAssignment;
@@ -1317,12 +1237,10 @@ class Handle_StepAP214_AutoDesignOrganizationAssignment : public Handle_StepBasi
 	return (StepAP214_AutoDesignOrganizationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_AutoDesignOrganizationAssignment {
-	~Handle_StepAP214_AutoDesignOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignOrganizationAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_AutoDesignOrganizationAssignment::~Handle_StepAP214_AutoDesignOrganizationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepAP214_HArray1OfPersonAndOrganizationItem;
@@ -1347,12 +1265,10 @@ class Handle_StepAP214_HArray1OfPersonAndOrganizationItem : public Handle_MMgt_T
 	return (StepAP214_HArray1OfPersonAndOrganizationItem*)$self->Access();
 	}
 };
-%extend Handle_StepAP214_HArray1OfPersonAndOrganizationItem {
-	~Handle_StepAP214_HArray1OfPersonAndOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfPersonAndOrganizationItem\n");}
-	}
-};
+%feature("shadow") Handle_StepAP214_HArray1OfPersonAndOrganizationItem::~Handle_StepAP214_HArray1OfPersonAndOrganizationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AppliedOrganizationAssignment;
@@ -1386,12 +1302,10 @@ class StepAP214_AppliedOrganizationAssignment : public StepBasic_OrganizationAss
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AppliedOrganizationAssignment {
-	~StepAP214_AppliedOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedOrganizationAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AppliedOrganizationAssignment::~StepAP214_AppliedOrganizationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Class;
@@ -1413,12 +1327,10 @@ class StepAP214_Class : public StepBasic_Group {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_Class {
-	~StepAP214_Class() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Class\n");}
-	}
-};
+%feature("shadow") StepAP214_Class::~StepAP214_Class %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_ExternallyDefinedClass;
@@ -1444,12 +1356,10 @@ class StepAP214_ExternallyDefinedClass : public StepAP214_Class {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_ExternallyDefinedClass {
-	~StepAP214_ExternallyDefinedClass() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_ExternallyDefinedClass\n");}
-	}
-};
+%feature("shadow") StepAP214_ExternallyDefinedClass::~StepAP214_ExternallyDefinedClass %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_GroupItem;
@@ -1463,12 +1373,10 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		virtual		Handle_StepGeom_GeometricRepresentationItem GeometricRepresentationItem() const;
 
 };
-%extend StepAP214_GroupItem {
-	~StepAP214_GroupItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_GroupItem\n");}
-	}
-};
+%feature("shadow") StepAP214_GroupItem::~StepAP214_GroupItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_ExternallyDefinedGeneralProperty;
@@ -1496,12 +1404,10 @@ class StepAP214_ExternallyDefinedGeneralProperty : public StepBasic_GeneralPrope
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_ExternallyDefinedGeneralProperty {
-	~StepAP214_ExternallyDefinedGeneralProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_ExternallyDefinedGeneralProperty\n");}
-	}
-};
+%feature("shadow") StepAP214_ExternallyDefinedGeneralProperty::~StepAP214_ExternallyDefinedGeneralProperty %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfExternalIdentificationItem;
@@ -1543,12 +1449,10 @@ class StepAP214_HArray1OfExternalIdentificationItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfExternalIdentificationItem {
-	~StepAP214_HArray1OfExternalIdentificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfExternalIdentificationItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfExternalIdentificationItem::~StepAP214_HArray1OfExternalIdentificationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfPresentedItemSelect;
@@ -1586,12 +1490,10 @@ class StepAP214_Array1OfPresentedItemSelect {
 		StepAP214_PresentedItemSelect & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfPresentedItemSelect {
-	~StepAP214_Array1OfPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfPresentedItemSelect\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfPresentedItemSelect::~StepAP214_Array1OfPresentedItemSelect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignGeneralOrgItem;
@@ -1619,12 +1521,10 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 		Handle_StepAP214_AutoDesignDocumentReference AutoDesignDocumentReference() const;
 
 };
-%extend StepAP214_AutoDesignGeneralOrgItem {
-	~StepAP214_AutoDesignGeneralOrgItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignGeneralOrgItem\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignGeneralOrgItem::~StepAP214_AutoDesignGeneralOrgItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfDateItem;
@@ -1662,12 +1562,10 @@ class StepAP214_Array1OfDateItem {
 		StepAP214_DateItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfDateItem {
-	~StepAP214_Array1OfDateItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfDateItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfDateItem::~StepAP214_Array1OfDateItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AppliedApprovalAssignment;
@@ -1701,12 +1599,10 @@ class StepAP214_AppliedApprovalAssignment : public StepBasic_ApprovalAssignment 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AppliedApprovalAssignment {
-	~StepAP214_AppliedApprovalAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedApprovalAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AppliedApprovalAssignment::~StepAP214_AppliedApprovalAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfGroupItem;
@@ -1748,12 +1644,10 @@ class StepAP214_HArray1OfGroupItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfGroupItem {
-	~StepAP214_HArray1OfGroupItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfGroupItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfGroupItem::~StepAP214_HArray1OfGroupItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignNominalDateAndTimeAssignment;
@@ -1787,12 +1681,10 @@ class StepAP214_AutoDesignNominalDateAndTimeAssignment : public StepBasic_DateAn
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AutoDesignNominalDateAndTimeAssignment {
-	~StepAP214_AutoDesignNominalDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignNominalDateAndTimeAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignNominalDateAndTimeAssignment::~StepAP214_AutoDesignNominalDateAndTimeAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignGroupAssignment;
@@ -1826,12 +1718,10 @@ class StepAP214_AutoDesignGroupAssignment : public StepBasic_GroupAssignment {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AutoDesignGroupAssignment {
-	~StepAP214_AutoDesignGroupAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignGroupAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignGroupAssignment::~StepAP214_AutoDesignGroupAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfAutoDesignDatedItem;
@@ -1869,12 +1759,10 @@ class StepAP214_Array1OfAutoDesignDatedItem {
 		StepAP214_AutoDesignDatedItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfAutoDesignDatedItem {
-	~StepAP214_Array1OfAutoDesignDatedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignDatedItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfAutoDesignDatedItem::~StepAP214_Array1OfAutoDesignDatedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignDateAndPersonAssignment;
@@ -1908,12 +1796,10 @@ class StepAP214_AutoDesignDateAndPersonAssignment : public StepBasic_PersonAndOr
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AutoDesignDateAndPersonAssignment {
-	~StepAP214_AutoDesignDateAndPersonAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDateAndPersonAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignDateAndPersonAssignment::~StepAP214_AutoDesignDateAndPersonAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AppliedDateAssignment;
@@ -1947,12 +1833,10 @@ class StepAP214_AppliedDateAssignment : public StepBasic_DateAssignment {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AppliedDateAssignment {
-	~StepAP214_AppliedDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedDateAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AppliedDateAssignment::~StepAP214_AppliedDateAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_ApprovalItem;
@@ -1988,12 +1872,10 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		virtual		Handle_StepBasic_SecurityClassification SecurityClassification() const;
 
 };
-%extend StepAP214_ApprovalItem {
-	~StepAP214_ApprovalItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_ApprovalItem\n");}
-	}
-};
+%feature("shadow") StepAP214_ApprovalItem::~StepAP214_ApprovalItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfDocumentReferenceItem;
@@ -2035,12 +1917,10 @@ class StepAP214_HArray1OfDocumentReferenceItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfDocumentReferenceItem {
-	~StepAP214_HArray1OfDocumentReferenceItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfDocumentReferenceItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfDocumentReferenceItem::~StepAP214_HArray1OfDocumentReferenceItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_DateItem;
@@ -2060,12 +1940,10 @@ class StepAP214_DateItem : public StepAP214_ApprovalItem {
 		Handle_StepBasic_Effectivity Effectivity() const;
 
 };
-%extend StepAP214_DateItem {
-	~StepAP214_DateItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_DateItem\n");}
-	}
-};
+%feature("shadow") StepAP214_DateItem::~StepAP214_DateItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfApprovalItem;
@@ -2107,12 +1985,10 @@ class StepAP214_HArray1OfApprovalItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfApprovalItem {
-	~StepAP214_HArray1OfApprovalItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfApprovalItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfApprovalItem::~StepAP214_HArray1OfApprovalItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AppliedPersonAndOrganizationAssignment;
@@ -2146,12 +2022,10 @@ class StepAP214_AppliedPersonAndOrganizationAssignment : public StepBasic_Person
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AppliedPersonAndOrganizationAssignment {
-	~StepAP214_AppliedPersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedPersonAndOrganizationAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AppliedPersonAndOrganizationAssignment::~StepAP214_AppliedPersonAndOrganizationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfAutoDesignReferencingItem;
@@ -2193,12 +2067,10 @@ class StepAP214_HArray1OfAutoDesignReferencingItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfAutoDesignReferencingItem {
-	~StepAP214_HArray1OfAutoDesignReferencingItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignReferencingItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfAutoDesignReferencingItem::~StepAP214_HArray1OfAutoDesignReferencingItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AppliedDocumentReference;
@@ -2230,12 +2102,10 @@ class StepAP214_AppliedDocumentReference : public StepBasic_DocumentReference {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AppliedDocumentReference {
-	~StepAP214_AppliedDocumentReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedDocumentReference\n");}
-	}
-};
+%feature("shadow") StepAP214_AppliedDocumentReference::~StepAP214_AppliedDocumentReference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfAutoDesignDateAndTimeItem;
@@ -2273,12 +2143,10 @@ class StepAP214_Array1OfAutoDesignDateAndTimeItem {
 		StepAP214_AutoDesignDateAndTimeItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfAutoDesignDateAndTimeItem {
-	~StepAP214_Array1OfAutoDesignDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignDateAndTimeItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfAutoDesignDateAndTimeItem::~StepAP214_Array1OfAutoDesignDateAndTimeItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfAutoDesignPresentedItemSelect;
@@ -2316,12 +2184,10 @@ class StepAP214_Array1OfAutoDesignPresentedItemSelect {
 		StepAP214_AutoDesignPresentedItemSelect & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfAutoDesignPresentedItemSelect {
-	~StepAP214_Array1OfAutoDesignPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignPresentedItemSelect\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfAutoDesignPresentedItemSelect::~StepAP214_Array1OfAutoDesignPresentedItemSelect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfAutoDesignDateAndPersonItem;
@@ -2363,12 +2229,10 @@ class StepAP214_HArray1OfAutoDesignDateAndPersonItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
-	~StepAP214_HArray1OfAutoDesignDateAndPersonItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDateAndPersonItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfAutoDesignDateAndPersonItem::~StepAP214_HArray1OfAutoDesignDateAndPersonItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_ExternalIdentificationItem;
@@ -2388,12 +2252,10 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinition ProductDefinition() const;
 
 };
-%extend StepAP214_ExternalIdentificationItem {
-	~StepAP214_ExternalIdentificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_ExternalIdentificationItem\n");}
-	}
-};
+%feature("shadow") StepAP214_ExternalIdentificationItem::~StepAP214_ExternalIdentificationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214;
@@ -2405,12 +2267,10 @@ class StepAP214 {
 		Handle_StepAP214_Protocol Protocol();
 
 };
-%extend StepAP214 {
-	~StepAP214() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214\n");}
-	}
-};
+%feature("shadow") StepAP214::~StepAP214 %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AppliedPresentedItem;
@@ -2442,12 +2302,10 @@ class StepAP214_AppliedPresentedItem : public StepVisual_PresentedItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AppliedPresentedItem {
-	~StepAP214_AppliedPresentedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedPresentedItem\n");}
-	}
-};
+%feature("shadow") StepAP214_AppliedPresentedItem::~StepAP214_AppliedPresentedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfDateAndTimeItem;
@@ -2485,12 +2343,10 @@ class StepAP214_Array1OfDateAndTimeItem {
 		StepAP214_DateAndTimeItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfDateAndTimeItem {
-	~StepAP214_Array1OfDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfDateAndTimeItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfDateAndTimeItem::~StepAP214_Array1OfDateAndTimeItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignDocumentReference;
@@ -2522,12 +2378,10 @@ class StepAP214_AutoDesignDocumentReference : public StepBasic_DocumentReference
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AutoDesignDocumentReference {
-	~StepAP214_AutoDesignDocumentReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDocumentReference\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignDocumentReference::~StepAP214_AutoDesignDocumentReference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfAutoDesignDateAndPersonItem;
@@ -2565,12 +2419,10 @@ class StepAP214_Array1OfAutoDesignDateAndPersonItem {
 		StepAP214_AutoDesignDateAndPersonItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfAutoDesignDateAndPersonItem {
-	~StepAP214_Array1OfAutoDesignDateAndPersonItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignDateAndPersonItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfAutoDesignDateAndPersonItem::~StepAP214_Array1OfAutoDesignDateAndPersonItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignSecurityClassificationAssignment;
@@ -2604,12 +2456,10 @@ class StepAP214_AutoDesignSecurityClassificationAssignment : public StepBasic_Se
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AutoDesignSecurityClassificationAssignment {
-	~StepAP214_AutoDesignSecurityClassificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignSecurityClassificationAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignSecurityClassificationAssignment::~StepAP214_AutoDesignSecurityClassificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignGroupedItem;
@@ -2643,12 +2493,10 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		Handle_StepVisual_TemplateInstance TemplateInstance() const;
 
 };
-%extend StepAP214_AutoDesignGroupedItem {
-	~StepAP214_AutoDesignGroupedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignGroupedItem\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignGroupedItem::~StepAP214_AutoDesignGroupedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfApprovalItem;
@@ -2686,12 +2534,10 @@ class StepAP214_Array1OfApprovalItem {
 		StepAP214_ApprovalItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfApprovalItem {
-	~StepAP214_Array1OfApprovalItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfApprovalItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfApprovalItem::~StepAP214_Array1OfApprovalItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfOrganizationItem;
@@ -2729,12 +2575,10 @@ class StepAP214_Array1OfOrganizationItem {
 		StepAP214_OrganizationItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfOrganizationItem {
-	~StepAP214_Array1OfOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfOrganizationItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfOrganizationItem::~StepAP214_Array1OfOrganizationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AppliedDateAndTimeAssignment;
@@ -2768,12 +2612,10 @@ class StepAP214_AppliedDateAndTimeAssignment : public StepBasic_DateAndTimeAssig
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AppliedDateAndTimeAssignment {
-	~StepAP214_AppliedDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedDateAndTimeAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AppliedDateAndTimeAssignment::~StepAP214_AppliedDateAndTimeAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfAutoDesignGroupedItem;
@@ -2811,12 +2653,10 @@ class StepAP214_Array1OfAutoDesignGroupedItem {
 		StepAP214_AutoDesignGroupedItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfAutoDesignGroupedItem {
-	~StepAP214_Array1OfAutoDesignGroupedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignGroupedItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfAutoDesignGroupedItem::~StepAP214_Array1OfAutoDesignGroupedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfAutoDesignPresentedItemSelect;
@@ -2858,12 +2698,10 @@ class StepAP214_HArray1OfAutoDesignPresentedItemSelect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfAutoDesignPresentedItemSelect {
-	~StepAP214_HArray1OfAutoDesignPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignPresentedItemSelect\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfAutoDesignPresentedItemSelect::~StepAP214_HArray1OfAutoDesignPresentedItemSelect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignPresentedItemSelect;
@@ -2887,12 +2725,10 @@ class StepAP214_AutoDesignPresentedItemSelect : public StepData_SelectType {
 		Handle_StepBasic_DocumentRelationship DocumentRelationship() const;
 
 };
-%extend StepAP214_AutoDesignPresentedItemSelect {
-	~StepAP214_AutoDesignPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignPresentedItemSelect\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignPresentedItemSelect::~StepAP214_AutoDesignPresentedItemSelect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignReferencingItem;
@@ -2932,12 +2768,10 @@ class StepAP214_AutoDesignReferencingItem : public StepData_SelectType {
 		Handle_StepRepr_ShapeAspect ShapeAspect() const;
 
 };
-%extend StepAP214_AutoDesignReferencingItem {
-	~StepAP214_AutoDesignReferencingItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignReferencingItem\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignReferencingItem::~StepAP214_AutoDesignReferencingItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AppliedSecurityClassificationAssignment;
@@ -2971,12 +2805,10 @@ class StepAP214_AppliedSecurityClassificationAssignment : public StepBasic_Secur
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AppliedSecurityClassificationAssignment {
-	~StepAP214_AppliedSecurityClassificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedSecurityClassificationAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AppliedSecurityClassificationAssignment::~StepAP214_AppliedSecurityClassificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_DocumentReferenceItem;
@@ -3006,12 +2838,10 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		Handle_StepRepr_ShapeAspectRelationship ShapeAspectRelationship() const;
 
 };
-%extend StepAP214_DocumentReferenceItem {
-	~StepAP214_DocumentReferenceItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_DocumentReferenceItem\n");}
-	}
-};
+%feature("shadow") StepAP214_DocumentReferenceItem::~StepAP214_DocumentReferenceItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfPersonAndOrganizationItem;
@@ -3053,12 +2883,10 @@ class StepAP214_HArray1OfPersonAndOrganizationItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfPersonAndOrganizationItem {
-	~StepAP214_HArray1OfPersonAndOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfPersonAndOrganizationItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfPersonAndOrganizationItem::~StepAP214_HArray1OfPersonAndOrganizationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfPresentedItemSelect;
@@ -3100,12 +2928,10 @@ class StepAP214_HArray1OfPresentedItemSelect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfPresentedItemSelect {
-	~StepAP214_HArray1OfPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfPresentedItemSelect\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfPresentedItemSelect::~StepAP214_HArray1OfPresentedItemSelect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignPersonAndOrganizationAssignment;
@@ -3139,12 +2965,10 @@ class StepAP214_AutoDesignPersonAndOrganizationAssignment : public StepBasic_Per
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AutoDesignPersonAndOrganizationAssignment {
-	~StepAP214_AutoDesignPersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignPersonAndOrganizationAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignPersonAndOrganizationAssignment::~StepAP214_AutoDesignPersonAndOrganizationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfGroupItem;
@@ -3182,12 +3006,10 @@ class StepAP214_Array1OfGroupItem {
 		StepAP214_GroupItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfGroupItem {
-	~StepAP214_Array1OfGroupItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfGroupItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfGroupItem::~StepAP214_Array1OfGroupItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfAutoDesignGroupedItem;
@@ -3229,12 +3051,10 @@ class StepAP214_HArray1OfAutoDesignGroupedItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfAutoDesignGroupedItem {
-	~StepAP214_HArray1OfAutoDesignGroupedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignGroupedItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfAutoDesignGroupedItem::~StepAP214_HArray1OfAutoDesignGroupedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignOrganizationItem;
@@ -3250,12 +3070,10 @@ class StepAP214_AutoDesignOrganizationItem : public StepAP214_AutoDesignGeneralO
 		Handle_StepBasic_PhysicallyModeledProductDefinition PhysicallyModeledProductDefinition() const;
 
 };
-%extend StepAP214_AutoDesignOrganizationItem {
-	~StepAP214_AutoDesignOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignOrganizationItem\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignOrganizationItem::~StepAP214_AutoDesignOrganizationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignApprovalAssignment;
@@ -3289,12 +3107,10 @@ class StepAP214_AutoDesignApprovalAssignment : public StepBasic_ApprovalAssignme
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AutoDesignApprovalAssignment {
-	~StepAP214_AutoDesignApprovalAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignApprovalAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignApprovalAssignment::~StepAP214_AutoDesignApprovalAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_DateAndTimeItem;
@@ -3314,12 +3130,10 @@ class StepAP214_DateAndTimeItem : public StepAP214_ApprovalItem {
 		Handle_StepBasic_Effectivity Effectivity() const;
 
 };
-%extend StepAP214_DateAndTimeItem {
-	~StepAP214_DateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_DateAndTimeItem\n");}
-	}
-};
+%feature("shadow") StepAP214_DateAndTimeItem::~StepAP214_DateAndTimeItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfExternalIdentificationItem;
@@ -3357,12 +3171,10 @@ class StepAP214_Array1OfExternalIdentificationItem {
 		StepAP214_ExternalIdentificationItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfExternalIdentificationItem {
-	~StepAP214_Array1OfExternalIdentificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfExternalIdentificationItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfExternalIdentificationItem::~StepAP214_Array1OfExternalIdentificationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignOrganizationAssignment;
@@ -3396,12 +3208,10 @@ class StepAP214_AutoDesignOrganizationAssignment : public StepBasic_Organization
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AutoDesignOrganizationAssignment {
-	~StepAP214_AutoDesignOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignOrganizationAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignOrganizationAssignment::~StepAP214_AutoDesignOrganizationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignDateAndTimeItem;
@@ -3419,12 +3229,10 @@ class StepAP214_AutoDesignDateAndTimeItem : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinitionEffectivity ProductDefinitionEffectivity() const;
 
 };
-%extend StepAP214_AutoDesignDateAndTimeItem {
-	~StepAP214_AutoDesignDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDateAndTimeItem\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignDateAndTimeItem::~StepAP214_AutoDesignDateAndTimeItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfAutoDesignReferencingItem;
@@ -3462,12 +3270,10 @@ class StepAP214_Array1OfAutoDesignReferencingItem {
 		StepAP214_AutoDesignReferencingItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfAutoDesignReferencingItem {
-	~StepAP214_Array1OfAutoDesignReferencingItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignReferencingItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfAutoDesignReferencingItem::~StepAP214_Array1OfAutoDesignReferencingItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignNominalDateAssignment;
@@ -3501,12 +3307,10 @@ class StepAP214_AutoDesignNominalDateAssignment : public StepBasic_DateAssignmen
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AutoDesignNominalDateAssignment {
-	~StepAP214_AutoDesignNominalDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignNominalDateAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignNominalDateAssignment::~StepAP214_AutoDesignNominalDateAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignDateAndPersonItem;
@@ -3536,12 +3340,10 @@ class StepAP214_AutoDesignDateAndPersonItem : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinitionWithAssociatedDocuments ProductDefinitionWithAssociatedDocuments() const;
 
 };
-%extend StepAP214_AutoDesignDateAndPersonItem {
-	~StepAP214_AutoDesignDateAndPersonItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDateAndPersonItem\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignDateAndPersonItem::~StepAP214_AutoDesignDateAndPersonItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfAutoDesignGeneralOrgItem;
@@ -3583,12 +3385,10 @@ class StepAP214_HArray1OfAutoDesignGeneralOrgItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfAutoDesignGeneralOrgItem {
-	~StepAP214_HArray1OfAutoDesignGeneralOrgItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignGeneralOrgItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfAutoDesignGeneralOrgItem::~StepAP214_HArray1OfAutoDesignGeneralOrgItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfOrganizationItem;
@@ -3630,12 +3430,10 @@ class StepAP214_HArray1OfOrganizationItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfOrganizationItem {
-	~StepAP214_HArray1OfOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfOrganizationItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfOrganizationItem::~StepAP214_HArray1OfOrganizationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AppliedGroupAssignment;
@@ -3663,12 +3461,10 @@ class StepAP214_AppliedGroupAssignment : public StepBasic_GroupAssignment {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AppliedGroupAssignment {
-	~StepAP214_AppliedGroupAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedGroupAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AppliedGroupAssignment::~StepAP214_AppliedGroupAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_RepItemGroup;
@@ -3696,12 +3492,10 @@ class StepAP214_RepItemGroup : public StepBasic_Group {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_RepItemGroup {
-	~StepAP214_RepItemGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_RepItemGroup\n");}
-	}
-};
+%feature("shadow") StepAP214_RepItemGroup::~StepAP214_RepItemGroup %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfDateAndTimeItem;
@@ -3743,12 +3537,10 @@ class StepAP214_HArray1OfDateAndTimeItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfDateAndTimeItem {
-	~StepAP214_HArray1OfDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfDateAndTimeItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfDateAndTimeItem::~StepAP214_HArray1OfDateAndTimeItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfDocumentReferenceItem;
@@ -3786,12 +3578,10 @@ class StepAP214_Array1OfDocumentReferenceItem {
 		StepAP214_DocumentReferenceItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfDocumentReferenceItem {
-	~StepAP214_Array1OfDocumentReferenceItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfDocumentReferenceItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfDocumentReferenceItem::~StepAP214_Array1OfDocumentReferenceItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_PersonAndOrganizationItem;
@@ -3805,12 +3595,10 @@ class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
 		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
 
 };
-%extend StepAP214_PersonAndOrganizationItem {
-	~StepAP214_PersonAndOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_PersonAndOrganizationItem\n");}
-	}
-};
+%feature("shadow") StepAP214_PersonAndOrganizationItem::~StepAP214_PersonAndOrganizationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_OrganizationItem;
@@ -3826,12 +3614,10 @@ class StepAP214_OrganizationItem : public StepAP214_ApprovalItem {
 		Handle_StepBasic_Approval Approval() const;
 
 };
-%extend StepAP214_OrganizationItem {
-	~StepAP214_OrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_OrganizationItem\n");}
-	}
-};
+%feature("shadow") StepAP214_OrganizationItem::~StepAP214_OrganizationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignActualDateAssignment;
@@ -3865,12 +3651,10 @@ class StepAP214_AutoDesignActualDateAssignment : public StepBasic_DateAssignment
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AutoDesignActualDateAssignment {
-	~StepAP214_AutoDesignActualDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignActualDateAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignActualDateAssignment::~StepAP214_AutoDesignActualDateAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignDatedItem;
@@ -3888,12 +3672,10 @@ class StepAP214_AutoDesignDatedItem : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinitionEffectivity ProductDefinitionEffectivity() const;
 
 };
-%extend StepAP214_AutoDesignDatedItem {
-	~StepAP214_AutoDesignDatedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDatedItem\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignDatedItem::~StepAP214_AutoDesignDatedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AppliedExternalIdentificationAssignment;
@@ -3921,12 +3703,10 @@ class StepAP214_AppliedExternalIdentificationAssignment : public StepBasic_Exter
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AppliedExternalIdentificationAssignment {
-	~StepAP214_AppliedExternalIdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedExternalIdentificationAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AppliedExternalIdentificationAssignment::~StepAP214_AppliedExternalIdentificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfAutoDesignGeneralOrgItem;
@@ -3964,12 +3744,10 @@ class StepAP214_Array1OfAutoDesignGeneralOrgItem {
 		StepAP214_AutoDesignGeneralOrgItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfAutoDesignGeneralOrgItem {
-	~StepAP214_Array1OfAutoDesignGeneralOrgItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignGeneralOrgItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfAutoDesignGeneralOrgItem::~StepAP214_Array1OfAutoDesignGeneralOrgItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignPresentedItem;
@@ -4001,12 +3779,10 @@ class StepAP214_AutoDesignPresentedItem : public StepVisual_PresentedItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AutoDesignPresentedItem {
-	~StepAP214_AutoDesignPresentedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignPresentedItem\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignPresentedItem::~StepAP214_AutoDesignPresentedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfSecurityClassificationItem;
@@ -4048,12 +3824,10 @@ class StepAP214_HArray1OfSecurityClassificationItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfSecurityClassificationItem {
-	~StepAP214_HArray1OfSecurityClassificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfSecurityClassificationItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfSecurityClassificationItem::~StepAP214_HArray1OfSecurityClassificationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_PresentedItemSelect;
@@ -4069,12 +3843,10 @@ class StepAP214_PresentedItemSelect : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinition ProductDefinition() const;
 
 };
-%extend StepAP214_PresentedItemSelect {
-	~StepAP214_PresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_PresentedItemSelect\n");}
-	}
-};
+%feature("shadow") StepAP214_PresentedItemSelect::~StepAP214_PresentedItemSelect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_AutoDesignActualDateAndTimeAssignment;
@@ -4108,12 +3880,10 @@ class StepAP214_AutoDesignActualDateAndTimeAssignment : public StepBasic_DateAnd
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_AutoDesignActualDateAndTimeAssignment {
-	~StepAP214_AutoDesignActualDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignActualDateAndTimeAssignment\n");}
-	}
-};
+%feature("shadow") StepAP214_AutoDesignActualDateAndTimeAssignment::~StepAP214_AutoDesignActualDateAndTimeAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfPersonAndOrganizationItem;
@@ -4151,12 +3921,10 @@ class StepAP214_Array1OfPersonAndOrganizationItem {
 		StepAP214_PersonAndOrganizationItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfPersonAndOrganizationItem {
-	~StepAP214_Array1OfPersonAndOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfPersonAndOrganizationItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfPersonAndOrganizationItem::~StepAP214_Array1OfPersonAndOrganizationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_SecurityClassificationItem;
@@ -4166,12 +3934,10 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		StepAP214_SecurityClassificationItem();
 
 };
-%extend StepAP214_SecurityClassificationItem {
-	~StepAP214_SecurityClassificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_SecurityClassificationItem\n");}
-	}
-};
+%feature("shadow") StepAP214_SecurityClassificationItem::~StepAP214_SecurityClassificationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfDateItem;
@@ -4213,12 +3979,10 @@ class StepAP214_HArray1OfDateItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfDateItem {
-	~StepAP214_HArray1OfDateItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfDateItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfDateItem::~StepAP214_HArray1OfDateItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfAutoDesignDateAndTimeItem;
@@ -4260,12 +4024,10 @@ class StepAP214_HArray1OfAutoDesignDateAndTimeItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
-	~StepAP214_HArray1OfAutoDesignDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDateAndTimeItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfAutoDesignDateAndTimeItem::~StepAP214_HArray1OfAutoDesignDateAndTimeItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_Array1OfSecurityClassificationItem;
@@ -4303,12 +4065,10 @@ class StepAP214_Array1OfSecurityClassificationItem {
 		StepAP214_SecurityClassificationItem & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_Array1OfSecurityClassificationItem {
-	~StepAP214_Array1OfSecurityClassificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfSecurityClassificationItem\n");}
-	}
-};
+%feature("shadow") StepAP214_Array1OfSecurityClassificationItem::~StepAP214_Array1OfSecurityClassificationItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepAP214_HArray1OfAutoDesignDatedItem;
@@ -4350,9 +4110,7 @@ class StepAP214_HArray1OfAutoDesignDatedItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepAP214_HArray1OfAutoDesignDatedItem {
-	~StepAP214_HArray1OfAutoDesignDatedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDatedItem\n");}
-	}
-};
+%feature("shadow") StepAP214_HArray1OfAutoDesignDatedItem::~StepAP214_HArray1OfAutoDesignDatedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

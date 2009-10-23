@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TDocStd_dependencies.i
 
 
@@ -58,12 +62,10 @@ class Handle_TDocStd_Modified : public Handle_TDF_Attribute {
 	return (TDocStd_Modified*)$self->Access();
 	}
 };
-%extend Handle_TDocStd_Modified {
-	~Handle_TDocStd_Modified() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_Modified\n");}
-	}
-};
+%feature("shadow") Handle_TDocStd_Modified::~Handle_TDocStd_Modified %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TDocStd_XLinkRoot;
@@ -88,12 +90,10 @@ class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
 	return (TDocStd_XLinkRoot*)$self->Access();
 	}
 };
-%extend Handle_TDocStd_XLinkRoot {
-	~Handle_TDocStd_XLinkRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_XLinkRoot\n");}
-	}
-};
+%feature("shadow") Handle_TDocStd_XLinkRoot::~Handle_TDocStd_XLinkRoot %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TDocStd_XLink;
@@ -118,12 +118,10 @@ class Handle_TDocStd_XLink : public Handle_TDF_Attribute {
 	return (TDocStd_XLink*)$self->Access();
 	}
 };
-%extend Handle_TDocStd_XLink {
-	~Handle_TDocStd_XLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_XLink\n");}
-	}
-};
+%feature("shadow") Handle_TDocStd_XLink::~Handle_TDocStd_XLink %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TDocStd_Document;
@@ -148,12 +146,10 @@ class Handle_TDocStd_Document : public Handle_CDM_Document {
 	return (TDocStd_Document*)$self->Access();
 	}
 };
-%extend Handle_TDocStd_Document {
-	~Handle_TDocStd_Document() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_Document\n");}
-	}
-};
+%feature("shadow") Handle_TDocStd_Document::~Handle_TDocStd_Document %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TDocStd_MultiTransactionManager;
@@ -178,12 +174,10 @@ class Handle_TDocStd_MultiTransactionManager : public Handle_MMgt_TShared {
 	return (TDocStd_MultiTransactionManager*)$self->Access();
 	}
 };
-%extend Handle_TDocStd_MultiTransactionManager {
-	~Handle_TDocStd_MultiTransactionManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_MultiTransactionManager\n");}
-	}
-};
+%feature("shadow") Handle_TDocStd_MultiTransactionManager::~Handle_TDocStd_MultiTransactionManager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TDocStd_Owner;
@@ -208,12 +202,10 @@ class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
 	return (TDocStd_Owner*)$self->Access();
 	}
 };
-%extend Handle_TDocStd_Owner {
-	~Handle_TDocStd_Owner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_Owner\n");}
-	}
-};
+%feature("shadow") Handle_TDocStd_Owner::~Handle_TDocStd_Owner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
@@ -238,12 +230,10 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public Handle_TC
 	return (TDocStd_SequenceNodeOfSequenceOfApplicationDelta*)$self->Access();
 	}
 };
-%extend Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
-	~Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta\n");}
-	}
-};
+%feature("shadow") Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta::~Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap;
@@ -268,12 +258,10 @@ class Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap : public Handle_TCollection_
 	return (TDocStd_DataMapNodeOfLabelIDMapDataMap*)$self->Access();
 	}
 };
-%extend Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap {
-	~Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap\n");}
-	}
-};
+%feature("shadow") Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap::~Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TDocStd_SequenceNodeOfSequenceOfDocument;
@@ -298,12 +286,10 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfDocument : public Handle_TCollectio
 	return (TDocStd_SequenceNodeOfSequenceOfDocument*)$self->Access();
 	}
 };
-%extend Handle_TDocStd_SequenceNodeOfSequenceOfDocument {
-	~Handle_TDocStd_SequenceNodeOfSequenceOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_SequenceNodeOfSequenceOfDocument\n");}
-	}
-};
+%feature("shadow") Handle_TDocStd_SequenceNodeOfSequenceOfDocument::~Handle_TDocStd_SequenceNodeOfSequenceOfDocument %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TDocStd_ApplicationDelta;
@@ -328,12 +314,10 @@ class Handle_TDocStd_ApplicationDelta : public Handle_MMgt_TShared {
 	return (TDocStd_ApplicationDelta*)$self->Access();
 	}
 };
-%extend Handle_TDocStd_ApplicationDelta {
-	~Handle_TDocStd_ApplicationDelta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_ApplicationDelta\n");}
-	}
-};
+%feature("shadow") Handle_TDocStd_ApplicationDelta::~Handle_TDocStd_ApplicationDelta %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TDocStd_CompoundDelta;
@@ -358,12 +342,10 @@ class Handle_TDocStd_CompoundDelta : public Handle_TDF_Delta {
 	return (TDocStd_CompoundDelta*)$self->Access();
 	}
 };
-%extend Handle_TDocStd_CompoundDelta {
-	~Handle_TDocStd_CompoundDelta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_CompoundDelta\n");}
-	}
-};
+%feature("shadow") Handle_TDocStd_CompoundDelta::~Handle_TDocStd_CompoundDelta %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_TDocStd_Application;
@@ -388,12 +370,10 @@ class Handle_TDocStd_Application : public Handle_CDF_Application {
 	return (TDocStd_Application*)$self->Access();
 	}
 };
-%extend Handle_TDocStd_Application {
-	~Handle_TDocStd_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_Application\n");}
-	}
-};
+%feature("shadow") Handle_TDocStd_Application::~Handle_TDocStd_Application %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_XLinkIterator;
@@ -413,12 +393,10 @@ class TDocStd_XLinkIterator {
 		TDocStd_XLink * Value() const;
 
 };
-%extend TDocStd_XLinkIterator {
-	~TDocStd_XLinkIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_XLinkIterator\n");}
-	}
-};
+%feature("shadow") TDocStd_XLinkIterator::~TDocStd_XLinkIterator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_SequenceOfDocument;
@@ -470,12 +448,10 @@ class TDocStd_SequenceOfDocument : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TDocStd_SequenceOfDocument {
-	~TDocStd_SequenceOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_SequenceOfDocument\n");}
-	}
-};
+%feature("shadow") TDocStd_SequenceOfDocument::~TDocStd_SequenceOfDocument %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_XLinkTool;
@@ -497,12 +473,10 @@ class TDocStd_XLinkTool {
 		Handle_TDF_RelocationTable RelocationTable() const;
 
 };
-%extend TDocStd_XLinkTool {
-	~TDocStd_XLinkTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_XLinkTool\n");}
-	}
-};
+%feature("shadow") TDocStd_XLinkTool::~TDocStd_XLinkTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_MultiTransactionManager;
@@ -574,12 +548,10 @@ class TDocStd_MultiTransactionManager : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDocStd_MultiTransactionManager {
-	~TDocStd_MultiTransactionManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_MultiTransactionManager\n");}
-	}
-};
+%feature("shadow") TDocStd_MultiTransactionManager::~TDocStd_MultiTransactionManager %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_Application;
@@ -629,12 +601,10 @@ class TDocStd_Application : public CDF_Application {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDocStd_Application {
-	~TDocStd_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_Application\n");}
-	}
-};
+%feature("shadow") TDocStd_Application::~TDocStd_Application %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_SequenceNodeOfSequenceOfDocument;
@@ -658,12 +628,10 @@ class TDocStd_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDocStd_SequenceNodeOfSequenceOfDocument {
-	~TDocStd_SequenceNodeOfSequenceOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_SequenceNodeOfSequenceOfDocument\n");}
-	}
-};
+%feature("shadow") TDocStd_SequenceNodeOfSequenceOfDocument::~TDocStd_SequenceNodeOfSequenceOfDocument %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_Owner;
@@ -711,12 +679,10 @@ class TDocStd_Owner : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDocStd_Owner {
-	~TDocStd_Owner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_Owner\n");}
-	}
-};
+%feature("shadow") TDocStd_Owner::~TDocStd_Owner %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_ApplicationDelta;
@@ -752,12 +718,10 @@ class TDocStd_ApplicationDelta : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDocStd_ApplicationDelta {
-	~TDocStd_ApplicationDelta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_ApplicationDelta\n");}
-	}
-};
+%feature("shadow") TDocStd_ApplicationDelta::~TDocStd_ApplicationDelta %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_Context;
@@ -771,12 +735,10 @@ class TDocStd_Context {
 		Standard_Boolean ModifiedReferences() const;
 
 };
-%extend TDocStd_Context {
-	~TDocStd_Context() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_Context\n");}
-	}
-};
+%feature("shadow") TDocStd_Context::~TDocStd_Context %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_DataMapIteratorOfLabelIDMapDataMap;
@@ -794,12 +756,10 @@ class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIt
 		const TDF_IDMap & Value() const;
 
 };
-%extend TDocStd_DataMapIteratorOfLabelIDMapDataMap {
-	~TDocStd_DataMapIteratorOfLabelIDMapDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_DataMapIteratorOfLabelIDMapDataMap\n");}
-	}
-};
+%feature("shadow") TDocStd_DataMapIteratorOfLabelIDMapDataMap::~TDocStd_DataMapIteratorOfLabelIDMapDataMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_PathParser;
@@ -821,12 +781,10 @@ class TDocStd_PathParser {
 		Standard_Integer Length() const;
 
 };
-%extend TDocStd_PathParser {
-	~TDocStd_PathParser() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_PathParser\n");}
-	}
-};
+%feature("shadow") TDocStd_PathParser::~TDocStd_PathParser %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_Modified;
@@ -888,12 +846,10 @@ class TDocStd_Modified : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDocStd_Modified {
-	~TDocStd_Modified() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_Modified\n");}
-	}
-};
+%feature("shadow") TDocStd_Modified::~TDocStd_Modified %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
@@ -917,12 +873,10 @@ class TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public TCollection_SeqN
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
-	~TDocStd_SequenceNodeOfSequenceOfApplicationDelta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_SequenceNodeOfSequenceOfApplicationDelta\n");}
-	}
-};
+%feature("shadow") TDocStd_SequenceNodeOfSequenceOfApplicationDelta::~TDocStd_SequenceNodeOfSequenceOfApplicationDelta %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd;
@@ -934,12 +888,10 @@ class TDocStd {
 		void IDList(TDF_IDList & anIDList);
 
 };
-%extend TDocStd {
-	~TDocStd() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd\n");}
-	}
-};
+%feature("shadow") TDocStd::~TDocStd %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_LabelIDMapDataMap;
@@ -971,12 +923,10 @@ class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
 		TDF_IDMap & operator()(const TDF_Label &K);
 
 };
-%extend TDocStd_LabelIDMapDataMap {
-	~TDocStd_LabelIDMapDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_LabelIDMapDataMap\n");}
-	}
-};
+%feature("shadow") TDocStd_LabelIDMapDataMap::~TDocStd_LabelIDMapDataMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_CompoundDelta;
@@ -998,12 +948,10 @@ class TDocStd_CompoundDelta : public TDF_Delta {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDocStd_CompoundDelta {
-	~TDocStd_CompoundDelta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_CompoundDelta\n");}
-	}
-};
+%feature("shadow") TDocStd_CompoundDelta::~TDocStd_CompoundDelta %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_DataMapNodeOfLabelIDMapDataMap;
@@ -1029,12 +977,10 @@ class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
-	~TDocStd_DataMapNodeOfLabelIDMapDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_DataMapNodeOfLabelIDMapDataMap\n");}
-	}
-};
+%feature("shadow") TDocStd_DataMapNodeOfLabelIDMapDataMap::~TDocStd_DataMapNodeOfLabelIDMapDataMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_Document;
@@ -1142,12 +1088,10 @@ class TDocStd_Document : public CDM_Document {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDocStd_Document {
-	~TDocStd_Document() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_Document\n");}
-	}
-};
+%feature("shadow") TDocStd_Document::~TDocStd_Document %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_SequenceOfApplicationDelta;
@@ -1199,12 +1143,10 @@ class TDocStd_SequenceOfApplicationDelta : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TDocStd_SequenceOfApplicationDelta {
-	~TDocStd_SequenceOfApplicationDelta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_SequenceOfApplicationDelta\n");}
-	}
-};
+%feature("shadow") TDocStd_SequenceOfApplicationDelta::~TDocStd_SequenceOfApplicationDelta %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_XLinkRoot;
@@ -1250,12 +1192,10 @@ class TDocStd_XLinkRoot : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDocStd_XLinkRoot {
-	~TDocStd_XLinkRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_XLinkRoot\n");}
-	}
-};
+%feature("shadow") TDocStd_XLinkRoot::~TDocStd_XLinkRoot %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor TDocStd_XLink;
@@ -1319,9 +1259,7 @@ class TDocStd_XLink : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend TDocStd_XLink {
-	~TDocStd_XLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDocStd_XLink\n");}
-	}
-};
+%feature("shadow") TDocStd_XLink::~TDocStd_XLink %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

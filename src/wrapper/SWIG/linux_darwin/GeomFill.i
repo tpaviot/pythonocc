@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GeomFill_dependencies.i
 
 
@@ -87,12 +91,10 @@ class Handle_GeomFill_Boundary : public Handle_MMgt_TShared {
 	return (GeomFill_Boundary*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_Boundary {
-	~Handle_GeomFill_Boundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Boundary\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_Boundary::~Handle_GeomFill_Boundary %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_TrihedronLaw;
@@ -117,12 +119,10 @@ class Handle_GeomFill_TrihedronLaw : public Handle_MMgt_TShared {
 	return (GeomFill_TrihedronLaw*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_TrihedronLaw {
-	~Handle_GeomFill_TrihedronLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TrihedronLaw\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_TrihedronLaw::~Handle_GeomFill_TrihedronLaw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_TrihedronWithGuide;
@@ -147,12 +147,10 @@ class Handle_GeomFill_TrihedronWithGuide : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_TrihedronWithGuide*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_TrihedronWithGuide {
-	~Handle_GeomFill_TrihedronWithGuide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TrihedronWithGuide\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_TrihedronWithGuide::~Handle_GeomFill_TrihedronWithGuide %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_SectionLaw;
@@ -177,12 +175,10 @@ class Handle_GeomFill_SectionLaw : public Handle_MMgt_TShared {
 	return (GeomFill_SectionLaw*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_SectionLaw {
-	~Handle_GeomFill_SectionLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SectionLaw\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_SectionLaw::~Handle_GeomFill_SectionLaw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_NSections;
@@ -207,12 +203,10 @@ class Handle_GeomFill_NSections : public Handle_GeomFill_SectionLaw {
 	return (GeomFill_NSections*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_NSections {
-	~Handle_GeomFill_NSections() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_NSections\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_NSections::~Handle_GeomFill_NSections %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_DegeneratedBound;
@@ -237,12 +231,10 @@ class Handle_GeomFill_DegeneratedBound : public Handle_GeomFill_Boundary {
 	return (GeomFill_DegeneratedBound*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_DegeneratedBound {
-	~Handle_GeomFill_DegeneratedBound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_DegeneratedBound\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_DegeneratedBound::~Handle_GeomFill_DegeneratedBound %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_GuideTrihedronPlan;
@@ -267,12 +259,10 @@ class Handle_GeomFill_GuideTrihedronPlan : public Handle_GeomFill_TrihedronWithG
 	return (GeomFill_GuideTrihedronPlan*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_GuideTrihedronPlan {
-	~Handle_GeomFill_GuideTrihedronPlan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_GuideTrihedronPlan\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_GuideTrihedronPlan::~Handle_GeomFill_GuideTrihedronPlan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_LocationLaw;
@@ -297,12 +287,10 @@ class Handle_GeomFill_LocationLaw : public Handle_MMgt_TShared {
 	return (GeomFill_LocationLaw*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_LocationLaw {
-	~Handle_GeomFill_LocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_LocationLaw\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_LocationLaw::~Handle_GeomFill_LocationLaw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_CurveAndTrihedron;
@@ -327,12 +315,10 @@ class Handle_GeomFill_CurveAndTrihedron : public Handle_GeomFill_LocationLaw {
 	return (GeomFill_CurveAndTrihedron*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_CurveAndTrihedron {
-	~Handle_GeomFill_CurveAndTrihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CurveAndTrihedron\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_CurveAndTrihedron::~Handle_GeomFill_CurveAndTrihedron %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_CircularBlendFunc;
@@ -357,12 +343,10 @@ class Handle_GeomFill_CircularBlendFunc : public Handle_Approx_SweepFunction {
 	return (GeomFill_CircularBlendFunc*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_CircularBlendFunc {
-	~Handle_GeomFill_CircularBlendFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CircularBlendFunc\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_CircularBlendFunc::~Handle_GeomFill_CircularBlendFunc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_SimpleBound;
@@ -387,12 +371,10 @@ class Handle_GeomFill_SimpleBound : public Handle_GeomFill_Boundary {
 	return (GeomFill_SimpleBound*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_SimpleBound {
-	~Handle_GeomFill_SimpleBound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SimpleBound\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_SimpleBound::~Handle_GeomFill_SimpleBound %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_DraftTrihedron;
@@ -417,12 +399,10 @@ class Handle_GeomFill_DraftTrihedron : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_DraftTrihedron*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_DraftTrihedron {
-	~Handle_GeomFill_DraftTrihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_DraftTrihedron\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_DraftTrihedron::~Handle_GeomFill_DraftTrihedron %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_LocationDraft;
@@ -447,12 +427,10 @@ class Handle_GeomFill_LocationDraft : public Handle_GeomFill_LocationLaw {
 	return (GeomFill_LocationDraft*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_LocationDraft {
-	~Handle_GeomFill_LocationDraft() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_LocationDraft\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_LocationDraft::~Handle_GeomFill_LocationDraft %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_BoundWithSurf;
@@ -477,12 +455,10 @@ class Handle_GeomFill_BoundWithSurf : public Handle_GeomFill_Boundary {
 	return (GeomFill_BoundWithSurf*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_BoundWithSurf {
-	~Handle_GeomFill_BoundWithSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_BoundWithSurf\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_BoundWithSurf::~Handle_GeomFill_BoundWithSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_Line;
@@ -507,12 +483,10 @@ class Handle_GeomFill_Line : public Handle_MMgt_TShared {
 	return (GeomFill_Line*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_Line {
-	~Handle_GeomFill_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Line\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_Line::~Handle_GeomFill_Line %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_SequenceNodeOfSequenceOfCurve;
@@ -537,12 +511,10 @@ class Handle_GeomFill_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_
 	return (GeomFill_SequenceNodeOfSequenceOfCurve*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_SequenceNodeOfSequenceOfCurve {
-	~Handle_GeomFill_SequenceNodeOfSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SequenceNodeOfSequenceOfCurve\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_SequenceNodeOfSequenceOfCurve::~Handle_GeomFill_SequenceNodeOfSequenceOfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_TgtField;
@@ -567,12 +539,10 @@ class Handle_GeomFill_TgtField : public Handle_MMgt_TShared {
 	return (GeomFill_TgtField*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_TgtField {
-	~Handle_GeomFill_TgtField() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TgtField\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_TgtField::~Handle_GeomFill_TgtField %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_HArray1OfSectionLaw;
@@ -597,12 +567,10 @@ class Handle_GeomFill_HArray1OfSectionLaw : public Handle_MMgt_TShared {
 	return (GeomFill_HArray1OfSectionLaw*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_HArray1OfSectionLaw {
-	~Handle_GeomFill_HArray1OfSectionLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_HArray1OfSectionLaw\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_HArray1OfSectionLaw::~Handle_GeomFill_HArray1OfSectionLaw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_Frenet;
@@ -627,12 +595,10 @@ class Handle_GeomFill_Frenet : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_Frenet*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_Frenet {
-	~Handle_GeomFill_Frenet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Frenet\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_Frenet::~Handle_GeomFill_Frenet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_Darboux;
@@ -657,12 +623,10 @@ class Handle_GeomFill_Darboux : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_Darboux*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_Darboux {
-	~Handle_GeomFill_Darboux() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Darboux\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_Darboux::~Handle_GeomFill_Darboux %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_CoonsAlgPatch;
@@ -687,12 +651,10 @@ class Handle_GeomFill_CoonsAlgPatch : public Handle_MMgt_TShared {
 	return (GeomFill_CoonsAlgPatch*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_CoonsAlgPatch {
-	~Handle_GeomFill_CoonsAlgPatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CoonsAlgPatch\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_CoonsAlgPatch::~Handle_GeomFill_CoonsAlgPatch %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_ConstantBiNormal;
@@ -717,12 +679,10 @@ class Handle_GeomFill_ConstantBiNormal : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_ConstantBiNormal*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_ConstantBiNormal {
-	~Handle_GeomFill_ConstantBiNormal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_ConstantBiNormal\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_ConstantBiNormal::~Handle_GeomFill_ConstantBiNormal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_LocationGuide;
@@ -747,12 +707,10 @@ class Handle_GeomFill_LocationGuide : public Handle_GeomFill_LocationLaw {
 	return (GeomFill_LocationGuide*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_LocationGuide {
-	~Handle_GeomFill_LocationGuide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_LocationGuide\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_LocationGuide::~Handle_GeomFill_LocationGuide %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_GuideTrihedronAC;
@@ -777,12 +735,10 @@ class Handle_GeomFill_GuideTrihedronAC : public Handle_GeomFill_TrihedronWithGui
 	return (GeomFill_GuideTrihedronAC*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_GuideTrihedronAC {
-	~Handle_GeomFill_GuideTrihedronAC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_GuideTrihedronAC\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_GuideTrihedronAC::~Handle_GeomFill_GuideTrihedronAC %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_CorrectedFrenet;
@@ -807,12 +763,10 @@ class Handle_GeomFill_CorrectedFrenet : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_CorrectedFrenet*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_CorrectedFrenet {
-	~Handle_GeomFill_CorrectedFrenet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CorrectedFrenet\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_CorrectedFrenet::~Handle_GeomFill_CorrectedFrenet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_SweepFunction;
@@ -837,12 +791,10 @@ class Handle_GeomFill_SweepFunction : public Handle_Approx_SweepFunction {
 	return (GeomFill_SweepFunction*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_SweepFunction {
-	~Handle_GeomFill_SweepFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SweepFunction\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_SweepFunction::~Handle_GeomFill_SweepFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_SequenceNodeOfSequenceOfTrsf;
@@ -867,12 +819,10 @@ class Handle_GeomFill_SequenceNodeOfSequenceOfTrsf : public Handle_TCollection_S
 	return (GeomFill_SequenceNodeOfSequenceOfTrsf*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_SequenceNodeOfSequenceOfTrsf {
-	~Handle_GeomFill_SequenceNodeOfSequenceOfTrsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SequenceNodeOfSequenceOfTrsf\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_SequenceNodeOfSequenceOfTrsf::~Handle_GeomFill_SequenceNodeOfSequenceOfTrsf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_EvolvedSection;
@@ -897,12 +847,10 @@ class Handle_GeomFill_EvolvedSection : public Handle_GeomFill_SectionLaw {
 	return (GeomFill_EvolvedSection*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_EvolvedSection {
-	~Handle_GeomFill_EvolvedSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_EvolvedSection\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_EvolvedSection::~Handle_GeomFill_EvolvedSection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_UniformSection;
@@ -927,12 +875,10 @@ class Handle_GeomFill_UniformSection : public Handle_GeomFill_SectionLaw {
 	return (GeomFill_UniformSection*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_UniformSection {
-	~Handle_GeomFill_UniformSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_UniformSection\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_UniformSection::~Handle_GeomFill_UniformSection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_HArray1OfLocationLaw;
@@ -957,12 +903,10 @@ class Handle_GeomFill_HArray1OfLocationLaw : public Handle_MMgt_TShared {
 	return (GeomFill_HArray1OfLocationLaw*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_HArray1OfLocationLaw {
-	~Handle_GeomFill_HArray1OfLocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_HArray1OfLocationLaw\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_HArray1OfLocationLaw::~Handle_GeomFill_HArray1OfLocationLaw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_Fixed;
@@ -987,12 +931,10 @@ class Handle_GeomFill_Fixed : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_Fixed*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_Fixed {
-	~Handle_GeomFill_Fixed() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Fixed\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_Fixed::~Handle_GeomFill_Fixed %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_GeomFill_TgtOnCoons;
@@ -1017,12 +959,10 @@ class Handle_GeomFill_TgtOnCoons : public Handle_GeomFill_TgtField {
 	return (GeomFill_TgtOnCoons*)$self->Access();
 	}
 };
-%extend Handle_GeomFill_TgtOnCoons {
-	~Handle_GeomFill_TgtOnCoons() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TgtOnCoons\n");}
-	}
-};
+%feature("shadow") Handle_GeomFill_TgtOnCoons::~Handle_GeomFill_TgtOnCoons %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_SectionPlacement;
@@ -1056,12 +996,10 @@ class GeomFill_SectionPlacement {
 		Handle_Geom_Curve ModifiedSection(const Standard_Boolean WithTranslation) const;
 
 };
-%extend GeomFill_SectionPlacement {
-	~GeomFill_SectionPlacement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SectionPlacement\n");}
-	}
-};
+%feature("shadow") GeomFill_SectionPlacement::~GeomFill_SectionPlacement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_TgtField;
@@ -1091,12 +1029,10 @@ class GeomFill_TgtField : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_TgtField {
-	~GeomFill_TgtField() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_TgtField\n");}
-	}
-};
+%feature("shadow") GeomFill_TgtField::~GeomFill_TgtField %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_TgtOnCoons;
@@ -1124,12 +1060,10 @@ class GeomFill_TgtOnCoons : public GeomFill_TgtField {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_TgtOnCoons {
-	~GeomFill_TgtOnCoons() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_TgtOnCoons\n");}
-	}
-};
+%feature("shadow") GeomFill_TgtOnCoons::~GeomFill_TgtOnCoons %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Profiler;
@@ -1161,12 +1095,10 @@ class GeomFill_Profiler {
 		const Handle_Geom_Curve & Curve(const Standard_Integer Index) const;
 
 };
-%extend GeomFill_Profiler {
-	~GeomFill_Profiler() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Profiler\n");}
-	}
-};
+%feature("shadow") GeomFill_Profiler::~GeomFill_Profiler %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Generator;
@@ -1178,12 +1110,10 @@ class GeomFill_Generator : public GeomFill_Profiler {
 		const Handle_Geom_Surface & Surface() const;
 
 };
-%extend GeomFill_Generator {
-	~GeomFill_Generator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Generator\n");}
-	}
-};
+%feature("shadow") GeomFill_Generator::~GeomFill_Generator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Boundary;
@@ -1229,12 +1159,10 @@ class GeomFill_Boundary : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_Boundary {
-	~GeomFill_Boundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Boundary\n");}
-	}
-};
+%feature("shadow") GeomFill_Boundary::~GeomFill_Boundary %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_DegeneratedBound;
@@ -1254,12 +1182,10 @@ class GeomFill_DegeneratedBound : public GeomFill_Boundary {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_DegeneratedBound {
-	~GeomFill_DegeneratedBound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_DegeneratedBound\n");}
-	}
-};
+%feature("shadow") GeomFill_DegeneratedBound::~GeomFill_DegeneratedBound %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_TrihedronLaw;
@@ -1305,12 +1231,10 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_TrihedronLaw {
-	~GeomFill_TrihedronLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_TrihedronLaw\n");}
-	}
-};
+%feature("shadow") GeomFill_TrihedronLaw::~GeomFill_TrihedronLaw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Darboux;
@@ -1330,12 +1254,10 @@ class GeomFill_Darboux : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_Darboux {
-	~GeomFill_Darboux() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Darboux\n");}
-	}
-};
+%feature("shadow") GeomFill_Darboux::~GeomFill_Darboux %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Array1OfSectionLaw;
@@ -1373,12 +1295,10 @@ class GeomFill_Array1OfSectionLaw {
 		Handle_GeomFill_SectionLaw & operator()(const Standard_Integer Index);
 
 };
-%extend GeomFill_Array1OfSectionLaw {
-	~GeomFill_Array1OfSectionLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Array1OfSectionLaw\n");}
-	}
-};
+%feature("shadow") GeomFill_Array1OfSectionLaw::~GeomFill_Array1OfSectionLaw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_ConstrainedFilling;
@@ -1410,12 +1330,10 @@ class GeomFill_ConstrainedFilling {
 		void CheckResult(const Standard_Integer I);
 
 };
-%extend GeomFill_ConstrainedFilling {
-	~GeomFill_ConstrainedFilling() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_ConstrainedFilling\n");}
-	}
-};
+%feature("shadow") GeomFill_ConstrainedFilling::~GeomFill_ConstrainedFilling %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_SequenceOfCurve;
@@ -1467,12 +1385,10 @@ class GeomFill_SequenceOfCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend GeomFill_SequenceOfCurve {
-	~GeomFill_SequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceOfCurve\n");}
-	}
-};
+%feature("shadow") GeomFill_SequenceOfCurve::~GeomFill_SequenceOfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_CorrectedFrenet;
@@ -1516,12 +1432,10 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_CorrectedFrenet {
-	~GeomFill_CorrectedFrenet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CorrectedFrenet\n");}
-	}
-};
+%feature("shadow") GeomFill_CorrectedFrenet::~GeomFill_CorrectedFrenet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill;
@@ -1549,12 +1463,10 @@ class GeomFill {
 		Standard_Real GetTolerance(const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real Radius, const Standard_Real AngularTol, const Standard_Real SpatialTol);
 
 };
-%extend GeomFill {
-	~GeomFill() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill\n");}
-	}
-};
+%feature("shadow") GeomFill::~GeomFill %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_FunctionDraft;
@@ -1582,12 +1494,10 @@ class GeomFill_FunctionDraft : public math_FunctionSetWithDerivatives {
 		Standard_Boolean Deriv2X(const math_Vector &X, GeomFill_Tensor & T);
 
 };
-%extend GeomFill_FunctionDraft {
-	~GeomFill_FunctionDraft() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_FunctionDraft\n");}
-	}
-};
+%feature("shadow") GeomFill_FunctionDraft::~GeomFill_FunctionDraft %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Filling;
@@ -1607,12 +1517,10 @@ class GeomFill_Filling {
 		void Weights(TColStd_Array2OfReal & Weights) const;
 
 };
-%extend GeomFill_Filling {
-	~GeomFill_Filling() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Filling\n");}
-	}
-};
+%feature("shadow") GeomFill_Filling::~GeomFill_Filling %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Curved;
@@ -1646,12 +1554,10 @@ class GeomFill_Curved : public GeomFill_Filling {
 		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
 
 };
-%extend GeomFill_Curved {
-	~GeomFill_Curved() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Curved\n");}
-	}
-};
+%feature("shadow") GeomFill_Curved::~GeomFill_Curved %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_SequenceNodeOfSequenceOfCurve;
@@ -1675,12 +1581,10 @@ class GeomFill_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_SequenceNodeOfSequenceOfCurve {
-	~GeomFill_SequenceNodeOfSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceNodeOfSequenceOfCurve\n");}
-	}
-};
+%feature("shadow") GeomFill_SequenceNodeOfSequenceOfCurve::~GeomFill_SequenceNodeOfSequenceOfCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_SnglrFunc;
@@ -1716,12 +1620,10 @@ class GeomFill_SnglrFunc : public Adaptor3d_Curve {
 		virtual		GeomAbs_CurveType GetType() const;
 
 };
-%extend GeomFill_SnglrFunc {
-	~GeomFill_SnglrFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SnglrFunc\n");}
-	}
-};
+%feature("shadow") GeomFill_SnglrFunc::~GeomFill_SnglrFunc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_PolynomialConvertor;
@@ -1741,12 +1643,10 @@ class GeomFill_PolynomialConvertor {
 		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Vec &D2FirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, const gp_Vec &Dir, const gp_Vec &DDir, const gp_Vec &D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles) const;
 
 };
-%extend GeomFill_PolynomialConvertor {
-	~GeomFill_PolynomialConvertor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_PolynomialConvertor\n");}
-	}
-};
+%feature("shadow") GeomFill_PolynomialConvertor::~GeomFill_PolynomialConvertor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_SectionLaw;
@@ -1814,12 +1714,10 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_SectionLaw {
-	~GeomFill_SectionLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SectionLaw\n");}
-	}
-};
+%feature("shadow") GeomFill_SectionLaw::~GeomFill_SectionLaw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_SimpleBound;
@@ -1851,12 +1749,10 @@ class GeomFill_SimpleBound : public GeomFill_Boundary {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_SimpleBound {
-	~GeomFill_SimpleBound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SimpleBound\n");}
-	}
-};
+%feature("shadow") GeomFill_SimpleBound::~GeomFill_SimpleBound %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_HArray1OfLocationLaw;
@@ -1898,12 +1794,10 @@ class GeomFill_HArray1OfLocationLaw : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_HArray1OfLocationLaw {
-	~GeomFill_HArray1OfLocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_HArray1OfLocationLaw\n");}
-	}
-};
+%feature("shadow") GeomFill_HArray1OfLocationLaw::~GeomFill_HArray1OfLocationLaw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_HArray1OfSectionLaw;
@@ -1945,12 +1839,10 @@ class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_HArray1OfSectionLaw {
-	~GeomFill_HArray1OfSectionLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_HArray1OfSectionLaw\n");}
-	}
-};
+%feature("shadow") GeomFill_HArray1OfSectionLaw::~GeomFill_HArray1OfSectionLaw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_LocationLaw;
@@ -2020,12 +1912,10 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_LocationLaw {
-	~GeomFill_LocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_LocationLaw\n");}
-	}
-};
+%feature("shadow") GeomFill_LocationLaw::~GeomFill_LocationLaw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_CurveAndTrihedron;
@@ -2045,12 +1935,10 @@ class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_CurveAndTrihedron {
-	~GeomFill_CurveAndTrihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CurveAndTrihedron\n");}
-	}
-};
+%feature("shadow") GeomFill_CurveAndTrihedron::~GeomFill_CurveAndTrihedron %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_SequenceNodeOfSequenceOfTrsf;
@@ -2074,12 +1962,10 @@ class GeomFill_SequenceNodeOfSequenceOfTrsf : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
-	~GeomFill_SequenceNodeOfSequenceOfTrsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceNodeOfSequenceOfTrsf\n");}
-	}
-};
+%feature("shadow") GeomFill_SequenceNodeOfSequenceOfTrsf::~GeomFill_SequenceNodeOfSequenceOfTrsf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_SweepFunction;
@@ -2135,12 +2021,10 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_SweepFunction {
-	~GeomFill_SweepFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SweepFunction\n");}
-	}
-};
+%feature("shadow") GeomFill_SweepFunction::~GeomFill_SweepFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_LocFunction;
@@ -2158,12 +2042,10 @@ class GeomFill_LocFunction {
 		void DN(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, const Standard_Integer Order, Standard_Real &OutValue, Standard_Integer &OutValue);
 
 };
-%extend GeomFill_LocFunction {
-	~GeomFill_LocFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_LocFunction\n");}
-	}
-};
+%feature("shadow") GeomFill_LocFunction::~GeomFill_LocFunction %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_SequenceOfTrsf;
@@ -2215,12 +2097,10 @@ class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend GeomFill_SequenceOfTrsf {
-	~GeomFill_SequenceOfTrsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceOfTrsf\n");}
-	}
-};
+%feature("shadow") GeomFill_SequenceOfTrsf::~GeomFill_SequenceOfTrsf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_TrihedronWithGuide;
@@ -2244,12 +2124,10 @@ class GeomFill_TrihedronWithGuide : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_TrihedronWithGuide {
-	~GeomFill_TrihedronWithGuide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_TrihedronWithGuide\n");}
-	}
-};
+%feature("shadow") GeomFill_TrihedronWithGuide::~GeomFill_TrihedronWithGuide %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_GuideTrihedronAC;
@@ -2293,12 +2171,10 @@ class GeomFill_GuideTrihedronAC : public GeomFill_TrihedronWithGuide {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_GuideTrihedronAC {
-	~GeomFill_GuideTrihedronAC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_GuideTrihedronAC\n");}
-	}
-};
+%feature("shadow") GeomFill_GuideTrihedronAC::~GeomFill_GuideTrihedronAC %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_SectionGenerator;
@@ -2322,12 +2198,10 @@ class GeomFill_SectionGenerator : public GeomFill_Profiler {
 		Standard_Real Parameter(const Standard_Integer P) const;
 
 };
-%extend GeomFill_SectionGenerator {
-	~GeomFill_SectionGenerator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SectionGenerator\n");}
-	}
-};
+%feature("shadow") GeomFill_SectionGenerator::~GeomFill_SectionGenerator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_LocationDraft;
@@ -2401,12 +2275,10 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_LocationDraft {
-	~GeomFill_LocationDraft() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_LocationDraft\n");}
-	}
-};
+%feature("shadow") GeomFill_LocationDraft::~GeomFill_LocationDraft %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Sweep;
@@ -2444,12 +2316,10 @@ class GeomFill_Sweep {
 		Handle_Geom2d_Curve Trace(const Standard_Integer IndexOfTrace) const;
 
 };
-%extend GeomFill_Sweep {
-	~GeomFill_Sweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Sweep\n");}
-	}
-};
+%feature("shadow") GeomFill_Sweep::~GeomFill_Sweep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_ConstantBiNormal;
@@ -2491,12 +2361,10 @@ class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_ConstantBiNormal {
-	~GeomFill_ConstantBiNormal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_ConstantBiNormal\n");}
-	}
-};
+%feature("shadow") GeomFill_ConstantBiNormal::~GeomFill_ConstantBiNormal %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_GuideTrihedronPlan;
@@ -2546,12 +2414,10 @@ class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_GuideTrihedronPlan {
-	~GeomFill_GuideTrihedronPlan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_GuideTrihedronPlan\n");}
-	}
-};
+%feature("shadow") GeomFill_GuideTrihedronPlan::~GeomFill_GuideTrihedronPlan %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_AppSurf;
@@ -2609,12 +2475,10 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
 
 };
-%extend GeomFill_AppSurf {
-	~GeomFill_AppSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_AppSurf\n");}
-	}
-};
+%feature("shadow") GeomFill_AppSurf::~GeomFill_AppSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_CircularBlendFunc;
@@ -2668,12 +2532,10 @@ class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_CircularBlendFunc {
-	~GeomFill_CircularBlendFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CircularBlendFunc\n");}
-	}
-};
+%feature("shadow") GeomFill_CircularBlendFunc::~GeomFill_CircularBlendFunc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Tensor;
@@ -2705,12 +2567,10 @@ class GeomFill_Tensor {
 		void Multiply(const math_Vector &Right, math_Matrix & Product) const;
 
 };
-%extend GeomFill_Tensor {
-	~GeomFill_Tensor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Tensor\n");}
-	}
-};
+%feature("shadow") GeomFill_Tensor::~GeomFill_Tensor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Frenet;
@@ -2754,12 +2614,10 @@ class GeomFill_Frenet : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_Frenet {
-	~GeomFill_Frenet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Frenet\n");}
-	}
-};
+%feature("shadow") GeomFill_Frenet::~GeomFill_Frenet %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Line;
@@ -2787,12 +2645,10 @@ class GeomFill_Line : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_Line {
-	~GeomFill_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Line\n");}
-	}
-};
+%feature("shadow") GeomFill_Line::~GeomFill_Line %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Pipe;
@@ -2850,12 +2706,10 @@ class GeomFill_Pipe {
 		Standard_Real ErrorOnSurf() const;
 
 };
-%extend GeomFill_Pipe {
-	~GeomFill_Pipe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Pipe\n");}
-	}
-};
+%feature("shadow") GeomFill_Pipe::~GeomFill_Pipe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_UniformSection;
@@ -2919,12 +2773,10 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_UniformSection {
-	~GeomFill_UniformSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_UniformSection\n");}
-	}
-};
+%feature("shadow") GeomFill_UniformSection::~GeomFill_UniformSection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Stretch;
@@ -2942,12 +2794,10 @@ class GeomFill_Stretch : public GeomFill_Filling {
 		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
 
 };
-%extend GeomFill_Stretch {
-	~GeomFill_Stretch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Stretch\n");}
-	}
-};
+%feature("shadow") GeomFill_Stretch::~GeomFill_Stretch %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_BSplineCurves;
@@ -2971,12 +2821,10 @@ class GeomFill_BSplineCurves {
 		const Handle_Geom_BSplineSurface & Surface() const;
 
 };
-%extend GeomFill_BSplineCurves {
-	~GeomFill_BSplineCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_BSplineCurves\n");}
-	}
-};
+%feature("shadow") GeomFill_BSplineCurves::~GeomFill_BSplineCurves %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_CornerState;
@@ -3006,12 +2854,10 @@ class GeomFill_CornerState {
 		void DoKill(const Standard_Real Scal);
 
 };
-%extend GeomFill_CornerState {
-	~GeomFill_CornerState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CornerState\n");}
-	}
-};
+%feature("shadow") GeomFill_CornerState::~GeomFill_CornerState %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_BoundWithSurf;
@@ -3049,12 +2895,10 @@ class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_BoundWithSurf {
-	~GeomFill_BoundWithSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_BoundWithSurf\n");}
-	}
-};
+%feature("shadow") GeomFill_BoundWithSurf::~GeomFill_BoundWithSurf %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_QuasiAngularConvertor;
@@ -3074,12 +2918,10 @@ class GeomFill_QuasiAngularConvertor {
 		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Vec &D2FirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, const gp_Vec &Dir, const gp_Vec &DDir, const gp_Vec &D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights, TColStd_Array1OfReal & D2Weights);
 
 };
-%extend GeomFill_QuasiAngularConvertor {
-	~GeomFill_QuasiAngularConvertor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_QuasiAngularConvertor\n");}
-	}
-};
+%feature("shadow") GeomFill_QuasiAngularConvertor::~GeomFill_QuasiAngularConvertor %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_AppSweep;
@@ -3137,12 +2979,10 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
 
 };
-%extend GeomFill_AppSweep {
-	~GeomFill_AppSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_AppSweep\n");}
-	}
-};
+%feature("shadow") GeomFill_AppSweep::~GeomFill_AppSweep %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_EvolvedSection;
@@ -3206,12 +3046,10 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_EvolvedSection {
-	~GeomFill_EvolvedSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_EvolvedSection\n");}
-	}
-};
+%feature("shadow") GeomFill_EvolvedSection::~GeomFill_EvolvedSection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_DraftTrihedron;
@@ -3253,12 +3091,10 @@ class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_DraftTrihedron {
-	~GeomFill_DraftTrihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_DraftTrihedron\n");}
-	}
-};
+%feature("shadow") GeomFill_DraftTrihedron::~GeomFill_DraftTrihedron %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_LocationGuide;
@@ -3338,12 +3174,10 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_LocationGuide {
-	~GeomFill_LocationGuide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_LocationGuide\n");}
-	}
-};
+%feature("shadow") GeomFill_LocationGuide::~GeomFill_LocationGuide %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Coons;
@@ -3361,12 +3195,10 @@ class GeomFill_Coons : public GeomFill_Filling {
 		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
 
 };
-%extend GeomFill_Coons {
-	~GeomFill_Coons() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Coons\n");}
-	}
-};
+%feature("shadow") GeomFill_Coons::~GeomFill_Coons %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_BezierCurves;
@@ -3390,12 +3222,10 @@ class GeomFill_BezierCurves {
 		const Handle_Geom_BezierSurface & Surface() const;
 
 };
-%extend GeomFill_BezierCurves {
-	~GeomFill_BezierCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_BezierCurves\n");}
-	}
-};
+%feature("shadow") GeomFill_BezierCurves::~GeomFill_BezierCurves %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_CoonsAlgPatch;
@@ -3435,12 +3265,10 @@ class GeomFill_CoonsAlgPatch : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_CoonsAlgPatch {
-	~GeomFill_CoonsAlgPatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CoonsAlgPatch\n");}
-	}
-};
+%feature("shadow") GeomFill_CoonsAlgPatch::~GeomFill_CoonsAlgPatch %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Fixed;
@@ -3478,12 +3306,10 @@ class GeomFill_Fixed : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend GeomFill_Fixed {
-	~GeomFill_Fixed() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Fixed\n");}
-	}
-};
+%feature("shadow") GeomFill_Fixed::~GeomFill_Fixed %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_PlanFunc;
@@ -3505,12 +3331,10 @@ class GeomFill_PlanFunc : public math_FunctionWithDerivative {
 		void D2E(const Standard_Real X, const gp_Vec &DP, const gp_Vec &D2P, const gp_Vec &DV, const gp_Vec &D2V, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend GeomFill_PlanFunc {
-	~GeomFill_PlanFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_PlanFunc\n");}
-	}
-};
+%feature("shadow") GeomFill_PlanFunc::~GeomFill_PlanFunc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor GeomFill_Array1OfLocationLaw;
@@ -3548,9 +3372,7 @@ class GeomFill_Array1OfLocationLaw {
 		Handle_GeomFill_LocationLaw & operator()(const Standard_Integer Index);
 
 };
-%extend GeomFill_Array1OfLocationLaw {
-	~GeomFill_Array1OfLocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Array1OfLocationLaw\n");}
-	}
-};
+%feature("shadow") GeomFill_Array1OfLocationLaw::~GeomFill_Array1OfLocationLaw %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

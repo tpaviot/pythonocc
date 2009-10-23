@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MNaming_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_MNaming_NamingRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MNaming_NamingRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MNaming_NamingRetrievalDriver {
-	~Handle_MNaming_NamingRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamingRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MNaming_NamingRetrievalDriver::~Handle_MNaming_NamingRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MNaming_NamingStorageDriver;
@@ -87,12 +89,10 @@ class Handle_MNaming_NamingStorageDriver : public Handle_MDF_ASDriver {
 	return (MNaming_NamingStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MNaming_NamingStorageDriver {
-	~Handle_MNaming_NamingStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamingStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MNaming_NamingStorageDriver::~Handle_MNaming_NamingStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MNaming_NamedShapeRetrievalDriver;
@@ -117,12 +117,10 @@ class Handle_MNaming_NamedShapeRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MNaming_NamedShapeRetrievalDriver*)$self->Access();
 	}
 };
-%extend Handle_MNaming_NamedShapeRetrievalDriver {
-	~Handle_MNaming_NamedShapeRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamedShapeRetrievalDriver\n");}
-	}
-};
+%feature("shadow") Handle_MNaming_NamedShapeRetrievalDriver::~Handle_MNaming_NamedShapeRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_MNaming_NamedShapeStorageDriver;
@@ -147,12 +145,10 @@ class Handle_MNaming_NamedShapeStorageDriver : public Handle_MDF_ASDriver {
 	return (MNaming_NamedShapeStorageDriver*)$self->Access();
 	}
 };
-%extend Handle_MNaming_NamedShapeStorageDriver {
-	~Handle_MNaming_NamedShapeStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamedShapeStorageDriver\n");}
-	}
-};
+%feature("shadow") Handle_MNaming_NamedShapeStorageDriver::~Handle_MNaming_NamedShapeStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MNaming;
@@ -166,12 +162,10 @@ class MNaming {
 		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };
-%extend MNaming {
-	~MNaming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MNaming\n");}
-	}
-};
+%feature("shadow") MNaming::~MNaming %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MNaming_NamingRetrievalDriver;
@@ -201,12 +195,10 @@ class MNaming_NamingRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MNaming_NamingRetrievalDriver {
-	~MNaming_NamingRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MNaming_NamingRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MNaming_NamingRetrievalDriver::~MNaming_NamingRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MNaming_NamedShapeRetrievalDriver;
@@ -236,12 +228,10 @@ class MNaming_NamedShapeRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MNaming_NamedShapeRetrievalDriver {
-	~MNaming_NamedShapeRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MNaming_NamedShapeRetrievalDriver\n");}
-	}
-};
+%feature("shadow") MNaming_NamedShapeRetrievalDriver::~MNaming_NamedShapeRetrievalDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MNaming_NamingStorageDriver;
@@ -271,12 +261,10 @@ class MNaming_NamingStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MNaming_NamingStorageDriver {
-	~MNaming_NamingStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MNaming_NamingStorageDriver\n");}
-	}
-};
+%feature("shadow") MNaming_NamingStorageDriver::~MNaming_NamingStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor MNaming_NamedShapeStorageDriver;
@@ -306,9 +294,7 @@ class MNaming_NamedShapeStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend MNaming_NamedShapeStorageDriver {
-	~MNaming_NamedShapeStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MNaming_NamedShapeStorageDriver\n");}
-	}
-};
+%feature("shadow") MNaming_NamedShapeStorageDriver::~MNaming_NamedShapeStorageDriver %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

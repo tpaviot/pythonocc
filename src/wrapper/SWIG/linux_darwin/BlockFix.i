@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BlockFix_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_BlockFix_SphereSpaceModifier : public Handle_BRepTools_Modification
 	return (BlockFix_SphereSpaceModifier*)$self->Access();
 	}
 };
-%extend Handle_BlockFix_SphereSpaceModifier {
-	~Handle_BlockFix_SphereSpaceModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BlockFix_SphereSpaceModifier\n");}
-	}
-};
+%feature("shadow") Handle_BlockFix_SphereSpaceModifier::~Handle_BlockFix_SphereSpaceModifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BlockFix_PeriodicSurfaceModifier;
@@ -87,12 +89,10 @@ class Handle_BlockFix_PeriodicSurfaceModifier : public Handle_BRepTools_Modifica
 	return (BlockFix_PeriodicSurfaceModifier*)$self->Access();
 	}
 };
-%extend Handle_BlockFix_PeriodicSurfaceModifier {
-	~Handle_BlockFix_PeriodicSurfaceModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BlockFix_PeriodicSurfaceModifier\n");}
-	}
-};
+%feature("shadow") Handle_BlockFix_PeriodicSurfaceModifier::~Handle_BlockFix_PeriodicSurfaceModifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_BlockFix_BlockFixAPI;
@@ -117,12 +117,10 @@ class Handle_BlockFix_BlockFixAPI : public Handle_MMgt_TShared {
 	return (BlockFix_BlockFixAPI*)$self->Access();
 	}
 };
-%extend Handle_BlockFix_BlockFixAPI {
-	~Handle_BlockFix_BlockFixAPI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BlockFix_BlockFixAPI\n");}
-	}
-};
+%feature("shadow") Handle_BlockFix_BlockFixAPI::~Handle_BlockFix_BlockFixAPI %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BlockFix;
@@ -136,12 +134,10 @@ class BlockFix {
 		TopoDS_Shape FixRanges(const TopoDS_Shape &S, const Standard_Real Tol);
 
 };
-%extend BlockFix {
-	~BlockFix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix\n");}
-	}
-};
+%feature("shadow") BlockFix::~BlockFix %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BlockFix_UnionEdges;
@@ -153,12 +149,10 @@ class BlockFix_UnionEdges {
 		TopoDS_Shape Perform(const TopoDS_Shape &Shape, const Standard_Real Tol);
 
 };
-%extend BlockFix_UnionEdges {
-	~BlockFix_UnionEdges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix_UnionEdges\n");}
-	}
-};
+%feature("shadow") BlockFix_UnionEdges::~BlockFix_UnionEdges %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BlockFix_SphereSpaceModifier;
@@ -196,12 +190,10 @@ class BlockFix_SphereSpaceModifier : public BRepTools_Modification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BlockFix_SphereSpaceModifier {
-	~BlockFix_SphereSpaceModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix_SphereSpaceModifier\n");}
-	}
-};
+%feature("shadow") BlockFix_SphereSpaceModifier::~BlockFix_SphereSpaceModifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BlockFix_CheckTool;
@@ -227,12 +219,10 @@ class BlockFix_CheckTool {
 		};
 
 };
-%extend BlockFix_CheckTool {
-	~BlockFix_CheckTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix_CheckTool\n");}
-	}
-};
+%feature("shadow") BlockFix_CheckTool::~BlockFix_CheckTool %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BlockFix_PeriodicSurfaceModifier;
@@ -270,12 +260,10 @@ class BlockFix_PeriodicSurfaceModifier : public BRepTools_Modification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BlockFix_PeriodicSurfaceModifier {
-	~BlockFix_PeriodicSurfaceModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix_PeriodicSurfaceModifier\n");}
-	}
-};
+%feature("shadow") BlockFix_PeriodicSurfaceModifier::~BlockFix_PeriodicSurfaceModifier %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BlockFix_UnionFaces;
@@ -315,12 +303,10 @@ class BlockFix_UnionFaces {
 		virtual		void MovePCurves(TopoDS_Face & aTarget, const TopoDS_Face &aSource) const;
 
 };
-%extend BlockFix_UnionFaces {
-	~BlockFix_UnionFaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix_UnionFaces\n");}
-	}
-};
+%feature("shadow") BlockFix_UnionFaces::~BlockFix_UnionFaces %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor BlockFix_BlockFixAPI;
@@ -376,9 +362,7 @@ class BlockFix_BlockFixAPI : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend BlockFix_BlockFixAPI {
-	~BlockFix_BlockFixAPI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix_BlockFixAPI\n");}
-	}
-};
+%feature("shadow") BlockFix_BlockFixAPI::~BlockFix_BlockFixAPI %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

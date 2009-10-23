@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include V2d_dependencies.i
 
 
@@ -63,12 +67,10 @@ class Handle_V2d_BackgroundGraphicObject : public Handle_Graphic2d_GraphicObject
 	return (V2d_BackgroundGraphicObject*)$self->Access();
 	}
 };
-%extend Handle_V2d_BackgroundGraphicObject {
-	~Handle_V2d_BackgroundGraphicObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_BackgroundGraphicObject\n");}
-	}
-};
+%feature("shadow") Handle_V2d_BackgroundGraphicObject::~Handle_V2d_BackgroundGraphicObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V2d_CircularGraphicGrid;
@@ -93,12 +95,10 @@ class Handle_V2d_CircularGraphicGrid : public Handle_Graphic2d_Primitive {
 	return (V2d_CircularGraphicGrid*)$self->Access();
 	}
 };
-%extend Handle_V2d_CircularGraphicGrid {
-	~Handle_V2d_CircularGraphicGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_CircularGraphicGrid\n");}
-	}
-};
+%feature("shadow") Handle_V2d_CircularGraphicGrid::~Handle_V2d_CircularGraphicGrid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V2d_CircularGrid;
@@ -123,12 +123,10 @@ class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
 	return (V2d_CircularGrid*)$self->Access();
 	}
 };
-%extend Handle_V2d_CircularGrid {
-	~Handle_V2d_CircularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_CircularGrid\n");}
-	}
-};
+%feature("shadow") Handle_V2d_CircularGrid::~Handle_V2d_CircularGrid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V2d_RectangularGrid;
@@ -153,12 +151,10 @@ class Handle_V2d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 	return (V2d_RectangularGrid*)$self->Access();
 	}
 };
-%extend Handle_V2d_RectangularGrid {
-	~Handle_V2d_RectangularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_RectangularGrid\n");}
-	}
-};
+%feature("shadow") Handle_V2d_RectangularGrid::~Handle_V2d_RectangularGrid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V2d_View;
@@ -183,12 +179,10 @@ class Handle_V2d_View : public Handle_Viewer_View {
 	return (V2d_View*)$self->Access();
 	}
 };
-%extend Handle_V2d_View {
-	~Handle_V2d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_View\n");}
-	}
-};
+%feature("shadow") Handle_V2d_View::~Handle_V2d_View %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V2d_Viewer;
@@ -213,12 +207,10 @@ class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
 	return (V2d_Viewer*)$self->Access();
 	}
 };
-%extend Handle_V2d_Viewer {
-	~Handle_V2d_Viewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_Viewer\n");}
-	}
-};
+%feature("shadow") Handle_V2d_Viewer::~Handle_V2d_Viewer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V2d_RectangularGraphicGrid;
@@ -243,12 +235,10 @@ class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 	return (V2d_RectangularGraphicGrid*)$self->Access();
 	}
 };
-%extend Handle_V2d_RectangularGraphicGrid {
-	~Handle_V2d_RectangularGraphicGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_RectangularGraphicGrid\n");}
-	}
-};
+%feature("shadow") Handle_V2d_RectangularGraphicGrid::~Handle_V2d_RectangularGraphicGrid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V2d;
@@ -260,12 +250,10 @@ class V2d {
 		void Draw(const Handle_V2d_Viewer &aViewer);
 
 };
-%extend V2d {
-	~V2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d\n");}
-	}
-};
+%feature("shadow") V2d::~V2d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V2d_CircularGrid;
@@ -295,12 +283,10 @@ class V2d_CircularGrid : public Aspect_CircularGrid {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V2d_CircularGrid {
-	~V2d_CircularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_CircularGrid\n");}
-	}
-};
+%feature("shadow") V2d_CircularGrid::~V2d_CircularGrid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V2d_RectangularGraphicGrid;
@@ -326,12 +312,10 @@ class V2d_RectangularGraphicGrid : public Graphic2d_Primitive {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V2d_RectangularGraphicGrid {
-	~V2d_RectangularGraphicGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_RectangularGraphicGrid\n");}
-	}
-};
+%feature("shadow") V2d_RectangularGraphicGrid::~V2d_RectangularGraphicGrid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V2d_View;
@@ -471,12 +455,10 @@ class V2d_View : public Viewer_View {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V2d_View {
-	~V2d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_View\n");}
-	}
-};
+%feature("shadow") V2d_View::~V2d_View %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V2d_RectangularGrid;
@@ -506,12 +488,10 @@ class V2d_RectangularGrid : public Aspect_RectangularGrid {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V2d_RectangularGrid {
-	~V2d_RectangularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_RectangularGrid\n");}
-	}
-};
+%feature("shadow") V2d_RectangularGrid::~V2d_RectangularGrid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V2d_CircularGraphicGrid;
@@ -537,12 +517,10 @@ class V2d_CircularGraphicGrid : public Graphic2d_Primitive {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V2d_CircularGraphicGrid {
-	~V2d_CircularGraphicGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_CircularGraphicGrid\n");}
-	}
-};
+%feature("shadow") V2d_CircularGraphicGrid::~V2d_CircularGraphicGrid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V2d_BackgroundGraphicObject;
@@ -566,12 +544,10 @@ class V2d_BackgroundGraphicObject : public Graphic2d_GraphicObject {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V2d_BackgroundGraphicObject {
-	~V2d_BackgroundGraphicObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_BackgroundGraphicObject\n");}
-	}
-};
+%feature("shadow") V2d_BackgroundGraphicObject::~V2d_BackgroundGraphicObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V2d_DefaultMap;
@@ -591,12 +567,10 @@ class V2d_DefaultMap {
 		Handle_Aspect_MarkMap MarkMap();
 
 };
-%extend V2d_DefaultMap {
-	~V2d_DefaultMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_DefaultMap\n");}
-	}
-};
+%feature("shadow") V2d_DefaultMap::~V2d_DefaultMap %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V2d_Viewer;
@@ -684,9 +658,7 @@ class V2d_Viewer : public Viewer_Viewer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V2d_Viewer {
-	~V2d_Viewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_Viewer\n");}
-	}
-};
+%feature("shadow") V2d_Viewer::~V2d_Viewer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

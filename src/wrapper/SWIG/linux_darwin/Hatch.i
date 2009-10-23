@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Hatch_dependencies.i
 
 
@@ -63,12 +67,10 @@ class Handle_Hatch_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqN
 	return (Hatch_SequenceNodeOfSequenceOfLine*)$self->Access();
 	}
 };
-%extend Handle_Hatch_SequenceNodeOfSequenceOfLine {
-	~Handle_Hatch_SequenceNodeOfSequenceOfLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Hatch_SequenceNodeOfSequenceOfLine\n");}
-	}
-};
+%feature("shadow") Handle_Hatch_SequenceNodeOfSequenceOfLine::~Handle_Hatch_SequenceNodeOfSequenceOfLine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Hatch_SequenceNodeOfSequenceOfParameter;
@@ -93,12 +95,10 @@ class Handle_Hatch_SequenceNodeOfSequenceOfParameter : public Handle_TCollection
 	return (Hatch_SequenceNodeOfSequenceOfParameter*)$self->Access();
 	}
 };
-%extend Handle_Hatch_SequenceNodeOfSequenceOfParameter {
-	~Handle_Hatch_SequenceNodeOfSequenceOfParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Hatch_SequenceNodeOfSequenceOfParameter\n");}
-	}
-};
+%feature("shadow") Handle_Hatch_SequenceNodeOfSequenceOfParameter::~Handle_Hatch_SequenceNodeOfSequenceOfParameter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Hatch_SequenceNodeOfSequenceOfParameter;
@@ -122,12 +122,10 @@ class Hatch_SequenceNodeOfSequenceOfParameter : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Hatch_SequenceNodeOfSequenceOfParameter {
-	~Hatch_SequenceNodeOfSequenceOfParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Hatch_SequenceNodeOfSequenceOfParameter\n");}
-	}
-};
+%feature("shadow") Hatch_SequenceNodeOfSequenceOfParameter::~Hatch_SequenceNodeOfSequenceOfParameter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Hatch_Line;
@@ -141,12 +139,10 @@ class Hatch_Line {
 		void AddIntersection(const Standard_Real Par1, const Standard_Boolean Start, const Standard_Integer Index, const Standard_Real Par2, const Standard_Real theToler);
 
 };
-%extend Hatch_Line {
-	~Hatch_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Hatch_Line\n");}
-	}
-};
+%feature("shadow") Hatch_Line::~Hatch_Line %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Hatch_SequenceOfParameter;
@@ -198,12 +194,10 @@ class Hatch_SequenceOfParameter : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Hatch_SequenceOfParameter {
-	~Hatch_SequenceOfParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Hatch_SequenceOfParameter\n");}
-	}
-};
+%feature("shadow") Hatch_SequenceOfParameter::~Hatch_SequenceOfParameter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Hatch_Hatcher;
@@ -255,12 +249,10 @@ class Hatch_Hatcher {
 		void EndIndex(const Standard_Integer I, const Standard_Integer J, Standard_Integer &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend Hatch_Hatcher {
-	~Hatch_Hatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Hatch_Hatcher\n");}
-	}
-};
+%feature("shadow") Hatch_Hatcher::~Hatch_Hatcher %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Hatch_SequenceOfLine;
@@ -312,12 +304,10 @@ class Hatch_SequenceOfLine : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Hatch_SequenceOfLine {
-	~Hatch_SequenceOfLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Hatch_SequenceOfLine\n");}
-	}
-};
+%feature("shadow") Hatch_SequenceOfLine::~Hatch_SequenceOfLine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Hatch_Parameter;
@@ -329,12 +319,10 @@ class Hatch_Parameter {
 		Hatch_Parameter(const Standard_Real Par1, const Standard_Boolean Start, const Standard_Integer Index=0, const Standard_Real Par2=0);
 
 };
-%extend Hatch_Parameter {
-	~Hatch_Parameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Hatch_Parameter\n");}
-	}
-};
+%feature("shadow") Hatch_Parameter::~Hatch_Parameter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Hatch_SequenceNodeOfSequenceOfLine;
@@ -358,9 +346,7 @@ class Hatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Hatch_SequenceNodeOfSequenceOfLine {
-	~Hatch_SequenceNodeOfSequenceOfLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Hatch_SequenceNodeOfSequenceOfLine\n");}
-	}
-};
+%feature("shadow") Hatch_SequenceNodeOfSequenceOfLine::~Hatch_SequenceNodeOfSequenceOfLine %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

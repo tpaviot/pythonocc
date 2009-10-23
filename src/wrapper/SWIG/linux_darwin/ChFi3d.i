@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ChFi3d_dependencies.i
 
 
@@ -56,12 +60,10 @@ class ChFi3d {
 		Standard_Boolean SameSide(const TopAbs_Orientation Or, const TopAbs_Orientation OrSave1, const TopAbs_Orientation OrSave2, const TopAbs_Orientation OrFace1, const TopAbs_Orientation OrFace2);
 
 };
-%extend ChFi3d {
-	~ChFi3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFi3d\n");}
-	}
-};
+%feature("shadow") ChFi3d::~ChFi3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFi3d_SearchSing;
@@ -77,12 +79,10 @@ class ChFi3d_SearchSing : public math_FunctionWithDerivative {
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%extend ChFi3d_SearchSing {
-	~ChFi3d_SearchSing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFi3d_SearchSing\n");}
-	}
-};
+%feature("shadow") ChFi3d_SearchSing::~ChFi3d_SearchSing %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFi3d_Builder;
@@ -154,12 +154,10 @@ class ChFi3d_Builder {
 		Standard_Integer PerformTwoCornerbyInter(const Standard_Integer Index);
 
 };
-%extend ChFi3d_Builder {
-	~ChFi3d_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFi3d_Builder\n");}
-	}
-};
+%feature("shadow") ChFi3d_Builder::~ChFi3d_Builder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFi3d_ChBuilder;
@@ -215,12 +213,10 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		Standard_Integer FindChoiceDistAngle(const Standard_Integer Choice, const Standard_Boolean DisOnF1) const;
 
 };
-%extend ChFi3d_ChBuilder {
-	~ChFi3d_ChBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFi3d_ChBuilder\n");}
-	}
-};
+%feature("shadow") ChFi3d_ChBuilder::~ChFi3d_ChBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ChFi3d_FilBuilder;
@@ -272,9 +268,7 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		Handle_ChFiDS_SecHArray1 Sect(const Standard_Integer IC, const Standard_Integer IS) const;
 
 };
-%extend ChFi3d_FilBuilder {
-	~ChFi3d_FilBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFi3d_FilBuilder\n");}
-	}
-};
+%feature("shadow") ChFi3d_FilBuilder::~ChFi3d_FilBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IGESCAFControl_dependencies.i
 
 
@@ -46,12 +50,10 @@ class IGESCAFControl {
 		Standard_Integer EncodeColor(const Quantity_Color &col);
 
 };
-%extend IGESCAFControl {
-	~IGESCAFControl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESCAFControl\n");}
-	}
-};
+%feature("shadow") IGESCAFControl::~IGESCAFControl %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESCAFControl_Writer;
@@ -81,12 +83,10 @@ class IGESCAFControl_Writer : public IGESControl_Writer {
 		Standard_Boolean GetLayerMode() const;
 
 };
-%extend IGESCAFControl_Writer {
-	~IGESCAFControl_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESCAFControl_Writer\n");}
-	}
-};
+%feature("shadow") IGESCAFControl_Writer::~IGESCAFControl_Writer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IGESCAFControl_Reader;
@@ -116,9 +116,7 @@ class IGESCAFControl_Reader : public IGESControl_Reader {
 		Standard_Boolean GetLayerMode() const;
 
 };
-%extend IGESCAFControl_Reader {
-	~IGESCAFControl_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESCAFControl_Reader\n");}
-	}
-};
+%feature("shadow") IGESCAFControl_Reader::~IGESCAFControl_Reader %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

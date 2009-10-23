@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntRes2d_dependencies.i
 
 
@@ -76,12 +80,10 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_
 	return (IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint*)$self->Access();
 	}
 };
-%extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
-	~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint\n");}
-	}
-};
+%feature("shadow") Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint::~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment;
@@ -106,12 +108,10 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public Handl
 	return (IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment*)$self->Access();
 	}
 };
-%extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
-	~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment\n");}
-	}
-};
+%feature("shadow") Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment::~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntRes2d_SequenceOfIntersectionSegment;
@@ -163,12 +163,10 @@ class IntRes2d_SequenceOfIntersectionSegment : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend IntRes2d_SequenceOfIntersectionSegment {
-	~IntRes2d_SequenceOfIntersectionSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceOfIntersectionSegment\n");}
-	}
-};
+%feature("shadow") IntRes2d_SequenceOfIntersectionSegment::~IntRes2d_SequenceOfIntersectionSegment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint;
@@ -192,12 +190,10 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public TCollection_Se
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
-	~IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint\n");}
-	}
-};
+%feature("shadow") IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint::~IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntRes2d_Transition;
@@ -251,12 +247,10 @@ class IntRes2d_Transition {
 		void _CSFDB_SetIntRes2d_Transitionoppos(const Standard_Boolean p);
 
 };
-%extend IntRes2d_Transition {
-	~IntRes2d_Transition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntRes2d_Transition\n");}
-	}
-};
+%feature("shadow") IntRes2d_Transition::~IntRes2d_Transition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntRes2d_SequenceOfIntersectionPoint;
@@ -308,39 +302,10 @@ class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend IntRes2d_SequenceOfIntersectionPoint {
-	~IntRes2d_SequenceOfIntersectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceOfIntersectionPoint\n");}
-	}
-};
-
-
-%nodefaultctor IntRes2d_Intersection;
-class IntRes2d_Intersection {
-	public:
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionPoint & Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		const IntRes2d_IntersectionSegment & Segment(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void SetReversedParameters(const Standard_Boolean flag);
-
-};
-%extend IntRes2d_Intersection {
-	~IntRes2d_Intersection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntRes2d_Intersection\n");}
-	}
-};
+%feature("shadow") IntRes2d_SequenceOfIntersectionPoint::~IntRes2d_SequenceOfIntersectionPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntRes2d_IntersectionSegment;
@@ -382,12 +347,10 @@ class IntRes2d_IntersectionSegment {
 		const IntRes2d_IntersectionPoint & _CSFDB_GetIntRes2d_IntersectionSegmentptlast() const;
 
 };
-%extend IntRes2d_IntersectionSegment {
-	~IntRes2d_IntersectionSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntRes2d_IntersectionSegment\n");}
-	}
-};
+%feature("shadow") IntRes2d_IntersectionSegment::~IntRes2d_IntersectionSegment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntRes2d_IntersectionPoint;
@@ -425,12 +388,35 @@ class IntRes2d_IntersectionPoint {
 		const IntRes2d_Transition & _CSFDB_GetIntRes2d_IntersectionPointtrans2() const;
 
 };
-%extend IntRes2d_IntersectionPoint {
-	~IntRes2d_IntersectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntRes2d_IntersectionPoint\n");}
-	}
+%feature("shadow") IntRes2d_IntersectionPoint::~IntRes2d_IntersectionPoint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
+
+%nodefaultctor IntRes2d_Intersection;
+class IntRes2d_Intersection {
+	public:
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const IntRes2d_IntersectionPoint & Point(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		const IntRes2d_IntersectionSegment & Segment(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void SetReversedParameters(const Standard_Boolean flag);
+
 };
+%feature("shadow") IntRes2d_Intersection::~IntRes2d_Intersection %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment;
@@ -454,12 +440,10 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
-	~IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment\n");}
-	}
-};
+%feature("shadow") IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment::~IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor IntRes2d_Domain;
@@ -501,9 +485,7 @@ class IntRes2d_Domain {
 		void EquivalentParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%extend IntRes2d_Domain {
-	~IntRes2d_Domain() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntRes2d_Domain\n");}
-	}
-};
+%feature("shadow") IntRes2d_Domain::~IntRes2d_Domain %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

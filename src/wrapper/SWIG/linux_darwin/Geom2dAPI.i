@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Geom2dAPI_dependencies.i
 
 
@@ -62,12 +66,10 @@ class Geom2dAPI_InterCurveCurve {
 		const Geom2dInt_GInter & Intersector() const;
 
 };
-%extend Geom2dAPI_InterCurveCurve {
-	~Geom2dAPI_InterCurveCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_InterCurveCurve\n");}
-	}
-};
+%feature("shadow") Geom2dAPI_InterCurveCurve::~Geom2dAPI_InterCurveCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dAPI_PointsToBSpline;
@@ -87,39 +89,10 @@ class Geom2dAPI_PointsToBSpline {
 		const Handle_Geom2d_BSplineCurve & Curve() const;
 
 };
-%extend Geom2dAPI_PointsToBSpline {
-	~Geom2dAPI_PointsToBSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_PointsToBSpline\n");}
-	}
-};
-
-
-%nodefaultctor Geom2dAPI_Interpolate;
-class Geom2dAPI_Interpolate {
-	public:
-		%feature("autodoc", "1");
-		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		void Load(const gp_Vec2d &InitialTangent, const gp_Vec2d &FinalTangent);
-		%feature("autodoc", "1");
-		void Load(const TColgp_Array1OfVec2d &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const Handle_Geom2d_BSplineCurve & Curve() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%extend Geom2dAPI_Interpolate {
-	~Geom2dAPI_Interpolate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_Interpolate\n");}
-	}
-};
+%feature("shadow") Geom2dAPI_PointsToBSpline::~Geom2dAPI_PointsToBSpline %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dAPI_ProjectPointOnCurve;
@@ -155,12 +128,35 @@ class Geom2dAPI_ProjectPointOnCurve {
 		const Extrema_ExtPC2d & Extrema() const;
 
 };
-%extend Geom2dAPI_ProjectPointOnCurve {
-	~Geom2dAPI_ProjectPointOnCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_ProjectPointOnCurve\n");}
-	}
+%feature("shadow") Geom2dAPI_ProjectPointOnCurve::~Geom2dAPI_ProjectPointOnCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
+
+%nodefaultctor Geom2dAPI_Interpolate;
+class Geom2dAPI_Interpolate {
+	public:
+		%feature("autodoc", "1");
+		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		Geom2dAPI_Interpolate(const Handle_TColgp_HArray1OfPnt2d &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
+		%feature("autodoc", "1");
+		void Load(const gp_Vec2d &InitialTangent, const gp_Vec2d &FinalTangent);
+		%feature("autodoc", "1");
+		void Load(const TColgp_Array1OfVec2d &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		const Handle_Geom2d_BSplineCurve & Curve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+
 };
+%feature("shadow") Geom2dAPI_Interpolate::~Geom2dAPI_Interpolate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Geom2dAPI_ExtremaCurveCurve;
@@ -186,9 +182,7 @@ class Geom2dAPI_ExtremaCurveCurve {
 		const Extrema_ExtCC2d & Extrema() const;
 
 };
-%extend Geom2dAPI_ExtremaCurveCurve {
-	~Geom2dAPI_ExtremaCurveCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_ExtremaCurveCurve\n");}
-	}
-};
+%feature("shadow") Geom2dAPI_ExtremaCurveCurve::~Geom2dAPI_ExtremaCurveCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

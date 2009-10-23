@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ShapeExtend_dependencies.i
 
 
@@ -85,12 +89,10 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public Handle_TC
 	return (ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg*)$self->Access();
 	}
 };
-%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
-	~Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg\n");}
-	}
-};
+%feature("shadow") Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg::~Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeExtend_BasicMsgRegistrator;
@@ -115,12 +117,10 @@ class Handle_ShapeExtend_BasicMsgRegistrator : public Handle_MMgt_TShared {
 	return (ShapeExtend_BasicMsgRegistrator*)$self->Access();
 	}
 };
-%extend Handle_ShapeExtend_BasicMsgRegistrator {
-	~Handle_ShapeExtend_BasicMsgRegistrator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeExtend_BasicMsgRegistrator\n");}
-	}
-};
+%feature("shadow") Handle_ShapeExtend_BasicMsgRegistrator::~Handle_ShapeExtend_BasicMsgRegistrator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeExtend_MsgRegistrator;
@@ -145,12 +145,10 @@ class Handle_ShapeExtend_MsgRegistrator : public Handle_ShapeExtend_BasicMsgRegi
 	return (ShapeExtend_MsgRegistrator*)$self->Access();
 	}
 };
-%extend Handle_ShapeExtend_MsgRegistrator {
-	~Handle_ShapeExtend_MsgRegistrator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeExtend_MsgRegistrator\n");}
-	}
-};
+%feature("shadow") Handle_ShapeExtend_MsgRegistrator::~Handle_ShapeExtend_MsgRegistrator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
@@ -175,12 +173,10 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handl
 	return (ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg*)$self->Access();
 	}
 };
-%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
-	~Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg\n");}
-	}
-};
+%feature("shadow") Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg::~Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeExtend_ComplexCurve;
@@ -205,12 +201,10 @@ class Handle_ShapeExtend_ComplexCurve : public Handle_Geom_Curve {
 	return (ShapeExtend_ComplexCurve*)$self->Access();
 	}
 };
-%extend Handle_ShapeExtend_ComplexCurve {
-	~Handle_ShapeExtend_ComplexCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeExtend_ComplexCurve\n");}
-	}
-};
+%feature("shadow") Handle_ShapeExtend_ComplexCurve::~Handle_ShapeExtend_ComplexCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeExtend_CompositeSurface;
@@ -235,12 +229,10 @@ class Handle_ShapeExtend_CompositeSurface : public Handle_Geom_Surface {
 	return (ShapeExtend_CompositeSurface*)$self->Access();
 	}
 };
-%extend Handle_ShapeExtend_CompositeSurface {
-	~Handle_ShapeExtend_CompositeSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeExtend_CompositeSurface\n");}
-	}
-};
+%feature("shadow") Handle_ShapeExtend_CompositeSurface::~Handle_ShapeExtend_CompositeSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_ShapeExtend_WireData;
@@ -265,12 +257,10 @@ class Handle_ShapeExtend_WireData : public Handle_MMgt_TShared {
 	return (ShapeExtend_WireData*)$self->Access();
 	}
 };
-%extend Handle_ShapeExtend_WireData {
-	~Handle_ShapeExtend_WireData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeExtend_WireData\n");}
-	}
-};
+%feature("shadow") Handle_ShapeExtend_WireData::~Handle_ShapeExtend_WireData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeExtend_ComplexCurve;
@@ -328,12 +318,10 @@ class ShapeExtend_ComplexCurve : public Geom_Curve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeExtend_ComplexCurve {
-	~ShapeExtend_ComplexCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeExtend_ComplexCurve\n");}
-	}
-};
+%feature("shadow") ShapeExtend_ComplexCurve::~ShapeExtend_ComplexCurve %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeExtend_WireData;
@@ -411,12 +399,10 @@ class ShapeExtend_WireData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeExtend_WireData {
-	~ShapeExtend_WireData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeExtend_WireData\n");}
-	}
-};
+%feature("shadow") ShapeExtend_WireData::~ShapeExtend_WireData %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeExtend_BasicMsgRegistrator;
@@ -444,12 +430,10 @@ class ShapeExtend_BasicMsgRegistrator : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeExtend_BasicMsgRegistrator {
-	~ShapeExtend_BasicMsgRegistrator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeExtend_BasicMsgRegistrator\n");}
-	}
-};
+%feature("shadow") ShapeExtend_BasicMsgRegistrator::~ShapeExtend_BasicMsgRegistrator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeExtend;
@@ -465,12 +449,10 @@ class ShapeExtend {
 		Standard_Boolean DecodeStatus(const Standard_Integer flag, const ShapeExtend_Status status);
 
 };
-%extend ShapeExtend {
-	~ShapeExtend() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeExtend\n");}
-	}
-};
+%feature("shadow") ShapeExtend::~ShapeExtend %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeExtend_MsgRegistrator;
@@ -500,12 +482,10 @@ class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeExtend_MsgRegistrator {
-	~ShapeExtend_MsgRegistrator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeExtend_MsgRegistrator\n");}
-	}
-};
+%feature("shadow") ShapeExtend_MsgRegistrator::~ShapeExtend_MsgRegistrator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg;
@@ -531,12 +511,10 @@ class ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public TCollection_MapN
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
-	~ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg\n");}
-	}
-};
+%feature("shadow") ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg::~ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
@@ -562,12 +540,10 @@ class ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public TCollection_
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
-	~ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg\n");}
-	}
-};
+%feature("shadow") ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg::~ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeExtend_DataMapOfTransientListOfMsg;
@@ -599,12 +575,10 @@ class ShapeExtend_DataMapOfTransientListOfMsg : public TCollection_BasicMap {
 		Message_ListOfMsg & operator()(const Handle_Standard_Transient &K);
 
 };
-%extend ShapeExtend_DataMapOfTransientListOfMsg {
-	~ShapeExtend_DataMapOfTransientListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeExtend_DataMapOfTransientListOfMsg\n");}
-	}
-};
+%feature("shadow") ShapeExtend_DataMapOfTransientListOfMsg::~ShapeExtend_DataMapOfTransientListOfMsg %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg;
@@ -622,12 +596,10 @@ class ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg : public TCollect
 		const Message_ListOfMsg & Value() const;
 
 };
-%extend ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg {
-	~ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg\n");}
-	}
-};
+%feature("shadow") ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg::~ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg;
@@ -645,12 +617,10 @@ class ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg : public TCollection_
 		const Message_ListOfMsg & Value() const;
 
 };
-%extend ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg {
-	~ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg\n");}
-	}
-};
+%feature("shadow") ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg::~ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeExtend_DataMapOfShapeListOfMsg;
@@ -682,12 +652,10 @@ class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
 		Message_ListOfMsg & operator()(const TopoDS_Shape &K);
 
 };
-%extend ShapeExtend_DataMapOfShapeListOfMsg {
-	~ShapeExtend_DataMapOfShapeListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeExtend_DataMapOfShapeListOfMsg\n");}
-	}
-};
+%feature("shadow") ShapeExtend_DataMapOfShapeListOfMsg::~ShapeExtend_DataMapOfShapeListOfMsg %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeExtend_CompositeSurface;
@@ -813,12 +781,10 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend ShapeExtend_CompositeSurface {
-	~ShapeExtend_CompositeSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeExtend_CompositeSurface\n");}
-	}
-};
+%feature("shadow") ShapeExtend_CompositeSurface::~ShapeExtend_CompositeSurface %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor ShapeExtend_Explorer;
@@ -842,9 +808,7 @@ class ShapeExtend_Explorer {
 		void DispatchList(const Handle_TopTools_HSequenceOfShape &list, Handle_TopTools_HSequenceOfShape & vertices, Handle_TopTools_HSequenceOfShape & edges, Handle_TopTools_HSequenceOfShape & wires, Handle_TopTools_HSequenceOfShape & faces, Handle_TopTools_HSequenceOfShape & shells, Handle_TopTools_HSequenceOfShape & solids, Handle_TopTools_HSequenceOfShape & compsols, Handle_TopTools_HSequenceOfShape & compounds) const;
 
 };
-%extend ShapeExtend_Explorer {
-	~ShapeExtend_Explorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeExtend_Explorer\n");}
-	}
-};
+%feature("shadow") ShapeExtend_Explorer::~ShapeExtend_Explorer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Precision_dependencies.i
 
 
@@ -74,9 +78,7 @@ class Precision {
 		Standard_Real Infinite();
 
 };
-%extend Precision {
-	~Precision() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Precision\n");}
-	}
-};
+%feature("shadow") Precision::~Precision %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

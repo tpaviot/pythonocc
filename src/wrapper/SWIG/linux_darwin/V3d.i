@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include V3d_dependencies.i
 
 
@@ -176,12 +180,10 @@ class Handle_V3d_Light : public Handle_MMgt_TShared {
 	return (V3d_Light*)$self->Access();
 	}
 };
-%extend Handle_V3d_Light {
-	~Handle_V3d_Light() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_Light\n");}
-	}
-};
+%feature("shadow") Handle_V3d_Light::~Handle_V3d_Light %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_PositionLight;
@@ -206,12 +208,10 @@ class Handle_V3d_PositionLight : public Handle_V3d_Light {
 	return (V3d_PositionLight*)$self->Access();
 	}
 };
-%extend Handle_V3d_PositionLight {
-	~Handle_V3d_PositionLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_PositionLight\n");}
-	}
-};
+%feature("shadow") Handle_V3d_PositionLight::~Handle_V3d_PositionLight %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_PositionalLight;
@@ -236,12 +236,10 @@ class Handle_V3d_PositionalLight : public Handle_V3d_PositionLight {
 	return (V3d_PositionalLight*)$self->Access();
 	}
 };
-%extend Handle_V3d_PositionalLight {
-	~Handle_V3d_PositionalLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_PositionalLight\n");}
-	}
-};
+%feature("shadow") Handle_V3d_PositionalLight::~Handle_V3d_PositionalLight %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_UnMapped;
@@ -266,12 +264,10 @@ class Handle_V3d_UnMapped : public Handle_Standard_DomainError {
 	return (V3d_UnMapped*)$self->Access();
 	}
 };
-%extend Handle_V3d_UnMapped {
-	~Handle_V3d_UnMapped() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_UnMapped\n");}
-	}
-};
+%feature("shadow") Handle_V3d_UnMapped::~Handle_V3d_UnMapped %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_RectangularGrid;
@@ -296,12 +292,10 @@ class Handle_V3d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 	return (V3d_RectangularGrid*)$self->Access();
 	}
 };
-%extend Handle_V3d_RectangularGrid {
-	~Handle_V3d_RectangularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_RectangularGrid\n");}
-	}
-};
+%feature("shadow") Handle_V3d_RectangularGrid::~Handle_V3d_RectangularGrid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_LayerMgr;
@@ -326,12 +320,10 @@ class Handle_V3d_LayerMgr : public Handle_MMgt_TShared {
 	return (V3d_LayerMgr*)$self->Access();
 	}
 };
-%extend Handle_V3d_LayerMgr {
-	~Handle_V3d_LayerMgr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_LayerMgr\n");}
-	}
-};
+%feature("shadow") Handle_V3d_LayerMgr::~Handle_V3d_LayerMgr %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_SpotLight;
@@ -356,12 +348,10 @@ class Handle_V3d_SpotLight : public Handle_V3d_PositionLight {
 	return (V3d_SpotLight*)$self->Access();
 	}
 };
-%extend Handle_V3d_SpotLight {
-	~Handle_V3d_SpotLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_SpotLight\n");}
-	}
-};
+%feature("shadow") Handle_V3d_SpotLight::~Handle_V3d_SpotLight %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_View;
@@ -386,12 +376,10 @@ class Handle_V3d_View : public Handle_Viewer_View {
 	return (V3d_View*)$self->Access();
 	}
 };
-%extend Handle_V3d_View {
-	~Handle_V3d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_View\n");}
-	}
-};
+%feature("shadow") Handle_V3d_View::~Handle_V3d_View %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_PerspectiveView;
@@ -416,12 +404,10 @@ class Handle_V3d_PerspectiveView : public Handle_V3d_View {
 	return (V3d_PerspectiveView*)$self->Access();
 	}
 };
-%extend Handle_V3d_PerspectiveView {
-	~Handle_V3d_PerspectiveView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_PerspectiveView\n");}
-	}
-};
+%feature("shadow") Handle_V3d_PerspectiveView::~Handle_V3d_PerspectiveView %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_Plane;
@@ -446,12 +432,10 @@ class Handle_V3d_Plane : public Handle_MMgt_TShared {
 	return (V3d_Plane*)$self->Access();
 	}
 };
-%extend Handle_V3d_Plane {
-	~Handle_V3d_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_Plane\n");}
-	}
-};
+%feature("shadow") Handle_V3d_Plane::~Handle_V3d_Plane %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_Camera;
@@ -476,12 +460,10 @@ class Handle_V3d_Camera : public Handle_MMgt_TShared {
 	return (V3d_Camera*)$self->Access();
 	}
 };
-%extend Handle_V3d_Camera {
-	~Handle_V3d_Camera() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_Camera\n");}
-	}
-};
+%feature("shadow") Handle_V3d_Camera::~Handle_V3d_Camera %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_OrthographicView;
@@ -506,12 +488,10 @@ class Handle_V3d_OrthographicView : public Handle_V3d_View {
 	return (V3d_OrthographicView*)$self->Access();
 	}
 };
-%extend Handle_V3d_OrthographicView {
-	~Handle_V3d_OrthographicView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_OrthographicView\n");}
-	}
-};
+%feature("shadow") Handle_V3d_OrthographicView::~Handle_V3d_OrthographicView %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_Viewer;
@@ -536,12 +516,10 @@ class Handle_V3d_Viewer : public Handle_Viewer_Viewer {
 	return (V3d_Viewer*)$self->Access();
 	}
 };
-%extend Handle_V3d_Viewer {
-	~Handle_V3d_Viewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_Viewer\n");}
-	}
-};
+%feature("shadow") Handle_V3d_Viewer::~Handle_V3d_Viewer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_ColorScale;
@@ -566,12 +544,10 @@ class Handle_V3d_ColorScale : public Handle_Aspect_ColorScale {
 	return (V3d_ColorScale*)$self->Access();
 	}
 };
-%extend Handle_V3d_ColorScale {
-	~Handle_V3d_ColorScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_ColorScale\n");}
-	}
-};
+%feature("shadow") Handle_V3d_ColorScale::~Handle_V3d_ColorScale %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_DirectionalLight;
@@ -596,12 +572,10 @@ class Handle_V3d_DirectionalLight : public Handle_V3d_PositionLight {
 	return (V3d_DirectionalLight*)$self->Access();
 	}
 };
-%extend Handle_V3d_DirectionalLight {
-	~Handle_V3d_DirectionalLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_DirectionalLight\n");}
-	}
-};
+%feature("shadow") Handle_V3d_DirectionalLight::~Handle_V3d_DirectionalLight %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_CircularGrid;
@@ -626,12 +600,10 @@ class Handle_V3d_CircularGrid : public Handle_Aspect_CircularGrid {
 	return (V3d_CircularGrid*)$self->Access();
 	}
 };
-%extend Handle_V3d_CircularGrid {
-	~Handle_V3d_CircularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_CircularGrid\n");}
-	}
-};
+%feature("shadow") Handle_V3d_CircularGrid::~Handle_V3d_CircularGrid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_V3d_AmbientLight;
@@ -656,12 +628,10 @@ class Handle_V3d_AmbientLight : public Handle_V3d_Light {
 	return (V3d_AmbientLight*)$self->Access();
 	}
 };
-%extend Handle_V3d_AmbientLight {
-	~Handle_V3d_AmbientLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_AmbientLight\n");}
-	}
-};
+%feature("shadow") Handle_V3d_AmbientLight::~Handle_V3d_AmbientLight %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_Light;
@@ -699,12 +669,10 @@ class V3d_Light : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_Light {
-	~V3d_Light() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_Light\n");}
-	}
-};
+%feature("shadow") V3d_Light::~V3d_Light %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_AmbientLight;
@@ -724,12 +692,10 @@ class V3d_AmbientLight : public V3d_Light {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_AmbientLight {
-	~V3d_AmbientLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_AmbientLight\n");}
-	}
-};
+%feature("shadow") V3d_AmbientLight::~V3d_AmbientLight %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_Plane;
@@ -761,12 +727,10 @@ class V3d_Plane : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_Plane {
-	~V3d_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_Plane\n");}
-	}
-};
+%feature("shadow") V3d_Plane::~V3d_Plane %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_Camera;
@@ -830,12 +794,10 @@ class V3d_Camera : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_Camera {
-	~V3d_Camera() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_Camera\n");}
-	}
-};
+%feature("shadow") V3d_Camera::~V3d_Camera %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_ColorScale;
@@ -875,12 +837,147 @@ class V3d_ColorScale : public Aspect_ColorScale {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_ColorScale {
-	~V3d_ColorScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_ColorScale\n");}
+%feature("shadow") V3d_ColorScale::~V3d_ColorScale %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
+
+%nodefaultctor V3d_PositionLight;
+class V3d_PositionLight : public V3d_Light {
+	public:
+		%feature("autodoc", "1");
+		virtual		void SetPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
+		%feature("autodoc", "1");
+		void SetTarget(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
+		%feature("autodoc", "1");
+		void SetRadius(const Quantity_Parameter Radius);
+		%feature("autodoc", "1");
+		void OnHideFace(const Handle_V3d_View &aView);
+		%feature("autodoc", "1");
+		void OnSeeFace(const Handle_V3d_View &aView);
+		%feature("autodoc", "1");
+		void Tracking(const Handle_V3d_View &aView, const V3d_TypeOfPickLight WathPick, const Standard_Integer Xpix, const Standard_Integer Ypix);
+		%feature("autodoc", "1");
+		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation=V3d_SIMPLE);
+		%feature("autodoc", "1");
+		void Erase();
+		%feature("autodoc", "1");
+		virtual		V3d_TypeOfPickLight Pick(const Handle_V3d_View &aView, const Standard_Integer Xpix, const Standard_Integer Ypix) const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Radius() const;
+		%feature("autodoc", "1");
+		Standard_Boolean SeeOrHide(const Handle_V3d_View &aView) const;
+		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
+		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","Target() -> [Standard_Real, Standard_Real, Standard_Real]");
+		void Target(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V3d_PositionLight {
+	Handle_V3d_PositionLight GetHandle() {
+	return *(Handle_V3d_PositionLight*) &$self;
 	}
 };
+%extend V3d_PositionLight {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") V3d_PositionLight::~V3d_PositionLight %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
+
+%nodefaultctor V3d_RectangularGrid;
+class V3d_RectangularGrid : public Aspect_RectangularGrid {
+	public:
+		%feature("autodoc", "1");
+		V3d_RectangularGrid(const V3d_ViewerPointer &aViewer, const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
+		%feature("autodoc", "1");
+		virtual		void SetColors(const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
+		%feature("autodoc", "1");
+		virtual		void Display();
+		%feature("autodoc", "1");
+		virtual		void Erase() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDisplayed() const;
+		%feature("autodoc","GraphicValues() -> [Standard_Real, Standard_Real, Standard_Real]");
+		void GraphicValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetGraphicValues(const Standard_Real XSize, const Standard_Real YSize, const Standard_Real OffSet);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V3d_RectangularGrid {
+	Handle_V3d_RectangularGrid GetHandle() {
+	return *(Handle_V3d_RectangularGrid*) &$self;
+	}
+};
+%extend V3d_RectangularGrid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") V3d_RectangularGrid::~V3d_RectangularGrid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
+
+
+%nodefaultctor V3d_SpotLight;
+class V3d_SpotLight : public V3d_PositionLight {
+	public:
+		%feature("autodoc", "1");
+		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, const V3d_TypeOfOrientation Direction=V3d_XnegYnegZpos, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.23599000000000036614267173717962577939033508301e-1);
+		%feature("autodoc", "1");
+		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate Xt, const V3d_Coordinate Yt, const V3d_Coordinate Zt, const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.23599000000000036614267173717962577939033508301e-1);
+		%feature("autodoc", "1");
+		virtual		void SetPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
+		%feature("autodoc", "1");
+		void SetDirection(const Quantity_Parameter Vx, const Quantity_Parameter Vy, const Quantity_Parameter Vz);
+		%feature("autodoc", "1");
+		void SetDirection(const V3d_TypeOfOrientation Orientation);
+		%feature("autodoc", "1");
+		void SetAttenuation(const Quantity_Coefficient A1, const Quantity_Coefficient A2);
+		%feature("autodoc", "1");
+		void SetConcentration(const Quantity_Coefficient C);
+		%feature("autodoc", "1");
+		void SetAngle(const Quantity_PlaneAngle Angle);
+		%feature("autodoc", "1");
+		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
+		%feature("autodoc","Direction() -> [Standard_Real, Standard_Real, Standard_Real]");
+		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
+		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void Attenuation(Quantity_Coefficient & A1, Quantity_Coefficient & A2) const;
+		%feature("autodoc", "1");
+		Quantity_Coefficient Concentration() const;
+		%feature("autodoc", "1");
+		Quantity_PlaneAngle Angle() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V3d_SpotLight {
+	Handle_V3d_SpotLight GetHandle() {
+	return *(Handle_V3d_SpotLight*) &$self;
+	}
+};
+%extend V3d_SpotLight {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") V3d_SpotLight::~V3d_SpotLight %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_View;
@@ -1270,155 +1367,10 @@ class V3d_View : public Viewer_View {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_View {
-	~V3d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_View\n");}
-	}
-};
-
-
-%nodefaultctor V3d_PositionLight;
-class V3d_PositionLight : public V3d_Light {
-	public:
-		%feature("autodoc", "1");
-		virtual		void SetPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
-		%feature("autodoc", "1");
-		void SetTarget(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
-		%feature("autodoc", "1");
-		void SetRadius(const Quantity_Parameter Radius);
-		%feature("autodoc", "1");
-		void OnHideFace(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		void OnSeeFace(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		void Tracking(const Handle_V3d_View &aView, const V3d_TypeOfPickLight WathPick, const Standard_Integer Xpix, const Standard_Integer Ypix);
-		%feature("autodoc", "1");
-		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation=V3d_SIMPLE);
-		%feature("autodoc", "1");
-		void Erase();
-		%feature("autodoc", "1");
-		virtual		V3d_TypeOfPickLight Pick(const Handle_V3d_View &aView, const Standard_Integer Xpix, const Standard_Integer Ypix) const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Radius() const;
-		%feature("autodoc", "1");
-		Standard_Boolean SeeOrHide(const Handle_V3d_View &aView) const;
-		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
-		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Target() -> [Standard_Real, Standard_Real, Standard_Real]");
-		void Target(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V3d_PositionLight {
-	Handle_V3d_PositionLight GetHandle() {
-	return *(Handle_V3d_PositionLight*) &$self;
-	}
-};
-%extend V3d_PositionLight {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend V3d_PositionLight {
-	~V3d_PositionLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_PositionLight\n");}
-	}
-};
-
-
-%nodefaultctor V3d_RectangularGrid;
-class V3d_RectangularGrid : public Aspect_RectangularGrid {
-	public:
-		%feature("autodoc", "1");
-		V3d_RectangularGrid(const V3d_ViewerPointer &aViewer, const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
-		%feature("autodoc", "1");
-		virtual		void SetColors(const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
-		%feature("autodoc", "1");
-		virtual		void Display();
-		%feature("autodoc", "1");
-		virtual		void Erase() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDisplayed() const;
-		%feature("autodoc","GraphicValues() -> [Standard_Real, Standard_Real, Standard_Real]");
-		void GraphicValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetGraphicValues(const Standard_Real XSize, const Standard_Real YSize, const Standard_Real OffSet);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V3d_RectangularGrid {
-	Handle_V3d_RectangularGrid GetHandle() {
-	return *(Handle_V3d_RectangularGrid*) &$self;
-	}
-};
-%extend V3d_RectangularGrid {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend V3d_RectangularGrid {
-	~V3d_RectangularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_RectangularGrid\n");}
-	}
-};
-
-
-%nodefaultctor V3d_SpotLight;
-class V3d_SpotLight : public V3d_PositionLight {
-	public:
-		%feature("autodoc", "1");
-		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, const V3d_TypeOfOrientation Direction=V3d_XnegYnegZpos, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.23599000000000036614267173717962577939033508301e-1);
-		%feature("autodoc", "1");
-		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate Xt, const V3d_Coordinate Yt, const V3d_Coordinate Zt, const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.23599000000000036614267173717962577939033508301e-1);
-		%feature("autodoc", "1");
-		virtual		void SetPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
-		%feature("autodoc", "1");
-		void SetDirection(const Quantity_Parameter Vx, const Quantity_Parameter Vy, const Quantity_Parameter Vz);
-		%feature("autodoc", "1");
-		void SetDirection(const V3d_TypeOfOrientation Orientation);
-		%feature("autodoc", "1");
-		void SetAttenuation(const Quantity_Coefficient A1, const Quantity_Coefficient A2);
-		%feature("autodoc", "1");
-		void SetConcentration(const Quantity_Coefficient C);
-		%feature("autodoc", "1");
-		void SetAngle(const Quantity_PlaneAngle Angle);
-		%feature("autodoc", "1");
-		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
-		%feature("autodoc","Direction() -> [Standard_Real, Standard_Real, Standard_Real]");
-		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
-		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void Attenuation(Quantity_Coefficient & A1, Quantity_Coefficient & A2) const;
-		%feature("autodoc", "1");
-		Quantity_Coefficient Concentration() const;
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle Angle() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V3d_SpotLight {
-	Handle_V3d_SpotLight GetHandle() {
-	return *(Handle_V3d_SpotLight*) &$self;
-	}
-};
-%extend V3d_SpotLight {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%extend V3d_SpotLight {
-	~V3d_SpotLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_SpotLight\n");}
-	}
-};
+%feature("shadow") V3d_View::~V3d_View %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_OrthographicView;
@@ -1432,8 +1384,6 @@ class V3d_OrthographicView : public V3d_View {
 		V3d_OrthographicView(const Handle_V3d_Viewer &VM, const Handle_V3d_OrthographicView &V);
 		%feature("autodoc", "1");
 		Handle_V3d_OrthographicView Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend V3d_OrthographicView {
@@ -1446,12 +1396,10 @@ class V3d_OrthographicView : public V3d_View {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_OrthographicView {
-	~V3d_OrthographicView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_OrthographicView\n");}
-	}
-};
+%feature("shadow") V3d_OrthographicView::~V3d_OrthographicView %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d;
@@ -1475,12 +1423,10 @@ class V3d {
 		void SetPlane(const Handle_V3d_Viewer &aViewer, const Quantity_Length x1, const Quantity_Length y1, const Quantity_Length z1, const Quantity_Length x2, const Quantity_Length y2, const Quantity_Length z2);
 
 };
-%extend V3d {
-	~V3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d\n");}
-	}
-};
+%feature("shadow") V3d::~V3d %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_Viewer;
@@ -1684,12 +1630,10 @@ class V3d_Viewer : public Viewer_Viewer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_Viewer {
-	~V3d_Viewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_Viewer\n");}
-	}
-};
+%feature("shadow") V3d_Viewer::~V3d_Viewer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_CircularGrid;
@@ -1723,12 +1667,10 @@ class V3d_CircularGrid : public Aspect_CircularGrid {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_CircularGrid {
-	~V3d_CircularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_CircularGrid\n");}
-	}
-};
+%feature("shadow") V3d_CircularGrid::~V3d_CircularGrid %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_UnMapped;
@@ -1758,12 +1700,10 @@ class V3d_UnMapped : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_UnMapped {
-	~V3d_UnMapped() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_UnMapped\n");}
-	}
-};
+%feature("shadow") V3d_UnMapped::~V3d_UnMapped %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_LayerMgr;
@@ -1801,12 +1741,10 @@ class V3d_LayerMgr : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_LayerMgr {
-	~V3d_LayerMgr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_LayerMgr\n");}
-	}
-};
+%feature("shadow") V3d_LayerMgr::~V3d_LayerMgr %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_PositionalLight;
@@ -1840,12 +1778,10 @@ class V3d_PositionalLight : public V3d_PositionLight {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_PositionalLight {
-	~V3d_PositionalLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_PositionalLight\n");}
-	}
-};
+%feature("shadow") V3d_PositionalLight::~V3d_PositionalLight %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_ListOfTransient;
@@ -1859,12 +1795,10 @@ class V3d_ListOfTransient : public TColStd_ListOfTransient {
 		void Remove(const Handle_Standard_Transient &aTransient);
 
 };
-%extend V3d_ListOfTransient {
-	~V3d_ListOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_ListOfTransient\n");}
-	}
-};
+%feature("shadow") V3d_ListOfTransient::~V3d_ListOfTransient %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_PerspectiveView;
@@ -1898,12 +1832,10 @@ class V3d_PerspectiveView : public V3d_View {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_PerspectiveView {
-	~V3d_PerspectiveView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_PerspectiveView\n");}
-	}
-};
+%feature("shadow") V3d_PerspectiveView::~V3d_PerspectiveView %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor V3d_DirectionalLight;
@@ -1943,9 +1875,7 @@ class V3d_DirectionalLight : public V3d_PositionLight {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend V3d_DirectionalLight {
-	~V3d_DirectionalLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_DirectionalLight\n");}
-	}
-};
+%feature("shadow") V3d_DirectionalLight::~V3d_DirectionalLight %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

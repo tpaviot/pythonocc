@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include LocOpe_dependencies.i
 
 
@@ -63,12 +67,10 @@ class Handle_LocOpe_ProjectedWires : public Handle_MMgt_TShared {
 	return (LocOpe_ProjectedWires*)$self->Access();
 	}
 };
-%extend Handle_LocOpe_ProjectedWires {
-	~Handle_LocOpe_ProjectedWires() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_ProjectedWires\n");}
-	}
-};
+%feature("shadow") Handle_LocOpe_ProjectedWires::~Handle_LocOpe_ProjectedWires %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_LocOpe_HBuilder;
@@ -93,12 +95,10 @@ class Handle_LocOpe_HBuilder : public Handle_TopOpeBRepBuild_HBuilder {
 	return (LocOpe_HBuilder*)$self->Access();
 	}
 };
-%extend Handle_LocOpe_HBuilder {
-	~Handle_LocOpe_HBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_HBuilder\n");}
-	}
-};
+%feature("shadow") Handle_LocOpe_HBuilder::~Handle_LocOpe_HBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt;
@@ -123,12 +123,10 @@ class Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt : public Handle_TCollection_M
 	return (LocOpe_DataMapNodeOfDataMapOfShapePnt*)$self->Access();
 	}
 };
-%extend Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt {
-	~Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt\n");}
-	}
-};
+%feature("shadow") Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt::~Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfPntFace;
@@ -153,12 +151,10 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfPntFace : public Handle_TCollection_
 	return (LocOpe_SequenceNodeOfSequenceOfPntFace*)$self->Access();
 	}
 };
-%extend Handle_LocOpe_SequenceNodeOfSequenceOfPntFace {
-	~Handle_LocOpe_SequenceNodeOfSequenceOfPntFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_SequenceNodeOfSequenceOfPntFace\n");}
-	}
-};
+%feature("shadow") Handle_LocOpe_SequenceNodeOfSequenceOfPntFace::~Handle_LocOpe_SequenceNodeOfSequenceOfPntFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_LocOpe_GeneratedShape;
@@ -183,12 +179,10 @@ class Handle_LocOpe_GeneratedShape : public Handle_MMgt_TShared {
 	return (LocOpe_GeneratedShape*)$self->Access();
 	}
 };
-%extend Handle_LocOpe_GeneratedShape {
-	~Handle_LocOpe_GeneratedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_GeneratedShape\n");}
-	}
-};
+%feature("shadow") Handle_LocOpe_GeneratedShape::~Handle_LocOpe_GeneratedShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_LocOpe_GluedShape;
@@ -213,12 +207,10 @@ class Handle_LocOpe_GluedShape : public Handle_LocOpe_GeneratedShape {
 	return (LocOpe_GluedShape*)$self->Access();
 	}
 };
-%extend Handle_LocOpe_GluedShape {
-	~Handle_LocOpe_GluedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_GluedShape\n");}
-	}
-};
+%feature("shadow") Handle_LocOpe_GluedShape::~Handle_LocOpe_GluedShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfLin;
@@ -243,12 +235,10 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfLin : public Handle_TCollection_SeqN
 	return (LocOpe_SequenceNodeOfSequenceOfLin*)$self->Access();
 	}
 };
-%extend Handle_LocOpe_SequenceNodeOfSequenceOfLin {
-	~Handle_LocOpe_SequenceNodeOfSequenceOfLin() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_SequenceNodeOfSequenceOfLin\n");}
-	}
-};
+%feature("shadow") Handle_LocOpe_SequenceNodeOfSequenceOfLin::~Handle_LocOpe_SequenceNodeOfSequenceOfLin %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_LocOpe_WiresOnShape;
@@ -273,12 +263,10 @@ class Handle_LocOpe_WiresOnShape : public Handle_LocOpe_ProjectedWires {
 	return (LocOpe_WiresOnShape*)$self->Access();
 	}
 };
-%extend Handle_LocOpe_WiresOnShape {
-	~Handle_LocOpe_WiresOnShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_WiresOnShape\n");}
-	}
-};
+%feature("shadow") Handle_LocOpe_WiresOnShape::~Handle_LocOpe_WiresOnShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfCirc;
@@ -303,12 +291,10 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfCirc : public Handle_TCollection_Seq
 	return (LocOpe_SequenceNodeOfSequenceOfCirc*)$self->Access();
 	}
 };
-%extend Handle_LocOpe_SequenceNodeOfSequenceOfCirc {
-	~Handle_LocOpe_SequenceNodeOfSequenceOfCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_SequenceNodeOfSequenceOfCirc\n");}
-	}
-};
+%feature("shadow") Handle_LocOpe_SequenceNodeOfSequenceOfCirc::~Handle_LocOpe_SequenceNodeOfSequenceOfCirc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_FindEdgesInFace;
@@ -330,12 +316,10 @@ class LocOpe_FindEdgesInFace {
 		void Next();
 
 };
-%extend LocOpe_FindEdgesInFace {
-	~LocOpe_FindEdgesInFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_FindEdgesInFace\n");}
-	}
-};
+%feature("shadow") LocOpe_FindEdgesInFace::~LocOpe_FindEdgesInFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_Pipe;
@@ -361,12 +345,10 @@ class LocOpe_Pipe {
 		Handle_Geom_Curve BarycCurve();
 
 };
-%extend LocOpe_Pipe {
-	~LocOpe_Pipe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_Pipe\n");}
-	}
-};
+%feature("shadow") LocOpe_Pipe::~LocOpe_Pipe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_SplitShape;
@@ -392,12 +374,10 @@ class LocOpe_SplitShape {
 		const TopTools_ListOfShape & LeftOf(const TopoDS_Wire &W, const TopoDS_Face &F);
 
 };
-%extend LocOpe_SplitShape {
-	~LocOpe_SplitShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_SplitShape\n");}
-	}
-};
+%feature("shadow") LocOpe_SplitShape::~LocOpe_SplitShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_CurveShapeIntersector;
@@ -429,12 +409,10 @@ class LocOpe_CurveShapeIntersector {
 		Standard_Boolean LocalizeBefore(const Standard_Integer FromInd, TopAbs_Orientation & Or, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 
 };
-%extend LocOpe_CurveShapeIntersector {
-	~LocOpe_CurveShapeIntersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_CurveShapeIntersector\n");}
-	}
-};
+%feature("shadow") LocOpe_CurveShapeIntersector::~LocOpe_CurveShapeIntersector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_Gluer;
@@ -470,12 +448,10 @@ class LocOpe_Gluer {
 		const TopTools_ListOfShape & TgtEdges() const;
 
 };
-%extend LocOpe_Gluer {
-	~LocOpe_Gluer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_Gluer\n");}
-	}
-};
+%feature("shadow") LocOpe_Gluer::~LocOpe_Gluer %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_BuildWires;
@@ -493,12 +469,10 @@ class LocOpe_BuildWires {
 		const TopTools_ListOfShape & Result() const;
 
 };
-%extend LocOpe_BuildWires {
-	~LocOpe_BuildWires() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_BuildWires\n");}
-	}
-};
+%feature("shadow") LocOpe_BuildWires::~LocOpe_BuildWires %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_HBuilder;
@@ -524,12 +498,10 @@ class LocOpe_HBuilder : public TopOpeBRepBuild_HBuilder {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend LocOpe_HBuilder {
-	~LocOpe_HBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_HBuilder\n");}
-	}
-};
+%feature("shadow") LocOpe_HBuilder::~LocOpe_HBuilder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_DPrism;
@@ -559,12 +531,10 @@ class LocOpe_DPrism {
 		Handle_Geom_Curve BarycCurve() const;
 
 };
-%extend LocOpe_DPrism {
-	~LocOpe_DPrism() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_DPrism\n");}
-	}
-};
+%feature("shadow") LocOpe_DPrism::~LocOpe_DPrism %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_SequenceNodeOfSequenceOfCirc;
@@ -588,12 +558,10 @@ class LocOpe_SequenceNodeOfSequenceOfCirc : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend LocOpe_SequenceNodeOfSequenceOfCirc {
-	~LocOpe_SequenceNodeOfSequenceOfCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_SequenceNodeOfSequenceOfCirc\n");}
-	}
-};
+%feature("shadow") LocOpe_SequenceNodeOfSequenceOfCirc::~LocOpe_SequenceNodeOfSequenceOfCirc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_ProjectedWires;
@@ -629,12 +597,10 @@ class LocOpe_ProjectedWires : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend LocOpe_ProjectedWires {
-	~LocOpe_ProjectedWires() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_ProjectedWires\n");}
-	}
-};
+%feature("shadow") LocOpe_ProjectedWires::~LocOpe_ProjectedWires %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_WiresOnShape;
@@ -684,12 +650,10 @@ class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend LocOpe_WiresOnShape {
-	~LocOpe_WiresOnShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_WiresOnShape\n");}
-	}
-};
+%feature("shadow") LocOpe_WiresOnShape::~LocOpe_WiresOnShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_GeneratedShape;
@@ -717,12 +681,10 @@ class LocOpe_GeneratedShape : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend LocOpe_GeneratedShape {
-	~LocOpe_GeneratedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_GeneratedShape\n");}
-	}
-};
+%feature("shadow") LocOpe_GeneratedShape::~LocOpe_GeneratedShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_BuildShape;
@@ -738,12 +700,10 @@ class LocOpe_BuildShape {
 		const TopoDS_Shape & Shape() const;
 
 };
-%extend LocOpe_BuildShape {
-	~LocOpe_BuildShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_BuildShape\n");}
-	}
-};
+%feature("shadow") LocOpe_BuildShape::~LocOpe_BuildShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_SequenceOfLin;
@@ -795,12 +755,10 @@ class LocOpe_SequenceOfLin : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend LocOpe_SequenceOfLin {
-	~LocOpe_SequenceOfLin() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_SequenceOfLin\n");}
-	}
-};
+%feature("shadow") LocOpe_SequenceOfLin::~LocOpe_SequenceOfLin %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_SequenceNodeOfSequenceOfLin;
@@ -824,12 +782,10 @@ class LocOpe_SequenceNodeOfSequenceOfLin : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend LocOpe_SequenceNodeOfSequenceOfLin {
-	~LocOpe_SequenceNodeOfSequenceOfLin() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_SequenceNodeOfSequenceOfLin\n");}
-	}
-};
+%feature("shadow") LocOpe_SequenceNodeOfSequenceOfLin::~LocOpe_SequenceNodeOfSequenceOfLin %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_SequenceOfCirc;
@@ -881,12 +837,10 @@ class LocOpe_SequenceOfCirc : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend LocOpe_SequenceOfCirc {
-	~LocOpe_SequenceOfCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_SequenceOfCirc\n");}
-	}
-};
+%feature("shadow") LocOpe_SequenceOfCirc::~LocOpe_SequenceOfCirc %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_GluedShape;
@@ -922,12 +876,10 @@ class LocOpe_GluedShape : public LocOpe_GeneratedShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend LocOpe_GluedShape {
-	~LocOpe_GluedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_GluedShape\n");}
-	}
-};
+%feature("shadow") LocOpe_GluedShape::~LocOpe_GluedShape %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_DataMapOfShapePnt;
@@ -959,12 +911,10 @@ class LocOpe_DataMapOfShapePnt : public TCollection_BasicMap {
 		gp_Pnt & operator()(const TopoDS_Shape &K);
 
 };
-%extend LocOpe_DataMapOfShapePnt {
-	~LocOpe_DataMapOfShapePnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_DataMapOfShapePnt\n");}
-	}
-};
+%feature("shadow") LocOpe_DataMapOfShapePnt::~LocOpe_DataMapOfShapePnt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe;
@@ -982,12 +932,10 @@ class LocOpe {
 		void SampleEdges(const TopoDS_Shape &S, TColgp_SequenceOfPnt & Pt);
 
 };
-%extend LocOpe {
-	~LocOpe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe\n");}
-	}
-};
+%feature("shadow") LocOpe::~LocOpe %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_Generator;
@@ -1011,12 +959,10 @@ class LocOpe_Generator {
 		const TopTools_ListOfShape & DescendantFace(const TopoDS_Face &F);
 
 };
-%extend LocOpe_Generator {
-	~LocOpe_Generator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_Generator\n");}
-	}
-};
+%feature("shadow") LocOpe_Generator::~LocOpe_Generator %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_Prism;
@@ -1046,12 +992,10 @@ class LocOpe_Prism {
 		Handle_Geom_Curve BarycCurve() const;
 
 };
-%extend LocOpe_Prism {
-	~LocOpe_Prism() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_Prism\n");}
-	}
-};
+%feature("shadow") LocOpe_Prism::~LocOpe_Prism %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_DataMapIteratorOfDataMapOfShapePnt;
@@ -1069,12 +1013,10 @@ class LocOpe_DataMapIteratorOfDataMapOfShapePnt : public TCollection_BasicMapIte
 		const gp_Pnt & Value() const;
 
 };
-%extend LocOpe_DataMapIteratorOfDataMapOfShapePnt {
-	~LocOpe_DataMapIteratorOfDataMapOfShapePnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_DataMapIteratorOfDataMapOfShapePnt\n");}
-	}
-};
+%feature("shadow") LocOpe_DataMapIteratorOfDataMapOfShapePnt::~LocOpe_DataMapIteratorOfDataMapOfShapePnt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_DataMapNodeOfDataMapOfShapePnt;
@@ -1100,12 +1042,10 @@ class LocOpe_DataMapNodeOfDataMapOfShapePnt : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
-	~LocOpe_DataMapNodeOfDataMapOfShapePnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_DataMapNodeOfDataMapOfShapePnt\n");}
-	}
-};
+%feature("shadow") LocOpe_DataMapNodeOfDataMapOfShapePnt::~LocOpe_DataMapNodeOfDataMapOfShapePnt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_CSIntersector;
@@ -1141,12 +1081,10 @@ class LocOpe_CSIntersector {
 		void Destroy();
 
 };
-%extend LocOpe_CSIntersector {
-	~LocOpe_CSIntersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_CSIntersector\n");}
-	}
-};
+%feature("shadow") LocOpe_CSIntersector::~LocOpe_CSIntersector %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_Spliter;
@@ -1174,12 +1112,10 @@ class LocOpe_Spliter {
 		const TopTools_ListOfShape & DescendantShapes(const TopoDS_Shape &S);
 
 };
-%extend LocOpe_Spliter {
-	~LocOpe_Spliter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_Spliter\n");}
-	}
-};
+%feature("shadow") LocOpe_Spliter::~LocOpe_Spliter %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_PntFace;
@@ -1205,12 +1141,10 @@ class LocOpe_PntFace {
 		Standard_Real VParameter() const;
 
 };
-%extend LocOpe_PntFace {
-	~LocOpe_PntFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_PntFace\n");}
-	}
-};
+%feature("shadow") LocOpe_PntFace::~LocOpe_PntFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_Builder;
@@ -1260,12 +1194,10 @@ class LocOpe_Builder {
 		const TopTools_ListOfShape & TgtEdges() const;
 
 };
-%extend LocOpe_Builder {
-	~LocOpe_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_Builder\n");}
-	}
-};
+%feature("shadow") LocOpe_Builder::~LocOpe_Builder %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_SequenceOfPntFace;
@@ -1317,12 +1249,10 @@ class LocOpe_SequenceOfPntFace : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend LocOpe_SequenceOfPntFace {
-	~LocOpe_SequenceOfPntFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_SequenceOfPntFace\n");}
-	}
-};
+%feature("shadow") LocOpe_SequenceOfPntFace::~LocOpe_SequenceOfPntFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_FindEdges;
@@ -1346,12 +1276,10 @@ class LocOpe_FindEdges {
 		void Next();
 
 };
-%extend LocOpe_FindEdges {
-	~LocOpe_FindEdges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_FindEdges\n");}
-	}
-};
+%feature("shadow") LocOpe_FindEdges::~LocOpe_FindEdges %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_SplitDrafts;
@@ -1377,12 +1305,10 @@ class LocOpe_SplitDrafts {
 		const TopTools_ListOfShape & ShapesFromShape(const TopoDS_Shape &S) const;
 
 };
-%extend LocOpe_SplitDrafts {
-	~LocOpe_SplitDrafts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_SplitDrafts\n");}
-	}
-};
+%feature("shadow") LocOpe_SplitDrafts::~LocOpe_SplitDrafts %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_LinearForm;
@@ -1408,12 +1334,10 @@ class LocOpe_LinearForm {
 		const TopTools_ListOfShape & Shapes(const TopoDS_Shape &S) const;
 
 };
-%extend LocOpe_LinearForm {
-	~LocOpe_LinearForm() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_LinearForm\n");}
-	}
-};
+%feature("shadow") LocOpe_LinearForm::~LocOpe_LinearForm %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor LocOpe_SequenceNodeOfSequenceOfPntFace;
@@ -1437,9 +1361,7 @@ class LocOpe_SequenceNodeOfSequenceOfPntFace : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
-	~LocOpe_SequenceNodeOfSequenceOfPntFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocOpe_SequenceNodeOfSequenceOfPntFace\n");}
-	}
-};
+%feature("shadow") LocOpe_SequenceNodeOfSequenceOfPntFace::~LocOpe_SequenceNodeOfSequenceOfPntFace %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

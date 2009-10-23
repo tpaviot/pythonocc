@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Plugin_dependencies.i
 
 
@@ -57,12 +61,10 @@ class Handle_Plugin_DataMapNodeOfMapOfFunctions : public Handle_TCollection_MapN
 	return (Plugin_DataMapNodeOfMapOfFunctions*)$self->Access();
 	}
 };
-%extend Handle_Plugin_DataMapNodeOfMapOfFunctions {
-	~Handle_Plugin_DataMapNodeOfMapOfFunctions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Plugin_DataMapNodeOfMapOfFunctions\n");}
-	}
-};
+%feature("shadow") Handle_Plugin_DataMapNodeOfMapOfFunctions::~Handle_Plugin_DataMapNodeOfMapOfFunctions %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_Plugin_Failure;
@@ -87,12 +89,10 @@ class Handle_Plugin_Failure : public Handle_Standard_Failure {
 	return (Plugin_Failure*)$self->Access();
 	}
 };
-%extend Handle_Plugin_Failure {
-	~Handle_Plugin_Failure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Plugin_Failure\n");}
-	}
-};
+%feature("shadow") Handle_Plugin_Failure::~Handle_Plugin_Failure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Plugin_MapOfFunctions;
@@ -114,12 +114,10 @@ class Plugin_MapOfFunctions : public TCollection_BasicMap {
 		Standard_Boolean UnBind(const TCollection_AsciiString &K);
 
 };
-%extend Plugin_MapOfFunctions {
-	~Plugin_MapOfFunctions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plugin_MapOfFunctions\n");}
-	}
-};
+%feature("shadow") Plugin_MapOfFunctions::~Plugin_MapOfFunctions %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Plugin_DataMapIteratorOfMapOfFunctions;
@@ -135,12 +133,10 @@ class Plugin_DataMapIteratorOfMapOfFunctions : public TCollection_BasicMapIterat
 		const TCollection_AsciiString & Key() const;
 
 };
-%extend Plugin_DataMapIteratorOfMapOfFunctions {
-	~Plugin_DataMapIteratorOfMapOfFunctions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plugin_DataMapIteratorOfMapOfFunctions\n");}
-	}
-};
+%feature("shadow") Plugin_DataMapIteratorOfMapOfFunctions::~Plugin_DataMapIteratorOfMapOfFunctions %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Plugin_DataMapNodeOfMapOfFunctions;
@@ -164,12 +160,10 @@ class Plugin_DataMapNodeOfMapOfFunctions : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Plugin_DataMapNodeOfMapOfFunctions {
-	~Plugin_DataMapNodeOfMapOfFunctions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plugin_DataMapNodeOfMapOfFunctions\n");}
-	}
-};
+%feature("shadow") Plugin_DataMapNodeOfMapOfFunctions::~Plugin_DataMapNodeOfMapOfFunctions %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Plugin_Failure;
@@ -199,12 +193,10 @@ class Plugin_Failure : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend Plugin_Failure {
-	~Plugin_Failure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plugin_Failure\n");}
-	}
-};
+%feature("shadow") Plugin_Failure::~Plugin_Failure %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Plugin;
@@ -216,9 +208,7 @@ class Plugin {
 		Handle_Standard_Transient Load(const Standard_GUID &aGUID);
 
 };
-%extend Plugin {
-	~Plugin() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Plugin\n");}
-	}
-};
+%feature("shadow") Plugin::~Plugin %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

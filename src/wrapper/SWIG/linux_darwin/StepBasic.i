@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StepBasic_dependencies.i
 
 
@@ -119,12 +123,10 @@ class Handle_StepBasic_Person : public Handle_MMgt_TShared {
 	return (StepBasic_Person*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_Person {
-	~Handle_StepBasic_Person() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Person\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_Person::~Handle_StepBasic_Person %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ActionMethod;
@@ -149,12 +151,10 @@ class Handle_StepBasic_ActionMethod : public Handle_MMgt_TShared {
 	return (StepBasic_ActionMethod*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ActionMethod {
-	~Handle_StepBasic_ActionMethod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ActionMethod\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ActionMethod::~Handle_StepBasic_ActionMethod %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_MeasureWithUnit;
@@ -179,12 +179,10 @@ class Handle_StepBasic_MeasureWithUnit : public Handle_MMgt_TShared {
 	return (StepBasic_MeasureWithUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_MeasureWithUnit {
-	~Handle_StepBasic_MeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MeasureWithUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_MeasureWithUnit::~Handle_StepBasic_MeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_PlaneAngleMeasureWithUnit;
@@ -209,12 +207,10 @@ class Handle_StepBasic_PlaneAngleMeasureWithUnit : public Handle_StepBasic_Measu
 	return (StepBasic_PlaneAngleMeasureWithUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_PlaneAngleMeasureWithUnit {
-	~Handle_StepBasic_PlaneAngleMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PlaneAngleMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_PlaneAngleMeasureWithUnit::~Handle_StepBasic_PlaneAngleMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_NamedUnit;
@@ -239,12 +235,10 @@ class Handle_StepBasic_NamedUnit : public Handle_MMgt_TShared {
 	return (StepBasic_NamedUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_NamedUnit {
-	~Handle_StepBasic_NamedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_NamedUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_NamedUnit::~Handle_StepBasic_NamedUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SiUnit;
@@ -269,12 +263,10 @@ class Handle_StepBasic_SiUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_SiUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SiUnit {
-	~Handle_StepBasic_SiUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SiUnit::~Handle_StepBasic_SiUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit;
@@ -299,12 +291,10 @@ class Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit : public Handle_Ste
 	return (StepBasic_SiUnitAndThermodynamicTemperatureUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit {
-	~Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit::~Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_CertificationAssignment;
@@ -329,12 +319,10 @@ class Handle_StepBasic_CertificationAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_CertificationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_CertificationAssignment {
-	~Handle_StepBasic_CertificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CertificationAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_CertificationAssignment::~Handle_StepBasic_CertificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ApprovalRelationship;
@@ -359,12 +347,10 @@ class Handle_StepBasic_ApprovalRelationship : public Handle_MMgt_TShared {
 	return (StepBasic_ApprovalRelationship*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ApprovalRelationship {
-	~Handle_StepBasic_ApprovalRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalRelationship\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ApprovalRelationship::~Handle_StepBasic_ApprovalRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DateRole;
@@ -389,12 +375,10 @@ class Handle_StepBasic_DateRole : public Handle_MMgt_TShared {
 	return (StepBasic_DateRole*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DateRole {
-	~Handle_StepBasic_DateRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DateRole\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DateRole::~Handle_StepBasic_DateRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ActionRequestAssignment;
@@ -419,12 +403,10 @@ class Handle_StepBasic_ActionRequestAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_ActionRequestAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ActionRequestAssignment {
-	~Handle_StepBasic_ActionRequestAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ActionRequestAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ActionRequestAssignment::~Handle_StepBasic_ActionRequestAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ApprovalStatus;
@@ -449,12 +431,10 @@ class Handle_StepBasic_ApprovalStatus : public Handle_MMgt_TShared {
 	return (StepBasic_ApprovalStatus*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ApprovalStatus {
-	~Handle_StepBasic_ApprovalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalStatus\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ApprovalStatus::~Handle_StepBasic_ApprovalStatus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SiUnitAndSolidAngleUnit;
@@ -479,12 +459,10 @@ class Handle_StepBasic_SiUnitAndSolidAngleUnit : public Handle_StepBasic_SiUnit 
 	return (StepBasic_SiUnitAndSolidAngleUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SiUnitAndSolidAngleUnit {
-	~Handle_StepBasic_SiUnitAndSolidAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndSolidAngleUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SiUnitAndSolidAngleUnit::~Handle_StepBasic_SiUnitAndSolidAngleUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ObjectRole;
@@ -509,12 +487,10 @@ class Handle_StepBasic_ObjectRole : public Handle_MMgt_TShared {
 	return (StepBasic_ObjectRole*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ObjectRole {
-	~Handle_StepBasic_ObjectRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ObjectRole\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ObjectRole::~Handle_StepBasic_ObjectRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_Approval;
@@ -539,12 +515,10 @@ class Handle_StepBasic_Approval : public Handle_MMgt_TShared {
 	return (StepBasic_Approval*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_Approval {
-	~Handle_StepBasic_Approval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Approval\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_Approval::~Handle_StepBasic_Approval %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_IdentificationAssignment;
@@ -569,12 +543,10 @@ class Handle_StepBasic_IdentificationAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_IdentificationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_IdentificationAssignment {
-	~Handle_StepBasic_IdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_IdentificationAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_IdentificationAssignment::~Handle_StepBasic_IdentificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ExternalIdentificationAssignment;
@@ -599,12 +571,10 @@ class Handle_StepBasic_ExternalIdentificationAssignment : public Handle_StepBasi
 	return (StepBasic_ExternalIdentificationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ExternalIdentificationAssignment {
-	~Handle_StepBasic_ExternalIdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ExternalIdentificationAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ExternalIdentificationAssignment::~Handle_StepBasic_ExternalIdentificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_Effectivity;
@@ -629,12 +599,10 @@ class Handle_StepBasic_Effectivity : public Handle_MMgt_TShared {
 	return (StepBasic_Effectivity*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_Effectivity {
-	~Handle_StepBasic_Effectivity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Effectivity\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_Effectivity::~Handle_StepBasic_Effectivity %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionEffectivity;
@@ -659,12 +627,10 @@ class Handle_StepBasic_ProductDefinitionEffectivity : public Handle_StepBasic_Ef
 	return (StepBasic_ProductDefinitionEffectivity*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductDefinitionEffectivity {
-	~Handle_StepBasic_ProductDefinitionEffectivity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionEffectivity\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductDefinitionEffectivity::~Handle_StepBasic_ProductDefinitionEffectivity %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_VolumeUnit;
@@ -689,12 +655,10 @@ class Handle_StepBasic_VolumeUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_VolumeUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_VolumeUnit {
-	~Handle_StepBasic_VolumeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_VolumeUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_VolumeUnit::~Handle_StepBasic_VolumeUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_Date;
@@ -719,12 +683,10 @@ class Handle_StepBasic_Date : public Handle_MMgt_TShared {
 	return (StepBasic_Date*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_Date {
-	~Handle_StepBasic_Date() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Date\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_Date::~Handle_StepBasic_Date %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_OrdinalDate;
@@ -749,12 +711,10 @@ class Handle_StepBasic_OrdinalDate : public Handle_StepBasic_Date {
 	return (StepBasic_OrdinalDate*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_OrdinalDate {
-	~Handle_StepBasic_OrdinalDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_OrdinalDate\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_OrdinalDate::~Handle_StepBasic_OrdinalDate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductCategory;
@@ -779,12 +739,10 @@ class Handle_StepBasic_ProductCategory : public Handle_MMgt_TShared {
 	return (StepBasic_ProductCategory*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductCategory {
-	~Handle_StepBasic_ProductCategory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductCategory\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductCategory::~Handle_StepBasic_ProductCategory %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductRelatedProductCategory;
@@ -809,12 +767,10 @@ class Handle_StepBasic_ProductRelatedProductCategory : public Handle_StepBasic_P
 	return (StepBasic_ProductRelatedProductCategory*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductRelatedProductCategory {
-	~Handle_StepBasic_ProductRelatedProductCategory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductRelatedProductCategory\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductRelatedProductCategory::~Handle_StepBasic_ProductRelatedProductCategory %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductType;
@@ -839,12 +795,10 @@ class Handle_StepBasic_ProductType : public Handle_StepBasic_ProductRelatedProdu
 	return (StepBasic_ProductType*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductType {
-	~Handle_StepBasic_ProductType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductType\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductType::~Handle_StepBasic_ProductType %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ApplicationContextElement;
@@ -869,12 +823,10 @@ class Handle_StepBasic_ApplicationContextElement : public Handle_MMgt_TShared {
 	return (StepBasic_ApplicationContextElement*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ApplicationContextElement {
-	~Handle_StepBasic_ApplicationContextElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApplicationContextElement\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ApplicationContextElement::~Handle_StepBasic_ApplicationContextElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductContext;
@@ -899,12 +851,10 @@ class Handle_StepBasic_ProductContext : public Handle_StepBasic_ApplicationConte
 	return (StepBasic_ProductContext*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductContext {
-	~Handle_StepBasic_ProductContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductContext\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductContext::~Handle_StepBasic_ProductContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_MechanicalContext;
@@ -929,12 +879,10 @@ class Handle_StepBasic_MechanicalContext : public Handle_StepBasic_ProductContex
 	return (StepBasic_MechanicalContext*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_MechanicalContext {
-	~Handle_StepBasic_MechanicalContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MechanicalContext\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_MechanicalContext::~Handle_StepBasic_MechanicalContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ApprovalAssignment;
@@ -959,12 +907,10 @@ class Handle_StepBasic_ApprovalAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_ApprovalAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ApprovalAssignment {
-	~Handle_StepBasic_ApprovalAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ApprovalAssignment::~Handle_StepBasic_ApprovalAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_MassMeasureWithUnit;
@@ -989,12 +935,10 @@ class Handle_StepBasic_MassMeasureWithUnit : public Handle_StepBasic_MeasureWith
 	return (StepBasic_MassMeasureWithUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_MassMeasureWithUnit {
-	~Handle_StepBasic_MassMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MassMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_MassMeasureWithUnit::~Handle_StepBasic_MassMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionContext;
@@ -1019,12 +963,10 @@ class Handle_StepBasic_ProductDefinitionContext : public Handle_StepBasic_Applic
 	return (StepBasic_ProductDefinitionContext*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductDefinitionContext {
-	~Handle_StepBasic_ProductDefinitionContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionContext\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductDefinitionContext::~Handle_StepBasic_ProductDefinitionContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DesignContext;
@@ -1049,12 +991,10 @@ class Handle_StepBasic_DesignContext : public Handle_StepBasic_ProductDefinition
 	return (StepBasic_DesignContext*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DesignContext {
-	~Handle_StepBasic_DesignContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DesignContext\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DesignContext::~Handle_StepBasic_DesignContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DateAndTimeAssignment;
@@ -1079,12 +1019,10 @@ class Handle_StepBasic_DateAndTimeAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_DateAndTimeAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DateAndTimeAssignment {
-	~Handle_StepBasic_DateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DateAndTimeAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DateAndTimeAssignment::~Handle_StepBasic_DateAndTimeAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductCategoryRelationship;
@@ -1109,12 +1047,10 @@ class Handle_StepBasic_ProductCategoryRelationship : public Handle_MMgt_TShared 
 	return (StepBasic_ProductCategoryRelationship*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductCategoryRelationship {
-	~Handle_StepBasic_ProductCategoryRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductCategoryRelationship\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductCategoryRelationship::~Handle_StepBasic_ProductCategoryRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionRelationship;
@@ -1139,12 +1075,10 @@ class Handle_StepBasic_ProductDefinitionRelationship : public Handle_MMgt_TShare
 	return (StepBasic_ProductDefinitionRelationship*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductDefinitionRelationship {
-	~Handle_StepBasic_ProductDefinitionRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionRelationship\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductDefinitionRelationship::~Handle_StepBasic_ProductDefinitionRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_Document;
@@ -1169,12 +1103,10 @@ class Handle_StepBasic_Document : public Handle_MMgt_TShared {
 	return (StepBasic_Document*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_Document {
-	~Handle_StepBasic_Document() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Document\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_Document::~Handle_StepBasic_Document %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_PersonAndOrganization;
@@ -1199,12 +1131,10 @@ class Handle_StepBasic_PersonAndOrganization : public Handle_MMgt_TShared {
 	return (StepBasic_PersonAndOrganization*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_PersonAndOrganization {
-	~Handle_StepBasic_PersonAndOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PersonAndOrganization\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_PersonAndOrganization::~Handle_StepBasic_PersonAndOrganization %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DocumentUsageConstraint;
@@ -1229,12 +1159,10 @@ class Handle_StepBasic_DocumentUsageConstraint : public Handle_MMgt_TShared {
 	return (StepBasic_DocumentUsageConstraint*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DocumentUsageConstraint {
-	~Handle_StepBasic_DocumentUsageConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentUsageConstraint\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DocumentUsageConstraint::~Handle_StepBasic_DocumentUsageConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ActionRequestSolution;
@@ -1259,12 +1187,10 @@ class Handle_StepBasic_ActionRequestSolution : public Handle_MMgt_TShared {
 	return (StepBasic_ActionRequestSolution*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ActionRequestSolution {
-	~Handle_StepBasic_ActionRequestSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ActionRequestSolution\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ActionRequestSolution::~Handle_StepBasic_ActionRequestSolution %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_CoordinatedUniversalTimeOffset;
@@ -1289,12 +1215,10 @@ class Handle_StepBasic_CoordinatedUniversalTimeOffset : public Handle_MMgt_TShar
 	return (StepBasic_CoordinatedUniversalTimeOffset*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_CoordinatedUniversalTimeOffset {
-	~Handle_StepBasic_CoordinatedUniversalTimeOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CoordinatedUniversalTimeOffset\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_CoordinatedUniversalTimeOffset::~Handle_StepBasic_CoordinatedUniversalTimeOffset %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SolidAngleUnit;
@@ -1319,12 +1243,10 @@ class Handle_StepBasic_SolidAngleUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_SolidAngleUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SolidAngleUnit {
-	~Handle_StepBasic_SolidAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SolidAngleUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SolidAngleUnit::~Handle_StepBasic_SolidAngleUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_MeasureValueMember;
@@ -1349,12 +1271,10 @@ class Handle_StepBasic_MeasureValueMember : public Handle_StepData_SelectReal {
 	return (StepBasic_MeasureValueMember*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_MeasureValueMember {
-	~Handle_StepBasic_MeasureValueMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MeasureValueMember\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_MeasureValueMember::~Handle_StepBasic_MeasureValueMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SiUnitAndAreaUnit;
@@ -1379,12 +1299,10 @@ class Handle_StepBasic_SiUnitAndAreaUnit : public Handle_StepBasic_SiUnit {
 	return (StepBasic_SiUnitAndAreaUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SiUnitAndAreaUnit {
-	~Handle_StepBasic_SiUnitAndAreaUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndAreaUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SiUnitAndAreaUnit::~Handle_StepBasic_SiUnitAndAreaUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DocumentType;
@@ -1409,12 +1327,10 @@ class Handle_StepBasic_DocumentType : public Handle_MMgt_TShared {
 	return (StepBasic_DocumentType*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DocumentType {
-	~Handle_StepBasic_DocumentType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentType\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DocumentType::~Handle_StepBasic_DocumentType %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_EffectivityAssignment;
@@ -1439,12 +1355,10 @@ class Handle_StepBasic_EffectivityAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_EffectivityAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_EffectivityAssignment {
-	~Handle_StepBasic_EffectivityAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_EffectivityAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_EffectivityAssignment::~Handle_StepBasic_EffectivityAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionFormation;
@@ -1469,12 +1383,10 @@ class Handle_StepBasic_ProductDefinitionFormation : public Handle_MMgt_TShared {
 	return (StepBasic_ProductDefinitionFormation*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductDefinitionFormation {
-	~Handle_StepBasic_ProductDefinitionFormation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormation\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductDefinitionFormation::~Handle_StepBasic_ProductDefinitionFormation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource;
@@ -1499,12 +1411,10 @@ class Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource : public Ha
 	return (StepBasic_ProductDefinitionFormationWithSpecifiedSource*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource {
-	~Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource::~Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_RatioUnit;
@@ -1529,12 +1439,10 @@ class Handle_StepBasic_RatioUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_RatioUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_RatioUnit {
-	~Handle_StepBasic_RatioUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_RatioUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_RatioUnit::~Handle_StepBasic_RatioUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DocumentRepresentationType;
@@ -1559,12 +1467,10 @@ class Handle_StepBasic_DocumentRepresentationType : public Handle_MMgt_TShared {
 	return (StepBasic_DocumentRepresentationType*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DocumentRepresentationType {
-	~Handle_StepBasic_DocumentRepresentationType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentRepresentationType\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DocumentRepresentationType::~Handle_StepBasic_DocumentRepresentationType %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnit;
@@ -1589,12 +1495,10 @@ class Handle_StepBasic_ConversionBasedUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_ConversionBasedUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ConversionBasedUnit {
-	~Handle_StepBasic_ConversionBasedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ConversionBasedUnit::~Handle_StepBasic_ConversionBasedUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit;
@@ -1619,12 +1523,10 @@ class Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public Handle_Step
 	return (StepBasic_ConversionBasedUnitAndPlaneAngleUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit {
-	~Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit::~Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DateAndTime;
@@ -1649,12 +1551,10 @@ class Handle_StepBasic_DateAndTime : public Handle_MMgt_TShared {
 	return (StepBasic_DateAndTime*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DateAndTime {
-	~Handle_StepBasic_DateAndTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DateAndTime\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DateAndTime::~Handle_StepBasic_DateAndTime %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SiUnitAndPlaneAngleUnit;
@@ -1679,12 +1579,10 @@ class Handle_StepBasic_SiUnitAndPlaneAngleUnit : public Handle_StepBasic_SiUnit 
 	return (StepBasic_SiUnitAndPlaneAngleUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SiUnitAndPlaneAngleUnit {
-	~Handle_StepBasic_SiUnitAndPlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndPlaneAngleUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SiUnitAndPlaneAngleUnit::~Handle_StepBasic_SiUnitAndPlaneAngleUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_PersonAndOrganizationRole;
@@ -1709,12 +1607,10 @@ class Handle_StepBasic_PersonAndOrganizationRole : public Handle_MMgt_TShared {
 	return (StepBasic_PersonAndOrganizationRole*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_PersonAndOrganizationRole {
-	~Handle_StepBasic_PersonAndOrganizationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PersonAndOrganizationRole\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_PersonAndOrganizationRole::~Handle_StepBasic_PersonAndOrganizationRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_PersonAndOrganizationAssignment;
@@ -1739,12 +1635,10 @@ class Handle_StepBasic_PersonAndOrganizationAssignment : public Handle_MMgt_TSha
 	return (StepBasic_PersonAndOrganizationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_PersonAndOrganizationAssignment {
-	~Handle_StepBasic_PersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PersonAndOrganizationAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_PersonAndOrganizationAssignment::~Handle_StepBasic_PersonAndOrganizationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DocumentProductAssociation;
@@ -1769,12 +1663,10 @@ class Handle_StepBasic_DocumentProductAssociation : public Handle_MMgt_TShared {
 	return (StepBasic_DocumentProductAssociation*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DocumentProductAssociation {
-	~Handle_StepBasic_DocumentProductAssociation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentProductAssociation\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DocumentProductAssociation::~Handle_StepBasic_DocumentProductAssociation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionFormationRelationship;
@@ -1799,12 +1691,10 @@ class Handle_StepBasic_ProductDefinitionFormationRelationship : public Handle_MM
 	return (StepBasic_ProductDefinitionFormationRelationship*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductDefinitionFormationRelationship {
-	~Handle_StepBasic_ProductDefinitionFormationRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormationRelationship\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductDefinitionFormationRelationship::~Handle_StepBasic_ProductDefinitionFormationRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SecurityClassification;
@@ -1829,12 +1719,10 @@ class Handle_StepBasic_SecurityClassification : public Handle_MMgt_TShared {
 	return (StepBasic_SecurityClassification*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SecurityClassification {
-	~Handle_StepBasic_SecurityClassification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SecurityClassification\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SecurityClassification::~Handle_StepBasic_SecurityClassification %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DigitalDocument;
@@ -1859,12 +1747,10 @@ class Handle_StepBasic_DigitalDocument : public Handle_StepBasic_Document {
 	return (StepBasic_DigitalDocument*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DigitalDocument {
-	~Handle_StepBasic_DigitalDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DigitalDocument\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DigitalDocument::~Handle_StepBasic_DigitalDocument %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_Group;
@@ -1889,12 +1775,10 @@ class Handle_StepBasic_Group : public Handle_MMgt_TShared {
 	return (StepBasic_Group*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_Group {
-	~Handle_StepBasic_Group() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Group\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_Group::~Handle_StepBasic_Group %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ExternalSource;
@@ -1919,12 +1803,10 @@ class Handle_StepBasic_ExternalSource : public Handle_MMgt_TShared {
 	return (StepBasic_ExternalSource*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ExternalSource {
-	~Handle_StepBasic_ExternalSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ExternalSource\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ExternalSource::~Handle_StepBasic_ExternalSource %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_IdentificationRole;
@@ -1949,12 +1831,10 @@ class Handle_StepBasic_IdentificationRole : public Handle_MMgt_TShared {
 	return (StepBasic_IdentificationRole*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_IdentificationRole {
-	~Handle_StepBasic_IdentificationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_IdentificationRole\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_IdentificationRole::~Handle_StepBasic_IdentificationRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_Address;
@@ -1979,12 +1859,10 @@ class Handle_StepBasic_Address : public Handle_MMgt_TShared {
 	return (StepBasic_Address*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_Address {
-	~Handle_StepBasic_Address() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Address\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_Address::~Handle_StepBasic_Address %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SiUnitAndRatioUnit;
@@ -2009,12 +1887,10 @@ class Handle_StepBasic_SiUnitAndRatioUnit : public Handle_StepBasic_SiUnit {
 	return (StepBasic_SiUnitAndRatioUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SiUnitAndRatioUnit {
-	~Handle_StepBasic_SiUnitAndRatioUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndRatioUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SiUnitAndRatioUnit::~Handle_StepBasic_SiUnitAndRatioUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_HArray1OfProduct;
@@ -2039,12 +1915,10 @@ class Handle_StepBasic_HArray1OfProduct : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfProduct*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_HArray1OfProduct {
-	~Handle_StepBasic_HArray1OfProduct() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfProduct\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_HArray1OfProduct::~Handle_StepBasic_HArray1OfProduct %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SolidAngleMeasureWithUnit;
@@ -2069,12 +1943,10 @@ class Handle_StepBasic_SolidAngleMeasureWithUnit : public Handle_StepBasic_Measu
 	return (StepBasic_SolidAngleMeasureWithUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SolidAngleMeasureWithUnit {
-	~Handle_StepBasic_SolidAngleMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SolidAngleMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SolidAngleMeasureWithUnit::~Handle_StepBasic_SolidAngleMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_NameAssignment;
@@ -2099,12 +1971,10 @@ class Handle_StepBasic_NameAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_NameAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_NameAssignment {
-	~Handle_StepBasic_NameAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_NameAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_NameAssignment::~Handle_StepBasic_NameAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_MassUnit;
@@ -2129,12 +1999,10 @@ class Handle_StepBasic_MassUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_MassUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_MassUnit {
-	~Handle_StepBasic_MassUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MassUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_MassUnit::~Handle_StepBasic_MassUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DocumentProductEquivalence;
@@ -2159,12 +2027,10 @@ class Handle_StepBasic_DocumentProductEquivalence : public Handle_StepBasic_Docu
 	return (StepBasic_DocumentProductEquivalence*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DocumentProductEquivalence {
-	~Handle_StepBasic_DocumentProductEquivalence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentProductEquivalence\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DocumentProductEquivalence::~Handle_StepBasic_DocumentProductEquivalence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_TimeUnit;
@@ -2189,12 +2055,10 @@ class Handle_StepBasic_TimeUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_TimeUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_TimeUnit {
-	~Handle_StepBasic_TimeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_TimeUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_TimeUnit::~Handle_StepBasic_TimeUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_PersonalAddress;
@@ -2219,12 +2083,10 @@ class Handle_StepBasic_PersonalAddress : public Handle_StepBasic_Address {
 	return (StepBasic_PersonalAddress*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_PersonalAddress {
-	~Handle_StepBasic_PersonalAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PersonalAddress\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_PersonalAddress::~Handle_StepBasic_PersonalAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DocumentRelationship;
@@ -2249,12 +2111,10 @@ class Handle_StepBasic_DocumentRelationship : public Handle_MMgt_TShared {
 	return (StepBasic_DocumentRelationship*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DocumentRelationship {
-	~Handle_StepBasic_DocumentRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentRelationship\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DocumentRelationship::~Handle_StepBasic_DocumentRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DerivedUnitElement;
@@ -2279,12 +2139,10 @@ class Handle_StepBasic_DerivedUnitElement : public Handle_MMgt_TShared {
 	return (StepBasic_DerivedUnitElement*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DerivedUnitElement {
-	~Handle_StepBasic_DerivedUnitElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DerivedUnitElement\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DerivedUnitElement::~Handle_StepBasic_DerivedUnitElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndVolumeUnit;
@@ -2309,12 +2167,10 @@ class Handle_StepBasic_ConversionBasedUnitAndVolumeUnit : public Handle_StepBasi
 	return (StepBasic_ConversionBasedUnitAndVolumeUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ConversionBasedUnitAndVolumeUnit {
-	~Handle_StepBasic_ConversionBasedUnitAndVolumeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndVolumeUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ConversionBasedUnitAndVolumeUnit::~Handle_StepBasic_ConversionBasedUnitAndVolumeUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndMassUnit;
@@ -2339,12 +2195,10 @@ class Handle_StepBasic_ConversionBasedUnitAndMassUnit : public Handle_StepBasic_
 	return (StepBasic_ConversionBasedUnitAndMassUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ConversionBasedUnitAndMassUnit {
-	~Handle_StepBasic_ConversionBasedUnitAndMassUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndMassUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ConversionBasedUnitAndMassUnit::~Handle_StepBasic_ConversionBasedUnitAndMassUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ThermodynamicTemperatureUnit;
@@ -2369,12 +2223,10 @@ class Handle_StepBasic_ThermodynamicTemperatureUnit : public Handle_StepBasic_Na
 	return (StepBasic_ThermodynamicTemperatureUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ThermodynamicTemperatureUnit {
-	~Handle_StepBasic_ThermodynamicTemperatureUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ThermodynamicTemperatureUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ThermodynamicTemperatureUnit::~Handle_StepBasic_ThermodynamicTemperatureUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SecurityClassificationLevel;
@@ -2399,12 +2251,10 @@ class Handle_StepBasic_SecurityClassificationLevel : public Handle_MMgt_TShared 
 	return (StepBasic_SecurityClassificationLevel*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SecurityClassificationLevel {
-	~Handle_StepBasic_SecurityClassificationLevel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SecurityClassificationLevel\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SecurityClassificationLevel::~Handle_StepBasic_SecurityClassificationLevel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DocumentReference;
@@ -2429,12 +2279,10 @@ class Handle_StepBasic_DocumentReference : public Handle_MMgt_TShared {
 	return (StepBasic_DocumentReference*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DocumentReference {
-	~Handle_StepBasic_DocumentReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentReference\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DocumentReference::~Handle_StepBasic_DocumentReference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SiUnitAndVolumeUnit;
@@ -2459,12 +2307,10 @@ class Handle_StepBasic_SiUnitAndVolumeUnit : public Handle_StepBasic_SiUnit {
 	return (StepBasic_SiUnitAndVolumeUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SiUnitAndVolumeUnit {
-	~Handle_StepBasic_SiUnitAndVolumeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndVolumeUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SiUnitAndVolumeUnit::~Handle_StepBasic_SiUnitAndVolumeUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndTimeUnit;
@@ -2489,12 +2335,10 @@ class Handle_StepBasic_ConversionBasedUnitAndTimeUnit : public Handle_StepBasic_
 	return (StepBasic_ConversionBasedUnitAndTimeUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ConversionBasedUnitAndTimeUnit {
-	~Handle_StepBasic_ConversionBasedUnitAndTimeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndTimeUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ConversionBasedUnitAndTimeUnit::~Handle_StepBasic_ConversionBasedUnitAndTimeUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_LengthUnit;
@@ -2519,12 +2363,10 @@ class Handle_StepBasic_LengthUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_LengthUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_LengthUnit {
-	~Handle_StepBasic_LengthUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_LengthUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_LengthUnit::~Handle_StepBasic_LengthUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DateAssignment;
@@ -2549,12 +2391,10 @@ class Handle_StepBasic_DateAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_DateAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DateAssignment {
-	~Handle_StepBasic_DateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DateAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DateAssignment::~Handle_StepBasic_DateAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SecurityClassificationAssignment;
@@ -2579,12 +2419,10 @@ class Handle_StepBasic_SecurityClassificationAssignment : public Handle_MMgt_TSh
 	return (StepBasic_SecurityClassificationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SecurityClassificationAssignment {
-	~Handle_StepBasic_SecurityClassificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SecurityClassificationAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SecurityClassificationAssignment::~Handle_StepBasic_SecurityClassificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ApprovalDateTime;
@@ -2609,12 +2447,10 @@ class Handle_StepBasic_ApprovalDateTime : public Handle_MMgt_TShared {
 	return (StepBasic_ApprovalDateTime*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ApprovalDateTime {
-	~Handle_StepBasic_ApprovalDateTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalDateTime\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ApprovalDateTime::~Handle_StepBasic_ApprovalDateTime %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_Product;
@@ -2639,12 +2475,10 @@ class Handle_StepBasic_Product : public Handle_MMgt_TShared {
 	return (StepBasic_Product*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_Product {
-	~Handle_StepBasic_Product() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Product\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_Product::~Handle_StepBasic_Product %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_GroupRelationship;
@@ -2669,12 +2503,10 @@ class Handle_StepBasic_GroupRelationship : public Handle_MMgt_TShared {
 	return (StepBasic_GroupRelationship*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_GroupRelationship {
-	~Handle_StepBasic_GroupRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_GroupRelationship\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_GroupRelationship::~Handle_StepBasic_GroupRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_HArray1OfDerivedUnitElement;
@@ -2699,12 +2531,10 @@ class Handle_StepBasic_HArray1OfDerivedUnitElement : public Handle_MMgt_TShared 
 	return (StepBasic_HArray1OfDerivedUnitElement*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_HArray1OfDerivedUnitElement {
-	~Handle_StepBasic_HArray1OfDerivedUnitElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfDerivedUnitElement\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_HArray1OfDerivedUnitElement::~Handle_StepBasic_HArray1OfDerivedUnitElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductDefinition;
@@ -2729,12 +2559,10 @@ class Handle_StepBasic_ProductDefinition : public Handle_MMgt_TShared {
 	return (StepBasic_ProductDefinition*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductDefinition {
-	~Handle_StepBasic_ProductDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinition\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductDefinition::~Handle_StepBasic_ProductDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionWithAssociatedDocuments;
@@ -2759,12 +2587,10 @@ class Handle_StepBasic_ProductDefinitionWithAssociatedDocuments : public Handle_
 	return (StepBasic_ProductDefinitionWithAssociatedDocuments*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductDefinitionWithAssociatedDocuments {
-	~Handle_StepBasic_ProductDefinitionWithAssociatedDocuments() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionWithAssociatedDocuments\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductDefinitionWithAssociatedDocuments::~Handle_StepBasic_ProductDefinitionWithAssociatedDocuments %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_RatioMeasureWithUnit;
@@ -2789,12 +2615,10 @@ class Handle_StepBasic_RatioMeasureWithUnit : public Handle_StepBasic_MeasureWit
 	return (StepBasic_RatioMeasureWithUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_RatioMeasureWithUnit {
-	~Handle_StepBasic_RatioMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_RatioMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_RatioMeasureWithUnit::~Handle_StepBasic_RatioMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndLengthUnit;
@@ -2819,12 +2643,10 @@ class Handle_StepBasic_ConversionBasedUnitAndLengthUnit : public Handle_StepBasi
 	return (StepBasic_ConversionBasedUnitAndLengthUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ConversionBasedUnitAndLengthUnit {
-	~Handle_StepBasic_ConversionBasedUnitAndLengthUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndLengthUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ConversionBasedUnitAndLengthUnit::~Handle_StepBasic_ConversionBasedUnitAndLengthUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_OrganizationRole;
@@ -2849,12 +2671,10 @@ class Handle_StepBasic_OrganizationRole : public Handle_MMgt_TShared {
 	return (StepBasic_OrganizationRole*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_OrganizationRole {
-	~Handle_StepBasic_OrganizationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_OrganizationRole\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_OrganizationRole::~Handle_StepBasic_OrganizationRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_VersionedActionRequest;
@@ -2879,12 +2699,10 @@ class Handle_StepBasic_VersionedActionRequest : public Handle_MMgt_TShared {
 	return (StepBasic_VersionedActionRequest*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_VersionedActionRequest {
-	~Handle_StepBasic_VersionedActionRequest() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_VersionedActionRequest\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_VersionedActionRequest::~Handle_StepBasic_VersionedActionRequest %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_OrganizationAssignment;
@@ -2909,12 +2727,10 @@ class Handle_StepBasic_OrganizationAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_OrganizationAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_OrganizationAssignment {
-	~Handle_StepBasic_OrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_OrganizationAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_OrganizationAssignment::~Handle_StepBasic_OrganizationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit;
@@ -2939,12 +2755,10 @@ class Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit : public Handle_Step
 	return (StepBasic_ConversionBasedUnitAndSolidAngleUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit {
-	~Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit::~Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_Certification;
@@ -2969,12 +2783,10 @@ class Handle_StepBasic_Certification : public Handle_MMgt_TShared {
 	return (StepBasic_Certification*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_Certification {
-	~Handle_StepBasic_Certification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Certification\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_Certification::~Handle_StepBasic_Certification %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_CalendarDate;
@@ -2999,12 +2811,10 @@ class Handle_StepBasic_CalendarDate : public Handle_StepBasic_Date {
 	return (StepBasic_CalendarDate*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_CalendarDate {
-	~Handle_StepBasic_CalendarDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CalendarDate\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_CalendarDate::~Handle_StepBasic_CalendarDate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndRatioUnit;
@@ -3029,12 +2839,10 @@ class Handle_StepBasic_ConversionBasedUnitAndRatioUnit : public Handle_StepBasic
 	return (StepBasic_ConversionBasedUnitAndRatioUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ConversionBasedUnitAndRatioUnit {
-	~Handle_StepBasic_ConversionBasedUnitAndRatioUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndRatioUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ConversionBasedUnitAndRatioUnit::~Handle_StepBasic_ConversionBasedUnitAndRatioUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SizeMember;
@@ -3059,12 +2867,10 @@ class Handle_StepBasic_SizeMember : public Handle_StepData_SelectReal {
 	return (StepBasic_SizeMember*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SizeMember {
-	~Handle_StepBasic_SizeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SizeMember\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SizeMember::~Handle_StepBasic_SizeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_HArray1OfApproval;
@@ -3089,12 +2895,10 @@ class Handle_StepBasic_HArray1OfApproval : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfApproval*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_HArray1OfApproval {
-	~Handle_StepBasic_HArray1OfApproval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfApproval\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_HArray1OfApproval::~Handle_StepBasic_HArray1OfApproval %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_HArray1OfPerson;
@@ -3119,12 +2923,10 @@ class Handle_StepBasic_HArray1OfPerson : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfPerson*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_HArray1OfPerson {
-	~Handle_StepBasic_HArray1OfPerson() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfPerson\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_HArray1OfPerson::~Handle_StepBasic_HArray1OfPerson %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ContractType;
@@ -3149,12 +2951,10 @@ class Handle_StepBasic_ContractType : public Handle_MMgt_TShared {
 	return (StepBasic_ContractType*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ContractType {
-	~Handle_StepBasic_ContractType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ContractType\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ContractType::~Handle_StepBasic_ContractType %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_Contract;
@@ -3179,12 +2979,10 @@ class Handle_StepBasic_Contract : public Handle_MMgt_TShared {
 	return (StepBasic_Contract*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_Contract {
-	~Handle_StepBasic_Contract() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Contract\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_Contract::~Handle_StepBasic_Contract %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_AreaUnit;
@@ -3209,12 +3007,10 @@ class Handle_StepBasic_AreaUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_AreaUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_AreaUnit {
-	~Handle_StepBasic_AreaUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_AreaUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_AreaUnit::~Handle_StepBasic_AreaUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_HArray1OfProductDefinition;
@@ -3239,12 +3035,10 @@ class Handle_StepBasic_HArray1OfProductDefinition : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfProductDefinition*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_HArray1OfProductDefinition {
-	~Handle_StepBasic_HArray1OfProductDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfProductDefinition\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_HArray1OfProductDefinition::~Handle_StepBasic_HArray1OfProductDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_HArray1OfProductContext;
@@ -3269,12 +3063,10 @@ class Handle_StepBasic_HArray1OfProductContext : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfProductContext*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_HArray1OfProductContext {
-	~Handle_StepBasic_HArray1OfProductContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfProductContext\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_HArray1OfProductContext::~Handle_StepBasic_HArray1OfProductContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndAreaUnit;
@@ -3299,12 +3091,10 @@ class Handle_StepBasic_ConversionBasedUnitAndAreaUnit : public Handle_StepBasic_
 	return (StepBasic_ConversionBasedUnitAndAreaUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ConversionBasedUnitAndAreaUnit {
-	~Handle_StepBasic_ConversionBasedUnitAndAreaUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndAreaUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ConversionBasedUnitAndAreaUnit::~Handle_StepBasic_ConversionBasedUnitAndAreaUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_RoleAssociation;
@@ -3329,12 +3119,10 @@ class Handle_StepBasic_RoleAssociation : public Handle_MMgt_TShared {
 	return (StepBasic_RoleAssociation*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_RoleAssociation {
-	~Handle_StepBasic_RoleAssociation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_RoleAssociation\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_RoleAssociation::~Handle_StepBasic_RoleAssociation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ContractAssignment;
@@ -3359,12 +3147,10 @@ class Handle_StepBasic_ContractAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_ContractAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ContractAssignment {
-	~Handle_StepBasic_ContractAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ContractAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ContractAssignment::~Handle_StepBasic_ContractAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_HArray1OfNamedUnit;
@@ -3389,12 +3175,10 @@ class Handle_StepBasic_HArray1OfNamedUnit : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfNamedUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_HArray1OfNamedUnit {
-	~Handle_StepBasic_HArray1OfNamedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfNamedUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_HArray1OfNamedUnit::~Handle_StepBasic_HArray1OfNamedUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_HArray1OfOrganization;
@@ -3419,12 +3203,10 @@ class Handle_StepBasic_HArray1OfOrganization : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfOrganization*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_HArray1OfOrganization {
-	~Handle_StepBasic_HArray1OfOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfOrganization\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_HArray1OfOrganization::~Handle_StepBasic_HArray1OfOrganization %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_PhysicallyModeledProductDefinition;
@@ -3449,12 +3231,10 @@ class Handle_StepBasic_PhysicallyModeledProductDefinition : public Handle_StepBa
 	return (StepBasic_PhysicallyModeledProductDefinition*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_PhysicallyModeledProductDefinition {
-	~Handle_StepBasic_PhysicallyModeledProductDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PhysicallyModeledProductDefinition\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_PhysicallyModeledProductDefinition::~Handle_StepBasic_PhysicallyModeledProductDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_OrganizationalAddress;
@@ -3479,12 +3259,10 @@ class Handle_StepBasic_OrganizationalAddress : public Handle_StepBasic_Address {
 	return (StepBasic_OrganizationalAddress*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_OrganizationalAddress {
-	~Handle_StepBasic_OrganizationalAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_OrganizationalAddress\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_OrganizationalAddress::~Handle_StepBasic_OrganizationalAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_EulerAngles;
@@ -3509,12 +3287,10 @@ class Handle_StepBasic_EulerAngles : public Handle_MMgt_TShared {
 	return (StepBasic_EulerAngles*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_EulerAngles {
-	~Handle_StepBasic_EulerAngles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_EulerAngles\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_EulerAngles::~Handle_StepBasic_EulerAngles %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_LocalTime;
@@ -3539,12 +3315,10 @@ class Handle_StepBasic_LocalTime : public Handle_MMgt_TShared {
 	return (StepBasic_LocalTime*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_LocalTime {
-	~Handle_StepBasic_LocalTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_LocalTime\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_LocalTime::~Handle_StepBasic_LocalTime %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SiUnitAndMassUnit;
@@ -3569,12 +3343,10 @@ class Handle_StepBasic_SiUnitAndMassUnit : public Handle_StepBasic_SiUnit {
 	return (StepBasic_SiUnitAndMassUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SiUnitAndMassUnit {
-	~Handle_StepBasic_SiUnitAndMassUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndMassUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SiUnitAndMassUnit::~Handle_StepBasic_SiUnitAndMassUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_CharacterizedObject;
@@ -3599,12 +3371,10 @@ class Handle_StepBasic_CharacterizedObject : public Handle_MMgt_TShared {
 	return (StepBasic_CharacterizedObject*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_CharacterizedObject {
-	~Handle_StepBasic_CharacterizedObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CharacterizedObject\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_CharacterizedObject::~Handle_StepBasic_CharacterizedObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_UncertaintyMeasureWithUnit;
@@ -3629,12 +3399,10 @@ class Handle_StepBasic_UncertaintyMeasureWithUnit : public Handle_StepBasic_Meas
 	return (StepBasic_UncertaintyMeasureWithUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_UncertaintyMeasureWithUnit {
-	~Handle_StepBasic_UncertaintyMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_UncertaintyMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_UncertaintyMeasureWithUnit::~Handle_StepBasic_UncertaintyMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ApprovalRole;
@@ -3659,12 +3427,10 @@ class Handle_StepBasic_ApprovalRole : public Handle_MMgt_TShared {
 	return (StepBasic_ApprovalRole*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ApprovalRole {
-	~Handle_StepBasic_ApprovalRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalRole\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ApprovalRole::~Handle_StepBasic_ApprovalRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_LengthMeasureWithUnit;
@@ -3689,12 +3455,10 @@ class Handle_StepBasic_LengthMeasureWithUnit : public Handle_StepBasic_MeasureWi
 	return (StepBasic_LengthMeasureWithUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_LengthMeasureWithUnit {
-	~Handle_StepBasic_LengthMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_LengthMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_LengthMeasureWithUnit::~Handle_StepBasic_LengthMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_CertificationType;
@@ -3719,12 +3483,10 @@ class Handle_StepBasic_CertificationType : public Handle_MMgt_TShared {
 	return (StepBasic_CertificationType*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_CertificationType {
-	~Handle_StepBasic_CertificationType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CertificationType\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_CertificationType::~Handle_StepBasic_CertificationType %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DerivedUnit;
@@ -3749,12 +3511,10 @@ class Handle_StepBasic_DerivedUnit : public Handle_MMgt_TShared {
 	return (StepBasic_DerivedUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DerivedUnit {
-	~Handle_StepBasic_DerivedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DerivedUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DerivedUnit::~Handle_StepBasic_DerivedUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_HArray1OfDocument;
@@ -3779,12 +3539,10 @@ class Handle_StepBasic_HArray1OfDocument : public Handle_MMgt_TShared {
 	return (StepBasic_HArray1OfDocument*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_HArray1OfDocument {
-	~Handle_StepBasic_HArray1OfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfDocument\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_HArray1OfDocument::~Handle_StepBasic_HArray1OfDocument %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_PlaneAngleUnit;
@@ -3809,12 +3567,10 @@ class Handle_StepBasic_PlaneAngleUnit : public Handle_StepBasic_NamedUnit {
 	return (StepBasic_PlaneAngleUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_PlaneAngleUnit {
-	~Handle_StepBasic_PlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PlaneAngleUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_PlaneAngleUnit::~Handle_StepBasic_PlaneAngleUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SiUnitAndLengthUnit;
@@ -3839,12 +3595,10 @@ class Handle_StepBasic_SiUnitAndLengthUnit : public Handle_StepBasic_SiUnit {
 	return (StepBasic_SiUnitAndLengthUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SiUnitAndLengthUnit {
-	~Handle_StepBasic_SiUnitAndLengthUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndLengthUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SiUnitAndLengthUnit::~Handle_StepBasic_SiUnitAndLengthUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ProductConceptContext;
@@ -3869,12 +3623,10 @@ class Handle_StepBasic_ProductConceptContext : public Handle_StepBasic_Applicati
 	return (StepBasic_ProductConceptContext*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ProductConceptContext {
-	~Handle_StepBasic_ProductConceptContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductConceptContext\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ProductConceptContext::~Handle_StepBasic_ProductConceptContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_SiUnitAndTimeUnit;
@@ -3899,12 +3651,10 @@ class Handle_StepBasic_SiUnitAndTimeUnit : public Handle_StepBasic_SiUnit {
 	return (StepBasic_SiUnitAndTimeUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_SiUnitAndTimeUnit {
-	~Handle_StepBasic_SiUnitAndTimeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndTimeUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_SiUnitAndTimeUnit::~Handle_StepBasic_SiUnitAndTimeUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DocumentFile;
@@ -3929,12 +3679,10 @@ class Handle_StepBasic_DocumentFile : public Handle_StepBasic_Document {
 	return (StepBasic_DocumentFile*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DocumentFile {
-	~Handle_StepBasic_DocumentFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentFile\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DocumentFile::~Handle_StepBasic_DocumentFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_WeekOfYearAndDayDate;
@@ -3959,12 +3707,10 @@ class Handle_StepBasic_WeekOfYearAndDayDate : public Handle_StepBasic_Date {
 	return (StepBasic_WeekOfYearAndDayDate*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_WeekOfYearAndDayDate {
-	~Handle_StepBasic_WeekOfYearAndDayDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_WeekOfYearAndDayDate\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_WeekOfYearAndDayDate::~Handle_StepBasic_WeekOfYearAndDayDate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit;
@@ -3989,12 +3735,10 @@ class Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit : public Handle_MMgt_
 	return (StepBasic_HArray1OfUncertaintyMeasureWithUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit {
-	~Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit::~Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_Action;
@@ -4019,12 +3763,10 @@ class Handle_StepBasic_Action : public Handle_MMgt_TShared {
 	return (StepBasic_Action*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_Action {
-	~Handle_StepBasic_Action() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Action\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_Action::~Handle_StepBasic_Action %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_Organization;
@@ -4049,12 +3791,10 @@ class Handle_StepBasic_Organization : public Handle_MMgt_TShared {
 	return (StepBasic_Organization*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_Organization {
-	~Handle_StepBasic_Organization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Organization\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_Organization::~Handle_StepBasic_Organization %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_TimeMeasureWithUnit;
@@ -4079,12 +3819,10 @@ class Handle_StepBasic_TimeMeasureWithUnit : public Handle_StepBasic_MeasureWith
 	return (StepBasic_TimeMeasureWithUnit*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_TimeMeasureWithUnit {
-	~Handle_StepBasic_TimeMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_TimeMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_TimeMeasureWithUnit::~Handle_StepBasic_TimeMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DimensionalExponents;
@@ -4109,12 +3847,10 @@ class Handle_StepBasic_DimensionalExponents : public Handle_MMgt_TShared {
 	return (StepBasic_DimensionalExponents*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DimensionalExponents {
-	~Handle_StepBasic_DimensionalExponents() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DimensionalExponents\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DimensionalExponents::~Handle_StepBasic_DimensionalExponents %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ApprovalPersonOrganization;
@@ -4139,12 +3875,10 @@ class Handle_StepBasic_ApprovalPersonOrganization : public Handle_MMgt_TShared {
 	return (StepBasic_ApprovalPersonOrganization*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ApprovalPersonOrganization {
-	~Handle_StepBasic_ApprovalPersonOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalPersonOrganization\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ApprovalPersonOrganization::~Handle_StepBasic_ApprovalPersonOrganization %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ApplicationProtocolDefinition;
@@ -4169,12 +3903,10 @@ class Handle_StepBasic_ApplicationProtocolDefinition : public Handle_MMgt_TShare
 	return (StepBasic_ApplicationProtocolDefinition*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ApplicationProtocolDefinition {
-	~Handle_StepBasic_ApplicationProtocolDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApplicationProtocolDefinition\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ApplicationProtocolDefinition::~Handle_StepBasic_ApplicationProtocolDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ApplicationContext;
@@ -4199,12 +3931,10 @@ class Handle_StepBasic_ApplicationContext : public Handle_MMgt_TShared {
 	return (StepBasic_ApplicationContext*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ApplicationContext {
-	~Handle_StepBasic_ApplicationContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApplicationContext\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ApplicationContext::~Handle_StepBasic_ApplicationContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_GeneralProperty;
@@ -4229,12 +3959,10 @@ class Handle_StepBasic_GeneralProperty : public Handle_MMgt_TShared {
 	return (StepBasic_GeneralProperty*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_GeneralProperty {
-	~Handle_StepBasic_GeneralProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_GeneralProperty\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_GeneralProperty::~Handle_StepBasic_GeneralProperty %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_DateTimeRole;
@@ -4259,12 +3987,10 @@ class Handle_StepBasic_DateTimeRole : public Handle_MMgt_TShared {
 	return (StepBasic_DateTimeRole*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_DateTimeRole {
-	~Handle_StepBasic_DateTimeRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DateTimeRole\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_DateTimeRole::~Handle_StepBasic_DateTimeRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ActionAssignment;
@@ -4289,12 +4015,10 @@ class Handle_StepBasic_ActionAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_ActionAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ActionAssignment {
-	~Handle_StepBasic_ActionAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ActionAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ActionAssignment::~Handle_StepBasic_ActionAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_ExternallyDefinedItem;
@@ -4319,12 +4043,10 @@ class Handle_StepBasic_ExternallyDefinedItem : public Handle_MMgt_TShared {
 	return (StepBasic_ExternallyDefinedItem*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_ExternallyDefinedItem {
-	~Handle_StepBasic_ExternallyDefinedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ExternallyDefinedItem\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_ExternallyDefinedItem::~Handle_StepBasic_ExternallyDefinedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor Handle_StepBasic_GroupAssignment;
@@ -4349,12 +4071,10 @@ class Handle_StepBasic_GroupAssignment : public Handle_MMgt_TShared {
 	return (StepBasic_GroupAssignment*)$self->Access();
 	}
 };
-%extend Handle_StepBasic_GroupAssignment {
-	~Handle_StepBasic_GroupAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_GroupAssignment\n");}
-	}
-};
+%feature("shadow") Handle_StepBasic_GroupAssignment::~Handle_StepBasic_GroupAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_MeasureWithUnit;
@@ -4390,12 +4110,10 @@ class StepBasic_MeasureWithUnit : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_MeasureWithUnit {
-	~StepBasic_MeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_MeasureWithUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_MeasureWithUnit::~StepBasic_MeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_PlaneAngleMeasureWithUnit;
@@ -4415,12 +4133,10 @@ class StepBasic_PlaneAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_PlaneAngleMeasureWithUnit {
-	~StepBasic_PlaneAngleMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_PlaneAngleMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_PlaneAngleMeasureWithUnit::~StepBasic_PlaneAngleMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_NameAssignment;
@@ -4448,12 +4164,10 @@ class StepBasic_NameAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_NameAssignment {
-	~StepBasic_NameAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_NameAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_NameAssignment::~StepBasic_NameAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DocumentReference;
@@ -4485,12 +4199,10 @@ class StepBasic_DocumentReference : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DocumentReference {
-	~StepBasic_DocumentReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentReference\n");}
-	}
-};
+%feature("shadow") StepBasic_DocumentReference::~StepBasic_DocumentReference %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductDefinitionFormation;
@@ -4526,12 +4238,10 @@ class StepBasic_ProductDefinitionFormation : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductDefinitionFormation {
-	~StepBasic_ProductDefinitionFormation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionFormation\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductDefinitionFormation::~StepBasic_ProductDefinitionFormation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DateAndTimeAssignment;
@@ -4563,12 +4273,10 @@ class StepBasic_DateAndTimeAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DateAndTimeAssignment {
-	~StepBasic_DateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DateAndTimeAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_DateAndTimeAssignment::~StepBasic_DateAndTimeAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_GeneralProperty;
@@ -4606,12 +4314,10 @@ class StepBasic_GeneralProperty : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_GeneralProperty {
-	~StepBasic_GeneralProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_GeneralProperty\n");}
-	}
-};
+%feature("shadow") StepBasic_GeneralProperty::~StepBasic_GeneralProperty %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_NamedUnit;
@@ -4639,12 +4345,10 @@ class StepBasic_NamedUnit : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_NamedUnit {
-	~StepBasic_NamedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_NamedUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_NamedUnit::~StepBasic_NamedUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ConversionBasedUnit;
@@ -4674,12 +4378,10 @@ class StepBasic_ConversionBasedUnit : public StepBasic_NamedUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ConversionBasedUnit {
-	~StepBasic_ConversionBasedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_ConversionBasedUnit::~StepBasic_ConversionBasedUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ConversionBasedUnitAndAreaUnit;
@@ -4703,12 +4405,10 @@ class StepBasic_ConversionBasedUnitAndAreaUnit : public StepBasic_ConversionBase
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ConversionBasedUnitAndAreaUnit {
-	~StepBasic_ConversionBasedUnitAndAreaUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndAreaUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_ConversionBasedUnitAndAreaUnit::~StepBasic_ConversionBasedUnitAndAreaUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DocumentUsageConstraint;
@@ -4744,12 +4444,10 @@ class StepBasic_DocumentUsageConstraint : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DocumentUsageConstraint {
-	~StepBasic_DocumentUsageConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentUsageConstraint\n");}
-	}
-};
+%feature("shadow") StepBasic_DocumentUsageConstraint::~StepBasic_DocumentUsageConstraint %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Array1OfProduct;
@@ -4787,12 +4485,10 @@ class StepBasic_Array1OfProduct {
 		Handle_StepBasic_Product & operator()(const Standard_Integer Index);
 
 };
-%extend StepBasic_Array1OfProduct {
-	~StepBasic_Array1OfProduct() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfProduct\n");}
-	}
-};
+%feature("shadow") StepBasic_Array1OfProduct::~StepBasic_Array1OfProduct %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_TimeMeasureWithUnit;
@@ -4814,12 +4510,10 @@ class StepBasic_TimeMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_TimeMeasureWithUnit {
-	~StepBasic_TimeMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_TimeMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_TimeMeasureWithUnit::~StepBasic_TimeMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductCategory;
@@ -4855,12 +4549,10 @@ class StepBasic_ProductCategory : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductCategory {
-	~StepBasic_ProductCategory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductCategory\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductCategory::~StepBasic_ProductCategory %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DateRole;
@@ -4888,12 +4580,10 @@ class StepBasic_DateRole : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DateRole {
-	~StepBasic_DateRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DateRole\n");}
-	}
-};
+%feature("shadow") StepBasic_DateRole::~StepBasic_DateRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_RoleSelect;
@@ -4927,12 +4617,10 @@ class StepBasic_RoleSelect : public StepData_SelectType {
 		Handle_StepBasic_SecurityClassificationAssignment SecurityClassificationAssignment() const;
 
 };
-%extend StepBasic_RoleSelect {
-	~StepBasic_RoleSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_RoleSelect\n");}
-	}
-};
+%feature("shadow") StepBasic_RoleSelect::~StepBasic_RoleSelect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ApplicationContextElement;
@@ -4964,12 +4652,10 @@ class StepBasic_ApplicationContextElement : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ApplicationContextElement {
-	~StepBasic_ApplicationContextElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ApplicationContextElement\n");}
-	}
-};
+%feature("shadow") StepBasic_ApplicationContextElement::~StepBasic_ApplicationContextElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductDefinitionContext;
@@ -4995,12 +4681,10 @@ class StepBasic_ProductDefinitionContext : public StepBasic_ApplicationContextEl
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductDefinitionContext {
-	~StepBasic_ProductDefinitionContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionContext\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductDefinitionContext::~StepBasic_ProductDefinitionContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_RatioUnit;
@@ -5022,12 +4706,10 @@ class StepBasic_RatioUnit : public StepBasic_NamedUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_RatioUnit {
-	~StepBasic_RatioUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_RatioUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_RatioUnit::~StepBasic_RatioUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Array1OfProductDefinition;
@@ -5065,12 +4747,10 @@ class StepBasic_Array1OfProductDefinition {
 		Handle_StepBasic_ProductDefinition & operator()(const Standard_Integer Index);
 
 };
-%extend StepBasic_Array1OfProductDefinition {
-	~StepBasic_Array1OfProductDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfProductDefinition\n");}
-	}
-};
+%feature("shadow") StepBasic_Array1OfProductDefinition::~StepBasic_Array1OfProductDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SecurityClassificationLevel;
@@ -5098,12 +4778,10 @@ class StepBasic_SecurityClassificationLevel : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SecurityClassificationLevel {
-	~StepBasic_SecurityClassificationLevel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SecurityClassificationLevel\n");}
-	}
-};
+%feature("shadow") StepBasic_SecurityClassificationLevel::~StepBasic_SecurityClassificationLevel %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Date;
@@ -5131,12 +4809,10 @@ class StepBasic_Date : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_Date {
-	~StepBasic_Date() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Date\n");}
-	}
-};
+%feature("shadow") StepBasic_Date::~StepBasic_Date %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DesignContext;
@@ -5158,12 +4834,10 @@ class StepBasic_DesignContext : public StepBasic_ProductDefinitionContext {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DesignContext {
-	~StepBasic_DesignContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DesignContext\n");}
-	}
-};
+%feature("shadow") StepBasic_DesignContext::~StepBasic_DesignContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ActionRequestSolution;
@@ -5195,12 +4869,10 @@ class StepBasic_ActionRequestSolution : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ActionRequestSolution {
-	~StepBasic_ActionRequestSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ActionRequestSolution\n");}
-	}
-};
+%feature("shadow") StepBasic_ActionRequestSolution::~StepBasic_ActionRequestSolution %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SiUnit;
@@ -5242,12 +4914,10 @@ class StepBasic_SiUnit : public StepBasic_NamedUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SiUnit {
-	~StepBasic_SiUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_SiUnit::~StepBasic_SiUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SiUnitAndPlaneAngleUnit;
@@ -5271,12 +4941,10 @@ class StepBasic_SiUnitAndPlaneAngleUnit : public StepBasic_SiUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SiUnitAndPlaneAngleUnit {
-	~StepBasic_SiUnitAndPlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndPlaneAngleUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_SiUnitAndPlaneAngleUnit::~StepBasic_SiUnitAndPlaneAngleUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DocumentRelationship;
@@ -5316,12 +4984,10 @@ class StepBasic_DocumentRelationship : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DocumentRelationship {
-	~StepBasic_DocumentRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentRelationship\n");}
-	}
-};
+%feature("shadow") StepBasic_DocumentRelationship::~StepBasic_DocumentRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DocumentProductAssociation;
@@ -5363,12 +5029,10 @@ class StepBasic_DocumentProductAssociation : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DocumentProductAssociation {
-	~StepBasic_DocumentProductAssociation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentProductAssociation\n");}
-	}
-};
+%feature("shadow") StepBasic_DocumentProductAssociation::~StepBasic_DocumentProductAssociation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ObjectRole;
@@ -5402,12 +5066,10 @@ class StepBasic_ObjectRole : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ObjectRole {
-	~StepBasic_ObjectRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ObjectRole\n");}
-	}
-};
+%feature("shadow") StepBasic_ObjectRole::~StepBasic_ObjectRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_LengthUnit;
@@ -5429,12 +5091,10 @@ class StepBasic_LengthUnit : public StepBasic_NamedUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_LengthUnit {
-	~StepBasic_LengthUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_LengthUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_LengthUnit::~StepBasic_LengthUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SiUnitAndThermodynamicTemperatureUnit;
@@ -5464,12 +5124,10 @@ class StepBasic_SiUnitAndThermodynamicTemperatureUnit : public StepBasic_SiUnit 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SiUnitAndThermodynamicTemperatureUnit {
-	~StepBasic_SiUnitAndThermodynamicTemperatureUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndThermodynamicTemperatureUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_SiUnitAndThermodynamicTemperatureUnit::~StepBasic_SiUnitAndThermodynamicTemperatureUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SiUnitAndTimeUnit;
@@ -5499,12 +5157,10 @@ class StepBasic_SiUnitAndTimeUnit : public StepBasic_SiUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SiUnitAndTimeUnit {
-	~StepBasic_SiUnitAndTimeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndTimeUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_SiUnitAndTimeUnit::~StepBasic_SiUnitAndTimeUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ConversionBasedUnitAndMassUnit;
@@ -5534,12 +5190,10 @@ class StepBasic_ConversionBasedUnitAndMassUnit : public StepBasic_ConversionBase
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ConversionBasedUnitAndMassUnit {
-	~StepBasic_ConversionBasedUnitAndMassUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndMassUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_ConversionBasedUnitAndMassUnit::~StepBasic_ConversionBasedUnitAndMassUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DateTimeSelect;
@@ -5557,12 +5211,10 @@ class StepBasic_DateTimeSelect : public StepData_SelectType {
 		Handle_StepBasic_DateAndTime DateAndTime() const;
 
 };
-%extend StepBasic_DateTimeSelect {
-	~StepBasic_DateTimeSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DateTimeSelect\n");}
-	}
-};
+%feature("shadow") StepBasic_DateTimeSelect::~StepBasic_DateTimeSelect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_AreaUnit;
@@ -5584,12 +5236,10 @@ class StepBasic_AreaUnit : public StepBasic_NamedUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_AreaUnit {
-	~StepBasic_AreaUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_AreaUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_AreaUnit::~StepBasic_AreaUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Approval;
@@ -5621,12 +5271,10 @@ class StepBasic_Approval : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_Approval {
-	~StepBasic_Approval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Approval\n");}
-	}
-};
+%feature("shadow") StepBasic_Approval::~StepBasic_Approval %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_HArray1OfProductContext;
@@ -5668,12 +5316,10 @@ class StepBasic_HArray1OfProductContext : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_HArray1OfProductContext {
-	~StepBasic_HArray1OfProductContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfProductContext\n");}
-	}
-};
+%feature("shadow") StepBasic_HArray1OfProductContext::~StepBasic_HArray1OfProductContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ApplicationProtocolDefinition;
@@ -5713,12 +5359,10 @@ class StepBasic_ApplicationProtocolDefinition : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ApplicationProtocolDefinition {
-	~StepBasic_ApplicationProtocolDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ApplicationProtocolDefinition\n");}
-	}
-};
+%feature("shadow") StepBasic_ApplicationProtocolDefinition::~StepBasic_ApplicationProtocolDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Array1OfOrganization;
@@ -5756,12 +5400,10 @@ class StepBasic_Array1OfOrganization {
 		Handle_StepBasic_Organization & operator()(const Standard_Integer Index);
 
 };
-%extend StepBasic_Array1OfOrganization {
-	~StepBasic_Array1OfOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfOrganization\n");}
-	}
-};
+%feature("shadow") StepBasic_Array1OfOrganization::~StepBasic_Array1OfOrganization %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_PlaneAngleUnit;
@@ -5783,12 +5425,10 @@ class StepBasic_PlaneAngleUnit : public StepBasic_NamedUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_PlaneAngleUnit {
-	~StepBasic_PlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_PlaneAngleUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_PlaneAngleUnit::~StepBasic_PlaneAngleUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Address;
@@ -5908,12 +5548,10 @@ class StepBasic_Address : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_Address {
-	~StepBasic_Address() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Address\n");}
-	}
-};
+%feature("shadow") StepBasic_Address::~StepBasic_Address %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ApprovalAssignment;
@@ -5941,12 +5579,10 @@ class StepBasic_ApprovalAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ApprovalAssignment {
-	~StepBasic_ApprovalAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_ApprovalAssignment::~StepBasic_ApprovalAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Array1OfApproval;
@@ -5984,12 +5620,10 @@ class StepBasic_Array1OfApproval {
 		Handle_StepBasic_Approval & operator()(const Standard_Integer Index);
 
 };
-%extend StepBasic_Array1OfApproval {
-	~StepBasic_Array1OfApproval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfApproval\n");}
-	}
-};
+%feature("shadow") StepBasic_Array1OfApproval::~StepBasic_Array1OfApproval %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ConversionBasedUnitAndTimeUnit;
@@ -6019,12 +5653,10 @@ class StepBasic_ConversionBasedUnitAndTimeUnit : public StepBasic_ConversionBase
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ConversionBasedUnitAndTimeUnit {
-	~StepBasic_ConversionBasedUnitAndTimeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndTimeUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_ConversionBasedUnitAndTimeUnit::~StepBasic_ConversionBasedUnitAndTimeUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ConversionBasedUnitAndPlaneAngleUnit;
@@ -6054,12 +5686,10 @@ class StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public StepBasic_Conversi
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ConversionBasedUnitAndPlaneAngleUnit {
-	~StepBasic_ConversionBasedUnitAndPlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndPlaneAngleUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_ConversionBasedUnitAndPlaneAngleUnit::~StepBasic_ConversionBasedUnitAndPlaneAngleUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductRelatedProductCategory;
@@ -6093,12 +5723,10 @@ class StepBasic_ProductRelatedProductCategory : public StepBasic_ProductCategory
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductRelatedProductCategory {
-	~StepBasic_ProductRelatedProductCategory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductRelatedProductCategory\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductRelatedProductCategory::~StepBasic_ProductRelatedProductCategory %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ConversionBasedUnitAndRatioUnit;
@@ -6128,12 +5756,10 @@ class StepBasic_ConversionBasedUnitAndRatioUnit : public StepBasic_ConversionBas
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ConversionBasedUnitAndRatioUnit {
-	~StepBasic_ConversionBasedUnitAndRatioUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndRatioUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_ConversionBasedUnitAndRatioUnit::~StepBasic_ConversionBasedUnitAndRatioUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Array1OfPerson;
@@ -6171,12 +5797,10 @@ class StepBasic_Array1OfPerson {
 		Handle_StepBasic_Person & operator()(const Standard_Integer Index);
 
 };
-%extend StepBasic_Array1OfPerson {
-	~StepBasic_Array1OfPerson() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfPerson\n");}
-	}
-};
+%feature("shadow") StepBasic_Array1OfPerson::~StepBasic_Array1OfPerson %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_RoleAssociation;
@@ -6208,12 +5832,10 @@ class StepBasic_RoleAssociation : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_RoleAssociation {
-	~StepBasic_RoleAssociation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_RoleAssociation\n");}
-	}
-};
+%feature("shadow") StepBasic_RoleAssociation::~StepBasic_RoleAssociation %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ContractAssignment;
@@ -6241,12 +5863,10 @@ class StepBasic_ContractAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ContractAssignment {
-	~StepBasic_ContractAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ContractAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_ContractAssignment::~StepBasic_ContractAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_WeekOfYearAndDayDate;
@@ -6284,12 +5904,10 @@ class StepBasic_WeekOfYearAndDayDate : public StepBasic_Date {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_WeekOfYearAndDayDate {
-	~StepBasic_WeekOfYearAndDayDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_WeekOfYearAndDayDate\n");}
-	}
-};
+%feature("shadow") StepBasic_WeekOfYearAndDayDate::~StepBasic_WeekOfYearAndDayDate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Effectivity;
@@ -6317,12 +5935,10 @@ class StepBasic_Effectivity : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_Effectivity {
-	~StepBasic_Effectivity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Effectivity\n");}
-	}
-};
+%feature("shadow") StepBasic_Effectivity::~StepBasic_Effectivity %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductDefinitionEffectivity;
@@ -6348,12 +5964,10 @@ class StepBasic_ProductDefinitionEffectivity : public StepBasic_Effectivity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductDefinitionEffectivity {
-	~StepBasic_ProductDefinitionEffectivity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionEffectivity\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductDefinitionEffectivity::~StepBasic_ProductDefinitionEffectivity %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DocumentType;
@@ -6381,12 +5995,10 @@ class StepBasic_DocumentType : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DocumentType {
-	~StepBasic_DocumentType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentType\n");}
-	}
-};
+%feature("shadow") StepBasic_DocumentType::~StepBasic_DocumentType %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_HArray1OfOrganization;
@@ -6428,12 +6040,10 @@ class StepBasic_HArray1OfOrganization : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_HArray1OfOrganization {
-	~StepBasic_HArray1OfOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfOrganization\n");}
-	}
-};
+%feature("shadow") StepBasic_HArray1OfOrganization::~StepBasic_HArray1OfOrganization %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_EulerAngles;
@@ -6461,12 +6071,10 @@ class StepBasic_EulerAngles : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_EulerAngles {
-	~StepBasic_EulerAngles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_EulerAngles\n");}
-	}
-};
+%feature("shadow") StepBasic_EulerAngles::~StepBasic_EulerAngles %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_CalendarDate;
@@ -6500,12 +6108,10 @@ class StepBasic_CalendarDate : public StepBasic_Date {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_CalendarDate {
-	~StepBasic_CalendarDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_CalendarDate\n");}
-	}
-};
+%feature("shadow") StepBasic_CalendarDate::~StepBasic_CalendarDate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_OrganizationRole;
@@ -6533,12 +6139,10 @@ class StepBasic_OrganizationRole : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_OrganizationRole {
-	~StepBasic_OrganizationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_OrganizationRole\n");}
-	}
-};
+%feature("shadow") StepBasic_OrganizationRole::~StepBasic_OrganizationRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DerivedUnitElement;
@@ -6570,12 +6174,10 @@ class StepBasic_DerivedUnitElement : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DerivedUnitElement {
-	~StepBasic_DerivedUnitElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DerivedUnitElement\n");}
-	}
-};
+%feature("shadow") StepBasic_DerivedUnitElement::~StepBasic_DerivedUnitElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductType;
@@ -6597,12 +6199,10 @@ class StepBasic_ProductType : public StepBasic_ProductRelatedProductCategory {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductType {
-	~StepBasic_ProductType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductType\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductType::~StepBasic_ProductType %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ApprovalStatus;
@@ -6630,12 +6230,10 @@ class StepBasic_ApprovalStatus : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ApprovalStatus {
-	~StepBasic_ApprovalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalStatus\n");}
-	}
-};
+%feature("shadow") StepBasic_ApprovalStatus::~StepBasic_ApprovalStatus %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_LocalTime;
@@ -6683,12 +6281,10 @@ class StepBasic_LocalTime : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_LocalTime {
-	~StepBasic_LocalTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_LocalTime\n");}
-	}
-};
+%feature("shadow") StepBasic_LocalTime::~StepBasic_LocalTime %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SiUnitAndMassUnit;
@@ -6718,12 +6314,10 @@ class StepBasic_SiUnitAndMassUnit : public StepBasic_SiUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SiUnitAndMassUnit {
-	~StepBasic_SiUnitAndMassUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndMassUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_SiUnitAndMassUnit::~StepBasic_SiUnitAndMassUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_PersonalAddress;
@@ -6761,12 +6355,10 @@ class StepBasic_PersonalAddress : public StepBasic_Address {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_PersonalAddress {
-	~StepBasic_PersonalAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_PersonalAddress\n");}
-	}
-};
+%feature("shadow") StepBasic_PersonalAddress::~StepBasic_PersonalAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_CertificationType;
@@ -6794,12 +6386,10 @@ class StepBasic_CertificationType : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_CertificationType {
-	~StepBasic_CertificationType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_CertificationType\n");}
-	}
-};
+%feature("shadow") StepBasic_CertificationType::~StepBasic_CertificationType %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_MeasureValueMember;
@@ -6827,12 +6417,10 @@ class StepBasic_MeasureValueMember : public StepData_SelectReal {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_MeasureValueMember {
-	~StepBasic_MeasureValueMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_MeasureValueMember\n");}
-	}
-};
+%feature("shadow") StepBasic_MeasureValueMember::~StepBasic_MeasureValueMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductDefinitionRelationship;
@@ -6878,12 +6466,10 @@ class StepBasic_ProductDefinitionRelationship : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductDefinitionRelationship {
-	~StepBasic_ProductDefinitionRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionRelationship\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductDefinitionRelationship::~StepBasic_ProductDefinitionRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Product;
@@ -6927,12 +6513,10 @@ class StepBasic_Product : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_Product {
-	~StepBasic_Product() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Product\n");}
-	}
-};
+%feature("shadow") StepBasic_Product::~StepBasic_Product %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ConversionBasedUnitAndVolumeUnit;
@@ -6958,12 +6542,10 @@ class StepBasic_ConversionBasedUnitAndVolumeUnit : public StepBasic_ConversionBa
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ConversionBasedUnitAndVolumeUnit {
-	~StepBasic_ConversionBasedUnitAndVolumeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndVolumeUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_ConversionBasedUnitAndVolumeUnit::~StepBasic_ConversionBasedUnitAndVolumeUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_CoordinatedUniversalTimeOffset;
@@ -7003,12 +6585,10 @@ class StepBasic_CoordinatedUniversalTimeOffset : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_CoordinatedUniversalTimeOffset {
-	~StepBasic_CoordinatedUniversalTimeOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_CoordinatedUniversalTimeOffset\n");}
-	}
-};
+%feature("shadow") StepBasic_CoordinatedUniversalTimeOffset::~StepBasic_CoordinatedUniversalTimeOffset %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Group;
@@ -7042,12 +6622,10 @@ class StepBasic_Group : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_Group {
-	~StepBasic_Group() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Group\n");}
-	}
-};
+%feature("shadow") StepBasic_Group::~StepBasic_Group %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ApprovalDateTime;
@@ -7079,12 +6657,10 @@ class StepBasic_ApprovalDateTime : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ApprovalDateTime {
-	~StepBasic_ApprovalDateTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalDateTime\n");}
-	}
-};
+%feature("shadow") StepBasic_ApprovalDateTime::~StepBasic_ApprovalDateTime %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ApprovalRole;
@@ -7112,12 +6688,10 @@ class StepBasic_ApprovalRole : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ApprovalRole {
-	~StepBasic_ApprovalRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalRole\n");}
-	}
-};
+%feature("shadow") StepBasic_ApprovalRole::~StepBasic_ApprovalRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_GroupRelationship;
@@ -7159,12 +6733,10 @@ class StepBasic_GroupRelationship : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_GroupRelationship {
-	~StepBasic_GroupRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_GroupRelationship\n");}
-	}
-};
+%feature("shadow") StepBasic_GroupRelationship::~StepBasic_GroupRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SecurityClassificationAssignment;
@@ -7192,12 +6764,10 @@ class StepBasic_SecurityClassificationAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SecurityClassificationAssignment {
-	~StepBasic_SecurityClassificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SecurityClassificationAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_SecurityClassificationAssignment::~StepBasic_SecurityClassificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductOrFormationOrDefinition;
@@ -7215,12 +6785,10 @@ class StepBasic_ProductOrFormationOrDefinition : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinition ProductDefinition() const;
 
 };
-%extend StepBasic_ProductOrFormationOrDefinition {
-	~StepBasic_ProductOrFormationOrDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductOrFormationOrDefinition\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductOrFormationOrDefinition::~StepBasic_ProductOrFormationOrDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SizeMember;
@@ -7248,12 +6816,10 @@ class StepBasic_SizeMember : public StepData_SelectReal {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SizeMember {
-	~StepBasic_SizeMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SizeMember\n");}
-	}
-};
+%feature("shadow") StepBasic_SizeMember::~StepBasic_SizeMember %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SiUnitAndSolidAngleUnit;
@@ -7283,12 +6849,10 @@ class StepBasic_SiUnitAndSolidAngleUnit : public StepBasic_SiUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SiUnitAndSolidAngleUnit {
-	~StepBasic_SiUnitAndSolidAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndSolidAngleUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_SiUnitAndSolidAngleUnit::~StepBasic_SiUnitAndSolidAngleUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ThermodynamicTemperatureUnit;
@@ -7310,12 +6874,10 @@ class StepBasic_ThermodynamicTemperatureUnit : public StepBasic_NamedUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ThermodynamicTemperatureUnit {
-	~StepBasic_ThermodynamicTemperatureUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ThermodynamicTemperatureUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_ThermodynamicTemperatureUnit::~StepBasic_ThermodynamicTemperatureUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DateAndTime;
@@ -7347,12 +6909,10 @@ class StepBasic_DateAndTime : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DateAndTime {
-	~StepBasic_DateAndTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DateAndTime\n");}
-	}
-};
+%feature("shadow") StepBasic_DateAndTime::~StepBasic_DateAndTime %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_OrganizationalAddress;
@@ -7390,12 +6950,10 @@ class StepBasic_OrganizationalAddress : public StepBasic_Address {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_OrganizationalAddress {
-	~StepBasic_OrganizationalAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_OrganizationalAddress\n");}
-	}
-};
+%feature("shadow") StepBasic_OrganizationalAddress::~StepBasic_OrganizationalAddress %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SiUnitAndRatioUnit;
@@ -7425,12 +6983,10 @@ class StepBasic_SiUnitAndRatioUnit : public StepBasic_SiUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SiUnitAndRatioUnit {
-	~StepBasic_SiUnitAndRatioUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndRatioUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_SiUnitAndRatioUnit::~StepBasic_SiUnitAndRatioUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductDefinitionFormationRelationship;
@@ -7474,12 +7030,10 @@ class StepBasic_ProductDefinitionFormationRelationship : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductDefinitionFormationRelationship {
-	~StepBasic_ProductDefinitionFormationRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionFormationRelationship\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductDefinitionFormationRelationship::~StepBasic_ProductDefinitionFormationRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SiUnitAndAreaUnit;
@@ -7509,12 +7063,10 @@ class StepBasic_SiUnitAndAreaUnit : public StepBasic_SiUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SiUnitAndAreaUnit {
-	~StepBasic_SiUnitAndAreaUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndAreaUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_SiUnitAndAreaUnit::~StepBasic_SiUnitAndAreaUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Array1OfProductContext;
@@ -7552,12 +7104,10 @@ class StepBasic_Array1OfProductContext {
 		Handle_StepBasic_ProductContext & operator()(const Standard_Integer Index);
 
 };
-%extend StepBasic_Array1OfProductContext {
-	~StepBasic_Array1OfProductContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfProductContext\n");}
-	}
-};
+%feature("shadow") StepBasic_Array1OfProductContext::~StepBasic_Array1OfProductContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_HArray1OfNamedUnit;
@@ -7599,12 +7149,10 @@ class StepBasic_HArray1OfNamedUnit : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_HArray1OfNamedUnit {
-	~StepBasic_HArray1OfNamedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfNamedUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_HArray1OfNamedUnit::~StepBasic_HArray1OfNamedUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_PersonAndOrganizationRole;
@@ -7632,12 +7180,10 @@ class StepBasic_PersonAndOrganizationRole : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_PersonAndOrganizationRole {
-	~StepBasic_PersonAndOrganizationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_PersonAndOrganizationRole\n");}
-	}
-};
+%feature("shadow") StepBasic_PersonAndOrganizationRole::~StepBasic_PersonAndOrganizationRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Action;
@@ -7675,12 +7221,10 @@ class StepBasic_Action : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_Action {
-	~StepBasic_Action() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Action\n");}
-	}
-};
+%feature("shadow") StepBasic_Action::~StepBasic_Action %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Unit;
@@ -7696,12 +7240,10 @@ class StepBasic_Unit : public StepData_SelectType {
 		Handle_StepBasic_DerivedUnit DerivedUnit() const;
 
 };
-%extend StepBasic_Unit {
-	~StepBasic_Unit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Unit\n");}
-	}
-};
+%feature("shadow") StepBasic_Unit::~StepBasic_Unit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SolidAngleUnit;
@@ -7723,12 +7265,10 @@ class StepBasic_SolidAngleUnit : public StepBasic_NamedUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SolidAngleUnit {
-	~StepBasic_SolidAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SolidAngleUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_SolidAngleUnit::~StepBasic_SolidAngleUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_PersonOrganizationSelect;
@@ -7746,12 +7286,10 @@ class StepBasic_PersonOrganizationSelect : public StepData_SelectType {
 		Handle_StepBasic_PersonAndOrganization PersonAndOrganization() const;
 
 };
-%extend StepBasic_PersonOrganizationSelect {
-	~StepBasic_PersonOrganizationSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_PersonOrganizationSelect\n");}
-	}
-};
+%feature("shadow") StepBasic_PersonOrganizationSelect::~StepBasic_PersonOrganizationSelect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ConversionBasedUnitAndSolidAngleUnit;
@@ -7781,12 +7319,10 @@ class StepBasic_ConversionBasedUnitAndSolidAngleUnit : public StepBasic_Conversi
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ConversionBasedUnitAndSolidAngleUnit {
-	~StepBasic_ConversionBasedUnitAndSolidAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndSolidAngleUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_ConversionBasedUnitAndSolidAngleUnit::~StepBasic_ConversionBasedUnitAndSolidAngleUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Certification;
@@ -7822,12 +7358,10 @@ class StepBasic_Certification : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_Certification {
-	~StepBasic_Certification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Certification\n");}
-	}
-};
+%feature("shadow") StepBasic_Certification::~StepBasic_Certification %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_VersionedActionRequest;
@@ -7869,12 +7403,10 @@ class StepBasic_VersionedActionRequest : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_VersionedActionRequest {
-	~StepBasic_VersionedActionRequest() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_VersionedActionRequest\n");}
-	}
-};
+%feature("shadow") StepBasic_VersionedActionRequest::~StepBasic_VersionedActionRequest %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_GroupAssignment;
@@ -7902,12 +7434,10 @@ class StepBasic_GroupAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_GroupAssignment {
-	~StepBasic_GroupAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_GroupAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_GroupAssignment::~StepBasic_GroupAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ActionAssignment;
@@ -7935,12 +7465,10 @@ class StepBasic_ActionAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ActionAssignment {
-	~StepBasic_ActionAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ActionAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_ActionAssignment::~StepBasic_ActionAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductDefinitionFormationWithSpecifiedSource;
@@ -7970,12 +7498,10 @@ class StepBasic_ProductDefinitionFormationWithSpecifiedSource : public StepBasic
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductDefinitionFormationWithSpecifiedSource {
-	~StepBasic_ProductDefinitionFormationWithSpecifiedSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionFormationWithSpecifiedSource\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductDefinitionFormationWithSpecifiedSource::~StepBasic_ProductDefinitionFormationWithSpecifiedSource %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ConversionBasedUnitAndLengthUnit;
@@ -8005,12 +7531,10 @@ class StepBasic_ConversionBasedUnitAndLengthUnit : public StepBasic_ConversionBa
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ConversionBasedUnitAndLengthUnit {
-	~StepBasic_ConversionBasedUnitAndLengthUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndLengthUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_ConversionBasedUnitAndLengthUnit::~StepBasic_ConversionBasedUnitAndLengthUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_OrganizationAssignment;
@@ -8042,12 +7566,10 @@ class StepBasic_OrganizationAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_OrganizationAssignment {
-	~StepBasic_OrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_OrganizationAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_OrganizationAssignment::~StepBasic_OrganizationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_OrdinalDate;
@@ -8077,12 +7599,10 @@ class StepBasic_OrdinalDate : public StepBasic_Date {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_OrdinalDate {
-	~StepBasic_OrdinalDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_OrdinalDate\n");}
-	}
-};
+%feature("shadow") StepBasic_OrdinalDate::~StepBasic_OrdinalDate %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ExternalSource;
@@ -8110,12 +7630,10 @@ class StepBasic_ExternalSource : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ExternalSource {
-	~StepBasic_ExternalSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ExternalSource\n");}
-	}
-};
+%feature("shadow") StepBasic_ExternalSource::~StepBasic_ExternalSource %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DateTimeRole;
@@ -8143,12 +7661,10 @@ class StepBasic_DateTimeRole : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DateTimeRole {
-	~StepBasic_DateTimeRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DateTimeRole\n");}
-	}
-};
+%feature("shadow") StepBasic_DateTimeRole::~StepBasic_DateTimeRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Document;
@@ -8190,12 +7706,10 @@ class StepBasic_Document : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_Document {
-	~StepBasic_Document() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Document\n");}
-	}
-};
+%feature("shadow") StepBasic_Document::~StepBasic_Document %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DocumentFile;
@@ -8221,12 +7735,10 @@ class StepBasic_DocumentFile : public StepBasic_Document {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DocumentFile {
-	~StepBasic_DocumentFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentFile\n");}
-	}
-};
+%feature("shadow") StepBasic_DocumentFile::~StepBasic_DocumentFile %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ExternallyDefinedItem;
@@ -8258,12 +7770,10 @@ class StepBasic_ExternallyDefinedItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ExternallyDefinedItem {
-	~StepBasic_ExternallyDefinedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ExternallyDefinedItem\n");}
-	}
-};
+%feature("shadow") StepBasic_ExternallyDefinedItem::~StepBasic_ExternallyDefinedItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SecurityClassification;
@@ -8299,12 +7809,10 @@ class StepBasic_SecurityClassification : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SecurityClassification {
-	~StepBasic_SecurityClassification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SecurityClassification\n");}
-	}
-};
+%feature("shadow") StepBasic_SecurityClassification::~StepBasic_SecurityClassification %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductDefinition;
@@ -8344,12 +7852,10 @@ class StepBasic_ProductDefinition : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductDefinition {
-	~StepBasic_ProductDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinition\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductDefinition::~StepBasic_ProductDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductDefinitionWithAssociatedDocuments;
@@ -8381,12 +7887,10 @@ class StepBasic_ProductDefinitionWithAssociatedDocuments : public StepBasic_Prod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductDefinitionWithAssociatedDocuments {
-	~StepBasic_ProductDefinitionWithAssociatedDocuments() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionWithAssociatedDocuments\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductDefinitionWithAssociatedDocuments::~StepBasic_ProductDefinitionWithAssociatedDocuments %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Contract;
@@ -8422,12 +7926,10 @@ class StepBasic_Contract : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_Contract {
-	~StepBasic_Contract() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Contract\n");}
-	}
-};
+%feature("shadow") StepBasic_Contract::~StepBasic_Contract %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SolidAngleMeasureWithUnit;
@@ -8449,12 +7951,10 @@ class StepBasic_SolidAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SolidAngleMeasureWithUnit {
-	~StepBasic_SolidAngleMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SolidAngleMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_SolidAngleMeasureWithUnit::~StepBasic_SolidAngleMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DimensionalExponents;
@@ -8506,12 +8006,10 @@ class StepBasic_DimensionalExponents : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DimensionalExponents {
-	~StepBasic_DimensionalExponents() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DimensionalExponents\n");}
-	}
-};
+%feature("shadow") StepBasic_DimensionalExponents::~StepBasic_DimensionalExponents %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Organization;
@@ -8551,12 +8049,10 @@ class StepBasic_Organization : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_Organization {
-	~StepBasic_Organization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Organization\n");}
-	}
-};
+%feature("shadow") StepBasic_Organization::~StepBasic_Organization %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_LengthMeasureWithUnit;
@@ -8578,12 +8074,10 @@ class StepBasic_LengthMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_LengthMeasureWithUnit {
-	~StepBasic_LengthMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_LengthMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_LengthMeasureWithUnit::~StepBasic_LengthMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DocumentRepresentationType;
@@ -8615,12 +8109,10 @@ class StepBasic_DocumentRepresentationType : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DocumentRepresentationType {
-	~StepBasic_DocumentRepresentationType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentRepresentationType\n");}
-	}
-};
+%feature("shadow") StepBasic_DocumentRepresentationType::~StepBasic_DocumentRepresentationType %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_PersonAndOrganization;
@@ -8652,12 +8144,10 @@ class StepBasic_PersonAndOrganization : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_PersonAndOrganization {
-	~StepBasic_PersonAndOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_PersonAndOrganization\n");}
-	}
-};
+%feature("shadow") StepBasic_PersonAndOrganization::~StepBasic_PersonAndOrganization %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Array1OfDocument;
@@ -8695,12 +8185,10 @@ class StepBasic_Array1OfDocument {
 		Handle_StepBasic_Document & operator()(const Standard_Integer Index);
 
 };
-%extend StepBasic_Array1OfDocument {
-	~StepBasic_Array1OfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfDocument\n");}
-	}
-};
+%feature("shadow") StepBasic_Array1OfDocument::~StepBasic_Array1OfDocument %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SiUnitAndVolumeUnit;
@@ -8730,12 +8218,10 @@ class StepBasic_SiUnitAndVolumeUnit : public StepBasic_SiUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SiUnitAndVolumeUnit {
-	~StepBasic_SiUnitAndVolumeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndVolumeUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_SiUnitAndVolumeUnit::~StepBasic_SiUnitAndVolumeUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ContractType;
@@ -8763,12 +8249,10 @@ class StepBasic_ContractType : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ContractType {
-	~StepBasic_ContractType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ContractType\n");}
-	}
-};
+%feature("shadow") StepBasic_ContractType::~StepBasic_ContractType %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ActionMethod;
@@ -8810,12 +8294,10 @@ class StepBasic_ActionMethod : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ActionMethod {
-	~StepBasic_ActionMethod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ActionMethod\n");}
-	}
-};
+%feature("shadow") StepBasic_ActionMethod::~StepBasic_ActionMethod %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_IdentificationAssignment;
@@ -8847,12 +8329,10 @@ class StepBasic_IdentificationAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_IdentificationAssignment {
-	~StepBasic_IdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_IdentificationAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_IdentificationAssignment::~StepBasic_IdentificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_VolumeUnit;
@@ -8874,12 +8354,10 @@ class StepBasic_VolumeUnit : public StepBasic_NamedUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_VolumeUnit {
-	~StepBasic_VolumeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_VolumeUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_VolumeUnit::~StepBasic_VolumeUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductContext;
@@ -8909,12 +8387,10 @@ class StepBasic_ProductContext : public StepBasic_ApplicationContextElement {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductContext {
-	~StepBasic_ProductContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductContext\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductContext::~StepBasic_ProductContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductCategoryRelationship;
@@ -8956,12 +8432,10 @@ class StepBasic_ProductCategoryRelationship : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductCategoryRelationship {
-	~StepBasic_ProductCategoryRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductCategoryRelationship\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductCategoryRelationship::~StepBasic_ProductCategoryRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_EffectivityAssignment;
@@ -8989,12 +8463,10 @@ class StepBasic_EffectivityAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_EffectivityAssignment {
-	~StepBasic_EffectivityAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_EffectivityAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_EffectivityAssignment::~StepBasic_EffectivityAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ApprovalRelationship;
@@ -9034,12 +8506,10 @@ class StepBasic_ApprovalRelationship : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ApprovalRelationship {
-	~StepBasic_ApprovalRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalRelationship\n");}
-	}
-};
+%feature("shadow") StepBasic_ApprovalRelationship::~StepBasic_ApprovalRelationship %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_RatioMeasureWithUnit;
@@ -9061,12 +8531,10 @@ class StepBasic_RatioMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_RatioMeasureWithUnit {
-	~StepBasic_RatioMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_RatioMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_RatioMeasureWithUnit::~StepBasic_RatioMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_PersonAndOrganizationAssignment;
@@ -9098,12 +8566,10 @@ class StepBasic_PersonAndOrganizationAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_PersonAndOrganizationAssignment {
-	~StepBasic_PersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_PersonAndOrganizationAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_PersonAndOrganizationAssignment::~StepBasic_PersonAndOrganizationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DateAssignment;
@@ -9135,12 +8601,10 @@ class StepBasic_DateAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DateAssignment {
-	~StepBasic_DateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DateAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_DateAssignment::~StepBasic_DateAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SizeSelect;
@@ -9160,12 +8624,10 @@ class StepBasic_SizeSelect : public StepData_SelectType {
 		Standard_Real RealValue() const;
 
 };
-%extend StepBasic_SizeSelect {
-	~StepBasic_SizeSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SizeSelect\n");}
-	}
-};
+%feature("shadow") StepBasic_SizeSelect::~StepBasic_SizeSelect %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ApprovalPersonOrganization;
@@ -9201,12 +8663,10 @@ class StepBasic_ApprovalPersonOrganization : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ApprovalPersonOrganization {
-	~StepBasic_ApprovalPersonOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalPersonOrganization\n");}
-	}
-};
+%feature("shadow") StepBasic_ApprovalPersonOrganization::~StepBasic_ApprovalPersonOrganization %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_UncertaintyMeasureWithUnit;
@@ -9240,12 +8700,10 @@ class StepBasic_UncertaintyMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_UncertaintyMeasureWithUnit {
-	~StepBasic_UncertaintyMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_UncertaintyMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_UncertaintyMeasureWithUnit::~StepBasic_UncertaintyMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DerivedUnit;
@@ -9277,12 +8735,10 @@ class StepBasic_DerivedUnit : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DerivedUnit {
-	~StepBasic_DerivedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DerivedUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_DerivedUnit::~StepBasic_DerivedUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ExternalIdentificationAssignment;
@@ -9310,12 +8766,10 @@ class StepBasic_ExternalIdentificationAssignment : public StepBasic_Identificati
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ExternalIdentificationAssignment {
-	~StepBasic_ExternalIdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ExternalIdentificationAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_ExternalIdentificationAssignment::~StepBasic_ExternalIdentificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DocumentProductEquivalence;
@@ -9337,12 +8791,10 @@ class StepBasic_DocumentProductEquivalence : public StepBasic_DocumentProductAss
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DocumentProductEquivalence {
-	~StepBasic_DocumentProductEquivalence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentProductEquivalence\n");}
-	}
-};
+%feature("shadow") StepBasic_DocumentProductEquivalence::~StepBasic_DocumentProductEquivalence %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Array1OfNamedUnit;
@@ -9380,12 +8832,10 @@ class StepBasic_Array1OfNamedUnit {
 		Handle_StepBasic_NamedUnit & operator()(const Standard_Integer Index);
 
 };
-%extend StepBasic_Array1OfNamedUnit {
-	~StepBasic_Array1OfNamedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfNamedUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_Array1OfNamedUnit::~StepBasic_Array1OfNamedUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_MassMeasureWithUnit;
@@ -9407,12 +8857,10 @@ class StepBasic_MassMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_MassMeasureWithUnit {
-	~StepBasic_MassMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_MassMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_MassMeasureWithUnit::~StepBasic_MassMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_MassUnit;
@@ -9434,12 +8882,10 @@ class StepBasic_MassUnit : public StepBasic_NamedUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_MassUnit {
-	~StepBasic_MassUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_MassUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_MassUnit::~StepBasic_MassUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SourceItem;
@@ -9455,12 +8901,10 @@ class StepBasic_SourceItem : public StepData_SelectType {
 		Handle_TCollection_HAsciiString Identifier() const;
 
 };
-%extend StepBasic_SourceItem {
-	~StepBasic_SourceItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SourceItem\n");}
-	}
-};
+%feature("shadow") StepBasic_SourceItem::~StepBasic_SourceItem %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Array1OfUncertaintyMeasureWithUnit;
@@ -9498,12 +8942,10 @@ class StepBasic_Array1OfUncertaintyMeasureWithUnit {
 		Handle_StepBasic_UncertaintyMeasureWithUnit & operator()(const Standard_Integer Index);
 
 };
-%extend StepBasic_Array1OfUncertaintyMeasureWithUnit {
-	~StepBasic_Array1OfUncertaintyMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfUncertaintyMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_Array1OfUncertaintyMeasureWithUnit::~StepBasic_Array1OfUncertaintyMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_HArray1OfProduct;
@@ -9545,12 +8987,10 @@ class StepBasic_HArray1OfProduct : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_HArray1OfProduct {
-	~StepBasic_HArray1OfProduct() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfProduct\n");}
-	}
-};
+%feature("shadow") StepBasic_HArray1OfProduct::~StepBasic_HArray1OfProduct %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_HArray1OfDocument;
@@ -9592,12 +9032,10 @@ class StepBasic_HArray1OfDocument : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_HArray1OfDocument {
-	~StepBasic_HArray1OfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfDocument\n");}
-	}
-};
+%feature("shadow") StepBasic_HArray1OfDocument::~StepBasic_HArray1OfDocument %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_MechanicalContext;
@@ -9619,12 +9057,10 @@ class StepBasic_MechanicalContext : public StepBasic_ProductContext {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_MechanicalContext {
-	~StepBasic_MechanicalContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_MechanicalContext\n");}
-	}
-};
+%feature("shadow") StepBasic_MechanicalContext::~StepBasic_MechanicalContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_HArray1OfPerson;
@@ -9666,12 +9102,10 @@ class StepBasic_HArray1OfPerson : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_HArray1OfPerson {
-	~StepBasic_HArray1OfPerson() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfPerson\n");}
-	}
-};
+%feature("shadow") StepBasic_HArray1OfPerson::~StepBasic_HArray1OfPerson %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_PhysicallyModeledProductDefinition;
@@ -9693,12 +9127,10 @@ class StepBasic_PhysicallyModeledProductDefinition : public StepBasic_ProductDef
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_PhysicallyModeledProductDefinition {
-	~StepBasic_PhysicallyModeledProductDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_PhysicallyModeledProductDefinition\n");}
-	}
-};
+%feature("shadow") StepBasic_PhysicallyModeledProductDefinition::~StepBasic_PhysicallyModeledProductDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Person;
@@ -9778,12 +9210,10 @@ class StepBasic_Person : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_Person {
-	~StepBasic_Person() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Person\n");}
-	}
-};
+%feature("shadow") StepBasic_Person::~StepBasic_Person %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ProductConceptContext;
@@ -9811,12 +9241,10 @@ class StepBasic_ProductConceptContext : public StepBasic_ApplicationContextEleme
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ProductConceptContext {
-	~StepBasic_ProductConceptContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductConceptContext\n");}
-	}
-};
+%feature("shadow") StepBasic_ProductConceptContext::~StepBasic_ProductConceptContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_CertificationAssignment;
@@ -9844,12 +9272,10 @@ class StepBasic_CertificationAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_CertificationAssignment {
-	~StepBasic_CertificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_CertificationAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_CertificationAssignment::~StepBasic_CertificationAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_IdentificationRole;
@@ -9883,12 +9309,10 @@ class StepBasic_IdentificationRole : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_IdentificationRole {
-	~StepBasic_IdentificationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_IdentificationRole\n");}
-	}
-};
+%feature("shadow") StepBasic_IdentificationRole::~StepBasic_IdentificationRole %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_HArray1OfApproval;
@@ -9930,12 +9354,10 @@ class StepBasic_HArray1OfApproval : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_HArray1OfApproval {
-	~StepBasic_HArray1OfApproval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfApproval\n");}
-	}
-};
+%feature("shadow") StepBasic_HArray1OfApproval::~StepBasic_HArray1OfApproval %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_TimeUnit;
@@ -9957,12 +9379,10 @@ class StepBasic_TimeUnit : public StepBasic_NamedUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_TimeUnit {
-	~StepBasic_TimeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_TimeUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_TimeUnit::~StepBasic_TimeUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_HArray1OfDerivedUnitElement;
@@ -10004,12 +9424,10 @@ class StepBasic_HArray1OfDerivedUnitElement : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_HArray1OfDerivedUnitElement {
-	~StepBasic_HArray1OfDerivedUnitElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfDerivedUnitElement\n");}
-	}
-};
+%feature("shadow") StepBasic_HArray1OfDerivedUnitElement::~StepBasic_HArray1OfDerivedUnitElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_HArray1OfUncertaintyMeasureWithUnit;
@@ -10051,12 +9469,10 @@ class StepBasic_HArray1OfUncertaintyMeasureWithUnit : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_HArray1OfUncertaintyMeasureWithUnit {
-	~StepBasic_HArray1OfUncertaintyMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfUncertaintyMeasureWithUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_HArray1OfUncertaintyMeasureWithUnit::~StepBasic_HArray1OfUncertaintyMeasureWithUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ActionRequestAssignment;
@@ -10084,12 +9500,10 @@ class StepBasic_ActionRequestAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ActionRequestAssignment {
-	~StepBasic_ActionRequestAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ActionRequestAssignment\n");}
-	}
-};
+%feature("shadow") StepBasic_ActionRequestAssignment::~StepBasic_ActionRequestAssignment %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_Array1OfDerivedUnitElement;
@@ -10127,12 +9541,10 @@ class StepBasic_Array1OfDerivedUnitElement {
 		Handle_StepBasic_DerivedUnitElement & operator()(const Standard_Integer Index);
 
 };
-%extend StepBasic_Array1OfDerivedUnitElement {
-	~StepBasic_Array1OfDerivedUnitElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfDerivedUnitElement\n");}
-	}
-};
+%feature("shadow") StepBasic_Array1OfDerivedUnitElement::~StepBasic_Array1OfDerivedUnitElement %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_ApplicationContext;
@@ -10160,12 +9572,10 @@ class StepBasic_ApplicationContext : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_ApplicationContext {
-	~StepBasic_ApplicationContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_ApplicationContext\n");}
-	}
-};
+%feature("shadow") StepBasic_ApplicationContext::~StepBasic_ApplicationContext %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_CharacterizedObject;
@@ -10199,12 +9609,10 @@ class StepBasic_CharacterizedObject : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_CharacterizedObject {
-	~StepBasic_CharacterizedObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_CharacterizedObject\n");}
-	}
-};
+%feature("shadow") StepBasic_CharacterizedObject::~StepBasic_CharacterizedObject %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_HArray1OfProductDefinition;
@@ -10246,12 +9654,10 @@ class StepBasic_HArray1OfProductDefinition : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_HArray1OfProductDefinition {
-	~StepBasic_HArray1OfProductDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfProductDefinition\n");}
-	}
-};
+%feature("shadow") StepBasic_HArray1OfProductDefinition::~StepBasic_HArray1OfProductDefinition %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_DigitalDocument;
@@ -10273,12 +9679,10 @@ class StepBasic_DigitalDocument : public StepBasic_Document {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_DigitalDocument {
-	~StepBasic_DigitalDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_DigitalDocument\n");}
-	}
-};
+%feature("shadow") StepBasic_DigitalDocument::~StepBasic_DigitalDocument %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor StepBasic_SiUnitAndLengthUnit;
@@ -10308,9 +9712,7 @@ class StepBasic_SiUnitAndLengthUnit : public StepBasic_SiUnit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend StepBasic_SiUnitAndLengthUnit {
-	~StepBasic_SiUnitAndLengthUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndLengthUnit\n");}
-	}
-};
+%feature("shadow") StepBasic_SiUnitAndLengthUnit::~StepBasic_SiUnitAndLengthUnit %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}

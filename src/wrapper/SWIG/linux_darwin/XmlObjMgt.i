@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include XmlObjMgt_dependencies.i
 
 
@@ -61,12 +65,10 @@ class Handle_XmlObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 	return (XmlObjMgt_DataMapNodeOfRRelocationTable*)$self->Access();
 	}
 };
-%extend Handle_XmlObjMgt_DataMapNodeOfRRelocationTable {
-	~Handle_XmlObjMgt_DataMapNodeOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlObjMgt_DataMapNodeOfRRelocationTable\n");}
-	}
-};
+%feature("shadow") Handle_XmlObjMgt_DataMapNodeOfRRelocationTable::~Handle_XmlObjMgt_DataMapNodeOfRRelocationTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlObjMgt_DataMapIteratorOfRRelocationTable;
@@ -84,12 +86,10 @@ class XmlObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapI
 		const Handle_Standard_Transient & Value() const;
 
 };
-%extend XmlObjMgt_DataMapIteratorOfRRelocationTable {
-	~XmlObjMgt_DataMapIteratorOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_DataMapIteratorOfRRelocationTable\n");}
-	}
-};
+%feature("shadow") XmlObjMgt_DataMapIteratorOfRRelocationTable::~XmlObjMgt_DataMapIteratorOfRRelocationTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlObjMgt;
@@ -123,12 +123,10 @@ class XmlObjMgt {
 		Standard_Boolean GetReal(const XmlObjMgt_DOMString &theString, Standard_Real &OutValue);
 
 };
-%extend XmlObjMgt {
-	~XmlObjMgt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlObjMgt\n");}
-	}
-};
+%feature("shadow") XmlObjMgt::~XmlObjMgt %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlObjMgt_DataMapNodeOfRRelocationTable;
@@ -164,12 +162,10 @@ class XmlObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
-%extend XmlObjMgt_DataMapNodeOfRRelocationTable {
-	~XmlObjMgt_DataMapNodeOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_DataMapNodeOfRRelocationTable\n");}
-	}
-};
+%feature("shadow") XmlObjMgt_DataMapNodeOfRRelocationTable::~XmlObjMgt_DataMapNodeOfRRelocationTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlObjMgt_GP;
@@ -191,12 +187,10 @@ class XmlObjMgt_GP {
 		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_XYZ & T);
 
 };
-%extend XmlObjMgt_GP {
-	~XmlObjMgt_GP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_GP\n");}
-	}
-};
+%feature("shadow") XmlObjMgt_GP::~XmlObjMgt_GP %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlObjMgt_Persistent;
@@ -220,12 +214,10 @@ class XmlObjMgt_Persistent {
 		Standard_Integer Id() const;
 
 };
-%extend XmlObjMgt_Persistent {
-	~XmlObjMgt_Persistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_Persistent\n");}
-	}
-};
+%feature("shadow") XmlObjMgt_Persistent::~XmlObjMgt_Persistent %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
 
 
 %nodefaultctor XmlObjMgt_RRelocationTable;
@@ -257,9 +249,7 @@ class XmlObjMgt_RRelocationTable : public TCollection_BasicMap {
 		Handle_Standard_Transient & operator()(const Standard_Integer &K);
 
 };
-%extend XmlObjMgt_RRelocationTable {
-	~XmlObjMgt_RRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_RRelocationTable\n");}
-	}
-};
+%feature("shadow") XmlObjMgt_RRelocationTable::~XmlObjMgt_RRelocationTable %{
+def __del__(self):
+	GarbageCollector.occ_gc.append(self)
+%}
