@@ -1,5 +1,6 @@
 from OCC.PAF.Context import ParametricModelingContext
 from OCC.PAF.Parametric import Parameters
+from OCC.SGEOM import *
 
 import time
 
@@ -13,11 +14,11 @@ def main():
     # for concerns of performance, _only_ operations that are registered
     # are associative 
 
-#    my_context.register_operations(my_context.basic_operations,
-#                                   my_context.boolean_operations,
-#                                   my_context.local_operations,
-#                                   my_context.
-#                                   )
+    my_context.register_operations(my_context.basic_operations,
+                                   my_context.boolean_operations,
+                                   my_context.local_operations,
+                                   my_context.curve_operations,
+                                   )
 
     for ops in dir(my_context):
         try:
@@ -36,6 +37,90 @@ def main():
     that do not have counter parts in the OCC API
     
     '''
+
+    
+    #===============================================================================
+    # SKETCHER INFOS
+    # Init Sketcher
+    # Create a string beginning by :"Sketcher:"
+    # Each command must be separated by ":"
+    # "F x y" : Create first point at X & Y
+    # 
+    # To Make Segment
+    # "R angle" : Set the direction by angle
+    # "D dx dy" : Set the direction by DX & DY
+    # 
+    # "TT x y" : Create by point at X & Y
+    # "T dx dy" : Create by point with DX & DY
+    # "L length" : Create by direction & Length
+    # "IX x" : Create by direction & Intersect. X
+    # "IY y" : Create by direction & Intersect. Y
+    # 
+    # To Make Arc
+    # "C radius length" : Create by direction, radius and length(in degree)
+    # 
+    # To finish
+    # "WW" : Close Wire
+    # 
+    # Create Sketcher
+    #===============================================================================
+    Cmd = "Sketch:F 0 0:TT 0 100:C 100 180:WW"
+    import ipdb; ipdb.set_trace()
+    
+    
+    ## Return list of variables value from salome notebook
+    ## @ingroup l1_geompy_auxiliary    
+    def ParseSketcherCommand(command):
+        Result = ""
+        StringResult = ""
+        sections = command.split(":")
+        for section in sections:
+            parameters = section.split(" ")
+            paramIndex = 1
+            for parameter in parameters:
+                if paramIndex > 1 and parameter.find("'") != -1:
+                    parameter = parameter.replace("'","")
+                    if notebook.isVariable(parameter):
+                        Result = Result + str(notebook.get(parameter)) + " "
+                        pass
+                    else:
+                        raise RuntimeError, "Variable with name '" + parameter + "' doesn't exist!!!"
+                        pass
+                    pass
+                else:
+                    Result = Result + str(parameter) + " "
+                    pass
+                if paramIndex > 1:
+                    StringResult = StringResult + parameter
+                    StringResult = StringResult + ":"
+                    pass
+                paramIndex = paramIndex + 1
+                pass
+            Result = Result[:len(Result)-1] + ":"
+            pass
+        Result = Result[:len(Result)-1]
+        return Result, StringResult
+    
+    
+    cmd, params = ParseSketcherCommand(Cmd)
+    theWorkingPlane = [0,0,0, 0,0,1, 1,0,0]
+    
+    from OCC.TCollection import *
+    cmd = TCollection_AsciiString(cmd)
+    
+    # theWorkingPlane should be a GEOM_Parameter nested in a std::list
+    # ---BUG--- NO CONVERTER FOR STD::LIST
+
+    
+    Sketcher = my_context.curve_operations.MakeSketcher(cmd, theWorkingPlane) #(string)->GEOM_Shape_ptr
+    
+    
+    
+#    Out[0]: <OCC.TCollection.TCollection_AsciiString; proxy of <Swig Object of type 'TCollection_AsciiString *' at 0x210b2860> >
+#    ipdb> crv.MakeSketcher(_cmd, theWorkingPlane)
+#    *** TypeError: in method 'GEOMImpl_ICurvesOperations_MakeSketcher', argument 3 of type 'std::list< GEOM_Parameter,std::allocator< GEOM_Parameter > >'
+    
+
 
     my_context.start_display()
 
