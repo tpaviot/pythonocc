@@ -278,7 +278,7 @@ def brep_feat_rib(event=None):
        
     aplane = Geom_Plane(0.,1.,0.,-45.)
     
-    aform = BRepFeat_MakeLinearForm( S.Shape(), W.Wire(), aplane.GetHandle(),
+    aform = BRepFeat_MakeLinearForm( S.Shape(), W.Wire(), aplane(),
                                      gp_Vec(0.,10.,0.), gp_Vec(0.,0.,0.),
                                      1, True
                                      )
