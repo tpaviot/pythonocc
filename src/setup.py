@@ -418,7 +418,8 @@ install_dir = os.path.join(sysconfig.get_python_lib(),'OCC')
 bg_image_install_dir = os.path.join(sysconfig.get_python_lib(),'OCC','Display')
 data = [(install_dir,\
         [os.path.join(os.getcwd(),'..','AUTHORS'),
-         os.path.join(os.getcwd(),'..','LICENSE')]),
+         os.path.join(os.getcwd(),'..','LICENSE'),
+         os.path.join(os.getcwd(),'wrapper','GarbageCollector.py')]),
         (bg_image_install_dir,\
         [os.path.join(os.getcwd(),'addons','Display','default_background.bmp')]),
         ]
