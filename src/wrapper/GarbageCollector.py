@@ -18,4 +18,25 @@
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-occ_gc = []
+class GarbageCollector(object):
+    """ Garbage collector for OCC objects
+    """
+    def __init__(self):
+        self._collected_objects = []
+        
+    def collect_object(self, obj_deleted):
+        """ Add an object to the garbage
+        """
+        self._collected_objects.append(obj_deleted)
+        
+    def __str__(self):
+        return "%i"%len(self._collected_objects)
+    
+    def purge(self):
+        """ Purge garbage, i.e. free OCC memory
+        """
+        for item in self._collected_objects:
+            item._kill_pointed()
+        self._collected_objects = []
+
+garbage = GarbageCollector()
