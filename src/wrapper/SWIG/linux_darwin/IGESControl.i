@@ -63,8 +63,18 @@ class Handle_IGESControl_AlgoContainer : public Handle_IGESToBRep_AlgoContainer 
 };
 %feature("shadow") Handle_IGESControl_AlgoContainer::~Handle_IGESControl_AlgoContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESControl_AlgoContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESControl_ActorWrite;
@@ -91,8 +101,18 @@ class Handle_IGESControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 };
 %feature("shadow") Handle_IGESControl_ActorWrite::~Handle_IGESControl_ActorWrite %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESControl_ActorWrite {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESControl_Controller;
@@ -119,8 +139,18 @@ class Handle_IGESControl_Controller : public Handle_XSControl_Controller {
 };
 %feature("shadow") Handle_IGESControl_Controller::~Handle_IGESControl_Controller %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESControl_Controller {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESControl_IGESBoundary;
@@ -147,8 +177,18 @@ class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
 };
 %feature("shadow") Handle_IGESControl_IGESBoundary::~Handle_IGESControl_IGESBoundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESControl_IGESBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESControl_ToolContainer;
@@ -175,8 +215,18 @@ class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer 
 };
 %feature("shadow") Handle_IGESControl_ToolContainer::~Handle_IGESControl_ToolContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESControl_ToolContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESControl_Reader;
@@ -200,8 +250,18 @@ class IGESControl_Reader : public XSControl_Reader {
 };
 %feature("shadow") IGESControl_Reader::~IGESControl_Reader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESControl_Reader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESControl_ActorWrite;
@@ -229,8 +289,18 @@ class IGESControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 };
 %feature("shadow") IGESControl_ActorWrite::~IGESControl_ActorWrite %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESControl_ActorWrite {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESControl_ToolContainer;
@@ -256,8 +326,18 @@ class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 };
 %feature("shadow") IGESControl_ToolContainer::~IGESControl_ToolContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESControl_ToolContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESControl_AlgoContainer;
@@ -281,8 +361,18 @@ class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
 };
 %feature("shadow") IGESControl_AlgoContainer::~IGESControl_AlgoContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESControl_AlgoContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESControl_IGESBoundary;
@@ -310,8 +400,18 @@ class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
 };
 %feature("shadow") IGESControl_IGESBoundary::~IGESControl_IGESBoundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESControl_IGESBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESControl_Writer;
@@ -347,8 +447,18 @@ class IGESControl_Writer {
 };
 %feature("shadow") IGESControl_Writer::~IGESControl_Writer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESControl_Writer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESControl_Controller;
@@ -382,5 +492,15 @@ class IGESControl_Controller : public XSControl_Controller {
 };
 %feature("shadow") IGESControl_Controller::~IGESControl_Controller %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESControl_Controller {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

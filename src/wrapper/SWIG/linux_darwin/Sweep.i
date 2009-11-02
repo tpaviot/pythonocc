@@ -66,8 +66,18 @@ class Sweep_NumShapeTool {
 };
 %feature("shadow") Sweep_NumShapeTool::~Sweep_NumShapeTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Sweep_NumShapeTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Sweep_NumShape;
@@ -95,8 +105,18 @@ class Sweep_NumShape {
 };
 %feature("shadow") Sweep_NumShape::~Sweep_NumShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Sweep_NumShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Sweep_NumShapeIterator;
@@ -118,5 +138,15 @@ class Sweep_NumShapeIterator {
 };
 %feature("shadow") Sweep_NumShapeIterator::~Sweep_NumShapeIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Sweep_NumShapeIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

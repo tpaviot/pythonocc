@@ -73,8 +73,18 @@ class BinTools_LocationSet {
 };
 %feature("shadow") BinTools_LocationSet::~BinTools_LocationSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinTools_LocationSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinTools;
@@ -102,8 +112,18 @@ class BinTools {
 };
 %feature("shadow") BinTools::~BinTools %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinTools {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinTools_ShapeSet;
@@ -222,8 +242,18 @@ class BinTools_ShapeSet {
 };
 %feature("shadow") BinTools_ShapeSet::~BinTools_ShapeSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinTools_ShapeSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinTools_SurfaceSet;
@@ -262,8 +292,18 @@ class BinTools_SurfaceSet {
 };
 %feature("shadow") BinTools_SurfaceSet::~BinTools_SurfaceSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinTools_SurfaceSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinTools_CurveSet;
@@ -302,8 +342,18 @@ class BinTools_CurveSet {
 };
 %feature("shadow") BinTools_CurveSet::~BinTools_CurveSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinTools_CurveSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinTools_Curve2dSet;
@@ -342,5 +392,15 @@ class BinTools_Curve2dSet {
 };
 %feature("shadow") BinTools_Curve2dSet::~BinTools_Curve2dSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinTools_Curve2dSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

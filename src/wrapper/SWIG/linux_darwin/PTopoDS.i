@@ -63,8 +63,18 @@ class Handle_PTopoDS_TShape : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PTopoDS_TShape::~Handle_PTopoDS_TShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TShell;
@@ -91,8 +101,18 @@ class Handle_PTopoDS_TShell : public Handle_PTopoDS_TShape {
 };
 %feature("shadow") Handle_PTopoDS_TShell::~Handle_PTopoDS_TShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TWire;
@@ -119,8 +139,18 @@ class Handle_PTopoDS_TWire : public Handle_PTopoDS_TShape {
 };
 %feature("shadow") Handle_PTopoDS_TWire::~Handle_PTopoDS_TWire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TWire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TVertex;
@@ -147,8 +177,18 @@ class Handle_PTopoDS_TVertex : public Handle_PTopoDS_TShape {
 };
 %feature("shadow") Handle_PTopoDS_TVertex::~Handle_PTopoDS_TVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape;
@@ -175,8 +215,18 @@ class Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public Handle_PStandar
 };
 %feature("shadow") Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape::~Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TShape1;
@@ -203,8 +253,18 @@ class Handle_PTopoDS_TShape1 : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PTopoDS_TShape1::~Handle_PTopoDS_TShape1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TShape1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TCompound1;
@@ -231,8 +291,18 @@ class Handle_PTopoDS_TCompound1 : public Handle_PTopoDS_TShape1 {
 };
 %feature("shadow") Handle_PTopoDS_TCompound1::~Handle_PTopoDS_TCompound1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TCompound1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_HArray1OfHShape;
@@ -259,8 +329,18 @@ class Handle_PTopoDS_HArray1OfHShape : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PTopoDS_HArray1OfHShape::~Handle_PTopoDS_HArray1OfHShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_HArray1OfHShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TEdge1;
@@ -287,8 +367,18 @@ class Handle_PTopoDS_TEdge1 : public Handle_PTopoDS_TShape1 {
 };
 %feature("shadow") Handle_PTopoDS_TEdge1::~Handle_PTopoDS_TEdge1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TEdge1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1;
@@ -315,8 +405,18 @@ class Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public Handle_PStandar
 };
 %feature("shadow") Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1::~Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TWire1;
@@ -343,8 +443,18 @@ class Handle_PTopoDS_TWire1 : public Handle_PTopoDS_TShape1 {
 };
 %feature("shadow") Handle_PTopoDS_TWire1::~Handle_PTopoDS_TWire1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TWire1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TSolid1;
@@ -371,8 +481,18 @@ class Handle_PTopoDS_TSolid1 : public Handle_PTopoDS_TShape1 {
 };
 %feature("shadow") Handle_PTopoDS_TSolid1::~Handle_PTopoDS_TSolid1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TSolid1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TEdge;
@@ -399,8 +519,18 @@ class Handle_PTopoDS_TEdge : public Handle_PTopoDS_TShape {
 };
 %feature("shadow") Handle_PTopoDS_TEdge::~Handle_PTopoDS_TEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TShell1;
@@ -427,8 +557,18 @@ class Handle_PTopoDS_TShell1 : public Handle_PTopoDS_TShape1 {
 };
 %feature("shadow") Handle_PTopoDS_TShell1::~Handle_PTopoDS_TShell1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TShell1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_HShape;
@@ -455,8 +595,18 @@ class Handle_PTopoDS_HShape : public Handle_ObjMgt_ExternShareable {
 };
 %feature("shadow") Handle_PTopoDS_HShape::~Handle_PTopoDS_HShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_HShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_Shell;
@@ -483,8 +633,18 @@ class Handle_PTopoDS_Shell : public Handle_PTopoDS_HShape {
 };
 %feature("shadow") Handle_PTopoDS_Shell::~Handle_PTopoDS_Shell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_Shell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TCompSolid1;
@@ -511,8 +671,18 @@ class Handle_PTopoDS_TCompSolid1 : public Handle_PTopoDS_TShape1 {
 };
 %feature("shadow") Handle_PTopoDS_TCompSolid1::~Handle_PTopoDS_TCompSolid1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TCompSolid1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TCompSolid;
@@ -539,8 +709,18 @@ class Handle_PTopoDS_TCompSolid : public Handle_PTopoDS_TShape {
 };
 %feature("shadow") Handle_PTopoDS_TCompSolid::~Handle_PTopoDS_TCompSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TCompSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TVertex1;
@@ -567,8 +747,18 @@ class Handle_PTopoDS_TVertex1 : public Handle_PTopoDS_TShape1 {
 };
 %feature("shadow") Handle_PTopoDS_TVertex1::~Handle_PTopoDS_TVertex1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TVertex1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_Vertex;
@@ -595,8 +785,18 @@ class Handle_PTopoDS_Vertex : public Handle_PTopoDS_HShape {
 };
 %feature("shadow") Handle_PTopoDS_Vertex::~Handle_PTopoDS_Vertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_Vertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_Wire;
@@ -623,8 +823,18 @@ class Handle_PTopoDS_Wire : public Handle_PTopoDS_HShape {
 };
 %feature("shadow") Handle_PTopoDS_Wire::~Handle_PTopoDS_Wire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_Wire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TSolid;
@@ -651,8 +861,18 @@ class Handle_PTopoDS_TSolid : public Handle_PTopoDS_TShape {
 };
 %feature("shadow") Handle_PTopoDS_TSolid::~Handle_PTopoDS_TSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_Compound;
@@ -679,8 +899,18 @@ class Handle_PTopoDS_Compound : public Handle_PTopoDS_HShape {
 };
 %feature("shadow") Handle_PTopoDS_Compound::~Handle_PTopoDS_Compound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_Compound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_HArray1OfShape1;
@@ -707,8 +937,18 @@ class Handle_PTopoDS_HArray1OfShape1 : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PTopoDS_HArray1OfShape1::~Handle_PTopoDS_HArray1OfShape1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_HArray1OfShape1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_Solid;
@@ -735,8 +975,18 @@ class Handle_PTopoDS_Solid : public Handle_PTopoDS_HShape {
 };
 %feature("shadow") Handle_PTopoDS_Solid::~Handle_PTopoDS_Solid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_Solid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_Edge;
@@ -763,8 +1013,18 @@ class Handle_PTopoDS_Edge : public Handle_PTopoDS_HShape {
 };
 %feature("shadow") Handle_PTopoDS_Edge::~Handle_PTopoDS_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_CompSolid;
@@ -791,8 +1051,18 @@ class Handle_PTopoDS_CompSolid : public Handle_PTopoDS_HShape {
 };
 %feature("shadow") Handle_PTopoDS_CompSolid::~Handle_PTopoDS_CompSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_CompSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TFace1;
@@ -819,8 +1089,18 @@ class Handle_PTopoDS_TFace1 : public Handle_PTopoDS_TShape1 {
 };
 %feature("shadow") Handle_PTopoDS_TFace1::~Handle_PTopoDS_TFace1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TFace1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_Face;
@@ -847,8 +1127,18 @@ class Handle_PTopoDS_Face : public Handle_PTopoDS_HShape {
 };
 %feature("shadow") Handle_PTopoDS_Face::~Handle_PTopoDS_Face %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TFace;
@@ -875,8 +1165,18 @@ class Handle_PTopoDS_TFace : public Handle_PTopoDS_TShape {
 };
 %feature("shadow") Handle_PTopoDS_TFace::~Handle_PTopoDS_TFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopoDS_TCompound;
@@ -903,8 +1203,18 @@ class Handle_PTopoDS_TCompound : public Handle_PTopoDS_TShape {
 };
 %feature("shadow") Handle_PTopoDS_TCompound::~Handle_PTopoDS_TCompound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopoDS_TCompound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TCompound1;
@@ -932,8 +1242,18 @@ class PTopoDS_TCompound1 : public PTopoDS_TShape1 {
 };
 %feature("shadow") PTopoDS_TCompound1::~PTopoDS_TCompound1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TCompound1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TCompSolid1;
@@ -961,8 +1281,18 @@ class PTopoDS_TCompSolid1 : public PTopoDS_TShape1 {
 };
 %feature("shadow") PTopoDS_TCompSolid1::~PTopoDS_TCompSolid1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TCompSolid1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape;
@@ -998,8 +1328,18 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public PStandard_ArrayNode {
 };
 %feature("shadow") PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape::~PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TShell;
@@ -1027,8 +1367,18 @@ class PTopoDS_TShell : public PTopoDS_TShape {
 };
 %feature("shadow") PTopoDS_TShell::~PTopoDS_TShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TEdge1;
@@ -1056,8 +1406,18 @@ class PTopoDS_TEdge1 : public PTopoDS_TShape1 {
 };
 %feature("shadow") PTopoDS_TEdge1::~PTopoDS_TEdge1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TEdge1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1;
@@ -1091,8 +1451,18 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public PStandard_ArrayNode {
 };
 %feature("shadow") PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1::~PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_HShape;
@@ -1140,8 +1510,18 @@ class PTopoDS_HShape : public ObjMgt_ExternShareable {
 };
 %feature("shadow") PTopoDS_HShape::~PTopoDS_HShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_HShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_Wire;
@@ -1165,8 +1545,18 @@ class PTopoDS_Wire : public PTopoDS_HShape {
 };
 %feature("shadow") PTopoDS_Wire::~PTopoDS_Wire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_Wire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_HArray1OfShape1;
@@ -1226,8 +1616,18 @@ class PTopoDS_HArray1OfShape1 : public Standard_Persistent {
 };
 %feature("shadow") PTopoDS_HArray1OfShape1::~PTopoDS_HArray1OfShape1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_HArray1OfShape1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TShell1;
@@ -1255,8 +1655,18 @@ class PTopoDS_TShell1 : public PTopoDS_TShape1 {
 };
 %feature("shadow") PTopoDS_TShell1::~PTopoDS_TShell1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TShell1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_Compound;
@@ -1282,8 +1692,18 @@ class PTopoDS_Compound : public PTopoDS_HShape {
 };
 %feature("shadow") PTopoDS_Compound::~PTopoDS_Compound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_Compound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_Face;
@@ -1309,8 +1729,18 @@ class PTopoDS_Face : public PTopoDS_HShape {
 };
 %feature("shadow") PTopoDS_Face::~PTopoDS_Face %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TEdge;
@@ -1338,8 +1768,18 @@ class PTopoDS_TEdge : public PTopoDS_TShape {
 };
 %feature("shadow") PTopoDS_TEdge::~PTopoDS_TEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_Edge;
@@ -1365,8 +1805,18 @@ class PTopoDS_Edge : public PTopoDS_HShape {
 };
 %feature("shadow") PTopoDS_Edge::~PTopoDS_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TSolid;
@@ -1394,8 +1844,18 @@ class PTopoDS_TSolid : public PTopoDS_TShape {
 };
 %feature("shadow") PTopoDS_TSolid::~PTopoDS_TSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TCompound;
@@ -1423,8 +1883,18 @@ class PTopoDS_TCompound : public PTopoDS_TShape {
 };
 %feature("shadow") PTopoDS_TCompound::~PTopoDS_TCompound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TCompound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TSolid1;
@@ -1452,8 +1922,18 @@ class PTopoDS_TSolid1 : public PTopoDS_TShape1 {
 };
 %feature("shadow") PTopoDS_TSolid1::~PTopoDS_TSolid1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TSolid1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TVertex1;
@@ -1481,8 +1961,18 @@ class PTopoDS_TVertex1 : public PTopoDS_TShape1 {
 };
 %feature("shadow") PTopoDS_TVertex1::~PTopoDS_TVertex1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TVertex1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape;
@@ -1500,8 +1990,18 @@ class PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape {
 };
 %feature("shadow") PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape::~PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_Solid;
@@ -1527,8 +2027,18 @@ class PTopoDS_Solid : public PTopoDS_HShape {
 };
 %feature("shadow") PTopoDS_Solid::~PTopoDS_Solid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_Solid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_FieldOfHArray1OfHShape;
@@ -1558,8 +2068,18 @@ class PTopoDS_FieldOfHArray1OfHShape : public DBC_BaseArray {
 };
 %feature("shadow") PTopoDS_FieldOfHArray1OfHShape::~PTopoDS_FieldOfHArray1OfHShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_FieldOfHArray1OfHShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_Vertex;
@@ -1585,8 +2105,18 @@ class PTopoDS_Vertex : public PTopoDS_HShape {
 };
 %feature("shadow") PTopoDS_Vertex::~PTopoDS_Vertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_Vertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TCompSolid;
@@ -1614,8 +2144,18 @@ class PTopoDS_TCompSolid : public PTopoDS_TShape {
 };
 %feature("shadow") PTopoDS_TCompSolid::~PTopoDS_TCompSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TCompSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1;
@@ -1633,8 +2173,18 @@ class PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 {
 };
 %feature("shadow") PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1::~PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_HArray1OfHShape;
@@ -1694,8 +2244,18 @@ class PTopoDS_HArray1OfHShape : public Standard_Persistent {
 };
 %feature("shadow") PTopoDS_HArray1OfHShape::~PTopoDS_HArray1OfHShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_HArray1OfHShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_FieldOfHArray1OfShape1;
@@ -1725,8 +2285,18 @@ class PTopoDS_FieldOfHArray1OfShape1 : public DBC_BaseArray {
 };
 %feature("shadow") PTopoDS_FieldOfHArray1OfShape1::~PTopoDS_FieldOfHArray1OfShape1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_FieldOfHArray1OfShape1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_CompSolid;
@@ -1752,8 +2322,18 @@ class PTopoDS_CompSolid : public PTopoDS_HShape {
 };
 %feature("shadow") PTopoDS_CompSolid::~PTopoDS_CompSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_CompSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TFace;
@@ -1781,8 +2361,18 @@ class PTopoDS_TFace : public PTopoDS_TShape {
 };
 %feature("shadow") PTopoDS_TFace::~PTopoDS_TFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TVertex;
@@ -1810,8 +2400,18 @@ class PTopoDS_TVertex : public PTopoDS_TShape {
 };
 %feature("shadow") PTopoDS_TVertex::~PTopoDS_TVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TFace1;
@@ -1839,8 +2439,18 @@ class PTopoDS_TFace1 : public PTopoDS_TShape1 {
 };
 %feature("shadow") PTopoDS_TFace1::~PTopoDS_TFace1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TFace1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TWire1;
@@ -1868,8 +2478,18 @@ class PTopoDS_TWire1 : public PTopoDS_TShape1 {
 };
 %feature("shadow") PTopoDS_TWire1::~PTopoDS_TWire1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TWire1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_Shell;
@@ -1895,8 +2515,18 @@ class PTopoDS_Shell : public PTopoDS_HShape {
 };
 %feature("shadow") PTopoDS_Shell::~PTopoDS_Shell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_Shell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_Shape1;
@@ -1932,8 +2562,18 @@ class PTopoDS_Shape1 {
 };
 %feature("shadow") PTopoDS_Shape1::~PTopoDS_Shape1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_Shape1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopoDS_TWire;
@@ -1961,5 +2601,15 @@ class PTopoDS_TWire : public PTopoDS_TShape {
 };
 %feature("shadow") PTopoDS_TWire::~PTopoDS_TWire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopoDS_TWire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

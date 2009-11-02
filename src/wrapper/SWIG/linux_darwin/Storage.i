@@ -95,8 +95,18 @@ class Handle_Storage_StreamReadError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Storage_StreamReadError::~Handle_Storage_StreamReadError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_StreamReadError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_StreamTypeMismatchError;
@@ -123,8 +133,18 @@ class Handle_Storage_StreamTypeMismatchError : public Handle_Storage_StreamReadE
 };
 %feature("shadow") Handle_Storage_StreamTypeMismatchError::~Handle_Storage_StreamTypeMismatchError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_StreamTypeMismatchError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_InternalData;
@@ -151,8 +171,18 @@ class Handle_Storage_InternalData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_InternalData::~Handle_Storage_InternalData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_InternalData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_SequenceNodeOfSeqOfCallBack;
@@ -179,8 +209,18 @@ class Handle_Storage_SequenceNodeOfSeqOfCallBack : public Handle_TCollection_Seq
 };
 %feature("shadow") Handle_Storage_SequenceNodeOfSeqOfCallBack::~Handle_Storage_SequenceNodeOfSeqOfCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_IndexedDataMapNodeOfPType;
@@ -207,8 +247,18 @@ class Handle_Storage_IndexedDataMapNodeOfPType : public Handle_TCollection_MapNo
 };
 %feature("shadow") Handle_Storage_IndexedDataMapNodeOfPType::~Handle_Storage_IndexedDataMapNodeOfPType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_IndexedDataMapNodeOfPType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_DataMapNodeOfMapOfPers;
@@ -235,8 +285,18 @@ class Handle_Storage_DataMapNodeOfMapOfPers : public Handle_TCollection_MapNode 
 };
 %feature("shadow") Handle_Storage_DataMapNodeOfMapOfPers::~Handle_Storage_DataMapNodeOfMapOfPers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_DataMapNodeOfMapOfPers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_SequenceNodeOfSeqOfPersistent;
@@ -263,8 +323,18 @@ class Handle_Storage_SequenceNodeOfSeqOfPersistent : public Handle_TCollection_S
 };
 %feature("shadow") Handle_Storage_SequenceNodeOfSeqOfPersistent::~Handle_Storage_SequenceNodeOfSeqOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_SequenceNodeOfSeqOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_HSeqOfPersistent;
@@ -291,8 +361,18 @@ class Handle_Storage_HSeqOfPersistent : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_HSeqOfPersistent::~Handle_Storage_HSeqOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_HSeqOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_HPArray;
@@ -319,8 +399,18 @@ class Handle_Storage_HPArray : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_HPArray::~Handle_Storage_HPArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_HPArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_StreamFormatError;
@@ -347,8 +437,18 @@ class Handle_Storage_StreamFormatError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Storage_StreamFormatError::~Handle_Storage_StreamFormatError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_StreamFormatError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_TypedCallBack;
@@ -375,8 +475,18 @@ class Handle_Storage_TypedCallBack : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_TypedCallBack::~Handle_Storage_TypedCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_TypedCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_HSeqOfCallBack;
@@ -403,8 +513,18 @@ class Handle_Storage_HSeqOfCallBack : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_HSeqOfCallBack::~Handle_Storage_HSeqOfCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_HSeqOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_Root;
@@ -431,8 +551,18 @@ class Handle_Storage_Root : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_Root::~Handle_Storage_Root %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_Root {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_DataMapNodeOfMapOfCallBack;
@@ -459,8 +589,18 @@ class Handle_Storage_DataMapNodeOfMapOfCallBack : public Handle_TCollection_MapN
 };
 %feature("shadow") Handle_Storage_DataMapNodeOfMapOfCallBack::~Handle_Storage_DataMapNodeOfMapOfCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_DataMapNodeOfMapOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_StreamWriteError;
@@ -487,8 +627,18 @@ class Handle_Storage_StreamWriteError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Storage_StreamWriteError::~Handle_Storage_StreamWriteError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_StreamWriteError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_Data;
@@ -515,8 +665,18 @@ class Handle_Storage_Data : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_Data::~Handle_Storage_Data %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_Data {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_HArrayOfSchema;
@@ -543,8 +703,18 @@ class Handle_Storage_HArrayOfSchema : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_HArrayOfSchema::~Handle_Storage_HArrayOfSchema %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_HArrayOfSchema {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_TypeData;
@@ -571,8 +741,18 @@ class Handle_Storage_TypeData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_TypeData::~Handle_Storage_TypeData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_TypeData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_Schema;
@@ -599,8 +779,18 @@ class Handle_Storage_Schema : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_Schema::~Handle_Storage_Schema %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_Schema {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_RootData;
@@ -627,8 +817,18 @@ class Handle_Storage_RootData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_RootData::~Handle_Storage_RootData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_RootData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_StreamExtCharParityError;
@@ -655,8 +855,18 @@ class Handle_Storage_StreamExtCharParityError : public Handle_Storage_StreamRead
 };
 %feature("shadow") Handle_Storage_StreamExtCharParityError::~Handle_Storage_StreamExtCharParityError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_StreamExtCharParityError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_SequenceNodeOfSeqOfRoot;
@@ -683,8 +893,18 @@ class Handle_Storage_SequenceNodeOfSeqOfRoot : public Handle_TCollection_SeqNode
 };
 %feature("shadow") Handle_Storage_SequenceNodeOfSeqOfRoot::~Handle_Storage_SequenceNodeOfSeqOfRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_SequenceNodeOfSeqOfRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_HArrayOfCallBack;
@@ -711,8 +931,18 @@ class Handle_Storage_HArrayOfCallBack : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_HArrayOfCallBack::~Handle_Storage_HArrayOfCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_HArrayOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_StdMapNodeOfMapOfAsciiString;
@@ -739,8 +969,18 @@ class Handle_Storage_StdMapNodeOfMapOfAsciiString : public Handle_TCollection_Ma
 };
 %feature("shadow") Handle_Storage_StdMapNodeOfMapOfAsciiString::~Handle_Storage_StdMapNodeOfMapOfAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_StdMapNodeOfMapOfAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_StreamModeError;
@@ -767,8 +1007,18 @@ class Handle_Storage_StreamModeError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Storage_StreamModeError::~Handle_Storage_StreamModeError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_StreamModeError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_HeaderData;
@@ -795,8 +1045,18 @@ class Handle_Storage_HeaderData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_HeaderData::~Handle_Storage_HeaderData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_HeaderData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_CallBack;
@@ -823,8 +1083,18 @@ class Handle_Storage_CallBack : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_CallBack::~Handle_Storage_CallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_CallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_DefaultCallBack;
@@ -851,8 +1121,18 @@ class Handle_Storage_DefaultCallBack : public Handle_Storage_CallBack {
 };
 %feature("shadow") Handle_Storage_DefaultCallBack::~Handle_Storage_DefaultCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_DefaultCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_StreamUnknownTypeError;
@@ -879,8 +1159,18 @@ class Handle_Storage_StreamUnknownTypeError : public Handle_Storage_StreamReadEr
 };
 %feature("shadow") Handle_Storage_StreamUnknownTypeError::~Handle_Storage_StreamUnknownTypeError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_StreamUnknownTypeError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Storage_HSeqOfRoot;
@@ -907,8 +1197,18 @@ class Handle_Storage_HSeqOfRoot : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Storage_HSeqOfRoot::~Handle_Storage_HSeqOfRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Storage_HSeqOfRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_HArrayOfCallBack;
@@ -952,8 +1252,18 @@ class Storage_HArrayOfCallBack : public MMgt_TShared {
 };
 %feature("shadow") Storage_HArrayOfCallBack::~Storage_HArrayOfCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_HArrayOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_SeqOfRoot;
@@ -1007,8 +1317,18 @@ class Storage_SeqOfRoot : public TCollection_BaseSequence {
 };
 %feature("shadow") Storage_SeqOfRoot::~Storage_SeqOfRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_SeqOfRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage;
@@ -1022,8 +1342,18 @@ class Storage {
 };
 %feature("shadow") Storage::~Storage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_SequenceNodeOfSeqOfPersistent;
@@ -1049,8 +1379,18 @@ class Storage_SequenceNodeOfSeqOfPersistent : public TCollection_SeqNode {
 };
 %feature("shadow") Storage_SequenceNodeOfSeqOfPersistent::~Storage_SequenceNodeOfSeqOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_SequenceNodeOfSeqOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_ArrayOfCallBack;
@@ -1090,8 +1430,18 @@ class Storage_ArrayOfCallBack {
 };
 %feature("shadow") Storage_ArrayOfCallBack::~Storage_ArrayOfCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_ArrayOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_HSeqOfCallBack;
@@ -1159,8 +1509,18 @@ class Storage_HSeqOfCallBack : public MMgt_TShared {
 };
 %feature("shadow") Storage_HSeqOfCallBack::~Storage_HSeqOfCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_HSeqOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_MapOfCallBack;
@@ -1194,8 +1554,18 @@ class Storage_MapOfCallBack : public TCollection_BasicMap {
 };
 %feature("shadow") Storage_MapOfCallBack::~Storage_MapOfCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_MapOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_HSeqOfRoot;
@@ -1263,8 +1633,18 @@ class Storage_HSeqOfRoot : public MMgt_TShared {
 };
 %feature("shadow") Storage_HSeqOfRoot::~Storage_HSeqOfRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_HSeqOfRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_Data;
@@ -1344,8 +1724,18 @@ class Storage_Data : public MMgt_TShared {
 };
 %feature("shadow") Storage_Data::~Storage_Data %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_Data {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_StreamReadError;
@@ -1377,8 +1767,18 @@ class Storage_StreamReadError : public Standard_Failure {
 };
 %feature("shadow") Storage_StreamReadError::~Storage_StreamReadError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_StreamReadError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_CallBack;
@@ -1408,8 +1808,18 @@ class Storage_CallBack : public MMgt_TShared {
 };
 %feature("shadow") Storage_CallBack::~Storage_CallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_CallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_DefaultCallBack;
@@ -1431,8 +1841,18 @@ class Storage_DefaultCallBack : public Storage_CallBack {
 };
 %feature("shadow") Storage_DefaultCallBack::~Storage_DefaultCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_DefaultCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_HArrayOfSchema;
@@ -1476,8 +1896,18 @@ class Storage_HArrayOfSchema : public MMgt_TShared {
 };
 %feature("shadow") Storage_HArrayOfSchema::~Storage_HArrayOfSchema %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_HArrayOfSchema {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_HPArray;
@@ -1521,8 +1951,18 @@ class Storage_HPArray : public MMgt_TShared {
 };
 %feature("shadow") Storage_HPArray::~Storage_HPArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_HPArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_SeqOfCallBack;
@@ -1576,8 +2016,18 @@ class Storage_SeqOfCallBack : public TCollection_BaseSequence {
 };
 %feature("shadow") Storage_SeqOfCallBack::~Storage_SeqOfCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_SeqOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_TypedCallBack;
@@ -1615,8 +2065,18 @@ class Storage_TypedCallBack : public MMgt_TShared {
 };
 %feature("shadow") Storage_TypedCallBack::~Storage_TypedCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_TypedCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_StreamExtCharParityError;
@@ -1648,8 +2108,18 @@ class Storage_StreamExtCharParityError : public Storage_StreamReadError {
 };
 %feature("shadow") Storage_StreamExtCharParityError::~Storage_StreamExtCharParityError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_StreamExtCharParityError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_MapPSDHasher;
@@ -1665,8 +2135,18 @@ class Storage_MapPSDHasher {
 };
 %feature("shadow") Storage_MapPSDHasher::~Storage_MapPSDHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_MapPSDHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_MapOfAsciiString;
@@ -1692,8 +2172,18 @@ class Storage_MapOfAsciiString : public TCollection_BasicMap {
 };
 %feature("shadow") Storage_MapOfAsciiString::~Storage_MapOfAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_MapOfAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_InternalData;
@@ -1719,8 +2209,18 @@ class Storage_InternalData : public MMgt_TShared {
 };
 %feature("shadow") Storage_InternalData::~Storage_InternalData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_InternalData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_DataMapIteratorOfMapOfCallBack;
@@ -1740,8 +2240,18 @@ class Storage_DataMapIteratorOfMapOfCallBack : public TCollection_BasicMapIterat
 };
 %feature("shadow") Storage_DataMapIteratorOfMapOfCallBack::~Storage_DataMapIteratorOfMapOfCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_DataMapIteratorOfMapOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_Schema;
@@ -1833,8 +2343,18 @@ class Storage_Schema : public MMgt_TShared {
 };
 %feature("shadow") Storage_Schema::~Storage_Schema %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_Schema {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_RootData;
@@ -1876,8 +2396,18 @@ class Storage_RootData : public MMgt_TShared {
 };
 %feature("shadow") Storage_RootData::~Storage_RootData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_RootData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_ArrayOfSchema;
@@ -1917,8 +2447,18 @@ class Storage_ArrayOfSchema {
 };
 %feature("shadow") Storage_ArrayOfSchema::~Storage_ArrayOfSchema %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_ArrayOfSchema {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_DataMapIteratorOfMapOfPers;
@@ -1938,8 +2478,18 @@ class Storage_DataMapIteratorOfMapOfPers : public TCollection_BasicMapIterator {
 };
 %feature("shadow") Storage_DataMapIteratorOfMapOfPers::~Storage_DataMapIteratorOfMapOfPers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_DataMapIteratorOfMapOfPers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_DataMapNodeOfMapOfCallBack;
@@ -1967,8 +2517,18 @@ class Storage_DataMapNodeOfMapOfCallBack : public TCollection_MapNode {
 };
 %feature("shadow") Storage_DataMapNodeOfMapOfCallBack::~Storage_DataMapNodeOfMapOfCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_DataMapNodeOfMapOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_stCONSTclCOM;
@@ -1980,8 +2540,18 @@ class Storage_stCONSTclCOM {
 };
 %feature("shadow") Storage_stCONSTclCOM::~Storage_stCONSTclCOM %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_stCONSTclCOM {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_StreamUnknownTypeError;
@@ -2013,8 +2583,18 @@ class Storage_StreamUnknownTypeError : public Storage_StreamReadError {
 };
 %feature("shadow") Storage_StreamUnknownTypeError::~Storage_StreamUnknownTypeError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_StreamUnknownTypeError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_BaseDriver;
@@ -2168,8 +2748,18 @@ class Storage_BaseDriver {
 };
 %feature("shadow") Storage_BaseDriver::~Storage_BaseDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_BaseDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_SequenceNodeOfSeqOfCallBack;
@@ -2195,8 +2785,18 @@ class Storage_SequenceNodeOfSeqOfCallBack : public TCollection_SeqNode {
 };
 %feature("shadow") Storage_SequenceNodeOfSeqOfCallBack::~Storage_SequenceNodeOfSeqOfCallBack %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_SequenceNodeOfSeqOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_SeqOfPersistent;
@@ -2250,8 +2850,18 @@ class Storage_SeqOfPersistent : public TCollection_BaseSequence {
 };
 %feature("shadow") Storage_SeqOfPersistent::~Storage_SeqOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_SeqOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_HSeqOfPersistent;
@@ -2319,8 +2929,18 @@ class Storage_HSeqOfPersistent : public MMgt_TShared {
 };
 %feature("shadow") Storage_HSeqOfPersistent::~Storage_HSeqOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_HSeqOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_PArray;
@@ -2360,8 +2980,18 @@ class Storage_PArray {
 };
 %feature("shadow") Storage_PArray::~Storage_PArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_PArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_StreamModeError;
@@ -2393,8 +3023,18 @@ class Storage_StreamModeError : public Standard_Failure {
 };
 %feature("shadow") Storage_StreamModeError::~Storage_StreamModeError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_StreamModeError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_IndexedDataMapNodeOfPType;
@@ -2446,8 +3086,18 @@ class Storage_IndexedDataMapNodeOfPType : public TCollection_MapNode {
 };
 %feature("shadow") Storage_IndexedDataMapNodeOfPType::~Storage_IndexedDataMapNodeOfPType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_IndexedDataMapNodeOfPType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_TypeData;
@@ -2485,8 +3135,18 @@ class Storage_TypeData : public MMgt_TShared {
 };
 %feature("shadow") Storage_TypeData::~Storage_TypeData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_TypeData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_StreamWriteError;
@@ -2518,8 +3178,18 @@ class Storage_StreamWriteError : public Standard_Failure {
 };
 %feature("shadow") Storage_StreamWriteError::~Storage_StreamWriteError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_StreamWriteError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_PType;
@@ -2583,8 +3253,18 @@ class Storage_PType : public TCollection_BasicMap {
 };
 %feature("shadow") Storage_PType::~Storage_PType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_PType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_Root;
@@ -2620,8 +3300,18 @@ class Storage_Root : public MMgt_TShared {
 };
 %feature("shadow") Storage_Root::~Storage_Root %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_Root {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_HeaderData;
@@ -2681,8 +3371,18 @@ class Storage_HeaderData : public MMgt_TShared {
 };
 %feature("shadow") Storage_HeaderData::~Storage_HeaderData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_HeaderData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_SequenceNodeOfSeqOfRoot;
@@ -2708,8 +3408,18 @@ class Storage_SequenceNodeOfSeqOfRoot : public TCollection_SeqNode {
 };
 %feature("shadow") Storage_SequenceNodeOfSeqOfRoot::~Storage_SequenceNodeOfSeqOfRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_SequenceNodeOfSeqOfRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_StreamFormatError;
@@ -2741,8 +3451,18 @@ class Storage_StreamFormatError : public Standard_Failure {
 };
 %feature("shadow") Storage_StreamFormatError::~Storage_StreamFormatError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_StreamFormatError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_MapIteratorOfMapOfAsciiString;
@@ -2760,8 +3480,18 @@ class Storage_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterato
 };
 %feature("shadow") Storage_MapIteratorOfMapOfAsciiString::~Storage_MapIteratorOfMapOfAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_MapIteratorOfMapOfAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_StdMapNodeOfMapOfAsciiString;
@@ -2787,8 +3517,18 @@ class Storage_StdMapNodeOfMapOfAsciiString : public TCollection_MapNode {
 };
 %feature("shadow") Storage_StdMapNodeOfMapOfAsciiString::~Storage_StdMapNodeOfMapOfAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_StdMapNodeOfMapOfAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_MapOfPers;
@@ -2822,8 +3562,18 @@ class Storage_MapOfPers : public TCollection_BasicMap {
 };
 %feature("shadow") Storage_MapOfPers::~Storage_MapOfPers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_MapOfPers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_DataMapNodeOfMapOfPers;
@@ -2851,8 +3601,18 @@ class Storage_DataMapNodeOfMapOfPers : public TCollection_MapNode {
 };
 %feature("shadow") Storage_DataMapNodeOfMapOfPers::~Storage_DataMapNodeOfMapOfPers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_DataMapNodeOfMapOfPers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Storage_StreamTypeMismatchError;
@@ -2884,5 +3644,15 @@ class Storage_StreamTypeMismatchError : public Storage_StreamReadError {
 };
 %feature("shadow") Storage_StreamTypeMismatchError::~Storage_StreamTypeMismatchError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Storage_StreamTypeMismatchError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

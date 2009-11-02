@@ -94,8 +94,18 @@ class Handle_Xw_HListOfMFTFonts : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Xw_HListOfMFTFonts::~Handle_Xw_HListOfMFTFonts %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_HListOfMFTFonts {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Xw_ColorMap;
@@ -122,8 +132,18 @@ class Handle_Xw_ColorMap : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Xw_ColorMap::~Handle_Xw_ColorMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_ColorMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Xw_TextManager;
@@ -150,8 +170,18 @@ class Handle_Xw_TextManager : public Handle_MFT_TextManager {
 };
 %feature("shadow") Handle_Xw_TextManager::~Handle_Xw_TextManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_TextManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Xw_Driver;
@@ -178,8 +208,18 @@ class Handle_Xw_Driver : public Handle_Aspect_WindowDriver {
 };
 %feature("shadow") Handle_Xw_Driver::~Handle_Xw_Driver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Xw_WidthMap;
@@ -206,8 +246,18 @@ class Handle_Xw_WidthMap : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_Xw_WidthMap::~Handle_Xw_WidthMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_WidthMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Xw_HListOfMFTSizes;
@@ -234,8 +284,18 @@ class Handle_Xw_HListOfMFTSizes : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Xw_HListOfMFTSizes::~Handle_Xw_HListOfMFTSizes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_HListOfMFTSizes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Xw_GraphicDevice;
@@ -262,8 +322,18 @@ class Handle_Xw_GraphicDevice : public Handle_Aspect_GraphicDevice {
 };
 %feature("shadow") Handle_Xw_GraphicDevice::~Handle_Xw_GraphicDevice %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_GraphicDevice {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Xw_FontMap;
@@ -290,8 +360,18 @@ class Handle_Xw_FontMap : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_Xw_FontMap::~Handle_Xw_FontMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_FontMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Xw_MarkMap;
@@ -318,8 +398,18 @@ class Handle_Xw_MarkMap : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_Xw_MarkMap::~Handle_Xw_MarkMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_MarkMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Xw_HListOfIndexs;
@@ -346,8 +436,18 @@ class Handle_Xw_HListOfIndexs : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Xw_HListOfIndexs::~Handle_Xw_HListOfIndexs %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_HListOfIndexs {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Xw_Window;
@@ -374,8 +474,18 @@ class Handle_Xw_Window : public Handle_Aspect_Window {
 };
 %feature("shadow") Handle_Xw_Window::~Handle_Xw_Window %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_Window {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Xw_IconBox;
@@ -402,8 +512,18 @@ class Handle_Xw_IconBox : public Handle_Xw_Window {
 };
 %feature("shadow") Handle_Xw_IconBox::~Handle_Xw_IconBox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_IconBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Xw_TypeMap;
@@ -430,8 +550,18 @@ class Handle_Xw_TypeMap : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_Xw_TypeMap::~Handle_Xw_TypeMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_TypeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Xw_PixMap;
@@ -458,8 +588,18 @@ class Handle_Xw_PixMap : public Handle_Aspect_PixMap {
 };
 %feature("shadow") Handle_Xw_PixMap::~Handle_Xw_PixMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Xw_PixMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_GraphicDevice;
@@ -517,8 +657,18 @@ class Xw_GraphicDevice : public Aspect_GraphicDevice {
 };
 %feature("shadow") Xw_GraphicDevice::~Xw_GraphicDevice %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_GraphicDevice {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_HListOfMFTFonts;
@@ -562,8 +712,18 @@ class Xw_HListOfMFTFonts : public MMgt_TShared {
 };
 %feature("shadow") Xw_HListOfMFTFonts::~Xw_HListOfMFTFonts %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_HListOfMFTFonts {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_Driver;
@@ -725,8 +885,18 @@ class Xw_Driver : public Aspect_WindowDriver {
 };
 %feature("shadow") Xw_Driver::~Xw_Driver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_WidthMap;
@@ -758,8 +928,18 @@ class Xw_WidthMap : public Standard_Transient {
 };
 %feature("shadow") Xw_WidthMap::~Xw_WidthMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_WidthMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_ColorMap;
@@ -831,8 +1011,18 @@ class Xw_ColorMap : public MMgt_TShared {
 };
 %feature("shadow") Xw_ColorMap::~Xw_ColorMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_ColorMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_TextManager;
@@ -876,8 +1066,18 @@ class Xw_TextManager : public MFT_TextManager {
 };
 %feature("shadow") Xw_TextManager::~Xw_TextManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_TextManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_HListOfMFTSizes;
@@ -921,8 +1121,18 @@ class Xw_HListOfMFTSizes : public MMgt_TShared {
 };
 %feature("shadow") Xw_HListOfMFTSizes::~Xw_HListOfMFTSizes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_HListOfMFTSizes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_Window;
@@ -1060,8 +1270,18 @@ class Xw_Window : public Aspect_Window {
 };
 %feature("shadow") Xw_Window::~Xw_Window %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_Window {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_IconBox;
@@ -1103,8 +1323,18 @@ class Xw_IconBox : public Xw_Window {
 };
 %feature("shadow") Xw_IconBox::~Xw_IconBox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_IconBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_HListOfIndexs;
@@ -1158,8 +1388,18 @@ class Xw_HListOfIndexs : public MMgt_TShared {
 };
 %feature("shadow") Xw_HListOfIndexs::~Xw_HListOfIndexs %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_HListOfIndexs {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_PixMap;
@@ -1189,8 +1429,18 @@ class Xw_PixMap : public Aspect_PixMap {
 };
 %feature("shadow") Xw_PixMap::~Xw_PixMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_PixMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_FontMap;
@@ -1222,8 +1472,18 @@ class Xw_FontMap : public Standard_Transient {
 };
 %feature("shadow") Xw_FontMap::~Xw_FontMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_FontMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_ListOfMFTFonts;
@@ -1263,8 +1523,18 @@ class Xw_ListOfMFTFonts {
 };
 %feature("shadow") Xw_ListOfMFTFonts::~Xw_ListOfMFTFonts %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_ListOfMFTFonts {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_TypeMap;
@@ -1296,8 +1566,18 @@ class Xw_TypeMap : public Standard_Transient {
 };
 %feature("shadow") Xw_TypeMap::~Xw_TypeMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_TypeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_ListOfIndexs;
@@ -1347,8 +1627,18 @@ class Xw_ListOfIndexs {
 };
 %feature("shadow") Xw_ListOfIndexs::~Xw_ListOfIndexs %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_ListOfIndexs {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_MarkMap;
@@ -1380,8 +1670,18 @@ class Xw_MarkMap : public Standard_Transient {
 };
 %feature("shadow") Xw_MarkMap::~Xw_MarkMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_MarkMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw;
@@ -1395,8 +1695,18 @@ class Xw {
 };
 %feature("shadow") Xw::~Xw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Xw_ListOfMFTSizes;
@@ -1436,5 +1746,15 @@ class Xw_ListOfMFTSizes {
 };
 %feature("shadow") Xw_ListOfMFTSizes::~Xw_ListOfMFTSizes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Xw_ListOfMFTSizes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

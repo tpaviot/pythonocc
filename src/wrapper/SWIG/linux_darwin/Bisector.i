@@ -63,8 +63,18 @@ class Handle_Bisector_Curve : public Handle_Geom2d_Curve {
 };
 %feature("shadow") Handle_Bisector_Curve::~Handle_Bisector_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Bisector_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Bisector_BisecAna;
@@ -91,8 +101,18 @@ class Handle_Bisector_BisecAna : public Handle_Bisector_Curve {
 };
 %feature("shadow") Handle_Bisector_BisecAna::~Handle_Bisector_BisecAna %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Bisector_BisecAna {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Bisector_BisecCC;
@@ -119,8 +139,18 @@ class Handle_Bisector_BisecCC : public Handle_Bisector_Curve {
 };
 %feature("shadow") Handle_Bisector_BisecCC::~Handle_Bisector_BisecCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Bisector_BisecCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Bisector_BisecPC;
@@ -147,8 +177,18 @@ class Handle_Bisector_BisecPC : public Handle_Bisector_Curve {
 };
 %feature("shadow") Handle_Bisector_BisecPC::~Handle_Bisector_BisecPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Bisector_BisecPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Bisector_Inter;
@@ -164,8 +204,18 @@ class Bisector_Inter : public IntRes2d_Intersection {
 };
 %feature("shadow") Bisector_Inter::~Bisector_Inter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Bisector_Inter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Bisector_FunctionInter;
@@ -187,8 +237,18 @@ class Bisector_FunctionInter : public math_FunctionWithDerivative {
 };
 %feature("shadow") Bisector_FunctionInter::~Bisector_FunctionInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Bisector_FunctionInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Bisector_Curve;
@@ -222,8 +282,18 @@ class Bisector_Curve : public Geom2d_Curve {
 };
 %feature("shadow") Bisector_Curve::~Bisector_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Bisector_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Bisector_BisecCC;
@@ -299,8 +369,18 @@ class Bisector_BisecCC : public Bisector_Curve {
 };
 %feature("shadow") Bisector_BisecCC::~Bisector_BisecCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Bisector_BisecCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Bisector_BisecPC;
@@ -384,8 +464,18 @@ class Bisector_BisecPC : public Bisector_Curve {
 };
 %feature("shadow") Bisector_BisecPC::~Bisector_BisecPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Bisector_BisecPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Bisector_BisecAna;
@@ -473,8 +563,18 @@ class Bisector_BisecAna : public Bisector_Curve {
 };
 %feature("shadow") Bisector_BisecAna::~Bisector_BisecAna %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Bisector_BisecAna {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Bisector_PolyBis;
@@ -502,8 +602,18 @@ class Bisector_PolyBis {
 };
 %feature("shadow") Bisector_PolyBis::~Bisector_PolyBis %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Bisector_PolyBis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Bisector_PointOnBis;
@@ -543,8 +653,18 @@ class Bisector_PointOnBis {
 };
 %feature("shadow") Bisector_PointOnBis::~Bisector_PointOnBis %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Bisector_PointOnBis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Bisector;
@@ -558,8 +678,18 @@ class Bisector {
 };
 %feature("shadow") Bisector::~Bisector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Bisector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Bisector_FunctionH;
@@ -577,8 +707,18 @@ class Bisector_FunctionH : public math_FunctionWithDerivative {
 };
 %feature("shadow") Bisector_FunctionH::~Bisector_FunctionH %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Bisector_FunctionH {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Bisector_Bisec;
@@ -602,5 +742,15 @@ class Bisector_Bisec {
 };
 %feature("shadow") Bisector_Bisec::~Bisector_Bisec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Bisector_Bisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

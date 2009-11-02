@@ -97,8 +97,18 @@ class TopoDSToStep_Root {
 };
 %feature("shadow") TopoDSToStep_Root::~TopoDSToStep_Root %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_Root {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_MakeStepVertex;
@@ -118,8 +128,18 @@ class TopoDSToStep_MakeStepVertex : public TopoDSToStep_Root {
 };
 %feature("shadow") TopoDSToStep_MakeStepVertex::~TopoDSToStep_MakeStepVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_MakeStepVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_MakeFacetedBrep;
@@ -135,8 +155,18 @@ class TopoDSToStep_MakeFacetedBrep : public TopoDSToStep_Root {
 };
 %feature("shadow") TopoDSToStep_MakeFacetedBrep::~TopoDSToStep_MakeFacetedBrep %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_MakeFacetedBrep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_MakeStepWire;
@@ -156,8 +186,18 @@ class TopoDSToStep_MakeStepWire : public TopoDSToStep_Root {
 };
 %feature("shadow") TopoDSToStep_MakeStepWire::~TopoDSToStep_MakeStepWire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_MakeStepWire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_MakeFacetedBrepAndBrepWithVoids;
@@ -171,8 +211,18 @@ class TopoDSToStep_MakeFacetedBrepAndBrepWithVoids : public TopoDSToStep_Root {
 };
 %feature("shadow") TopoDSToStep_MakeFacetedBrepAndBrepWithVoids::~TopoDSToStep_MakeFacetedBrepAndBrepWithVoids %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_MakeFacetedBrepAndBrepWithVoids {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_MakeManifoldSolidBrep;
@@ -188,8 +238,18 @@ class TopoDSToStep_MakeManifoldSolidBrep : public TopoDSToStep_Root {
 };
 %feature("shadow") TopoDSToStep_MakeManifoldSolidBrep::~TopoDSToStep_MakeManifoldSolidBrep %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_MakeManifoldSolidBrep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_MakeShellBasedSurfaceModel;
@@ -207,8 +267,18 @@ class TopoDSToStep_MakeShellBasedSurfaceModel : public TopoDSToStep_Root {
 };
 %feature("shadow") TopoDSToStep_MakeShellBasedSurfaceModel::~TopoDSToStep_MakeShellBasedSurfaceModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_MakeShellBasedSurfaceModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_MakeStepEdge;
@@ -228,8 +298,18 @@ class TopoDSToStep_MakeStepEdge : public TopoDSToStep_Root {
 };
 %feature("shadow") TopoDSToStep_MakeStepEdge::~TopoDSToStep_MakeStepEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_MakeStepEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_Tool;
@@ -283,8 +363,18 @@ class TopoDSToStep_Tool {
 };
 %feature("shadow") TopoDSToStep_Tool::~TopoDSToStep_Tool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_WireframeBuilder;
@@ -310,8 +400,18 @@ class TopoDSToStep_WireframeBuilder : public TopoDSToStep_Root {
 };
 %feature("shadow") TopoDSToStep_WireframeBuilder::~TopoDSToStep_WireframeBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_WireframeBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_MakeBrepWithVoids;
@@ -325,8 +425,18 @@ class TopoDSToStep_MakeBrepWithVoids : public TopoDSToStep_Root {
 };
 %feature("shadow") TopoDSToStep_MakeBrepWithVoids::~TopoDSToStep_MakeBrepWithVoids %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_MakeBrepWithVoids {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep;
@@ -352,8 +462,18 @@ class TopoDSToStep {
 };
 %feature("shadow") TopoDSToStep::~TopoDSToStep %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_Builder;
@@ -373,8 +493,18 @@ class TopoDSToStep_Builder : public TopoDSToStep_Root {
 };
 %feature("shadow") TopoDSToStep_Builder::~TopoDSToStep_Builder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_Builder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_MakeStepFace;
@@ -394,8 +524,18 @@ class TopoDSToStep_MakeStepFace : public TopoDSToStep_Root {
 };
 %feature("shadow") TopoDSToStep_MakeStepFace::~TopoDSToStep_MakeStepFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_MakeStepFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_FacetedTool;
@@ -409,8 +549,18 @@ class TopoDSToStep_FacetedTool {
 };
 %feature("shadow") TopoDSToStep_FacetedTool::~TopoDSToStep_FacetedTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_FacetedTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDSToStep_MakeGeometricCurveSet;
@@ -424,5 +574,15 @@ class TopoDSToStep_MakeGeometricCurveSet : public TopoDSToStep_Root {
 };
 %feature("shadow") TopoDSToStep_MakeGeometricCurveSet::~TopoDSToStep_MakeGeometricCurveSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDSToStep_MakeGeometricCurveSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

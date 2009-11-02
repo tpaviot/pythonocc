@@ -63,8 +63,18 @@ class Handle_TransferBRep_BinderOfShape : public Handle_Transfer_Binder {
 };
 %feature("shadow") Handle_TransferBRep_BinderOfShape::~Handle_TransferBRep_BinderOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TransferBRep_BinderOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TransferBRep_ShapeBinder;
@@ -91,8 +101,18 @@ class Handle_TransferBRep_ShapeBinder : public Handle_TransferBRep_BinderOfShape
 };
 %feature("shadow") Handle_TransferBRep_ShapeBinder::~Handle_TransferBRep_ShapeBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TransferBRep_ShapeBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TransferBRep_ShapeMapper;
@@ -119,8 +139,18 @@ class Handle_TransferBRep_ShapeMapper : public Handle_Transfer_Finder {
 };
 %feature("shadow") Handle_TransferBRep_ShapeMapper::~Handle_TransferBRep_ShapeMapper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TransferBRep_ShapeMapper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TransferBRep_HSequenceOfTransferResultInfo;
@@ -147,8 +177,18 @@ class Handle_TransferBRep_HSequenceOfTransferResultInfo : public Handle_MMgt_TSh
 };
 %feature("shadow") Handle_TransferBRep_HSequenceOfTransferResultInfo::~Handle_TransferBRep_HSequenceOfTransferResultInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TransferBRep_HSequenceOfTransferResultInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo;
@@ -175,8 +215,18 @@ class Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public Ha
 };
 %feature("shadow") Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo::~Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TransferBRep_OrientedShapeMapper;
@@ -203,8 +253,18 @@ class Handle_TransferBRep_OrientedShapeMapper : public Handle_Transfer_Finder {
 };
 %feature("shadow") Handle_TransferBRep_OrientedShapeMapper::~Handle_TransferBRep_OrientedShapeMapper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TransferBRep_OrientedShapeMapper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TransferBRep_ShapeListBinder;
@@ -231,8 +291,18 @@ class Handle_TransferBRep_ShapeListBinder : public Handle_Transfer_Binder {
 };
 %feature("shadow") Handle_TransferBRep_ShapeListBinder::~Handle_TransferBRep_ShapeListBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TransferBRep_ShapeListBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TransferBRep_TransferResultInfo;
@@ -259,8 +329,18 @@ class Handle_TransferBRep_TransferResultInfo : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TransferBRep_TransferResultInfo::~Handle_TransferBRep_TransferResultInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TransferBRep_TransferResultInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TransferBRep_Reader;
@@ -338,8 +418,18 @@ class TransferBRep_Reader {
 };
 %feature("shadow") TransferBRep_Reader::~TransferBRep_Reader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TransferBRep_Reader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TransferBRep_TransferResultInfo;
@@ -461,8 +551,18 @@ class TransferBRep_TransferResultInfo : public MMgt_TShared {
 };
 %feature("shadow") TransferBRep_TransferResultInfo::~TransferBRep_TransferResultInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TransferBRep_TransferResultInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TransferBRep_OrientedShapeMapper;
@@ -494,8 +594,18 @@ class TransferBRep_OrientedShapeMapper : public Transfer_Finder {
 };
 %feature("shadow") TransferBRep_OrientedShapeMapper::~TransferBRep_OrientedShapeMapper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TransferBRep_OrientedShapeMapper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TransferBRep_HSequenceOfTransferResultInfo;
@@ -563,8 +673,18 @@ class TransferBRep_HSequenceOfTransferResultInfo : public MMgt_TShared {
 };
 %feature("shadow") TransferBRep_HSequenceOfTransferResultInfo::~TransferBRep_HSequenceOfTransferResultInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TransferBRep_HSequenceOfTransferResultInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TransferBRep_BinderOfShape;
@@ -600,8 +720,18 @@ class TransferBRep_BinderOfShape : public Transfer_Binder {
 };
 %feature("shadow") TransferBRep_BinderOfShape::~TransferBRep_BinderOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TransferBRep_BinderOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TransferBRep_ShapeBinder;
@@ -645,8 +775,18 @@ class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
 };
 %feature("shadow") TransferBRep_ShapeBinder::~TransferBRep_ShapeBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TransferBRep_ShapeBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TransferBRep_SequenceOfTransferResultInfo;
@@ -700,8 +840,18 @@ class TransferBRep_SequenceOfTransferResultInfo : public TCollection_BaseSequenc
 };
 %feature("shadow") TransferBRep_SequenceOfTransferResultInfo::~TransferBRep_SequenceOfTransferResultInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TransferBRep_SequenceOfTransferResultInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TransferBRep;
@@ -747,8 +897,18 @@ class TransferBRep {
 };
 %feature("shadow") TransferBRep::~TransferBRep %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TransferBRep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TransferBRep_ShapeInfo;
@@ -764,8 +924,18 @@ class TransferBRep_ShapeInfo {
 };
 %feature("shadow") TransferBRep_ShapeInfo::~TransferBRep_ShapeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TransferBRep_ShapeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo;
@@ -791,8 +961,18 @@ class TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public TCollecti
 };
 %feature("shadow") TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo::~TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TransferBRep_ShapeListBinder;
@@ -852,5 +1032,15 @@ class TransferBRep_ShapeListBinder : public Transfer_Binder {
 };
 %feature("shadow") TransferBRep_ShapeListBinder::~TransferBRep_ShapeListBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TransferBRep_ShapeListBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -91,8 +91,18 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public Handle_TC
 };
 %feature("shadow") Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg::~Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeExtend_BasicMsgRegistrator;
@@ -119,8 +129,18 @@ class Handle_ShapeExtend_BasicMsgRegistrator : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeExtend_BasicMsgRegistrator::~Handle_ShapeExtend_BasicMsgRegistrator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeExtend_BasicMsgRegistrator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeExtend_MsgRegistrator;
@@ -147,8 +167,18 @@ class Handle_ShapeExtend_MsgRegistrator : public Handle_ShapeExtend_BasicMsgRegi
 };
 %feature("shadow") Handle_ShapeExtend_MsgRegistrator::~Handle_ShapeExtend_MsgRegistrator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeExtend_MsgRegistrator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
@@ -175,8 +205,18 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handl
 };
 %feature("shadow") Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg::~Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeExtend_ComplexCurve;
@@ -203,8 +243,18 @@ class Handle_ShapeExtend_ComplexCurve : public Handle_Geom_Curve {
 };
 %feature("shadow") Handle_ShapeExtend_ComplexCurve::~Handle_ShapeExtend_ComplexCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeExtend_ComplexCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeExtend_CompositeSurface;
@@ -231,8 +281,18 @@ class Handle_ShapeExtend_CompositeSurface : public Handle_Geom_Surface {
 };
 %feature("shadow") Handle_ShapeExtend_CompositeSurface::~Handle_ShapeExtend_CompositeSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeExtend_CompositeSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeExtend_WireData;
@@ -259,8 +319,18 @@ class Handle_ShapeExtend_WireData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeExtend_WireData::~Handle_ShapeExtend_WireData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeExtend_WireData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeExtend_ComplexCurve;
@@ -320,8 +390,18 @@ class ShapeExtend_ComplexCurve : public Geom_Curve {
 };
 %feature("shadow") ShapeExtend_ComplexCurve::~ShapeExtend_ComplexCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeExtend_ComplexCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeExtend_WireData;
@@ -401,8 +481,18 @@ class ShapeExtend_WireData : public MMgt_TShared {
 };
 %feature("shadow") ShapeExtend_WireData::~ShapeExtend_WireData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeExtend_WireData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeExtend_BasicMsgRegistrator;
@@ -432,8 +522,18 @@ class ShapeExtend_BasicMsgRegistrator : public MMgt_TShared {
 };
 %feature("shadow") ShapeExtend_BasicMsgRegistrator::~ShapeExtend_BasicMsgRegistrator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeExtend_BasicMsgRegistrator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeExtend;
@@ -451,8 +551,18 @@ class ShapeExtend {
 };
 %feature("shadow") ShapeExtend::~ShapeExtend %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeExtend {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeExtend_MsgRegistrator;
@@ -484,8 +594,18 @@ class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
 };
 %feature("shadow") ShapeExtend_MsgRegistrator::~ShapeExtend_MsgRegistrator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeExtend_MsgRegistrator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg;
@@ -513,8 +633,18 @@ class ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public TCollection_MapN
 };
 %feature("shadow") ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg::~ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
@@ -542,8 +672,18 @@ class ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public TCollection_
 };
 %feature("shadow") ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg::~ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeExtend_DataMapOfTransientListOfMsg;
@@ -577,8 +717,18 @@ class ShapeExtend_DataMapOfTransientListOfMsg : public TCollection_BasicMap {
 };
 %feature("shadow") ShapeExtend_DataMapOfTransientListOfMsg::~ShapeExtend_DataMapOfTransientListOfMsg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeExtend_DataMapOfTransientListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg;
@@ -598,8 +748,18 @@ class ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg : public TCollect
 };
 %feature("shadow") ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg::~ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg;
@@ -619,8 +779,18 @@ class ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg : public TCollection_
 };
 %feature("shadow") ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg::~ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeExtend_DataMapOfShapeListOfMsg;
@@ -654,8 +824,18 @@ class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
 };
 %feature("shadow") ShapeExtend_DataMapOfShapeListOfMsg::~ShapeExtend_DataMapOfShapeListOfMsg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeExtend_DataMapOfShapeListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeExtend_CompositeSurface;
@@ -783,8 +963,18 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 };
 %feature("shadow") ShapeExtend_CompositeSurface::~ShapeExtend_CompositeSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeExtend_CompositeSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeExtend_Explorer;
@@ -810,5 +1000,15 @@ class ShapeExtend_Explorer {
 };
 %feature("shadow") ShapeExtend_Explorer::~ShapeExtend_Explorer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeExtend_Explorer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_XmlMDF_ADriver : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_XmlMDF_ADriver::~Handle_XmlMDF_ADriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDF_ADriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDF_TagSourceDriver;
@@ -91,8 +101,18 @@ class Handle_XmlMDF_TagSourceDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDF_TagSourceDriver::~Handle_XmlMDF_TagSourceDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDF_TagSourceDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDF_DataMapNodeOfMapOfDriver;
@@ -119,8 +139,18 @@ class Handle_XmlMDF_DataMapNodeOfMapOfDriver : public Handle_TCollection_MapNode
 };
 %feature("shadow") Handle_XmlMDF_DataMapNodeOfMapOfDriver::~Handle_XmlMDF_DataMapNodeOfMapOfDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDF_DataMapNodeOfMapOfDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDF_ReferenceDriver;
@@ -147,8 +177,18 @@ class Handle_XmlMDF_ReferenceDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDF_ReferenceDriver::~Handle_XmlMDF_ReferenceDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDF_ReferenceDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDF_DataMapNodeOfTypeADriverMap;
@@ -175,8 +215,18 @@ class Handle_XmlMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapN
 };
 %feature("shadow") Handle_XmlMDF_DataMapNodeOfTypeADriverMap::~Handle_XmlMDF_DataMapNodeOfTypeADriverMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDF_DataMapNodeOfTypeADriverMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDF_ADriverTable;
@@ -203,8 +253,18 @@ class Handle_XmlMDF_ADriverTable : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_XmlMDF_ADriverTable::~Handle_XmlMDF_ADriverTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDF_ADriverTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDF_DataMapNodeOfTypeADriverMap;
@@ -232,8 +292,18 @@ class XmlMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 };
 %feature("shadow") XmlMDF_DataMapNodeOfTypeADriverMap::~XmlMDF_DataMapNodeOfTypeADriverMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDF_DataMapNodeOfTypeADriverMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDF_DataMapNodeOfMapOfDriver;
@@ -261,8 +331,18 @@ class XmlMDF_DataMapNodeOfMapOfDriver : public TCollection_MapNode {
 };
 %feature("shadow") XmlMDF_DataMapNodeOfMapOfDriver::~XmlMDF_DataMapNodeOfMapOfDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDF_DataMapNodeOfMapOfDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDF_TypeADriverMap;
@@ -296,8 +376,18 @@ class XmlMDF_TypeADriverMap : public TCollection_BasicMap {
 };
 %feature("shadow") XmlMDF_TypeADriverMap::~XmlMDF_TypeADriverMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDF_TypeADriverMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDF_ADriver;
@@ -333,8 +423,18 @@ class XmlMDF_ADriver : public MMgt_TShared {
 };
 %feature("shadow") XmlMDF_ADriver::~XmlMDF_ADriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDF_ADriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDF_TagSourceDriver;
@@ -364,8 +464,18 @@ class XmlMDF_TagSourceDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDF_TagSourceDriver::~XmlMDF_TagSourceDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDF_TagSourceDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDF;
@@ -383,8 +493,18 @@ class XmlMDF {
 };
 %feature("shadow") XmlMDF::~XmlMDF %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDF_DataMapIteratorOfMapOfDriver;
@@ -404,8 +524,18 @@ class XmlMDF_DataMapIteratorOfMapOfDriver : public TCollection_BasicMapIterator 
 };
 %feature("shadow") XmlMDF_DataMapIteratorOfMapOfDriver::~XmlMDF_DataMapIteratorOfMapOfDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDF_DataMapIteratorOfMapOfDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDF_MapOfDriver;
@@ -439,8 +569,18 @@ class XmlMDF_MapOfDriver : public TCollection_BasicMap {
 };
 %feature("shadow") XmlMDF_MapOfDriver::~XmlMDF_MapOfDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDF_MapOfDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDF_ADriverTable;
@@ -470,8 +610,18 @@ class XmlMDF_ADriverTable : public MMgt_TShared {
 };
 %feature("shadow") XmlMDF_ADriverTable::~XmlMDF_ADriverTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDF_ADriverTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDF_ReferenceDriver;
@@ -501,8 +651,18 @@ class XmlMDF_ReferenceDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDF_ReferenceDriver::~XmlMDF_ReferenceDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDF_ReferenceDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDF_DataMapIteratorOfTypeADriverMap;
@@ -522,5 +682,15 @@ class XmlMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterat
 };
 %feature("shadow") XmlMDF_DataMapIteratorOfTypeADriverMap::~XmlMDF_DataMapIteratorOfTypeADriverMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDF_DataMapIteratorOfTypeADriverMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -68,8 +68,18 @@ class Geom2dAPI_InterCurveCurve {
 };
 %feature("shadow") Geom2dAPI_InterCurveCurve::~Geom2dAPI_InterCurveCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dAPI_InterCurveCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dAPI_PointsToBSpline;
@@ -91,8 +101,18 @@ class Geom2dAPI_PointsToBSpline {
 };
 %feature("shadow") Geom2dAPI_PointsToBSpline::~Geom2dAPI_PointsToBSpline %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dAPI_PointsToBSpline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dAPI_ProjectPointOnCurve;
@@ -130,8 +150,18 @@ class Geom2dAPI_ProjectPointOnCurve {
 };
 %feature("shadow") Geom2dAPI_ProjectPointOnCurve::~Geom2dAPI_ProjectPointOnCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dAPI_ProjectPointOnCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dAPI_Interpolate;
@@ -155,8 +185,18 @@ class Geom2dAPI_Interpolate {
 };
 %feature("shadow") Geom2dAPI_Interpolate::~Geom2dAPI_Interpolate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dAPI_Interpolate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dAPI_ExtremaCurveCurve;
@@ -184,5 +224,15 @@ class Geom2dAPI_ExtremaCurveCurve {
 };
 %feature("shadow") Geom2dAPI_ExtremaCurveCurve::~Geom2dAPI_ExtremaCurveCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dAPI_ExtremaCurveCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

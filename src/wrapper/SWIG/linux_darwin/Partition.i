@@ -62,8 +62,18 @@ class Partition_Spliter {
 };
 %feature("shadow") Partition_Spliter::~Partition_Spliter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Partition_Spliter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Partition_Loop2d;
@@ -89,8 +99,18 @@ class Partition_Loop2d {
 };
 %feature("shadow") Partition_Loop2d::~Partition_Loop2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Partition_Loop2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Partition_Loop3d;
@@ -112,8 +132,18 @@ class Partition_Loop3d {
 };
 %feature("shadow") Partition_Loop3d::~Partition_Loop3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Partition_Loop3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Partition_Loop;
@@ -137,8 +167,18 @@ class Partition_Loop {
 };
 %feature("shadow") Partition_Loop::~Partition_Loop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Partition_Loop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Partition_Inter3d;
@@ -182,8 +222,18 @@ class Partition_Inter3d {
 };
 %feature("shadow") Partition_Inter3d::~Partition_Inter3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Partition_Inter3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Partition_Inter2d;
@@ -203,5 +253,15 @@ class Partition_Inter2d {
 };
 %feature("shadow") Partition_Inter2d::~Partition_Inter2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Partition_Inter2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

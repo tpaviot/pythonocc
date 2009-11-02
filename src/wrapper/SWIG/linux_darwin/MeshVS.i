@@ -137,8 +137,18 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner : public Handle
 };
 %feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_PrsBuilder;
@@ -165,8 +175,18 @@ class Handle_MeshVS_PrsBuilder : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MeshVS_PrsBuilder::~Handle_MeshVS_PrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_PrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_MeshPrsBuilder;
@@ -193,8 +213,18 @@ class Handle_MeshVS_MeshPrsBuilder : public Handle_MeshVS_PrsBuilder {
 };
 %feature("shadow") Handle_MeshVS_MeshPrsBuilder::~Handle_MeshVS_MeshPrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_MeshPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_Mesh;
@@ -221,8 +251,18 @@ class Handle_MeshVS_Mesh : public Handle_AIS_InteractiveObject {
 };
 %feature("shadow") Handle_MeshVS_Mesh::~Handle_MeshVS_Mesh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_Mesh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_TextPrsBuilder;
@@ -249,8 +289,18 @@ class Handle_MeshVS_TextPrsBuilder : public Handle_MeshVS_PrsBuilder {
 };
 %feature("shadow") Handle_MeshVS_TextPrsBuilder::~Handle_MeshVS_TextPrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_TextPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_SensitivePolyhedron;
@@ -277,8 +327,18 @@ class Handle_MeshVS_SensitivePolyhedron : public Handle_Select3D_SensitiveEntity
 };
 %feature("shadow") Handle_MeshVS_SensitivePolyhedron::~Handle_MeshVS_SensitivePolyhedron %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_SensitivePolyhedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_NodalColorPrsBuilder;
@@ -305,8 +365,18 @@ class Handle_MeshVS_NodalColorPrsBuilder : public Handle_MeshVS_PrsBuilder {
 };
 %feature("shadow") Handle_MeshVS_NodalColorPrsBuilder::~Handle_MeshVS_NodalColorPrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_NodalColorPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger;
@@ -333,8 +403,18 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger : public Ha
 };
 %feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger::~Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_MeshOwner;
@@ -361,8 +441,18 @@ class Handle_MeshVS_MeshOwner : public Handle_SelectMgr_EntityOwner {
 };
 %feature("shadow") Handle_MeshVS_MeshOwner::~Handle_MeshVS_MeshOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_MeshOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString;
@@ -389,8 +479,18 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString : public Handle_TCo
 };
 %feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder;
@@ -417,8 +517,18 @@ class Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public Handle_TCollecti
 };
 %feature("shadow") Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder::~Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_MeshEntityOwner;
@@ -445,8 +555,18 @@ class Handle_MeshVS_MeshEntityOwner : public Handle_SelectMgr_EntityOwner {
 };
 %feature("shadow") Handle_MeshVS_MeshEntityOwner::~Handle_MeshVS_MeshEntityOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_MeshEntityOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DummySensitiveEntity;
@@ -473,8 +593,18 @@ class Handle_MeshVS_DummySensitiveEntity : public Handle_SelectBasics_SensitiveE
 };
 %feature("shadow") Handle_MeshVS_DummySensitiveEntity::~Handle_MeshVS_DummySensitiveEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DummySensitiveEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger;
@@ -501,8 +631,18 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger : public Handle_TCol
 };
 %feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger::~Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_ElementalColorPrsBuilder;
@@ -529,8 +669,18 @@ class Handle_MeshVS_ElementalColorPrsBuilder : public Handle_MeshVS_PrsBuilder {
 };
 %feature("shadow") Handle_MeshVS_ElementalColorPrsBuilder::~Handle_MeshVS_ElementalColorPrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_ElementalColorPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_StdMapNodeOfMapOfTwoNodes;
@@ -557,8 +707,18 @@ class Handle_MeshVS_StdMapNodeOfMapOfTwoNodes : public Handle_TCollection_MapNod
 };
 %feature("shadow") Handle_MeshVS_StdMapNodeOfMapOfTwoNodes::~Handle_MeshVS_StdMapNodeOfMapOfTwoNodes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_StdMapNodeOfMapOfTwoNodes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor;
@@ -585,8 +745,18 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor : public Handle_TCollecti
 };
 %feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DataSource;
@@ -613,8 +783,18 @@ class Handle_MeshVS_DataSource : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MeshVS_DataSource::~Handle_MeshVS_DataSource %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DataSource {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial;
@@ -641,8 +821,18 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial : public Handle_TColle
 };
 %feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DeformedDataSource;
@@ -669,8 +859,18 @@ class Handle_MeshVS_DeformedDataSource : public Handle_MeshVS_DataSource {
 };
 %feature("shadow") Handle_MeshVS_DeformedDataSource::~Handle_MeshVS_DeformedDataSource %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DeformedDataSource {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors;
@@ -697,8 +897,18 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors : public Handle_TColl
 };
 %feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_SensitiveMesh;
@@ -725,8 +935,18 @@ class Handle_MeshVS_SensitiveMesh : public Handle_Select3D_SensitiveEntity {
 };
 %feature("shadow") Handle_MeshVS_SensitiveMesh::~Handle_MeshVS_SensitiveMesh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_SensitiveMesh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_Drawer;
@@ -753,8 +973,18 @@ class Handle_MeshVS_Drawer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MeshVS_Drawer::~Handle_MeshVS_Drawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger;
@@ -781,8 +1011,18 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger : public Handle_
 };
 %feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger::~Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_SensitiveSegment;
@@ -809,8 +1049,18 @@ class Handle_MeshVS_SensitiveSegment : public Handle_Select3D_SensitiveSegment {
 };
 %feature("shadow") Handle_MeshVS_SensitiveSegment::~Handle_MeshVS_SensitiveSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_SensitiveSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DataSource3D;
@@ -837,8 +1087,18 @@ class Handle_MeshVS_DataSource3D : public Handle_MeshVS_DataSource {
 };
 %feature("shadow") Handle_MeshVS_DataSource3D::~Handle_MeshVS_DataSource3D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DataSource3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner;
@@ -865,8 +1125,18 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner : public Handle_TCollecti
 };
 %feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector;
@@ -893,8 +1163,18 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector : public Handle_TCollect
 };
 %feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_SensitiveFace;
@@ -921,8 +1201,18 @@ class Handle_MeshVS_SensitiveFace : public Handle_Select3D_SensitiveFace {
 };
 %feature("shadow") Handle_MeshVS_SensitiveFace::~Handle_MeshVS_SensitiveFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_SensitiveFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_VectorPrsBuilder;
@@ -949,8 +1239,18 @@ class Handle_MeshVS_VectorPrsBuilder : public Handle_MeshVS_PrsBuilder {
 };
 %feature("shadow") Handle_MeshVS_VectorPrsBuilder::~Handle_MeshVS_VectorPrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_VectorPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_HArray1OfSequenceOfInteger;
@@ -977,8 +1277,18 @@ class Handle_MeshVS_HArray1OfSequenceOfInteger : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MeshVS_HArray1OfSequenceOfInteger::~Handle_MeshVS_HArray1OfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_HArray1OfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean;
@@ -1005,8 +1315,18 @@ class Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean : public Handle_TCollec
 };
 %feature("shadow") Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean::~Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshVS_DataMapNodeOfDataMapOfIntegerBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_Tool;
@@ -1032,8 +1352,18 @@ class MeshVS_Tool {
 };
 %feature("shadow") MeshVS_Tool::~MeshVS_Tool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_TwoNodes;
@@ -1045,8 +1375,18 @@ class MeshVS_TwoNodes {
 };
 %feature("shadow") MeshVS_TwoNodes::~MeshVS_TwoNodes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_TwoNodes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerOwner;
@@ -1066,8 +1406,18 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerOwner : public TCollection_BasicMa
 };
 %feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerOwner::~MeshVS_DataMapIteratorOfDataMapOfIntegerOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapIteratorOfDataMapOfIntegerOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataSource;
@@ -1127,8 +1477,18 @@ class MeshVS_DataSource : public MMgt_TShared {
 };
 %feature("shadow") MeshVS_DataSource::~MeshVS_DataSource %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataSource {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DeformedDataSource;
@@ -1166,8 +1526,18 @@ class MeshVS_DeformedDataSource : public MeshVS_DataSource {
 };
 %feature("shadow") MeshVS_DeformedDataSource::~MeshVS_DeformedDataSource %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DeformedDataSource {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerVector;
@@ -1187,8 +1557,18 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerVector : public TCollection_BasicM
 };
 %feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerVector::~MeshVS_DataMapIteratorOfDataMapOfIntegerVector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapIteratorOfDataMapOfIntegerVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_SequenceNodeOfSequenceOfPrsBuilder;
@@ -1214,8 +1594,18 @@ class MeshVS_SequenceNodeOfSequenceOfPrsBuilder : public TCollection_SeqNode {
 };
 %feature("shadow") MeshVS_SequenceNodeOfSequenceOfPrsBuilder::~MeshVS_SequenceNodeOfSequenceOfPrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_SequenceNodeOfSequenceOfPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_TwoColors;
@@ -1227,8 +1617,18 @@ class MeshVS_TwoColors {
 };
 %feature("shadow") MeshVS_TwoColors::~MeshVS_TwoColors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_TwoColors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_PrsBuilder;
@@ -1280,8 +1680,18 @@ class MeshVS_PrsBuilder : public MMgt_TShared {
 };
 %feature("shadow") MeshVS_PrsBuilder::~MeshVS_PrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_PrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_VectorPrsBuilder;
@@ -1325,8 +1735,18 @@ class MeshVS_VectorPrsBuilder : public MeshVS_PrsBuilder {
 };
 %feature("shadow") MeshVS_VectorPrsBuilder::~MeshVS_VectorPrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_VectorPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapOfTwoColorsMapOfInteger;
@@ -1360,8 +1780,18 @@ class MeshVS_DataMapOfTwoColorsMapOfInteger : public TCollection_BasicMap {
 };
 %feature("shadow") MeshVS_DataMapOfTwoColorsMapOfInteger::~MeshVS_DataMapOfTwoColorsMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapOfTwoColorsMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerColor;
@@ -1399,8 +1829,18 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerColor : public TCollection_MapNode {
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerColor::~MeshVS_DataMapNodeOfDataMapOfIntegerColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerBoolean;
@@ -1438,8 +1878,18 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerBoolean : public TCollection_MapNode {
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerBoolean::~MeshVS_DataMapNodeOfDataMapOfIntegerBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner;
@@ -1459,8 +1909,18 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner : public TCollecti
 };
 %feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner::~MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapIteratorOfDataMapOfIntegerMeshEntityOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_SequenceOfPrsBuilder;
@@ -1514,8 +1974,18 @@ class MeshVS_SequenceOfPrsBuilder : public TCollection_BaseSequence {
 };
 %feature("shadow") MeshVS_SequenceOfPrsBuilder::~MeshVS_SequenceOfPrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_SequenceOfPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_SensitiveSegment;
@@ -1545,8 +2015,18 @@ class MeshVS_SensitiveSegment : public Select3D_SensitiveSegment {
 };
 %feature("shadow") MeshVS_SensitiveSegment::~MeshVS_SensitiveSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_SensitiveSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerMeshEntityOwner;
@@ -1580,8 +2060,18 @@ class MeshVS_DataMapOfIntegerMeshEntityOwner : public TCollection_BasicMap {
 };
 %feature("shadow") MeshVS_DataMapOfIntegerMeshEntityOwner::~MeshVS_DataMapOfIntegerMeshEntityOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapOfIntegerMeshEntityOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapOfColorMapOfInteger;
@@ -1615,8 +2105,18 @@ class MeshVS_DataMapOfColorMapOfInteger : public TCollection_BasicMap {
 };
 %feature("shadow") MeshVS_DataMapOfColorMapOfInteger::~MeshVS_DataMapOfColorMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapOfColorMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapOfHArray1OfSequenceOfInteger;
@@ -1650,8 +2150,18 @@ class MeshVS_DataMapOfHArray1OfSequenceOfInteger : public TCollection_BasicMap {
 };
 %feature("shadow") MeshVS_DataMapOfHArray1OfSequenceOfInteger::~MeshVS_DataMapOfHArray1OfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapOfHArray1OfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_Drawer;
@@ -1707,8 +2217,18 @@ class MeshVS_Drawer : public MMgt_TShared {
 };
 %feature("shadow") MeshVS_Drawer::~MeshVS_Drawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerVector;
@@ -1746,8 +2266,18 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerVector : public TCollection_MapNode {
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerVector::~MeshVS_DataMapNodeOfDataMapOfIntegerVector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString;
@@ -1785,8 +2315,18 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString : public TCollection_MapNo
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString::~MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerMaterial;
@@ -1820,8 +2360,18 @@ class MeshVS_DataMapOfIntegerMaterial : public TCollection_BasicMap {
 };
 %feature("shadow") MeshVS_DataMapOfIntegerMaterial::~MeshVS_DataMapOfIntegerMaterial %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapOfIntegerMaterial {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_TwoNodesHasher;
@@ -1837,8 +2387,18 @@ class MeshVS_TwoNodesHasher {
 };
 %feature("shadow") MeshVS_TwoNodesHasher::~MeshVS_TwoNodesHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_TwoNodesHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger;
@@ -1858,8 +2418,18 @@ class MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger : public TCollectio
 };
 %feature("shadow") MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger::~MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapIteratorOfDataMapOfTwoColorsMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_TwoColorsHasher;
@@ -1875,8 +2445,18 @@ class MeshVS_TwoColorsHasher {
 };
 %feature("shadow") MeshVS_TwoColorsHasher::~MeshVS_TwoColorsHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_TwoColorsHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_Mesh;
@@ -1974,8 +2554,18 @@ class MeshVS_Mesh : public AIS_InteractiveObject {
 };
 %feature("shadow") MeshVS_Mesh::~MeshVS_Mesh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_Mesh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger;
@@ -2003,8 +2593,18 @@ class MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger : public TCollection_Ma
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger::~MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapNodeOfDataMapOfTwoColorsMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerOwner;
@@ -2042,8 +2642,18 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerOwner : public TCollection_MapNode {
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerOwner::~MeshVS_DataMapNodeOfDataMapOfIntegerOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_TextPrsBuilder;
@@ -2079,8 +2689,18 @@ class MeshVS_TextPrsBuilder : public MeshVS_PrsBuilder {
 };
 %feature("shadow") MeshVS_TextPrsBuilder::~MeshVS_TextPrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_TextPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_StdMapNodeOfMapOfTwoNodes;
@@ -2106,8 +2726,18 @@ class MeshVS_StdMapNodeOfMapOfTwoNodes : public TCollection_MapNode {
 };
 %feature("shadow") MeshVS_StdMapNodeOfMapOfTwoNodes::~MeshVS_StdMapNodeOfMapOfTwoNodes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_StdMapNodeOfMapOfTwoNodes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_Array1OfSequenceOfInteger;
@@ -2147,8 +2777,18 @@ class MeshVS_Array1OfSequenceOfInteger {
 };
 %feature("shadow") MeshVS_Array1OfSequenceOfInteger::~MeshVS_Array1OfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_Array1OfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors;
@@ -2168,8 +2808,18 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors : public TCollection_Bas
 };
 %feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors::~MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerAsciiString;
@@ -2203,8 +2853,18 @@ class MeshVS_DataMapOfIntegerAsciiString : public TCollection_BasicMap {
 };
 %feature("shadow") MeshVS_DataMapOfIntegerAsciiString::~MeshVS_DataMapOfIntegerAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapOfIntegerAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString;
@@ -2224,8 +2884,18 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString : public TCollection_B
 };
 %feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString::~MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapIteratorOfDataMapOfIntegerAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataSource3D;
@@ -2255,8 +2925,18 @@ class MeshVS_DataSource3D : public MeshVS_DataSource {
 };
 %feature("shadow") MeshVS_DataSource3D::~MeshVS_DataSource3D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataSource3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial;
@@ -2276,8 +2956,18 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial : public TCollection_Basi
 };
 %feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial::~MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapIteratorOfDataMapOfIntegerMaterial {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean;
@@ -2297,8 +2987,18 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean : public TCollection_Basic
 };
 %feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean::~MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapIteratorOfDataMapOfIntegerBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_Buffer;
@@ -2310,8 +3010,18 @@ class MeshVS_Buffer {
 };
 %feature("shadow") MeshVS_Buffer::~MeshVS_Buffer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_Buffer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_HArray1OfSequenceOfInteger;
@@ -2355,8 +3065,18 @@ class MeshVS_HArray1OfSequenceOfInteger : public MMgt_TShared {
 };
 %feature("shadow") MeshVS_HArray1OfSequenceOfInteger::~MeshVS_HArray1OfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_HArray1OfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger;
@@ -2376,8 +3096,18 @@ class MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger : public TCollection_Ba
 };
 %feature("shadow") MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger::~MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapIteratorOfDataMapOfColorMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_MeshEntityOwner;
@@ -2421,8 +3151,18 @@ class MeshVS_MeshEntityOwner : public SelectMgr_EntityOwner {
 };
 %feature("shadow") MeshVS_MeshEntityOwner::~MeshVS_MeshEntityOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_MeshEntityOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerBoolean;
@@ -2456,8 +3196,18 @@ class MeshVS_DataMapOfIntegerBoolean : public TCollection_BasicMap {
 };
 %feature("shadow") MeshVS_DataMapOfIntegerBoolean::~MeshVS_DataMapOfIntegerBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapOfIntegerBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_SensitivePolyhedron;
@@ -2495,8 +3245,18 @@ class MeshVS_SensitivePolyhedron : public Select3D_SensitiveEntity {
 };
 %feature("shadow") MeshVS_SensitivePolyhedron::~MeshVS_SensitivePolyhedron %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_SensitivePolyhedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_SensitiveMesh;
@@ -2536,8 +3296,18 @@ class MeshVS_SensitiveMesh : public Select3D_SensitiveEntity {
 };
 %feature("shadow") MeshVS_SensitiveMesh::~MeshVS_SensitiveMesh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_SensitiveMesh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors;
@@ -2575,8 +3345,18 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors : public TCollection_MapNode
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors::~MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerTwoColors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger;
@@ -2614,8 +3394,18 @@ class MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger : public TCollecti
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger::~MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerColor;
@@ -2649,8 +3439,18 @@ class MeshVS_DataMapOfIntegerColor : public TCollection_BasicMap {
 };
 %feature("shadow") MeshVS_DataMapOfIntegerColor::~MeshVS_DataMapOfIntegerColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapOfIntegerColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_ColorHasher;
@@ -2666,8 +3466,18 @@ class MeshVS_ColorHasher : public TColStd_MapIntegerHasher {
 };
 %feature("shadow") MeshVS_ColorHasher::~MeshVS_ColorHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_ColorHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerVector;
@@ -2701,8 +3511,18 @@ class MeshVS_DataMapOfIntegerVector : public TCollection_BasicMap {
 };
 %feature("shadow") MeshVS_DataMapOfIntegerVector::~MeshVS_DataMapOfIntegerVector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapOfIntegerVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_NodalColorPrsBuilder;
@@ -2758,8 +3578,18 @@ class MeshVS_NodalColorPrsBuilder : public MeshVS_PrsBuilder {
 };
 %feature("shadow") MeshVS_NodalColorPrsBuilder::~MeshVS_NodalColorPrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_NodalColorPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_MapOfTwoNodes;
@@ -2785,8 +3615,18 @@ class MeshVS_MapOfTwoNodes : public TCollection_BasicMap {
 };
 %feature("shadow") MeshVS_MapOfTwoNodes::~MeshVS_MapOfTwoNodes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_MapOfTwoNodes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_ElementalColorPrsBuilder;
@@ -2836,8 +3676,18 @@ class MeshVS_ElementalColorPrsBuilder : public MeshVS_PrsBuilder {
 };
 %feature("shadow") MeshVS_ElementalColorPrsBuilder::~MeshVS_ElementalColorPrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_ElementalColorPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger;
@@ -2865,8 +3715,18 @@ class MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger : public TCollection_MapNod
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger::~MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapNodeOfDataMapOfColorMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfIntegerColor;
@@ -2886,8 +3746,18 @@ class MeshVS_DataMapIteratorOfDataMapOfIntegerColor : public TCollection_BasicMa
 };
 %feature("shadow") MeshVS_DataMapIteratorOfDataMapOfIntegerColor::~MeshVS_DataMapIteratorOfDataMapOfIntegerColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapIteratorOfDataMapOfIntegerColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_SensitiveFace;
@@ -2917,8 +3787,18 @@ class MeshVS_SensitiveFace : public Select3D_SensitiveFace {
 };
 %feature("shadow") MeshVS_SensitiveFace::~MeshVS_SensitiveFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_SensitiveFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerMaterial;
@@ -2956,8 +3836,18 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerMaterial : public TCollection_MapNode 
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerMaterial::~MeshVS_DataMapNodeOfDataMapOfIntegerMaterial %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerMaterial {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerTwoColors;
@@ -2991,8 +3881,18 @@ class MeshVS_DataMapOfIntegerTwoColors : public TCollection_BasicMap {
 };
 %feature("shadow") MeshVS_DataMapOfIntegerTwoColors::~MeshVS_DataMapOfIntegerTwoColors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapOfIntegerTwoColors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_MapIteratorOfMapOfTwoNodes;
@@ -3010,8 +3910,18 @@ class MeshVS_MapIteratorOfMapOfTwoNodes : public TCollection_BasicMapIterator {
 };
 %feature("shadow") MeshVS_MapIteratorOfMapOfTwoNodes::~MeshVS_MapIteratorOfMapOfTwoNodes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_MapIteratorOfMapOfTwoNodes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner;
@@ -3049,8 +3959,18 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner : public TCollection_M
 };
 %feature("shadow") MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner::~MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapOfIntegerOwner;
@@ -3084,8 +4004,18 @@ class MeshVS_DataMapOfIntegerOwner : public TCollection_BasicMap {
 };
 %feature("shadow") MeshVS_DataMapOfIntegerOwner::~MeshVS_DataMapOfIntegerOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapOfIntegerOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_MeshOwner;
@@ -3131,8 +4061,18 @@ class MeshVS_MeshOwner : public SelectMgr_EntityOwner {
 };
 %feature("shadow") MeshVS_MeshOwner::~MeshVS_MeshOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_MeshOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger;
@@ -3152,8 +4092,18 @@ class MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger : public TColl
 };
 %feature("shadow") MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger::~MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DataMapIteratorOfDataMapOfHArray1OfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_DummySensitiveEntity;
@@ -3191,8 +4141,18 @@ class MeshVS_DummySensitiveEntity : public SelectBasics_SensitiveEntity {
 };
 %feature("shadow") MeshVS_DummySensitiveEntity::~MeshVS_DummySensitiveEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_DummySensitiveEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshVS_MeshPrsBuilder;
@@ -3228,5 +4188,15 @@ class MeshVS_MeshPrsBuilder : public MeshVS_PrsBuilder {
 };
 %feature("shadow") MeshVS_MeshPrsBuilder::~MeshVS_MeshPrsBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshVS_MeshPrsBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

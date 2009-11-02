@@ -75,8 +75,18 @@ class Handle_PrsMgr_Prs : public Handle_Prs3d_Presentation {
 };
 %feature("shadow") Handle_PrsMgr_Prs::~Handle_PrsMgr_Prs %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PrsMgr_Prs {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PrsMgr_PresentationManager;
@@ -103,8 +113,18 @@ class Handle_PrsMgr_PresentationManager : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_PrsMgr_PresentationManager::~Handle_PrsMgr_PresentationManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PrsMgr_PresentationManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PrsMgr_PresentationManager3d;
@@ -131,8 +151,18 @@ class Handle_PrsMgr_PresentationManager3d : public Handle_PrsMgr_PresentationMan
 };
 %feature("shadow") Handle_PrsMgr_PresentationManager3d::~Handle_PrsMgr_PresentationManager3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PrsMgr_PresentationManager3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PrsMgr_Presentation;
@@ -159,8 +189,18 @@ class Handle_PrsMgr_Presentation : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_PrsMgr_Presentation::~Handle_PrsMgr_Presentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PrsMgr_Presentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PrsMgr_Presentation2d;
@@ -187,8 +227,18 @@ class Handle_PrsMgr_Presentation2d : public Handle_PrsMgr_Presentation {
 };
 %feature("shadow") Handle_PrsMgr_Presentation2d::~Handle_PrsMgr_Presentation2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PrsMgr_Presentation2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PrsMgr_PresentableObject;
@@ -215,8 +265,18 @@ class Handle_PrsMgr_PresentableObject : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_PrsMgr_PresentableObject::~Handle_PrsMgr_PresentableObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PrsMgr_PresentableObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PrsMgr_PresentationManager2d;
@@ -243,8 +303,18 @@ class Handle_PrsMgr_PresentationManager2d : public Handle_PrsMgr_PresentationMan
 };
 %feature("shadow") Handle_PrsMgr_PresentationManager2d::~Handle_PrsMgr_PresentationManager2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PrsMgr_PresentationManager2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PrsMgr_SequenceNodeOfPresentations;
@@ -271,8 +341,18 @@ class Handle_PrsMgr_SequenceNodeOfPresentations : public Handle_TCollection_SeqN
 };
 %feature("shadow") Handle_PrsMgr_SequenceNodeOfPresentations::~Handle_PrsMgr_SequenceNodeOfPresentations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PrsMgr_SequenceNodeOfPresentations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PrsMgr_Presentation3d;
@@ -299,8 +379,18 @@ class Handle_PrsMgr_Presentation3d : public Handle_PrsMgr_Presentation {
 };
 %feature("shadow") Handle_PrsMgr_Presentation3d::~Handle_PrsMgr_Presentation3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PrsMgr_Presentation3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PrsMgr_ModedPresentation;
@@ -318,8 +408,18 @@ class PrsMgr_ModedPresentation {
 };
 %feature("shadow") PrsMgr_ModedPresentation::~PrsMgr_ModedPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PrsMgr_ModedPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PrsMgr_Presentation;
@@ -349,8 +449,18 @@ class PrsMgr_Presentation : public MMgt_TShared {
 };
 %feature("shadow") PrsMgr_Presentation::~PrsMgr_Presentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PrsMgr_Presentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PrsMgr_Presentation2d;
@@ -378,8 +488,18 @@ class PrsMgr_Presentation2d : public PrsMgr_Presentation {
 };
 %feature("shadow") PrsMgr_Presentation2d::~PrsMgr_Presentation2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PrsMgr_Presentation2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PrsMgr_Prs;
@@ -411,8 +531,18 @@ class PrsMgr_Prs : public Prs3d_Presentation {
 };
 %feature("shadow") PrsMgr_Prs::~PrsMgr_Prs %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PrsMgr_Prs {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PrsMgr_Presentations;
@@ -466,8 +596,18 @@ class PrsMgr_Presentations : public TCollection_BaseSequence {
 };
 %feature("shadow") PrsMgr_Presentations::~PrsMgr_Presentations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PrsMgr_Presentations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PrsMgr_SequenceNodeOfPresentations;
@@ -493,8 +633,18 @@ class PrsMgr_SequenceNodeOfPresentations : public TCollection_SeqNode {
 };
 %feature("shadow") PrsMgr_SequenceNodeOfPresentations::~PrsMgr_SequenceNodeOfPresentations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PrsMgr_SequenceNodeOfPresentations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PrsMgr_PresentableObject;
@@ -546,8 +696,18 @@ class PrsMgr_PresentableObject : public MMgt_TShared {
 };
 %feature("shadow") PrsMgr_PresentableObject::~PrsMgr_PresentableObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PrsMgr_PresentableObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PrsMgr_Presentation3d;
@@ -573,8 +733,18 @@ class PrsMgr_Presentation3d : public PrsMgr_Presentation {
 };
 %feature("shadow") PrsMgr_Presentation3d::~PrsMgr_Presentation3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PrsMgr_Presentation3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PrsMgr_PresentationManager;
@@ -632,8 +802,18 @@ class PrsMgr_PresentationManager : public MMgt_TShared {
 };
 %feature("shadow") PrsMgr_PresentationManager::~PrsMgr_PresentationManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PrsMgr_PresentationManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PrsMgr_PresentationManager2d;
@@ -693,8 +873,18 @@ class PrsMgr_PresentationManager2d : public PrsMgr_PresentationManager {
 };
 %feature("shadow") PrsMgr_PresentationManager2d::~PrsMgr_PresentationManager2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PrsMgr_PresentationManager2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PrsMgr_PresentationManager3d;
@@ -748,5 +938,15 @@ class PrsMgr_PresentationManager3d : public PrsMgr_PresentationManager {
 };
 %feature("shadow") PrsMgr_PresentationManager3d::~PrsMgr_PresentationManager3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PrsMgr_PresentationManager3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

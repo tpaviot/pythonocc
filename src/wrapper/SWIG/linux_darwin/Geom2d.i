@@ -63,8 +63,18 @@ class Handle_Geom2d_Geometry : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Geom2d_Geometry::~Handle_Geom2d_Geometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_Geometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_Curve;
@@ -91,8 +101,18 @@ class Handle_Geom2d_Curve : public Handle_Geom2d_Geometry {
 };
 %feature("shadow") Handle_Geom2d_Curve::~Handle_Geom2d_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_Conic;
@@ -119,8 +139,18 @@ class Handle_Geom2d_Conic : public Handle_Geom2d_Curve {
 };
 %feature("shadow") Handle_Geom2d_Conic::~Handle_Geom2d_Conic %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_Conic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_OffsetCurve;
@@ -147,8 +177,18 @@ class Handle_Geom2d_OffsetCurve : public Handle_Geom2d_Curve {
 };
 %feature("shadow") Handle_Geom2d_OffsetCurve::~Handle_Geom2d_OffsetCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_OffsetCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_Circle;
@@ -175,8 +215,18 @@ class Handle_Geom2d_Circle : public Handle_Geom2d_Conic {
 };
 %feature("shadow") Handle_Geom2d_Circle::~Handle_Geom2d_Circle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_Circle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_Vector;
@@ -203,8 +253,18 @@ class Handle_Geom2d_Vector : public Handle_Geom2d_Geometry {
 };
 %feature("shadow") Handle_Geom2d_Vector::~Handle_Geom2d_Vector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_Vector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_BoundedCurve;
@@ -231,8 +291,18 @@ class Handle_Geom2d_BoundedCurve : public Handle_Geom2d_Curve {
 };
 %feature("shadow") Handle_Geom2d_BoundedCurve::~Handle_Geom2d_BoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_BoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_Parabola;
@@ -259,8 +329,18 @@ class Handle_Geom2d_Parabola : public Handle_Geom2d_Conic {
 };
 %feature("shadow") Handle_Geom2d_Parabola::~Handle_Geom2d_Parabola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_Parabola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_Transformation;
@@ -287,8 +367,18 @@ class Handle_Geom2d_Transformation : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Geom2d_Transformation::~Handle_Geom2d_Transformation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_Transformation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_UndefinedDerivative;
@@ -315,8 +405,18 @@ class Handle_Geom2d_UndefinedDerivative : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Geom2d_UndefinedDerivative::~Handle_Geom2d_UndefinedDerivative %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_UndefinedDerivative {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_Point;
@@ -343,8 +443,18 @@ class Handle_Geom2d_Point : public Handle_Geom2d_Geometry {
 };
 %feature("shadow") Handle_Geom2d_Point::~Handle_Geom2d_Point %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_Hyperbola;
@@ -371,8 +481,18 @@ class Handle_Geom2d_Hyperbola : public Handle_Geom2d_Conic {
 };
 %feature("shadow") Handle_Geom2d_Hyperbola::~Handle_Geom2d_Hyperbola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_Hyperbola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_Ellipse;
@@ -399,8 +519,18 @@ class Handle_Geom2d_Ellipse : public Handle_Geom2d_Conic {
 };
 %feature("shadow") Handle_Geom2d_Ellipse::~Handle_Geom2d_Ellipse %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_Ellipse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_BezierCurve;
@@ -427,8 +557,18 @@ class Handle_Geom2d_BezierCurve : public Handle_Geom2d_BoundedCurve {
 };
 %feature("shadow") Handle_Geom2d_BezierCurve::~Handle_Geom2d_BezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_BezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_Line;
@@ -455,8 +595,18 @@ class Handle_Geom2d_Line : public Handle_Geom2d_Curve {
 };
 %feature("shadow") Handle_Geom2d_Line::~Handle_Geom2d_Line %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_AxisPlacement;
@@ -483,8 +633,18 @@ class Handle_Geom2d_AxisPlacement : public Handle_Geom2d_Geometry {
 };
 %feature("shadow") Handle_Geom2d_AxisPlacement::~Handle_Geom2d_AxisPlacement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_AxisPlacement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_VectorWithMagnitude;
@@ -511,8 +671,18 @@ class Handle_Geom2d_VectorWithMagnitude : public Handle_Geom2d_Vector {
 };
 %feature("shadow") Handle_Geom2d_VectorWithMagnitude::~Handle_Geom2d_VectorWithMagnitude %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_VectorWithMagnitude {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_UndefinedValue;
@@ -539,8 +709,18 @@ class Handle_Geom2d_UndefinedValue : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Geom2d_UndefinedValue::~Handle_Geom2d_UndefinedValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_UndefinedValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_BSplineCurve;
@@ -567,8 +747,18 @@ class Handle_Geom2d_BSplineCurve : public Handle_Geom2d_BoundedCurve {
 };
 %feature("shadow") Handle_Geom2d_BSplineCurve::~Handle_Geom2d_BSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_BSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_Direction;
@@ -595,8 +785,18 @@ class Handle_Geom2d_Direction : public Handle_Geom2d_Vector {
 };
 %feature("shadow") Handle_Geom2d_Direction::~Handle_Geom2d_Direction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_Direction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_CartesianPoint;
@@ -623,8 +823,18 @@ class Handle_Geom2d_CartesianPoint : public Handle_Geom2d_Point {
 };
 %feature("shadow") Handle_Geom2d_CartesianPoint::~Handle_Geom2d_CartesianPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_CartesianPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2d_TrimmedCurve;
@@ -651,8 +861,18 @@ class Handle_Geom2d_TrimmedCurve : public Handle_Geom2d_BoundedCurve {
 };
 %feature("shadow") Handle_Geom2d_TrimmedCurve::~Handle_Geom2d_TrimmedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2d_TrimmedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_Geometry;
@@ -704,8 +924,18 @@ class Geom2d_Geometry : public MMgt_TShared {
 };
 %feature("shadow") Geom2d_Geometry::~Geom2d_Geometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_Geometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_AxisPlacement;
@@ -747,8 +977,18 @@ class Geom2d_AxisPlacement : public Geom2d_Geometry {
 };
 %feature("shadow") Geom2d_AxisPlacement::~Geom2d_AxisPlacement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_AxisPlacement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_UndefinedValue;
@@ -780,8 +1020,18 @@ class Geom2d_UndefinedValue : public Standard_DomainError {
 };
 %feature("shadow") Geom2d_UndefinedValue::~Geom2d_UndefinedValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_UndefinedValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_Curve;
@@ -839,8 +1089,18 @@ class Geom2d_Curve : public Geom2d_Geometry {
 };
 %feature("shadow") Geom2d_Curve::~Geom2d_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_Line;
@@ -888,8 +1148,18 @@ class Geom2d_Line : public Geom2d_Curve {
 };
 %feature("shadow") Geom2d_Line::~Geom2d_Line %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_Point;
@@ -923,8 +1193,18 @@ class Geom2d_Point : public Geom2d_Geometry {
 };
 %feature("shadow") Geom2d_Point::~Geom2d_Point %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_Conic;
@@ -972,8 +1252,18 @@ class Geom2d_Conic : public Geom2d_Curve {
 };
 %feature("shadow") Geom2d_Conic::~Geom2d_Conic %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_Conic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_Parabola;
@@ -1041,8 +1331,18 @@ class Geom2d_Parabola : public Geom2d_Conic {
 };
 %feature("shadow") Geom2d_Parabola::~Geom2d_Parabola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_Parabola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_UndefinedDerivative;
@@ -1074,8 +1374,18 @@ class Geom2d_UndefinedDerivative : public Standard_DomainError {
 };
 %feature("shadow") Geom2d_UndefinedDerivative::~Geom2d_UndefinedDerivative %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_UndefinedDerivative {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_Transformation;
@@ -1151,8 +1461,18 @@ class Geom2d_Transformation : public MMgt_TShared {
 };
 %feature("shadow") Geom2d_Transformation::~Geom2d_Transformation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_Transformation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_CartesianPoint;
@@ -1198,8 +1518,18 @@ class Geom2d_CartesianPoint : public Geom2d_Point {
 };
 %feature("shadow") Geom2d_CartesianPoint::~Geom2d_CartesianPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_CartesianPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_BoundedCurve;
@@ -1225,8 +1555,18 @@ class Geom2d_BoundedCurve : public Geom2d_Curve {
 };
 %feature("shadow") Geom2d_BoundedCurve::~Geom2d_BoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_BoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_BSplineCurve;
@@ -1376,8 +1716,18 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 };
 %feature("shadow") Geom2d_BSplineCurve::~Geom2d_BSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_BSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_Vector;
@@ -1421,8 +1771,18 @@ class Geom2d_Vector : public Geom2d_Geometry {
 };
 %feature("shadow") Geom2d_Vector::~Geom2d_Vector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_Vector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_VectorWithMagnitude;
@@ -1496,8 +1856,18 @@ class Geom2d_VectorWithMagnitude : public Geom2d_Vector {
 };
 %feature("shadow") Geom2d_VectorWithMagnitude::~Geom2d_VectorWithMagnitude %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_VectorWithMagnitude {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_Hyperbola;
@@ -1585,8 +1955,18 @@ class Geom2d_Hyperbola : public Geom2d_Conic {
 };
 %feature("shadow") Geom2d_Hyperbola::~Geom2d_Hyperbola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_Hyperbola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_BezierCurve;
@@ -1680,8 +2060,18 @@ class Geom2d_BezierCurve : public Geom2d_BoundedCurve {
 };
 %feature("shadow") Geom2d_BezierCurve::~Geom2d_BezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_BezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_Direction;
@@ -1729,8 +2119,18 @@ class Geom2d_Direction : public Geom2d_Vector {
 };
 %feature("shadow") Geom2d_Direction::~Geom2d_Direction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_Direction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_OffsetCurve;
@@ -1804,8 +2204,18 @@ class Geom2d_OffsetCurve : public Geom2d_Curve {
 };
 %feature("shadow") Geom2d_OffsetCurve::~Geom2d_OffsetCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_OffsetCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_Ellipse;
@@ -1883,8 +2293,18 @@ class Geom2d_Ellipse : public Geom2d_Conic {
 };
 %feature("shadow") Geom2d_Ellipse::~Geom2d_Ellipse %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_Ellipse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_Circle;
@@ -1946,8 +2366,18 @@ class Geom2d_Circle : public Geom2d_Conic {
 };
 %feature("shadow") Geom2d_Circle::~Geom2d_Circle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_Circle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2d_TrimmedCurve;
@@ -2015,5 +2445,15 @@ class Geom2d_TrimmedCurve : public Geom2d_BoundedCurve {
 };
 %feature("shadow") Geom2d_TrimmedCurve::~Geom2d_TrimmedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2d_TrimmedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

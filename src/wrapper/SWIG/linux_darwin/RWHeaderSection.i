@@ -63,8 +63,18 @@ class Handle_RWHeaderSection_ReadWriteModule : public Handle_StepData_ReadWriteM
 };
 %feature("shadow") Handle_RWHeaderSection_ReadWriteModule::~Handle_RWHeaderSection_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_RWHeaderSection_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_RWHeaderSection_GeneralModule;
@@ -91,8 +101,18 @@ class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModul
 };
 %feature("shadow") Handle_RWHeaderSection_GeneralModule::~Handle_RWHeaderSection_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_RWHeaderSection_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWHeaderSection_RWFileDescription;
@@ -108,8 +128,18 @@ class RWHeaderSection_RWFileDescription {
 };
 %feature("shadow") RWHeaderSection_RWFileDescription::~RWHeaderSection_RWFileDescription %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWHeaderSection_RWFileDescription {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWHeaderSection_ReadWriteModule;
@@ -145,8 +175,18 @@ class RWHeaderSection_ReadWriteModule : public StepData_ReadWriteModule {
 };
 %feature("shadow") RWHeaderSection_ReadWriteModule::~RWHeaderSection_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWHeaderSection_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWHeaderSection;
@@ -160,8 +200,18 @@ class RWHeaderSection {
 };
 %feature("shadow") RWHeaderSection::~RWHeaderSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWHeaderSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWHeaderSection_RWFileName;
@@ -177,8 +227,18 @@ class RWHeaderSection_RWFileName {
 };
 %feature("shadow") RWHeaderSection_RWFileName::~RWHeaderSection_RWFileName %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWHeaderSection_RWFileName {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWHeaderSection_RWFileSchema;
@@ -194,8 +254,18 @@ class RWHeaderSection_RWFileSchema {
 };
 %feature("shadow") RWHeaderSection_RWFileSchema::~RWHeaderSection_RWFileSchema %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWHeaderSection_RWFileSchema {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWHeaderSection_GeneralModule;
@@ -227,5 +297,15 @@ class RWHeaderSection_GeneralModule : public StepData_GeneralModule {
 };
 %feature("shadow") RWHeaderSection_GeneralModule::~RWHeaderSection_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWHeaderSection_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

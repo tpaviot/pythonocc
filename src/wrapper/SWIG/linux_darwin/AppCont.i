@@ -54,8 +54,18 @@ class AppCont_FitFunction {
 };
 %feature("shadow") AppCont_FitFunction::~AppCont_FitFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppCont_FitFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppCont_Function;
@@ -75,8 +85,18 @@ class AppCont_Function {
 };
 %feature("shadow") AppCont_Function::~AppCont_Function %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppCont_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppCont_FunctionTool;
@@ -108,8 +128,18 @@ class AppCont_FunctionTool {
 };
 %feature("shadow") AppCont_FunctionTool::~AppCont_FunctionTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppCont_FunctionTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppCont_Function2d;
@@ -129,8 +159,18 @@ class AppCont_Function2d {
 };
 %feature("shadow") AppCont_Function2d::~AppCont_Function2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppCont_Function2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppCont_FunctionTool2d;
@@ -162,8 +202,18 @@ class AppCont_FunctionTool2d {
 };
 %feature("shadow") AppCont_FunctionTool2d::~AppCont_FunctionTool2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppCont_FunctionTool2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppCont_FitFunction2d;
@@ -181,5 +231,15 @@ class AppCont_FitFunction2d {
 };
 %feature("shadow") AppCont_FitFunction2d::~AppCont_FitFunction2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppCont_FitFunction2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -72,8 +72,18 @@ class Handle_CDM_StdMapNodeOfMapOfDocument : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_CDM_StdMapNodeOfMapOfDocument::~Handle_CDM_StdMapNodeOfMapOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_StdMapNodeOfMapOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDM_DataMapNodeOfNamesDirectory;
@@ -100,8 +110,18 @@ class Handle_CDM_DataMapNodeOfNamesDirectory : public Handle_TCollection_MapNode
 };
 %feature("shadow") Handle_CDM_DataMapNodeOfNamesDirectory::~Handle_CDM_DataMapNodeOfNamesDirectory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_DataMapNodeOfNamesDirectory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDM_DataMapNodeOfPresentationDirectory;
@@ -128,8 +148,18 @@ class Handle_CDM_DataMapNodeOfPresentationDirectory : public Handle_TCollection_
 };
 %feature("shadow") Handle_CDM_DataMapNodeOfPresentationDirectory::~Handle_CDM_DataMapNodeOfPresentationDirectory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_DataMapNodeOfPresentationDirectory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDM_Reference;
@@ -156,8 +186,18 @@ class Handle_CDM_Reference : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_CDM_Reference::~Handle_CDM_Reference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_Reference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDM_MessageDriver;
@@ -184,8 +224,18 @@ class Handle_CDM_MessageDriver : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_CDM_MessageDriver::~Handle_CDM_MessageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_MessageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDM_MetaData;
@@ -212,8 +262,18 @@ class Handle_CDM_MetaData : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_CDM_MetaData::~Handle_CDM_MetaData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_MetaData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDM_COutMessageDriver;
@@ -240,8 +300,18 @@ class Handle_CDM_COutMessageDriver : public Handle_CDM_MessageDriver {
 };
 %feature("shadow") Handle_CDM_COutMessageDriver::~Handle_CDM_COutMessageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_COutMessageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDM_Document;
@@ -268,8 +338,18 @@ class Handle_CDM_Document : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_CDM_Document::~Handle_CDM_Document %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_Document {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDM_NullMessageDriver;
@@ -296,8 +376,18 @@ class Handle_CDM_NullMessageDriver : public Handle_CDM_MessageDriver {
 };
 %feature("shadow") Handle_CDM_NullMessageDriver::~Handle_CDM_NullMessageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_NullMessageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDM_StackNodeOfStackOfDocument;
@@ -324,8 +414,18 @@ class Handle_CDM_StackNodeOfStackOfDocument : public Handle_TCollection_MapNode 
 };
 %feature("shadow") Handle_CDM_StackNodeOfStackOfDocument::~Handle_CDM_StackNodeOfStackOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_StackNodeOfStackOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDM_ListNodeOfListOfDocument;
@@ -352,8 +452,18 @@ class Handle_CDM_ListNodeOfListOfDocument : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_CDM_ListNodeOfListOfDocument::~Handle_CDM_ListNodeOfListOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_ListNodeOfListOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDM_DataMapNodeOfMetaDataLookUpTable;
@@ -380,8 +490,18 @@ class Handle_CDM_DataMapNodeOfMetaDataLookUpTable : public Handle_TCollection_Ma
 };
 %feature("shadow") Handle_CDM_DataMapNodeOfMetaDataLookUpTable::~Handle_CDM_DataMapNodeOfMetaDataLookUpTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_DataMapNodeOfMetaDataLookUpTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDM_Application;
@@ -408,8 +528,18 @@ class Handle_CDM_Application : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_CDM_Application::~Handle_CDM_Application %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDM_ListNodeOfListOfReferences;
@@ -436,8 +566,18 @@ class Handle_CDM_ListNodeOfListOfReferences : public Handle_TCollection_MapNode 
 };
 %feature("shadow") Handle_CDM_ListNodeOfListOfReferences::~Handle_CDM_ListNodeOfListOfReferences %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDM_ListNodeOfListOfReferences {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_DataMapNodeOfNamesDirectory;
@@ -475,8 +615,18 @@ class CDM_DataMapNodeOfNamesDirectory : public TCollection_MapNode {
 };
 %feature("shadow") CDM_DataMapNodeOfNamesDirectory::~CDM_DataMapNodeOfNamesDirectory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_DataMapNodeOfNamesDirectory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_DataMapNodeOfPresentationDirectory;
@@ -504,8 +654,18 @@ class CDM_DataMapNodeOfPresentationDirectory : public TCollection_MapNode {
 };
 %feature("shadow") CDM_DataMapNodeOfPresentationDirectory::~CDM_DataMapNodeOfPresentationDirectory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_DataMapNodeOfPresentationDirectory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_ListIteratorOfListOfDocument;
@@ -527,8 +687,18 @@ class CDM_ListIteratorOfListOfDocument {
 };
 %feature("shadow") CDM_ListIteratorOfListOfDocument::~CDM_ListIteratorOfListOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_ListIteratorOfListOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_ReferenceIterator;
@@ -550,8 +720,18 @@ class CDM_ReferenceIterator {
 };
 %feature("shadow") CDM_ReferenceIterator::~CDM_ReferenceIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_ReferenceIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_Application;
@@ -583,8 +763,18 @@ class CDM_Application : public Standard_Transient {
 };
 %feature("shadow") CDM_Application::~CDM_Application %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_NamesDirectory;
@@ -628,8 +818,18 @@ class CDM_NamesDirectory : public TCollection_BasicMap {
 };
 %feature("shadow") CDM_NamesDirectory::~CDM_NamesDirectory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_NamesDirectory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_DataMapIteratorOfPresentationDirectory;
@@ -649,8 +849,18 @@ class CDM_DataMapIteratorOfPresentationDirectory : public TCollection_BasicMapIt
 };
 %feature("shadow") CDM_DataMapIteratorOfPresentationDirectory::~CDM_DataMapIteratorOfPresentationDirectory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_DataMapIteratorOfPresentationDirectory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_DataMapIteratorOfMetaDataLookUpTable;
@@ -670,8 +880,18 @@ class CDM_DataMapIteratorOfMetaDataLookUpTable : public TCollection_BasicMapIter
 };
 %feature("shadow") CDM_DataMapIteratorOfMetaDataLookUpTable::~CDM_DataMapIteratorOfMetaDataLookUpTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_DataMapIteratorOfMetaDataLookUpTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_StackNodeOfStackOfDocument;
@@ -697,8 +917,18 @@ class CDM_StackNodeOfStackOfDocument : public TCollection_MapNode {
 };
 %feature("shadow") CDM_StackNodeOfStackOfDocument::~CDM_StackNodeOfStackOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_StackNodeOfStackOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_DocumentHasher;
@@ -714,8 +944,18 @@ class CDM_DocumentHasher {
 };
 %feature("shadow") CDM_DocumentHasher::~CDM_DocumentHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_DocumentHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_DataMapIteratorOfNamesDirectory;
@@ -735,8 +975,18 @@ class CDM_DataMapIteratorOfNamesDirectory : public TCollection_BasicMapIterator 
 };
 %feature("shadow") CDM_DataMapIteratorOfNamesDirectory::~CDM_DataMapIteratorOfNamesDirectory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_DataMapIteratorOfNamesDirectory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_MessageDriver;
@@ -760,8 +1010,18 @@ class CDM_MessageDriver : public Standard_Transient {
 };
 %feature("shadow") CDM_MessageDriver::~CDM_MessageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_MessageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_COutMessageDriver;
@@ -783,8 +1043,18 @@ class CDM_COutMessageDriver : public CDM_MessageDriver {
 };
 %feature("shadow") CDM_COutMessageDriver::~CDM_COutMessageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_COutMessageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_NullMessageDriver;
@@ -810,8 +1080,18 @@ class CDM_NullMessageDriver : public CDM_MessageDriver {
 };
 %feature("shadow") CDM_NullMessageDriver::~CDM_NullMessageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_NullMessageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_ListIteratorOfListOfReferences;
@@ -833,8 +1113,18 @@ class CDM_ListIteratorOfListOfReferences {
 };
 %feature("shadow") CDM_ListIteratorOfListOfReferences::~CDM_ListIteratorOfListOfReferences %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_ListIteratorOfListOfReferences {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_MetaDataLookUpTable;
@@ -868,8 +1158,18 @@ class CDM_MetaDataLookUpTable : public TCollection_BasicMap {
 };
 %feature("shadow") CDM_MetaDataLookUpTable::~CDM_MetaDataLookUpTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_MetaDataLookUpTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_DataMapNodeOfMetaDataLookUpTable;
@@ -897,8 +1197,18 @@ class CDM_DataMapNodeOfMetaDataLookUpTable : public TCollection_MapNode {
 };
 %feature("shadow") CDM_DataMapNodeOfMetaDataLookUpTable::~CDM_DataMapNodeOfMetaDataLookUpTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_DataMapNodeOfMetaDataLookUpTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_PresentationDirectory;
@@ -932,8 +1242,18 @@ class CDM_PresentationDirectory : public TCollection_BasicMap {
 };
 %feature("shadow") CDM_PresentationDirectory::~CDM_PresentationDirectory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_PresentationDirectory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_ListOfReferences;
@@ -983,8 +1303,18 @@ class CDM_ListOfReferences {
 };
 %feature("shadow") CDM_ListOfReferences::~CDM_ListOfReferences %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_ListOfReferences {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_MapIteratorOfMapOfDocument;
@@ -1002,8 +1332,18 @@ class CDM_MapIteratorOfMapOfDocument : public TCollection_BasicMapIterator {
 };
 %feature("shadow") CDM_MapIteratorOfMapOfDocument::~CDM_MapIteratorOfMapOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_MapIteratorOfMapOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_ListNodeOfListOfReferences;
@@ -1029,8 +1369,18 @@ class CDM_ListNodeOfListOfReferences : public TCollection_MapNode {
 };
 %feature("shadow") CDM_ListNodeOfListOfReferences::~CDM_ListNodeOfListOfReferences %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_ListNodeOfListOfReferences {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_ListOfDocument;
@@ -1080,8 +1430,18 @@ class CDM_ListOfDocument {
 };
 %feature("shadow") CDM_ListOfDocument::~CDM_ListOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_ListOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_MapOfDocument;
@@ -1107,8 +1467,18 @@ class CDM_MapOfDocument : public TCollection_BasicMap {
 };
 %feature("shadow") CDM_MapOfDocument::~CDM_MapOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_MapOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_ListNodeOfListOfDocument;
@@ -1134,8 +1504,18 @@ class CDM_ListNodeOfListOfDocument : public TCollection_MapNode {
 };
 %feature("shadow") CDM_ListNodeOfListOfDocument::~CDM_ListNodeOfListOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_ListNodeOfListOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_StackOfDocument;
@@ -1165,8 +1545,18 @@ class CDM_StackOfDocument {
 };
 %feature("shadow") CDM_StackOfDocument::~CDM_StackOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_StackOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_StdMapNodeOfMapOfDocument;
@@ -1192,8 +1582,18 @@ class CDM_StdMapNodeOfMapOfDocument : public TCollection_MapNode {
 };
 %feature("shadow") CDM_StdMapNodeOfMapOfDocument::~CDM_StdMapNodeOfMapOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_StdMapNodeOfMapOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_StackIteratorOfStackOfDocument;
@@ -1215,8 +1615,18 @@ class CDM_StackIteratorOfStackOfDocument {
 };
 %feature("shadow") CDM_StackIteratorOfStackOfDocument::~CDM_StackIteratorOfStackOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_StackIteratorOfStackOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_MetaData;
@@ -1274,8 +1684,18 @@ class CDM_MetaData : public Standard_Transient {
 };
 %feature("shadow") CDM_MetaData::~CDM_MetaData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_MetaData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDM_Reference;
@@ -1307,5 +1727,15 @@ class CDM_Reference : public Standard_Transient {
 };
 %feature("shadow") CDM_Reference::~CDM_Reference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDM_Reference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

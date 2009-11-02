@@ -119,8 +119,18 @@ class Handle_PlotMgt_PlotterParameter : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_PlotMgt_PlotterParameter::~Handle_PlotMgt_PlotterParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PlotMgt_PlotterParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PlotMgt_HListOfMFTSizes;
@@ -147,8 +157,18 @@ class Handle_PlotMgt_HListOfMFTSizes : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_PlotMgt_HListOfMFTSizes::~Handle_PlotMgt_HListOfMFTSizes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PlotMgt_HListOfMFTSizes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PlotMgt_PlotterDefinitionError;
@@ -175,8 +195,18 @@ class Handle_PlotMgt_PlotterDefinitionError : public Handle_Standard_OutOfRange 
 };
 %feature("shadow") Handle_PlotMgt_PlotterDefinitionError::~Handle_PlotMgt_PlotterDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PlotMgt_PlotterDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PlotMgt_PlotterDriver;
@@ -203,8 +233,18 @@ class Handle_PlotMgt_PlotterDriver : public Handle_Aspect_Driver {
 };
 %feature("shadow") Handle_PlotMgt_PlotterDriver::~Handle_PlotMgt_PlotterDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PlotMgt_PlotterDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PlotMgt_Plotter;
@@ -231,8 +271,18 @@ class Handle_PlotMgt_Plotter : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_PlotMgt_Plotter::~Handle_PlotMgt_Plotter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PlotMgt_Plotter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PlotMgt_ImageDriver;
@@ -259,8 +309,18 @@ class Handle_PlotMgt_ImageDriver : public Handle_PlotMgt_PlotterDriver {
 };
 %feature("shadow") Handle_PlotMgt_ImageDriver::~Handle_PlotMgt_ImageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PlotMgt_ImageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PlotMgt_HListOfPlotterParameter;
@@ -287,8 +347,18 @@ class Handle_PlotMgt_HListOfPlotterParameter : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_PlotMgt_HListOfPlotterParameter::~Handle_PlotMgt_HListOfPlotterParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PlotMgt_HListOfPlotterParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter;
@@ -315,8 +385,18 @@ class Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter : public Handle_TColle
 };
 %feature("shadow") Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter::~Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PlotMgt_HListOfMFTFonts;
@@ -343,8 +423,18 @@ class Handle_PlotMgt_HListOfMFTFonts : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_PlotMgt_HListOfMFTFonts::~Handle_PlotMgt_HListOfMFTFonts %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PlotMgt_HListOfMFTFonts {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PlotMgt_TextManager;
@@ -371,8 +461,18 @@ class Handle_PlotMgt_TextManager : public Handle_MFT_TextManager {
 };
 %feature("shadow") Handle_PlotMgt_TextManager::~Handle_PlotMgt_TextManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PlotMgt_TextManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PlotMgt_PlotterAccessError;
@@ -399,8 +499,18 @@ class Handle_PlotMgt_PlotterAccessError : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_PlotMgt_PlotterAccessError::~Handle_PlotMgt_PlotterAccessError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PlotMgt_PlotterAccessError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_TextManager;
@@ -444,8 +554,18 @@ class PlotMgt_TextManager : public MFT_TextManager {
 };
 %feature("shadow") PlotMgt_TextManager::~PlotMgt_TextManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_TextManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_SequenceNodeOfListOfPlotterParameter;
@@ -471,8 +591,18 @@ class PlotMgt_SequenceNodeOfListOfPlotterParameter : public TCollection_SeqNode 
 };
 %feature("shadow") PlotMgt_SequenceNodeOfListOfPlotterParameter::~PlotMgt_SequenceNodeOfListOfPlotterParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_ListOfMFTSizes;
@@ -512,8 +642,18 @@ class PlotMgt_ListOfMFTSizes {
 };
 %feature("shadow") PlotMgt_ListOfMFTSizes::~PlotMgt_ListOfMFTSizes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_ListOfMFTSizes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_HListOfMFTSizes;
@@ -557,8 +697,18 @@ class PlotMgt_HListOfMFTSizes : public MMgt_TShared {
 };
 %feature("shadow") PlotMgt_HListOfMFTSizes::~PlotMgt_HListOfMFTSizes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_HListOfMFTSizes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_PlotterAccessError;
@@ -590,8 +740,18 @@ class PlotMgt_PlotterAccessError : public Standard_OutOfRange {
 };
 %feature("shadow") PlotMgt_PlotterAccessError::~PlotMgt_PlotterAccessError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_PlotterAccessError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_ListOfPlotterParameter;
@@ -645,8 +805,18 @@ class PlotMgt_ListOfPlotterParameter : public TCollection_BaseSequence {
 };
 %feature("shadow") PlotMgt_ListOfPlotterParameter::~PlotMgt_ListOfPlotterParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_ListOfPlotterParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_PlotterParameter;
@@ -708,8 +878,18 @@ class PlotMgt_PlotterParameter : public MMgt_TShared {
 };
 %feature("shadow") PlotMgt_PlotterParameter::~PlotMgt_PlotterParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_PlotterParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_PlotterDriver;
@@ -827,8 +1007,18 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 };
 %feature("shadow") PlotMgt_PlotterDriver::~PlotMgt_PlotterDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_PlotterDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_Plotter;
@@ -1178,8 +1368,18 @@ class PlotMgt_Plotter : public MMgt_TShared {
 };
 %feature("shadow") PlotMgt_Plotter::~PlotMgt_Plotter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_Plotter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_HListOfMFTFonts;
@@ -1223,8 +1423,18 @@ class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 };
 %feature("shadow") PlotMgt_HListOfMFTFonts::~PlotMgt_HListOfMFTFonts %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_HListOfMFTFonts {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt;
@@ -1264,8 +1474,18 @@ class PlotMgt {
 };
 %feature("shadow") PlotMgt::~PlotMgt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_PlotterDefinitionError;
@@ -1297,8 +1517,18 @@ class PlotMgt_PlotterDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") PlotMgt_PlotterDefinitionError::~PlotMgt_PlotterDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_PlotterDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_ImageDriver;
@@ -1328,8 +1558,18 @@ class PlotMgt_ImageDriver : public PlotMgt_PlotterDriver {
 };
 %feature("shadow") PlotMgt_ImageDriver::~PlotMgt_ImageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_ImageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_HListOfPlotterParameter;
@@ -1397,8 +1637,18 @@ class PlotMgt_HListOfPlotterParameter : public MMgt_TShared {
 };
 %feature("shadow") PlotMgt_HListOfPlotterParameter::~PlotMgt_HListOfPlotterParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_HListOfPlotterParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PlotMgt_ListOfMFTFonts;
@@ -1438,5 +1688,15 @@ class PlotMgt_ListOfMFTFonts {
 };
 %feature("shadow") PlotMgt_ListOfMFTFonts::~PlotMgt_ListOfMFTFonts %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PlotMgt_ListOfMFTFonts {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

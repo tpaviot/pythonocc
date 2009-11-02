@@ -63,8 +63,18 @@ class Handle_PDF_Attribute : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PDF_Attribute::~Handle_PDF_Attribute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PDF_Attribute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PDF_TagSource;
@@ -91,8 +101,18 @@ class Handle_PDF_TagSource : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PDF_TagSource::~Handle_PDF_TagSource %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PDF_TagSource {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PDF_Reference;
@@ -119,8 +139,18 @@ class Handle_PDF_Reference : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PDF_Reference::~Handle_PDF_Reference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PDF_Reference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PDF_HAttributeArray1;
@@ -147,8 +177,18 @@ class Handle_PDF_HAttributeArray1 : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PDF_HAttributeArray1::~Handle_PDF_HAttributeArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PDF_HAttributeArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1;
@@ -175,8 +215,18 @@ class Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 : public Handle_PStandard_A
 };
 %feature("shadow") Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1::~Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PDF_Data;
@@ -203,8 +253,18 @@ class Handle_PDF_Data : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PDF_Data::~Handle_PDF_Data %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PDF_Data {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PDF_Attribute;
@@ -230,8 +290,18 @@ class PDF_Attribute : public Standard_Persistent {
 };
 %feature("shadow") PDF_Attribute::~PDF_Attribute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PDF_Attribute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PDF_TagSource;
@@ -265,8 +335,18 @@ class PDF_TagSource : public PDF_Attribute {
 };
 %feature("shadow") PDF_TagSource::~PDF_TagSource %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PDF_TagSource {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PDF_Reference;
@@ -302,8 +382,18 @@ class PDF_Reference : public PDF_Attribute {
 };
 %feature("shadow") PDF_Reference::~PDF_Reference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PDF_Reference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PDF_VArrayNodeOfFieldOfHAttributeArray1;
@@ -339,8 +429,18 @@ class PDF_VArrayNodeOfFieldOfHAttributeArray1 : public PStandard_ArrayNode {
 };
 %feature("shadow") PDF_VArrayNodeOfFieldOfHAttributeArray1::~PDF_VArrayNodeOfFieldOfHAttributeArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PDF_VArrayNodeOfFieldOfHAttributeArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PDF_Data;
@@ -390,8 +490,18 @@ class PDF_Data : public Standard_Persistent {
 };
 %feature("shadow") PDF_Data::~PDF_Data %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PDF_Data {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PDF_HAttributeArray1;
@@ -451,8 +561,18 @@ class PDF_HAttributeArray1 : public Standard_Persistent {
 };
 %feature("shadow") PDF_HAttributeArray1::~PDF_HAttributeArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PDF_HAttributeArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PDF_FieldOfHAttributeArray1;
@@ -482,8 +602,18 @@ class PDF_FieldOfHAttributeArray1 : public DBC_BaseArray {
 };
 %feature("shadow") PDF_FieldOfHAttributeArray1::~PDF_FieldOfHAttributeArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PDF_FieldOfHAttributeArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PDF_VArrayTNodeOfFieldOfHAttributeArray1;
@@ -501,5 +631,15 @@ class PDF_VArrayTNodeOfFieldOfHAttributeArray1 {
 };
 %feature("shadow") PDF_VArrayTNodeOfFieldOfHAttributeArray1::~PDF_VArrayTNodeOfFieldOfHAttributeArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PDF_VArrayTNodeOfFieldOfHAttributeArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

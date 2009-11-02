@@ -73,8 +73,18 @@ class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_PCollection_IsNotRoot::~Handle_PCollection_IsNotRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCollection_IsNotRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCollection_IsContained;
@@ -101,8 +111,18 @@ class Handle_PCollection_IsContained : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_PCollection_IsContained::~Handle_PCollection_IsContained %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCollection_IsContained {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCollection_IsNullTree;
@@ -129,8 +149,18 @@ class Handle_PCollection_IsNullTree : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_PCollection_IsNullTree::~Handle_PCollection_IsNullTree %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCollection_IsNullTree {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCollection_HAsciiString;
@@ -157,8 +187,18 @@ class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PCollection_HAsciiString::~Handle_PCollection_HAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCollection_HAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCollection_HExtendedString;
@@ -185,8 +225,18 @@ class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PCollection_HExtendedString::~Handle_PCollection_HExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCollection_HExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCollection_IsNullTree;
@@ -218,8 +268,18 @@ class PCollection_IsNullTree : public Standard_Failure {
 };
 %feature("shadow") PCollection_IsNullTree::~PCollection_IsNullTree %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCollection_IsNullTree {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCollection_PrivCompareOfInteger;
@@ -237,8 +297,18 @@ class PCollection_PrivCompareOfInteger {
 };
 %feature("shadow") PCollection_PrivCompareOfInteger::~PCollection_PrivCompareOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCollection_PrivCompareOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCollection_IsNotRoot;
@@ -270,8 +340,18 @@ class PCollection_IsNotRoot : public Standard_Failure {
 };
 %feature("shadow") PCollection_IsNotRoot::~PCollection_IsNotRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCollection_IsNotRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCollection_IsContained;
@@ -303,8 +383,18 @@ class PCollection_IsContained : public Standard_Failure {
 };
 %feature("shadow") PCollection_IsContained::~PCollection_IsContained %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCollection_IsContained {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCollection_HAsciiString;
@@ -442,8 +532,18 @@ class PCollection_HAsciiString : public Standard_Persistent {
 };
 %feature("shadow") PCollection_HAsciiString::~PCollection_HAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCollection_HAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCollection_CompareOfInteger;
@@ -459,8 +559,18 @@ class PCollection_CompareOfInteger : public PCollection_PrivCompareOfInteger {
 };
 %feature("shadow") PCollection_CompareOfInteger::~PCollection_CompareOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCollection_CompareOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCollection_HExtendedString;
@@ -578,8 +688,18 @@ class PCollection_HExtendedString : public Standard_Persistent {
 };
 %feature("shadow") PCollection_HExtendedString::~PCollection_HExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCollection_HExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCollection_PrivCompareOfReal;
@@ -597,8 +717,18 @@ class PCollection_PrivCompareOfReal {
 };
 %feature("shadow") PCollection_PrivCompareOfReal::~PCollection_PrivCompareOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCollection_PrivCompareOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCollection_CompareOfReal;
@@ -610,5 +740,15 @@ class PCollection_CompareOfReal : public PCollection_PrivCompareOfReal {
 };
 %feature("shadow") PCollection_CompareOfReal::~PCollection_CompareOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCollection_CompareOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

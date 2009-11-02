@@ -54,8 +54,18 @@ class RWStepElement_RWAnalysisItemWithinRepresentation {
 };
 %feature("shadow") RWStepElement_RWAnalysisItemWithinRepresentation::~RWStepElement_RWAnalysisItemWithinRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWAnalysisItemWithinRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWSurfaceSectionField;
@@ -73,8 +83,18 @@ class RWStepElement_RWSurfaceSectionField {
 };
 %feature("shadow") RWStepElement_RWSurfaceSectionField::~RWStepElement_RWSurfaceSectionField %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWSurfaceSectionField {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWCurveElementSectionDerivedDefinitions;
@@ -92,8 +112,18 @@ class RWStepElement_RWCurveElementSectionDerivedDefinitions {
 };
 %feature("shadow") RWStepElement_RWCurveElementSectionDerivedDefinitions::~RWStepElement_RWCurveElementSectionDerivedDefinitions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWCurveElementSectionDerivedDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWSurfaceSectionFieldVarying;
@@ -111,8 +141,18 @@ class RWStepElement_RWSurfaceSectionFieldVarying {
 };
 %feature("shadow") RWStepElement_RWSurfaceSectionFieldVarying::~RWStepElement_RWSurfaceSectionFieldVarying %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWSurfaceSectionFieldVarying {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWSurfaceSection;
@@ -130,8 +170,18 @@ class RWStepElement_RWSurfaceSection {
 };
 %feature("shadow") RWStepElement_RWSurfaceSection::~RWStepElement_RWSurfaceSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWSurfaceSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWElementDescriptor;
@@ -149,8 +199,18 @@ class RWStepElement_RWElementDescriptor {
 };
 %feature("shadow") RWStepElement_RWElementDescriptor::~RWStepElement_RWElementDescriptor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWElementDescriptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWElementMaterial;
@@ -168,8 +228,18 @@ class RWStepElement_RWElementMaterial {
 };
 %feature("shadow") RWStepElement_RWElementMaterial::~RWStepElement_RWElementMaterial %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWElementMaterial {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWCurveElementSectionDefinition;
@@ -187,8 +257,18 @@ class RWStepElement_RWCurveElementSectionDefinition {
 };
 %feature("shadow") RWStepElement_RWCurveElementSectionDefinition::~RWStepElement_RWCurveElementSectionDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWCurveElementSectionDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWVolume3dElementDescriptor;
@@ -206,8 +286,18 @@ class RWStepElement_RWVolume3dElementDescriptor {
 };
 %feature("shadow") RWStepElement_RWVolume3dElementDescriptor::~RWStepElement_RWVolume3dElementDescriptor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWVolume3dElementDescriptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWSurfaceElementProperty;
@@ -225,8 +315,18 @@ class RWStepElement_RWSurfaceElementProperty {
 };
 %feature("shadow") RWStepElement_RWSurfaceElementProperty::~RWStepElement_RWSurfaceElementProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWSurfaceElementProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWUniformSurfaceSection;
@@ -244,8 +344,18 @@ class RWStepElement_RWUniformSurfaceSection {
 };
 %feature("shadow") RWStepElement_RWUniformSurfaceSection::~RWStepElement_RWUniformSurfaceSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWUniformSurfaceSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWSurface3dElementDescriptor;
@@ -263,8 +373,18 @@ class RWStepElement_RWSurface3dElementDescriptor {
 };
 %feature("shadow") RWStepElement_RWSurface3dElementDescriptor::~RWStepElement_RWSurface3dElementDescriptor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWSurface3dElementDescriptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWSurfaceSectionFieldConstant;
@@ -282,8 +402,18 @@ class RWStepElement_RWSurfaceSectionFieldConstant {
 };
 %feature("shadow") RWStepElement_RWSurfaceSectionFieldConstant::~RWStepElement_RWSurfaceSectionFieldConstant %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWSurfaceSectionFieldConstant {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWCurve3dElementDescriptor;
@@ -301,8 +431,18 @@ class RWStepElement_RWCurve3dElementDescriptor {
 };
 %feature("shadow") RWStepElement_RWCurve3dElementDescriptor::~RWStepElement_RWCurve3dElementDescriptor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWCurve3dElementDescriptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepElement_RWCurveElementEndReleasePacket;
@@ -320,5 +460,15 @@ class RWStepElement_RWCurveElementEndReleasePacket {
 };
 %feature("shadow") RWStepElement_RWCurveElementEndReleasePacket::~RWStepElement_RWCurveElementEndReleasePacket %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepElement_RWCurveElementEndReleasePacket {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

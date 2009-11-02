@@ -63,8 +63,18 @@ class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_T
 };
 %feature("shadow") Handle_ShapeProcess_StackItemOfDictionaryOfOperator::~Handle_ShapeProcess_StackItemOfDictionaryOfOperator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeProcess_StackItemOfDictionaryOfOperator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeProcess_Operator;
@@ -91,8 +101,18 @@ class Handle_ShapeProcess_Operator : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeProcess_Operator::~Handle_ShapeProcess_Operator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeProcess_Operator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeProcess_UOperator;
@@ -119,8 +139,18 @@ class Handle_ShapeProcess_UOperator : public Handle_ShapeProcess_Operator {
 };
 %feature("shadow") Handle_ShapeProcess_UOperator::~Handle_ShapeProcess_UOperator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeProcess_UOperator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeProcess_Context;
@@ -147,8 +177,18 @@ class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeProcess_Context::~Handle_ShapeProcess_Context %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeProcess_Context {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeProcess_DictionaryOfOperator;
@@ -175,8 +215,18 @@ class Handle_ShapeProcess_DictionaryOfOperator : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeProcess_DictionaryOfOperator::~Handle_ShapeProcess_DictionaryOfOperator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeProcess_DictionaryOfOperator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeProcess_ShapeContext;
@@ -203,8 +253,18 @@ class Handle_ShapeProcess_ShapeContext : public Handle_ShapeProcess_Context {
 };
 %feature("shadow") Handle_ShapeProcess_ShapeContext::~Handle_ShapeProcess_ShapeContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeProcess_ShapeContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeProcess_Operator;
@@ -228,8 +288,18 @@ class ShapeProcess_Operator : public MMgt_TShared {
 };
 %feature("shadow") ShapeProcess_Operator::~ShapeProcess_Operator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeProcess_Operator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeProcess_UOperator;
@@ -251,8 +321,18 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 };
 %feature("shadow") ShapeProcess_UOperator::~ShapeProcess_UOperator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeProcess_UOperator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeProcess_OperLibrary;
@@ -268,8 +348,18 @@ class ShapeProcess_OperLibrary {
 };
 %feature("shadow") ShapeProcess_OperLibrary::~ShapeProcess_OperLibrary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeProcess_OperLibrary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeProcess;
@@ -287,8 +377,18 @@ class ShapeProcess {
 };
 %feature("shadow") ShapeProcess::~ShapeProcess %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeProcess_StackItemOfDictionaryOfOperator;
@@ -320,8 +420,18 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 };
 %feature("shadow") ShapeProcess_StackItemOfDictionaryOfOperator::~ShapeProcess_StackItemOfDictionaryOfOperator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeProcess_StackItemOfDictionaryOfOperator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeProcess_IteratorOfDictionaryOfOperator;
@@ -347,8 +457,18 @@ class ShapeProcess_IteratorOfDictionaryOfOperator {
 };
 %feature("shadow") ShapeProcess_IteratorOfDictionaryOfOperator::~ShapeProcess_IteratorOfDictionaryOfOperator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeProcess_IteratorOfDictionaryOfOperator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeProcess_Context;
@@ -410,8 +530,18 @@ class ShapeProcess_Context : public MMgt_TShared {
 };
 %feature("shadow") ShapeProcess_Context::~ShapeProcess_Context %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeProcess_Context {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeProcess_ShapeContext;
@@ -469,8 +599,18 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 };
 %feature("shadow") ShapeProcess_ShapeContext::~ShapeProcess_ShapeContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeProcess_ShapeContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeProcess_DictionaryOfOperator;
@@ -528,5 +668,15 @@ class ShapeProcess_DictionaryOfOperator : public MMgt_TShared {
 };
 %feature("shadow") ShapeProcess_DictionaryOfOperator::~ShapeProcess_DictionaryOfOperator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeProcess_DictionaryOfOperator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

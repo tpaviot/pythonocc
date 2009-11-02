@@ -58,8 +58,18 @@ class GeomConvert_BSplineSurfaceKnotSplitting {
 };
 %feature("shadow") GeomConvert_BSplineSurfaceKnotSplitting::~GeomConvert_BSplineSurfaceKnotSplitting %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomConvert_BSplineSurfaceKnotSplitting {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomConvert_CompBezierSurfacesToBSplineSurface;
@@ -99,8 +109,18 @@ class GeomConvert_CompBezierSurfacesToBSplineSurface {
 };
 %feature("shadow") GeomConvert_CompBezierSurfacesToBSplineSurface::~GeomConvert_CompBezierSurfacesToBSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomConvert_CompBezierSurfacesToBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomConvert_BSplineCurveKnotSplitting;
@@ -118,8 +138,18 @@ class GeomConvert_BSplineCurveKnotSplitting {
 };
 %feature("shadow") GeomConvert_BSplineCurveKnotSplitting::~GeomConvert_BSplineCurveKnotSplitting %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomConvert_BSplineCurveKnotSplitting {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomConvert;
@@ -159,8 +189,18 @@ class GeomConvert {
 };
 %feature("shadow") GeomConvert::~GeomConvert %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomConvert {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomConvert_ApproxCurve;
@@ -188,8 +228,18 @@ class GeomConvert_ApproxCurve {
 };
 %feature("shadow") GeomConvert_ApproxCurve::~GeomConvert_ApproxCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomConvert_ApproxCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomConvert_BSplineCurveToBezierCurve;
@@ -211,8 +261,18 @@ class GeomConvert_BSplineCurveToBezierCurve {
 };
 %feature("shadow") GeomConvert_BSplineCurveToBezierCurve::~GeomConvert_BSplineCurveToBezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomConvert_BSplineCurveToBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomConvert_BSplineSurfaceToBezierSurface;
@@ -238,8 +298,18 @@ class GeomConvert_BSplineSurfaceToBezierSurface {
 };
 %feature("shadow") GeomConvert_BSplineSurfaceToBezierSurface::~GeomConvert_BSplineSurfaceToBezierSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomConvert_BSplineSurfaceToBezierSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomConvert_CompCurveToBSplineCurve;
@@ -255,8 +325,18 @@ class GeomConvert_CompCurveToBSplineCurve {
 };
 %feature("shadow") GeomConvert_CompCurveToBSplineCurve::~GeomConvert_CompCurveToBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomConvert_CompCurveToBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomConvert_ApproxSurface;
@@ -284,5 +364,15 @@ class GeomConvert_ApproxSurface {
 };
 %feature("shadow") GeomConvert_ApproxSurface::~GeomConvert_ApproxSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomConvert_ApproxSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

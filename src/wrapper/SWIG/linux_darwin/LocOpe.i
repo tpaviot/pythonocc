@@ -69,8 +69,18 @@ class Handle_LocOpe_ProjectedWires : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_LocOpe_ProjectedWires::~Handle_LocOpe_ProjectedWires %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_LocOpe_ProjectedWires {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_LocOpe_HBuilder;
@@ -97,8 +107,18 @@ class Handle_LocOpe_HBuilder : public Handle_TopOpeBRepBuild_HBuilder {
 };
 %feature("shadow") Handle_LocOpe_HBuilder::~Handle_LocOpe_HBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_LocOpe_HBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt;
@@ -125,8 +145,18 @@ class Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt : public Handle_TCollection_M
 };
 %feature("shadow") Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt::~Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfPntFace;
@@ -153,8 +183,18 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfPntFace : public Handle_TCollection_
 };
 %feature("shadow") Handle_LocOpe_SequenceNodeOfSequenceOfPntFace::~Handle_LocOpe_SequenceNodeOfSequenceOfPntFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_LocOpe_SequenceNodeOfSequenceOfPntFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_LocOpe_GeneratedShape;
@@ -181,8 +221,18 @@ class Handle_LocOpe_GeneratedShape : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_LocOpe_GeneratedShape::~Handle_LocOpe_GeneratedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_LocOpe_GeneratedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_LocOpe_GluedShape;
@@ -209,8 +259,18 @@ class Handle_LocOpe_GluedShape : public Handle_LocOpe_GeneratedShape {
 };
 %feature("shadow") Handle_LocOpe_GluedShape::~Handle_LocOpe_GluedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_LocOpe_GluedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfLin;
@@ -237,8 +297,18 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfLin : public Handle_TCollection_SeqN
 };
 %feature("shadow") Handle_LocOpe_SequenceNodeOfSequenceOfLin::~Handle_LocOpe_SequenceNodeOfSequenceOfLin %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_LocOpe_SequenceNodeOfSequenceOfLin {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_LocOpe_WiresOnShape;
@@ -265,8 +335,18 @@ class Handle_LocOpe_WiresOnShape : public Handle_LocOpe_ProjectedWires {
 };
 %feature("shadow") Handle_LocOpe_WiresOnShape::~Handle_LocOpe_WiresOnShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_LocOpe_WiresOnShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfCirc;
@@ -293,8 +373,18 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfCirc : public Handle_TCollection_Seq
 };
 %feature("shadow") Handle_LocOpe_SequenceNodeOfSequenceOfCirc::~Handle_LocOpe_SequenceNodeOfSequenceOfCirc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_LocOpe_SequenceNodeOfSequenceOfCirc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_FindEdgesInFace;
@@ -318,8 +408,18 @@ class LocOpe_FindEdgesInFace {
 };
 %feature("shadow") LocOpe_FindEdgesInFace::~LocOpe_FindEdgesInFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_FindEdgesInFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_Pipe;
@@ -347,8 +447,18 @@ class LocOpe_Pipe {
 };
 %feature("shadow") LocOpe_Pipe::~LocOpe_Pipe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_Pipe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_SplitShape;
@@ -376,8 +486,18 @@ class LocOpe_SplitShape {
 };
 %feature("shadow") LocOpe_SplitShape::~LocOpe_SplitShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_SplitShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_CurveShapeIntersector;
@@ -411,8 +531,18 @@ class LocOpe_CurveShapeIntersector {
 };
 %feature("shadow") LocOpe_CurveShapeIntersector::~LocOpe_CurveShapeIntersector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_CurveShapeIntersector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_Gluer;
@@ -450,8 +580,18 @@ class LocOpe_Gluer {
 };
 %feature("shadow") LocOpe_Gluer::~LocOpe_Gluer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_Gluer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_BuildWires;
@@ -471,8 +611,18 @@ class LocOpe_BuildWires {
 };
 %feature("shadow") LocOpe_BuildWires::~LocOpe_BuildWires %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_BuildWires {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_HBuilder;
@@ -500,8 +650,18 @@ class LocOpe_HBuilder : public TopOpeBRepBuild_HBuilder {
 };
 %feature("shadow") LocOpe_HBuilder::~LocOpe_HBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_HBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_DPrism;
@@ -533,8 +693,18 @@ class LocOpe_DPrism {
 };
 %feature("shadow") LocOpe_DPrism::~LocOpe_DPrism %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_DPrism {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_SequenceNodeOfSequenceOfCirc;
@@ -560,8 +730,18 @@ class LocOpe_SequenceNodeOfSequenceOfCirc : public TCollection_SeqNode {
 };
 %feature("shadow") LocOpe_SequenceNodeOfSequenceOfCirc::~LocOpe_SequenceNodeOfSequenceOfCirc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_SequenceNodeOfSequenceOfCirc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_ProjectedWires;
@@ -599,8 +779,18 @@ class LocOpe_ProjectedWires : public MMgt_TShared {
 };
 %feature("shadow") LocOpe_ProjectedWires::~LocOpe_ProjectedWires %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_ProjectedWires {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_WiresOnShape;
@@ -652,8 +842,18 @@ class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
 };
 %feature("shadow") LocOpe_WiresOnShape::~LocOpe_WiresOnShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_WiresOnShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_GeneratedShape;
@@ -683,8 +883,18 @@ class LocOpe_GeneratedShape : public MMgt_TShared {
 };
 %feature("shadow") LocOpe_GeneratedShape::~LocOpe_GeneratedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_GeneratedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_BuildShape;
@@ -702,8 +912,18 @@ class LocOpe_BuildShape {
 };
 %feature("shadow") LocOpe_BuildShape::~LocOpe_BuildShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_BuildShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_SequenceOfLin;
@@ -757,8 +977,18 @@ class LocOpe_SequenceOfLin : public TCollection_BaseSequence {
 };
 %feature("shadow") LocOpe_SequenceOfLin::~LocOpe_SequenceOfLin %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_SequenceOfLin {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_SequenceNodeOfSequenceOfLin;
@@ -784,8 +1014,18 @@ class LocOpe_SequenceNodeOfSequenceOfLin : public TCollection_SeqNode {
 };
 %feature("shadow") LocOpe_SequenceNodeOfSequenceOfLin::~LocOpe_SequenceNodeOfSequenceOfLin %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_SequenceNodeOfSequenceOfLin {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_SequenceOfCirc;
@@ -839,8 +1079,18 @@ class LocOpe_SequenceOfCirc : public TCollection_BaseSequence {
 };
 %feature("shadow") LocOpe_SequenceOfCirc::~LocOpe_SequenceOfCirc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_SequenceOfCirc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_GluedShape;
@@ -878,8 +1128,18 @@ class LocOpe_GluedShape : public LocOpe_GeneratedShape {
 };
 %feature("shadow") LocOpe_GluedShape::~LocOpe_GluedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_GluedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_DataMapOfShapePnt;
@@ -913,8 +1173,18 @@ class LocOpe_DataMapOfShapePnt : public TCollection_BasicMap {
 };
 %feature("shadow") LocOpe_DataMapOfShapePnt::~LocOpe_DataMapOfShapePnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_DataMapOfShapePnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe;
@@ -934,8 +1204,18 @@ class LocOpe {
 };
 %feature("shadow") LocOpe::~LocOpe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_Generator;
@@ -961,8 +1241,18 @@ class LocOpe_Generator {
 };
 %feature("shadow") LocOpe_Generator::~LocOpe_Generator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_Generator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_Prism;
@@ -994,8 +1284,18 @@ class LocOpe_Prism {
 };
 %feature("shadow") LocOpe_Prism::~LocOpe_Prism %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_Prism {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_DataMapIteratorOfDataMapOfShapePnt;
@@ -1015,8 +1315,18 @@ class LocOpe_DataMapIteratorOfDataMapOfShapePnt : public TCollection_BasicMapIte
 };
 %feature("shadow") LocOpe_DataMapIteratorOfDataMapOfShapePnt::~LocOpe_DataMapIteratorOfDataMapOfShapePnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_DataMapIteratorOfDataMapOfShapePnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_DataMapNodeOfDataMapOfShapePnt;
@@ -1044,8 +1354,18 @@ class LocOpe_DataMapNodeOfDataMapOfShapePnt : public TCollection_MapNode {
 };
 %feature("shadow") LocOpe_DataMapNodeOfDataMapOfShapePnt::~LocOpe_DataMapNodeOfDataMapOfShapePnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_CSIntersector;
@@ -1083,8 +1403,18 @@ class LocOpe_CSIntersector {
 };
 %feature("shadow") LocOpe_CSIntersector::~LocOpe_CSIntersector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_CSIntersector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_Spliter;
@@ -1114,8 +1444,18 @@ class LocOpe_Spliter {
 };
 %feature("shadow") LocOpe_Spliter::~LocOpe_Spliter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_Spliter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_PntFace;
@@ -1143,8 +1483,18 @@ class LocOpe_PntFace {
 };
 %feature("shadow") LocOpe_PntFace::~LocOpe_PntFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_PntFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_Builder;
@@ -1196,8 +1546,18 @@ class LocOpe_Builder {
 };
 %feature("shadow") LocOpe_Builder::~LocOpe_Builder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_Builder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_SequenceOfPntFace;
@@ -1251,8 +1611,18 @@ class LocOpe_SequenceOfPntFace : public TCollection_BaseSequence {
 };
 %feature("shadow") LocOpe_SequenceOfPntFace::~LocOpe_SequenceOfPntFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_SequenceOfPntFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_FindEdges;
@@ -1278,8 +1648,18 @@ class LocOpe_FindEdges {
 };
 %feature("shadow") LocOpe_FindEdges::~LocOpe_FindEdges %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_FindEdges {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_SplitDrafts;
@@ -1307,8 +1687,18 @@ class LocOpe_SplitDrafts {
 };
 %feature("shadow") LocOpe_SplitDrafts::~LocOpe_SplitDrafts %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_SplitDrafts {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_LinearForm;
@@ -1336,8 +1726,18 @@ class LocOpe_LinearForm {
 };
 %feature("shadow") LocOpe_LinearForm::~LocOpe_LinearForm %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_LinearForm {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocOpe_SequenceNodeOfSequenceOfPntFace;
@@ -1363,5 +1763,15 @@ class LocOpe_SequenceNodeOfSequenceOfPntFace : public TCollection_SeqNode {
 };
 %feature("shadow") LocOpe_SequenceNodeOfSequenceOfPntFace::~LocOpe_SequenceNodeOfSequenceOfPntFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocOpe_SequenceNodeOfSequenceOfPntFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

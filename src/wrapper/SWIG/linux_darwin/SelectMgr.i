@@ -80,8 +80,18 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfSelection : public Handle_TCollec
 };
 %feature("shadow") Handle_SelectMgr_SequenceNodeOfSequenceOfSelection::~Handle_SelectMgr_SequenceNodeOfSequenceOfSelection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_SequenceNodeOfSequenceOfSelection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_ViewerSelector;
@@ -108,8 +118,18 @@ class Handle_SelectMgr_ViewerSelector : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_SelectMgr_ViewerSelector::~Handle_SelectMgr_ViewerSelector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_ViewerSelector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_EntityOwner;
@@ -136,8 +156,18 @@ class Handle_SelectMgr_EntityOwner : public Handle_SelectBasics_EntityOwner {
 };
 %feature("shadow") Handle_SelectMgr_EntityOwner::~Handle_SelectMgr_EntityOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_EntityOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
@@ -164,8 +194,18 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public Handle_TCo
 };
 %feature("shadow") Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors::~Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_SelectableObject;
@@ -192,8 +232,18 @@ class Handle_SelectMgr_SelectableObject : public Handle_PrsMgr_PresentableObject
 };
 %feature("shadow") Handle_SelectMgr_SelectableObject::~Handle_SelectMgr_SelectableObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_SelectableObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_Selection;
@@ -220,8 +270,18 @@ class Handle_SelectMgr_Selection : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_SelectMgr_Selection::~Handle_SelectMgr_Selection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_Selection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_Filter;
@@ -248,8 +308,18 @@ class Handle_SelectMgr_Filter : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_SelectMgr_Filter::~Handle_SelectMgr_Filter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_Filter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_CompositionFilter;
@@ -276,8 +346,18 @@ class Handle_SelectMgr_CompositionFilter : public Handle_SelectMgr_Filter {
 };
 %feature("shadow") Handle_SelectMgr_CompositionFilter::~Handle_SelectMgr_CompositionFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_CompositionFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_OrFilter;
@@ -304,8 +384,18 @@ class Handle_SelectMgr_OrFilter : public Handle_SelectMgr_CompositionFilter {
 };
 %feature("shadow") Handle_SelectMgr_OrFilter::~Handle_SelectMgr_OrFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_OrFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive;
@@ -332,8 +422,18 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public Handle_TC
 };
 %feature("shadow") Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive::~Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_AndFilter;
@@ -360,8 +460,18 @@ class Handle_SelectMgr_AndFilter : public Handle_SelectMgr_CompositionFilter {
 };
 %feature("shadow") Handle_SelectMgr_AndFilter::~Handle_SelectMgr_AndFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_AndFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner;
@@ -388,8 +498,18 @@ class Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public Handle_TCollec
 };
 %feature("shadow") Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner::~Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_SequenceNodeOfSequenceOfOwner;
@@ -416,8 +536,18 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfOwner : public Handle_TCollection
 };
 %feature("shadow") Handle_SelectMgr_SequenceNodeOfSequenceOfOwner::~Handle_SelectMgr_SequenceNodeOfSequenceOfOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_SequenceNodeOfSequenceOfOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_SelectionManager;
@@ -444,8 +574,18 @@ class Handle_SelectMgr_SelectionManager : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_SelectMgr_SelectionManager::~Handle_SelectMgr_SelectionManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_SelectionManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_ListNodeOfListOfFilter;
@@ -472,8 +612,18 @@ class Handle_SelectMgr_ListNodeOfListOfFilter : public Handle_TCollection_MapNod
 };
 %feature("shadow") Handle_SelectMgr_ListNodeOfListOfFilter::~Handle_SelectMgr_ListNodeOfListOfFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_ListNodeOfListOfFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_SequenceNodeOfSequenceOfFilter;
@@ -500,8 +650,18 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfFilter : public Handle_TCollectio
 };
 %feature("shadow") Handle_SelectMgr_SequenceNodeOfSequenceOfFilter::~Handle_SelectMgr_SequenceNodeOfSequenceOfFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_SequenceNodeOfSequenceOfFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation;
@@ -528,8 +688,18 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public Handle
 };
 %feature("shadow") Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation::~Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_SequenceNodeOfSequenceOfSelector;
@@ -556,8 +726,18 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfSelector : public Handle_TCollect
 };
 %feature("shadow") Handle_SelectMgr_SequenceNodeOfSequenceOfSelector::~Handle_SelectMgr_SequenceNodeOfSequenceOfSelector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_SequenceNodeOfSequenceOfSelector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion;
@@ -584,8 +764,18 @@ class Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : publ
 };
 %feature("shadow") Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion::~Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_IndexedDataMapOfOwnerCriterion;
@@ -629,8 +819,18 @@ class SelectMgr_IndexedDataMapOfOwnerCriterion : public TCollection_BasicMap {
 };
 %feature("shadow") SelectMgr_IndexedDataMapOfOwnerCriterion::~SelectMgr_IndexedDataMapOfOwnerCriterion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_IndexedDataMapOfOwnerCriterion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_ListIteratorOfListOfFilter;
@@ -652,8 +852,18 @@ class SelectMgr_ListIteratorOfListOfFilter {
 };
 %feature("shadow") SelectMgr_ListIteratorOfListOfFilter::~SelectMgr_ListIteratorOfListOfFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_ListIteratorOfListOfFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_Selection;
@@ -697,8 +907,18 @@ class SelectMgr_Selection : public MMgt_TShared {
 };
 %feature("shadow") SelectMgr_Selection::~SelectMgr_Selection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_Selection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_DataMapOfObjectSelectors;
@@ -732,8 +952,18 @@ class SelectMgr_DataMapOfObjectSelectors : public TCollection_BasicMap {
 };
 %feature("shadow") SelectMgr_DataMapOfObjectSelectors::~SelectMgr_DataMapOfObjectSelectors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_DataMapOfObjectSelectors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_ListNodeOfListOfFilter;
@@ -759,8 +989,18 @@ class SelectMgr_ListNodeOfListOfFilter : public TCollection_MapNode {
 };
 %feature("shadow") SelectMgr_ListNodeOfListOfFilter::~SelectMgr_ListNodeOfListOfFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_ListNodeOfListOfFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_SelectionManager;
@@ -844,8 +1084,18 @@ class SelectMgr_SelectionManager : public MMgt_TShared {
 };
 %feature("shadow") SelectMgr_SelectionManager::~SelectMgr_SelectionManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_SelectionManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion;
@@ -887,8 +1137,18 @@ class SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : public TCol
 };
 %feature("shadow") SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion::~SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive;
@@ -926,8 +1186,18 @@ class SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public TCollection_MapN
 };
 %feature("shadow") SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive::~SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_IndexedMapNodeOfIndexedMapOfOwner;
@@ -967,8 +1237,18 @@ class SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public TCollection_MapNode {
 };
 %feature("shadow") SelectMgr_IndexedMapNodeOfIndexedMapOfOwner::~SelectMgr_IndexedMapNodeOfIndexedMapOfOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_ListOfFilter;
@@ -1018,8 +1298,18 @@ class SelectMgr_ListOfFilter {
 };
 %feature("shadow") SelectMgr_ListOfFilter::~SelectMgr_ListOfFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_ListOfFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_SequenceOfSelection;
@@ -1073,8 +1363,18 @@ class SelectMgr_SequenceOfSelection : public TCollection_BaseSequence {
 };
 %feature("shadow") SelectMgr_SequenceOfSelection::~SelectMgr_SequenceOfSelection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_SequenceOfSelection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_IndexedMapOfOwner;
@@ -1108,8 +1408,18 @@ class SelectMgr_IndexedMapOfOwner : public TCollection_BasicMap {
 };
 %feature("shadow") SelectMgr_IndexedMapOfOwner::~SelectMgr_IndexedMapOfOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_IndexedMapOfOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfSelector;
@@ -1135,8 +1445,18 @@ class SelectMgr_SequenceNodeOfSequenceOfSelector : public TCollection_SeqNode {
 };
 %feature("shadow") SelectMgr_SequenceNodeOfSequenceOfSelector::~SelectMgr_SequenceNodeOfSequenceOfSelector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_SequenceNodeOfSequenceOfSelector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_Filter;
@@ -1162,8 +1482,18 @@ class SelectMgr_Filter : public MMgt_TShared {
 };
 %feature("shadow") SelectMgr_Filter::~SelectMgr_Filter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_Filter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_CompositionFilter;
@@ -1195,8 +1525,18 @@ class SelectMgr_CompositionFilter : public SelectMgr_Filter {
 };
 %feature("shadow") SelectMgr_CompositionFilter::~SelectMgr_CompositionFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_CompositionFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_OrFilter;
@@ -1220,8 +1560,18 @@ class SelectMgr_OrFilter : public SelectMgr_CompositionFilter {
 };
 %feature("shadow") SelectMgr_OrFilter::~SelectMgr_OrFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_OrFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive;
@@ -1241,8 +1591,18 @@ class SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive : public TCollection_
 };
 %feature("shadow") SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive::~SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
@@ -1270,8 +1630,18 @@ class SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public TCollection_MapNo
 };
 %feature("shadow") SelectMgr_DataMapNodeOfDataMapOfObjectSelectors::~SelectMgr_DataMapNodeOfDataMapOfObjectSelectors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_SequenceOfFilter;
@@ -1325,8 +1695,18 @@ class SelectMgr_SequenceOfFilter : public TCollection_BaseSequence {
 };
 %feature("shadow") SelectMgr_SequenceOfFilter::~SelectMgr_SequenceOfFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_SequenceOfFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation;
@@ -1346,8 +1726,18 @@ class SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation : public TCollecti
 };
 %feature("shadow") SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation::~SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_DataMapNodeOfDataMapOfSelectionActivation;
@@ -1385,8 +1775,18 @@ class SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public TCollection_M
 };
 %feature("shadow") SelectMgr_DataMapNodeOfDataMapOfSelectionActivation::~SelectMgr_DataMapNodeOfDataMapOfSelectionActivation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfFilter;
@@ -1412,8 +1812,18 @@ class SelectMgr_SequenceNodeOfSequenceOfFilter : public TCollection_SeqNode {
 };
 %feature("shadow") SelectMgr_SequenceNodeOfSequenceOfFilter::~SelectMgr_SequenceNodeOfSequenceOfFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_SequenceNodeOfSequenceOfFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_SelectableObject;
@@ -1475,8 +1885,18 @@ class SelectMgr_SelectableObject : public PrsMgr_PresentableObject {
 };
 %feature("shadow") SelectMgr_SelectableObject::~SelectMgr_SelectableObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_SelectableObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfSelection;
@@ -1502,8 +1922,18 @@ class SelectMgr_SequenceNodeOfSequenceOfSelection : public TCollection_SeqNode {
 };
 %feature("shadow") SelectMgr_SequenceNodeOfSequenceOfSelection::~SelectMgr_SequenceNodeOfSequenceOfSelection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_SequenceNodeOfSequenceOfSelection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_SequenceOfOwner;
@@ -1557,8 +1987,18 @@ class SelectMgr_SequenceOfOwner : public TCollection_BaseSequence {
 };
 %feature("shadow") SelectMgr_SequenceOfOwner::~SelectMgr_SequenceOfOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_SequenceOfOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_DataMapOfSelectionActivation;
@@ -1602,8 +2042,18 @@ class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
 };
 %feature("shadow") SelectMgr_DataMapOfSelectionActivation::~SelectMgr_DataMapOfSelectionActivation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_DataMapOfSelectionActivation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_SortCriterion;
@@ -1641,8 +2091,18 @@ class SelectMgr_SortCriterion {
 };
 %feature("shadow") SelectMgr_SortCriterion::~SelectMgr_SortCriterion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_SortCriterion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_SequenceOfSelector;
@@ -1696,8 +2156,18 @@ class SelectMgr_SequenceOfSelector : public TCollection_BaseSequence {
 };
 %feature("shadow") SelectMgr_SequenceOfSelector::~SelectMgr_SequenceOfSelector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_SequenceOfSelector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_DataMapOfIntegerSensitive;
@@ -1731,8 +2201,18 @@ class SelectMgr_DataMapOfIntegerSensitive : public TCollection_BasicMap {
 };
 %feature("shadow") SelectMgr_DataMapOfIntegerSensitive::~SelectMgr_DataMapOfIntegerSensitive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_DataMapOfIntegerSensitive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfOwner;
@@ -1758,8 +2238,18 @@ class SelectMgr_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 };
 %feature("shadow") SelectMgr_SequenceNodeOfSequenceOfOwner::~SelectMgr_SequenceNodeOfSequenceOfOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_SequenceNodeOfSequenceOfOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors;
@@ -1779,8 +2269,18 @@ class SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors : public TCollection_B
 };
 %feature("shadow") SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors::~SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_CompareResults;
@@ -1796,8 +2296,18 @@ class SelectMgr_CompareResults : public TCollection_CompareOfInteger {
 };
 %feature("shadow") SelectMgr_CompareResults::~SelectMgr_CompareResults %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_CompareResults {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_ViewerSelector;
@@ -1891,8 +2401,18 @@ class SelectMgr_ViewerSelector : public MMgt_TShared {
 };
 %feature("shadow") SelectMgr_ViewerSelector::~SelectMgr_ViewerSelector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_ViewerSelector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_AndFilter;
@@ -1918,8 +2438,18 @@ class SelectMgr_AndFilter : public SelectMgr_CompositionFilter {
 };
 %feature("shadow") SelectMgr_AndFilter::~SelectMgr_AndFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_AndFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectMgr_EntityOwner;
@@ -1979,5 +2509,15 @@ class SelectMgr_EntityOwner : public SelectBasics_EntityOwner {
 };
 %feature("shadow") SelectMgr_EntityOwner::~SelectMgr_EntityOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectMgr_EntityOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -58,8 +58,18 @@ class StlAPI_Writer {
 };
 %feature("shadow") StlAPI_Writer::~StlAPI_Writer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlAPI_Writer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StlAPI_Reader;
@@ -73,8 +83,18 @@ class StlAPI_Reader {
 };
 %feature("shadow") StlAPI_Reader::~StlAPI_Reader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlAPI_Reader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StlAPI;
@@ -90,5 +110,15 @@ class StlAPI {
 };
 %feature("shadow") StlAPI::~StlAPI %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlAPI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

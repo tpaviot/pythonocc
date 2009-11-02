@@ -69,8 +69,18 @@ class Handle_BinLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 };
 %feature("shadow") Handle_BinLDrivers_DocumentRetrievalDriver::~Handle_BinLDrivers_DocumentRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinLDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinLDrivers_DocumentStorageDriver;
@@ -97,8 +107,18 @@ class Handle_BinLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 };
 %feature("shadow") Handle_BinLDrivers_DocumentStorageDriver::~Handle_BinLDrivers_DocumentStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinLDrivers_DocumentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinLDrivers_DocumentStorageDriver;
@@ -132,8 +152,18 @@ class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 };
 %feature("shadow") BinLDrivers_DocumentStorageDriver::~BinLDrivers_DocumentStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinLDrivers_DocumentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinLDrivers_DocumentSection;
@@ -171,8 +201,18 @@ class BinLDrivers_DocumentSection {
 };
 %feature("shadow") BinLDrivers_DocumentSection::~BinLDrivers_DocumentSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinLDrivers_DocumentSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinLDrivers;
@@ -190,8 +230,18 @@ class BinLDrivers {
 };
 %feature("shadow") BinLDrivers::~BinLDrivers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinLDrivers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinLDrivers_DocumentRetrievalDriver;
@@ -225,5 +275,15 @@ class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 };
 %feature("shadow") BinLDrivers_DocumentRetrievalDriver::~BinLDrivers_DocumentRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinLDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

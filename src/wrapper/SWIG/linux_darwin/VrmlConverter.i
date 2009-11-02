@@ -76,8 +76,18 @@ class Handle_VrmlConverter_ShadingAspect : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_VrmlConverter_ShadingAspect::~Handle_VrmlConverter_ShadingAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_VrmlConverter_ShadingAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_VrmlConverter_Drawer;
@@ -104,8 +114,18 @@ class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_VrmlConverter_Drawer::~Handle_VrmlConverter_Drawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_VrmlConverter_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_VrmlConverter_PointAspect;
@@ -132,8 +152,18 @@ class Handle_VrmlConverter_PointAspect : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_VrmlConverter_PointAspect::~Handle_VrmlConverter_PointAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_VrmlConverter_PointAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_VrmlConverter_LineAspect;
@@ -160,8 +190,18 @@ class Handle_VrmlConverter_LineAspect : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_VrmlConverter_LineAspect::~Handle_VrmlConverter_LineAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_VrmlConverter_LineAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_VrmlConverter_IsoAspect;
@@ -188,8 +228,18 @@ class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
 };
 %feature("shadow") Handle_VrmlConverter_IsoAspect::~Handle_VrmlConverter_IsoAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_VrmlConverter_IsoAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_VrmlConverter_Projector;
@@ -216,8 +266,18 @@ class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_VrmlConverter_Projector::~Handle_VrmlConverter_Projector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_VrmlConverter_Projector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_WFDeflectionShape;
@@ -231,8 +291,18 @@ class VrmlConverter_WFDeflectionShape {
 };
 %feature("shadow") VrmlConverter_WFDeflectionShape::~VrmlConverter_WFDeflectionShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_WFDeflectionShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_WFDeflectionRestrictedFace;
@@ -252,8 +322,18 @@ class VrmlConverter_WFDeflectionRestrictedFace {
 };
 %feature("shadow") VrmlConverter_WFDeflectionRestrictedFace::~VrmlConverter_WFDeflectionRestrictedFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_WFDeflectionRestrictedFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_WFRestrictedFace;
@@ -273,8 +353,18 @@ class VrmlConverter_WFRestrictedFace {
 };
 %feature("shadow") VrmlConverter_WFRestrictedFace::~VrmlConverter_WFRestrictedFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_WFRestrictedFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_ShadedShape;
@@ -290,8 +380,18 @@ class VrmlConverter_ShadedShape {
 };
 %feature("shadow") VrmlConverter_ShadedShape::~VrmlConverter_ShadedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_ShadedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_Drawer;
@@ -397,8 +497,18 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 };
 %feature("shadow") VrmlConverter_Drawer::~VrmlConverter_Drawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_ShadingAspect;
@@ -438,8 +548,18 @@ class VrmlConverter_ShadingAspect : public MMgt_TShared {
 };
 %feature("shadow") VrmlConverter_ShadingAspect::~VrmlConverter_ShadingAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_ShadingAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_LineAspect;
@@ -473,8 +593,18 @@ class VrmlConverter_LineAspect : public MMgt_TShared {
 };
 %feature("shadow") VrmlConverter_LineAspect::~VrmlConverter_LineAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_LineAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_IsoAspect;
@@ -502,8 +632,18 @@ class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
 };
 %feature("shadow") VrmlConverter_IsoAspect::~VrmlConverter_IsoAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_IsoAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_Projector;
@@ -545,8 +685,18 @@ class VrmlConverter_Projector : public MMgt_TShared {
 };
 %feature("shadow") VrmlConverter_Projector::~VrmlConverter_Projector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_Projector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_Curve;
@@ -564,8 +714,18 @@ class VrmlConverter_Curve {
 };
 %feature("shadow") VrmlConverter_Curve::~VrmlConverter_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_HLRShape;
@@ -579,8 +739,18 @@ class VrmlConverter_HLRShape {
 };
 %feature("shadow") VrmlConverter_HLRShape::~VrmlConverter_HLRShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_HLRShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_PointAspect;
@@ -614,8 +784,18 @@ class VrmlConverter_PointAspect : public MMgt_TShared {
 };
 %feature("shadow") VrmlConverter_PointAspect::~VrmlConverter_PointAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_PointAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_WFShape;
@@ -629,8 +809,18 @@ class VrmlConverter_WFShape {
 };
 %feature("shadow") VrmlConverter_WFShape::~VrmlConverter_WFShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_WFShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlConverter_DeflectionCurve;
@@ -652,5 +842,15 @@ class VrmlConverter_DeflectionCurve {
 };
 %feature("shadow") VrmlConverter_DeflectionCurve::~VrmlConverter_DeflectionCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlConverter_DeflectionCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

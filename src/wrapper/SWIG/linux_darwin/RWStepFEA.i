@@ -54,8 +54,18 @@ class RWStepFEA_RWFeaParametricPoint {
 };
 %feature("shadow") RWStepFEA_RWFeaParametricPoint::~RWStepFEA_RWFeaParametricPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaParametricPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWParametricSurface3dElementCoordinateSystem;
@@ -73,8 +83,18 @@ class RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
 };
 %feature("shadow") RWStepFEA_RWParametricSurface3dElementCoordinateSystem::~RWStepFEA_RWParametricSurface3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWCurve3dElementRepresentation;
@@ -92,8 +112,18 @@ class RWStepFEA_RWCurve3dElementRepresentation {
 };
 %feature("shadow") RWStepFEA_RWCurve3dElementRepresentation::~RWStepFEA_RWCurve3dElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWCurve3dElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaGroup;
@@ -111,8 +141,18 @@ class RWStepFEA_RWFeaGroup {
 };
 %feature("shadow") RWStepFEA_RWFeaGroup::~RWStepFEA_RWFeaGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWCurve3dElementProperty;
@@ -130,8 +170,18 @@ class RWStepFEA_RWCurve3dElementProperty {
 };
 %feature("shadow") RWStepFEA_RWCurve3dElementProperty::~RWStepFEA_RWCurve3dElementProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWCurve3dElementProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaAreaDensity;
@@ -149,8 +199,18 @@ class RWStepFEA_RWFeaAreaDensity {
 };
 %feature("shadow") RWStepFEA_RWFeaAreaDensity::~RWStepFEA_RWFeaAreaDensity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaAreaDensity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWCurveElementInterval;
@@ -168,8 +228,18 @@ class RWStepFEA_RWCurveElementInterval {
 };
 %feature("shadow") RWStepFEA_RWCurveElementInterval::~RWStepFEA_RWCurveElementInterval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWCurveElementInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem;
@@ -187,8 +257,18 @@ class RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem {
 };
 %feature("shadow") RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem::~RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness;
@@ -206,8 +286,18 @@ class RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness {
 };
 %feature("shadow") RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness::~RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWElementRepresentation;
@@ -225,8 +315,18 @@ class RWStepFEA_RWElementRepresentation {
 };
 %feature("shadow") RWStepFEA_RWElementRepresentation::~RWStepFEA_RWElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWVolume3dElementRepresentation;
@@ -244,8 +344,18 @@ class RWStepFEA_RWVolume3dElementRepresentation {
 };
 %feature("shadow") RWStepFEA_RWVolume3dElementRepresentation::~RWStepFEA_RWVolume3dElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWVolume3dElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWAlignedCurve3dElementCoordinateSystem;
@@ -263,8 +373,18 @@ class RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
 };
 %feature("shadow") RWStepFEA_RWAlignedCurve3dElementCoordinateSystem::~RWStepFEA_RWAlignedCurve3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaMoistureAbsorption;
@@ -282,8 +402,18 @@ class RWStepFEA_RWFeaMoistureAbsorption {
 };
 %feature("shadow") RWStepFEA_RWFeaMoistureAbsorption::~RWStepFEA_RWFeaMoistureAbsorption %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaMoistureAbsorption {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWCurveElementIntervalConstant;
@@ -301,8 +431,18 @@ class RWStepFEA_RWCurveElementIntervalConstant {
 };
 %feature("shadow") RWStepFEA_RWCurveElementIntervalConstant::~RWStepFEA_RWCurveElementIntervalConstant %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWCurveElementIntervalConstant {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaMaterialPropertyRepresentation;
@@ -320,8 +460,18 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentation {
 };
 %feature("shadow") RWStepFEA_RWFeaMaterialPropertyRepresentation::~RWStepFEA_RWFeaMaterialPropertyRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaMaterialPropertyRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWParametricCurve3dElementCoordinateSystem;
@@ -339,8 +489,18 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
 };
 %feature("shadow") RWStepFEA_RWParametricCurve3dElementCoordinateSystem::~RWStepFEA_RWParametricCurve3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaShellBendingStiffness;
@@ -358,8 +518,18 @@ class RWStepFEA_RWFeaShellBendingStiffness {
 };
 %feature("shadow") RWStepFEA_RWFeaShellBendingStiffness::~RWStepFEA_RWFeaShellBendingStiffness %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaShellBendingStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWNodeRepresentation;
@@ -377,8 +547,18 @@ class RWStepFEA_RWNodeRepresentation {
 };
 %feature("shadow") RWStepFEA_RWNodeRepresentation::~RWStepFEA_RWNodeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWParametricCurve3dElementCoordinateDirection;
@@ -396,8 +576,18 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
 };
 %feature("shadow") RWStepFEA_RWParametricCurve3dElementCoordinateDirection::~RWStepFEA_RWParametricCurve3dElementCoordinateDirection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWAlignedSurface3dElementCoordinateSystem;
@@ -415,8 +605,18 @@ class RWStepFEA_RWAlignedSurface3dElementCoordinateSystem {
 };
 %feature("shadow") RWStepFEA_RWAlignedSurface3dElementCoordinateSystem::~RWStepFEA_RWAlignedSurface3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWAlignedSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion;
@@ -434,8 +634,18 @@ class RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 };
 %feature("shadow") RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion::~RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaAxis2Placement3d;
@@ -453,8 +663,18 @@ class RWStepFEA_RWFeaAxis2Placement3d {
 };
 %feature("shadow") RWStepFEA_RWFeaAxis2Placement3d::~RWStepFEA_RWFeaAxis2Placement3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaAxis2Placement3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWConstantSurface3dElementCoordinateSystem;
@@ -472,8 +692,18 @@ class RWStepFEA_RWConstantSurface3dElementCoordinateSystem {
 };
 %feature("shadow") RWStepFEA_RWConstantSurface3dElementCoordinateSystem::~RWStepFEA_RWConstantSurface3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWConstantSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion;
@@ -491,8 +721,18 @@ class RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
 };
 %feature("shadow") RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion::~RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaShellMembraneStiffness;
@@ -510,8 +750,18 @@ class RWStepFEA_RWFeaShellMembraneStiffness {
 };
 %feature("shadow") RWStepFEA_RWFeaShellMembraneStiffness::~RWStepFEA_RWFeaShellMembraneStiffness %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaShellMembraneStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaShellShearStiffness;
@@ -529,8 +779,18 @@ class RWStepFEA_RWFeaShellShearStiffness {
 };
 %feature("shadow") RWStepFEA_RWFeaShellShearStiffness::~RWStepFEA_RWFeaShellShearStiffness %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaShellShearStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWNodeSet;
@@ -548,8 +808,18 @@ class RWStepFEA_RWNodeSet {
 };
 %feature("shadow") RWStepFEA_RWNodeSet::~RWStepFEA_RWNodeSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWNodeSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFreedomAndCoefficient;
@@ -567,8 +837,18 @@ class RWStepFEA_RWFreedomAndCoefficient {
 };
 %feature("shadow") RWStepFEA_RWFreedomAndCoefficient::~RWStepFEA_RWFreedomAndCoefficient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFreedomAndCoefficient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaLinearElasticity;
@@ -586,8 +866,18 @@ class RWStepFEA_RWFeaLinearElasticity {
 };
 %feature("shadow") RWStepFEA_RWFeaLinearElasticity::~RWStepFEA_RWFeaLinearElasticity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaLinearElasticity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWSurface3dElementRepresentation;
@@ -605,8 +895,18 @@ class RWStepFEA_RWSurface3dElementRepresentation {
 };
 %feature("shadow") RWStepFEA_RWSurface3dElementRepresentation::~RWStepFEA_RWSurface3dElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWSurface3dElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWElementGroup;
@@ -624,8 +924,18 @@ class RWStepFEA_RWElementGroup {
 };
 %feature("shadow") RWStepFEA_RWElementGroup::~RWStepFEA_RWElementGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWElementGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWNodeWithVector;
@@ -643,8 +953,18 @@ class RWStepFEA_RWNodeWithVector {
 };
 %feature("shadow") RWStepFEA_RWNodeWithVector::~RWStepFEA_RWNodeWithVector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWNodeWithVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWCurveElementEndOffset;
@@ -662,8 +982,18 @@ class RWStepFEA_RWCurveElementEndOffset {
 };
 %feature("shadow") RWStepFEA_RWCurveElementEndOffset::~RWStepFEA_RWCurveElementEndOffset %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWCurveElementEndOffset {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaRepresentationItem;
@@ -681,8 +1011,18 @@ class RWStepFEA_RWFeaRepresentationItem {
 };
 %feature("shadow") RWStepFEA_RWFeaRepresentationItem::~RWStepFEA_RWFeaRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWNodeDefinition;
@@ -700,8 +1040,18 @@ class RWStepFEA_RWNodeDefinition {
 };
 %feature("shadow") RWStepFEA_RWNodeDefinition::~RWStepFEA_RWNodeDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWNodeDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaModel3d;
@@ -719,8 +1069,18 @@ class RWStepFEA_RWFeaModel3d {
 };
 %feature("shadow") RWStepFEA_RWFeaModel3d::~RWStepFEA_RWFeaModel3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaModel3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWGeometricNode;
@@ -738,8 +1098,18 @@ class RWStepFEA_RWGeometricNode {
 };
 %feature("shadow") RWStepFEA_RWGeometricNode::~RWStepFEA_RWGeometricNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWGeometricNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaMassDensity;
@@ -757,8 +1127,18 @@ class RWStepFEA_RWFeaMassDensity {
 };
 %feature("shadow") RWStepFEA_RWFeaMassDensity::~RWStepFEA_RWFeaMassDensity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaMassDensity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWElementGeometricRelationship;
@@ -776,8 +1156,18 @@ class RWStepFEA_RWElementGeometricRelationship {
 };
 %feature("shadow") RWStepFEA_RWElementGeometricRelationship::~RWStepFEA_RWElementGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWElementGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaMaterialPropertyRepresentationItem;
@@ -795,8 +1185,18 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
 };
 %feature("shadow") RWStepFEA_RWFeaMaterialPropertyRepresentationItem::~RWStepFEA_RWFeaMaterialPropertyRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaModelDefinition;
@@ -814,8 +1214,18 @@ class RWStepFEA_RWFeaModelDefinition {
 };
 %feature("shadow") RWStepFEA_RWFeaModelDefinition::~RWStepFEA_RWFeaModelDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaModelDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWCurveElementEndRelease;
@@ -833,8 +1243,18 @@ class RWStepFEA_RWCurveElementEndRelease {
 };
 %feature("shadow") RWStepFEA_RWCurveElementEndRelease::~RWStepFEA_RWCurveElementEndRelease %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWCurveElementEndRelease {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWCurveElementIntervalLinearlyVarying;
@@ -852,8 +1272,18 @@ class RWStepFEA_RWCurveElementIntervalLinearlyVarying {
 };
 %feature("shadow") RWStepFEA_RWCurveElementIntervalLinearlyVarying::~RWStepFEA_RWCurveElementIntervalLinearlyVarying %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWCurveElementIntervalLinearlyVarying {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWNodeWithSolutionCoordinateSystem;
@@ -871,8 +1301,18 @@ class RWStepFEA_RWNodeWithSolutionCoordinateSystem {
 };
 %feature("shadow") RWStepFEA_RWNodeWithSolutionCoordinateSystem::~RWStepFEA_RWNodeWithSolutionCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWNodeWithSolutionCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFreedomsList;
@@ -890,8 +1330,18 @@ class RWStepFEA_RWFreedomsList {
 };
 %feature("shadow") RWStepFEA_RWFreedomsList::~RWStepFEA_RWFreedomsList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFreedomsList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWNodeGroup;
@@ -909,8 +1359,18 @@ class RWStepFEA_RWNodeGroup {
 };
 %feature("shadow") RWStepFEA_RWNodeGroup::~RWStepFEA_RWNodeGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWNodeGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaCurveSectionGeometricRelationship;
@@ -928,8 +1388,18 @@ class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
 };
 %feature("shadow") RWStepFEA_RWFeaCurveSectionGeometricRelationship::~RWStepFEA_RWFeaCurveSectionGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaCurveSectionGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaSurfaceSectionGeometricRelationship;
@@ -947,8 +1417,18 @@ class RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
 };
 %feature("shadow") RWStepFEA_RWFeaSurfaceSectionGeometricRelationship::~RWStepFEA_RWFeaSurfaceSectionGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWDummyNode;
@@ -966,8 +1446,18 @@ class RWStepFEA_RWDummyNode {
 };
 %feature("shadow") RWStepFEA_RWDummyNode::~RWStepFEA_RWDummyNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWDummyNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWFeaModel;
@@ -985,8 +1475,18 @@ class RWStepFEA_RWFeaModel {
 };
 %feature("shadow") RWStepFEA_RWFeaModel::~RWStepFEA_RWFeaModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWFeaModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWNode;
@@ -1004,8 +1504,18 @@ class RWStepFEA_RWNode {
 };
 %feature("shadow") RWStepFEA_RWNode::~RWStepFEA_RWNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepFEA_RWCurveElementLocation;
@@ -1023,5 +1533,15 @@ class RWStepFEA_RWCurveElementLocation {
 };
 %feature("shadow") RWStepFEA_RWCurveElementLocation::~RWStepFEA_RWCurveElementLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepFEA_RWCurveElementLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

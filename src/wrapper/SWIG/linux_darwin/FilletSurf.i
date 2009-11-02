@@ -111,8 +111,18 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 };
 %feature("shadow") FilletSurf_InternalBuilder::~FilletSurf_InternalBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend FilletSurf_InternalBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor FilletSurf_Builder;
@@ -166,5 +176,15 @@ class FilletSurf_Builder {
 };
 %feature("shadow") FilletSurf_Builder::~FilletSurf_Builder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend FilletSurf_Builder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

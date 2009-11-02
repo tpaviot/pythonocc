@@ -52,8 +52,18 @@ class BndLib_AddSurface {
 };
 %feature("shadow") BndLib_AddSurface::~BndLib_AddSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BndLib_AddSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BndLib_Add3dCurve;
@@ -69,8 +79,18 @@ class BndLib_Add3dCurve {
 };
 %feature("shadow") BndLib_Add3dCurve::~BndLib_Add3dCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BndLib_Add3dCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BndLib;
@@ -126,8 +146,18 @@ class BndLib {
 };
 %feature("shadow") BndLib::~BndLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BndLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BndLib_Add2dCurve;
@@ -143,5 +173,15 @@ class BndLib_Add2dCurve {
 };
 %feature("shadow") BndLib_Add2dCurve::~BndLib_Add2dCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BndLib_Add2dCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -64,8 +64,18 @@ class ChFi2d {
 };
 %feature("shadow") ChFi2d::~ChFi2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFi2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFi2d_Builder;
@@ -119,5 +129,15 @@ class ChFi2d_Builder {
 };
 %feature("shadow") ChFi2d_Builder::~ChFi2d_Builder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFi2d_Builder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

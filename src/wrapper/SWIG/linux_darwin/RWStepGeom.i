@@ -54,8 +54,18 @@ class RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
 };
 %feature("shadow") RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx::~RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface;
@@ -73,8 +83,18 @@ class RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface {
 };
 %feature("shadow") RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface::~RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWBoundedCurve;
@@ -90,8 +110,18 @@ class RWStepGeom_RWBoundedCurve {
 };
 %feature("shadow") RWStepGeom_RWBoundedCurve::~RWStepGeom_RWBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWPointReplica;
@@ -109,8 +139,18 @@ class RWStepGeom_RWPointReplica {
 };
 %feature("shadow") RWStepGeom_RWPointReplica::~RWStepGeom_RWPointReplica %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWPointReplica {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWDegeneratePcurve;
@@ -128,8 +168,18 @@ class RWStepGeom_RWDegeneratePcurve {
 };
 %feature("shadow") RWStepGeom_RWDegeneratePcurve::~RWStepGeom_RWDegeneratePcurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWDegeneratePcurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWSurface;
@@ -145,8 +195,18 @@ class RWStepGeom_RWSurface {
 };
 %feature("shadow") RWStepGeom_RWSurface::~RWStepGeom_RWSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWEvaluatedDegeneratePcurve;
@@ -164,8 +224,18 @@ class RWStepGeom_RWEvaluatedDegeneratePcurve {
 };
 %feature("shadow") RWStepGeom_RWEvaluatedDegeneratePcurve::~RWStepGeom_RWEvaluatedDegeneratePcurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWEvaluatedDegeneratePcurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWGeometricRepresentationContext;
@@ -181,8 +251,18 @@ class RWStepGeom_RWGeometricRepresentationContext {
 };
 %feature("shadow") RWStepGeom_RWGeometricRepresentationContext::~RWStepGeom_RWGeometricRepresentationContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWGeometricRepresentationContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWRectangularTrimmedSurface;
@@ -200,8 +280,18 @@ class RWStepGeom_RWRectangularTrimmedSurface {
 };
 %feature("shadow") RWStepGeom_RWRectangularTrimmedSurface::~RWStepGeom_RWRectangularTrimmedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWRectangularTrimmedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWDegenerateToroidalSurface;
@@ -219,8 +309,18 @@ class RWStepGeom_RWDegenerateToroidalSurface {
 };
 %feature("shadow") RWStepGeom_RWDegenerateToroidalSurface::~RWStepGeom_RWDegenerateToroidalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWDegenerateToroidalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWCompositeCurveSegment;
@@ -238,8 +338,18 @@ class RWStepGeom_RWCompositeCurveSegment {
 };
 %feature("shadow") RWStepGeom_RWCompositeCurveSegment::~RWStepGeom_RWCompositeCurveSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWCompositeCurveSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWVector;
@@ -259,8 +369,18 @@ class RWStepGeom_RWVector {
 };
 %feature("shadow") RWStepGeom_RWVector::~RWStepGeom_RWVector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWOffsetSurface;
@@ -278,8 +398,18 @@ class RWStepGeom_RWOffsetSurface {
 };
 %feature("shadow") RWStepGeom_RWOffsetSurface::~RWStepGeom_RWOffsetSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWOffsetSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWBoundedSurface;
@@ -295,8 +425,18 @@ class RWStepGeom_RWBoundedSurface {
 };
 %feature("shadow") RWStepGeom_RWBoundedSurface::~RWStepGeom_RWBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWQuasiUniformCurve;
@@ -314,8 +454,18 @@ class RWStepGeom_RWQuasiUniformCurve {
 };
 %feature("shadow") RWStepGeom_RWQuasiUniformCurve::~RWStepGeom_RWQuasiUniformCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWQuasiUniformCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWCartesianTransformationOperator3d;
@@ -333,8 +483,18 @@ class RWStepGeom_RWCartesianTransformationOperator3d {
 };
 %feature("shadow") RWStepGeom_RWCartesianTransformationOperator3d::~RWStepGeom_RWCartesianTransformationOperator3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWCartesianTransformationOperator3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWCurve;
@@ -350,8 +510,18 @@ class RWStepGeom_RWCurve {
 };
 %feature("shadow") RWStepGeom_RWCurve::~RWStepGeom_RWCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWAxis1Placement;
@@ -369,8 +539,18 @@ class RWStepGeom_RWAxis1Placement {
 };
 %feature("shadow") RWStepGeom_RWAxis1Placement::~RWStepGeom_RWAxis1Placement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWAxis1Placement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWConicalSurface;
@@ -388,8 +568,18 @@ class RWStepGeom_RWConicalSurface {
 };
 %feature("shadow") RWStepGeom_RWConicalSurface::~RWStepGeom_RWConicalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWConicalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWSurfaceCurve;
@@ -407,8 +597,18 @@ class RWStepGeom_RWSurfaceCurve {
 };
 %feature("shadow") RWStepGeom_RWSurfaceCurve::~RWStepGeom_RWSurfaceCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWSurfaceCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWToroidalSurface;
@@ -428,8 +628,18 @@ class RWStepGeom_RWToroidalSurface {
 };
 %feature("shadow") RWStepGeom_RWToroidalSurface::~RWStepGeom_RWToroidalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWToroidalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWBezierCurve;
@@ -447,8 +657,18 @@ class RWStepGeom_RWBezierCurve {
 };
 %feature("shadow") RWStepGeom_RWBezierCurve::~RWStepGeom_RWBezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWReparametrisedCompositeCurveSegment;
@@ -466,8 +686,18 @@ class RWStepGeom_RWReparametrisedCompositeCurveSegment {
 };
 %feature("shadow") RWStepGeom_RWReparametrisedCompositeCurveSegment::~RWStepGeom_RWReparametrisedCompositeCurveSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWReparametrisedCompositeCurveSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWElementarySurface;
@@ -485,8 +715,18 @@ class RWStepGeom_RWElementarySurface {
 };
 %feature("shadow") RWStepGeom_RWElementarySurface::~RWStepGeom_RWElementarySurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWElementarySurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWCylindricalSurface;
@@ -504,8 +744,18 @@ class RWStepGeom_RWCylindricalSurface {
 };
 %feature("shadow") RWStepGeom_RWCylindricalSurface::~RWStepGeom_RWCylindricalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWCylindricalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWBoundaryCurve;
@@ -523,8 +773,18 @@ class RWStepGeom_RWBoundaryCurve {
 };
 %feature("shadow") RWStepGeom_RWBoundaryCurve::~RWStepGeom_RWBoundaryCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWBoundaryCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWRationalBSplineSurface;
@@ -544,8 +804,18 @@ class RWStepGeom_RWRationalBSplineSurface {
 };
 %feature("shadow") RWStepGeom_RWRationalBSplineSurface::~RWStepGeom_RWRationalBSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWRationalBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWSeamCurve;
@@ -563,8 +833,18 @@ class RWStepGeom_RWSeamCurve {
 };
 %feature("shadow") RWStepGeom_RWSeamCurve::~RWStepGeom_RWSeamCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWSeamCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWSurfacePatch;
@@ -582,8 +862,18 @@ class RWStepGeom_RWSurfacePatch {
 };
 %feature("shadow") RWStepGeom_RWSurfacePatch::~RWStepGeom_RWSurfacePatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWSurfacePatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWOuterBoundaryCurve;
@@ -601,8 +891,18 @@ class RWStepGeom_RWOuterBoundaryCurve {
 };
 %feature("shadow") RWStepGeom_RWOuterBoundaryCurve::~RWStepGeom_RWOuterBoundaryCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWOuterBoundaryCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWCompositeCurveOnSurface;
@@ -620,8 +920,18 @@ class RWStepGeom_RWCompositeCurveOnSurface {
 };
 %feature("shadow") RWStepGeom_RWCompositeCurveOnSurface::~RWStepGeom_RWCompositeCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWCompositeCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve;
@@ -639,8 +949,18 @@ class RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve {
 };
 %feature("shadow") RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve::~RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWUniformCurve;
@@ -658,8 +978,18 @@ class RWStepGeom_RWUniformCurve {
 };
 %feature("shadow") RWStepGeom_RWUniformCurve::~RWStepGeom_RWUniformCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWUniformCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWPointOnSurface;
@@ -677,8 +1007,18 @@ class RWStepGeom_RWPointOnSurface {
 };
 %feature("shadow") RWStepGeom_RWPointOnSurface::~RWStepGeom_RWPointOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWPointOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWSurfaceOfLinearExtrusion;
@@ -696,8 +1036,18 @@ class RWStepGeom_RWSurfaceOfLinearExtrusion {
 };
 %feature("shadow") RWStepGeom_RWSurfaceOfLinearExtrusion::~RWStepGeom_RWSurfaceOfLinearExtrusion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWSurfaceOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWParabola;
@@ -715,8 +1065,18 @@ class RWStepGeom_RWParabola {
 };
 %feature("shadow") RWStepGeom_RWParabola::~RWStepGeom_RWParabola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWParabola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWCartesianPoint;
@@ -732,8 +1092,18 @@ class RWStepGeom_RWCartesianPoint {
 };
 %feature("shadow") RWStepGeom_RWCartesianPoint::~RWStepGeom_RWCartesianPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWCartesianPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWUniformSurface;
@@ -751,8 +1121,18 @@ class RWStepGeom_RWUniformSurface {
 };
 %feature("shadow") RWStepGeom_RWUniformSurface::~RWStepGeom_RWUniformSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWUniformSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve;
@@ -772,8 +1152,18 @@ class RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve {
 };
 %feature("shadow") RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve::~RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWAxis2Placement3d;
@@ -791,8 +1181,18 @@ class RWStepGeom_RWAxis2Placement3d {
 };
 %feature("shadow") RWStepGeom_RWAxis2Placement3d::~RWStepGeom_RWAxis2Placement3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWAxis2Placement3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext;
@@ -810,8 +1210,18 @@ class RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext {
 };
 %feature("shadow") RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext::~RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface;
@@ -829,8 +1239,18 @@ class RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface {
 };
 %feature("shadow") RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface::~RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWPlane;
@@ -848,8 +1268,18 @@ class RWStepGeom_RWPlane {
 };
 %feature("shadow") RWStepGeom_RWPlane::~RWStepGeom_RWPlane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWPlane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWPointOnCurve;
@@ -867,8 +1297,18 @@ class RWStepGeom_RWPointOnCurve {
 };
 %feature("shadow") RWStepGeom_RWPointOnCurve::~RWStepGeom_RWPointOnCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWPointOnCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWGeometricRepresentationItem;
@@ -884,8 +1324,18 @@ class RWStepGeom_RWGeometricRepresentationItem {
 };
 %feature("shadow") RWStepGeom_RWGeometricRepresentationItem::~RWStepGeom_RWGeometricRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWGeometricRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWCircle;
@@ -903,8 +1353,18 @@ class RWStepGeom_RWCircle {
 };
 %feature("shadow") RWStepGeom_RWCircle::~RWStepGeom_RWCircle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWCircle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWCurveBoundedSurface;
@@ -922,8 +1382,18 @@ class RWStepGeom_RWCurveBoundedSurface {
 };
 %feature("shadow") RWStepGeom_RWCurveBoundedSurface::~RWStepGeom_RWCurveBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWCurveBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWTrimmedCurve;
@@ -941,8 +1411,18 @@ class RWStepGeom_RWTrimmedCurve {
 };
 %feature("shadow") RWStepGeom_RWTrimmedCurve::~RWStepGeom_RWTrimmedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWTrimmedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWRectangularCompositeSurface;
@@ -960,8 +1440,18 @@ class RWStepGeom_RWRectangularCompositeSurface {
 };
 %feature("shadow") RWStepGeom_RWRectangularCompositeSurface::~RWStepGeom_RWRectangularCompositeSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWRectangularCompositeSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWOrientedSurface;
@@ -979,8 +1469,18 @@ class RWStepGeom_RWOrientedSurface {
 };
 %feature("shadow") RWStepGeom_RWOrientedSurface::~RWStepGeom_RWOrientedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWOrientedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWCurveReplica;
@@ -998,8 +1498,18 @@ class RWStepGeom_RWCurveReplica {
 };
 %feature("shadow") RWStepGeom_RWCurveReplica::~RWStepGeom_RWCurveReplica %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWCurveReplica {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWAxis2Placement2d;
@@ -1017,8 +1527,18 @@ class RWStepGeom_RWAxis2Placement2d {
 };
 %feature("shadow") RWStepGeom_RWAxis2Placement2d::~RWStepGeom_RWAxis2Placement2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWAxis2Placement2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWRationalBSplineCurve;
@@ -1038,8 +1558,18 @@ class RWStepGeom_RWRationalBSplineCurve {
 };
 %feature("shadow") RWStepGeom_RWRationalBSplineCurve::~RWStepGeom_RWRationalBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWRationalBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWDirection;
@@ -1057,8 +1587,18 @@ class RWStepGeom_RWDirection {
 };
 %feature("shadow") RWStepGeom_RWDirection::~RWStepGeom_RWDirection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWDirection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWBSplineCurve;
@@ -1076,8 +1616,18 @@ class RWStepGeom_RWBSplineCurve {
 };
 %feature("shadow") RWStepGeom_RWBSplineCurve::~RWStepGeom_RWBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWBSplineSurface;
@@ -1095,8 +1645,18 @@ class RWStepGeom_RWBSplineSurface {
 };
 %feature("shadow") RWStepGeom_RWBSplineSurface::~RWStepGeom_RWBSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWUniformCurveAndRationalBSplineCurve;
@@ -1114,8 +1674,18 @@ class RWStepGeom_RWUniformCurveAndRationalBSplineCurve {
 };
 %feature("shadow") RWStepGeom_RWUniformCurveAndRationalBSplineCurve::~RWStepGeom_RWUniformCurveAndRationalBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWUniformCurveAndRationalBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWPlacement;
@@ -1133,8 +1703,18 @@ class RWStepGeom_RWPlacement {
 };
 %feature("shadow") RWStepGeom_RWPlacement::~RWStepGeom_RWPlacement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWPlacement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWPoint;
@@ -1150,8 +1730,18 @@ class RWStepGeom_RWPoint {
 };
 %feature("shadow") RWStepGeom_RWPoint::~RWStepGeom_RWPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWCartesianTransformationOperator;
@@ -1169,8 +1759,18 @@ class RWStepGeom_RWCartesianTransformationOperator {
 };
 %feature("shadow") RWStepGeom_RWCartesianTransformationOperator::~RWStepGeom_RWCartesianTransformationOperator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWCartesianTransformationOperator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWPcurve;
@@ -1188,8 +1788,18 @@ class RWStepGeom_RWPcurve {
 };
 %feature("shadow") RWStepGeom_RWPcurve::~RWStepGeom_RWPcurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWPcurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWSurfaceCurveAndBoundedCurve;
@@ -1207,8 +1817,18 @@ class RWStepGeom_RWSurfaceCurveAndBoundedCurve {
 };
 %feature("shadow") RWStepGeom_RWSurfaceCurveAndBoundedCurve::~RWStepGeom_RWSurfaceCurveAndBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWSurfaceCurveAndBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWEllipse;
@@ -1228,8 +1848,18 @@ class RWStepGeom_RWEllipse {
 };
 %feature("shadow") RWStepGeom_RWEllipse::~RWStepGeom_RWEllipse %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWEllipse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface;
@@ -1249,8 +1879,18 @@ class RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface {
 };
 %feature("shadow") RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface::~RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWBSplineCurveWithKnots;
@@ -1270,8 +1910,18 @@ class RWStepGeom_RWBSplineCurveWithKnots {
 };
 %feature("shadow") RWStepGeom_RWBSplineCurveWithKnots::~RWStepGeom_RWBSplineCurveWithKnots %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWBSplineCurveWithKnots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWBezierCurveAndRationalBSplineCurve;
@@ -1289,8 +1939,18 @@ class RWStepGeom_RWBezierCurveAndRationalBSplineCurve {
 };
 %feature("shadow") RWStepGeom_RWBezierCurveAndRationalBSplineCurve::~RWStepGeom_RWBezierCurveAndRationalBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWBezierCurveAndRationalBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWSphericalSurface;
@@ -1308,8 +1968,18 @@ class RWStepGeom_RWSphericalSurface {
 };
 %feature("shadow") RWStepGeom_RWSphericalSurface::~RWStepGeom_RWSphericalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWSphericalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWCompositeCurve;
@@ -1327,8 +1997,18 @@ class RWStepGeom_RWCompositeCurve {
 };
 %feature("shadow") RWStepGeom_RWCompositeCurve::~RWStepGeom_RWCompositeCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWCompositeCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWSurfaceOfRevolution;
@@ -1346,8 +2026,18 @@ class RWStepGeom_RWSurfaceOfRevolution {
 };
 %feature("shadow") RWStepGeom_RWSurfaceOfRevolution::~RWStepGeom_RWSurfaceOfRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWSurfaceOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface;
@@ -1365,8 +2055,18 @@ class RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface {
 };
 %feature("shadow") RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface::~RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWSweptSurface;
@@ -1384,8 +2084,18 @@ class RWStepGeom_RWSweptSurface {
 };
 %feature("shadow") RWStepGeom_RWSweptSurface::~RWStepGeom_RWSweptSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWSweptSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWSurfaceReplica;
@@ -1403,8 +2113,18 @@ class RWStepGeom_RWSurfaceReplica {
 };
 %feature("shadow") RWStepGeom_RWSurfaceReplica::~RWStepGeom_RWSurfaceReplica %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWSurfaceReplica {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext;
@@ -1422,8 +2142,18 @@ class RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationCont
 };
 %feature("shadow") RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext::~RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWOffsetCurve3d;
@@ -1441,8 +2171,18 @@ class RWStepGeom_RWOffsetCurve3d {
 };
 %feature("shadow") RWStepGeom_RWOffsetCurve3d::~RWStepGeom_RWOffsetCurve3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWOffsetCurve3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWQuasiUniformSurface;
@@ -1460,8 +2200,18 @@ class RWStepGeom_RWQuasiUniformSurface {
 };
 %feature("shadow") RWStepGeom_RWQuasiUniformSurface::~RWStepGeom_RWQuasiUniformSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWQuasiUniformSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWBSplineSurfaceWithKnots;
@@ -1481,8 +2231,18 @@ class RWStepGeom_RWBSplineSurfaceWithKnots {
 };
 %feature("shadow") RWStepGeom_RWBSplineSurfaceWithKnots::~RWStepGeom_RWBSplineSurfaceWithKnots %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWBSplineSurfaceWithKnots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWPolyline;
@@ -1500,8 +2260,18 @@ class RWStepGeom_RWPolyline {
 };
 %feature("shadow") RWStepGeom_RWPolyline::~RWStepGeom_RWPolyline %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWPolyline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWBezierSurface;
@@ -1519,8 +2289,18 @@ class RWStepGeom_RWBezierSurface {
 };
 %feature("shadow") RWStepGeom_RWBezierSurface::~RWStepGeom_RWBezierSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWBezierSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWIntersectionCurve;
@@ -1538,8 +2318,18 @@ class RWStepGeom_RWIntersectionCurve {
 };
 %feature("shadow") RWStepGeom_RWIntersectionCurve::~RWStepGeom_RWIntersectionCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWIntersectionCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWConic;
@@ -1557,8 +2347,18 @@ class RWStepGeom_RWConic {
 };
 %feature("shadow") RWStepGeom_RWConic::~RWStepGeom_RWConic %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWConic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWHyperbola;
@@ -1576,8 +2376,18 @@ class RWStepGeom_RWHyperbola {
 };
 %feature("shadow") RWStepGeom_RWHyperbola::~RWStepGeom_RWHyperbola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWHyperbola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepGeom_RWLine;
@@ -1595,5 +2405,15 @@ class RWStepGeom_RWLine {
 };
 %feature("shadow") RWStepGeom_RWLine::~RWStepGeom_RWLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepGeom_RWLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

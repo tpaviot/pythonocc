@@ -69,8 +69,18 @@ class Handle_V2d_BackgroundGraphicObject : public Handle_Graphic2d_GraphicObject
 };
 %feature("shadow") Handle_V2d_BackgroundGraphicObject::~Handle_V2d_BackgroundGraphicObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V2d_BackgroundGraphicObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V2d_CircularGraphicGrid;
@@ -97,8 +107,18 @@ class Handle_V2d_CircularGraphicGrid : public Handle_Graphic2d_Primitive {
 };
 %feature("shadow") Handle_V2d_CircularGraphicGrid::~Handle_V2d_CircularGraphicGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V2d_CircularGraphicGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V2d_CircularGrid;
@@ -125,8 +145,18 @@ class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
 };
 %feature("shadow") Handle_V2d_CircularGrid::~Handle_V2d_CircularGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V2d_CircularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V2d_RectangularGrid;
@@ -153,8 +183,18 @@ class Handle_V2d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 };
 %feature("shadow") Handle_V2d_RectangularGrid::~Handle_V2d_RectangularGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V2d_RectangularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V2d_View;
@@ -181,8 +221,18 @@ class Handle_V2d_View : public Handle_Viewer_View {
 };
 %feature("shadow") Handle_V2d_View::~Handle_V2d_View %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V2d_View {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V2d_Viewer;
@@ -209,8 +259,18 @@ class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
 };
 %feature("shadow") Handle_V2d_Viewer::~Handle_V2d_Viewer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V2d_Viewer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V2d_RectangularGraphicGrid;
@@ -237,8 +297,18 @@ class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 };
 %feature("shadow") Handle_V2d_RectangularGraphicGrid::~Handle_V2d_RectangularGraphicGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V2d_RectangularGraphicGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V2d;
@@ -252,8 +322,18 @@ class V2d {
 };
 %feature("shadow") V2d::~V2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V2d_CircularGrid;
@@ -285,8 +365,18 @@ class V2d_CircularGrid : public Aspect_CircularGrid {
 };
 %feature("shadow") V2d_CircularGrid::~V2d_CircularGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V2d_CircularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V2d_RectangularGraphicGrid;
@@ -314,8 +404,18 @@ class V2d_RectangularGraphicGrid : public Graphic2d_Primitive {
 };
 %feature("shadow") V2d_RectangularGraphicGrid::~V2d_RectangularGraphicGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V2d_RectangularGraphicGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V2d_View;
@@ -457,8 +557,18 @@ class V2d_View : public Viewer_View {
 };
 %feature("shadow") V2d_View::~V2d_View %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V2d_View {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V2d_RectangularGrid;
@@ -490,8 +600,18 @@ class V2d_RectangularGrid : public Aspect_RectangularGrid {
 };
 %feature("shadow") V2d_RectangularGrid::~V2d_RectangularGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V2d_RectangularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V2d_CircularGraphicGrid;
@@ -519,8 +639,18 @@ class V2d_CircularGraphicGrid : public Graphic2d_Primitive {
 };
 %feature("shadow") V2d_CircularGraphicGrid::~V2d_CircularGraphicGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V2d_CircularGraphicGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V2d_BackgroundGraphicObject;
@@ -546,8 +676,18 @@ class V2d_BackgroundGraphicObject : public Graphic2d_GraphicObject {
 };
 %feature("shadow") V2d_BackgroundGraphicObject::~V2d_BackgroundGraphicObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V2d_BackgroundGraphicObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V2d_DefaultMap;
@@ -569,8 +709,18 @@ class V2d_DefaultMap {
 };
 %feature("shadow") V2d_DefaultMap::~V2d_DefaultMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V2d_DefaultMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V2d_Viewer;
@@ -660,5 +810,15 @@ class V2d_Viewer : public Viewer_Viewer {
 };
 %feature("shadow") V2d_Viewer::~V2d_Viewer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V2d_Viewer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

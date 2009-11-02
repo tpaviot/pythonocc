@@ -64,8 +64,18 @@ class Handle_TopLoc_SListNodeOfSListOfItemLocation : public Handle_MMgt_TShared 
 };
 %feature("shadow") Handle_TopLoc_SListNodeOfSListOfItemLocation::~Handle_TopLoc_SListNodeOfSListOfItemLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopLoc_SListNodeOfSListOfItemLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopLoc_Datum3D;
@@ -92,8 +102,18 @@ class Handle_TopLoc_Datum3D : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TopLoc_Datum3D::~Handle_TopLoc_Datum3D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopLoc_Datum3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopLoc_StdMapNodeOfMapOfLocation;
@@ -120,8 +140,18 @@ class Handle_TopLoc_StdMapNodeOfMapOfLocation : public Handle_TCollection_MapNod
 };
 %feature("shadow") Handle_TopLoc_StdMapNodeOfMapOfLocation::~Handle_TopLoc_StdMapNodeOfMapOfLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopLoc_StdMapNodeOfMapOfLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
@@ -148,8 +178,18 @@ class Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public Handle_TCollec
 };
 %feature("shadow") Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation::~Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
@@ -189,8 +229,18 @@ class TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public TCollection_MapNode {
 };
 %feature("shadow") TopLoc_IndexedMapNodeOfIndexedMapOfLocation::~TopLoc_IndexedMapNodeOfIndexedMapOfLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopLoc_MapOfLocation;
@@ -216,8 +266,18 @@ class TopLoc_MapOfLocation : public TCollection_BasicMap {
 };
 %feature("shadow") TopLoc_MapOfLocation::~TopLoc_MapOfLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopLoc_MapOfLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopLoc_StdMapNodeOfMapOfLocation;
@@ -243,8 +303,18 @@ class TopLoc_StdMapNodeOfMapOfLocation : public TCollection_MapNode {
 };
 %feature("shadow") TopLoc_StdMapNodeOfMapOfLocation::~TopLoc_StdMapNodeOfMapOfLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopLoc_StdMapNodeOfMapOfLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopLoc_Location;
@@ -309,8 +379,18 @@ class TopLoc_Location {
 };
 %feature("shadow") TopLoc_Location::~TopLoc_Location %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopLoc_Location {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopLoc_MapIteratorOfMapOfLocation;
@@ -328,8 +408,18 @@ class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
 };
 %feature("shadow") TopLoc_MapIteratorOfMapOfLocation::~TopLoc_MapIteratorOfMapOfLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopLoc_MapIteratorOfMapOfLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopLoc_IndexedMapOfLocation;
@@ -363,8 +453,18 @@ class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
 };
 %feature("shadow") TopLoc_IndexedMapOfLocation::~TopLoc_IndexedMapOfLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopLoc_IndexedMapOfLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopLoc_SListOfItemLocation;
@@ -412,8 +512,18 @@ class TopLoc_SListOfItemLocation {
 };
 %feature("shadow") TopLoc_SListOfItemLocation::~TopLoc_SListOfItemLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopLoc_SListOfItemLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopLoc_Datum3D;
@@ -449,8 +559,18 @@ class TopLoc_Datum3D : public MMgt_TShared {
 };
 %feature("shadow") TopLoc_Datum3D::~TopLoc_Datum3D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopLoc_Datum3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopLoc_MapLocationHasher;
@@ -466,8 +586,18 @@ class TopLoc_MapLocationHasher {
 };
 %feature("shadow") TopLoc_MapLocationHasher::~TopLoc_MapLocationHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopLoc_MapLocationHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopLoc_ItemLocation;
@@ -487,5 +617,15 @@ class TopLoc_ItemLocation {
 };
 %feature("shadow") TopLoc_ItemLocation::~TopLoc_ItemLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopLoc_ItemLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_APIHeaderSection_EditHeader : public Handle_IFSelect_Editor {
 };
 %feature("shadow") Handle_APIHeaderSection_EditHeader::~Handle_APIHeaderSection_EditHeader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_APIHeaderSection_EditHeader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor APIHeaderSection_EditHeader;
@@ -98,8 +108,18 @@ class APIHeaderSection_EditHeader : public IFSelect_Editor {
 };
 %feature("shadow") APIHeaderSection_EditHeader::~APIHeaderSection_EditHeader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend APIHeaderSection_EditHeader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor APIHeaderSection_MakeHeader;
@@ -199,5 +219,15 @@ class APIHeaderSection_MakeHeader {
 };
 %feature("shadow") APIHeaderSection_MakeHeader::~APIHeaderSection_MakeHeader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend APIHeaderSection_MakeHeader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

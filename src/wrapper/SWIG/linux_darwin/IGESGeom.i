@@ -63,8 +63,18 @@ class Handle_IGESGeom_SpecificModule : public Handle_IGESData_SpecificModule {
 };
 %feature("shadow") Handle_IGESGeom_SpecificModule::~Handle_IGESGeom_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_Direction;
@@ -91,8 +101,18 @@ class Handle_IGESGeom_Direction : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_Direction::~Handle_IGESGeom_Direction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_Direction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_SurfaceOfRevolution;
@@ -119,8 +139,18 @@ class Handle_IGESGeom_SurfaceOfRevolution : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_SurfaceOfRevolution::~Handle_IGESGeom_SurfaceOfRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_SurfaceOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_Boundary;
@@ -147,8 +177,18 @@ class Handle_IGESGeom_Boundary : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_Boundary::~Handle_IGESGeom_Boundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_Boundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_HArray1OfTransformationMatrix;
@@ -175,8 +215,18 @@ class Handle_IGESGeom_HArray1OfTransformationMatrix : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_IGESGeom_HArray1OfTransformationMatrix::~Handle_IGESGeom_HArray1OfTransformationMatrix %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_HArray1OfTransformationMatrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_CurveOnSurface;
@@ -203,8 +253,18 @@ class Handle_IGESGeom_CurveOnSurface : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_CurveOnSurface::~Handle_IGESGeom_CurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_CurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_HArray1OfBoundary;
@@ -231,8 +291,18 @@ class Handle_IGESGeom_HArray1OfBoundary : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESGeom_HArray1OfBoundary::~Handle_IGESGeom_HArray1OfBoundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_HArray1OfBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_CompositeCurve;
@@ -259,8 +329,18 @@ class Handle_IGESGeom_CompositeCurve : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_CompositeCurve::~Handle_IGESGeom_CompositeCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_CompositeCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_HArray1OfCurveOnSurface;
@@ -287,8 +367,18 @@ class Handle_IGESGeom_HArray1OfCurveOnSurface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESGeom_HArray1OfCurveOnSurface::~Handle_IGESGeom_HArray1OfCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_HArray1OfCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_Flash;
@@ -315,8 +405,18 @@ class Handle_IGESGeom_Flash : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_Flash::~Handle_IGESGeom_Flash %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_Flash {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_Line;
@@ -343,8 +443,18 @@ class Handle_IGESGeom_Line : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_Line::~Handle_IGESGeom_Line %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_TransformationMatrix;
@@ -371,8 +481,18 @@ class Handle_IGESGeom_TransformationMatrix : public Handle_IGESData_TransfEntity
 };
 %feature("shadow") Handle_IGESGeom_TransformationMatrix::~Handle_IGESGeom_TransformationMatrix %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_TransformationMatrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_RuledSurface;
@@ -399,8 +519,18 @@ class Handle_IGESGeom_RuledSurface : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_RuledSurface::~Handle_IGESGeom_RuledSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_RuledSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_Plane;
@@ -427,8 +557,18 @@ class Handle_IGESGeom_Plane : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_Plane::~Handle_IGESGeom_Plane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_Plane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_BSplineCurve;
@@ -455,8 +595,18 @@ class Handle_IGESGeom_BSplineCurve : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_BSplineCurve::~Handle_IGESGeom_BSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_BSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_BoundedSurface;
@@ -483,8 +633,18 @@ class Handle_IGESGeom_BoundedSurface : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_BoundedSurface::~Handle_IGESGeom_BoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_BoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_Protocol;
@@ -511,8 +671,18 @@ class Handle_IGESGeom_Protocol : public Handle_IGESData_Protocol {
 };
 %feature("shadow") Handle_IGESGeom_Protocol::~Handle_IGESGeom_Protocol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_Protocol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_BSplineSurface;
@@ -539,8 +709,18 @@ class Handle_IGESGeom_BSplineSurface : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_BSplineSurface::~Handle_IGESGeom_BSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_BSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_ConicArc;
@@ -567,8 +747,18 @@ class Handle_IGESGeom_ConicArc : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_ConicArc::~Handle_IGESGeom_ConicArc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_ConicArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_OffsetSurface;
@@ -595,8 +785,18 @@ class Handle_IGESGeom_OffsetSurface : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_OffsetSurface::~Handle_IGESGeom_OffsetSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_OffsetSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_TrimmedSurface;
@@ -623,8 +823,18 @@ class Handle_IGESGeom_TrimmedSurface : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_TrimmedSurface::~Handle_IGESGeom_TrimmedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_TrimmedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_SplineCurve;
@@ -651,8 +861,18 @@ class Handle_IGESGeom_SplineCurve : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_SplineCurve::~Handle_IGESGeom_SplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_SplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_CircularArc;
@@ -679,8 +899,18 @@ class Handle_IGESGeom_CircularArc : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_CircularArc::~Handle_IGESGeom_CircularArc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_CircularArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_Point;
@@ -707,8 +937,18 @@ class Handle_IGESGeom_Point : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_Point::~Handle_IGESGeom_Point %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_GeneralModule;
@@ -735,8 +975,18 @@ class Handle_IGESGeom_GeneralModule : public Handle_IGESData_GeneralModule {
 };
 %feature("shadow") Handle_IGESGeom_GeneralModule::~Handle_IGESGeom_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_SplineSurface;
@@ -763,8 +1013,18 @@ class Handle_IGESGeom_SplineSurface : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_SplineSurface::~Handle_IGESGeom_SplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_SplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_CopiousData;
@@ -791,8 +1051,18 @@ class Handle_IGESGeom_CopiousData : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_CopiousData::~Handle_IGESGeom_CopiousData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_CopiousData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_ReadWriteModule;
@@ -819,8 +1089,18 @@ class Handle_IGESGeom_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 };
 %feature("shadow") Handle_IGESGeom_ReadWriteModule::~Handle_IGESGeom_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_TabulatedCylinder;
@@ -847,8 +1127,18 @@ class Handle_IGESGeom_TabulatedCylinder : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_TabulatedCylinder::~Handle_IGESGeom_TabulatedCylinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_TabulatedCylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGeom_OffsetCurve;
@@ -875,8 +1165,18 @@ class Handle_IGESGeom_OffsetCurve : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGeom_OffsetCurve::~Handle_IGESGeom_OffsetCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGeom_OffsetCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_TrimmedSurface;
@@ -914,8 +1214,18 @@ class IGESGeom_TrimmedSurface : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_TrimmedSurface::~IGESGeom_TrimmedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_TrimmedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ReadWriteModule;
@@ -945,8 +1255,18 @@ class IGESGeom_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %feature("shadow") IGESGeom_ReadWriteModule::~IGESGeom_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_HArray1OfTransformationMatrix;
@@ -990,8 +1310,18 @@ class IGESGeom_HArray1OfTransformationMatrix : public MMgt_TShared {
 };
 %feature("shadow") IGESGeom_HArray1OfTransformationMatrix::~IGESGeom_HArray1OfTransformationMatrix %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_HArray1OfTransformationMatrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_TabulatedCylinder;
@@ -1023,8 +1353,18 @@ class IGESGeom_TabulatedCylinder : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_TabulatedCylinder::~IGESGeom_TabulatedCylinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_TabulatedCylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_BSplineSurface;
@@ -1096,8 +1436,18 @@ class IGESGeom_BSplineSurface : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_BSplineSurface::~IGESGeom_BSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_BSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_Flash;
@@ -1139,8 +1489,18 @@ class IGESGeom_Flash : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_Flash::~IGESGeom_Flash %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_Flash {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolCopiousData;
@@ -1166,8 +1526,18 @@ class IGESGeom_ToolCopiousData {
 };
 %feature("shadow") IGESGeom_ToolCopiousData::~IGESGeom_ToolCopiousData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolCopiousData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_CurveOnSurface;
@@ -1203,8 +1573,18 @@ class IGESGeom_CurveOnSurface : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_CurveOnSurface::~IGESGeom_CurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_CurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_BoundedSurface;
@@ -1238,8 +1618,18 @@ class IGESGeom_BoundedSurface : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_BoundedSurface::~IGESGeom_BoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_BoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_RuledSurface;
@@ -1277,8 +1667,18 @@ class IGESGeom_RuledSurface : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_RuledSurface::~IGESGeom_RuledSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_RuledSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolFlash;
@@ -1306,8 +1706,18 @@ class IGESGeom_ToolFlash {
 };
 %feature("shadow") IGESGeom_ToolFlash::~IGESGeom_ToolFlash %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolFlash {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolTabulatedCylinder;
@@ -1333,8 +1743,18 @@ class IGESGeom_ToolTabulatedCylinder {
 };
 %feature("shadow") IGESGeom_ToolTabulatedCylinder::~IGESGeom_ToolTabulatedCylinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolTabulatedCylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolConicArc;
@@ -1362,8 +1782,18 @@ class IGESGeom_ToolConicArc {
 };
 %feature("shadow") IGESGeom_ToolConicArc::~IGESGeom_ToolConicArc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolConicArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_OffsetSurface;
@@ -1397,8 +1827,18 @@ class IGESGeom_OffsetSurface : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_OffsetSurface::~IGESGeom_OffsetSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_OffsetSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolSplineCurve;
@@ -1424,8 +1864,18 @@ class IGESGeom_ToolSplineCurve {
 };
 %feature("shadow") IGESGeom_ToolSplineCurve::~IGESGeom_ToolSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_Array1OfCurveOnSurface;
@@ -1465,8 +1915,18 @@ class IGESGeom_Array1OfCurveOnSurface {
 };
 %feature("shadow") IGESGeom_Array1OfCurveOnSurface::~IGESGeom_Array1OfCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_Array1OfCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_CircularArc;
@@ -1516,8 +1976,18 @@ class IGESGeom_CircularArc : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_CircularArc::~IGESGeom_CircularArc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_CircularArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom;
@@ -1533,8 +2003,18 @@ class IGESGeom {
 };
 %feature("shadow") IGESGeom::~IGESGeom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolSplineSurface;
@@ -1560,8 +2040,18 @@ class IGESGeom_ToolSplineSurface {
 };
 %feature("shadow") IGESGeom_ToolSplineSurface::~IGESGeom_ToolSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_SplineSurface;
@@ -1607,8 +2097,18 @@ class IGESGeom_SplineSurface : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_SplineSurface::~IGESGeom_SplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_SplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_GeneralModule;
@@ -1644,8 +2144,18 @@ class IGESGeom_GeneralModule : public IGESData_GeneralModule {
 };
 %feature("shadow") IGESGeom_GeneralModule::~IGESGeom_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_HArray1OfBoundary;
@@ -1689,8 +2199,18 @@ class IGESGeom_HArray1OfBoundary : public MMgt_TShared {
 };
 %feature("shadow") IGESGeom_HArray1OfBoundary::~IGESGeom_HArray1OfBoundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_HArray1OfBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolRuledSurface;
@@ -1716,8 +2236,18 @@ class IGESGeom_ToolRuledSurface {
 };
 %feature("shadow") IGESGeom_ToolRuledSurface::~IGESGeom_ToolRuledSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolRuledSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ConicArc;
@@ -1777,8 +2307,18 @@ class IGESGeom_ConicArc : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_ConicArc::~IGESGeom_ConicArc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ConicArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_Plane;
@@ -1824,8 +2364,18 @@ class IGESGeom_Plane : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_Plane::~IGESGeom_Plane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_Plane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolOffsetCurve;
@@ -1853,8 +2403,18 @@ class IGESGeom_ToolOffsetCurve {
 };
 %feature("shadow") IGESGeom_ToolOffsetCurve::~IGESGeom_ToolOffsetCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolOffsetCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_BSplineCurve;
@@ -1912,8 +2472,18 @@ class IGESGeom_BSplineCurve : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_BSplineCurve::~IGESGeom_BSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_BSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolPlane;
@@ -1939,8 +2509,18 @@ class IGESGeom_ToolPlane {
 };
 %feature("shadow") IGESGeom_ToolPlane::~IGESGeom_ToolPlane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolPlane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_CompositeCurve;
@@ -1970,8 +2550,18 @@ class IGESGeom_CompositeCurve : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_CompositeCurve::~IGESGeom_CompositeCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_CompositeCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_Array1OfBoundary;
@@ -2011,8 +2601,18 @@ class IGESGeom_Array1OfBoundary {
 };
 %feature("shadow") IGESGeom_Array1OfBoundary::~IGESGeom_Array1OfBoundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_Array1OfBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_Line;
@@ -2050,8 +2650,18 @@ class IGESGeom_Line : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_Line::~IGESGeom_Line %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolTransformationMatrix;
@@ -2079,8 +2689,18 @@ class IGESGeom_ToolTransformationMatrix {
 };
 %feature("shadow") IGESGeom_ToolTransformationMatrix::~IGESGeom_ToolTransformationMatrix %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolTransformationMatrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_SurfaceOfRevolution;
@@ -2114,8 +2734,18 @@ class IGESGeom_SurfaceOfRevolution : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_SurfaceOfRevolution::~IGESGeom_SurfaceOfRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_SurfaceOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolCircularArc;
@@ -2141,8 +2771,18 @@ class IGESGeom_ToolCircularArc {
 };
 %feature("shadow") IGESGeom_ToolCircularArc::~IGESGeom_ToolCircularArc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolCircularArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolDirection;
@@ -2168,8 +2808,18 @@ class IGESGeom_ToolDirection {
 };
 %feature("shadow") IGESGeom_ToolDirection::~IGESGeom_ToolDirection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolDirection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_TransformationMatrix;
@@ -2201,8 +2851,18 @@ class IGESGeom_TransformationMatrix : public IGESData_TransfEntity {
 };
 %feature("shadow") IGESGeom_TransformationMatrix::~IGESGeom_TransformationMatrix %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_TransformationMatrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_HArray1OfCurveOnSurface;
@@ -2246,8 +2906,18 @@ class IGESGeom_HArray1OfCurveOnSurface : public MMgt_TShared {
 };
 %feature("shadow") IGESGeom_HArray1OfCurveOnSurface::~IGESGeom_HArray1OfCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_HArray1OfCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_CopiousData;
@@ -2299,8 +2969,18 @@ class IGESGeom_CopiousData : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_CopiousData::~IGESGeom_CopiousData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_CopiousData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolLine;
@@ -2326,8 +3006,18 @@ class IGESGeom_ToolLine {
 };
 %feature("shadow") IGESGeom_ToolLine::~IGESGeom_ToolLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_Point;
@@ -2361,8 +3051,18 @@ class IGESGeom_Point : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_Point::~IGESGeom_Point %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_SplineCurve;
@@ -2410,8 +3110,18 @@ class IGESGeom_SplineCurve : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_SplineCurve::~IGESGeom_SplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_SplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolCompositeCurve;
@@ -2437,8 +3147,18 @@ class IGESGeom_ToolCompositeCurve {
 };
 %feature("shadow") IGESGeom_ToolCompositeCurve::~IGESGeom_ToolCompositeCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolCompositeCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolPoint;
@@ -2464,8 +3184,18 @@ class IGESGeom_ToolPoint {
 };
 %feature("shadow") IGESGeom_ToolPoint::~IGESGeom_ToolPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_Boundary;
@@ -2509,8 +3239,18 @@ class IGESGeom_Boundary : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_Boundary::~IGESGeom_Boundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_Boundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_Array1OfTransformationMatrix;
@@ -2550,8 +3290,18 @@ class IGESGeom_Array1OfTransformationMatrix {
 };
 %feature("shadow") IGESGeom_Array1OfTransformationMatrix::~IGESGeom_Array1OfTransformationMatrix %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_Array1OfTransformationMatrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_SpecificModule;
@@ -2579,8 +3329,18 @@ class IGESGeom_SpecificModule : public IGESData_SpecificModule {
 };
 %feature("shadow") IGESGeom_SpecificModule::~IGESGeom_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolOffsetSurface;
@@ -2606,8 +3366,18 @@ class IGESGeom_ToolOffsetSurface {
 };
 %feature("shadow") IGESGeom_ToolOffsetSurface::~IGESGeom_ToolOffsetSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolOffsetSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolBoundedSurface;
@@ -2633,8 +3403,18 @@ class IGESGeom_ToolBoundedSurface {
 };
 %feature("shadow") IGESGeom_ToolBoundedSurface::~IGESGeom_ToolBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_Direction;
@@ -2664,8 +3444,18 @@ class IGESGeom_Direction : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_Direction::~IGESGeom_Direction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_Direction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolBSplineSurface;
@@ -2691,8 +3481,18 @@ class IGESGeom_ToolBSplineSurface {
 };
 %feature("shadow") IGESGeom_ToolBSplineSurface::~IGESGeom_ToolBSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolTrimmedSurface;
@@ -2718,8 +3518,18 @@ class IGESGeom_ToolTrimmedSurface {
 };
 %feature("shadow") IGESGeom_ToolTrimmedSurface::~IGESGeom_ToolTrimmedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolTrimmedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolBSplineCurve;
@@ -2745,8 +3555,18 @@ class IGESGeom_ToolBSplineCurve {
 };
 %feature("shadow") IGESGeom_ToolBSplineCurve::~IGESGeom_ToolBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolBoundary;
@@ -2774,8 +3594,18 @@ class IGESGeom_ToolBoundary {
 };
 %feature("shadow") IGESGeom_ToolBoundary::~IGESGeom_ToolBoundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolSurfaceOfRevolution;
@@ -2801,8 +3631,18 @@ class IGESGeom_ToolSurfaceOfRevolution {
 };
 %feature("shadow") IGESGeom_ToolSurfaceOfRevolution::~IGESGeom_ToolSurfaceOfRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolSurfaceOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_ToolCurveOnSurface;
@@ -2830,8 +3670,18 @@ class IGESGeom_ToolCurveOnSurface {
 };
 %feature("shadow") IGESGeom_ToolCurveOnSurface::~IGESGeom_ToolCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_ToolCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGeom_OffsetCurve;
@@ -2887,5 +3737,15 @@ class IGESGeom_OffsetCurve : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGeom_OffsetCurve::~IGESGeom_OffsetCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGeom_OffsetCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

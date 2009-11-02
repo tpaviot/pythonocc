@@ -54,8 +54,18 @@ class RWStepRepr_RWShapeAspectRelationship {
 };
 %feature("shadow") RWStepRepr_RWShapeAspectRelationship::~RWStepRepr_RWShapeAspectRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWShapeAspectRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWQuantifiedAssemblyComponentUsage;
@@ -73,8 +83,18 @@ class RWStepRepr_RWQuantifiedAssemblyComponentUsage {
 };
 %feature("shadow") RWStepRepr_RWQuantifiedAssemblyComponentUsage::~RWStepRepr_RWQuantifiedAssemblyComponentUsage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWQuantifiedAssemblyComponentUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWDefinitionalRepresentation;
@@ -92,8 +112,18 @@ class RWStepRepr_RWDefinitionalRepresentation {
 };
 %feature("shadow") RWStepRepr_RWDefinitionalRepresentation::~RWStepRepr_RWDefinitionalRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWDefinitionalRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWCompoundRepresentationItem;
@@ -111,8 +141,18 @@ class RWStepRepr_RWCompoundRepresentationItem {
 };
 %feature("shadow") RWStepRepr_RWCompoundRepresentationItem::~RWStepRepr_RWCompoundRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWCompoundRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWDerivedShapeAspect;
@@ -130,8 +170,18 @@ class RWStepRepr_RWDerivedShapeAspect {
 };
 %feature("shadow") RWStepRepr_RWDerivedShapeAspect::~RWStepRepr_RWDerivedShapeAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWDerivedShapeAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWCompositeShapeAspect;
@@ -149,8 +199,18 @@ class RWStepRepr_RWCompositeShapeAspect {
 };
 %feature("shadow") RWStepRepr_RWCompositeShapeAspect::~RWStepRepr_RWCompositeShapeAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWCompositeShapeAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWExtension;
@@ -168,8 +228,18 @@ class RWStepRepr_RWExtension {
 };
 %feature("shadow") RWStepRepr_RWExtension::~RWStepRepr_RWExtension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWExtension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWShapeAspectDerivingRelationship;
@@ -187,8 +257,18 @@ class RWStepRepr_RWShapeAspectDerivingRelationship {
 };
 %feature("shadow") RWStepRepr_RWShapeAspectDerivingRelationship::~RWStepRepr_RWShapeAspectDerivingRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWShapeAspectDerivingRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWRepresentationRelationship;
@@ -206,8 +286,18 @@ class RWStepRepr_RWRepresentationRelationship {
 };
 %feature("shadow") RWStepRepr_RWRepresentationRelationship::~RWStepRepr_RWRepresentationRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWRepresentationRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWAssemblyComponentUsageSubstitute;
@@ -225,8 +315,18 @@ class RWStepRepr_RWAssemblyComponentUsageSubstitute {
 };
 %feature("shadow") RWStepRepr_RWAssemblyComponentUsageSubstitute::~RWStepRepr_RWAssemblyComponentUsageSubstitute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWAssemblyComponentUsageSubstitute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWConfigurationItem;
@@ -244,8 +344,18 @@ class RWStepRepr_RWConfigurationItem {
 };
 %feature("shadow") RWStepRepr_RWConfigurationItem::~RWStepRepr_RWConfigurationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWConfigurationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWFunctionallyDefinedTransformation;
@@ -261,8 +371,18 @@ class RWStepRepr_RWFunctionallyDefinedTransformation {
 };
 %feature("shadow") RWStepRepr_RWFunctionallyDefinedTransformation::~RWStepRepr_RWFunctionallyDefinedTransformation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWFunctionallyDefinedTransformation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation;
@@ -280,8 +400,18 @@ class RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation {
 };
 %feature("shadow") RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation::~RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWConfigurationEffectivity;
@@ -299,8 +429,18 @@ class RWStepRepr_RWConfigurationEffectivity {
 };
 %feature("shadow") RWStepRepr_RWConfigurationEffectivity::~RWStepRepr_RWConfigurationEffectivity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWConfigurationEffectivity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWMakeFromUsageOption;
@@ -318,8 +458,18 @@ class RWStepRepr_RWMakeFromUsageOption {
 };
 %feature("shadow") RWStepRepr_RWMakeFromUsageOption::~RWStepRepr_RWMakeFromUsageOption %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWMakeFromUsageOption {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWMappedItem;
@@ -337,8 +487,18 @@ class RWStepRepr_RWMappedItem {
 };
 %feature("shadow") RWStepRepr_RWMappedItem::~RWStepRepr_RWMappedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWMappedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWRepresentationContext;
@@ -354,8 +514,18 @@ class RWStepRepr_RWRepresentationContext {
 };
 %feature("shadow") RWStepRepr_RWRepresentationContext::~RWStepRepr_RWRepresentationContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWRepresentationContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWReprItemAndLengthMeasureWithUnit;
@@ -371,8 +541,18 @@ class RWStepRepr_RWReprItemAndLengthMeasureWithUnit {
 };
 %feature("shadow") RWStepRepr_RWReprItemAndLengthMeasureWithUnit::~RWStepRepr_RWReprItemAndLengthMeasureWithUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWReprItemAndLengthMeasureWithUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWMaterialPropertyRepresentation;
@@ -390,8 +570,18 @@ class RWStepRepr_RWMaterialPropertyRepresentation {
 };
 %feature("shadow") RWStepRepr_RWMaterialPropertyRepresentation::~RWStepRepr_RWMaterialPropertyRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWMaterialPropertyRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWStructuralResponseProperty;
@@ -409,8 +599,18 @@ class RWStepRepr_RWStructuralResponseProperty {
 };
 %feature("shadow") RWStepRepr_RWStructuralResponseProperty::~RWStepRepr_RWStructuralResponseProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWStructuralResponseProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWParametricRepresentationContext;
@@ -426,8 +626,18 @@ class RWStepRepr_RWParametricRepresentationContext {
 };
 %feature("shadow") RWStepRepr_RWParametricRepresentationContext::~RWStepRepr_RWParametricRepresentationContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWParametricRepresentationContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWMaterialDesignation;
@@ -445,8 +655,18 @@ class RWStepRepr_RWMaterialDesignation {
 };
 %feature("shadow") RWStepRepr_RWMaterialDesignation::~RWStepRepr_RWMaterialDesignation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWMaterialDesignation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWProductDefinitionShape;
@@ -464,8 +684,18 @@ class RWStepRepr_RWProductDefinitionShape {
 };
 %feature("shadow") RWStepRepr_RWProductDefinitionShape::~RWStepRepr_RWProductDefinitionShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWProductDefinitionShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWDataEnvironment;
@@ -483,8 +713,18 @@ class RWStepRepr_RWDataEnvironment {
 };
 %feature("shadow") RWStepRepr_RWDataEnvironment::~RWStepRepr_RWDataEnvironment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWDataEnvironment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWPropertyDefinition;
@@ -502,8 +742,18 @@ class RWStepRepr_RWPropertyDefinition {
 };
 %feature("shadow") RWStepRepr_RWPropertyDefinition::~RWStepRepr_RWPropertyDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWPropertyDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWConfigurationDesign;
@@ -521,8 +771,18 @@ class RWStepRepr_RWConfigurationDesign {
 };
 %feature("shadow") RWStepRepr_RWConfigurationDesign::~RWStepRepr_RWConfigurationDesign %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWConfigurationDesign {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWRepresentationMap;
@@ -540,8 +800,18 @@ class RWStepRepr_RWRepresentationMap {
 };
 %feature("shadow") RWStepRepr_RWRepresentationMap::~RWStepRepr_RWRepresentationMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWRepresentationMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWMaterialProperty;
@@ -559,8 +829,18 @@ class RWStepRepr_RWMaterialProperty {
 };
 %feature("shadow") RWStepRepr_RWMaterialProperty::~RWStepRepr_RWMaterialProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWMaterialProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWDescriptiveRepresentationItem;
@@ -576,8 +856,18 @@ class RWStepRepr_RWDescriptiveRepresentationItem {
 };
 %feature("shadow") RWStepRepr_RWDescriptiveRepresentationItem::~RWStepRepr_RWDescriptiveRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWDescriptiveRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWShapeAspectTransition;
@@ -595,8 +885,18 @@ class RWStepRepr_RWShapeAspectTransition {
 };
 %feature("shadow") RWStepRepr_RWShapeAspectTransition::~RWStepRepr_RWShapeAspectTransition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWShapeAspectTransition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWSpecifiedHigherUsageOccurrence;
@@ -614,8 +914,18 @@ class RWStepRepr_RWSpecifiedHigherUsageOccurrence {
 };
 %feature("shadow") RWStepRepr_RWSpecifiedHigherUsageOccurrence::~RWStepRepr_RWSpecifiedHigherUsageOccurrence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWSpecifiedHigherUsageOccurrence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWGlobalUncertaintyAssignedContext;
@@ -633,8 +943,18 @@ class RWStepRepr_RWGlobalUncertaintyAssignedContext {
 };
 %feature("shadow") RWStepRepr_RWGlobalUncertaintyAssignedContext::~RWStepRepr_RWGlobalUncertaintyAssignedContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWGlobalUncertaintyAssignedContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWShapeAspect;
@@ -652,8 +972,18 @@ class RWStepRepr_RWShapeAspect {
 };
 %feature("shadow") RWStepRepr_RWShapeAspect::~RWStepRepr_RWShapeAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWShapeAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWGlobalUnitAssignedContext;
@@ -671,8 +1001,18 @@ class RWStepRepr_RWGlobalUnitAssignedContext {
 };
 %feature("shadow") RWStepRepr_RWGlobalUnitAssignedContext::~RWStepRepr_RWGlobalUnitAssignedContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWGlobalUnitAssignedContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWPropertyDefinitionRelationship;
@@ -690,8 +1030,18 @@ class RWStepRepr_RWPropertyDefinitionRelationship {
 };
 %feature("shadow") RWStepRepr_RWPropertyDefinitionRelationship::~RWStepRepr_RWPropertyDefinitionRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWPropertyDefinitionRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWPropertyDefinitionRepresentation;
@@ -709,8 +1059,18 @@ class RWStepRepr_RWPropertyDefinitionRepresentation {
 };
 %feature("shadow") RWStepRepr_RWPropertyDefinitionRepresentation::~RWStepRepr_RWPropertyDefinitionRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWPropertyDefinitionRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWRepresentation;
@@ -728,8 +1088,18 @@ class RWStepRepr_RWRepresentation {
 };
 %feature("shadow") RWStepRepr_RWRepresentation::~RWStepRepr_RWRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWShapeRepresentationRelationshipWithTransformation;
@@ -747,8 +1117,18 @@ class RWStepRepr_RWShapeRepresentationRelationshipWithTransformation {
 };
 %feature("shadow") RWStepRepr_RWShapeRepresentationRelationshipWithTransformation::~RWStepRepr_RWShapeRepresentationRelationshipWithTransformation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWShapeRepresentationRelationshipWithTransformation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWRepresentationItem;
@@ -764,8 +1144,18 @@ class RWStepRepr_RWRepresentationItem {
 };
 %feature("shadow") RWStepRepr_RWRepresentationItem::~RWStepRepr_RWRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWRepresentationRelationshipWithTransformation;
@@ -783,8 +1173,18 @@ class RWStepRepr_RWRepresentationRelationshipWithTransformation {
 };
 %feature("shadow") RWStepRepr_RWRepresentationRelationshipWithTransformation::~RWStepRepr_RWRepresentationRelationshipWithTransformation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWRepresentationRelationshipWithTransformation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWItemDefinedTransformation;
@@ -802,8 +1202,18 @@ class RWStepRepr_RWItemDefinedTransformation {
 };
 %feature("shadow") RWStepRepr_RWItemDefinedTransformation::~RWStepRepr_RWItemDefinedTransformation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWItemDefinedTransformation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWMeasureRepresentationItem;
@@ -821,8 +1231,18 @@ class RWStepRepr_RWMeasureRepresentationItem {
 };
 %feature("shadow") RWStepRepr_RWMeasureRepresentationItem::~RWStepRepr_RWMeasureRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWMeasureRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWProductConcept;
@@ -840,8 +1260,18 @@ class RWStepRepr_RWProductConcept {
 };
 %feature("shadow") RWStepRepr_RWProductConcept::~RWStepRepr_RWProductConcept %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWProductConcept {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepRepr_RWAssemblyComponentUsage;
@@ -859,5 +1289,15 @@ class RWStepRepr_RWAssemblyComponentUsage {
 };
 %feature("shadow") RWStepRepr_RWAssemblyComponentUsage::~RWStepRepr_RWAssemblyComponentUsage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepRepr_RWAssemblyComponentUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

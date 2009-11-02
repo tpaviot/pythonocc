@@ -62,8 +62,18 @@ class DsgPrs_ShadedPlanePresentation {
 };
 %feature("shadow") DsgPrs_ShadedPlanePresentation::~DsgPrs_ShadedPlanePresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_ShadedPlanePresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_FilletRadiusPresentation;
@@ -77,8 +87,18 @@ class DsgPrs_FilletRadiusPresentation {
 };
 %feature("shadow") DsgPrs_FilletRadiusPresentation::~DsgPrs_FilletRadiusPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_FilletRadiusPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_MidPointPresentation;
@@ -98,8 +118,18 @@ class DsgPrs_MidPointPresentation {
 };
 %feature("shadow") DsgPrs_MidPointPresentation::~DsgPrs_MidPointPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_MidPointPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_XYZAxisPresentation;
@@ -115,8 +145,18 @@ class DsgPrs_XYZAxisPresentation {
 };
 %feature("shadow") DsgPrs_XYZAxisPresentation::~DsgPrs_XYZAxisPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_XYZAxisPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_ShapeDirPresentation;
@@ -130,8 +170,18 @@ class DsgPrs_ShapeDirPresentation {
 };
 %feature("shadow") DsgPrs_ShapeDirPresentation::~DsgPrs_ShapeDirPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_ShapeDirPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_EqualRadiusPresentation;
@@ -145,8 +195,18 @@ class DsgPrs_EqualRadiusPresentation {
 };
 %feature("shadow") DsgPrs_EqualRadiusPresentation::~DsgPrs_EqualRadiusPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_EqualRadiusPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_XYZPlanePresentation;
@@ -160,8 +220,18 @@ class DsgPrs_XYZPlanePresentation {
 };
 %feature("shadow") DsgPrs_XYZPlanePresentation::~DsgPrs_XYZPlanePresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_XYZPlanePresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_LengthPresentation;
@@ -183,8 +253,18 @@ class DsgPrs_LengthPresentation {
 };
 %feature("shadow") DsgPrs_LengthPresentation::~DsgPrs_LengthPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_LengthPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_SymbPresentation;
@@ -198,8 +278,18 @@ class DsgPrs_SymbPresentation {
 };
 %feature("shadow") DsgPrs_SymbPresentation::~DsgPrs_SymbPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_SymbPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_IdenticPresentation;
@@ -221,8 +311,18 @@ class DsgPrs_IdenticPresentation {
 };
 %feature("shadow") DsgPrs_IdenticPresentation::~DsgPrs_IdenticPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_IdenticPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_DiameterPresentation;
@@ -238,8 +338,18 @@ class DsgPrs_DiameterPresentation {
 };
 %feature("shadow") DsgPrs_DiameterPresentation::~DsgPrs_DiameterPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_DiameterPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_FixPresentation;
@@ -253,8 +363,18 @@ class DsgPrs_FixPresentation {
 };
 %feature("shadow") DsgPrs_FixPresentation::~DsgPrs_FixPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_FixPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_RadiusPresentation;
@@ -266,8 +386,18 @@ class DsgPrs_RadiusPresentation {
 };
 %feature("shadow") DsgPrs_RadiusPresentation::~DsgPrs_RadiusPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_RadiusPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_DatumTool;
@@ -281,8 +411,18 @@ class DsgPrs_DatumTool {
 };
 %feature("shadow") DsgPrs_DatumTool::~DsgPrs_DatumTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_DatumTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_EllipseRadiusPresentation;
@@ -300,8 +440,18 @@ class DsgPrs_EllipseRadiusPresentation {
 };
 %feature("shadow") DsgPrs_EllipseRadiusPresentation::~DsgPrs_EllipseRadiusPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_EllipseRadiusPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_DatumPrs;
@@ -315,8 +465,18 @@ class DsgPrs_DatumPrs : public Prs3d_Root {
 };
 %feature("shadow") DsgPrs_DatumPrs::~DsgPrs_DatumPrs %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_DatumPrs {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_AnglePresentation;
@@ -342,8 +502,18 @@ class DsgPrs_AnglePresentation {
 };
 %feature("shadow") DsgPrs_AnglePresentation::~DsgPrs_AnglePresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_AnglePresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_TangentPresentation;
@@ -357,8 +527,18 @@ class DsgPrs_TangentPresentation {
 };
 %feature("shadow") DsgPrs_TangentPresentation::~DsgPrs_TangentPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_TangentPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_Chamf2dPresentation;
@@ -374,8 +554,18 @@ class DsgPrs_Chamf2dPresentation {
 };
 %feature("shadow") DsgPrs_Chamf2dPresentation::~DsgPrs_Chamf2dPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_Chamf2dPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_EqualDistancePresentation;
@@ -393,8 +583,18 @@ class DsgPrs_EqualDistancePresentation {
 };
 %feature("shadow") DsgPrs_EqualDistancePresentation::~DsgPrs_EqualDistancePresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_EqualDistancePresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_ParalPresentation;
@@ -410,8 +610,18 @@ class DsgPrs_ParalPresentation {
 };
 %feature("shadow") DsgPrs_ParalPresentation::~DsgPrs_ParalPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_ParalPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_OffsetPresentation;
@@ -427,8 +637,18 @@ class DsgPrs_OffsetPresentation {
 };
 %feature("shadow") DsgPrs_OffsetPresentation::~DsgPrs_OffsetPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_OffsetPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_PerpenPresentation;
@@ -442,8 +662,18 @@ class DsgPrs_PerpenPresentation {
 };
 %feature("shadow") DsgPrs_PerpenPresentation::~DsgPrs_PerpenPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_PerpenPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs;
@@ -471,8 +701,18 @@ class DsgPrs {
 };
 %feature("shadow") DsgPrs::~DsgPrs %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_ConcentricPresentation;
@@ -486,8 +726,18 @@ class DsgPrs_ConcentricPresentation {
 };
 %feature("shadow") DsgPrs_ConcentricPresentation::~DsgPrs_ConcentricPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_ConcentricPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DsgPrs_SymmetricPresentation;
@@ -505,5 +755,15 @@ class DsgPrs_SymmetricPresentation {
 };
 %feature("shadow") DsgPrs_SymmetricPresentation::~DsgPrs_SymmetricPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DsgPrs_SymmetricPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

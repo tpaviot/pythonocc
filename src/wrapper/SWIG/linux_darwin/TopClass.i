@@ -56,8 +56,18 @@ class TopClass_Intersection3d {
 };
 %feature("shadow") TopClass_Intersection3d::~TopClass_Intersection3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopClass_Intersection3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopClass_SolidExplorer;
@@ -91,5 +101,15 @@ class TopClass_SolidExplorer {
 };
 %feature("shadow") TopClass_SolidExplorer::~TopClass_SolidExplorer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopClass_SolidExplorer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

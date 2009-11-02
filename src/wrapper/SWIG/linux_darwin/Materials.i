@@ -63,8 +63,18 @@ class Handle_Materials_SequenceNodeOfMtsSequence : public Handle_TCollection_Seq
 };
 %feature("shadow") Handle_Materials_SequenceNodeOfMtsSequence::~Handle_Materials_SequenceNodeOfMtsSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Materials_SequenceNodeOfMtsSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Materials_FuzzyInstance;
@@ -91,8 +101,18 @@ class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
 };
 %feature("shadow") Handle_Materials_FuzzyInstance::~Handle_Materials_FuzzyInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Materials_FuzzyInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Materials_MaterialDefinition;
@@ -119,8 +139,18 @@ class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitio
 };
 %feature("shadow") Handle_Materials_MaterialDefinition::~Handle_Materials_MaterialDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Materials_MaterialDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Materials_Color;
@@ -147,8 +177,18 @@ class Handle_Materials_Color : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_Materials_Color::~Handle_Materials_Color %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Materials_Color {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Materials_Material;
@@ -175,8 +215,18 @@ class Handle_Materials_Material : public Handle_Materials_FuzzyInstance {
 };
 %feature("shadow") Handle_Materials_Material::~Handle_Materials_Material %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Materials_Material {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Materials_MaterialsDictionary;
@@ -203,8 +253,18 @@ class Handle_Materials_MaterialsDictionary : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_Materials_MaterialsDictionary::~Handle_Materials_MaterialsDictionary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Materials_MaterialsDictionary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Materials_MaterialsSequence;
@@ -231,8 +291,18 @@ class Handle_Materials_MaterialsSequence : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Materials_MaterialsSequence::~Handle_Materials_MaterialsSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Materials_MaterialsSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Materials_MaterialsDictionary;
@@ -274,8 +344,18 @@ class Materials_MaterialsDictionary : public Standard_Transient {
 };
 %feature("shadow") Materials_MaterialsDictionary::~Materials_MaterialsDictionary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Materials_MaterialsDictionary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Materials;
@@ -303,8 +383,18 @@ class Materials {
 };
 %feature("shadow") Materials::~Materials %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Materials {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Materials_FuzzyInstance;
@@ -362,8 +452,18 @@ class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 };
 %feature("shadow") Materials_FuzzyInstance::~Materials_FuzzyInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Materials_FuzzyInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Materials_SequenceNodeOfMtsSequence;
@@ -389,8 +489,18 @@ class Materials_SequenceNodeOfMtsSequence : public TCollection_SeqNode {
 };
 %feature("shadow") Materials_SequenceNodeOfMtsSequence::~Materials_SequenceNodeOfMtsSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Materials_SequenceNodeOfMtsSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Materials_MaterialDefinition;
@@ -416,8 +526,18 @@ class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
 };
 %feature("shadow") Materials_MaterialDefinition::~Materials_MaterialDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Materials_MaterialDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Materials_Material;
@@ -451,8 +571,18 @@ class Materials_Material : public Materials_FuzzyInstance {
 };
 %feature("shadow") Materials_Material::~Materials_Material %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Materials_Material {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Materials_Color;
@@ -490,8 +620,18 @@ class Materials_Color : public Standard_Transient {
 };
 %feature("shadow") Materials_Color::~Materials_Color %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Materials_Color {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Materials_MtsSequence;
@@ -545,8 +685,18 @@ class Materials_MtsSequence : public TCollection_BaseSequence {
 };
 %feature("shadow") Materials_MtsSequence::~Materials_MtsSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Materials_MtsSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Materials_MaterialsSequence;
@@ -614,5 +764,15 @@ class Materials_MaterialsSequence : public MMgt_TShared {
 };
 %feature("shadow") Materials_MaterialsSequence::~Materials_MaterialsSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Materials_MaterialsSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_PMMgt_PManaged : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PMMgt_PManaged::~Handle_PMMgt_PManaged %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PMMgt_PManaged {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PMMgt_PManaged;
@@ -88,5 +98,15 @@ class PMMgt_PManaged : public Standard_Persistent {
 };
 %feature("shadow") PMMgt_PManaged::~PMMgt_PManaged %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PMMgt_PManaged {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

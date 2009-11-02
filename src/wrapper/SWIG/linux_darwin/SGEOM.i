@@ -63,8 +63,18 @@ class Handle_GEOM_Application : public Handle_TDocStd_Application {
 };
 %feature("shadow") Handle_GEOM_Application::~Handle_GEOM_Application %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOM_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOM_Object;
@@ -91,8 +101,18 @@ class Handle_GEOM_Object : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GEOM_Object::~Handle_GEOM_Object %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOM_Object {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient;
@@ -119,8 +139,18 @@ class Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public Handle_TCo
 };
 %feature("shadow") Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient::~Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOM_SubShapeDriver;
@@ -147,8 +177,18 @@ class Handle_GEOM_SubShapeDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOM_SubShapeDriver::~Handle_GEOM_SubShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOM_SubShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOM_Function;
@@ -175,8 +215,18 @@ class Handle_GEOM_Function : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GEOM_Function::~Handle_GEOM_Function %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOM_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOM_SubShapeDriver;
@@ -208,8 +258,18 @@ class GEOM_SubShapeDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOM_SubShapeDriver::~GEOM_SubShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOM_SubShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOM_Solver;
@@ -229,8 +289,18 @@ class GEOM_Solver {
 };
 %feature("shadow") GEOM_Solver::~GEOM_Solver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOM_Solver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOM_Parameter;
@@ -258,8 +328,18 @@ class GEOM_Parameter {
 };
 %feature("shadow") GEOM_Parameter::~GEOM_Parameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOM_Parameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOM_DataMapOfAsciiStringTransient;
@@ -293,8 +373,18 @@ class GEOM_DataMapOfAsciiStringTransient : public TCollection_BasicMap {
 };
 %feature("shadow") GEOM_DataMapOfAsciiStringTransient::~GEOM_DataMapOfAsciiStringTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOM_DataMapOfAsciiStringTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOM_ISubShape;
@@ -314,8 +404,18 @@ class GEOM_ISubShape {
 };
 %feature("shadow") GEOM_ISubShape::~GEOM_ISubShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOM_ISubShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOM_Engine;
@@ -373,8 +473,18 @@ class GEOM_Engine {
 };
 %feature("shadow") GEOM_Engine::~GEOM_Engine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOM_Engine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOM_Application;
@@ -404,8 +514,18 @@ class GEOM_Application : public TDocStd_Application {
 };
 %feature("shadow") GEOM_Application::~GEOM_Application %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOM_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOM_Function;
@@ -513,8 +633,18 @@ class GEOM_Function : public MMgt_TShared {
 };
 %feature("shadow") GEOM_Function::~GEOM_Function %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOM_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOM_DataMapNodeOfDataMapOfAsciiStringTransient;
@@ -544,8 +674,18 @@ class GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public TCollection_MapNo
 };
 %feature("shadow") GEOM_DataMapNodeOfDataMapOfAsciiStringTransient::~GEOM_DataMapNodeOfDataMapOfAsciiStringTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOM_Object;
@@ -645,8 +785,18 @@ class GEOM_Object : public MMgt_TShared {
 };
 %feature("shadow") GEOM_Object::~GEOM_Object %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOM_Object {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient;
@@ -666,8 +816,18 @@ class GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient : public TCollection_B
 };
 %feature("shadow") GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient::~GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOM_IOperations;
@@ -699,5 +859,15 @@ class GEOM_IOperations {
 };
 %feature("shadow") GEOM_IOperations::~GEOM_IOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOM_IOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

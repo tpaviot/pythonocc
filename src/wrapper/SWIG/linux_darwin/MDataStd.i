@@ -63,8 +63,18 @@ class Handle_MDataStd_DirectoryRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_DirectoryRetrievalDriver::~Handle_MDataStd_DirectoryRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_DirectoryRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_RealArrayRetrievalDriver_1;
@@ -91,8 +101,18 @@ class Handle_MDataStd_RealArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_RealArrayRetrievalDriver_1::~Handle_MDataStd_RealArrayRetrievalDriver_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_RealArrayRetrievalDriver_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ByteArrayRetrievalDriver_1;
@@ -119,8 +139,18 @@ class Handle_MDataStd_ByteArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_ByteArrayRetrievalDriver_1::~Handle_MDataStd_ByteArrayRetrievalDriver_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ByteArrayRetrievalDriver_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ReferenceListStorageDriver;
@@ -147,8 +177,18 @@ class Handle_MDataStd_ReferenceListStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_ReferenceListStorageDriver::~Handle_MDataStd_ReferenceListStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ReferenceListStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_IntegerListStorageDriver;
@@ -175,8 +215,18 @@ class Handle_MDataStd_IntegerListStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_IntegerListStorageDriver::~Handle_MDataStd_IntegerListStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_IntegerListStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_BooleanListRetrievalDriver;
@@ -203,8 +253,18 @@ class Handle_MDataStd_BooleanListRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_BooleanListRetrievalDriver::~Handle_MDataStd_BooleanListRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_BooleanListRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ExtStringArrayRetrievalDriver_1;
@@ -231,8 +291,18 @@ class Handle_MDataStd_ExtStringArrayRetrievalDriver_1 : public Handle_MDF_ARDriv
 };
 %feature("shadow") Handle_MDataStd_ExtStringArrayRetrievalDriver_1::~Handle_MDataStd_ExtStringArrayRetrievalDriver_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ExtStringArrayRetrievalDriver_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_PlacementRetrievalDriver;
@@ -259,8 +329,18 @@ class Handle_MDataStd_PlacementRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_PlacementRetrievalDriver::~Handle_MDataStd_PlacementRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_PlacementRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_TreeNodeRetrievalDriver;
@@ -287,8 +367,18 @@ class Handle_MDataStd_TreeNodeRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_TreeNodeRetrievalDriver::~Handle_MDataStd_TreeNodeRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_TreeNodeRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_RealListRetrievalDriver;
@@ -315,8 +405,18 @@ class Handle_MDataStd_RealListRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_RealListRetrievalDriver::~Handle_MDataStd_RealListRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_RealListRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_PlaneRetrievalDriver;
@@ -343,8 +443,18 @@ class Handle_MDataStd_PlaneRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_PlaneRetrievalDriver::~Handle_MDataStd_PlaneRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_PlaneRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_NoteBookStorageDriver;
@@ -371,8 +481,18 @@ class Handle_MDataStd_NoteBookStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_NoteBookStorageDriver::~Handle_MDataStd_NoteBookStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_NoteBookStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ExtStringListRetrievalDriver;
@@ -399,8 +519,18 @@ class Handle_MDataStd_ExtStringListRetrievalDriver : public Handle_MDF_ARDriver 
 };
 %feature("shadow") Handle_MDataStd_ExtStringListRetrievalDriver::~Handle_MDataStd_ExtStringListRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ExtStringListRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_TickRetrievalDriver;
@@ -427,8 +557,18 @@ class Handle_MDataStd_TickRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_TickRetrievalDriver::~Handle_MDataStd_TickRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_TickRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_AxisStorageDriver;
@@ -455,8 +595,18 @@ class Handle_MDataStd_AxisStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_AxisStorageDriver::~Handle_MDataStd_AxisStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_AxisStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_DirectoryStorageDriver;
@@ -483,8 +633,18 @@ class Handle_MDataStd_DirectoryStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_DirectoryStorageDriver::~Handle_MDataStd_DirectoryStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_DirectoryStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_GeometryStorageDriver;
@@ -511,8 +671,18 @@ class Handle_MDataStd_GeometryStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_GeometryStorageDriver::~Handle_MDataStd_GeometryStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_GeometryStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_NoteBookRetrievalDriver;
@@ -539,8 +709,18 @@ class Handle_MDataStd_NoteBookRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_NoteBookRetrievalDriver::~Handle_MDataStd_NoteBookRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_NoteBookRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_RealStorageDriver;
@@ -567,8 +747,18 @@ class Handle_MDataStd_RealStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_RealStorageDriver::~Handle_MDataStd_RealStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_RealStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_PlacementStorageDriver;
@@ -595,8 +785,18 @@ class Handle_MDataStd_PlacementStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_PlacementStorageDriver::~Handle_MDataStd_PlacementStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_PlacementStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ShapeRetrievalDriver;
@@ -623,8 +823,18 @@ class Handle_MDataStd_ShapeRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_ShapeRetrievalDriver::~Handle_MDataStd_ShapeRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ShapeRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ShapeStorageDriver;
@@ -651,8 +861,18 @@ class Handle_MDataStd_ShapeStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_ShapeStorageDriver::~Handle_MDataStd_ShapeStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ShapeStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ConstraintRetrievalDriver;
@@ -679,8 +899,18 @@ class Handle_MDataStd_ConstraintRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_ConstraintRetrievalDriver::~Handle_MDataStd_ConstraintRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ConstraintRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_PatternStdRetrievalDriver;
@@ -707,8 +937,18 @@ class Handle_MDataStd_PatternStdRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_PatternStdRetrievalDriver::~Handle_MDataStd_PatternStdRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_PatternStdRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_AsciiStringStorageDriver;
@@ -735,8 +975,18 @@ class Handle_MDataStd_AsciiStringStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_AsciiStringStorageDriver::~Handle_MDataStd_AsciiStringStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_AsciiStringStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_AsciiStringRetrievalDriver;
@@ -763,8 +1013,18 @@ class Handle_MDataStd_AsciiStringRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_AsciiStringRetrievalDriver::~Handle_MDataStd_AsciiStringRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_AsciiStringRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_IntPackedMapRetrievalDriver_1;
@@ -791,8 +1051,18 @@ class Handle_MDataStd_IntPackedMapRetrievalDriver_1 : public Handle_MDF_ARDriver
 };
 %feature("shadow") Handle_MDataStd_IntPackedMapRetrievalDriver_1::~Handle_MDataStd_IntPackedMapRetrievalDriver_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_IntPackedMapRetrievalDriver_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_IntegerStorageDriver;
@@ -819,8 +1089,18 @@ class Handle_MDataStd_IntegerStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_IntegerStorageDriver::~Handle_MDataStd_IntegerStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_IntegerStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_IntegerListRetrievalDriver;
@@ -847,8 +1127,18 @@ class Handle_MDataStd_IntegerListRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_IntegerListRetrievalDriver::~Handle_MDataStd_IntegerListRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_IntegerListRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ReferenceArrayStorageDriver;
@@ -875,8 +1165,18 @@ class Handle_MDataStd_ReferenceArrayStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_ReferenceArrayStorageDriver::~Handle_MDataStd_ReferenceArrayStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ReferenceArrayStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ExtStringArrayStorageDriver;
@@ -903,8 +1203,18 @@ class Handle_MDataStd_ExtStringArrayStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_ExtStringArrayStorageDriver::~Handle_MDataStd_ExtStringArrayStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ExtStringArrayStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_UAttributeRetrievalDriver;
@@ -931,8 +1241,18 @@ class Handle_MDataStd_UAttributeRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_UAttributeRetrievalDriver::~Handle_MDataStd_UAttributeRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_UAttributeRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_CommentRetrievalDriver;
@@ -959,8 +1279,18 @@ class Handle_MDataStd_CommentRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_CommentRetrievalDriver::~Handle_MDataStd_CommentRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_CommentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_RelationRetrievalDriver;
@@ -987,8 +1317,18 @@ class Handle_MDataStd_RelationRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_RelationRetrievalDriver::~Handle_MDataStd_RelationRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_RelationRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_PointRetrievalDriver;
@@ -1015,8 +1355,18 @@ class Handle_MDataStd_PointRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_PointRetrievalDriver::~Handle_MDataStd_PointRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_PointRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_AxisRetrievalDriver;
@@ -1043,8 +1393,18 @@ class Handle_MDataStd_AxisRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_AxisRetrievalDriver::~Handle_MDataStd_AxisRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_AxisRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_NameRetrievalDriver;
@@ -1071,8 +1431,18 @@ class Handle_MDataStd_NameRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_NameRetrievalDriver::~Handle_MDataStd_NameRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_NameRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ExpressionRetrievalDriver;
@@ -1099,8 +1469,18 @@ class Handle_MDataStd_ExpressionRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_ExpressionRetrievalDriver::~Handle_MDataStd_ExpressionRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ExpressionRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_IntPackedMapRetrievalDriver;
@@ -1127,8 +1507,18 @@ class Handle_MDataStd_IntPackedMapRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_IntPackedMapRetrievalDriver::~Handle_MDataStd_IntPackedMapRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_IntPackedMapRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_PatternStdStorageDriver;
@@ -1155,8 +1545,18 @@ class Handle_MDataStd_PatternStdStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_PatternStdStorageDriver::~Handle_MDataStd_PatternStdStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_PatternStdStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_RealArrayRetrievalDriver;
@@ -1183,8 +1583,18 @@ class Handle_MDataStd_RealArrayRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_RealArrayRetrievalDriver::~Handle_MDataStd_RealArrayRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_RealArrayRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ReferenceArrayRetrievalDriver;
@@ -1211,8 +1621,18 @@ class Handle_MDataStd_ReferenceArrayRetrievalDriver : public Handle_MDF_ARDriver
 };
 %feature("shadow") Handle_MDataStd_ReferenceArrayRetrievalDriver::~Handle_MDataStd_ReferenceArrayRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ReferenceArrayRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_NamedDataRetrievalDriver;
@@ -1239,8 +1659,18 @@ class Handle_MDataStd_NamedDataRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_NamedDataRetrievalDriver::~Handle_MDataStd_NamedDataRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_NamedDataRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ExtStringArrayRetrievalDriver;
@@ -1267,8 +1697,18 @@ class Handle_MDataStd_ExtStringArrayRetrievalDriver : public Handle_MDF_ARDriver
 };
 %feature("shadow") Handle_MDataStd_ExtStringArrayRetrievalDriver::~Handle_MDataStd_ExtStringArrayRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ExtStringArrayRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_NameStorageDriver;
@@ -1295,8 +1735,18 @@ class Handle_MDataStd_NameStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_NameStorageDriver::~Handle_MDataStd_NameStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_NameStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_PointStorageDriver;
@@ -1323,8 +1773,18 @@ class Handle_MDataStd_PointStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_PointStorageDriver::~Handle_MDataStd_PointStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_PointStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_IntegerRetrievalDriver;
@@ -1351,8 +1811,18 @@ class Handle_MDataStd_IntegerRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_IntegerRetrievalDriver::~Handle_MDataStd_IntegerRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_IntegerRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_BooleanArrayStorageDriver;
@@ -1379,8 +1849,18 @@ class Handle_MDataStd_BooleanArrayStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_BooleanArrayStorageDriver::~Handle_MDataStd_BooleanArrayStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_BooleanArrayStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_IntPackedMapStorageDriver;
@@ -1407,8 +1887,18 @@ class Handle_MDataStd_IntPackedMapStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_IntPackedMapStorageDriver::~Handle_MDataStd_IntPackedMapStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_IntPackedMapStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ExpressionStorageDriver;
@@ -1435,8 +1925,18 @@ class Handle_MDataStd_ExpressionStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_ExpressionStorageDriver::~Handle_MDataStd_ExpressionStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ExpressionStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_NamedDataStorageDriver;
@@ -1463,8 +1963,18 @@ class Handle_MDataStd_NamedDataStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_NamedDataStorageDriver::~Handle_MDataStd_NamedDataStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_NamedDataStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_RealArrayStorageDriver;
@@ -1491,8 +2001,18 @@ class Handle_MDataStd_RealArrayStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_RealArrayStorageDriver::~Handle_MDataStd_RealArrayStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_RealArrayStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ExtStringListStorageDriver;
@@ -1519,8 +2039,18 @@ class Handle_MDataStd_ExtStringListStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_ExtStringListStorageDriver::~Handle_MDataStd_ExtStringListStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ExtStringListStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_RelationStorageDriver;
@@ -1547,8 +2077,18 @@ class Handle_MDataStd_RelationStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_RelationStorageDriver::~Handle_MDataStd_RelationStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_RelationStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_BooleanArrayRetrievalDriver;
@@ -1575,8 +2115,18 @@ class Handle_MDataStd_BooleanArrayRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_BooleanArrayRetrievalDriver::~Handle_MDataStd_BooleanArrayRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_BooleanArrayRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_RealListStorageDriver;
@@ -1603,8 +2153,18 @@ class Handle_MDataStd_RealListStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_RealListStorageDriver::~Handle_MDataStd_RealListStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_RealListStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_PlaneStorageDriver;
@@ -1631,8 +2191,18 @@ class Handle_MDataStd_PlaneStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_PlaneStorageDriver::~Handle_MDataStd_PlaneStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_PlaneStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_UAttributeStorageDriver;
@@ -1659,8 +2229,18 @@ class Handle_MDataStd_UAttributeStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_UAttributeStorageDriver::~Handle_MDataStd_UAttributeStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_UAttributeStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_BooleanListStorageDriver;
@@ -1687,8 +2267,18 @@ class Handle_MDataStd_BooleanListStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_BooleanListStorageDriver::~Handle_MDataStd_BooleanListStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_BooleanListStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_VariableStorageDriver;
@@ -1715,8 +2305,18 @@ class Handle_MDataStd_VariableStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_VariableStorageDriver::~Handle_MDataStd_VariableStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_VariableStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_IntegerArrayRetrievalDriver_1;
@@ -1743,8 +2343,18 @@ class Handle_MDataStd_IntegerArrayRetrievalDriver_1 : public Handle_MDF_ARDriver
 };
 %feature("shadow") Handle_MDataStd_IntegerArrayRetrievalDriver_1::~Handle_MDataStd_IntegerArrayRetrievalDriver_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_IntegerArrayRetrievalDriver_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_GeometryRetrievalDriver;
@@ -1771,8 +2381,18 @@ class Handle_MDataStd_GeometryRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_GeometryRetrievalDriver::~Handle_MDataStd_GeometryRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_GeometryRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_RealRetrievalDriver;
@@ -1799,8 +2419,18 @@ class Handle_MDataStd_RealRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_RealRetrievalDriver::~Handle_MDataStd_RealRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_RealRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ByteArrayStorageDriver;
@@ -1827,8 +2457,18 @@ class Handle_MDataStd_ByteArrayStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_ByteArrayStorageDriver::~Handle_MDataStd_ByteArrayStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ByteArrayStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_CommentStorageDriver;
@@ -1855,8 +2495,18 @@ class Handle_MDataStd_CommentStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_CommentStorageDriver::~Handle_MDataStd_CommentStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_CommentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_IntegerArrayStorageDriver;
@@ -1883,8 +2533,18 @@ class Handle_MDataStd_IntegerArrayStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_IntegerArrayStorageDriver::~Handle_MDataStd_IntegerArrayStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_IntegerArrayStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ReferenceListRetrievalDriver;
@@ -1911,8 +2571,18 @@ class Handle_MDataStd_ReferenceListRetrievalDriver : public Handle_MDF_ARDriver 
 };
 %feature("shadow") Handle_MDataStd_ReferenceListRetrievalDriver::~Handle_MDataStd_ReferenceListRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ReferenceListRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_IntegerArrayRetrievalDriver;
@@ -1939,8 +2609,18 @@ class Handle_MDataStd_IntegerArrayRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_IntegerArrayRetrievalDriver::~Handle_MDataStd_IntegerArrayRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_IntegerArrayRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ByteArrayRetrievalDriver;
@@ -1967,8 +2647,18 @@ class Handle_MDataStd_ByteArrayRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_ByteArrayRetrievalDriver::~Handle_MDataStd_ByteArrayRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ByteArrayRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_ConstraintStorageDriver;
@@ -1995,8 +2685,18 @@ class Handle_MDataStd_ConstraintStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_ConstraintStorageDriver::~Handle_MDataStd_ConstraintStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_ConstraintStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_TickStorageDriver;
@@ -2023,8 +2723,18 @@ class Handle_MDataStd_TickStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_TickStorageDriver::~Handle_MDataStd_TickStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_TickStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_TreeNodeStorageDriver;
@@ -2051,8 +2761,18 @@ class Handle_MDataStd_TreeNodeStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDataStd_TreeNodeStorageDriver::~Handle_MDataStd_TreeNodeStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_TreeNodeStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDataStd_VariableRetrievalDriver;
@@ -2079,8 +2799,18 @@ class Handle_MDataStd_VariableRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDataStd_VariableRetrievalDriver::~Handle_MDataStd_VariableRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDataStd_VariableRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ExtStringArrayRetrievalDriver;
@@ -2112,8 +2842,18 @@ class MDataStd_ExtStringArrayRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_ExtStringArrayRetrievalDriver::~MDataStd_ExtStringArrayRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ExtStringArrayRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ExpressionStorageDriver;
@@ -2145,8 +2885,18 @@ class MDataStd_ExpressionStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_ExpressionStorageDriver::~MDataStd_ExpressionStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ExpressionStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_RealStorageDriver;
@@ -2178,8 +2928,18 @@ class MDataStd_RealStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_RealStorageDriver::~MDataStd_RealStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_RealStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ReferenceArrayRetrievalDriver;
@@ -2211,8 +2971,18 @@ class MDataStd_ReferenceArrayRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_ReferenceArrayRetrievalDriver::~MDataStd_ReferenceArrayRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ReferenceArrayRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_PlacementRetrievalDriver;
@@ -2244,8 +3014,18 @@ class MDataStd_PlacementRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_PlacementRetrievalDriver::~MDataStd_PlacementRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_PlacementRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ConstraintRetrievalDriver;
@@ -2277,8 +3057,18 @@ class MDataStd_ConstraintRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_ConstraintRetrievalDriver::~MDataStd_ConstraintRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ConstraintRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_NameRetrievalDriver;
@@ -2310,8 +3100,18 @@ class MDataStd_NameRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_NameRetrievalDriver::~MDataStd_NameRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_NameRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_PointStorageDriver;
@@ -2343,8 +3143,18 @@ class MDataStd_PointStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_PointStorageDriver::~MDataStd_PointStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_PointStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_IntPackedMapStorageDriver;
@@ -2376,8 +3186,18 @@ class MDataStd_IntPackedMapStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_IntPackedMapStorageDriver::~MDataStd_IntPackedMapStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_IntPackedMapStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_TreeNodeStorageDriver;
@@ -2409,8 +3229,18 @@ class MDataStd_TreeNodeStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_TreeNodeStorageDriver::~MDataStd_TreeNodeStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_TreeNodeStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ExtStringArrayStorageDriver;
@@ -2442,8 +3272,18 @@ class MDataStd_ExtStringArrayStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_ExtStringArrayStorageDriver::~MDataStd_ExtStringArrayStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ExtStringArrayStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_AxisStorageDriver;
@@ -2475,8 +3315,18 @@ class MDataStd_AxisStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_AxisStorageDriver::~MDataStd_AxisStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_AxisStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ExpressionRetrievalDriver;
@@ -2508,8 +3358,18 @@ class MDataStd_ExpressionRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_ExpressionRetrievalDriver::~MDataStd_ExpressionRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ExpressionRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_TickRetrievalDriver;
@@ -2541,8 +3401,18 @@ class MDataStd_TickRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_TickRetrievalDriver::~MDataStd_TickRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_TickRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_CommentStorageDriver;
@@ -2574,8 +3444,18 @@ class MDataStd_CommentStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_CommentStorageDriver::~MDataStd_CommentStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_CommentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_UAttributeRetrievalDriver;
@@ -2607,8 +3487,18 @@ class MDataStd_UAttributeRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_UAttributeRetrievalDriver::~MDataStd_UAttributeRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_UAttributeRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_PlaneRetrievalDriver;
@@ -2640,8 +3530,18 @@ class MDataStd_PlaneRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_PlaneRetrievalDriver::~MDataStd_PlaneRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_PlaneRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_PatternStdStorageDriver;
@@ -2673,8 +3573,18 @@ class MDataStd_PatternStdStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_PatternStdStorageDriver::~MDataStd_PatternStdStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_PatternStdStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_DirectoryStorageDriver;
@@ -2706,8 +3616,18 @@ class MDataStd_DirectoryStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_DirectoryStorageDriver::~MDataStd_DirectoryStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_DirectoryStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ReferenceListStorageDriver;
@@ -2739,8 +3659,18 @@ class MDataStd_ReferenceListStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_ReferenceListStorageDriver::~MDataStd_ReferenceListStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ReferenceListStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_BooleanListRetrievalDriver;
@@ -2772,8 +3702,18 @@ class MDataStd_BooleanListRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_BooleanListRetrievalDriver::~MDataStd_BooleanListRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_BooleanListRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_AxisRetrievalDriver;
@@ -2805,8 +3745,18 @@ class MDataStd_AxisRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_AxisRetrievalDriver::~MDataStd_AxisRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_AxisRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_RealArrayRetrievalDriver;
@@ -2838,8 +3788,18 @@ class MDataStd_RealArrayRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_RealArrayRetrievalDriver::~MDataStd_RealArrayRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_RealArrayRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_RealArrayRetrievalDriver_1;
@@ -2871,8 +3831,18 @@ class MDataStd_RealArrayRetrievalDriver_1 : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_RealArrayRetrievalDriver_1::~MDataStd_RealArrayRetrievalDriver_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_RealArrayRetrievalDriver_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_IntegerListRetrievalDriver;
@@ -2904,8 +3874,18 @@ class MDataStd_IntegerListRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_IntegerListRetrievalDriver::~MDataStd_IntegerListRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_IntegerListRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_DirectoryRetrievalDriver;
@@ -2937,8 +3917,18 @@ class MDataStd_DirectoryRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_DirectoryRetrievalDriver::~MDataStd_DirectoryRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_DirectoryRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ByteArrayRetrievalDriver_1;
@@ -2970,8 +3960,18 @@ class MDataStd_ByteArrayRetrievalDriver_1 : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_ByteArrayRetrievalDriver_1::~MDataStd_ByteArrayRetrievalDriver_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ByteArrayRetrievalDriver_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_AsciiStringRetrievalDriver;
@@ -3003,8 +4003,18 @@ class MDataStd_AsciiStringRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_AsciiStringRetrievalDriver::~MDataStd_AsciiStringRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_AsciiStringRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_BooleanListStorageDriver;
@@ -3036,8 +4046,18 @@ class MDataStd_BooleanListStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_BooleanListStorageDriver::~MDataStd_BooleanListStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_BooleanListStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ShapeStorageDriver;
@@ -3069,8 +4089,18 @@ class MDataStd_ShapeStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_ShapeStorageDriver::~MDataStd_ShapeStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ShapeStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_NoteBookRetrievalDriver;
@@ -3102,8 +4132,18 @@ class MDataStd_NoteBookRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_NoteBookRetrievalDriver::~MDataStd_NoteBookRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_NoteBookRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_IntegerListStorageDriver;
@@ -3135,8 +4175,18 @@ class MDataStd_IntegerListStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_IntegerListStorageDriver::~MDataStd_IntegerListStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_IntegerListStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_IntPackedMapRetrievalDriver_1;
@@ -3168,8 +4218,18 @@ class MDataStd_IntPackedMapRetrievalDriver_1 : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_IntPackedMapRetrievalDriver_1::~MDataStd_IntPackedMapRetrievalDriver_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_IntPackedMapRetrievalDriver_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_IntegerArrayStorageDriver;
@@ -3201,8 +4261,18 @@ class MDataStd_IntegerArrayStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_IntegerArrayStorageDriver::~MDataStd_IntegerArrayStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_IntegerArrayStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_IntegerRetrievalDriver;
@@ -3234,8 +4304,18 @@ class MDataStd_IntegerRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_IntegerRetrievalDriver::~MDataStd_IntegerRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_IntegerRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_BooleanArrayStorageDriver;
@@ -3267,8 +4347,18 @@ class MDataStd_BooleanArrayStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_BooleanArrayStorageDriver::~MDataStd_BooleanArrayStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_BooleanArrayStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ReferenceArrayStorageDriver;
@@ -3300,8 +4390,18 @@ class MDataStd_ReferenceArrayStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_ReferenceArrayStorageDriver::~MDataStd_ReferenceArrayStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ReferenceArrayStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ConstraintStorageDriver;
@@ -3333,8 +4433,18 @@ class MDataStd_ConstraintStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_ConstraintStorageDriver::~MDataStd_ConstraintStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ConstraintStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_NamedDataStorageDriver;
@@ -3366,8 +4476,18 @@ class MDataStd_NamedDataStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_NamedDataStorageDriver::~MDataStd_NamedDataStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_NamedDataStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_IntegerStorageDriver;
@@ -3399,8 +4519,18 @@ class MDataStd_IntegerStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_IntegerStorageDriver::~MDataStd_IntegerStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_IntegerStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_NoteBookStorageDriver;
@@ -3432,8 +4562,18 @@ class MDataStd_NoteBookStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_NoteBookStorageDriver::~MDataStd_NoteBookStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_NoteBookStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_UAttributeStorageDriver;
@@ -3465,8 +4605,18 @@ class MDataStd_UAttributeStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_UAttributeStorageDriver::~MDataStd_UAttributeStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_UAttributeStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_PatternStdRetrievalDriver;
@@ -3498,8 +4648,18 @@ class MDataStd_PatternStdRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_PatternStdRetrievalDriver::~MDataStd_PatternStdRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_PatternStdRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_IntPackedMapRetrievalDriver;
@@ -3531,8 +4691,18 @@ class MDataStd_IntPackedMapRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_IntPackedMapRetrievalDriver::~MDataStd_IntPackedMapRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_IntPackedMapRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_PointRetrievalDriver;
@@ -3564,8 +4734,18 @@ class MDataStd_PointRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_PointRetrievalDriver::~MDataStd_PointRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_PointRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ByteArrayRetrievalDriver;
@@ -3597,8 +4777,18 @@ class MDataStd_ByteArrayRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_ByteArrayRetrievalDriver::~MDataStd_ByteArrayRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ByteArrayRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_NameStorageDriver;
@@ -3630,8 +4820,18 @@ class MDataStd_NameStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_NameStorageDriver::~MDataStd_NameStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_NameStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_RelationStorageDriver;
@@ -3663,8 +4863,18 @@ class MDataStd_RelationStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_RelationStorageDriver::~MDataStd_RelationStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_RelationStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ExtStringListRetrievalDriver;
@@ -3696,8 +4906,18 @@ class MDataStd_ExtStringListRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_ExtStringListRetrievalDriver::~MDataStd_ExtStringListRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ExtStringListRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_RealListStorageDriver;
@@ -3729,8 +4949,18 @@ class MDataStd_RealListStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_RealListStorageDriver::~MDataStd_RealListStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_RealListStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_RealRetrievalDriver;
@@ -3762,8 +4992,18 @@ class MDataStd_RealRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_RealRetrievalDriver::~MDataStd_RealRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_RealRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_TickStorageDriver;
@@ -3795,8 +5035,18 @@ class MDataStd_TickStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_TickStorageDriver::~MDataStd_TickStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_TickStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ExtStringArrayRetrievalDriver_1;
@@ -3828,8 +5078,18 @@ class MDataStd_ExtStringArrayRetrievalDriver_1 : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_ExtStringArrayRetrievalDriver_1::~MDataStd_ExtStringArrayRetrievalDriver_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ExtStringArrayRetrievalDriver_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_PlacementStorageDriver;
@@ -3861,8 +5121,18 @@ class MDataStd_PlacementStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_PlacementStorageDriver::~MDataStd_PlacementStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_PlacementStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_TreeNodeRetrievalDriver;
@@ -3894,8 +5164,18 @@ class MDataStd_TreeNodeRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_TreeNodeRetrievalDriver::~MDataStd_TreeNodeRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_TreeNodeRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_RealArrayStorageDriver;
@@ -3927,8 +5207,18 @@ class MDataStd_RealArrayStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_RealArrayStorageDriver::~MDataStd_RealArrayStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_RealArrayStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_CommentRetrievalDriver;
@@ -3960,8 +5250,18 @@ class MDataStd_CommentRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_CommentRetrievalDriver::~MDataStd_CommentRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_CommentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_AsciiStringStorageDriver;
@@ -3993,8 +5293,18 @@ class MDataStd_AsciiStringStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_AsciiStringStorageDriver::~MDataStd_AsciiStringStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_AsciiStringStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_VariableStorageDriver;
@@ -4026,8 +5336,18 @@ class MDataStd_VariableStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_VariableStorageDriver::~MDataStd_VariableStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_VariableStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ReferenceListRetrievalDriver;
@@ -4059,8 +5379,18 @@ class MDataStd_ReferenceListRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_ReferenceListRetrievalDriver::~MDataStd_ReferenceListRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ReferenceListRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_GeometryStorageDriver;
@@ -4092,8 +5422,18 @@ class MDataStd_GeometryStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_GeometryStorageDriver::~MDataStd_GeometryStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_GeometryStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd;
@@ -4125,8 +5465,18 @@ class MDataStd {
 };
 %feature("shadow") MDataStd::~MDataStd %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ByteArrayStorageDriver;
@@ -4158,8 +5508,18 @@ class MDataStd_ByteArrayStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_ByteArrayStorageDriver::~MDataStd_ByteArrayStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ByteArrayStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_IntegerArrayRetrievalDriver_1;
@@ -4191,8 +5551,18 @@ class MDataStd_IntegerArrayRetrievalDriver_1 : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_IntegerArrayRetrievalDriver_1::~MDataStd_IntegerArrayRetrievalDriver_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_IntegerArrayRetrievalDriver_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_RealListRetrievalDriver;
@@ -4224,8 +5594,18 @@ class MDataStd_RealListRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_RealListRetrievalDriver::~MDataStd_RealListRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_RealListRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ShapeRetrievalDriver;
@@ -4257,8 +5637,18 @@ class MDataStd_ShapeRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_ShapeRetrievalDriver::~MDataStd_ShapeRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ShapeRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_BooleanArrayRetrievalDriver;
@@ -4290,8 +5680,18 @@ class MDataStd_BooleanArrayRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_BooleanArrayRetrievalDriver::~MDataStd_BooleanArrayRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_BooleanArrayRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_NamedDataRetrievalDriver;
@@ -4323,8 +5723,18 @@ class MDataStd_NamedDataRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_NamedDataRetrievalDriver::~MDataStd_NamedDataRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_NamedDataRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_IntegerArrayRetrievalDriver;
@@ -4356,8 +5766,18 @@ class MDataStd_IntegerArrayRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_IntegerArrayRetrievalDriver::~MDataStd_IntegerArrayRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_IntegerArrayRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_ExtStringListStorageDriver;
@@ -4389,8 +5809,18 @@ class MDataStd_ExtStringListStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_ExtStringListStorageDriver::~MDataStd_ExtStringListStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_ExtStringListStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_GeometryRetrievalDriver;
@@ -4422,8 +5852,18 @@ class MDataStd_GeometryRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_GeometryRetrievalDriver::~MDataStd_GeometryRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_GeometryRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_RelationRetrievalDriver;
@@ -4455,8 +5895,18 @@ class MDataStd_RelationRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_RelationRetrievalDriver::~MDataStd_RelationRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_RelationRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_PlaneStorageDriver;
@@ -4488,8 +5938,18 @@ class MDataStd_PlaneStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDataStd_PlaneStorageDriver::~MDataStd_PlaneStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_PlaneStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDataStd_VariableRetrievalDriver;
@@ -4521,5 +5981,15 @@ class MDataStd_VariableRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDataStd_VariableRetrievalDriver::~MDataStd_VariableRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDataStd_VariableRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

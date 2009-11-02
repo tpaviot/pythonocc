@@ -54,8 +54,18 @@ class RWStepDimTol_RWDatumFeature {
 };
 %feature("shadow") RWStepDimTol_RWDatumFeature::~RWStepDimTol_RWDatumFeature %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWDatumFeature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWDatumReference;
@@ -73,8 +83,18 @@ class RWStepDimTol_RWDatumReference {
 };
 %feature("shadow") RWStepDimTol_RWDatumReference::~RWStepDimTol_RWDatumReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWDatumReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWParallelismTolerance;
@@ -92,8 +112,18 @@ class RWStepDimTol_RWParallelismTolerance {
 };
 %feature("shadow") RWStepDimTol_RWParallelismTolerance::~RWStepDimTol_RWParallelismTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWParallelismTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWRoundnessTolerance;
@@ -111,8 +141,18 @@ class RWStepDimTol_RWRoundnessTolerance {
 };
 %feature("shadow") RWStepDimTol_RWRoundnessTolerance::~RWStepDimTol_RWRoundnessTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWRoundnessTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWAngularityTolerance;
@@ -130,8 +170,18 @@ class RWStepDimTol_RWAngularityTolerance {
 };
 %feature("shadow") RWStepDimTol_RWAngularityTolerance::~RWStepDimTol_RWAngularityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWAngularityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWSurfaceProfileTolerance;
@@ -149,8 +199,18 @@ class RWStepDimTol_RWSurfaceProfileTolerance {
 };
 %feature("shadow") RWStepDimTol_RWSurfaceProfileTolerance::~RWStepDimTol_RWSurfaceProfileTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWSurfaceProfileTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWCommonDatum;
@@ -168,8 +228,18 @@ class RWStepDimTol_RWCommonDatum {
 };
 %feature("shadow") RWStepDimTol_RWCommonDatum::~RWStepDimTol_RWCommonDatum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWCommonDatum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWPlacedDatumTargetFeature;
@@ -187,8 +257,18 @@ class RWStepDimTol_RWPlacedDatumTargetFeature {
 };
 %feature("shadow") RWStepDimTol_RWPlacedDatumTargetFeature::~RWStepDimTol_RWPlacedDatumTargetFeature %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWPlacedDatumTargetFeature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWPerpendicularityTolerance;
@@ -206,8 +286,18 @@ class RWStepDimTol_RWPerpendicularityTolerance {
 };
 %feature("shadow") RWStepDimTol_RWPerpendicularityTolerance::~RWStepDimTol_RWPerpendicularityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWPerpendicularityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWSymmetryTolerance;
@@ -225,8 +315,18 @@ class RWStepDimTol_RWSymmetryTolerance {
 };
 %feature("shadow") RWStepDimTol_RWSymmetryTolerance::~RWStepDimTol_RWSymmetryTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWSymmetryTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWCircularRunoutTolerance;
@@ -244,8 +344,18 @@ class RWStepDimTol_RWCircularRunoutTolerance {
 };
 %feature("shadow") RWStepDimTol_RWCircularRunoutTolerance::~RWStepDimTol_RWCircularRunoutTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWCircularRunoutTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWPositionTolerance;
@@ -263,8 +373,18 @@ class RWStepDimTol_RWPositionTolerance {
 };
 %feature("shadow") RWStepDimTol_RWPositionTolerance::~RWStepDimTol_RWPositionTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWPositionTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWLineProfileTolerance;
@@ -282,8 +402,18 @@ class RWStepDimTol_RWLineProfileTolerance {
 };
 %feature("shadow") RWStepDimTol_RWLineProfileTolerance::~RWStepDimTol_RWLineProfileTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWLineProfileTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWDatumTarget;
@@ -301,8 +431,18 @@ class RWStepDimTol_RWDatumTarget {
 };
 %feature("shadow") RWStepDimTol_RWDatumTarget::~RWStepDimTol_RWDatumTarget %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWDatumTarget {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWFlatnessTolerance;
@@ -320,8 +460,18 @@ class RWStepDimTol_RWFlatnessTolerance {
 };
 %feature("shadow") RWStepDimTol_RWFlatnessTolerance::~RWStepDimTol_RWFlatnessTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWFlatnessTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
@@ -339,8 +489,18 @@ class RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 };
 %feature("shadow") RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol::~RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWGeometricTolerance;
@@ -358,8 +518,18 @@ class RWStepDimTol_RWGeometricTolerance {
 };
 %feature("shadow") RWStepDimTol_RWGeometricTolerance::~RWStepDimTol_RWGeometricTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWGeometricTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWStraightnessTolerance;
@@ -377,8 +547,18 @@ class RWStepDimTol_RWStraightnessTolerance {
 };
 %feature("shadow") RWStepDimTol_RWStraightnessTolerance::~RWStepDimTol_RWStraightnessTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWStraightnessTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWCylindricityTolerance;
@@ -396,8 +576,18 @@ class RWStepDimTol_RWCylindricityTolerance {
 };
 %feature("shadow") RWStepDimTol_RWCylindricityTolerance::~RWStepDimTol_RWCylindricityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWCylindricityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWGeometricToleranceRelationship;
@@ -415,8 +605,18 @@ class RWStepDimTol_RWGeometricToleranceRelationship {
 };
 %feature("shadow") RWStepDimTol_RWGeometricToleranceRelationship::~RWStepDimTol_RWGeometricToleranceRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWGeometricToleranceRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWCoaxialityTolerance;
@@ -434,8 +634,18 @@ class RWStepDimTol_RWCoaxialityTolerance {
 };
 %feature("shadow") RWStepDimTol_RWCoaxialityTolerance::~RWStepDimTol_RWCoaxialityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWCoaxialityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWTotalRunoutTolerance;
@@ -453,8 +663,18 @@ class RWStepDimTol_RWTotalRunoutTolerance {
 };
 %feature("shadow") RWStepDimTol_RWTotalRunoutTolerance::~RWStepDimTol_RWTotalRunoutTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWTotalRunoutTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWModifiedGeometricTolerance;
@@ -472,8 +692,18 @@ class RWStepDimTol_RWModifiedGeometricTolerance {
 };
 %feature("shadow") RWStepDimTol_RWModifiedGeometricTolerance::~RWStepDimTol_RWModifiedGeometricTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWModifiedGeometricTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWConcentricityTolerance;
@@ -491,8 +721,18 @@ class RWStepDimTol_RWConcentricityTolerance {
 };
 %feature("shadow") RWStepDimTol_RWConcentricityTolerance::~RWStepDimTol_RWConcentricityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWConcentricityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWDatum;
@@ -510,8 +750,18 @@ class RWStepDimTol_RWDatum {
 };
 %feature("shadow") RWStepDimTol_RWDatum::~RWStepDimTol_RWDatum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWDatum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepDimTol_RWGeometricToleranceWithDatumReference;
@@ -529,5 +779,15 @@ class RWStepDimTol_RWGeometricToleranceWithDatumReference {
 };
 %feature("shadow") RWStepDimTol_RWGeometricToleranceWithDatumReference::~RWStepDimTol_RWGeometricToleranceWithDatumReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepDimTol_RWGeometricToleranceWithDatumReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

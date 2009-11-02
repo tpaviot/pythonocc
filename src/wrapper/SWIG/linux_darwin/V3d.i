@@ -182,8 +182,18 @@ class Handle_V3d_Light : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_V3d_Light::~Handle_V3d_Light %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_Light {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_PositionLight;
@@ -210,8 +220,18 @@ class Handle_V3d_PositionLight : public Handle_V3d_Light {
 };
 %feature("shadow") Handle_V3d_PositionLight::~Handle_V3d_PositionLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_PositionLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_PositionalLight;
@@ -238,8 +258,18 @@ class Handle_V3d_PositionalLight : public Handle_V3d_PositionLight {
 };
 %feature("shadow") Handle_V3d_PositionalLight::~Handle_V3d_PositionalLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_PositionalLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_UnMapped;
@@ -266,8 +296,18 @@ class Handle_V3d_UnMapped : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_V3d_UnMapped::~Handle_V3d_UnMapped %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_UnMapped {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_RectangularGrid;
@@ -294,8 +334,18 @@ class Handle_V3d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 };
 %feature("shadow") Handle_V3d_RectangularGrid::~Handle_V3d_RectangularGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_RectangularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_LayerMgr;
@@ -322,8 +372,18 @@ class Handle_V3d_LayerMgr : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_V3d_LayerMgr::~Handle_V3d_LayerMgr %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_LayerMgr {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_SpotLight;
@@ -350,8 +410,18 @@ class Handle_V3d_SpotLight : public Handle_V3d_PositionLight {
 };
 %feature("shadow") Handle_V3d_SpotLight::~Handle_V3d_SpotLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_SpotLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_View;
@@ -378,8 +448,18 @@ class Handle_V3d_View : public Handle_Viewer_View {
 };
 %feature("shadow") Handle_V3d_View::~Handle_V3d_View %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_View {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_PerspectiveView;
@@ -406,8 +486,18 @@ class Handle_V3d_PerspectiveView : public Handle_V3d_View {
 };
 %feature("shadow") Handle_V3d_PerspectiveView::~Handle_V3d_PerspectiveView %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_PerspectiveView {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_Plane;
@@ -434,8 +524,18 @@ class Handle_V3d_Plane : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_V3d_Plane::~Handle_V3d_Plane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_Plane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_Camera;
@@ -462,8 +562,18 @@ class Handle_V3d_Camera : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_V3d_Camera::~Handle_V3d_Camera %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_Camera {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_OrthographicView;
@@ -490,8 +600,18 @@ class Handle_V3d_OrthographicView : public Handle_V3d_View {
 };
 %feature("shadow") Handle_V3d_OrthographicView::~Handle_V3d_OrthographicView %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_OrthographicView {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_Viewer;
@@ -518,8 +638,18 @@ class Handle_V3d_Viewer : public Handle_Viewer_Viewer {
 };
 %feature("shadow") Handle_V3d_Viewer::~Handle_V3d_Viewer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_Viewer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_ColorScale;
@@ -546,8 +676,18 @@ class Handle_V3d_ColorScale : public Handle_Aspect_ColorScale {
 };
 %feature("shadow") Handle_V3d_ColorScale::~Handle_V3d_ColorScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_ColorScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_DirectionalLight;
@@ -574,8 +714,18 @@ class Handle_V3d_DirectionalLight : public Handle_V3d_PositionLight {
 };
 %feature("shadow") Handle_V3d_DirectionalLight::~Handle_V3d_DirectionalLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_DirectionalLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_CircularGrid;
@@ -602,8 +752,18 @@ class Handle_V3d_CircularGrid : public Handle_Aspect_CircularGrid {
 };
 %feature("shadow") Handle_V3d_CircularGrid::~Handle_V3d_CircularGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_CircularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_AmbientLight;
@@ -630,8 +790,18 @@ class Handle_V3d_AmbientLight : public Handle_V3d_Light {
 };
 %feature("shadow") Handle_V3d_AmbientLight::~Handle_V3d_AmbientLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_V3d_AmbientLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_Light;
@@ -671,8 +841,18 @@ class V3d_Light : public MMgt_TShared {
 };
 %feature("shadow") V3d_Light::~V3d_Light %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_Light {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_AmbientLight;
@@ -694,8 +874,18 @@ class V3d_AmbientLight : public V3d_Light {
 };
 %feature("shadow") V3d_AmbientLight::~V3d_AmbientLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_AmbientLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_Plane;
@@ -729,8 +919,18 @@ class V3d_Plane : public MMgt_TShared {
 };
 %feature("shadow") V3d_Plane::~V3d_Plane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_Plane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_Camera;
@@ -796,8 +996,18 @@ class V3d_Camera : public MMgt_TShared {
 };
 %feature("shadow") V3d_Camera::~V3d_Camera %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_Camera {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_ColorScale;
@@ -839,8 +1049,18 @@ class V3d_ColorScale : public Aspect_ColorScale {
 };
 %feature("shadow") V3d_ColorScale::~V3d_ColorScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_ColorScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_PositionLight;
@@ -888,8 +1108,18 @@ class V3d_PositionLight : public V3d_Light {
 };
 %feature("shadow") V3d_PositionLight::~V3d_PositionLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_PositionLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_RectangularGrid;
@@ -925,8 +1155,18 @@ class V3d_RectangularGrid : public Aspect_RectangularGrid {
 };
 %feature("shadow") V3d_RectangularGrid::~V3d_RectangularGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_RectangularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_SpotLight;
@@ -976,8 +1216,18 @@ class V3d_SpotLight : public V3d_PositionLight {
 };
 %feature("shadow") V3d_SpotLight::~V3d_SpotLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_SpotLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_View;
@@ -1369,8 +1619,18 @@ class V3d_View : public Viewer_View {
 };
 %feature("shadow") V3d_View::~V3d_View %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_View {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_OrthographicView;
@@ -1398,8 +1658,18 @@ class V3d_OrthographicView : public V3d_View {
 };
 %feature("shadow") V3d_OrthographicView::~V3d_OrthographicView %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_OrthographicView {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d;
@@ -1425,8 +1695,18 @@ class V3d {
 };
 %feature("shadow") V3d::~V3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_Viewer;
@@ -1632,8 +1912,18 @@ class V3d_Viewer : public Viewer_Viewer {
 };
 %feature("shadow") V3d_Viewer::~V3d_Viewer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_Viewer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_CircularGrid;
@@ -1669,8 +1959,18 @@ class V3d_CircularGrid : public Aspect_CircularGrid {
 };
 %feature("shadow") V3d_CircularGrid::~V3d_CircularGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_CircularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_UnMapped;
@@ -1702,8 +2002,18 @@ class V3d_UnMapped : public Standard_DomainError {
 };
 %feature("shadow") V3d_UnMapped::~V3d_UnMapped %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_UnMapped {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_LayerMgr;
@@ -1743,8 +2053,18 @@ class V3d_LayerMgr : public MMgt_TShared {
 };
 %feature("shadow") V3d_LayerMgr::~V3d_LayerMgr %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_LayerMgr {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_PositionalLight;
@@ -1780,8 +2100,18 @@ class V3d_PositionalLight : public V3d_PositionLight {
 };
 %feature("shadow") V3d_PositionalLight::~V3d_PositionalLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_PositionalLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_ListOfTransient;
@@ -1797,8 +2127,18 @@ class V3d_ListOfTransient : public TColStd_ListOfTransient {
 };
 %feature("shadow") V3d_ListOfTransient::~V3d_ListOfTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_ListOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_PerspectiveView;
@@ -1834,8 +2174,18 @@ class V3d_PerspectiveView : public V3d_View {
 };
 %feature("shadow") V3d_PerspectiveView::~V3d_PerspectiveView %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_PerspectiveView {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor V3d_DirectionalLight;
@@ -1877,5 +2227,15 @@ class V3d_DirectionalLight : public V3d_PositionLight {
 };
 %feature("shadow") V3d_DirectionalLight::~V3d_DirectionalLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend V3d_DirectionalLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

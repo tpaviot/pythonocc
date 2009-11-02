@@ -63,8 +63,18 @@ class Handle_Expr_ExprFailure : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Expr_ExprFailure::~Handle_Expr_ExprFailure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_ExprFailure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_NotAssigned;
@@ -91,8 +101,18 @@ class Handle_Expr_NotAssigned : public Handle_Expr_ExprFailure {
 };
 %feature("shadow") Handle_Expr_NotAssigned::~Handle_Expr_NotAssigned %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_NotAssigned {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_GeneralExpression;
@@ -119,8 +139,18 @@ class Handle_Expr_GeneralExpression : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Expr_GeneralExpression::~Handle_Expr_GeneralExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_GeneralExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_UnaryExpression;
@@ -147,8 +177,18 @@ class Handle_Expr_UnaryExpression : public Handle_Expr_GeneralExpression {
 };
 %feature("shadow") Handle_Expr_UnaryExpression::~Handle_Expr_UnaryExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_UnaryExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_LogOf10;
@@ -175,8 +215,18 @@ class Handle_Expr_LogOf10 : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_LogOf10::~Handle_Expr_LogOf10 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_LogOf10 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_SquareRoot;
@@ -203,8 +253,18 @@ class Handle_Expr_SquareRoot : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_SquareRoot::~Handle_Expr_SquareRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_SquareRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Tanh;
@@ -231,8 +291,18 @@ class Handle_Expr_Tanh : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_Tanh::~Handle_Expr_Tanh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Tanh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_ArcSine;
@@ -259,8 +329,18 @@ class Handle_Expr_ArcSine : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_ArcSine::~Handle_Expr_ArcSine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_ArcSine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_UnaryMinus;
@@ -287,8 +367,18 @@ class Handle_Expr_UnaryMinus : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_UnaryMinus::~Handle_Expr_UnaryMinus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_UnaryMinus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_NotEvaluable;
@@ -315,8 +405,18 @@ class Handle_Expr_NotEvaluable : public Handle_Expr_ExprFailure {
 };
 %feature("shadow") Handle_Expr_NotEvaluable::~Handle_Expr_NotEvaluable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_NotEvaluable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_NumericValue;
@@ -343,8 +443,18 @@ class Handle_Expr_NumericValue : public Handle_Expr_GeneralExpression {
 };
 %feature("shadow") Handle_Expr_NumericValue::~Handle_Expr_NumericValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_NumericValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_InvalidAssignment;
@@ -371,8 +481,18 @@ class Handle_Expr_InvalidAssignment : public Handle_Expr_ExprFailure {
 };
 %feature("shadow") Handle_Expr_InvalidAssignment::~Handle_Expr_InvalidAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_InvalidAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_ArcCosine;
@@ -399,8 +519,18 @@ class Handle_Expr_ArcCosine : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_ArcCosine::~Handle_Expr_ArcCosine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_ArcCosine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_GeneralRelation;
@@ -427,8 +557,18 @@ class Handle_Expr_GeneralRelation : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Expr_GeneralRelation::~Handle_Expr_GeneralRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_GeneralRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_SingleRelation;
@@ -455,8 +595,18 @@ class Handle_Expr_SingleRelation : public Handle_Expr_GeneralRelation {
 };
 %feature("shadow") Handle_Expr_SingleRelation::~Handle_Expr_SingleRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_SingleRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Different;
@@ -483,8 +633,18 @@ class Handle_Expr_Different : public Handle_Expr_SingleRelation {
 };
 %feature("shadow") Handle_Expr_Different::~Handle_Expr_Different %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Different {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_BinaryExpression;
@@ -511,8 +671,18 @@ class Handle_Expr_BinaryExpression : public Handle_Expr_GeneralExpression {
 };
 %feature("shadow") Handle_Expr_BinaryExpression::~Handle_Expr_BinaryExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_BinaryExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Division;
@@ -539,8 +709,18 @@ class Handle_Expr_Division : public Handle_Expr_BinaryExpression {
 };
 %feature("shadow") Handle_Expr_Division::~Handle_Expr_Division %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Division {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_ArgSinh;
@@ -567,8 +747,18 @@ class Handle_Expr_ArgSinh : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_ArgSinh::~Handle_Expr_ArgSinh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_ArgSinh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_PolyExpression;
@@ -595,8 +785,18 @@ class Handle_Expr_PolyExpression : public Handle_Expr_GeneralExpression {
 };
 %feature("shadow") Handle_Expr_PolyExpression::~Handle_Expr_PolyExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_PolyExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Exponential;
@@ -623,8 +823,18 @@ class Handle_Expr_Exponential : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_Exponential::~Handle_Expr_Exponential %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Exponential {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Absolute;
@@ -651,8 +861,18 @@ class Handle_Expr_Absolute : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_Absolute::~Handle_Expr_Absolute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Absolute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_NamedExpression;
@@ -679,8 +899,18 @@ class Handle_Expr_NamedExpression : public Handle_Expr_GeneralExpression {
 };
 %feature("shadow") Handle_Expr_NamedExpression::~Handle_Expr_NamedExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_NamedExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_NamedConstant;
@@ -707,8 +937,18 @@ class Handle_Expr_NamedConstant : public Handle_Expr_NamedExpression {
 };
 %feature("shadow") Handle_Expr_NamedConstant::~Handle_Expr_NamedConstant %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_NamedConstant {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Difference;
@@ -735,8 +975,18 @@ class Handle_Expr_Difference : public Handle_Expr_BinaryExpression {
 };
 %feature("shadow") Handle_Expr_Difference::~Handle_Expr_Difference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Difference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_NamedUnknown;
@@ -763,8 +1013,18 @@ class Handle_Expr_NamedUnknown : public Handle_Expr_NamedExpression {
 };
 %feature("shadow") Handle_Expr_NamedUnknown::~Handle_Expr_NamedUnknown %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_NamedUnknown {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Sinh;
@@ -791,8 +1051,18 @@ class Handle_Expr_Sinh : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_Sinh::~Handle_Expr_Sinh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Sinh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Sum;
@@ -819,8 +1089,18 @@ class Handle_Expr_Sum : public Handle_Expr_PolyExpression {
 };
 %feature("shadow") Handle_Expr_Sum::~Handle_Expr_Sum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Sum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_LessThan;
@@ -847,8 +1127,18 @@ class Handle_Expr_LessThan : public Handle_Expr_SingleRelation {
 };
 %feature("shadow") Handle_Expr_LessThan::~Handle_Expr_LessThan %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_LessThan {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Sign;
@@ -875,8 +1165,18 @@ class Handle_Expr_Sign : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_Sign::~Handle_Expr_Sign %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Sign {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_InvalidFunction;
@@ -903,8 +1203,18 @@ class Handle_Expr_InvalidFunction : public Handle_Expr_ExprFailure {
 };
 %feature("shadow") Handle_Expr_InvalidFunction::~Handle_Expr_InvalidFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_InvalidFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_GreaterThanOrEqual;
@@ -931,8 +1241,18 @@ class Handle_Expr_GreaterThanOrEqual : public Handle_Expr_SingleRelation {
 };
 %feature("shadow") Handle_Expr_GreaterThanOrEqual::~Handle_Expr_GreaterThanOrEqual %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_GreaterThanOrEqual {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Tangent;
@@ -959,8 +1279,18 @@ class Handle_Expr_Tangent : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_Tangent::~Handle_Expr_Tangent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Tangent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Equal;
@@ -987,8 +1317,18 @@ class Handle_Expr_Equal : public Handle_Expr_SingleRelation {
 };
 %feature("shadow") Handle_Expr_Equal::~Handle_Expr_Equal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Equal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Sine;
@@ -1015,8 +1355,18 @@ class Handle_Expr_Sine : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_Sine::~Handle_Expr_Sine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Sine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression;
@@ -1043,8 +1393,18 @@ class Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression : public Handle_TCol
 };
 %feature("shadow") Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression::~Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_InvalidOperand;
@@ -1071,8 +1431,18 @@ class Handle_Expr_InvalidOperand : public Handle_Expr_ExprFailure {
 };
 %feature("shadow") Handle_Expr_InvalidOperand::~Handle_Expr_InvalidOperand %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_InvalidOperand {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_ArgCosh;
@@ -1099,8 +1469,18 @@ class Handle_Expr_ArgCosh : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_ArgCosh::~Handle_Expr_ArgCosh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_ArgCosh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_PolyFunction;
@@ -1127,8 +1507,18 @@ class Handle_Expr_PolyFunction : public Handle_Expr_PolyExpression {
 };
 %feature("shadow") Handle_Expr_PolyFunction::~Handle_Expr_PolyFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_PolyFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_ArcTangent;
@@ -1155,8 +1545,18 @@ class Handle_Expr_ArcTangent : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_ArcTangent::~Handle_Expr_ArcTangent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_ArcTangent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_LogOfe;
@@ -1183,8 +1583,18 @@ class Handle_Expr_LogOfe : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_LogOfe::~Handle_Expr_LogOfe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_LogOfe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_UnaryFunction;
@@ -1211,8 +1621,18 @@ class Handle_Expr_UnaryFunction : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_UnaryFunction::~Handle_Expr_UnaryFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_UnaryFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_GreaterThan;
@@ -1239,8 +1659,18 @@ class Handle_Expr_GreaterThan : public Handle_Expr_SingleRelation {
 };
 %feature("shadow") Handle_Expr_GreaterThan::~Handle_Expr_GreaterThan %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_GreaterThan {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Cosh;
@@ -1267,8 +1697,18 @@ class Handle_Expr_Cosh : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_Cosh::~Handle_Expr_Cosh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Cosh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown;
@@ -1295,8 +1735,18 @@ class Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown : public Handle_TCollection_
 };
 %feature("shadow") Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown::~Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Exponentiate;
@@ -1323,8 +1773,18 @@ class Handle_Expr_Exponentiate : public Handle_Expr_BinaryExpression {
 };
 %feature("shadow") Handle_Expr_Exponentiate::~Handle_Expr_Exponentiate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Exponentiate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_GeneralFunction;
@@ -1351,8 +1811,18 @@ class Handle_Expr_GeneralFunction : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Expr_GeneralFunction::~Handle_Expr_GeneralFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_GeneralFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_NamedFunction;
@@ -1379,8 +1849,18 @@ class Handle_Expr_NamedFunction : public Handle_Expr_GeneralFunction {
 };
 %feature("shadow") Handle_Expr_NamedFunction::~Handle_Expr_NamedFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_NamedFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_SystemRelation;
@@ -1407,8 +1887,18 @@ class Handle_Expr_SystemRelation : public Handle_Expr_GeneralRelation {
 };
 %feature("shadow") Handle_Expr_SystemRelation::~Handle_Expr_SystemRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_SystemRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_LessThanOrEqual;
@@ -1435,8 +1925,18 @@ class Handle_Expr_LessThanOrEqual : public Handle_Expr_SingleRelation {
 };
 %feature("shadow") Handle_Expr_LessThanOrEqual::~Handle_Expr_LessThanOrEqual %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_LessThanOrEqual {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_FunctionDerivative;
@@ -1463,8 +1963,18 @@ class Handle_Expr_FunctionDerivative : public Handle_Expr_GeneralFunction {
 };
 %feature("shadow") Handle_Expr_FunctionDerivative::~Handle_Expr_FunctionDerivative %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_FunctionDerivative {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_BinaryFunction;
@@ -1491,8 +2001,18 @@ class Handle_Expr_BinaryFunction : public Handle_Expr_BinaryExpression {
 };
 %feature("shadow") Handle_Expr_BinaryFunction::~Handle_Expr_BinaryFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_BinaryFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation;
@@ -1519,8 +2039,18 @@ class Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation : public Handle_TColle
 };
 %feature("shadow") Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation::~Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Product;
@@ -1547,8 +2077,18 @@ class Handle_Expr_Product : public Handle_Expr_PolyExpression {
 };
 %feature("shadow") Handle_Expr_Product::~Handle_Expr_Product %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Product {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_ArgTanh;
@@ -1575,8 +2115,18 @@ class Handle_Expr_ArgTanh : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_ArgTanh::~Handle_Expr_ArgTanh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_ArgTanh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Cosine;
@@ -1603,8 +2153,18 @@ class Handle_Expr_Cosine : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_Cosine::~Handle_Expr_Cosine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Cosine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Expr_Square;
@@ -1631,8 +2191,18 @@ class Handle_Expr_Square : public Handle_Expr_UnaryExpression {
 };
 %feature("shadow") Handle_Expr_Square::~Handle_Expr_Square %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Expr_Square {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_MapOfNamedUnknown;
@@ -1666,8 +2236,18 @@ class Expr_MapOfNamedUnknown : public TCollection_BasicMap {
 };
 %feature("shadow") Expr_MapOfNamedUnknown::~Expr_MapOfNamedUnknown %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_MapOfNamedUnknown {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_IndexedMapNodeOfMapOfNamedUnknown;
@@ -1707,8 +2287,18 @@ class Expr_IndexedMapNodeOfMapOfNamedUnknown : public TCollection_MapNode {
 };
 %feature("shadow") Expr_IndexedMapNodeOfMapOfNamedUnknown::~Expr_IndexedMapNodeOfMapOfNamedUnknown %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_IndexedMapNodeOfMapOfNamedUnknown {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_GeneralExpression;
@@ -1762,8 +2352,18 @@ class Expr_GeneralExpression : public MMgt_TShared {
 };
 %feature("shadow") Expr_GeneralExpression::~Expr_GeneralExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_GeneralExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_BinaryExpression;
@@ -1791,8 +2391,18 @@ class Expr_BinaryExpression : public Expr_GeneralExpression {
 };
 %feature("shadow") Expr_BinaryExpression::~Expr_BinaryExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_BinaryExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Division;
@@ -1814,8 +2424,18 @@ class Expr_Division : public Expr_BinaryExpression {
 };
 %feature("shadow") Expr_Division::~Expr_Division %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Division {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_UnaryExpression;
@@ -1853,8 +2473,18 @@ class Expr_UnaryExpression : public Expr_GeneralExpression {
 };
 %feature("shadow") Expr_UnaryExpression::~Expr_UnaryExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_UnaryExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Sinh;
@@ -1890,8 +2520,18 @@ class Expr_Sinh : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_Sinh::~Expr_Sinh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Sinh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_ArgSinh;
@@ -1929,8 +2569,18 @@ class Expr_ArgSinh : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_ArgSinh::~Expr_ArgSinh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_ArgSinh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Exponential;
@@ -1968,8 +2618,18 @@ class Expr_Exponential : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_Exponential::~Expr_Exponential %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Exponential {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_GeneralRelation;
@@ -2013,8 +2673,18 @@ class Expr_GeneralRelation : public MMgt_TShared {
 };
 %feature("shadow") Expr_GeneralRelation::~Expr_GeneralRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_GeneralRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_SingleRelation;
@@ -2042,8 +2712,18 @@ class Expr_SingleRelation : public Expr_GeneralRelation {
 };
 %feature("shadow") Expr_SingleRelation::~Expr_SingleRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_SingleRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_GreaterThanOrEqual;
@@ -2065,8 +2745,18 @@ class Expr_GreaterThanOrEqual : public Expr_SingleRelation {
 };
 %feature("shadow") Expr_GreaterThanOrEqual::~Expr_GreaterThanOrEqual %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_GreaterThanOrEqual {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Cosine;
@@ -2104,8 +2794,18 @@ class Expr_Cosine : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_Cosine::~Expr_Cosine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Cosine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_ArcCosine;
@@ -2143,8 +2843,18 @@ class Expr_ArcCosine : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_ArcCosine::~Expr_ArcCosine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_ArcCosine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Tanh;
@@ -2182,8 +2892,18 @@ class Expr_Tanh : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_Tanh::~Expr_Tanh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Tanh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_LessThan;
@@ -2217,8 +2937,18 @@ class Expr_LessThan : public Expr_SingleRelation {
 };
 %feature("shadow") Expr_LessThan::~Expr_LessThan %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_LessThan {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_LogOfe;
@@ -2256,8 +2986,18 @@ class Expr_LogOfe : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_LogOfe::~Expr_LogOfe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_LogOfe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_BinaryFunction;
@@ -2297,8 +3037,18 @@ class Expr_BinaryFunction : public Expr_BinaryExpression {
 };
 %feature("shadow") Expr_BinaryFunction::~Expr_BinaryFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_BinaryFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_RelationIterator;
@@ -2316,8 +3066,18 @@ class Expr_RelationIterator {
 };
 %feature("shadow") Expr_RelationIterator::~Expr_RelationIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_RelationIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_ExprFailure;
@@ -2349,8 +3109,18 @@ class Expr_ExprFailure : public Standard_Failure {
 };
 %feature("shadow") Expr_ExprFailure::~Expr_ExprFailure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_ExprFailure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_NotEvaluable;
@@ -2376,8 +3146,18 @@ class Expr_NotEvaluable : public Expr_ExprFailure {
 };
 %feature("shadow") Expr_NotEvaluable::~Expr_NotEvaluable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_NotEvaluable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr;
@@ -2397,8 +3177,18 @@ class Expr {
 };
 %feature("shadow") Expr::~Expr %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_SequenceNodeOfSequenceOfGeneralRelation;
@@ -2424,8 +3214,18 @@ class Expr_SequenceNodeOfSequenceOfGeneralRelation : public TCollection_SeqNode 
 };
 %feature("shadow") Expr_SequenceNodeOfSequenceOfGeneralRelation::~Expr_SequenceNodeOfSequenceOfGeneralRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_SequenceNodeOfSequenceOfGeneralRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_NamedExpression;
@@ -2457,8 +3257,18 @@ class Expr_NamedExpression : public Expr_GeneralExpression {
 };
 %feature("shadow") Expr_NamedExpression::~Expr_NamedExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_NamedExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_NamedConstant;
@@ -2506,8 +3316,18 @@ class Expr_NamedConstant : public Expr_NamedExpression {
 };
 %feature("shadow") Expr_NamedConstant::~Expr_NamedConstant %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_NamedConstant {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_UnaryMinus;
@@ -2547,8 +3367,18 @@ class Expr_UnaryMinus : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_UnaryMinus::~Expr_UnaryMinus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_UnaryMinus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_PolyExpression;
@@ -2588,8 +3418,18 @@ class Expr_PolyExpression : public Expr_GeneralExpression {
 };
 %feature("shadow") Expr_PolyExpression::~Expr_PolyExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_PolyExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_PolyFunction;
@@ -2627,8 +3467,18 @@ class Expr_PolyFunction : public Expr_PolyExpression {
 };
 %feature("shadow") Expr_PolyFunction::~Expr_PolyFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_PolyFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_ArcSine;
@@ -2666,8 +3516,18 @@ class Expr_ArcSine : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_ArcSine::~Expr_ArcSine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_ArcSine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_UnaryFunction;
@@ -2707,8 +3567,18 @@ class Expr_UnaryFunction : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_UnaryFunction::~Expr_UnaryFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_UnaryFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_SquareRoot;
@@ -2746,8 +3616,18 @@ class Expr_SquareRoot : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_SquareRoot::~Expr_SquareRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_SquareRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_SequenceOfGeneralRelation;
@@ -2801,8 +3681,18 @@ class Expr_SequenceOfGeneralRelation : public TCollection_BaseSequence {
 };
 %feature("shadow") Expr_SequenceOfGeneralRelation::~Expr_SequenceOfGeneralRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_SequenceOfGeneralRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_NamedUnknown;
@@ -2856,8 +3746,18 @@ class Expr_NamedUnknown : public Expr_NamedExpression {
 };
 %feature("shadow") Expr_NamedUnknown::~Expr_NamedUnknown %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_NamedUnknown {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_ArgCosh;
@@ -2895,8 +3795,18 @@ class Expr_ArgCosh : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_ArgCosh::~Expr_ArgCosh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_ArgCosh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_SystemRelation;
@@ -2946,8 +3856,18 @@ class Expr_SystemRelation : public Expr_GeneralRelation {
 };
 %feature("shadow") Expr_SystemRelation::~Expr_SystemRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_SystemRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Different;
@@ -2981,8 +3901,18 @@ class Expr_Different : public Expr_SingleRelation {
 };
 %feature("shadow") Expr_Different::~Expr_Different %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Different {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Array1OfNamedUnknown;
@@ -3022,8 +3952,18 @@ class Expr_Array1OfNamedUnknown {
 };
 %feature("shadow") Expr_Array1OfNamedUnknown::~Expr_Array1OfNamedUnknown %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Array1OfNamedUnknown {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_InvalidFunction;
@@ -3055,8 +3995,18 @@ class Expr_InvalidFunction : public Expr_ExprFailure {
 };
 %feature("shadow") Expr_InvalidFunction::~Expr_InvalidFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_InvalidFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Product;
@@ -3096,8 +4046,18 @@ class Expr_Product : public Expr_PolyExpression {
 };
 %feature("shadow") Expr_Product::~Expr_Product %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Product {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Equal;
@@ -3131,8 +4091,18 @@ class Expr_Equal : public Expr_SingleRelation {
 };
 %feature("shadow") Expr_Equal::~Expr_Equal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Equal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_GeneralFunction;
@@ -3172,8 +4142,18 @@ class Expr_GeneralFunction : public MMgt_TShared {
 };
 %feature("shadow") Expr_GeneralFunction::~Expr_GeneralFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_GeneralFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_NamedFunction;
@@ -3205,8 +4185,18 @@ class Expr_NamedFunction : public Expr_GeneralFunction {
 };
 %feature("shadow") Expr_NamedFunction::~Expr_NamedFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_NamedFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_SequenceNodeOfSequenceOfGeneralExpression;
@@ -3232,8 +4222,18 @@ class Expr_SequenceNodeOfSequenceOfGeneralExpression : public TCollection_SeqNod
 };
 %feature("shadow") Expr_SequenceNodeOfSequenceOfGeneralExpression::~Expr_SequenceNodeOfSequenceOfGeneralExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_SequenceNodeOfSequenceOfGeneralExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Tangent;
@@ -3271,8 +4271,18 @@ class Expr_Tangent : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_Tangent::~Expr_Tangent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Tangent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Array1OfGeneralExpression;
@@ -3312,8 +4322,18 @@ class Expr_Array1OfGeneralExpression {
 };
 %feature("shadow") Expr_Array1OfGeneralExpression::~Expr_Array1OfGeneralExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Array1OfGeneralExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_InvalidOperand;
@@ -3345,8 +4365,18 @@ class Expr_InvalidOperand : public Expr_ExprFailure {
 };
 %feature("shadow") Expr_InvalidOperand::~Expr_InvalidOperand %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_InvalidOperand {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_UnknownIterator;
@@ -3364,8 +4394,18 @@ class Expr_UnknownIterator {
 };
 %feature("shadow") Expr_UnknownIterator::~Expr_UnknownIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_UnknownIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_SequenceOfGeneralExpression;
@@ -3419,8 +4459,18 @@ class Expr_SequenceOfGeneralExpression : public TCollection_BaseSequence {
 };
 %feature("shadow") Expr_SequenceOfGeneralExpression::~Expr_SequenceOfGeneralExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_SequenceOfGeneralExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Array1OfSingleRelation;
@@ -3460,8 +4510,18 @@ class Expr_Array1OfSingleRelation {
 };
 %feature("shadow") Expr_Array1OfSingleRelation::~Expr_Array1OfSingleRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Array1OfSingleRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_ArgTanh;
@@ -3499,8 +4559,18 @@ class Expr_ArgTanh : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_ArgTanh::~Expr_ArgTanh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_ArgTanh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Sum;
@@ -3542,8 +4612,18 @@ class Expr_Sum : public Expr_PolyExpression {
 };
 %feature("shadow") Expr_Sum::~Expr_Sum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Sum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Difference;
@@ -3583,8 +4663,18 @@ class Expr_Difference : public Expr_BinaryExpression {
 };
 %feature("shadow") Expr_Difference::~Expr_Difference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Difference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Square;
@@ -3622,8 +4712,18 @@ class Expr_Square : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_Square::~Expr_Square %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Square {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_GreaterThan;
@@ -3657,8 +4757,18 @@ class Expr_GreaterThan : public Expr_SingleRelation {
 };
 %feature("shadow") Expr_GreaterThan::~Expr_GreaterThan %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_GreaterThan {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Exponentiate;
@@ -3696,8 +4806,18 @@ class Expr_Exponentiate : public Expr_BinaryExpression {
 };
 %feature("shadow") Expr_Exponentiate::~Expr_Exponentiate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Exponentiate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_RUIterator;
@@ -3715,8 +4835,18 @@ class Expr_RUIterator {
 };
 %feature("shadow") Expr_RUIterator::~Expr_RUIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_RUIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_NotAssigned;
@@ -3748,8 +4878,18 @@ class Expr_NotAssigned : public Expr_ExprFailure {
 };
 %feature("shadow") Expr_NotAssigned::~Expr_NotAssigned %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_NotAssigned {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_InvalidAssignment;
@@ -3781,8 +4921,18 @@ class Expr_InvalidAssignment : public Expr_ExprFailure {
 };
 %feature("shadow") Expr_InvalidAssignment::~Expr_InvalidAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_InvalidAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_ArcTangent;
@@ -3820,8 +4970,18 @@ class Expr_ArcTangent : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_ArcTangent::~Expr_ArcTangent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_ArcTangent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Cosh;
@@ -3859,8 +5019,18 @@ class Expr_Cosh : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_Cosh::~Expr_Cosh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Cosh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_FunctionDerivative;
@@ -3912,8 +5082,18 @@ class Expr_FunctionDerivative : public Expr_GeneralFunction {
 };
 %feature("shadow") Expr_FunctionDerivative::~Expr_FunctionDerivative %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_FunctionDerivative {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Absolute;
@@ -3951,8 +5131,18 @@ class Expr_Absolute : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_Absolute::~Expr_Absolute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Absolute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_LogOf10;
@@ -3990,8 +5180,18 @@ class Expr_LogOf10 : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_LogOf10::~Expr_LogOf10 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_LogOf10 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_NumericValue;
@@ -4047,8 +5247,18 @@ class Expr_NumericValue : public Expr_GeneralExpression {
 };
 %feature("shadow") Expr_NumericValue::~Expr_NumericValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_NumericValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_Sine;
@@ -4086,8 +5296,18 @@ class Expr_Sine : public Expr_UnaryExpression {
 };
 %feature("shadow") Expr_Sine::~Expr_Sine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_Sine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Expr_LessThanOrEqual;
@@ -4121,5 +5341,15 @@ class Expr_LessThanOrEqual : public Expr_SingleRelation {
 };
 %feature("shadow") Expr_LessThanOrEqual::~Expr_LessThanOrEqual %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Expr_LessThanOrEqual {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

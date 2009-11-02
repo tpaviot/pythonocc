@@ -62,5 +62,15 @@ class BRepProj_Projection {
 };
 %feature("shadow") BRepProj_Projection::~BRepProj_Projection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepProj_Projection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

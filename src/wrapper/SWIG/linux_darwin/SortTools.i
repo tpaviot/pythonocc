@@ -50,8 +50,18 @@ class SortTools_QuickSortOfReal {
 };
 %feature("shadow") SortTools_QuickSortOfReal::~SortTools_QuickSortOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SortTools_QuickSortOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SortTools_HeapSortOfInteger;
@@ -65,8 +75,18 @@ class SortTools_HeapSortOfInteger {
 };
 %feature("shadow") SortTools_HeapSortOfInteger::~SortTools_HeapSortOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SortTools_HeapSortOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SortTools_StraightInsertionSortOfInteger;
@@ -80,8 +100,18 @@ class SortTools_StraightInsertionSortOfInteger {
 };
 %feature("shadow") SortTools_StraightInsertionSortOfInteger::~SortTools_StraightInsertionSortOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SortTools_StraightInsertionSortOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SortTools_HeapSortOfReal;
@@ -95,8 +125,18 @@ class SortTools_HeapSortOfReal {
 };
 %feature("shadow") SortTools_HeapSortOfReal::~SortTools_HeapSortOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SortTools_HeapSortOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SortTools_StraightInsertionSortOfReal;
@@ -110,8 +150,18 @@ class SortTools_StraightInsertionSortOfReal {
 };
 %feature("shadow") SortTools_StraightInsertionSortOfReal::~SortTools_StraightInsertionSortOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SortTools_StraightInsertionSortOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SortTools_QuickSortOfInteger;
@@ -125,8 +175,18 @@ class SortTools_QuickSortOfInteger {
 };
 %feature("shadow") SortTools_QuickSortOfInteger::~SortTools_QuickSortOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SortTools_QuickSortOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SortTools_ShellSortOfReal;
@@ -140,8 +200,18 @@ class SortTools_ShellSortOfReal {
 };
 %feature("shadow") SortTools_ShellSortOfReal::~SortTools_ShellSortOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SortTools_ShellSortOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SortTools_ShellSortOfInteger;
@@ -155,5 +225,15 @@ class SortTools_ShellSortOfInteger {
 };
 %feature("shadow") SortTools_ShellSortOfInteger::~SortTools_ShellSortOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SortTools_ShellSortOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

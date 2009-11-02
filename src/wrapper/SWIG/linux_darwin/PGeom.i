@@ -63,8 +63,18 @@ class Handle_PGeom_Geometry : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PGeom_Geometry::~Handle_PGeom_Geometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Geometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Surface;
@@ -91,8 +101,18 @@ class Handle_PGeom_Surface : public Handle_PGeom_Geometry {
 };
 %feature("shadow") Handle_PGeom_Surface::~Handle_PGeom_Surface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Surface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_BoundedSurface;
@@ -119,8 +139,18 @@ class Handle_PGeom_BoundedSurface : public Handle_PGeom_Surface {
 };
 %feature("shadow") Handle_PGeom_BoundedSurface::~Handle_PGeom_BoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_BoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Curve;
@@ -147,8 +177,18 @@ class Handle_PGeom_Curve : public Handle_PGeom_Geometry {
 };
 %feature("shadow") Handle_PGeom_Curve::~Handle_PGeom_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_BoundedCurve;
@@ -175,8 +215,18 @@ class Handle_PGeom_BoundedCurve : public Handle_PGeom_Curve {
 };
 %feature("shadow") Handle_PGeom_BoundedCurve::~Handle_PGeom_BoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_BoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_TrimmedCurve;
@@ -203,8 +253,18 @@ class Handle_PGeom_TrimmedCurve : public Handle_PGeom_BoundedCurve {
 };
 %feature("shadow") Handle_PGeom_TrimmedCurve::~Handle_PGeom_TrimmedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_TrimmedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Transformation;
@@ -231,8 +291,18 @@ class Handle_PGeom_Transformation : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PGeom_Transformation::~Handle_PGeom_Transformation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Transformation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_ElementarySurface;
@@ -259,8 +329,18 @@ class Handle_PGeom_ElementarySurface : public Handle_PGeom_Surface {
 };
 %feature("shadow") Handle_PGeom_ElementarySurface::~Handle_PGeom_ElementarySurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_ElementarySurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_SphericalSurface;
@@ -287,8 +367,18 @@ class Handle_PGeom_SphericalSurface : public Handle_PGeom_ElementarySurface {
 };
 %feature("shadow") Handle_PGeom_SphericalSurface::~Handle_PGeom_SphericalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_SphericalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Conic;
@@ -315,8 +405,18 @@ class Handle_PGeom_Conic : public Handle_PGeom_Curve {
 };
 %feature("shadow") Handle_PGeom_Conic::~Handle_PGeom_Conic %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Conic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Parabola;
@@ -343,8 +443,18 @@ class Handle_PGeom_Parabola : public Handle_PGeom_Conic {
 };
 %feature("shadow") Handle_PGeom_Parabola::~Handle_PGeom_Parabola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Parabola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_AxisPlacement;
@@ -371,8 +481,18 @@ class Handle_PGeom_AxisPlacement : public Handle_PGeom_Geometry {
 };
 %feature("shadow") Handle_PGeom_AxisPlacement::~Handle_PGeom_AxisPlacement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_AxisPlacement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_BSplineSurface;
@@ -399,8 +519,18 @@ class Handle_PGeom_BSplineSurface : public Handle_PGeom_BoundedSurface {
 };
 %feature("shadow") Handle_PGeom_BSplineSurface::~Handle_PGeom_BSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_BSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_BezierSurface;
@@ -427,8 +557,18 @@ class Handle_PGeom_BezierSurface : public Handle_PGeom_BoundedSurface {
 };
 %feature("shadow") Handle_PGeom_BezierSurface::~Handle_PGeom_BezierSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_BezierSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Circle;
@@ -455,8 +595,18 @@ class Handle_PGeom_Circle : public Handle_PGeom_Conic {
 };
 %feature("shadow") Handle_PGeom_Circle::~Handle_PGeom_Circle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Circle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Point;
@@ -483,8 +633,18 @@ class Handle_PGeom_Point : public Handle_PGeom_Geometry {
 };
 %feature("shadow") Handle_PGeom_Point::~Handle_PGeom_Point %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_CartesianPoint;
@@ -511,8 +671,18 @@ class Handle_PGeom_CartesianPoint : public Handle_PGeom_Point {
 };
 %feature("shadow") Handle_PGeom_CartesianPoint::~Handle_PGeom_CartesianPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_CartesianPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_SweptSurface;
@@ -539,8 +709,18 @@ class Handle_PGeom_SweptSurface : public Handle_PGeom_Surface {
 };
 %feature("shadow") Handle_PGeom_SweptSurface::~Handle_PGeom_SweptSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_SweptSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_BSplineCurve;
@@ -567,8 +747,18 @@ class Handle_PGeom_BSplineCurve : public Handle_PGeom_BoundedCurve {
 };
 %feature("shadow") Handle_PGeom_BSplineCurve::~Handle_PGeom_BSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_BSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Line;
@@ -595,8 +785,18 @@ class Handle_PGeom_Line : public Handle_PGeom_Curve {
 };
 %feature("shadow") Handle_PGeom_Line::~Handle_PGeom_Line %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Plane;
@@ -623,8 +823,18 @@ class Handle_PGeom_Plane : public Handle_PGeom_ElementarySurface {
 };
 %feature("shadow") Handle_PGeom_Plane::~Handle_PGeom_Plane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Plane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Vector;
@@ -651,8 +861,18 @@ class Handle_PGeom_Vector : public Handle_PGeom_Geometry {
 };
 %feature("shadow") Handle_PGeom_Vector::~Handle_PGeom_Vector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Vector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Direction;
@@ -679,8 +899,18 @@ class Handle_PGeom_Direction : public Handle_PGeom_Vector {
 };
 %feature("shadow") Handle_PGeom_Direction::~Handle_PGeom_Direction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Direction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_OffsetSurface;
@@ -707,8 +937,18 @@ class Handle_PGeom_OffsetSurface : public Handle_PGeom_Surface {
 };
 %feature("shadow") Handle_PGeom_OffsetSurface::~Handle_PGeom_OffsetSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_OffsetSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_SurfaceOfRevolution;
@@ -735,8 +975,18 @@ class Handle_PGeom_SurfaceOfRevolution : public Handle_PGeom_SweptSurface {
 };
 %feature("shadow") Handle_PGeom_SurfaceOfRevolution::~Handle_PGeom_SurfaceOfRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_SurfaceOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_ToroidalSurface;
@@ -763,8 +1013,18 @@ class Handle_PGeom_ToroidalSurface : public Handle_PGeom_ElementarySurface {
 };
 %feature("shadow") Handle_PGeom_ToroidalSurface::~Handle_PGeom_ToroidalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_ToroidalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_OffsetCurve;
@@ -791,8 +1051,18 @@ class Handle_PGeom_OffsetCurve : public Handle_PGeom_Curve {
 };
 %feature("shadow") Handle_PGeom_OffsetCurve::~Handle_PGeom_OffsetCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_OffsetCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_SurfaceOfLinearExtrusion;
@@ -819,8 +1089,18 @@ class Handle_PGeom_SurfaceOfLinearExtrusion : public Handle_PGeom_SweptSurface {
 };
 %feature("shadow") Handle_PGeom_SurfaceOfLinearExtrusion::~Handle_PGeom_SurfaceOfLinearExtrusion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_SurfaceOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Ellipse;
@@ -847,8 +1127,18 @@ class Handle_PGeom_Ellipse : public Handle_PGeom_Conic {
 };
 %feature("shadow") Handle_PGeom_Ellipse::~Handle_PGeom_Ellipse %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Ellipse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_VectorWithMagnitude;
@@ -875,8 +1165,18 @@ class Handle_PGeom_VectorWithMagnitude : public Handle_PGeom_Vector {
 };
 %feature("shadow") Handle_PGeom_VectorWithMagnitude::~Handle_PGeom_VectorWithMagnitude %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_VectorWithMagnitude {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_CylindricalSurface;
@@ -903,8 +1203,18 @@ class Handle_PGeom_CylindricalSurface : public Handle_PGeom_ElementarySurface {
 };
 %feature("shadow") Handle_PGeom_CylindricalSurface::~Handle_PGeom_CylindricalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_CylindricalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Hyperbola;
@@ -931,8 +1241,18 @@ class Handle_PGeom_Hyperbola : public Handle_PGeom_Conic {
 };
 %feature("shadow") Handle_PGeom_Hyperbola::~Handle_PGeom_Hyperbola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Hyperbola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Axis1Placement;
@@ -959,8 +1279,18 @@ class Handle_PGeom_Axis1Placement : public Handle_PGeom_AxisPlacement {
 };
 %feature("shadow") Handle_PGeom_Axis1Placement::~Handle_PGeom_Axis1Placement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Axis1Placement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_ConicalSurface;
@@ -987,8 +1317,18 @@ class Handle_PGeom_ConicalSurface : public Handle_PGeom_ElementarySurface {
 };
 %feature("shadow") Handle_PGeom_ConicalSurface::~Handle_PGeom_ConicalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_ConicalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_BezierCurve;
@@ -1015,8 +1355,18 @@ class Handle_PGeom_BezierCurve : public Handle_PGeom_BoundedCurve {
 };
 %feature("shadow") Handle_PGeom_BezierCurve::~Handle_PGeom_BezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_BezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_RectangularTrimmedSurface;
@@ -1043,8 +1393,18 @@ class Handle_PGeom_RectangularTrimmedSurface : public Handle_PGeom_BoundedSurfac
 };
 %feature("shadow") Handle_PGeom_RectangularTrimmedSurface::~Handle_PGeom_RectangularTrimmedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_RectangularTrimmedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PGeom_Axis2Placement;
@@ -1071,8 +1431,18 @@ class Handle_PGeom_Axis2Placement : public Handle_PGeom_AxisPlacement {
 };
 %feature("shadow") Handle_PGeom_Axis2Placement::~Handle_PGeom_Axis2Placement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PGeom_Axis2Placement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Geometry;
@@ -1098,8 +1468,18 @@ class PGeom_Geometry : public Standard_Persistent {
 };
 %feature("shadow") PGeom_Geometry::~PGeom_Geometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Geometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Surface;
@@ -1123,8 +1503,18 @@ class PGeom_Surface : public PGeom_Geometry {
 };
 %feature("shadow") PGeom_Surface::~PGeom_Surface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Surface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_BoundedSurface;
@@ -1148,8 +1538,18 @@ class PGeom_BoundedSurface : public PGeom_Surface {
 };
 %feature("shadow") PGeom_BoundedSurface::~PGeom_BoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_BoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Point;
@@ -1175,8 +1575,18 @@ class PGeom_Point : public PGeom_Geometry {
 };
 %feature("shadow") PGeom_Point::~PGeom_Point %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_CartesianPoint;
@@ -1208,8 +1618,18 @@ class PGeom_CartesianPoint : public PGeom_Point {
 };
 %feature("shadow") PGeom_CartesianPoint::~PGeom_CartesianPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_CartesianPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Curve;
@@ -1235,8 +1655,18 @@ class PGeom_Curve : public PGeom_Geometry {
 };
 %feature("shadow") PGeom_Curve::~PGeom_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_BoundedCurve;
@@ -1260,8 +1690,18 @@ class PGeom_BoundedCurve : public PGeom_Curve {
 };
 %feature("shadow") PGeom_BoundedCurve::~PGeom_BoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_BoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_BSplineCurve;
@@ -1343,8 +1783,18 @@ class PGeom_BSplineCurve : public PGeom_BoundedCurve {
 };
 %feature("shadow") PGeom_BSplineCurve::~PGeom_BSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_BSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_BSplineSurface;
@@ -1468,8 +1918,18 @@ class PGeom_BSplineSurface : public PGeom_BoundedSurface {
 };
 %feature("shadow") PGeom_BSplineSurface::~PGeom_BSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_BSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Vector;
@@ -1499,8 +1959,18 @@ class PGeom_Vector : public PGeom_Geometry {
 };
 %feature("shadow") PGeom_Vector::~PGeom_Vector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Vector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Conic;
@@ -1530,8 +2000,18 @@ class PGeom_Conic : public PGeom_Curve {
 };
 %feature("shadow") PGeom_Conic::~PGeom_Conic %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Conic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Parabola;
@@ -1565,8 +2045,18 @@ class PGeom_Parabola : public PGeom_Conic {
 };
 %feature("shadow") PGeom_Parabola::~PGeom_Parabola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Parabola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Circle;
@@ -1602,8 +2092,18 @@ class PGeom_Circle : public PGeom_Conic {
 };
 %feature("shadow") PGeom_Circle::~PGeom_Circle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Circle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Transformation;
@@ -1637,8 +2137,18 @@ class PGeom_Transformation : public Standard_Persistent {
 };
 %feature("shadow") PGeom_Transformation::~PGeom_Transformation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Transformation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_TrimmedCurve;
@@ -1690,8 +2200,18 @@ class PGeom_TrimmedCurve : public PGeom_BoundedCurve {
 };
 %feature("shadow") PGeom_TrimmedCurve::~PGeom_TrimmedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_TrimmedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_RectangularTrimmedSurface;
@@ -1759,8 +2279,18 @@ class PGeom_RectangularTrimmedSurface : public PGeom_BoundedSurface {
 };
 %feature("shadow") PGeom_RectangularTrimmedSurface::~PGeom_RectangularTrimmedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_RectangularTrimmedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Ellipse;
@@ -1804,8 +2334,18 @@ class PGeom_Ellipse : public PGeom_Conic {
 };
 %feature("shadow") PGeom_Ellipse::~PGeom_Ellipse %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Ellipse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_ElementarySurface;
@@ -1835,8 +2375,18 @@ class PGeom_ElementarySurface : public PGeom_Surface {
 };
 %feature("shadow") PGeom_ElementarySurface::~PGeom_ElementarySurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_ElementarySurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_ToroidalSurface;
@@ -1878,8 +2428,18 @@ class PGeom_ToroidalSurface : public PGeom_ElementarySurface {
 };
 %feature("shadow") PGeom_ToroidalSurface::~PGeom_ToroidalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_ToroidalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Line;
@@ -1913,8 +2473,18 @@ class PGeom_Line : public PGeom_Curve {
 };
 %feature("shadow") PGeom_Line::~PGeom_Line %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Direction;
@@ -1942,8 +2512,18 @@ class PGeom_Direction : public PGeom_Vector {
 };
 %feature("shadow") PGeom_Direction::~PGeom_Direction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Direction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_AxisPlacement;
@@ -1973,8 +2553,18 @@ class PGeom_AxisPlacement : public PGeom_Geometry {
 };
 %feature("shadow") PGeom_AxisPlacement::~PGeom_AxisPlacement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_AxisPlacement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_BezierSurface;
@@ -2034,8 +2624,18 @@ class PGeom_BezierSurface : public PGeom_BoundedSurface {
 };
 %feature("shadow") PGeom_BezierSurface::~PGeom_BezierSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_BezierSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_OffsetCurve;
@@ -2085,8 +2685,18 @@ class PGeom_OffsetCurve : public PGeom_Curve {
 };
 %feature("shadow") PGeom_OffsetCurve::~PGeom_OffsetCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_OffsetCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_CylindricalSurface;
@@ -2122,8 +2732,18 @@ class PGeom_CylindricalSurface : public PGeom_ElementarySurface {
 };
 %feature("shadow") PGeom_CylindricalSurface::~PGeom_CylindricalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_CylindricalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Axis2Placement;
@@ -2157,8 +2777,18 @@ class PGeom_Axis2Placement : public PGeom_AxisPlacement {
 };
 %feature("shadow") PGeom_Axis2Placement::~PGeom_Axis2Placement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Axis2Placement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_SweptSurface;
@@ -2196,8 +2826,18 @@ class PGeom_SweptSurface : public PGeom_Surface {
 };
 %feature("shadow") PGeom_SweptSurface::~PGeom_SweptSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_SweptSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_SurfaceOfLinearExtrusion;
@@ -2223,8 +2863,18 @@ class PGeom_SurfaceOfLinearExtrusion : public PGeom_SweptSurface {
 };
 %feature("shadow") PGeom_SurfaceOfLinearExtrusion::~PGeom_SurfaceOfLinearExtrusion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_SurfaceOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Axis1Placement;
@@ -2252,8 +2902,18 @@ class PGeom_Axis1Placement : public PGeom_AxisPlacement {
 };
 %feature("shadow") PGeom_Axis1Placement::~PGeom_Axis1Placement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Axis1Placement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_SphericalSurface;
@@ -2289,8 +2949,18 @@ class PGeom_SphericalSurface : public PGeom_ElementarySurface {
 };
 %feature("shadow") PGeom_SphericalSurface::~PGeom_SphericalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_SphericalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_BezierCurve;
@@ -2342,8 +3012,18 @@ class PGeom_BezierCurve : public PGeom_BoundedCurve {
 };
 %feature("shadow") PGeom_BezierCurve::~PGeom_BezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_BezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_OffsetSurface;
@@ -2387,8 +3067,18 @@ class PGeom_OffsetSurface : public PGeom_Surface {
 };
 %feature("shadow") PGeom_OffsetSurface::~PGeom_OffsetSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_OffsetSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Hyperbola;
@@ -2432,8 +3122,18 @@ class PGeom_Hyperbola : public PGeom_Conic {
 };
 %feature("shadow") PGeom_Hyperbola::~PGeom_Hyperbola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Hyperbola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_ConicalSurface;
@@ -2477,8 +3177,18 @@ class PGeom_ConicalSurface : public PGeom_ElementarySurface {
 };
 %feature("shadow") PGeom_ConicalSurface::~PGeom_ConicalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_ConicalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_SurfaceOfRevolution;
@@ -2512,8 +3222,18 @@ class PGeom_SurfaceOfRevolution : public PGeom_SweptSurface {
 };
 %feature("shadow") PGeom_SurfaceOfRevolution::~PGeom_SurfaceOfRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_SurfaceOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_Plane;
@@ -2541,8 +3261,18 @@ class PGeom_Plane : public PGeom_ElementarySurface {
 };
 %feature("shadow") PGeom_Plane::~PGeom_Plane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_Plane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PGeom_VectorWithMagnitude;
@@ -2570,5 +3300,15 @@ class PGeom_VectorWithMagnitude : public PGeom_Vector {
 };
 %feature("shadow") PGeom_VectorWithMagnitude::~PGeom_VectorWithMagnitude %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PGeom_VectorWithMagnitude {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

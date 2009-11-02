@@ -63,8 +63,18 @@ class Handle_XmlLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 };
 %feature("shadow") Handle_XmlLDrivers_DocumentStorageDriver::~Handle_XmlLDrivers_DocumentStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlLDrivers_DocumentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef;
@@ -91,8 +101,18 @@ class Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public Handle_TC
 };
 %feature("shadow") Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef::~Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlLDrivers_DocumentRetrievalDriver;
@@ -119,8 +139,18 @@ class Handle_XmlLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 };
 %feature("shadow") Handle_XmlLDrivers_DocumentRetrievalDriver::~Handle_XmlLDrivers_DocumentRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlLDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlLDrivers_DocumentRetrievalDriver;
@@ -154,8 +184,18 @@ class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 };
 %feature("shadow") XmlLDrivers_DocumentRetrievalDriver::~XmlLDrivers_DocumentRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlLDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlLDrivers_DocumentStorageDriver;
@@ -187,8 +227,18 @@ class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 };
 %feature("shadow") XmlLDrivers_DocumentStorageDriver::~XmlLDrivers_DocumentStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlLDrivers_DocumentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlLDrivers_SequenceOfNamespaceDef;
@@ -242,8 +292,18 @@ class XmlLDrivers_SequenceOfNamespaceDef : public TCollection_BaseSequence {
 };
 %feature("shadow") XmlLDrivers_SequenceOfNamespaceDef::~XmlLDrivers_SequenceOfNamespaceDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlLDrivers_SequenceOfNamespaceDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef;
@@ -269,8 +329,18 @@ class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqN
 };
 %feature("shadow") XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef::~XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlLDrivers_NamespaceDef;
@@ -288,8 +358,18 @@ class XmlLDrivers_NamespaceDef {
 };
 %feature("shadow") XmlLDrivers_NamespaceDef::~XmlLDrivers_NamespaceDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlLDrivers_NamespaceDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlLDrivers;
@@ -309,5 +389,15 @@ class XmlLDrivers {
 };
 %feature("shadow") XmlLDrivers::~XmlLDrivers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlLDrivers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

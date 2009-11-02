@@ -97,8 +97,18 @@ class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepFeat_Builder::~BRepFeat_Builder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat_Builder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat_MakeCylindricalHole;
@@ -132,8 +142,18 @@ class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
 };
 %feature("shadow") BRepFeat_MakeCylindricalHole::~BRepFeat_MakeCylindricalHole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat_MakeCylindricalHole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat;
@@ -161,8 +181,18 @@ class BRepFeat {
 };
 %feature("shadow") BRepFeat::~BRepFeat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat_Form;
@@ -206,8 +236,18 @@ class BRepFeat_Form : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepFeat_Form::~BRepFeat_Form %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat_Form {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat_MakePipe;
@@ -231,8 +271,18 @@ class BRepFeat_MakePipe : public BRepFeat_Form {
 };
 %feature("shadow") BRepFeat_MakePipe::~BRepFeat_MakePipe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat_MakePipe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat_MakePrism;
@@ -268,8 +318,18 @@ class BRepFeat_MakePrism : public BRepFeat_Form {
 };
 %feature("shadow") BRepFeat_MakePrism::~BRepFeat_MakePrism %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat_MakePrism {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat_LocalOperation;
@@ -299,8 +359,18 @@ class BRepFeat_LocalOperation : public BRepFeat_Builder {
 };
 %feature("shadow") BRepFeat_LocalOperation::~BRepFeat_LocalOperation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat_LocalOperation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat_SplitShape;
@@ -332,8 +402,18 @@ class BRepFeat_SplitShape : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepFeat_SplitShape::~BRepFeat_SplitShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat_SplitShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat_RibSlot;
@@ -365,8 +445,18 @@ class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepFeat_RibSlot::~BRepFeat_RibSlot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat_RibSlot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat_MakeLinearForm;
@@ -388,8 +478,18 @@ class BRepFeat_MakeLinearForm : public BRepFeat_RibSlot {
 };
 %feature("shadow") BRepFeat_MakeLinearForm::~BRepFeat_MakeLinearForm %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat_MakeLinearForm {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat_MakeRevolutionForm;
@@ -411,8 +511,18 @@ class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
 };
 %feature("shadow") BRepFeat_MakeRevolutionForm::~BRepFeat_MakeRevolutionForm %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat_MakeRevolutionForm {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat_MakeDPrism;
@@ -454,8 +564,18 @@ class BRepFeat_MakeDPrism : public BRepFeat_Form {
 };
 %feature("shadow") BRepFeat_MakeDPrism::~BRepFeat_MakeDPrism %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat_MakeDPrism {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat_Gluer;
@@ -487,8 +607,18 @@ class BRepFeat_Gluer : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepFeat_Gluer::~BRepFeat_Gluer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat_Gluer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat_MakeRevol;
@@ -520,5 +650,15 @@ class BRepFeat_MakeRevol : public BRepFeat_Form {
 };
 %feature("shadow") BRepFeat_MakeRevol::~BRepFeat_MakeRevol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepFeat_MakeRevol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

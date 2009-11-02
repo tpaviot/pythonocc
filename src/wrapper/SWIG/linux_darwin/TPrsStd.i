@@ -63,8 +63,18 @@ class Handle_TPrsStd_Driver : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TPrsStd_Driver::~Handle_TPrsStd_Driver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TPrsStd_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TPrsStd_ConstraintDriver;
@@ -91,8 +101,18 @@ class Handle_TPrsStd_ConstraintDriver : public Handle_TPrsStd_Driver {
 };
 %feature("shadow") Handle_TPrsStd_ConstraintDriver::~Handle_TPrsStd_ConstraintDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TPrsStd_ConstraintDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TPrsStd_DriverTable;
@@ -119,8 +139,18 @@ class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TPrsStd_DriverTable::~Handle_TPrsStd_DriverTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TPrsStd_DriverTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TPrsStd_PlaneDriver;
@@ -147,8 +177,18 @@ class Handle_TPrsStd_PlaneDriver : public Handle_TPrsStd_Driver {
 };
 %feature("shadow") Handle_TPrsStd_PlaneDriver::~Handle_TPrsStd_PlaneDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TPrsStd_PlaneDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TPrsStd_AISPresentation;
@@ -175,8 +215,18 @@ class Handle_TPrsStd_AISPresentation : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TPrsStd_AISPresentation::~Handle_TPrsStd_AISPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TPrsStd_AISPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver;
@@ -203,8 +253,18 @@ class Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollectio
 };
 %feature("shadow") Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver::~Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TPrsStd_AxisDriver;
@@ -231,8 +291,18 @@ class Handle_TPrsStd_AxisDriver : public Handle_TPrsStd_Driver {
 };
 %feature("shadow") Handle_TPrsStd_AxisDriver::~Handle_TPrsStd_AxisDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TPrsStd_AxisDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TPrsStd_PointDriver;
@@ -259,8 +329,18 @@ class Handle_TPrsStd_PointDriver : public Handle_TPrsStd_Driver {
 };
 %feature("shadow") Handle_TPrsStd_PointDriver::~Handle_TPrsStd_PointDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TPrsStd_PointDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TPrsStd_AISViewer;
@@ -287,8 +367,18 @@ class Handle_TPrsStd_AISViewer : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TPrsStd_AISViewer::~Handle_TPrsStd_AISViewer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TPrsStd_AISViewer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TPrsStd_GeometryDriver;
@@ -315,8 +405,18 @@ class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 };
 %feature("shadow") Handle_TPrsStd_GeometryDriver::~Handle_TPrsStd_GeometryDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TPrsStd_GeometryDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TPrsStd_NamedShapeDriver;
@@ -343,8 +443,18 @@ class Handle_TPrsStd_NamedShapeDriver : public Handle_TPrsStd_Driver {
 };
 %feature("shadow") Handle_TPrsStd_NamedShapeDriver::~Handle_TPrsStd_NamedShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TPrsStd_NamedShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_ConstraintTools;
@@ -402,8 +512,18 @@ class TPrsStd_ConstraintTools {
 };
 %feature("shadow") TPrsStd_ConstraintTools::~TPrsStd_ConstraintTools %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_ConstraintTools {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_Driver;
@@ -427,8 +547,18 @@ class TPrsStd_Driver : public MMgt_TShared {
 };
 %feature("shadow") TPrsStd_Driver::~TPrsStd_Driver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_NamedShapeDriver;
@@ -452,8 +582,18 @@ class TPrsStd_NamedShapeDriver : public TPrsStd_Driver {
 };
 %feature("shadow") TPrsStd_NamedShapeDriver::~TPrsStd_NamedShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_NamedShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver;
@@ -473,8 +613,18 @@ class TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicMap
 };
 %feature("shadow") TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver::~TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_PointDriver;
@@ -500,8 +650,18 @@ class TPrsStd_PointDriver : public TPrsStd_Driver {
 };
 %feature("shadow") TPrsStd_PointDriver::~TPrsStd_PointDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_PointDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_AxisDriver;
@@ -527,8 +687,18 @@ class TPrsStd_AxisDriver : public TPrsStd_Driver {
 };
 %feature("shadow") TPrsStd_AxisDriver::~TPrsStd_AxisDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_AxisDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_AISViewer;
@@ -582,8 +752,18 @@ class TPrsStd_AISViewer : public TDF_Attribute {
 };
 %feature("shadow") TPrsStd_AISViewer::~TPrsStd_AISViewer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_AISViewer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_ConstraintDriver;
@@ -609,8 +789,18 @@ class TPrsStd_ConstraintDriver : public TPrsStd_Driver {
 };
 %feature("shadow") TPrsStd_ConstraintDriver::~TPrsStd_ConstraintDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_ConstraintDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_DataMapNodeOfDataMapOfGUIDDriver;
@@ -638,8 +828,18 @@ class TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 };
 %feature("shadow") TPrsStd_DataMapNodeOfDataMapOfGUIDDriver::~TPrsStd_DataMapNodeOfDataMapOfGUIDDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_AISPresentation;
@@ -757,8 +957,18 @@ class TPrsStd_AISPresentation : public TDF_Attribute {
 };
 %feature("shadow") TPrsStd_AISPresentation::~TPrsStd_AISPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_AISPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_PlaneDriver;
@@ -784,8 +994,18 @@ class TPrsStd_PlaneDriver : public TPrsStd_Driver {
 };
 %feature("shadow") TPrsStd_PlaneDriver::~TPrsStd_PlaneDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_PlaneDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_GeometryDriver;
@@ -811,8 +1031,18 @@ class TPrsStd_GeometryDriver : public TPrsStd_Driver {
 };
 %feature("shadow") TPrsStd_GeometryDriver::~TPrsStd_GeometryDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_GeometryDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_DataMapOfGUIDDriver;
@@ -846,8 +1076,18 @@ class TPrsStd_DataMapOfGUIDDriver : public TCollection_BasicMap {
 };
 %feature("shadow") TPrsStd_DataMapOfGUIDDriver::~TPrsStd_DataMapOfGUIDDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_DataMapOfGUIDDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TPrsStd_DriverTable;
@@ -883,5 +1123,15 @@ class TPrsStd_DriverTable : public MMgt_TShared {
 };
 %feature("shadow") TPrsStd_DriverTable::~TPrsStd_DriverTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TPrsStd_DriverTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

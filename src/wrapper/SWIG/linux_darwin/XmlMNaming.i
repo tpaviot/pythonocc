@@ -63,8 +63,18 @@ class Handle_XmlMNaming_NamingDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMNaming_NamingDriver::~Handle_XmlMNaming_NamingDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMNaming_NamingDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMNaming_NamedShapeDriver;
@@ -91,8 +101,18 @@ class Handle_XmlMNaming_NamedShapeDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMNaming_NamedShapeDriver::~Handle_XmlMNaming_NamedShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMNaming_NamedShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMNaming_NamedShapeDriver;
@@ -128,8 +148,18 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMNaming_NamedShapeDriver::~XmlMNaming_NamedShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMNaming_NamedShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMNaming_Array1OfShape1;
@@ -157,8 +187,18 @@ class XmlMNaming_Array1OfShape1 {
 };
 %feature("shadow") XmlMNaming_Array1OfShape1::~XmlMNaming_Array1OfShape1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMNaming_Array1OfShape1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMNaming_Shape1;
@@ -204,8 +244,18 @@ class XmlMNaming_Shape1 {
 };
 %feature("shadow") XmlMNaming_Shape1::~XmlMNaming_Shape1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMNaming_Shape1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMNaming_NamingDriver;
@@ -235,8 +285,18 @@ class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMNaming_NamingDriver::~XmlMNaming_NamingDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMNaming_NamingDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMNaming;
@@ -250,5 +310,15 @@ class XmlMNaming {
 };
 %feature("shadow") XmlMNaming::~XmlMNaming %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMNaming {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

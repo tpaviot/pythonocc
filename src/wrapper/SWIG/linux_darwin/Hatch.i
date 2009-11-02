@@ -69,8 +69,18 @@ class Handle_Hatch_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqN
 };
 %feature("shadow") Handle_Hatch_SequenceNodeOfSequenceOfLine::~Handle_Hatch_SequenceNodeOfSequenceOfLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Hatch_SequenceNodeOfSequenceOfLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Hatch_SequenceNodeOfSequenceOfParameter;
@@ -97,8 +107,18 @@ class Handle_Hatch_SequenceNodeOfSequenceOfParameter : public Handle_TCollection
 };
 %feature("shadow") Handle_Hatch_SequenceNodeOfSequenceOfParameter::~Handle_Hatch_SequenceNodeOfSequenceOfParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Hatch_SequenceNodeOfSequenceOfParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Hatch_SequenceNodeOfSequenceOfParameter;
@@ -124,8 +144,18 @@ class Hatch_SequenceNodeOfSequenceOfParameter : public TCollection_SeqNode {
 };
 %feature("shadow") Hatch_SequenceNodeOfSequenceOfParameter::~Hatch_SequenceNodeOfSequenceOfParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Hatch_SequenceNodeOfSequenceOfParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Hatch_Line;
@@ -141,8 +171,18 @@ class Hatch_Line {
 };
 %feature("shadow") Hatch_Line::~Hatch_Line %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Hatch_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Hatch_SequenceOfParameter;
@@ -196,8 +236,18 @@ class Hatch_SequenceOfParameter : public TCollection_BaseSequence {
 };
 %feature("shadow") Hatch_SequenceOfParameter::~Hatch_SequenceOfParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Hatch_SequenceOfParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Hatch_Hatcher;
@@ -251,8 +301,18 @@ class Hatch_Hatcher {
 };
 %feature("shadow") Hatch_Hatcher::~Hatch_Hatcher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Hatch_Hatcher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Hatch_SequenceOfLine;
@@ -306,8 +366,18 @@ class Hatch_SequenceOfLine : public TCollection_BaseSequence {
 };
 %feature("shadow") Hatch_SequenceOfLine::~Hatch_SequenceOfLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Hatch_SequenceOfLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Hatch_Parameter;
@@ -321,8 +391,18 @@ class Hatch_Parameter {
 };
 %feature("shadow") Hatch_Parameter::~Hatch_Parameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Hatch_Parameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Hatch_SequenceNodeOfSequenceOfLine;
@@ -348,5 +428,15 @@ class Hatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 };
 %feature("shadow") Hatch_SequenceNodeOfSequenceOfLine::~Hatch_SequenceNodeOfSequenceOfLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Hatch_SequenceNodeOfSequenceOfLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

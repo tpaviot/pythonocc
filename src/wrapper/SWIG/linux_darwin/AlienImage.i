@@ -72,8 +72,18 @@ class Handle_AlienImage_AlienImage : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AlienImage_AlienImage::~Handle_AlienImage_AlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_AlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_AlienUserImage;
@@ -100,8 +110,18 @@ class Handle_AlienImage_AlienUserImage : public Handle_AlienImage_AlienImage {
 };
 %feature("shadow") Handle_AlienImage_AlienUserImage::~Handle_AlienImage_AlienUserImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_AlienUserImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_SGIRGBAlienImage;
@@ -128,8 +148,18 @@ class Handle_AlienImage_SGIRGBAlienImage : public Handle_AlienImage_AlienUserIma
 };
 %feature("shadow") Handle_AlienImage_SGIRGBAlienImage::~Handle_AlienImage_SGIRGBAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_SGIRGBAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_EuclidAlienImage;
@@ -156,8 +186,18 @@ class Handle_AlienImage_EuclidAlienImage : public Handle_AlienImage_AlienUserIma
 };
 %feature("shadow") Handle_AlienImage_EuclidAlienImage::~Handle_AlienImage_EuclidAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_EuclidAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_AlienImageData;
@@ -184,8 +224,18 @@ class Handle_AlienImage_AlienImageData : public Handle_AlienImage_AlienImage {
 };
 %feature("shadow") Handle_AlienImage_AlienImageData::~Handle_AlienImage_AlienImageData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_AlienImageData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_AidaAlienImage;
@@ -212,8 +262,18 @@ class Handle_AlienImage_AidaAlienImage : public Handle_AlienImage_AlienUserImage
 };
 %feature("shadow") Handle_AlienImage_AidaAlienImage::~Handle_AlienImage_AidaAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_AidaAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_SunRFAlienData;
@@ -240,8 +300,18 @@ class Handle_AlienImage_SunRFAlienData : public Handle_AlienImage_AlienImageData
 };
 %feature("shadow") Handle_AlienImage_SunRFAlienData::~Handle_AlienImage_SunRFAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_SunRFAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_EuclidAlienData;
@@ -268,8 +338,18 @@ class Handle_AlienImage_EuclidAlienData : public Handle_AlienImage_AlienImageDat
 };
 %feature("shadow") Handle_AlienImage_EuclidAlienData::~Handle_AlienImage_EuclidAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_EuclidAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_SGIRGBAlienData;
@@ -296,8 +376,18 @@ class Handle_AlienImage_SGIRGBAlienData : public Handle_AlienImage_AlienImageDat
 };
 %feature("shadow") Handle_AlienImage_SGIRGBAlienData::~Handle_AlienImage_SGIRGBAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_SGIRGBAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_XAlienImage;
@@ -324,8 +414,18 @@ class Handle_AlienImage_XAlienImage : public Handle_AlienImage_AlienUserImage {
 };
 %feature("shadow") Handle_AlienImage_XAlienImage::~Handle_AlienImage_XAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_XAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_GIFAlienImage;
@@ -352,8 +452,18 @@ class Handle_AlienImage_GIFAlienImage : public Handle_AlienImage_AlienUserImage 
 };
 %feature("shadow") Handle_AlienImage_GIFAlienImage::~Handle_AlienImage_GIFAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_GIFAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_X11XWDAlienData;
@@ -380,8 +490,18 @@ class Handle_AlienImage_X11XWDAlienData : public Handle_AlienImage_AlienImageDat
 };
 %feature("shadow") Handle_AlienImage_X11XWDAlienData::~Handle_AlienImage_X11XWDAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_X11XWDAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_BMPAlienImage;
@@ -408,8 +528,18 @@ class Handle_AlienImage_BMPAlienImage : public Handle_AlienImage_AlienUserImage 
 };
 %feature("shadow") Handle_AlienImage_BMPAlienImage::~Handle_AlienImage_BMPAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_BMPAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_BMPAlienData;
@@ -436,8 +566,18 @@ class Handle_AlienImage_BMPAlienData : public Handle_AlienImage_AlienImageData {
 };
 %feature("shadow") Handle_AlienImage_BMPAlienData::~Handle_AlienImage_BMPAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_BMPAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_GIFAlienData;
@@ -464,8 +604,18 @@ class Handle_AlienImage_GIFAlienData : public Handle_AlienImage_AlienImageData {
 };
 %feature("shadow") Handle_AlienImage_GIFAlienData::~Handle_AlienImage_GIFAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_GIFAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_SunRFAlienImage;
@@ -492,8 +642,18 @@ class Handle_AlienImage_SunRFAlienImage : public Handle_AlienImage_AlienUserImag
 };
 %feature("shadow") Handle_AlienImage_SunRFAlienImage::~Handle_AlienImage_SunRFAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_SunRFAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AlienImage_AidaAlienData;
@@ -520,8 +680,18 @@ class Handle_AlienImage_AidaAlienData : public Handle_AlienImage_AlienImageData 
 };
 %feature("shadow") Handle_AlienImage_AidaAlienData::~Handle_AlienImage_AidaAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AlienImage_AidaAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_AlienImage;
@@ -551,8 +721,18 @@ class AlienImage_AlienImage : public MMgt_TShared {
 };
 %feature("shadow") AlienImage_AlienImage::~AlienImage_AlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_AlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_AlienImageData;
@@ -576,8 +756,18 @@ class AlienImage_AlienImageData : public AlienImage_AlienImage {
 };
 %feature("shadow") AlienImage_AlienImageData::~AlienImage_AlienImageData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_AlienImageData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_SGIRGBAlienData;
@@ -601,8 +791,18 @@ class AlienImage_SGIRGBAlienData : public AlienImage_AlienImageData {
 };
 %feature("shadow") AlienImage_SGIRGBAlienData::~AlienImage_SGIRGBAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_SGIRGBAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_AlienUserImage;
@@ -636,8 +836,18 @@ class AlienImage_AlienUserImage : public AlienImage_AlienImage {
 };
 %feature("shadow") AlienImage_AlienUserImage::~AlienImage_AlienUserImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_AlienUserImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_SGIRGBAlienImage;
@@ -665,8 +875,18 @@ class AlienImage_SGIRGBAlienImage : public AlienImage_AlienUserImage {
 };
 %feature("shadow") AlienImage_SGIRGBAlienImage::~AlienImage_SGIRGBAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_SGIRGBAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_X11XWDAlienData;
@@ -704,8 +924,18 @@ class AlienImage_X11XWDAlienData : public AlienImage_AlienImageData {
 };
 %feature("shadow") AlienImage_X11XWDAlienData::~AlienImage_X11XWDAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_X11XWDAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_SunRFAlienImage;
@@ -743,8 +973,18 @@ class AlienImage_SunRFAlienImage : public AlienImage_AlienUserImage {
 };
 %feature("shadow") AlienImage_SunRFAlienImage::~AlienImage_SunRFAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_SunRFAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_X11XColor;
@@ -756,8 +996,18 @@ class AlienImage_X11XColor {
 };
 %feature("shadow") AlienImage_X11XColor::~AlienImage_X11XColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_X11XColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_BMPAlienData;
@@ -791,8 +1041,18 @@ class AlienImage_BMPAlienData : public AlienImage_AlienImageData {
 };
 %feature("shadow") AlienImage_BMPAlienData::~AlienImage_BMPAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_BMPAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_SUNRFFileHeader;
@@ -804,8 +1064,18 @@ class AlienImage_SUNRFFileHeader {
 };
 %feature("shadow") AlienImage_SUNRFFileHeader::~AlienImage_SUNRFFileHeader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_SUNRFFileHeader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_GIFAlienImage;
@@ -843,8 +1113,18 @@ class AlienImage_GIFAlienImage : public AlienImage_AlienUserImage {
 };
 %feature("shadow") AlienImage_GIFAlienImage::~AlienImage_GIFAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_GIFAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage;
@@ -864,8 +1144,18 @@ class AlienImage {
 };
 %feature("shadow") AlienImage::~AlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_BMPHeader;
@@ -877,8 +1167,18 @@ class AlienImage_BMPHeader {
 };
 %feature("shadow") AlienImage_BMPHeader::~AlienImage_BMPHeader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_BMPHeader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_SGIRGBFileHeader;
@@ -890,8 +1190,18 @@ class AlienImage_SGIRGBFileHeader {
 };
 %feature("shadow") AlienImage_SGIRGBFileHeader::~AlienImage_SGIRGBFileHeader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_SGIRGBFileHeader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_AidaAlienImage;
@@ -927,8 +1237,18 @@ class AlienImage_AidaAlienImage : public AlienImage_AlienUserImage {
 };
 %feature("shadow") AlienImage_AidaAlienImage::~AlienImage_AidaAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_AidaAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_EuclidAlienData;
@@ -966,8 +1286,18 @@ class AlienImage_EuclidAlienData : public AlienImage_AlienImageData {
 };
 %feature("shadow") AlienImage_EuclidAlienData::~AlienImage_EuclidAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_EuclidAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_AidaAlienData;
@@ -1003,8 +1333,18 @@ class AlienImage_AidaAlienData : public AlienImage_AlienImageData {
 };
 %feature("shadow") AlienImage_AidaAlienData::~AlienImage_AidaAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_AidaAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_XAlienImage;
@@ -1042,8 +1382,18 @@ class AlienImage_XAlienImage : public AlienImage_AlienUserImage {
 };
 %feature("shadow") AlienImage_XAlienImage::~AlienImage_XAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_XAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_SunRFAlienData;
@@ -1091,8 +1441,18 @@ class AlienImage_SunRFAlienData : public AlienImage_AlienImageData {
 };
 %feature("shadow") AlienImage_SunRFAlienData::~AlienImage_SunRFAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_SunRFAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_EuclidAlienImage;
@@ -1126,8 +1486,18 @@ class AlienImage_EuclidAlienImage : public AlienImage_AlienUserImage {
 };
 %feature("shadow") AlienImage_EuclidAlienImage::~AlienImage_EuclidAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_EuclidAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_MemoryOperations;
@@ -1143,8 +1513,18 @@ class AlienImage_MemoryOperations {
 };
 %feature("shadow") AlienImage_MemoryOperations::~AlienImage_MemoryOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_MemoryOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_GIFAlienData;
@@ -1178,8 +1558,18 @@ class AlienImage_GIFAlienData : public AlienImage_AlienImageData {
 };
 %feature("shadow") AlienImage_GIFAlienData::~AlienImage_GIFAlienData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_GIFAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AlienImage_BMPAlienImage;
@@ -1217,5 +1607,15 @@ class AlienImage_BMPAlienImage : public AlienImage_AlienUserImage {
 };
 %feature("shadow") AlienImage_BMPAlienImage::~AlienImage_BMPAlienImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AlienImage_BMPAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

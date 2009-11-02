@@ -63,8 +63,18 @@ class Handle_BinMXCAFDoc_ColorToolDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMXCAFDoc_ColorToolDriver::~Handle_BinMXCAFDoc_ColorToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMXCAFDoc_ColorToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMXCAFDoc_DocumentToolDriver;
@@ -91,8 +101,18 @@ class Handle_BinMXCAFDoc_DocumentToolDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMXCAFDoc_DocumentToolDriver::~Handle_BinMXCAFDoc_DocumentToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMXCAFDoc_DocumentToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMXCAFDoc_GraphNodeDriver;
@@ -119,8 +139,18 @@ class Handle_BinMXCAFDoc_GraphNodeDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMXCAFDoc_GraphNodeDriver::~Handle_BinMXCAFDoc_GraphNodeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMXCAFDoc_GraphNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMXCAFDoc_VolumeDriver;
@@ -147,8 +177,18 @@ class Handle_BinMXCAFDoc_VolumeDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMXCAFDoc_VolumeDriver::~Handle_BinMXCAFDoc_VolumeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMXCAFDoc_VolumeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMXCAFDoc_ShapeToolDriver;
@@ -175,8 +215,18 @@ class Handle_BinMXCAFDoc_ShapeToolDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMXCAFDoc_ShapeToolDriver::~Handle_BinMXCAFDoc_ShapeToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMXCAFDoc_ShapeToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMXCAFDoc_CentroidDriver;
@@ -203,8 +253,18 @@ class Handle_BinMXCAFDoc_CentroidDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMXCAFDoc_CentroidDriver::~Handle_BinMXCAFDoc_CentroidDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMXCAFDoc_CentroidDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMXCAFDoc_LocationDriver;
@@ -231,8 +291,18 @@ class Handle_BinMXCAFDoc_LocationDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMXCAFDoc_LocationDriver::~Handle_BinMXCAFDoc_LocationDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMXCAFDoc_LocationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMXCAFDoc_ColorDriver;
@@ -259,8 +329,18 @@ class Handle_BinMXCAFDoc_ColorDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMXCAFDoc_ColorDriver::~Handle_BinMXCAFDoc_ColorDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMXCAFDoc_ColorDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMXCAFDoc_AreaDriver;
@@ -287,8 +367,18 @@ class Handle_BinMXCAFDoc_AreaDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMXCAFDoc_AreaDriver::~Handle_BinMXCAFDoc_AreaDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMXCAFDoc_AreaDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMXCAFDoc_LayerToolDriver;
@@ -315,8 +405,18 @@ class Handle_BinMXCAFDoc_LayerToolDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMXCAFDoc_LayerToolDriver::~Handle_BinMXCAFDoc_LayerToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMXCAFDoc_LayerToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMXCAFDoc_ColorToolDriver;
@@ -346,8 +446,18 @@ class BinMXCAFDoc_ColorToolDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMXCAFDoc_ColorToolDriver::~BinMXCAFDoc_ColorToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMXCAFDoc_ColorToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMXCAFDoc_VolumeDriver;
@@ -377,8 +487,18 @@ class BinMXCAFDoc_VolumeDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMXCAFDoc_VolumeDriver::~BinMXCAFDoc_VolumeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMXCAFDoc_VolumeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMXCAFDoc_DocumentToolDriver;
@@ -408,8 +528,18 @@ class BinMXCAFDoc_DocumentToolDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMXCAFDoc_DocumentToolDriver::~BinMXCAFDoc_DocumentToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMXCAFDoc_DocumentToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMXCAFDoc_LayerToolDriver;
@@ -439,8 +569,18 @@ class BinMXCAFDoc_LayerToolDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMXCAFDoc_LayerToolDriver::~BinMXCAFDoc_LayerToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMXCAFDoc_LayerToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMXCAFDoc_AreaDriver;
@@ -470,8 +610,18 @@ class BinMXCAFDoc_AreaDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMXCAFDoc_AreaDriver::~BinMXCAFDoc_AreaDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMXCAFDoc_AreaDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMXCAFDoc_CentroidDriver;
@@ -501,8 +651,18 @@ class BinMXCAFDoc_CentroidDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMXCAFDoc_CentroidDriver::~BinMXCAFDoc_CentroidDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMXCAFDoc_CentroidDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMXCAFDoc_ColorDriver;
@@ -532,8 +692,18 @@ class BinMXCAFDoc_ColorDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMXCAFDoc_ColorDriver::~BinMXCAFDoc_ColorDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMXCAFDoc_ColorDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMXCAFDoc_GraphNodeDriver;
@@ -563,8 +733,18 @@ class BinMXCAFDoc_GraphNodeDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMXCAFDoc_GraphNodeDriver::~BinMXCAFDoc_GraphNodeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMXCAFDoc_GraphNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMXCAFDoc;
@@ -578,8 +758,18 @@ class BinMXCAFDoc {
 };
 %feature("shadow") BinMXCAFDoc::~BinMXCAFDoc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMXCAFDoc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMXCAFDoc_LocationDriver;
@@ -613,8 +803,18 @@ class BinMXCAFDoc_LocationDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMXCAFDoc_LocationDriver::~BinMXCAFDoc_LocationDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMXCAFDoc_LocationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMXCAFDoc_ShapeToolDriver;
@@ -644,5 +844,15 @@ class BinMXCAFDoc_ShapeToolDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMXCAFDoc_ShapeToolDriver::~BinMXCAFDoc_ShapeToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMXCAFDoc_ShapeToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

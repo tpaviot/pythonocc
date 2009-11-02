@@ -69,8 +69,18 @@ class Handle_XSAlgo_ToolContainer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_XSAlgo_ToolContainer::~Handle_XSAlgo_ToolContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XSAlgo_ToolContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XSAlgo_AlgoContainer;
@@ -97,8 +107,18 @@ class Handle_XSAlgo_AlgoContainer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_XSAlgo_AlgoContainer::~Handle_XSAlgo_AlgoContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XSAlgo_AlgoContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSAlgo;
@@ -116,8 +136,18 @@ class XSAlgo {
 };
 %feature("shadow") XSAlgo::~XSAlgo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSAlgo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSAlgo_ToolContainer;
@@ -141,5 +171,15 @@ class XSAlgo_ToolContainer : public MMgt_TShared {
 };
 %feature("shadow") XSAlgo_ToolContainer::~XSAlgo_ToolContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSAlgo_ToolContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

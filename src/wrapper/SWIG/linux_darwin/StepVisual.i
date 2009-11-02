@@ -91,8 +91,18 @@ class Handle_StepVisual_PresentationRepresentation : public Handle_StepRepr_Repr
 };
 %feature("shadow") Handle_StepVisual_PresentationRepresentation::~Handle_StepVisual_PresentationRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PresentationRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation;
@@ -119,8 +129,18 @@ class Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation : pu
 };
 %feature("shadow") Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation::~Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_CompositeText;
@@ -147,8 +167,18 @@ class Handle_StepVisual_CompositeText : public Handle_StepGeom_GeometricRepresen
 };
 %feature("shadow") Handle_StepVisual_CompositeText::~Handle_StepVisual_CompositeText %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_CompositeText {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleSegmentationCurve;
@@ -175,8 +205,18 @@ class Handle_StepVisual_SurfaceStyleSegmentationCurve : public Handle_MMgt_TShar
 };
 %feature("shadow") Handle_StepVisual_SurfaceStyleSegmentationCurve::~Handle_StepVisual_SurfaceStyleSegmentationCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_SurfaceStyleSegmentationCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_AnnotationText;
@@ -203,8 +243,18 @@ class Handle_StepVisual_AnnotationText : public Handle_StepRepr_MappedItem {
 };
 %feature("shadow") Handle_StepVisual_AnnotationText::~Handle_StepVisual_AnnotationText %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_AnnotationText {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_Invisibility;
@@ -231,8 +281,18 @@ class Handle_StepVisual_Invisibility : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_Invisibility::~Handle_StepVisual_Invisibility %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_Invisibility {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_ContextDependentInvisibility;
@@ -259,8 +319,18 @@ class Handle_StepVisual_ContextDependentInvisibility : public Handle_StepVisual_
 };
 %feature("shadow") Handle_StepVisual_ContextDependentInvisibility::~Handle_StepVisual_ContextDependentInvisibility %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_ContextDependentInvisibility {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PresentationArea;
@@ -287,8 +357,18 @@ class Handle_StepVisual_PresentationArea : public Handle_StepVisual_Presentation
 };
 %feature("shadow") Handle_StepVisual_PresentationArea::~Handle_StepVisual_PresentationArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PresentationArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PreDefinedItem;
@@ -315,8 +395,18 @@ class Handle_StepVisual_PreDefinedItem : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_PreDefinedItem::~Handle_StepVisual_PreDefinedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PreDefinedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PreDefinedCurveFont;
@@ -343,8 +433,18 @@ class Handle_StepVisual_PreDefinedCurveFont : public Handle_StepVisual_PreDefine
 };
 %feature("shadow") Handle_StepVisual_PreDefinedCurveFont::~Handle_StepVisual_PreDefinedCurveFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PreDefinedCurveFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_DraughtingPreDefinedCurveFont;
@@ -371,8 +471,18 @@ class Handle_StepVisual_DraughtingPreDefinedCurveFont : public Handle_StepVisual
 };
 %feature("shadow") Handle_StepVisual_DraughtingPreDefinedCurveFont::~Handle_StepVisual_DraughtingPreDefinedCurveFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_DraughtingPreDefinedCurveFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_ExternallyDefinedCurveFont;
@@ -399,8 +509,18 @@ class Handle_StepVisual_ExternallyDefinedCurveFont : public Handle_StepBasic_Ext
 };
 %feature("shadow") Handle_StepVisual_ExternallyDefinedCurveFont::~Handle_StepVisual_ExternallyDefinedCurveFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_ExternallyDefinedCurveFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_MarkerMember;
@@ -427,8 +547,18 @@ class Handle_StepVisual_MarkerMember : public Handle_StepData_SelectInt {
 };
 %feature("shadow") Handle_StepVisual_MarkerMember::~Handle_StepVisual_MarkerMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_MarkerMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_StyledItem;
@@ -455,8 +585,18 @@ class Handle_StepVisual_StyledItem : public Handle_StepRepr_RepresentationItem {
 };
 %feature("shadow") Handle_StepVisual_StyledItem::~Handle_StepVisual_StyledItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_StyledItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_OverRidingStyledItem;
@@ -483,8 +623,18 @@ class Handle_StepVisual_OverRidingStyledItem : public Handle_StepVisual_StyledIt
 };
 %feature("shadow") Handle_StepVisual_OverRidingStyledItem::~Handle_StepVisual_OverRidingStyledItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_OverRidingStyledItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_ContextDependentOverRidingStyledItem;
@@ -511,8 +661,18 @@ class Handle_StepVisual_ContextDependentOverRidingStyledItem : public Handle_Ste
 };
 %feature("shadow") Handle_StepVisual_ContextDependentOverRidingStyledItem::~Handle_StepVisual_ContextDependentOverRidingStyledItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_ContextDependentOverRidingStyledItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PresentationSize;
@@ -539,8 +699,18 @@ class Handle_StepVisual_PresentationSize : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_PresentationSize::~Handle_StepVisual_PresentationSize %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PresentationSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleSilhouette;
@@ -567,8 +737,18 @@ class Handle_StepVisual_SurfaceStyleSilhouette : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_SurfaceStyleSilhouette::~Handle_StepVisual_SurfaceStyleSilhouette %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_SurfaceStyleSilhouette {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PlanarExtent;
@@ -595,8 +775,18 @@ class Handle_StepVisual_PlanarExtent : public Handle_StepGeom_GeometricRepresent
 };
 %feature("shadow") Handle_StepVisual_PlanarExtent::~Handle_StepVisual_PlanarExtent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PlanarExtent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PlanarBox;
@@ -623,8 +813,18 @@ class Handle_StepVisual_PlanarBox : public Handle_StepVisual_PlanarExtent {
 };
 %feature("shadow") Handle_StepVisual_PlanarBox::~Handle_StepVisual_PlanarBox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PlanarBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_HArray1OfTextOrCharacter;
@@ -651,8 +851,18 @@ class Handle_StepVisual_HArray1OfTextOrCharacter : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_HArray1OfTextOrCharacter::~Handle_StepVisual_HArray1OfTextOrCharacter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_HArray1OfTextOrCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_Colour;
@@ -679,8 +889,18 @@ class Handle_StepVisual_Colour : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_Colour::~Handle_StepVisual_Colour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_Colour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_CameraModel;
@@ -707,8 +927,18 @@ class Handle_StepVisual_CameraModel : public Handle_StepGeom_GeometricRepresenta
 };
 %feature("shadow") Handle_StepVisual_CameraModel::~Handle_StepVisual_CameraModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_CameraModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_CameraModelD2;
@@ -735,8 +965,18 @@ class Handle_StepVisual_CameraModelD2 : public Handle_StepVisual_CameraModel {
 };
 %feature("shadow") Handle_StepVisual_CameraModelD2::~Handle_StepVisual_CameraModelD2 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_CameraModelD2 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_CameraModelD3;
@@ -763,8 +1003,18 @@ class Handle_StepVisual_CameraModelD3 : public Handle_StepVisual_CameraModel {
 };
 %feature("shadow") Handle_StepVisual_CameraModelD3::~Handle_StepVisual_CameraModelD3 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_CameraModelD3 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_CameraImage;
@@ -791,8 +1041,18 @@ class Handle_StepVisual_CameraImage : public Handle_StepRepr_MappedItem {
 };
 %feature("shadow") Handle_StepVisual_CameraImage::~Handle_StepVisual_CameraImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_CameraImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_CameraImage2dWithScale;
@@ -819,8 +1079,18 @@ class Handle_StepVisual_CameraImage2dWithScale : public Handle_StepVisual_Camera
 };
 %feature("shadow") Handle_StepVisual_CameraImage2dWithScale::~Handle_StepVisual_CameraImage2dWithScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_CameraImage2dWithScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PresentationLayerAssignment;
@@ -847,8 +1117,18 @@ class Handle_StepVisual_PresentationLayerAssignment : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_StepVisual_PresentationLayerAssignment::~Handle_StepVisual_PresentationLayerAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PresentationLayerAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_FillAreaStyleColour;
@@ -875,8 +1155,18 @@ class Handle_StepVisual_FillAreaStyleColour : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_FillAreaStyleColour::~Handle_StepVisual_FillAreaStyleColour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_FillAreaStyleColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_TextStyle;
@@ -903,8 +1193,18 @@ class Handle_StepVisual_TextStyle : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_TextStyle::~Handle_StepVisual_TextStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_TextStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_TextStyleWithBoxCharacteristics;
@@ -931,8 +1231,18 @@ class Handle_StepVisual_TextStyleWithBoxCharacteristics : public Handle_StepVisu
 };
 %feature("shadow") Handle_StepVisual_TextStyleWithBoxCharacteristics::~Handle_StepVisual_TextStyleWithBoxCharacteristics %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_TextStyleWithBoxCharacteristics {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_SurfaceSideStyle;
@@ -959,8 +1269,18 @@ class Handle_StepVisual_SurfaceSideStyle : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_SurfaceSideStyle::~Handle_StepVisual_SurfaceSideStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_SurfaceSideStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_CurveStyleFont;
@@ -987,8 +1307,18 @@ class Handle_StepVisual_CurveStyleFont : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_CurveStyleFont::~Handle_StepVisual_CurveStyleFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_CurveStyleFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PointStyle;
@@ -1015,8 +1345,18 @@ class Handle_StepVisual_PointStyle : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_PointStyle::~Handle_StepVisual_PointStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PointStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_HArray1OfDirectionCountSelect;
@@ -1043,8 +1383,18 @@ class Handle_StepVisual_HArray1OfDirectionCountSelect : public Handle_MMgt_TShar
 };
 %feature("shadow") Handle_StepVisual_HArray1OfDirectionCountSelect::~Handle_StepVisual_HArray1OfDirectionCountSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_HArray1OfDirectionCountSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PreDefinedColour;
@@ -1071,8 +1421,18 @@ class Handle_StepVisual_PreDefinedColour : public Handle_StepVisual_Colour {
 };
 %feature("shadow") Handle_StepVisual_PreDefinedColour::~Handle_StepVisual_PreDefinedColour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PreDefinedColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_DraughtingPreDefinedColour;
@@ -1099,8 +1459,18 @@ class Handle_StepVisual_DraughtingPreDefinedColour : public Handle_StepVisual_Pr
 };
 %feature("shadow") Handle_StepVisual_DraughtingPreDefinedColour::~Handle_StepVisual_DraughtingPreDefinedColour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_DraughtingPreDefinedColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_FillAreaStyle;
@@ -1127,8 +1497,18 @@ class Handle_StepVisual_FillAreaStyle : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_FillAreaStyle::~Handle_StepVisual_FillAreaStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_FillAreaStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PresentationSet;
@@ -1155,8 +1535,18 @@ class Handle_StepVisual_PresentationSet : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_PresentationSet::~Handle_StepVisual_PresentationSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PresentationSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_ColourSpecification;
@@ -1183,8 +1573,18 @@ class Handle_StepVisual_ColourSpecification : public Handle_StepVisual_Colour {
 };
 %feature("shadow") Handle_StepVisual_ColourSpecification::~Handle_StepVisual_ColourSpecification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_ColourSpecification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_ColourRgb;
@@ -1211,8 +1611,18 @@ class Handle_StepVisual_ColourRgb : public Handle_StepVisual_ColourSpecification
 };
 %feature("shadow") Handle_StepVisual_ColourRgb::~Handle_StepVisual_ColourRgb %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_ColourRgb {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_CurveStyle;
@@ -1239,8 +1649,18 @@ class Handle_StepVisual_CurveStyle : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_CurveStyle::~Handle_StepVisual_CurveStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_CurveStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_ExternallyDefinedTextFont;
@@ -1267,8 +1687,18 @@ class Handle_StepVisual_ExternallyDefinedTextFont : public Handle_StepBasic_Exte
 };
 %feature("shadow") Handle_StepVisual_ExternallyDefinedTextFont::~Handle_StepVisual_ExternallyDefinedTextFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_ExternallyDefinedTextFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_ViewVolume;
@@ -1295,8 +1725,18 @@ class Handle_StepVisual_ViewVolume : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_ViewVolume::~Handle_StepVisual_ViewVolume %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_ViewVolume {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_TemplateInstance;
@@ -1323,8 +1763,18 @@ class Handle_StepVisual_TemplateInstance : public Handle_StepRepr_MappedItem {
 };
 %feature("shadow") Handle_StepVisual_TemplateInstance::~Handle_StepVisual_TemplateInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_TemplateInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PresentedItemRepresentation;
@@ -1351,8 +1801,18 @@ class Handle_StepVisual_PresentedItemRepresentation : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_StepVisual_PresentedItemRepresentation::~Handle_StepVisual_PresentedItemRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PresentedItemRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleBoundary;
@@ -1379,8 +1839,18 @@ class Handle_StepVisual_SurfaceStyleBoundary : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_SurfaceStyleBoundary::~Handle_StepVisual_SurfaceStyleBoundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_SurfaceStyleBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_AnnotationOccurrence;
@@ -1407,8 +1877,18 @@ class Handle_StepVisual_AnnotationOccurrence : public Handle_StepVisual_StyledIt
 };
 %feature("shadow") Handle_StepVisual_AnnotationOccurrence::~Handle_StepVisual_AnnotationOccurrence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_AnnotationOccurrence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PresentationView;
@@ -1435,8 +1915,18 @@ class Handle_StepVisual_PresentationView : public Handle_StepVisual_Presentation
 };
 %feature("shadow") Handle_StepVisual_PresentationView::~Handle_StepVisual_PresentationView %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PresentationView {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleFillArea;
@@ -1463,8 +1953,18 @@ class Handle_StepVisual_SurfaceStyleFillArea : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_SurfaceStyleFillArea::~Handle_StepVisual_SurfaceStyleFillArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_SurfaceStyleFillArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PresentedItem;
@@ -1491,8 +1991,18 @@ class Handle_StepVisual_PresentedItem : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_PresentedItem::~Handle_StepVisual_PresentedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PresentedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_Template;
@@ -1519,8 +2029,18 @@ class Handle_StepVisual_Template : public Handle_StepRepr_Representation {
 };
 %feature("shadow") Handle_StepVisual_Template::~Handle_StepVisual_Template %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_Template {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_AreaInSet;
@@ -1547,8 +2067,18 @@ class Handle_StepVisual_AreaInSet : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_AreaInSet::~Handle_StepVisual_AreaInSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_AreaInSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_TextStyleForDefinedFont;
@@ -1575,8 +2105,18 @@ class Handle_StepVisual_TextStyleForDefinedFont : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_TextStyleForDefinedFont::~Handle_StepVisual_TextStyleForDefinedFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_TextStyleForDefinedFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_HArray1OfPresentationStyleAssignment;
@@ -1603,8 +2143,18 @@ class Handle_StepVisual_HArray1OfPresentationStyleAssignment : public Handle_MMg
 };
 %feature("shadow") Handle_StepVisual_HArray1OfPresentationStyleAssignment::~Handle_StepVisual_HArray1OfPresentationStyleAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_HArray1OfPresentationStyleAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PreDefinedTextFont;
@@ -1631,8 +2181,18 @@ class Handle_StepVisual_PreDefinedTextFont : public Handle_StepVisual_PreDefined
 };
 %feature("shadow") Handle_StepVisual_PreDefinedTextFont::~Handle_StepVisual_PreDefinedTextFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PreDefinedTextFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_HArray1OfBoxCharacteristicSelect;
@@ -1659,8 +2219,18 @@ class Handle_StepVisual_HArray1OfBoxCharacteristicSelect : public Handle_MMgt_TS
 };
 %feature("shadow") Handle_StepVisual_HArray1OfBoxCharacteristicSelect::~Handle_StepVisual_HArray1OfBoxCharacteristicSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_HArray1OfBoxCharacteristicSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_CurveStyleFontPattern;
@@ -1687,8 +2257,18 @@ class Handle_StepVisual_CurveStyleFontPattern : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_CurveStyleFontPattern::~Handle_StepVisual_CurveStyleFontPattern %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_CurveStyleFontPattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleUsage;
@@ -1715,8 +2295,18 @@ class Handle_StepVisual_SurfaceStyleUsage : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_SurfaceStyleUsage::~Handle_StepVisual_SurfaceStyleUsage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_SurfaceStyleUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleParameterLine;
@@ -1743,8 +2333,18 @@ class Handle_StepVisual_SurfaceStyleParameterLine : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_SurfaceStyleParameterLine::~Handle_StepVisual_SurfaceStyleParameterLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_SurfaceStyleParameterLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_MechanicalDesignGeometricPresentationArea;
@@ -1771,8 +2371,18 @@ class Handle_StepVisual_MechanicalDesignGeometricPresentationArea : public Handl
 };
 %feature("shadow") Handle_StepVisual_MechanicalDesignGeometricPresentationArea::~Handle_StepVisual_MechanicalDesignGeometricPresentationArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_MechanicalDesignGeometricPresentationArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_AnnotationTextOccurrence;
@@ -1799,8 +2409,18 @@ class Handle_StepVisual_AnnotationTextOccurrence : public Handle_StepVisual_Anno
 };
 %feature("shadow") Handle_StepVisual_AnnotationTextOccurrence::~Handle_StepVisual_AnnotationTextOccurrence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_AnnotationTextOccurrence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_TextLiteral;
@@ -1827,8 +2447,18 @@ class Handle_StepVisual_TextLiteral : public Handle_StepGeom_GeometricRepresenta
 };
 %feature("shadow") Handle_StepVisual_TextLiteral::~Handle_StepVisual_TextLiteral %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_TextLiteral {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_HArray1OfFillStyleSelect;
@@ -1855,8 +2485,18 @@ class Handle_StepVisual_HArray1OfFillStyleSelect : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_HArray1OfFillStyleSelect::~Handle_StepVisual_HArray1OfFillStyleSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_HArray1OfFillStyleSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_CompositeTextWithExtent;
@@ -1883,8 +2523,18 @@ class Handle_StepVisual_CompositeTextWithExtent : public Handle_StepVisual_Compo
 };
 %feature("shadow") Handle_StepVisual_CompositeTextWithExtent::~Handle_StepVisual_CompositeTextWithExtent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_CompositeTextWithExtent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_HArray1OfCurveStyleFontPattern;
@@ -1911,8 +2561,18 @@ class Handle_StepVisual_HArray1OfCurveStyleFontPattern : public Handle_MMgt_TSha
 };
 %feature("shadow") Handle_StepVisual_HArray1OfCurveStyleFontPattern::~Handle_StepVisual_HArray1OfCurveStyleFontPattern %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_HArray1OfCurveStyleFontPattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_DraughtingModel;
@@ -1939,8 +2599,18 @@ class Handle_StepVisual_DraughtingModel : public Handle_StepRepr_Representation 
 };
 %feature("shadow") Handle_StepVisual_DraughtingModel::~Handle_StepVisual_DraughtingModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_DraughtingModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_HArray1OfLayeredItem;
@@ -1967,8 +2637,18 @@ class Handle_StepVisual_HArray1OfLayeredItem : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_HArray1OfLayeredItem::~Handle_StepVisual_HArray1OfLayeredItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_HArray1OfLayeredItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PresentationLayerUsage;
@@ -1995,8 +2675,18 @@ class Handle_StepVisual_PresentationLayerUsage : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_PresentationLayerUsage::~Handle_StepVisual_PresentationLayerUsage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PresentationLayerUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_HArray1OfInvisibleItem;
@@ -2023,8 +2713,18 @@ class Handle_StepVisual_HArray1OfInvisibleItem : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_HArray1OfInvisibleItem::~Handle_StepVisual_HArray1OfInvisibleItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_HArray1OfInvisibleItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_BackgroundColour;
@@ -2051,8 +2751,18 @@ class Handle_StepVisual_BackgroundColour : public Handle_StepVisual_Colour {
 };
 %feature("shadow") Handle_StepVisual_BackgroundColour::~Handle_StepVisual_BackgroundColour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_BackgroundColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_CameraImage3dWithScale;
@@ -2079,8 +2789,18 @@ class Handle_StepVisual_CameraImage3dWithScale : public Handle_StepVisual_Camera
 };
 %feature("shadow") Handle_StepVisual_CameraImage3dWithScale::~Handle_StepVisual_CameraImage3dWithScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_CameraImage3dWithScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_DraughtingAnnotationOccurrence;
@@ -2107,8 +2827,18 @@ class Handle_StepVisual_DraughtingAnnotationOccurrence : public Handle_StepVisua
 };
 %feature("shadow") Handle_StepVisual_DraughtingAnnotationOccurrence::~Handle_StepVisual_DraughtingAnnotationOccurrence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_DraughtingAnnotationOccurrence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_HArray1OfStyleContextSelect;
@@ -2135,8 +2865,18 @@ class Handle_StepVisual_HArray1OfStyleContextSelect : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_StepVisual_HArray1OfStyleContextSelect::~Handle_StepVisual_HArray1OfStyleContextSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_HArray1OfStyleContextSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_CameraUsage;
@@ -2163,8 +2903,18 @@ class Handle_StepVisual_CameraUsage : public Handle_StepRepr_RepresentationMap {
 };
 %feature("shadow") Handle_StepVisual_CameraUsage::~Handle_StepVisual_CameraUsage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_CameraUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PresentationStyleAssignment;
@@ -2191,8 +2941,18 @@ class Handle_StepVisual_PresentationStyleAssignment : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_StepVisual_PresentationStyleAssignment::~Handle_StepVisual_PresentationStyleAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PresentationStyleAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_PresentationStyleByContext;
@@ -2219,8 +2979,18 @@ class Handle_StepVisual_PresentationStyleByContext : public Handle_StepVisual_Pr
 };
 %feature("shadow") Handle_StepVisual_PresentationStyleByContext::~Handle_StepVisual_PresentationStyleByContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_PresentationStyleByContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_HArray1OfSurfaceStyleElementSelect;
@@ -2247,8 +3017,18 @@ class Handle_StepVisual_HArray1OfSurfaceStyleElementSelect : public Handle_MMgt_
 };
 %feature("shadow") Handle_StepVisual_HArray1OfSurfaceStyleElementSelect::~Handle_StepVisual_HArray1OfSurfaceStyleElementSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_HArray1OfSurfaceStyleElementSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleControlGrid;
@@ -2275,8 +3055,18 @@ class Handle_StepVisual_SurfaceStyleControlGrid : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepVisual_SurfaceStyleControlGrid::~Handle_StepVisual_SurfaceStyleControlGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_SurfaceStyleControlGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepVisual_HArray1OfPresentationStyleSelect;
@@ -2303,8 +3093,18 @@ class Handle_StepVisual_HArray1OfPresentationStyleSelect : public Handle_MMgt_TS
 };
 %feature("shadow") Handle_StepVisual_HArray1OfPresentationStyleSelect::~Handle_StepVisual_HArray1OfPresentationStyleSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepVisual_HArray1OfPresentationStyleSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_CurveStyleFontPattern;
@@ -2338,8 +3138,18 @@ class StepVisual_CurveStyleFontPattern : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_CurveStyleFontPattern::~StepVisual_CurveStyleFontPattern %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_CurveStyleFontPattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_SurfaceStyleElementSelect;
@@ -2359,8 +3169,18 @@ class StepVisual_SurfaceStyleElementSelect : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_SurfaceStyleElementSelect::~StepVisual_SurfaceStyleElementSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_SurfaceStyleElementSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_CameraUsage;
@@ -2384,8 +3204,18 @@ class StepVisual_CameraUsage : public StepRepr_RepresentationMap {
 };
 %feature("shadow") StepVisual_CameraUsage::~StepVisual_CameraUsage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_CameraUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_AnnotationText;
@@ -2409,8 +3239,18 @@ class StepVisual_AnnotationText : public StepRepr_MappedItem {
 };
 %feature("shadow") StepVisual_AnnotationText::~StepVisual_AnnotationText %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_AnnotationText {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_HArray1OfDirectionCountSelect;
@@ -2454,8 +3294,18 @@ class StepVisual_HArray1OfDirectionCountSelect : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_HArray1OfDirectionCountSelect::~StepVisual_HArray1OfDirectionCountSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_HArray1OfDirectionCountSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_HArray1OfCurveStyleFontPattern;
@@ -2499,8 +3349,18 @@ class StepVisual_HArray1OfCurveStyleFontPattern : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_HArray1OfCurveStyleFontPattern::~StepVisual_HArray1OfCurveStyleFontPattern %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_HArray1OfCurveStyleFontPattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentedItemRepresentation;
@@ -2534,8 +3394,18 @@ class StepVisual_PresentedItemRepresentation : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_PresentedItemRepresentation::~StepVisual_PresentedItemRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentedItemRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentationRepresentation;
@@ -2559,8 +3429,18 @@ class StepVisual_PresentationRepresentation : public StepRepr_Representation {
 };
 %feature("shadow") StepVisual_PresentationRepresentation::~StepVisual_PresentationRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentationRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentationArea;
@@ -2582,8 +3462,18 @@ class StepVisual_PresentationArea : public StepVisual_PresentationRepresentation
 };
 %feature("shadow") StepVisual_PresentationArea::~StepVisual_PresentationArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentationArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_MechanicalDesignGeometricPresentationArea;
@@ -2605,8 +3495,18 @@ class StepVisual_MechanicalDesignGeometricPresentationArea : public StepVisual_P
 };
 %feature("shadow") StepVisual_MechanicalDesignGeometricPresentationArea::~StepVisual_MechanicalDesignGeometricPresentationArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_MechanicalDesignGeometricPresentationArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_HArray1OfStyleContextSelect;
@@ -2650,8 +3550,18 @@ class StepVisual_HArray1OfStyleContextSelect : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_HArray1OfStyleContextSelect::~StepVisual_HArray1OfStyleContextSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_HArray1OfStyleContextSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_BoxCharacteristicSelect;
@@ -2671,8 +3581,18 @@ class StepVisual_BoxCharacteristicSelect {
 };
 %feature("shadow") StepVisual_BoxCharacteristicSelect::~StepVisual_BoxCharacteristicSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_BoxCharacteristicSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_CameraModel;
@@ -2696,8 +3616,18 @@ class StepVisual_CameraModel : public StepGeom_GeometricRepresentationItem {
 };
 %feature("shadow") StepVisual_CameraModel::~StepVisual_CameraModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_CameraModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_HArray1OfTextOrCharacter;
@@ -2741,8 +3671,18 @@ class StepVisual_HArray1OfTextOrCharacter : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_HArray1OfTextOrCharacter::~StepVisual_HArray1OfTextOrCharacter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_HArray1OfTextOrCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PlanarExtent;
@@ -2778,8 +3718,18 @@ class StepVisual_PlanarExtent : public StepGeom_GeometricRepresentationItem {
 };
 %feature("shadow") StepVisual_PlanarExtent::~StepVisual_PlanarExtent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PlanarExtent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentationStyleAssignment;
@@ -2813,8 +3763,18 @@ class StepVisual_PresentationStyleAssignment : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_PresentationStyleAssignment::~StepVisual_PresentationStyleAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentationStyleAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentationStyleByContext;
@@ -2842,8 +3802,18 @@ class StepVisual_PresentationStyleByContext : public StepVisual_PresentationStyl
 };
 %feature("shadow") StepVisual_PresentationStyleByContext::~StepVisual_PresentationStyleByContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentationStyleByContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_CurveStyle;
@@ -2885,8 +3855,18 @@ class StepVisual_CurveStyle : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_CurveStyle::~StepVisual_CurveStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_CurveStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Array1OfInvisibleItem;
@@ -2926,8 +3906,18 @@ class StepVisual_Array1OfInvisibleItem {
 };
 %feature("shadow") StepVisual_Array1OfInvisibleItem::~StepVisual_Array1OfInvisibleItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Array1OfInvisibleItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_StyledItem;
@@ -2967,8 +3957,18 @@ class StepVisual_StyledItem : public StepRepr_RepresentationItem {
 };
 %feature("shadow") StepVisual_StyledItem::~StepVisual_StyledItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_StyledItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_AnnotationOccurrence;
@@ -2990,8 +3990,18 @@ class StepVisual_AnnotationOccurrence : public StepVisual_StyledItem {
 };
 %feature("shadow") StepVisual_AnnotationOccurrence::~StepVisual_AnnotationOccurrence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_AnnotationOccurrence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_DraughtingAnnotationOccurrence;
@@ -3013,8 +4023,18 @@ class StepVisual_DraughtingAnnotationOccurrence : public StepVisual_AnnotationOc
 };
 %feature("shadow") StepVisual_DraughtingAnnotationOccurrence::~StepVisual_DraughtingAnnotationOccurrence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_DraughtingAnnotationOccurrence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_SurfaceStyleSilhouette;
@@ -3044,8 +4064,18 @@ class StepVisual_SurfaceStyleSilhouette : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_SurfaceStyleSilhouette::~StepVisual_SurfaceStyleSilhouette %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_SurfaceStyleSilhouette {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Colour;
@@ -3069,8 +4099,18 @@ class StepVisual_Colour : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_Colour::~StepVisual_Colour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Colour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_BackgroundColour;
@@ -3098,8 +4138,18 @@ class StepVisual_BackgroundColour : public StepVisual_Colour {
 };
 %feature("shadow") StepVisual_BackgroundColour::~StepVisual_BackgroundColour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_BackgroundColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_FillStyleSelect;
@@ -3115,8 +4165,18 @@ class StepVisual_FillStyleSelect : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_FillStyleSelect::~StepVisual_FillStyleSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_FillStyleSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Array1OfStyleContextSelect;
@@ -3156,8 +4216,18 @@ class StepVisual_Array1OfStyleContextSelect {
 };
 %feature("shadow") StepVisual_Array1OfStyleContextSelect::~StepVisual_Array1OfStyleContextSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Array1OfStyleContextSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_ViewVolume;
@@ -3219,8 +4289,18 @@ class StepVisual_ViewVolume : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_ViewVolume::~StepVisual_ViewVolume %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_ViewVolume {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_HArray1OfPresentationStyleSelect;
@@ -3264,8 +4344,18 @@ class StepVisual_HArray1OfPresentationStyleSelect : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_HArray1OfPresentationStyleSelect::~StepVisual_HArray1OfPresentationStyleSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_HArray1OfPresentationStyleSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PreDefinedColour;
@@ -3293,8 +4383,18 @@ class StepVisual_PreDefinedColour : public StepVisual_Colour {
 };
 %feature("shadow") StepVisual_PreDefinedColour::~StepVisual_PreDefinedColour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PreDefinedColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PlanarBox;
@@ -3326,8 +4426,18 @@ class StepVisual_PlanarBox : public StepVisual_PlanarExtent {
 };
 %feature("shadow") StepVisual_PlanarBox::~StepVisual_PlanarBox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PlanarBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_OverRidingStyledItem;
@@ -3359,8 +4469,18 @@ class StepVisual_OverRidingStyledItem : public StepVisual_StyledItem {
 };
 %feature("shadow") StepVisual_OverRidingStyledItem::~StepVisual_OverRidingStyledItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_OverRidingStyledItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_ContextDependentOverRidingStyledItem;
@@ -3392,8 +4512,18 @@ class StepVisual_ContextDependentOverRidingStyledItem : public StepVisual_OverRi
 };
 %feature("shadow") StepVisual_ContextDependentOverRidingStyledItem::~StepVisual_ContextDependentOverRidingStyledItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_ContextDependentOverRidingStyledItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentationSizeAssignmentSelect;
@@ -3413,8 +4543,18 @@ class StepVisual_PresentationSizeAssignmentSelect : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_PresentationSizeAssignmentSelect::~StepVisual_PresentationSizeAssignmentSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentationSizeAssignmentSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PointStyle;
@@ -3456,8 +4596,18 @@ class StepVisual_PointStyle : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_PointStyle::~StepVisual_PointStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PointStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_CompositeText;
@@ -3493,8 +4643,18 @@ class StepVisual_CompositeText : public StepGeom_GeometricRepresentationItem {
 };
 %feature("shadow") StepVisual_CompositeText::~StepVisual_CompositeText %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_CompositeText {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_MarkerMember;
@@ -3532,8 +4692,18 @@ class StepVisual_MarkerMember : public StepData_SelectInt {
 };
 %feature("shadow") StepVisual_MarkerMember::~StepVisual_MarkerMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_MarkerMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_CameraImage;
@@ -3557,8 +4727,18 @@ class StepVisual_CameraImage : public StepRepr_MappedItem {
 };
 %feature("shadow") StepVisual_CameraImage::~StepVisual_CameraImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_CameraImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_TextStyle;
@@ -3592,8 +4772,18 @@ class StepVisual_TextStyle : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_TextStyle::~StepVisual_TextStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_TextStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_TextStyleWithBoxCharacteristics;
@@ -3625,8 +4815,18 @@ class StepVisual_TextStyleWithBoxCharacteristics : public StepVisual_TextStyle {
 };
 %feature("shadow") StepVisual_TextStyleWithBoxCharacteristics::~StepVisual_TextStyleWithBoxCharacteristics %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_TextStyleWithBoxCharacteristics {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_SurfaceStyleUsage;
@@ -3660,8 +4860,18 @@ class StepVisual_SurfaceStyleUsage : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_SurfaceStyleUsage::~StepVisual_SurfaceStyleUsage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_SurfaceStyleUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_MarkerSelect;
@@ -3681,8 +4891,18 @@ class StepVisual_MarkerSelect : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_MarkerSelect::~StepVisual_MarkerSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_MarkerSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_CameraImage3dWithScale;
@@ -3706,8 +4926,18 @@ class StepVisual_CameraImage3dWithScale : public StepVisual_CameraImage {
 };
 %feature("shadow") StepVisual_CameraImage3dWithScale::~StepVisual_CameraImage3dWithScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_CameraImage3dWithScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_AnnotationTextOccurrence;
@@ -3731,8 +4961,18 @@ class StepVisual_AnnotationTextOccurrence : public StepVisual_AnnotationOccurren
 };
 %feature("shadow") StepVisual_AnnotationTextOccurrence::~StepVisual_AnnotationTextOccurrence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_AnnotationTextOccurrence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_ExternallyDefinedCurveFont;
@@ -3756,8 +4996,18 @@ class StepVisual_ExternallyDefinedCurveFont : public StepBasic_ExternallyDefined
 };
 %feature("shadow") StepVisual_ExternallyDefinedCurveFont::~StepVisual_ExternallyDefinedCurveFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_ExternallyDefinedCurveFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_HArray1OfLayeredItem;
@@ -3801,8 +5051,18 @@ class StepVisual_HArray1OfLayeredItem : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_HArray1OfLayeredItem::~StepVisual_HArray1OfLayeredItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_HArray1OfLayeredItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentationRepresentationSelect;
@@ -3820,8 +5080,18 @@ class StepVisual_PresentationRepresentationSelect : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_PresentationRepresentationSelect::~StepVisual_PresentationRepresentationSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentationRepresentationSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_ColourSpecification;
@@ -3851,8 +5121,18 @@ class StepVisual_ColourSpecification : public StepVisual_Colour {
 };
 %feature("shadow") StepVisual_ColourSpecification::~StepVisual_ColourSpecification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_ColourSpecification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_ColourRgb;
@@ -3888,8 +5168,18 @@ class StepVisual_ColourRgb : public StepVisual_ColourSpecification {
 };
 %feature("shadow") StepVisual_ColourRgb::~StepVisual_ColourRgb %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_ColourRgb {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_HArray1OfSurfaceStyleElementSelect;
@@ -3933,8 +5223,18 @@ class StepVisual_HArray1OfSurfaceStyleElementSelect : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_HArray1OfSurfaceStyleElementSelect::~StepVisual_HArray1OfSurfaceStyleElementSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_HArray1OfSurfaceStyleElementSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Array1OfTextOrCharacter;
@@ -3974,8 +5274,18 @@ class StepVisual_Array1OfTextOrCharacter {
 };
 %feature("shadow") StepVisual_Array1OfTextOrCharacter::~StepVisual_Array1OfTextOrCharacter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Array1OfTextOrCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentationLayerAssignment;
@@ -4017,8 +5327,18 @@ class StepVisual_PresentationLayerAssignment : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_PresentationLayerAssignment::~StepVisual_PresentationLayerAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentationLayerAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_FillAreaStyleColour;
@@ -4052,8 +5372,18 @@ class StepVisual_FillAreaStyleColour : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_FillAreaStyleColour::~StepVisual_FillAreaStyleColour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_FillAreaStyleColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PreDefinedItem;
@@ -4083,8 +5413,18 @@ class StepVisual_PreDefinedItem : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_PreDefinedItem::~StepVisual_PreDefinedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PreDefinedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_InvisibleItem;
@@ -4104,8 +5444,18 @@ class StepVisual_InvisibleItem : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_InvisibleItem::~StepVisual_InvisibleItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_InvisibleItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_StyleContextSelect;
@@ -4125,8 +5475,18 @@ class StepVisual_StyleContextSelect : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_StyleContextSelect::~StepVisual_StyleContextSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_StyleContextSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentationView;
@@ -4150,8 +5510,18 @@ class StepVisual_PresentationView : public StepVisual_PresentationRepresentation
 };
 %feature("shadow") StepVisual_PresentationView::~StepVisual_PresentationView %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentationView {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentationLayerUsage;
@@ -4185,8 +5555,18 @@ class StepVisual_PresentationLayerUsage : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_PresentationLayerUsage::~StepVisual_PresentationLayerUsage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentationLayerUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_TextLiteral;
@@ -4234,8 +5614,18 @@ class StepVisual_TextLiteral : public StepGeom_GeometricRepresentationItem {
 };
 %feature("shadow") StepVisual_TextLiteral::~StepVisual_TextLiteral %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_TextLiteral {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentationSize;
@@ -4269,8 +5659,18 @@ class StepVisual_PresentationSize : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_PresentationSize::~StepVisual_PresentationSize %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentationSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Array1OfFillStyleSelect;
@@ -4310,8 +5710,18 @@ class StepVisual_Array1OfFillStyleSelect {
 };
 %feature("shadow") StepVisual_Array1OfFillStyleSelect::~StepVisual_Array1OfFillStyleSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Array1OfFillStyleSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Invisibility;
@@ -4345,8 +5755,18 @@ class StepVisual_Invisibility : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_Invisibility::~StepVisual_Invisibility %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Invisibility {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_ContextDependentInvisibility;
@@ -4374,8 +5794,18 @@ class StepVisual_ContextDependentInvisibility : public StepVisual_Invisibility {
 };
 %feature("shadow") StepVisual_ContextDependentInvisibility::~StepVisual_ContextDependentInvisibility %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_ContextDependentInvisibility {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PreDefinedCurveFont;
@@ -4399,8 +5829,18 @@ class StepVisual_PreDefinedCurveFont : public StepVisual_PreDefinedItem {
 };
 %feature("shadow") StepVisual_PreDefinedCurveFont::~StepVisual_PreDefinedCurveFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PreDefinedCurveFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_DraughtingPreDefinedCurveFont;
@@ -4422,8 +5862,18 @@ class StepVisual_DraughtingPreDefinedCurveFont : public StepVisual_PreDefinedCur
 };
 %feature("shadow") StepVisual_DraughtingPreDefinedCurveFont::~StepVisual_DraughtingPreDefinedCurveFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_DraughtingPreDefinedCurveFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Template;
@@ -4447,8 +5897,18 @@ class StepVisual_Template : public StepRepr_Representation {
 };
 %feature("shadow") StepVisual_Template::~StepVisual_Template %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Template {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_TextStyleForDefinedFont;
@@ -4478,8 +5938,18 @@ class StepVisual_TextStyleForDefinedFont : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_TextStyleForDefinedFont::~StepVisual_TextStyleForDefinedFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_TextStyleForDefinedFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_SurfaceStyleParameterLine;
@@ -4517,8 +5987,18 @@ class StepVisual_SurfaceStyleParameterLine : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_SurfaceStyleParameterLine::~StepVisual_SurfaceStyleParameterLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_SurfaceStyleParameterLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_CameraModelD2;
@@ -4554,8 +6034,18 @@ class StepVisual_CameraModelD2 : public StepVisual_CameraModel {
 };
 %feature("shadow") StepVisual_CameraModelD2::~StepVisual_CameraModelD2 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_CameraModelD2 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_CurveStyleFont;
@@ -4593,8 +6083,18 @@ class StepVisual_CurveStyleFont : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_CurveStyleFont::~StepVisual_CurveStyleFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_CurveStyleFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentationSet;
@@ -4618,8 +6118,18 @@ class StepVisual_PresentationSet : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_PresentationSet::~StepVisual_PresentationSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentationSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_ExternallyDefinedTextFont;
@@ -4643,8 +6153,18 @@ class StepVisual_ExternallyDefinedTextFont : public StepBasic_ExternallyDefinedI
 };
 %feature("shadow") StepVisual_ExternallyDefinedTextFont::~StepVisual_ExternallyDefinedTextFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_ExternallyDefinedTextFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_SurfaceSideStyle;
@@ -4682,8 +6202,18 @@ class StepVisual_SurfaceSideStyle : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_SurfaceSideStyle::~StepVisual_SurfaceSideStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_SurfaceSideStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Array1OfBoxCharacteristicSelect;
@@ -4723,8 +6253,18 @@ class StepVisual_Array1OfBoxCharacteristicSelect {
 };
 %feature("shadow") StepVisual_Array1OfBoxCharacteristicSelect::~StepVisual_Array1OfBoxCharacteristicSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Array1OfBoxCharacteristicSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Array1OfPresentationStyleAssignment;
@@ -4764,8 +6304,18 @@ class StepVisual_Array1OfPresentationStyleAssignment {
 };
 %feature("shadow") StepVisual_Array1OfPresentationStyleAssignment::~StepVisual_Array1OfPresentationStyleAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Array1OfPresentationStyleAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_LayeredItem;
@@ -4783,8 +6333,18 @@ class StepVisual_LayeredItem : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_LayeredItem::~StepVisual_LayeredItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_LayeredItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_FillAreaStyle;
@@ -4822,8 +6382,18 @@ class StepVisual_FillAreaStyle : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_FillAreaStyle::~StepVisual_FillAreaStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_FillAreaStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_CompositeTextWithExtent;
@@ -4855,8 +6425,18 @@ class StepVisual_CompositeTextWithExtent : public StepVisual_CompositeText {
 };
 %feature("shadow") StepVisual_CompositeTextWithExtent::~StepVisual_CompositeTextWithExtent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_CompositeTextWithExtent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_SurfaceStyleBoundary;
@@ -4886,8 +6466,18 @@ class StepVisual_SurfaceStyleBoundary : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_SurfaceStyleBoundary::~StepVisual_SurfaceStyleBoundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_SurfaceStyleBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_DirectionCountSelect;
@@ -4911,8 +6501,18 @@ class StepVisual_DirectionCountSelect {
 };
 %feature("shadow") StepVisual_DirectionCountSelect::~StepVisual_DirectionCountSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_DirectionCountSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Array1OfLayeredItem;
@@ -4952,8 +6552,18 @@ class StepVisual_Array1OfLayeredItem {
 };
 %feature("shadow") StepVisual_Array1OfLayeredItem::~StepVisual_Array1OfLayeredItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Array1OfLayeredItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_MechanicalDesignGeometricPresentationRepresentation;
@@ -4977,8 +6587,18 @@ class StepVisual_MechanicalDesignGeometricPresentationRepresentation : public St
 };
 %feature("shadow") StepVisual_MechanicalDesignGeometricPresentationRepresentation::~StepVisual_MechanicalDesignGeometricPresentationRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Array1OfCurveStyleFontPattern;
@@ -5018,8 +6638,18 @@ class StepVisual_Array1OfCurveStyleFontPattern {
 };
 %feature("shadow") StepVisual_Array1OfCurveStyleFontPattern::~StepVisual_Array1OfCurveStyleFontPattern %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Array1OfCurveStyleFontPattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_DraughtingPreDefinedColour;
@@ -5043,8 +6673,18 @@ class StepVisual_DraughtingPreDefinedColour : public StepVisual_PreDefinedColour
 };
 %feature("shadow") StepVisual_DraughtingPreDefinedColour::~StepVisual_DraughtingPreDefinedColour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_DraughtingPreDefinedColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_TemplateInstance;
@@ -5068,8 +6708,18 @@ class StepVisual_TemplateInstance : public StepRepr_MappedItem {
 };
 %feature("shadow") StepVisual_TemplateInstance::~StepVisual_TemplateInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_TemplateInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_CameraImage2dWithScale;
@@ -5093,8 +6743,18 @@ class StepVisual_CameraImage2dWithScale : public StepVisual_CameraImage {
 };
 %feature("shadow") StepVisual_CameraImage2dWithScale::~StepVisual_CameraImage2dWithScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_CameraImage2dWithScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_SurfaceStyleSegmentationCurve;
@@ -5124,8 +6784,18 @@ class StepVisual_SurfaceStyleSegmentationCurve : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_SurfaceStyleSegmentationCurve::~StepVisual_SurfaceStyleSegmentationCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_SurfaceStyleSegmentationCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_FontSelect;
@@ -5143,8 +6813,18 @@ class StepVisual_FontSelect : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_FontSelect::~StepVisual_FontSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_FontSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Array1OfPresentationStyleSelect;
@@ -5184,8 +6864,18 @@ class StepVisual_Array1OfPresentationStyleSelect {
 };
 %feature("shadow") StepVisual_Array1OfPresentationStyleSelect::~StepVisual_Array1OfPresentationStyleSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Array1OfPresentationStyleSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_HArray1OfInvisibleItem;
@@ -5229,8 +6919,18 @@ class StepVisual_HArray1OfInvisibleItem : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_HArray1OfInvisibleItem::~StepVisual_HArray1OfInvisibleItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_HArray1OfInvisibleItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentedItem;
@@ -5254,8 +6954,18 @@ class StepVisual_PresentedItem : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_PresentedItem::~StepVisual_PresentedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Array1OfDirectionCountSelect;
@@ -5295,8 +7005,18 @@ class StepVisual_Array1OfDirectionCountSelect {
 };
 %feature("shadow") StepVisual_Array1OfDirectionCountSelect::~StepVisual_Array1OfDirectionCountSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Array1OfDirectionCountSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PreDefinedTextFont;
@@ -5320,8 +7040,18 @@ class StepVisual_PreDefinedTextFont : public StepVisual_PreDefinedItem {
 };
 %feature("shadow") StepVisual_PreDefinedTextFont::~StepVisual_PreDefinedTextFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PreDefinedTextFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_CameraModelD3;
@@ -5357,8 +7087,18 @@ class StepVisual_CameraModelD3 : public StepVisual_CameraModel {
 };
 %feature("shadow") StepVisual_CameraModelD3::~StepVisual_CameraModelD3 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_CameraModelD3 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_PresentationStyleSelect;
@@ -5378,8 +7118,18 @@ class StepVisual_PresentationStyleSelect : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_PresentationStyleSelect::~StepVisual_PresentationStyleSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_PresentationStyleSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_Array1OfSurfaceStyleElementSelect;
@@ -5419,8 +7169,18 @@ class StepVisual_Array1OfSurfaceStyleElementSelect {
 };
 %feature("shadow") StepVisual_Array1OfSurfaceStyleElementSelect::~StepVisual_Array1OfSurfaceStyleElementSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_Array1OfSurfaceStyleElementSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_SurfaceStyleControlGrid;
@@ -5450,8 +7210,18 @@ class StepVisual_SurfaceStyleControlGrid : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_SurfaceStyleControlGrid::~StepVisual_SurfaceStyleControlGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_SurfaceStyleControlGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_HArray1OfFillStyleSelect;
@@ -5495,8 +7265,18 @@ class StepVisual_HArray1OfFillStyleSelect : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_HArray1OfFillStyleSelect::~StepVisual_HArray1OfFillStyleSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_HArray1OfFillStyleSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_HArray1OfPresentationStyleAssignment;
@@ -5540,8 +7320,18 @@ class StepVisual_HArray1OfPresentationStyleAssignment : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_HArray1OfPresentationStyleAssignment::~StepVisual_HArray1OfPresentationStyleAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_HArray1OfPresentationStyleAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_CurveStyleFontSelect;
@@ -5561,8 +7351,18 @@ class StepVisual_CurveStyleFontSelect : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_CurveStyleFontSelect::~StepVisual_CurveStyleFontSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_CurveStyleFontSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_DraughtingModel;
@@ -5586,8 +7386,18 @@ class StepVisual_DraughtingModel : public StepRepr_Representation {
 };
 %feature("shadow") StepVisual_DraughtingModel::~StepVisual_DraughtingModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_DraughtingModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_SurfaceStyleFillArea;
@@ -5617,8 +7427,18 @@ class StepVisual_SurfaceStyleFillArea : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_SurfaceStyleFillArea::~StepVisual_SurfaceStyleFillArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_SurfaceStyleFillArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_AreaOrView;
@@ -5636,8 +7456,18 @@ class StepVisual_AreaOrView : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_AreaOrView::~StepVisual_AreaOrView %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_AreaOrView {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_InvisibilityContext;
@@ -5655,8 +7485,18 @@ class StepVisual_InvisibilityContext : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_InvisibilityContext::~StepVisual_InvisibilityContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_InvisibilityContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_TextOrCharacter;
@@ -5676,8 +7516,18 @@ class StepVisual_TextOrCharacter : public StepData_SelectType {
 };
 %feature("shadow") StepVisual_TextOrCharacter::~StepVisual_TextOrCharacter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_TextOrCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_HArray1OfBoxCharacteristicSelect;
@@ -5721,8 +7571,18 @@ class StepVisual_HArray1OfBoxCharacteristicSelect : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_HArray1OfBoxCharacteristicSelect::~StepVisual_HArray1OfBoxCharacteristicSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_HArray1OfBoxCharacteristicSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepVisual_AreaInSet;
@@ -5756,5 +7616,15 @@ class StepVisual_AreaInSet : public MMgt_TShared {
 };
 %feature("shadow") StepVisual_AreaInSet::~StepVisual_AreaInSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepVisual_AreaInSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

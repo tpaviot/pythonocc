@@ -76,8 +76,18 @@ class Handle_LProp_SequenceNodeOfSequenceOfCIType : public Handle_TCollection_Se
 };
 %feature("shadow") Handle_LProp_SequenceNodeOfSequenceOfCIType::~Handle_LProp_SequenceNodeOfSequenceOfCIType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_LProp_SequenceNodeOfSequenceOfCIType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_LProp_BadContinuity;
@@ -104,8 +114,18 @@ class Handle_LProp_BadContinuity : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_LProp_BadContinuity::~Handle_LProp_BadContinuity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_LProp_BadContinuity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_LProp_NotDefined;
@@ -132,8 +152,18 @@ class Handle_LProp_NotDefined : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_LProp_NotDefined::~Handle_LProp_NotDefined %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_LProp_NotDefined {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LProp_SequenceNodeOfSequenceOfCIType;
@@ -159,8 +189,18 @@ class LProp_SequenceNodeOfSequenceOfCIType : public TCollection_SeqNode {
 };
 %feature("shadow") LProp_SequenceNodeOfSequenceOfCIType::~LProp_SequenceNodeOfSequenceOfCIType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LProp_SequenceNodeOfSequenceOfCIType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LProp_BadContinuity;
@@ -192,8 +232,18 @@ class LProp_BadContinuity : public Standard_Failure {
 };
 %feature("shadow") LProp_BadContinuity::~LProp_BadContinuity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LProp_BadContinuity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LProp_SequenceOfCIType;
@@ -247,8 +297,18 @@ class LProp_SequenceOfCIType : public TCollection_BaseSequence {
 };
 %feature("shadow") LProp_SequenceOfCIType::~LProp_SequenceOfCIType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LProp_SequenceOfCIType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LProp_AnalyticCurInf;
@@ -262,8 +322,18 @@ class LProp_AnalyticCurInf {
 };
 %feature("shadow") LProp_AnalyticCurInf::~LProp_AnalyticCurInf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LProp_AnalyticCurInf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LProp_CurAndInf;
@@ -289,8 +359,18 @@ class LProp_CurAndInf {
 };
 %feature("shadow") LProp_CurAndInf::~LProp_CurAndInf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LProp_CurAndInf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LProp_NotDefined;
@@ -322,5 +402,15 @@ class LProp_NotDefined : public Standard_Failure {
 };
 %feature("shadow") LProp_NotDefined::~LProp_NotDefined %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LProp_NotDefined {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

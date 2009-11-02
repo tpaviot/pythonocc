@@ -182,8 +182,18 @@ class Handle_AIS2D_ListNodeOfListOfIO : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_AIS2D_ListNodeOfListOfIO::~Handle_AIS2D_ListNodeOfListOfIO %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_ListNodeOfListOfIO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit;
@@ -210,8 +220,18 @@ class Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit : public Handle_TCollectio
 };
 %feature("shadow") Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit::~Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_GlobalStatus;
@@ -238,8 +258,18 @@ class Handle_AIS2D_GlobalStatus : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AIS2D_GlobalStatus::~Handle_AIS2D_GlobalStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_GlobalStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_LocalContext;
@@ -266,8 +296,18 @@ class Handle_AIS2D_LocalContext : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AIS2D_LocalContext::~Handle_AIS2D_LocalContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_LocalContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_InteractiveObject;
@@ -294,8 +334,18 @@ class Handle_AIS2D_InteractiveObject : public Handle_Graphic2d_GraphicObject {
 };
 %feature("shadow") Handle_AIS2D_InteractiveObject::~Handle_AIS2D_InteractiveObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_InteractiveObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_ProjShape;
@@ -322,8 +372,18 @@ class Handle_AIS2D_ProjShape : public Handle_AIS2D_InteractiveObject {
 };
 %feature("shadow") Handle_AIS2D_ProjShape::~Handle_AIS2D_ProjShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_ProjShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfLC;
@@ -350,8 +410,18 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfLC : public Handle_TCollection_MapNode 
 };
 %feature("shadow") Handle_AIS2D_DataMapNodeOfDataMapOfLC::~Handle_AIS2D_DataMapNodeOfDataMapOfLC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_DataMapNodeOfDataMapOfLC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_SequenceNodeOfSequenceOfIO;
@@ -378,8 +448,18 @@ class Handle_AIS2D_SequenceNodeOfSequenceOfIO : public Handle_TCollection_SeqNod
 };
 %feature("shadow") Handle_AIS2D_SequenceNodeOfSequenceOfIO::~Handle_AIS2D_SequenceNodeOfSequenceOfIO %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_SequenceNodeOfSequenceOfIO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_LocalStatus;
@@ -406,8 +486,18 @@ class Handle_AIS2D_LocalStatus : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AIS2D_LocalStatus::~Handle_AIS2D_LocalStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_LocalStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfLocStat;
@@ -434,8 +524,18 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfLocStat : public Handle_TCollection_Map
 };
 %feature("shadow") Handle_AIS2D_DataMapNodeOfDataMapOfLocStat::~Handle_AIS2D_DataMapNodeOfDataMapOfLocStat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_DataMapNodeOfDataMapOfLocStat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects;
@@ -462,8 +562,18 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects : public Handle_TCollection
 };
 %feature("shadow") Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects::~Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus;
@@ -490,8 +600,18 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_Ma
 };
 %feature("shadow") Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus::~Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_HSequenceOfPrimArchit;
@@ -518,8 +638,18 @@ class Handle_AIS2D_HSequenceOfPrimArchit : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AIS2D_HSequenceOfPrimArchit::~Handle_AIS2D_HSequenceOfPrimArchit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_HSequenceOfPrimArchit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_PrimitiveArchit;
@@ -546,8 +676,18 @@ class Handle_AIS2D_PrimitiveArchit : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AIS2D_PrimitiveArchit::~Handle_AIS2D_PrimitiveArchit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_PrimitiveArchit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_HSequenceOfIO;
@@ -574,8 +714,18 @@ class Handle_AIS2D_HSequenceOfIO : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AIS2D_HSequenceOfIO::~Handle_AIS2D_HSequenceOfIO %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_HSequenceOfIO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS2D_InteractiveContext;
@@ -602,8 +752,18 @@ class Handle_AIS2D_InteractiveContext : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AIS2D_InteractiveContext::~Handle_AIS2D_InteractiveContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS2D_InteractiveContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_SequenceOfPrimArchit;
@@ -657,8 +817,18 @@ class AIS2D_SequenceOfPrimArchit : public TCollection_BaseSequence {
 };
 %feature("shadow") AIS2D_SequenceOfPrimArchit::~AIS2D_SequenceOfPrimArchit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_SequenceOfPrimArchit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_ListIteratorOfListOfIO;
@@ -680,8 +850,18 @@ class AIS2D_ListIteratorOfListOfIO {
 };
 %feature("shadow") AIS2D_ListIteratorOfListOfIO::~AIS2D_ListIteratorOfListOfIO %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_ListIteratorOfListOfIO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_DataMapOfLC;
@@ -715,8 +895,18 @@ class AIS2D_DataMapOfLC : public TCollection_BasicMap {
 };
 %feature("shadow") AIS2D_DataMapOfLC::~AIS2D_DataMapOfLC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_DataMapOfLC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_LocalStatus;
@@ -786,8 +976,18 @@ class AIS2D_LocalStatus : public MMgt_TShared {
 };
 %feature("shadow") AIS2D_LocalStatus::~AIS2D_LocalStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_LocalStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_InteractiveObject;
@@ -873,8 +1073,18 @@ class AIS2D_InteractiveObject : public Graphic2d_GraphicObject {
 };
 %feature("shadow") AIS2D_InteractiveObject::~AIS2D_InteractiveObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_InteractiveObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_DataMapNodeOfDataMapOfPrimAspects;
@@ -902,8 +1112,18 @@ class AIS2D_DataMapNodeOfDataMapOfPrimAspects : public TCollection_MapNode {
 };
 %feature("shadow") AIS2D_DataMapNodeOfDataMapOfPrimAspects::~AIS2D_DataMapNodeOfDataMapOfPrimAspects %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_GlobalStatus;
@@ -967,8 +1187,18 @@ class AIS2D_GlobalStatus : public MMgt_TShared {
 };
 %feature("shadow") AIS2D_GlobalStatus::~AIS2D_GlobalStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_GlobalStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_DataMapIteratorOfDataMapOfLC;
@@ -988,8 +1218,18 @@ class AIS2D_DataMapIteratorOfDataMapOfLC : public TCollection_BasicMapIterator {
 };
 %feature("shadow") AIS2D_DataMapIteratorOfDataMapOfLC::~AIS2D_DataMapIteratorOfDataMapOfLC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_DataMapIteratorOfDataMapOfLC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_ListOfIO;
@@ -1039,8 +1279,18 @@ class AIS2D_ListOfIO {
 };
 %feature("shadow") AIS2D_ListOfIO::~AIS2D_ListOfIO %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_ListOfIO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_DataMapNodeOfDataMapOfLocStat;
@@ -1068,8 +1318,18 @@ class AIS2D_DataMapNodeOfDataMapOfLocStat : public TCollection_MapNode {
 };
 %feature("shadow") AIS2D_DataMapNodeOfDataMapOfLocStat::~AIS2D_DataMapNodeOfDataMapOfLocStat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_DataMapNodeOfDataMapOfLocStat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_ListNodeOfListOfIO;
@@ -1095,8 +1355,18 @@ class AIS2D_ListNodeOfListOfIO : public TCollection_MapNode {
 };
 %feature("shadow") AIS2D_ListNodeOfListOfIO::~AIS2D_ListNodeOfListOfIO %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_ListNodeOfListOfIO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_ProjShape;
@@ -1144,8 +1414,18 @@ class AIS2D_ProjShape : public AIS2D_InteractiveObject {
 };
 %feature("shadow") AIS2D_ProjShape::~AIS2D_ProjShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_ProjShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_DataMapIteratorOfDataMapOfPrimAspects;
@@ -1165,8 +1445,18 @@ class AIS2D_DataMapIteratorOfDataMapOfPrimAspects : public TCollection_BasicMapI
 };
 %feature("shadow") AIS2D_DataMapIteratorOfDataMapOfPrimAspects::~AIS2D_DataMapIteratorOfDataMapOfPrimAspects %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_DataMapIteratorOfDataMapOfPrimAspects {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_InteractiveContext;
@@ -1368,8 +1658,18 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 };
 %feature("shadow") AIS2D_InteractiveContext::~AIS2D_InteractiveContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_InteractiveContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_DataMapOfIOStatus;
@@ -1403,8 +1703,18 @@ class AIS2D_DataMapOfIOStatus : public TCollection_BasicMap {
 };
 %feature("shadow") AIS2D_DataMapOfIOStatus::~AIS2D_DataMapOfIOStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_DataMapOfIOStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_SequenceNodeOfSequenceOfIO;
@@ -1430,8 +1740,18 @@ class AIS2D_SequenceNodeOfSequenceOfIO : public TCollection_SeqNode {
 };
 %feature("shadow") AIS2D_SequenceNodeOfSequenceOfIO::~AIS2D_SequenceNodeOfSequenceOfIO %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_SequenceNodeOfSequenceOfIO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_HSequenceOfIO;
@@ -1499,8 +1819,18 @@ class AIS2D_HSequenceOfIO : public MMgt_TShared {
 };
 %feature("shadow") AIS2D_HSequenceOfIO::~AIS2D_HSequenceOfIO %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_HSequenceOfIO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_DataMapNodeOfDataMapOfLC;
@@ -1538,8 +1868,18 @@ class AIS2D_DataMapNodeOfDataMapOfLC : public TCollection_MapNode {
 };
 %feature("shadow") AIS2D_DataMapNodeOfDataMapOfLC::~AIS2D_DataMapNodeOfDataMapOfLC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_DataMapNodeOfDataMapOfLC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_DataMapOfPrimAspects;
@@ -1573,8 +1913,18 @@ class AIS2D_DataMapOfPrimAspects : public TCollection_BasicMap {
 };
 %feature("shadow") AIS2D_DataMapOfPrimAspects::~AIS2D_DataMapOfPrimAspects %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_DataMapOfPrimAspects {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_DataMapNodeOfDataMapOfIOStatus;
@@ -1602,8 +1952,18 @@ class AIS2D_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 };
 %feature("shadow") AIS2D_DataMapNodeOfDataMapOfIOStatus::~AIS2D_DataMapNodeOfDataMapOfIOStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_DataMapNodeOfDataMapOfIOStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_SequenceOfIO;
@@ -1657,8 +2017,18 @@ class AIS2D_SequenceOfIO : public TCollection_BaseSequence {
 };
 %feature("shadow") AIS2D_SequenceOfIO::~AIS2D_SequenceOfIO %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_SequenceOfIO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D;
@@ -1674,8 +2044,18 @@ class AIS2D {
 };
 %feature("shadow") AIS2D::~AIS2D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_SequenceNodeOfSequenceOfPrimArchit;
@@ -1701,8 +2081,18 @@ class AIS2D_SequenceNodeOfSequenceOfPrimArchit : public TCollection_SeqNode {
 };
 %feature("shadow") AIS2D_SequenceNodeOfSequenceOfPrimArchit::~AIS2D_SequenceNodeOfSequenceOfPrimArchit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_SequenceNodeOfSequenceOfPrimArchit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_DataMapIteratorOfDataMapOfLocStat;
@@ -1722,8 +2112,18 @@ class AIS2D_DataMapIteratorOfDataMapOfLocStat : public TCollection_BasicMapItera
 };
 %feature("shadow") AIS2D_DataMapIteratorOfDataMapOfLocStat::~AIS2D_DataMapIteratorOfDataMapOfLocStat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_DataMapIteratorOfDataMapOfLocStat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_PrimitiveArchit;
@@ -1751,8 +2151,18 @@ class AIS2D_PrimitiveArchit : public MMgt_TShared {
 };
 %feature("shadow") AIS2D_PrimitiveArchit::~AIS2D_PrimitiveArchit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_PrimitiveArchit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_HSequenceOfPrimArchit;
@@ -1820,8 +2230,18 @@ class AIS2D_HSequenceOfPrimArchit : public MMgt_TShared {
 };
 %feature("shadow") AIS2D_HSequenceOfPrimArchit::~AIS2D_HSequenceOfPrimArchit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_HSequenceOfPrimArchit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_LocalContext;
@@ -1907,8 +2327,18 @@ class AIS2D_LocalContext : public MMgt_TShared {
 };
 %feature("shadow") AIS2D_LocalContext::~AIS2D_LocalContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_LocalContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_DataMapOfLocStat;
@@ -1942,8 +2372,18 @@ class AIS2D_DataMapOfLocStat : public TCollection_BasicMap {
 };
 %feature("shadow") AIS2D_DataMapOfLocStat::~AIS2D_DataMapOfLocStat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_DataMapOfLocStat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS2D_DataMapIteratorOfDataMapOfIOStatus;
@@ -1963,5 +2403,15 @@ class AIS2D_DataMapIteratorOfDataMapOfIOStatus : public TCollection_BasicMapIter
 };
 %feature("shadow") AIS2D_DataMapIteratorOfDataMapOfIOStatus::~AIS2D_DataMapIteratorOfDataMapOfIOStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS2D_DataMapIteratorOfDataMapOfIOStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

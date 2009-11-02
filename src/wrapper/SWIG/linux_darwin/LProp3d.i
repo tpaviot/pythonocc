@@ -60,8 +60,18 @@ class LProp3d_SurfaceTool {
 };
 %feature("shadow") LProp3d_SurfaceTool::~LProp3d_SurfaceTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LProp3d_SurfaceTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LProp3d_CurveTool;
@@ -87,8 +97,18 @@ class LProp3d_CurveTool {
 };
 %feature("shadow") LProp3d_CurveTool::~LProp3d_CurveTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LProp3d_CurveTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LProp3d_CLProps;
@@ -126,8 +146,18 @@ class LProp3d_CLProps {
 };
 %feature("shadow") LProp3d_CLProps::~LProp3d_CLProps %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LProp3d_CLProps {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LProp3d_SLProps;
@@ -185,5 +215,15 @@ class LProp3d_SLProps {
 };
 %feature("shadow") LProp3d_SLProps::~LProp3d_SLProps %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LProp3d_SLProps {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

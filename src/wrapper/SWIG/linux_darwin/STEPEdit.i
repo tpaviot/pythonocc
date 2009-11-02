@@ -63,8 +63,18 @@ class Handle_STEPEdit_EditSDR : public Handle_IFSelect_Editor {
 };
 %feature("shadow") Handle_STEPEdit_EditSDR::~Handle_STEPEdit_EditSDR %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPEdit_EditSDR {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPEdit_EditContext;
@@ -91,8 +101,18 @@ class Handle_STEPEdit_EditContext : public Handle_IFSelect_Editor {
 };
 %feature("shadow") Handle_STEPEdit_EditContext::~Handle_STEPEdit_EditContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPEdit_EditContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPEdit;
@@ -116,8 +136,18 @@ class STEPEdit {
 };
 %feature("shadow") STEPEdit::~STEPEdit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPEdit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPEdit_EditContext;
@@ -151,8 +181,18 @@ class STEPEdit_EditContext : public IFSelect_Editor {
 };
 %feature("shadow") STEPEdit_EditContext::~STEPEdit_EditContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPEdit_EditContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPEdit_EditSDR;
@@ -186,5 +226,15 @@ class STEPEdit_EditSDR : public IFSelect_Editor {
 };
 %feature("shadow") STEPEdit_EditSDR::~STEPEdit_EditSDR %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPEdit_EditSDR {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

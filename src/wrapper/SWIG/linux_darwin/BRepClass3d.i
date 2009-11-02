@@ -63,8 +63,18 @@ class Handle_BRepClass3d_DataMapNodeOfMapOfInter : public Handle_TCollection_Map
 };
 %feature("shadow") Handle_BRepClass3d_DataMapNodeOfMapOfInter::~Handle_BRepClass3d_DataMapNodeOfMapOfInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepClass3d_DataMapNodeOfMapOfInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass3d_SClassifier;
@@ -90,8 +100,18 @@ class BRepClass3d_SClassifier {
 };
 %feature("shadow") BRepClass3d_SClassifier::~BRepClass3d_SClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass3d_SClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass3d_SolidExplorer;
@@ -161,8 +181,18 @@ class BRepClass3d_SolidExplorer {
 };
 %feature("shadow") BRepClass3d_SolidExplorer::~BRepClass3d_SolidExplorer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass3d_SolidExplorer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass3d_DataMapIteratorOfMapOfInter;
@@ -182,8 +212,18 @@ class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapItera
 };
 %feature("shadow") BRepClass3d_DataMapIteratorOfMapOfInter::~BRepClass3d_DataMapIteratorOfMapOfInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass3d_DataMapIteratorOfMapOfInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass3d_Intersector3d;
@@ -215,8 +255,18 @@ class BRepClass3d_Intersector3d {
 };
 %feature("shadow") BRepClass3d_Intersector3d::~BRepClass3d_Intersector3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass3d_Intersector3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass3d_SolidClassifier;
@@ -240,8 +290,18 @@ class BRepClass3d_SolidClassifier : public BRepClass3d_SClassifier {
 };
 %feature("shadow") BRepClass3d_SolidClassifier::~BRepClass3d_SolidClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass3d_SolidClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass3d_DataMapNodeOfMapOfInter;
@@ -269,8 +329,18 @@ class BRepClass3d_DataMapNodeOfMapOfInter : public TCollection_MapNode {
 };
 %feature("shadow") BRepClass3d_DataMapNodeOfMapOfInter::~BRepClass3d_DataMapNodeOfMapOfInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass3d_DataMapNodeOfMapOfInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass3d_MapOfInter;
@@ -304,8 +374,18 @@ class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 };
 %feature("shadow") BRepClass3d_MapOfInter::~BRepClass3d_MapOfInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass3d_MapOfInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass3d_SolidPassiveClassifier;
@@ -329,5 +409,15 @@ class BRepClass3d_SolidPassiveClassifier {
 };
 %feature("shadow") BRepClass3d_SolidPassiveClassifier::~BRepClass3d_SolidPassiveClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass3d_SolidPassiveClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

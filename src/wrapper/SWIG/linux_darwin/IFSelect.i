@@ -106,8 +106,18 @@ class Handle_IFSelect_SignatureList : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_SignatureList::~Handle_IFSelect_SignatureList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SignatureList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_WorkSession;
@@ -134,8 +144,18 @@ class Handle_IFSelect_WorkSession : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_WorkSession::~Handle_IFSelect_WorkSession %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_WorkSession {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_Transformer;
@@ -162,8 +182,18 @@ class Handle_IFSelect_Transformer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_Transformer::~Handle_IFSelect_Transformer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_Transformer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_TransformStandard;
@@ -190,8 +220,18 @@ class Handle_IFSelect_TransformStandard : public Handle_IFSelect_Transformer {
 };
 %feature("shadow") Handle_IFSelect_TransformStandard::~Handle_IFSelect_TransformStandard %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_TransformStandard {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_Dispatch;
@@ -218,8 +258,18 @@ class Handle_IFSelect_Dispatch : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_Dispatch::~Handle_IFSelect_Dispatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_Dispatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_AppliedModifiers;
@@ -246,8 +296,18 @@ class Handle_IFSelect_AppliedModifiers : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_AppliedModifiers::~Handle_IFSelect_AppliedModifiers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_AppliedModifiers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_GeneralModifier;
@@ -274,8 +334,18 @@ class Handle_IFSelect_GeneralModifier : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_GeneralModifier::~Handle_IFSelect_GeneralModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_GeneralModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_Modifier;
@@ -302,8 +372,18 @@ class Handle_IFSelect_Modifier : public Handle_IFSelect_GeneralModifier {
 };
 %feature("shadow") Handle_IFSelect_Modifier::~Handle_IFSelect_Modifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_Modifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_ModifReorder;
@@ -330,8 +410,18 @@ class Handle_IFSelect_ModifReorder : public Handle_IFSelect_Modifier {
 };
 %feature("shadow") Handle_IFSelect_ModifReorder::~Handle_IFSelect_ModifReorder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_ModifReorder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_Activator;
@@ -358,8 +448,18 @@ class Handle_IFSelect_Activator : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_Activator::~Handle_IFSelect_Activator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_Activator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_Selection;
@@ -386,8 +486,18 @@ class Handle_IFSelect_Selection : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_Selection::~Handle_IFSelect_Selection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_Selection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectDeduct;
@@ -414,8 +524,18 @@ class Handle_IFSelect_SelectDeduct : public Handle_IFSelect_Selection {
 };
 %feature("shadow") Handle_IFSelect_SelectDeduct::~Handle_IFSelect_SelectDeduct %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectDeduct {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectExplore;
@@ -442,8 +562,18 @@ class Handle_IFSelect_SelectExplore : public Handle_IFSelect_SelectDeduct {
 };
 %feature("shadow") Handle_IFSelect_SelectExplore::~Handle_IFSelect_SelectExplore %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectExplore {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectSignedShared;
@@ -470,8 +600,18 @@ class Handle_IFSelect_SelectSignedShared : public Handle_IFSelect_SelectExplore 
 };
 %feature("shadow") Handle_IFSelect_SelectSignedShared::~Handle_IFSelect_SelectSignedShared %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectSignedShared {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectSignedSharing;
@@ -498,8 +638,18 @@ class Handle_IFSelect_SelectSignedSharing : public Handle_IFSelect_SelectExplore
 };
 %feature("shadow") Handle_IFSelect_SelectSignedSharing::~Handle_IFSelect_SelectSignedSharing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectSignedSharing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_Signature;
@@ -526,8 +676,18 @@ class Handle_IFSelect_Signature : public Handle_Interface_SignType {
 };
 %feature("shadow") Handle_IFSelect_Signature::~Handle_IFSelect_Signature %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_Signature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_DispGlobal;
@@ -554,8 +714,18 @@ class Handle_IFSelect_DispGlobal : public Handle_IFSelect_Dispatch {
 };
 %feature("shadow") Handle_IFSelect_DispGlobal::~Handle_IFSelect_DispGlobal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_DispGlobal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SessionDumper;
@@ -582,8 +752,18 @@ class Handle_IFSelect_SessionDumper : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_SessionDumper::~Handle_IFSelect_SessionDumper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SessionDumper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectExtract;
@@ -610,8 +790,18 @@ class Handle_IFSelect_SelectExtract : public Handle_IFSelect_SelectDeduct {
 };
 %feature("shadow") Handle_IFSelect_SelectExtract::~Handle_IFSelect_SelectExtract %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectExtract {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectUnknownEntities;
@@ -638,8 +828,18 @@ class Handle_IFSelect_SelectUnknownEntities : public Handle_IFSelect_SelectExtra
 };
 %feature("shadow") Handle_IFSelect_SelectUnknownEntities::~Handle_IFSelect_SelectUnknownEntities %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectUnknownEntities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_ModifEditForm;
@@ -666,8 +866,18 @@ class Handle_IFSelect_ModifEditForm : public Handle_IFSelect_Modifier {
 };
 %feature("shadow") Handle_IFSelect_ModifEditForm::~Handle_IFSelect_ModifEditForm %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_ModifEditForm {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_ListEditor;
@@ -694,8 +904,18 @@ class Handle_IFSelect_ListEditor : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_ListEditor::~Handle_IFSelect_ListEditor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_ListEditor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectErrorEntities;
@@ -722,8 +942,18 @@ class Handle_IFSelect_SelectErrorEntities : public Handle_IFSelect_SelectExtract
 };
 %feature("shadow") Handle_IFSelect_SelectErrorEntities::~Handle_IFSelect_SelectErrorEntities %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectErrorEntities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_IntParam;
@@ -750,8 +980,18 @@ class Handle_IFSelect_IntParam : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_IntParam::~Handle_IFSelect_IntParam %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_IntParam {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SignCounter;
@@ -778,8 +1018,18 @@ class Handle_IFSelect_SignCounter : public Handle_IFSelect_SignatureList {
 };
 %feature("shadow") Handle_IFSelect_SignCounter::~Handle_IFSelect_SignCounter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SignCounter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectFlag;
@@ -806,8 +1056,18 @@ class Handle_IFSelect_SelectFlag : public Handle_IFSelect_SelectExtract {
 };
 %feature("shadow") Handle_IFSelect_SelectFlag::~Handle_IFSelect_SelectFlag %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectFlag {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_PacketList;
@@ -834,8 +1094,18 @@ class Handle_IFSelect_PacketList : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_PacketList::~Handle_IFSelect_PacketList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_PacketList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_HSeqOfSelection;
@@ -862,8 +1132,18 @@ class Handle_IFSelect_HSeqOfSelection : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_HSeqOfSelection::~Handle_IFSelect_HSeqOfSelection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_HSeqOfSelection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectCombine;
@@ -890,8 +1170,18 @@ class Handle_IFSelect_SelectCombine : public Handle_IFSelect_Selection {
 };
 %feature("shadow") Handle_IFSelect_SelectCombine::~Handle_IFSelect_SelectCombine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectCombine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectSuite;
@@ -918,8 +1208,18 @@ class Handle_IFSelect_SelectSuite : public Handle_IFSelect_SelectDeduct {
 };
 %feature("shadow") Handle_IFSelect_SelectSuite::~Handle_IFSelect_SelectSuite %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectSuite {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier;
@@ -946,8 +1246,18 @@ class Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public Handle_TC
 };
 %feature("shadow") Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier::~Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SignType;
@@ -974,8 +1284,18 @@ class Handle_IFSelect_SignType : public Handle_IFSelect_Signature {
 };
 %feature("shadow") Handle_IFSelect_SignType::~Handle_IFSelect_SignType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SignType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectControl;
@@ -1002,8 +1322,18 @@ class Handle_IFSelect_SelectControl : public Handle_IFSelect_Selection {
 };
 %feature("shadow") Handle_IFSelect_SelectControl::~Handle_IFSelect_SelectControl %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectControl {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_WorkLibrary;
@@ -1030,8 +1360,18 @@ class Handle_IFSelect_WorkLibrary : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_IFSelect_WorkLibrary::~Handle_IFSelect_WorkLibrary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_WorkLibrary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectIntersection;
@@ -1058,8 +1398,18 @@ class Handle_IFSelect_SelectIntersection : public Handle_IFSelect_SelectCombine 
 };
 %feature("shadow") Handle_IFSelect_SelectIntersection::~Handle_IFSelect_SelectIntersection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectIntersection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_CheckCounter;
@@ -1086,8 +1436,18 @@ class Handle_IFSelect_CheckCounter : public Handle_IFSelect_SignatureList {
 };
 %feature("shadow") Handle_IFSelect_CheckCounter::~Handle_IFSelect_CheckCounter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_CheckCounter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectBase;
@@ -1114,8 +1474,18 @@ class Handle_IFSelect_SelectBase : public Handle_IFSelect_Selection {
 };
 %feature("shadow") Handle_IFSelect_SelectBase::~Handle_IFSelect_SelectBase %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectBase {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectModelRoots;
@@ -1142,8 +1512,18 @@ class Handle_IFSelect_SelectModelRoots : public Handle_IFSelect_SelectBase {
 };
 %feature("shadow") Handle_IFSelect_SelectModelRoots::~Handle_IFSelect_SelectModelRoots %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectModelRoots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_DispPerSignature;
@@ -1170,8 +1550,18 @@ class Handle_IFSelect_DispPerSignature : public Handle_IFSelect_Dispatch {
 };
 %feature("shadow") Handle_IFSelect_DispPerSignature::~Handle_IFSelect_DispPerSignature %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_DispPerSignature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectShared;
@@ -1198,8 +1588,18 @@ class Handle_IFSelect_SelectShared : public Handle_IFSelect_SelectDeduct {
 };
 %feature("shadow") Handle_IFSelect_SelectShared::~Handle_IFSelect_SelectShared %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectShared {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectSignature;
@@ -1226,8 +1626,18 @@ class Handle_IFSelect_SelectSignature : public Handle_IFSelect_SelectExtract {
 };
 %feature("shadow") Handle_IFSelect_SelectSignature::~Handle_IFSelect_SelectSignature %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectSignature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectSharing;
@@ -1254,8 +1664,18 @@ class Handle_IFSelect_SelectSharing : public Handle_IFSelect_SelectDeduct {
 };
 %feature("shadow") Handle_IFSelect_SelectSharing::~Handle_IFSelect_SelectSharing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectSharing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_EditForm;
@@ -1282,8 +1702,18 @@ class Handle_IFSelect_EditForm : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_EditForm::~Handle_IFSelect_EditForm %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_EditForm {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_DispPerFiles;
@@ -1310,8 +1740,18 @@ class Handle_IFSelect_DispPerFiles : public Handle_IFSelect_Dispatch {
 };
 %feature("shadow") Handle_IFSelect_DispPerFiles::~Handle_IFSelect_DispPerFiles %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_DispPerFiles {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_DispPerOne;
@@ -1338,8 +1778,18 @@ class Handle_IFSelect_DispPerOne : public Handle_IFSelect_Dispatch {
 };
 %feature("shadow") Handle_IFSelect_DispPerOne::~Handle_IFSelect_DispPerOne %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_DispPerOne {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectIncorrectEntities;
@@ -1366,8 +1816,18 @@ class Handle_IFSelect_SelectIncorrectEntities : public Handle_IFSelect_SelectFla
 };
 %feature("shadow") Handle_IFSelect_SelectIncorrectEntities::~Handle_IFSelect_SelectIncorrectEntities %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectIncorrectEntities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectAnyList;
@@ -1394,8 +1854,18 @@ class Handle_IFSelect_SelectAnyList : public Handle_IFSelect_SelectDeduct {
 };
 %feature("shadow") Handle_IFSelect_SelectAnyList::~Handle_IFSelect_SelectAnyList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectAnyList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectInList;
@@ -1422,8 +1892,18 @@ class Handle_IFSelect_SelectInList : public Handle_IFSelect_SelectAnyList {
 };
 %feature("shadow") Handle_IFSelect_SelectInList::~Handle_IFSelect_SelectInList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectInList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_ShareOut;
@@ -1450,8 +1930,18 @@ class Handle_IFSelect_ShareOut : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_ShareOut::~Handle_IFSelect_ShareOut %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_ShareOut {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectAnyType;
@@ -1478,8 +1968,18 @@ class Handle_IFSelect_SelectAnyType : public Handle_IFSelect_SelectExtract {
 };
 %feature("shadow") Handle_IFSelect_SelectAnyType::~Handle_IFSelect_SelectAnyType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectAnyType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectType;
@@ -1506,8 +2006,18 @@ class Handle_IFSelect_SelectType : public Handle_IFSelect_SelectAnyType {
 };
 %feature("shadow") Handle_IFSelect_SelectType::~Handle_IFSelect_SelectType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectModelEntities;
@@ -1534,8 +2044,18 @@ class Handle_IFSelect_SelectModelEntities : public Handle_IFSelect_SelectBase {
 };
 %feature("shadow") Handle_IFSelect_SelectModelEntities::~Handle_IFSelect_SelectModelEntities %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectModelEntities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectUnion;
@@ -1562,8 +2082,18 @@ class Handle_IFSelect_SelectUnion : public Handle_IFSelect_SelectCombine {
 };
 %feature("shadow") Handle_IFSelect_SelectUnion::~Handle_IFSelect_SelectUnion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectUnion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SignCategory;
@@ -1590,8 +2120,18 @@ class Handle_IFSelect_SignCategory : public Handle_IFSelect_Signature {
 };
 %feature("shadow") Handle_IFSelect_SignCategory::~Handle_IFSelect_SignCategory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SignCategory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SequenceNodeOfTSeqOfDispatch;
@@ -1618,8 +2158,18 @@ class Handle_IFSelect_SequenceNodeOfTSeqOfDispatch : public Handle_TCollection_S
 };
 %feature("shadow") Handle_IFSelect_SequenceNodeOfTSeqOfDispatch::~Handle_IFSelect_SequenceNodeOfTSeqOfDispatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SequenceNodeOfTSeqOfDispatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SignMultiple;
@@ -1646,8 +2196,18 @@ class Handle_IFSelect_SignMultiple : public Handle_IFSelect_Signature {
 };
 %feature("shadow") Handle_IFSelect_SignMultiple::~Handle_IFSelect_SignMultiple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SignMultiple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_GraphCounter;
@@ -1674,8 +2234,18 @@ class Handle_IFSelect_GraphCounter : public Handle_IFSelect_SignCounter {
 };
 %feature("shadow") Handle_IFSelect_GraphCounter::~Handle_IFSelect_GraphCounter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_GraphCounter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectDiff;
@@ -1702,8 +2272,18 @@ class Handle_IFSelect_SelectDiff : public Handle_IFSelect_SelectControl {
 };
 %feature("shadow") Handle_IFSelect_SelectDiff::~Handle_IFSelect_SelectDiff %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectDiff {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers;
@@ -1730,8 +2310,18 @@ class Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public Handle_T
 };
 %feature("shadow") Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers::~Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SignAncestor;
@@ -1758,8 +2348,18 @@ class Handle_IFSelect_SignAncestor : public Handle_IFSelect_SignType {
 };
 %feature("shadow") Handle_IFSelect_SignAncestor::~Handle_IFSelect_SignAncestor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SignAncestor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectRootComps;
@@ -1786,8 +2386,18 @@ class Handle_IFSelect_SelectRootComps : public Handle_IFSelect_SelectExtract {
 };
 %feature("shadow") Handle_IFSelect_SelectRootComps::~Handle_IFSelect_SelectRootComps %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectRootComps {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SignValidity;
@@ -1814,8 +2424,18 @@ class Handle_IFSelect_SignValidity : public Handle_IFSelect_Signature {
 };
 %feature("shadow") Handle_IFSelect_SignValidity::~Handle_IFSelect_SignValidity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SignValidity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel;
@@ -1842,8 +2462,18 @@ class Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public Handle_TCo
 };
 %feature("shadow") Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel::~Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_Editor;
@@ -1870,8 +2500,18 @@ class Handle_IFSelect_Editor : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_Editor::~Handle_IFSelect_Editor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_Editor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_ParamEditor;
@@ -1898,8 +2538,18 @@ class Handle_IFSelect_ParamEditor : public Handle_IFSelect_Editor {
 };
 %feature("shadow") Handle_IFSelect_ParamEditor::~Handle_IFSelect_ParamEditor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_ParamEditor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectRange;
@@ -1926,8 +2576,18 @@ class Handle_IFSelect_SelectRange : public Handle_IFSelect_SelectExtract {
 };
 %feature("shadow") Handle_IFSelect_SelectRange::~Handle_IFSelect_SelectRange %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectRange {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectRoots;
@@ -1954,8 +2614,18 @@ class Handle_IFSelect_SelectRoots : public Handle_IFSelect_SelectExtract {
 };
 %feature("shadow") Handle_IFSelect_SelectRoots::~Handle_IFSelect_SelectRoots %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectRoots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_DispPerCount;
@@ -1982,8 +2652,18 @@ class Handle_IFSelect_DispPerCount : public Handle_IFSelect_Dispatch {
 };
 %feature("shadow") Handle_IFSelect_DispPerCount::~Handle_IFSelect_DispPerCount %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_DispPerCount {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_BasicDumper;
@@ -2010,8 +2690,18 @@ class Handle_IFSelect_BasicDumper : public Handle_IFSelect_SessionDumper {
 };
 %feature("shadow") Handle_IFSelect_BasicDumper::~Handle_IFSelect_BasicDumper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_BasicDumper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SessionPilot;
@@ -2038,8 +2728,18 @@ class Handle_IFSelect_SessionPilot : public Handle_IFSelect_Activator {
 };
 %feature("shadow") Handle_IFSelect_SessionPilot::~Handle_IFSelect_SessionPilot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SessionPilot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectSent;
@@ -2066,8 +2766,18 @@ class Handle_IFSelect_SelectSent : public Handle_IFSelect_SelectExtract {
 };
 %feature("shadow") Handle_IFSelect_SelectSent::~Handle_IFSelect_SelectSent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectSent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_ModelCopier;
@@ -2094,8 +2804,18 @@ class Handle_IFSelect_ModelCopier : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IFSelect_ModelCopier::~Handle_IFSelect_ModelCopier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_ModelCopier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SequenceNodeOfTSeqOfSelection;
@@ -2122,8 +2842,18 @@ class Handle_IFSelect_SequenceNodeOfTSeqOfSelection : public Handle_TCollection_
 };
 %feature("shadow") Handle_IFSelect_SequenceNodeOfTSeqOfSelection::~Handle_IFSelect_SequenceNodeOfTSeqOfSelection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SequenceNodeOfTSeqOfSelection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectEntityNumber;
@@ -2150,8 +2880,18 @@ class Handle_IFSelect_SelectEntityNumber : public Handle_IFSelect_SelectBase {
 };
 %feature("shadow") Handle_IFSelect_SelectEntityNumber::~Handle_IFSelect_SelectEntityNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectEntityNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_Act;
@@ -2178,8 +2918,18 @@ class Handle_IFSelect_Act : public Handle_IFSelect_Activator {
 };
 %feature("shadow") Handle_IFSelect_Act::~Handle_IFSelect_Act %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_Act {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IFSelect_SelectPointed;
@@ -2206,8 +2956,18 @@ class Handle_IFSelect_SelectPointed : public Handle_IFSelect_SelectBase {
 };
 %feature("shadow") Handle_IFSelect_SelectPointed::~Handle_IFSelect_SelectPointed %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IFSelect_SelectPointed {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_IntParam;
@@ -2237,8 +2997,18 @@ class IFSelect_IntParam : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_IntParam::~IFSelect_IntParam %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_IntParam {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_Editor;
@@ -2304,8 +3074,18 @@ class IFSelect_Editor : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_Editor::~IFSelect_Editor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_Editor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectionIterator;
@@ -2331,8 +3111,18 @@ class IFSelect_SelectionIterator {
 };
 %feature("shadow") IFSelect_SelectionIterator::~IFSelect_SelectionIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectionIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_Selection;
@@ -2364,8 +3154,18 @@ class IFSelect_Selection : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_Selection::~IFSelect_Selection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_Selection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectDeduct;
@@ -2397,8 +3197,18 @@ class IFSelect_SelectDeduct : public IFSelect_Selection {
 };
 %feature("shadow") IFSelect_SelectDeduct::~IFSelect_SelectDeduct %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectDeduct {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectAnyList;
@@ -2446,8 +3256,18 @@ class IFSelect_SelectAnyList : public IFSelect_SelectDeduct {
 };
 %feature("shadow") IFSelect_SelectAnyList::~IFSelect_SelectAnyList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectAnyList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectInList;
@@ -2471,8 +3291,18 @@ class IFSelect_SelectInList : public IFSelect_SelectAnyList {
 };
 %feature("shadow") IFSelect_SelectInList::~IFSelect_SelectInList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectInList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectExtract;
@@ -2508,8 +3338,18 @@ class IFSelect_SelectExtract : public IFSelect_SelectDeduct {
 };
 %feature("shadow") IFSelect_SelectExtract::~IFSelect_SelectExtract %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectExtract {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectAnyType;
@@ -2531,8 +3371,18 @@ class IFSelect_SelectAnyType : public IFSelect_SelectExtract {
 };
 %feature("shadow") IFSelect_SelectAnyType::~IFSelect_SelectAnyType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectAnyType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectErrorEntities;
@@ -2560,8 +3410,18 @@ class IFSelect_SelectErrorEntities : public IFSelect_SelectExtract {
 };
 %feature("shadow") IFSelect_SelectErrorEntities::~IFSelect_SelectErrorEntities %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectErrorEntities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectBase;
@@ -2585,8 +3445,18 @@ class IFSelect_SelectBase : public IFSelect_Selection {
 };
 %feature("shadow") IFSelect_SelectBase::~IFSelect_SelectBase %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectBase {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectPointed;
@@ -2642,8 +3512,18 @@ class IFSelect_SelectPointed : public IFSelect_SelectBase {
 };
 %feature("shadow") IFSelect_SelectPointed::~IFSelect_SelectPointed %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectPointed {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectControl;
@@ -2677,8 +3557,18 @@ class IFSelect_SelectControl : public IFSelect_Selection {
 };
 %feature("shadow") IFSelect_SelectControl::~IFSelect_SelectControl %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectControl {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectDiff;
@@ -2704,8 +3594,18 @@ class IFSelect_SelectDiff : public IFSelect_SelectControl {
 };
 %feature("shadow") IFSelect_SelectDiff::~IFSelect_SelectDiff %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectDiff {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect;
@@ -2721,8 +3621,18 @@ class IFSelect {
 };
 %feature("shadow") IFSelect::~IFSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_Dispatch;
@@ -2772,8 +3682,18 @@ class IFSelect_Dispatch : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_Dispatch::~IFSelect_Dispatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_Dispatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_DispPerSignature;
@@ -2801,8 +3721,18 @@ class IFSelect_DispPerSignature : public IFSelect_Dispatch {
 };
 %feature("shadow") IFSelect_DispPerSignature::~IFSelect_DispPerSignature %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_DispPerSignature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_Transformer;
@@ -2832,8 +3762,18 @@ class IFSelect_Transformer : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_Transformer::~IFSelect_Transformer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_Transformer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SequenceOfGeneralModifier;
@@ -2887,8 +3827,18 @@ class IFSelect_SequenceOfGeneralModifier : public TCollection_BaseSequence {
 };
 %feature("shadow") IFSelect_SequenceOfGeneralModifier::~IFSelect_SequenceOfGeneralModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SequenceOfGeneralModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SequenceNodeOfTSeqOfSelection;
@@ -2914,8 +3864,18 @@ class IFSelect_SequenceNodeOfTSeqOfSelection : public TCollection_SeqNode {
 };
 %feature("shadow") IFSelect_SequenceNodeOfTSeqOfSelection::~IFSelect_SequenceNodeOfTSeqOfSelection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SequenceNodeOfTSeqOfSelection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SequenceNodeOfSequenceOfAppliedModifiers;
@@ -2941,8 +3901,18 @@ class IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public TCollection_Seq
 };
 %feature("shadow") IFSelect_SequenceNodeOfSequenceOfAppliedModifiers::~IFSelect_SequenceNodeOfSequenceOfAppliedModifiers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_ContextModif;
@@ -3012,8 +3982,18 @@ class IFSelect_ContextModif {
 };
 %feature("shadow") IFSelect_ContextModif::~IFSelect_ContextModif %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_ContextModif {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectCombine;
@@ -3049,8 +4029,18 @@ class IFSelect_SelectCombine : public IFSelect_Selection {
 };
 %feature("shadow") IFSelect_SelectCombine::~IFSelect_SelectCombine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectCombine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectUnion;
@@ -3076,8 +4066,18 @@ class IFSelect_SelectUnion : public IFSelect_SelectCombine {
 };
 %feature("shadow") IFSelect_SelectUnion::~IFSelect_SelectUnion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectUnion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectModelRoots;
@@ -3105,8 +4105,18 @@ class IFSelect_SelectModelRoots : public IFSelect_SelectBase {
 };
 %feature("shadow") IFSelect_SelectModelRoots::~IFSelect_SelectModelRoots %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectModelRoots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_TransformStandard;
@@ -3164,8 +4174,18 @@ class IFSelect_TransformStandard : public IFSelect_Transformer {
 };
 %feature("shadow") IFSelect_TransformStandard::~IFSelect_TransformStandard %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_TransformStandard {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_PacketList;
@@ -3213,8 +4233,18 @@ class IFSelect_PacketList : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_PacketList::~IFSelect_PacketList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_PacketList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_Signature;
@@ -3254,8 +4284,18 @@ class IFSelect_Signature : public Interface_SignType {
 };
 %feature("shadow") IFSelect_Signature::~IFSelect_Signature %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_Signature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SignValidity;
@@ -3281,8 +4321,18 @@ class IFSelect_SignValidity : public IFSelect_Signature {
 };
 %feature("shadow") IFSelect_SignValidity::~IFSelect_SignValidity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SignValidity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectType;
@@ -3314,8 +4364,18 @@ class IFSelect_SelectType : public IFSelect_SelectAnyType {
 };
 %feature("shadow") IFSelect_SelectType::~IFSelect_SelectType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_ModelCopier;
@@ -3381,8 +4441,18 @@ class IFSelect_ModelCopier : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_ModelCopier::~IFSelect_ModelCopier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_ModelCopier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_DispPerCount;
@@ -3420,8 +4490,18 @@ class IFSelect_DispPerCount : public IFSelect_Dispatch {
 };
 %feature("shadow") IFSelect_DispPerCount::~IFSelect_DispPerCount %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_DispPerCount {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SignatureList;
@@ -3477,8 +4557,18 @@ class IFSelect_SignatureList : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_SignatureList::~IFSelect_SignatureList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SignatureList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_CheckCounter;
@@ -3506,8 +4596,18 @@ class IFSelect_CheckCounter : public IFSelect_SignatureList {
 };
 %feature("shadow") IFSelect_CheckCounter::~IFSelect_CheckCounter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_CheckCounter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_WorkLibrary;
@@ -3547,8 +4647,18 @@ class IFSelect_WorkLibrary : public Standard_Transient {
 };
 %feature("shadow") IFSelect_WorkLibrary::~IFSelect_WorkLibrary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_WorkLibrary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_EditForm;
@@ -3658,8 +4768,18 @@ class IFSelect_EditForm : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_EditForm::~IFSelect_EditForm %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_EditForm {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_TSeqOfSelection;
@@ -3713,8 +4833,18 @@ class IFSelect_TSeqOfSelection : public TCollection_BaseSequence {
 };
 %feature("shadow") IFSelect_TSeqOfSelection::~IFSelect_TSeqOfSelection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_TSeqOfSelection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectExplore;
@@ -3746,8 +4876,18 @@ class IFSelect_SelectExplore : public IFSelect_SelectDeduct {
 };
 %feature("shadow") IFSelect_SelectExplore::~IFSelect_SelectExplore %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectExplore {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectSignedShared;
@@ -3775,8 +4915,18 @@ class IFSelect_SelectSignedShared : public IFSelect_SelectExplore {
 };
 %feature("shadow") IFSelect_SelectSignedShared::~IFSelect_SelectSignedShared %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectSignedShared {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectSuite;
@@ -3816,8 +4966,18 @@ class IFSelect_SelectSuite : public IFSelect_SelectDeduct {
 };
 %feature("shadow") IFSelect_SelectSuite::~IFSelect_SelectSuite %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectSuite {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectSignedSharing;
@@ -3851,8 +5011,18 @@ class IFSelect_SelectSignedSharing : public IFSelect_SelectExplore {
 };
 %feature("shadow") IFSelect_SelectSignedSharing::~IFSelect_SelectSignedSharing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectSignedSharing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_Functions;
@@ -3874,8 +5044,18 @@ class IFSelect_Functions {
 };
 %feature("shadow") IFSelect_Functions::~IFSelect_Functions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_Functions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectShared;
@@ -3903,8 +5083,18 @@ class IFSelect_SelectShared : public IFSelect_SelectDeduct {
 };
 %feature("shadow") IFSelect_SelectShared::~IFSelect_SelectShared %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectShared {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectSent;
@@ -3938,8 +5128,18 @@ class IFSelect_SelectSent : public IFSelect_SelectExtract {
 };
 %feature("shadow") IFSelect_SelectSent::~IFSelect_SelectSent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectSent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SignType;
@@ -3965,8 +5165,18 @@ class IFSelect_SignType : public IFSelect_Signature {
 };
 %feature("shadow") IFSelect_SignType::~IFSelect_SignType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SignType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SignAncestor;
@@ -3990,8 +5200,18 @@ class IFSelect_SignAncestor : public IFSelect_SignType {
 };
 %feature("shadow") IFSelect_SignAncestor::~IFSelect_SignAncestor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SignAncestor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_DispPerFiles;
@@ -4029,8 +5249,18 @@ class IFSelect_DispPerFiles : public IFSelect_Dispatch {
 };
 %feature("shadow") IFSelect_DispPerFiles::~IFSelect_DispPerFiles %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_DispPerFiles {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_WorkSession;
@@ -4376,8 +5606,18 @@ class IFSelect_WorkSession : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_WorkSession::~IFSelect_WorkSession %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_WorkSession {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SignMultiple;
@@ -4407,8 +5647,18 @@ class IFSelect_SignMultiple : public IFSelect_Signature {
 };
 %feature("shadow") IFSelect_SignMultiple::~IFSelect_SignMultiple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SignMultiple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_Activator;
@@ -4460,8 +5710,18 @@ class IFSelect_Activator : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_Activator::~IFSelect_Activator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_Activator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SessionPilot;
@@ -4533,8 +5793,18 @@ class IFSelect_SessionPilot : public IFSelect_Activator {
 };
 %feature("shadow") IFSelect_SessionPilot::~IFSelect_SessionPilot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SessionPilot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SignCounter;
@@ -4590,8 +5860,18 @@ class IFSelect_SignCounter : public IFSelect_SignatureList {
 };
 %feature("shadow") IFSelect_SignCounter::~IFSelect_SignCounter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SignCounter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectModelEntities;
@@ -4621,8 +5901,18 @@ class IFSelect_SelectModelEntities : public IFSelect_SelectBase {
 };
 %feature("shadow") IFSelect_SelectModelEntities::~IFSelect_SelectModelEntities %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectModelEntities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_DispGlobal;
@@ -4654,8 +5944,18 @@ class IFSelect_DispGlobal : public IFSelect_Dispatch {
 };
 %feature("shadow") IFSelect_DispGlobal::~IFSelect_DispGlobal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_DispGlobal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_ContextWrite;
@@ -4711,8 +6011,18 @@ class IFSelect_ContextWrite {
 };
 %feature("shadow") IFSelect_ContextWrite::~IFSelect_ContextWrite %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_ContextWrite {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectRange;
@@ -4760,8 +6070,18 @@ class IFSelect_SelectRange : public IFSelect_SelectExtract {
 };
 %feature("shadow") IFSelect_SelectRange::~IFSelect_SelectRange %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectRange {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectFlag;
@@ -4793,8 +6113,18 @@ class IFSelect_SelectFlag : public IFSelect_SelectExtract {
 };
 %feature("shadow") IFSelect_SelectFlag::~IFSelect_SelectFlag %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectFlag {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectRootComps;
@@ -4824,8 +6154,18 @@ class IFSelect_SelectRootComps : public IFSelect_SelectExtract {
 };
 %feature("shadow") IFSelect_SelectRootComps::~IFSelect_SelectRootComps %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectRootComps {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectRoots;
@@ -4855,8 +6195,18 @@ class IFSelect_SelectRoots : public IFSelect_SelectExtract {
 };
 %feature("shadow") IFSelect_SelectRoots::~IFSelect_SelectRoots %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectRoots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_ListEditor;
@@ -4914,8 +6264,18 @@ class IFSelect_ListEditor : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_ListEditor::~IFSelect_ListEditor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_ListEditor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SessionDumper;
@@ -4945,8 +6305,18 @@ class IFSelect_SessionDumper : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_SessionDumper::~IFSelect_SessionDumper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SessionDumper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_BasicDumper;
@@ -4968,8 +6338,18 @@ class IFSelect_BasicDumper : public IFSelect_SessionDumper {
 };
 %feature("shadow") IFSelect_BasicDumper::~IFSelect_BasicDumper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_BasicDumper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_AppliedModifiers;
@@ -5007,8 +6387,18 @@ class IFSelect_AppliedModifiers : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_AppliedModifiers::~IFSelect_AppliedModifiers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_AppliedModifiers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectIntersection;
@@ -5036,8 +6426,18 @@ class IFSelect_SelectIntersection : public IFSelect_SelectCombine {
 };
 %feature("shadow") IFSelect_SelectIntersection::~IFSelect_SelectIntersection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectIntersection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_ShareOut;
@@ -5121,8 +6521,18 @@ class IFSelect_ShareOut : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_ShareOut::~IFSelect_ShareOut %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_ShareOut {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SessionFile;
@@ -5206,8 +6616,18 @@ class IFSelect_SessionFile {
 };
 %feature("shadow") IFSelect_SessionFile::~IFSelect_SessionFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SessionFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_GeneralModifier;
@@ -5247,8 +6667,18 @@ class IFSelect_GeneralModifier : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_GeneralModifier::~IFSelect_GeneralModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_GeneralModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SignCategory;
@@ -5274,8 +6704,18 @@ class IFSelect_SignCategory : public IFSelect_Signature {
 };
 %feature("shadow") IFSelect_SignCategory::~IFSelect_SignCategory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SignCategory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_ShareOutResult;
@@ -5325,8 +6765,18 @@ class IFSelect_ShareOutResult {
 };
 %feature("shadow") IFSelect_ShareOutResult::~IFSelect_ShareOutResult %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_ShareOutResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SequenceNodeOfTSeqOfDispatch;
@@ -5352,8 +6802,18 @@ class IFSelect_SequenceNodeOfTSeqOfDispatch : public TCollection_SeqNode {
 };
 %feature("shadow") IFSelect_SequenceNodeOfTSeqOfDispatch::~IFSelect_SequenceNodeOfTSeqOfDispatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SequenceNodeOfTSeqOfDispatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectSignature;
@@ -5395,8 +6855,18 @@ class IFSelect_SelectSignature : public IFSelect_SelectExtract {
 };
 %feature("shadow") IFSelect_SelectSignature::~IFSelect_SelectSignature %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectSignature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_ParamEditor;
@@ -5436,8 +6906,18 @@ class IFSelect_ParamEditor : public IFSelect_Editor {
 };
 %feature("shadow") IFSelect_ParamEditor::~IFSelect_ParamEditor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_ParamEditor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectUnknownEntities;
@@ -5465,8 +6945,18 @@ class IFSelect_SelectUnknownEntities : public IFSelect_SelectExtract {
 };
 %feature("shadow") IFSelect_SelectUnknownEntities::~IFSelect_SelectUnknownEntities %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectUnknownEntities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_Act;
@@ -5496,8 +6986,18 @@ class IFSelect_Act : public IFSelect_Activator {
 };
 %feature("shadow") IFSelect_Act::~IFSelect_Act %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_Act {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectIncorrectEntities;
@@ -5521,8 +7021,18 @@ class IFSelect_SelectIncorrectEntities : public IFSelect_SelectFlag {
 };
 %feature("shadow") IFSelect_SelectIncorrectEntities::~IFSelect_SelectIncorrectEntities %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectIncorrectEntities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SequenceNodeOfSequenceOfGeneralModifier;
@@ -5548,8 +7058,18 @@ class IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public TCollection_SeqN
 };
 %feature("shadow") IFSelect_SequenceNodeOfSequenceOfGeneralModifier::~IFSelect_SequenceNodeOfSequenceOfGeneralModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_HSeqOfSelection;
@@ -5617,8 +7137,18 @@ class IFSelect_HSeqOfSelection : public MMgt_TShared {
 };
 %feature("shadow") IFSelect_HSeqOfSelection::~IFSelect_HSeqOfSelection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_HSeqOfSelection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_Modifier;
@@ -5642,8 +7172,18 @@ class IFSelect_Modifier : public IFSelect_GeneralModifier {
 };
 %feature("shadow") IFSelect_Modifier::~IFSelect_Modifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_Modifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_DispPerOne;
@@ -5675,8 +7215,18 @@ class IFSelect_DispPerOne : public IFSelect_Dispatch {
 };
 %feature("shadow") IFSelect_DispPerOne::~IFSelect_DispPerOne %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_DispPerOne {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SequenceOfInterfaceModel;
@@ -5730,8 +7280,18 @@ class IFSelect_SequenceOfInterfaceModel : public TCollection_BaseSequence {
 };
 %feature("shadow") IFSelect_SequenceOfInterfaceModel::~IFSelect_SequenceOfInterfaceModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SequenceOfInterfaceModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectEntityNumber;
@@ -5763,8 +7323,18 @@ class IFSelect_SelectEntityNumber : public IFSelect_SelectBase {
 };
 %feature("shadow") IFSelect_SelectEntityNumber::~IFSelect_SelectEntityNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectEntityNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SequenceOfAppliedModifiers;
@@ -5818,8 +7388,18 @@ class IFSelect_SequenceOfAppliedModifiers : public TCollection_BaseSequence {
 };
 %feature("shadow") IFSelect_SequenceOfAppliedModifiers::~IFSelect_SequenceOfAppliedModifiers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SequenceOfAppliedModifiers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_GraphCounter;
@@ -5849,8 +7429,18 @@ class IFSelect_GraphCounter : public IFSelect_SignCounter {
 };
 %feature("shadow") IFSelect_GraphCounter::~IFSelect_GraphCounter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_GraphCounter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SequenceNodeOfSequenceOfInterfaceModel;
@@ -5876,8 +7466,18 @@ class IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public TCollection_SeqNo
 };
 %feature("shadow") IFSelect_SequenceNodeOfSequenceOfInterfaceModel::~IFSelect_SequenceNodeOfSequenceOfInterfaceModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_SelectSharing;
@@ -5905,8 +7505,18 @@ class IFSelect_SelectSharing : public IFSelect_SelectDeduct {
 };
 %feature("shadow") IFSelect_SelectSharing::~IFSelect_SelectSharing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_SelectSharing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_TSeqOfDispatch;
@@ -5960,8 +7570,18 @@ class IFSelect_TSeqOfDispatch : public TCollection_BaseSequence {
 };
 %feature("shadow") IFSelect_TSeqOfDispatch::~IFSelect_TSeqOfDispatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_TSeqOfDispatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_ModifEditForm;
@@ -5991,8 +7611,18 @@ class IFSelect_ModifEditForm : public IFSelect_Modifier {
 };
 %feature("shadow") IFSelect_ModifEditForm::~IFSelect_ModifEditForm %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_ModifEditForm {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IFSelect_ModifReorder;
@@ -6020,5 +7650,15 @@ class IFSelect_ModifReorder : public IFSelect_Modifier {
 };
 %feature("shadow") IFSelect_ModifReorder::~IFSelect_ModifReorder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IFSelect_ModifReorder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -77,8 +77,18 @@ class Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour : public Handle_TC
 };
 %feature("shadow") Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour::~Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour;
@@ -105,8 +115,18 @@ class Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : publ
 };
 %feature("shadow") Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour::~Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour;
@@ -133,8 +153,18 @@ class Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : publi
 };
 %feature("shadow") Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour::~Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Contap_TheIWLineOfTheIWalkingOfContour;
@@ -161,8 +191,18 @@ class Handle_Contap_TheIWLineOfTheIWalkingOfContour : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_Contap_TheIWLineOfTheIWalkingOfContour::~Handle_Contap_TheIWLineOfTheIWalkingOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Contap_TheIWLineOfTheIWalkingOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Contap_TheHSequenceOfPointOfContour;
@@ -189,8 +229,18 @@ class Handle_Contap_TheHSequenceOfPointOfContour : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Contap_TheHSequenceOfPointOfContour::~Handle_Contap_TheHSequenceOfPointOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Contap_TheHSequenceOfPointOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour;
@@ -217,8 +267,18 @@ class Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public
 };
 %feature("shadow") Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour::~Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour;
@@ -245,8 +305,18 @@ class Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour : public Handle_TCo
 };
 %feature("shadow") Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour::~Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_ThePointOfContour;
@@ -296,8 +366,18 @@ class Contap_ThePointOfContour {
 };
 %feature("shadow") Contap_ThePointOfContour::~Contap_ThePointOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_ThePointOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_TheLineOfContour;
@@ -347,8 +427,18 @@ class Contap_TheLineOfContour {
 };
 %feature("shadow") Contap_TheLineOfContour::~Contap_TheLineOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_TheLineOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour;
@@ -374,8 +464,18 @@ class Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : public TCol
 };
 %feature("shadow") Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour::~Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_TheSurfFunctionOfContour;
@@ -431,8 +531,18 @@ class Contap_TheSurfFunctionOfContour : public math_FunctionSetWithDerivatives {
 };
 %feature("shadow") Contap_TheSurfFunctionOfContour::~Contap_TheSurfFunctionOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_TheSurfFunctionOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_TheSequenceOfPointOfContour;
@@ -486,8 +596,18 @@ class Contap_TheSequenceOfPointOfContour : public TCollection_BaseSequence {
 };
 %feature("shadow") Contap_TheSequenceOfPointOfContour::~Contap_TheSequenceOfPointOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_TheSequenceOfPointOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_SequenceOfIWLineOfTheIWalkingOfContour;
@@ -541,8 +661,18 @@ class Contap_SequenceOfIWLineOfTheIWalkingOfContour : public TCollection_BaseSeq
 };
 %feature("shadow") Contap_SequenceOfIWLineOfTheIWalkingOfContour::~Contap_SequenceOfIWLineOfTheIWalkingOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_SequenceOfIWLineOfTheIWalkingOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_HSurfaceTool;
@@ -632,8 +762,18 @@ class Contap_HSurfaceTool {
 };
 %feature("shadow") Contap_HSurfaceTool::~Contap_HSurfaceTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_HSurfaceTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_SequenceOfSegmentOfTheSearchOfContour;
@@ -687,8 +827,18 @@ class Contap_SequenceOfSegmentOfTheSearchOfContour : public TCollection_BaseSequ
 };
 %feature("shadow") Contap_SequenceOfSegmentOfTheSearchOfContour::~Contap_SequenceOfSegmentOfTheSearchOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_SequenceOfSegmentOfTheSearchOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_TheSegmentOfTheSearchOfContour;
@@ -714,8 +864,18 @@ class Contap_TheSegmentOfTheSearchOfContour {
 };
 %feature("shadow") Contap_TheSegmentOfTheSearchOfContour::~Contap_TheSegmentOfTheSearchOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_TheSegmentOfTheSearchOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_TheSearchOfContour;
@@ -741,8 +901,18 @@ class Contap_TheSearchOfContour {
 };
 %feature("shadow") Contap_TheSearchOfContour::~Contap_TheSearchOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_TheSearchOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_TheSurfPropsOfContour;
@@ -760,8 +930,18 @@ class Contap_TheSurfPropsOfContour {
 };
 %feature("shadow") Contap_TheSurfPropsOfContour::~Contap_TheSurfPropsOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_TheSurfPropsOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_SequenceOfPathPointOfTheSearchOfContour;
@@ -815,8 +995,18 @@ class Contap_SequenceOfPathPointOfTheSearchOfContour : public TCollection_BaseSe
 };
 %feature("shadow") Contap_SequenceOfPathPointOfTheSearchOfContour::~Contap_SequenceOfPathPointOfTheSearchOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_SequenceOfPathPointOfTheSearchOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_TheHSequenceOfPointOfContour;
@@ -884,8 +1074,18 @@ class Contap_TheHSequenceOfPointOfContour : public MMgt_TShared {
 };
 %feature("shadow") Contap_TheHSequenceOfPointOfContour::~Contap_TheHSequenceOfPointOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_TheHSequenceOfPointOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_Contour;
@@ -933,8 +1133,18 @@ class Contap_Contour {
 };
 %feature("shadow") Contap_Contour::~Contap_Contour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_Contour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_SequenceNodeOfTheSequenceOfLineOfContour;
@@ -960,8 +1170,18 @@ class Contap_SequenceNodeOfTheSequenceOfLineOfContour : public TCollection_SeqNo
 };
 %feature("shadow") Contap_SequenceNodeOfTheSequenceOfLineOfContour::~Contap_SequenceNodeOfTheSequenceOfLineOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_SequenceNodeOfTheSequenceOfLineOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour;
@@ -987,8 +1207,18 @@ class Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : public TColl
 };
 %feature("shadow") Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour::~Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_ContAna;
@@ -1028,8 +1258,18 @@ class Contap_ContAna {
 };
 %feature("shadow") Contap_ContAna::~Contap_ContAna %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_ContAna {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_HContTool;
@@ -1077,8 +1317,18 @@ class Contap_HContTool {
 };
 %feature("shadow") Contap_HContTool::~Contap_HContTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_HContTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_HCurve2dTool;
@@ -1138,8 +1388,18 @@ class Contap_HCurve2dTool {
 };
 %feature("shadow") Contap_HCurve2dTool::~Contap_HCurve2dTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_HCurve2dTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_ThePathPointOfTheSearchOfContour;
@@ -1171,8 +1431,18 @@ class Contap_ThePathPointOfTheSearchOfContour {
 };
 %feature("shadow") Contap_ThePathPointOfTheSearchOfContour::~Contap_ThePathPointOfTheSearchOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_ThePathPointOfTheSearchOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_TheSearchInsideOfContour;
@@ -1196,8 +1466,18 @@ class Contap_TheSearchInsideOfContour {
 };
 %feature("shadow") Contap_TheSearchInsideOfContour::~Contap_TheSearchInsideOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_TheSearchInsideOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_TheSequenceOfLineOfContour;
@@ -1251,8 +1531,18 @@ class Contap_TheSequenceOfLineOfContour : public TCollection_BaseSequence {
 };
 %feature("shadow") Contap_TheSequenceOfLineOfContour::~Contap_TheSequenceOfLineOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_TheSequenceOfLineOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_TheIWLineOfTheIWalkingOfContour;
@@ -1330,8 +1620,18 @@ class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
 };
 %feature("shadow") Contap_TheIWLineOfTheIWalkingOfContour::~Contap_TheIWLineOfTheIWalkingOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_TheIWLineOfTheIWalkingOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour;
@@ -1357,8 +1657,18 @@ class Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public TColle
 };
 %feature("shadow") Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour::~Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_SequenceNodeOfTheSequenceOfPointOfContour;
@@ -1384,8 +1694,18 @@ class Contap_SequenceNodeOfTheSequenceOfPointOfContour : public TCollection_SeqN
 };
 %feature("shadow") Contap_SequenceNodeOfTheSequenceOfPointOfContour::~Contap_SequenceNodeOfTheSequenceOfPointOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_SequenceNodeOfTheSequenceOfPointOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Contap_TheArcFunctionOfContour;
@@ -1423,5 +1743,15 @@ class Contap_TheArcFunctionOfContour : public math_FunctionWithDerivative {
 };
 %feature("shadow") Contap_TheArcFunctionOfContour::~Contap_TheArcFunctionOfContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Contap_TheArcFunctionOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

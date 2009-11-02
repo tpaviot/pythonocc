@@ -145,8 +145,18 @@ class Handle_Standard_Transient {
 };
 %feature("shadow") Handle_Standard_Transient::~Handle_Standard_Transient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_Transient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_Failure;
@@ -173,8 +183,18 @@ class Handle_Standard_Failure : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_Standard_Failure::~Handle_Standard_Failure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_Failure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_DomainError;
@@ -201,8 +221,18 @@ class Handle_Standard_DomainError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Standard_DomainError::~Handle_Standard_DomainError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_DomainError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_RangeError;
@@ -229,8 +259,18 @@ class Handle_Standard_RangeError : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_RangeError::~Handle_Standard_RangeError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_RangeError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_NullValue;
@@ -257,8 +297,18 @@ class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 };
 %feature("shadow") Handle_Standard_NullValue::~Handle_Standard_NullValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_NullValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_LicenseError;
@@ -285,8 +335,18 @@ class Handle_Standard_LicenseError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Standard_LicenseError::~Handle_Standard_LicenseError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_LicenseError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_LicenseNotFound;
@@ -313,8 +373,18 @@ class Handle_Standard_LicenseNotFound : public Handle_Standard_LicenseError {
 };
 %feature("shadow") Handle_Standard_LicenseNotFound::~Handle_Standard_LicenseNotFound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_LicenseNotFound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_TypeMismatch;
@@ -341,8 +411,18 @@ class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_TypeMismatch::~Handle_Standard_TypeMismatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_TypeMismatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_OutOfRange;
@@ -369,8 +449,18 @@ class Handle_Standard_OutOfRange : public Handle_Standard_RangeError {
 };
 %feature("shadow") Handle_Standard_OutOfRange::~Handle_Standard_OutOfRange %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_OutOfRange {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_NumericError;
@@ -397,8 +487,18 @@ class Handle_Standard_NumericError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Standard_NumericError::~Handle_Standard_NumericError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_NumericError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_NoMoreObject;
@@ -425,8 +525,18 @@ class Handle_Standard_NoMoreObject : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_NoMoreObject::~Handle_Standard_NoMoreObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_NoMoreObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_ProgramError;
@@ -453,8 +563,18 @@ class Handle_Standard_ProgramError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Standard_ProgramError::~Handle_Standard_ProgramError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_ProgramError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_NotImplemented;
@@ -481,8 +601,18 @@ class Handle_Standard_NotImplemented : public Handle_Standard_ProgramError {
 };
 %feature("shadow") Handle_Standard_NotImplemented::~Handle_Standard_NotImplemented %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_NotImplemented {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_NullObject;
@@ -509,8 +639,18 @@ class Handle_Standard_NullObject : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_NullObject::~Handle_Standard_NullObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_NullObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_Persistent;
@@ -559,8 +699,18 @@ class Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_Standard_Persistent::~Handle_Standard_Persistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_Persistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_AbortiveTransaction;
@@ -587,8 +737,18 @@ class Handle_Standard_AbortiveTransaction : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Standard_AbortiveTransaction::~Handle_Standard_AbortiveTransaction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_AbortiveTransaction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_DimensionError;
@@ -615,8 +775,18 @@ class Handle_Standard_DimensionError : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_DimensionError::~Handle_Standard_DimensionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_DimensionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_DivideByZero;
@@ -643,8 +813,18 @@ class Handle_Standard_DivideByZero : public Handle_Standard_NumericError {
 };
 %feature("shadow") Handle_Standard_DivideByZero::~Handle_Standard_DivideByZero %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_DivideByZero {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_NoSuchObject;
@@ -671,8 +851,18 @@ class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_NoSuchObject::~Handle_Standard_NoSuchObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_NoSuchObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_ConstructionError;
@@ -699,8 +889,18 @@ class Handle_Standard_ConstructionError : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_ConstructionError::~Handle_Standard_ConstructionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_ConstructionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_DimensionMismatch;
@@ -727,8 +927,18 @@ class Handle_Standard_DimensionMismatch : public Handle_Standard_DimensionError 
 };
 %feature("shadow") Handle_Standard_DimensionMismatch::~Handle_Standard_DimensionMismatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_DimensionMismatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_OutOfMemory;
@@ -755,8 +965,18 @@ class Handle_Standard_OutOfMemory : public Handle_Standard_ProgramError {
 };
 %feature("shadow") Handle_Standard_OutOfMemory::~Handle_Standard_OutOfMemory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_OutOfMemory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_Type;
@@ -783,8 +1003,18 @@ class Handle_Standard_Type : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_Standard_Type::~Handle_Standard_Type %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_Type {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_Overflow;
@@ -811,8 +1041,18 @@ class Handle_Standard_Overflow : public Handle_Standard_NumericError {
 };
 %feature("shadow") Handle_Standard_Overflow::~Handle_Standard_Overflow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_Overflow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_NegativeValue;
@@ -839,8 +1079,18 @@ class Handle_Standard_NegativeValue : public Handle_Standard_RangeError {
 };
 %feature("shadow") Handle_Standard_NegativeValue::~Handle_Standard_NegativeValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_NegativeValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_ImmutableObject;
@@ -867,8 +1117,18 @@ class Handle_Standard_ImmutableObject : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_ImmutableObject::~Handle_Standard_ImmutableObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_ImmutableObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_Underflow;
@@ -895,8 +1155,18 @@ class Handle_Standard_Underflow : public Handle_Standard_NumericError {
 };
 %feature("shadow") Handle_Standard_Underflow::~Handle_Standard_Underflow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_Underflow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_MultiplyDefined;
@@ -923,8 +1193,18 @@ class Handle_Standard_MultiplyDefined : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Standard_MultiplyDefined::~Handle_Standard_MultiplyDefined %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_MultiplyDefined {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Standard_TooManyUsers;
@@ -951,8 +1231,18 @@ class Handle_Standard_TooManyUsers : public Handle_Standard_LicenseError {
 };
 %feature("shadow") Handle_Standard_TooManyUsers::~Handle_Standard_TooManyUsers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Standard_TooManyUsers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_Transient;
@@ -1000,8 +1290,18 @@ class Standard_Transient {
 };
 %feature("shadow") Standard_Transient::~Standard_Transient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_Transient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_Failure;
@@ -1055,8 +1355,18 @@ class Standard_Failure : public Standard_Transient {
 };
 %feature("shadow") Standard_Failure::~Standard_Failure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_Failure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_DomainError;
@@ -1082,8 +1392,18 @@ class Standard_DomainError : public Standard_Failure {
 };
 %feature("shadow") Standard_DomainError::~Standard_DomainError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_DomainError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_NoSuchObject;
@@ -1109,8 +1429,18 @@ class Standard_NoSuchObject : public Standard_DomainError {
 };
 %feature("shadow") Standard_NoSuchObject::~Standard_NoSuchObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_NoSuchObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_RangeError;
@@ -1142,8 +1472,18 @@ class Standard_RangeError : public Standard_DomainError {
 };
 %feature("shadow") Standard_RangeError::~Standard_RangeError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_RangeError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_NullValue;
@@ -1169,8 +1509,18 @@ class Standard_NullValue : public Standard_RangeError {
 };
 %feature("shadow") Standard_NullValue::~Standard_NullValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_NullValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_NumericError;
@@ -1202,8 +1552,18 @@ class Standard_NumericError : public Standard_Failure {
 };
 %feature("shadow") Standard_NumericError::~Standard_NumericError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_NumericError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_MMgrRoot;
@@ -1223,8 +1583,18 @@ class Standard_MMgrRoot {
 };
 %feature("shadow") Standard_MMgrRoot::~Standard_MMgrRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_MMgrRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_MMgrRaw;
@@ -1242,8 +1612,18 @@ class Standard_MMgrRaw : public Standard_MMgrRoot {
 };
 %feature("shadow") Standard_MMgrRaw::~Standard_MMgrRaw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_MMgrRaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_NoMoreObject;
@@ -1275,8 +1655,18 @@ class Standard_NoMoreObject : public Standard_DomainError {
 };
 %feature("shadow") Standard_NoMoreObject::~Standard_NoMoreObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_NoMoreObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_ProgramError;
@@ -1308,8 +1698,18 @@ class Standard_ProgramError : public Standard_Failure {
 };
 %feature("shadow") Standard_ProgramError::~Standard_ProgramError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_ProgramError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_NotImplemented;
@@ -1335,8 +1735,18 @@ class Standard_NotImplemented : public Standard_ProgramError {
 };
 %feature("shadow") Standard_NotImplemented::~Standard_NotImplemented %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_NotImplemented {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_ConstructionError;
@@ -1368,8 +1778,18 @@ class Standard_ConstructionError : public Standard_DomainError {
 };
 %feature("shadow") Standard_ConstructionError::~Standard_ConstructionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_ConstructionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_TypeMismatch;
@@ -1401,8 +1821,18 @@ class Standard_TypeMismatch : public Standard_DomainError {
 };
 %feature("shadow") Standard_TypeMismatch::~Standard_TypeMismatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_TypeMismatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_MMgrOpt;
@@ -1424,8 +1854,18 @@ class Standard_MMgrOpt : public Standard_MMgrRoot {
 };
 %feature("shadow") Standard_MMgrOpt::~Standard_MMgrOpt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_MMgrOpt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_Storable;
@@ -1460,8 +1900,18 @@ class Standard_Storable {
 };
 %feature("shadow") Standard_Storable::~Standard_Storable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_Storable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_DimensionError;
@@ -1493,8 +1943,18 @@ class Standard_DimensionError : public Standard_DomainError {
 };
 %feature("shadow") Standard_DimensionError::~Standard_DimensionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_DimensionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_DimensionMismatch;
@@ -1520,8 +1980,18 @@ class Standard_DimensionMismatch : public Standard_DimensionError {
 };
 %feature("shadow") Standard_DimensionMismatch::~Standard_DimensionMismatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_DimensionMismatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_Type;
@@ -1589,8 +2059,18 @@ class Standard_Type : public Standard_Transient {
 };
 %feature("shadow") Standard_Type::~Standard_Type %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_Type {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_ErrorHandlerCallback;
@@ -1606,8 +2086,18 @@ class Standard_ErrorHandlerCallback {
 };
 %feature("shadow") Standard_ErrorHandlerCallback::~Standard_ErrorHandlerCallback %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_ErrorHandlerCallback {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_NegativeValue;
@@ -1639,8 +2129,18 @@ class Standard_NegativeValue : public Standard_RangeError {
 };
 %feature("shadow") Standard_NegativeValue::~Standard_NegativeValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_NegativeValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_Mutex;
@@ -1658,8 +2158,18 @@ class Standard_Mutex : public Standard_ErrorHandlerCallback {
 };
 %feature("shadow") Standard_Mutex::~Standard_Mutex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_Mutex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_ImmutableObject;
@@ -1691,8 +2201,18 @@ class Standard_ImmutableObject : public Standard_DomainError {
 };
 %feature("shadow") Standard_ImmutableObject::~Standard_ImmutableObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_ImmutableObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_AbortiveTransaction;
@@ -1724,8 +2244,18 @@ class Standard_AbortiveTransaction : public Standard_Failure {
 };
 %feature("shadow") Standard_AbortiveTransaction::~Standard_AbortiveTransaction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_AbortiveTransaction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_AncestorIterator;
@@ -1751,8 +2281,18 @@ class Standard_AncestorIterator {
 };
 %feature("shadow") Standard_AncestorIterator::~Standard_AncestorIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_AncestorIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_MultiplyDefined;
@@ -1784,8 +2324,18 @@ class Standard_MultiplyDefined : public Standard_DomainError {
 };
 %feature("shadow") Standard_MultiplyDefined::~Standard_MultiplyDefined %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_MultiplyDefined {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_LicenseError;
@@ -1817,8 +2367,18 @@ class Standard_LicenseError : public Standard_Failure {
 };
 %feature("shadow") Standard_LicenseError::~Standard_LicenseError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_LicenseError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_TooManyUsers;
@@ -1844,8 +2404,18 @@ class Standard_TooManyUsers : public Standard_LicenseError {
 };
 %feature("shadow") Standard_TooManyUsers::~Standard_TooManyUsers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_TooManyUsers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_LicenseNotFound;
@@ -1877,8 +2447,18 @@ class Standard_LicenseNotFound : public Standard_LicenseError {
 };
 %feature("shadow") Standard_LicenseNotFound::~Standard_LicenseNotFound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_LicenseNotFound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard;
@@ -1902,8 +2482,18 @@ class Standard {
 };
 %feature("shadow") Standard::~Standard %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_Underflow;
@@ -1935,8 +2525,18 @@ class Standard_Underflow : public Standard_NumericError {
 };
 %feature("shadow") Standard_Underflow::~Standard_Underflow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_Underflow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_Overflow;
@@ -1968,8 +2568,18 @@ class Standard_Overflow : public Standard_NumericError {
 };
 %feature("shadow") Standard_Overflow::~Standard_Overflow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_Overflow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_NullObject;
@@ -2001,8 +2611,18 @@ class Standard_NullObject : public Standard_DomainError {
 };
 %feature("shadow") Standard_NullObject::~Standard_NullObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_NullObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_GUID;
@@ -2102,8 +2722,18 @@ class Standard_GUID {
 };
 %feature("shadow") Standard_GUID::~Standard_GUID %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_GUID {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 %extend Standard_GUID {
 	Standard_PCharacter ToString() {
 	Standard_PCharacter tmpstr=NULL;
@@ -2136,8 +2766,18 @@ class Standard_ErrorHandler {
 };
 %feature("shadow") Standard_ErrorHandler::~Standard_ErrorHandler %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_ErrorHandler {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_Persistent;
@@ -2181,8 +2821,18 @@ class Standard_Persistent {
 };
 %feature("shadow") Standard_Persistent::~Standard_Persistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_Persistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_OutOfRange;
@@ -2214,8 +2864,18 @@ class Standard_OutOfRange : public Standard_RangeError {
 };
 %feature("shadow") Standard_OutOfRange::~Standard_OutOfRange %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_OutOfRange {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_DivideByZero;
@@ -2247,8 +2907,18 @@ class Standard_DivideByZero : public Standard_NumericError {
 };
 %feature("shadow") Standard_DivideByZero::~Standard_DivideByZero %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_DivideByZero {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Standard_OutOfMemory;
@@ -2280,5 +2950,15 @@ class Standard_OutOfMemory : public Standard_ProgramError {
 };
 %feature("shadow") Standard_OutOfMemory::~Standard_OutOfMemory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Standard_OutOfMemory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

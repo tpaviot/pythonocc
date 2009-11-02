@@ -63,8 +63,18 @@ class Handle_TShort_HSequenceOfShortReal : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TShort_HSequenceOfShortReal::~Handle_TShort_HSequenceOfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TShort_HSequenceOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TShort_HArray1OfShortReal;
@@ -91,8 +101,18 @@ class Handle_TShort_HArray1OfShortReal : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TShort_HArray1OfShortReal::~Handle_TShort_HArray1OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TShort_HArray1OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TShort_SequenceNodeOfSequenceOfShortReal;
@@ -119,8 +139,18 @@ class Handle_TShort_SequenceNodeOfSequenceOfShortReal : public Handle_TCollectio
 };
 %feature("shadow") Handle_TShort_SequenceNodeOfSequenceOfShortReal::~Handle_TShort_SequenceNodeOfSequenceOfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TShort_SequenceNodeOfSequenceOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TShort_HArray2OfShortReal;
@@ -147,8 +177,18 @@ class Handle_TShort_HArray2OfShortReal : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TShort_HArray2OfShortReal::~Handle_TShort_HArray2OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TShort_HArray2OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TShort_HArray1OfShortReal;
@@ -192,8 +232,18 @@ class TShort_HArray1OfShortReal : public MMgt_TShared {
 };
 %feature("shadow") TShort_HArray1OfShortReal::~TShort_HArray1OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TShort_HArray1OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TShort_SequenceOfShortReal;
@@ -247,8 +297,18 @@ class TShort_SequenceOfShortReal : public TCollection_BaseSequence {
 };
 %feature("shadow") TShort_SequenceOfShortReal::~TShort_SequenceOfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TShort_SequenceOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TShort_Array1OfShortReal;
@@ -288,8 +348,18 @@ class TShort_Array1OfShortReal {
 };
 %feature("shadow") TShort_Array1OfShortReal::~TShort_Array1OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TShort_Array1OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TShort_HArray2OfShortReal;
@@ -339,8 +409,18 @@ class TShort_HArray2OfShortReal : public MMgt_TShared {
 };
 %feature("shadow") TShort_HArray2OfShortReal::~TShort_HArray2OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TShort_HArray2OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TShort_Array2OfShortReal;
@@ -384,8 +464,18 @@ class TShort_Array2OfShortReal {
 };
 %feature("shadow") TShort_Array2OfShortReal::~TShort_Array2OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TShort_Array2OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TShort_SequenceNodeOfSequenceOfShortReal;
@@ -411,8 +501,18 @@ class TShort_SequenceNodeOfSequenceOfShortReal : public TCollection_SeqNode {
 };
 %feature("shadow") TShort_SequenceNodeOfSequenceOfShortReal::~TShort_SequenceNodeOfSequenceOfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TShort_SequenceNodeOfSequenceOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TShort_HSequenceOfShortReal;
@@ -480,5 +580,15 @@ class TShort_HSequenceOfShortReal : public MMgt_TShared {
 };
 %feature("shadow") TShort_HSequenceOfShortReal::~TShort_HSequenceOfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TShort_HSequenceOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

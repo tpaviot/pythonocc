@@ -120,8 +120,18 @@ class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_CDF_MetaDataDriver::~Handle_CDF_MetaDataDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDF_MetaDataDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDF_StoreList;
@@ -148,8 +158,18 @@ class Handle_CDF_StoreList : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_CDF_StoreList::~Handle_CDF_StoreList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDF_StoreList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDF_Directory;
@@ -176,8 +196,18 @@ class Handle_CDF_Directory : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_CDF_Directory::~Handle_CDF_Directory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDF_Directory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDF_MetaDataDriverError;
@@ -204,8 +234,18 @@ class Handle_CDF_MetaDataDriverError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_CDF_MetaDataDriverError::~Handle_CDF_MetaDataDriverError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDF_MetaDataDriverError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDF_Application;
@@ -232,8 +272,18 @@ class Handle_CDF_Application : public Handle_CDM_Application {
 };
 %feature("shadow") Handle_CDF_Application::~Handle_CDF_Application %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDF_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDF_MetaDataDriverFactory;
@@ -260,8 +310,18 @@ class Handle_CDF_MetaDataDriverFactory : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_CDF_MetaDataDriverFactory::~Handle_CDF_MetaDataDriverFactory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDF_MetaDataDriverFactory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_CDF_Session;
@@ -288,8 +348,18 @@ class Handle_CDF_Session : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_CDF_Session::~Handle_CDF_Session %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CDF_Session {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDF_MetaDataDriverError;
@@ -321,8 +391,18 @@ class CDF_MetaDataDriverError : public Standard_Failure {
 };
 %feature("shadow") CDF_MetaDataDriverError::~CDF_MetaDataDriverError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDF_MetaDataDriverError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDF;
@@ -338,8 +418,18 @@ class CDF {
 };
 %feature("shadow") CDF::~CDF %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDF_Application;
@@ -397,8 +487,18 @@ class CDF_Application : public CDM_Application {
 };
 %feature("shadow") CDF_Application::~CDF_Application %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDF_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDF_MetaDataDriver;
@@ -452,8 +552,18 @@ class CDF_MetaDataDriver : public Standard_Transient {
 };
 %feature("shadow") CDF_MetaDataDriver::~CDF_MetaDataDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDF_MetaDataDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDF_Timer;
@@ -471,8 +581,18 @@ class CDF_Timer {
 };
 %feature("shadow") CDF_Timer::~CDF_Timer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDF_Timer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDF_StoreList;
@@ -508,8 +628,18 @@ class CDF_StoreList : public Standard_Transient {
 };
 %feature("shadow") CDF_StoreList::~CDF_StoreList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDF_StoreList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDF_MetaDataDriverFactory;
@@ -533,8 +663,18 @@ class CDF_MetaDataDriverFactory : public Standard_Transient {
 };
 %feature("shadow") CDF_MetaDataDriverFactory::~CDF_MetaDataDriverFactory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDF_MetaDataDriverFactory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDF_Directory;
@@ -570,8 +710,18 @@ class CDF_Directory : public Standard_Transient {
 };
 %feature("shadow") CDF_Directory::~CDF_Directory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDF_Directory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDF_Session;
@@ -613,8 +763,18 @@ class CDF_Session : public Standard_Transient {
 };
 %feature("shadow") CDF_Session::~CDF_Session %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDF_Session {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDF_DirectoryIterator;
@@ -634,8 +794,18 @@ class CDF_DirectoryIterator {
 };
 %feature("shadow") CDF_DirectoryIterator::~CDF_DirectoryIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDF_DirectoryIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CDF_Store;
@@ -715,5 +885,15 @@ class CDF_Store {
 };
 %feature("shadow") CDF_Store::~CDF_Store %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CDF_Store {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

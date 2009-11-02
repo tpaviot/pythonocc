@@ -63,8 +63,18 @@ class Handle_PShort_HArray2OfShortReal : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PShort_HArray2OfShortReal::~Handle_PShort_HArray2OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PShort_HArray2OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PShort_HSequenceOfShortReal;
@@ -91,8 +101,18 @@ class Handle_PShort_HSequenceOfShortReal : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PShort_HSequenceOfShortReal::~Handle_PShort_HSequenceOfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PShort_HSequenceOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal;
@@ -119,8 +139,18 @@ class Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public Handle_PStand
 };
 %feature("shadow") Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal::~Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PShort_HArray1OfShortReal;
@@ -147,8 +177,18 @@ class Handle_PShort_HArray1OfShortReal : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PShort_HArray1OfShortReal::~Handle_PShort_HArray1OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PShort_HArray1OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal;
@@ -175,8 +215,18 @@ class Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public Handle_PStand
 };
 %feature("shadow") Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal::~Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PShort_SeqNodeOfHSequenceOfShortReal;
@@ -203,8 +253,18 @@ class Handle_PShort_SeqNodeOfHSequenceOfShortReal : public Handle_PMMgt_PManaged
 };
 %feature("shadow") Handle_PShort_SeqNodeOfHSequenceOfShortReal::~Handle_PShort_SeqNodeOfHSequenceOfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PShort_SeqNodeOfHSequenceOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PShort_VArrayNodeOfFieldOfHArray1OfShortReal;
@@ -240,8 +300,18 @@ class PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public PStandard_ArrayNode 
 };
 %feature("shadow") PShort_VArrayNodeOfFieldOfHArray1OfShortReal::~PShort_VArrayNodeOfFieldOfHArray1OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PShort_FieldOfHArray1OfShortReal;
@@ -271,8 +341,18 @@ class PShort_FieldOfHArray1OfShortReal : public DBC_BaseArray {
 };
 %feature("shadow") PShort_FieldOfHArray1OfShortReal::~PShort_FieldOfHArray1OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PShort_FieldOfHArray1OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PShort_HSequenceOfShortReal;
@@ -370,8 +450,18 @@ class PShort_HSequenceOfShortReal : public Standard_Persistent {
 };
 %feature("shadow") PShort_HSequenceOfShortReal::~PShort_HSequenceOfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PShort_HSequenceOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PShort_FieldOfHArray2OfShortReal;
@@ -401,8 +491,18 @@ class PShort_FieldOfHArray2OfShortReal : public DBC_BaseArray {
 };
 %feature("shadow") PShort_FieldOfHArray2OfShortReal::~PShort_FieldOfHArray2OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PShort_FieldOfHArray2OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PShort_VArrayNodeOfFieldOfHArray2OfShortReal;
@@ -438,8 +538,18 @@ class PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public PStandard_ArrayNode 
 };
 %feature("shadow") PShort_VArrayNodeOfFieldOfHArray2OfShortReal::~PShort_VArrayNodeOfFieldOfHArray2OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PShort_SeqExplorerOfHSequenceOfShortReal;
@@ -459,8 +569,18 @@ class PShort_SeqExplorerOfHSequenceOfShortReal {
 };
 %feature("shadow") PShort_SeqExplorerOfHSequenceOfShortReal::~PShort_SeqExplorerOfHSequenceOfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PShort_SeqExplorerOfHSequenceOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PShort_VArrayTNodeOfFieldOfHArray1OfShortReal;
@@ -478,8 +598,18 @@ class PShort_VArrayTNodeOfFieldOfHArray1OfShortReal {
 };
 %feature("shadow") PShort_VArrayTNodeOfFieldOfHArray1OfShortReal::~PShort_VArrayTNodeOfFieldOfHArray1OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PShort_VArrayTNodeOfFieldOfHArray1OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PShort_SeqNodeOfHSequenceOfShortReal;
@@ -535,8 +665,18 @@ class PShort_SeqNodeOfHSequenceOfShortReal : public PMMgt_PManaged {
 };
 %feature("shadow") PShort_SeqNodeOfHSequenceOfShortReal::~PShort_SeqNodeOfHSequenceOfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PShort_SeqNodeOfHSequenceOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PShort_HArray2OfShortReal;
@@ -610,8 +750,18 @@ class PShort_HArray2OfShortReal : public Standard_Persistent {
 };
 %feature("shadow") PShort_HArray2OfShortReal::~PShort_HArray2OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PShort_HArray2OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PShort_HArray1OfShortReal;
@@ -671,8 +821,18 @@ class PShort_HArray1OfShortReal : public Standard_Persistent {
 };
 %feature("shadow") PShort_HArray1OfShortReal::~PShort_HArray1OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PShort_HArray1OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PShort_VArrayTNodeOfFieldOfHArray2OfShortReal;
@@ -690,5 +850,15 @@ class PShort_VArrayTNodeOfFieldOfHArray2OfShortReal {
 };
 %feature("shadow") PShort_VArrayTNodeOfFieldOfHArray2OfShortReal::~PShort_VArrayTNodeOfFieldOfHArray2OfShortReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PShort_VArrayTNodeOfFieldOfHArray2OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

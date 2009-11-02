@@ -63,8 +63,18 @@ class Handle_PBRep_CurveRepresentation : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PBRep_CurveRepresentation::~Handle_PBRep_CurveRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_CurveRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_GCurve;
@@ -91,8 +101,18 @@ class Handle_PBRep_GCurve : public Handle_PBRep_CurveRepresentation {
 };
 %feature("shadow") Handle_PBRep_GCurve::~Handle_PBRep_GCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_GCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_CurveOnSurface;
@@ -119,8 +139,18 @@ class Handle_PBRep_CurveOnSurface : public Handle_PBRep_GCurve {
 };
 %feature("shadow") Handle_PBRep_CurveOnSurface::~Handle_PBRep_CurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_CurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_CurveOnClosedSurface;
@@ -147,8 +177,18 @@ class Handle_PBRep_CurveOnClosedSurface : public Handle_PBRep_CurveOnSurface {
 };
 %feature("shadow") Handle_PBRep_CurveOnClosedSurface::~Handle_PBRep_CurveOnClosedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_CurveOnClosedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_PointRepresentation;
@@ -175,8 +215,18 @@ class Handle_PBRep_PointRepresentation : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PBRep_PointRepresentation::~Handle_PBRep_PointRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_PointRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_PointsOnSurface;
@@ -203,8 +253,18 @@ class Handle_PBRep_PointsOnSurface : public Handle_PBRep_PointRepresentation {
 };
 %feature("shadow") Handle_PBRep_PointsOnSurface::~Handle_PBRep_PointsOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_PointsOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_PointOnCurveOnSurface;
@@ -231,8 +291,18 @@ class Handle_PBRep_PointOnCurveOnSurface : public Handle_PBRep_PointsOnSurface {
 };
 %feature("shadow") Handle_PBRep_PointOnCurveOnSurface::~Handle_PBRep_PointOnCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_PointOnCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_TVertex1;
@@ -259,8 +329,18 @@ class Handle_PBRep_TVertex1 : public Handle_PTopoDS_TVertex1 {
 };
 %feature("shadow") Handle_PBRep_TVertex1::~Handle_PBRep_TVertex1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_TVertex1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_TFace;
@@ -287,8 +367,18 @@ class Handle_PBRep_TFace : public Handle_PTopoDS_TFace {
 };
 %feature("shadow") Handle_PBRep_TFace::~Handle_PBRep_TFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_TFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_PolygonOnSurface;
@@ -315,8 +405,18 @@ class Handle_PBRep_PolygonOnSurface : public Handle_PBRep_CurveRepresentation {
 };
 %feature("shadow") Handle_PBRep_PolygonOnSurface::~Handle_PBRep_PolygonOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_PolygonOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_TEdge1;
@@ -343,8 +443,18 @@ class Handle_PBRep_TEdge1 : public Handle_PTopoDS_TEdge1 {
 };
 %feature("shadow") Handle_PBRep_TEdge1::~Handle_PBRep_TEdge1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_TEdge1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_PolygonOnClosedSurface;
@@ -371,8 +481,18 @@ class Handle_PBRep_PolygonOnClosedSurface : public Handle_PBRep_PolygonOnSurface
 };
 %feature("shadow") Handle_PBRep_PolygonOnClosedSurface::~Handle_PBRep_PolygonOnClosedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_PolygonOnClosedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_PointOnSurface;
@@ -399,8 +519,18 @@ class Handle_PBRep_PointOnSurface : public Handle_PBRep_PointsOnSurface {
 };
 %feature("shadow") Handle_PBRep_PointOnSurface::~Handle_PBRep_PointOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_PointOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_PolygonOnTriangulation;
@@ -427,8 +557,18 @@ class Handle_PBRep_PolygonOnTriangulation : public Handle_PBRep_CurveRepresentat
 };
 %feature("shadow") Handle_PBRep_PolygonOnTriangulation::~Handle_PBRep_PolygonOnTriangulation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_PolygonOnTriangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_CurveOn2Surfaces;
@@ -455,8 +595,18 @@ class Handle_PBRep_CurveOn2Surfaces : public Handle_PBRep_CurveRepresentation {
 };
 %feature("shadow") Handle_PBRep_CurveOn2Surfaces::~Handle_PBRep_CurveOn2Surfaces %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_CurveOn2Surfaces {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_Curve3D;
@@ -483,8 +633,18 @@ class Handle_PBRep_Curve3D : public Handle_PBRep_GCurve {
 };
 %feature("shadow") Handle_PBRep_Curve3D::~Handle_PBRep_Curve3D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_Curve3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_TEdge;
@@ -511,8 +671,18 @@ class Handle_PBRep_TEdge : public Handle_PTopoDS_TEdge {
 };
 %feature("shadow") Handle_PBRep_TEdge::~Handle_PBRep_TEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_TEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_PointOnCurve;
@@ -539,8 +709,18 @@ class Handle_PBRep_PointOnCurve : public Handle_PBRep_PointRepresentation {
 };
 %feature("shadow") Handle_PBRep_PointOnCurve::~Handle_PBRep_PointOnCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_PointOnCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_PolygonOnClosedTriangulation;
@@ -567,8 +747,18 @@ class Handle_PBRep_PolygonOnClosedTriangulation : public Handle_PBRep_PolygonOnT
 };
 %feature("shadow") Handle_PBRep_PolygonOnClosedTriangulation::~Handle_PBRep_PolygonOnClosedTriangulation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_PolygonOnClosedTriangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_TVertex;
@@ -595,8 +785,18 @@ class Handle_PBRep_TVertex : public Handle_PTopoDS_TVertex {
 };
 %feature("shadow") Handle_PBRep_TVertex::~Handle_PBRep_TVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_TVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_TFace1;
@@ -623,8 +823,18 @@ class Handle_PBRep_TFace1 : public Handle_PTopoDS_TFace1 {
 };
 %feature("shadow") Handle_PBRep_TFace1::~Handle_PBRep_TFace1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_TFace1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PBRep_Polygon3D;
@@ -651,8 +861,18 @@ class Handle_PBRep_Polygon3D : public Handle_PBRep_CurveRepresentation {
 };
 %feature("shadow") Handle_PBRep_Polygon3D::~Handle_PBRep_Polygon3D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PBRep_Polygon3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_TEdge1;
@@ -710,8 +930,18 @@ class PBRep_TEdge1 : public PTopoDS_TEdge1 {
 };
 %feature("shadow") PBRep_TEdge1::~PBRep_TEdge1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_TEdge1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_CurveRepresentation;
@@ -769,8 +999,18 @@ class PBRep_CurveRepresentation : public Standard_Persistent {
 };
 %feature("shadow") PBRep_CurveRepresentation::~PBRep_CurveRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_CurveRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_PolygonOnTriangulation;
@@ -808,8 +1048,18 @@ class PBRep_PolygonOnTriangulation : public PBRep_CurveRepresentation {
 };
 %feature("shadow") PBRep_PolygonOnTriangulation::~PBRep_PolygonOnTriangulation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_PolygonOnTriangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_GCurve;
@@ -853,8 +1103,18 @@ class PBRep_GCurve : public PBRep_CurveRepresentation {
 };
 %feature("shadow") PBRep_GCurve::~PBRep_GCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_GCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_CurveOnSurface;
@@ -904,8 +1164,18 @@ class PBRep_CurveOnSurface : public PBRep_GCurve {
 };
 %feature("shadow") PBRep_CurveOnSurface::~PBRep_CurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_CurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_TEdge;
@@ -963,8 +1233,18 @@ class PBRep_TEdge : public PTopoDS_TEdge {
 };
 %feature("shadow") PBRep_TEdge::~PBRep_TEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_TEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_PointRepresentation;
@@ -1016,8 +1296,18 @@ class PBRep_PointRepresentation : public Standard_Persistent {
 };
 %feature("shadow") PBRep_PointRepresentation::~PBRep_PointRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_PointRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_PointsOnSurface;
@@ -1047,8 +1337,18 @@ class PBRep_PointsOnSurface : public PBRep_PointRepresentation {
 };
 %feature("shadow") PBRep_PointsOnSurface::~PBRep_PointsOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_PointsOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_PolygonOnClosedTriangulation;
@@ -1084,8 +1384,18 @@ class PBRep_PolygonOnClosedTriangulation : public PBRep_PolygonOnTriangulation {
 };
 %feature("shadow") PBRep_PolygonOnClosedTriangulation::~PBRep_PolygonOnClosedTriangulation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_PolygonOnClosedTriangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_CurveOnClosedSurface;
@@ -1139,8 +1449,18 @@ class PBRep_CurveOnClosedSurface : public PBRep_CurveOnSurface {
 };
 %feature("shadow") PBRep_CurveOnClosedSurface::~PBRep_CurveOnClosedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_CurveOnClosedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_PointOnCurveOnSurface;
@@ -1176,8 +1496,18 @@ class PBRep_PointOnCurveOnSurface : public PBRep_PointsOnSurface {
 };
 %feature("shadow") PBRep_PointOnCurveOnSurface::~PBRep_PointOnCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_PointOnCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_TVertex;
@@ -1225,8 +1555,18 @@ class PBRep_TVertex : public PTopoDS_TVertex {
 };
 %feature("shadow") PBRep_TVertex::~PBRep_TVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_TVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_TFace;
@@ -1290,8 +1630,18 @@ class PBRep_TFace : public PTopoDS_TFace {
 };
 %feature("shadow") PBRep_TFace::~PBRep_TFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_TFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_Curve3D;
@@ -1327,8 +1677,18 @@ class PBRep_Curve3D : public PBRep_GCurve {
 };
 %feature("shadow") PBRep_Curve3D::~PBRep_Curve3D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_Curve3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_PolygonOnSurface;
@@ -1370,8 +1730,18 @@ class PBRep_PolygonOnSurface : public PBRep_CurveRepresentation {
 };
 %feature("shadow") PBRep_PolygonOnSurface::~PBRep_PolygonOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_PolygonOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_PolygonOnClosedSurface;
@@ -1405,8 +1775,18 @@ class PBRep_PolygonOnClosedSurface : public PBRep_PolygonOnSurface {
 };
 %feature("shadow") PBRep_PolygonOnClosedSurface::~PBRep_PolygonOnClosedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_PolygonOnClosedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_Polygon3D;
@@ -1442,8 +1822,18 @@ class PBRep_Polygon3D : public PBRep_CurveRepresentation {
 };
 %feature("shadow") PBRep_Polygon3D::~PBRep_Polygon3D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_Polygon3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_PointOnSurface;
@@ -1479,8 +1869,18 @@ class PBRep_PointOnSurface : public PBRep_PointsOnSurface {
 };
 %feature("shadow") PBRep_PointOnSurface::~PBRep_PointOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_PointOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_PointOnCurve;
@@ -1516,8 +1916,18 @@ class PBRep_PointOnCurve : public PBRep_PointRepresentation {
 };
 %feature("shadow") PBRep_PointOnCurve::~PBRep_PointOnCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_PointOnCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_TFace1;
@@ -1581,8 +1991,18 @@ class PBRep_TFace1 : public PTopoDS_TFace1 {
 };
 %feature("shadow") PBRep_TFace1::~PBRep_TFace1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_TFace1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_TVertex1;
@@ -1630,8 +2050,18 @@ class PBRep_TVertex1 : public PTopoDS_TVertex1 {
 };
 %feature("shadow") PBRep_TVertex1::~PBRep_TVertex1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_TVertex1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PBRep_CurveOn2Surfaces;
@@ -1683,5 +2113,15 @@ class PBRep_CurveOn2Surfaces : public PBRep_CurveRepresentation {
 };
 %feature("shadow") PBRep_CurveOn2Surfaces::~PBRep_CurveOn2Surfaces %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PBRep_CurveOn2Surfaces {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

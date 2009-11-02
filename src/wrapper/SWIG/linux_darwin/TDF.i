@@ -65,8 +65,18 @@ class Handle_TDF_DoubleMapNodeOfGUIDProgIDMap : public Handle_TCollection_MapNod
 };
 %feature("shadow") Handle_TDF_DoubleMapNodeOfGUIDProgIDMap::~Handle_TDF_DoubleMapNodeOfGUIDProgIDMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DoubleMapNodeOfGUIDProgIDMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_AttributeDelta;
@@ -93,8 +103,18 @@ class Handle_TDF_AttributeDelta : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDF_AttributeDelta::~Handle_TDF_AttributeDelta %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_AttributeDelta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_StdMapNodeOfLabelMap;
@@ -121,8 +141,18 @@ class Handle_TDF_StdMapNodeOfLabelMap : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_TDF_StdMapNodeOfLabelMap::~Handle_TDF_StdMapNodeOfLabelMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_StdMapNodeOfLabelMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_Attribute;
@@ -149,8 +179,18 @@ class Handle_TDF_Attribute : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDF_Attribute::~Handle_TDF_Attribute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_Attribute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_Reference;
@@ -177,8 +217,18 @@ class Handle_TDF_Reference : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDF_Reference::~Handle_TDF_Reference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_Reference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DataMapNodeOfAttributeDataMap;
@@ -205,8 +255,18 @@ class Handle_TDF_DataMapNodeOfAttributeDataMap : public Handle_TCollection_MapNo
 };
 %feature("shadow") Handle_TDF_DataMapNodeOfAttributeDataMap::~Handle_TDF_DataMapNodeOfAttributeDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DataMapNodeOfAttributeDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_StdMapNodeOfIDMap;
@@ -233,8 +293,18 @@ class Handle_TDF_StdMapNodeOfIDMap : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_TDF_StdMapNodeOfIDMap::~Handle_TDF_StdMapNodeOfIDMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_StdMapNodeOfIDMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DataSet;
@@ -261,8 +331,18 @@ class Handle_TDF_DataSet : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDF_DataSet::~Handle_TDF_DataSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DataSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DeltaOnModification;
@@ -289,8 +369,18 @@ class Handle_TDF_DeltaOnModification : public Handle_TDF_AttributeDelta {
 };
 %feature("shadow") Handle_TDF_DeltaOnModification::~Handle_TDF_DeltaOnModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DeltaOnModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DataMapNodeOfLabelDataMap;
@@ -317,8 +407,18 @@ class Handle_TDF_DataMapNodeOfLabelDataMap : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_TDF_DataMapNodeOfLabelDataMap::~Handle_TDF_DataMapNodeOfLabelDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DataMapNodeOfLabelDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_ListNodeOfAttributeList;
@@ -345,8 +445,18 @@ class Handle_TDF_ListNodeOfAttributeList : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_TDF_ListNodeOfAttributeList::~Handle_TDF_ListNodeOfAttributeList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_ListNodeOfAttributeList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DeltaOnRemoval;
@@ -373,8 +483,18 @@ class Handle_TDF_DeltaOnRemoval : public Handle_TDF_AttributeDelta {
 };
 %feature("shadow") Handle_TDF_DeltaOnRemoval::~Handle_TDF_DeltaOnRemoval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DeltaOnRemoval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DefaultDeltaOnRemoval;
@@ -401,8 +521,18 @@ class Handle_TDF_DefaultDeltaOnRemoval : public Handle_TDF_DeltaOnRemoval {
 };
 %feature("shadow") Handle_TDF_DefaultDeltaOnRemoval::~Handle_TDF_DefaultDeltaOnRemoval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DefaultDeltaOnRemoval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_SequenceNodeOfAttributeSequence;
@@ -429,8 +559,18 @@ class Handle_TDF_SequenceNodeOfAttributeSequence : public Handle_TCollection_Seq
 };
 %feature("shadow") Handle_TDF_SequenceNodeOfAttributeSequence::~Handle_TDF_SequenceNodeOfAttributeSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_SequenceNodeOfAttributeSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_ListNodeOfIDList;
@@ -457,8 +597,18 @@ class Handle_TDF_ListNodeOfIDList : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_TDF_ListNodeOfIDList::~Handle_TDF_ListNodeOfIDList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_ListNodeOfIDList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DataMapNodeOfLabelIntegerMap;
@@ -485,8 +635,18 @@ class Handle_TDF_DataMapNodeOfLabelIntegerMap : public Handle_TCollection_MapNod
 };
 %feature("shadow") Handle_TDF_DataMapNodeOfLabelIntegerMap::~Handle_TDF_DataMapNodeOfLabelIntegerMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DataMapNodeOfLabelIntegerMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_RelocationTable;
@@ -513,8 +673,18 @@ class Handle_TDF_RelocationTable : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDF_RelocationTable::~Handle_TDF_RelocationTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_RelocationTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_StdMapNodeOfAttributeMap;
@@ -541,8 +711,18 @@ class Handle_TDF_StdMapNodeOfAttributeMap : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_TDF_StdMapNodeOfAttributeMap::~Handle_TDF_StdMapNodeOfAttributeMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_StdMapNodeOfAttributeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_ListNodeOfAttributeDeltaList;
@@ -569,8 +749,18 @@ class Handle_TDF_ListNodeOfAttributeDeltaList : public Handle_TCollection_MapNod
 };
 %feature("shadow") Handle_TDF_ListNodeOfAttributeDeltaList::~Handle_TDF_ListNodeOfAttributeDeltaList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_ListNodeOfAttributeDeltaList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_ListNodeOfLabelList;
@@ -597,8 +787,18 @@ class Handle_TDF_ListNodeOfLabelList : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_TDF_ListNodeOfLabelList::~Handle_TDF_ListNodeOfLabelList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_ListNodeOfLabelList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_Data;
@@ -625,8 +825,18 @@ class Handle_TDF_Data : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDF_Data::~Handle_TDF_Data %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_Data {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DoubleMapNodeOfAttributeDoubleMap;
@@ -653,8 +863,18 @@ class Handle_TDF_DoubleMapNodeOfAttributeDoubleMap : public Handle_TCollection_M
 };
 %feature("shadow") Handle_TDF_DoubleMapNodeOfAttributeDoubleMap::~Handle_TDF_DoubleMapNodeOfAttributeDoubleMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DoubleMapNodeOfAttributeDoubleMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DeltaOnAddition;
@@ -681,8 +901,18 @@ class Handle_TDF_DeltaOnAddition : public Handle_TDF_AttributeDelta {
 };
 %feature("shadow") Handle_TDF_DeltaOnAddition::~Handle_TDF_DeltaOnAddition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DeltaOnAddition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_IndexedMapNodeOfAttributeIndexedMap;
@@ -709,8 +939,18 @@ class Handle_TDF_IndexedMapNodeOfAttributeIndexedMap : public Handle_TCollection
 };
 %feature("shadow") Handle_TDF_IndexedMapNodeOfAttributeIndexedMap::~Handle_TDF_IndexedMapNodeOfAttributeIndexedMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_IndexedMapNodeOfAttributeIndexedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_ListNodeOfDeltaList;
@@ -737,8 +977,18 @@ class Handle_TDF_ListNodeOfDeltaList : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_TDF_ListNodeOfDeltaList::~Handle_TDF_ListNodeOfDeltaList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_ListNodeOfDeltaList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_HAttributeArray1;
@@ -765,8 +1015,18 @@ class Handle_TDF_HAttributeArray1 : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDF_HAttributeArray1::~Handle_TDF_HAttributeArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_HAttributeArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_TagSource;
@@ -793,8 +1053,18 @@ class Handle_TDF_TagSource : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDF_TagSource::~Handle_TDF_TagSource %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_TagSource {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DeltaOnResume;
@@ -821,8 +1091,18 @@ class Handle_TDF_DeltaOnResume : public Handle_TDF_AttributeDelta {
 };
 %feature("shadow") Handle_TDF_DeltaOnResume::~Handle_TDF_DeltaOnResume %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DeltaOnResume {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DataMapNodeOfLabelLabelMap;
@@ -849,8 +1129,18 @@ class Handle_TDF_DataMapNodeOfLabelLabelMap : public Handle_TCollection_MapNode 
 };
 %feature("shadow") Handle_TDF_DataMapNodeOfLabelLabelMap::~Handle_TDF_DataMapNodeOfLabelLabelMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DataMapNodeOfLabelLabelMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_SequenceNodeOfLabelSequence;
@@ -877,8 +1167,18 @@ class Handle_TDF_SequenceNodeOfLabelSequence : public Handle_TCollection_SeqNode
 };
 %feature("shadow") Handle_TDF_SequenceNodeOfLabelSequence::~Handle_TDF_SequenceNodeOfLabelSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_SequenceNodeOfLabelSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_Delta;
@@ -905,8 +1205,18 @@ class Handle_TDF_Delta : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDF_Delta::~Handle_TDF_Delta %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_Delta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DefaultDeltaOnModification;
@@ -933,8 +1243,18 @@ class Handle_TDF_DefaultDeltaOnModification : public Handle_TDF_DeltaOnModificat
 };
 %feature("shadow") Handle_TDF_DefaultDeltaOnModification::~Handle_TDF_DefaultDeltaOnModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DefaultDeltaOnModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DeltaOnForget;
@@ -961,8 +1281,18 @@ class Handle_TDF_DeltaOnForget : public Handle_TDF_AttributeDelta {
 };
 %feature("shadow") Handle_TDF_DeltaOnForget::~Handle_TDF_DeltaOnForget %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DeltaOnForget {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_IndexedMapNodeOfLabelIndexedMap;
@@ -989,8 +1319,18 @@ class Handle_TDF_IndexedMapNodeOfLabelIndexedMap : public Handle_TCollection_Map
 };
 %feature("shadow") Handle_TDF_IndexedMapNodeOfLabelIndexedMap::~Handle_TDF_IndexedMapNodeOfLabelIndexedMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_IndexedMapNodeOfLabelIndexedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDF_DoubleMapNodeOfLabelDoubleMap;
@@ -1017,8 +1357,18 @@ class Handle_TDF_DoubleMapNodeOfLabelDoubleMap : public Handle_TCollection_MapNo
 };
 %feature("shadow") Handle_TDF_DoubleMapNodeOfLabelDoubleMap::~Handle_TDF_DoubleMapNodeOfLabelDoubleMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDF_DoubleMapNodeOfLabelDoubleMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_Attribute;
@@ -1118,8 +1468,18 @@ class TDF_Attribute : public MMgt_TShared {
 };
 %feature("shadow") TDF_Attribute::~TDF_Attribute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_Attribute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ListIteratorOfAttributeDeltaList;
@@ -1141,8 +1501,18 @@ class TDF_ListIteratorOfAttributeDeltaList {
 };
 %feature("shadow") TDF_ListIteratorOfAttributeDeltaList::~TDF_ListIteratorOfAttributeDeltaList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ListIteratorOfAttributeDeltaList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_AttributeDelta;
@@ -1180,8 +1550,18 @@ class TDF_AttributeDelta : public MMgt_TShared {
 };
 %feature("shadow") TDF_AttributeDelta::~TDF_AttributeDelta %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_AttributeDelta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DeltaOnForget;
@@ -1203,8 +1583,18 @@ class TDF_DeltaOnForget : public TDF_AttributeDelta {
 };
 %feature("shadow") TDF_DeltaOnForget::~TDF_DeltaOnForget %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DeltaOnForget {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DeltaOnResume;
@@ -1230,8 +1620,18 @@ class TDF_DeltaOnResume : public TDF_AttributeDelta {
 };
 %feature("shadow") TDF_DeltaOnResume::~TDF_DeltaOnResume %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DeltaOnResume {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_AttributeDoubleMap;
@@ -1267,8 +1667,18 @@ class TDF_AttributeDoubleMap : public TCollection_BasicMap {
 };
 %feature("shadow") TDF_AttributeDoubleMap::~TDF_AttributeDoubleMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_AttributeDoubleMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_Tool;
@@ -1324,8 +1734,18 @@ class TDF_Tool {
 };
 %feature("shadow") TDF_Tool::~TDF_Tool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_MapIteratorOfAttributeMap;
@@ -1343,8 +1763,18 @@ class TDF_MapIteratorOfAttributeMap : public TCollection_BasicMapIterator {
 };
 %feature("shadow") TDF_MapIteratorOfAttributeMap::~TDF_MapIteratorOfAttributeMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_MapIteratorOfAttributeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ListIteratorOfLabelList;
@@ -1366,8 +1796,18 @@ class TDF_ListIteratorOfLabelList {
 };
 %feature("shadow") TDF_ListIteratorOfLabelList::~TDF_ListIteratorOfLabelList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ListIteratorOfLabelList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_GUIDProgIDMap;
@@ -1403,8 +1843,18 @@ class TDF_GUIDProgIDMap : public TCollection_BasicMap {
 };
 %feature("shadow") TDF_GUIDProgIDMap::~TDF_GUIDProgIDMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_GUIDProgIDMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_AttributeDeltaList;
@@ -1454,8 +1904,18 @@ class TDF_AttributeDeltaList {
 };
 %feature("shadow") TDF_AttributeDeltaList::~TDF_AttributeDeltaList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_AttributeDeltaList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DeltaOnAddition;
@@ -1481,8 +1941,18 @@ class TDF_DeltaOnAddition : public TDF_AttributeDelta {
 };
 %feature("shadow") TDF_DeltaOnAddition::~TDF_DeltaOnAddition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DeltaOnAddition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DeltaOnModification;
@@ -1506,8 +1976,18 @@ class TDF_DeltaOnModification : public TDF_AttributeDelta {
 };
 %feature("shadow") TDF_DeltaOnModification::~TDF_DeltaOnModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DeltaOnModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ClosureMode;
@@ -1527,8 +2007,18 @@ class TDF_ClosureMode {
 };
 %feature("shadow") TDF_ClosureMode::~TDF_ClosureMode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ClosureMode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_StdMapNodeOfIDMap;
@@ -1554,8 +2044,18 @@ class TDF_StdMapNodeOfIDMap : public TCollection_MapNode {
 };
 %feature("shadow") TDF_StdMapNodeOfIDMap::~TDF_StdMapNodeOfIDMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_StdMapNodeOfIDMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_LabelMapHasher;
@@ -1571,8 +2071,18 @@ class TDF_LabelMapHasher {
 };
 %feature("shadow") TDF_LabelMapHasher::~TDF_LabelMapHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_LabelMapHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_IndexedMapNodeOfAttributeIndexedMap;
@@ -1612,8 +2122,18 @@ class TDF_IndexedMapNodeOfAttributeIndexedMap : public TCollection_MapNode {
 };
 %feature("shadow") TDF_IndexedMapNodeOfAttributeIndexedMap::~TDF_IndexedMapNodeOfAttributeIndexedMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_IndexedMapNodeOfAttributeIndexedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_Label;
@@ -1711,8 +2231,18 @@ class TDF_Label {
 };
 %feature("shadow") TDF_Label::~TDF_Label %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_Label {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_MapIteratorOfLabelMap;
@@ -1730,8 +2260,18 @@ class TDF_MapIteratorOfLabelMap : public TCollection_BasicMapIterator {
 };
 %feature("shadow") TDF_MapIteratorOfLabelMap::~TDF_MapIteratorOfLabelMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_MapIteratorOfLabelMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ListNodeOfDeltaList;
@@ -1757,8 +2297,18 @@ class TDF_ListNodeOfDeltaList : public TCollection_MapNode {
 };
 %feature("shadow") TDF_ListNodeOfDeltaList::~TDF_ListNodeOfDeltaList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ListNodeOfDeltaList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DoubleMapNodeOfAttributeDoubleMap;
@@ -1788,8 +2338,18 @@ class TDF_DoubleMapNodeOfAttributeDoubleMap : public TCollection_MapNode {
 };
 %feature("shadow") TDF_DoubleMapNodeOfAttributeDoubleMap::~TDF_DoubleMapNodeOfAttributeDoubleMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DoubleMapNodeOfAttributeDoubleMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_AttributeMap;
@@ -1815,8 +2375,18 @@ class TDF_AttributeMap : public TCollection_BasicMap {
 };
 %feature("shadow") TDF_AttributeMap::~TDF_AttributeMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_AttributeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_LabelMap;
@@ -1842,8 +2412,18 @@ class TDF_LabelMap : public TCollection_BasicMap {
 };
 %feature("shadow") TDF_LabelMap::~TDF_LabelMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_LabelMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_LabelIndexedMap;
@@ -1877,8 +2457,18 @@ class TDF_LabelIndexedMap : public TCollection_BasicMap {
 };
 %feature("shadow") TDF_LabelIndexedMap::~TDF_LabelIndexedMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_LabelIndexedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DoubleMapNodeOfGUIDProgIDMap;
@@ -1908,8 +2498,18 @@ class TDF_DoubleMapNodeOfGUIDProgIDMap : public TCollection_MapNode {
 };
 %feature("shadow") TDF_DoubleMapNodeOfGUIDProgIDMap::~TDF_DoubleMapNodeOfGUIDProgIDMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DoubleMapNodeOfGUIDProgIDMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_LabelDataMap;
@@ -1943,8 +2543,18 @@ class TDF_LabelDataMap : public TCollection_BasicMap {
 };
 %feature("shadow") TDF_LabelDataMap::~TDF_LabelDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_LabelDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_MapIteratorOfIDMap;
@@ -1962,8 +2572,18 @@ class TDF_MapIteratorOfIDMap : public TCollection_BasicMapIterator {
 };
 %feature("shadow") TDF_MapIteratorOfIDMap::~TDF_MapIteratorOfIDMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_MapIteratorOfIDMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_LabelList;
@@ -2013,8 +2633,18 @@ class TDF_LabelList {
 };
 %feature("shadow") TDF_LabelList::~TDF_LabelList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_LabelList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DefaultDeltaOnModification;
@@ -2040,8 +2670,18 @@ class TDF_DefaultDeltaOnModification : public TDF_DeltaOnModification {
 };
 %feature("shadow") TDF_DefaultDeltaOnModification::~TDF_DefaultDeltaOnModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DefaultDeltaOnModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_IDFilter;
@@ -2085,8 +2725,18 @@ class TDF_IDFilter {
 };
 %feature("shadow") TDF_IDFilter::~TDF_IDFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_IDFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_Transaction;
@@ -2116,8 +2766,18 @@ class TDF_Transaction {
 };
 %feature("shadow") TDF_Transaction::~TDF_Transaction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_Transaction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_AttributeSequence;
@@ -2171,8 +2831,18 @@ class TDF_AttributeSequence : public TCollection_BaseSequence {
 };
 %feature("shadow") TDF_AttributeSequence::~TDF_AttributeSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_AttributeSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DataMapNodeOfAttributeDataMap;
@@ -2200,8 +2870,18 @@ class TDF_DataMapNodeOfAttributeDataMap : public TCollection_MapNode {
 };
 %feature("shadow") TDF_DataMapNodeOfAttributeDataMap::~TDF_DataMapNodeOfAttributeDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DataMapNodeOfAttributeDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ListNodeOfAttributeList;
@@ -2227,8 +2907,18 @@ class TDF_ListNodeOfAttributeList : public TCollection_MapNode {
 };
 %feature("shadow") TDF_ListNodeOfAttributeList::~TDF_ListNodeOfAttributeList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ListNodeOfAttributeList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_IndexedMapNodeOfLabelIndexedMap;
@@ -2268,8 +2958,18 @@ class TDF_IndexedMapNodeOfLabelIndexedMap : public TCollection_MapNode {
 };
 %feature("shadow") TDF_IndexedMapNodeOfLabelIndexedMap::~TDF_IndexedMapNodeOfLabelIndexedMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_IndexedMapNodeOfLabelIndexedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_TagSource;
@@ -2315,8 +3015,18 @@ class TDF_TagSource : public TDF_Attribute {
 };
 %feature("shadow") TDF_TagSource::~TDF_TagSource %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_TagSource {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_Data;
@@ -2368,8 +3078,18 @@ class TDF_Data : public MMgt_TShared {
 };
 %feature("shadow") TDF_Data::~TDF_Data %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_Data {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DoubleMapNodeOfLabelDoubleMap;
@@ -2399,8 +3119,18 @@ class TDF_DoubleMapNodeOfLabelDoubleMap : public TCollection_MapNode {
 };
 %feature("shadow") TDF_DoubleMapNodeOfLabelDoubleMap::~TDF_DoubleMapNodeOfLabelDoubleMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DoubleMapNodeOfLabelDoubleMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ListNodeOfIDList;
@@ -2426,8 +3156,18 @@ class TDF_ListNodeOfIDList : public TCollection_MapNode {
 };
 %feature("shadow") TDF_ListNodeOfIDList::~TDF_ListNodeOfIDList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ListNodeOfIDList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_LabelSequence;
@@ -2481,8 +3221,18 @@ class TDF_LabelSequence : public TCollection_BaseSequence {
 };
 %feature("shadow") TDF_LabelSequence::~TDF_LabelSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_LabelSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_SequenceNodeOfLabelSequence;
@@ -2508,8 +3258,18 @@ class TDF_SequenceNodeOfLabelSequence : public TCollection_SeqNode {
 };
 %feature("shadow") TDF_SequenceNodeOfLabelSequence::~TDF_SequenceNodeOfLabelSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_SequenceNodeOfLabelSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_CopyTool;
@@ -2527,8 +3287,18 @@ class TDF_CopyTool {
 };
 %feature("shadow") TDF_CopyTool::~TDF_CopyTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_CopyTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DataMapNodeOfLabelLabelMap;
@@ -2556,8 +3326,18 @@ class TDF_DataMapNodeOfLabelLabelMap : public TCollection_MapNode {
 };
 %feature("shadow") TDF_DataMapNodeOfLabelLabelMap::~TDF_DataMapNodeOfLabelLabelMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DataMapNodeOfLabelLabelMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DataMapIteratorOfLabelIntegerMap;
@@ -2577,8 +3357,18 @@ class TDF_DataMapIteratorOfLabelIntegerMap : public TCollection_BasicMapIterator
 };
 %feature("shadow") TDF_DataMapIteratorOfLabelIntegerMap::~TDF_DataMapIteratorOfLabelIntegerMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DataMapIteratorOfLabelIntegerMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DataMapIteratorOfLabelLabelMap;
@@ -2598,8 +3388,18 @@ class TDF_DataMapIteratorOfLabelLabelMap : public TCollection_BasicMapIterator {
 };
 %feature("shadow") TDF_DataMapIteratorOfLabelLabelMap::~TDF_DataMapIteratorOfLabelLabelMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DataMapIteratorOfLabelLabelMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_AttributeDataMap;
@@ -2633,8 +3433,18 @@ class TDF_AttributeDataMap : public TCollection_BasicMap {
 };
 %feature("shadow") TDF_AttributeDataMap::~TDF_AttributeDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_AttributeDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_IDList;
@@ -2684,8 +3494,18 @@ class TDF_IDList {
 };
 %feature("shadow") TDF_IDList::~TDF_IDList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_IDList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DataMapIteratorOfAttributeDataMap;
@@ -2705,8 +3525,18 @@ class TDF_DataMapIteratorOfAttributeDataMap : public TCollection_BasicMapIterato
 };
 %feature("shadow") TDF_DataMapIteratorOfAttributeDataMap::~TDF_DataMapIteratorOfAttributeDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DataMapIteratorOfAttributeDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_LabelLabelMap;
@@ -2740,8 +3570,18 @@ class TDF_LabelLabelMap : public TCollection_BasicMap {
 };
 %feature("shadow") TDF_LabelLabelMap::~TDF_LabelLabelMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_LabelLabelMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ListIteratorOfAttributeList;
@@ -2763,8 +3603,18 @@ class TDF_ListIteratorOfAttributeList {
 };
 %feature("shadow") TDF_ListIteratorOfAttributeList::~TDF_ListIteratorOfAttributeList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ListIteratorOfAttributeList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_StdMapNodeOfLabelMap;
@@ -2790,8 +3640,18 @@ class TDF_StdMapNodeOfLabelMap : public TCollection_MapNode {
 };
 %feature("shadow") TDF_StdMapNodeOfLabelMap::~TDF_StdMapNodeOfLabelMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_StdMapNodeOfLabelMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ListIteratorOfDeltaList;
@@ -2813,8 +3673,18 @@ class TDF_ListIteratorOfDeltaList {
 };
 %feature("shadow") TDF_ListIteratorOfDeltaList::~TDF_ListIteratorOfDeltaList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ListIteratorOfDeltaList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_AttributeIterator;
@@ -2838,8 +3708,18 @@ class TDF_AttributeIterator {
 };
 %feature("shadow") TDF_AttributeIterator::~TDF_AttributeIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_AttributeIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_LabelDoubleMap;
@@ -2875,8 +3755,18 @@ class TDF_LabelDoubleMap : public TCollection_BasicMap {
 };
 %feature("shadow") TDF_LabelDoubleMap::~TDF_LabelDoubleMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_LabelDoubleMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DoubleMapIteratorOfAttributeDoubleMap;
@@ -2896,8 +3786,18 @@ class TDF_DoubleMapIteratorOfAttributeDoubleMap : public TCollection_BasicMapIte
 };
 %feature("shadow") TDF_DoubleMapIteratorOfAttributeDoubleMap::~TDF_DoubleMapIteratorOfAttributeDoubleMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DoubleMapIteratorOfAttributeDoubleMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DataMapNodeOfLabelIntegerMap;
@@ -2935,8 +3835,18 @@ class TDF_DataMapNodeOfLabelIntegerMap : public TCollection_MapNode {
 };
 %feature("shadow") TDF_DataMapNodeOfLabelIntegerMap::~TDF_DataMapNodeOfLabelIntegerMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DataMapNodeOfLabelIntegerMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_SequenceNodeOfAttributeSequence;
@@ -2962,8 +3872,18 @@ class TDF_SequenceNodeOfAttributeSequence : public TCollection_SeqNode {
 };
 %feature("shadow") TDF_SequenceNodeOfAttributeSequence::~TDF_SequenceNodeOfAttributeSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_SequenceNodeOfAttributeSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ListIteratorOfIDList;
@@ -2985,8 +3905,18 @@ class TDF_ListIteratorOfIDList {
 };
 %feature("shadow") TDF_ListIteratorOfIDList::~TDF_ListIteratorOfIDList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ListIteratorOfIDList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_AttributeArray1;
@@ -3026,8 +3956,18 @@ class TDF_AttributeArray1 {
 };
 %feature("shadow") TDF_AttributeArray1::~TDF_AttributeArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_AttributeArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_IDMap;
@@ -3053,8 +3993,18 @@ class TDF_IDMap : public TCollection_BasicMap {
 };
 %feature("shadow") TDF_IDMap::~TDF_IDMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_IDMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DeltaList;
@@ -3104,8 +4054,18 @@ class TDF_DeltaList {
 };
 %feature("shadow") TDF_DeltaList::~TDF_DeltaList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DeltaList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ListNodeOfLabelList;
@@ -3131,8 +4091,18 @@ class TDF_ListNodeOfLabelList : public TCollection_MapNode {
 };
 %feature("shadow") TDF_ListNodeOfLabelList::~TDF_ListNodeOfLabelList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ListNodeOfLabelList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_StdMapNodeOfAttributeMap;
@@ -3158,8 +4128,18 @@ class TDF_StdMapNodeOfAttributeMap : public TCollection_MapNode {
 };
 %feature("shadow") TDF_StdMapNodeOfAttributeMap::~TDF_StdMapNodeOfAttributeMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_StdMapNodeOfAttributeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_CopyLabel;
@@ -3187,8 +4167,18 @@ class TDF_CopyLabel {
 };
 %feature("shadow") TDF_CopyLabel::~TDF_CopyLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_CopyLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DataSet;
@@ -3240,8 +4230,18 @@ class TDF_DataSet : public MMgt_TShared {
 };
 %feature("shadow") TDF_DataSet::~TDF_DataSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DataSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ChildIterator;
@@ -3265,8 +4265,18 @@ class TDF_ChildIterator {
 };
 %feature("shadow") TDF_ChildIterator::~TDF_ChildIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ChildIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_AttributeList;
@@ -3316,8 +4326,18 @@ class TDF_AttributeList {
 };
 %feature("shadow") TDF_AttributeList::~TDF_AttributeList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_AttributeList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_HAttributeArray1;
@@ -3361,8 +4381,18 @@ class TDF_HAttributeArray1 : public MMgt_TShared {
 };
 %feature("shadow") TDF_HAttributeArray1::~TDF_HAttributeArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_HAttributeArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_RelocationTable;
@@ -3420,8 +4450,18 @@ class TDF_RelocationTable : public MMgt_TShared {
 };
 %feature("shadow") TDF_RelocationTable::~TDF_RelocationTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_RelocationTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_AttributeIndexedMap;
@@ -3455,8 +4495,18 @@ class TDF_AttributeIndexedMap : public TCollection_BasicMap {
 };
 %feature("shadow") TDF_AttributeIndexedMap::~TDF_AttributeIndexedMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_AttributeIndexedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF;
@@ -3478,8 +4528,18 @@ class TDF {
 };
 %feature("shadow") TDF::~TDF %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_LabelIntegerMap;
@@ -3523,8 +4583,18 @@ class TDF_LabelIntegerMap : public TCollection_BasicMap {
 };
 %feature("shadow") TDF_LabelIntegerMap::~TDF_LabelIntegerMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_LabelIntegerMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_Reference;
@@ -3574,8 +4644,18 @@ class TDF_Reference : public TDF_Attribute {
 };
 %feature("shadow") TDF_Reference::~TDF_Reference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_Reference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DataMapNodeOfLabelDataMap;
@@ -3603,8 +4683,18 @@ class TDF_DataMapNodeOfLabelDataMap : public TCollection_MapNode {
 };
 %feature("shadow") TDF_DataMapNodeOfLabelDataMap::~TDF_DataMapNodeOfLabelDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DataMapNodeOfLabelDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_Delta;
@@ -3652,8 +4742,18 @@ class TDF_Delta : public MMgt_TShared {
 };
 %feature("shadow") TDF_Delta::~TDF_Delta %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_Delta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ComparisonTool;
@@ -3675,8 +4775,18 @@ class TDF_ComparisonTool {
 };
 %feature("shadow") TDF_ComparisonTool::~TDF_ComparisonTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ComparisonTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DoubleMapIteratorOfGUIDProgIDMap;
@@ -3696,8 +4806,18 @@ class TDF_DoubleMapIteratorOfGUIDProgIDMap : public TCollection_BasicMapIterator
 };
 %feature("shadow") TDF_DoubleMapIteratorOfGUIDProgIDMap::~TDF_DoubleMapIteratorOfGUIDProgIDMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DoubleMapIteratorOfGUIDProgIDMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DeltaOnRemoval;
@@ -3719,8 +4839,18 @@ class TDF_DeltaOnRemoval : public TDF_AttributeDelta {
 };
 %feature("shadow") TDF_DeltaOnRemoval::~TDF_DeltaOnRemoval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DeltaOnRemoval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DefaultDeltaOnRemoval;
@@ -3744,8 +4874,18 @@ class TDF_DefaultDeltaOnRemoval : public TDF_DeltaOnRemoval {
 };
 %feature("shadow") TDF_DefaultDeltaOnRemoval::~TDF_DefaultDeltaOnRemoval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DefaultDeltaOnRemoval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DoubleMapIteratorOfLabelDoubleMap;
@@ -3765,8 +4905,18 @@ class TDF_DoubleMapIteratorOfLabelDoubleMap : public TCollection_BasicMapIterato
 };
 %feature("shadow") TDF_DoubleMapIteratorOfLabelDoubleMap::~TDF_DoubleMapIteratorOfLabelDoubleMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DoubleMapIteratorOfLabelDoubleMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ChildIDIterator;
@@ -3790,8 +4940,18 @@ class TDF_ChildIDIterator {
 };
 %feature("shadow") TDF_ChildIDIterator::~TDF_ChildIDIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ChildIDIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ClosureTool;
@@ -3809,8 +4969,18 @@ class TDF_ClosureTool {
 };
 %feature("shadow") TDF_ClosureTool::~TDF_ClosureTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ClosureTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_ListNodeOfAttributeDeltaList;
@@ -3836,8 +5006,18 @@ class TDF_ListNodeOfAttributeDeltaList : public TCollection_MapNode {
 };
 %feature("shadow") TDF_ListNodeOfAttributeDeltaList::~TDF_ListNodeOfAttributeDeltaList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_ListNodeOfAttributeDeltaList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDF_DataMapIteratorOfLabelDataMap;
@@ -3857,5 +5037,15 @@ class TDF_DataMapIteratorOfLabelDataMap : public TCollection_BasicMapIterator {
 };
 %feature("shadow") TDF_DataMapIteratorOfLabelDataMap::~TDF_DataMapIteratorOfLabelDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDF_DataMapIteratorOfLabelDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

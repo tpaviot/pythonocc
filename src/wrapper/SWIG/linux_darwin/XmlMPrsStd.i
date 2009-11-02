@@ -63,8 +63,18 @@ class Handle_XmlMPrsStd_PositionDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMPrsStd_PositionDriver::~Handle_XmlMPrsStd_PositionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMPrsStd_PositionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMPrsStd_AISPresentationDriver;
@@ -91,8 +101,18 @@ class Handle_XmlMPrsStd_AISPresentationDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMPrsStd_AISPresentationDriver::~Handle_XmlMPrsStd_AISPresentationDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMPrsStd_AISPresentationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMPrsStd;
@@ -106,8 +126,18 @@ class XmlMPrsStd {
 };
 %feature("shadow") XmlMPrsStd::~XmlMPrsStd %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMPrsStd {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMPrsStd_AISPresentationDriver;
@@ -137,8 +167,18 @@ class XmlMPrsStd_AISPresentationDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMPrsStd_AISPresentationDriver::~XmlMPrsStd_AISPresentationDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMPrsStd_AISPresentationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMPrsStd_PositionDriver;
@@ -168,5 +208,15 @@ class XmlMPrsStd_PositionDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMPrsStd_PositionDriver::~XmlMPrsStd_PositionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMPrsStd_PositionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

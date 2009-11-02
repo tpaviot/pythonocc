@@ -64,8 +64,18 @@ class GeomLib_CheckBSplineCurve {
 };
 %feature("shadow") GeomLib_CheckBSplineCurve::~GeomLib_CheckBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLib_CheckBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLib_DenominatorMultiplier;
@@ -79,8 +89,18 @@ class GeomLib_DenominatorMultiplier {
 };
 %feature("shadow") GeomLib_DenominatorMultiplier::~GeomLib_DenominatorMultiplier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLib_DenominatorMultiplier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLib_Tool;
@@ -98,8 +118,18 @@ class GeomLib_Tool {
 };
 %feature("shadow") GeomLib_Tool::~GeomLib_Tool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLib_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLib_PolyFunc;
@@ -117,8 +147,18 @@ class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 };
 %feature("shadow") GeomLib_PolyFunc::~GeomLib_PolyFunc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLib_PolyFunc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLib_LogSample;
@@ -132,8 +172,18 @@ class GeomLib_LogSample : public math_FunctionSample {
 };
 %feature("shadow") GeomLib_LogSample::~GeomLib_LogSample %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLib_LogSample {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLib_MakeCurvefromApprox;
@@ -163,8 +213,18 @@ class GeomLib_MakeCurvefromApprox {
 };
 %feature("shadow") GeomLib_MakeCurvefromApprox::~GeomLib_MakeCurvefromApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLib_MakeCurvefromApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLib_IsPlanarSurface;
@@ -180,8 +240,18 @@ class GeomLib_IsPlanarSurface {
 };
 %feature("shadow") GeomLib_IsPlanarSurface::~GeomLib_IsPlanarSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLib_IsPlanarSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLib_Interpolate;
@@ -199,8 +269,18 @@ class GeomLib_Interpolate {
 };
 %feature("shadow") GeomLib_Interpolate::~GeomLib_Interpolate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLib_Interpolate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLib_Check2dBSplineCurve;
@@ -220,8 +300,18 @@ class GeomLib_Check2dBSplineCurve {
 };
 %feature("shadow") GeomLib_Check2dBSplineCurve::~GeomLib_Check2dBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLib_Check2dBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLib_Array1OfMat;
@@ -261,8 +351,18 @@ class GeomLib_Array1OfMat {
 };
 %feature("shadow") GeomLib_Array1OfMat::~GeomLib_Array1OfMat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLib_Array1OfMat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLib;
@@ -306,5 +406,15 @@ class GeomLib {
 };
 %feature("shadow") GeomLib::~GeomLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

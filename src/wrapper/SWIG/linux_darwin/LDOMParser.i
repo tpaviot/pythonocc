@@ -52,5 +52,15 @@ class LDOMParser {
 };
 %feature("shadow") LDOMParser::~LDOMParser %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LDOMParser {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

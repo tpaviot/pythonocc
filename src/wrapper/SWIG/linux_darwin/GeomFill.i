@@ -93,8 +93,18 @@ class Handle_GeomFill_Boundary : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomFill_Boundary::~Handle_GeomFill_Boundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_Boundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_TrihedronLaw;
@@ -121,8 +131,18 @@ class Handle_GeomFill_TrihedronLaw : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomFill_TrihedronLaw::~Handle_GeomFill_TrihedronLaw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_TrihedronLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_TrihedronWithGuide;
@@ -149,8 +169,18 @@ class Handle_GeomFill_TrihedronWithGuide : public Handle_GeomFill_TrihedronLaw {
 };
 %feature("shadow") Handle_GeomFill_TrihedronWithGuide::~Handle_GeomFill_TrihedronWithGuide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_TrihedronWithGuide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_SectionLaw;
@@ -177,8 +207,18 @@ class Handle_GeomFill_SectionLaw : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomFill_SectionLaw::~Handle_GeomFill_SectionLaw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_SectionLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_NSections;
@@ -205,8 +245,18 @@ class Handle_GeomFill_NSections : public Handle_GeomFill_SectionLaw {
 };
 %feature("shadow") Handle_GeomFill_NSections::~Handle_GeomFill_NSections %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_NSections {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_DegeneratedBound;
@@ -233,8 +283,18 @@ class Handle_GeomFill_DegeneratedBound : public Handle_GeomFill_Boundary {
 };
 %feature("shadow") Handle_GeomFill_DegeneratedBound::~Handle_GeomFill_DegeneratedBound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_DegeneratedBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_GuideTrihedronPlan;
@@ -261,8 +321,18 @@ class Handle_GeomFill_GuideTrihedronPlan : public Handle_GeomFill_TrihedronWithG
 };
 %feature("shadow") Handle_GeomFill_GuideTrihedronPlan::~Handle_GeomFill_GuideTrihedronPlan %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_GuideTrihedronPlan {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_LocationLaw;
@@ -289,8 +359,18 @@ class Handle_GeomFill_LocationLaw : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomFill_LocationLaw::~Handle_GeomFill_LocationLaw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_LocationLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_CurveAndTrihedron;
@@ -317,8 +397,18 @@ class Handle_GeomFill_CurveAndTrihedron : public Handle_GeomFill_LocationLaw {
 };
 %feature("shadow") Handle_GeomFill_CurveAndTrihedron::~Handle_GeomFill_CurveAndTrihedron %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_CurveAndTrihedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_CircularBlendFunc;
@@ -345,8 +435,18 @@ class Handle_GeomFill_CircularBlendFunc : public Handle_Approx_SweepFunction {
 };
 %feature("shadow") Handle_GeomFill_CircularBlendFunc::~Handle_GeomFill_CircularBlendFunc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_CircularBlendFunc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_SimpleBound;
@@ -373,8 +473,18 @@ class Handle_GeomFill_SimpleBound : public Handle_GeomFill_Boundary {
 };
 %feature("shadow") Handle_GeomFill_SimpleBound::~Handle_GeomFill_SimpleBound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_SimpleBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_DraftTrihedron;
@@ -401,8 +511,18 @@ class Handle_GeomFill_DraftTrihedron : public Handle_GeomFill_TrihedronLaw {
 };
 %feature("shadow") Handle_GeomFill_DraftTrihedron::~Handle_GeomFill_DraftTrihedron %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_DraftTrihedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_LocationDraft;
@@ -429,8 +549,18 @@ class Handle_GeomFill_LocationDraft : public Handle_GeomFill_LocationLaw {
 };
 %feature("shadow") Handle_GeomFill_LocationDraft::~Handle_GeomFill_LocationDraft %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_LocationDraft {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_BoundWithSurf;
@@ -457,8 +587,18 @@ class Handle_GeomFill_BoundWithSurf : public Handle_GeomFill_Boundary {
 };
 %feature("shadow") Handle_GeomFill_BoundWithSurf::~Handle_GeomFill_BoundWithSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_BoundWithSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_Line;
@@ -485,8 +625,18 @@ class Handle_GeomFill_Line : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomFill_Line::~Handle_GeomFill_Line %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_SequenceNodeOfSequenceOfCurve;
@@ -513,8 +663,18 @@ class Handle_GeomFill_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_
 };
 %feature("shadow") Handle_GeomFill_SequenceNodeOfSequenceOfCurve::~Handle_GeomFill_SequenceNodeOfSequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_SequenceNodeOfSequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_TgtField;
@@ -541,8 +701,18 @@ class Handle_GeomFill_TgtField : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomFill_TgtField::~Handle_GeomFill_TgtField %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_TgtField {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_HArray1OfSectionLaw;
@@ -569,8 +739,18 @@ class Handle_GeomFill_HArray1OfSectionLaw : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomFill_HArray1OfSectionLaw::~Handle_GeomFill_HArray1OfSectionLaw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_HArray1OfSectionLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_Frenet;
@@ -597,8 +777,18 @@ class Handle_GeomFill_Frenet : public Handle_GeomFill_TrihedronLaw {
 };
 %feature("shadow") Handle_GeomFill_Frenet::~Handle_GeomFill_Frenet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_Frenet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_Darboux;
@@ -625,8 +815,18 @@ class Handle_GeomFill_Darboux : public Handle_GeomFill_TrihedronLaw {
 };
 %feature("shadow") Handle_GeomFill_Darboux::~Handle_GeomFill_Darboux %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_Darboux {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_CoonsAlgPatch;
@@ -653,8 +853,18 @@ class Handle_GeomFill_CoonsAlgPatch : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomFill_CoonsAlgPatch::~Handle_GeomFill_CoonsAlgPatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_CoonsAlgPatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_ConstantBiNormal;
@@ -681,8 +891,18 @@ class Handle_GeomFill_ConstantBiNormal : public Handle_GeomFill_TrihedronLaw {
 };
 %feature("shadow") Handle_GeomFill_ConstantBiNormal::~Handle_GeomFill_ConstantBiNormal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_ConstantBiNormal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_LocationGuide;
@@ -709,8 +929,18 @@ class Handle_GeomFill_LocationGuide : public Handle_GeomFill_LocationLaw {
 };
 %feature("shadow") Handle_GeomFill_LocationGuide::~Handle_GeomFill_LocationGuide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_LocationGuide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_GuideTrihedronAC;
@@ -737,8 +967,18 @@ class Handle_GeomFill_GuideTrihedronAC : public Handle_GeomFill_TrihedronWithGui
 };
 %feature("shadow") Handle_GeomFill_GuideTrihedronAC::~Handle_GeomFill_GuideTrihedronAC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_GuideTrihedronAC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_CorrectedFrenet;
@@ -765,8 +1005,18 @@ class Handle_GeomFill_CorrectedFrenet : public Handle_GeomFill_TrihedronLaw {
 };
 %feature("shadow") Handle_GeomFill_CorrectedFrenet::~Handle_GeomFill_CorrectedFrenet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_CorrectedFrenet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_SweepFunction;
@@ -793,8 +1043,18 @@ class Handle_GeomFill_SweepFunction : public Handle_Approx_SweepFunction {
 };
 %feature("shadow") Handle_GeomFill_SweepFunction::~Handle_GeomFill_SweepFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_SweepFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_SequenceNodeOfSequenceOfTrsf;
@@ -821,8 +1081,18 @@ class Handle_GeomFill_SequenceNodeOfSequenceOfTrsf : public Handle_TCollection_S
 };
 %feature("shadow") Handle_GeomFill_SequenceNodeOfSequenceOfTrsf::~Handle_GeomFill_SequenceNodeOfSequenceOfTrsf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_SequenceNodeOfSequenceOfTrsf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_EvolvedSection;
@@ -849,8 +1119,18 @@ class Handle_GeomFill_EvolvedSection : public Handle_GeomFill_SectionLaw {
 };
 %feature("shadow") Handle_GeomFill_EvolvedSection::~Handle_GeomFill_EvolvedSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_EvolvedSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_UniformSection;
@@ -877,8 +1157,18 @@ class Handle_GeomFill_UniformSection : public Handle_GeomFill_SectionLaw {
 };
 %feature("shadow") Handle_GeomFill_UniformSection::~Handle_GeomFill_UniformSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_UniformSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_HArray1OfLocationLaw;
@@ -905,8 +1195,18 @@ class Handle_GeomFill_HArray1OfLocationLaw : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomFill_HArray1OfLocationLaw::~Handle_GeomFill_HArray1OfLocationLaw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_HArray1OfLocationLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_Fixed;
@@ -933,8 +1233,18 @@ class Handle_GeomFill_Fixed : public Handle_GeomFill_TrihedronLaw {
 };
 %feature("shadow") Handle_GeomFill_Fixed::~Handle_GeomFill_Fixed %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_Fixed {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_TgtOnCoons;
@@ -961,8 +1271,18 @@ class Handle_GeomFill_TgtOnCoons : public Handle_GeomFill_TgtField {
 };
 %feature("shadow") Handle_GeomFill_TgtOnCoons::~Handle_GeomFill_TgtOnCoons %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomFill_TgtOnCoons {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_SectionPlacement;
@@ -998,8 +1318,18 @@ class GeomFill_SectionPlacement {
 };
 %feature("shadow") GeomFill_SectionPlacement::~GeomFill_SectionPlacement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_SectionPlacement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_TgtField;
@@ -1031,8 +1361,18 @@ class GeomFill_TgtField : public MMgt_TShared {
 };
 %feature("shadow") GeomFill_TgtField::~GeomFill_TgtField %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_TgtField {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_TgtOnCoons;
@@ -1062,8 +1402,18 @@ class GeomFill_TgtOnCoons : public GeomFill_TgtField {
 };
 %feature("shadow") GeomFill_TgtOnCoons::~GeomFill_TgtOnCoons %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_TgtOnCoons {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Profiler;
@@ -1097,8 +1447,18 @@ class GeomFill_Profiler {
 };
 %feature("shadow") GeomFill_Profiler::~GeomFill_Profiler %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Profiler {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Generator;
@@ -1112,8 +1472,18 @@ class GeomFill_Generator : public GeomFill_Profiler {
 };
 %feature("shadow") GeomFill_Generator::~GeomFill_Generator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Generator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Boundary;
@@ -1161,8 +1531,18 @@ class GeomFill_Boundary : public MMgt_TShared {
 };
 %feature("shadow") GeomFill_Boundary::~GeomFill_Boundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Boundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_DegeneratedBound;
@@ -1184,8 +1564,18 @@ class GeomFill_DegeneratedBound : public GeomFill_Boundary {
 };
 %feature("shadow") GeomFill_DegeneratedBound::~GeomFill_DegeneratedBound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_DegeneratedBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_TrihedronLaw;
@@ -1233,8 +1623,18 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 };
 %feature("shadow") GeomFill_TrihedronLaw::~GeomFill_TrihedronLaw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_TrihedronLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Darboux;
@@ -1256,8 +1656,18 @@ class GeomFill_Darboux : public GeomFill_TrihedronLaw {
 };
 %feature("shadow") GeomFill_Darboux::~GeomFill_Darboux %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Darboux {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Array1OfSectionLaw;
@@ -1297,8 +1707,18 @@ class GeomFill_Array1OfSectionLaw {
 };
 %feature("shadow") GeomFill_Array1OfSectionLaw::~GeomFill_Array1OfSectionLaw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Array1OfSectionLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_ConstrainedFilling;
@@ -1332,8 +1752,18 @@ class GeomFill_ConstrainedFilling {
 };
 %feature("shadow") GeomFill_ConstrainedFilling::~GeomFill_ConstrainedFilling %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_ConstrainedFilling {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_SequenceOfCurve;
@@ -1387,8 +1817,18 @@ class GeomFill_SequenceOfCurve : public TCollection_BaseSequence {
 };
 %feature("shadow") GeomFill_SequenceOfCurve::~GeomFill_SequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_SequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_CorrectedFrenet;
@@ -1434,8 +1874,18 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 };
 %feature("shadow") GeomFill_CorrectedFrenet::~GeomFill_CorrectedFrenet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_CorrectedFrenet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill;
@@ -1465,8 +1915,18 @@ class GeomFill {
 };
 %feature("shadow") GeomFill::~GeomFill %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_FunctionDraft;
@@ -1496,8 +1956,18 @@ class GeomFill_FunctionDraft : public math_FunctionSetWithDerivatives {
 };
 %feature("shadow") GeomFill_FunctionDraft::~GeomFill_FunctionDraft %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_FunctionDraft {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Filling;
@@ -1519,8 +1989,18 @@ class GeomFill_Filling {
 };
 %feature("shadow") GeomFill_Filling::~GeomFill_Filling %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Filling {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Curved;
@@ -1556,8 +2036,18 @@ class GeomFill_Curved : public GeomFill_Filling {
 };
 %feature("shadow") GeomFill_Curved::~GeomFill_Curved %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Curved {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_SequenceNodeOfSequenceOfCurve;
@@ -1583,8 +2073,18 @@ class GeomFill_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 };
 %feature("shadow") GeomFill_SequenceNodeOfSequenceOfCurve::~GeomFill_SequenceNodeOfSequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_SequenceNodeOfSequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_SnglrFunc;
@@ -1622,8 +2122,18 @@ class GeomFill_SnglrFunc : public Adaptor3d_Curve {
 };
 %feature("shadow") GeomFill_SnglrFunc::~GeomFill_SnglrFunc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_SnglrFunc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_PolynomialConvertor;
@@ -1645,8 +2155,18 @@ class GeomFill_PolynomialConvertor {
 };
 %feature("shadow") GeomFill_PolynomialConvertor::~GeomFill_PolynomialConvertor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_PolynomialConvertor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_SectionLaw;
@@ -1716,8 +2236,18 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 };
 %feature("shadow") GeomFill_SectionLaw::~GeomFill_SectionLaw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_SectionLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_SimpleBound;
@@ -1751,8 +2281,18 @@ class GeomFill_SimpleBound : public GeomFill_Boundary {
 };
 %feature("shadow") GeomFill_SimpleBound::~GeomFill_SimpleBound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_SimpleBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_HArray1OfLocationLaw;
@@ -1796,8 +2336,18 @@ class GeomFill_HArray1OfLocationLaw : public MMgt_TShared {
 };
 %feature("shadow") GeomFill_HArray1OfLocationLaw::~GeomFill_HArray1OfLocationLaw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_HArray1OfLocationLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_HArray1OfSectionLaw;
@@ -1841,8 +2391,18 @@ class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
 };
 %feature("shadow") GeomFill_HArray1OfSectionLaw::~GeomFill_HArray1OfSectionLaw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_HArray1OfSectionLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_LocationLaw;
@@ -1914,8 +2474,18 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 };
 %feature("shadow") GeomFill_LocationLaw::~GeomFill_LocationLaw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_LocationLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_CurveAndTrihedron;
@@ -1937,8 +2507,18 @@ class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
 };
 %feature("shadow") GeomFill_CurveAndTrihedron::~GeomFill_CurveAndTrihedron %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_CurveAndTrihedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_SequenceNodeOfSequenceOfTrsf;
@@ -1964,8 +2544,18 @@ class GeomFill_SequenceNodeOfSequenceOfTrsf : public TCollection_SeqNode {
 };
 %feature("shadow") GeomFill_SequenceNodeOfSequenceOfTrsf::~GeomFill_SequenceNodeOfSequenceOfTrsf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_SweepFunction;
@@ -2023,8 +2613,18 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 };
 %feature("shadow") GeomFill_SweepFunction::~GeomFill_SweepFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_SweepFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_LocFunction;
@@ -2044,8 +2644,18 @@ class GeomFill_LocFunction {
 };
 %feature("shadow") GeomFill_LocFunction::~GeomFill_LocFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_LocFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_SequenceOfTrsf;
@@ -2099,8 +2709,18 @@ class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
 };
 %feature("shadow") GeomFill_SequenceOfTrsf::~GeomFill_SequenceOfTrsf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_SequenceOfTrsf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_TrihedronWithGuide;
@@ -2126,8 +2746,18 @@ class GeomFill_TrihedronWithGuide : public GeomFill_TrihedronLaw {
 };
 %feature("shadow") GeomFill_TrihedronWithGuide::~GeomFill_TrihedronWithGuide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_TrihedronWithGuide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_GuideTrihedronAC;
@@ -2173,8 +2803,18 @@ class GeomFill_GuideTrihedronAC : public GeomFill_TrihedronWithGuide {
 };
 %feature("shadow") GeomFill_GuideTrihedronAC::~GeomFill_GuideTrihedronAC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_GuideTrihedronAC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_SectionGenerator;
@@ -2200,8 +2840,18 @@ class GeomFill_SectionGenerator : public GeomFill_Profiler {
 };
 %feature("shadow") GeomFill_SectionGenerator::~GeomFill_SectionGenerator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_SectionGenerator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_LocationDraft;
@@ -2277,8 +2927,18 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 };
 %feature("shadow") GeomFill_LocationDraft::~GeomFill_LocationDraft %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_LocationDraft {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Sweep;
@@ -2318,8 +2978,18 @@ class GeomFill_Sweep {
 };
 %feature("shadow") GeomFill_Sweep::~GeomFill_Sweep %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Sweep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_ConstantBiNormal;
@@ -2363,8 +3033,18 @@ class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
 };
 %feature("shadow") GeomFill_ConstantBiNormal::~GeomFill_ConstantBiNormal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_ConstantBiNormal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_GuideTrihedronPlan;
@@ -2416,8 +3096,18 @@ class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
 };
 %feature("shadow") GeomFill_GuideTrihedronPlan::~GeomFill_GuideTrihedronPlan %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_GuideTrihedronPlan {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_AppSurf;
@@ -2477,8 +3167,18 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 };
 %feature("shadow") GeomFill_AppSurf::~GeomFill_AppSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_AppSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_CircularBlendFunc;
@@ -2534,8 +3234,18 @@ class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 };
 %feature("shadow") GeomFill_CircularBlendFunc::~GeomFill_CircularBlendFunc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_CircularBlendFunc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Tensor;
@@ -2569,8 +3279,18 @@ class GeomFill_Tensor {
 };
 %feature("shadow") GeomFill_Tensor::~GeomFill_Tensor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Tensor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Frenet;
@@ -2616,8 +3336,18 @@ class GeomFill_Frenet : public GeomFill_TrihedronLaw {
 };
 %feature("shadow") GeomFill_Frenet::~GeomFill_Frenet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Frenet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Line;
@@ -2647,8 +3377,18 @@ class GeomFill_Line : public MMgt_TShared {
 };
 %feature("shadow") GeomFill_Line::~GeomFill_Line %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Pipe;
@@ -2708,8 +3448,18 @@ class GeomFill_Pipe {
 };
 %feature("shadow") GeomFill_Pipe::~GeomFill_Pipe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Pipe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_UniformSection;
@@ -2775,8 +3525,18 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 };
 %feature("shadow") GeomFill_UniformSection::~GeomFill_UniformSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_UniformSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Stretch;
@@ -2796,8 +3556,18 @@ class GeomFill_Stretch : public GeomFill_Filling {
 };
 %feature("shadow") GeomFill_Stretch::~GeomFill_Stretch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Stretch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_BSplineCurves;
@@ -2823,8 +3593,18 @@ class GeomFill_BSplineCurves {
 };
 %feature("shadow") GeomFill_BSplineCurves::~GeomFill_BSplineCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_BSplineCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_CornerState;
@@ -2856,8 +3636,18 @@ class GeomFill_CornerState {
 };
 %feature("shadow") GeomFill_CornerState::~GeomFill_CornerState %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_CornerState {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_BoundWithSurf;
@@ -2897,8 +3687,18 @@ class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 };
 %feature("shadow") GeomFill_BoundWithSurf::~GeomFill_BoundWithSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_BoundWithSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_QuasiAngularConvertor;
@@ -2920,8 +3720,18 @@ class GeomFill_QuasiAngularConvertor {
 };
 %feature("shadow") GeomFill_QuasiAngularConvertor::~GeomFill_QuasiAngularConvertor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_QuasiAngularConvertor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_AppSweep;
@@ -2981,8 +3791,18 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 };
 %feature("shadow") GeomFill_AppSweep::~GeomFill_AppSweep %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_AppSweep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_EvolvedSection;
@@ -3048,8 +3868,18 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 };
 %feature("shadow") GeomFill_EvolvedSection::~GeomFill_EvolvedSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_EvolvedSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_DraftTrihedron;
@@ -3093,8 +3923,18 @@ class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 };
 %feature("shadow") GeomFill_DraftTrihedron::~GeomFill_DraftTrihedron %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_DraftTrihedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_LocationGuide;
@@ -3176,8 +4016,18 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 };
 %feature("shadow") GeomFill_LocationGuide::~GeomFill_LocationGuide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_LocationGuide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Coons;
@@ -3197,8 +4047,18 @@ class GeomFill_Coons : public GeomFill_Filling {
 };
 %feature("shadow") GeomFill_Coons::~GeomFill_Coons %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Coons {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_BezierCurves;
@@ -3224,8 +4084,18 @@ class GeomFill_BezierCurves {
 };
 %feature("shadow") GeomFill_BezierCurves::~GeomFill_BezierCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_BezierCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_CoonsAlgPatch;
@@ -3267,8 +4137,18 @@ class GeomFill_CoonsAlgPatch : public MMgt_TShared {
 };
 %feature("shadow") GeomFill_CoonsAlgPatch::~GeomFill_CoonsAlgPatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_CoonsAlgPatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Fixed;
@@ -3308,8 +4188,18 @@ class GeomFill_Fixed : public GeomFill_TrihedronLaw {
 };
 %feature("shadow") GeomFill_Fixed::~GeomFill_Fixed %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Fixed {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_PlanFunc;
@@ -3333,8 +4223,18 @@ class GeomFill_PlanFunc : public math_FunctionWithDerivative {
 };
 %feature("shadow") GeomFill_PlanFunc::~GeomFill_PlanFunc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_PlanFunc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomFill_Array1OfLocationLaw;
@@ -3374,5 +4274,15 @@ class GeomFill_Array1OfLocationLaw {
 };
 %feature("shadow") GeomFill_Array1OfLocationLaw::~GeomFill_Array1OfLocationLaw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomFill_Array1OfLocationLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

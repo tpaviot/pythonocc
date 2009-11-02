@@ -58,8 +58,18 @@ class IGESConvGeom {
 };
 %feature("shadow") IGESConvGeom::~IGESConvGeom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESConvGeom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESConvGeom_GeomBuilder;
@@ -109,5 +119,15 @@ class IGESConvGeom_GeomBuilder {
 };
 %feature("shadow") IGESConvGeom_GeomBuilder::~IGESConvGeom_GeomBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESConvGeom_GeomBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

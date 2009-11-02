@@ -63,8 +63,18 @@ class Handle_PColPGeom2d_HArray1OfBezierCurve : public Handle_Standard_Persisten
 };
 %feature("shadow") Handle_PColPGeom2d_HArray1OfBezierCurve::~Handle_PColPGeom2d_HArray1OfBezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColPGeom2d_HArray1OfBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColPGeom2d_HArray1OfCurve;
@@ -91,8 +101,18 @@ class Handle_PColPGeom2d_HArray1OfCurve : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColPGeom2d_HArray1OfCurve::~Handle_PColPGeom2d_HArray1OfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColPGeom2d_HArray1OfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColPGeom2d_HArray1OfBSplineCurve;
@@ -119,8 +139,18 @@ class Handle_PColPGeom2d_HArray1OfBSplineCurve : public Handle_Standard_Persiste
 };
 %feature("shadow") Handle_PColPGeom2d_HArray1OfBSplineCurve::~Handle_PColPGeom2d_HArray1OfBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColPGeom2d_HArray1OfBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve;
@@ -147,8 +177,18 @@ class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve : public Handle
 };
 %feature("shadow") Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve::~Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve;
@@ -175,8 +215,18 @@ class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public Handl
 };
 %feature("shadow") Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve::~Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve;
@@ -203,8 +253,18 @@ class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve : public Handle_PStan
 };
 %feature("shadow") Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve::~Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve;
@@ -231,8 +291,18 @@ class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public Handl
 };
 %feature("shadow") Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve::~Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColPGeom2d_HArray1OfBoundedCurve;
@@ -259,8 +329,18 @@ class Handle_PColPGeom2d_HArray1OfBoundedCurve : public Handle_Standard_Persiste
 };
 %feature("shadow") Handle_PColPGeom2d_HArray1OfBoundedCurve::~Handle_PColPGeom2d_HArray1OfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColPGeom2d_HArray1OfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve;
@@ -278,8 +358,18 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve {
 };
 %feature("shadow") PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve::~PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_HArray1OfBoundedCurve;
@@ -339,8 +429,18 @@ class PColPGeom2d_HArray1OfBoundedCurve : public Standard_Persistent {
 };
 %feature("shadow") PColPGeom2d_HArray1OfBoundedCurve::~PColPGeom2d_HArray1OfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_HArray1OfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve;
@@ -358,8 +458,18 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve {
 };
 %feature("shadow") PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve::~PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_FieldOfHArray1OfCurve;
@@ -389,8 +499,18 @@ class PColPGeom2d_FieldOfHArray1OfCurve : public DBC_BaseArray {
 };
 %feature("shadow") PColPGeom2d_FieldOfHArray1OfCurve::~PColPGeom2d_FieldOfHArray1OfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_FieldOfHArray1OfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_HArray1OfCurve;
@@ -450,8 +570,18 @@ class PColPGeom2d_HArray1OfCurve : public Standard_Persistent {
 };
 %feature("shadow") PColPGeom2d_HArray1OfCurve::~PColPGeom2d_HArray1OfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_HArray1OfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve;
@@ -469,8 +599,18 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 };
 %feature("shadow") PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve::~PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve;
@@ -506,8 +646,18 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_Ar
 };
 %feature("shadow") PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve::~PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_FieldOfHArray1OfBezierCurve;
@@ -537,8 +687,18 @@ class PColPGeom2d_FieldOfHArray1OfBezierCurve : public DBC_BaseArray {
 };
 %feature("shadow") PColPGeom2d_FieldOfHArray1OfBezierCurve::~PColPGeom2d_FieldOfHArray1OfBezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_FieldOfHArray1OfBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve;
@@ -574,8 +734,18 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve : public PStandard_Arr
 };
 %feature("shadow") PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve::~PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve;
@@ -593,8 +763,18 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
 };
 %feature("shadow") PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve::~PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve;
@@ -630,8 +810,18 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_Ar
 };
 %feature("shadow") PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve::~PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_FieldOfHArray1OfBSplineCurve;
@@ -661,8 +851,18 @@ class PColPGeom2d_FieldOfHArray1OfBSplineCurve : public DBC_BaseArray {
 };
 %feature("shadow") PColPGeom2d_FieldOfHArray1OfBSplineCurve::~PColPGeom2d_FieldOfHArray1OfBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_FieldOfHArray1OfBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_HArray1OfBSplineCurve;
@@ -722,8 +922,18 @@ class PColPGeom2d_HArray1OfBSplineCurve : public Standard_Persistent {
 };
 %feature("shadow") PColPGeom2d_HArray1OfBSplineCurve::~PColPGeom2d_HArray1OfBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_HArray1OfBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve;
@@ -759,8 +969,18 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode
 };
 %feature("shadow") PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve::~PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_FieldOfHArray1OfBoundedCurve;
@@ -790,8 +1010,18 @@ class PColPGeom2d_FieldOfHArray1OfBoundedCurve : public DBC_BaseArray {
 };
 %feature("shadow") PColPGeom2d_FieldOfHArray1OfBoundedCurve::~PColPGeom2d_FieldOfHArray1OfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_FieldOfHArray1OfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColPGeom2d_HArray1OfBezierCurve;
@@ -851,5 +1081,15 @@ class PColPGeom2d_HArray1OfBezierCurve : public Standard_Persistent {
 };
 %feature("shadow") PColPGeom2d_HArray1OfBezierCurve::~PColPGeom2d_HArray1OfBezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColPGeom2d_HArray1OfBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -54,8 +54,18 @@ class RWStepAP203_RWCcDesignSecurityClassification {
 };
 %feature("shadow") RWStepAP203_RWCcDesignSecurityClassification::~RWStepAP203_RWCcDesignSecurityClassification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP203_RWCcDesignSecurityClassification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP203_RWStartRequest;
@@ -73,8 +83,18 @@ class RWStepAP203_RWStartRequest {
 };
 %feature("shadow") RWStepAP203_RWStartRequest::~RWStepAP203_RWStartRequest %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP203_RWStartRequest {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP203_RWStartWork;
@@ -92,8 +112,18 @@ class RWStepAP203_RWStartWork {
 };
 %feature("shadow") RWStepAP203_RWStartWork::~RWStepAP203_RWStartWork %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP203_RWStartWork {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP203_RWCcDesignPersonAndOrganizationAssignment;
@@ -111,8 +141,18 @@ class RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
 };
 %feature("shadow") RWStepAP203_RWCcDesignPersonAndOrganizationAssignment::~RWStepAP203_RWCcDesignPersonAndOrganizationAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP203_RWCcDesignContract;
@@ -130,8 +170,18 @@ class RWStepAP203_RWCcDesignContract {
 };
 %feature("shadow") RWStepAP203_RWCcDesignContract::~RWStepAP203_RWCcDesignContract %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP203_RWCcDesignContract {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP203_RWChangeRequest;
@@ -149,8 +199,18 @@ class RWStepAP203_RWChangeRequest {
 };
 %feature("shadow") RWStepAP203_RWChangeRequest::~RWStepAP203_RWChangeRequest %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP203_RWChangeRequest {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP203_RWCcDesignSpecificationReference;
@@ -168,8 +228,18 @@ class RWStepAP203_RWCcDesignSpecificationReference {
 };
 %feature("shadow") RWStepAP203_RWCcDesignSpecificationReference::~RWStepAP203_RWCcDesignSpecificationReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP203_RWCcDesignSpecificationReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP203_RWCcDesignDateAndTimeAssignment;
@@ -187,8 +257,18 @@ class RWStepAP203_RWCcDesignDateAndTimeAssignment {
 };
 %feature("shadow") RWStepAP203_RWCcDesignDateAndTimeAssignment::~RWStepAP203_RWCcDesignDateAndTimeAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP203_RWCcDesignDateAndTimeAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP203_RWCcDesignCertification;
@@ -206,8 +286,18 @@ class RWStepAP203_RWCcDesignCertification {
 };
 %feature("shadow") RWStepAP203_RWCcDesignCertification::~RWStepAP203_RWCcDesignCertification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP203_RWCcDesignCertification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP203_RWCcDesignApproval;
@@ -225,8 +315,18 @@ class RWStepAP203_RWCcDesignApproval {
 };
 %feature("shadow") RWStepAP203_RWCcDesignApproval::~RWStepAP203_RWCcDesignApproval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP203_RWCcDesignApproval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP203_RWChange;
@@ -244,5 +344,15 @@ class RWStepAP203_RWChange {
 };
 %feature("shadow") RWStepAP203_RWChange::~RWStepAP203_RWChange %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP203_RWChange {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

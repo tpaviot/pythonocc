@@ -85,8 +85,18 @@ class Handle_Image_Image : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Image_Image::~Handle_Image_Image %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Image_Image {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Image_DColorImage;
@@ -113,8 +123,18 @@ class Handle_Image_DColorImage : public Handle_Image_Image {
 };
 %feature("shadow") Handle_Image_DColorImage::~Handle_Image_DColorImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Image_DColorImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Image_DIndexedImage;
@@ -141,8 +161,18 @@ class Handle_Image_DIndexedImage : public Handle_Image_Image {
 };
 %feature("shadow") Handle_Image_DIndexedImage::~Handle_Image_DIndexedImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Image_DIndexedImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Image_PseudoColorImage;
@@ -169,8 +199,18 @@ class Handle_Image_PseudoColorImage : public Handle_Image_DIndexedImage {
 };
 %feature("shadow") Handle_Image_PseudoColorImage::~Handle_Image_PseudoColorImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Image_PseudoColorImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Image_DataMapNodeOfLookupTable;
@@ -197,8 +237,18 @@ class Handle_Image_DataMapNodeOfLookupTable : public Handle_TCollection_MapNode 
 };
 %feature("shadow") Handle_Image_DataMapNodeOfLookupTable::~Handle_Image_DataMapNodeOfLookupTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Image_DataMapNodeOfLookupTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Image_DataMapNodeOfColorPixelDataMap;
@@ -225,8 +275,18 @@ class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_Ma
 };
 %feature("shadow") Handle_Image_DataMapNodeOfColorPixelDataMap::~Handle_Image_DataMapNodeOfColorPixelDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Image_DataMapNodeOfColorPixelDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Image_ColorImage;
@@ -253,8 +313,18 @@ class Handle_Image_ColorImage : public Handle_Image_DColorImage {
 };
 %feature("shadow") Handle_Image_ColorImage::~Handle_Image_ColorImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Image_ColorImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_PixelRowOfDIndexedImage;
@@ -294,8 +364,18 @@ class Image_PixelRowOfDIndexedImage {
 };
 %feature("shadow") Image_PixelRowOfDIndexedImage::~Image_PixelRowOfDIndexedImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_PixelRowOfDIndexedImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_Image;
@@ -375,8 +455,18 @@ class Image_Image : public MMgt_TShared {
 };
 %feature("shadow") Image_Image::~Image_Image %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_Image {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_IndexPixelMapHasher;
@@ -392,8 +482,18 @@ class Image_IndexPixelMapHasher {
 };
 %feature("shadow") Image_IndexPixelMapHasher::~Image_IndexPixelMapHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_IndexPixelMapHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_PixelInterpolation;
@@ -411,8 +511,18 @@ class Image_PixelInterpolation {
 };
 %feature("shadow") Image_PixelInterpolation::~Image_PixelInterpolation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_PixelInterpolation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_PlanarPixelInterpolation;
@@ -428,8 +538,18 @@ class Image_PlanarPixelInterpolation : public Image_PixelInterpolation {
 };
 %feature("shadow") Image_PlanarPixelInterpolation::~Image_PlanarPixelInterpolation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_PlanarPixelInterpolation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_LookupTable;
@@ -463,8 +583,18 @@ class Image_LookupTable : public TCollection_BasicMap {
 };
 %feature("shadow") Image_LookupTable::~Image_LookupTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_LookupTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_DColorImage;
@@ -570,8 +700,18 @@ class Image_DColorImage : public Image_Image {
 };
 %feature("shadow") Image_DColorImage::~Image_DColorImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_DColorImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_ColorImage;
@@ -601,8 +741,18 @@ class Image_ColorImage : public Image_DColorImage {
 };
 %feature("shadow") Image_ColorImage::~Image_ColorImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_ColorImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image;
@@ -634,8 +784,18 @@ class Image {
 };
 %feature("shadow") Image::~Image %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_AveragePixelInterpolation;
@@ -653,8 +813,18 @@ class Image_AveragePixelInterpolation : public Image_PixelInterpolation {
 };
 %feature("shadow") Image_AveragePixelInterpolation::~Image_AveragePixelInterpolation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_AveragePixelInterpolation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_DataMapNodeOfLookupTable;
@@ -682,8 +852,18 @@ class Image_DataMapNodeOfLookupTable : public TCollection_MapNode {
 };
 %feature("shadow") Image_DataMapNodeOfLookupTable::~Image_DataMapNodeOfLookupTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_DataMapNodeOfLookupTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_BilinearPixelInterpolation;
@@ -701,8 +881,18 @@ class Image_BilinearPixelInterpolation : public Image_PixelInterpolation {
 };
 %feature("shadow") Image_BilinearPixelInterpolation::~Image_BilinearPixelInterpolation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_BilinearPixelInterpolation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_Convertor;
@@ -722,8 +912,18 @@ class Image_Convertor {
 };
 %feature("shadow") Image_Convertor::~Image_Convertor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_Convertor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_ColorPixelMapHasher;
@@ -739,8 +939,18 @@ class Image_ColorPixelMapHasher {
 };
 %feature("shadow") Image_ColorPixelMapHasher::~Image_ColorPixelMapHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_ColorPixelMapHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_DataMapIteratorOfLookupTable;
@@ -760,8 +970,18 @@ class Image_DataMapIteratorOfLookupTable : public TCollection_BasicMapIterator {
 };
 %feature("shadow") Image_DataMapIteratorOfLookupTable::~Image_DataMapIteratorOfLookupTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_DataMapIteratorOfLookupTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_PixelRowOfDColorImage;
@@ -801,8 +1021,18 @@ class Image_PixelRowOfDColorImage {
 };
 %feature("shadow") Image_PixelRowOfDColorImage::~Image_PixelRowOfDColorImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_PixelRowOfDColorImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_ColorPixelDataMap;
@@ -846,8 +1076,18 @@ class Image_ColorPixelDataMap : public TCollection_BasicMap {
 };
 %feature("shadow") Image_ColorPixelDataMap::~Image_ColorPixelDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_ColorPixelDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_BalancedPixelInterpolation;
@@ -865,8 +1105,18 @@ class Image_BalancedPixelInterpolation : public Image_PixelInterpolation {
 };
 %feature("shadow") Image_BalancedPixelInterpolation::~Image_BalancedPixelInterpolation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_BalancedPixelInterpolation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_DIndexedImage;
@@ -972,8 +1222,18 @@ class Image_DIndexedImage : public Image_Image {
 };
 %feature("shadow") Image_DIndexedImage::~Image_DIndexedImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_DIndexedImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_DataMapIteratorOfColorPixelDataMap;
@@ -993,8 +1253,18 @@ class Image_DataMapIteratorOfColorPixelDataMap : public TCollection_BasicMapIter
 };
 %feature("shadow") Image_DataMapIteratorOfColorPixelDataMap::~Image_DataMapIteratorOfColorPixelDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_DataMapIteratorOfColorPixelDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_PseudoColorImage;
@@ -1044,8 +1314,18 @@ class Image_PseudoColorImage : public Image_DIndexedImage {
 };
 %feature("shadow") Image_PseudoColorImage::~Image_PseudoColorImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_PseudoColorImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_PixelFieldOfDColorImage;
@@ -1079,8 +1359,18 @@ class Image_PixelFieldOfDColorImage {
 };
 %feature("shadow") Image_PixelFieldOfDColorImage::~Image_PixelFieldOfDColorImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_PixelFieldOfDColorImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Image_DataMapNodeOfColorPixelDataMap;
@@ -1118,5 +1408,15 @@ class Image_DataMapNodeOfColorPixelDataMap : public TCollection_MapNode {
 };
 %feature("shadow") Image_DataMapNodeOfColorPixelDataMap::~Image_DataMapNodeOfColorPixelDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Image_DataMapNodeOfColorPixelDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

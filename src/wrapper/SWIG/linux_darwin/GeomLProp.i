@@ -74,8 +74,18 @@ class GeomLProp_CLProps {
 };
 %feature("shadow") GeomLProp_CLProps::~GeomLProp_CLProps %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLProp_CLProps {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLProp_SLProps;
@@ -133,8 +143,18 @@ class GeomLProp_SLProps {
 };
 %feature("shadow") GeomLProp_SLProps::~GeomLProp_SLProps %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLProp_SLProps {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLProp;
@@ -150,8 +170,18 @@ class GeomLProp {
 };
 %feature("shadow") GeomLProp::~GeomLProp %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLProp {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLProp_SurfaceTool;
@@ -175,8 +205,18 @@ class GeomLProp_SurfaceTool {
 };
 %feature("shadow") GeomLProp_SurfaceTool::~GeomLProp_SurfaceTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLProp_SurfaceTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomLProp_CurveTool;
@@ -202,5 +242,15 @@ class GeomLProp_CurveTool {
 };
 %feature("shadow") GeomLProp_CurveTool::~GeomLProp_CurveTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomLProp_CurveTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

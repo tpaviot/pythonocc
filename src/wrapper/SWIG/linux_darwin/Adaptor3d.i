@@ -66,8 +66,18 @@ class Handle_Adaptor3d_HCurve : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Adaptor3d_HCurve::~Handle_Adaptor3d_HCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Adaptor3d_HCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Adaptor3d_HIsoCurve;
@@ -94,8 +104,18 @@ class Handle_Adaptor3d_HIsoCurve : public Handle_Adaptor3d_HCurve {
 };
 %feature("shadow") Handle_Adaptor3d_HIsoCurve::~Handle_Adaptor3d_HIsoCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Adaptor3d_HIsoCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Adaptor3d_HSurface;
@@ -122,8 +142,18 @@ class Handle_Adaptor3d_HSurface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Adaptor3d_HSurface::~Handle_Adaptor3d_HSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Adaptor3d_HSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Adaptor3d_HSurfaceOfLinearExtrusion;
@@ -150,8 +180,18 @@ class Handle_Adaptor3d_HSurfaceOfLinearExtrusion : public Handle_Adaptor3d_HSurf
 };
 %feature("shadow") Handle_Adaptor3d_HSurfaceOfLinearExtrusion::~Handle_Adaptor3d_HSurfaceOfLinearExtrusion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Adaptor3d_HSurfaceOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Adaptor3d_HSurfaceOfRevolution;
@@ -178,8 +218,18 @@ class Handle_Adaptor3d_HSurfaceOfRevolution : public Handle_Adaptor3d_HSurface {
 };
 %feature("shadow") Handle_Adaptor3d_HSurfaceOfRevolution::~Handle_Adaptor3d_HSurfaceOfRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Adaptor3d_HSurfaceOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Adaptor3d_HCurveOnSurface;
@@ -206,8 +256,18 @@ class Handle_Adaptor3d_HCurveOnSurface : public Handle_Adaptor3d_HCurve {
 };
 %feature("shadow") Handle_Adaptor3d_HCurveOnSurface::~Handle_Adaptor3d_HCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Adaptor3d_HCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Adaptor3d_HOffsetCurve;
@@ -234,8 +294,18 @@ class Handle_Adaptor3d_HOffsetCurve : public Handle_Adaptor2d_HCurve2d {
 };
 %feature("shadow") Handle_Adaptor3d_HOffsetCurve::~Handle_Adaptor3d_HOffsetCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Adaptor3d_HOffsetCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Adaptor3d_HVertex;
@@ -262,8 +332,18 @@ class Handle_Adaptor3d_HVertex : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Adaptor3d_HVertex::~Handle_Adaptor3d_HVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Adaptor3d_HVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Adaptor3d_TopolTool;
@@ -290,8 +370,18 @@ class Handle_Adaptor3d_TopolTool : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Adaptor3d_TopolTool::~Handle_Adaptor3d_TopolTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Adaptor3d_TopolTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_HSurface;
@@ -409,8 +499,18 @@ class Adaptor3d_HSurface : public MMgt_TShared {
 };
 %feature("shadow") Adaptor3d_HSurface::~Adaptor3d_HSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_HSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_HSurfaceOfLinearExtrusion;
@@ -438,8 +538,18 @@ class Adaptor3d_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
 };
 %feature("shadow") Adaptor3d_HSurfaceOfLinearExtrusion::~Adaptor3d_HSurfaceOfLinearExtrusion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_HSurfaceOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_TopolTool;
@@ -529,8 +639,18 @@ class Adaptor3d_TopolTool : public MMgt_TShared {
 };
 %feature("shadow") Adaptor3d_TopolTool::~Adaptor3d_TopolTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_TopolTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_Surface;
@@ -638,8 +758,18 @@ class Adaptor3d_Surface {
 };
 %feature("shadow") Adaptor3d_Surface::~Adaptor3d_Surface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_Surface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_SurfaceOfRevolution;
@@ -661,8 +791,18 @@ class Adaptor3d_SurfaceOfRevolution : public Adaptor3d_Surface {
 };
 %feature("shadow") Adaptor3d_SurfaceOfRevolution::~Adaptor3d_SurfaceOfRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_SurfaceOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_HCurve;
@@ -744,8 +884,18 @@ class Adaptor3d_HCurve : public MMgt_TShared {
 };
 %feature("shadow") Adaptor3d_HCurve::~Adaptor3d_HCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_HCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_HIsoCurve;
@@ -773,8 +923,18 @@ class Adaptor3d_HIsoCurve : public Adaptor3d_HCurve {
 };
 %feature("shadow") Adaptor3d_HIsoCurve::~Adaptor3d_HIsoCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_HIsoCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_InterFunc;
@@ -792,8 +952,18 @@ class Adaptor3d_InterFunc : public math_FunctionWithDerivative {
 };
 %feature("shadow") Adaptor3d_InterFunc::~Adaptor3d_InterFunc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_InterFunc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_HVertex;
@@ -829,8 +999,18 @@ class Adaptor3d_HVertex : public MMgt_TShared {
 };
 %feature("shadow") Adaptor3d_HVertex::~Adaptor3d_HVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_HVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_Curve;
@@ -900,8 +1080,18 @@ class Adaptor3d_Curve {
 };
 %feature("shadow") Adaptor3d_Curve::~Adaptor3d_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_CurveOnSurface;
@@ -929,8 +1119,18 @@ class Adaptor3d_CurveOnSurface : public Adaptor3d_Curve {
 };
 %feature("shadow") Adaptor3d_CurveOnSurface::~Adaptor3d_CurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_CurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_HCurveOnSurface;
@@ -964,8 +1164,18 @@ class Adaptor3d_HCurveOnSurface : public Adaptor3d_HCurve {
 };
 %feature("shadow") Adaptor3d_HCurveOnSurface::~Adaptor3d_HCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_HCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_SurfaceOfLinearExtrusion;
@@ -1075,8 +1285,18 @@ class Adaptor3d_SurfaceOfLinearExtrusion : public Adaptor3d_Surface {
 };
 %feature("shadow") Adaptor3d_SurfaceOfLinearExtrusion::~Adaptor3d_SurfaceOfLinearExtrusion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_SurfaceOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_HOffsetCurve;
@@ -1108,8 +1328,18 @@ class Adaptor3d_HOffsetCurve : public Adaptor2d_HCurve2d {
 };
 %feature("shadow") Adaptor3d_HOffsetCurve::~Adaptor3d_HOffsetCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_HOffsetCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_OffsetCurve;
@@ -1193,8 +1423,18 @@ class Adaptor3d_OffsetCurve : public Adaptor2d_Curve2d {
 };
 %feature("shadow") Adaptor3d_OffsetCurve::~Adaptor3d_OffsetCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_OffsetCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_IsoCurve;
@@ -1280,8 +1520,18 @@ class Adaptor3d_IsoCurve : public Adaptor3d_Curve {
 };
 %feature("shadow") Adaptor3d_IsoCurve::~Adaptor3d_IsoCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_IsoCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor3d_HSurfaceOfRevolution;
@@ -1313,5 +1563,15 @@ class Adaptor3d_HSurfaceOfRevolution : public Adaptor3d_HSurface {
 };
 %feature("shadow") Adaptor3d_HSurfaceOfRevolution::~Adaptor3d_HSurfaceOfRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor3d_HSurfaceOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

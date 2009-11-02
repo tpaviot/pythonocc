@@ -58,8 +58,18 @@ class TopTrans_CurveTransition {
 };
 %feature("shadow") TopTrans_CurveTransition::~TopTrans_CurveTransition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopTrans_CurveTransition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopTrans_Array2OfOrientation;
@@ -103,8 +113,18 @@ class TopTrans_Array2OfOrientation {
 };
 %feature("shadow") TopTrans_Array2OfOrientation::~TopTrans_Array2OfOrientation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopTrans_Array2OfOrientation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopTrans_SurfaceTransition;
@@ -132,5 +152,15 @@ class TopTrans_SurfaceTransition {
 };
 %feature("shadow") TopTrans_SurfaceTransition::~TopTrans_SurfaceTransition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopTrans_SurfaceTransition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

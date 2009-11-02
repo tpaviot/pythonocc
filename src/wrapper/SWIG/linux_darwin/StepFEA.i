@@ -91,8 +91,18 @@ class Handle_StepFEA_NodeRepresentation : public Handle_StepRepr_Representation 
 };
 %feature("shadow") Handle_StepFEA_NodeRepresentation::~Handle_StepFEA_NodeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_NodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_DummyNode;
@@ -119,8 +129,18 @@ class Handle_StepFEA_DummyNode : public Handle_StepFEA_NodeRepresentation {
 };
 %feature("shadow") Handle_StepFEA_DummyNode::~Handle_StepFEA_DummyNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_DummyNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaMaterialPropertyRepresentationItem;
@@ -147,8 +167,18 @@ class Handle_StepFEA_FeaMaterialPropertyRepresentationItem : public Handle_StepR
 };
 %feature("shadow") Handle_StepFEA_FeaMaterialPropertyRepresentationItem::~Handle_StepFEA_FeaMaterialPropertyRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness;
@@ -175,8 +205,18 @@ class Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness : public Handle_St
 };
 %feature("shadow") Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness::~Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaLinearElasticity;
@@ -203,8 +243,18 @@ class Handle_StepFEA_FeaLinearElasticity : public Handle_StepFEA_FeaMaterialProp
 };
 %feature("shadow") Handle_StepFEA_FeaLinearElasticity::~Handle_StepFEA_FeaLinearElasticity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaLinearElasticity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaShellMembraneStiffness;
@@ -231,8 +281,18 @@ class Handle_StepFEA_FeaShellMembraneStiffness : public Handle_StepFEA_FeaMateri
 };
 %feature("shadow") Handle_StepFEA_FeaShellMembraneStiffness::~Handle_StepFEA_FeaShellMembraneStiffness %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaShellMembraneStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_HSequenceOfCurve3dElementProperty;
@@ -259,8 +319,18 @@ class Handle_StepFEA_HSequenceOfCurve3dElementProperty : public Handle_MMgt_TSha
 };
 %feature("shadow") Handle_StepFEA_HSequenceOfCurve3dElementProperty::~Handle_StepFEA_HSequenceOfCurve3dElementProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_HSequenceOfCurve3dElementProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaModel;
@@ -287,8 +357,18 @@ class Handle_StepFEA_FeaModel : public Handle_StepRepr_Representation {
 };
 %feature("shadow") Handle_StepFEA_FeaModel::~Handle_StepFEA_FeaModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaModel3d;
@@ -315,8 +395,18 @@ class Handle_StepFEA_FeaModel3d : public Handle_StepFEA_FeaModel {
 };
 %feature("shadow") Handle_StepFEA_FeaModel3d::~Handle_StepFEA_FeaModel3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaModel3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation;
@@ -343,8 +433,18 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public Hand
 };
 %feature("shadow") Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation::~Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaModelDefinition;
@@ -371,8 +471,18 @@ class Handle_StepFEA_FeaModelDefinition : public Handle_StepRepr_ShapeAspect {
 };
 %feature("shadow") Handle_StepFEA_FeaModelDefinition::~Handle_StepFEA_FeaModelDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaModelDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_HArray1OfDegreeOfFreedom;
@@ -399,8 +509,18 @@ class Handle_StepFEA_HArray1OfDegreeOfFreedom : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepFEA_HArray1OfDegreeOfFreedom::~Handle_StepFEA_HArray1OfDegreeOfFreedom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_HArray1OfDegreeOfFreedom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion;
@@ -427,8 +547,18 @@ class Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public H
 };
 %feature("shadow") Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion::~Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_ElementRepresentation;
@@ -455,8 +585,18 @@ class Handle_StepFEA_ElementRepresentation : public Handle_StepRepr_Representati
 };
 %feature("shadow") Handle_StepFEA_ElementRepresentation::~Handle_StepFEA_ElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_ElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_HArray1OfNodeRepresentation;
@@ -483,8 +623,18 @@ class Handle_StepFEA_HArray1OfNodeRepresentation : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepFEA_HArray1OfNodeRepresentation::~Handle_StepFEA_HArray1OfNodeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_HArray1OfNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaRepresentationItem;
@@ -511,8 +661,18 @@ class Handle_StepFEA_FeaRepresentationItem : public Handle_StepRepr_Representati
 };
 %feature("shadow") Handle_StepFEA_FeaRepresentationItem::~Handle_StepFEA_FeaRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_AlignedSurface3dElementCoordinateSystem;
@@ -539,8 +699,18 @@ class Handle_StepFEA_AlignedSurface3dElementCoordinateSystem : public Handle_Ste
 };
 %feature("shadow") Handle_StepFEA_AlignedSurface3dElementCoordinateSystem::~Handle_StepFEA_AlignedSurface3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_AlignedSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaMoistureAbsorption;
@@ -567,8 +737,18 @@ class Handle_StepFEA_FeaMoistureAbsorption : public Handle_StepFEA_FeaMaterialPr
 };
 %feature("shadow") Handle_StepFEA_FeaMoistureAbsorption::~Handle_StepFEA_FeaMoistureAbsorption %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaMoistureAbsorption {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_Surface3dElementRepresentation;
@@ -595,8 +775,18 @@ class Handle_StepFEA_Surface3dElementRepresentation : public Handle_StepFEA_Elem
 };
 %feature("shadow") Handle_StepFEA_Surface3dElementRepresentation::~Handle_StepFEA_Surface3dElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_Surface3dElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaAreaDensity;
@@ -623,8 +813,18 @@ class Handle_StepFEA_FeaAreaDensity : public Handle_StepFEA_FeaMaterialPropertyR
 };
 %feature("shadow") Handle_StepFEA_FeaAreaDensity::~Handle_StepFEA_FeaAreaDensity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaAreaDensity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaMaterialPropertyRepresentation;
@@ -651,8 +851,18 @@ class Handle_StepFEA_FeaMaterialPropertyRepresentation : public Handle_StepRepr_
 };
 %feature("shadow") Handle_StepFEA_FeaMaterialPropertyRepresentation::~Handle_StepFEA_FeaMaterialPropertyRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaMaterialPropertyRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_ConstantSurface3dElementCoordinateSystem;
@@ -679,8 +889,18 @@ class Handle_StepFEA_ConstantSurface3dElementCoordinateSystem : public Handle_St
 };
 %feature("shadow") Handle_StepFEA_ConstantSurface3dElementCoordinateSystem::~Handle_StepFEA_ConstantSurface3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_ConstantSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaCurveSectionGeometricRelationship;
@@ -707,8 +927,18 @@ class Handle_StepFEA_FeaCurveSectionGeometricRelationship : public Handle_MMgt_T
 };
 %feature("shadow") Handle_StepFEA_FeaCurveSectionGeometricRelationship::~Handle_StepFEA_FeaCurveSectionGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaCurveSectionGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_CurveElementLocation;
@@ -735,8 +965,18 @@ class Handle_StepFEA_CurveElementLocation : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepFEA_CurveElementLocation::~Handle_StepFEA_CurveElementLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_CurveElementLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty;
@@ -763,8 +1003,18 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public Han
 };
 %feature("shadow") Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty::~Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_Curve3dElementRepresentation;
@@ -791,8 +1041,18 @@ class Handle_StepFEA_Curve3dElementRepresentation : public Handle_StepFEA_Elemen
 };
 %feature("shadow") Handle_StepFEA_Curve3dElementRepresentation::~Handle_StepFEA_Curve3dElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_Curve3dElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_HArray1OfElementRepresentation;
@@ -819,8 +1079,18 @@ class Handle_StepFEA_HArray1OfElementRepresentation : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_StepFEA_HArray1OfElementRepresentation::~Handle_StepFEA_HArray1OfElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_HArray1OfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_AlignedCurve3dElementCoordinateSystem;
@@ -847,8 +1117,18 @@ class Handle_StepFEA_AlignedCurve3dElementCoordinateSystem : public Handle_StepF
 };
 %feature("shadow") Handle_StepFEA_AlignedCurve3dElementCoordinateSystem::~Handle_StepFEA_AlignedCurve3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_AlignedCurve3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_NodeSet;
@@ -875,8 +1155,18 @@ class Handle_StepFEA_NodeSet : public Handle_StepGeom_GeometricRepresentationIte
 };
 %feature("shadow") Handle_StepFEA_NodeSet::~Handle_StepFEA_NodeSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_NodeSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_ParametricCurve3dElementCoordinateSystem;
@@ -903,8 +1193,18 @@ class Handle_StepFEA_ParametricCurve3dElementCoordinateSystem : public Handle_St
 };
 %feature("shadow") Handle_StepFEA_ParametricCurve3dElementCoordinateSystem::~Handle_StepFEA_ParametricCurve3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_ParametricCurve3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_CurveElementInterval;
@@ -931,8 +1231,18 @@ class Handle_StepFEA_CurveElementInterval : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepFEA_CurveElementInterval::~Handle_StepFEA_CurveElementInterval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_CurveElementInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_CurveElementIntervalLinearlyVarying;
@@ -959,8 +1269,18 @@ class Handle_StepFEA_CurveElementIntervalLinearlyVarying : public Handle_StepFEA
 };
 %feature("shadow") Handle_StepFEA_CurveElementIntervalLinearlyVarying::~Handle_StepFEA_CurveElementIntervalLinearlyVarying %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_CurveElementIntervalLinearlyVarying {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_Node;
@@ -987,8 +1307,18 @@ class Handle_StepFEA_Node : public Handle_StepFEA_NodeRepresentation {
 };
 %feature("shadow") Handle_StepFEA_Node::~Handle_StepFEA_Node %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_Node {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_NodeWithSolutionCoordinateSystem;
@@ -1015,8 +1345,18 @@ class Handle_StepFEA_NodeWithSolutionCoordinateSystem : public Handle_StepFEA_No
 };
 %feature("shadow") Handle_StepFEA_NodeWithSolutionCoordinateSystem::~Handle_StepFEA_NodeWithSolutionCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_NodeWithSolutionCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_CurveElementEndRelease;
@@ -1043,8 +1383,18 @@ class Handle_StepFEA_CurveElementEndRelease : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepFEA_CurveElementEndRelease::~Handle_StepFEA_CurveElementEndRelease %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_CurveElementEndRelease {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_NodeWithVector;
@@ -1071,8 +1421,18 @@ class Handle_StepFEA_NodeWithVector : public Handle_StepFEA_Node {
 };
 %feature("shadow") Handle_StepFEA_NodeWithVector::~Handle_StepFEA_NodeWithVector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_NodeWithVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FreedomAndCoefficient;
@@ -1099,8 +1459,18 @@ class Handle_StepFEA_FreedomAndCoefficient : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepFEA_FreedomAndCoefficient::~Handle_StepFEA_FreedomAndCoefficient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FreedomAndCoefficient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_NodeDefinition;
@@ -1127,8 +1497,18 @@ class Handle_StepFEA_NodeDefinition : public Handle_StepRepr_ShapeAspect {
 };
 %feature("shadow") Handle_StepFEA_NodeDefinition::~Handle_StepFEA_NodeDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_NodeDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_HArray1OfCurveElementInterval;
@@ -1155,8 +1535,18 @@ class Handle_StepFEA_HArray1OfCurveElementInterval : public Handle_MMgt_TShared 
 };
 %feature("shadow") Handle_StepFEA_HArray1OfCurveElementInterval::~Handle_StepFEA_HArray1OfCurveElementInterval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_HArray1OfCurveElementInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion;
@@ -1183,8 +1573,18 @@ class Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public Handl
 };
 %feature("shadow") Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion::~Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_CurveElementIntervalConstant;
@@ -1211,8 +1611,18 @@ class Handle_StepFEA_CurveElementIntervalConstant : public Handle_StepFEA_CurveE
 };
 %feature("shadow") Handle_StepFEA_CurveElementIntervalConstant::~Handle_StepFEA_CurveElementIntervalConstant %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_CurveElementIntervalConstant {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem;
@@ -1239,8 +1649,18 @@ class Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem : public Handle_St
 };
 %feature("shadow") Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem::~Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship;
@@ -1267,8 +1687,18 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship : publ
 };
 %feature("shadow") Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship::~Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_GeometricNode;
@@ -1295,8 +1725,18 @@ class Handle_StepFEA_GeometricNode : public Handle_StepFEA_NodeRepresentation {
 };
 %feature("shadow") Handle_StepFEA_GeometricNode::~Handle_StepFEA_GeometricNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_GeometricNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_SymmetricTensor23dMember;
@@ -1323,8 +1763,18 @@ class Handle_StepFEA_SymmetricTensor23dMember : public Handle_StepData_SelectArr
 };
 %feature("shadow") Handle_StepFEA_SymmetricTensor23dMember::~Handle_StepFEA_SymmetricTensor23dMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_SymmetricTensor23dMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_CurveElementEndOffset;
@@ -1351,8 +1801,18 @@ class Handle_StepFEA_CurveElementEndOffset : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepFEA_CurveElementEndOffset::~Handle_StepFEA_CurveElementEndOffset %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_CurveElementEndOffset {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_HSequenceOfElementGeometricRelationship;
@@ -1379,8 +1839,18 @@ class Handle_StepFEA_HSequenceOfElementGeometricRelationship : public Handle_MMg
 };
 %feature("shadow") Handle_StepFEA_HSequenceOfElementGeometricRelationship::~Handle_StepFEA_HSequenceOfElementGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_HSequenceOfElementGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaGroup;
@@ -1407,8 +1877,18 @@ class Handle_StepFEA_FeaGroup : public Handle_StepBasic_Group {
 };
 %feature("shadow") Handle_StepFEA_FeaGroup::~Handle_StepFEA_FeaGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_ElementGroup;
@@ -1435,8 +1915,18 @@ class Handle_StepFEA_ElementGroup : public Handle_StepFEA_FeaGroup {
 };
 %feature("shadow") Handle_StepFEA_ElementGroup::~Handle_StepFEA_ElementGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_ElementGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaShellBendingStiffness;
@@ -1463,8 +1953,18 @@ class Handle_StepFEA_FeaShellBendingStiffness : public Handle_StepFEA_FeaMateria
 };
 %feature("shadow") Handle_StepFEA_FeaShellBendingStiffness::~Handle_StepFEA_FeaShellBendingStiffness %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaShellBendingStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaMassDensity;
@@ -1491,8 +1991,18 @@ class Handle_StepFEA_FeaMassDensity : public Handle_StepFEA_FeaMaterialPropertyR
 };
 %feature("shadow") Handle_StepFEA_FeaMassDensity::~Handle_StepFEA_FeaMassDensity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaMassDensity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaSurfaceSectionGeometricRelationship;
@@ -1519,8 +2029,18 @@ class Handle_StepFEA_FeaSurfaceSectionGeometricRelationship : public Handle_MMgt
 };
 %feature("shadow") Handle_StepFEA_FeaSurfaceSectionGeometricRelationship::~Handle_StepFEA_FeaSurfaceSectionGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaSurfaceSectionGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_ParametricSurface3dElementCoordinateSystem;
@@ -1547,8 +2067,18 @@ class Handle_StepFEA_ParametricSurface3dElementCoordinateSystem : public Handle_
 };
 %feature("shadow") Handle_StepFEA_ParametricSurface3dElementCoordinateSystem::~Handle_StepFEA_ParametricSurface3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_ParametricSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_Curve3dElementProperty;
@@ -1575,8 +2105,18 @@ class Handle_StepFEA_Curve3dElementProperty : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepFEA_Curve3dElementProperty::~Handle_StepFEA_Curve3dElementProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_Curve3dElementProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaShellShearStiffness;
@@ -1603,8 +2143,18 @@ class Handle_StepFEA_FeaShellShearStiffness : public Handle_StepFEA_FeaMaterialP
 };
 %feature("shadow") Handle_StepFEA_FeaShellShearStiffness::~Handle_StepFEA_FeaShellShearStiffness %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaShellShearStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_HSequenceOfElementRepresentation;
@@ -1631,8 +2181,18 @@ class Handle_StepFEA_HSequenceOfElementRepresentation : public Handle_MMgt_TShar
 };
 %feature("shadow") Handle_StepFEA_HSequenceOfElementRepresentation::~Handle_StepFEA_HSequenceOfElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_HSequenceOfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_HSequenceOfNodeRepresentation;
@@ -1659,8 +2219,18 @@ class Handle_StepFEA_HSequenceOfNodeRepresentation : public Handle_MMgt_TShared 
 };
 %feature("shadow") Handle_StepFEA_HSequenceOfNodeRepresentation::~Handle_StepFEA_HSequenceOfNodeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_HSequenceOfNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaAxis2Placement3d;
@@ -1687,8 +2257,18 @@ class Handle_StepFEA_FeaAxis2Placement3d : public Handle_StepGeom_Axis2Placement
 };
 %feature("shadow") Handle_StepFEA_FeaAxis2Placement3d::~Handle_StepFEA_FeaAxis2Placement3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaAxis2Placement3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FreedomsList;
@@ -1715,8 +2295,18 @@ class Handle_StepFEA_FreedomsList : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepFEA_FreedomsList::~Handle_StepFEA_FreedomsList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FreedomsList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation;
@@ -1743,8 +2333,18 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public Handle_
 };
 %feature("shadow") Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation::~Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_Volume3dElementRepresentation;
@@ -1771,8 +2371,18 @@ class Handle_StepFEA_Volume3dElementRepresentation : public Handle_StepFEA_Eleme
 };
 %feature("shadow") Handle_StepFEA_Volume3dElementRepresentation::~Handle_StepFEA_Volume3dElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_Volume3dElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_ParametricCurve3dElementCoordinateDirection;
@@ -1799,8 +2409,18 @@ class Handle_StepFEA_ParametricCurve3dElementCoordinateDirection : public Handle
 };
 %feature("shadow") Handle_StepFEA_ParametricCurve3dElementCoordinateDirection::~Handle_StepFEA_ParametricCurve3dElementCoordinateDirection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_ParametricCurve3dElementCoordinateDirection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_SymmetricTensor43dMember;
@@ -1827,8 +2447,18 @@ class Handle_StepFEA_SymmetricTensor43dMember : public Handle_StepData_SelectArr
 };
 %feature("shadow") Handle_StepFEA_SymmetricTensor43dMember::~Handle_StepFEA_SymmetricTensor43dMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_SymmetricTensor43dMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_HArray1OfCurveElementEndOffset;
@@ -1855,8 +2485,18 @@ class Handle_StepFEA_HArray1OfCurveElementEndOffset : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_StepFEA_HArray1OfCurveElementEndOffset::~Handle_StepFEA_HArray1OfCurveElementEndOffset %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_HArray1OfCurveElementEndOffset {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_NodeGroup;
@@ -1883,8 +2523,18 @@ class Handle_StepFEA_NodeGroup : public Handle_StepFEA_FeaGroup {
 };
 %feature("shadow") Handle_StepFEA_NodeGroup::~Handle_StepFEA_NodeGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_NodeGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_HArray1OfCurveElementEndRelease;
@@ -1911,8 +2561,18 @@ class Handle_StepFEA_HArray1OfCurveElementEndRelease : public Handle_MMgt_TShare
 };
 %feature("shadow") Handle_StepFEA_HArray1OfCurveElementEndRelease::~Handle_StepFEA_HArray1OfCurveElementEndRelease %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_HArray1OfCurveElementEndRelease {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_ElementGeometricRelationship;
@@ -1939,8 +2599,18 @@ class Handle_StepFEA_ElementGeometricRelationship : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepFEA_ElementGeometricRelationship::~Handle_StepFEA_ElementGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_ElementGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_DegreeOfFreedomMember;
@@ -1967,8 +2637,18 @@ class Handle_StepFEA_DegreeOfFreedomMember : public Handle_StepData_SelectNamed 
 };
 %feature("shadow") Handle_StepFEA_DegreeOfFreedomMember::~Handle_StepFEA_DegreeOfFreedomMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_DegreeOfFreedomMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepFEA_FeaParametricPoint;
@@ -1995,8 +2675,18 @@ class Handle_StepFEA_FeaParametricPoint : public Handle_StepGeom_Point {
 };
 %feature("shadow") Handle_StepFEA_FeaParametricPoint::~Handle_StepFEA_FeaParametricPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepFEA_FeaParametricPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_NodeSet;
@@ -2026,8 +2716,18 @@ class StepFEA_NodeSet : public StepGeom_GeometricRepresentationItem {
 };
 %feature("shadow") StepFEA_NodeSet::~StepFEA_NodeSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_NodeSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_NodeRepresentation;
@@ -2057,8 +2757,18 @@ class StepFEA_NodeRepresentation : public StepRepr_Representation {
 };
 %feature("shadow") StepFEA_NodeRepresentation::~StepFEA_NodeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_NodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_Node;
@@ -2080,8 +2790,18 @@ class StepFEA_Node : public StepFEA_NodeRepresentation {
 };
 %feature("shadow") StepFEA_Node::~StepFEA_Node %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_Node {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_NodeWithSolutionCoordinateSystem;
@@ -2103,8 +2823,18 @@ class StepFEA_NodeWithSolutionCoordinateSystem : public StepFEA_Node {
 };
 %feature("shadow") StepFEA_NodeWithSolutionCoordinateSystem::~StepFEA_NodeWithSolutionCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_NodeWithSolutionCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_HArray1OfCurveElementEndOffset;
@@ -2148,8 +2878,18 @@ class StepFEA_HArray1OfCurveElementEndOffset : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_HArray1OfCurveElementEndOffset::~StepFEA_HArray1OfCurveElementEndOffset %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_HArray1OfCurveElementEndOffset {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_ElementGeometricRelationship;
@@ -2187,8 +2927,18 @@ class StepFEA_ElementGeometricRelationship : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_ElementGeometricRelationship::~StepFEA_ElementGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_ElementGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_ElementRepresentation;
@@ -2218,8 +2968,18 @@ class StepFEA_ElementRepresentation : public StepRepr_Representation {
 };
 %feature("shadow") StepFEA_ElementRepresentation::~StepFEA_ElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_ElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaSurfaceSectionGeometricRelationship;
@@ -2253,8 +3013,18 @@ class StepFEA_FeaSurfaceSectionGeometricRelationship : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_FeaSurfaceSectionGeometricRelationship::~StepFEA_FeaSurfaceSectionGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaSurfaceSectionGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_HSequenceOfElementRepresentation;
@@ -2322,8 +3092,18 @@ class StepFEA_HSequenceOfElementRepresentation : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_HSequenceOfElementRepresentation::~StepFEA_HSequenceOfElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_HSequenceOfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_CurveElementEndRelease;
@@ -2357,8 +3137,18 @@ class StepFEA_CurveElementEndRelease : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_CurveElementEndRelease::~StepFEA_CurveElementEndRelease %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_CurveElementEndRelease {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_Array1OfElementRepresentation;
@@ -2398,8 +3188,18 @@ class StepFEA_Array1OfElementRepresentation {
 };
 %feature("shadow") StepFEA_Array1OfElementRepresentation::~StepFEA_Array1OfElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_Array1OfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaMaterialPropertyRepresentationItem;
@@ -2423,8 +3223,18 @@ class StepFEA_FeaMaterialPropertyRepresentationItem : public StepRepr_Representa
 };
 %feature("shadow") StepFEA_FeaMaterialPropertyRepresentationItem::~StepFEA_FeaMaterialPropertyRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaMaterialPropertyRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaSecantCoefficientOfLinearThermalExpansion;
@@ -2456,8 +3266,18 @@ class StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public StepFEA_FeaM
 };
 %feature("shadow") StepFEA_FeaSecantCoefficientOfLinearThermalExpansion::~StepFEA_FeaSecantCoefficientOfLinearThermalExpansion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaShellMembraneBendingCouplingStiffness;
@@ -2487,8 +3307,18 @@ class StepFEA_FeaShellMembraneBendingCouplingStiffness : public StepFEA_FeaMater
 };
 %feature("shadow") StepFEA_FeaShellMembraneBendingCouplingStiffness::~StepFEA_FeaShellMembraneBendingCouplingStiffness %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaShellMembraneBendingCouplingStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty;
@@ -2514,8 +3344,18 @@ class StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public TCollectio
 };
 %feature("shadow") StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty::~StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaRepresentationItem;
@@ -2539,8 +3379,18 @@ class StepFEA_FeaRepresentationItem : public StepRepr_RepresentationItem {
 };
 %feature("shadow") StepFEA_FeaRepresentationItem::~StepFEA_FeaRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_ParametricCurve3dElementCoordinateSystem;
@@ -2568,8 +3418,18 @@ class StepFEA_ParametricCurve3dElementCoordinateSystem : public StepFEA_FeaRepre
 };
 %feature("shadow") StepFEA_ParametricCurve3dElementCoordinateSystem::~StepFEA_ParametricCurve3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_ParametricCurve3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_CurveElementLocation;
@@ -2599,8 +3459,18 @@ class StepFEA_CurveElementLocation : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_CurveElementLocation::~StepFEA_CurveElementLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_CurveElementLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_DegreeOfFreedomMember;
@@ -2632,8 +3502,18 @@ class StepFEA_DegreeOfFreedomMember : public StepData_SelectNamed {
 };
 %feature("shadow") StepFEA_DegreeOfFreedomMember::~StepFEA_DegreeOfFreedomMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_DegreeOfFreedomMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_SequenceOfNodeRepresentation;
@@ -2687,8 +3567,18 @@ class StepFEA_SequenceOfNodeRepresentation : public TCollection_BaseSequence {
 };
 %feature("shadow") StepFEA_SequenceOfNodeRepresentation::~StepFEA_SequenceOfNodeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_SequenceOfNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_HArray1OfCurveElementInterval;
@@ -2732,8 +3622,18 @@ class StepFEA_HArray1OfCurveElementInterval : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_HArray1OfCurveElementInterval::~StepFEA_HArray1OfCurveElementInterval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_HArray1OfCurveElementInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_HArray1OfElementRepresentation;
@@ -2777,8 +3677,18 @@ class StepFEA_HArray1OfElementRepresentation : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_HArray1OfElementRepresentation::~StepFEA_HArray1OfElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_HArray1OfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_AlignedSurface3dElementCoordinateSystem;
@@ -2808,8 +3718,18 @@ class StepFEA_AlignedSurface3dElementCoordinateSystem : public StepFEA_FeaRepres
 };
 %feature("shadow") StepFEA_AlignedSurface3dElementCoordinateSystem::~StepFEA_AlignedSurface3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_AlignedSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_SymmetricTensor23d;
@@ -2839,8 +3759,18 @@ class StepFEA_SymmetricTensor23d : public StepData_SelectType {
 };
 %feature("shadow") StepFEA_SymmetricTensor23d::~StepFEA_SymmetricTensor23d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_SymmetricTensor23d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_HArray1OfDegreeOfFreedom;
@@ -2884,8 +3814,18 @@ class StepFEA_HArray1OfDegreeOfFreedom : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_HArray1OfDegreeOfFreedom::~StepFEA_HArray1OfDegreeOfFreedom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_HArray1OfDegreeOfFreedom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_HArray1OfCurveElementEndRelease;
@@ -2929,8 +3869,18 @@ class StepFEA_HArray1OfCurveElementEndRelease : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_HArray1OfCurveElementEndRelease::~StepFEA_HArray1OfCurveElementEndRelease %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_HArray1OfCurveElementEndRelease {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_CurveElementInterval;
@@ -2964,8 +3914,18 @@ class StepFEA_CurveElementInterval : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_CurveElementInterval::~StepFEA_CurveElementInterval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_CurveElementInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_NodeDefinition;
@@ -2989,8 +3949,18 @@ class StepFEA_NodeDefinition : public StepRepr_ShapeAspect {
 };
 %feature("shadow") StepFEA_NodeDefinition::~StepFEA_NodeDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_NodeDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_SymmetricTensor42d;
@@ -3006,8 +3976,18 @@ class StepFEA_SymmetricTensor42d : public StepData_SelectType {
 };
 %feature("shadow") StepFEA_SymmetricTensor42d::~StepFEA_SymmetricTensor42d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_SymmetricTensor42d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaMoistureAbsorption;
@@ -3037,8 +4017,18 @@ class StepFEA_FeaMoistureAbsorption : public StepFEA_FeaMaterialPropertyRepresen
 };
 %feature("shadow") StepFEA_FeaMoistureAbsorption::~StepFEA_FeaMoistureAbsorption %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaMoistureAbsorption {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_Curve3dElementRepresentation;
@@ -3080,8 +4070,18 @@ class StepFEA_Curve3dElementRepresentation : public StepFEA_ElementRepresentatio
 };
 %feature("shadow") StepFEA_Curve3dElementRepresentation::~StepFEA_Curve3dElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_Curve3dElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_ParametricSurface3dElementCoordinateSystem;
@@ -3115,8 +4115,18 @@ class StepFEA_ParametricSurface3dElementCoordinateSystem : public StepFEA_FeaRep
 };
 %feature("shadow") StepFEA_ParametricSurface3dElementCoordinateSystem::~StepFEA_ParametricSurface3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_ParametricSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_Array1OfNodeRepresentation;
@@ -3156,8 +4166,18 @@ class StepFEA_Array1OfNodeRepresentation {
 };
 %feature("shadow") StepFEA_Array1OfNodeRepresentation::~StepFEA_Array1OfNodeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_Array1OfNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_Array1OfCurveElementEndRelease;
@@ -3197,8 +4217,18 @@ class StepFEA_Array1OfCurveElementEndRelease {
 };
 %feature("shadow") StepFEA_Array1OfCurveElementEndRelease::~StepFEA_Array1OfCurveElementEndRelease %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_Array1OfCurveElementEndRelease {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_SequenceNodeOfSequenceOfNodeRepresentation;
@@ -3224,8 +4254,18 @@ class StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public TCollection_Se
 };
 %feature("shadow") StepFEA_SequenceNodeOfSequenceOfNodeRepresentation::~StepFEA_SequenceNodeOfSequenceOfNodeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaGroup;
@@ -3255,8 +4295,18 @@ class StepFEA_FeaGroup : public StepBasic_Group {
 };
 %feature("shadow") StepFEA_FeaGroup::~StepFEA_FeaGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_SymmetricTensor43dMember;
@@ -3288,8 +4338,18 @@ class StepFEA_SymmetricTensor43dMember : public StepData_SelectArrReal {
 };
 %feature("shadow") StepFEA_SymmetricTensor43dMember::~StepFEA_SymmetricTensor43dMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_SymmetricTensor43dMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_ElementOrElementGroup;
@@ -3307,8 +4367,18 @@ class StepFEA_ElementOrElementGroup : public StepData_SelectType {
 };
 %feature("shadow") StepFEA_ElementOrElementGroup::~StepFEA_ElementOrElementGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_ElementOrElementGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_Curve3dElementProperty;
@@ -3354,8 +4424,18 @@ class StepFEA_Curve3dElementProperty : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_Curve3dElementProperty::~StepFEA_Curve3dElementProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_Curve3dElementProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaShellMembraneStiffness;
@@ -3385,8 +4465,18 @@ class StepFEA_FeaShellMembraneStiffness : public StepFEA_FeaMaterialPropertyRepr
 };
 %feature("shadow") StepFEA_FeaShellMembraneStiffness::~StepFEA_FeaShellMembraneStiffness %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaShellMembraneStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaModelDefinition;
@@ -3410,8 +4500,18 @@ class StepFEA_FeaModelDefinition : public StepRepr_ShapeAspect {
 };
 %feature("shadow") StepFEA_FeaModelDefinition::~StepFEA_FeaModelDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaModelDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaLinearElasticity;
@@ -3441,8 +4541,18 @@ class StepFEA_FeaLinearElasticity : public StepFEA_FeaMaterialPropertyRepresenta
 };
 %feature("shadow") StepFEA_FeaLinearElasticity::~StepFEA_FeaLinearElasticity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaLinearElasticity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaParametricPoint;
@@ -3472,8 +4582,18 @@ class StepFEA_FeaParametricPoint : public StepGeom_Point {
 };
 %feature("shadow") StepFEA_FeaParametricPoint::~StepFEA_FeaParametricPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaParametricPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_DummyNode;
@@ -3497,8 +4617,18 @@ class StepFEA_DummyNode : public StepFEA_NodeRepresentation {
 };
 %feature("shadow") StepFEA_DummyNode::~StepFEA_DummyNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_DummyNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_Array1OfCurveElementInterval;
@@ -3538,8 +4668,18 @@ class StepFEA_Array1OfCurveElementInterval {
 };
 %feature("shadow") StepFEA_Array1OfCurveElementInterval::~StepFEA_Array1OfCurveElementInterval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_Array1OfCurveElementInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_CurveElementEndCoordinateSystem;
@@ -3559,8 +4699,18 @@ class StepFEA_CurveElementEndCoordinateSystem : public StepData_SelectType {
 };
 %feature("shadow") StepFEA_CurveElementEndCoordinateSystem::~StepFEA_CurveElementEndCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_CurveElementEndCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaMassDensity;
@@ -3590,8 +4740,18 @@ class StepFEA_FeaMassDensity : public StepFEA_FeaMaterialPropertyRepresentationI
 };
 %feature("shadow") StepFEA_FeaMassDensity::~StepFEA_FeaMassDensity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaMassDensity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaMaterialPropertyRepresentation;
@@ -3615,8 +4775,18 @@ class StepFEA_FeaMaterialPropertyRepresentation : public StepRepr_MaterialProper
 };
 %feature("shadow") StepFEA_FeaMaterialPropertyRepresentation::~StepFEA_FeaMaterialPropertyRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaMaterialPropertyRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_CurveElementIntervalConstant;
@@ -3646,8 +4816,18 @@ class StepFEA_CurveElementIntervalConstant : public StepFEA_CurveElementInterval
 };
 %feature("shadow") StepFEA_CurveElementIntervalConstant::~StepFEA_CurveElementIntervalConstant %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_CurveElementIntervalConstant {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_NodeWithVector;
@@ -3671,8 +4851,18 @@ class StepFEA_NodeWithVector : public StepFEA_Node {
 };
 %feature("shadow") StepFEA_NodeWithVector::~StepFEA_NodeWithVector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_NodeWithVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_SequenceOfElementGeometricRelationship;
@@ -3726,8 +4916,18 @@ class StepFEA_SequenceOfElementGeometricRelationship : public TCollection_BaseSe
 };
 %feature("shadow") StepFEA_SequenceOfElementGeometricRelationship::~StepFEA_SequenceOfElementGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_SequenceOfElementGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_ElementGroup;
@@ -3757,8 +4957,18 @@ class StepFEA_ElementGroup : public StepFEA_FeaGroup {
 };
 %feature("shadow") StepFEA_ElementGroup::~StepFEA_ElementGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_ElementGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_Volume3dElementRepresentation;
@@ -3796,8 +5006,18 @@ class StepFEA_Volume3dElementRepresentation : public StepFEA_ElementRepresentati
 };
 %feature("shadow") StepFEA_Volume3dElementRepresentation::~StepFEA_Volume3dElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_Volume3dElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FreedomAndCoefficient;
@@ -3831,8 +5051,18 @@ class StepFEA_FreedomAndCoefficient : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_FreedomAndCoefficient::~StepFEA_FreedomAndCoefficient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FreedomAndCoefficient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_Array1OfDegreeOfFreedom;
@@ -3872,8 +5102,18 @@ class StepFEA_Array1OfDegreeOfFreedom {
 };
 %feature("shadow") StepFEA_Array1OfDegreeOfFreedom::~StepFEA_Array1OfDegreeOfFreedom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_Array1OfDegreeOfFreedom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_HSequenceOfNodeRepresentation;
@@ -3941,8 +5181,18 @@ class StepFEA_HSequenceOfNodeRepresentation : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_HSequenceOfNodeRepresentation::~StepFEA_HSequenceOfNodeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_HSequenceOfNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_SequenceOfElementRepresentation;
@@ -3996,8 +5246,18 @@ class StepFEA_SequenceOfElementRepresentation : public TCollection_BaseSequence 
 };
 %feature("shadow") StepFEA_SequenceOfElementRepresentation::~StepFEA_SequenceOfElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_SequenceOfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship;
@@ -4023,8 +5283,18 @@ class StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship : public TCol
 };
 %feature("shadow") StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship::~StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_ParametricCurve3dElementCoordinateDirection;
@@ -4054,8 +5324,18 @@ class StepFEA_ParametricCurve3dElementCoordinateDirection : public StepFEA_FeaRe
 };
 %feature("shadow") StepFEA_ParametricCurve3dElementCoordinateDirection::~StepFEA_ParametricCurve3dElementCoordinateDirection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_ParametricCurve3dElementCoordinateDirection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_CurveElementEndOffset;
@@ -4089,8 +5369,18 @@ class StepFEA_CurveElementEndOffset : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_CurveElementEndOffset::~StepFEA_CurveElementEndOffset %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_CurveElementEndOffset {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaAxis2Placement3d;
@@ -4124,8 +5414,18 @@ class StepFEA_FeaAxis2Placement3d : public StepGeom_Axis2Placement3d {
 };
 %feature("shadow") StepFEA_FeaAxis2Placement3d::~StepFEA_FeaAxis2Placement3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaAxis2Placement3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_NodeGroup;
@@ -4155,8 +5455,18 @@ class StepFEA_NodeGroup : public StepFEA_FeaGroup {
 };
 %feature("shadow") StepFEA_NodeGroup::~StepFEA_NodeGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_NodeGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion;
@@ -4186,8 +5496,18 @@ class StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public StepFEA_
 };
 %feature("shadow") StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion::~StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_CurveElementIntervalLinearlyVarying;
@@ -4217,8 +5537,18 @@ class StepFEA_CurveElementIntervalLinearlyVarying : public StepFEA_CurveElementI
 };
 %feature("shadow") StepFEA_CurveElementIntervalLinearlyVarying::~StepFEA_CurveElementIntervalLinearlyVarying %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_CurveElementIntervalLinearlyVarying {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaShellShearStiffness;
@@ -4248,8 +5578,18 @@ class StepFEA_FeaShellShearStiffness : public StepFEA_FeaMaterialPropertyReprese
 };
 %feature("shadow") StepFEA_FeaShellShearStiffness::~StepFEA_FeaShellShearStiffness %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaShellShearStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_SymmetricTensor23dMember;
@@ -4281,8 +5621,18 @@ class StepFEA_SymmetricTensor23dMember : public StepData_SelectArrReal {
 };
 %feature("shadow") StepFEA_SymmetricTensor23dMember::~StepFEA_SymmetricTensor23dMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_SymmetricTensor23dMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_HSequenceOfElementGeometricRelationship;
@@ -4350,8 +5700,18 @@ class StepFEA_HSequenceOfElementGeometricRelationship : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_HSequenceOfElementGeometricRelationship::~StepFEA_HSequenceOfElementGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_HSequenceOfElementGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_SymmetricTensor22d;
@@ -4367,8 +5727,18 @@ class StepFEA_SymmetricTensor22d : public StepData_SelectType {
 };
 %feature("shadow") StepFEA_SymmetricTensor22d::~StepFEA_SymmetricTensor22d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_SymmetricTensor22d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_Surface3dElementRepresentation;
@@ -4410,8 +5780,18 @@ class StepFEA_Surface3dElementRepresentation : public StepFEA_ElementRepresentat
 };
 %feature("shadow") StepFEA_Surface3dElementRepresentation::~StepFEA_Surface3dElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_Surface3dElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FreedomsList;
@@ -4441,8 +5821,18 @@ class StepFEA_FreedomsList : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_FreedomsList::~StepFEA_FreedomsList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FreedomsList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_ConstantSurface3dElementCoordinateSystem;
@@ -4476,8 +5866,18 @@ class StepFEA_ConstantSurface3dElementCoordinateSystem : public StepFEA_FeaRepre
 };
 %feature("shadow") StepFEA_ConstantSurface3dElementCoordinateSystem::~StepFEA_ConstantSurface3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_ConstantSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaModel;
@@ -4519,8 +5919,18 @@ class StepFEA_FeaModel : public StepRepr_Representation {
 };
 %feature("shadow") StepFEA_FeaModel::~StepFEA_FeaModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaAreaDensity;
@@ -4550,8 +5960,18 @@ class StepFEA_FeaAreaDensity : public StepFEA_FeaMaterialPropertyRepresentationI
 };
 %feature("shadow") StepFEA_FeaAreaDensity::~StepFEA_FeaAreaDensity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaAreaDensity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_SequenceNodeOfSequenceOfElementRepresentation;
@@ -4577,8 +5997,18 @@ class StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public TCollection
 };
 %feature("shadow") StepFEA_SequenceNodeOfSequenceOfElementRepresentation::~StepFEA_SequenceNodeOfSequenceOfElementRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_HSequenceOfCurve3dElementProperty;
@@ -4646,8 +6076,18 @@ class StepFEA_HSequenceOfCurve3dElementProperty : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_HSequenceOfCurve3dElementProperty::~StepFEA_HSequenceOfCurve3dElementProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_HSequenceOfCurve3dElementProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaShellBendingStiffness;
@@ -4677,8 +6117,18 @@ class StepFEA_FeaShellBendingStiffness : public StepFEA_FeaMaterialPropertyRepre
 };
 %feature("shadow") StepFEA_FeaShellBendingStiffness::~StepFEA_FeaShellBendingStiffness %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaShellBendingStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_HArray1OfNodeRepresentation;
@@ -4722,8 +6172,18 @@ class StepFEA_HArray1OfNodeRepresentation : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_HArray1OfNodeRepresentation::~StepFEA_HArray1OfNodeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_HArray1OfNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_SequenceOfCurve3dElementProperty;
@@ -4777,8 +6237,18 @@ class StepFEA_SequenceOfCurve3dElementProperty : public TCollection_BaseSequence
 };
 %feature("shadow") StepFEA_SequenceOfCurve3dElementProperty::~StepFEA_SequenceOfCurve3dElementProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_SequenceOfCurve3dElementProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_DegreeOfFreedom;
@@ -4804,8 +6274,18 @@ class StepFEA_DegreeOfFreedom : public StepData_SelectType {
 };
 %feature("shadow") StepFEA_DegreeOfFreedom::~StepFEA_DegreeOfFreedom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_DegreeOfFreedom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaModel3d;
@@ -4829,8 +6309,18 @@ class StepFEA_FeaModel3d : public StepFEA_FeaModel {
 };
 %feature("shadow") StepFEA_FeaModel3d::~StepFEA_FeaModel3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaModel3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_FeaCurveSectionGeometricRelationship;
@@ -4864,8 +6354,18 @@ class StepFEA_FeaCurveSectionGeometricRelationship : public MMgt_TShared {
 };
 %feature("shadow") StepFEA_FeaCurveSectionGeometricRelationship::~StepFEA_FeaCurveSectionGeometricRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_FeaCurveSectionGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_Array1OfCurveElementEndOffset;
@@ -4905,8 +6405,18 @@ class StepFEA_Array1OfCurveElementEndOffset {
 };
 %feature("shadow") StepFEA_Array1OfCurveElementEndOffset::~StepFEA_Array1OfCurveElementEndOffset %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_Array1OfCurveElementEndOffset {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_GeometricNode;
@@ -4930,8 +6440,18 @@ class StepFEA_GeometricNode : public StepFEA_NodeRepresentation {
 };
 %feature("shadow") StepFEA_GeometricNode::~StepFEA_GeometricNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_GeometricNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_AlignedCurve3dElementCoordinateSystem;
@@ -4961,8 +6481,18 @@ class StepFEA_AlignedCurve3dElementCoordinateSystem : public StepFEA_FeaRepresen
 };
 %feature("shadow") StepFEA_AlignedCurve3dElementCoordinateSystem::~StepFEA_AlignedCurve3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepFEA_ArbitraryVolume3dElementCoordinateSystem;
@@ -4992,5 +6522,15 @@ class StepFEA_ArbitraryVolume3dElementCoordinateSystem : public StepFEA_FeaRepre
 };
 %feature("shadow") StepFEA_ArbitraryVolume3dElementCoordinateSystem::~StepFEA_ArbitraryVolume3dElementCoordinateSystem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepFEA_ArbitraryVolume3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

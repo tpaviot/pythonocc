@@ -69,8 +69,18 @@ class Handle_XCAFDoc_DocumentTool : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_DocumentTool::~Handle_XCAFDoc_DocumentTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_DocumentTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_DimTolTool;
@@ -97,8 +107,18 @@ class Handle_XCAFDoc_DimTolTool : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_DimTolTool::~Handle_XCAFDoc_DimTolTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_DimTolTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel;
@@ -125,8 +145,18 @@ class Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCollectio
 };
 %feature("shadow") Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel::~Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_Volume;
@@ -153,8 +183,18 @@ class Handle_XCAFDoc_Volume : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_Volume::~Handle_XCAFDoc_Volume %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_Volume {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_DimTol;
@@ -181,8 +221,18 @@ class Handle_XCAFDoc_DimTol : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_DimTol::~Handle_XCAFDoc_DimTol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_DimTol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_Centroid;
@@ -209,8 +259,18 @@ class Handle_XCAFDoc_Centroid : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_Centroid::~Handle_XCAFDoc_Centroid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_Centroid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence;
@@ -237,8 +297,18 @@ class Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence : public Handle_TCollection
 };
 %feature("shadow") Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence::~Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_Area;
@@ -265,8 +335,18 @@ class Handle_XCAFDoc_Area : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_Area::~Handle_XCAFDoc_Area %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_Area {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_Color;
@@ -293,8 +373,18 @@ class Handle_XCAFDoc_Color : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_Color::~Handle_XCAFDoc_Color %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_Color {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_ColorTool;
@@ -321,8 +411,18 @@ class Handle_XCAFDoc_ColorTool : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_ColorTool::~Handle_XCAFDoc_ColorTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_ColorTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_Material;
@@ -349,8 +449,18 @@ class Handle_XCAFDoc_Material : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_Material::~Handle_XCAFDoc_Material %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_Material {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_LayerTool;
@@ -377,8 +487,18 @@ class Handle_XCAFDoc_LayerTool : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_LayerTool::~Handle_XCAFDoc_LayerTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_LayerTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_MaterialTool;
@@ -405,8 +525,18 @@ class Handle_XCAFDoc_MaterialTool : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_MaterialTool::~Handle_XCAFDoc_MaterialTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_MaterialTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_GraphNode;
@@ -433,8 +563,18 @@ class Handle_XCAFDoc_GraphNode : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_GraphNode::~Handle_XCAFDoc_GraphNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_GraphNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_Location;
@@ -461,8 +601,18 @@ class Handle_XCAFDoc_Location : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_Location::~Handle_XCAFDoc_Location %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_Location {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_Datum;
@@ -489,8 +639,18 @@ class Handle_XCAFDoc_Datum : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_Datum::~Handle_XCAFDoc_Datum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_Datum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_ShapeTool;
@@ -517,8 +677,18 @@ class Handle_XCAFDoc_ShapeTool : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_ShapeTool::~Handle_XCAFDoc_ShapeTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_ShapeTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDoc_ShapeMapTool;
@@ -545,8 +715,18 @@ class Handle_XCAFDoc_ShapeMapTool : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_XCAFDoc_ShapeMapTool::~Handle_XCAFDoc_ShapeMapTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDoc_ShapeMapTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_DocumentTool;
@@ -608,8 +788,18 @@ class XCAFDoc_DocumentTool : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_DocumentTool::~XCAFDoc_DocumentTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_DocumentTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc;
@@ -643,8 +833,18 @@ class XCAFDoc {
 };
 %feature("shadow") XCAFDoc::~XCAFDoc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_DataMapOfShapeLabel;
@@ -678,8 +878,18 @@ class XCAFDoc_DataMapOfShapeLabel : public TCollection_BasicMap {
 };
 %feature("shadow") XCAFDoc_DataMapOfShapeLabel::~XCAFDoc_DataMapOfShapeLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_DataMapOfShapeLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_Volume;
@@ -729,8 +939,18 @@ class XCAFDoc_Volume : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_Volume::~XCAFDoc_Volume %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_Volume {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_DimTol;
@@ -776,8 +996,18 @@ class XCAFDoc_DimTol : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_DimTol::~XCAFDoc_DimTol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_DimTol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_DimTolTool;
@@ -851,8 +1081,18 @@ class XCAFDoc_DimTolTool : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_DimTolTool::~XCAFDoc_DimTolTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_DimTolTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_ShapeTool;
@@ -1002,8 +1242,18 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_ShapeTool::~XCAFDoc_ShapeTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_ShapeTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel;
@@ -1023,8 +1273,18 @@ class XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel : public TCollection_BasicMap
 };
 %feature("shadow") XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel::~XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_Datum;
@@ -1068,8 +1328,18 @@ class XCAFDoc_Datum : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_Datum::~XCAFDoc_Datum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_Datum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_LayerTool;
@@ -1157,8 +1427,18 @@ class XCAFDoc_LayerTool : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_LayerTool::~XCAFDoc_LayerTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_LayerTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_GraphNode;
@@ -1240,8 +1520,18 @@ class XCAFDoc_GraphNode : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_GraphNode::~XCAFDoc_GraphNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_GraphNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_Area;
@@ -1291,8 +1581,18 @@ class XCAFDoc_Area : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_Area::~XCAFDoc_Area %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_Area {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_Color;
@@ -1344,8 +1644,18 @@ class XCAFDoc_Color : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_Color::~XCAFDoc_Color %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_Color {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_Location;
@@ -1385,8 +1695,18 @@ class XCAFDoc_Location : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_Location::~XCAFDoc_Location %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_Location {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_Material;
@@ -1434,8 +1754,18 @@ class XCAFDoc_Material : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_Material::~XCAFDoc_Material %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_Material {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_GraphNodeSequence;
@@ -1489,8 +1819,18 @@ class XCAFDoc_GraphNodeSequence : public TCollection_BaseSequence {
 };
 %feature("shadow") XCAFDoc_GraphNodeSequence::~XCAFDoc_GraphNodeSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_GraphNodeSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_DataMapNodeOfDataMapOfShapeLabel;
@@ -1518,8 +1858,18 @@ class XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNode {
 };
 %feature("shadow") XCAFDoc_DataMapNodeOfDataMapOfShapeLabel::~XCAFDoc_DataMapNodeOfDataMapOfShapeLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_ShapeMapTool;
@@ -1561,8 +1911,18 @@ class XCAFDoc_ShapeMapTool : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_ShapeMapTool::~XCAFDoc_ShapeMapTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_ShapeMapTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_Centroid;
@@ -1612,8 +1972,18 @@ class XCAFDoc_Centroid : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_Centroid::~XCAFDoc_Centroid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_Centroid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_ColorTool;
@@ -1703,8 +2073,18 @@ class XCAFDoc_ColorTool : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_ColorTool::~XCAFDoc_ColorTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_ColorTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_SequenceNodeOfGraphNodeSequence;
@@ -1730,8 +2110,18 @@ class XCAFDoc_SequenceNodeOfGraphNodeSequence : public TCollection_SeqNode {
 };
 %feature("shadow") XCAFDoc_SequenceNodeOfGraphNodeSequence::~XCAFDoc_SequenceNodeOfGraphNodeSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_SequenceNodeOfGraphNodeSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDoc_MaterialTool;
@@ -1785,5 +2175,15 @@ class XCAFDoc_MaterialTool : public TDF_Attribute {
 };
 %feature("shadow") XCAFDoc_MaterialTool::~XCAFDoc_MaterialTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDoc_MaterialTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

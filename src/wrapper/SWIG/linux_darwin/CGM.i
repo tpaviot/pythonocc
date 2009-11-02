@@ -63,5 +63,15 @@ class Handle_CGM_Driver : public Handle_PlotMgt_PlotterDriver {
 };
 %feature("shadow") Handle_CGM_Driver::~Handle_CGM_Driver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_CGM_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

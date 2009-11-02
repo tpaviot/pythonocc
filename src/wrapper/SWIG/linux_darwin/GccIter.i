@@ -92,8 +92,18 @@ class Handle_GccIter_IsParallel : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_GccIter_IsParallel::~Handle_GccIter_IsParallel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GccIter_IsParallel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccIter_IsParallel;
@@ -125,5 +135,15 @@ class GccIter_IsParallel : public Standard_DomainError {
 };
 %feature("shadow") GccIter_IsParallel::~GccIter_IsParallel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccIter_IsParallel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

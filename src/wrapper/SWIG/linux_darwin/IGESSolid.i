@@ -63,8 +63,18 @@ class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
 };
 %feature("shadow") Handle_IGESSolid_SpecificModule::~Handle_IGESSolid_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_EdgeList;
@@ -91,8 +101,18 @@ class Handle_IGESSolid_EdgeList : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_EdgeList::~Handle_IGESSolid_EdgeList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_EdgeList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_Block;
@@ -119,8 +139,18 @@ class Handle_IGESSolid_Block : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_Block::~Handle_IGESSolid_Block %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_Block {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_ToroidalSurface;
@@ -147,8 +177,18 @@ class Handle_IGESSolid_ToroidalSurface : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_ToroidalSurface::~Handle_IGESSolid_ToroidalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_ToroidalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_ConeFrustum;
@@ -175,8 +215,18 @@ class Handle_IGESSolid_ConeFrustum : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_ConeFrustum::~Handle_IGESSolid_ConeFrustum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_ConeFrustum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_HArray1OfFace;
@@ -203,8 +253,18 @@ class Handle_IGESSolid_HArray1OfFace : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESSolid_HArray1OfFace::~Handle_IGESSolid_HArray1OfFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_HArray1OfFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_RightAngularWedge;
@@ -231,8 +291,18 @@ class Handle_IGESSolid_RightAngularWedge : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_RightAngularWedge::~Handle_IGESSolid_RightAngularWedge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_RightAngularWedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_CylindricalSurface;
@@ -259,8 +329,18 @@ class Handle_IGESSolid_CylindricalSurface : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_CylindricalSurface::~Handle_IGESSolid_CylindricalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_CylindricalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_HArray1OfLoop;
@@ -287,8 +367,18 @@ class Handle_IGESSolid_HArray1OfLoop : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESSolid_HArray1OfLoop::~Handle_IGESSolid_HArray1OfLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_HArray1OfLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_Shell;
@@ -315,8 +405,18 @@ class Handle_IGESSolid_Shell : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_Shell::~Handle_IGESSolid_Shell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_Shell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_SelectedComponent;
@@ -343,8 +443,18 @@ class Handle_IGESSolid_SelectedComponent : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_SelectedComponent::~Handle_IGESSolid_SelectedComponent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_SelectedComponent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_SolidInstance;
@@ -371,8 +481,18 @@ class Handle_IGESSolid_SolidInstance : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_SolidInstance::~Handle_IGESSolid_SolidInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_SolidInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_ConicalSurface;
@@ -399,8 +519,18 @@ class Handle_IGESSolid_ConicalSurface : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_ConicalSurface::~Handle_IGESSolid_ConicalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_ConicalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_SolidAssembly;
@@ -427,8 +557,18 @@ class Handle_IGESSolid_SolidAssembly : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_SolidAssembly::~Handle_IGESSolid_SolidAssembly %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_SolidAssembly {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_ManifoldSolid;
@@ -455,8 +595,18 @@ class Handle_IGESSolid_ManifoldSolid : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_ManifoldSolid::~Handle_IGESSolid_ManifoldSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_ManifoldSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_Protocol;
@@ -483,8 +633,18 @@ class Handle_IGESSolid_Protocol : public Handle_IGESData_Protocol {
 };
 %feature("shadow") Handle_IGESSolid_Protocol::~Handle_IGESSolid_Protocol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_Protocol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_Cylinder;
@@ -511,8 +671,18 @@ class Handle_IGESSolid_Cylinder : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_Cylinder::~Handle_IGESSolid_Cylinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_Cylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_GeneralModule;
@@ -539,8 +709,18 @@ class Handle_IGESSolid_GeneralModule : public Handle_IGESData_GeneralModule {
 };
 %feature("shadow") Handle_IGESSolid_GeneralModule::~Handle_IGESSolid_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_VertexList;
@@ -567,8 +747,18 @@ class Handle_IGESSolid_VertexList : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_VertexList::~Handle_IGESSolid_VertexList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_VertexList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_SolidOfLinearExtrusion;
@@ -595,8 +785,18 @@ class Handle_IGESSolid_SolidOfLinearExtrusion : public Handle_IGESData_IGESEntit
 };
 %feature("shadow") Handle_IGESSolid_SolidOfLinearExtrusion::~Handle_IGESSolid_SolidOfLinearExtrusion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_SolidOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_Torus;
@@ -623,8 +823,18 @@ class Handle_IGESSolid_Torus : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_Torus::~Handle_IGESSolid_Torus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_Torus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_BooleanTree;
@@ -651,8 +861,18 @@ class Handle_IGESSolid_BooleanTree : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_BooleanTree::~Handle_IGESSolid_BooleanTree %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_BooleanTree {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_SphericalSurface;
@@ -679,8 +899,18 @@ class Handle_IGESSolid_SphericalSurface : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_SphericalSurface::~Handle_IGESSolid_SphericalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_SphericalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_Sphere;
@@ -707,8 +937,18 @@ class Handle_IGESSolid_Sphere : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_Sphere::~Handle_IGESSolid_Sphere %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_Sphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_Loop;
@@ -735,8 +975,18 @@ class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_Loop::~Handle_IGESSolid_Loop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_Loop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_HArray1OfVertexList;
@@ -763,8 +1013,18 @@ class Handle_IGESSolid_HArray1OfVertexList : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESSolid_HArray1OfVertexList::~Handle_IGESSolid_HArray1OfVertexList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_HArray1OfVertexList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_Ellipsoid;
@@ -791,8 +1051,18 @@ class Handle_IGESSolid_Ellipsoid : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_Ellipsoid::~Handle_IGESSolid_Ellipsoid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_Ellipsoid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_HArray1OfShell;
@@ -819,8 +1089,18 @@ class Handle_IGESSolid_HArray1OfShell : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESSolid_HArray1OfShell::~Handle_IGESSolid_HArray1OfShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_HArray1OfShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_SolidOfRevolution;
@@ -847,8 +1127,18 @@ class Handle_IGESSolid_SolidOfRevolution : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_SolidOfRevolution::~Handle_IGESSolid_SolidOfRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_SolidOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_ReadWriteModule;
@@ -875,8 +1165,18 @@ class Handle_IGESSolid_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 };
 %feature("shadow") Handle_IGESSolid_ReadWriteModule::~Handle_IGESSolid_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_Face;
@@ -903,8 +1203,18 @@ class Handle_IGESSolid_Face : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_Face::~Handle_IGESSolid_Face %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSolid_PlaneSurface;
@@ -931,8 +1241,18 @@ class Handle_IGESSolid_PlaneSurface : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESSolid_PlaneSurface::~Handle_IGESSolid_PlaneSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSolid_PlaneSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_SolidOfRevolution;
@@ -974,8 +1294,18 @@ class IGESSolid_SolidOfRevolution : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_SolidOfRevolution::~IGESSolid_SolidOfRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_SolidOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_HArray1OfShell;
@@ -1019,8 +1349,18 @@ class IGESSolid_HArray1OfShell : public MMgt_TShared {
 };
 %feature("shadow") IGESSolid_HArray1OfShell::~IGESSolid_HArray1OfShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_HArray1OfShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolSphere;
@@ -1046,8 +1386,18 @@ class IGESSolid_ToolSphere {
 };
 %feature("shadow") IGESSolid_ToolSphere::~IGESSolid_ToolSphere %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolSphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_Ellipsoid;
@@ -1097,8 +1447,18 @@ class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_Ellipsoid::~IGESSolid_Ellipsoid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_Ellipsoid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolToroidalSurface;
@@ -1124,8 +1484,18 @@ class IGESSolid_ToolToroidalSurface {
 };
 %feature("shadow") IGESSolid_ToolToroidalSurface::~IGESSolid_ToolToroidalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolToroidalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ConeFrustum;
@@ -1165,8 +1535,18 @@ class IGESSolid_ConeFrustum : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_ConeFrustum::~IGESSolid_ConeFrustum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ConeFrustum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_SolidOfLinearExtrusion;
@@ -1200,8 +1580,18 @@ class IGESSolid_SolidOfLinearExtrusion : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_SolidOfLinearExtrusion::~IGESSolid_SolidOfLinearExtrusion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_SolidOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_Array1OfShell;
@@ -1241,8 +1631,18 @@ class IGESSolid_Array1OfShell {
 };
 %feature("shadow") IGESSolid_Array1OfShell::~IGESSolid_Array1OfShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_Array1OfShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_SolidAssembly;
@@ -1278,8 +1678,18 @@ class IGESSolid_SolidAssembly : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_SolidAssembly::~IGESSolid_SolidAssembly %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_SolidAssembly {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_Array1OfVertexList;
@@ -1319,8 +1729,18 @@ class IGESSolid_Array1OfVertexList {
 };
 %feature("shadow") IGESSolid_Array1OfVertexList::~IGESSolid_Array1OfVertexList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_Array1OfVertexList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_CylindricalSurface;
@@ -1356,8 +1776,18 @@ class IGESSolid_CylindricalSurface : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_CylindricalSurface::~IGESSolid_CylindricalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_CylindricalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolSolidOfRevolution;
@@ -1383,8 +1813,18 @@ class IGESSolid_ToolSolidOfRevolution {
 };
 %feature("shadow") IGESSolid_ToolSolidOfRevolution::~IGESSolid_ToolSolidOfRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolSolidOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_SelectedComponent;
@@ -1416,8 +1856,18 @@ class IGESSolid_SelectedComponent : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_SelectedComponent::~IGESSolid_SelectedComponent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_SelectedComponent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_BooleanTree;
@@ -1451,8 +1901,18 @@ class IGESSolid_BooleanTree : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_BooleanTree::~IGESSolid_BooleanTree %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_BooleanTree {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_HArray1OfLoop;
@@ -1496,8 +1956,18 @@ class IGESSolid_HArray1OfLoop : public MMgt_TShared {
 };
 %feature("shadow") IGESSolid_HArray1OfLoop::~IGESSolid_HArray1OfLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_HArray1OfLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolConeFrustum;
@@ -1523,8 +1993,18 @@ class IGESSolid_ToolConeFrustum {
 };
 %feature("shadow") IGESSolid_ToolConeFrustum::~IGESSolid_ToolConeFrustum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolConeFrustum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolEdgeList;
@@ -1550,8 +2030,18 @@ class IGESSolid_ToolEdgeList {
 };
 %feature("shadow") IGESSolid_ToolEdgeList::~IGESSolid_ToolEdgeList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolEdgeList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_Shell;
@@ -1587,8 +2077,18 @@ class IGESSolid_Shell : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_Shell::~IGESSolid_Shell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_Shell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolSelectedComponent;
@@ -1614,8 +2114,18 @@ class IGESSolid_ToolSelectedComponent {
 };
 %feature("shadow") IGESSolid_ToolSelectedComponent::~IGESSolid_ToolSelectedComponent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolSelectedComponent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToroidalSurface;
@@ -1655,8 +2165,18 @@ class IGESSolid_ToroidalSurface : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_ToroidalSurface::~IGESSolid_ToroidalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToroidalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_SolidInstance;
@@ -1688,8 +2208,18 @@ class IGESSolid_SolidInstance : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_SolidInstance::~IGESSolid_SolidInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_SolidInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolFace;
@@ -1715,8 +2245,18 @@ class IGESSolid_ToolFace {
 };
 %feature("shadow") IGESSolid_ToolFace::~IGESSolid_ToolFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_SphericalSurface;
@@ -1754,8 +2294,18 @@ class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_SphericalSurface::~IGESSolid_SphericalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_SphericalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_SpecificModule;
@@ -1781,8 +2331,18 @@ class IGESSolid_SpecificModule : public IGESData_SpecificModule {
 };
 %feature("shadow") IGESSolid_SpecificModule::~IGESSolid_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolLoop;
@@ -1808,8 +2368,18 @@ class IGESSolid_ToolLoop {
 };
 %feature("shadow") IGESSolid_ToolLoop::~IGESSolid_ToolLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolEllipsoid;
@@ -1835,8 +2405,18 @@ class IGESSolid_ToolEllipsoid {
 };
 %feature("shadow") IGESSolid_ToolEllipsoid::~IGESSolid_ToolEllipsoid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolEllipsoid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_Array1OfFace;
@@ -1876,8 +2456,18 @@ class IGESSolid_Array1OfFace {
 };
 %feature("shadow") IGESSolid_Array1OfFace::~IGESSolid_Array1OfFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_Array1OfFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_Sphere;
@@ -1909,8 +2499,18 @@ class IGESSolid_Sphere : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_Sphere::~IGESSolid_Sphere %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_Sphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolBlock;
@@ -1936,8 +2536,18 @@ class IGESSolid_ToolBlock {
 };
 %feature("shadow") IGESSolid_ToolBlock::~IGESSolid_ToolBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_Cylinder;
@@ -1975,8 +2585,18 @@ class IGESSolid_Cylinder : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_Cylinder::~IGESSolid_Cylinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_Cylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolSphericalSurface;
@@ -2002,8 +2622,18 @@ class IGESSolid_ToolSphericalSurface {
 };
 %feature("shadow") IGESSolid_ToolSphericalSurface::~IGESSolid_ToolSphericalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolSphericalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolTorus;
@@ -2029,8 +2659,18 @@ class IGESSolid_ToolTorus {
 };
 %feature("shadow") IGESSolid_ToolTorus::~IGESSolid_ToolTorus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolTorus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolBooleanTree;
@@ -2056,8 +2696,18 @@ class IGESSolid_ToolBooleanTree {
 };
 %feature("shadow") IGESSolid_ToolBooleanTree::~IGESSolid_ToolBooleanTree %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolBooleanTree {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_RightAngularWedge;
@@ -2109,8 +2759,18 @@ class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_RightAngularWedge::~IGESSolid_RightAngularWedge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_RightAngularWedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ReadWriteModule;
@@ -2140,8 +2800,18 @@ class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %feature("shadow") IGESSolid_ReadWriteModule::~IGESSolid_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_VertexList;
@@ -2171,8 +2841,18 @@ class IGESSolid_VertexList : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_VertexList::~IGESSolid_VertexList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_VertexList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolConicalSurface;
@@ -2198,8 +2878,18 @@ class IGESSolid_ToolConicalSurface {
 };
 %feature("shadow") IGESSolid_ToolConicalSurface::~IGESSolid_ToolConicalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolConicalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolManifoldSolid;
@@ -2225,8 +2915,18 @@ class IGESSolid_ToolManifoldSolid {
 };
 %feature("shadow") IGESSolid_ToolManifoldSolid::~IGESSolid_ToolManifoldSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolManifoldSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_HArray1OfFace;
@@ -2270,8 +2970,18 @@ class IGESSolid_HArray1OfFace : public MMgt_TShared {
 };
 %feature("shadow") IGESSolid_HArray1OfFace::~IGESSolid_HArray1OfFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_HArray1OfFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolShell;
@@ -2297,8 +3007,18 @@ class IGESSolid_ToolShell {
 };
 %feature("shadow") IGESSolid_ToolShell::~IGESSolid_ToolShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid;
@@ -2314,8 +3034,18 @@ class IGESSolid {
 };
 %feature("shadow") IGESSolid::~IGESSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_PlaneSurface;
@@ -2349,8 +3079,18 @@ class IGESSolid_PlaneSurface : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_PlaneSurface::~IGESSolid_PlaneSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_PlaneSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_Array1OfLoop;
@@ -2390,8 +3130,18 @@ class IGESSolid_Array1OfLoop {
 };
 %feature("shadow") IGESSolid_Array1OfLoop::~IGESSolid_Array1OfLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_Array1OfLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_Torus;
@@ -2429,8 +3179,18 @@ class IGESSolid_Torus : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_Torus::~IGESSolid_Torus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_Torus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_Face;
@@ -2464,8 +3224,18 @@ class IGESSolid_Face : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_Face::~IGESSolid_Face %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolRightAngularWedge;
@@ -2491,8 +3261,18 @@ class IGESSolid_ToolRightAngularWedge {
 };
 %feature("shadow") IGESSolid_ToolRightAngularWedge::~IGESSolid_ToolRightAngularWedge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolRightAngularWedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_HArray1OfVertexList;
@@ -2536,8 +3316,18 @@ class IGESSolid_HArray1OfVertexList : public MMgt_TShared {
 };
 %feature("shadow") IGESSolid_HArray1OfVertexList::~IGESSolid_HArray1OfVertexList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_HArray1OfVertexList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_Loop;
@@ -2583,8 +3373,18 @@ class IGESSolid_Loop : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_Loop::~IGESSolid_Loop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_Loop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolCylindricalSurface;
@@ -2610,8 +3410,18 @@ class IGESSolid_ToolCylindricalSurface {
 };
 %feature("shadow") IGESSolid_ToolCylindricalSurface::~IGESSolid_ToolCylindricalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolCylindricalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ConicalSurface;
@@ -2649,8 +3459,18 @@ class IGESSolid_ConicalSurface : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_ConicalSurface::~IGESSolid_ConicalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ConicalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolSolidInstance;
@@ -2676,8 +3496,18 @@ class IGESSolid_ToolSolidInstance {
 };
 %feature("shadow") IGESSolid_ToolSolidInstance::~IGESSolid_ToolSolidInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolSolidInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ManifoldSolid;
@@ -2713,8 +3543,18 @@ class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_ManifoldSolid::~IGESSolid_ManifoldSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ManifoldSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolPlaneSurface;
@@ -2740,8 +3580,18 @@ class IGESSolid_ToolPlaneSurface {
 };
 %feature("shadow") IGESSolid_ToolPlaneSurface::~IGESSolid_ToolPlaneSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolPlaneSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolSolidAssembly;
@@ -2767,8 +3617,18 @@ class IGESSolid_ToolSolidAssembly {
 };
 %feature("shadow") IGESSolid_ToolSolidAssembly::~IGESSolid_ToolSolidAssembly %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolSolidAssembly {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolVertexList;
@@ -2794,8 +3654,18 @@ class IGESSolid_ToolVertexList {
 };
 %feature("shadow") IGESSolid_ToolVertexList::~IGESSolid_ToolVertexList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolVertexList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_EdgeList;
@@ -2833,8 +3703,18 @@ class IGESSolid_EdgeList : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_EdgeList::~IGESSolid_EdgeList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_EdgeList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolSolidOfLinearExtrusion;
@@ -2860,8 +3740,18 @@ class IGESSolid_ToolSolidOfLinearExtrusion {
 };
 %feature("shadow") IGESSolid_ToolSolidOfLinearExtrusion::~IGESSolid_ToolSolidOfLinearExtrusion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolSolidOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_ToolCylinder;
@@ -2887,8 +3777,18 @@ class IGESSolid_ToolCylinder {
 };
 %feature("shadow") IGESSolid_ToolCylinder::~IGESSolid_ToolCylinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_ToolCylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_GeneralModule;
@@ -2924,8 +3824,18 @@ class IGESSolid_GeneralModule : public IGESData_GeneralModule {
 };
 %feature("shadow") IGESSolid_GeneralModule::~IGESSolid_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_Block;
@@ -2975,8 +3885,18 @@ class IGESSolid_Block : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESSolid_Block::~IGESSolid_Block %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_Block {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSolid_TopoBuilder;
@@ -3036,5 +3956,15 @@ class IGESSolid_TopoBuilder {
 };
 %feature("shadow") IGESSolid_TopoBuilder::~IGESSolid_TopoBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSolid_TopoBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_PCDMShape_Document : public Handle_PCDM_Document {
 };
 %feature("shadow") Handle_PCDMShape_Document::~Handle_PCDMShape_Document %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCDMShape_Document {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDMShape_Document;
@@ -98,5 +108,15 @@ class PCDMShape_Document : public PCDM_Document {
 };
 %feature("shadow") PCDMShape_Document::~PCDMShape_Document %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDMShape_Document {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

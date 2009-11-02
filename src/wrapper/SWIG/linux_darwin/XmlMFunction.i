@@ -63,8 +63,18 @@ class Handle_XmlMFunction_FunctionDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMFunction_FunctionDriver::~Handle_XmlMFunction_FunctionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMFunction_FunctionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMFunction_GraphNodeDriver;
@@ -91,8 +101,18 @@ class Handle_XmlMFunction_GraphNodeDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMFunction_GraphNodeDriver::~Handle_XmlMFunction_GraphNodeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMFunction_GraphNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMFunction_ScopeDriver;
@@ -119,8 +139,18 @@ class Handle_XmlMFunction_ScopeDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMFunction_ScopeDriver::~Handle_XmlMFunction_ScopeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMFunction_ScopeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMFunction_ScopeDriver;
@@ -150,8 +180,18 @@ class XmlMFunction_ScopeDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMFunction_ScopeDriver::~XmlMFunction_ScopeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMFunction_ScopeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMFunction;
@@ -165,8 +205,18 @@ class XmlMFunction {
 };
 %feature("shadow") XmlMFunction::~XmlMFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMFunction_GraphNodeDriver;
@@ -196,8 +246,18 @@ class XmlMFunction_GraphNodeDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMFunction_GraphNodeDriver::~XmlMFunction_GraphNodeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMFunction_GraphNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMFunction_FunctionDriver;
@@ -227,5 +287,15 @@ class XmlMFunction_FunctionDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMFunction_FunctionDriver::~XmlMFunction_FunctionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMFunction_FunctionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

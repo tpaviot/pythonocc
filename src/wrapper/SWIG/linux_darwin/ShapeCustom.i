@@ -63,8 +63,18 @@ class Handle_ShapeCustom_BSplineRestriction : public Handle_BRepTools_Modificati
 };
 %feature("shadow") Handle_ShapeCustom_BSplineRestriction::~Handle_ShapeCustom_BSplineRestriction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeCustom_BSplineRestriction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeCustom_TrsfModification;
@@ -91,8 +101,18 @@ class Handle_ShapeCustom_TrsfModification : public Handle_BRepTools_TrsfModifica
 };
 %feature("shadow") Handle_ShapeCustom_TrsfModification::~Handle_ShapeCustom_TrsfModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeCustom_TrsfModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeCustom_SweptToElementary;
@@ -119,8 +139,18 @@ class Handle_ShapeCustom_SweptToElementary : public Handle_BRepTools_Modificatio
 };
 %feature("shadow") Handle_ShapeCustom_SweptToElementary::~Handle_ShapeCustom_SweptToElementary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeCustom_SweptToElementary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeCustom_RestrictionParameters;
@@ -147,8 +177,18 @@ class Handle_ShapeCustom_RestrictionParameters : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeCustom_RestrictionParameters::~Handle_ShapeCustom_RestrictionParameters %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeCustom_RestrictionParameters {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeCustom_ConvertToBSpline;
@@ -175,8 +215,18 @@ class Handle_ShapeCustom_ConvertToBSpline : public Handle_BRepTools_Modification
 };
 %feature("shadow") Handle_ShapeCustom_ConvertToBSpline::~Handle_ShapeCustom_ConvertToBSpline %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeCustom_ConvertToBSpline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeCustom_ConvertToRevolution;
@@ -203,8 +253,18 @@ class Handle_ShapeCustom_ConvertToRevolution : public Handle_BRepTools_Modificat
 };
 %feature("shadow") Handle_ShapeCustom_ConvertToRevolution::~Handle_ShapeCustom_ConvertToRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeCustom_ConvertToRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeCustom_DirectModification;
@@ -231,8 +291,18 @@ class Handle_ShapeCustom_DirectModification : public Handle_BRepTools_Modificati
 };
 %feature("shadow") Handle_ShapeCustom_DirectModification::~Handle_ShapeCustom_DirectModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeCustom_DirectModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeCustom_ConvertToBSpline;
@@ -274,8 +344,18 @@ class ShapeCustom_ConvertToBSpline : public BRepTools_Modification {
 };
 %feature("shadow") ShapeCustom_ConvertToBSpline::~ShapeCustom_ConvertToBSpline %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeCustom_ConvertToBSpline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeCustom_ConvertToRevolution;
@@ -311,8 +391,18 @@ class ShapeCustom_ConvertToRevolution : public BRepTools_Modification {
 };
 %feature("shadow") ShapeCustom_ConvertToRevolution::~ShapeCustom_ConvertToRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeCustom_ConvertToRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeCustom_Curve2d;
@@ -330,8 +420,18 @@ class ShapeCustom_Curve2d {
 };
 %feature("shadow") ShapeCustom_Curve2d::~ShapeCustom_Curve2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeCustom_Curve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeCustom_TrsfModification;
@@ -365,8 +465,18 @@ class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
 };
 %feature("shadow") ShapeCustom_TrsfModification::~ShapeCustom_TrsfModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeCustom_TrsfModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeCustom_RestrictionParameters;
@@ -434,8 +544,18 @@ class ShapeCustom_RestrictionParameters : public MMgt_TShared {
 };
 %feature("shadow") ShapeCustom_RestrictionParameters::~ShapeCustom_RestrictionParameters %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeCustom_RestrictionParameters {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeCustom_Curve;
@@ -453,8 +573,18 @@ class ShapeCustom_Curve {
 };
 %feature("shadow") ShapeCustom_Curve::~ShapeCustom_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeCustom_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeCustom_Surface;
@@ -476,8 +606,18 @@ class ShapeCustom_Surface {
 };
 %feature("shadow") ShapeCustom_Surface::~ShapeCustom_Surface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeCustom_Surface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeCustom_SweptToElementary;
@@ -513,8 +653,18 @@ class ShapeCustom_SweptToElementary : public BRepTools_Modification {
 };
 %feature("shadow") ShapeCustom_SweptToElementary::~ShapeCustom_SweptToElementary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeCustom_SweptToElementary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeCustom;
@@ -532,8 +682,18 @@ class ShapeCustom {
 };
 %feature("shadow") ShapeCustom::~ShapeCustom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeCustom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeCustom_BSplineRestriction;
@@ -615,8 +775,18 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 };
 %feature("shadow") ShapeCustom_BSplineRestriction::~ShapeCustom_BSplineRestriction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeCustom_BSplineRestriction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeCustom_DirectModification;
@@ -652,5 +822,15 @@ class ShapeCustom_DirectModification : public BRepTools_Modification {
 };
 %feature("shadow") ShapeCustom_DirectModification::~ShapeCustom_DirectModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeCustom_DirectModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

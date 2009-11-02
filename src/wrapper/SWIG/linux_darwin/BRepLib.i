@@ -93,8 +93,18 @@ class BRepLib_Command {
 };
 %feature("shadow") BRepLib_Command::~BRepLib_Command %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLib_Command {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLib_MakeShape;
@@ -120,8 +130,18 @@ class BRepLib_MakeShape : public BRepLib_Command {
 };
 %feature("shadow") BRepLib_MakeShape::~BRepLib_MakeShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLib_MakeShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLib_MakeVertex;
@@ -135,8 +155,18 @@ class BRepLib_MakeVertex : public BRepLib_MakeShape {
 };
 %feature("shadow") BRepLib_MakeVertex::~BRepLib_MakeVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLib_MakeVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLib_MakeEdge;
@@ -248,8 +278,18 @@ class BRepLib_MakeEdge : public BRepLib_MakeShape {
 };
 %feature("shadow") BRepLib_MakeEdge::~BRepLib_MakeEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLib_MakeEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLib_MakeEdge2d;
@@ -335,8 +375,18 @@ class BRepLib_MakeEdge2d : public BRepLib_MakeShape {
 };
 %feature("shadow") BRepLib_MakeEdge2d::~BRepLib_MakeEdge2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLib_MakeEdge2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLib_MakeShell;
@@ -358,8 +408,18 @@ class BRepLib_MakeShell : public BRepLib_MakeShape {
 };
 %feature("shadow") BRepLib_MakeShell::~BRepLib_MakeShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLib_MakeShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLib_FuseEdges;
@@ -387,8 +447,18 @@ class BRepLib_FuseEdges {
 };
 %feature("shadow") BRepLib_FuseEdges::~BRepLib_FuseEdges %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLib_FuseEdges {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLib;
@@ -438,8 +508,18 @@ class BRepLib {
 };
 %feature("shadow") BRepLib::~BRepLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLib_FindSurface;
@@ -467,8 +547,18 @@ class BRepLib_FindSurface {
 };
 %feature("shadow") BRepLib_FindSurface::~BRepLib_FindSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLib_FindSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLib_MakePolygon;
@@ -508,8 +598,18 @@ class BRepLib_MakePolygon : public BRepLib_MakeShape {
 };
 %feature("shadow") BRepLib_MakePolygon::~BRepLib_MakePolygon %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLib_MakePolygon {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLib_MakeFace;
@@ -575,8 +675,18 @@ class BRepLib_MakeFace : public BRepLib_MakeShape {
 };
 %feature("shadow") BRepLib_MakeFace::~BRepLib_MakeFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLib_MakeFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLib_MakeSolid;
@@ -606,8 +716,18 @@ class BRepLib_MakeSolid : public BRepLib_MakeShape {
 };
 %feature("shadow") BRepLib_MakeSolid::~BRepLib_MakeSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLib_MakeSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLib_MakeWire;
@@ -645,5 +765,15 @@ class BRepLib_MakeWire : public BRepLib_MakeShape {
 };
 %feature("shadow") BRepLib_MakeWire::~BRepLib_MakeWire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLib_MakeWire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

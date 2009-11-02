@@ -93,8 +93,18 @@ class Handle_BOP_HistoryCollector : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_BOP_HistoryCollector::~Handle_BOP_HistoryCollector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_HistoryCollector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_ShellSolidHistoryCollector;
@@ -121,8 +131,18 @@ class Handle_BOP_ShellSolidHistoryCollector : public Handle_BOP_HistoryCollector
 };
 %feature("shadow") Handle_BOP_ShellSolidHistoryCollector::~Handle_BOP_ShellSolidHistoryCollector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_ShellSolidHistoryCollector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_SolidSolidHistoryCollector;
@@ -149,8 +169,18 @@ class Handle_BOP_SolidSolidHistoryCollector : public Handle_BOP_HistoryCollector
 };
 %feature("shadow") Handle_BOP_SolidSolidHistoryCollector::~Handle_BOP_SolidSolidHistoryCollector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_SolidSolidHistoryCollector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfListOfLoop;
@@ -177,8 +207,18 @@ class Handle_BOP_ListNodeOfListOfListOfLoop : public Handle_TCollection_MapNode 
 };
 %feature("shadow") Handle_BOP_ListNodeOfListOfListOfLoop::~Handle_BOP_ListNodeOfListOfListOfLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_ListNodeOfListOfListOfLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_WireSolidHistoryCollector;
@@ -205,8 +245,18 @@ class Handle_BOP_WireSolidHistoryCollector : public Handle_BOP_HistoryCollector 
 };
 %feature("shadow") Handle_BOP_WireSolidHistoryCollector::~Handle_BOP_WireSolidHistoryCollector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_WireSolidHistoryCollector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
@@ -233,8 +283,18 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public Ha
 };
 %feature("shadow") Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier::~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo;
@@ -261,8 +321,18 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public H
 };
 %feature("shadow") Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo::~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo;
@@ -289,8 +359,18 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public
 };
 %feature("shadow") Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo::~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfCheckResult;
@@ -317,8 +397,18 @@ class Handle_BOP_ListNodeOfListOfCheckResult : public Handle_TCollection_MapNode
 };
 %feature("shadow") Handle_BOP_ListNodeOfListOfCheckResult::~Handle_BOP_ListNodeOfListOfCheckResult %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_ListNodeOfListOfCheckResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfLoop;
@@ -345,8 +435,18 @@ class Handle_BOP_ListNodeOfListOfLoop : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_BOP_ListNodeOfListOfLoop::~Handle_BOP_ListNodeOfListOfLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_ListNodeOfListOfLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_SequenceNodeOfSeqOfSeqOfShape;
@@ -373,8 +473,18 @@ class Handle_BOP_SequenceNodeOfSeqOfSeqOfShape : public Handle_TCollection_SeqNo
 };
 %feature("shadow") Handle_BOP_SequenceNodeOfSeqOfSeqOfShape::~Handle_BOP_SequenceNodeOfSeqOfSeqOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_SequenceNodeOfSeqOfSeqOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_Loop;
@@ -401,8 +511,18 @@ class Handle_BOP_Loop : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_BOP_Loop::~Handle_BOP_Loop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_Loop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_SectionHistoryCollector;
@@ -429,8 +549,18 @@ class Handle_BOP_SectionHistoryCollector : public Handle_BOP_HistoryCollector {
 };
 %feature("shadow") Handle_BOP_SectionHistoryCollector::~Handle_BOP_SectionHistoryCollector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_SectionHistoryCollector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfFaceInfo;
@@ -457,8 +587,18 @@ class Handle_BOP_ListNodeOfListOfFaceInfo : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_BOP_ListNodeOfListOfFaceInfo::~Handle_BOP_ListNodeOfListOfFaceInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_ListNodeOfListOfFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfConnexityBlock;
@@ -485,8 +625,18 @@ class Handle_BOP_ListNodeOfListOfConnexityBlock : public Handle_TCollection_MapN
 };
 %feature("shadow") Handle_BOP_ListNodeOfListOfConnexityBlock::~Handle_BOP_ListNodeOfListOfConnexityBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_ListNodeOfListOfConnexityBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfEdgeInfo;
@@ -513,8 +663,18 @@ class Handle_BOP_ListNodeOfListOfEdgeInfo : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_BOP_ListNodeOfListOfEdgeInfo::~Handle_BOP_ListNodeOfListOfEdgeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOP_ListNodeOfListOfEdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListIteratorOfListOfListOfLoop;
@@ -536,8 +696,18 @@ class BOP_ListIteratorOfListOfListOfLoop {
 };
 %feature("shadow") BOP_ListIteratorOfListOfListOfLoop::~BOP_ListIteratorOfListOfListOfLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListIteratorOfListOfListOfLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo;
@@ -579,8 +749,18 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public TColle
 };
 %feature("shadow") BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo::~BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListNodeOfListOfFaceInfo;
@@ -606,8 +786,18 @@ class BOP_ListNodeOfListOfFaceInfo : public TCollection_MapNode {
 };
 %feature("shadow") BOP_ListNodeOfListOfFaceInfo::~BOP_ListNodeOfListOfFaceInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListNodeOfListOfFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_Builder;
@@ -657,8 +847,18 @@ class BOP_Builder {
 };
 %feature("shadow") BOP_Builder::~BOP_Builder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_Builder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_HistoryCollector;
@@ -694,8 +894,18 @@ class BOP_HistoryCollector : public MMgt_TShared {
 };
 %feature("shadow") BOP_HistoryCollector::~BOP_HistoryCollector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_HistoryCollector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_WireSolidHistoryCollector;
@@ -717,8 +927,18 @@ class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %feature("shadow") BOP_WireSolidHistoryCollector::~BOP_WireSolidHistoryCollector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_WireSolidHistoryCollector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_AreaBuilder;
@@ -756,8 +976,18 @@ class BOP_AreaBuilder {
 };
 %feature("shadow") BOP_AreaBuilder::~BOP_AreaBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_AreaBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_Area3dBuilder;
@@ -773,8 +1003,18 @@ class BOP_Area3dBuilder : public BOP_AreaBuilder {
 };
 %feature("shadow") BOP_Area3dBuilder::~BOP_Area3dBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_Area3dBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListIteratorOfListOfFaceInfo;
@@ -796,8 +1036,18 @@ class BOP_ListIteratorOfListOfFaceInfo {
 };
 %feature("shadow") BOP_ListIteratorOfListOfFaceInfo::~BOP_ListIteratorOfListOfFaceInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListIteratorOfListOfFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_SFSCorrector;
@@ -821,8 +1071,18 @@ class BOP_SFSCorrector {
 };
 %feature("shadow") BOP_SFSCorrector::~BOP_SFSCorrector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_SFSCorrector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_SolidSolidHistoryCollector;
@@ -850,8 +1110,18 @@ class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %feature("shadow") BOP_SolidSolidHistoryCollector::~BOP_SolidSolidHistoryCollector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_SolidSolidHistoryCollector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListIteratorOfListOfEdgeInfo;
@@ -873,8 +1143,18 @@ class BOP_ListIteratorOfListOfEdgeInfo {
 };
 %feature("shadow") BOP_ListIteratorOfListOfEdgeInfo::~BOP_ListIteratorOfListOfEdgeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListIteratorOfListOfEdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_IndexedDataMapOfSolidClassifier;
@@ -918,8 +1198,18 @@ class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
 };
 %feature("shadow") BOP_IndexedDataMapOfSolidClassifier::~BOP_IndexedDataMapOfSolidClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_IndexedDataMapOfSolidClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ShellSplitter;
@@ -945,8 +1235,18 @@ class BOP_ShellSplitter {
 };
 %feature("shadow") BOP_ShellSplitter::~BOP_ShellSplitter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ShellSplitter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_Draw;
@@ -968,8 +1268,18 @@ class BOP_Draw {
 };
 %feature("shadow") BOP_Draw::~BOP_Draw %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_Draw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListOfLoop;
@@ -1019,8 +1329,18 @@ class BOP_ListOfLoop {
 };
 %feature("shadow") BOP_ListOfLoop::~BOP_ListOfLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListOfLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_WireShape;
@@ -1038,8 +1358,18 @@ class BOP_WireShape : public BOP_Builder {
 };
 %feature("shadow") BOP_WireShape::~BOP_WireShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_WireShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_WireShell;
@@ -1061,8 +1391,18 @@ class BOP_WireShell : public BOP_WireShape {
 };
 %feature("shadow") BOP_WireShell::~BOP_WireShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_WireShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_WESCorrector;
@@ -1086,8 +1426,18 @@ class BOP_WESCorrector {
 };
 %feature("shadow") BOP_WESCorrector::~BOP_WESCorrector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_WESCorrector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_Area2dBuilder;
@@ -1103,8 +1453,18 @@ class BOP_Area2dBuilder : public BOP_AreaBuilder {
 };
 %feature("shadow") BOP_Area2dBuilder::~BOP_Area2dBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_Area2dBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_FaceAreaBuilder;
@@ -1120,8 +1480,18 @@ class BOP_FaceAreaBuilder : public BOP_Area2dBuilder {
 };
 %feature("shadow") BOP_FaceAreaBuilder::~BOP_FaceAreaBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_FaceAreaBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_SectionHistoryCollector;
@@ -1147,8 +1517,18 @@ class BOP_SectionHistoryCollector : public BOP_HistoryCollector {
 };
 %feature("shadow") BOP_SectionHistoryCollector::~BOP_SectionHistoryCollector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_SectionHistoryCollector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_Loop;
@@ -1180,8 +1560,18 @@ class BOP_Loop : public MMgt_TShared {
 };
 %feature("shadow") BOP_Loop::~BOP_Loop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_Loop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_Refiner;
@@ -1211,8 +1601,18 @@ class BOP_Refiner {
 };
 %feature("shadow") BOP_Refiner::~BOP_Refiner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_Refiner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo;
@@ -1254,8 +1654,18 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollect
 };
 %feature("shadow") BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo::~BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ConnexityBlock;
@@ -1277,8 +1687,18 @@ class BOP_ConnexityBlock {
 };
 %feature("shadow") BOP_ConnexityBlock::~BOP_ConnexityBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ConnexityBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListOfEdgeInfo;
@@ -1328,8 +1748,18 @@ class BOP_ListOfEdgeInfo {
 };
 %feature("shadow") BOP_ListOfEdgeInfo::~BOP_ListOfEdgeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListOfEdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListNodeOfListOfEdgeInfo;
@@ -1355,8 +1785,18 @@ class BOP_ListNodeOfListOfEdgeInfo : public TCollection_MapNode {
 };
 %feature("shadow") BOP_ListNodeOfListOfEdgeInfo::~BOP_ListNodeOfListOfEdgeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListNodeOfListOfEdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListNodeOfListOfListOfLoop;
@@ -1382,8 +1822,18 @@ class BOP_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 };
 %feature("shadow") BOP_ListNodeOfListOfListOfLoop::~BOP_ListNodeOfListOfListOfLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListNodeOfListOfListOfLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListOfFaceInfo;
@@ -1433,8 +1883,18 @@ class BOP_ListOfFaceInfo {
 };
 %feature("shadow") BOP_ListOfFaceInfo::~BOP_ListOfFaceInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListOfFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_BuilderTools;
@@ -1464,8 +1924,18 @@ class BOP_BuilderTools {
 };
 %feature("shadow") BOP_BuilderTools::~BOP_BuilderTools %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_BuilderTools {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ShapeSet;
@@ -1521,8 +1991,18 @@ class BOP_ShapeSet {
 };
 %feature("shadow") BOP_ShapeSet::~BOP_ShapeSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ShapeSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ShellFaceSet;
@@ -1538,8 +2018,18 @@ class BOP_ShellFaceSet : public BOP_ShapeSet {
 };
 %feature("shadow") BOP_ShellFaceSet::~BOP_ShellFaceSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ShellFaceSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_SolidBuilder;
@@ -1579,8 +2069,18 @@ class BOP_SolidBuilder {
 };
 %feature("shadow") BOP_SolidBuilder::~BOP_SolidBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_SolidBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ShellSolid;
@@ -1612,8 +2112,18 @@ class BOP_ShellSolid : public BOP_Builder {
 };
 %feature("shadow") BOP_ShellSolid::~BOP_ShellSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ShellSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_SolidClassifier;
@@ -1639,8 +2149,18 @@ class BOP_SolidClassifier {
 };
 %feature("shadow") BOP_SolidClassifier::~BOP_SolidClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_SolidClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_IndexedDataMapOfEdgeListFaceInfo;
@@ -1684,8 +2204,18 @@ class BOP_IndexedDataMapOfEdgeListFaceInfo : public TCollection_BasicMap {
 };
 %feature("shadow") BOP_IndexedDataMapOfEdgeListFaceInfo::~BOP_IndexedDataMapOfEdgeListFaceInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_IndexedDataMapOfEdgeListFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_EmptyBuilder;
@@ -1705,8 +2235,18 @@ class BOP_EmptyBuilder : public BOP_Builder {
 };
 %feature("shadow") BOP_EmptyBuilder::~BOP_EmptyBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_EmptyBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
@@ -1748,8 +2288,18 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public TCollecti
 };
 %feature("shadow") BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier::~BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListOfConnexityBlock;
@@ -1799,8 +2349,18 @@ class BOP_ListOfConnexityBlock {
 };
 %feature("shadow") BOP_ListOfConnexityBlock::~BOP_ListOfConnexityBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListOfConnexityBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListNodeOfListOfCheckResult;
@@ -1826,8 +2386,18 @@ class BOP_ListNodeOfListOfCheckResult : public TCollection_MapNode {
 };
 %feature("shadow") BOP_ListNodeOfListOfCheckResult::~BOP_ListNodeOfListOfCheckResult %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListNodeOfListOfCheckResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_CheckResult;
@@ -1859,8 +2429,18 @@ class BOP_CheckResult {
 };
 %feature("shadow") BOP_CheckResult::~BOP_CheckResult %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_CheckResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_LoopClassifier;
@@ -1874,8 +2454,18 @@ class BOP_LoopClassifier {
 };
 %feature("shadow") BOP_LoopClassifier::~BOP_LoopClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_LoopClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_CompositeClassifier;
@@ -1897,8 +2487,18 @@ class BOP_CompositeClassifier : public BOP_LoopClassifier {
 };
 %feature("shadow") BOP_CompositeClassifier::~BOP_CompositeClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_CompositeClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListIteratorOfListOfCheckResult;
@@ -1920,8 +2520,18 @@ class BOP_ListIteratorOfListOfCheckResult {
 };
 %feature("shadow") BOP_ListIteratorOfListOfCheckResult::~BOP_ListIteratorOfListOfCheckResult %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListIteratorOfListOfCheckResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_SequenceNodeOfSeqOfSeqOfShape;
@@ -1947,8 +2557,18 @@ class BOP_SequenceNodeOfSeqOfSeqOfShape : public TCollection_SeqNode {
 };
 %feature("shadow") BOP_SequenceNodeOfSeqOfSeqOfShape::~BOP_SequenceNodeOfSeqOfSeqOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_SequenceNodeOfSeqOfSeqOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_IndexedDataMapOfVertexListEdgeInfo;
@@ -1992,8 +2612,18 @@ class BOP_IndexedDataMapOfVertexListEdgeInfo : public TCollection_BasicMap {
 };
 %feature("shadow") BOP_IndexedDataMapOfVertexListEdgeInfo::~BOP_IndexedDataMapOfVertexListEdgeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_IndexedDataMapOfVertexListEdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ShellShell;
@@ -2013,8 +2643,18 @@ class BOP_ShellShell : public BOP_ShellSolid {
 };
 %feature("shadow") BOP_ShellShell::~BOP_ShellShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ShellShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_Section;
@@ -2036,8 +2676,18 @@ class BOP_Section : public BOP_Builder {
 };
 %feature("shadow") BOP_Section::~BOP_Section %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_Section {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListOfCheckResult;
@@ -2087,8 +2737,18 @@ class BOP_ListOfCheckResult {
 };
 %feature("shadow") BOP_ListOfCheckResult::~BOP_ListOfCheckResult %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListOfCheckResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ShellFaceClassifier;
@@ -2114,8 +2774,18 @@ class BOP_ShellFaceClassifier : public BOP_CompositeClassifier {
 };
 %feature("shadow") BOP_ShellFaceClassifier::~BOP_ShellFaceClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ShellFaceClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_FaceBuilder;
@@ -2173,8 +2843,18 @@ class BOP_FaceBuilder {
 };
 %feature("shadow") BOP_FaceBuilder::~BOP_FaceBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_FaceBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListOfListOfLoop;
@@ -2224,8 +2904,18 @@ class BOP_ListOfListOfLoop {
 };
 %feature("shadow") BOP_ListOfListOfLoop::~BOP_ListOfListOfLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListOfListOfLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_BlockBuilder;
@@ -2267,8 +2957,18 @@ class BOP_BlockBuilder {
 };
 %feature("shadow") BOP_BlockBuilder::~BOP_BlockBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_BlockBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_CorrectTolerances;
@@ -2286,8 +2986,18 @@ class BOP_CorrectTolerances {
 };
 %feature("shadow") BOP_CorrectTolerances::~BOP_CorrectTolerances %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_CorrectTolerances {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListIteratorOfListOfConnexityBlock;
@@ -2309,8 +3019,18 @@ class BOP_ListIteratorOfListOfConnexityBlock {
 };
 %feature("shadow") BOP_ListIteratorOfListOfConnexityBlock::~BOP_ListIteratorOfListOfConnexityBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListIteratorOfListOfConnexityBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_BlockIterator;
@@ -2334,8 +3054,18 @@ class BOP_BlockIterator {
 };
 %feature("shadow") BOP_BlockIterator::~BOP_BlockIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_BlockIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_SolidSolid;
@@ -2357,8 +3087,18 @@ class BOP_SolidSolid : public BOP_ShellSolid {
 };
 %feature("shadow") BOP_SolidSolid::~BOP_SolidSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_SolidSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_SeqOfSeqOfShape;
@@ -2412,8 +3152,18 @@ class BOP_SeqOfSeqOfShape : public TCollection_BaseSequence {
 };
 %feature("shadow") BOP_SeqOfSeqOfShape::~BOP_SeqOfSeqOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_SeqOfSeqOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_WireSolid;
@@ -2437,8 +3187,18 @@ class BOP_WireSolid : public BOP_WireShape {
 };
 %feature("shadow") BOP_WireSolid::~BOP_WireSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_WireSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_LoopSet;
@@ -2462,8 +3222,18 @@ class BOP_LoopSet {
 };
 %feature("shadow") BOP_LoopSet::~BOP_LoopSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_LoopSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_WireEdgeClassifier;
@@ -2491,8 +3261,18 @@ class BOP_WireEdgeClassifier : public BOP_CompositeClassifier {
 };
 %feature("shadow") BOP_WireEdgeClassifier::~BOP_WireEdgeClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_WireEdgeClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_WireWire;
@@ -2512,8 +3292,18 @@ class BOP_WireWire : public BOP_WireShape {
 };
 %feature("shadow") BOP_WireWire::~BOP_WireWire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_WireWire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ShellSolidHistoryCollector;
@@ -2541,8 +3331,18 @@ class BOP_ShellSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %feature("shadow") BOP_ShellSolidHistoryCollector::~BOP_ShellSolidHistoryCollector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ShellSolidHistoryCollector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_WireEdgeSet;
@@ -2578,8 +3378,18 @@ class BOP_WireEdgeSet : public BOP_ShapeSet {
 };
 %feature("shadow") BOP_WireEdgeSet::~BOP_WireEdgeSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_WireEdgeSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_SolidAreaBuilder;
@@ -2595,8 +3405,18 @@ class BOP_SolidAreaBuilder : public BOP_Area3dBuilder {
 };
 %feature("shadow") BOP_SolidAreaBuilder::~BOP_SolidAreaBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_SolidAreaBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListIteratorOfListOfLoop;
@@ -2618,8 +3438,18 @@ class BOP_ListIteratorOfListOfLoop {
 };
 %feature("shadow") BOP_ListIteratorOfListOfLoop::~BOP_ListIteratorOfListOfLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListIteratorOfListOfLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_WireSplitter;
@@ -2645,8 +3475,18 @@ class BOP_WireSplitter {
 };
 %feature("shadow") BOP_WireSplitter::~BOP_WireSplitter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_WireSplitter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_FaceInfo;
@@ -2686,8 +3526,18 @@ class BOP_FaceInfo {
 };
 %feature("shadow") BOP_FaceInfo::~BOP_FaceInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_FaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_SDFWESFiller;
@@ -2727,8 +3577,18 @@ class BOP_SDFWESFiller {
 };
 %feature("shadow") BOP_SDFWESFiller::~BOP_SDFWESFiller %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_SDFWESFiller {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListNodeOfListOfConnexityBlock;
@@ -2754,8 +3614,18 @@ class BOP_ListNodeOfListOfConnexityBlock : public TCollection_MapNode {
 };
 %feature("shadow") BOP_ListNodeOfListOfConnexityBlock::~BOP_ListNodeOfListOfConnexityBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListNodeOfListOfConnexityBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ArgumentAnalyzer;
@@ -2799,8 +3669,18 @@ class BOP_ArgumentAnalyzer {
 };
 %feature("shadow") BOP_ArgumentAnalyzer::~BOP_ArgumentAnalyzer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ArgumentAnalyzer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_EdgeInfo;
@@ -2828,8 +3708,18 @@ class BOP_EdgeInfo {
 };
 %feature("shadow") BOP_EdgeInfo::~BOP_EdgeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_EdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOP_ListNodeOfListOfLoop;
@@ -2855,5 +3745,15 @@ class BOP_ListNodeOfListOfLoop : public TCollection_MapNode {
 };
 %feature("shadow") BOP_ListNodeOfListOfLoop::~BOP_ListNodeOfListOfLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOP_ListNodeOfListOfLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_XCAFDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Documen
 };
 %feature("shadow") Handle_XCAFDrivers_DocumentRetrievalDriver::~Handle_XCAFDrivers_DocumentRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XCAFDrivers_DocumentStorageDriver;
@@ -91,8 +101,18 @@ class Handle_XCAFDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentS
 };
 %feature("shadow") Handle_XCAFDrivers_DocumentStorageDriver::~Handle_XCAFDrivers_DocumentStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFDrivers_DocumentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDrivers_DocumentRetrievalDriver;
@@ -118,8 +138,18 @@ class XCAFDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriv
 };
 %feature("shadow") XCAFDrivers_DocumentRetrievalDriver::~XCAFDrivers_DocumentRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDrivers_DocumentStorageDriver;
@@ -145,8 +175,18 @@ class XCAFDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 };
 %feature("shadow") XCAFDrivers_DocumentStorageDriver::~XCAFDrivers_DocumentStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDrivers_DocumentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFDrivers;
@@ -160,5 +200,15 @@ class XCAFDrivers {
 };
 %feature("shadow") XCAFDrivers::~XCAFDrivers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFDrivers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -78,8 +78,18 @@ class Handle_HatchGen_SequenceNodeOfDomains : public Handle_TCollection_SeqNode 
 };
 %feature("shadow") Handle_HatchGen_SequenceNodeOfDomains::~Handle_HatchGen_SequenceNodeOfDomains %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HatchGen_SequenceNodeOfDomains {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HatchGen_SequenceNodeOfPointsOnElement;
@@ -106,8 +116,18 @@ class Handle_HatchGen_SequenceNodeOfPointsOnElement : public Handle_TCollection_
 };
 %feature("shadow") Handle_HatchGen_SequenceNodeOfPointsOnElement::~Handle_HatchGen_SequenceNodeOfPointsOnElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HatchGen_SequenceNodeOfPointsOnElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HatchGen_SequenceNodeOfPointsOnHatching;
@@ -134,8 +154,18 @@ class Handle_HatchGen_SequenceNodeOfPointsOnHatching : public Handle_TCollection
 };
 %feature("shadow") Handle_HatchGen_SequenceNodeOfPointsOnHatching::~Handle_HatchGen_SequenceNodeOfPointsOnHatching %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HatchGen_SequenceNodeOfPointsOnHatching {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HatchGen_PointsOnHatching;
@@ -189,8 +219,18 @@ class HatchGen_PointsOnHatching : public TCollection_BaseSequence {
 };
 %feature("shadow") HatchGen_PointsOnHatching::~HatchGen_PointsOnHatching %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HatchGen_PointsOnHatching {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HatchGen_PointsOnElement;
@@ -244,8 +284,18 @@ class HatchGen_PointsOnElement : public TCollection_BaseSequence {
 };
 %feature("shadow") HatchGen_PointsOnElement::~HatchGen_PointsOnElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HatchGen_PointsOnElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HatchGen_Domain;
@@ -283,8 +333,18 @@ class HatchGen_Domain {
 };
 %feature("shadow") HatchGen_Domain::~HatchGen_Domain %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HatchGen_Domain {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HatchGen_IntersectionPoint;
@@ -324,8 +384,18 @@ class HatchGen_IntersectionPoint {
 };
 %feature("shadow") HatchGen_IntersectionPoint::~HatchGen_IntersectionPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HatchGen_IntersectionPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HatchGen_PointOnHatching;
@@ -359,8 +429,18 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 };
 %feature("shadow") HatchGen_PointOnHatching::~HatchGen_PointOnHatching %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HatchGen_PointOnHatching {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HatchGen_SequenceNodeOfPointsOnElement;
@@ -386,8 +466,18 @@ class HatchGen_SequenceNodeOfPointsOnElement : public TCollection_SeqNode {
 };
 %feature("shadow") HatchGen_SequenceNodeOfPointsOnElement::~HatchGen_SequenceNodeOfPointsOnElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HatchGen_SequenceNodeOfPointsOnElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HatchGen_SequenceNodeOfDomains;
@@ -413,8 +503,18 @@ class HatchGen_SequenceNodeOfDomains : public TCollection_SeqNode {
 };
 %feature("shadow") HatchGen_SequenceNodeOfDomains::~HatchGen_SequenceNodeOfDomains %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HatchGen_SequenceNodeOfDomains {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HatchGen_SequenceNodeOfPointsOnHatching;
@@ -440,8 +540,18 @@ class HatchGen_SequenceNodeOfPointsOnHatching : public TCollection_SeqNode {
 };
 %feature("shadow") HatchGen_SequenceNodeOfPointsOnHatching::~HatchGen_SequenceNodeOfPointsOnHatching %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HatchGen_SequenceNodeOfPointsOnHatching {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HatchGen_PointOnElement;
@@ -467,8 +577,18 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 };
 %feature("shadow") HatchGen_PointOnElement::~HatchGen_PointOnElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HatchGen_PointOnElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HatchGen_Domains;
@@ -522,5 +642,15 @@ class HatchGen_Domains : public TCollection_BaseSequence {
 };
 %feature("shadow") HatchGen_Domains::~HatchGen_Domains %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HatchGen_Domains {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

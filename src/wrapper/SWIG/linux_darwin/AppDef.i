@@ -63,8 +63,18 @@ class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AppDef_HArray1OfMultiPointConstraint::~Handle_AppDef_HArray1OfMultiPointConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AppDef_HArray1OfMultiPointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AppDef_MyCriterionOfTheVariational;
@@ -91,8 +101,18 @@ class Handle_AppDef_MyCriterionOfTheVariational : public Handle_AppParCurves_Smo
 };
 %feature("shadow") Handle_AppDef_MyCriterionOfTheVariational::~Handle_AppDef_MyCriterionOfTheVariational %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AppDef_MyCriterionOfTheVariational {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_MyLineTool;
@@ -134,8 +154,18 @@ class AppDef_MyLineTool {
 };
 %feature("shadow") AppDef_MyLineTool::~AppDef_MyLineTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_MyLineTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_ParFunctionOfTheGradient;
@@ -169,8 +199,18 @@ class AppDef_ParFunctionOfTheGradient : public math_MultipleVarFunctionWithGradi
 };
 %feature("shadow") AppDef_ParFunctionOfTheGradient::~AppDef_ParFunctionOfTheGradient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_ParFunctionOfTheGradient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_MultiPointConstraint;
@@ -230,8 +270,18 @@ class AppDef_MultiPointConstraint : public AppParCurves_MultiPoint {
 };
 %feature("shadow") AppDef_MultiPointConstraint::~AppDef_MultiPointConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_MultiPointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_TheGradient;
@@ -255,8 +305,18 @@ class AppDef_TheGradient {
 };
 %feature("shadow") AppDef_TheGradient::~AppDef_TheGradient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_TheGradient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_MyBSplGradientOfBSplineCompute;
@@ -282,8 +342,18 @@ class AppDef_MyBSplGradientOfBSplineCompute {
 };
 %feature("shadow") AppDef_MyBSplGradientOfBSplineCompute::~AppDef_MyBSplGradientOfBSplineCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_MyBSplGradientOfBSplineCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_HArray1OfMultiPointConstraint;
@@ -327,8 +397,18 @@ class AppDef_HArray1OfMultiPointConstraint : public MMgt_TShared {
 };
 %feature("shadow") AppDef_HArray1OfMultiPointConstraint::~AppDef_HArray1OfMultiPointConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_HArray1OfMultiPointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_TheLeastSquares;
@@ -380,8 +460,18 @@ class AppDef_TheLeastSquares {
 };
 %feature("shadow") AppDef_TheLeastSquares::~AppDef_TheLeastSquares %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_TheLeastSquares {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute;
@@ -395,8 +485,18 @@ class AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute : public math_BFGS {
 };
 %feature("shadow") AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute::~AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute;
@@ -410,8 +510,18 @@ class AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute : public math_BFGS
 };
 %feature("shadow") AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute::~AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_MyCriterionOfTheVariational;
@@ -477,8 +587,18 @@ class AppDef_MyCriterionOfTheVariational : public AppParCurves_SmoothCriterion {
 };
 %feature("shadow") AppDef_MyCriterionOfTheVariational::~AppDef_MyCriterionOfTheVariational %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_MyCriterionOfTheVariational {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_Compute;
@@ -524,8 +644,18 @@ class AppDef_Compute {
 };
 %feature("shadow") AppDef_Compute::~AppDef_Compute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_Compute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_TheResol;
@@ -547,8 +677,18 @@ class AppDef_TheResol {
 };
 %feature("shadow") AppDef_TheResol::~AppDef_TheResol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_TheResol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_MultiLine;
@@ -584,8 +724,18 @@ class AppDef_MultiLine {
 };
 %feature("shadow") AppDef_MultiLine::~AppDef_MultiLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_MultiLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_ResConstraintOfMyGradientbisOfBSplineCompute;
@@ -607,8 +757,18 @@ class AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
 };
 %feature("shadow") AppDef_ResConstraintOfMyGradientbisOfBSplineCompute::~AppDef_ResConstraintOfMyGradientbisOfBSplineCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_Gradient_BFGSOfMyGradientOfCompute;
@@ -622,8 +782,18 @@ class AppDef_Gradient_BFGSOfMyGradientOfCompute : public math_BFGS {
 };
 %feature("shadow") AppDef_Gradient_BFGSOfMyGradientOfCompute::~AppDef_Gradient_BFGSOfMyGradientOfCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_Gradient_BFGSOfMyGradientOfCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute;
@@ -667,8 +837,18 @@ class AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute : public math_Multip
 };
 %feature("shadow") AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute::~AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_ParFunctionOfMyGradientbisOfBSplineCompute;
@@ -702,8 +882,18 @@ class AppDef_ParFunctionOfMyGradientbisOfBSplineCompute : public math_MultipleVa
 };
 %feature("shadow") AppDef_ParFunctionOfMyGradientbisOfBSplineCompute::~AppDef_ParFunctionOfMyGradientbisOfBSplineCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_ParFunctionOfMyGradientbisOfBSplineCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_TheVariational;
@@ -789,8 +979,18 @@ class AppDef_TheVariational {
 };
 %feature("shadow") AppDef_TheVariational::~AppDef_TheVariational %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_TheVariational {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_ParLeastSquareOfMyGradientOfCompute;
@@ -842,8 +1042,18 @@ class AppDef_ParLeastSquareOfMyGradientOfCompute {
 };
 %feature("shadow") AppDef_ParLeastSquareOfMyGradientOfCompute::~AppDef_ParLeastSquareOfMyGradientOfCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_ParLeastSquareOfMyGradientOfCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_ResConstraintOfTheGradient;
@@ -865,8 +1075,18 @@ class AppDef_ResConstraintOfTheGradient {
 };
 %feature("shadow") AppDef_ResConstraintOfTheGradient::~AppDef_ResConstraintOfTheGradient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_ResConstraintOfTheGradient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_TheFunction;
@@ -900,8 +1120,18 @@ class AppDef_TheFunction : public math_MultipleVarFunctionWithGradient {
 };
 %feature("shadow") AppDef_TheFunction::~AppDef_TheFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_TheFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_MyGradientOfCompute;
@@ -925,8 +1155,18 @@ class AppDef_MyGradientOfCompute {
 };
 %feature("shadow") AppDef_MyGradientOfCompute::~AppDef_MyGradientOfCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_MyGradientOfCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute;
@@ -978,8 +1218,18 @@ class AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
 };
 %feature("shadow") AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute::~AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_MyGradientbisOfBSplineCompute;
@@ -1003,8 +1253,18 @@ class AppDef_MyGradientbisOfBSplineCompute {
 };
 %feature("shadow") AppDef_MyGradientbisOfBSplineCompute::~AppDef_MyGradientbisOfBSplineCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_MyGradientbisOfBSplineCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_BSplineCompute;
@@ -1054,8 +1314,18 @@ class AppDef_BSplineCompute {
 };
 %feature("shadow") AppDef_BSplineCompute::~AppDef_BSplineCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_BSplineCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_Gradient_BFGSOfTheGradient;
@@ -1069,8 +1339,18 @@ class AppDef_Gradient_BFGSOfTheGradient : public math_BFGS {
 };
 %feature("shadow") AppDef_Gradient_BFGSOfTheGradient::~AppDef_Gradient_BFGSOfTheGradient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_Gradient_BFGSOfTheGradient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute;
@@ -1122,8 +1402,18 @@ class AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
 };
 %feature("shadow") AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute::~AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_ResConstraintOfMyGradientOfCompute;
@@ -1145,8 +1435,18 @@ class AppDef_ResConstraintOfMyGradientOfCompute {
 };
 %feature("shadow") AppDef_ResConstraintOfMyGradientOfCompute::~AppDef_ResConstraintOfMyGradientOfCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_ResConstraintOfMyGradientOfCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_Array1OfMultiPointConstraint;
@@ -1186,8 +1486,18 @@ class AppDef_Array1OfMultiPointConstraint {
 };
 %feature("shadow") AppDef_Array1OfMultiPointConstraint::~AppDef_Array1OfMultiPointConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_Array1OfMultiPointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_ParLeastSquareOfTheGradient;
@@ -1239,8 +1549,18 @@ class AppDef_ParLeastSquareOfTheGradient {
 };
 %feature("shadow") AppDef_ParLeastSquareOfTheGradient::~AppDef_ParLeastSquareOfTheGradient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_ParLeastSquareOfTheGradient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppDef_ParFunctionOfMyGradientOfCompute;
@@ -1274,5 +1594,15 @@ class AppDef_ParFunctionOfMyGradientOfCompute : public math_MultipleVarFunctionW
 };
 %feature("shadow") AppDef_ParFunctionOfMyGradientOfCompute::~AppDef_ParFunctionOfMyGradientOfCompute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppDef_ParFunctionOfMyGradientOfCompute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

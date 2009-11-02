@@ -78,8 +78,18 @@ class IntCurvesFace_Intersector {
 };
 %feature("shadow") IntCurvesFace_Intersector::~IntCurvesFace_Intersector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurvesFace_Intersector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurvesFace_ShapeIntersector;
@@ -121,5 +131,15 @@ class IntCurvesFace_ShapeIntersector {
 };
 %feature("shadow") IntCurvesFace_ShapeIntersector::~IntCurvesFace_ShapeIntersector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurvesFace_ShapeIntersector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

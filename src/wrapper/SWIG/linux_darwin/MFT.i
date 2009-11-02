@@ -101,8 +101,18 @@ class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqN
 };
 %feature("shadow") Handle_MFT_SequenceNodeOfListOfFontHandle::~Handle_MFT_SequenceNodeOfListOfFontHandle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MFT_SequenceNodeOfListOfFontHandle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MFT_SequenceNodeOfListOfFontName;
@@ -129,8 +139,18 @@ class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNod
 };
 %feature("shadow") Handle_MFT_SequenceNodeOfListOfFontName::~Handle_MFT_SequenceNodeOfListOfFontName %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MFT_SequenceNodeOfListOfFontName {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MFT_TextManager;
@@ -157,8 +177,18 @@ class Handle_MFT_TextManager : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MFT_TextManager::~Handle_MFT_TextManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MFT_TextManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MFT_FontManager;
@@ -185,8 +215,18 @@ class Handle_MFT_FontManager : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MFT_FontManager::~Handle_MFT_FontManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MFT_FontManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MFT_FontManagerError;
@@ -213,8 +253,18 @@ class Handle_MFT_FontManagerError : public Handle_Standard_TypeMismatch {
 };
 %feature("shadow") Handle_MFT_FontManagerError::~Handle_MFT_FontManagerError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MFT_FontManagerError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MFT_SequenceNodeOfListOfFontReference;
@@ -241,8 +291,18 @@ class Handle_MFT_SequenceNodeOfListOfFontReference : public Handle_TCollection_S
 };
 %feature("shadow") Handle_MFT_SequenceNodeOfListOfFontReference::~Handle_MFT_SequenceNodeOfListOfFontReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MFT_SequenceNodeOfListOfFontReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MFT_FontManagerDefinitionError;
@@ -269,8 +329,18 @@ class Handle_MFT_FontManagerDefinitionError : public Handle_Standard_NoSuchObjec
 };
 %feature("shadow") Handle_MFT_FontManagerDefinitionError::~Handle_MFT_FontManagerDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MFT_FontManagerDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFT_FontManagerError;
@@ -302,8 +372,18 @@ class MFT_FontManagerError : public Standard_TypeMismatch {
 };
 %feature("shadow") MFT_FontManagerError::~MFT_FontManagerError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFT_FontManagerError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFT;
@@ -315,8 +395,18 @@ class MFT {
 };
 %feature("shadow") MFT::~MFT %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFT {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFT_FontManager;
@@ -434,8 +524,18 @@ class MFT_FontManager : public MMgt_TShared {
 };
 %feature("shadow") MFT_FontManager::~MFT_FontManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFT_FontManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFT_SequenceNodeOfListOfFontName;
@@ -461,8 +561,18 @@ class MFT_SequenceNodeOfListOfFontName : public TCollection_SeqNode {
 };
 %feature("shadow") MFT_SequenceNodeOfListOfFontName::~MFT_SequenceNodeOfListOfFontName %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFT_SequenceNodeOfListOfFontName {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFT_ListOfFontHandle;
@@ -516,8 +626,18 @@ class MFT_ListOfFontHandle : public TCollection_BaseSequence {
 };
 %feature("shadow") MFT_ListOfFontHandle::~MFT_ListOfFontHandle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFT_ListOfFontHandle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFT_ListOfFontName;
@@ -571,8 +691,18 @@ class MFT_ListOfFontName : public TCollection_BaseSequence {
 };
 %feature("shadow") MFT_ListOfFontName::~MFT_ListOfFontName %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFT_ListOfFontName {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFT_ListOfFontReference;
@@ -636,8 +766,18 @@ class MFT_ListOfFontReference : public TCollection_BaseSequence {
 };
 %feature("shadow") MFT_ListOfFontReference::~MFT_ListOfFontReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFT_ListOfFontReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFT_SequenceNodeOfListOfFontReference;
@@ -673,8 +813,18 @@ class MFT_SequenceNodeOfListOfFontReference : public TCollection_SeqNode {
 };
 %feature("shadow") MFT_SequenceNodeOfListOfFontReference::~MFT_SequenceNodeOfListOfFontReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFT_SequenceNodeOfListOfFontReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFT_SequenceNodeOfListOfFontHandle;
@@ -700,8 +850,18 @@ class MFT_SequenceNodeOfListOfFontHandle : public TCollection_SeqNode {
 };
 %feature("shadow") MFT_SequenceNodeOfListOfFontHandle::~MFT_SequenceNodeOfListOfFontHandle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFT_SequenceNodeOfListOfFontHandle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFT_TextManager;
@@ -745,8 +905,18 @@ class MFT_TextManager : public MMgt_TShared {
 };
 %feature("shadow") MFT_TextManager::~MFT_TextManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFT_TextManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFT_FontManagerDefinitionError;
@@ -778,5 +948,15 @@ class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
 };
 %feature("shadow") MFT_FontManagerDefinitionError::~MFT_FontManagerDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFT_FontManagerDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

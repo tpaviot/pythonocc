@@ -79,8 +79,18 @@ class Handle_Intrv_SequenceNodeOfSequenceOfInterval : public Handle_TCollection_
 };
 %feature("shadow") Handle_Intrv_SequenceNodeOfSequenceOfInterval::~Handle_Intrv_SequenceNodeOfSequenceOfInterval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Intrv_SequenceNodeOfSequenceOfInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Intrv_Intervals;
@@ -116,8 +126,18 @@ class Intrv_Intervals {
 };
 %feature("shadow") Intrv_Intervals::~Intrv_Intervals %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Intrv_Intervals {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Intrv_SequenceOfInterval;
@@ -171,8 +191,18 @@ class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
 };
 %feature("shadow") Intrv_SequenceOfInterval::~Intrv_SequenceOfInterval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Intrv_SequenceOfInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Intrv_SequenceNodeOfSequenceOfInterval;
@@ -198,8 +228,18 @@ class Intrv_SequenceNodeOfSequenceOfInterval : public TCollection_SeqNode {
 };
 %feature("shadow") Intrv_SequenceNodeOfSequenceOfInterval::~Intrv_SequenceNodeOfSequenceOfInterval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Intrv_SequenceNodeOfSequenceOfInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Intrv_Interval;
@@ -267,5 +307,15 @@ class Intrv_Interval {
 };
 %feature("shadow") Intrv_Interval::~Intrv_Interval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Intrv_Interval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

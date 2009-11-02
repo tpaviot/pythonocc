@@ -70,8 +70,18 @@ class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 };
 %feature("shadow") Handle_BinObjMgt_DataMapNodeOfRRelocationTable::~Handle_BinObjMgt_DataMapNodeOfRRelocationTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinObjMgt_DataMapNodeOfRRelocationTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress;
@@ -98,8 +108,18 @@ class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 };
 %feature("shadow") Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress::~Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinObjMgt_Persistent;
@@ -222,8 +242,18 @@ class BinObjMgt_Persistent {
 };
 %feature("shadow") BinObjMgt_Persistent::~BinObjMgt_Persistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinObjMgt_Persistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinObjMgt_DataMapNodeOfRRelocationTable;
@@ -261,8 +291,18 @@ class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 };
 %feature("shadow") BinObjMgt_DataMapNodeOfRRelocationTable::~BinObjMgt_DataMapNodeOfRRelocationTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinObjMgt_DataMapNodeOfRRelocationTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinObjMgt_RRelocationTable;
@@ -296,8 +336,18 @@ class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
 };
 %feature("shadow") BinObjMgt_RRelocationTable::~BinObjMgt_RRelocationTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinObjMgt_RRelocationTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinObjMgt_SequenceOfAddress;
@@ -351,8 +401,18 @@ class BinObjMgt_SequenceOfAddress : public TCollection_BaseSequence {
 };
 %feature("shadow") BinObjMgt_SequenceOfAddress::~BinObjMgt_SequenceOfAddress %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinObjMgt_SequenceOfAddress {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinObjMgt_DataMapIteratorOfRRelocationTable;
@@ -372,8 +432,18 @@ class BinObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapI
 };
 %feature("shadow") BinObjMgt_DataMapIteratorOfRRelocationTable::~BinObjMgt_DataMapIteratorOfRRelocationTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinObjMgt_DataMapIteratorOfRRelocationTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinObjMgt_SequenceNodeOfSequenceOfAddress;
@@ -399,5 +469,15 @@ class BinObjMgt_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 };
 %feature("shadow") BinObjMgt_SequenceNodeOfSequenceOfAddress::~BinObjMgt_SequenceNodeOfSequenceOfAddress %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinObjMgt_SequenceNodeOfSequenceOfAddress {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

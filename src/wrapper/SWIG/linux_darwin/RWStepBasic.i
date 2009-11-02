@@ -54,8 +54,18 @@ class RWStepBasic_RWActionAssignment {
 };
 %feature("shadow") RWStepBasic_RWActionAssignment::~RWStepBasic_RWActionAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWActionAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWMassMeasureWithUnit;
@@ -73,8 +83,18 @@ class RWStepBasic_RWMassMeasureWithUnit {
 };
 %feature("shadow") RWStepBasic_RWMassMeasureWithUnit::~RWStepBasic_RWMassMeasureWithUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWMassMeasureWithUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWIdentificationRole;
@@ -92,8 +112,18 @@ class RWStepBasic_RWIdentificationRole {
 };
 %feature("shadow") RWStepBasic_RWIdentificationRole::~RWStepBasic_RWIdentificationRole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWIdentificationRole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWPlaneAngleMeasureWithUnit;
@@ -111,8 +141,18 @@ class RWStepBasic_RWPlaneAngleMeasureWithUnit {
 };
 %feature("shadow") RWStepBasic_RWPlaneAngleMeasureWithUnit::~RWStepBasic_RWPlaneAngleMeasureWithUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWPlaneAngleMeasureWithUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndLengthUnit;
@@ -130,8 +170,18 @@ class RWStepBasic_RWConversionBasedUnitAndLengthUnit {
 };
 %feature("shadow") RWStepBasic_RWConversionBasedUnitAndLengthUnit::~RWStepBasic_RWConversionBasedUnitAndLengthUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWConversionBasedUnitAndLengthUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSecurityClassificationLevel;
@@ -147,8 +197,18 @@ class RWStepBasic_RWSecurityClassificationLevel {
 };
 %feature("shadow") RWStepBasic_RWSecurityClassificationLevel::~RWStepBasic_RWSecurityClassificationLevel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSecurityClassificationLevel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWCertificationType;
@@ -166,8 +226,18 @@ class RWStepBasic_RWCertificationType {
 };
 %feature("shadow") RWStepBasic_RWCertificationType::~RWStepBasic_RWCertificationType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWCertificationType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDerivedUnitElement;
@@ -185,8 +255,18 @@ class RWStepBasic_RWDerivedUnitElement {
 };
 %feature("shadow") RWStepBasic_RWDerivedUnitElement::~RWStepBasic_RWDerivedUnitElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDerivedUnitElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductDefinitionEffectivity;
@@ -204,8 +284,18 @@ class RWStepBasic_RWProductDefinitionEffectivity {
 };
 %feature("shadow") RWStepBasic_RWProductDefinitionEffectivity::~RWStepBasic_RWProductDefinitionEffectivity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductDefinitionEffectivity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSiUnit;
@@ -229,8 +319,18 @@ class RWStepBasic_RWSiUnit {
 };
 %feature("shadow") RWStepBasic_RWSiUnit::~RWStepBasic_RWSiUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSiUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductDefinitionContext;
@@ -248,8 +348,18 @@ class RWStepBasic_RWProductDefinitionContext {
 };
 %feature("shadow") RWStepBasic_RWProductDefinitionContext::~RWStepBasic_RWProductDefinitionContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductDefinitionContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWCertification;
@@ -267,8 +377,18 @@ class RWStepBasic_RWCertification {
 };
 %feature("shadow") RWStepBasic_RWCertification::~RWStepBasic_RWCertification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWCertification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDocumentType;
@@ -286,8 +406,18 @@ class RWStepBasic_RWDocumentType {
 };
 %feature("shadow") RWStepBasic_RWDocumentType::~RWStepBasic_RWDocumentType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDocumentType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductCategoryRelationship;
@@ -305,8 +435,18 @@ class RWStepBasic_RWProductCategoryRelationship {
 };
 %feature("shadow") RWStepBasic_RWProductCategoryRelationship::~RWStepBasic_RWProductCategoryRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductCategoryRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndTimeUnit;
@@ -324,8 +464,18 @@ class RWStepBasic_RWConversionBasedUnitAndTimeUnit {
 };
 %feature("shadow") RWStepBasic_RWConversionBasedUnitAndTimeUnit::~RWStepBasic_RWConversionBasedUnitAndTimeUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWConversionBasedUnitAndTimeUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWNameAssignment;
@@ -343,8 +493,18 @@ class RWStepBasic_RWNameAssignment {
 };
 %feature("shadow") RWStepBasic_RWNameAssignment::~RWStepBasic_RWNameAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWNameAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWLengthUnit;
@@ -362,8 +522,18 @@ class RWStepBasic_RWLengthUnit {
 };
 %feature("shadow") RWStepBasic_RWLengthUnit::~RWStepBasic_RWLengthUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWLengthUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductDefinition;
@@ -381,8 +551,18 @@ class RWStepBasic_RWProductDefinition {
 };
 %feature("shadow") RWStepBasic_RWProductDefinition::~RWStepBasic_RWProductDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWApprovalStatus;
@@ -398,8 +578,18 @@ class RWStepBasic_RWApprovalStatus {
 };
 %feature("shadow") RWStepBasic_RWApprovalStatus::~RWStepBasic_RWApprovalStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWApprovalStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSolidAngleMeasureWithUnit;
@@ -417,8 +607,18 @@ class RWStepBasic_RWSolidAngleMeasureWithUnit {
 };
 %feature("shadow") RWStepBasic_RWSolidAngleMeasureWithUnit::~RWStepBasic_RWSolidAngleMeasureWithUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSolidAngleMeasureWithUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDocumentRepresentationType;
@@ -436,8 +636,18 @@ class RWStepBasic_RWDocumentRepresentationType {
 };
 %feature("shadow") RWStepBasic_RWDocumentRepresentationType::~RWStepBasic_RWDocumentRepresentationType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDocumentRepresentationType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDimensionalExponents;
@@ -453,8 +663,18 @@ class RWStepBasic_RWDimensionalExponents {
 };
 %feature("shadow") RWStepBasic_RWDimensionalExponents::~RWStepBasic_RWDimensionalExponents %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDimensionalExponents {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWContract;
@@ -472,8 +692,18 @@ class RWStepBasic_RWContract {
 };
 %feature("shadow") RWStepBasic_RWContract::~RWStepBasic_RWContract %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWContract {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDocumentProductAssociation;
@@ -491,8 +721,18 @@ class RWStepBasic_RWDocumentProductAssociation {
 };
 %feature("shadow") RWStepBasic_RWDocumentProductAssociation::~RWStepBasic_RWDocumentProductAssociation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDocumentProductAssociation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWCalendarDate;
@@ -508,8 +748,18 @@ class RWStepBasic_RWCalendarDate {
 };
 %feature("shadow") RWStepBasic_RWCalendarDate::~RWStepBasic_RWCalendarDate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWCalendarDate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWVersionedActionRequest;
@@ -527,8 +777,18 @@ class RWStepBasic_RWVersionedActionRequest {
 };
 %feature("shadow") RWStepBasic_RWVersionedActionRequest::~RWStepBasic_RWVersionedActionRequest %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWVersionedActionRequest {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource;
@@ -546,8 +806,18 @@ class RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
 };
 %feature("shadow") RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource::~RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSolidAngleUnit;
@@ -565,8 +835,18 @@ class RWStepBasic_RWSolidAngleUnit {
 };
 %feature("shadow") RWStepBasic_RWSolidAngleUnit::~RWStepBasic_RWSolidAngleUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSolidAngleUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWContractAssignment;
@@ -584,8 +864,18 @@ class RWStepBasic_RWContractAssignment {
 };
 %feature("shadow") RWStepBasic_RWContractAssignment::~RWStepBasic_RWContractAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWContractAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit;
@@ -603,8 +893,18 @@ class RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit {
 };
 %feature("shadow") RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit::~RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndVolumeUnit;
@@ -622,8 +922,18 @@ class RWStepBasic_RWConversionBasedUnitAndVolumeUnit {
 };
 %feature("shadow") RWStepBasic_RWConversionBasedUnitAndVolumeUnit::~RWStepBasic_RWConversionBasedUnitAndVolumeUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWConversionBasedUnitAndVolumeUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWPersonAndOrganization;
@@ -641,8 +951,18 @@ class RWStepBasic_RWPersonAndOrganization {
 };
 %feature("shadow") RWStepBasic_RWPersonAndOrganization::~RWStepBasic_RWPersonAndOrganization %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWPersonAndOrganization {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWOrganizationRole;
@@ -658,8 +978,18 @@ class RWStepBasic_RWOrganizationRole {
 };
 %feature("shadow") RWStepBasic_RWOrganizationRole::~RWStepBasic_RWOrganizationRole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWOrganizationRole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWEffectivityAssignment;
@@ -677,8 +1007,18 @@ class RWStepBasic_RWEffectivityAssignment {
 };
 %feature("shadow") RWStepBasic_RWEffectivityAssignment::~RWStepBasic_RWEffectivityAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWEffectivityAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSiUnitAndRatioUnit;
@@ -694,8 +1034,18 @@ class RWStepBasic_RWSiUnitAndRatioUnit {
 };
 %feature("shadow") RWStepBasic_RWSiUnitAndRatioUnit::~RWStepBasic_RWSiUnitAndRatioUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSiUnitAndRatioUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndMassUnit;
@@ -713,8 +1063,18 @@ class RWStepBasic_RWConversionBasedUnitAndMassUnit {
 };
 %feature("shadow") RWStepBasic_RWConversionBasedUnitAndMassUnit::~RWStepBasic_RWConversionBasedUnitAndMassUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWConversionBasedUnitAndMassUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWActionMethod;
@@ -732,8 +1092,18 @@ class RWStepBasic_RWActionMethod {
 };
 %feature("shadow") RWStepBasic_RWActionMethod::~RWStepBasic_RWActionMethod %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWActionMethod {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWLocalTime;
@@ -751,8 +1121,18 @@ class RWStepBasic_RWLocalTime {
 };
 %feature("shadow") RWStepBasic_RWLocalTime::~RWStepBasic_RWLocalTime %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWLocalTime {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWActionRequestAssignment;
@@ -770,8 +1150,18 @@ class RWStepBasic_RWActionRequestAssignment {
 };
 %feature("shadow") RWStepBasic_RWActionRequestAssignment::~RWStepBasic_RWActionRequestAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWActionRequestAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnit;
@@ -789,8 +1179,18 @@ class RWStepBasic_RWConversionBasedUnit {
 };
 %feature("shadow") RWStepBasic_RWConversionBasedUnit::~RWStepBasic_RWConversionBasedUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWConversionBasedUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWObjectRole;
@@ -808,8 +1208,18 @@ class RWStepBasic_RWObjectRole {
 };
 %feature("shadow") RWStepBasic_RWObjectRole::~RWStepBasic_RWObjectRole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWObjectRole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWOrganizationalAddress;
@@ -827,8 +1237,18 @@ class RWStepBasic_RWOrganizationalAddress {
 };
 %feature("shadow") RWStepBasic_RWOrganizationalAddress::~RWStepBasic_RWOrganizationalAddress %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWOrganizationalAddress {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductDefinitionFormationRelationship;
@@ -846,8 +1266,18 @@ class RWStepBasic_RWProductDefinitionFormationRelationship {
 };
 %feature("shadow") RWStepBasic_RWProductDefinitionFormationRelationship::~RWStepBasic_RWProductDefinitionFormationRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductDefinitionFormationRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWIdentificationAssignment;
@@ -865,8 +1295,18 @@ class RWStepBasic_RWIdentificationAssignment {
 };
 %feature("shadow") RWStepBasic_RWIdentificationAssignment::~RWStepBasic_RWIdentificationAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWIdentificationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWWeekOfYearAndDayDate;
@@ -882,8 +1322,18 @@ class RWStepBasic_RWWeekOfYearAndDayDate {
 };
 %feature("shadow") RWStepBasic_RWWeekOfYearAndDayDate::~RWStepBasic_RWWeekOfYearAndDayDate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWWeekOfYearAndDayDate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWGroup;
@@ -901,8 +1351,18 @@ class RWStepBasic_RWGroup {
 };
 %feature("shadow") RWStepBasic_RWGroup::~RWStepBasic_RWGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDocumentRelationship;
@@ -920,8 +1380,18 @@ class RWStepBasic_RWDocumentRelationship {
 };
 %feature("shadow") RWStepBasic_RWDocumentRelationship::~RWStepBasic_RWDocumentRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDocumentRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit;
@@ -937,8 +1407,18 @@ class RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
 };
 %feature("shadow") RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit::~RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDateTimeRole;
@@ -954,8 +1434,18 @@ class RWStepBasic_RWDateTimeRole {
 };
 %feature("shadow") RWStepBasic_RWDateTimeRole::~RWStepBasic_RWDateTimeRole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDateTimeRole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWApplicationContext;
@@ -971,8 +1461,18 @@ class RWStepBasic_RWApplicationContext {
 };
 %feature("shadow") RWStepBasic_RWApplicationContext::~RWStepBasic_RWApplicationContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWApplicationContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSiUnitAndAreaUnit;
@@ -988,8 +1488,18 @@ class RWStepBasic_RWSiUnitAndAreaUnit {
 };
 %feature("shadow") RWStepBasic_RWSiUnitAndAreaUnit::~RWStepBasic_RWSiUnitAndAreaUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSiUnitAndAreaUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWPlaneAngleUnit;
@@ -1007,8 +1517,18 @@ class RWStepBasic_RWPlaneAngleUnit {
 };
 %feature("shadow") RWStepBasic_RWPlaneAngleUnit::~RWStepBasic_RWPlaneAngleUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWPlaneAngleUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSiUnitAndSolidAngleUnit;
@@ -1024,8 +1544,18 @@ class RWStepBasic_RWSiUnitAndSolidAngleUnit {
 };
 %feature("shadow") RWStepBasic_RWSiUnitAndSolidAngleUnit::~RWStepBasic_RWSiUnitAndSolidAngleUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSiUnitAndSolidAngleUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWAddress;
@@ -1041,8 +1571,18 @@ class RWStepBasic_RWAddress {
 };
 %feature("shadow") RWStepBasic_RWAddress::~RWStepBasic_RWAddress %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWAddress {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWExternallyDefinedItem;
@@ -1060,8 +1600,18 @@ class RWStepBasic_RWExternallyDefinedItem {
 };
 %feature("shadow") RWStepBasic_RWExternallyDefinedItem::~RWStepBasic_RWExternallyDefinedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWExternallyDefinedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSiUnitAndPlaneAngleUnit;
@@ -1077,8 +1627,18 @@ class RWStepBasic_RWSiUnitAndPlaneAngleUnit {
 };
 %feature("shadow") RWStepBasic_RWSiUnitAndPlaneAngleUnit::~RWStepBasic_RWSiUnitAndPlaneAngleUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSiUnitAndPlaneAngleUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductDefinitionRelationship;
@@ -1096,8 +1656,18 @@ class RWStepBasic_RWProductDefinitionRelationship {
 };
 %feature("shadow") RWStepBasic_RWProductDefinitionRelationship::~RWStepBasic_RWProductDefinitionRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductDefinitionRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWExternalIdentificationAssignment;
@@ -1115,8 +1685,18 @@ class RWStepBasic_RWExternalIdentificationAssignment {
 };
 %feature("shadow") RWStepBasic_RWExternalIdentificationAssignment::~RWStepBasic_RWExternalIdentificationAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWExternalIdentificationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDateAndTime;
@@ -1134,8 +1714,18 @@ class RWStepBasic_RWDateAndTime {
 };
 %feature("shadow") RWStepBasic_RWDateAndTime::~RWStepBasic_RWDateAndTime %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDateAndTime {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSiUnitAndLengthUnit;
@@ -1151,8 +1741,18 @@ class RWStepBasic_RWSiUnitAndLengthUnit {
 };
 %feature("shadow") RWStepBasic_RWSiUnitAndLengthUnit::~RWStepBasic_RWSiUnitAndLengthUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSiUnitAndLengthUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWNamedUnit;
@@ -1170,8 +1770,18 @@ class RWStepBasic_RWNamedUnit {
 };
 %feature("shadow") RWStepBasic_RWNamedUnit::~RWStepBasic_RWNamedUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWNamedUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit;
@@ -1189,8 +1799,18 @@ class RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
 };
 %feature("shadow") RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit::~RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductDefinitionWithAssociatedDocuments;
@@ -1208,8 +1828,18 @@ class RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
 };
 %feature("shadow") RWStepBasic_RWProductDefinitionWithAssociatedDocuments::~RWStepBasic_RWProductDefinitionWithAssociatedDocuments %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWApprovalPersonOrganization;
@@ -1227,8 +1857,18 @@ class RWStepBasic_RWApprovalPersonOrganization {
 };
 %feature("shadow") RWStepBasic_RWApprovalPersonOrganization::~RWStepBasic_RWApprovalPersonOrganization %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWApprovalPersonOrganization {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWApprovalRole;
@@ -1244,8 +1884,18 @@ class RWStepBasic_RWApprovalRole {
 };
 %feature("shadow") RWStepBasic_RWApprovalRole::~RWStepBasic_RWApprovalRole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWApprovalRole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDocumentProductEquivalence;
@@ -1263,8 +1913,18 @@ class RWStepBasic_RWDocumentProductEquivalence {
 };
 %feature("shadow") RWStepBasic_RWDocumentProductEquivalence::~RWStepBasic_RWDocumentProductEquivalence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDocumentProductEquivalence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWCharacterizedObject;
@@ -1282,8 +1942,18 @@ class RWStepBasic_RWCharacterizedObject {
 };
 %feature("shadow") RWStepBasic_RWCharacterizedObject::~RWStepBasic_RWCharacterizedObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWCharacterizedObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSiUnitAndMassUnit;
@@ -1299,8 +1969,18 @@ class RWStepBasic_RWSiUnitAndMassUnit {
 };
 %feature("shadow") RWStepBasic_RWSiUnitAndMassUnit::~RWStepBasic_RWSiUnitAndMassUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSiUnitAndMassUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWGroupRelationship;
@@ -1318,8 +1998,18 @@ class RWStepBasic_RWGroupRelationship {
 };
 %feature("shadow") RWStepBasic_RWGroupRelationship::~RWStepBasic_RWGroupRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWGroupRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductContext;
@@ -1337,8 +2027,18 @@ class RWStepBasic_RWProductContext {
 };
 %feature("shadow") RWStepBasic_RWProductContext::~RWStepBasic_RWProductContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWOrdinalDate;
@@ -1354,8 +2054,18 @@ class RWStepBasic_RWOrdinalDate {
 };
 %feature("shadow") RWStepBasic_RWOrdinalDate::~RWStepBasic_RWOrdinalDate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWOrdinalDate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWExternalSource;
@@ -1373,8 +2083,18 @@ class RWStepBasic_RWExternalSource {
 };
 %feature("shadow") RWStepBasic_RWExternalSource::~RWStepBasic_RWExternalSource %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWExternalSource {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWMechanicalContext;
@@ -1392,8 +2112,18 @@ class RWStepBasic_RWMechanicalContext {
 };
 %feature("shadow") RWStepBasic_RWMechanicalContext::~RWStepBasic_RWMechanicalContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWMechanicalContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDocumentFile;
@@ -1411,8 +2141,18 @@ class RWStepBasic_RWDocumentFile {
 };
 %feature("shadow") RWStepBasic_RWDocumentFile::~RWStepBasic_RWDocumentFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDocumentFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWCoordinatedUniversalTimeOffset;
@@ -1428,8 +2168,18 @@ class RWStepBasic_RWCoordinatedUniversalTimeOffset {
 };
 %feature("shadow") RWStepBasic_RWCoordinatedUniversalTimeOffset::~RWStepBasic_RWCoordinatedUniversalTimeOffset %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWCoordinatedUniversalTimeOffset {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProduct;
@@ -1447,8 +2197,18 @@ class RWStepBasic_RWProduct {
 };
 %feature("shadow") RWStepBasic_RWProduct::~RWStepBasic_RWProduct %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProduct {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWRoleAssociation;
@@ -1466,8 +2226,18 @@ class RWStepBasic_RWRoleAssociation {
 };
 %feature("shadow") RWStepBasic_RWRoleAssociation::~RWStepBasic_RWRoleAssociation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWRoleAssociation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWRatioMeasureWithUnit;
@@ -1485,8 +2255,18 @@ class RWStepBasic_RWRatioMeasureWithUnit {
 };
 %feature("shadow") RWStepBasic_RWRatioMeasureWithUnit::~RWStepBasic_RWRatioMeasureWithUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWRatioMeasureWithUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWGroupAssignment;
@@ -1504,8 +2284,18 @@ class RWStepBasic_RWGroupAssignment {
 };
 %feature("shadow") RWStepBasic_RWGroupAssignment::~RWStepBasic_RWGroupAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWGroupAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductDefinitionFormation;
@@ -1523,8 +2313,18 @@ class RWStepBasic_RWProductDefinitionFormation {
 };
 %feature("shadow") RWStepBasic_RWProductDefinitionFormation::~RWStepBasic_RWProductDefinitionFormation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductDefinitionFormation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSiUnitAndVolumeUnit;
@@ -1540,8 +2340,18 @@ class RWStepBasic_RWSiUnitAndVolumeUnit {
 };
 %feature("shadow") RWStepBasic_RWSiUnitAndVolumeUnit::~RWStepBasic_RWSiUnitAndVolumeUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSiUnitAndVolumeUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWThermodynamicTemperatureUnit;
@@ -1559,8 +2369,18 @@ class RWStepBasic_RWThermodynamicTemperatureUnit {
 };
 %feature("shadow") RWStepBasic_RWThermodynamicTemperatureUnit::~RWStepBasic_RWThermodynamicTemperatureUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWThermodynamicTemperatureUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWOrganization;
@@ -1576,8 +2396,18 @@ class RWStepBasic_RWOrganization {
 };
 %feature("shadow") RWStepBasic_RWOrganization::~RWStepBasic_RWOrganization %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWOrganization {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSecurityClassification;
@@ -1595,8 +2425,18 @@ class RWStepBasic_RWSecurityClassification {
 };
 %feature("shadow") RWStepBasic_RWSecurityClassification::~RWStepBasic_RWSecurityClassification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSecurityClassification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductConceptContext;
@@ -1614,8 +2454,18 @@ class RWStepBasic_RWProductConceptContext {
 };
 %feature("shadow") RWStepBasic_RWProductConceptContext::~RWStepBasic_RWProductConceptContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductConceptContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWUncertaintyMeasureWithUnit;
@@ -1633,8 +2483,18 @@ class RWStepBasic_RWUncertaintyMeasureWithUnit {
 };
 %feature("shadow") RWStepBasic_RWUncertaintyMeasureWithUnit::~RWStepBasic_RWUncertaintyMeasureWithUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWUncertaintyMeasureWithUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWMeasureWithUnit;
@@ -1652,8 +2512,18 @@ class RWStepBasic_RWMeasureWithUnit {
 };
 %feature("shadow") RWStepBasic_RWMeasureWithUnit::~RWStepBasic_RWMeasureWithUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWMeasureWithUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndAreaUnit;
@@ -1671,8 +2541,18 @@ class RWStepBasic_RWConversionBasedUnitAndAreaUnit {
 };
 %feature("shadow") RWStepBasic_RWConversionBasedUnitAndAreaUnit::~RWStepBasic_RWConversionBasedUnitAndAreaUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWConversionBasedUnitAndAreaUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWEffectivity;
@@ -1690,8 +2570,18 @@ class RWStepBasic_RWEffectivity {
 };
 %feature("shadow") RWStepBasic_RWEffectivity::~RWStepBasic_RWEffectivity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWEffectivity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWAction;
@@ -1709,8 +2599,18 @@ class RWStepBasic_RWAction {
 };
 %feature("shadow") RWStepBasic_RWAction::~RWStepBasic_RWAction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWAction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWPersonAndOrganizationRole;
@@ -1726,8 +2626,18 @@ class RWStepBasic_RWPersonAndOrganizationRole {
 };
 %feature("shadow") RWStepBasic_RWPersonAndOrganizationRole::~RWStepBasic_RWPersonAndOrganizationRole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWPersonAndOrganizationRole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDocument;
@@ -1745,8 +2655,18 @@ class RWStepBasic_RWDocument {
 };
 %feature("shadow") RWStepBasic_RWDocument::~RWStepBasic_RWDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductType;
@@ -1764,8 +2684,18 @@ class RWStepBasic_RWProductType {
 };
 %feature("shadow") RWStepBasic_RWProductType::~RWStepBasic_RWProductType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWPerson;
@@ -1781,8 +2711,18 @@ class RWStepBasic_RWPerson {
 };
 %feature("shadow") RWStepBasic_RWPerson::~RWStepBasic_RWPerson %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWPerson {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWApplicationProtocolDefinition;
@@ -1800,8 +2740,18 @@ class RWStepBasic_RWApplicationProtocolDefinition {
 };
 %feature("shadow") RWStepBasic_RWApplicationProtocolDefinition::~RWStepBasic_RWApplicationProtocolDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWApplicationProtocolDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWContractType;
@@ -1819,8 +2769,18 @@ class RWStepBasic_RWContractType {
 };
 %feature("shadow") RWStepBasic_RWContractType::~RWStepBasic_RWContractType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWContractType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDate;
@@ -1836,8 +2796,18 @@ class RWStepBasic_RWDate {
 };
 %feature("shadow") RWStepBasic_RWDate::~RWStepBasic_RWDate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWCertificationAssignment;
@@ -1855,8 +2825,18 @@ class RWStepBasic_RWCertificationAssignment {
 };
 %feature("shadow") RWStepBasic_RWCertificationAssignment::~RWStepBasic_RWCertificationAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWCertificationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWApprovalRelationship;
@@ -1874,8 +2854,18 @@ class RWStepBasic_RWApprovalRelationship {
 };
 %feature("shadow") RWStepBasic_RWApprovalRelationship::~RWStepBasic_RWApprovalRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWApprovalRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWApproval;
@@ -1893,8 +2883,18 @@ class RWStepBasic_RWApproval {
 };
 %feature("shadow") RWStepBasic_RWApproval::~RWStepBasic_RWApproval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWApproval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWApprovalDateTime;
@@ -1912,8 +2912,18 @@ class RWStepBasic_RWApprovalDateTime {
 };
 %feature("shadow") RWStepBasic_RWApprovalDateTime::~RWStepBasic_RWApprovalDateTime %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWApprovalDateTime {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWPersonalAddress;
@@ -1931,8 +2941,18 @@ class RWStepBasic_RWPersonalAddress {
 };
 %feature("shadow") RWStepBasic_RWPersonalAddress::~RWStepBasic_RWPersonalAddress %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWPersonalAddress {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductRelatedProductCategory;
@@ -1950,8 +2970,18 @@ class RWStepBasic_RWProductRelatedProductCategory {
 };
 %feature("shadow") RWStepBasic_RWProductRelatedProductCategory::~RWStepBasic_RWProductRelatedProductCategory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductRelatedProductCategory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWLengthMeasureWithUnit;
@@ -1969,8 +2999,18 @@ class RWStepBasic_RWLengthMeasureWithUnit {
 };
 %feature("shadow") RWStepBasic_RWLengthMeasureWithUnit::~RWStepBasic_RWLengthMeasureWithUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWLengthMeasureWithUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWEulerAngles;
@@ -1988,8 +3028,18 @@ class RWStepBasic_RWEulerAngles {
 };
 %feature("shadow") RWStepBasic_RWEulerAngles::~RWStepBasic_RWEulerAngles %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWEulerAngles {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDateRole;
@@ -2005,8 +3055,18 @@ class RWStepBasic_RWDateRole {
 };
 %feature("shadow") RWStepBasic_RWDateRole::~RWStepBasic_RWDateRole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDateRole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndRatioUnit;
@@ -2024,8 +3084,18 @@ class RWStepBasic_RWConversionBasedUnitAndRatioUnit {
 };
 %feature("shadow") RWStepBasic_RWConversionBasedUnitAndRatioUnit::~RWStepBasic_RWConversionBasedUnitAndRatioUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWConversionBasedUnitAndRatioUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDerivedUnit;
@@ -2043,8 +3113,18 @@ class RWStepBasic_RWDerivedUnit {
 };
 %feature("shadow") RWStepBasic_RWDerivedUnit::~RWStepBasic_RWDerivedUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDerivedUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWMassUnit;
@@ -2062,8 +3142,18 @@ class RWStepBasic_RWMassUnit {
 };
 %feature("shadow") RWStepBasic_RWMassUnit::~RWStepBasic_RWMassUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWMassUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWGeneralProperty;
@@ -2081,8 +3171,18 @@ class RWStepBasic_RWGeneralProperty {
 };
 %feature("shadow") RWStepBasic_RWGeneralProperty::~RWStepBasic_RWGeneralProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWGeneralProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWApplicationContextElement;
@@ -2100,8 +3200,18 @@ class RWStepBasic_RWApplicationContextElement {
 };
 %feature("shadow") RWStepBasic_RWApplicationContextElement::~RWStepBasic_RWApplicationContextElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWApplicationContextElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWSiUnitAndTimeUnit;
@@ -2117,8 +3227,18 @@ class RWStepBasic_RWSiUnitAndTimeUnit {
 };
 %feature("shadow") RWStepBasic_RWSiUnitAndTimeUnit::~RWStepBasic_RWSiUnitAndTimeUnit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWSiUnitAndTimeUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWDocumentUsageConstraint;
@@ -2136,8 +3256,18 @@ class RWStepBasic_RWDocumentUsageConstraint {
 };
 %feature("shadow") RWStepBasic_RWDocumentUsageConstraint::~RWStepBasic_RWDocumentUsageConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWDocumentUsageConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWProductCategory;
@@ -2153,8 +3283,18 @@ class RWStepBasic_RWProductCategory {
 };
 %feature("shadow") RWStepBasic_RWProductCategory::~RWStepBasic_RWProductCategory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWProductCategory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepBasic_RWActionRequestSolution;
@@ -2172,5 +3312,15 @@ class RWStepBasic_RWActionRequestSolution {
 };
 %feature("shadow") RWStepBasic_RWActionRequestSolution::~RWStepBasic_RWActionRequestSolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepBasic_RWActionRequestSolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

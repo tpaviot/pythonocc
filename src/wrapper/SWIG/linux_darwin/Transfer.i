@@ -84,8 +84,18 @@ class Handle_Transfer_ProcessForFinder : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Transfer_ProcessForFinder::~Handle_Transfer_ProcessForFinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_ProcessForFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_FinderProcess;
@@ -112,8 +122,18 @@ class Handle_Transfer_FinderProcess : public Handle_Transfer_ProcessForFinder {
 };
 %feature("shadow") Handle_Transfer_FinderProcess::~Handle_Transfer_FinderProcess %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_FinderProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_HSequenceOfFinder;
@@ -140,8 +160,18 @@ class Handle_Transfer_HSequenceOfFinder : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Transfer_HSequenceOfFinder::~Handle_Transfer_HSequenceOfFinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_HSequenceOfFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_Finder;
@@ -168,8 +198,18 @@ class Handle_Transfer_Finder : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Transfer_Finder::~Handle_Transfer_Finder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_Finder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_ActorOfProcessForTransient;
@@ -196,8 +236,18 @@ class Handle_Transfer_ActorOfProcessForTransient : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Transfer_ActorOfProcessForTransient::~Handle_Transfer_ActorOfProcessForTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_ActorOfProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_DispatchControl;
@@ -224,8 +274,18 @@ class Handle_Transfer_DispatchControl : public Handle_Interface_CopyControl {
 };
 %feature("shadow") Handle_Transfer_DispatchControl::~Handle_Transfer_DispatchControl %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_DispatchControl {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder;
@@ -252,8 +312,18 @@ class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public
 };
 %feature("shadow") Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder::~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_ActorOfProcessForFinder;
@@ -280,8 +350,18 @@ class Handle_Transfer_ActorOfProcessForFinder : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Transfer_ActorOfProcessForFinder::~Handle_Transfer_ActorOfProcessForFinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_ActorOfProcessForFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_TransientMapper;
@@ -308,8 +388,18 @@ class Handle_Transfer_TransientMapper : public Handle_Transfer_Finder {
 };
 %feature("shadow") Handle_Transfer_TransientMapper::~Handle_Transfer_TransientMapper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_TransientMapper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient;
@@ -336,8 +426,18 @@ class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : pub
 };
 %feature("shadow") Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient::~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_Binder;
@@ -364,8 +464,18 @@ class Handle_Transfer_Binder : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Transfer_Binder::~Handle_Transfer_Binder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_Binder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_SimpleBinderOfTransient;
@@ -392,8 +502,18 @@ class Handle_Transfer_SimpleBinderOfTransient : public Handle_Transfer_Binder {
 };
 %feature("shadow") Handle_Transfer_SimpleBinderOfTransient::~Handle_Transfer_SimpleBinderOfTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_SimpleBinderOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_ProcessForTransient;
@@ -420,8 +540,18 @@ class Handle_Transfer_ProcessForTransient : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Transfer_ProcessForTransient::~Handle_Transfer_ProcessForTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_ProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_TransientProcess;
@@ -448,8 +578,18 @@ class Handle_Transfer_TransientProcess : public Handle_Transfer_ProcessForTransi
 };
 %feature("shadow") Handle_Transfer_TransientProcess::~Handle_Transfer_TransientProcess %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_TransientProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_TransferFailure;
@@ -476,8 +616,18 @@ class Handle_Transfer_TransferFailure : public Handle_Interface_InterfaceError {
 };
 %feature("shadow") Handle_Transfer_TransferFailure::~Handle_Transfer_TransferFailure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_TransferFailure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfBinder;
@@ -504,8 +654,18 @@ class Handle_Transfer_SequenceNodeOfSequenceOfBinder : public Handle_TCollection
 };
 %feature("shadow") Handle_Transfer_SequenceNodeOfSequenceOfBinder::~Handle_Transfer_SequenceNodeOfSequenceOfBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_SequenceNodeOfSequenceOfBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfFinder;
@@ -532,8 +692,18 @@ class Handle_Transfer_SequenceNodeOfSequenceOfFinder : public Handle_TCollection
 };
 %feature("shadow") Handle_Transfer_SequenceNodeOfSequenceOfFinder::~Handle_Transfer_SequenceNodeOfSequenceOfFinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_SequenceNodeOfSequenceOfFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_ActorOfTransientProcess;
@@ -560,8 +730,18 @@ class Handle_Transfer_ActorOfTransientProcess : public Handle_Transfer_ActorOfPr
 };
 %feature("shadow") Handle_Transfer_ActorOfTransientProcess::~Handle_Transfer_ActorOfTransientProcess %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_ActorOfTransientProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_BinderOfTransientInteger;
@@ -588,8 +768,18 @@ class Handle_Transfer_BinderOfTransientInteger : public Handle_Transfer_SimpleBi
 };
 %feature("shadow") Handle_Transfer_BinderOfTransientInteger::~Handle_Transfer_BinderOfTransientInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_BinderOfTransientInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient;
@@ -616,8 +806,18 @@ class Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient : public Handle_T
 };
 %feature("shadow") Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient::~Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_ActorOfFinderProcess;
@@ -644,8 +844,18 @@ class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProce
 };
 %feature("shadow") Handle_Transfer_ActorOfFinderProcess::~Handle_Transfer_ActorOfFinderProcess %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_ActorOfFinderProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_ActorDispatch;
@@ -672,8 +882,18 @@ class Handle_Transfer_ActorDispatch : public Handle_Transfer_ActorOfTransientPro
 };
 %feature("shadow") Handle_Transfer_ActorDispatch::~Handle_Transfer_ActorDispatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_ActorDispatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_HSequenceOfBinder;
@@ -700,8 +920,18 @@ class Handle_Transfer_HSequenceOfBinder : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Transfer_HSequenceOfBinder::~Handle_Transfer_HSequenceOfBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_HSequenceOfBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_MultipleBinder;
@@ -728,8 +958,18 @@ class Handle_Transfer_MultipleBinder : public Handle_Transfer_Binder {
 };
 %feature("shadow") Handle_Transfer_MultipleBinder::~Handle_Transfer_MultipleBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_MultipleBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_MapContainer;
@@ -756,8 +996,18 @@ class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Transfer_MapContainer::~Handle_Transfer_MapContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_MapContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_VoidBinder;
@@ -784,8 +1034,18 @@ class Handle_Transfer_VoidBinder : public Handle_Transfer_Binder {
 };
 %feature("shadow") Handle_Transfer_VoidBinder::~Handle_Transfer_VoidBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_VoidBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_ResultFromTransient;
@@ -812,8 +1072,18 @@ class Handle_Transfer_ResultFromTransient : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Transfer_ResultFromTransient::~Handle_Transfer_ResultFromTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_ResultFromTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_ResultFromModel;
@@ -840,8 +1110,18 @@ class Handle_Transfer_ResultFromModel : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Transfer_ResultFromModel::~Handle_Transfer_ResultFromModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_ResultFromModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_TransientListBinder;
@@ -868,8 +1148,18 @@ class Handle_Transfer_TransientListBinder : public Handle_Transfer_Binder {
 };
 %feature("shadow") Handle_Transfer_TransientListBinder::~Handle_Transfer_TransientListBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_TransientListBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Transfer_TransferDeadLoop;
@@ -896,8 +1186,18 @@ class Handle_Transfer_TransferDeadLoop : public Handle_Transfer_TransferFailure 
 };
 %feature("shadow") Handle_Transfer_TransferDeadLoop::~Handle_Transfer_TransferDeadLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Transfer_TransferDeadLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_TransferMapOfProcessForTransient;
@@ -941,8 +1241,18 @@ class Transfer_TransferMapOfProcessForTransient : public TCollection_BasicMap {
 };
 %feature("shadow") Transfer_TransferMapOfProcessForTransient::~Transfer_TransferMapOfProcessForTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_TransferMapOfProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_TransferInput;
@@ -964,8 +1274,18 @@ class Transfer_TransferInput {
 };
 %feature("shadow") Transfer_TransferInput::~Transfer_TransferInput %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_TransferInput {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_DispatchControl;
@@ -999,8 +1319,18 @@ class Transfer_DispatchControl : public Interface_CopyControl {
 };
 %feature("shadow") Transfer_DispatchControl::~Transfer_DispatchControl %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_DispatchControl {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_ResultFromTransient;
@@ -1056,8 +1386,18 @@ class Transfer_ResultFromTransient : public MMgt_TShared {
 };
 %feature("shadow") Transfer_ResultFromTransient::~Transfer_ResultFromTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_ResultFromTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_ProcessForFinder;
@@ -1209,8 +1549,18 @@ class Transfer_ProcessForFinder : public MMgt_TShared {
 };
 %feature("shadow") Transfer_ProcessForFinder::~Transfer_ProcessForFinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_ProcessForFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_FinderProcess;
@@ -1242,8 +1592,18 @@ class Transfer_FinderProcess : public Transfer_ProcessForFinder {
 };
 %feature("shadow") Transfer_FinderProcess::~Transfer_FinderProcess %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_FinderProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_Binder;
@@ -1295,8 +1655,18 @@ class Transfer_Binder : public MMgt_TShared {
 };
 %feature("shadow") Transfer_Binder::~Transfer_Binder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_Binder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_SimpleBinderOfTransient;
@@ -1330,8 +1700,18 @@ class Transfer_SimpleBinderOfTransient : public Transfer_Binder {
 };
 %feature("shadow") Transfer_SimpleBinderOfTransient::~Transfer_SimpleBinderOfTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_SimpleBinderOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_TransferIterator;
@@ -1381,8 +1761,18 @@ class Transfer_TransferIterator {
 };
 %feature("shadow") Transfer_TransferIterator::~Transfer_TransferIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_TransferIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_ActorOfProcessForFinder;
@@ -1422,8 +1812,18 @@ class Transfer_ActorOfProcessForFinder : public MMgt_TShared {
 };
 %feature("shadow") Transfer_ActorOfProcessForFinder::~Transfer_ActorOfProcessForFinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_ActorOfProcessForFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_ActorOfProcessForTransient;
@@ -1463,8 +1863,18 @@ class Transfer_ActorOfProcessForTransient : public MMgt_TShared {
 };
 %feature("shadow") Transfer_ActorOfProcessForTransient::~Transfer_ActorOfProcessForTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_ActorOfProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_HSequenceOfFinder;
@@ -1532,8 +1942,18 @@ class Transfer_HSequenceOfFinder : public MMgt_TShared {
 };
 %feature("shadow") Transfer_HSequenceOfFinder::~Transfer_HSequenceOfFinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_HSequenceOfFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_Finder;
@@ -1595,8 +2015,18 @@ class Transfer_Finder : public MMgt_TShared {
 };
 %feature("shadow") Transfer_Finder::~Transfer_Finder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_Finder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_SequenceOfFinder;
@@ -1650,8 +2080,18 @@ class Transfer_SequenceOfFinder : public TCollection_BaseSequence {
 };
 %feature("shadow") Transfer_SequenceOfFinder::~Transfer_SequenceOfFinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_SequenceOfFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_SequenceNodeOfSequenceOfFinder;
@@ -1677,8 +2117,18 @@ class Transfer_SequenceNodeOfSequenceOfFinder : public TCollection_SeqNode {
 };
 %feature("shadow") Transfer_SequenceNodeOfSequenceOfFinder::~Transfer_SequenceNodeOfSequenceOfFinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_SequenceNodeOfSequenceOfFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_FindHasher;
@@ -1694,8 +2144,18 @@ class Transfer_FindHasher {
 };
 %feature("shadow") Transfer_FindHasher::~Transfer_FindHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_FindHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_ResultFromModel;
@@ -1757,8 +2217,18 @@ class Transfer_ResultFromModel : public MMgt_TShared {
 };
 %feature("shadow") Transfer_ResultFromModel::~Transfer_ResultFromModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_ResultFromModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_ActorOfTransientProcess;
@@ -1788,8 +2258,18 @@ class Transfer_ActorOfTransientProcess : public Transfer_ActorOfProcessForTransi
 };
 %feature("shadow") Transfer_ActorOfTransientProcess::~Transfer_ActorOfTransientProcess %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_ActorOfTransientProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_ActorDispatch;
@@ -1819,8 +2299,18 @@ class Transfer_ActorDispatch : public Transfer_ActorOfTransientProcess {
 };
 %feature("shadow") Transfer_ActorDispatch::~Transfer_ActorDispatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_ActorDispatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_ProcessForTransient;
@@ -1972,8 +2462,18 @@ class Transfer_ProcessForTransient : public MMgt_TShared {
 };
 %feature("shadow") Transfer_ProcessForTransient::~Transfer_ProcessForTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_ProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_DataMapOfTransientTransient;
@@ -2007,8 +2507,18 @@ class Transfer_DataMapOfTransientTransient : public TCollection_BasicMap {
 };
 %feature("shadow") Transfer_DataMapOfTransientTransient::~Transfer_DataMapOfTransientTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_DataMapOfTransientTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_TransferFailure;
@@ -2040,8 +2550,18 @@ class Transfer_TransferFailure : public Interface_InterfaceError {
 };
 %feature("shadow") Transfer_TransferFailure::~Transfer_TransferFailure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_TransferFailure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_TransferDeadLoop;
@@ -2067,8 +2587,18 @@ class Transfer_TransferDeadLoop : public Transfer_TransferFailure {
 };
 %feature("shadow") Transfer_TransferDeadLoop::~Transfer_TransferDeadLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_TransferDeadLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder;
@@ -2110,8 +2640,18 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public TColle
 };
 %feature("shadow") Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder::~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_TransientProcess;
@@ -2167,8 +2707,18 @@ class Transfer_TransientProcess : public Transfer_ProcessForTransient {
 };
 %feature("shadow") Transfer_TransientProcess::~Transfer_TransientProcess %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_TransientProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_TransientMapper;
@@ -2200,8 +2750,18 @@ class Transfer_TransientMapper : public Transfer_Finder {
 };
 %feature("shadow") Transfer_TransientMapper::~Transfer_TransientMapper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_TransientMapper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_IteratorOfProcessForFinder;
@@ -2223,8 +2783,18 @@ class Transfer_IteratorOfProcessForFinder : public Transfer_TransferIterator {
 };
 %feature("shadow") Transfer_IteratorOfProcessForFinder::~Transfer_IteratorOfProcessForFinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_IteratorOfProcessForFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_TransferDispatch;
@@ -2244,8 +2814,18 @@ class Transfer_TransferDispatch : public Interface_CopyTool {
 };
 %feature("shadow") Transfer_TransferDispatch::~Transfer_TransferDispatch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_TransferDispatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_MapContainer;
@@ -2273,8 +2853,18 @@ class Transfer_MapContainer : public MMgt_TShared {
 };
 %feature("shadow") Transfer_MapContainer::~Transfer_MapContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_MapContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_ActorOfFinderProcess;
@@ -2316,8 +2906,18 @@ class Transfer_ActorOfFinderProcess : public Transfer_ActorOfProcessForFinder {
 };
 %feature("shadow") Transfer_ActorOfFinderProcess::~Transfer_ActorOfFinderProcess %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_ActorOfFinderProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_DataMapNodeOfDataMapOfTransientTransient;
@@ -2345,8 +2945,18 @@ class Transfer_DataMapNodeOfDataMapOfTransientTransient : public TCollection_Map
 };
 %feature("shadow") Transfer_DataMapNodeOfDataMapOfTransientTransient::~Transfer_DataMapNodeOfDataMapOfTransientTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_DataMapNodeOfDataMapOfTransientTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_VoidBinder;
@@ -2374,8 +2984,18 @@ class Transfer_VoidBinder : public Transfer_Binder {
 };
 %feature("shadow") Transfer_VoidBinder::~Transfer_VoidBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_VoidBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_SequenceOfBinder;
@@ -2429,8 +3049,18 @@ class Transfer_SequenceOfBinder : public TCollection_BaseSequence {
 };
 %feature("shadow") Transfer_SequenceOfBinder::~Transfer_SequenceOfBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_SequenceOfBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_MultipleBinder;
@@ -2470,8 +3100,18 @@ class Transfer_MultipleBinder : public Transfer_Binder {
 };
 %feature("shadow") Transfer_MultipleBinder::~Transfer_MultipleBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_MultipleBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_TransferOutput;
@@ -2501,8 +3141,18 @@ class Transfer_TransferOutput {
 };
 %feature("shadow") Transfer_TransferOutput::~Transfer_TransferOutput %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_TransferOutput {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_TransferMapOfProcessForFinder;
@@ -2546,8 +3196,18 @@ class Transfer_TransferMapOfProcessForFinder : public TCollection_BasicMap {
 };
 %feature("shadow") Transfer_TransferMapOfProcessForFinder::~Transfer_TransferMapOfProcessForFinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_TransferMapOfProcessForFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_TransientListBinder;
@@ -2589,8 +3249,18 @@ class Transfer_TransientListBinder : public Transfer_Binder {
 };
 %feature("shadow") Transfer_TransientListBinder::~Transfer_TransientListBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_TransientListBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_SequenceNodeOfSequenceOfBinder;
@@ -2616,8 +3286,18 @@ class Transfer_SequenceNodeOfSequenceOfBinder : public TCollection_SeqNode {
 };
 %feature("shadow") Transfer_SequenceNodeOfSequenceOfBinder::~Transfer_SequenceNodeOfSequenceOfBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_SequenceNodeOfSequenceOfBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_BinderOfTransientInteger;
@@ -2645,8 +3325,18 @@ class Transfer_BinderOfTransientInteger : public Transfer_SimpleBinderOfTransien
 };
 %feature("shadow") Transfer_BinderOfTransientInteger::~Transfer_BinderOfTransientInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_BinderOfTransientInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_HSequenceOfBinder;
@@ -2714,8 +3404,18 @@ class Transfer_HSequenceOfBinder : public MMgt_TShared {
 };
 %feature("shadow") Transfer_HSequenceOfBinder::~Transfer_HSequenceOfBinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_HSequenceOfBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_DataInfo;
@@ -2731,8 +3431,18 @@ class Transfer_DataInfo {
 };
 %feature("shadow") Transfer_DataInfo::~Transfer_DataInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_DataInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient;
@@ -2774,8 +3484,18 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public TCo
 };
 %feature("shadow") Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient::~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_DataMapIteratorOfDataMapOfTransientTransient;
@@ -2795,8 +3515,18 @@ class Transfer_DataMapIteratorOfDataMapOfTransientTransient : public TCollection
 };
 %feature("shadow") Transfer_DataMapIteratorOfDataMapOfTransientTransient::~Transfer_DataMapIteratorOfDataMapOfTransientTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_DataMapIteratorOfDataMapOfTransientTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Transfer_IteratorOfProcessForTransient;
@@ -2818,5 +3548,15 @@ class Transfer_IteratorOfProcessForTransient : public Transfer_TransferIterator 
 };
 %feature("shadow") Transfer_IteratorOfProcessForTransient::~Transfer_IteratorOfProcessForTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Transfer_IteratorOfProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

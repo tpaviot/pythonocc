@@ -63,8 +63,18 @@ class Handle_StdLDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentS
 };
 %feature("shadow") Handle_StdLDrivers_DocumentStorageDriver::~Handle_StdLDrivers_DocumentStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StdLDrivers_DocumentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StdLDrivers_DocumentRetrievalDriver;
@@ -91,8 +101,18 @@ class Handle_StdLDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Documen
 };
 %feature("shadow") Handle_StdLDrivers_DocumentRetrievalDriver::~Handle_StdLDrivers_DocumentRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StdLDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StdLDrivers;
@@ -106,8 +126,18 @@ class StdLDrivers {
 };
 %feature("shadow") StdLDrivers::~StdLDrivers %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StdLDrivers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StdLDrivers_DocumentStorageDriver;
@@ -135,8 +165,18 @@ class StdLDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 };
 %feature("shadow") StdLDrivers_DocumentStorageDriver::~StdLDrivers_DocumentStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StdLDrivers_DocumentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StdLDrivers_DocumentRetrievalDriver;
@@ -162,5 +202,15 @@ class StdLDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriv
 };
 %feature("shadow") StdLDrivers_DocumentRetrievalDriver::~StdLDrivers_DocumentRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StdLDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

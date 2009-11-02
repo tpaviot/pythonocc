@@ -100,8 +100,18 @@ class LocalAnalysis_SurfaceContinuity {
 };
 %feature("shadow") LocalAnalysis_SurfaceContinuity::~LocalAnalysis_SurfaceContinuity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocalAnalysis_SurfaceContinuity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocalAnalysis;
@@ -117,8 +127,18 @@ class LocalAnalysis {
 };
 %feature("shadow") LocalAnalysis::~LocalAnalysis %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocalAnalysis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor LocalAnalysis_CurveContinuity;
@@ -162,5 +182,15 @@ class LocalAnalysis_CurveContinuity {
 };
 %feature("shadow") LocalAnalysis_CurveContinuity::~LocalAnalysis_CurveContinuity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend LocalAnalysis_CurveContinuity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

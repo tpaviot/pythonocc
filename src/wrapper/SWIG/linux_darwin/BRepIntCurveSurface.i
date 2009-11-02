@@ -72,5 +72,15 @@ class BRepIntCurveSurface_Inter {
 };
 %feature("shadow") BRepIntCurveSurface_Inter::~BRepIntCurveSurface_Inter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepIntCurveSurface_Inter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

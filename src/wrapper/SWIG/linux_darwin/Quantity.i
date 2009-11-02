@@ -738,8 +738,18 @@ class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError 
 };
 %feature("shadow") Handle_Quantity_ColorDefinitionError::~Handle_Quantity_ColorDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Quantity_ColorDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Quantity_PeriodDefinitionError;
@@ -766,8 +776,18 @@ class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError
 };
 %feature("shadow") Handle_Quantity_PeriodDefinitionError::~Handle_Quantity_PeriodDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Quantity_PeriodDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Quantity_HArray1OfColor;
@@ -794,8 +814,18 @@ class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Quantity_HArray1OfColor::~Handle_Quantity_HArray1OfColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Quantity_HArray1OfColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Quantity_DateDefinitionError;
@@ -822,8 +852,18 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Quantity_DateDefinitionError::~Handle_Quantity_DateDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Quantity_DateDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Quantity_Array2OfColor;
@@ -867,8 +907,18 @@ class Quantity_Array2OfColor {
 };
 %feature("shadow") Quantity_Array2OfColor::~Quantity_Array2OfColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Quantity_Array2OfColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Quantity_Array1OfCoefficient;
@@ -908,8 +958,18 @@ class Quantity_Array1OfCoefficient {
 };
 %feature("shadow") Quantity_Array1OfCoefficient::~Quantity_Array1OfCoefficient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Quantity_Array1OfCoefficient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Quantity_Period;
@@ -965,8 +1025,18 @@ class Quantity_Period {
 };
 %feature("shadow") Quantity_Period::~Quantity_Period %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Quantity_Period {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Quantity_ColorDefinitionError;
@@ -998,8 +1068,18 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 };
 %feature("shadow") Quantity_ColorDefinitionError::~Quantity_ColorDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Quantity_ColorDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Quantity_PeriodDefinitionError;
@@ -1031,8 +1111,18 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 };
 %feature("shadow") Quantity_PeriodDefinitionError::~Quantity_PeriodDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Quantity_PeriodDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Quantity_Array1OfColor;
@@ -1072,8 +1162,18 @@ class Quantity_Array1OfColor {
 };
 %feature("shadow") Quantity_Array1OfColor::~Quantity_Array1OfColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Quantity_Array1OfColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Quantity_Color;
@@ -1157,8 +1257,18 @@ class Quantity_Color {
 };
 %feature("shadow") Quantity_Color::~Quantity_Color %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Quantity_Color {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Quantity_HArray1OfColor;
@@ -1202,8 +1312,18 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 };
 %feature("shadow") Quantity_HArray1OfColor::~Quantity_HArray1OfColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Quantity_HArray1OfColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Quantity_Date;
@@ -1271,8 +1391,18 @@ class Quantity_Date {
 };
 %feature("shadow") Quantity_Date::~Quantity_Date %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Quantity_Date {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Quantity_DateDefinitionError;
@@ -1304,8 +1434,18 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 };
 %feature("shadow") Quantity_DateDefinitionError::~Quantity_DateDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Quantity_DateDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Quantity_Convert;
@@ -1325,5 +1465,15 @@ class Quantity_Convert {
 };
 %feature("shadow") Quantity_Convert::~Quantity_Convert %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Quantity_Convert {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_StdFail_UndefinedValue : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_StdFail_UndefinedValue::~Handle_StdFail_UndefinedValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StdFail_UndefinedValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StdFail_NotDone;
@@ -91,8 +101,18 @@ class Handle_StdFail_NotDone : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_StdFail_NotDone::~Handle_StdFail_NotDone %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StdFail_NotDone {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StdFail_UndefinedDerivative;
@@ -119,8 +139,18 @@ class Handle_StdFail_UndefinedDerivative : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_StdFail_UndefinedDerivative::~Handle_StdFail_UndefinedDerivative %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StdFail_UndefinedDerivative {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StdFail_InfiniteSolutions;
@@ -147,8 +177,18 @@ class Handle_StdFail_InfiniteSolutions : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_StdFail_InfiniteSolutions::~Handle_StdFail_InfiniteSolutions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StdFail_InfiniteSolutions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StdFail_Undefined;
@@ -175,8 +215,18 @@ class Handle_StdFail_Undefined : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_StdFail_Undefined::~Handle_StdFail_Undefined %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StdFail_Undefined {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StdFail_InfiniteSolutions;
@@ -208,8 +258,18 @@ class StdFail_InfiniteSolutions : public Standard_Failure {
 };
 %feature("shadow") StdFail_InfiniteSolutions::~StdFail_InfiniteSolutions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StdFail_InfiniteSolutions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StdFail_UndefinedDerivative;
@@ -241,8 +301,18 @@ class StdFail_UndefinedDerivative : public Standard_DomainError {
 };
 %feature("shadow") StdFail_UndefinedDerivative::~StdFail_UndefinedDerivative %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StdFail_UndefinedDerivative {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StdFail_UndefinedValue;
@@ -274,8 +344,18 @@ class StdFail_UndefinedValue : public Standard_DomainError {
 };
 %feature("shadow") StdFail_UndefinedValue::~StdFail_UndefinedValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StdFail_UndefinedValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StdFail_NotDone;
@@ -307,8 +387,18 @@ class StdFail_NotDone : public Standard_Failure {
 };
 %feature("shadow") StdFail_NotDone::~StdFail_NotDone %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StdFail_NotDone {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StdFail_Undefined;
@@ -340,5 +430,15 @@ class StdFail_Undefined : public Standard_Failure {
 };
 %feature("shadow") StdFail_Undefined::~StdFail_Undefined %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StdFail_Undefined {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_MFunction_FunctionRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MFunction_FunctionRetrievalDriver::~Handle_MFunction_FunctionRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MFunction_FunctionRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MFunction_FunctionStorageDriver;
@@ -91,8 +101,18 @@ class Handle_MFunction_FunctionStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MFunction_FunctionStorageDriver::~Handle_MFunction_FunctionStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MFunction_FunctionStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFunction_FunctionStorageDriver;
@@ -124,8 +144,18 @@ class MFunction_FunctionStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MFunction_FunctionStorageDriver::~MFunction_FunctionStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFunction_FunctionStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFunction_FunctionRetrievalDriver;
@@ -157,8 +187,18 @@ class MFunction_FunctionRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MFunction_FunctionRetrievalDriver::~MFunction_FunctionRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFunction_FunctionRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MFunction;
@@ -174,5 +214,15 @@ class MFunction {
 };
 %feature("shadow") MFunction::~MFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

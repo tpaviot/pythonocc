@@ -63,8 +63,18 @@ class Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public Ha
 };
 %feature("shadow") Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation::~Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox;
@@ -88,8 +98,18 @@ class GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
 };
 %feature("shadow") GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox::~GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox;
@@ -115,8 +135,18 @@ class GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
 };
 %feature("shadow") GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox::~GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox;
@@ -164,8 +194,18 @@ class GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox : public math_Functio
 };
 %feature("shadow") GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox::~GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox;
@@ -209,8 +249,18 @@ class GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox : public 
 };
 %feature("shadow") GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox::~GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_MyGradientbisOfTheComputeLineOfWLApprox;
@@ -234,8 +284,18 @@ class GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
 };
 %feature("shadow") GeomInt_MyGradientbisOfTheComputeLineOfWLApprox::~GeomInt_MyGradientbisOfTheComputeLineOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox;
@@ -269,8 +329,18 @@ class GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox : public m
 };
 %feature("shadow") GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox::~GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_SequenceOfParameterAndOrientation;
@@ -324,8 +394,18 @@ class GeomInt_SequenceOfParameterAndOrientation : public TCollection_BaseSequenc
 };
 %feature("shadow") GeomInt_SequenceOfParameterAndOrientation::~GeomInt_SequenceOfParameterAndOrientation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_SequenceOfParameterAndOrientation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation;
@@ -351,8 +431,18 @@ class GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public TCollecti
 };
 %feature("shadow") GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation::~GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_TheMultiLineOfWLApprox;
@@ -390,8 +480,18 @@ class GeomInt_TheMultiLineOfWLApprox {
 };
 %feature("shadow") GeomInt_TheMultiLineOfWLApprox::~GeomInt_TheMultiLineOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_TheMultiLineOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox;
@@ -405,8 +505,18 @@ class GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox : public ma
 };
 %feature("shadow") GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox::~GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox;
@@ -440,8 +550,18 @@ class GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox : public math
 };
 %feature("shadow") GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox::~GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
@@ -483,8 +603,18 @@ class GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox : public math
 };
 %feature("shadow") GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox::~GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
@@ -536,8 +666,18 @@ class GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox {
 };
 %feature("shadow") GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox::~GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_ThePrmPrmSvSurfacesOfWLApprox;
@@ -559,8 +699,18 @@ class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 };
 %feature("shadow") GeomInt_ThePrmPrmSvSurfacesOfWLApprox::~GeomInt_ThePrmPrmSvSurfacesOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_ThePrmPrmSvSurfacesOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
@@ -612,8 +762,18 @@ class GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox {
 };
 %feature("shadow") GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox::~GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_TheComputeLineBezierOfWLApprox;
@@ -659,8 +819,18 @@ class GeomInt_TheComputeLineBezierOfWLApprox {
 };
 %feature("shadow") GeomInt_TheComputeLineBezierOfWLApprox::~GeomInt_TheComputeLineBezierOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_TheComputeLineBezierOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
@@ -712,8 +882,18 @@ class GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
 };
 %feature("shadow") GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox::~GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox;
@@ -727,8 +907,18 @@ class GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox : public
 };
 %feature("shadow") GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox::~GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_LineTool;
@@ -748,8 +938,18 @@ class GeomInt_LineTool {
 };
 %feature("shadow") GeomInt_LineTool::~GeomInt_LineTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_LineTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_TheComputeLineOfWLApprox;
@@ -799,8 +999,18 @@ class GeomInt_TheComputeLineOfWLApprox {
 };
 %feature("shadow") GeomInt_TheComputeLineOfWLApprox::~GeomInt_TheComputeLineOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_TheComputeLineOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox;
@@ -814,8 +1024,18 @@ class GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox : publi
 };
 %feature("shadow") GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox::~GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_ParameterAndOrientation;
@@ -839,8 +1059,18 @@ class GeomInt_ParameterAndOrientation {
 };
 %feature("shadow") GeomInt_ParameterAndOrientation::~GeomInt_ParameterAndOrientation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_ParameterAndOrientation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_TheMultiLineToolOfWLApprox;
@@ -882,8 +1112,18 @@ class GeomInt_TheMultiLineToolOfWLApprox {
 };
 %feature("shadow") GeomInt_TheMultiLineToolOfWLApprox::~GeomInt_TheMultiLineToolOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_TheMultiLineToolOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_LineConstructor;
@@ -905,8 +1145,18 @@ class GeomInt_LineConstructor {
 };
 %feature("shadow") GeomInt_LineConstructor::~GeomInt_LineConstructor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_LineConstructor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
@@ -942,8 +1192,18 @@ class GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
 };
 %feature("shadow") GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox::~GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomInt_TheImpPrmSvSurfacesOfWLApprox;
@@ -967,5 +1227,15 @@ class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 };
 %feature("shadow") GeomInt_TheImpPrmSvSurfacesOfWLApprox::~GeomInt_TheImpPrmSvSurfacesOfWLApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomInt_TheImpPrmSvSurfacesOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

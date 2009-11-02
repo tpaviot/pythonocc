@@ -63,8 +63,18 @@ class Handle_TopBas_ListNodeOfListOfTestInterference : public Handle_TCollection
 };
 %feature("shadow") Handle_TopBas_ListNodeOfListOfTestInterference::~Handle_TopBas_ListNodeOfListOfTestInterference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopBas_ListNodeOfListOfTestInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopBas_ListOfTestInterference;
@@ -114,8 +124,18 @@ class TopBas_ListOfTestInterference {
 };
 %feature("shadow") TopBas_ListOfTestInterference::~TopBas_ListOfTestInterference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopBas_ListOfTestInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopBas_ListIteratorOfListOfTestInterference;
@@ -137,8 +157,18 @@ class TopBas_ListIteratorOfListOfTestInterference {
 };
 %feature("shadow") TopBas_ListIteratorOfListOfTestInterference::~TopBas_ListIteratorOfListOfTestInterference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopBas_ListIteratorOfListOfTestInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopBas_ListNodeOfListOfTestInterference;
@@ -164,8 +194,18 @@ class TopBas_ListNodeOfListOfTestInterference : public TCollection_MapNode {
 };
 %feature("shadow") TopBas_ListNodeOfListOfTestInterference::~TopBas_ListNodeOfListOfTestInterference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopBas_ListNodeOfListOfTestInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopBas_TestInterference;
@@ -223,5 +263,15 @@ class TopBas_TestInterference {
 };
 %feature("shadow") TopBas_TestInterference::~TopBas_TestInterference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopBas_TestInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

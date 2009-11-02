@@ -63,8 +63,18 @@ class Handle_RWStepAP214_ReadWriteModule : public Handle_StepData_ReadWriteModul
 };
 %feature("shadow") Handle_RWStepAP214_ReadWriteModule::~Handle_RWStepAP214_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_RWStepAP214_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_RWStepAP214_GeneralModule;
@@ -91,8 +101,18 @@ class Handle_RWStepAP214_GeneralModule : public Handle_StepData_GeneralModule {
 };
 %feature("shadow") Handle_RWStepAP214_GeneralModule::~Handle_RWStepAP214_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_RWStepAP214_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment;
@@ -110,8 +130,18 @@ class RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment {
 };
 %feature("shadow") RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment::~RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAppliedDateAssignment;
@@ -129,8 +159,18 @@ class RWStepAP214_RWAppliedDateAssignment {
 };
 %feature("shadow") RWStepAP214_RWAppliedDateAssignment::~RWStepAP214_RWAppliedDateAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAppliedDateAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAutoDesignOrganizationAssignment;
@@ -148,8 +188,18 @@ class RWStepAP214_RWAutoDesignOrganizationAssignment {
 };
 %feature("shadow") RWStepAP214_RWAutoDesignOrganizationAssignment::~RWStepAP214_RWAutoDesignOrganizationAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAutoDesignOrganizationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAutoDesignApprovalAssignment;
@@ -167,8 +217,18 @@ class RWStepAP214_RWAutoDesignApprovalAssignment {
 };
 %feature("shadow") RWStepAP214_RWAutoDesignApprovalAssignment::~RWStepAP214_RWAutoDesignApprovalAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAutoDesignApprovalAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAppliedPresentedItem;
@@ -186,8 +246,18 @@ class RWStepAP214_RWAppliedPresentedItem {
 };
 %feature("shadow") RWStepAP214_RWAppliedPresentedItem::~RWStepAP214_RWAppliedPresentedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAppliedPresentedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_ReadWriteModule;
@@ -225,8 +295,18 @@ class RWStepAP214_ReadWriteModule : public StepData_ReadWriteModule {
 };
 %feature("shadow") RWStepAP214_ReadWriteModule::~RWStepAP214_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAppliedPersonAndOrganizationAssignment;
@@ -244,8 +324,18 @@ class RWStepAP214_RWAppliedPersonAndOrganizationAssignment {
 };
 %feature("shadow") RWStepAP214_RWAppliedPersonAndOrganizationAssignment::~RWStepAP214_RWAppliedPersonAndOrganizationAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAppliedPersonAndOrganizationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAppliedGroupAssignment;
@@ -263,8 +353,18 @@ class RWStepAP214_RWAppliedGroupAssignment {
 };
 %feature("shadow") RWStepAP214_RWAppliedGroupAssignment::~RWStepAP214_RWAppliedGroupAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAppliedGroupAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAppliedDateAndTimeAssignment;
@@ -282,8 +382,18 @@ class RWStepAP214_RWAppliedDateAndTimeAssignment {
 };
 %feature("shadow") RWStepAP214_RWAppliedDateAndTimeAssignment::~RWStepAP214_RWAppliedDateAndTimeAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAppliedDateAndTimeAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWClass;
@@ -301,8 +411,18 @@ class RWStepAP214_RWClass {
 };
 %feature("shadow") RWStepAP214_RWClass::~RWStepAP214_RWClass %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWClass {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_GeneralModule;
@@ -338,8 +458,18 @@ class RWStepAP214_GeneralModule : public StepData_GeneralModule {
 };
 %feature("shadow") RWStepAP214_GeneralModule::~RWStepAP214_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment;
@@ -357,8 +487,18 @@ class RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment {
 };
 %feature("shadow") RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment::~RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAutoDesignNominalDateAssignment;
@@ -376,8 +516,18 @@ class RWStepAP214_RWAutoDesignNominalDateAssignment {
 };
 %feature("shadow") RWStepAP214_RWAutoDesignNominalDateAssignment::~RWStepAP214_RWAutoDesignNominalDateAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAutoDesignNominalDateAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAutoDesignGroupAssignment;
@@ -395,8 +545,18 @@ class RWStepAP214_RWAutoDesignGroupAssignment {
 };
 %feature("shadow") RWStepAP214_RWAutoDesignGroupAssignment::~RWStepAP214_RWAutoDesignGroupAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAutoDesignGroupAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAppliedApprovalAssignment;
@@ -414,8 +574,18 @@ class RWStepAP214_RWAppliedApprovalAssignment {
 };
 %feature("shadow") RWStepAP214_RWAppliedApprovalAssignment::~RWStepAP214_RWAppliedApprovalAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAppliedApprovalAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAutoDesignPresentedItem;
@@ -433,8 +603,18 @@ class RWStepAP214_RWAutoDesignPresentedItem {
 };
 %feature("shadow") RWStepAP214_RWAutoDesignPresentedItem::~RWStepAP214_RWAutoDesignPresentedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAutoDesignPresentedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214;
@@ -448,8 +628,18 @@ class RWStepAP214 {
 };
 %feature("shadow") RWStepAP214::~RWStepAP214 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWRepItemGroup;
@@ -467,8 +657,18 @@ class RWStepAP214_RWRepItemGroup {
 };
 %feature("shadow") RWStepAP214_RWRepItemGroup::~RWStepAP214_RWRepItemGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWRepItemGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAppliedSecurityClassificationAssignment;
@@ -486,8 +686,18 @@ class RWStepAP214_RWAppliedSecurityClassificationAssignment {
 };
 %feature("shadow") RWStepAP214_RWAppliedSecurityClassificationAssignment::~RWStepAP214_RWAppliedSecurityClassificationAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAppliedSecurityClassificationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAutoDesignActualDateAssignment;
@@ -505,8 +715,18 @@ class RWStepAP214_RWAutoDesignActualDateAssignment {
 };
 %feature("shadow") RWStepAP214_RWAutoDesignActualDateAssignment::~RWStepAP214_RWAutoDesignActualDateAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAutoDesignActualDateAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAppliedDocumentReference;
@@ -524,8 +744,18 @@ class RWStepAP214_RWAppliedDocumentReference {
 };
 %feature("shadow") RWStepAP214_RWAppliedDocumentReference::~RWStepAP214_RWAppliedDocumentReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAppliedDocumentReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAutoDesignDocumentReference;
@@ -543,8 +773,18 @@ class RWStepAP214_RWAutoDesignDocumentReference {
 };
 %feature("shadow") RWStepAP214_RWAutoDesignDocumentReference::~RWStepAP214_RWAutoDesignDocumentReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAutoDesignDocumentReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWExternallyDefinedGeneralProperty;
@@ -562,8 +802,18 @@ class RWStepAP214_RWExternallyDefinedGeneralProperty {
 };
 %feature("shadow") RWStepAP214_RWExternallyDefinedGeneralProperty::~RWStepAP214_RWExternallyDefinedGeneralProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWExternallyDefinedGeneralProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAppliedExternalIdentificationAssignment;
@@ -581,8 +831,18 @@ class RWStepAP214_RWAppliedExternalIdentificationAssignment {
 };
 %feature("shadow") RWStepAP214_RWAppliedExternalIdentificationAssignment::~RWStepAP214_RWAppliedExternalIdentificationAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAppliedExternalIdentificationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAutoDesignSecurityClassificationAssignment;
@@ -600,8 +860,18 @@ class RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
 };
 %feature("shadow") RWStepAP214_RWAutoDesignSecurityClassificationAssignment::~RWStepAP214_RWAutoDesignSecurityClassificationAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAppliedOrganizationAssignment;
@@ -619,8 +889,18 @@ class RWStepAP214_RWAppliedOrganizationAssignment {
 };
 %feature("shadow") RWStepAP214_RWAppliedOrganizationAssignment::~RWStepAP214_RWAppliedOrganizationAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAppliedOrganizationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWExternallyDefinedClass;
@@ -638,8 +918,18 @@ class RWStepAP214_RWExternallyDefinedClass {
 };
 %feature("shadow") RWStepAP214_RWExternallyDefinedClass::~RWStepAP214_RWExternallyDefinedClass %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWExternallyDefinedClass {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAutoDesignDateAndPersonAssignment;
@@ -657,8 +947,18 @@ class RWStepAP214_RWAutoDesignDateAndPersonAssignment {
 };
 %feature("shadow") RWStepAP214_RWAutoDesignDateAndPersonAssignment::~RWStepAP214_RWAutoDesignDateAndPersonAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAutoDesignDateAndPersonAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepAP214_RWAutoDesignActualDateAndTimeAssignment;
@@ -676,5 +976,15 @@ class RWStepAP214_RWAutoDesignActualDateAndTimeAssignment {
 };
 %feature("shadow") RWStepAP214_RWAutoDesignActualDateAndTimeAssignment::~RWStepAP214_RWAutoDesignActualDateAndTimeAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepAP214_RWAutoDesignActualDateAndTimeAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

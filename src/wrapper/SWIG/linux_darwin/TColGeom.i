@@ -63,8 +63,18 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_
 };
 %feature("shadow") Handle_TColGeom_SequenceNodeOfSequenceOfCurve::~Handle_TColGeom_SequenceNodeOfSequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_SequenceNodeOfSequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HSequenceOfSurface;
@@ -91,8 +101,18 @@ class Handle_TColGeom_HSequenceOfSurface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HSequenceOfSurface::~Handle_TColGeom_HSequenceOfSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HSequenceOfSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HArray1OfBoundedSurface;
@@ -119,8 +139,18 @@ class Handle_TColGeom_HArray1OfBoundedSurface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HArray1OfBoundedSurface::~Handle_TColGeom_HArray1OfBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HArray1OfBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HArray2OfBoundedSurface;
@@ -147,8 +177,18 @@ class Handle_TColGeom_HArray2OfBoundedSurface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HArray2OfBoundedSurface::~Handle_TColGeom_HArray2OfBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HArray2OfBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HArray1OfCurve;
@@ -175,8 +215,18 @@ class Handle_TColGeom_HArray1OfCurve : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HArray1OfCurve::~Handle_TColGeom_HArray1OfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HArray1OfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_SequenceNodeOfSequenceOfSurface;
@@ -203,8 +253,18 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfSurface : public Handle_TCollectio
 };
 %feature("shadow") Handle_TColGeom_SequenceNodeOfSequenceOfSurface::~Handle_TColGeom_SequenceNodeOfSequenceOfSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_SequenceNodeOfSequenceOfSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HArray1OfBoundedCurve;
@@ -231,8 +291,18 @@ class Handle_TColGeom_HArray1OfBoundedCurve : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HArray1OfBoundedCurve::~Handle_TColGeom_HArray1OfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HArray1OfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HArray2OfBSplineSurface;
@@ -259,8 +329,18 @@ class Handle_TColGeom_HArray2OfBSplineSurface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HArray2OfBSplineSurface::~Handle_TColGeom_HArray2OfBSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HArray2OfBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HSequenceOfCurve;
@@ -287,8 +367,18 @@ class Handle_TColGeom_HSequenceOfCurve : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HSequenceOfCurve::~Handle_TColGeom_HSequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HSequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface;
@@ -315,8 +405,18 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface : public Handle_TCo
 };
 %feature("shadow") Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface::~Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve;
@@ -343,8 +443,18 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve : public Handle_TColl
 };
 %feature("shadow") Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve::~Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HArray1OfSurface;
@@ -371,8 +481,18 @@ class Handle_TColGeom_HArray1OfSurface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HArray1OfSurface::~Handle_TColGeom_HArray1OfSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HArray1OfSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HArray1OfBezierCurve;
@@ -399,8 +519,18 @@ class Handle_TColGeom_HArray1OfBezierCurve : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HArray1OfBezierCurve::~Handle_TColGeom_HArray1OfBezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HArray1OfBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HArray2OfBezierSurface;
@@ -427,8 +557,18 @@ class Handle_TColGeom_HArray2OfBezierSurface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HArray2OfBezierSurface::~Handle_TColGeom_HArray2OfBezierSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HArray2OfBezierSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HArray1OfBSplineCurve;
@@ -455,8 +595,18 @@ class Handle_TColGeom_HArray1OfBSplineCurve : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HArray1OfBSplineCurve::~Handle_TColGeom_HArray1OfBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HArray1OfBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HArray2OfSurface;
@@ -483,8 +633,18 @@ class Handle_TColGeom_HArray2OfSurface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HArray2OfSurface::~Handle_TColGeom_HArray2OfSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HArray2OfSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HSequenceOfBoundedSurface;
@@ -511,8 +671,18 @@ class Handle_TColGeom_HSequenceOfBoundedSurface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HSequenceOfBoundedSurface::~Handle_TColGeom_HSequenceOfBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HSequenceOfBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColGeom_HSequenceOfBoundedCurve;
@@ -539,8 +709,18 @@ class Handle_TColGeom_HSequenceOfBoundedCurve : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColGeom_HSequenceOfBoundedCurve::~Handle_TColGeom_HSequenceOfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColGeom_HSequenceOfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_Array1OfBoundedCurve;
@@ -580,8 +760,18 @@ class TColGeom_Array1OfBoundedCurve {
 };
 %feature("shadow") TColGeom_Array1OfBoundedCurve::~TColGeom_Array1OfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_Array1OfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_Array1OfCurve;
@@ -621,8 +811,18 @@ class TColGeom_Array1OfCurve {
 };
 %feature("shadow") TColGeom_Array1OfCurve::~TColGeom_Array1OfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_Array1OfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HSequenceOfCurve;
@@ -690,8 +890,18 @@ class TColGeom_HSequenceOfCurve : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HSequenceOfCurve::~TColGeom_HSequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HSequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HArray1OfSurface;
@@ -735,8 +945,18 @@ class TColGeom_HArray1OfSurface : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HArray1OfSurface::~TColGeom_HArray1OfSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HArray1OfSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HArray1OfCurve;
@@ -780,8 +1000,18 @@ class TColGeom_HArray1OfCurve : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HArray1OfCurve::~TColGeom_HArray1OfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HArray1OfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfBoundedSurface;
@@ -807,8 +1037,18 @@ class TColGeom_SequenceNodeOfSequenceOfBoundedSurface : public TCollection_SeqNo
 };
 %feature("shadow") TColGeom_SequenceNodeOfSequenceOfBoundedSurface::~TColGeom_SequenceNodeOfSequenceOfBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_SequenceNodeOfSequenceOfBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfCurve;
@@ -834,8 +1074,18 @@ class TColGeom_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 };
 %feature("shadow") TColGeom_SequenceNodeOfSequenceOfCurve::~TColGeom_SequenceNodeOfSequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_SequenceNodeOfSequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_Array2OfSurface;
@@ -879,8 +1129,18 @@ class TColGeom_Array2OfSurface {
 };
 %feature("shadow") TColGeom_Array2OfSurface::~TColGeom_Array2OfSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_Array2OfSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_Array2OfBezierSurface;
@@ -924,8 +1184,18 @@ class TColGeom_Array2OfBezierSurface {
 };
 %feature("shadow") TColGeom_Array2OfBezierSurface::~TColGeom_Array2OfBezierSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_Array2OfBezierSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HSequenceOfBoundedCurve;
@@ -993,8 +1263,18 @@ class TColGeom_HSequenceOfBoundedCurve : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HSequenceOfBoundedCurve::~TColGeom_HSequenceOfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HSequenceOfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HArray1OfBSplineCurve;
@@ -1038,8 +1318,18 @@ class TColGeom_HArray1OfBSplineCurve : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HArray1OfBSplineCurve::~TColGeom_HArray1OfBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HArray1OfBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_SequenceOfCurve;
@@ -1093,8 +1383,18 @@ class TColGeom_SequenceOfCurve : public TCollection_BaseSequence {
 };
 %feature("shadow") TColGeom_SequenceOfCurve::~TColGeom_SequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_SequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_Array1OfBoundedSurface;
@@ -1134,8 +1434,18 @@ class TColGeom_Array1OfBoundedSurface {
 };
 %feature("shadow") TColGeom_Array1OfBoundedSurface::~TColGeom_Array1OfBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_Array1OfBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_Array1OfSurface;
@@ -1175,8 +1485,18 @@ class TColGeom_Array1OfSurface {
 };
 %feature("shadow") TColGeom_Array1OfSurface::~TColGeom_Array1OfSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_Array1OfSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HArray2OfBezierSurface;
@@ -1226,8 +1546,18 @@ class TColGeom_HArray2OfBezierSurface : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HArray2OfBezierSurface::~TColGeom_HArray2OfBezierSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HArray2OfBezierSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_SequenceOfBoundedSurface;
@@ -1281,8 +1611,18 @@ class TColGeom_SequenceOfBoundedSurface : public TCollection_BaseSequence {
 };
 %feature("shadow") TColGeom_SequenceOfBoundedSurface::~TColGeom_SequenceOfBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_SequenceOfBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HArray1OfBoundedSurface;
@@ -1326,8 +1666,18 @@ class TColGeom_HArray1OfBoundedSurface : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HArray1OfBoundedSurface::~TColGeom_HArray1OfBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HArray1OfBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HArray2OfSurface;
@@ -1377,8 +1727,18 @@ class TColGeom_HArray2OfSurface : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HArray2OfSurface::~TColGeom_HArray2OfSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HArray2OfSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HArray2OfBoundedSurface;
@@ -1428,8 +1788,18 @@ class TColGeom_HArray2OfBoundedSurface : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HArray2OfBoundedSurface::~TColGeom_HArray2OfBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HArray2OfBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfBoundedCurve;
@@ -1455,8 +1825,18 @@ class TColGeom_SequenceNodeOfSequenceOfBoundedCurve : public TCollection_SeqNode
 };
 %feature("shadow") TColGeom_SequenceNodeOfSequenceOfBoundedCurve::~TColGeom_SequenceNodeOfSequenceOfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_SequenceNodeOfSequenceOfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HSequenceOfBoundedSurface;
@@ -1524,8 +1904,18 @@ class TColGeom_HSequenceOfBoundedSurface : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HSequenceOfBoundedSurface::~TColGeom_HSequenceOfBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HSequenceOfBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_SequenceOfBoundedCurve;
@@ -1579,8 +1969,18 @@ class TColGeom_SequenceOfBoundedCurve : public TCollection_BaseSequence {
 };
 %feature("shadow") TColGeom_SequenceOfBoundedCurve::~TColGeom_SequenceOfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_SequenceOfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_SequenceOfSurface;
@@ -1634,8 +2034,18 @@ class TColGeom_SequenceOfSurface : public TCollection_BaseSequence {
 };
 %feature("shadow") TColGeom_SequenceOfSurface::~TColGeom_SequenceOfSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_SequenceOfSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HArray2OfBSplineSurface;
@@ -1685,8 +2095,18 @@ class TColGeom_HArray2OfBSplineSurface : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HArray2OfBSplineSurface::~TColGeom_HArray2OfBSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HArray2OfBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_Array2OfBoundedSurface;
@@ -1730,8 +2150,18 @@ class TColGeom_Array2OfBoundedSurface {
 };
 %feature("shadow") TColGeom_Array2OfBoundedSurface::~TColGeom_Array2OfBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_Array2OfBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HArray1OfBezierCurve;
@@ -1775,8 +2205,18 @@ class TColGeom_HArray1OfBezierCurve : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HArray1OfBezierCurve::~TColGeom_HArray1OfBezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HArray1OfBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_Array1OfBSplineCurve;
@@ -1816,8 +2256,18 @@ class TColGeom_Array1OfBSplineCurve {
 };
 %feature("shadow") TColGeom_Array1OfBSplineCurve::~TColGeom_Array1OfBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_Array1OfBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_Array1OfBezierCurve;
@@ -1857,8 +2307,18 @@ class TColGeom_Array1OfBezierCurve {
 };
 %feature("shadow") TColGeom_Array1OfBezierCurve::~TColGeom_Array1OfBezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_Array1OfBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HArray1OfBoundedCurve;
@@ -1902,8 +2362,18 @@ class TColGeom_HArray1OfBoundedCurve : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HArray1OfBoundedCurve::~TColGeom_HArray1OfBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HArray1OfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_Array2OfBSplineSurface;
@@ -1947,8 +2417,18 @@ class TColGeom_Array2OfBSplineSurface {
 };
 %feature("shadow") TColGeom_Array2OfBSplineSurface::~TColGeom_Array2OfBSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_Array2OfBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_HSequenceOfSurface;
@@ -2016,8 +2496,18 @@ class TColGeom_HSequenceOfSurface : public MMgt_TShared {
 };
 %feature("shadow") TColGeom_HSequenceOfSurface::~TColGeom_HSequenceOfSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_HSequenceOfSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfSurface;
@@ -2043,5 +2533,15 @@ class TColGeom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 };
 %feature("shadow") TColGeom_SequenceNodeOfSequenceOfSurface::~TColGeom_SequenceNodeOfSequenceOfSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColGeom_SequenceNodeOfSequenceOfSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

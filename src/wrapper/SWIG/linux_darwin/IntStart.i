@@ -63,8 +63,18 @@ class Handle_IntStart_SITopolTool : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IntStart_SITopolTool::~Handle_IntStart_SITopolTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntStart_SITopolTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntStart_SITopolTool;
@@ -88,5 +98,15 @@ class IntStart_SITopolTool : public MMgt_TShared {
 };
 %feature("shadow") IntStart_SITopolTool::~IntStart_SITopolTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntStart_SITopolTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

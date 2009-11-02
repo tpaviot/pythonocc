@@ -63,8 +63,18 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction : public Handle_TCollec
 };
 %feature("shadow") Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction::~Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression;
@@ -91,8 +101,18 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression : public Handle_TColl
 };
 %feature("shadow") Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression::~Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ExprIntrp_Generator;
@@ -119,8 +139,18 @@ class Handle_ExprIntrp_Generator : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ExprIntrp_Generator::~Handle_ExprIntrp_Generator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ExprIntrp_Generator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ExprIntrp_GenExp;
@@ -147,8 +177,18 @@ class Handle_ExprIntrp_GenExp : public Handle_ExprIntrp_Generator {
 };
 %feature("shadow") Handle_ExprIntrp_GenExp::~Handle_ExprIntrp_GenExp %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ExprIntrp_GenExp {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ExprIntrp_SyntaxError;
@@ -175,8 +215,18 @@ class Handle_ExprIntrp_SyntaxError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_ExprIntrp_SyntaxError::~Handle_ExprIntrp_SyntaxError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ExprIntrp_SyntaxError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ExprIntrp_GenRel;
@@ -203,8 +253,18 @@ class Handle_ExprIntrp_GenRel : public Handle_ExprIntrp_Generator {
 };
 %feature("shadow") Handle_ExprIntrp_GenRel::~Handle_ExprIntrp_GenRel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ExprIntrp_GenRel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation;
@@ -231,8 +291,18 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation : public Handle_TCollec
 };
 %feature("shadow") Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation::~Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression;
@@ -259,8 +329,18 @@ class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public Handle_T
 };
 %feature("shadow") Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression::~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ExprIntrp_GenFct;
@@ -287,8 +367,18 @@ class Handle_ExprIntrp_GenFct : public Handle_ExprIntrp_Generator {
 };
 %feature("shadow") Handle_ExprIntrp_GenFct::~Handle_ExprIntrp_GenFct %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ExprIntrp_GenFct {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction;
@@ -315,8 +405,18 @@ class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public Handle_TCo
 };
 %feature("shadow") Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction::~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfNames;
@@ -343,8 +443,18 @@ class Handle_ExprIntrp_StackNodeOfStackOfNames : public Handle_TCollection_MapNo
 };
 %feature("shadow") Handle_ExprIntrp_StackNodeOfStackOfNames::~Handle_ExprIntrp_StackNodeOfStackOfNames %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ExprIntrp_StackNodeOfStackOfNames {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_Generator;
@@ -378,8 +488,18 @@ class ExprIntrp_Generator : public MMgt_TShared {
 };
 %feature("shadow") ExprIntrp_Generator::~ExprIntrp_Generator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_Generator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_GenFct;
@@ -405,8 +525,18 @@ class ExprIntrp_GenFct : public ExprIntrp_Generator {
 };
 %feature("shadow") ExprIntrp_GenFct::~ExprIntrp_GenFct %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_GenFct {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_StackNodeOfStackOfNames;
@@ -432,8 +562,18 @@ class ExprIntrp_StackNodeOfStackOfNames : public TCollection_MapNode {
 };
 %feature("shadow") ExprIntrp_StackNodeOfStackOfNames::~ExprIntrp_StackNodeOfStackOfNames %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_StackNodeOfStackOfNames {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_SyntaxError;
@@ -465,8 +605,18 @@ class ExprIntrp_SyntaxError : public Standard_Failure {
 };
 %feature("shadow") ExprIntrp_SyntaxError::~ExprIntrp_SyntaxError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_SyntaxError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_StackIteratorOfStackOfNames;
@@ -488,8 +638,18 @@ class ExprIntrp_StackIteratorOfStackOfNames {
 };
 %feature("shadow") ExprIntrp_StackIteratorOfStackOfNames::~ExprIntrp_StackIteratorOfStackOfNames %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_StackIteratorOfStackOfNames {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_SequenceOfNamedFunction;
@@ -543,8 +703,18 @@ class ExprIntrp_SequenceOfNamedFunction : public TCollection_BaseSequence {
 };
 %feature("shadow") ExprIntrp_SequenceOfNamedFunction::~ExprIntrp_SequenceOfNamedFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_SequenceOfNamedFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_StackOfNames;
@@ -574,8 +744,18 @@ class ExprIntrp_StackOfNames {
 };
 %feature("shadow") ExprIntrp_StackOfNames::~ExprIntrp_StackOfNames %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_StackOfNames {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_SequenceNodeOfSequenceOfNamedExpression;
@@ -601,8 +781,18 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public TCollection_Seq
 };
 %feature("shadow") ExprIntrp_SequenceNodeOfSequenceOfNamedExpression::~ExprIntrp_SequenceNodeOfSequenceOfNamedExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp;
@@ -614,8 +804,18 @@ class ExprIntrp {
 };
 %feature("shadow") ExprIntrp::~ExprIntrp %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_StackIteratorOfStackOfGeneralExpression;
@@ -637,8 +837,18 @@ class ExprIntrp_StackIteratorOfStackOfGeneralExpression {
 };
 %feature("shadow") ExprIntrp_StackIteratorOfStackOfGeneralExpression::~ExprIntrp_StackIteratorOfStackOfGeneralExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_StackIteratorOfStackOfGeneralExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_GenRel;
@@ -668,8 +878,18 @@ class ExprIntrp_GenRel : public ExprIntrp_Generator {
 };
 %feature("shadow") ExprIntrp_GenRel::~ExprIntrp_GenRel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_GenRel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_StackIteratorOfStackOfGeneralRelation;
@@ -691,8 +911,18 @@ class ExprIntrp_StackIteratorOfStackOfGeneralRelation {
 };
 %feature("shadow") ExprIntrp_StackIteratorOfStackOfGeneralRelation::~ExprIntrp_StackIteratorOfStackOfGeneralRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_StackIteratorOfStackOfGeneralRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralFunction;
@@ -718,8 +948,18 @@ class ExprIntrp_StackNodeOfStackOfGeneralFunction : public TCollection_MapNode {
 };
 %feature("shadow") ExprIntrp_StackNodeOfStackOfGeneralFunction::~ExprIntrp_StackNodeOfStackOfGeneralFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_StackNodeOfStackOfGeneralFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_StackIteratorOfStackOfGeneralFunction;
@@ -741,8 +981,18 @@ class ExprIntrp_StackIteratorOfStackOfGeneralFunction {
 };
 %feature("shadow") ExprIntrp_StackIteratorOfStackOfGeneralFunction::~ExprIntrp_StackIteratorOfStackOfGeneralFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_StackIteratorOfStackOfGeneralFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralRelation;
@@ -768,8 +1018,18 @@ class ExprIntrp_StackNodeOfStackOfGeneralRelation : public TCollection_MapNode {
 };
 %feature("shadow") ExprIntrp_StackNodeOfStackOfGeneralRelation::~ExprIntrp_StackNodeOfStackOfGeneralRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_StackNodeOfStackOfGeneralRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_StackOfGeneralRelation;
@@ -799,8 +1059,18 @@ class ExprIntrp_StackOfGeneralRelation {
 };
 %feature("shadow") ExprIntrp_StackOfGeneralRelation::~ExprIntrp_StackOfGeneralRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_StackOfGeneralRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_SequenceOfNamedExpression;
@@ -854,8 +1124,18 @@ class ExprIntrp_SequenceOfNamedExpression : public TCollection_BaseSequence {
 };
 %feature("shadow") ExprIntrp_SequenceOfNamedExpression::~ExprIntrp_SequenceOfNamedExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_SequenceOfNamedExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_StackOfGeneralFunction;
@@ -885,8 +1165,18 @@ class ExprIntrp_StackOfGeneralFunction {
 };
 %feature("shadow") ExprIntrp_StackOfGeneralFunction::~ExprIntrp_StackOfGeneralFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_StackOfGeneralFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_StackOfGeneralExpression;
@@ -916,8 +1206,18 @@ class ExprIntrp_StackOfGeneralExpression {
 };
 %feature("shadow") ExprIntrp_StackOfGeneralExpression::~ExprIntrp_StackOfGeneralExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_StackOfGeneralExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_SequenceNodeOfSequenceOfNamedFunction;
@@ -943,8 +1243,18 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public TCollection_SeqNo
 };
 %feature("shadow") ExprIntrp_SequenceNodeOfSequenceOfNamedFunction::~ExprIntrp_SequenceNodeOfSequenceOfNamedFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralExpression;
@@ -970,8 +1280,18 @@ class ExprIntrp_StackNodeOfStackOfGeneralExpression : public TCollection_MapNode
 };
 %feature("shadow") ExprIntrp_StackNodeOfStackOfGeneralExpression::~ExprIntrp_StackNodeOfStackOfGeneralExpression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_GenExp;
@@ -1001,8 +1321,18 @@ class ExprIntrp_GenExp : public ExprIntrp_Generator {
 };
 %feature("shadow") ExprIntrp_GenExp::~ExprIntrp_GenExp %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_GenExp {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ExprIntrp_Analysis;
@@ -1050,5 +1380,15 @@ class ExprIntrp_Analysis {
 };
 %feature("shadow") ExprIntrp_Analysis::~ExprIntrp_Analysis %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ExprIntrp_Analysis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_ShapeUpgrade_Tool : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeUpgrade_Tool::~Handle_ShapeUpgrade_Tool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_FaceDivide;
@@ -91,8 +101,18 @@ class Handle_ShapeUpgrade_FaceDivide : public Handle_ShapeUpgrade_Tool {
 };
 %feature("shadow") Handle_ShapeUpgrade_FaceDivide::~Handle_ShapeUpgrade_FaceDivide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_FaceDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_FaceDivideArea;
@@ -119,8 +139,18 @@ class Handle_ShapeUpgrade_FaceDivideArea : public Handle_ShapeUpgrade_FaceDivide
 };
 %feature("shadow") Handle_ShapeUpgrade_FaceDivideArea::~Handle_ShapeUpgrade_FaceDivideArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_FaceDivideArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_SplitSurface;
@@ -147,8 +177,18 @@ class Handle_ShapeUpgrade_SplitSurface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeUpgrade_SplitSurface::~Handle_ShapeUpgrade_SplitSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_SplitSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_SplitSurfaceAngle;
@@ -175,8 +215,18 @@ class Handle_ShapeUpgrade_SplitSurfaceAngle : public Handle_ShapeUpgrade_SplitSu
 };
 %feature("shadow") Handle_ShapeUpgrade_SplitSurfaceAngle::~Handle_ShapeUpgrade_SplitSurfaceAngle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_SplitSurfaceAngle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_EdgeDivide;
@@ -203,8 +253,18 @@ class Handle_ShapeUpgrade_EdgeDivide : public Handle_ShapeUpgrade_Tool {
 };
 %feature("shadow") Handle_ShapeUpgrade_EdgeDivide::~Handle_ShapeUpgrade_EdgeDivide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_EdgeDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_ClosedEdgeDivide;
@@ -231,8 +291,18 @@ class Handle_ShapeUpgrade_ClosedEdgeDivide : public Handle_ShapeUpgrade_EdgeDivi
 };
 %feature("shadow") Handle_ShapeUpgrade_ClosedEdgeDivide::~Handle_ShapeUpgrade_ClosedEdgeDivide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_ClosedEdgeDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis;
@@ -259,8 +329,18 @@ class Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis : public Handle_ShapeUpgra
 };
 %feature("shadow") Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis::~Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_RemoveLocations;
@@ -287,8 +367,18 @@ class Handle_ShapeUpgrade_RemoveLocations : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeUpgrade_RemoveLocations::~Handle_ShapeUpgrade_RemoveLocations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_RemoveLocations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_RemoveInternalWires;
@@ -315,8 +405,18 @@ class Handle_ShapeUpgrade_RemoveInternalWires : public Handle_ShapeUpgrade_Tool 
 };
 %feature("shadow") Handle_ShapeUpgrade_RemoveInternalWires::~Handle_ShapeUpgrade_RemoveInternalWires %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_RemoveInternalWires {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_SplitSurfaceArea;
@@ -343,8 +443,18 @@ class Handle_ShapeUpgrade_SplitSurfaceArea : public Handle_ShapeUpgrade_SplitSur
 };
 %feature("shadow") Handle_ShapeUpgrade_SplitSurfaceArea::~Handle_ShapeUpgrade_SplitSurfaceArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_SplitSurfaceArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_FixSmallCurves;
@@ -371,8 +481,18 @@ class Handle_ShapeUpgrade_FixSmallCurves : public Handle_ShapeUpgrade_Tool {
 };
 %feature("shadow") Handle_ShapeUpgrade_FixSmallCurves::~Handle_ShapeUpgrade_FixSmallCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_FixSmallCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_FixSmallBezierCurves;
@@ -399,8 +519,18 @@ class Handle_ShapeUpgrade_FixSmallBezierCurves : public Handle_ShapeUpgrade_FixS
 };
 %feature("shadow") Handle_ShapeUpgrade_FixSmallBezierCurves::~Handle_ShapeUpgrade_FixSmallBezierCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_FixSmallBezierCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_SplitSurfaceContinuity;
@@ -427,8 +557,18 @@ class Handle_ShapeUpgrade_SplitSurfaceContinuity : public Handle_ShapeUpgrade_Sp
 };
 %feature("shadow") Handle_ShapeUpgrade_SplitSurfaceContinuity::~Handle_ShapeUpgrade_SplitSurfaceContinuity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_SplitSurfaceContinuity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve;
@@ -455,8 +595,18 @@ class Handle_ShapeUpgrade_SplitCurve : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeUpgrade_SplitCurve::~Handle_ShapeUpgrade_SplitCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_SplitCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve2d;
@@ -483,8 +633,18 @@ class Handle_ShapeUpgrade_SplitCurve2d : public Handle_ShapeUpgrade_SplitCurve {
 };
 %feature("shadow") Handle_ShapeUpgrade_SplitCurve2d::~Handle_ShapeUpgrade_SplitCurve2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_SplitCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve2dContinuity;
@@ -511,8 +671,18 @@ class Handle_ShapeUpgrade_SplitCurve2dContinuity : public Handle_ShapeUpgrade_Sp
 };
 %feature("shadow") Handle_ShapeUpgrade_SplitCurve2dContinuity::~Handle_ShapeUpgrade_SplitCurve2dContinuity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_SplitCurve2dContinuity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve3d;
@@ -539,8 +709,18 @@ class Handle_ShapeUpgrade_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve {
 };
 %feature("shadow") Handle_ShapeUpgrade_SplitCurve3d::~Handle_ShapeUpgrade_SplitCurve3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_SplitCurve3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve3dContinuity;
@@ -567,8 +747,18 @@ class Handle_ShapeUpgrade_SplitCurve3dContinuity : public Handle_ShapeUpgrade_Sp
 };
 %feature("shadow") Handle_ShapeUpgrade_SplitCurve3dContinuity::~Handle_ShapeUpgrade_SplitCurve3dContinuity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_SplitCurve3dContinuity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_ConvertCurve2dToBezier;
@@ -595,8 +785,18 @@ class Handle_ShapeUpgrade_ConvertCurve2dToBezier : public Handle_ShapeUpgrade_Sp
 };
 %feature("shadow") Handle_ShapeUpgrade_ConvertCurve2dToBezier::~Handle_ShapeUpgrade_ConvertCurve2dToBezier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_ConvertCurve2dToBezier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_ConvertCurve3dToBezier;
@@ -623,8 +823,18 @@ class Handle_ShapeUpgrade_ConvertCurve3dToBezier : public Handle_ShapeUpgrade_Sp
 };
 %feature("shadow") Handle_ShapeUpgrade_ConvertCurve3dToBezier::~Handle_ShapeUpgrade_ConvertCurve3dToBezier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_ConvertCurve3dToBezier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_WireDivide;
@@ -651,8 +861,18 @@ class Handle_ShapeUpgrade_WireDivide : public Handle_ShapeUpgrade_Tool {
 };
 %feature("shadow") Handle_ShapeUpgrade_WireDivide::~Handle_ShapeUpgrade_WireDivide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_WireDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeUpgrade_ClosedFaceDivide;
@@ -679,8 +899,18 @@ class Handle_ShapeUpgrade_ClosedFaceDivide : public Handle_ShapeUpgrade_FaceDivi
 };
 %feature("shadow") Handle_ShapeUpgrade_ClosedFaceDivide::~Handle_ShapeUpgrade_ClosedFaceDivide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeUpgrade_ClosedFaceDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_SplitCurve;
@@ -718,8 +948,18 @@ class ShapeUpgrade_SplitCurve : public MMgt_TShared {
 };
 %feature("shadow") ShapeUpgrade_SplitCurve::~ShapeUpgrade_SplitCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_SplitCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_SplitCurve3d;
@@ -747,8 +987,18 @@ class ShapeUpgrade_SplitCurve3d : public ShapeUpgrade_SplitCurve {
 };
 %feature("shadow") ShapeUpgrade_SplitCurve3d::~ShapeUpgrade_SplitCurve3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_SplitCurve3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_ConvertCurve3dToBezier;
@@ -784,8 +1034,18 @@ class ShapeUpgrade_ConvertCurve3dToBezier : public ShapeUpgrade_SplitCurve3d {
 };
 %feature("shadow") ShapeUpgrade_ConvertCurve3dToBezier::~ShapeUpgrade_ConvertCurve3dToBezier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_ConvertCurve3dToBezier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_SplitSurface;
@@ -831,8 +1091,18 @@ class ShapeUpgrade_SplitSurface : public MMgt_TShared {
 };
 %feature("shadow") ShapeUpgrade_SplitSurface::~ShapeUpgrade_SplitSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_SplitSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_ShapeDivide;
@@ -872,8 +1142,18 @@ class ShapeUpgrade_ShapeDivide {
 };
 %feature("shadow") ShapeUpgrade_ShapeDivide::~ShapeUpgrade_ShapeDivide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_ShapeDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_ShapeDivideArea;
@@ -899,8 +1179,18 @@ class ShapeUpgrade_ShapeDivideArea : public ShapeUpgrade_ShapeDivide {
 };
 %feature("shadow") ShapeUpgrade_ShapeDivideArea::~ShapeUpgrade_ShapeDivideArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_ShapeDivideArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_SplitSurfaceAngle;
@@ -930,8 +1220,18 @@ class ShapeUpgrade_SplitSurfaceAngle : public ShapeUpgrade_SplitSurface {
 };
 %feature("shadow") ShapeUpgrade_SplitSurfaceAngle::~ShapeUpgrade_SplitSurfaceAngle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_SplitSurfaceAngle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_Tool;
@@ -975,8 +1275,18 @@ class ShapeUpgrade_Tool : public MMgt_TShared {
 };
 %feature("shadow") ShapeUpgrade_Tool::~ShapeUpgrade_Tool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_RemoveInternalWires;
@@ -1028,8 +1338,18 @@ class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 };
 %feature("shadow") ShapeUpgrade_RemoveInternalWires::~ShapeUpgrade_RemoveInternalWires %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_RemoveInternalWires {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_FixSmallCurves;
@@ -1063,8 +1383,18 @@ class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
 };
 %feature("shadow") ShapeUpgrade_FixSmallCurves::~ShapeUpgrade_FixSmallCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_FixSmallCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_ShapeDivideClosedEdges;
@@ -1078,8 +1408,18 @@ class ShapeUpgrade_ShapeDivideClosedEdges : public ShapeUpgrade_ShapeDivide {
 };
 %feature("shadow") ShapeUpgrade_ShapeDivideClosedEdges::~ShapeUpgrade_ShapeDivideClosedEdges %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_ShapeDivideClosedEdges {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_EdgeDivide;
@@ -1125,8 +1465,18 @@ class ShapeUpgrade_EdgeDivide : public ShapeUpgrade_Tool {
 };
 %feature("shadow") ShapeUpgrade_EdgeDivide::~ShapeUpgrade_EdgeDivide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_EdgeDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_ClosedEdgeDivide;
@@ -1150,8 +1500,18 @@ class ShapeUpgrade_ClosedEdgeDivide : public ShapeUpgrade_EdgeDivide {
 };
 %feature("shadow") ShapeUpgrade_ClosedEdgeDivide::~ShapeUpgrade_ClosedEdgeDivide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_ClosedEdgeDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade;
@@ -1167,8 +1527,18 @@ class ShapeUpgrade {
 };
 %feature("shadow") ShapeUpgrade::~ShapeUpgrade %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_ShellSewing;
@@ -1182,8 +1552,18 @@ class ShapeUpgrade_ShellSewing {
 };
 %feature("shadow") ShapeUpgrade_ShellSewing::~ShapeUpgrade_ShellSewing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_ShellSewing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_ShapeDivideContinuity;
@@ -1207,8 +1587,18 @@ class ShapeUpgrade_ShapeDivideContinuity : public ShapeUpgrade_ShapeDivide {
 };
 %feature("shadow") ShapeUpgrade_ShapeDivideContinuity::~ShapeUpgrade_ShapeDivideContinuity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_ShapeDivideContinuity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_SplitSurfaceContinuity;
@@ -1238,8 +1628,18 @@ class ShapeUpgrade_SplitSurfaceContinuity : public ShapeUpgrade_SplitSurface {
 };
 %feature("shadow") ShapeUpgrade_SplitSurfaceContinuity::~ShapeUpgrade_SplitSurfaceContinuity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_SplitSurfaceContinuity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_FixSmallBezierCurves;
@@ -1265,8 +1665,18 @@ class ShapeUpgrade_FixSmallBezierCurves : public ShapeUpgrade_FixSmallCurves {
 };
 %feature("shadow") ShapeUpgrade_FixSmallBezierCurves::~ShapeUpgrade_FixSmallBezierCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_FixSmallBezierCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_SplitSurfaceArea;
@@ -1304,8 +1714,18 @@ class ShapeUpgrade_SplitSurfaceArea : public ShapeUpgrade_SplitSurface {
 };
 %feature("shadow") ShapeUpgrade_SplitSurfaceArea::~ShapeUpgrade_SplitSurfaceArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_SplitSurfaceArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_SplitCurve2d;
@@ -1337,8 +1757,18 @@ class ShapeUpgrade_SplitCurve2d : public ShapeUpgrade_SplitCurve {
 };
 %feature("shadow") ShapeUpgrade_SplitCurve2d::~ShapeUpgrade_SplitCurve2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_SplitCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_FaceDivide;
@@ -1384,8 +1814,18 @@ class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
 };
 %feature("shadow") ShapeUpgrade_FaceDivide::~ShapeUpgrade_FaceDivide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_FaceDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_FaceDivideArea;
@@ -1421,8 +1861,18 @@ class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
 };
 %feature("shadow") ShapeUpgrade_FaceDivideArea::~ShapeUpgrade_FaceDivideArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_FaceDivideArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_ShapeConvertToBezier;
@@ -1478,8 +1928,18 @@ class ShapeUpgrade_ShapeConvertToBezier : public ShapeUpgrade_ShapeDivide {
 };
 %feature("shadow") ShapeUpgrade_ShapeConvertToBezier::~ShapeUpgrade_ShapeConvertToBezier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_ShapeConvertToBezier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_ClosedFaceDivide;
@@ -1511,8 +1971,18 @@ class ShapeUpgrade_ClosedFaceDivide : public ShapeUpgrade_FaceDivide {
 };
 %feature("shadow") ShapeUpgrade_ClosedFaceDivide::~ShapeUpgrade_ClosedFaceDivide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_ClosedFaceDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_SplitCurve3dContinuity;
@@ -1544,8 +2014,18 @@ class ShapeUpgrade_SplitCurve3dContinuity : public ShapeUpgrade_SplitCurve3d {
 };
 %feature("shadow") ShapeUpgrade_SplitCurve3dContinuity::~ShapeUpgrade_SplitCurve3dContinuity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_SplitCurve3dContinuity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_WireDivide;
@@ -1607,8 +2087,18 @@ class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 };
 %feature("shadow") ShapeUpgrade_WireDivide::~ShapeUpgrade_WireDivide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_WireDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_ShapeDivideAngle;
@@ -1628,8 +2118,18 @@ class ShapeUpgrade_ShapeDivideAngle : public ShapeUpgrade_ShapeDivide {
 };
 %feature("shadow") ShapeUpgrade_ShapeDivideAngle::~ShapeUpgrade_ShapeDivideAngle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_ShapeDivideAngle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_SplitCurve2dContinuity;
@@ -1659,8 +2159,18 @@ class ShapeUpgrade_SplitCurve2dContinuity : public ShapeUpgrade_SplitCurve2d {
 };
 %feature("shadow") ShapeUpgrade_SplitCurve2dContinuity::~ShapeUpgrade_SplitCurve2dContinuity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_SplitCurve2dContinuity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_ConvertSurfaceToBezierBasis;
@@ -1706,8 +2216,18 @@ class ShapeUpgrade_ConvertSurfaceToBezierBasis : public ShapeUpgrade_SplitSurfac
 };
 %feature("shadow") ShapeUpgrade_ConvertSurfaceToBezierBasis::~ShapeUpgrade_ConvertSurfaceToBezierBasis %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_ShapeDivideClosed;
@@ -1721,8 +2241,18 @@ class ShapeUpgrade_ShapeDivideClosed : public ShapeUpgrade_ShapeDivide {
 };
 %feature("shadow") ShapeUpgrade_ShapeDivideClosed::~ShapeUpgrade_ShapeDivideClosed %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_ShapeDivideClosed {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_ConvertCurve2dToBezier;
@@ -1752,8 +2282,18 @@ class ShapeUpgrade_ConvertCurve2dToBezier : public ShapeUpgrade_SplitCurve2d {
 };
 %feature("shadow") ShapeUpgrade_ConvertCurve2dToBezier::~ShapeUpgrade_ConvertCurve2dToBezier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_ConvertCurve2dToBezier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeUpgrade_RemoveLocations;
@@ -1787,5 +2327,15 @@ class ShapeUpgrade_RemoveLocations : public MMgt_TShared {
 };
 %feature("shadow") ShapeUpgrade_RemoveLocations::~ShapeUpgrade_RemoveLocations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeUpgrade_RemoveLocations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

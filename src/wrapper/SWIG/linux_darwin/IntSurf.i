@@ -76,8 +76,18 @@ class Handle_IntSurf_LineOn2S : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IntSurf_LineOn2S::~Handle_IntSurf_LineOn2S %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntSurf_LineOn2S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint;
@@ -104,8 +114,18 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public Handle_TColl
 };
 %feature("shadow") Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint::~Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IntSurf_ListNodeOfListOfPntOn2S;
@@ -132,8 +152,18 @@ class Handle_IntSurf_ListNodeOfListOfPntOn2S : public Handle_TCollection_MapNode
 };
 %feature("shadow") Handle_IntSurf_ListNodeOfListOfPntOn2S::~Handle_IntSurf_ListNodeOfListOfPntOn2S %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntSurf_ListNodeOfListOfPntOn2S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint;
@@ -160,8 +190,18 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint : public Handle_TCollecti
 };
 %feature("shadow") Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint::~Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfCouple;
@@ -188,8 +228,18 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfCouple : public Handle_TCollection_
 };
 %feature("shadow") Handle_IntSurf_SequenceNodeOfSequenceOfCouple::~Handle_IntSurf_SequenceNodeOfSequenceOfCouple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntSurf_SequenceNodeOfSequenceOfCouple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S;
@@ -216,8 +266,18 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S : public Handle_TCollection
 };
 %feature("shadow") Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S::~Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_ListNodeOfListOfPntOn2S;
@@ -243,8 +303,18 @@ class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
 };
 %feature("shadow") IntSurf_ListNodeOfListOfPntOn2S::~IntSurf_ListNodeOfListOfPntOn2S %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_ListNodeOfListOfPntOn2S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf;
@@ -258,8 +328,18 @@ class IntSurf {
 };
 %feature("shadow") IntSurf::~IntSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_Transition;
@@ -289,8 +369,18 @@ class IntSurf_Transition {
 };
 %feature("shadow") IntSurf_Transition::~IntSurf_Transition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_Transition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_Quadric;
@@ -346,8 +436,18 @@ class IntSurf_Quadric {
 };
 %feature("shadow") IntSurf_Quadric::~IntSurf_Quadric %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_Quadric {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_ListOfPntOn2S;
@@ -397,8 +497,18 @@ class IntSurf_ListOfPntOn2S {
 };
 %feature("shadow") IntSurf_ListOfPntOn2S::~IntSurf_ListOfPntOn2S %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_ListOfPntOn2S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_PntOn2S;
@@ -428,8 +538,18 @@ class IntSurf_PntOn2S {
 };
 %feature("shadow") IntSurf_PntOn2S::~IntSurf_PntOn2S %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_PntOn2S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_PathPoint;
@@ -469,8 +589,18 @@ class IntSurf_PathPoint {
 };
 %feature("shadow") IntSurf_PathPoint::~IntSurf_PathPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_PathPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_Couple;
@@ -488,8 +618,18 @@ class IntSurf_Couple {
 };
 %feature("shadow") IntSurf_Couple::~IntSurf_Couple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_Couple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_SequenceOfCouple;
@@ -543,8 +683,18 @@ class IntSurf_SequenceOfCouple : public TCollection_BaseSequence {
 };
 %feature("shadow") IntSurf_SequenceOfCouple::~IntSurf_SequenceOfCouple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_SequenceOfCouple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_PathPointTool;
@@ -572,8 +722,18 @@ class IntSurf_PathPointTool {
 };
 %feature("shadow") IntSurf_PathPointTool::~IntSurf_PathPointTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_PathPointTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfPathPoint;
@@ -599,8 +759,18 @@ class IntSurf_SequenceNodeOfSequenceOfPathPoint : public TCollection_SeqNode {
 };
 %feature("shadow") IntSurf_SequenceNodeOfSequenceOfPathPoint::~IntSurf_SequenceNodeOfSequenceOfPathPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_SequenceNodeOfSequenceOfPathPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_InteriorPoint;
@@ -628,8 +798,18 @@ class IntSurf_InteriorPoint {
 };
 %feature("shadow") IntSurf_InteriorPoint::~IntSurf_InteriorPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_InteriorPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfInteriorPoint;
@@ -655,8 +835,18 @@ class IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public TCollection_SeqNode
 };
 %feature("shadow") IntSurf_SequenceNodeOfSequenceOfInteriorPoint::~IntSurf_SequenceNodeOfSequenceOfInteriorPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfCouple;
@@ -682,8 +872,18 @@ class IntSurf_SequenceNodeOfSequenceOfCouple : public TCollection_SeqNode {
 };
 %feature("shadow") IntSurf_SequenceNodeOfSequenceOfCouple::~IntSurf_SequenceNodeOfSequenceOfCouple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_SequenceNodeOfSequenceOfCouple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_SequenceOfPntOn2S;
@@ -737,8 +937,18 @@ class IntSurf_SequenceOfPntOn2S : public TCollection_BaseSequence {
 };
 %feature("shadow") IntSurf_SequenceOfPntOn2S::~IntSurf_SequenceOfPntOn2S %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_SequenceOfPntOn2S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_InteriorPointTool;
@@ -758,8 +968,18 @@ class IntSurf_InteriorPointTool {
 };
 %feature("shadow") IntSurf_InteriorPointTool::~IntSurf_InteriorPointTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_InteriorPointTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_LineOn2S;
@@ -803,8 +1023,18 @@ class IntSurf_LineOn2S : public MMgt_TShared {
 };
 %feature("shadow") IntSurf_LineOn2S::~IntSurf_LineOn2S %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_LineOn2S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_ListIteratorOfListOfPntOn2S;
@@ -826,8 +1056,18 @@ class IntSurf_ListIteratorOfListOfPntOn2S {
 };
 %feature("shadow") IntSurf_ListIteratorOfListOfPntOn2S::~IntSurf_ListIteratorOfListOfPntOn2S %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_ListIteratorOfListOfPntOn2S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfPntOn2S;
@@ -853,8 +1093,18 @@ class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
 };
 %feature("shadow") IntSurf_SequenceNodeOfSequenceOfPntOn2S::~IntSurf_SequenceNodeOfSequenceOfPntOn2S %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_QuadricTool;
@@ -874,8 +1124,18 @@ class IntSurf_QuadricTool {
 };
 %feature("shadow") IntSurf_QuadricTool::~IntSurf_QuadricTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_QuadricTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_SequenceOfPathPoint;
@@ -929,8 +1189,18 @@ class IntSurf_SequenceOfPathPoint : public TCollection_BaseSequence {
 };
 %feature("shadow") IntSurf_SequenceOfPathPoint::~IntSurf_SequenceOfPathPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_SequenceOfPathPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntSurf_SequenceOfInteriorPoint;
@@ -984,5 +1254,15 @@ class IntSurf_SequenceOfInteriorPoint : public TCollection_BaseSequence {
 };
 %feature("shadow") IntSurf_SequenceOfInteriorPoint::~IntSurf_SequenceOfInteriorPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntSurf_SequenceOfInteriorPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_XmlMDocStd_XLinkDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDocStd_XLinkDriver::~Handle_XmlMDocStd_XLinkDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDocStd_XLinkDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDocStd;
@@ -78,8 +88,18 @@ class XmlMDocStd {
 };
 %feature("shadow") XmlMDocStd::~XmlMDocStd %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDocStd {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDocStd_XLinkDriver;
@@ -109,5 +129,15 @@ class XmlMDocStd_XLinkDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDocStd_XLinkDriver::~XmlMDocStd_XLinkDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDocStd_XLinkDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

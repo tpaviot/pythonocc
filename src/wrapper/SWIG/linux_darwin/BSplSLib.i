@@ -116,5 +116,15 @@ class BSplSLib {
 };
 %feature("shadow") BSplSLib::~BSplSLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BSplSLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

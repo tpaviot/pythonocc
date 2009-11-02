@@ -64,8 +64,18 @@ class Handle_TDocStd_Modified : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDocStd_Modified::~Handle_TDocStd_Modified %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDocStd_Modified {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDocStd_XLinkRoot;
@@ -92,8 +102,18 @@ class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDocStd_XLinkRoot::~Handle_TDocStd_XLinkRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDocStd_XLinkRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDocStd_XLink;
@@ -120,8 +140,18 @@ class Handle_TDocStd_XLink : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDocStd_XLink::~Handle_TDocStd_XLink %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDocStd_XLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDocStd_Document;
@@ -148,8 +178,18 @@ class Handle_TDocStd_Document : public Handle_CDM_Document {
 };
 %feature("shadow") Handle_TDocStd_Document::~Handle_TDocStd_Document %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDocStd_Document {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDocStd_MultiTransactionManager;
@@ -176,8 +216,18 @@ class Handle_TDocStd_MultiTransactionManager : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDocStd_MultiTransactionManager::~Handle_TDocStd_MultiTransactionManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDocStd_MultiTransactionManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDocStd_Owner;
@@ -204,8 +254,18 @@ class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDocStd_Owner::~Handle_TDocStd_Owner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDocStd_Owner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
@@ -232,8 +292,18 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public Handle_TC
 };
 %feature("shadow") Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta::~Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap;
@@ -260,8 +330,18 @@ class Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap : public Handle_TCollection_
 };
 %feature("shadow") Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap::~Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDocStd_SequenceNodeOfSequenceOfDocument;
@@ -288,8 +368,18 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfDocument : public Handle_TCollectio
 };
 %feature("shadow") Handle_TDocStd_SequenceNodeOfSequenceOfDocument::~Handle_TDocStd_SequenceNodeOfSequenceOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDocStd_SequenceNodeOfSequenceOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDocStd_ApplicationDelta;
@@ -316,8 +406,18 @@ class Handle_TDocStd_ApplicationDelta : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDocStd_ApplicationDelta::~Handle_TDocStd_ApplicationDelta %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDocStd_ApplicationDelta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDocStd_CompoundDelta;
@@ -344,8 +444,18 @@ class Handle_TDocStd_CompoundDelta : public Handle_TDF_Delta {
 };
 %feature("shadow") Handle_TDocStd_CompoundDelta::~Handle_TDocStd_CompoundDelta %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDocStd_CompoundDelta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDocStd_Application;
@@ -372,8 +482,18 @@ class Handle_TDocStd_Application : public Handle_CDF_Application {
 };
 %feature("shadow") Handle_TDocStd_Application::~Handle_TDocStd_Application %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDocStd_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_XLinkIterator;
@@ -395,8 +515,18 @@ class TDocStd_XLinkIterator {
 };
 %feature("shadow") TDocStd_XLinkIterator::~TDocStd_XLinkIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_XLinkIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_SequenceOfDocument;
@@ -450,8 +580,18 @@ class TDocStd_SequenceOfDocument : public TCollection_BaseSequence {
 };
 %feature("shadow") TDocStd_SequenceOfDocument::~TDocStd_SequenceOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_SequenceOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_XLinkTool;
@@ -475,8 +615,18 @@ class TDocStd_XLinkTool {
 };
 %feature("shadow") TDocStd_XLinkTool::~TDocStd_XLinkTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_XLinkTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_MultiTransactionManager;
@@ -550,8 +700,18 @@ class TDocStd_MultiTransactionManager : public MMgt_TShared {
 };
 %feature("shadow") TDocStd_MultiTransactionManager::~TDocStd_MultiTransactionManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_MultiTransactionManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_Application;
@@ -603,8 +763,18 @@ class TDocStd_Application : public CDF_Application {
 };
 %feature("shadow") TDocStd_Application::~TDocStd_Application %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_SequenceNodeOfSequenceOfDocument;
@@ -630,8 +800,18 @@ class TDocStd_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 };
 %feature("shadow") TDocStd_SequenceNodeOfSequenceOfDocument::~TDocStd_SequenceNodeOfSequenceOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_SequenceNodeOfSequenceOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_Owner;
@@ -681,8 +861,18 @@ class TDocStd_Owner : public TDF_Attribute {
 };
 %feature("shadow") TDocStd_Owner::~TDocStd_Owner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_Owner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_ApplicationDelta;
@@ -720,8 +910,18 @@ class TDocStd_ApplicationDelta : public MMgt_TShared {
 };
 %feature("shadow") TDocStd_ApplicationDelta::~TDocStd_ApplicationDelta %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_ApplicationDelta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_Context;
@@ -737,8 +937,18 @@ class TDocStd_Context {
 };
 %feature("shadow") TDocStd_Context::~TDocStd_Context %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_Context {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_DataMapIteratorOfLabelIDMapDataMap;
@@ -758,8 +968,18 @@ class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIt
 };
 %feature("shadow") TDocStd_DataMapIteratorOfLabelIDMapDataMap::~TDocStd_DataMapIteratorOfLabelIDMapDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_DataMapIteratorOfLabelIDMapDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_PathParser;
@@ -783,8 +1003,18 @@ class TDocStd_PathParser {
 };
 %feature("shadow") TDocStd_PathParser::~TDocStd_PathParser %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_PathParser {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_Modified;
@@ -848,8 +1078,18 @@ class TDocStd_Modified : public TDF_Attribute {
 };
 %feature("shadow") TDocStd_Modified::~TDocStd_Modified %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_Modified {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
@@ -875,8 +1115,18 @@ class TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public TCollection_SeqN
 };
 %feature("shadow") TDocStd_SequenceNodeOfSequenceOfApplicationDelta::~TDocStd_SequenceNodeOfSequenceOfApplicationDelta %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd;
@@ -890,8 +1140,18 @@ class TDocStd {
 };
 %feature("shadow") TDocStd::~TDocStd %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_LabelIDMapDataMap;
@@ -925,8 +1185,18 @@ class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
 };
 %feature("shadow") TDocStd_LabelIDMapDataMap::~TDocStd_LabelIDMapDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_LabelIDMapDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_CompoundDelta;
@@ -950,8 +1220,18 @@ class TDocStd_CompoundDelta : public TDF_Delta {
 };
 %feature("shadow") TDocStd_CompoundDelta::~TDocStd_CompoundDelta %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_CompoundDelta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_DataMapNodeOfLabelIDMapDataMap;
@@ -979,8 +1259,18 @@ class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
 };
 %feature("shadow") TDocStd_DataMapNodeOfLabelIDMapDataMap::~TDocStd_DataMapNodeOfLabelIDMapDataMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_Document;
@@ -1090,8 +1380,18 @@ class TDocStd_Document : public CDM_Document {
 };
 %feature("shadow") TDocStd_Document::~TDocStd_Document %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_Document {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_SequenceOfApplicationDelta;
@@ -1145,8 +1445,18 @@ class TDocStd_SequenceOfApplicationDelta : public TCollection_BaseSequence {
 };
 %feature("shadow") TDocStd_SequenceOfApplicationDelta::~TDocStd_SequenceOfApplicationDelta %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_SequenceOfApplicationDelta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_XLinkRoot;
@@ -1194,8 +1504,18 @@ class TDocStd_XLinkRoot : public TDF_Attribute {
 };
 %feature("shadow") TDocStd_XLinkRoot::~TDocStd_XLinkRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_XLinkRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDocStd_XLink;
@@ -1261,5 +1581,15 @@ class TDocStd_XLink : public TDF_Attribute {
 };
 %feature("shadow") TDocStd_XLink::~TDocStd_XLink %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDocStd_XLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

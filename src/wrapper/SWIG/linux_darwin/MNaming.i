@@ -63,8 +63,18 @@ class Handle_MNaming_NamingRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MNaming_NamingRetrievalDriver::~Handle_MNaming_NamingRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MNaming_NamingRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MNaming_NamingStorageDriver;
@@ -91,8 +101,18 @@ class Handle_MNaming_NamingStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MNaming_NamingStorageDriver::~Handle_MNaming_NamingStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MNaming_NamingStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MNaming_NamedShapeRetrievalDriver;
@@ -119,8 +139,18 @@ class Handle_MNaming_NamedShapeRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MNaming_NamedShapeRetrievalDriver::~Handle_MNaming_NamedShapeRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MNaming_NamedShapeRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MNaming_NamedShapeStorageDriver;
@@ -147,8 +177,18 @@ class Handle_MNaming_NamedShapeStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MNaming_NamedShapeStorageDriver::~Handle_MNaming_NamedShapeStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MNaming_NamedShapeStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MNaming;
@@ -164,8 +204,18 @@ class MNaming {
 };
 %feature("shadow") MNaming::~MNaming %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MNaming {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MNaming_NamingRetrievalDriver;
@@ -197,8 +247,18 @@ class MNaming_NamingRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MNaming_NamingRetrievalDriver::~MNaming_NamingRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MNaming_NamingRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MNaming_NamedShapeRetrievalDriver;
@@ -230,8 +290,18 @@ class MNaming_NamedShapeRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MNaming_NamedShapeRetrievalDriver::~MNaming_NamedShapeRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MNaming_NamedShapeRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MNaming_NamingStorageDriver;
@@ -263,8 +333,18 @@ class MNaming_NamingStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MNaming_NamingStorageDriver::~MNaming_NamingStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MNaming_NamingStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MNaming_NamedShapeStorageDriver;
@@ -296,5 +376,15 @@ class MNaming_NamedShapeStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MNaming_NamedShapeStorageDriver::~MNaming_NamedShapeStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MNaming_NamedShapeStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

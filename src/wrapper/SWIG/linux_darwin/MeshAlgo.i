@@ -64,8 +64,18 @@ class Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public Handle_TCollect
 };
 %feature("shadow") Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc::~Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshAlgo;
@@ -81,8 +91,18 @@ class MeshAlgo {
 };
 %feature("shadow") MeshAlgo::~MeshAlgo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshAlgo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshAlgo_Circ;
@@ -104,8 +124,18 @@ class MeshAlgo_Circ {
 };
 %feature("shadow") MeshAlgo_Circ::~MeshAlgo_Circ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshAlgo_Circ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshAlgo_DataMapOfIntegerCirc;
@@ -139,8 +169,18 @@ class MeshAlgo_DataMapOfIntegerCirc : public TCollection_BasicMap {
 };
 %feature("shadow") MeshAlgo_DataMapOfIntegerCirc::~MeshAlgo_DataMapOfIntegerCirc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshAlgo_DataMapOfIntegerCirc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshAlgo_CircleTool;
@@ -184,8 +224,18 @@ class MeshAlgo_CircleTool {
 };
 %feature("shadow") MeshAlgo_CircleTool::~MeshAlgo_CircleTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshAlgo_CircleTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc;
@@ -205,8 +255,18 @@ class MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc : public TCollection_BasicM
 };
 %feature("shadow") MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc::~MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc;
@@ -244,5 +304,15 @@ class MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public TCollection_MapNode {
 };
 %feature("shadow") MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc::~MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -70,8 +70,18 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public H
 };
 %feature("shadow") Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString::~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
@@ -98,8 +108,18 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public Hand
 };
 %feature("shadow") Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString::~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Resource_NoSuchResource;
@@ -126,8 +146,18 @@ class Handle_Resource_NoSuchResource : public Handle_Standard_NoSuchObject {
 };
 %feature("shadow") Handle_Resource_NoSuchResource::~Handle_Resource_NoSuchResource %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Resource_NoSuchResource {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Resource_Manager;
@@ -154,8 +184,18 @@ class Handle_Resource_Manager : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Resource_Manager::~Handle_Resource_Manager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Resource_Manager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Resource_Array1OfAsciiString;
@@ -195,8 +235,18 @@ class Resource_Array1OfAsciiString {
 };
 %feature("shadow") Resource_Array1OfAsciiString::~Resource_Array1OfAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Resource_Array1OfAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Resource_DataMapOfAsciiStringAsciiString;
@@ -230,8 +280,18 @@ class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 };
 %feature("shadow") Resource_DataMapOfAsciiStringAsciiString::~Resource_DataMapOfAsciiStringAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Resource_DataMapOfAsciiStringAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString;
@@ -251,8 +311,18 @@ class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCol
 };
 %feature("shadow") Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString::~Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
@@ -280,8 +350,18 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection
 };
 %feature("shadow") Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString::~Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString;
@@ -309,8 +389,18 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollect
 };
 %feature("shadow") Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString::~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Resource_Manager;
@@ -356,8 +446,18 @@ class Resource_Manager : public MMgt_TShared {
 };
 %feature("shadow") Resource_Manager::~Resource_Manager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Resource_Manager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Resource_QuickSortOfArray1;
@@ -371,8 +471,18 @@ class Resource_QuickSortOfArray1 {
 };
 %feature("shadow") Resource_QuickSortOfArray1::~Resource_QuickSortOfArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Resource_QuickSortOfArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Resource_LexicalCompare;
@@ -386,8 +496,18 @@ class Resource_LexicalCompare {
 };
 %feature("shadow") Resource_LexicalCompare::~Resource_LexicalCompare %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Resource_LexicalCompare {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Resource_NoSuchResource;
@@ -419,8 +539,18 @@ class Resource_NoSuchResource : public Standard_NoSuchObject {
 };
 %feature("shadow") Resource_NoSuchResource::~Resource_NoSuchResource %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Resource_NoSuchResource {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Resource_DataMapOfAsciiStringExtendedString;
@@ -454,8 +584,18 @@ class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap 
 };
 %feature("shadow") Resource_DataMapOfAsciiStringExtendedString::~Resource_DataMapOfAsciiStringExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Resource_DataMapOfAsciiStringExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Resource_Unicode;
@@ -493,8 +633,18 @@ class Resource_Unicode {
 };
 %feature("shadow") Resource_Unicode::~Resource_Unicode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Resource_Unicode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString;
@@ -514,5 +664,15 @@ class Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString : public TCollec
 };
 %feature("shadow") Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString::~Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

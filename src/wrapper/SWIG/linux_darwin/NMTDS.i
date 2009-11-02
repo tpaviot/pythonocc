@@ -77,8 +77,18 @@ class Handle_NMTDS_StdMapNodeOfMapOfPassKey : public Handle_TCollection_MapNode 
 };
 %feature("shadow") Handle_NMTDS_StdMapNodeOfMapOfPassKey::~Handle_NMTDS_StdMapNodeOfMapOfPassKey %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTDS_StdMapNodeOfMapOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean;
@@ -105,8 +115,18 @@ class Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean : public Handle_TCollection_M
 };
 %feature("shadow") Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean::~Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTDS_ListNodeOfListOfPassKey;
@@ -133,8 +153,18 @@ class Handle_NMTDS_ListNodeOfListOfPassKey : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_NMTDS_ListNodeOfListOfPassKey::~Handle_NMTDS_ListNodeOfListOfPassKey %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTDS_ListNodeOfListOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger;
@@ -161,8 +191,18 @@ class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfSh
 };
 %feature("shadow") Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger::~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger;
@@ -189,8 +229,18 @@ class Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TCo
 };
 %feature("shadow") Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger::~Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors;
@@ -217,8 +267,18 @@ class Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors : pu
 };
 %feature("shadow") Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors::~Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
@@ -245,8 +305,18 @@ class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public Handle_
 };
 %feature("shadow") Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape;
@@ -273,8 +343,18 @@ class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public Han
 };
 %feature("shadow") Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape::~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTDS_ListNodeOfListOfPassKeyBoolean;
@@ -301,8 +381,18 @@ class Handle_NMTDS_ListNodeOfListOfPassKeyBoolean : public Handle_TCollection_Ma
 };
 %feature("shadow") Handle_NMTDS_ListNodeOfListOfPassKeyBoolean::~Handle_NMTDS_ListNodeOfListOfPassKeyBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTDS_ListNodeOfListOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger;
@@ -354,8 +444,18 @@ class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInte
 };
 %feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors;
@@ -405,8 +505,18 @@ class NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors {
 };
 %feature("shadow") NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors::~NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_PassKeyShapeMapHasher;
@@ -422,8 +532,18 @@ class NMTDS_PassKeyShapeMapHasher {
 };
 %feature("shadow") NMTDS_PassKeyShapeMapHasher::~NMTDS_PassKeyShapeMapHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_PassKeyShapeMapHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger;
@@ -467,8 +587,18 @@ class NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger : public TCollec
 };
 %feature("shadow") NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger::~NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger;
@@ -506,8 +636,18 @@ class NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public TCollection_MapNo
 };
 %feature("shadow") NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger::~NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors;
@@ -533,8 +673,18 @@ class NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors : public TC
 };
 %feature("shadow") NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors::~NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_StdMapNodeOfMapOfPassKeyBoolean;
@@ -560,8 +710,18 @@ class NMTDS_StdMapNodeOfMapOfPassKeyBoolean : public TCollection_MapNode {
 };
 %feature("shadow") NMTDS_StdMapNodeOfMapOfPassKeyBoolean::~NMTDS_StdMapNodeOfMapOfPassKeyBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_StdMapNodeOfMapOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_ListIteratorOfListOfPassKey;
@@ -583,8 +743,18 @@ class NMTDS_ListIteratorOfListOfPassKey {
 };
 %feature("shadow") NMTDS_ListIteratorOfListOfPassKey::~NMTDS_ListIteratorOfListOfPassKey %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_ListIteratorOfListOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_DataMapOfIntegerMapOfInteger;
@@ -618,8 +788,18 @@ class NMTDS_DataMapOfIntegerMapOfInteger : public TCollection_BasicMap {
 };
 %feature("shadow") NMTDS_DataMapOfIntegerMapOfInteger::~NMTDS_DataMapOfIntegerMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_DataMapOfIntegerMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger;
@@ -639,8 +819,18 @@ class NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger : public TCollection_B
 };
 %feature("shadow") NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger::~NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_IndexedDataMapOfShapeBox;
@@ -684,8 +874,18 @@ class NMTDS_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 };
 %feature("shadow") NMTDS_IndexedDataMapOfShapeBox::~NMTDS_IndexedDataMapOfShapeBox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_IndexedDataMapOfShapeBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
@@ -727,8 +927,18 @@ class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TCollection_Ma
 };
 %feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_ListOfPassKeyBoolean;
@@ -778,8 +988,18 @@ class NMTDS_ListOfPassKeyBoolean {
 };
 %feature("shadow") NMTDS_ListOfPassKeyBoolean::~NMTDS_ListOfPassKeyBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_ListOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_CArray1OfIndexRange;
@@ -817,8 +1037,18 @@ class NMTDS_CArray1OfIndexRange {
 };
 %feature("shadow") NMTDS_CArray1OfIndexRange::~NMTDS_CArray1OfIndexRange %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_CArray1OfIndexRange {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_InterfPool;
@@ -860,8 +1090,18 @@ class NMTDS_InterfPool {
 };
 %feature("shadow") NMTDS_InterfPool::~NMTDS_InterfPool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_InterfPool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_ListIteratorOfListOfPassKeyBoolean;
@@ -883,8 +1123,18 @@ class NMTDS_ListIteratorOfListOfPassKeyBoolean {
 };
 %feature("shadow") NMTDS_ListIteratorOfListOfPassKeyBoolean::~NMTDS_ListIteratorOfListOfPassKeyBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_ListIteratorOfListOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_BoxBndTreeSelector;
@@ -902,8 +1152,18 @@ class NMTDS_BoxBndTreeSelector : public Selector {
 };
 %feature("shadow") NMTDS_BoxBndTreeSelector::~NMTDS_BoxBndTreeSelector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_BoxBndTreeSelector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_IndexedDataMapOfIntegerShape;
@@ -947,8 +1207,18 @@ class NMTDS_IndexedDataMapOfIntegerShape : public TCollection_BasicMap {
 };
 %feature("shadow") NMTDS_IndexedDataMapOfIntegerShape::~NMTDS_IndexedDataMapOfIntegerShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_IndexedDataMapOfIntegerShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_PassKey;
@@ -993,8 +1263,18 @@ class NMTDS_PassKey {
 };
 %feature("shadow") NMTDS_PassKey::~NMTDS_PassKey %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_PassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_MapOfPassKeyBoolean;
@@ -1020,8 +1300,18 @@ class NMTDS_MapOfPassKeyBoolean : public TCollection_BasicMap {
 };
 %feature("shadow") NMTDS_MapOfPassKeyBoolean::~NMTDS_MapOfPassKeyBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_MapOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors;
@@ -1043,8 +1333,18 @@ class NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
 };
 %feature("shadow") NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors::~NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_ListNodeOfListOfPassKeyBoolean;
@@ -1070,8 +1370,18 @@ class NMTDS_ListNodeOfListOfPassKeyBoolean : public TCollection_MapNode {
 };
 %feature("shadow") NMTDS_ListNodeOfListOfPassKeyBoolean::~NMTDS_ListNodeOfListOfPassKeyBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_ListNodeOfListOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_PassKeyMapHasher;
@@ -1087,8 +1397,18 @@ class NMTDS_PassKeyMapHasher {
 };
 %feature("shadow") NMTDS_PassKeyMapHasher::~NMTDS_PassKeyMapHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_PassKeyMapHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_Iterator;
@@ -1122,8 +1442,18 @@ class NMTDS_Iterator {
 };
 %feature("shadow") NMTDS_Iterator::~NMTDS_Iterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_Iterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_StdMapNodeOfMapOfPassKey;
@@ -1149,8 +1479,18 @@ class NMTDS_StdMapNodeOfMapOfPassKey : public TCollection_MapNode {
 };
 %feature("shadow") NMTDS_StdMapNodeOfMapOfPassKey::~NMTDS_StdMapNodeOfMapOfPassKey %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_StdMapNodeOfMapOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_ShapesDataStructure;
@@ -1184,8 +1524,18 @@ class NMTDS_ShapesDataStructure : public BooleanOperations_ShapesDataStructure {
 };
 %feature("shadow") NMTDS_ShapesDataStructure::~NMTDS_ShapesDataStructure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_ShapesDataStructure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_IndexRange;
@@ -1207,8 +1557,18 @@ class NMTDS_IndexRange {
 };
 %feature("shadow") NMTDS_IndexRange::~NMTDS_IndexRange %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_IndexRange {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_ListOfPassKey;
@@ -1258,8 +1618,18 @@ class NMTDS_ListOfPassKey {
 };
 %feature("shadow") NMTDS_ListOfPassKey::~NMTDS_ListOfPassKey %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_ListOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_PassKeyShape;
@@ -1302,8 +1672,18 @@ class NMTDS_PassKeyShape {
 };
 %feature("shadow") NMTDS_PassKeyShape::~NMTDS_PassKeyShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_PassKeyShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_Tools;
@@ -1325,8 +1705,18 @@ class NMTDS_Tools {
 };
 %feature("shadow") NMTDS_Tools::~NMTDS_Tools %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_Tools {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_PassKeyBoolean;
@@ -1344,8 +1734,18 @@ class NMTDS_PassKeyBoolean : public NMTDS_PassKey {
 };
 %feature("shadow") NMTDS_PassKeyBoolean::~NMTDS_PassKeyBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_PassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_MapOfPassKey;
@@ -1371,8 +1771,18 @@ class NMTDS_MapOfPassKey : public TCollection_BasicMap {
 };
 %feature("shadow") NMTDS_MapOfPassKey::~NMTDS_MapOfPassKey %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_MapOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_ListNodeOfListOfPassKey;
@@ -1398,8 +1808,18 @@ class NMTDS_ListNodeOfListOfPassKey : public TCollection_MapNode {
 };
 %feature("shadow") NMTDS_ListNodeOfListOfPassKey::~NMTDS_ListNodeOfListOfPassKey %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_ListNodeOfListOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_IteratorCheckerSI;
@@ -1411,8 +1831,18 @@ class NMTDS_IteratorCheckerSI : public NMTDS_Iterator {
 };
 %feature("shadow") NMTDS_IteratorCheckerSI::~NMTDS_IteratorCheckerSI %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_IteratorCheckerSI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_MapIteratorOfMapOfPassKey;
@@ -1430,8 +1860,18 @@ class NMTDS_MapIteratorOfMapOfPassKey : public TCollection_BasicMapIterator {
 };
 %feature("shadow") NMTDS_MapIteratorOfMapOfPassKey::~NMTDS_MapIteratorOfMapOfPassKey %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_MapIteratorOfMapOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_MapIteratorOfMapOfPassKeyBoolean;
@@ -1449,8 +1889,18 @@ class NMTDS_MapIteratorOfMapOfPassKeyBoolean : public TCollection_BasicMapIterat
 };
 %feature("shadow") NMTDS_MapIteratorOfMapOfPassKeyBoolean::~NMTDS_MapIteratorOfMapOfPassKeyBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_MapIteratorOfMapOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape;
@@ -1502,5 +1952,15 @@ class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public TCollectio
 };
 %feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

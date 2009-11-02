@@ -63,8 +63,18 @@ class Handle_GeomTools_UndefinedTypeHandler : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomTools_UndefinedTypeHandler::~Handle_GeomTools_UndefinedTypeHandler %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomTools_UndefinedTypeHandler {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomTools_Curve2dSet;
@@ -115,8 +125,18 @@ class GeomTools_Curve2dSet {
 };
 %feature("shadow") GeomTools_Curve2dSet::~GeomTools_Curve2dSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomTools_Curve2dSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomTools_CurveSet;
@@ -167,8 +187,18 @@ class GeomTools_CurveSet {
 };
 %feature("shadow") GeomTools_CurveSet::~GeomTools_CurveSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomTools_CurveSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomTools;
@@ -202,8 +232,18 @@ class GeomTools {
 };
 %feature("shadow") GeomTools::~GeomTools %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomTools {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomTools_SurfaceSet;
@@ -254,8 +294,18 @@ class GeomTools_SurfaceSet {
 };
 %feature("shadow") GeomTools_SurfaceSet::~GeomTools_SurfaceSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomTools_SurfaceSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomTools_UndefinedTypeHandler;
@@ -291,5 +341,15 @@ class GeomTools_UndefinedTypeHandler : public MMgt_TShared {
 };
 %feature("shadow") GeomTools_UndefinedTypeHandler::~GeomTools_UndefinedTypeHandler %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomTools_UndefinedTypeHandler {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

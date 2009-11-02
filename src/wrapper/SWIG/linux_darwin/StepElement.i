@@ -126,8 +126,18 @@ class Handle_StepElement_ElementDescriptor : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepElement_ElementDescriptor::~Handle_StepElement_ElementDescriptor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_ElementDescriptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_Surface3dElementDescriptor;
@@ -154,8 +164,18 @@ class Handle_StepElement_Surface3dElementDescriptor : public Handle_StepElement_
 };
 %feature("shadow") Handle_StepElement_Surface3dElementDescriptor::~Handle_StepElement_Surface3dElementDescriptor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_Surface3dElementDescriptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HArray1OfCurveElementSectionDefinition;
@@ -182,8 +202,18 @@ class Handle_StepElement_HArray1OfCurveElementSectionDefinition : public Handle_
 };
 %feature("shadow") Handle_StepElement_HArray1OfCurveElementSectionDefinition::~Handle_StepElement_HArray1OfCurveElementSectionDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HArray1OfCurveElementSectionDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_SurfaceElementPurposeMember;
@@ -210,8 +240,18 @@ class Handle_StepElement_SurfaceElementPurposeMember : public Handle_StepData_Se
 };
 %feature("shadow") Handle_StepElement_SurfaceElementPurposeMember::~Handle_StepElement_SurfaceElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_SurfaceElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HArray1OfVolumeElementPurposeMember;
@@ -238,8 +278,18 @@ class Handle_StepElement_HArray1OfVolumeElementPurposeMember : public Handle_MMg
 };
 %feature("shadow") Handle_StepElement_HArray1OfVolumeElementPurposeMember::~Handle_StepElement_HArray1OfVolumeElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HArray1OfVolumeElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_SurfaceSection;
@@ -266,8 +316,18 @@ class Handle_StepElement_SurfaceSection : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepElement_SurfaceSection::~Handle_StepElement_SurfaceSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_SurfaceSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_SurfaceSectionField;
@@ -294,8 +354,18 @@ class Handle_StepElement_SurfaceSectionField : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepElement_SurfaceSectionField::~Handle_StepElement_SurfaceSectionField %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_SurfaceSectionField {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HArray1OfSurfaceSection;
@@ -322,8 +392,18 @@ class Handle_StepElement_HArray1OfSurfaceSection : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepElement_HArray1OfSurfaceSection::~Handle_StepElement_HArray1OfSurfaceSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HArray1OfSurfaceSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_CurveElementSectionDefinition;
@@ -350,8 +430,18 @@ class Handle_StepElement_CurveElementSectionDefinition : public Handle_MMgt_TSha
 };
 %feature("shadow") Handle_StepElement_CurveElementSectionDefinition::~Handle_StepElement_CurveElementSectionDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_CurveElementSectionDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial;
@@ -378,8 +468,18 @@ class Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial : public Handle
 };
 %feature("shadow") Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial::~Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember;
@@ -406,8 +506,18 @@ class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : pub
 };
 %feature("shadow") Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember::~Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_AnalysisItemWithinRepresentation;
@@ -434,8 +544,18 @@ class Handle_StepElement_AnalysisItemWithinRepresentation : public Handle_MMgt_T
 };
 %feature("shadow") Handle_StepElement_AnalysisItemWithinRepresentation::~Handle_StepElement_AnalysisItemWithinRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_AnalysisItemWithinRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HArray2OfSurfaceElementPurpose;
@@ -462,8 +582,18 @@ class Handle_StepElement_HArray2OfSurfaceElementPurpose : public Handle_MMgt_TSh
 };
 %feature("shadow") Handle_StepElement_HArray2OfSurfaceElementPurpose::~Handle_StepElement_HArray2OfSurfaceElementPurpose %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HArray2OfSurfaceElementPurpose {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HArray2OfSurfaceElementPurposeMember;
@@ -490,8 +620,18 @@ class Handle_StepElement_HArray2OfSurfaceElementPurposeMember : public Handle_MM
 };
 %feature("shadow") Handle_StepElement_HArray2OfSurfaceElementPurposeMember::~Handle_StepElement_HArray2OfSurfaceElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HArray2OfSurfaceElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue;
@@ -518,8 +658,18 @@ class Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue : public Handle_MMgt
 };
 %feature("shadow") Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue::~Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_CurveElementEndReleasePacket;
@@ -546,8 +696,18 @@ class Handle_StepElement_CurveElementEndReleasePacket : public Handle_MMgt_TShar
 };
 %feature("shadow") Handle_StepElement_CurveElementEndReleasePacket::~Handle_StepElement_CurveElementEndReleasePacket %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_CurveElementEndReleasePacket {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HSequenceOfCurveElementPurposeMember;
@@ -574,8 +734,18 @@ class Handle_StepElement_HSequenceOfCurveElementPurposeMember : public Handle_MM
 };
 %feature("shadow") Handle_StepElement_HSequenceOfCurveElementPurposeMember::~Handle_StepElement_HSequenceOfCurveElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HSequenceOfCurveElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HSequenceOfCurveElementSectionDefinition;
@@ -602,8 +772,18 @@ class Handle_StepElement_HSequenceOfCurveElementSectionDefinition : public Handl
 };
 %feature("shadow") Handle_StepElement_HSequenceOfCurveElementSectionDefinition::~Handle_StepElement_HSequenceOfCurveElementSectionDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HSequenceOfCurveElementSectionDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember;
@@ -630,8 +810,18 @@ class Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : p
 };
 %feature("shadow") Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember::~Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_SurfaceElementProperty;
@@ -658,8 +848,18 @@ class Handle_StepElement_SurfaceElementProperty : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepElement_SurfaceElementProperty::~Handle_StepElement_SurfaceElementProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_SurfaceElementProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HSequenceOfElementMaterial;
@@ -686,8 +886,18 @@ class Handle_StepElement_HSequenceOfElementMaterial : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_StepElement_HSequenceOfElementMaterial::~Handle_StepElement_HSequenceOfElementMaterial %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HSequenceOfElementMaterial {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HArray2OfCurveElementPurposeMember;
@@ -714,8 +924,18 @@ class Handle_StepElement_HArray2OfCurveElementPurposeMember : public Handle_MMgt
 };
 %feature("shadow") Handle_StepElement_HArray2OfCurveElementPurposeMember::~Handle_StepElement_HArray2OfCurveElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HArray2OfCurveElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_UniformSurfaceSection;
@@ -742,8 +962,18 @@ class Handle_StepElement_UniformSurfaceSection : public Handle_StepElement_Surfa
 };
 %feature("shadow") Handle_StepElement_UniformSurfaceSection::~Handle_StepElement_UniformSurfaceSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_UniformSurfaceSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_Curve3dElementDescriptor;
@@ -770,8 +1000,18 @@ class Handle_StepElement_Curve3dElementDescriptor : public Handle_StepElement_El
 };
 %feature("shadow") Handle_StepElement_Curve3dElementDescriptor::~Handle_StepElement_Curve3dElementDescriptor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_Curve3dElementDescriptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_VolumeElementPurposeMember;
@@ -798,8 +1038,18 @@ class Handle_StepElement_VolumeElementPurposeMember : public Handle_StepData_Sel
 };
 %feature("shadow") Handle_StepElement_VolumeElementPurposeMember::~Handle_StepElement_VolumeElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_VolumeElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_MeasureOrUnspecifiedValueMember;
@@ -826,8 +1076,18 @@ class Handle_StepElement_MeasureOrUnspecifiedValueMember : public Handle_StepDat
 };
 %feature("shadow") Handle_StepElement_MeasureOrUnspecifiedValueMember::~Handle_StepElement_MeasureOrUnspecifiedValueMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_MeasureOrUnspecifiedValueMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HSequenceOfSurfaceElementPurposeMember;
@@ -854,8 +1114,18 @@ class Handle_StepElement_HSequenceOfSurfaceElementPurposeMember : public Handle_
 };
 %feature("shadow") Handle_StepElement_HSequenceOfSurfaceElementPurposeMember::~Handle_StepElement_HSequenceOfSurfaceElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HSequenceOfSurfaceElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_CurveElementPurposeMember;
@@ -882,8 +1152,18 @@ class Handle_StepElement_CurveElementPurposeMember : public Handle_StepData_Sele
 };
 %feature("shadow") Handle_StepElement_CurveElementPurposeMember::~Handle_StepElement_CurveElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_CurveElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_ElementAspectMember;
@@ -910,8 +1190,18 @@ class Handle_StepElement_ElementAspectMember : public Handle_StepData_SelectName
 };
 %feature("shadow") Handle_StepElement_ElementAspectMember::~Handle_StepElement_ElementAspectMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_ElementAspectMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_CurveElementFreedomMember;
@@ -938,8 +1228,18 @@ class Handle_StepElement_CurveElementFreedomMember : public Handle_StepData_Sele
 };
 %feature("shadow") Handle_StepElement_CurveElementFreedomMember::~Handle_StepElement_CurveElementFreedomMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_CurveElementFreedomMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_Volume3dElementDescriptor;
@@ -966,8 +1266,18 @@ class Handle_StepElement_Volume3dElementDescriptor : public Handle_StepElement_E
 };
 %feature("shadow") Handle_StepElement_Volume3dElementDescriptor::~Handle_StepElement_Volume3dElementDescriptor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_Volume3dElementDescriptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_SurfaceSectionFieldVarying;
@@ -994,8 +1304,18 @@ class Handle_StepElement_SurfaceSectionFieldVarying : public Handle_StepElement_
 };
 %feature("shadow") Handle_StepElement_SurfaceSectionFieldVarying::~Handle_StepElement_SurfaceSectionFieldVarying %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_SurfaceSectionFieldVarying {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember;
@@ -1022,8 +1342,18 @@ class Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember : publi
 };
 %feature("shadow") Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember::~Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_CurveElementSectionDerivedDefinitions;
@@ -1050,8 +1380,18 @@ class Handle_StepElement_CurveElementSectionDerivedDefinitions : public Handle_S
 };
 %feature("shadow") Handle_StepElement_CurveElementSectionDerivedDefinitions::~Handle_StepElement_CurveElementSectionDerivedDefinitions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_CurveElementSectionDerivedDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HArray1OfVolumeElementPurpose;
@@ -1078,8 +1418,18 @@ class Handle_StepElement_HArray1OfVolumeElementPurpose : public Handle_MMgt_TSha
 };
 %feature("shadow") Handle_StepElement_HArray1OfVolumeElementPurpose::~Handle_StepElement_HArray1OfVolumeElementPurpose %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HArray1OfVolumeElementPurpose {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_ElementMaterial;
@@ -1106,8 +1456,18 @@ class Handle_StepElement_ElementMaterial : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepElement_ElementMaterial::~Handle_StepElement_ElementMaterial %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_ElementMaterial {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition;
@@ -1134,8 +1494,18 @@ class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition :
 };
 %feature("shadow") Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition::~Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HArray1OfCurveElementEndReleasePacket;
@@ -1162,8 +1532,18 @@ class Handle_StepElement_HArray1OfCurveElementEndReleasePacket : public Handle_M
 };
 %feature("shadow") Handle_StepElement_HArray1OfCurveElementEndReleasePacket::~Handle_StepElement_HArray1OfCurveElementEndReleasePacket %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HArray1OfCurveElementEndReleasePacket {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember;
@@ -1190,8 +1570,18 @@ class Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public 
 };
 %feature("shadow") Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember::~Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepElement_SurfaceSectionFieldConstant;
@@ -1218,8 +1608,18 @@ class Handle_StepElement_SurfaceSectionFieldConstant : public Handle_StepElement
 };
 %feature("shadow") Handle_StepElement_SurfaceSectionFieldConstant::~Handle_StepElement_SurfaceSectionFieldConstant %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepElement_SurfaceSectionFieldConstant {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SequenceOfSurfaceElementPurposeMember;
@@ -1273,8 +1673,18 @@ class StepElement_SequenceOfSurfaceElementPurposeMember : public TCollection_Bas
 };
 %feature("shadow") StepElement_SequenceOfSurfaceElementPurposeMember::~StepElement_SequenceOfSurfaceElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SequenceOfSurfaceElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfElementMaterial;
@@ -1300,8 +1710,18 @@ class StepElement_SequenceNodeOfSequenceOfElementMaterial : public TCollection_S
 };
 %feature("shadow") StepElement_SequenceNodeOfSequenceOfElementMaterial::~StepElement_SequenceNodeOfSequenceOfElementMaterial %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SequenceNodeOfSequenceOfElementMaterial {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember;
@@ -1345,8 +1765,18 @@ class StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember : public MMgt_
 };
 %feature("shadow") StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember::~StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SequenceOfCurveElementPurposeMember;
@@ -1400,8 +1830,18 @@ class StepElement_SequenceOfCurveElementPurposeMember : public TCollection_BaseS
 };
 %feature("shadow") StepElement_SequenceOfCurveElementPurposeMember::~StepElement_SequenceOfCurveElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SequenceOfCurveElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HSequenceOfSurfaceElementPurposeMember;
@@ -1469,8 +1909,18 @@ class StepElement_HSequenceOfSurfaceElementPurposeMember : public MMgt_TShared {
 };
 %feature("shadow") StepElement_HSequenceOfSurfaceElementPurposeMember::~StepElement_HSequenceOfSurfaceElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HSequenceOfSurfaceElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SurfaceSection;
@@ -1508,8 +1958,18 @@ class StepElement_SurfaceSection : public MMgt_TShared {
 };
 %feature("shadow") StepElement_SurfaceSection::~StepElement_SurfaceSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SurfaceSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_UniformSurfaceSection;
@@ -1545,8 +2005,18 @@ class StepElement_UniformSurfaceSection : public StepElement_SurfaceSection {
 };
 %feature("shadow") StepElement_UniformSurfaceSection::~StepElement_UniformSurfaceSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_UniformSurfaceSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Array2OfSurfaceElementPurpose;
@@ -1590,8 +2060,18 @@ class StepElement_Array2OfSurfaceElementPurpose {
 };
 %feature("shadow") StepElement_Array2OfSurfaceElementPurpose::~StepElement_Array2OfSurfaceElementPurpose %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Array2OfSurfaceElementPurpose {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember;
@@ -1617,8 +2097,18 @@ class StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : public T
 };
 %feature("shadow") StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember::~StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HArray1OfVolumeElementPurposeMember;
@@ -1662,8 +2152,18 @@ class StepElement_HArray1OfVolumeElementPurposeMember : public MMgt_TShared {
 };
 %feature("shadow") StepElement_HArray1OfVolumeElementPurposeMember::~StepElement_HArray1OfVolumeElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HArray1OfVolumeElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Array1OfCurveElementEndReleasePacket;
@@ -1703,8 +2203,18 @@ class StepElement_Array1OfCurveElementEndReleasePacket {
 };
 %feature("shadow") StepElement_Array1OfCurveElementEndReleasePacket::~StepElement_Array1OfCurveElementEndReleasePacket %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Array1OfCurveElementEndReleasePacket {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_ElementAspect;
@@ -1762,8 +2272,18 @@ class StepElement_ElementAspect : public StepData_SelectType {
 };
 %feature("shadow") StepElement_ElementAspect::~StepElement_ElementAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_ElementAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Array2OfSurfaceElementPurposeMember;
@@ -1807,8 +2327,18 @@ class StepElement_Array2OfSurfaceElementPurposeMember {
 };
 %feature("shadow") StepElement_Array2OfSurfaceElementPurposeMember::~StepElement_Array2OfSurfaceElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Array2OfSurfaceElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember;
@@ -1848,8 +2378,18 @@ class StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember {
 };
 %feature("shadow") StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember::~StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Array1OfHSequenceOfCurveElementPurposeMember;
@@ -1889,8 +2429,18 @@ class StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
 };
 %feature("shadow") StepElement_Array1OfHSequenceOfCurveElementPurposeMember::~StepElement_Array1OfHSequenceOfCurveElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_ElementDescriptor;
@@ -1924,8 +2474,18 @@ class StepElement_ElementDescriptor : public MMgt_TShared {
 };
 %feature("shadow") StepElement_ElementDescriptor::~StepElement_ElementDescriptor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_ElementDescriptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Volume3dElementDescriptor;
@@ -1957,8 +2517,18 @@ class StepElement_Volume3dElementDescriptor : public StepElement_ElementDescript
 };
 %feature("shadow") StepElement_Volume3dElementDescriptor::~StepElement_Volume3dElementDescriptor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Volume3dElementDescriptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_ElementAspectMember;
@@ -1990,8 +2560,18 @@ class StepElement_ElementAspectMember : public StepData_SelectNamed {
 };
 %feature("shadow") StepElement_ElementAspectMember::~StepElement_ElementAspectMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_ElementAspectMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SurfaceSectionField;
@@ -2015,8 +2595,18 @@ class StepElement_SurfaceSectionField : public MMgt_TShared {
 };
 %feature("shadow") StepElement_SurfaceSectionField::~StepElement_SurfaceSectionField %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SurfaceSectionField {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SurfaceSectionFieldConstant;
@@ -2044,8 +2634,18 @@ class StepElement_SurfaceSectionFieldConstant : public StepElement_SurfaceSectio
 };
 %feature("shadow") StepElement_SurfaceSectionFieldConstant::~StepElement_SurfaceSectionFieldConstant %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SurfaceSectionFieldConstant {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SurfaceElementProperty;
@@ -2083,8 +2683,18 @@ class StepElement_SurfaceElementProperty : public MMgt_TShared {
 };
 %feature("shadow") StepElement_SurfaceElementProperty::~StepElement_SurfaceElementProperty %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SurfaceElementProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Array2OfCurveElementPurposeMember;
@@ -2128,8 +2738,18 @@ class StepElement_Array2OfCurveElementPurposeMember {
 };
 %feature("shadow") StepElement_Array2OfCurveElementPurposeMember::~StepElement_Array2OfCurveElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Array2OfCurveElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HSequenceOfCurveElementPurposeMember;
@@ -2197,8 +2817,18 @@ class StepElement_HSequenceOfCurveElementPurposeMember : public MMgt_TShared {
 };
 %feature("shadow") StepElement_HSequenceOfCurveElementPurposeMember::~StepElement_HSequenceOfCurveElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HSequenceOfCurveElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HArray2OfSurfaceElementPurposeMember;
@@ -2248,8 +2878,18 @@ class StepElement_HArray2OfSurfaceElementPurposeMember : public MMgt_TShared {
 };
 %feature("shadow") StepElement_HArray2OfSurfaceElementPurposeMember::~StepElement_HArray2OfSurfaceElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HArray2OfSurfaceElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HArray1OfVolumeElementPurpose;
@@ -2293,8 +2933,18 @@ class StepElement_HArray1OfVolumeElementPurpose : public MMgt_TShared {
 };
 %feature("shadow") StepElement_HArray1OfVolumeElementPurpose::~StepElement_HArray1OfVolumeElementPurpose %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HArray1OfVolumeElementPurpose {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HArray1OfCurveElementEndReleasePacket;
@@ -2338,8 +2988,18 @@ class StepElement_HArray1OfCurveElementEndReleasePacket : public MMgt_TShared {
 };
 %feature("shadow") StepElement_HArray1OfCurveElementEndReleasePacket::~StepElement_HArray1OfCurveElementEndReleasePacket %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HArray1OfCurveElementEndReleasePacket {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HArray1OfSurfaceSection;
@@ -2383,8 +3043,18 @@ class StepElement_HArray1OfSurfaceSection : public MMgt_TShared {
 };
 %feature("shadow") StepElement_HArray1OfSurfaceSection::~StepElement_HArray1OfSurfaceSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HArray1OfSurfaceSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_MeasureOrUnspecifiedValue;
@@ -2410,8 +3080,18 @@ class StepElement_MeasureOrUnspecifiedValue : public StepData_SelectType {
 };
 %feature("shadow") StepElement_MeasureOrUnspecifiedValue::~StepElement_MeasureOrUnspecifiedValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_MeasureOrUnspecifiedValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_CurveElementPurposeMember;
@@ -2443,8 +3123,18 @@ class StepElement_CurveElementPurposeMember : public StepData_SelectNamed {
 };
 %feature("shadow") StepElement_CurveElementPurposeMember::~StepElement_CurveElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_CurveElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SequenceOfCurveElementSectionDefinition;
@@ -2498,8 +3188,18 @@ class StepElement_SequenceOfCurveElementSectionDefinition : public TCollection_B
 };
 %feature("shadow") StepElement_SequenceOfCurveElementSectionDefinition::~StepElement_SequenceOfCurveElementSectionDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SequenceOfCurveElementSectionDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HSequenceOfCurveElementSectionDefinition;
@@ -2567,8 +3267,18 @@ class StepElement_HSequenceOfCurveElementSectionDefinition : public MMgt_TShared
 };
 %feature("shadow") StepElement_HSequenceOfCurveElementSectionDefinition::~StepElement_HSequenceOfCurveElementSectionDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HSequenceOfCurveElementSectionDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_MeasureOrUnspecifiedValueMember;
@@ -2600,8 +3310,18 @@ class StepElement_MeasureOrUnspecifiedValueMember : public StepData_SelectNamed 
 };
 %feature("shadow") StepElement_MeasureOrUnspecifiedValueMember::~StepElement_MeasureOrUnspecifiedValueMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_MeasureOrUnspecifiedValueMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_CurveElementSectionDefinition;
@@ -2635,8 +3355,18 @@ class StepElement_CurveElementSectionDefinition : public MMgt_TShared {
 };
 %feature("shadow") StepElement_CurveElementSectionDefinition::~StepElement_CurveElementSectionDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_CurveElementSectionDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HSequenceOfElementMaterial;
@@ -2704,8 +3434,18 @@ class StepElement_HSequenceOfElementMaterial : public MMgt_TShared {
 };
 %feature("shadow") StepElement_HSequenceOfElementMaterial::~StepElement_HSequenceOfElementMaterial %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HSequenceOfElementMaterial {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_CurveElementFreedom;
@@ -2731,8 +3471,18 @@ class StepElement_CurveElementFreedom : public StepData_SelectType {
 };
 %feature("shadow") StepElement_CurveElementFreedom::~StepElement_CurveElementFreedom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_CurveElementFreedom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_AnalysisItemWithinRepresentation;
@@ -2774,8 +3524,18 @@ class StepElement_AnalysisItemWithinRepresentation : public MMgt_TShared {
 };
 %feature("shadow") StepElement_AnalysisItemWithinRepresentation::~StepElement_AnalysisItemWithinRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_AnalysisItemWithinRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Curve3dElementDescriptor;
@@ -2805,8 +3565,18 @@ class StepElement_Curve3dElementDescriptor : public StepElement_ElementDescripto
 };
 %feature("shadow") StepElement_Curve3dElementDescriptor::~StepElement_Curve3dElementDescriptor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Curve3dElementDescriptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Array1OfSurfaceSection;
@@ -2846,8 +3616,18 @@ class StepElement_Array1OfSurfaceSection {
 };
 %feature("shadow") StepElement_Array1OfSurfaceSection::~StepElement_Array1OfSurfaceSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Array1OfSurfaceSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HArray2OfSurfaceElementPurpose;
@@ -2897,8 +3677,18 @@ class StepElement_HArray2OfSurfaceElementPurpose : public MMgt_TShared {
 };
 %feature("shadow") StepElement_HArray2OfSurfaceElementPurpose::~StepElement_HArray2OfSurfaceElementPurpose %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HArray2OfSurfaceElementPurpose {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SurfaceElementPurpose;
@@ -2924,8 +3714,18 @@ class StepElement_SurfaceElementPurpose : public StepData_SelectType {
 };
 %feature("shadow") StepElement_SurfaceElementPurpose::~StepElement_SurfaceElementPurpose %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SurfaceElementPurpose {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_VolumeElementPurpose;
@@ -2951,8 +3751,18 @@ class StepElement_VolumeElementPurpose : public StepData_SelectType {
 };
 %feature("shadow") StepElement_VolumeElementPurpose::~StepElement_VolumeElementPurpose %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_VolumeElementPurpose {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Array1OfVolumeElementPurpose;
@@ -2992,8 +3802,18 @@ class StepElement_Array1OfVolumeElementPurpose {
 };
 %feature("shadow") StepElement_Array1OfVolumeElementPurpose::~StepElement_Array1OfVolumeElementPurpose %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Array1OfVolumeElementPurpose {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_VolumeElementPurposeMember;
@@ -3025,8 +3845,18 @@ class StepElement_VolumeElementPurposeMember : public StepData_SelectNamed {
 };
 %feature("shadow") StepElement_VolumeElementPurposeMember::~StepElement_VolumeElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_VolumeElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_CurveElementPurpose;
@@ -3052,8 +3882,18 @@ class StepElement_CurveElementPurpose : public StepData_SelectType {
 };
 %feature("shadow") StepElement_CurveElementPurpose::~StepElement_CurveElementPurpose %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_CurveElementPurpose {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SurfaceElementPurposeMember;
@@ -3085,8 +3925,18 @@ class StepElement_SurfaceElementPurposeMember : public StepData_SelectNamed {
 };
 %feature("shadow") StepElement_SurfaceElementPurposeMember::~StepElement_SurfaceElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SurfaceElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Array1OfMeasureOrUnspecifiedValue;
@@ -3126,8 +3976,18 @@ class StepElement_Array1OfMeasureOrUnspecifiedValue {
 };
 %feature("shadow") StepElement_Array1OfMeasureOrUnspecifiedValue::~StepElement_Array1OfMeasureOrUnspecifiedValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Array1OfMeasureOrUnspecifiedValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_CurveElementSectionDerivedDefinitions;
@@ -3193,8 +4053,18 @@ class StepElement_CurveElementSectionDerivedDefinitions : public StepElement_Cur
 };
 %feature("shadow") StepElement_CurveElementSectionDerivedDefinitions::~StepElement_CurveElementSectionDerivedDefinitions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_CurveElementSectionDerivedDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember;
@@ -3220,8 +4090,18 @@ class StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : public TCo
 };
 %feature("shadow") StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember::~StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HArray1OfHSequenceOfCurveElementPurposeMember;
@@ -3265,8 +4145,18 @@ class StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public MMgt_TS
 };
 %feature("shadow") StepElement_HArray1OfHSequenceOfCurveElementPurposeMember::~StepElement_HArray1OfHSequenceOfCurveElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HArray1OfHSequenceOfCurveElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SequenceOfElementMaterial;
@@ -3320,8 +4210,18 @@ class StepElement_SequenceOfElementMaterial : public TCollection_BaseSequence {
 };
 %feature("shadow") StepElement_SequenceOfElementMaterial::~StepElement_SequenceOfElementMaterial %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SequenceOfElementMaterial {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Array1OfVolumeElementPurposeMember;
@@ -3361,8 +4261,18 @@ class StepElement_Array1OfVolumeElementPurposeMember {
 };
 %feature("shadow") StepElement_Array1OfVolumeElementPurposeMember::~StepElement_Array1OfVolumeElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Array1OfVolumeElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_CurveElementFreedomMember;
@@ -3394,8 +4304,18 @@ class StepElement_CurveElementFreedomMember : public StepData_SelectNamed {
 };
 %feature("shadow") StepElement_CurveElementFreedomMember::~StepElement_CurveElementFreedomMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_CurveElementFreedomMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SurfaceSectionFieldVarying;
@@ -3429,8 +4349,18 @@ class StepElement_SurfaceSectionFieldVarying : public StepElement_SurfaceSection
 };
 %feature("shadow") StepElement_SurfaceSectionFieldVarying::~StepElement_SurfaceSectionFieldVarying %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SurfaceSectionFieldVarying {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Array1OfCurveElementSectionDefinition;
@@ -3470,8 +4400,18 @@ class StepElement_Array1OfCurveElementSectionDefinition {
 };
 %feature("shadow") StepElement_Array1OfCurveElementSectionDefinition::~StepElement_Array1OfCurveElementSectionDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Array1OfCurveElementSectionDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HArray2OfCurveElementPurposeMember;
@@ -3521,8 +4461,18 @@ class StepElement_HArray2OfCurveElementPurposeMember : public MMgt_TShared {
 };
 %feature("shadow") StepElement_HArray2OfCurveElementPurposeMember::~StepElement_HArray2OfCurveElementPurposeMember %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HArray2OfCurveElementPurposeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition;
@@ -3548,8 +4498,18 @@ class StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition : public
 };
 %feature("shadow") StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition::~StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HArray1OfCurveElementSectionDefinition;
@@ -3593,8 +4553,18 @@ class StepElement_HArray1OfCurveElementSectionDefinition : public MMgt_TShared {
 };
 %feature("shadow") StepElement_HArray1OfCurveElementSectionDefinition::~StepElement_HArray1OfCurveElementSectionDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HArray1OfCurveElementSectionDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_Surface3dElementDescriptor;
@@ -3628,8 +4598,18 @@ class StepElement_Surface3dElementDescriptor : public StepElement_ElementDescrip
 };
 %feature("shadow") StepElement_Surface3dElementDescriptor::~StepElement_Surface3dElementDescriptor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_Surface3dElementDescriptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_ElementMaterial;
@@ -3667,8 +4647,18 @@ class StepElement_ElementMaterial : public MMgt_TShared {
 };
 %feature("shadow") StepElement_ElementMaterial::~StepElement_ElementMaterial %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_ElementMaterial {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_CurveElementEndReleasePacket;
@@ -3702,8 +4692,18 @@ class StepElement_CurveElementEndReleasePacket : public MMgt_TShared {
 };
 %feature("shadow") StepElement_CurveElementEndReleasePacket::~StepElement_CurveElementEndReleasePacket %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_CurveElementEndReleasePacket {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepElement_HArray1OfMeasureOrUnspecifiedValue;
@@ -3747,5 +4747,15 @@ class StepElement_HArray1OfMeasureOrUnspecifiedValue : public MMgt_TShared {
 };
 %feature("shadow") StepElement_HArray1OfMeasureOrUnspecifiedValue::~StepElement_HArray1OfMeasureOrUnspecifiedValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepElement_HArray1OfMeasureOrUnspecifiedValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -52,8 +52,18 @@ class GC_Root {
 };
 %feature("shadow") GC_Root::~GC_Root %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_Root {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeEllipse;
@@ -73,8 +83,18 @@ class GC_MakeEllipse : public GC_Root {
 };
 %feature("shadow") GC_MakeEllipse::~GC_MakeEllipse %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeEllipse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeArcOfCircle;
@@ -98,8 +118,18 @@ class GC_MakeArcOfCircle : public GC_Root {
 };
 %feature("shadow") GC_MakeArcOfCircle::~GC_MakeArcOfCircle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeArcOfCircle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeLine;
@@ -123,8 +153,18 @@ class GC_MakeLine : public GC_Root {
 };
 %feature("shadow") GC_MakeLine::~GC_MakeLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeTrimmedCone;
@@ -142,8 +182,18 @@ class GC_MakeTrimmedCone : public GC_Root {
 };
 %feature("shadow") GC_MakeTrimmedCone::~GC_MakeTrimmedCone %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeTrimmedCone {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeScale;
@@ -159,8 +209,18 @@ class GC_MakeScale {
 };
 %feature("shadow") GC_MakeScale::~GC_MakeScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeCircle;
@@ -190,8 +250,18 @@ class GC_MakeCircle : public GC_Root {
 };
 %feature("shadow") GC_MakeCircle::~GC_MakeCircle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeCircle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeArcOfHyperbola;
@@ -211,8 +281,18 @@ class GC_MakeArcOfHyperbola : public GC_Root {
 };
 %feature("shadow") GC_MakeArcOfHyperbola::~GC_MakeArcOfHyperbola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeArcOfHyperbola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeMirror;
@@ -238,8 +318,18 @@ class GC_MakeMirror {
 };
 %feature("shadow") GC_MakeMirror::~GC_MakeMirror %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeMirror {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakePlane;
@@ -269,8 +359,18 @@ class GC_MakePlane : public GC_Root {
 };
 %feature("shadow") GC_MakePlane::~GC_MakePlane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakePlane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeTranslation;
@@ -288,8 +388,18 @@ class GC_MakeTranslation {
 };
 %feature("shadow") GC_MakeTranslation::~GC_MakeTranslation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeTranslation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeRotation;
@@ -309,8 +419,18 @@ class GC_MakeRotation {
 };
 %feature("shadow") GC_MakeRotation::~GC_MakeRotation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeRotation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeCylindricalSurface;
@@ -338,8 +458,18 @@ class GC_MakeCylindricalSurface : public GC_Root {
 };
 %feature("shadow") GC_MakeCylindricalSurface::~GC_MakeCylindricalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeCylindricalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeArcOfParabola;
@@ -359,8 +489,18 @@ class GC_MakeArcOfParabola : public GC_Root {
 };
 %feature("shadow") GC_MakeArcOfParabola::~GC_MakeArcOfParabola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeArcOfParabola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeTrimmedCylinder;
@@ -384,8 +524,18 @@ class GC_MakeTrimmedCylinder : public GC_Root {
 };
 %feature("shadow") GC_MakeTrimmedCylinder::~GC_MakeTrimmedCylinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeTrimmedCylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeArcOfEllipse;
@@ -405,8 +555,18 @@ class GC_MakeArcOfEllipse : public GC_Root {
 };
 %feature("shadow") GC_MakeArcOfEllipse::~GC_MakeArcOfEllipse %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeArcOfEllipse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeHyperbola;
@@ -426,8 +586,18 @@ class GC_MakeHyperbola : public GC_Root {
 };
 %feature("shadow") GC_MakeHyperbola::~GC_MakeHyperbola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeHyperbola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeSegment;
@@ -449,8 +619,18 @@ class GC_MakeSegment : public GC_Root {
 };
 %feature("shadow") GC_MakeSegment::~GC_MakeSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GC_MakeConicalSurface;
@@ -480,5 +660,15 @@ class GC_MakeConicalSurface : public GC_Root {
 };
 %feature("shadow") GC_MakeConicalSurface::~GC_MakeConicalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GC_MakeConicalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

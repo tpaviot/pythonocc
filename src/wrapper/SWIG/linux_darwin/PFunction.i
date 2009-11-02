@@ -63,8 +63,18 @@ class Handle_PFunction_Function : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PFunction_Function::~Handle_PFunction_Function %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PFunction_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PFunction_Function;
@@ -104,5 +114,15 @@ class PFunction_Function : public PDF_Attribute {
 };
 %feature("shadow") PFunction_Function::~PFunction_Function %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PFunction_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

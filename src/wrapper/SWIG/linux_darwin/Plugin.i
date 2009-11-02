@@ -63,8 +63,18 @@ class Handle_Plugin_DataMapNodeOfMapOfFunctions : public Handle_TCollection_MapN
 };
 %feature("shadow") Handle_Plugin_DataMapNodeOfMapOfFunctions::~Handle_Plugin_DataMapNodeOfMapOfFunctions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Plugin_DataMapNodeOfMapOfFunctions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Plugin_Failure;
@@ -91,8 +101,18 @@ class Handle_Plugin_Failure : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_Plugin_Failure::~Handle_Plugin_Failure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Plugin_Failure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Plugin_MapOfFunctions;
@@ -116,8 +136,18 @@ class Plugin_MapOfFunctions : public TCollection_BasicMap {
 };
 %feature("shadow") Plugin_MapOfFunctions::~Plugin_MapOfFunctions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Plugin_MapOfFunctions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Plugin_DataMapIteratorOfMapOfFunctions;
@@ -135,8 +165,18 @@ class Plugin_DataMapIteratorOfMapOfFunctions : public TCollection_BasicMapIterat
 };
 %feature("shadow") Plugin_DataMapIteratorOfMapOfFunctions::~Plugin_DataMapIteratorOfMapOfFunctions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Plugin_DataMapIteratorOfMapOfFunctions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Plugin_DataMapNodeOfMapOfFunctions;
@@ -162,8 +202,18 @@ class Plugin_DataMapNodeOfMapOfFunctions : public TCollection_MapNode {
 };
 %feature("shadow") Plugin_DataMapNodeOfMapOfFunctions::~Plugin_DataMapNodeOfMapOfFunctions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Plugin_DataMapNodeOfMapOfFunctions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Plugin_Failure;
@@ -195,8 +245,18 @@ class Plugin_Failure : public Standard_Failure {
 };
 %feature("shadow") Plugin_Failure::~Plugin_Failure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Plugin_Failure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Plugin;
@@ -210,5 +270,15 @@ class Plugin {
 };
 %feature("shadow") Plugin::~Plugin %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Plugin {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

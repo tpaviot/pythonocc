@@ -71,8 +71,18 @@ class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 };
 %feature("shadow") Handle_math_NotSquare::~Handle_math_NotSquare %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_math_NotSquare {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_math_SingularMatrix;
@@ -99,8 +109,18 @@ class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_math_SingularMatrix::~Handle_math_SingularMatrix %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_math_SingularMatrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_TrigonometricFunctionRoots;
@@ -132,8 +152,18 @@ class math_TrigonometricFunctionRoots {
 };
 %feature("shadow") math_TrigonometricFunctionRoots::~math_TrigonometricFunctionRoots %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_TrigonometricFunctionRoots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_BissecNewton;
@@ -163,8 +193,18 @@ class math_BissecNewton {
 };
 %feature("shadow") math_BissecNewton::~math_BissecNewton %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_BissecNewton {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_MultipleVarFunction;
@@ -180,8 +220,18 @@ class math_MultipleVarFunction {
 };
 %feature("shadow") math_MultipleVarFunction::~math_MultipleVarFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_MultipleVarFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_MultipleVarFunctionWithGradient;
@@ -197,8 +247,18 @@ class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
 };
 %feature("shadow") math_MultipleVarFunctionWithGradient::~math_MultipleVarFunctionWithGradient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_MultipleVarFunctionWithGradient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_MultipleVarFunctionWithHessian;
@@ -210,8 +270,18 @@ class math_MultipleVarFunctionWithHessian : public math_MultipleVarFunctionWithG
 };
 %feature("shadow") math_MultipleVarFunctionWithHessian::~math_MultipleVarFunctionWithHessian %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_MultipleVarFunctionWithHessian {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_ValueAndWeight;
@@ -229,8 +299,18 @@ class math_ValueAndWeight {
 };
 %feature("shadow") math_ValueAndWeight::~math_ValueAndWeight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_ValueAndWeight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_BFGS;
@@ -272,8 +352,18 @@ class math_BFGS {
 };
 %feature("shadow") math_BFGS::~math_BFGS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_BFGS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_DirectPolynomialRoots;
@@ -307,8 +397,18 @@ class math_DirectPolynomialRoots {
 };
 %feature("shadow") math_DirectPolynomialRoots::~math_DirectPolynomialRoots %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_DirectPolynomialRoots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_IntegerRandom;
@@ -324,8 +424,18 @@ class math_IntegerRandom {
 };
 %feature("shadow") math_IntegerRandom::~math_IntegerRandom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_IntegerRandom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_Function;
@@ -339,8 +449,18 @@ class math_Function {
 };
 %feature("shadow") math_Function::~math_Function %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_Jacobi;
@@ -370,8 +490,18 @@ class math_Jacobi {
 };
 %feature("shadow") math_Jacobi::~math_Jacobi %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_Jacobi {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math;
@@ -395,8 +525,18 @@ class math {
 };
 %feature("shadow") math::~math %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_Powell;
@@ -434,8 +574,18 @@ class math_Powell {
 };
 %feature("shadow") math_Powell::~math_Powell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_Powell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_FunctionRoot;
@@ -467,8 +617,18 @@ class math_FunctionRoot {
 };
 %feature("shadow") math_FunctionRoot::~math_FunctionRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_FunctionRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_Array1OfValueAndWeight;
@@ -508,8 +668,18 @@ class math_Array1OfValueAndWeight {
 };
 %feature("shadow") math_Array1OfValueAndWeight::~math_Array1OfValueAndWeight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_Array1OfValueAndWeight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_FunctionAllRoots;
@@ -543,8 +713,18 @@ class math_FunctionAllRoots {
 };
 %feature("shadow") math_FunctionAllRoots::~math_FunctionAllRoots %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_FunctionAllRoots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_EigenValuesSearcher;
@@ -564,8 +744,18 @@ class math_EigenValuesSearcher {
 };
 %feature("shadow") math_EigenValuesSearcher::~math_EigenValuesSearcher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_EigenValuesSearcher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_Gauss;
@@ -595,8 +785,18 @@ class math_Gauss {
 };
 %feature("shadow") math_Gauss::~math_Gauss %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_Gauss {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_SVD;
@@ -622,8 +822,18 @@ class math_SVD {
 };
 %feature("shadow") math_SVD::~math_SVD %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_SVD {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_QuickSortOfValueAndWeight;
@@ -637,8 +847,18 @@ class math_QuickSortOfValueAndWeight {
 };
 %feature("shadow") math_QuickSortOfValueAndWeight::~math_QuickSortOfValueAndWeight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_QuickSortOfValueAndWeight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_GaussSingleIntegration;
@@ -666,8 +886,18 @@ class math_GaussSingleIntegration {
 };
 %feature("shadow") math_GaussSingleIntegration::~math_GaussSingleIntegration %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_GaussSingleIntegration {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_Matrix;
@@ -813,8 +1043,18 @@ class math_Matrix {
 };
 %feature("shadow") math_Matrix::~math_Matrix %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_Matrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_DoubleTabOfReal;
@@ -854,8 +1094,18 @@ class math_DoubleTabOfReal {
 };
 %feature("shadow") math_DoubleTabOfReal::~math_DoubleTabOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_DoubleTabOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_IntegerVector;
@@ -963,8 +1213,18 @@ class math_IntegerVector {
 };
 %feature("shadow") math_IntegerVector::~math_IntegerVector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_IntegerVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_GaussSetIntegration;
@@ -988,8 +1248,18 @@ class math_GaussSetIntegration {
 };
 %feature("shadow") math_GaussSetIntegration::~math_GaussSetIntegration %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_GaussSetIntegration {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_Vector;
@@ -1121,8 +1391,18 @@ class math_Vector {
 };
 %feature("shadow") math_Vector::~math_Vector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_Vector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_NotSquare;
@@ -1154,8 +1434,18 @@ class math_NotSquare : public Standard_DimensionError {
 };
 %feature("shadow") math_NotSquare::~math_NotSquare %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_NotSquare {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_FunctionSet;
@@ -1175,8 +1465,18 @@ class math_FunctionSet {
 };
 %feature("shadow") math_FunctionSet::~math_FunctionSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_FunctionSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_FunctionSetWithDerivatives;
@@ -1190,8 +1490,18 @@ class math_FunctionSetWithDerivatives : public math_FunctionSet {
 };
 %feature("shadow") math_FunctionSetWithDerivatives::~math_FunctionSetWithDerivatives %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_FunctionSetWithDerivatives {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_SingularMatrix;
@@ -1223,8 +1533,18 @@ class math_SingularMatrix : public Standard_Failure {
 };
 %feature("shadow") math_SingularMatrix::~math_SingularMatrix %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_SingularMatrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_Householder;
@@ -1254,8 +1574,18 @@ class math_Householder {
 };
 %feature("shadow") math_Householder::~math_Householder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_Householder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_ComputeKronrodPointsAndWeights;
@@ -1273,8 +1603,18 @@ class math_ComputeKronrodPointsAndWeights {
 };
 %feature("shadow") math_ComputeKronrodPointsAndWeights::~math_ComputeKronrodPointsAndWeights %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_ComputeKronrodPointsAndWeights {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_BrentMinimum;
@@ -1310,8 +1650,18 @@ class math_BrentMinimum {
 };
 %feature("shadow") math_BrentMinimum::~math_BrentMinimum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_BrentMinimum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_NewtonFunctionRoot;
@@ -1347,8 +1697,18 @@ class math_NewtonFunctionRoot {
 };
 %feature("shadow") math_NewtonFunctionRoot::~math_NewtonFunctionRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_NewtonFunctionRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_Uzawa;
@@ -1384,8 +1744,18 @@ class math_Uzawa {
 };
 %feature("shadow") math_Uzawa::~math_Uzawa %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_Uzawa {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_FunctionRoots;
@@ -1415,8 +1785,18 @@ class math_FunctionRoots {
 };
 %feature("shadow") math_FunctionRoots::~math_FunctionRoots %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_FunctionRoots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_FunctionWithDerivative;
@@ -1434,8 +1814,18 @@ class math_FunctionWithDerivative : public math_Function {
 };
 %feature("shadow") math_FunctionWithDerivative::~math_FunctionWithDerivative %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_FunctionWithDerivative {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_BracketedRoot;
@@ -1463,8 +1853,18 @@ class math_BracketedRoot {
 };
 %feature("shadow") math_BracketedRoot::~math_BracketedRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_BracketedRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_FunctionSetRoot;
@@ -1516,8 +1916,18 @@ class math_FunctionSetRoot {
 };
 %feature("shadow") math_FunctionSetRoot::~math_FunctionSetRoot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_FunctionSetRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_BracketMinimum;
@@ -1547,8 +1957,18 @@ class math_BracketMinimum {
 };
 %feature("shadow") math_BracketMinimum::~math_BracketMinimum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_BracketMinimum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_SingleTabOfReal;
@@ -1586,8 +2006,18 @@ class math_SingleTabOfReal {
 };
 %feature("shadow") math_SingleTabOfReal::~math_SingleTabOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_SingleTabOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_CompareOfValueAndWeight;
@@ -1605,8 +2035,18 @@ class math_CompareOfValueAndWeight {
 };
 %feature("shadow") math_CompareOfValueAndWeight::~math_CompareOfValueAndWeight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_CompareOfValueAndWeight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_GaussLeastSquare;
@@ -1630,8 +2070,18 @@ class math_GaussLeastSquare {
 };
 %feature("shadow") math_GaussLeastSquare::~math_GaussLeastSquare %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_GaussLeastSquare {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_KronrodSingleIntegration;
@@ -1665,8 +2115,18 @@ class math_KronrodSingleIntegration {
 };
 %feature("shadow") math_KronrodSingleIntegration::~math_KronrodSingleIntegration %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_KronrodSingleIntegration {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_Crout;
@@ -1696,8 +2156,18 @@ class math_Crout {
 };
 %feature("shadow") math_Crout::~math_Crout %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_Crout {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_FRPR;
@@ -1739,8 +2209,18 @@ class math_FRPR {
 };
 %feature("shadow") math_FRPR::~math_FRPR %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_FRPR {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_ComputeGaussPointsAndWeights;
@@ -1758,8 +2238,18 @@ class math_ComputeGaussPointsAndWeights {
 };
 %feature("shadow") math_ComputeGaussPointsAndWeights::~math_ComputeGaussPointsAndWeights %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_ComputeGaussPointsAndWeights {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_FunctionSample;
@@ -1777,8 +2267,18 @@ class math_FunctionSample {
 };
 %feature("shadow") math_FunctionSample::~math_FunctionSample %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_FunctionSample {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_RealRandom;
@@ -1794,8 +2294,18 @@ class math_RealRandom {
 };
 %feature("shadow") math_RealRandom::~math_RealRandom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_RealRandom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_SingleTabOfInteger;
@@ -1833,8 +2343,18 @@ class math_SingleTabOfInteger {
 };
 %feature("shadow") math_SingleTabOfInteger::~math_SingleTabOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_SingleTabOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor math_GaussMultipleIntegration;
@@ -1858,5 +2378,15 @@ class math_GaussMultipleIntegration {
 };
 %feature("shadow") math_GaussMultipleIntegration::~math_GaussMultipleIntegration %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend math_GaussMultipleIntegration {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

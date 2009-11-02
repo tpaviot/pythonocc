@@ -58,8 +58,18 @@ class Geom2dToIGES_Geom2dEntity {
 };
 %feature("shadow") Geom2dToIGES_Geom2dEntity::~Geom2dToIGES_Geom2dEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dToIGES_Geom2dEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dToIGES_Geom2dCurve;
@@ -75,8 +85,18 @@ class Geom2dToIGES_Geom2dCurve : public Geom2dToIGES_Geom2dEntity {
 };
 %feature("shadow") Geom2dToIGES_Geom2dCurve::~Geom2dToIGES_Geom2dCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dToIGES_Geom2dCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dToIGES_Geom2dPoint;
@@ -94,8 +114,18 @@ class Geom2dToIGES_Geom2dPoint : public Geom2dToIGES_Geom2dEntity {
 };
 %feature("shadow") Geom2dToIGES_Geom2dPoint::~Geom2dToIGES_Geom2dPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dToIGES_Geom2dPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dToIGES_Geom2dVector;
@@ -115,5 +145,15 @@ class Geom2dToIGES_Geom2dVector : public Geom2dToIGES_Geom2dEntity {
 };
 %feature("shadow") Geom2dToIGES_Geom2dVector::~Geom2dToIGES_Geom2dVector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dToIGES_Geom2dVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

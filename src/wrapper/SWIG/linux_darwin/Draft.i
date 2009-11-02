@@ -70,8 +70,18 @@ class Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public Handle_TCollectio
 };
 %feature("shadow") Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo::~Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo;
@@ -98,8 +108,18 @@ class Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public Handle_TCollectio
 };
 %feature("shadow") Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo::~Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo;
@@ -126,8 +146,18 @@ class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TColle
 };
 %feature("shadow") Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo::~Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Draft_Modification;
@@ -154,8 +184,18 @@ class Handle_Draft_Modification : public Handle_BRepTools_Modification {
 };
 %feature("shadow") Handle_Draft_Modification::~Handle_Draft_Modification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Draft_Modification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft_FaceInfo;
@@ -189,8 +229,18 @@ class Draft_FaceInfo {
 };
 %feature("shadow") Draft_FaceInfo::~Draft_FaceInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft_FaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft_DataMapOfFaceFaceInfo;
@@ -224,8 +274,18 @@ class Draft_DataMapOfFaceFaceInfo : public TCollection_BasicMap {
 };
 %feature("shadow") Draft_DataMapOfFaceFaceInfo::~Draft_DataMapOfFaceFaceInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft_DataMapOfFaceFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft_DataMapOfEdgeEdgeInfo;
@@ -259,8 +319,18 @@ class Draft_DataMapOfEdgeEdgeInfo : public TCollection_BasicMap {
 };
 %feature("shadow") Draft_DataMapOfEdgeEdgeInfo::~Draft_DataMapOfEdgeEdgeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft_DataMapOfEdgeEdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft;
@@ -274,8 +344,18 @@ class Draft {
 };
 %feature("shadow") Draft::~Draft %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft_DataMapIteratorOfDataMapOfFaceFaceInfo;
@@ -295,8 +375,18 @@ class Draft_DataMapIteratorOfDataMapOfFaceFaceInfo : public TCollection_BasicMap
 };
 %feature("shadow") Draft_DataMapIteratorOfDataMapOfFaceFaceInfo::~Draft_DataMapIteratorOfDataMapOfFaceFaceInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft_DataMapIteratorOfDataMapOfFaceFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft_Modification;
@@ -352,8 +442,18 @@ class Draft_Modification : public BRepTools_Modification {
 };
 %feature("shadow") Draft_Modification::~Draft_Modification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft_Modification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft_DataMapNodeOfDataMapOfVertexVertexInfo;
@@ -381,8 +481,18 @@ class Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public TCollection_MapNode 
 };
 %feature("shadow") Draft_DataMapNodeOfDataMapOfVertexVertexInfo::~Draft_DataMapNodeOfDataMapOfVertexVertexInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo;
@@ -410,8 +520,18 @@ class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
 };
 %feature("shadow") Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo::~Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft_DataMapIteratorOfDataMapOfVertexVertexInfo;
@@ -431,8 +551,18 @@ class Draft_DataMapIteratorOfDataMapOfVertexVertexInfo : public TCollection_Basi
 };
 %feature("shadow") Draft_DataMapIteratorOfDataMapOfVertexVertexInfo::~Draft_DataMapIteratorOfDataMapOfVertexVertexInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft_DataMapIteratorOfDataMapOfVertexVertexInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo;
@@ -452,8 +582,18 @@ class Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo : public TCollection_BasicMap
 };
 %feature("shadow") Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo::~Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft_VertexInfo;
@@ -493,8 +633,18 @@ class Draft_VertexInfo {
 };
 %feature("shadow") Draft_VertexInfo::~Draft_VertexInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft_VertexInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft_DataMapNodeOfDataMapOfFaceFaceInfo;
@@ -522,8 +672,18 @@ class Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public TCollection_MapNode {
 };
 %feature("shadow") Draft_DataMapNodeOfDataMapOfFaceFaceInfo::~Draft_DataMapNodeOfDataMapOfFaceFaceInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft_EdgeInfo;
@@ -571,8 +731,18 @@ class Draft_EdgeInfo {
 };
 %feature("shadow") Draft_EdgeInfo::~Draft_EdgeInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft_EdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Draft_DataMapOfVertexVertexInfo;
@@ -606,5 +776,15 @@ class Draft_DataMapOfVertexVertexInfo : public TCollection_BasicMap {
 };
 %feature("shadow") Draft_DataMapOfVertexVertexInfo::~Draft_DataMapOfVertexVertexInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Draft_DataMapOfVertexVertexInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

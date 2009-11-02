@@ -63,8 +63,18 @@ class Handle_MgtTopoDS_TranslateTool : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MgtTopoDS_TranslateTool::~Handle_MgtTopoDS_TranslateTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MgtTopoDS_TranslateTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MgtTopoDS_TranslateTool1;
@@ -91,8 +101,18 @@ class Handle_MgtTopoDS_TranslateTool1 : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MgtTopoDS_TranslateTool1::~Handle_MgtTopoDS_TranslateTool1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MgtTopoDS_TranslateTool1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MgtTopoDS_TranslateTool;
@@ -184,8 +204,18 @@ class MgtTopoDS_TranslateTool : public MMgt_TShared {
 };
 %feature("shadow") MgtTopoDS_TranslateTool::~MgtTopoDS_TranslateTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MgtTopoDS_TranslateTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MgtTopoDS_TranslateTool1;
@@ -277,8 +307,18 @@ class MgtTopoDS_TranslateTool1 : public MMgt_TShared {
 };
 %feature("shadow") MgtTopoDS_TranslateTool1::~MgtTopoDS_TranslateTool1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MgtTopoDS_TranslateTool1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MgtTopoDS;
@@ -298,5 +338,15 @@ class MgtTopoDS {
 };
 %feature("shadow") MgtTopoDS::~MgtTopoDS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MgtTopoDS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : pub
 };
 %feature("shadow") Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger::~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger;
@@ -91,8 +101,18 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public 
 };
 %feature("shadow") Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger::~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOPTColStd_ListNodeOfListOfListOfShape;
@@ -119,8 +139,18 @@ class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_
 };
 %feature("shadow") Handle_BOPTColStd_ListNodeOfListOfListOfShape::~Handle_BOPTColStd_ListNodeOfListOfListOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOPTColStd_ListNodeOfListOfListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
@@ -147,8 +177,18 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfI
 };
 %feature("shadow") Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger::~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_CArray1OfShape;
@@ -186,8 +226,18 @@ class BOPTColStd_CArray1OfShape {
 };
 %feature("shadow") BOPTColStd_CArray1OfShape::~BOPTColStd_CArray1OfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_CArray1OfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger;
@@ -231,8 +281,18 @@ class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection
 };
 %feature("shadow") BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger::~BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_ShapeWithRankHasher;
@@ -248,8 +308,18 @@ class BOPTColStd_ShapeWithRankHasher {
 };
 %feature("shadow") BOPTColStd_ShapeWithRankHasher::~BOPTColStd_ShapeWithRankHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_ShapeWithRankHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfIntegerInteger;
@@ -313,8 +383,18 @@ class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
 };
 %feature("shadow") BOPTColStd_IndexedDataMapOfIntegerInteger::~BOPTColStd_IndexedDataMapOfIntegerInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_IndexedDataMapOfIntegerInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_ShapeWithRank;
@@ -343,8 +423,18 @@ class BOPTColStd_ShapeWithRank {
 };
 %feature("shadow") BOPTColStd_ShapeWithRank::~BOPTColStd_ShapeWithRank %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_ShapeWithRank {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_CArray1OfPnt2d;
@@ -382,8 +472,18 @@ class BOPTColStd_CArray1OfPnt2d {
 };
 %feature("shadow") BOPTColStd_CArray1OfPnt2d::~BOPTColStd_CArray1OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_CArray1OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger;
@@ -445,8 +545,18 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public TCo
 };
 %feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfSWRInteger;
@@ -510,8 +620,18 @@ class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
 };
 %feature("shadow") BOPTColStd_IndexedDataMapOfSWRInteger::~BOPTColStd_IndexedDataMapOfSWRInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_IndexedDataMapOfSWRInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_ListIteratorOfListOfListOfShape;
@@ -533,8 +653,18 @@ class BOPTColStd_ListIteratorOfListOfListOfShape {
 };
 %feature("shadow") BOPTColStd_ListIteratorOfListOfListOfShape::~BOPTColStd_ListIteratorOfListOfListOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_ListIteratorOfListOfListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_ListOfListOfShape;
@@ -584,8 +714,18 @@ class BOPTColStd_ListOfListOfShape {
 };
 %feature("shadow") BOPTColStd_ListOfListOfShape::~BOPTColStd_ListOfListOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_ListOfListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_CArray1OfInteger;
@@ -633,8 +773,18 @@ class BOPTColStd_CArray1OfInteger {
 };
 %feature("shadow") BOPTColStd_CArray1OfInteger::~BOPTColStd_CArray1OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_CArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_ListNodeOfListOfListOfShape;
@@ -660,8 +810,18 @@ class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
 };
 %feature("shadow") BOPTColStd_ListNodeOfListOfListOfShape::~BOPTColStd_ListNodeOfListOfListOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_ListNodeOfListOfListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger;
@@ -713,8 +873,18 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public TCollec
 };
 %feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_Failure;
@@ -728,8 +898,18 @@ class BOPTColStd_Failure {
 };
 %feature("shadow") BOPTColStd_Failure::~BOPTColStd_Failure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_Failure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
@@ -781,8 +961,18 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger 
 };
 %feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BOPTColStd_Dump;
@@ -798,5 +988,15 @@ class BOPTColStd_Dump {
 };
 %feature("shadow") BOPTColStd_Dump::~BOPTColStd_Dump %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BOPTColStd_Dump {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

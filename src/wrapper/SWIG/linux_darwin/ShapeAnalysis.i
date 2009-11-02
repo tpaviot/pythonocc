@@ -64,8 +64,18 @@ class Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public Handle_TC
 };
 %feature("shadow") Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds::~Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeAnalysis_FreeBoundData;
@@ -92,8 +102,18 @@ class Handle_ShapeAnalysis_FreeBoundData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeAnalysis_FreeBoundData::~Handle_ShapeAnalysis_FreeBoundData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeAnalysis_FreeBoundData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeAnalysis_HSequenceOfFreeBounds;
@@ -120,8 +140,18 @@ class Handle_ShapeAnalysis_HSequenceOfFreeBounds : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeAnalysis_HSequenceOfFreeBounds::~Handle_ShapeAnalysis_HSequenceOfFreeBounds %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeAnalysis_HSequenceOfFreeBounds {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeAnalysis_TransferParameters;
@@ -148,8 +178,18 @@ class Handle_ShapeAnalysis_TransferParameters : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeAnalysis_TransferParameters::~Handle_ShapeAnalysis_TransferParameters %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeAnalysis_TransferParameters {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeAnalysis_TransferParametersProj;
@@ -176,8 +216,18 @@ class Handle_ShapeAnalysis_TransferParametersProj : public Handle_ShapeAnalysis_
 };
 %feature("shadow") Handle_ShapeAnalysis_TransferParametersProj::~Handle_ShapeAnalysis_TransferParametersProj %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeAnalysis_TransferParametersProj {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal;
@@ -204,8 +254,18 @@ class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public Handle
 };
 %feature("shadow") Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal::~Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeAnalysis_Wire;
@@ -232,8 +292,18 @@ class Handle_ShapeAnalysis_Wire : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeAnalysis_Wire::~Handle_ShapeAnalysis_Wire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeAnalysis_Wire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal;
@@ -260,8 +330,18 @@ class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public Handle_TColl
 };
 %feature("shadow") Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal::~Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeAnalysis_Surface;
@@ -288,8 +368,18 @@ class Handle_ShapeAnalysis_Surface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeAnalysis_Surface::~Handle_ShapeAnalysis_Surface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeAnalysis_Surface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal;
@@ -327,8 +417,18 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode
 };
 %feature("shadow") ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal::~ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_Surface;
@@ -416,8 +516,18 @@ class ShapeAnalysis_Surface : public MMgt_TShared {
 };
 %feature("shadow") ShapeAnalysis_Surface::~ShapeAnalysis_Surface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_Surface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_ShapeContents;
@@ -525,8 +635,18 @@ class ShapeAnalysis_ShapeContents {
 };
 %feature("shadow") ShapeAnalysis_ShapeContents::~ShapeAnalysis_ShapeContents %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_ShapeContents {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_ShapeTolerance;
@@ -550,8 +670,18 @@ class ShapeAnalysis_ShapeTolerance {
 };
 %feature("shadow") ShapeAnalysis_ShapeTolerance::~ShapeAnalysis_ShapeTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_ShapeTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_FreeBounds;
@@ -581,8 +711,18 @@ class ShapeAnalysis_FreeBounds {
 };
 %feature("shadow") ShapeAnalysis_FreeBounds::~ShapeAnalysis_FreeBounds %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_FreeBounds {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis;
@@ -610,8 +750,18 @@ class ShapeAnalysis {
 };
 %feature("shadow") ShapeAnalysis::~ShapeAnalysis %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_Edge;
@@ -673,8 +823,18 @@ class ShapeAnalysis_Edge {
 };
 %feature("shadow") ShapeAnalysis_Edge::~ShapeAnalysis_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_Curve;
@@ -718,8 +878,18 @@ class ShapeAnalysis_Curve {
 };
 %feature("shadow") ShapeAnalysis_Curve::~ShapeAnalysis_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_DataMapOfShapeReal;
@@ -763,8 +933,18 @@ class ShapeAnalysis_DataMapOfShapeReal : public TCollection_BasicMap {
 };
 %feature("shadow") ShapeAnalysis_DataMapOfShapeReal::~ShapeAnalysis_DataMapOfShapeReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_DataMapOfShapeReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_TransferParameters;
@@ -802,8 +982,18 @@ class ShapeAnalysis_TransferParameters : public MMgt_TShared {
 };
 %feature("shadow") ShapeAnalysis_TransferParameters::~ShapeAnalysis_TransferParameters %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_TransferParameters {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal;
@@ -831,8 +1021,18 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public TCollection_M
 };
 %feature("shadow") ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal::~ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal;
@@ -852,8 +1052,18 @@ class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal : public TCollection_Bas
 };
 %feature("shadow") ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal::~ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_FreeBoundData;
@@ -913,8 +1123,18 @@ class ShapeAnalysis_FreeBoundData : public MMgt_TShared {
 };
 %feature("shadow") ShapeAnalysis_FreeBoundData::~ShapeAnalysis_FreeBoundData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_FreeBoundData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_HSequenceOfFreeBounds;
@@ -982,8 +1202,18 @@ class ShapeAnalysis_HSequenceOfFreeBounds : public MMgt_TShared {
 };
 %feature("shadow") ShapeAnalysis_HSequenceOfFreeBounds::~ShapeAnalysis_HSequenceOfFreeBounds %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_HSequenceOfFreeBounds {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_DataMapOfShapeListOfReal;
@@ -1017,8 +1247,18 @@ class ShapeAnalysis_DataMapOfShapeListOfReal : public TCollection_BasicMap {
 };
 %feature("shadow") ShapeAnalysis_DataMapOfShapeListOfReal::~ShapeAnalysis_DataMapOfShapeListOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_DataMapOfShapeListOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_CheckSmallFace;
@@ -1074,8 +1314,18 @@ class ShapeAnalysis_CheckSmallFace {
 };
 %feature("shadow") ShapeAnalysis_CheckSmallFace::~ShapeAnalysis_CheckSmallFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_CheckSmallFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_WireOrder;
@@ -1129,8 +1379,18 @@ class ShapeAnalysis_WireOrder {
 };
 %feature("shadow") ShapeAnalysis_WireOrder::~ShapeAnalysis_WireOrder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_WireOrder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_TransferParametersProj;
@@ -1172,8 +1432,18 @@ class ShapeAnalysis_TransferParametersProj : public ShapeAnalysis_TransferParame
 };
 %feature("shadow") ShapeAnalysis_TransferParametersProj::~ShapeAnalysis_TransferParametersProj %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_TransferParametersProj {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_Wire;
@@ -1339,8 +1609,18 @@ class ShapeAnalysis_Wire : public MMgt_TShared {
 };
 %feature("shadow") ShapeAnalysis_Wire::~ShapeAnalysis_Wire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_Wire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_SequenceOfFreeBounds;
@@ -1394,8 +1674,18 @@ class ShapeAnalysis_SequenceOfFreeBounds : public TCollection_BaseSequence {
 };
 %feature("shadow") ShapeAnalysis_SequenceOfFreeBounds::~ShapeAnalysis_SequenceOfFreeBounds %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_SequenceOfFreeBounds {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal;
@@ -1415,8 +1705,18 @@ class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal : public TCollecti
 };
 %feature("shadow") ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal::~ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_Geom;
@@ -1432,8 +1732,18 @@ class ShapeAnalysis_Geom {
 };
 %feature("shadow") ShapeAnalysis_Geom::~ShapeAnalysis_Geom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_Geom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_Shell;
@@ -1467,8 +1777,18 @@ class ShapeAnalysis_Shell {
 };
 %feature("shadow") ShapeAnalysis_Shell::~ShapeAnalysis_Shell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_Shell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_FreeBoundsProperties;
@@ -1522,8 +1842,18 @@ class ShapeAnalysis_FreeBoundsProperties {
 };
 %feature("shadow") ShapeAnalysis_FreeBoundsProperties::~ShapeAnalysis_FreeBoundsProperties %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_FreeBoundsProperties {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds;
@@ -1549,8 +1879,18 @@ class ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public TCollection_SeqN
 };
 %feature("shadow") ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds::~ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAnalysis_WireVertex;
@@ -1610,5 +1950,15 @@ class ShapeAnalysis_WireVertex {
 };
 %feature("shadow") ShapeAnalysis_WireVertex::~ShapeAnalysis_WireVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAnalysis_WireVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

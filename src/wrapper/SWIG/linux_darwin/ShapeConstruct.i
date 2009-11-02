@@ -63,8 +63,18 @@ class Handle_ShapeConstruct_ProjectCurveOnSurface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeConstruct_ProjectCurveOnSurface::~Handle_ShapeConstruct_ProjectCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeConstruct_ProjectCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeConstruct_ProjectCurveOnSurface;
@@ -120,8 +130,18 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 };
 %feature("shadow") ShapeConstruct_ProjectCurveOnSurface::~ShapeConstruct_ProjectCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeConstruct_ProjectCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeConstruct_CompBezierCurves2dToBSplineCurve2d;
@@ -147,8 +167,18 @@ class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
 };
 %feature("shadow") ShapeConstruct_CompBezierCurves2dToBSplineCurve2d::~ShapeConstruct_CompBezierCurves2dToBSplineCurve2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeConstruct_CompBezierCurvesToBSplineCurve;
@@ -174,8 +204,18 @@ class ShapeConstruct_CompBezierCurvesToBSplineCurve {
 };
 %feature("shadow") ShapeConstruct_CompBezierCurvesToBSplineCurve::~ShapeConstruct_CompBezierCurvesToBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeConstruct_CompBezierCurvesToBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeConstruct_Curve;
@@ -201,8 +241,18 @@ class ShapeConstruct_Curve {
 };
 %feature("shadow") ShapeConstruct_Curve::~ShapeConstruct_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeConstruct_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeConstruct_MakeTriangulation;
@@ -220,8 +270,18 @@ class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") ShapeConstruct_MakeTriangulation::~ShapeConstruct_MakeTriangulation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeConstruct_MakeTriangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeConstruct;
@@ -245,5 +305,15 @@ class ShapeConstruct {
 };
 %feature("shadow") ShapeConstruct::~ShapeConstruct %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeConstruct {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

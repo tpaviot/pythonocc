@@ -66,8 +66,18 @@ class Geom2dConvert {
 };
 %feature("shadow") Geom2dConvert::~Geom2dConvert %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dConvert {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dConvert_CompCurveToBSplineCurve;
@@ -83,8 +93,18 @@ class Geom2dConvert_CompCurveToBSplineCurve {
 };
 %feature("shadow") Geom2dConvert_CompCurveToBSplineCurve::~Geom2dConvert_CompCurveToBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dConvert_CompCurveToBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dConvert_BSplineCurveKnotSplitting;
@@ -102,8 +122,18 @@ class Geom2dConvert_BSplineCurveKnotSplitting {
 };
 %feature("shadow") Geom2dConvert_BSplineCurveKnotSplitting::~Geom2dConvert_BSplineCurveKnotSplitting %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dConvert_BSplineCurveKnotSplitting {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dConvert_BSplineCurveToBezierCurve;
@@ -125,8 +155,18 @@ class Geom2dConvert_BSplineCurveToBezierCurve {
 };
 %feature("shadow") Geom2dConvert_BSplineCurveToBezierCurve::~Geom2dConvert_BSplineCurveToBezierCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dConvert_BSplineCurveToBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dConvert_ApproxCurve;
@@ -154,5 +194,15 @@ class Geom2dConvert_ApproxCurve {
 };
 %feature("shadow") Geom2dConvert_ApproxCurve::~Geom2dConvert_ApproxCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dConvert_ApproxCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

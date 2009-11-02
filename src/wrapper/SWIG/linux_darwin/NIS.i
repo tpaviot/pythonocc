@@ -63,8 +63,18 @@ class Handle_NIS_Drawer : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_NIS_Drawer::~Handle_NIS_Drawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NIS_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NIS_SurfaceDrawer;
@@ -91,8 +101,18 @@ class Handle_NIS_SurfaceDrawer : public Handle_NIS_Drawer {
 };
 %feature("shadow") Handle_NIS_SurfaceDrawer::~Handle_NIS_SurfaceDrawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NIS_SurfaceDrawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NIS_SelectFilter;
@@ -119,8 +139,18 @@ class Handle_NIS_SelectFilter : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_NIS_SelectFilter::~Handle_NIS_SelectFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NIS_SelectFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NIS_TriangulatedDrawer;
@@ -147,8 +177,18 @@ class Handle_NIS_TriangulatedDrawer : public Handle_NIS_Drawer {
 };
 %feature("shadow") Handle_NIS_TriangulatedDrawer::~Handle_NIS_TriangulatedDrawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NIS_TriangulatedDrawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NIS_InteractiveObject;
@@ -175,8 +215,18 @@ class Handle_NIS_InteractiveObject : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_NIS_InteractiveObject::~Handle_NIS_InteractiveObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NIS_InteractiveObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NIS_Triangulated;
@@ -203,8 +253,18 @@ class Handle_NIS_Triangulated : public Handle_NIS_InteractiveObject {
 };
 %feature("shadow") Handle_NIS_Triangulated::~Handle_NIS_Triangulated %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NIS_Triangulated {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NIS_Surface;
@@ -231,8 +291,18 @@ class Handle_NIS_Surface : public Handle_NIS_InteractiveObject {
 };
 %feature("shadow") Handle_NIS_Surface::~Handle_NIS_Surface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NIS_Surface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NIS_InteractiveContext;
@@ -259,8 +329,18 @@ class Handle_NIS_InteractiveContext : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_NIS_InteractiveContext::~Handle_NIS_InteractiveContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NIS_InteractiveContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NIS_View;
@@ -287,8 +367,18 @@ class Handle_NIS_View : public Handle_V3d_OrthographicView {
 };
 %feature("shadow") Handle_NIS_View::~Handle_NIS_View %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NIS_View {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NIS_View;
@@ -326,8 +416,18 @@ class NIS_View : public V3d_OrthographicView {
 };
 %feature("shadow") NIS_View::~NIS_View %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NIS_View {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NIS_DrawList;
@@ -359,8 +459,18 @@ class NIS_DrawList {
 };
 %feature("shadow") NIS_DrawList::~NIS_DrawList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NIS_DrawList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NIS_Drawer;
@@ -408,8 +518,18 @@ class NIS_Drawer : public Standard_Transient {
 };
 %feature("shadow") NIS_Drawer::~NIS_Drawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NIS_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NIS_SurfaceDrawer;
@@ -449,8 +569,18 @@ class NIS_SurfaceDrawer : public NIS_Drawer {
 };
 %feature("shadow") NIS_SurfaceDrawer::~NIS_SurfaceDrawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NIS_SurfaceDrawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NIS_InteractiveContext;
@@ -534,8 +664,18 @@ class NIS_InteractiveContext : public Standard_Transient {
 };
 %feature("shadow") NIS_InteractiveContext::~NIS_InteractiveContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NIS_InteractiveContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NIS_ObjectsIterator;
@@ -557,8 +697,18 @@ class NIS_ObjectsIterator {
 };
 %feature("shadow") NIS_ObjectsIterator::~NIS_ObjectsIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NIS_ObjectsIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NIS_TriangulatedDrawer;
@@ -592,8 +742,18 @@ class NIS_TriangulatedDrawer : public NIS_Drawer {
 };
 %feature("shadow") NIS_TriangulatedDrawer::~NIS_TriangulatedDrawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NIS_TriangulatedDrawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NIS_InteractiveObject;
@@ -653,8 +813,18 @@ class NIS_InteractiveObject : public Standard_Transient {
 };
 %feature("shadow") NIS_InteractiveObject::~NIS_InteractiveObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NIS_InteractiveObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NIS_SelectFilter;
@@ -680,8 +850,18 @@ class NIS_SelectFilter : public Standard_Transient {
 };
 %feature("shadow") NIS_SelectFilter::~NIS_SelectFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NIS_SelectFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NIS_Surface;
@@ -731,5 +911,15 @@ class NIS_Surface : public NIS_InteractiveObject {
 };
 %feature("shadow") NIS_Surface::~NIS_Surface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NIS_Surface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

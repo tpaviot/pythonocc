@@ -104,8 +104,18 @@ class BRepPrim_GWedge {
 };
 %feature("shadow") BRepPrim_GWedge::~BRepPrim_GWedge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepPrim_GWedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepPrim_Wedge;
@@ -121,8 +131,18 @@ class BRepPrim_Wedge : public BRepPrim_GWedge {
 };
 %feature("shadow") BRepPrim_Wedge::~BRepPrim_Wedge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepPrim_Wedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepPrim_FaceBuilder;
@@ -148,8 +168,18 @@ class BRepPrim_FaceBuilder {
 };
 %feature("shadow") BRepPrim_FaceBuilder::~BRepPrim_FaceBuilder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepPrim_FaceBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepPrim_Builder;
@@ -207,8 +237,18 @@ class BRepPrim_Builder {
 };
 %feature("shadow") BRepPrim_Builder::~BRepPrim_Builder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepPrim_Builder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepPrim_OneAxis;
@@ -320,8 +360,18 @@ class BRepPrim_OneAxis {
 };
 %feature("shadow") BRepPrim_OneAxis::~BRepPrim_OneAxis %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepPrim_OneAxis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepPrim_Revolution;
@@ -341,8 +391,18 @@ class BRepPrim_Revolution : public BRepPrim_OneAxis {
 };
 %feature("shadow") BRepPrim_Revolution::~BRepPrim_Revolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepPrim_Revolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepPrim_Sphere;
@@ -358,8 +418,18 @@ class BRepPrim_Sphere : public BRepPrim_Revolution {
 };
 %feature("shadow") BRepPrim_Sphere::~BRepPrim_Sphere %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepPrim_Sphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepPrim_Cone;
@@ -385,8 +455,18 @@ class BRepPrim_Cone : public BRepPrim_Revolution {
 };
 %feature("shadow") BRepPrim_Cone::~BRepPrim_Cone %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepPrim_Cone {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepPrim_Cylinder;
@@ -410,8 +490,18 @@ class BRepPrim_Cylinder : public BRepPrim_Revolution {
 };
 %feature("shadow") BRepPrim_Cylinder::~BRepPrim_Cylinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepPrim_Cylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepPrim_Torus;
@@ -429,5 +519,15 @@ class BRepPrim_Torus : public BRepPrim_Revolution {
 };
 %feature("shadow") BRepPrim_Torus::~BRepPrim_Torus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepPrim_Torus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

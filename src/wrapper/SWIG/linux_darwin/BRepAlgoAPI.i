@@ -82,8 +82,18 @@ class BRepAlgoAPI_BooleanOperation : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepAlgoAPI_BooleanOperation::~BRepAlgoAPI_BooleanOperation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgoAPI_BooleanOperation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgoAPI_Fuse;
@@ -97,8 +107,18 @@ class BRepAlgoAPI_Fuse : public BRepAlgoAPI_BooleanOperation {
 };
 %feature("shadow") BRepAlgoAPI_Fuse::~BRepAlgoAPI_Fuse %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgoAPI_Fuse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgoAPI_Section;
@@ -148,8 +168,18 @@ class BRepAlgoAPI_Section : public BRepAlgoAPI_BooleanOperation {
 };
 %feature("shadow") BRepAlgoAPI_Section::~BRepAlgoAPI_Section %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgoAPI_Section {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgoAPI_Cut;
@@ -163,8 +193,18 @@ class BRepAlgoAPI_Cut : public BRepAlgoAPI_BooleanOperation {
 };
 %feature("shadow") BRepAlgoAPI_Cut::~BRepAlgoAPI_Cut %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgoAPI_Cut {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgoAPI_Common;
@@ -178,5 +218,15 @@ class BRepAlgoAPI_Common : public BRepAlgoAPI_BooleanOperation {
 };
 %feature("shadow") BRepAlgoAPI_Common::~BRepAlgoAPI_Common %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgoAPI_Common {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

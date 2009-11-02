@@ -63,8 +63,18 @@ class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeAlgo_ToolContainer::~Handle_ShapeAlgo_ToolContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeAlgo_ToolContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeAlgo_AlgoContainer;
@@ -91,8 +101,18 @@ class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeAlgo_AlgoContainer::~Handle_ShapeAlgo_AlgoContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeAlgo_AlgoContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAlgo_ToolContainer;
@@ -120,8 +140,18 @@ class ShapeAlgo_ToolContainer : public MMgt_TShared {
 };
 %feature("shadow") ShapeAlgo_ToolContainer::~ShapeAlgo_ToolContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAlgo_ToolContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeAlgo_AlgoContainer;
@@ -173,5 +203,15 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 };
 %feature("shadow") ShapeAlgo_AlgoContainer::~ShapeAlgo_AlgoContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeAlgo_AlgoContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

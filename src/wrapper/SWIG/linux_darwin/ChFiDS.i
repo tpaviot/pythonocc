@@ -87,8 +87,18 @@ class Handle_ChFiDS_SecHArray1 : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ChFiDS_SecHArray1::~Handle_ChFiDS_SecHArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_SecHArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe;
@@ -115,8 +125,18 @@ class Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : pub
 };
 %feature("shadow") Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe::~Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ChFiDS_Stripe;
@@ -143,8 +163,18 @@ class Handle_ChFiDS_Stripe : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ChFiDS_Stripe::~Handle_ChFiDS_Stripe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_Stripe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ChFiDS_ListNodeOfListOfHElSpine;
@@ -171,8 +201,18 @@ class Handle_ChFiDS_ListNodeOfListOfHElSpine : public Handle_TCollection_MapNode
 };
 %feature("shadow") Handle_ChFiDS_ListNodeOfListOfHElSpine::~Handle_ChFiDS_ListNodeOfListOfHElSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_ListNodeOfListOfHElSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ChFiDS_Spine;
@@ -199,8 +239,18 @@ class Handle_ChFiDS_Spine : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ChFiDS_Spine::~Handle_ChFiDS_Spine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_Spine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ChFiDS_ChamfSpine;
@@ -227,8 +277,18 @@ class Handle_ChFiDS_ChamfSpine : public Handle_ChFiDS_Spine {
 };
 %feature("shadow") Handle_ChFiDS_ChamfSpine::~Handle_ChFiDS_ChamfSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_ChamfSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ChFiDS_HElSpine;
@@ -255,8 +315,18 @@ class Handle_ChFiDS_HElSpine : public Handle_Adaptor3d_HCurve {
 };
 %feature("shadow") Handle_ChFiDS_HElSpine::~Handle_ChFiDS_HElSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_HElSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ChFiDS_ListNodeOfListOfStripe;
@@ -283,8 +353,18 @@ class Handle_ChFiDS_ListNodeOfListOfStripe : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_ChFiDS_ListNodeOfListOfStripe::~Handle_ChFiDS_ListNodeOfListOfStripe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_ListNodeOfListOfStripe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ChFiDS_FilSpine;
@@ -311,8 +391,18 @@ class Handle_ChFiDS_FilSpine : public Handle_ChFiDS_Spine {
 };
 %feature("shadow") Handle_ChFiDS_FilSpine::~Handle_ChFiDS_FilSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_FilSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ChFiDS_SequenceNodeOfSequenceOfSpine;
@@ -339,8 +429,18 @@ class Handle_ChFiDS_SequenceNodeOfSequenceOfSpine : public Handle_TCollection_Se
 };
 %feature("shadow") Handle_ChFiDS_SequenceNodeOfSequenceOfSpine::~Handle_ChFiDS_SequenceNodeOfSequenceOfSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_SequenceNodeOfSequenceOfSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ChFiDS_SurfData;
@@ -367,8 +467,18 @@ class Handle_ChFiDS_SurfData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ChFiDS_SurfData::~Handle_ChFiDS_SurfData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_SurfData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData;
@@ -395,8 +505,18 @@ class Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData : public Handle_TCollection
 };
 %feature("shadow") Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData::~Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ChFiDS_ListNodeOfRegularities;
@@ -423,8 +543,18 @@ class Handle_ChFiDS_ListNodeOfRegularities : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_ChFiDS_ListNodeOfRegularities::~Handle_ChFiDS_ListNodeOfRegularities %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_ListNodeOfRegularities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ChFiDS_HData;
@@ -451,8 +581,18 @@ class Handle_ChFiDS_HData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ChFiDS_HData::~Handle_ChFiDS_HData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ChFiDS_HData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_ListIteratorOfListOfHElSpine;
@@ -474,8 +614,18 @@ class ChFiDS_ListIteratorOfListOfHElSpine {
 };
 %feature("shadow") ChFiDS_ListIteratorOfListOfHElSpine::~ChFiDS_ListIteratorOfListOfHElSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_ListIteratorOfListOfHElSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_CircSection;
@@ -495,8 +645,18 @@ class ChFiDS_CircSection {
 };
 %feature("shadow") ChFiDS_CircSection::~ChFiDS_CircSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_CircSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_CommonPoint;
@@ -544,8 +704,18 @@ class ChFiDS_CommonPoint {
 };
 %feature("shadow") ChFiDS_CommonPoint::~ChFiDS_CommonPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_CommonPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_Spine;
@@ -691,8 +861,18 @@ class ChFiDS_Spine : public MMgt_TShared {
 };
 %feature("shadow") ChFiDS_Spine::~ChFiDS_Spine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_Spine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_FilSpine;
@@ -746,8 +926,18 @@ class ChFiDS_FilSpine : public ChFiDS_Spine {
 };
 %feature("shadow") ChFiDS_FilSpine::~ChFiDS_FilSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_FilSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe;
@@ -789,8 +979,18 @@ class ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public TCo
 };
 %feature("shadow") ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe::~ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_SequenceOfSpine;
@@ -844,8 +1044,18 @@ class ChFiDS_SequenceOfSpine : public TCollection_BaseSequence {
 };
 %feature("shadow") ChFiDS_SequenceOfSpine::~ChFiDS_SequenceOfSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_SequenceOfSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_ChamfSpine;
@@ -885,8 +1095,18 @@ class ChFiDS_ChamfSpine : public ChFiDS_Spine {
 };
 %feature("shadow") ChFiDS_ChamfSpine::~ChFiDS_ChamfSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_ChamfSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_SurfData;
@@ -1014,8 +1234,18 @@ class ChFiDS_SurfData : public MMgt_TShared {
 };
 %feature("shadow") ChFiDS_SurfData::~ChFiDS_SurfData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_SurfData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_ListNodeOfListOfHElSpine;
@@ -1041,8 +1271,18 @@ class ChFiDS_ListNodeOfListOfHElSpine : public TCollection_MapNode {
 };
 %feature("shadow") ChFiDS_ListNodeOfListOfHElSpine::~ChFiDS_ListNodeOfListOfHElSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_ListNodeOfListOfHElSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_IndexedDataMapOfVertexListOfStripe;
@@ -1086,8 +1326,18 @@ class ChFiDS_IndexedDataMapOfVertexListOfStripe : public TCollection_BasicMap {
 };
 %feature("shadow") ChFiDS_IndexedDataMapOfVertexListOfStripe::~ChFiDS_IndexedDataMapOfVertexListOfStripe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_IndexedDataMapOfVertexListOfStripe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_Regul;
@@ -1115,8 +1365,18 @@ class ChFiDS_Regul {
 };
 %feature("shadow") ChFiDS_Regul::~ChFiDS_Regul %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_Regul {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_ElSpine;
@@ -1198,8 +1458,18 @@ class ChFiDS_ElSpine : public Adaptor3d_Curve {
 };
 %feature("shadow") ChFiDS_ElSpine::~ChFiDS_ElSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_ElSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_StripeMap;
@@ -1227,8 +1497,18 @@ class ChFiDS_StripeMap {
 };
 %feature("shadow") ChFiDS_StripeMap::~ChFiDS_StripeMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_StripeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_ListNodeOfRegularities;
@@ -1254,8 +1534,18 @@ class ChFiDS_ListNodeOfRegularities : public TCollection_MapNode {
 };
 %feature("shadow") ChFiDS_ListNodeOfRegularities::~ChFiDS_ListNodeOfRegularities %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_ListNodeOfRegularities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_ListOfStripe;
@@ -1305,8 +1595,18 @@ class ChFiDS_ListOfStripe {
 };
 %feature("shadow") ChFiDS_ListOfStripe::~ChFiDS_ListOfStripe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_ListOfStripe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_FaceInterference;
@@ -1348,8 +1648,18 @@ class ChFiDS_FaceInterference {
 };
 %feature("shadow") ChFiDS_FaceInterference::~ChFiDS_FaceInterference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_FaceInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_HData;
@@ -1417,8 +1727,18 @@ class ChFiDS_HData : public MMgt_TShared {
 };
 %feature("shadow") ChFiDS_HData::~ChFiDS_HData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_HData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_ListIteratorOfListOfStripe;
@@ -1440,8 +1760,18 @@ class ChFiDS_ListIteratorOfListOfStripe {
 };
 %feature("shadow") ChFiDS_ListIteratorOfListOfStripe::~ChFiDS_ListIteratorOfListOfStripe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_ListIteratorOfListOfStripe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_Regularities;
@@ -1491,8 +1821,18 @@ class ChFiDS_Regularities {
 };
 %feature("shadow") ChFiDS_Regularities::~ChFiDS_Regularities %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_Regularities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_SequenceNodeOfSequenceOfSpine;
@@ -1518,8 +1858,18 @@ class ChFiDS_SequenceNodeOfSequenceOfSpine : public TCollection_SeqNode {
 };
 %feature("shadow") ChFiDS_SequenceNodeOfSequenceOfSpine::~ChFiDS_SequenceNodeOfSequenceOfSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_SequenceNodeOfSequenceOfSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_ListNodeOfListOfStripe;
@@ -1545,8 +1895,18 @@ class ChFiDS_ListNodeOfListOfStripe : public TCollection_MapNode {
 };
 %feature("shadow") ChFiDS_ListNodeOfListOfStripe::~ChFiDS_ListNodeOfListOfStripe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_ListNodeOfListOfStripe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_StripeArray1;
@@ -1586,8 +1946,18 @@ class ChFiDS_StripeArray1 {
 };
 %feature("shadow") ChFiDS_StripeArray1::~ChFiDS_StripeArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_StripeArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_SequenceOfSurfData;
@@ -1641,8 +2011,18 @@ class ChFiDS_SequenceOfSurfData : public TCollection_BaseSequence {
 };
 %feature("shadow") ChFiDS_SequenceOfSurfData::~ChFiDS_SequenceOfSurfData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_SequenceOfSurfData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_HElSpine;
@@ -1676,8 +2056,18 @@ class ChFiDS_HElSpine : public Adaptor3d_HCurve {
 };
 %feature("shadow") ChFiDS_HElSpine::~ChFiDS_HElSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_HElSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_SecHArray1;
@@ -1721,8 +2111,18 @@ class ChFiDS_SecHArray1 : public MMgt_TShared {
 };
 %feature("shadow") ChFiDS_SecHArray1::~ChFiDS_SecHArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_SecHArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_ListOfHElSpine;
@@ -1772,8 +2172,18 @@ class ChFiDS_ListOfHElSpine {
 };
 %feature("shadow") ChFiDS_ListOfHElSpine::~ChFiDS_ListOfHElSpine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_ListOfHElSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_Stripe;
@@ -1899,8 +2309,18 @@ class ChFiDS_Stripe : public MMgt_TShared {
 };
 %feature("shadow") ChFiDS_Stripe::~ChFiDS_Stripe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_Stripe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_SecArray1;
@@ -1940,8 +2360,18 @@ class ChFiDS_SecArray1 {
 };
 %feature("shadow") ChFiDS_SecArray1::~ChFiDS_SecArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_SecArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_Map;
@@ -1965,8 +2395,18 @@ class ChFiDS_Map {
 };
 %feature("shadow") ChFiDS_Map::~ChFiDS_Map %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_Map {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_ListIteratorOfRegularities;
@@ -1988,8 +2428,18 @@ class ChFiDS_ListIteratorOfRegularities {
 };
 %feature("shadow") ChFiDS_ListIteratorOfRegularities::~ChFiDS_ListIteratorOfRegularities %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_ListIteratorOfRegularities {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ChFiDS_SequenceNodeOfSequenceOfSurfData;
@@ -2015,5 +2465,15 @@ class ChFiDS_SequenceNodeOfSequenceOfSurfData : public TCollection_SeqNode {
 };
 %feature("shadow") ChFiDS_SequenceNodeOfSequenceOfSurfData::~ChFiDS_SequenceNodeOfSequenceOfSurfData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ChFiDS_SequenceNodeOfSequenceOfSurfData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

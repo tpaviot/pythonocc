@@ -63,8 +63,18 @@ class Handle_GeomPlate_PointConstraint : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomPlate_PointConstraint::~Handle_GeomPlate_PointConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomPlate_PointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint;
@@ -91,8 +101,18 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public Handle_T
 };
 %feature("shadow") Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint::~Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomPlate_HArray1OfHCurveOnSurface;
@@ -119,8 +139,18 @@ class Handle_GeomPlate_HArray1OfHCurveOnSurface : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomPlate_HArray1OfHCurveOnSurface::~Handle_GeomPlate_HArray1OfHCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomPlate_HArray1OfHCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfAij;
@@ -147,8 +177,18 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfAij : public Handle_TCollection_S
 };
 %feature("shadow") Handle_GeomPlate_SequenceNodeOfSequenceOfAij::~Handle_GeomPlate_SequenceNodeOfSequenceOfAij %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomPlate_SequenceNodeOfSequenceOfAij {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomPlate_HSequenceOfPointConstraint;
@@ -175,8 +215,18 @@ class Handle_GeomPlate_HSequenceOfPointConstraint : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomPlate_HSequenceOfPointConstraint::~Handle_GeomPlate_HSequenceOfPointConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomPlate_HSequenceOfPointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint;
@@ -203,8 +253,18 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public Handle_T
 };
 %feature("shadow") Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint::~Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomPlate_Surface;
@@ -231,8 +291,18 @@ class Handle_GeomPlate_Surface : public Handle_Geom_Surface {
 };
 %feature("shadow") Handle_GeomPlate_Surface::~Handle_GeomPlate_Surface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomPlate_Surface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomPlate_HArray1OfSequenceOfReal;
@@ -259,8 +329,18 @@ class Handle_GeomPlate_HArray1OfSequenceOfReal : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomPlate_HArray1OfSequenceOfReal::~Handle_GeomPlate_HArray1OfSequenceOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomPlate_HArray1OfSequenceOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomPlate_CurveConstraint;
@@ -287,8 +367,18 @@ class Handle_GeomPlate_CurveConstraint : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomPlate_CurveConstraint::~Handle_GeomPlate_CurveConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomPlate_CurveConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomPlate_HSequenceOfCurveConstraint;
@@ -315,8 +405,18 @@ class Handle_GeomPlate_HSequenceOfCurveConstraint : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GeomPlate_HSequenceOfCurveConstraint::~Handle_GeomPlate_HSequenceOfCurveConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GeomPlate_HSequenceOfCurveConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_HArray1OfHCurveOnSurface;
@@ -360,8 +460,18 @@ class GeomPlate_HArray1OfHCurveOnSurface : public MMgt_TShared {
 };
 %feature("shadow") GeomPlate_HArray1OfHCurveOnSurface::~GeomPlate_HArray1OfHCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_HArray1OfHCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_HSequenceOfCurveConstraint;
@@ -429,8 +539,18 @@ class GeomPlate_HSequenceOfCurveConstraint : public MMgt_TShared {
 };
 %feature("shadow") GeomPlate_HSequenceOfCurveConstraint::~GeomPlate_HSequenceOfCurveConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_HSequenceOfCurveConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_SequenceNodeOfSequenceOfPointConstraint;
@@ -456,8 +576,18 @@ class GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public TCollection_Seq
 };
 %feature("shadow") GeomPlate_SequenceNodeOfSequenceOfPointConstraint::~GeomPlate_SequenceNodeOfSequenceOfPointConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_Aij;
@@ -471,8 +601,18 @@ class GeomPlate_Aij {
 };
 %feature("shadow") GeomPlate_Aij::~GeomPlate_Aij %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_Aij {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_PointConstraint;
@@ -528,8 +668,18 @@ class GeomPlate_PointConstraint : public MMgt_TShared {
 };
 %feature("shadow") GeomPlate_PointConstraint::~GeomPlate_PointConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_PointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_CurveConstraint;
@@ -601,8 +751,18 @@ class GeomPlate_CurveConstraint : public MMgt_TShared {
 };
 %feature("shadow") GeomPlate_CurveConstraint::~GeomPlate_CurveConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_CurveConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_HSequenceOfPointConstraint;
@@ -670,8 +830,18 @@ class GeomPlate_HSequenceOfPointConstraint : public MMgt_TShared {
 };
 %feature("shadow") GeomPlate_HSequenceOfPointConstraint::~GeomPlate_HSequenceOfPointConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_HSequenceOfPointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_HArray1OfSequenceOfReal;
@@ -715,8 +885,18 @@ class GeomPlate_HArray1OfSequenceOfReal : public MMgt_TShared {
 };
 %feature("shadow") GeomPlate_HArray1OfSequenceOfReal::~GeomPlate_HArray1OfSequenceOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_HArray1OfSequenceOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_BuildAveragePlane;
@@ -742,8 +922,18 @@ class GeomPlate_BuildAveragePlane {
 };
 %feature("shadow") GeomPlate_BuildAveragePlane::~GeomPlate_BuildAveragePlane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_BuildAveragePlane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_SequenceNodeOfSequenceOfCurveConstraint;
@@ -769,8 +959,18 @@ class GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public TCollection_Seq
 };
 %feature("shadow") GeomPlate_SequenceNodeOfSequenceOfCurveConstraint::~GeomPlate_SequenceNodeOfSequenceOfCurveConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_Surface;
@@ -852,8 +1052,18 @@ class GeomPlate_Surface : public Geom_Surface {
 };
 %feature("shadow") GeomPlate_Surface::~GeomPlate_Surface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_Surface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_PlateG0Criterion;
@@ -869,8 +1079,18 @@ class GeomPlate_PlateG0Criterion : public AdvApp2Var_Criterion {
 };
 %feature("shadow") GeomPlate_PlateG0Criterion::~GeomPlate_PlateG0Criterion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_PlateG0Criterion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_MakeApprox;
@@ -890,8 +1110,18 @@ class GeomPlate_MakeApprox {
 };
 %feature("shadow") GeomPlate_MakeApprox::~GeomPlate_MakeApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_MakeApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_SequenceOfPointConstraint;
@@ -945,8 +1175,18 @@ class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
 };
 %feature("shadow") GeomPlate_SequenceOfPointConstraint::~GeomPlate_SequenceOfPointConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_SequenceOfPointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_BuildPlateSurface;
@@ -1006,8 +1246,18 @@ class GeomPlate_BuildPlateSurface {
 };
 %feature("shadow") GeomPlate_BuildPlateSurface::~GeomPlate_BuildPlateSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_BuildPlateSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_SequenceOfAij;
@@ -1061,8 +1311,18 @@ class GeomPlate_SequenceOfAij : public TCollection_BaseSequence {
 };
 %feature("shadow") GeomPlate_SequenceOfAij::~GeomPlate_SequenceOfAij %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_SequenceOfAij {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_PlateG1Criterion;
@@ -1078,8 +1338,18 @@ class GeomPlate_PlateG1Criterion : public AdvApp2Var_Criterion {
 };
 %feature("shadow") GeomPlate_PlateG1Criterion::~GeomPlate_PlateG1Criterion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_PlateG1Criterion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_SequenceNodeOfSequenceOfAij;
@@ -1105,8 +1375,18 @@ class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
 };
 %feature("shadow") GeomPlate_SequenceNodeOfSequenceOfAij::~GeomPlate_SequenceNodeOfSequenceOfAij %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_SequenceNodeOfSequenceOfAij {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_Array1OfSequenceOfReal;
@@ -1146,8 +1426,18 @@ class GeomPlate_Array1OfSequenceOfReal {
 };
 %feature("shadow") GeomPlate_Array1OfSequenceOfReal::~GeomPlate_Array1OfSequenceOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_Array1OfSequenceOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_Array1OfHCurveOnSurface;
@@ -1187,8 +1477,18 @@ class GeomPlate_Array1OfHCurveOnSurface {
 };
 %feature("shadow") GeomPlate_Array1OfHCurveOnSurface::~GeomPlate_Array1OfHCurveOnSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_Array1OfHCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomPlate_SequenceOfCurveConstraint;
@@ -1242,5 +1542,15 @@ class GeomPlate_SequenceOfCurveConstraint : public TCollection_BaseSequence {
 };
 %feature("shadow") GeomPlate_SequenceOfCurveConstraint::~GeomPlate_SequenceOfCurveConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomPlate_SequenceOfCurveConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_BRepApprox_ApproxLine : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_BRepApprox_ApproxLine::~Handle_BRepApprox_ApproxLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepApprox_ApproxLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox;
@@ -98,8 +108,18 @@ class BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox : public 
 };
 %feature("shadow") BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox::~BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox;
@@ -151,8 +171,18 @@ class BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox {
 };
 %feature("shadow") BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox::~BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox;
@@ -166,8 +196,18 @@ class BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox : public m
 };
 %feature("shadow") BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox::~BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_MyGradientbisOfTheComputeLineOfApprox;
@@ -191,8 +231,18 @@ class BRepApprox_MyGradientbisOfTheComputeLineOfApprox {
 };
 %feature("shadow") BRepApprox_MyGradientbisOfTheComputeLineOfApprox::~BRepApprox_MyGradientbisOfTheComputeLineOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_MyGradientbisOfTheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_ApproxLine;
@@ -222,8 +272,18 @@ class BRepApprox_ApproxLine : public MMgt_TShared {
 };
 %feature("shadow") BRepApprox_ApproxLine::~BRepApprox_ApproxLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_ApproxLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox;
@@ -257,8 +317,18 @@ class BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox : public mat
 };
 %feature("shadow") BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox::~BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox;
@@ -294,8 +364,18 @@ class BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
 };
 %feature("shadow") BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox::~BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox;
@@ -347,8 +427,18 @@ class BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox {
 };
 %feature("shadow") BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox::~BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox;
@@ -400,8 +490,18 @@ class BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox {
 };
 %feature("shadow") BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox::~BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox;
@@ -423,8 +523,18 @@ class BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox {
 };
 %feature("shadow") BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox::~BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox;
@@ -468,8 +578,18 @@ class BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox : public
 };
 %feature("shadow") BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox::~BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_Approx;
@@ -495,8 +615,18 @@ class BRepApprox_Approx {
 };
 %feature("shadow") BRepApprox_Approx::~BRepApprox_Approx %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_Approx {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_SurfaceTool;
@@ -586,8 +716,18 @@ class BRepApprox_SurfaceTool {
 };
 %feature("shadow") BRepApprox_SurfaceTool::~BRepApprox_SurfaceTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_SurfaceTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_MyGradientOfTheComputeLineBezierOfApprox;
@@ -611,8 +751,18 @@ class BRepApprox_MyGradientOfTheComputeLineBezierOfApprox {
 };
 %feature("shadow") BRepApprox_MyGradientOfTheComputeLineBezierOfApprox::~BRepApprox_MyGradientOfTheComputeLineBezierOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_MyGradientOfTheComputeLineBezierOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_ThePrmPrmSvSurfacesOfApprox;
@@ -634,8 +784,18 @@ class BRepApprox_ThePrmPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 };
 %feature("shadow") BRepApprox_ThePrmPrmSvSurfacesOfApprox::~BRepApprox_ThePrmPrmSvSurfacesOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_ThePrmPrmSvSurfacesOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_TheComputeLineBezierOfApprox;
@@ -681,8 +841,18 @@ class BRepApprox_TheComputeLineBezierOfApprox {
 };
 %feature("shadow") BRepApprox_TheComputeLineBezierOfApprox::~BRepApprox_TheComputeLineBezierOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_TheComputeLineBezierOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox;
@@ -696,8 +866,18 @@ class BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox : publi
 };
 %feature("shadow") BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox::~BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_TheMultiLineOfApprox;
@@ -735,8 +915,18 @@ class BRepApprox_TheMultiLineOfApprox {
 };
 %feature("shadow") BRepApprox_TheMultiLineOfApprox::~BRepApprox_TheMultiLineOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_TheMultiLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox;
@@ -758,8 +948,18 @@ class BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
 };
 %feature("shadow") BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox::~BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox;
@@ -801,8 +1001,18 @@ class BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox : public mat
 };
 %feature("shadow") BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox::~BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_TheImpPrmSvSurfacesOfApprox;
@@ -826,8 +1036,18 @@ class BRepApprox_TheImpPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 };
 %feature("shadow") BRepApprox_TheImpPrmSvSurfacesOfApprox::~BRepApprox_TheImpPrmSvSurfacesOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_TheImpPrmSvSurfacesOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_TheMultiLineToolOfApprox;
@@ -869,8 +1089,18 @@ class BRepApprox_TheMultiLineToolOfApprox {
 };
 %feature("shadow") BRepApprox_TheMultiLineToolOfApprox::~BRepApprox_TheMultiLineToolOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_TheMultiLineToolOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_MyBSplGradientOfTheComputeLineOfApprox;
@@ -896,8 +1126,18 @@ class BRepApprox_MyBSplGradientOfTheComputeLineOfApprox {
 };
 %feature("shadow") BRepApprox_MyBSplGradientOfTheComputeLineOfApprox::~BRepApprox_MyBSplGradientOfTheComputeLineOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_MyBSplGradientOfTheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox;
@@ -911,8 +1151,18 @@ class BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox : publ
 };
 %feature("shadow") BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox::~BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_TheComputeLineOfApprox;
@@ -962,8 +1212,18 @@ class BRepApprox_TheComputeLineOfApprox {
 };
 %feature("shadow") BRepApprox_TheComputeLineOfApprox::~BRepApprox_TheComputeLineOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_TheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox;
@@ -1011,5 +1271,15 @@ class BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox : public math_Functi
 };
 %feature("shadow") BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox::~BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

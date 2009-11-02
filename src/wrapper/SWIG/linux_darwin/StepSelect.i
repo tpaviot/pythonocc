@@ -63,8 +63,18 @@ class Handle_StepSelect_ModelModifier : public Handle_IFSelect_Modifier {
 };
 %feature("shadow") Handle_StepSelect_ModelModifier::~Handle_StepSelect_ModelModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepSelect_ModelModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepSelect_FileModifier;
@@ -91,8 +101,18 @@ class Handle_StepSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 };
 %feature("shadow") Handle_StepSelect_FileModifier::~Handle_StepSelect_FileModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepSelect_FileModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepSelect_FloatFormat;
@@ -119,8 +139,18 @@ class Handle_StepSelect_FloatFormat : public Handle_StepSelect_FileModifier {
 };
 %feature("shadow") Handle_StepSelect_FloatFormat::~Handle_StepSelect_FloatFormat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepSelect_FloatFormat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepSelect_WorkLibrary;
@@ -147,8 +177,18 @@ class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 };
 %feature("shadow") Handle_StepSelect_WorkLibrary::~Handle_StepSelect_WorkLibrary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepSelect_WorkLibrary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepSelect_Activator;
@@ -175,8 +215,18 @@ class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 };
 %feature("shadow") Handle_StepSelect_Activator::~Handle_StepSelect_Activator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepSelect_Activator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepSelect_StepType;
@@ -203,8 +253,18 @@ class Handle_StepSelect_StepType : public Handle_IFSelect_Signature {
 };
 %feature("shadow") Handle_StepSelect_StepType::~Handle_StepSelect_StepType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepSelect_StepType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepSelect_FileModifier;
@@ -228,8 +288,18 @@ class StepSelect_FileModifier : public IFSelect_GeneralModifier {
 };
 %feature("shadow") StepSelect_FileModifier::~StepSelect_FileModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepSelect_FileModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepSelect_WorkLibrary;
@@ -263,8 +333,18 @@ class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
 };
 %feature("shadow") StepSelect_WorkLibrary::~StepSelect_WorkLibrary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepSelect_WorkLibrary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepSelect_Activator;
@@ -292,8 +372,18 @@ class StepSelect_Activator : public IFSelect_Activator {
 };
 %feature("shadow") StepSelect_Activator::~StepSelect_Activator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepSelect_Activator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepSelect_StepType;
@@ -321,8 +411,18 @@ class StepSelect_StepType : public IFSelect_Signature {
 };
 %feature("shadow") StepSelect_StepType::~StepSelect_StepType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepSelect_StepType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepSelect_FloatFormat;
@@ -360,8 +460,18 @@ class StepSelect_FloatFormat : public StepSelect_FileModifier {
 };
 %feature("shadow") StepSelect_FloatFormat::~StepSelect_FloatFormat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepSelect_FloatFormat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepSelect_ModelModifier;
@@ -389,5 +499,15 @@ class StepSelect_ModelModifier : public IFSelect_Modifier {
 };
 %feature("shadow") StepSelect_ModelModifier::~StepSelect_ModelModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepSelect_ModelModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

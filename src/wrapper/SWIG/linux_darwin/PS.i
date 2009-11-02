@@ -63,8 +63,18 @@ class Handle_PS_Driver : public Handle_PlotMgt_PlotterDriver {
 };
 %feature("shadow") Handle_PS_Driver::~Handle_PS_Driver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PS_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PS_Driver;
@@ -100,5 +110,15 @@ class PS_Driver : public PlotMgt_PlotterDriver {
 };
 %feature("shadow") PS_Driver::~PS_Driver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PS_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

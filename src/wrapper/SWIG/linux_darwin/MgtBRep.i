@@ -68,8 +68,18 @@ class Handle_MgtBRep_TranslateTool1 : public Handle_MgtTopoDS_TranslateTool1 {
 };
 %feature("shadow") Handle_MgtBRep_TranslateTool1::~Handle_MgtBRep_TranslateTool1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MgtBRep_TranslateTool1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MgtBRep_TranslateTool;
@@ -96,8 +106,18 @@ class Handle_MgtBRep_TranslateTool : public Handle_MgtTopoDS_TranslateTool {
 };
 %feature("shadow") Handle_MgtBRep_TranslateTool::~Handle_MgtBRep_TranslateTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MgtBRep_TranslateTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MgtBRep_TranslateTool1;
@@ -167,8 +187,18 @@ class MgtBRep_TranslateTool1 : public MgtTopoDS_TranslateTool1 {
 };
 %feature("shadow") MgtBRep_TranslateTool1::~MgtBRep_TranslateTool1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MgtBRep_TranslateTool1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MgtBRep;
@@ -188,8 +218,18 @@ class MgtBRep {
 };
 %feature("shadow") MgtBRep::~MgtBRep %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MgtBRep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MgtBRep_TranslateTool;
@@ -259,5 +299,15 @@ class MgtBRep_TranslateTool : public MgtTopoDS_TranslateTool {
 };
 %feature("shadow") MgtBRep_TranslateTool::~MgtBRep_TranslateTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MgtBRep_TranslateTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

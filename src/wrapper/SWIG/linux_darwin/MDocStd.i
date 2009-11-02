@@ -63,8 +63,18 @@ class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 };
 %feature("shadow") Handle_MDocStd_DocumentStorageDriver::~Handle_MDocStd_DocumentStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDocStd_DocumentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDocStd_DocumentRetrievalDriver;
@@ -91,8 +101,18 @@ class Handle_MDocStd_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDrive
 };
 %feature("shadow") Handle_MDocStd_DocumentRetrievalDriver::~Handle_MDocStd_DocumentRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDocStd_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDocStd_XLinkRetrievalDriver;
@@ -119,8 +139,18 @@ class Handle_MDocStd_XLinkRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %feature("shadow") Handle_MDocStd_XLinkRetrievalDriver::~Handle_MDocStd_XLinkRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDocStd_XLinkRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDocStd_XLinkStorageDriver;
@@ -147,8 +177,18 @@ class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
 };
 %feature("shadow") Handle_MDocStd_XLinkStorageDriver::~Handle_MDocStd_XLinkStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDocStd_XLinkStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDocStd_ListNodeOfDocEntryList;
@@ -175,8 +215,18 @@ class Handle_MDocStd_ListNodeOfDocEntryList : public Handle_TCollection_MapNode 
 };
 %feature("shadow") Handle_MDocStd_ListNodeOfDocEntryList::~Handle_MDocStd_ListNodeOfDocEntryList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDocStd_ListNodeOfDocEntryList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MDocStd_StdMapNodeOfPersistentMap;
@@ -203,8 +253,18 @@ class Handle_MDocStd_StdMapNodeOfPersistentMap : public Handle_TCollection_MapNo
 };
 %feature("shadow") Handle_MDocStd_StdMapNodeOfPersistentMap::~Handle_MDocStd_StdMapNodeOfPersistentMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MDocStd_StdMapNodeOfPersistentMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDocStd;
@@ -224,8 +284,18 @@ class MDocStd {
 };
 %feature("shadow") MDocStd::~MDocStd %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDocStd {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDocStd_ListNodeOfDocEntryList;
@@ -251,8 +321,18 @@ class MDocStd_ListNodeOfDocEntryList : public TCollection_MapNode {
 };
 %feature("shadow") MDocStd_ListNodeOfDocEntryList::~MDocStd_ListNodeOfDocEntryList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDocStd_ListNodeOfDocEntryList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDocStd_DocumentStorageDriver;
@@ -286,8 +366,18 @@ class MDocStd_DocumentStorageDriver : public PCDM_StorageDriver {
 };
 %feature("shadow") MDocStd_DocumentStorageDriver::~MDocStd_DocumentStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDocStd_DocumentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDocStd_PersistentMap;
@@ -313,8 +403,18 @@ class MDocStd_PersistentMap : public TCollection_BasicMap {
 };
 %feature("shadow") MDocStd_PersistentMap::~MDocStd_PersistentMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDocStd_PersistentMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDocStd_DocumentRetrievalDriver;
@@ -348,8 +448,18 @@ class MDocStd_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 };
 %feature("shadow") MDocStd_DocumentRetrievalDriver::~MDocStd_DocumentRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDocStd_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDocStd_XLinkRetrievalDriver;
@@ -381,8 +491,18 @@ class MDocStd_XLinkRetrievalDriver : public MDF_ARDriver {
 };
 %feature("shadow") MDocStd_XLinkRetrievalDriver::~MDocStd_XLinkRetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDocStd_XLinkRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDocStd_MapIteratorOfPersistentMap;
@@ -400,8 +520,18 @@ class MDocStd_MapIteratorOfPersistentMap : public TCollection_BasicMapIterator {
 };
 %feature("shadow") MDocStd_MapIteratorOfPersistentMap::~MDocStd_MapIteratorOfPersistentMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDocStd_MapIteratorOfPersistentMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDocStd_XLinkStorageDriver;
@@ -433,8 +563,18 @@ class MDocStd_XLinkStorageDriver : public MDF_ASDriver {
 };
 %feature("shadow") MDocStd_XLinkStorageDriver::~MDocStd_XLinkStorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDocStd_XLinkStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDocStd_ListIteratorOfDocEntryList;
@@ -456,8 +596,18 @@ class MDocStd_ListIteratorOfDocEntryList {
 };
 %feature("shadow") MDocStd_ListIteratorOfDocEntryList::~MDocStd_ListIteratorOfDocEntryList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDocStd_ListIteratorOfDocEntryList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDocStd_DocEntryList;
@@ -507,8 +657,18 @@ class MDocStd_DocEntryList {
 };
 %feature("shadow") MDocStd_DocEntryList::~MDocStd_DocEntryList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDocStd_DocEntryList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MDocStd_StdMapNodeOfPersistentMap;
@@ -534,5 +694,15 @@ class MDocStd_StdMapNodeOfPersistentMap : public TCollection_MapNode {
 };
 %feature("shadow") MDocStd_StdMapNodeOfPersistentMap::~MDocStd_StdMapNodeOfPersistentMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MDocStd_StdMapNodeOfPersistentMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -80,5 +80,15 @@ class BRepToIGESBRep_Entity : public BRepToIGES_BREntity {
 };
 %feature("shadow") BRepToIGESBRep_Entity::~BRepToIGESBRep_Entity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepToIGESBRep_Entity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

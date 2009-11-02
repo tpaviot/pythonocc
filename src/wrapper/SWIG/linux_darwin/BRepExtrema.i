@@ -69,8 +69,18 @@ class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError 
 };
 %feature("shadow") Handle_BRepExtrema_UnCompatibleShape::~Handle_BRepExtrema_UnCompatibleShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepExtrema_UnCompatibleShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepExtrema_SequenceNodeOfSeqOfSolution;
@@ -97,8 +107,18 @@ class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection
 };
 %feature("shadow") Handle_BRepExtrema_SequenceNodeOfSeqOfSolution::~Handle_BRepExtrema_SequenceNodeOfSeqOfSolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepExtrema_SeqOfSolution;
@@ -152,8 +172,18 @@ class BRepExtrema_SeqOfSolution : public TCollection_BaseSequence {
 };
 %feature("shadow") BRepExtrema_SeqOfSolution::~BRepExtrema_SeqOfSolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepExtrema_SeqOfSolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepExtrema_SequenceNodeOfSeqOfSolution;
@@ -179,8 +209,18 @@ class BRepExtrema_SequenceNodeOfSeqOfSolution : public TCollection_SeqNode {
 };
 %feature("shadow") BRepExtrema_SequenceNodeOfSeqOfSolution::~BRepExtrema_SequenceNodeOfSeqOfSolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepExtrema_SequenceNodeOfSeqOfSolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepExtrema_Poly;
@@ -194,8 +234,18 @@ class BRepExtrema_Poly {
 };
 %feature("shadow") BRepExtrema_Poly::~BRepExtrema_Poly %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepExtrema_Poly {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepExtrema_ExtPF;
@@ -223,8 +273,18 @@ class BRepExtrema_ExtPF {
 };
 %feature("shadow") BRepExtrema_ExtPF::~BRepExtrema_ExtPF %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepExtrema_ExtPF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepExtrema_ExtCC;
@@ -260,8 +320,18 @@ class BRepExtrema_ExtCC {
 };
 %feature("shadow") BRepExtrema_ExtCC::~BRepExtrema_ExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepExtrema_ExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepExtrema_DistanceSS;
@@ -283,8 +353,18 @@ class BRepExtrema_DistanceSS {
 };
 %feature("shadow") BRepExtrema_DistanceSS::~BRepExtrema_DistanceSS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepExtrema_DistanceSS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepExtrema_ExtPC;
@@ -316,8 +396,18 @@ class BRepExtrema_ExtPC {
 };
 %feature("shadow") BRepExtrema_ExtPC::~BRepExtrema_ExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepExtrema_ExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepExtrema_ExtCF;
@@ -351,8 +441,18 @@ class BRepExtrema_ExtCF {
 };
 %feature("shadow") BRepExtrema_ExtCF::~BRepExtrema_ExtCF %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepExtrema_ExtCF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepExtrema_ExtFF;
@@ -386,8 +486,18 @@ class BRepExtrema_ExtFF {
 };
 %feature("shadow") BRepExtrema_ExtFF::~BRepExtrema_ExtFF %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepExtrema_ExtFF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepExtrema_DistShapeShape;
@@ -447,8 +557,18 @@ class BRepExtrema_DistShapeShape {
 };
 %feature("shadow") BRepExtrema_DistShapeShape::~BRepExtrema_DistShapeShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepExtrema_DistShapeShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepExtrema_UnCompatibleShape;
@@ -480,8 +600,18 @@ class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
 };
 %feature("shadow") BRepExtrema_UnCompatibleShape::~BRepExtrema_UnCompatibleShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepExtrema_UnCompatibleShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepExtrema_SolutionElem;
@@ -515,5 +645,15 @@ class BRepExtrema_SolutionElem {
 };
 %feature("shadow") BRepExtrema_SolutionElem::~BRepExtrema_SolutionElem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepExtrema_SolutionElem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

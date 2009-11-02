@@ -63,8 +63,18 @@ class Handle_IGESAppli_NodalConstraint : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_NodalConstraint::~Handle_IGESAppli_NodalConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_NodalConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_PinNumber;
@@ -91,8 +101,18 @@ class Handle_IGESAppli_PinNumber : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_PinNumber::~Handle_IGESAppli_PinNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_PinNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_ReadWriteModule;
@@ -119,8 +139,18 @@ class Handle_IGESAppli_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 };
 %feature("shadow") Handle_IGESAppli_ReadWriteModule::~Handle_IGESAppli_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_PartNumber;
@@ -147,8 +177,18 @@ class Handle_IGESAppli_PartNumber : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_PartNumber::~Handle_IGESAppli_PartNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_PartNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_HArray1OfNode;
@@ -175,8 +215,18 @@ class Handle_IGESAppli_HArray1OfNode : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESAppli_HArray1OfNode::~Handle_IGESAppli_HArray1OfNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_HArray1OfNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_Node;
@@ -203,8 +253,18 @@ class Handle_IGESAppli_Node : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_Node::~Handle_IGESAppli_Node %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_Node {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_ElementResults;
@@ -231,8 +291,18 @@ class Handle_IGESAppli_ElementResults : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_ElementResults::~Handle_IGESAppli_ElementResults %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_ElementResults {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_LevelFunction;
@@ -259,8 +329,18 @@ class Handle_IGESAppli_LevelFunction : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_LevelFunction::~Handle_IGESAppli_LevelFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_LevelFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_PWBArtworkStackup;
@@ -287,8 +367,18 @@ class Handle_IGESAppli_PWBArtworkStackup : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_PWBArtworkStackup::~Handle_IGESAppli_PWBArtworkStackup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_PWBArtworkStackup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_DrilledHole;
@@ -315,8 +405,18 @@ class Handle_IGESAppli_DrilledHole : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_DrilledHole::~Handle_IGESAppli_DrilledHole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_DrilledHole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_LevelToPWBLayerMap;
@@ -343,8 +443,18 @@ class Handle_IGESAppli_LevelToPWBLayerMap : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_LevelToPWBLayerMap::~Handle_IGESAppli_LevelToPWBLayerMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_LevelToPWBLayerMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_NodalDisplAndRot;
@@ -371,8 +481,18 @@ class Handle_IGESAppli_NodalDisplAndRot : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_NodalDisplAndRot::~Handle_IGESAppli_NodalDisplAndRot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_NodalDisplAndRot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_FiniteElement;
@@ -399,8 +519,18 @@ class Handle_IGESAppli_FiniteElement : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_FiniteElement::~Handle_IGESAppli_FiniteElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_FiniteElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_ReferenceDesignator;
@@ -427,8 +557,18 @@ class Handle_IGESAppli_ReferenceDesignator : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_ReferenceDesignator::~Handle_IGESAppli_ReferenceDesignator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_ReferenceDesignator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_FlowLineSpec;
@@ -455,8 +595,18 @@ class Handle_IGESAppli_FlowLineSpec : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_FlowLineSpec::~Handle_IGESAppli_FlowLineSpec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_FlowLineSpec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_RegionRestriction;
@@ -483,8 +633,18 @@ class Handle_IGESAppli_RegionRestriction : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_RegionRestriction::~Handle_IGESAppli_RegionRestriction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_RegionRestriction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_LineWidening;
@@ -511,8 +671,18 @@ class Handle_IGESAppli_LineWidening : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_LineWidening::~Handle_IGESAppli_LineWidening %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_LineWidening {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_PipingFlow;
@@ -539,8 +709,18 @@ class Handle_IGESAppli_PipingFlow : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_PipingFlow::~Handle_IGESAppli_PipingFlow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_PipingFlow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_HArray1OfFlow;
@@ -567,8 +747,18 @@ class Handle_IGESAppli_HArray1OfFlow : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESAppli_HArray1OfFlow::~Handle_IGESAppli_HArray1OfFlow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_HArray1OfFlow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_HArray1OfFiniteElement;
@@ -595,8 +785,18 @@ class Handle_IGESAppli_HArray1OfFiniteElement : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESAppli_HArray1OfFiniteElement::~Handle_IGESAppli_HArray1OfFiniteElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_HArray1OfFiniteElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_PWBDrilledHole;
@@ -623,8 +823,18 @@ class Handle_IGESAppli_PWBDrilledHole : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_PWBDrilledHole::~Handle_IGESAppli_PWBDrilledHole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_PWBDrilledHole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_Flow;
@@ -651,8 +861,18 @@ class Handle_IGESAppli_Flow : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_Flow::~Handle_IGESAppli_Flow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_Flow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_Protocol;
@@ -679,8 +899,18 @@ class Handle_IGESAppli_Protocol : public Handle_IGESData_Protocol {
 };
 %feature("shadow") Handle_IGESAppli_Protocol::~Handle_IGESAppli_Protocol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_Protocol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_GeneralModule;
@@ -707,8 +937,18 @@ class Handle_IGESAppli_GeneralModule : public Handle_IGESData_GeneralModule {
 };
 %feature("shadow") Handle_IGESAppli_GeneralModule::~Handle_IGESAppli_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_NodalResults;
@@ -735,8 +975,18 @@ class Handle_IGESAppli_NodalResults : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESAppli_NodalResults::~Handle_IGESAppli_NodalResults %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_NodalResults {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESAppli_SpecificModule;
@@ -763,8 +1013,18 @@ class Handle_IGESAppli_SpecificModule : public Handle_IGESData_SpecificModule {
 };
 %feature("shadow") Handle_IGESAppli_SpecificModule::~Handle_IGESAppli_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESAppli_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ReadWriteModule;
@@ -794,8 +1054,18 @@ class IGESAppli_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %feature("shadow") IGESAppli_ReadWriteModule::~IGESAppli_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolPipingFlow;
@@ -823,8 +1093,18 @@ class IGESAppli_ToolPipingFlow {
 };
 %feature("shadow") IGESAppli_ToolPipingFlow::~IGESAppli_ToolPipingFlow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolPipingFlow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolNodalResults;
@@ -850,8 +1130,18 @@ class IGESAppli_ToolNodalResults {
 };
 %feature("shadow") IGESAppli_ToolNodalResults::~IGESAppli_ToolNodalResults %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolNodalResults {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolFlowLineSpec;
@@ -877,8 +1167,18 @@ class IGESAppli_ToolFlowLineSpec {
 };
 %feature("shadow") IGESAppli_ToolFlowLineSpec::~IGESAppli_ToolFlowLineSpec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolFlowLineSpec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_SpecificModule;
@@ -906,8 +1206,18 @@ class IGESAppli_SpecificModule : public IGESData_SpecificModule {
 };
 %feature("shadow") IGESAppli_SpecificModule::~IGESAppli_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_FiniteElement;
@@ -941,8 +1251,18 @@ class IGESAppli_FiniteElement : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_FiniteElement::~IGESAppli_FiniteElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_FiniteElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_HArray1OfNode;
@@ -986,8 +1306,18 @@ class IGESAppli_HArray1OfNode : public MMgt_TShared {
 };
 %feature("shadow") IGESAppli_HArray1OfNode::~IGESAppli_HArray1OfNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_HArray1OfNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_Flow;
@@ -1045,8 +1375,18 @@ class IGESAppli_Flow : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_Flow::~IGESAppli_Flow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_Flow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli;
@@ -1062,8 +1402,18 @@ class IGESAppli {
 };
 %feature("shadow") IGESAppli::~IGESAppli %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_NodalResults;
@@ -1107,8 +1457,18 @@ class IGESAppli_NodalResults : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_NodalResults::~IGESAppli_NodalResults %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_NodalResults {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_FlowLineSpec;
@@ -1140,8 +1500,18 @@ class IGESAppli_FlowLineSpec : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_FlowLineSpec::~IGESAppli_FlowLineSpec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_FlowLineSpec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolNodalConstraint;
@@ -1167,8 +1537,18 @@ class IGESAppli_ToolNodalConstraint {
 };
 %feature("shadow") IGESAppli_ToolNodalConstraint::~IGESAppli_ToolNodalConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolNodalConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_Array1OfFlow;
@@ -1208,8 +1588,18 @@ class IGESAppli_Array1OfFlow {
 };
 %feature("shadow") IGESAppli_Array1OfFlow::~IGESAppli_Array1OfFlow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_Array1OfFlow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_LevelToPWBLayerMap;
@@ -1247,8 +1637,18 @@ class IGESAppli_LevelToPWBLayerMap : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_LevelToPWBLayerMap::~IGESAppli_LevelToPWBLayerMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_LevelToPWBLayerMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_Array1OfNode;
@@ -1288,8 +1688,18 @@ class IGESAppli_Array1OfNode {
 };
 %feature("shadow") IGESAppli_Array1OfNode::~IGESAppli_Array1OfNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_Array1OfNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolFiniteElement;
@@ -1315,8 +1725,18 @@ class IGESAppli_ToolFiniteElement {
 };
 %feature("shadow") IGESAppli_ToolFiniteElement::~IGESAppli_ToolFiniteElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolFiniteElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_PWBDrilledHole;
@@ -1350,8 +1770,18 @@ class IGESAppli_PWBDrilledHole : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_PWBDrilledHole::~IGESAppli_PWBDrilledHole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_PWBDrilledHole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_PartNumber;
@@ -1387,8 +1817,18 @@ class IGESAppli_PartNumber : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_PartNumber::~IGESAppli_PartNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_PartNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolNodalDisplAndRot;
@@ -1414,8 +1854,18 @@ class IGESAppli_ToolNodalDisplAndRot {
 };
 %feature("shadow") IGESAppli_ToolNodalDisplAndRot::~IGESAppli_ToolNodalDisplAndRot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolNodalDisplAndRot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolReferenceDesignator;
@@ -1443,8 +1893,18 @@ class IGESAppli_ToolReferenceDesignator {
 };
 %feature("shadow") IGESAppli_ToolReferenceDesignator::~IGESAppli_ToolReferenceDesignator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolReferenceDesignator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolElementResults;
@@ -1470,8 +1930,18 @@ class IGESAppli_ToolElementResults {
 };
 %feature("shadow") IGESAppli_ToolElementResults::~IGESAppli_ToolElementResults %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolElementResults {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ElementResults;
@@ -1535,8 +2005,18 @@ class IGESAppli_ElementResults : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_ElementResults::~IGESAppli_ElementResults %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ElementResults {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolRegionRestriction;
@@ -1564,8 +2044,18 @@ class IGESAppli_ToolRegionRestriction {
 };
 %feature("shadow") IGESAppli_ToolRegionRestriction::~IGESAppli_ToolRegionRestriction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolRegionRestriction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_DrilledHole;
@@ -1603,8 +2093,18 @@ class IGESAppli_DrilledHole : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_DrilledHole::~IGESAppli_DrilledHole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_DrilledHole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_LevelFunction;
@@ -1636,8 +2136,18 @@ class IGESAppli_LevelFunction : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_LevelFunction::~IGESAppli_LevelFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_LevelFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_PipingFlow;
@@ -1693,8 +2203,18 @@ class IGESAppli_PipingFlow : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_PipingFlow::~IGESAppli_PipingFlow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_PipingFlow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_Array1OfFiniteElement;
@@ -1734,8 +2254,18 @@ class IGESAppli_Array1OfFiniteElement {
 };
 %feature("shadow") IGESAppli_Array1OfFiniteElement::~IGESAppli_Array1OfFiniteElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_Array1OfFiniteElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolDrilledHole;
@@ -1763,8 +2293,18 @@ class IGESAppli_ToolDrilledHole {
 };
 %feature("shadow") IGESAppli_ToolDrilledHole::~IGESAppli_ToolDrilledHole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolDrilledHole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_GeneralModule;
@@ -1800,8 +2340,18 @@ class IGESAppli_GeneralModule : public IGESData_GeneralModule {
 };
 %feature("shadow") IGESAppli_GeneralModule::~IGESAppli_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_PWBArtworkStackup;
@@ -1835,8 +2385,18 @@ class IGESAppli_PWBArtworkStackup : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_PWBArtworkStackup::~IGESAppli_PWBArtworkStackup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_PWBArtworkStackup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_NodalDisplAndRot;
@@ -1876,8 +2436,18 @@ class IGESAppli_NodalDisplAndRot : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_NodalDisplAndRot::~IGESAppli_NodalDisplAndRot %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_NodalDisplAndRot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolNode;
@@ -1903,8 +2473,18 @@ class IGESAppli_ToolNode {
 };
 %feature("shadow") IGESAppli_ToolNode::~IGESAppli_ToolNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_HArray1OfFiniteElement;
@@ -1948,8 +2528,18 @@ class IGESAppli_HArray1OfFiniteElement : public MMgt_TShared {
 };
 %feature("shadow") IGESAppli_HArray1OfFiniteElement::~IGESAppli_HArray1OfFiniteElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_HArray1OfFiniteElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_PinNumber;
@@ -1979,8 +2569,18 @@ class IGESAppli_PinNumber : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_PinNumber::~IGESAppli_PinNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_PinNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_NodalConstraint;
@@ -2014,8 +2614,18 @@ class IGESAppli_NodalConstraint : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_NodalConstraint::~IGESAppli_NodalConstraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_NodalConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolLevelFunction;
@@ -2043,8 +2653,18 @@ class IGESAppli_ToolLevelFunction {
 };
 %feature("shadow") IGESAppli_ToolLevelFunction::~IGESAppli_ToolLevelFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolLevelFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_Node;
@@ -2078,8 +2698,18 @@ class IGESAppli_Node : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_Node::~IGESAppli_Node %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_Node {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolPinNumber;
@@ -2107,8 +2737,18 @@ class IGESAppli_ToolPinNumber {
 };
 %feature("shadow") IGESAppli_ToolPinNumber::~IGESAppli_ToolPinNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolPinNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolPWBDrilledHole;
@@ -2136,8 +2776,18 @@ class IGESAppli_ToolPWBDrilledHole {
 };
 %feature("shadow") IGESAppli_ToolPWBDrilledHole::~IGESAppli_ToolPWBDrilledHole %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolPWBDrilledHole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolLevelToPWBLayerMap;
@@ -2163,8 +2813,18 @@ class IGESAppli_ToolLevelToPWBLayerMap {
 };
 %feature("shadow") IGESAppli_ToolLevelToPWBLayerMap::~IGESAppli_ToolLevelToPWBLayerMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolLevelToPWBLayerMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ReferenceDesignator;
@@ -2194,8 +2854,18 @@ class IGESAppli_ReferenceDesignator : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_ReferenceDesignator::~IGESAppli_ReferenceDesignator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ReferenceDesignator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_RegionRestriction;
@@ -2229,8 +2899,18 @@ class IGESAppli_RegionRestriction : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_RegionRestriction::~IGESAppli_RegionRestriction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_RegionRestriction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolLineWidening;
@@ -2258,8 +2938,18 @@ class IGESAppli_ToolLineWidening {
 };
 %feature("shadow") IGESAppli_ToolLineWidening::~IGESAppli_ToolLineWidening %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolLineWidening {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolPWBArtworkStackup;
@@ -2285,8 +2975,18 @@ class IGESAppli_ToolPWBArtworkStackup {
 };
 %feature("shadow") IGESAppli_ToolPWBArtworkStackup::~IGESAppli_ToolPWBArtworkStackup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolPWBArtworkStackup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_HArray1OfFlow;
@@ -2330,8 +3030,18 @@ class IGESAppli_HArray1OfFlow : public MMgt_TShared {
 };
 %feature("shadow") IGESAppli_HArray1OfFlow::~IGESAppli_HArray1OfFlow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_HArray1OfFlow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_LineWidening;
@@ -2369,8 +3079,18 @@ class IGESAppli_LineWidening : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESAppli_LineWidening::~IGESAppli_LineWidening %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_LineWidening {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolFlow;
@@ -2398,8 +3118,18 @@ class IGESAppli_ToolFlow {
 };
 %feature("shadow") IGESAppli_ToolFlow::~IGESAppli_ToolFlow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolFlow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESAppli_ToolPartNumber;
@@ -2427,5 +3157,15 @@ class IGESAppli_ToolPartNumber {
 };
 %feature("shadow") IGESAppli_ToolPartNumber::~IGESAppli_ToolPartNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESAppli_ToolPartNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

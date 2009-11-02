@@ -63,8 +63,18 @@ class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_Law_ListNodeOfLaws::~Handle_Law_ListNodeOfLaws %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Law_ListNodeOfLaws {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Law_Function;
@@ -91,8 +101,18 @@ class Handle_Law_Function : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Law_Function::~Handle_Law_Function %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Law_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Law_BSpFunc;
@@ -119,8 +139,18 @@ class Handle_Law_BSpFunc : public Handle_Law_Function {
 };
 %feature("shadow") Handle_Law_BSpFunc::~Handle_Law_BSpFunc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Law_BSpFunc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Law_Interpol;
@@ -147,8 +177,18 @@ class Handle_Law_Interpol : public Handle_Law_BSpFunc {
 };
 %feature("shadow") Handle_Law_Interpol::~Handle_Law_Interpol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Law_Interpol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Law_BSpline;
@@ -175,8 +215,18 @@ class Handle_Law_BSpline : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Law_BSpline::~Handle_Law_BSpline %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Law_BSpline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Law_S;
@@ -203,8 +253,18 @@ class Handle_Law_S : public Handle_Law_BSpFunc {
 };
 %feature("shadow") Handle_Law_S::~Handle_Law_S %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Law_S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Law_Linear;
@@ -231,8 +291,18 @@ class Handle_Law_Linear : public Handle_Law_Function {
 };
 %feature("shadow") Handle_Law_Linear::~Handle_Law_Linear %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Law_Linear {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Law_Constant;
@@ -259,8 +329,18 @@ class Handle_Law_Constant : public Handle_Law_Function {
 };
 %feature("shadow") Handle_Law_Constant::~Handle_Law_Constant %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Law_Constant {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Law_Composite;
@@ -287,8 +367,18 @@ class Handle_Law_Composite : public Handle_Law_Function {
 };
 %feature("shadow") Handle_Law_Composite::~Handle_Law_Composite %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Law_Composite {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law_ListNodeOfLaws;
@@ -314,8 +404,18 @@ class Law_ListNodeOfLaws : public TCollection_MapNode {
 };
 %feature("shadow") Law_ListNodeOfLaws::~Law_ListNodeOfLaws %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law_ListNodeOfLaws {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law_Function;
@@ -353,8 +453,18 @@ class Law_Function : public MMgt_TShared {
 };
 %feature("shadow") Law_Function::~Law_Function %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law_BSpFunc;
@@ -382,8 +492,18 @@ class Law_BSpFunc : public Law_Function {
 };
 %feature("shadow") Law_BSpFunc::~Law_BSpFunc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law_BSpFunc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law_Interpol;
@@ -415,8 +535,18 @@ class Law_Interpol : public Law_BSpFunc {
 };
 %feature("shadow") Law_Interpol::~Law_Interpol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law_Interpol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law_ListIteratorOfLaws;
@@ -438,8 +568,18 @@ class Law_ListIteratorOfLaws {
 };
 %feature("shadow") Law_ListIteratorOfLaws::~Law_ListIteratorOfLaws %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law_ListIteratorOfLaws {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law_Interpolate;
@@ -463,8 +603,18 @@ class Law_Interpolate {
 };
 %feature("shadow") Law_Interpolate::~Law_Interpolate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law_Interpolate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law_Composite;
@@ -514,8 +664,18 @@ class Law_Composite : public Law_Function {
 };
 %feature("shadow") Law_Composite::~Law_Composite %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law_Composite {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law_BSpline;
@@ -663,8 +823,18 @@ class Law_BSpline : public MMgt_TShared {
 };
 %feature("shadow") Law_BSpline::~Law_BSpline %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law_BSpline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law_BSplineKnotSplitting;
@@ -682,8 +852,18 @@ class Law_BSplineKnotSplitting {
 };
 %feature("shadow") Law_BSplineKnotSplitting::~Law_BSplineKnotSplitting %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law_BSplineKnotSplitting {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law_S;
@@ -711,8 +891,18 @@ class Law_S : public Law_BSpFunc {
 };
 %feature("shadow") Law_S::~Law_S %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law_S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law_Laws;
@@ -762,8 +952,18 @@ class Law_Laws {
 };
 %feature("shadow") Law_Laws::~Law_Laws %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law_Laws {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law;
@@ -787,8 +987,18 @@ class Law {
 };
 %feature("shadow") Law::~Law %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law_Linear;
@@ -830,8 +1040,18 @@ class Law_Linear : public Law_Function {
 };
 %feature("shadow") Law_Linear::~Law_Linear %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law_Linear {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Law_Constant;
@@ -873,5 +1093,15 @@ class Law_Constant : public Law_Function {
 };
 %feature("shadow") Law_Constant::~Law_Constant %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Law_Constant {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

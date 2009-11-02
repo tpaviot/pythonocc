@@ -94,8 +94,18 @@ class AdvApprox_ApproxAFunction {
 };
 %feature("shadow") AdvApprox_ApproxAFunction::~AdvApprox_ApproxAFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AdvApprox_ApproxAFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AdvApprox_Cutting;
@@ -109,8 +119,18 @@ class AdvApprox_Cutting {
 };
 %feature("shadow") AdvApprox_Cutting::~AdvApprox_Cutting %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AdvApprox_Cutting {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AdvApprox_PrefAndRec;
@@ -124,8 +144,18 @@ class AdvApprox_PrefAndRec : public AdvApprox_Cutting {
 };
 %feature("shadow") AdvApprox_PrefAndRec::~AdvApprox_PrefAndRec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AdvApprox_PrefAndRec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AdvApprox_PrefCutting;
@@ -139,8 +169,18 @@ class AdvApprox_PrefCutting : public AdvApprox_Cutting {
 };
 %feature("shadow") AdvApprox_PrefCutting::~AdvApprox_PrefCutting %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AdvApprox_PrefCutting {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AdvApprox_DichoCutting;
@@ -154,8 +194,18 @@ class AdvApprox_DichoCutting : public AdvApprox_Cutting {
 };
 %feature("shadow") AdvApprox_DichoCutting::~AdvApprox_DichoCutting %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AdvApprox_DichoCutting {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AdvApprox_SimpleApprox;
@@ -195,5 +245,15 @@ class AdvApprox_SimpleApprox {
 };
 %feature("shadow") AdvApprox_SimpleApprox::~AdvApprox_SimpleApprox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AdvApprox_SimpleApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

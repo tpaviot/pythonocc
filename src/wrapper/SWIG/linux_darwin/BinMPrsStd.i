@@ -63,8 +63,18 @@ class Handle_BinMPrsStd_PositionDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMPrsStd_PositionDriver::~Handle_BinMPrsStd_PositionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMPrsStd_PositionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMPrsStd_AISPresentationDriver;
@@ -91,8 +101,18 @@ class Handle_BinMPrsStd_AISPresentationDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMPrsStd_AISPresentationDriver::~Handle_BinMPrsStd_AISPresentationDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMPrsStd_AISPresentationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMPrsStd;
@@ -106,8 +126,18 @@ class BinMPrsStd {
 };
 %feature("shadow") BinMPrsStd::~BinMPrsStd %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMPrsStd {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMPrsStd_AISPresentationDriver;
@@ -137,8 +167,18 @@ class BinMPrsStd_AISPresentationDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMPrsStd_AISPresentationDriver::~BinMPrsStd_AISPresentationDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMPrsStd_AISPresentationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMPrsStd_PositionDriver;
@@ -168,5 +208,15 @@ class BinMPrsStd_PositionDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMPrsStd_PositionDriver::~BinMPrsStd_PositionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMPrsStd_PositionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

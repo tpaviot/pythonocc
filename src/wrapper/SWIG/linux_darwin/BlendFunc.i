@@ -61,8 +61,18 @@ class BlendFunc {
 };
 %feature("shadow") BlendFunc::~BlendFunc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BlendFunc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BlendFunc_Tensor;
@@ -96,5 +106,15 @@ class BlendFunc_Tensor {
 };
 %feature("shadow") BlendFunc_Tensor::~BlendFunc_Tensor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BlendFunc_Tensor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

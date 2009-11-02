@@ -71,8 +71,18 @@ class Handle_Dynamic_DynamicInstance : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dynamic_DynamicInstance::~Handle_Dynamic_DynamicInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_DynamicInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfMethods;
@@ -99,8 +109,18 @@ class Handle_Dynamic_SequenceNodeOfSeqOfMethods : public Handle_TCollection_SeqN
 };
 %feature("shadow") Handle_Dynamic_SequenceNodeOfSeqOfMethods::~Handle_Dynamic_SequenceNodeOfSeqOfMethods %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_SequenceNodeOfSeqOfMethods {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_Parameter;
@@ -127,8 +147,18 @@ class Handle_Dynamic_Parameter : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dynamic_Parameter::~Handle_Dynamic_Parameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_Parameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_IntegerParameter;
@@ -155,8 +185,18 @@ class Handle_Dynamic_IntegerParameter : public Handle_Dynamic_Parameter {
 };
 %feature("shadow") Handle_Dynamic_IntegerParameter::~Handle_Dynamic_IntegerParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_IntegerParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_SequenceOfMethodDefinitions;
@@ -183,8 +223,18 @@ class Handle_Dynamic_SequenceOfMethodDefinitions : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dynamic_SequenceOfMethodDefinitions::~Handle_Dynamic_SequenceOfMethodDefinitions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_SequenceOfMethodDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_VariableNode;
@@ -211,8 +261,18 @@ class Handle_Dynamic_VariableNode : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dynamic_VariableNode::~Handle_Dynamic_VariableNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_VariableNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_FuzzyDefinitionsDictionary;
@@ -239,8 +299,18 @@ class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dynamic_FuzzyDefinitionsDictionary::~Handle_Dynamic_FuzzyDefinitionsDictionary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_FuzzyDefinitionsDictionary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions;
@@ -267,8 +337,18 @@ class Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public Handle_TColle
 };
 %feature("shadow") Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions::~Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_FuzzyClass;
@@ -295,8 +375,18 @@ class Handle_Dynamic_FuzzyClass : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dynamic_FuzzyClass::~Handle_Dynamic_FuzzyClass %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_FuzzyClass {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_FuzzyDefinition;
@@ -323,8 +413,18 @@ class Handle_Dynamic_FuzzyDefinition : public Handle_Dynamic_FuzzyClass {
 };
 %feature("shadow") Handle_Dynamic_FuzzyDefinition::~Handle_Dynamic_FuzzyDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_FuzzyDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_Method;
@@ -351,8 +451,18 @@ class Handle_Dynamic_Method : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dynamic_Method::~Handle_Dynamic_Method %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_Method {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_Variable;
@@ -379,8 +489,18 @@ class Handle_Dynamic_Variable : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dynamic_Variable::~Handle_Dynamic_Variable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_Variable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_AbstractVariableInstance;
@@ -407,8 +527,18 @@ class Handle_Dynamic_AbstractVariableInstance : public Handle_Dynamic_Variable {
 };
 %feature("shadow") Handle_Dynamic_AbstractVariableInstance::~Handle_Dynamic_AbstractVariableInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_AbstractVariableInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_RealParameter;
@@ -435,8 +565,18 @@ class Handle_Dynamic_RealParameter : public Handle_Dynamic_Parameter {
 };
 %feature("shadow") Handle_Dynamic_RealParameter::~Handle_Dynamic_RealParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_RealParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_MethodDefinition;
@@ -463,8 +603,18 @@ class Handle_Dynamic_MethodDefinition : public Handle_Dynamic_Method {
 };
 %feature("shadow") Handle_Dynamic_MethodDefinition::~Handle_Dynamic_MethodDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_MethodDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_CompiledMethod;
@@ -491,8 +641,18 @@ class Handle_Dynamic_CompiledMethod : public Handle_Dynamic_MethodDefinition {
 };
 %feature("shadow") Handle_Dynamic_CompiledMethod::~Handle_Dynamic_CompiledMethod %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_CompiledMethod {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_InterpretedMethod;
@@ -519,8 +679,18 @@ class Handle_Dynamic_InterpretedMethod : public Handle_Dynamic_MethodDefinition 
 };
 %feature("shadow") Handle_Dynamic_InterpretedMethod::~Handle_Dynamic_InterpretedMethod %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_InterpretedMethod {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_SequenceOfFuzzyDefinitions;
@@ -547,8 +717,18 @@ class Handle_Dynamic_SequenceOfFuzzyDefinitions : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dynamic_SequenceOfFuzzyDefinitions::~Handle_Dynamic_SequenceOfFuzzyDefinitions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_SequenceOfFuzzyDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_ParameterNode;
@@ -575,8 +755,18 @@ class Handle_Dynamic_ParameterNode : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dynamic_ParameterNode::~Handle_Dynamic_ParameterNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_ParameterNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_VariableInstance;
@@ -603,8 +793,18 @@ class Handle_Dynamic_VariableInstance : public Handle_Dynamic_AbstractVariableIn
 };
 %feature("shadow") Handle_Dynamic_VariableInstance::~Handle_Dynamic_VariableInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_VariableInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_VariableGroup;
@@ -631,8 +831,18 @@ class Handle_Dynamic_VariableGroup : public Handle_Dynamic_Variable {
 };
 %feature("shadow") Handle_Dynamic_VariableGroup::~Handle_Dynamic_VariableGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_VariableGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_CompositVariableInstance;
@@ -659,8 +869,18 @@ class Handle_Dynamic_CompositVariableInstance : public Handle_Dynamic_AbstractVa
 };
 %feature("shadow") Handle_Dynamic_CompositVariableInstance::~Handle_Dynamic_CompositVariableInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_CompositVariableInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_InstanceParameter;
@@ -687,8 +907,18 @@ class Handle_Dynamic_InstanceParameter : public Handle_Dynamic_Parameter {
 };
 %feature("shadow") Handle_Dynamic_InstanceParameter::~Handle_Dynamic_InstanceParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_InstanceParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_SequenceOfClasses;
@@ -715,8 +945,18 @@ class Handle_Dynamic_SequenceOfClasses : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dynamic_SequenceOfClasses::~Handle_Dynamic_SequenceOfClasses %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_SequenceOfClasses {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_MethodDefinitionsDictionary;
@@ -743,8 +983,18 @@ class Handle_Dynamic_MethodDefinitionsDictionary : public Handle_Standard_Transi
 };
 %feature("shadow") Handle_Dynamic_MethodDefinitionsDictionary::~Handle_Dynamic_MethodDefinitionsDictionary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_MethodDefinitionsDictionary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_SequenceOfMethods;
@@ -771,8 +1021,18 @@ class Handle_Dynamic_SequenceOfMethods : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dynamic_SequenceOfMethods::~Handle_Dynamic_SequenceOfMethods %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_SequenceOfMethods {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfClasses;
@@ -799,8 +1059,18 @@ class Handle_Dynamic_SequenceNodeOfSeqOfClasses : public Handle_TCollection_SeqN
 };
 %feature("shadow") Handle_Dynamic_SequenceNodeOfSeqOfClasses::~Handle_Dynamic_SequenceNodeOfSeqOfClasses %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_SequenceNodeOfSeqOfClasses {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions;
@@ -827,8 +1097,18 @@ class Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public Handle_TCollec
 };
 %feature("shadow") Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions::~Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_DynamicClass;
@@ -855,8 +1135,18 @@ class Handle_Dynamic_DynamicClass : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dynamic_DynamicClass::~Handle_Dynamic_DynamicClass %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_DynamicClass {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_DynamicDerivedClass;
@@ -883,8 +1173,18 @@ class Handle_Dynamic_DynamicDerivedClass : public Handle_Dynamic_DynamicClass {
 };
 %feature("shadow") Handle_Dynamic_DynamicDerivedClass::~Handle_Dynamic_DynamicDerivedClass %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_DynamicDerivedClass {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_BooleanParameter;
@@ -911,8 +1211,18 @@ class Handle_Dynamic_BooleanParameter : public Handle_Dynamic_Parameter {
 };
 %feature("shadow") Handle_Dynamic_BooleanParameter::~Handle_Dynamic_BooleanParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_BooleanParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_StringParameter;
@@ -939,8 +1249,18 @@ class Handle_Dynamic_StringParameter : public Handle_Dynamic_Parameter {
 };
 %feature("shadow") Handle_Dynamic_StringParameter::~Handle_Dynamic_StringParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_StringParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_CompositMethod;
@@ -967,8 +1287,18 @@ class Handle_Dynamic_CompositMethod : public Handle_Dynamic_MethodDefinition {
 };
 %feature("shadow") Handle_Dynamic_CompositMethod::~Handle_Dynamic_CompositMethod %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_CompositMethod {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dynamic_ObjectParameter;
@@ -995,8 +1325,18 @@ class Handle_Dynamic_ObjectParameter : public Handle_Dynamic_Parameter {
 };
 %feature("shadow") Handle_Dynamic_ObjectParameter::~Handle_Dynamic_ObjectParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dynamic_ObjectParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_Method;
@@ -1038,8 +1378,18 @@ class Dynamic_Method : public MMgt_TShared {
 };
 %feature("shadow") Dynamic_Method::~Dynamic_Method %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_Method {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_MethodDefinition;
@@ -1069,8 +1419,18 @@ class Dynamic_MethodDefinition : public Dynamic_Method {
 };
 %feature("shadow") Dynamic_MethodDefinition::~Dynamic_MethodDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_MethodDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_InterpretedMethod;
@@ -1098,8 +1458,18 @@ class Dynamic_InterpretedMethod : public Dynamic_MethodDefinition {
 };
 %feature("shadow") Dynamic_InterpretedMethod::~Dynamic_InterpretedMethod %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_InterpretedMethod {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_SequenceOfFuzzyDefinitions;
@@ -1167,8 +1537,18 @@ class Dynamic_SequenceOfFuzzyDefinitions : public MMgt_TShared {
 };
 %feature("shadow") Dynamic_SequenceOfFuzzyDefinitions::~Dynamic_SequenceOfFuzzyDefinitions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_SequenceOfFuzzyDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_SequenceNodeOfSeqOfMethodDefinitions;
@@ -1194,8 +1574,18 @@ class Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public TCollection_SeqNode 
 };
 %feature("shadow") Dynamic_SequenceNodeOfSeqOfMethodDefinitions::~Dynamic_SequenceNodeOfSeqOfMethodDefinitions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_DynamicClass;
@@ -1237,8 +1627,18 @@ class Dynamic_DynamicClass : public MMgt_TShared {
 };
 %feature("shadow") Dynamic_DynamicClass::~Dynamic_DynamicClass %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_DynamicClass {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_CompiledMethod;
@@ -1266,8 +1666,18 @@ class Dynamic_CompiledMethod : public Dynamic_MethodDefinition {
 };
 %feature("shadow") Dynamic_CompiledMethod::~Dynamic_CompiledMethod %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_CompiledMethod {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_SequenceNodeOfSeqOfClasses;
@@ -1293,8 +1703,18 @@ class Dynamic_SequenceNodeOfSeqOfClasses : public TCollection_SeqNode {
 };
 %feature("shadow") Dynamic_SequenceNodeOfSeqOfClasses::~Dynamic_SequenceNodeOfSeqOfClasses %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_SequenceNodeOfSeqOfClasses {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_Parameter;
@@ -1326,8 +1746,18 @@ class Dynamic_Parameter : public MMgt_TShared {
 };
 %feature("shadow") Dynamic_Parameter::~Dynamic_Parameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_Parameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_InstanceParameter;
@@ -1363,8 +1793,18 @@ class Dynamic_InstanceParameter : public Dynamic_Parameter {
 };
 %feature("shadow") Dynamic_InstanceParameter::~Dynamic_InstanceParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_InstanceParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_FuzzyClass;
@@ -1422,8 +1862,18 @@ class Dynamic_FuzzyClass : public MMgt_TShared {
 };
 %feature("shadow") Dynamic_FuzzyClass::~Dynamic_FuzzyClass %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_FuzzyClass {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_SeqOfMethods;
@@ -1477,8 +1927,18 @@ class Dynamic_SeqOfMethods : public TCollection_BaseSequence {
 };
 %feature("shadow") Dynamic_SeqOfMethods::~Dynamic_SeqOfMethods %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_SeqOfMethods {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_VariableNode;
@@ -1512,8 +1972,18 @@ class Dynamic_VariableNode : public MMgt_TShared {
 };
 %feature("shadow") Dynamic_VariableNode::~Dynamic_VariableNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_VariableNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_SeqOfMethodDefinitions;
@@ -1567,8 +2037,18 @@ class Dynamic_SeqOfMethodDefinitions : public TCollection_BaseSequence {
 };
 %feature("shadow") Dynamic_SeqOfMethodDefinitions::~Dynamic_SeqOfMethodDefinitions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_SeqOfMethodDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_SequenceOfMethods;
@@ -1636,8 +2116,18 @@ class Dynamic_SequenceOfMethods : public MMgt_TShared {
 };
 %feature("shadow") Dynamic_SequenceOfMethods::~Dynamic_SequenceOfMethods %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_SequenceOfMethods {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_RealParameter;
@@ -1675,8 +2165,18 @@ class Dynamic_RealParameter : public Dynamic_Parameter {
 };
 %feature("shadow") Dynamic_RealParameter::~Dynamic_RealParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_RealParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_BooleanParameter;
@@ -1716,8 +2216,18 @@ class Dynamic_BooleanParameter : public Dynamic_Parameter {
 };
 %feature("shadow") Dynamic_BooleanParameter::~Dynamic_BooleanParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_BooleanParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_DynamicDerivedClass;
@@ -1747,8 +2257,18 @@ class Dynamic_DynamicDerivedClass : public Dynamic_DynamicClass {
 };
 %feature("shadow") Dynamic_DynamicDerivedClass::~Dynamic_DynamicDerivedClass %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_DynamicDerivedClass {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_StringParameter;
@@ -1786,8 +2306,18 @@ class Dynamic_StringParameter : public Dynamic_Parameter {
 };
 %feature("shadow") Dynamic_StringParameter::~Dynamic_StringParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_StringParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_SeqOfClasses;
@@ -1841,8 +2371,18 @@ class Dynamic_SeqOfClasses : public TCollection_BaseSequence {
 };
 %feature("shadow") Dynamic_SeqOfClasses::~Dynamic_SeqOfClasses %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_SeqOfClasses {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_SequenceOfClasses;
@@ -1910,8 +2450,18 @@ class Dynamic_SequenceOfClasses : public MMgt_TShared {
 };
 %feature("shadow") Dynamic_SequenceOfClasses::~Dynamic_SequenceOfClasses %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_SequenceOfClasses {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_FuzzyDefinition;
@@ -1945,8 +2495,18 @@ class Dynamic_FuzzyDefinition : public Dynamic_FuzzyClass {
 };
 %feature("shadow") Dynamic_FuzzyDefinition::~Dynamic_FuzzyDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_FuzzyDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_Variable;
@@ -1986,8 +2546,18 @@ class Dynamic_Variable : public MMgt_TShared {
 };
 %feature("shadow") Dynamic_Variable::~Dynamic_Variable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_Variable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_DynamicInstance;
@@ -2029,8 +2599,18 @@ class Dynamic_DynamicInstance : public MMgt_TShared {
 };
 %feature("shadow") Dynamic_DynamicInstance::~Dynamic_DynamicInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_DynamicInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_IntegerParameter;
@@ -2068,8 +2648,18 @@ class Dynamic_IntegerParameter : public Dynamic_Parameter {
 };
 %feature("shadow") Dynamic_IntegerParameter::~Dynamic_IntegerParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_IntegerParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_CompositMethod;
@@ -2107,8 +2697,18 @@ class Dynamic_CompositMethod : public Dynamic_MethodDefinition {
 };
 %feature("shadow") Dynamic_CompositMethod::~Dynamic_CompositMethod %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_CompositMethod {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_ParameterNode;
@@ -2142,8 +2742,18 @@ class Dynamic_ParameterNode : public MMgt_TShared {
 };
 %feature("shadow") Dynamic_ParameterNode::~Dynamic_ParameterNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_ParameterNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_AbstractVariableInstance;
@@ -2167,8 +2777,18 @@ class Dynamic_AbstractVariableInstance : public Dynamic_Variable {
 };
 %feature("shadow") Dynamic_AbstractVariableInstance::~Dynamic_AbstractVariableInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_AbstractVariableInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_FuzzyDefinitionsDictionary;
@@ -2210,8 +2830,18 @@ class Dynamic_FuzzyDefinitionsDictionary : public MMgt_TShared {
 };
 %feature("shadow") Dynamic_FuzzyDefinitionsDictionary::~Dynamic_FuzzyDefinitionsDictionary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_FuzzyDefinitionsDictionary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_ObjectParameter;
@@ -2249,8 +2879,18 @@ class Dynamic_ObjectParameter : public Dynamic_Parameter {
 };
 %feature("shadow") Dynamic_ObjectParameter::~Dynamic_ObjectParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_ObjectParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_SequenceOfMethodDefinitions;
@@ -2318,8 +2958,18 @@ class Dynamic_SequenceOfMethodDefinitions : public MMgt_TShared {
 };
 %feature("shadow") Dynamic_SequenceOfMethodDefinitions::~Dynamic_SequenceOfMethodDefinitions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_SequenceOfMethodDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions;
@@ -2345,8 +2995,18 @@ class Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public TCollection_SeqNode {
 };
 %feature("shadow") Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions::~Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_VariableInstance;
@@ -2374,8 +3034,18 @@ class Dynamic_VariableInstance : public Dynamic_AbstractVariableInstance {
 };
 %feature("shadow") Dynamic_VariableInstance::~Dynamic_VariableInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_VariableInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic;
@@ -2389,8 +3059,18 @@ class Dynamic {
 };
 %feature("shadow") Dynamic::~Dynamic %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_VariableGroup;
@@ -2414,8 +3094,18 @@ class Dynamic_VariableGroup : public Dynamic_Variable {
 };
 %feature("shadow") Dynamic_VariableGroup::~Dynamic_VariableGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_VariableGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_MethodDefinitionsDictionary;
@@ -2459,8 +3149,18 @@ class Dynamic_MethodDefinitionsDictionary : public Standard_Transient {
 };
 %feature("shadow") Dynamic_MethodDefinitionsDictionary::~Dynamic_MethodDefinitionsDictionary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_MethodDefinitionsDictionary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_CompositVariableInstance;
@@ -2488,8 +3188,18 @@ class Dynamic_CompositVariableInstance : public Dynamic_AbstractVariableInstance
 };
 %feature("shadow") Dynamic_CompositVariableInstance::~Dynamic_CompositVariableInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_CompositVariableInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_SequenceNodeOfSeqOfMethods;
@@ -2515,8 +3225,18 @@ class Dynamic_SequenceNodeOfSeqOfMethods : public TCollection_SeqNode {
 };
 %feature("shadow") Dynamic_SequenceNodeOfSeqOfMethods::~Dynamic_SequenceNodeOfSeqOfMethods %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_SequenceNodeOfSeqOfMethods {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dynamic_SeqOfFuzzyDefinitions;
@@ -2570,5 +3290,15 @@ class Dynamic_SeqOfFuzzyDefinitions : public TCollection_BaseSequence {
 };
 %feature("shadow") Dynamic_SeqOfFuzzyDefinitions::~Dynamic_SeqOfFuzzyDefinitions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dynamic_SeqOfFuzzyDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

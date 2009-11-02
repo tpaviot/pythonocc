@@ -63,8 +63,18 @@ class Handle_TColQuantity_HArray1OfLength : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColQuantity_HArray1OfLength::~Handle_TColQuantity_HArray1OfLength %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColQuantity_HArray1OfLength {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TColQuantity_HArray2OfLength;
@@ -91,8 +101,18 @@ class Handle_TColQuantity_HArray2OfLength : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TColQuantity_HArray2OfLength::~Handle_TColQuantity_HArray2OfLength %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TColQuantity_HArray2OfLength {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColQuantity_Array1OfLength;
@@ -132,8 +152,18 @@ class TColQuantity_Array1OfLength {
 };
 %feature("shadow") TColQuantity_Array1OfLength::~TColQuantity_Array1OfLength %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColQuantity_Array1OfLength {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColQuantity_HArray1OfLength;
@@ -177,8 +207,18 @@ class TColQuantity_HArray1OfLength : public MMgt_TShared {
 };
 %feature("shadow") TColQuantity_HArray1OfLength::~TColQuantity_HArray1OfLength %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColQuantity_HArray1OfLength {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColQuantity_HArray2OfLength;
@@ -228,8 +268,18 @@ class TColQuantity_HArray2OfLength : public MMgt_TShared {
 };
 %feature("shadow") TColQuantity_HArray2OfLength::~TColQuantity_HArray2OfLength %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColQuantity_HArray2OfLength {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TColQuantity_Array2OfLength;
@@ -273,5 +323,15 @@ class TColQuantity_Array2OfLength {
 };
 %feature("shadow") TColQuantity_Array2OfLength::~TColQuantity_Array2OfLength %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TColQuantity_Array2OfLength {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_Viewer_BadValue : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_Viewer_BadValue::~Handle_Viewer_BadValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Viewer_BadValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Viewer_Viewer;
@@ -91,8 +101,18 @@ class Handle_Viewer_Viewer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Viewer_Viewer::~Handle_Viewer_Viewer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Viewer_Viewer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Viewer_View;
@@ -119,8 +139,18 @@ class Handle_Viewer_View : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Viewer_View::~Handle_Viewer_View %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Viewer_View {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Viewer_View;
@@ -150,8 +180,18 @@ class Viewer_View : public MMgt_TShared {
 };
 %feature("shadow") Viewer_View::~Viewer_View %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Viewer_View {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Viewer_Viewer;
@@ -181,8 +221,18 @@ class Viewer_Viewer : public MMgt_TShared {
 };
 %feature("shadow") Viewer_Viewer::~Viewer_Viewer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Viewer_Viewer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Viewer_BadValue;
@@ -214,5 +264,15 @@ class Viewer_BadValue : public Standard_OutOfRange {
 };
 %feature("shadow") Viewer_BadValue::~Viewer_BadValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Viewer_BadValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

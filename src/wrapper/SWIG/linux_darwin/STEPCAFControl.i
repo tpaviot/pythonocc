@@ -63,8 +63,18 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public Handle_T
 };
 %feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR;
@@ -91,8 +101,18 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public Handle_TColl
 };
 %feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile;
@@ -119,8 +139,18 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public Handle_
 };
 %feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD;
@@ -147,8 +177,18 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public Handle_TColle
 };
 %feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPCAFControl_ActorWrite;
@@ -175,8 +215,18 @@ class Handle_STEPCAFControl_ActorWrite : public Handle_STEPControl_ActorWrite {
 };
 %feature("shadow") Handle_STEPCAFControl_ActorWrite::~Handle_STEPCAFControl_ActorWrite %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPCAFControl_ActorWrite {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPCAFControl_ExternFile;
@@ -203,8 +253,18 @@ class Handle_STEPCAFControl_ExternFile : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_STEPCAFControl_ExternFile::~Handle_STEPCAFControl_ExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPCAFControl_ExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile;
@@ -231,8 +291,18 @@ class Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile : public Handle_MM
 };
 %feature("shadow") Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile::~Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile;
@@ -259,8 +329,18 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public Handl
 };
 %feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPCAFControl_DictionaryOfExternFile;
@@ -287,8 +367,18 @@ class Handle_STEPCAFControl_DictionaryOfExternFile : public Handle_MMgt_TShared 
 };
 %feature("shadow") Handle_STEPCAFControl_DictionaryOfExternFile::~Handle_STEPCAFControl_DictionaryOfExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPCAFControl_DictionaryOfExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient;
@@ -315,8 +405,18 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public Handle
 };
 %feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPCAFControl_Controller;
@@ -343,8 +443,18 @@ class Handle_STEPCAFControl_Controller : public Handle_STEPControl_Controller {
 };
 %feature("shadow") Handle_STEPCAFControl_Controller::~Handle_STEPCAFControl_Controller %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPCAFControl_Controller {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape;
@@ -371,8 +481,18 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public Handle_TCo
 };
 %feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel;
@@ -399,8 +519,18 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCo
 };
 %feature("shadow") Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel::~Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile;
@@ -420,8 +550,18 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile : public TCollect
 };
 %feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile::~STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapOfShapeTransient;
@@ -455,8 +595,18 @@ class STEPCAFControl_DataMapOfShapeTransient : public TCollection_BasicMap {
 };
 %feature("shadow") STEPCAFControl_DataMapOfShapeTransient::~STEPCAFControl_DataMapOfShapeTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_ExternFile;
@@ -504,8 +654,18 @@ class STEPCAFControl_ExternFile : public MMgt_TShared {
 };
 %feature("shadow") STEPCAFControl_ExternFile::~STEPCAFControl_ExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_ExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapOfShapePD;
@@ -539,8 +699,18 @@ class STEPCAFControl_DataMapOfShapePD : public TCollection_BasicMap {
 };
 %feature("shadow") STEPCAFControl_DataMapOfShapePD::~STEPCAFControl_DataMapOfShapePD %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapOfShapePD {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DictionaryOfExternFile;
@@ -598,8 +768,18 @@ class STEPCAFControl_DictionaryOfExternFile : public MMgt_TShared {
 };
 %feature("shadow") STEPCAFControl_DictionaryOfExternFile::~STEPCAFControl_DictionaryOfExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DictionaryOfExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_Reader;
@@ -665,8 +845,18 @@ class STEPCAFControl_Reader {
 };
 %feature("shadow") STEPCAFControl_Reader::~STEPCAFControl_Reader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_Reader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapOfShapeSDR;
@@ -700,8 +890,18 @@ class STEPCAFControl_DataMapOfShapeSDR : public TCollection_BasicMap {
 };
 %feature("shadow") STEPCAFControl_DataMapOfShapeSDR::~STEPCAFControl_DataMapOfShapeSDR %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapOfShapeSDR {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR;
@@ -729,8 +929,18 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public TCollection_MapNode
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR::~STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape;
@@ -750,8 +960,18 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape : public TCollection_B
 };
 %feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape::~STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_ActorWrite;
@@ -783,8 +1003,18 @@ class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
 };
 %feature("shadow") STEPCAFControl_ActorWrite::~STEPCAFControl_ActorWrite %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_ActorWrite {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_IteratorOfDictionaryOfExternFile;
@@ -810,8 +1040,18 @@ class STEPCAFControl_IteratorOfDictionaryOfExternFile {
 };
 %feature("shadow") STEPCAFControl_IteratorOfDictionaryOfExternFile::~STEPCAFControl_IteratorOfDictionaryOfExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_IteratorOfDictionaryOfExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel;
@@ -839,8 +1079,18 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNo
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel::~STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_Controller;
@@ -866,8 +1116,18 @@ class STEPCAFControl_Controller : public STEPControl_Controller {
 };
 %feature("shadow") STEPCAFControl_Controller::~STEPCAFControl_Controller %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_Controller {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfLabelShape;
@@ -895,8 +1155,18 @@ class STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public TCollection_MapNo
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfLabelShape::~STEPCAFControl_DataMapNodeOfDataMapOfLabelShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapNodeOfDataMapOfLabelShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapOfShapeLabel;
@@ -930,8 +1200,18 @@ class STEPCAFControl_DataMapOfShapeLabel : public TCollection_BasicMap {
 };
 %feature("shadow") STEPCAFControl_DataMapOfShapeLabel::~STEPCAFControl_DataMapOfShapeLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapOfShapeLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_StackItemOfDictionaryOfExternFile;
@@ -963,8 +1243,18 @@ class STEPCAFControl_StackItemOfDictionaryOfExternFile : public MMgt_TShared {
 };
 %feature("shadow") STEPCAFControl_StackItemOfDictionaryOfExternFile::~STEPCAFControl_StackItemOfDictionaryOfExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_StackItemOfDictionaryOfExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile;
@@ -992,8 +1282,18 @@ class STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public TCollection_
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile::~STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient;
@@ -1021,8 +1321,18 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public TCollection_M
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient::~STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile;
@@ -1042,8 +1352,18 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile : public TCollectio
 };
 %feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile::~STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapOfPDExternFile;
@@ -1077,8 +1397,18 @@ class STEPCAFControl_DataMapOfPDExternFile : public TCollection_BasicMap {
 };
 %feature("shadow") STEPCAFControl_DataMapOfPDExternFile::~STEPCAFControl_DataMapOfPDExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapOfPDExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapOfSDRExternFile;
@@ -1112,8 +1442,18 @@ class STEPCAFControl_DataMapOfSDRExternFile : public TCollection_BasicMap {
 };
 %feature("shadow") STEPCAFControl_DataMapOfSDRExternFile::~STEPCAFControl_DataMapOfSDRExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapOfSDRExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapOfLabelExternFile;
@@ -1147,8 +1487,18 @@ class STEPCAFControl_DataMapOfLabelExternFile : public TCollection_BasicMap {
 };
 %feature("shadow") STEPCAFControl_DataMapOfLabelExternFile::~STEPCAFControl_DataMapOfLabelExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapOfLabelExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel;
@@ -1168,8 +1518,18 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel : public TCollection_B
 };
 %feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel::~STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile;
@@ -1197,8 +1557,18 @@ class STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public TCollection_Map
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile::~STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile;
@@ -1226,8 +1596,18 @@ class STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public TCollection_Ma
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile::~STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapOfLabelShape;
@@ -1261,8 +1641,18 @@ class STEPCAFControl_DataMapOfLabelShape : public TCollection_BasicMap {
 };
 %feature("shadow") STEPCAFControl_DataMapOfLabelShape::~STEPCAFControl_DataMapOfLabelShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapOfLabelShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_Writer;
@@ -1326,8 +1716,18 @@ class STEPCAFControl_Writer {
 };
 %feature("shadow") STEPCAFControl_Writer::~STEPCAFControl_Writer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_Writer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient;
@@ -1347,8 +1747,18 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient : public TCollecti
 };
 %feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient::~STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile;
@@ -1368,8 +1778,18 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile : public TCollection
 };
 %feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile::~STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfShapePD;
@@ -1397,8 +1817,18 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public TCollection_MapNode 
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfShapePD::~STEPCAFControl_DataMapNodeOfDataMapOfShapePD %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapNodeOfDataMapOfShapePD {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapePD;
@@ -1418,8 +1848,18 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapePD : public TCollection_Basi
 };
 %feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfShapePD::~STEPCAFControl_DataMapIteratorOfDataMapOfShapePD %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfShapePD {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR;
@@ -1439,5 +1879,15 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR : public TCollection_Bas
 };
 %feature("shadow") STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR::~STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

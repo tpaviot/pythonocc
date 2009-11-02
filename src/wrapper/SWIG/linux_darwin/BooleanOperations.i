@@ -90,8 +90,18 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger 
 };
 %feature("shadow") Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger::~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors;
@@ -118,8 +128,18 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestor
 };
 %feature("shadow") Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors::~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors;
@@ -163,8 +183,18 @@ class BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors : public TColle
 };
 %feature("shadow") BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors::~BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BooleanOperations_ShapeAndInterferences;
@@ -202,8 +232,18 @@ class BooleanOperations_ShapeAndInterferences {
 };
 %feature("shadow") BooleanOperations_ShapeAndInterferences::~BooleanOperations_ShapeAndInterferences %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BooleanOperations_ShapeAndInterferences {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BooleanOperations_Explorer;
@@ -233,8 +273,18 @@ class BooleanOperations_Explorer {
 };
 %feature("shadow") BooleanOperations_Explorer::~BooleanOperations_Explorer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BooleanOperations_Explorer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger;
@@ -286,8 +336,18 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger : publi
 };
 %feature("shadow") BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger::~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BooleanOperations_OnceExplorer;
@@ -315,8 +375,18 @@ class BooleanOperations_OnceExplorer : public BooleanOperations_Explorer {
 };
 %feature("shadow") BooleanOperations_OnceExplorer::~BooleanOperations_OnceExplorer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BooleanOperations_OnceExplorer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BooleanOperations_ShapesDataStructure;
@@ -412,8 +482,18 @@ class BooleanOperations_ShapesDataStructure {
 };
 %feature("shadow") BooleanOperations_ShapesDataStructure::~BooleanOperations_ShapesDataStructure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BooleanOperations_ShapesDataStructure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BooleanOperations_AncestorsSeqAndSuccessorsSeq;
@@ -443,8 +523,18 @@ class BooleanOperations_AncestorsSeqAndSuccessorsSeq {
 };
 %feature("shadow") BooleanOperations_AncestorsSeqAndSuccessorsSeq::~BooleanOperations_AncestorsSeqAndSuccessorsSeq %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BooleanOperations_AncestorsSeqAndSuccessorsSeq {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BooleanOperations_IndexedDataMapOfShapeInteger;
@@ -508,8 +598,18 @@ class BooleanOperations_IndexedDataMapOfShapeInteger : public TCollection_BasicM
 };
 %feature("shadow") BooleanOperations_IndexedDataMapOfShapeInteger::~BooleanOperations_IndexedDataMapOfShapeInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BooleanOperations_IndexedDataMapOfShapeInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BooleanOperations_AncestorsAndSuccessors;
@@ -549,8 +649,18 @@ class BooleanOperations_AncestorsAndSuccessors {
 };
 %feature("shadow") BooleanOperations_AncestorsAndSuccessors::~BooleanOperations_AncestorsAndSuccessors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BooleanOperations_AncestorsAndSuccessors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors;
@@ -592,5 +702,15 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSucces
 };
 %feature("shadow") BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors::~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

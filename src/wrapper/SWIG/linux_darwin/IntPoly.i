@@ -63,8 +63,18 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TColl
 };
 %feature("shadow") Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt::~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
@@ -91,8 +101,18 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public Handle_TCollecti
 };
 %feature("shadow") Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d::~Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d;
@@ -119,8 +139,18 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public Handle_TCo
 };
 %feature("shadow") Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d::~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt;
@@ -147,8 +177,18 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public Handle_TCollection
 };
 %feature("shadow") Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt::~Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPoly_SequenceOfSequenceOfPnt2d;
@@ -202,8 +242,18 @@ class IntPoly_SequenceOfSequenceOfPnt2d : public TCollection_BaseSequence {
 };
 %feature("shadow") IntPoly_SequenceOfSequenceOfPnt2d::~IntPoly_SequenceOfSequenceOfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPoly_SequenceOfSequenceOfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPoly_PlaneSection;
@@ -235,8 +285,18 @@ class IntPoly_PlaneSection {
 };
 %feature("shadow") IntPoly_PlaneSection::~IntPoly_PlaneSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPoly_PlaneSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPoly_IndexedMapNodeOfIndexedMapOfPnt;
@@ -276,8 +336,18 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
 };
 %feature("shadow") IntPoly_IndexedMapNodeOfIndexedMapOfPnt::~IntPoly_IndexedMapNodeOfIndexedMapOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPoly_ShapeSection;
@@ -317,8 +387,18 @@ class IntPoly_ShapeSection {
 };
 %feature("shadow") IntPoly_ShapeSection::~IntPoly_ShapeSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPoly_ShapeSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPoly_SequenceOfSequenceOfPnt;
@@ -372,8 +452,18 @@ class IntPoly_SequenceOfSequenceOfPnt : public TCollection_BaseSequence {
 };
 %feature("shadow") IntPoly_SequenceOfSequenceOfPnt::~IntPoly_SequenceOfSequenceOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPoly_SequenceOfSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPoly_Pnt2dHasher;
@@ -389,8 +479,18 @@ class IntPoly_Pnt2dHasher {
 };
 %feature("shadow") IntPoly_Pnt2dHasher::~IntPoly_Pnt2dHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPoly_Pnt2dHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d;
@@ -416,8 +516,18 @@ class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public TCollection_SeqNo
 };
 %feature("shadow") IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d::~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPoly_IndexedMapOfPnt2d;
@@ -451,8 +561,18 @@ class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
 };
 %feature("shadow") IntPoly_IndexedMapOfPnt2d::~IntPoly_IndexedMapOfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPoly_IndexedMapOfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPoly_PntHasher;
@@ -468,8 +588,18 @@ class IntPoly_PntHasher {
 };
 %feature("shadow") IntPoly_PntHasher::~IntPoly_PntHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPoly_PntHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
@@ -509,8 +639,18 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
 };
 %feature("shadow") IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d::~IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt;
@@ -536,8 +676,18 @@ class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public TCollection_SeqNode
 };
 %feature("shadow") IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt::~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPoly_IndexedMapOfPnt;
@@ -571,5 +721,15 @@ class IntPoly_IndexedMapOfPnt : public TCollection_BasicMap {
 };
 %feature("shadow") IntPoly_IndexedMapOfPnt::~IntPoly_IndexedMapOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPoly_IndexedMapOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

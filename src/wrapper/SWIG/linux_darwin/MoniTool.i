@@ -77,8 +77,18 @@ class Handle_MoniTool_SignText : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MoniTool_SignText::~Handle_MoniTool_SignText %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_SignText {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_DataMapNodeOfDataMapOfTimer;
@@ -105,8 +115,18 @@ class Handle_MoniTool_DataMapNodeOfDataMapOfTimer : public Handle_TCollection_Ma
 };
 %feature("shadow") Handle_MoniTool_DataMapNodeOfDataMapOfTimer::~Handle_MoniTool_DataMapNodeOfDataMapOfTimer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_DataMapNodeOfDataMapOfTimer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_IntVal;
@@ -133,8 +153,18 @@ class Handle_MoniTool_IntVal : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MoniTool_IntVal::~Handle_MoniTool_IntVal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_IntVal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient;
@@ -161,8 +191,18 @@ class Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient : public Handle_TColl
 };
 %feature("shadow") Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient::~Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_CaseData;
@@ -189,8 +229,18 @@ class Handle_MoniTool_CaseData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MoniTool_CaseData::~Handle_MoniTool_CaseData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_CaseData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_RealVal;
@@ -217,8 +267,18 @@ class Handle_MoniTool_RealVal : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MoniTool_RealVal::~Handle_MoniTool_RealVal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_RealVal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_Option;
@@ -245,8 +305,18 @@ class Handle_MoniTool_Option : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MoniTool_Option::~Handle_MoniTool_Option %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_Option {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_Element;
@@ -273,8 +343,18 @@ class Handle_MoniTool_Element : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MoniTool_Element::~Handle_MoniTool_Element %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_Element {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_TransientElem;
@@ -301,8 +381,18 @@ class Handle_MoniTool_TransientElem : public Handle_MoniTool_Element {
 };
 %feature("shadow") Handle_MoniTool_TransientElem::~Handle_MoniTool_TransientElem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_TransientElem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_Profile;
@@ -329,8 +419,18 @@ class Handle_MoniTool_Profile : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MoniTool_Profile::~Handle_MoniTool_Profile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_Profile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_SequenceNodeOfSequenceOfElement;
@@ -357,8 +457,18 @@ class Handle_MoniTool_SequenceNodeOfSequenceOfElement : public Handle_TCollectio
 };
 %feature("shadow") Handle_MoniTool_SequenceNodeOfSequenceOfElement::~Handle_MoniTool_SequenceNodeOfSequenceOfElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_SequenceNodeOfSequenceOfElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_TypedValue;
@@ -385,8 +495,18 @@ class Handle_MoniTool_TypedValue : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MoniTool_TypedValue::~Handle_MoniTool_TypedValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_TypedValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient;
@@ -413,8 +533,18 @@ class Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : publi
 };
 %feature("shadow") Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient::~Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_SignShape;
@@ -441,8 +571,18 @@ class Handle_MoniTool_SignShape : public Handle_MoniTool_SignText {
 };
 %feature("shadow") Handle_MoniTool_SignShape::~Handle_MoniTool_SignShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_SignShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_HSequenceOfElement;
@@ -469,8 +609,18 @@ class Handle_MoniTool_HSequenceOfElement : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MoniTool_HSequenceOfElement::~Handle_MoniTool_HSequenceOfElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_HSequenceOfElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MoniTool_Timer;
@@ -497,8 +647,18 @@ class Handle_MoniTool_Timer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MoniTool_Timer::~Handle_MoniTool_Timer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MoniTool_Timer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_RealVal;
@@ -536,8 +696,18 @@ class MoniTool_RealVal : public MMgt_TShared {
 };
 %feature("shadow") MoniTool_RealVal::~MoniTool_RealVal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_RealVal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_DataMapNodeOfDataMapOfShapeTransient;
@@ -565,8 +735,18 @@ class MoniTool_DataMapNodeOfDataMapOfShapeTransient : public TCollection_MapNode
 };
 %feature("shadow") MoniTool_DataMapNodeOfDataMapOfShapeTransient::~MoniTool_DataMapNodeOfDataMapOfShapeTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_HSequenceOfElement;
@@ -634,8 +814,18 @@ class MoniTool_HSequenceOfElement : public MMgt_TShared {
 };
 %feature("shadow") MoniTool_HSequenceOfElement::~MoniTool_HSequenceOfElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_HSequenceOfElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_Timer;
@@ -707,8 +897,18 @@ class MoniTool_Timer : public MMgt_TShared {
 };
 %feature("shadow") MoniTool_Timer::~MoniTool_Timer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_Timer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_SequenceNodeOfSequenceOfElement;
@@ -734,8 +934,18 @@ class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
 };
 %feature("shadow") MoniTool_SequenceNodeOfSequenceOfElement::~MoniTool_SequenceNodeOfSequenceOfElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_SequenceNodeOfSequenceOfElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_DataMapNodeOfDataMapOfTimer;
@@ -763,8 +973,18 @@ class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
 };
 %feature("shadow") MoniTool_DataMapNodeOfDataMapOfTimer::~MoniTool_DataMapNodeOfDataMapOfTimer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_DataMapNodeOfDataMapOfTimer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_DataMapOfShapeTransient;
@@ -798,8 +1018,18 @@ class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
 };
 %feature("shadow") MoniTool_DataMapOfShapeTransient::~MoniTool_DataMapOfShapeTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_DataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_TimerSentry;
@@ -819,8 +1049,18 @@ class MoniTool_TimerSentry {
 };
 %feature("shadow") MoniTool_TimerSentry::~MoniTool_TimerSentry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_TimerSentry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_IntVal;
@@ -858,8 +1098,18 @@ class MoniTool_IntVal : public MMgt_TShared {
 };
 %feature("shadow") MoniTool_IntVal::~MoniTool_IntVal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_IntVal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_Stat;
@@ -891,8 +1141,18 @@ class MoniTool_Stat {
 };
 %feature("shadow") MoniTool_Stat::~MoniTool_Stat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_Stat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_Element;
@@ -926,8 +1186,18 @@ class MoniTool_Element : public MMgt_TShared {
 };
 %feature("shadow") MoniTool_Element::~MoniTool_Element %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_Element {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_DataMapOfTimer;
@@ -961,8 +1231,18 @@ class MoniTool_DataMapOfTimer : public TCollection_BasicMap {
 };
 %feature("shadow") MoniTool_DataMapOfTimer::~MoniTool_DataMapOfTimer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_DataMapOfTimer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_TypedValue;
@@ -1084,8 +1364,18 @@ class MoniTool_TypedValue : public MMgt_TShared {
 };
 %feature("shadow") MoniTool_TypedValue::~MoniTool_TypedValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_TypedValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_TransientElem;
@@ -1117,8 +1407,18 @@ class MoniTool_TransientElem : public MoniTool_Element {
 };
 %feature("shadow") MoniTool_TransientElem::~MoniTool_TransientElem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_TransientElem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient;
@@ -1160,8 +1460,18 @@ class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TColl
 };
 %feature("shadow") MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient::~MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_Profile;
@@ -1233,8 +1543,18 @@ class MoniTool_Profile : public MMgt_TShared {
 };
 %feature("shadow") MoniTool_Profile::~MoniTool_Profile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_Profile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_AttrList;
@@ -1280,8 +1600,18 @@ class MoniTool_AttrList {
 };
 %feature("shadow") MoniTool_AttrList::~MoniTool_AttrList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_AttrList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_DataInfo;
@@ -1297,8 +1627,18 @@ class MoniTool_DataInfo {
 };
 %feature("shadow") MoniTool_DataInfo::~MoniTool_DataInfo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_DataInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_SignText;
@@ -1326,8 +1666,18 @@ class MoniTool_SignText : public MMgt_TShared {
 };
 %feature("shadow") MoniTool_SignText::~MoniTool_SignText %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_SignText {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_SignShape;
@@ -1349,8 +1699,18 @@ class MoniTool_SignShape : public MoniTool_SignText {
 };
 %feature("shadow") MoniTool_SignShape::~MoniTool_SignShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_SignShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_OptValue;
@@ -1376,8 +1736,18 @@ class MoniTool_OptValue {
 };
 %feature("shadow") MoniTool_OptValue::~MoniTool_OptValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_OptValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_DataMapIteratorOfDataMapOfTimer;
@@ -1397,8 +1767,18 @@ class MoniTool_DataMapIteratorOfDataMapOfTimer : public TCollection_BasicMapIter
 };
 %feature("shadow") MoniTool_DataMapIteratorOfDataMapOfTimer::~MoniTool_DataMapIteratorOfDataMapOfTimer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_DataMapIteratorOfDataMapOfTimer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_ElemHasher;
@@ -1414,8 +1794,18 @@ class MoniTool_ElemHasher {
 };
 %feature("shadow") MoniTool_ElemHasher::~MoniTool_ElemHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_ElemHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_IndexedDataMapOfShapeTransient;
@@ -1459,8 +1849,18 @@ class MoniTool_IndexedDataMapOfShapeTransient : public TCollection_BasicMap {
 };
 %feature("shadow") MoniTool_IndexedDataMapOfShapeTransient::~MoniTool_IndexedDataMapOfShapeTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_IndexedDataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_MTHasher;
@@ -1476,8 +1876,18 @@ class MoniTool_MTHasher {
 };
 %feature("shadow") MoniTool_MTHasher::~MoniTool_MTHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_MTHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_SequenceOfElement;
@@ -1531,8 +1941,18 @@ class MoniTool_SequenceOfElement : public TCollection_BaseSequence {
 };
 %feature("shadow") MoniTool_SequenceOfElement::~MoniTool_SequenceOfElement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_SequenceOfElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_CaseData;
@@ -1646,8 +2066,18 @@ class MoniTool_CaseData : public MMgt_TShared {
 };
 %feature("shadow") MoniTool_CaseData::~MoniTool_CaseData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_CaseData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_Option;
@@ -1701,8 +2131,18 @@ class MoniTool_Option : public MMgt_TShared {
 };
 %feature("shadow") MoniTool_Option::~MoniTool_Option %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_Option {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MoniTool_DataMapIteratorOfDataMapOfShapeTransient;
@@ -1722,5 +2162,15 @@ class MoniTool_DataMapIteratorOfDataMapOfShapeTransient : public TCollection_Bas
 };
 %feature("shadow") MoniTool_DataMapIteratorOfDataMapOfShapeTransient::~MoniTool_DataMapIteratorOfDataMapOfShapeTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MoniTool_DataMapIteratorOfDataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

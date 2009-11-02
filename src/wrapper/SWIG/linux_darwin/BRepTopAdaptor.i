@@ -63,8 +63,18 @@ class Handle_BRepTopAdaptor_TopolTool : public Handle_Adaptor3d_TopolTool {
 };
 %feature("shadow") Handle_BRepTopAdaptor_TopolTool::~Handle_BRepTopAdaptor_TopolTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepTopAdaptor_TopolTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepTopAdaptor_HVertex;
@@ -91,8 +101,18 @@ class Handle_BRepTopAdaptor_HVertex : public Handle_Adaptor3d_HVertex {
 };
 %feature("shadow") Handle_BRepTopAdaptor_HVertex::~Handle_BRepTopAdaptor_HVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepTopAdaptor_HVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool;
@@ -119,8 +139,18 @@ class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollect
 };
 %feature("shadow") Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool::~Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr;
@@ -147,8 +177,18 @@ class Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public Handle_TCollection_S
 };
 %feature("shadow") Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr::~Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTopAdaptor_SequenceNodeOfSeqOfPtr;
@@ -174,8 +214,18 @@ class BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public TCollection_SeqNode {
 };
 %feature("shadow") BRepTopAdaptor_SequenceNodeOfSeqOfPtr::~BRepTopAdaptor_SequenceNodeOfSeqOfPtr %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTopAdaptor_Tool;
@@ -203,8 +253,18 @@ class BRepTopAdaptor_Tool {
 };
 %feature("shadow") BRepTopAdaptor_Tool::~BRepTopAdaptor_Tool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTopAdaptor_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool;
@@ -224,8 +284,18 @@ class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicM
 };
 %feature("shadow") BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool::~BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTopAdaptor_HVertex;
@@ -263,8 +333,18 @@ class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 };
 %feature("shadow") BRepTopAdaptor_HVertex::~BRepTopAdaptor_HVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTopAdaptor_HVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTopAdaptor_FClass2d;
@@ -288,8 +368,18 @@ class BRepTopAdaptor_FClass2d {
 };
 %feature("shadow") BRepTopAdaptor_FClass2d::~BRepTopAdaptor_FClass2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTopAdaptor_FClass2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTopAdaptor_TopolTool;
@@ -369,8 +459,18 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 };
 %feature("shadow") BRepTopAdaptor_TopolTool::~BRepTopAdaptor_TopolTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTopAdaptor_TopolTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTopAdaptor_MapOfShapeTool;
@@ -404,8 +504,18 @@ class BRepTopAdaptor_MapOfShapeTool : public TCollection_BasicMap {
 };
 %feature("shadow") BRepTopAdaptor_MapOfShapeTool::~BRepTopAdaptor_MapOfShapeTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTopAdaptor_MapOfShapeTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTopAdaptor_SeqOfPtr;
@@ -459,8 +569,18 @@ class BRepTopAdaptor_SeqOfPtr : public TCollection_BaseSequence {
 };
 %feature("shadow") BRepTopAdaptor_SeqOfPtr::~BRepTopAdaptor_SeqOfPtr %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTopAdaptor_SeqOfPtr {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTopAdaptor_DataMapNodeOfMapOfShapeTool;
@@ -488,5 +608,15 @@ class BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public TCollection_MapNode {
 };
 %feature("shadow") BRepTopAdaptor_DataMapNodeOfMapOfShapeTool::~BRepTopAdaptor_DataMapNodeOfMapOfShapeTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

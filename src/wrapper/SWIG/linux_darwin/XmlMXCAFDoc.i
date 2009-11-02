@@ -63,8 +63,18 @@ class Handle_XmlMXCAFDoc_LocationDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMXCAFDoc_LocationDriver::~Handle_XmlMXCAFDoc_LocationDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMXCAFDoc_LocationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMXCAFDoc_CentroidDriver;
@@ -91,8 +101,18 @@ class Handle_XmlMXCAFDoc_CentroidDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMXCAFDoc_CentroidDriver::~Handle_XmlMXCAFDoc_CentroidDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMXCAFDoc_CentroidDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMXCAFDoc_GraphNodeDriver;
@@ -119,8 +139,18 @@ class Handle_XmlMXCAFDoc_GraphNodeDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMXCAFDoc_GraphNodeDriver::~Handle_XmlMXCAFDoc_GraphNodeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMXCAFDoc_GraphNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMXCAFDoc_VolumeDriver;
@@ -147,8 +177,18 @@ class Handle_XmlMXCAFDoc_VolumeDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMXCAFDoc_VolumeDriver::~Handle_XmlMXCAFDoc_VolumeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMXCAFDoc_VolumeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMXCAFDoc_DocumentToolDriver;
@@ -175,8 +215,18 @@ class Handle_XmlMXCAFDoc_DocumentToolDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMXCAFDoc_DocumentToolDriver::~Handle_XmlMXCAFDoc_DocumentToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMXCAFDoc_DocumentToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMXCAFDoc_ColorDriver;
@@ -203,8 +253,18 @@ class Handle_XmlMXCAFDoc_ColorDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMXCAFDoc_ColorDriver::~Handle_XmlMXCAFDoc_ColorDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMXCAFDoc_ColorDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMXCAFDoc_LayerToolDriver;
@@ -231,8 +291,18 @@ class Handle_XmlMXCAFDoc_LayerToolDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMXCAFDoc_LayerToolDriver::~Handle_XmlMXCAFDoc_LayerToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMXCAFDoc_LayerToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMXCAFDoc_AreaDriver;
@@ -259,8 +329,18 @@ class Handle_XmlMXCAFDoc_AreaDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMXCAFDoc_AreaDriver::~Handle_XmlMXCAFDoc_AreaDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMXCAFDoc_AreaDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMXCAFDoc_ShapeToolDriver;
@@ -287,8 +367,18 @@ class Handle_XmlMXCAFDoc_ShapeToolDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMXCAFDoc_ShapeToolDriver::~Handle_XmlMXCAFDoc_ShapeToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMXCAFDoc_ShapeToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMXCAFDoc_ColorToolDriver;
@@ -315,8 +405,18 @@ class Handle_XmlMXCAFDoc_ColorToolDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMXCAFDoc_ColorToolDriver::~Handle_XmlMXCAFDoc_ColorToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMXCAFDoc_ColorToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMXCAFDoc_DocumentToolDriver;
@@ -346,8 +446,18 @@ class XmlMXCAFDoc_DocumentToolDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMXCAFDoc_DocumentToolDriver::~XmlMXCAFDoc_DocumentToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMXCAFDoc_DocumentToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMXCAFDoc_LocationDriver;
@@ -381,8 +491,18 @@ class XmlMXCAFDoc_LocationDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMXCAFDoc_LocationDriver::~XmlMXCAFDoc_LocationDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMXCAFDoc_LocationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMXCAFDoc_ColorDriver;
@@ -412,8 +532,18 @@ class XmlMXCAFDoc_ColorDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMXCAFDoc_ColorDriver::~XmlMXCAFDoc_ColorDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMXCAFDoc_ColorDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMXCAFDoc_ColorToolDriver;
@@ -443,8 +573,18 @@ class XmlMXCAFDoc_ColorToolDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMXCAFDoc_ColorToolDriver::~XmlMXCAFDoc_ColorToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMXCAFDoc_ColorToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMXCAFDoc;
@@ -458,8 +598,18 @@ class XmlMXCAFDoc {
 };
 %feature("shadow") XmlMXCAFDoc::~XmlMXCAFDoc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMXCAFDoc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMXCAFDoc_VolumeDriver;
@@ -489,8 +639,18 @@ class XmlMXCAFDoc_VolumeDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMXCAFDoc_VolumeDriver::~XmlMXCAFDoc_VolumeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMXCAFDoc_VolumeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMXCAFDoc_CentroidDriver;
@@ -520,8 +680,18 @@ class XmlMXCAFDoc_CentroidDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMXCAFDoc_CentroidDriver::~XmlMXCAFDoc_CentroidDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMXCAFDoc_CentroidDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMXCAFDoc_GraphNodeDriver;
@@ -551,8 +721,18 @@ class XmlMXCAFDoc_GraphNodeDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMXCAFDoc_GraphNodeDriver::~XmlMXCAFDoc_GraphNodeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMXCAFDoc_GraphNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMXCAFDoc_AreaDriver;
@@ -582,8 +762,18 @@ class XmlMXCAFDoc_AreaDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMXCAFDoc_AreaDriver::~XmlMXCAFDoc_AreaDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMXCAFDoc_AreaDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMXCAFDoc_LayerToolDriver;
@@ -613,8 +803,18 @@ class XmlMXCAFDoc_LayerToolDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMXCAFDoc_LayerToolDriver::~XmlMXCAFDoc_LayerToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMXCAFDoc_LayerToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMXCAFDoc_ShapeToolDriver;
@@ -644,5 +844,15 @@ class XmlMXCAFDoc_ShapeToolDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMXCAFDoc_ShapeToolDriver::~XmlMXCAFDoc_ShapeToolDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMXCAFDoc_ShapeToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

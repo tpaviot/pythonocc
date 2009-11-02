@@ -112,8 +112,18 @@ class Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI : public Handle_TCollection_
 };
 %feature("shadow") Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI::~Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepToTopoDS_DataMapNodeOfPointVertexMap;
@@ -140,8 +150,18 @@ class Handle_StepToTopoDS_DataMapNodeOfPointVertexMap : public Handle_TCollectio
 };
 %feature("shadow") Handle_StepToTopoDS_DataMapNodeOfPointVertexMap::~Handle_StepToTopoDS_DataMapNodeOfPointVertexMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepToTopoDS_DataMapNodeOfPointVertexMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap;
@@ -168,8 +188,18 @@ class Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap : public Handle_TCollection_
 };
 %feature("shadow") Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap::~Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_GeometricTool;
@@ -189,8 +219,18 @@ class StepToTopoDS_GeometricTool {
 };
 %feature("shadow") StepToTopoDS_GeometricTool::~StepToTopoDS_GeometricTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_GeometricTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_Root;
@@ -210,8 +250,18 @@ class StepToTopoDS_Root {
 };
 %feature("shadow") StepToTopoDS_Root::~StepToTopoDS_Root %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_Root {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_MakeTransformed;
@@ -233,8 +283,18 @@ class StepToTopoDS_MakeTransformed : public StepToTopoDS_Root {
 };
 %feature("shadow") StepToTopoDS_MakeTransformed::~StepToTopoDS_MakeTransformed %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_MakeTransformed {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_DataMapIteratorOfPointEdgeMap;
@@ -254,8 +314,18 @@ class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIt
 };
 %feature("shadow") StepToTopoDS_DataMapIteratorOfPointEdgeMap::~StepToTopoDS_DataMapIteratorOfPointEdgeMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_DataMapIteratorOfPointEdgeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_TranslateShell;
@@ -275,8 +345,18 @@ class StepToTopoDS_TranslateShell : public StepToTopoDS_Root {
 };
 %feature("shadow") StepToTopoDS_TranslateShell::~StepToTopoDS_TranslateShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_TranslateShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_Tool;
@@ -344,8 +424,18 @@ class StepToTopoDS_Tool {
 };
 %feature("shadow") StepToTopoDS_Tool::~StepToTopoDS_Tool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_TranslateEdge;
@@ -369,8 +459,18 @@ class StepToTopoDS_TranslateEdge : public StepToTopoDS_Root {
 };
 %feature("shadow") StepToTopoDS_TranslateEdge::~StepToTopoDS_TranslateEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_TranslateEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_DataMapIteratorOfPointVertexMap;
@@ -390,8 +490,18 @@ class StepToTopoDS_DataMapIteratorOfPointVertexMap : public TCollection_BasicMap
 };
 %feature("shadow") StepToTopoDS_DataMapIteratorOfPointVertexMap::~StepToTopoDS_DataMapIteratorOfPointVertexMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_DataMapIteratorOfPointVertexMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_CartesianPointHasher;
@@ -407,8 +517,18 @@ class StepToTopoDS_CartesianPointHasher {
 };
 %feature("shadow") StepToTopoDS_CartesianPointHasher::~StepToTopoDS_CartesianPointHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_CartesianPointHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_DataMapIteratorOfDataMapOfTRI;
@@ -428,8 +548,18 @@ class StepToTopoDS_DataMapIteratorOfDataMapOfTRI : public TCollection_BasicMapIt
 };
 %feature("shadow") StepToTopoDS_DataMapIteratorOfDataMapOfTRI::~StepToTopoDS_DataMapIteratorOfDataMapOfTRI %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_DataMapIteratorOfDataMapOfTRI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_PointPairHasher;
@@ -445,8 +575,18 @@ class StepToTopoDS_PointPairHasher {
 };
 %feature("shadow") StepToTopoDS_PointPairHasher::~StepToTopoDS_PointPairHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_PointPairHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_DataMapNodeOfPointVertexMap;
@@ -474,8 +614,18 @@ class StepToTopoDS_DataMapNodeOfPointVertexMap : public TCollection_MapNode {
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfPointVertexMap::~StepToTopoDS_DataMapNodeOfPointVertexMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_DataMapNodeOfPointVertexMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_DataMapOfTRI;
@@ -509,8 +659,18 @@ class StepToTopoDS_DataMapOfTRI : public TCollection_BasicMap {
 };
 %feature("shadow") StepToTopoDS_DataMapOfTRI::~StepToTopoDS_DataMapOfTRI %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_DataMapOfTRI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_TranslateFace;
@@ -530,8 +690,18 @@ class StepToTopoDS_TranslateFace : public StepToTopoDS_Root {
 };
 %feature("shadow") StepToTopoDS_TranslateFace::~StepToTopoDS_TranslateFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_TranslateFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_TranslatePolyLoop;
@@ -551,8 +721,18 @@ class StepToTopoDS_TranslatePolyLoop : public StepToTopoDS_Root {
 };
 %feature("shadow") StepToTopoDS_TranslatePolyLoop::~StepToTopoDS_TranslatePolyLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_TranslatePolyLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_TranslateCompositeCurve;
@@ -574,8 +754,18 @@ class StepToTopoDS_TranslateCompositeCurve : public StepToTopoDS_Root {
 };
 %feature("shadow") StepToTopoDS_TranslateCompositeCurve::~StepToTopoDS_TranslateCompositeCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_TranslateCompositeCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_PointVertexMap;
@@ -609,8 +799,18 @@ class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
 };
 %feature("shadow") StepToTopoDS_PointVertexMap::~StepToTopoDS_PointVertexMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_PointVertexMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_PointPair;
@@ -622,8 +822,18 @@ class StepToTopoDS_PointPair {
 };
 %feature("shadow") StepToTopoDS_PointPair::~StepToTopoDS_PointPair %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_PointPair {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_PointEdgeMap;
@@ -657,8 +867,18 @@ class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
 };
 %feature("shadow") StepToTopoDS_PointEdgeMap::~StepToTopoDS_PointEdgeMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_PointEdgeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_TranslateEdgeLoop;
@@ -678,8 +898,18 @@ class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
 };
 %feature("shadow") StepToTopoDS_TranslateEdgeLoop::~StepToTopoDS_TranslateEdgeLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_TranslateEdgeLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_TranslateVertex;
@@ -699,8 +929,18 @@ class StepToTopoDS_TranslateVertex : public StepToTopoDS_Root {
 };
 %feature("shadow") StepToTopoDS_TranslateVertex::~StepToTopoDS_TranslateVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_TranslateVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_TranslateCurveBoundedSurface;
@@ -718,8 +958,18 @@ class StepToTopoDS_TranslateCurveBoundedSurface : public StepToTopoDS_Root {
 };
 %feature("shadow") StepToTopoDS_TranslateCurveBoundedSurface::~StepToTopoDS_TranslateCurveBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_TranslateCurveBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_DataMapNodeOfDataMapOfTRI;
@@ -747,8 +997,18 @@ class StepToTopoDS_DataMapNodeOfDataMapOfTRI : public TCollection_MapNode {
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfDataMapOfTRI::~StepToTopoDS_DataMapNodeOfDataMapOfTRI %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS;
@@ -776,8 +1036,18 @@ class StepToTopoDS {
 };
 %feature("shadow") StepToTopoDS::~StepToTopoDS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_DataMapNodeOfPointEdgeMap;
@@ -805,8 +1075,18 @@ class StepToTopoDS_DataMapNodeOfPointEdgeMap : public TCollection_MapNode {
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfPointEdgeMap::~StepToTopoDS_DataMapNodeOfPointEdgeMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToTopoDS_TranslateVertexLoop;
@@ -826,5 +1106,15 @@ class StepToTopoDS_TranslateVertexLoop : public StepToTopoDS_Root {
 };
 %feature("shadow") StepToTopoDS_TranslateVertexLoop::~StepToTopoDS_TranslateVertexLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToTopoDS_TranslateVertexLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

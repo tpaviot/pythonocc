@@ -63,8 +63,18 @@ class Handle_XCAFApp_Application : public Handle_TDocStd_Application {
 };
 %feature("shadow") Handle_XCAFApp_Application::~Handle_XCAFApp_Application %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XCAFApp_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XCAFApp_Application;
@@ -94,8 +104,18 @@ class XCAFApp_Application : public TDocStd_Application {
 };
 %feature("shadow") XCAFApp_Application::~XCAFApp_Application %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XCAFApp_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 %inline %{
 Handle_XCAFApp_Application GetApplication()
 {

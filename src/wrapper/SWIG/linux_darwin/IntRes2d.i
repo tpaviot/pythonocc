@@ -82,8 +82,18 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_
 };
 %feature("shadow") Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint::~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment;
@@ -110,8 +120,18 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public Handl
 };
 %feature("shadow") Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment::~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntRes2d_SequenceOfIntersectionSegment;
@@ -165,8 +185,18 @@ class IntRes2d_SequenceOfIntersectionSegment : public TCollection_BaseSequence {
 };
 %feature("shadow") IntRes2d_SequenceOfIntersectionSegment::~IntRes2d_SequenceOfIntersectionSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntRes2d_SequenceOfIntersectionSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint;
@@ -192,8 +222,18 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public TCollection_Se
 };
 %feature("shadow") IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint::~IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntRes2d_Transition;
@@ -249,8 +289,18 @@ class IntRes2d_Transition {
 };
 %feature("shadow") IntRes2d_Transition::~IntRes2d_Transition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntRes2d_Transition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntRes2d_SequenceOfIntersectionPoint;
@@ -304,8 +354,18 @@ class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
 };
 %feature("shadow") IntRes2d_SequenceOfIntersectionPoint::~IntRes2d_SequenceOfIntersectionPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntRes2d_SequenceOfIntersectionPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntRes2d_IntersectionSegment;
@@ -349,8 +409,18 @@ class IntRes2d_IntersectionSegment {
 };
 %feature("shadow") IntRes2d_IntersectionSegment::~IntRes2d_IntersectionSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntRes2d_IntersectionSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntRes2d_IntersectionPoint;
@@ -390,8 +460,18 @@ class IntRes2d_IntersectionPoint {
 };
 %feature("shadow") IntRes2d_IntersectionPoint::~IntRes2d_IntersectionPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntRes2d_IntersectionPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntRes2d_Intersection;
@@ -415,8 +495,18 @@ class IntRes2d_Intersection {
 };
 %feature("shadow") IntRes2d_Intersection::~IntRes2d_Intersection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntRes2d_Intersection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment;
@@ -442,8 +532,18 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_
 };
 %feature("shadow") IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment::~IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntRes2d_Domain;
@@ -487,5 +587,15 @@ class IntRes2d_Domain {
 };
 %feature("shadow") IntRes2d_Domain::~IntRes2d_Domain %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntRes2d_Domain {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

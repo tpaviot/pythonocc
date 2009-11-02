@@ -183,8 +183,18 @@ class Handle_OSD_Exception : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_OSD_Exception::~Handle_OSD_Exception %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_INT_DIVIDE_BY_ZERO;
@@ -211,8 +221,18 @@ class Handle_OSD_Exception_INT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_INT_DIVIDE_BY_ZERO::~Handle_OSD_Exception_INT_DIVIDE_BY_ZERO %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_INT_DIVIDE_BY_ZERO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Signal;
@@ -239,8 +259,18 @@ class Handle_OSD_Signal : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_OSD_Signal::~Handle_OSD_Signal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Signal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_SIGBUS;
@@ -267,8 +297,18 @@ class Handle_OSD_SIGBUS : public Handle_OSD_Signal {
 };
 %feature("shadow") Handle_OSD_SIGBUS::~Handle_OSD_SIGBUS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_SIGBUS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_SIGILL;
@@ -295,8 +335,18 @@ class Handle_OSD_SIGILL : public Handle_OSD_Signal {
 };
 %feature("shadow") Handle_OSD_SIGILL::~Handle_OSD_SIGILL %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_SIGILL {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_INVALID_DISPOSITION;
@@ -323,8 +373,18 @@ class Handle_OSD_Exception_INVALID_DISPOSITION : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_INVALID_DISPOSITION::~Handle_OSD_Exception_INVALID_DISPOSITION %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_INVALID_DISPOSITION {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_INT_OVERFLOW;
@@ -351,8 +411,18 @@ class Handle_OSD_Exception_INT_OVERFLOW : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_INT_OVERFLOW::~Handle_OSD_Exception_INT_OVERFLOW %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_INT_OVERFLOW {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_STACK_OVERFLOW;
@@ -379,8 +449,18 @@ class Handle_OSD_Exception_STACK_OVERFLOW : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_STACK_OVERFLOW::~Handle_OSD_Exception_STACK_OVERFLOW %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_STACK_OVERFLOW {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_FLT_OVERFLOW;
@@ -407,8 +487,18 @@ class Handle_OSD_Exception_FLT_OVERFLOW : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_FLT_OVERFLOW::~Handle_OSD_Exception_FLT_OVERFLOW %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_FLT_OVERFLOW {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_IN_PAGE_ERROR;
@@ -435,8 +525,18 @@ class Handle_OSD_Exception_IN_PAGE_ERROR : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_IN_PAGE_ERROR::~Handle_OSD_Exception_IN_PAGE_ERROR %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_IN_PAGE_ERROR {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_SIGSEGV;
@@ -463,8 +563,18 @@ class Handle_OSD_SIGSEGV : public Handle_OSD_Signal {
 };
 %feature("shadow") Handle_OSD_SIGSEGV::~Handle_OSD_SIGSEGV %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_SIGSEGV {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_STATUS_NO_MEMORY;
@@ -491,8 +601,18 @@ class Handle_OSD_Exception_STATUS_NO_MEMORY : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_STATUS_NO_MEMORY::~Handle_OSD_Exception_STATUS_NO_MEMORY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_STATUS_NO_MEMORY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO;
@@ -519,8 +639,18 @@ class Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO::~Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_PRIV_INSTRUCTION;
@@ -547,8 +677,18 @@ class Handle_OSD_Exception_PRIV_INSTRUCTION : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_PRIV_INSTRUCTION::~Handle_OSD_Exception_PRIV_INSTRUCTION %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_PRIV_INSTRUCTION {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_SIGKILL;
@@ -575,8 +715,18 @@ class Handle_OSD_SIGKILL : public Handle_OSD_Signal {
 };
 %feature("shadow") Handle_OSD_SIGKILL::~Handle_OSD_SIGKILL %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_SIGKILL {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_FLT_INVALID_OPERATION;
@@ -603,8 +753,18 @@ class Handle_OSD_Exception_FLT_INVALID_OPERATION : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_FLT_INVALID_OPERATION::~Handle_OSD_Exception_FLT_INVALID_OPERATION %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_FLT_INVALID_OPERATION {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_OSDError;
@@ -631,8 +791,18 @@ class Handle_OSD_OSDError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_OSD_OSDError::~Handle_OSD_OSDError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_OSDError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_ACCESS_VIOLATION;
@@ -659,8 +829,18 @@ class Handle_OSD_Exception_ACCESS_VIOLATION : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_ACCESS_VIOLATION::~Handle_OSD_Exception_ACCESS_VIOLATION %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_ACCESS_VIOLATION {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_SIGQUIT;
@@ -687,8 +867,18 @@ class Handle_OSD_SIGQUIT : public Handle_OSD_Signal {
 };
 %feature("shadow") Handle_OSD_SIGQUIT::~Handle_OSD_SIGQUIT %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_SIGQUIT {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION;
@@ -715,8 +905,18 @@ class Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION : public Handle_OSD_Exceptio
 };
 %feature("shadow") Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION::~Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED;
@@ -743,8 +943,18 @@ class Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED::~Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_SIGHUP;
@@ -771,8 +981,18 @@ class Handle_OSD_SIGHUP : public Handle_OSD_Signal {
 };
 %feature("shadow") Handle_OSD_SIGHUP::~Handle_OSD_SIGHUP %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_SIGHUP {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_FLT_STACK_CHECK;
@@ -799,8 +1019,18 @@ class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_FLT_STACK_CHECK::~Handle_OSD_Exception_FLT_STACK_CHECK %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_FLT_STACK_CHECK {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_SIGSYS;
@@ -827,8 +1057,18 @@ class Handle_OSD_SIGSYS : public Handle_OSD_Signal {
 };
 %feature("shadow") Handle_OSD_SIGSYS::~Handle_OSD_SIGSYS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_SIGSYS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_ILLEGAL_INSTRUCTION;
@@ -855,8 +1095,18 @@ class Handle_OSD_Exception_ILLEGAL_INSTRUCTION : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_ILLEGAL_INSTRUCTION::~Handle_OSD_Exception_ILLEGAL_INSTRUCTION %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_ILLEGAL_INSTRUCTION {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_SIGINT;
@@ -883,8 +1133,18 @@ class Handle_OSD_SIGINT : public Handle_OSD_Signal {
 };
 %feature("shadow") Handle_OSD_SIGINT::~Handle_OSD_SIGINT %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_SIGINT {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_FLT_UNDERFLOW;
@@ -911,8 +1171,18 @@ class Handle_OSD_Exception_FLT_UNDERFLOW : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_FLT_UNDERFLOW::~Handle_OSD_Exception_FLT_UNDERFLOW %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_FLT_UNDERFLOW {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_CTRL_BREAK;
@@ -939,8 +1209,18 @@ class Handle_OSD_Exception_CTRL_BREAK : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_CTRL_BREAK::~Handle_OSD_Exception_CTRL_BREAK %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_CTRL_BREAK {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_FLT_INEXACT_RESULT;
@@ -967,8 +1247,18 @@ class Handle_OSD_Exception_FLT_INEXACT_RESULT : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_FLT_INEXACT_RESULT::~Handle_OSD_Exception_FLT_INEXACT_RESULT %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_FLT_INEXACT_RESULT {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_OSD_Exception_FLT_DENORMAL_OPERAND;
@@ -995,8 +1285,18 @@ class Handle_OSD_Exception_FLT_DENORMAL_OPERAND : public Handle_OSD_Exception {
 };
 %feature("shadow") Handle_OSD_Exception_FLT_DENORMAL_OPERAND::~Handle_OSD_Exception_FLT_DENORMAL_OPERAND %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_OSD_Exception_FLT_DENORMAL_OPERAND {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Chronometer;
@@ -1030,8 +1330,18 @@ class OSD_Chronometer {
 };
 %feature("shadow") OSD_Chronometer::~OSD_Chronometer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Chronometer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception;
@@ -1063,8 +1373,18 @@ class OSD_Exception : public Standard_Failure {
 };
 %feature("shadow") OSD_Exception::~OSD_Exception %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_PRIV_INSTRUCTION;
@@ -1090,8 +1410,18 @@ class OSD_Exception_PRIV_INSTRUCTION : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_PRIV_INSTRUCTION::~OSD_Exception_PRIV_INSTRUCTION %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_PRIV_INSTRUCTION {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_FLT_UNDERFLOW;
@@ -1123,8 +1453,18 @@ class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_FLT_UNDERFLOW::~OSD_Exception_FLT_UNDERFLOW %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_FLT_UNDERFLOW {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Disk;
@@ -1164,8 +1504,18 @@ class OSD_Disk {
 };
 %feature("shadow") OSD_Disk::~OSD_Disk %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Disk {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_CTRL_BREAK;
@@ -1197,8 +1547,18 @@ class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_CTRL_BREAK::~OSD_Exception_CTRL_BREAK %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_CTRL_BREAK {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_ILLEGAL_INSTRUCTION;
@@ -1230,8 +1590,18 @@ class OSD_Exception_ILLEGAL_INSTRUCTION : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_ILLEGAL_INSTRUCTION::~OSD_Exception_ILLEGAL_INSTRUCTION %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_ILLEGAL_INSTRUCTION {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_IN_PAGE_ERROR;
@@ -1263,8 +1633,18 @@ class OSD_Exception_IN_PAGE_ERROR : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_IN_PAGE_ERROR::~OSD_Exception_IN_PAGE_ERROR %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_IN_PAGE_ERROR {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_ACCESS_VIOLATION;
@@ -1296,8 +1676,18 @@ class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_ACCESS_VIOLATION::~OSD_Exception_ACCESS_VIOLATION %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_ACCESS_VIOLATION {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_FLT_DIVIDE_BY_ZERO;
@@ -1329,8 +1719,18 @@ class OSD_Exception_FLT_DIVIDE_BY_ZERO : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_FLT_DIVIDE_BY_ZERO::~OSD_Exception_FLT_DIVIDE_BY_ZERO %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_FLT_DIVIDE_BY_ZERO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_FileNode;
@@ -1372,8 +1772,18 @@ class OSD_FileNode {
 };
 %feature("shadow") OSD_FileNode::~OSD_FileNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_FileNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_OSDError;
@@ -1405,8 +1815,18 @@ class OSD_OSDError : public Standard_Failure {
 };
 %feature("shadow") OSD_OSDError::~OSD_OSDError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_OSDError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_SharedLibrary;
@@ -1432,8 +1852,18 @@ class OSD_SharedLibrary {
 };
 %feature("shadow") OSD_SharedLibrary::~OSD_SharedLibrary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_SharedLibrary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Error;
@@ -1455,8 +1885,18 @@ class OSD_Error {
 };
 %feature("shadow") OSD_Error::~OSD_Error %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Error {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Protection;
@@ -1494,8 +1934,18 @@ class OSD_Protection {
 };
 %feature("shadow") OSD_Protection::~OSD_Protection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Protection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_FLT_INVALID_OPERATION;
@@ -1527,8 +1977,18 @@ class OSD_Exception_FLT_INVALID_OPERATION : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_FLT_INVALID_OPERATION::~OSD_Exception_FLT_INVALID_OPERATION %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_FLT_INVALID_OPERATION {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_SharedMemory;
@@ -1558,8 +2018,18 @@ class OSD_SharedMemory {
 };
 %feature("shadow") OSD_SharedMemory::~OSD_SharedMemory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_SharedMemory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Path;
@@ -1631,8 +2101,18 @@ class OSD_Path {
 };
 %feature("shadow") OSD_Path::~OSD_Path %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Path {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Signal;
@@ -1664,8 +2144,18 @@ class OSD_Signal : public Standard_Failure {
 };
 %feature("shadow") OSD_Signal::~OSD_Signal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Signal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Real2String;
@@ -1681,8 +2171,18 @@ class OSD_Real2String {
 };
 %feature("shadow") OSD_Real2String::~OSD_Real2String %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Real2String {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Directory;
@@ -1700,8 +2200,18 @@ class OSD_Directory : public OSD_FileNode {
 };
 %feature("shadow") OSD_Directory::~OSD_Directory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Directory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Environment;
@@ -1737,8 +2247,18 @@ class OSD_Environment {
 };
 %feature("shadow") OSD_Environment::~OSD_Environment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Environment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_INT_OVERFLOW;
@@ -1770,8 +2290,18 @@ class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_INT_OVERFLOW::~OSD_Exception_INT_OVERFLOW %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_INT_OVERFLOW {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_SIGHUP;
@@ -1803,8 +2333,18 @@ class OSD_SIGHUP : public OSD_Signal {
 };
 %feature("shadow") OSD_SIGHUP::~OSD_SIGHUP %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_SIGHUP {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Timer;
@@ -1836,8 +2376,18 @@ class OSD_Timer : public OSD_Chronometer {
 };
 %feature("shadow") OSD_Timer::~OSD_Timer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Timer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_SIGSYS;
@@ -1869,8 +2419,18 @@ class OSD_SIGSYS : public OSD_Signal {
 };
 %feature("shadow") OSD_SIGSYS::~OSD_SIGSYS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_SIGSYS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_FLT_INEXACT_RESULT;
@@ -1902,8 +2462,18 @@ class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_FLT_INEXACT_RESULT::~OSD_Exception_FLT_INEXACT_RESULT %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_FLT_INEXACT_RESULT {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD;
@@ -1939,8 +2509,18 @@ class OSD {
 };
 %feature("shadow") OSD::~OSD %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_INVALID_DISPOSITION;
@@ -1972,8 +2552,18 @@ class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_INVALID_DISPOSITION::~OSD_Exception_INVALID_DISPOSITION %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_INVALID_DISPOSITION {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_FLT_STACK_CHECK;
@@ -2005,8 +2595,18 @@ class OSD_Exception_FLT_STACK_CHECK : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_FLT_STACK_CHECK::~OSD_Exception_FLT_STACK_CHECK %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_FLT_STACK_CHECK {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_STACK_OVERFLOW;
@@ -2038,8 +2638,18 @@ class OSD_Exception_STACK_OVERFLOW : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_STACK_OVERFLOW::~OSD_Exception_STACK_OVERFLOW %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_STACK_OVERFLOW {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Printer;
@@ -2063,8 +2673,18 @@ class OSD_Printer {
 };
 %feature("shadow") OSD_Printer::~OSD_Printer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Printer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_SIGQUIT;
@@ -2096,8 +2716,18 @@ class OSD_SIGQUIT : public OSD_Signal {
 };
 %feature("shadow") OSD_SIGQUIT::~OSD_SIGQUIT %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_SIGQUIT {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_STATUS_NO_MEMORY;
@@ -2129,8 +2759,18 @@ class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_STATUS_NO_MEMORY::~OSD_Exception_STATUS_NO_MEMORY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_STATUS_NO_MEMORY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_DirectoryIterator;
@@ -2162,8 +2802,18 @@ class OSD_DirectoryIterator {
 };
 %feature("shadow") OSD_DirectoryIterator::~OSD_DirectoryIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_DirectoryIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_SIGILL;
@@ -2195,8 +2845,18 @@ class OSD_SIGILL : public OSD_Signal {
 };
 %feature("shadow") OSD_SIGILL::~OSD_SIGILL %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_SIGILL {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Thread;
@@ -2232,8 +2892,18 @@ class OSD_Thread {
 };
 %feature("shadow") OSD_Thread::~OSD_Thread %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Thread {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_FileIterator;
@@ -2265,8 +2935,18 @@ class OSD_FileIterator {
 };
 %feature("shadow") OSD_FileIterator::~OSD_FileIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_FileIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_SIGKILL;
@@ -2298,8 +2978,18 @@ class OSD_SIGKILL : public OSD_Signal {
 };
 %feature("shadow") OSD_SIGKILL::~OSD_SIGKILL %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_SIGKILL {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_FLT_DENORMAL_OPERAND;
@@ -2331,8 +3021,18 @@ class OSD_Exception_FLT_DENORMAL_OPERAND : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_FLT_DENORMAL_OPERAND::~OSD_Exception_FLT_DENORMAL_OPERAND %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_FLT_DENORMAL_OPERAND {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_SIGBUS;
@@ -2364,8 +3064,18 @@ class OSD_SIGBUS : public OSD_Signal {
 };
 %feature("shadow") OSD_SIGBUS::~OSD_SIGBUS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_SIGBUS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_FLT_OVERFLOW;
@@ -2397,8 +3107,18 @@ class OSD_Exception_FLT_OVERFLOW : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_FLT_OVERFLOW::~OSD_Exception_FLT_OVERFLOW %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_FLT_OVERFLOW {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_NONCONTINUABLE_EXCEPTION;
@@ -2430,8 +3150,18 @@ class OSD_Exception_NONCONTINUABLE_EXCEPTION : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_NONCONTINUABLE_EXCEPTION::~OSD_Exception_NONCONTINUABLE_EXCEPTION %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_NONCONTINUABLE_EXCEPTION {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Host;
@@ -2465,8 +3195,18 @@ class OSD_Host {
 };
 %feature("shadow") OSD_Host::~OSD_Host %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Host {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_SIGINT;
@@ -2498,8 +3238,18 @@ class OSD_SIGINT : public OSD_Signal {
 };
 %feature("shadow") OSD_SIGINT::~OSD_SIGINT %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_SIGINT {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_INT_DIVIDE_BY_ZERO;
@@ -2531,8 +3281,18 @@ class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_INT_DIVIDE_BY_ZERO::~OSD_Exception_INT_DIVIDE_BY_ZERO %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_INT_DIVIDE_BY_ZERO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_EnvironmentIterator;
@@ -2560,8 +3320,18 @@ class OSD_EnvironmentIterator {
 };
 %feature("shadow") OSD_EnvironmentIterator::~OSD_EnvironmentIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_EnvironmentIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_File;
@@ -2625,8 +3395,18 @@ class OSD_File : public OSD_FileNode {
 };
 %feature("shadow") OSD_File::~OSD_File %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_File {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_Exception_ARRAY_BOUNDS_EXCEEDED;
@@ -2658,8 +3438,18 @@ class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
 };
 %feature("shadow") OSD_Exception_ARRAY_BOUNDS_EXCEEDED::~OSD_Exception_ARRAY_BOUNDS_EXCEEDED %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor OSD_SIGSEGV;
@@ -2691,5 +3481,15 @@ class OSD_SIGSEGV : public OSD_Signal {
 };
 %feature("shadow") OSD_SIGSEGV::~OSD_SIGSEGV %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend OSD_SIGSEGV {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

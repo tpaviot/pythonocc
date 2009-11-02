@@ -89,8 +89,18 @@ class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_
 };
 %feature("shadow") Handle_PCDM_SequenceNodeOfSequenceOfReference::~Handle_PCDM_SequenceNodeOfSequenceOfReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCDM_Document;
@@ -117,8 +127,18 @@ class Handle_PCDM_Document : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PCDM_Document::~Handle_PCDM_Document %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCDM_Document {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCDM_SequenceNodeOfSequenceOfDocument;
@@ -145,8 +165,18 @@ class Handle_PCDM_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_S
 };
 %feature("shadow") Handle_PCDM_SequenceNodeOfSequenceOfDocument::~Handle_PCDM_SequenceNodeOfSequenceOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCDM_SequenceNodeOfSequenceOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCDM_DriverError;
@@ -173,8 +203,18 @@ class Handle_PCDM_DriverError : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_PCDM_DriverError::~Handle_PCDM_DriverError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCDM_DriverError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCDM_ReadWriter;
@@ -201,8 +241,18 @@ class Handle_PCDM_ReadWriter : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_PCDM_ReadWriter::~Handle_PCDM_ReadWriter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCDM_ReadWriter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCDM_ReadWriter_1;
@@ -229,8 +279,18 @@ class Handle_PCDM_ReadWriter_1 : public Handle_PCDM_ReadWriter {
 };
 %feature("shadow") Handle_PCDM_ReadWriter_1::~Handle_PCDM_ReadWriter_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCDM_ReadWriter_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCDM_Reader;
@@ -257,8 +317,18 @@ class Handle_PCDM_Reader : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_PCDM_Reader::~Handle_PCDM_Reader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCDM_Reader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCDM_RetrievalDriver;
@@ -285,8 +355,18 @@ class Handle_PCDM_RetrievalDriver : public Handle_PCDM_Reader {
 };
 %feature("shadow") Handle_PCDM_RetrievalDriver::~Handle_PCDM_RetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCDM_RetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCDM_Writer;
@@ -313,8 +393,18 @@ class Handle_PCDM_Writer : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_PCDM_Writer::~Handle_PCDM_Writer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCDM_Writer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCDM_StorageDriver;
@@ -341,8 +431,18 @@ class Handle_PCDM_StorageDriver : public Handle_PCDM_Writer {
 };
 %feature("shadow") Handle_PCDM_StorageDriver::~Handle_PCDM_StorageDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCDM_StorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PCDM_ReferenceIterator;
@@ -369,8 +469,18 @@ class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_PCDM_ReferenceIterator::~Handle_PCDM_ReferenceIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PCDM_ReferenceIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM_Writer;
@@ -394,8 +504,18 @@ class PCDM_Writer : public Standard_Transient {
 };
 %feature("shadow") PCDM_Writer::~PCDM_Writer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM_Writer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM_DriverError;
@@ -427,8 +547,18 @@ class PCDM_DriverError : public Standard_Failure {
 };
 %feature("shadow") PCDM_DriverError::~PCDM_DriverError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM_DriverError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM_Reader;
@@ -456,8 +586,18 @@ class PCDM_Reader : public Standard_Transient {
 };
 %feature("shadow") PCDM_Reader::~PCDM_Reader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM_Reader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM_RetrievalDriver;
@@ -493,8 +633,18 @@ class PCDM_RetrievalDriver : public PCDM_Reader {
 };
 %feature("shadow") PCDM_RetrievalDriver::~PCDM_RetrievalDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM_RetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM_ReferenceIterator;
@@ -522,8 +672,18 @@ class PCDM_ReferenceIterator : public Standard_Transient {
 };
 %feature("shadow") PCDM_ReferenceIterator::~PCDM_ReferenceIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM_ReferenceIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM_SequenceNodeOfSequenceOfReference;
@@ -549,8 +709,18 @@ class PCDM_SequenceNodeOfSequenceOfReference : public TCollection_SeqNode {
 };
 %feature("shadow") PCDM_SequenceNodeOfSequenceOfReference::~PCDM_SequenceNodeOfSequenceOfReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM_SequenceNodeOfSequenceOfReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM_ReadWriter;
@@ -600,8 +770,18 @@ class PCDM_ReadWriter : public Standard_Transient {
 };
 %feature("shadow") PCDM_ReadWriter::~PCDM_ReadWriter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM_ReadWriter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM_ReadWriter_1;
@@ -625,8 +805,18 @@ class PCDM_ReadWriter_1 : public PCDM_ReadWriter {
 };
 %feature("shadow") PCDM_ReadWriter_1::~PCDM_ReadWriter_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM_ReadWriter_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM_Reference;
@@ -646,8 +836,18 @@ class PCDM_Reference {
 };
 %feature("shadow") PCDM_Reference::~PCDM_Reference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM_Reference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM;
@@ -663,8 +863,18 @@ class PCDM {
 };
 %feature("shadow") PCDM::~PCDM %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM_SequenceOfDocument;
@@ -718,8 +928,18 @@ class PCDM_SequenceOfDocument : public TCollection_BaseSequence {
 };
 %feature("shadow") PCDM_SequenceOfDocument::~PCDM_SequenceOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM_SequenceOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM_SequenceOfReference;
@@ -773,8 +993,18 @@ class PCDM_SequenceOfReference : public TCollection_BaseSequence {
 };
 %feature("shadow") PCDM_SequenceOfReference::~PCDM_SequenceOfReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM_SequenceOfReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM_SequenceNodeOfSequenceOfDocument;
@@ -800,8 +1030,18 @@ class PCDM_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 };
 %feature("shadow") PCDM_SequenceNodeOfSequenceOfDocument::~PCDM_SequenceNodeOfSequenceOfDocument %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM_SequenceNodeOfSequenceOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PCDM_Document;
@@ -827,5 +1067,15 @@ class PCDM_Document : public Standard_Persistent {
 };
 %feature("shadow") PCDM_Document::~PCDM_Document %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PCDM_Document {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

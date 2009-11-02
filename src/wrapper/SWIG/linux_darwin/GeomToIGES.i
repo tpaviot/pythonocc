@@ -58,8 +58,18 @@ class GeomToIGES_GeomEntity {
 };
 %feature("shadow") GeomToIGES_GeomEntity::~GeomToIGES_GeomEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomToIGES_GeomEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomToIGES_GeomCurve;
@@ -97,8 +107,18 @@ class GeomToIGES_GeomCurve : public GeomToIGES_GeomEntity {
 };
 %feature("shadow") GeomToIGES_GeomCurve::~GeomToIGES_GeomCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomToIGES_GeomCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomToIGES_GeomPoint;
@@ -116,8 +136,18 @@ class GeomToIGES_GeomPoint : public GeomToIGES_GeomEntity {
 };
 %feature("shadow") GeomToIGES_GeomPoint::~GeomToIGES_GeomPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomToIGES_GeomPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomToIGES_GeomSurface;
@@ -181,8 +211,18 @@ class GeomToIGES_GeomSurface : public GeomToIGES_GeomEntity {
 };
 %feature("shadow") GeomToIGES_GeomSurface::~GeomToIGES_GeomSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomToIGES_GeomSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomToIGES_GeomVector;
@@ -202,5 +242,15 @@ class GeomToIGES_GeomVector : public GeomToIGES_GeomEntity {
 };
 %feature("shadow") GeomToIGES_GeomVector::~GeomToIGES_GeomVector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomToIGES_GeomVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

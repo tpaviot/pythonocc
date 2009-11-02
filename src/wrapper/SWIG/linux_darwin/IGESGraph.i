@@ -63,8 +63,18 @@ class Handle_IGESGraph_DrawingSize : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGraph_DrawingSize::~Handle_IGESGraph_DrawingSize %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_DrawingSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_LineFontDefPattern;
@@ -91,8 +101,18 @@ class Handle_IGESGraph_LineFontDefPattern : public Handle_IGESData_LineFontEntit
 };
 %feature("shadow") Handle_IGESGraph_LineFontDefPattern::~Handle_IGESGraph_LineFontDefPattern %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_LineFontDefPattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_Pick;
@@ -119,8 +139,18 @@ class Handle_IGESGraph_Pick : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGraph_Pick::~Handle_IGESGraph_Pick %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_Pick {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_GeneralModule;
@@ -147,8 +177,18 @@ class Handle_IGESGraph_GeneralModule : public Handle_IGESData_GeneralModule {
 };
 %feature("shadow") Handle_IGESGraph_GeneralModule::~Handle_IGESGraph_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_HArray1OfColor;
@@ -175,8 +215,18 @@ class Handle_IGESGraph_HArray1OfColor : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESGraph_HArray1OfColor::~Handle_IGESGraph_HArray1OfColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_HArray1OfColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_Protocol;
@@ -203,8 +253,18 @@ class Handle_IGESGraph_Protocol : public Handle_IGESData_Protocol {
 };
 %feature("shadow") Handle_IGESGraph_Protocol::~Handle_IGESGraph_Protocol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_Protocol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_DrawingUnits;
@@ -231,8 +291,18 @@ class Handle_IGESGraph_DrawingUnits : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGraph_DrawingUnits::~Handle_IGESGraph_DrawingUnits %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_DrawingUnits {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_HArray1OfTextFontDef;
@@ -259,8 +329,18 @@ class Handle_IGESGraph_HArray1OfTextFontDef : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESGraph_HArray1OfTextFontDef::~Handle_IGESGraph_HArray1OfTextFontDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_HArray1OfTextFontDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_ReadWriteModule;
@@ -287,8 +367,18 @@ class Handle_IGESGraph_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 };
 %feature("shadow") Handle_IGESGraph_ReadWriteModule::~Handle_IGESGraph_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_DefinitionLevel;
@@ -315,8 +405,18 @@ class Handle_IGESGraph_DefinitionLevel : public Handle_IGESData_LevelListEntity 
 };
 %feature("shadow") Handle_IGESGraph_DefinitionLevel::~Handle_IGESGraph_DefinitionLevel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_DefinitionLevel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_HArray1OfTextDisplayTemplate;
@@ -343,8 +443,18 @@ class Handle_IGESGraph_HArray1OfTextDisplayTemplate : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_IGESGraph_HArray1OfTextDisplayTemplate::~Handle_IGESGraph_HArray1OfTextDisplayTemplate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_HArray1OfTextDisplayTemplate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_LineFontPredefined;
@@ -371,8 +481,18 @@ class Handle_IGESGraph_LineFontPredefined : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGraph_LineFontPredefined::~Handle_IGESGraph_LineFontPredefined %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_LineFontPredefined {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_SpecificModule;
@@ -399,8 +519,18 @@ class Handle_IGESGraph_SpecificModule : public Handle_IGESData_SpecificModule {
 };
 %feature("shadow") Handle_IGESGraph_SpecificModule::~Handle_IGESGraph_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_Color;
@@ -427,8 +557,18 @@ class Handle_IGESGraph_Color : public Handle_IGESData_ColorEntity {
 };
 %feature("shadow") Handle_IGESGraph_Color::~Handle_IGESGraph_Color %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_Color {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_UniformRectGrid;
@@ -455,8 +595,18 @@ class Handle_IGESGraph_UniformRectGrid : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGraph_UniformRectGrid::~Handle_IGESGraph_UniformRectGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_UniformRectGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_TextDisplayTemplate;
@@ -483,8 +633,18 @@ class Handle_IGESGraph_TextDisplayTemplate : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGraph_TextDisplayTemplate::~Handle_IGESGraph_TextDisplayTemplate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_TextDisplayTemplate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_HighLight;
@@ -511,8 +671,18 @@ class Handle_IGESGraph_HighLight : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGraph_HighLight::~Handle_IGESGraph_HighLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_HighLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_LineFontDefTemplate;
@@ -539,8 +709,18 @@ class Handle_IGESGraph_LineFontDefTemplate : public Handle_IGESData_LineFontEnti
 };
 %feature("shadow") Handle_IGESGraph_LineFontDefTemplate::~Handle_IGESGraph_LineFontDefTemplate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_LineFontDefTemplate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_NominalSize;
@@ -567,8 +747,18 @@ class Handle_IGESGraph_NominalSize : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGraph_NominalSize::~Handle_IGESGraph_NominalSize %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_NominalSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_TextFontDef;
@@ -595,8 +785,18 @@ class Handle_IGESGraph_TextFontDef : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESGraph_TextFontDef::~Handle_IGESGraph_TextFontDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_TextFontDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESGraph_IntercharacterSpacing;
@@ -623,8 +823,18 @@ class Handle_IGESGraph_IntercharacterSpacing : public Handle_IGESData_IGESEntity
 };
 %feature("shadow") Handle_IGESGraph_IntercharacterSpacing::~Handle_IGESGraph_IntercharacterSpacing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESGraph_IntercharacterSpacing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_Pick;
@@ -656,8 +866,18 @@ class IGESGraph_Pick : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGraph_Pick::~IGESGraph_Pick %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_Pick {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolDrawingUnits;
@@ -685,8 +905,18 @@ class IGESGraph_ToolDrawingUnits {
 };
 %feature("shadow") IGESGraph_ToolDrawingUnits::~IGESGraph_ToolDrawingUnits %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolDrawingUnits {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_DrawingUnits;
@@ -720,8 +950,18 @@ class IGESGraph_DrawingUnits : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGraph_DrawingUnits::~IGESGraph_DrawingUnits %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_DrawingUnits {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolLineFontDefPattern;
@@ -747,8 +987,18 @@ class IGESGraph_ToolLineFontDefPattern {
 };
 %feature("shadow") IGESGraph_ToolLineFontDefPattern::~IGESGraph_ToolLineFontDefPattern %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolLineFontDefPattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_Array1OfTextFontDef;
@@ -788,8 +1038,18 @@ class IGESGraph_Array1OfTextFontDef {
 };
 %feature("shadow") IGESGraph_Array1OfTextFontDef::~IGESGraph_Array1OfTextFontDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_Array1OfTextFontDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolTextDisplayTemplate;
@@ -815,8 +1075,18 @@ class IGESGraph_ToolTextDisplayTemplate {
 };
 %feature("shadow") IGESGraph_ToolTextDisplayTemplate::~IGESGraph_ToolTextDisplayTemplate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolTextDisplayTemplate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_UniformRectGrid;
@@ -858,8 +1128,18 @@ class IGESGraph_UniformRectGrid : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGraph_UniformRectGrid::~IGESGraph_UniformRectGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_UniformRectGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolUniformRectGrid;
@@ -887,8 +1167,18 @@ class IGESGraph_ToolUniformRectGrid {
 };
 %feature("shadow") IGESGraph_ToolUniformRectGrid::~IGESGraph_ToolUniformRectGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolUniformRectGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolNominalSize;
@@ -916,8 +1206,18 @@ class IGESGraph_ToolNominalSize {
 };
 %feature("shadow") IGESGraph_ToolNominalSize::~IGESGraph_ToolNominalSize %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolNominalSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_HArray1OfTextDisplayTemplate;
@@ -961,8 +1261,18 @@ class IGESGraph_HArray1OfTextDisplayTemplate : public MMgt_TShared {
 };
 %feature("shadow") IGESGraph_HArray1OfTextDisplayTemplate::~IGESGraph_HArray1OfTextDisplayTemplate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_HArray1OfTextDisplayTemplate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolIntercharacterSpacing;
@@ -990,8 +1300,18 @@ class IGESGraph_ToolIntercharacterSpacing {
 };
 %feature("shadow") IGESGraph_ToolIntercharacterSpacing::~IGESGraph_ToolIntercharacterSpacing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolIntercharacterSpacing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolDrawingSize;
@@ -1019,8 +1339,18 @@ class IGESGraph_ToolDrawingSize {
 };
 %feature("shadow") IGESGraph_ToolDrawingSize::~IGESGraph_ToolDrawingSize %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolDrawingSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_IntercharacterSpacing;
@@ -1050,8 +1380,18 @@ class IGESGraph_IntercharacterSpacing : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGraph_IntercharacterSpacing::~IGESGraph_IntercharacterSpacing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_IntercharacterSpacing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolTextFontDef;
@@ -1077,8 +1417,18 @@ class IGESGraph_ToolTextFontDef {
 };
 %feature("shadow") IGESGraph_ToolTextFontDef::~IGESGraph_ToolTextFontDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolTextFontDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_LineFontDefTemplate;
@@ -1112,8 +1462,18 @@ class IGESGraph_LineFontDefTemplate : public IGESData_LineFontEntity {
 };
 %feature("shadow") IGESGraph_LineFontDefTemplate::~IGESGraph_LineFontDefTemplate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_LineFontDefTemplate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph;
@@ -1129,8 +1489,18 @@ class IGESGraph {
 };
 %feature("shadow") IGESGraph::~IGESGraph %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolColor;
@@ -1156,8 +1526,18 @@ class IGESGraph_ToolColor {
 };
 %feature("shadow") IGESGraph_ToolColor::~IGESGraph_ToolColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolLineFontDefTemplate;
@@ -1183,8 +1563,18 @@ class IGESGraph_ToolLineFontDefTemplate {
 };
 %feature("shadow") IGESGraph_ToolLineFontDefTemplate::~IGESGraph_ToolLineFontDefTemplate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolLineFontDefTemplate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_DefinitionLevel;
@@ -1216,8 +1606,18 @@ class IGESGraph_DefinitionLevel : public IGESData_LevelListEntity {
 };
 %feature("shadow") IGESGraph_DefinitionLevel::~IGESGraph_DefinitionLevel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_DefinitionLevel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolDefinitionLevel;
@@ -1243,8 +1643,18 @@ class IGESGraph_ToolDefinitionLevel {
 };
 %feature("shadow") IGESGraph_ToolDefinitionLevel::~IGESGraph_ToolDefinitionLevel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolDefinitionLevel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_TextDisplayTemplate;
@@ -1296,8 +1706,18 @@ class IGESGraph_TextDisplayTemplate : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGraph_TextDisplayTemplate::~IGESGraph_TextDisplayTemplate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_TextDisplayTemplate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolPick;
@@ -1325,8 +1745,18 @@ class IGESGraph_ToolPick {
 };
 %feature("shadow") IGESGraph_ToolPick::~IGESGraph_ToolPick %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolPick {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_Array1OfTextDisplayTemplate;
@@ -1366,8 +1796,18 @@ class IGESGraph_Array1OfTextDisplayTemplate {
 };
 %feature("shadow") IGESGraph_Array1OfTextDisplayTemplate::~IGESGraph_Array1OfTextDisplayTemplate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_Array1OfTextDisplayTemplate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_TextFontDef;
@@ -1417,8 +1857,18 @@ class IGESGraph_TextFontDef : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGraph_TextFontDef::~IGESGraph_TextFontDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_TextFontDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_NominalSize;
@@ -1454,8 +1904,18 @@ class IGESGraph_NominalSize : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGraph_NominalSize::~IGESGraph_NominalSize %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_NominalSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_DrawingSize;
@@ -1487,8 +1947,18 @@ class IGESGraph_DrawingSize : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGraph_DrawingSize::~IGESGraph_DrawingSize %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_DrawingSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_HArray1OfTextFontDef;
@@ -1532,8 +2002,18 @@ class IGESGraph_HArray1OfTextFontDef : public MMgt_TShared {
 };
 %feature("shadow") IGESGraph_HArray1OfTextFontDef::~IGESGraph_HArray1OfTextFontDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_HArray1OfTextFontDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_LineFontPredefined;
@@ -1563,8 +2043,18 @@ class IGESGraph_LineFontPredefined : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGraph_LineFontPredefined::~IGESGraph_LineFontPredefined %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_LineFontPredefined {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_SpecificModule;
@@ -1592,8 +2082,18 @@ class IGESGraph_SpecificModule : public IGESData_SpecificModule {
 };
 %feature("shadow") IGESGraph_SpecificModule::~IGESGraph_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolHighLight;
@@ -1621,8 +2121,18 @@ class IGESGraph_ToolHighLight {
 };
 %feature("shadow") IGESGraph_ToolHighLight::~IGESGraph_ToolHighLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolHighLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_Color;
@@ -1658,8 +2168,18 @@ class IGESGraph_Color : public IGESData_ColorEntity {
 };
 %feature("shadow") IGESGraph_Color::~IGESGraph_Color %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_Color {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_HighLight;
@@ -1691,8 +2211,18 @@ class IGESGraph_HighLight : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESGraph_HighLight::~IGESGraph_HighLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_HighLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ReadWriteModule;
@@ -1722,8 +2252,18 @@ class IGESGraph_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %feature("shadow") IGESGraph_ReadWriteModule::~IGESGraph_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_Array1OfColor;
@@ -1763,8 +2303,18 @@ class IGESGraph_Array1OfColor {
 };
 %feature("shadow") IGESGraph_Array1OfColor::~IGESGraph_Array1OfColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_Array1OfColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_GeneralModule;
@@ -1800,8 +2350,18 @@ class IGESGraph_GeneralModule : public IGESData_GeneralModule {
 };
 %feature("shadow") IGESGraph_GeneralModule::~IGESGraph_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_ToolLineFontPredefined;
@@ -1829,8 +2389,18 @@ class IGESGraph_ToolLineFontPredefined {
 };
 %feature("shadow") IGESGraph_ToolLineFontPredefined::~IGESGraph_ToolLineFontPredefined %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_ToolLineFontPredefined {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_HArray1OfColor;
@@ -1874,8 +2444,18 @@ class IGESGraph_HArray1OfColor : public MMgt_TShared {
 };
 %feature("shadow") IGESGraph_HArray1OfColor::~IGESGraph_HArray1OfColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_HArray1OfColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESGraph_LineFontDefPattern;
@@ -1909,5 +2489,15 @@ class IGESGraph_LineFontDefPattern : public IGESData_LineFontEntity {
 };
 %feature("shadow") IGESGraph_LineFontDefPattern::~IGESGraph_LineFontDefPattern %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESGraph_LineFontDefPattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

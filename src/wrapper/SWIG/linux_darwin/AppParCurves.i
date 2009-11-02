@@ -70,8 +70,18 @@ class Handle_AppParCurves_HArray1OfMultiCurve : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AppParCurves_HArray1OfMultiCurve::~Handle_AppParCurves_HArray1OfMultiCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AppParCurves_HArray1OfMultiCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve;
@@ -98,8 +108,18 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public Handle_
 };
 %feature("shadow") Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve::~Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AppParCurves_SmoothCriterion;
@@ -126,8 +146,18 @@ class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AppParCurves_SmoothCriterion::~Handle_AppParCurves_SmoothCriterion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AppParCurves_SmoothCriterion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AppParCurves_HArray1OfMultiPoint;
@@ -154,8 +184,18 @@ class Handle_AppParCurves_HArray1OfMultiPoint : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AppParCurves_HArray1OfMultiPoint::~Handle_AppParCurves_HArray1OfMultiPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AppParCurves_HArray1OfMultiPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve;
@@ -182,8 +222,18 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public Handle_TCo
 };
 %feature("shadow") Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve::~Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AppParCurves_HArray1OfConstraintCouple;
@@ -210,8 +260,18 @@ class Handle_AppParCurves_HArray1OfConstraintCouple : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_AppParCurves_HArray1OfConstraintCouple::~Handle_AppParCurves_HArray1OfConstraintCouple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AppParCurves_HArray1OfConstraintCouple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AppParCurves_HArray1OfMultiBSpCurve;
@@ -238,8 +298,18 @@ class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AppParCurves_HArray1OfMultiBSpCurve::~Handle_AppParCurves_HArray1OfMultiBSpCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_SequenceOfMultiCurve;
@@ -293,8 +363,18 @@ class AppParCurves_SequenceOfMultiCurve : public TCollection_BaseSequence {
 };
 %feature("shadow") AppParCurves_SequenceOfMultiCurve::~AppParCurves_SequenceOfMultiCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_SequenceOfMultiCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_MultiCurve;
@@ -358,8 +438,18 @@ class AppParCurves_MultiCurve {
 };
 %feature("shadow") AppParCurves_MultiCurve::~AppParCurves_MultiCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_MultiCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_MultiBSpCurve;
@@ -393,8 +483,18 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 };
 %feature("shadow") AppParCurves_MultiBSpCurve::~AppParCurves_MultiBSpCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_MultiBSpCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_Array1OfMultiCurve;
@@ -434,8 +534,18 @@ class AppParCurves_Array1OfMultiCurve {
 };
 %feature("shadow") AppParCurves_Array1OfMultiCurve::~AppParCurves_Array1OfMultiCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_Array1OfMultiCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_SequenceNodeOfSequenceOfMultiCurve;
@@ -461,8 +571,18 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public TCollection_SeqNo
 };
 %feature("shadow") AppParCurves_SequenceNodeOfSequenceOfMultiCurve::~AppParCurves_SequenceNodeOfSequenceOfMultiCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_ConstraintCouple;
@@ -484,8 +604,18 @@ class AppParCurves_ConstraintCouple {
 };
 %feature("shadow") AppParCurves_ConstraintCouple::~AppParCurves_ConstraintCouple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_ConstraintCouple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_HArray1OfMultiCurve;
@@ -529,8 +659,18 @@ class AppParCurves_HArray1OfMultiCurve : public MMgt_TShared {
 };
 %feature("shadow") AppParCurves_HArray1OfMultiCurve::~AppParCurves_HArray1OfMultiCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_HArray1OfMultiCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_SmoothCriterion;
@@ -594,8 +734,18 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 };
 %feature("shadow") AppParCurves_SmoothCriterion::~AppParCurves_SmoothCriterion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_SmoothCriterion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_MultiPoint;
@@ -643,8 +793,18 @@ class AppParCurves_MultiPoint {
 };
 %feature("shadow") AppParCurves_MultiPoint::~AppParCurves_MultiPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_MultiPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_Array1OfConstraintCouple;
@@ -684,8 +844,18 @@ class AppParCurves_Array1OfConstraintCouple {
 };
 %feature("shadow") AppParCurves_Array1OfConstraintCouple::~AppParCurves_Array1OfConstraintCouple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_Array1OfConstraintCouple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_SequenceOfMultiBSpCurve;
@@ -739,8 +909,18 @@ class AppParCurves_SequenceOfMultiBSpCurve : public TCollection_BaseSequence {
 };
 %feature("shadow") AppParCurves_SequenceOfMultiBSpCurve::~AppParCurves_SequenceOfMultiBSpCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_SequenceOfMultiBSpCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve;
@@ -766,8 +946,18 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public TCollection_Se
 };
 %feature("shadow") AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve::~AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_Array1OfMultiBSpCurve;
@@ -807,8 +997,18 @@ class AppParCurves_Array1OfMultiBSpCurve {
 };
 %feature("shadow") AppParCurves_Array1OfMultiBSpCurve::~AppParCurves_Array1OfMultiBSpCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_Array1OfMultiBSpCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_Array1OfMultiPoint;
@@ -848,8 +1048,18 @@ class AppParCurves_Array1OfMultiPoint {
 };
 %feature("shadow") AppParCurves_Array1OfMultiPoint::~AppParCurves_Array1OfMultiPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_Array1OfMultiPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_HArray1OfConstraintCouple;
@@ -893,8 +1103,18 @@ class AppParCurves_HArray1OfConstraintCouple : public MMgt_TShared {
 };
 %feature("shadow") AppParCurves_HArray1OfConstraintCouple::~AppParCurves_HArray1OfConstraintCouple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_HArray1OfConstraintCouple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_HArray1OfMultiPoint;
@@ -938,8 +1158,18 @@ class AppParCurves_HArray1OfMultiPoint : public MMgt_TShared {
 };
 %feature("shadow") AppParCurves_HArray1OfMultiPoint::~AppParCurves_HArray1OfMultiPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_HArray1OfMultiPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves;
@@ -959,8 +1189,18 @@ class AppParCurves {
 };
 %feature("shadow") AppParCurves::~AppParCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppParCurves_HArray1OfMultiBSpCurve;
@@ -1004,5 +1244,15 @@ class AppParCurves_HArray1OfMultiBSpCurve : public MMgt_TShared {
 };
 %feature("shadow") AppParCurves_HArray1OfMultiBSpCurve::~AppParCurves_HArray1OfMultiBSpCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppParCurves_HArray1OfMultiBSpCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

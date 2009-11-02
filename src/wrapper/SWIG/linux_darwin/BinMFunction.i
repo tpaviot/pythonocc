@@ -63,8 +63,18 @@ class Handle_BinMFunction_GraphNodeDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMFunction_GraphNodeDriver::~Handle_BinMFunction_GraphNodeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMFunction_GraphNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMFunction_FunctionDriver;
@@ -91,8 +101,18 @@ class Handle_BinMFunction_FunctionDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMFunction_FunctionDriver::~Handle_BinMFunction_FunctionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMFunction_FunctionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMFunction_ScopeDriver;
@@ -119,8 +139,18 @@ class Handle_BinMFunction_ScopeDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMFunction_ScopeDriver::~Handle_BinMFunction_ScopeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMFunction_ScopeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMFunction_FunctionDriver;
@@ -150,8 +180,18 @@ class BinMFunction_FunctionDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMFunction_FunctionDriver::~BinMFunction_FunctionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMFunction_FunctionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMFunction;
@@ -165,8 +205,18 @@ class BinMFunction {
 };
 %feature("shadow") BinMFunction::~BinMFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMFunction_GraphNodeDriver;
@@ -196,8 +246,18 @@ class BinMFunction_GraphNodeDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMFunction_GraphNodeDriver::~BinMFunction_GraphNodeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMFunction_GraphNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMFunction_ScopeDriver;
@@ -227,5 +287,15 @@ class BinMFunction_ScopeDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMFunction_ScopeDriver::~BinMFunction_ScopeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMFunction_ScopeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_StepAP203_HArray1OfWorkItem : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepAP203_HArray1OfWorkItem::~Handle_StepAP203_HArray1OfWorkItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_HArray1OfWorkItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_CcDesignPersonAndOrganizationAssignment;
@@ -91,8 +101,18 @@ class Handle_StepAP203_CcDesignPersonAndOrganizationAssignment : public Handle_S
 };
 %feature("shadow") Handle_StepAP203_CcDesignPersonAndOrganizationAssignment::~Handle_StepAP203_CcDesignPersonAndOrganizationAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_CcDesignPersonAndOrganizationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_StartRequest;
@@ -119,8 +139,18 @@ class Handle_StepAP203_StartRequest : public Handle_StepBasic_ActionRequestAssig
 };
 %feature("shadow") Handle_StepAP203_StartRequest::~Handle_StepAP203_StartRequest %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_StartRequest {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_HArray1OfClassifiedItem;
@@ -147,8 +177,18 @@ class Handle_StepAP203_HArray1OfClassifiedItem : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepAP203_HArray1OfClassifiedItem::~Handle_StepAP203_HArray1OfClassifiedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_HArray1OfClassifiedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_CcDesignSpecificationReference;
@@ -175,8 +215,18 @@ class Handle_StepAP203_CcDesignSpecificationReference : public Handle_StepBasic_
 };
 %feature("shadow") Handle_StepAP203_CcDesignSpecificationReference::~Handle_StepAP203_CcDesignSpecificationReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_CcDesignSpecificationReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_HArray1OfPersonOrganizationItem;
@@ -203,8 +253,18 @@ class Handle_StepAP203_HArray1OfPersonOrganizationItem : public Handle_MMgt_TSha
 };
 %feature("shadow") Handle_StepAP203_HArray1OfPersonOrganizationItem::~Handle_StepAP203_HArray1OfPersonOrganizationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_HArray1OfPersonOrganizationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_ChangeRequest;
@@ -231,8 +291,18 @@ class Handle_StepAP203_ChangeRequest : public Handle_StepBasic_ActionRequestAssi
 };
 %feature("shadow") Handle_StepAP203_ChangeRequest::~Handle_StepAP203_ChangeRequest %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_ChangeRequest {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_CcDesignDateAndTimeAssignment;
@@ -259,8 +329,18 @@ class Handle_StepAP203_CcDesignDateAndTimeAssignment : public Handle_StepBasic_D
 };
 %feature("shadow") Handle_StepAP203_CcDesignDateAndTimeAssignment::~Handle_StepAP203_CcDesignDateAndTimeAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_CcDesignDateAndTimeAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_Change;
@@ -287,8 +367,18 @@ class Handle_StepAP203_Change : public Handle_StepBasic_ActionAssignment {
 };
 %feature("shadow") Handle_StepAP203_Change::~Handle_StepAP203_Change %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_Change {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_HArray1OfChangeRequestItem;
@@ -315,8 +405,18 @@ class Handle_StepAP203_HArray1OfChangeRequestItem : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepAP203_HArray1OfChangeRequestItem::~Handle_StepAP203_HArray1OfChangeRequestItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_HArray1OfChangeRequestItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_StartWork;
@@ -343,8 +443,18 @@ class Handle_StepAP203_StartWork : public Handle_StepBasic_ActionAssignment {
 };
 %feature("shadow") Handle_StepAP203_StartWork::~Handle_StepAP203_StartWork %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_StartWork {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_HArray1OfStartRequestItem;
@@ -371,8 +481,18 @@ class Handle_StepAP203_HArray1OfStartRequestItem : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepAP203_HArray1OfStartRequestItem::~Handle_StepAP203_HArray1OfStartRequestItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_HArray1OfStartRequestItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_CcDesignSecurityClassification;
@@ -399,8 +519,18 @@ class Handle_StepAP203_CcDesignSecurityClassification : public Handle_StepBasic_
 };
 %feature("shadow") Handle_StepAP203_CcDesignSecurityClassification::~Handle_StepAP203_CcDesignSecurityClassification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_CcDesignSecurityClassification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_HArray1OfApprovedItem;
@@ -427,8 +557,18 @@ class Handle_StepAP203_HArray1OfApprovedItem : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepAP203_HArray1OfApprovedItem::~Handle_StepAP203_HArray1OfApprovedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_HArray1OfApprovedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_CcDesignApproval;
@@ -455,8 +595,18 @@ class Handle_StepAP203_CcDesignApproval : public Handle_StepBasic_ApprovalAssign
 };
 %feature("shadow") Handle_StepAP203_CcDesignApproval::~Handle_StepAP203_CcDesignApproval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_CcDesignApproval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_HArray1OfSpecifiedItem;
@@ -483,8 +633,18 @@ class Handle_StepAP203_HArray1OfSpecifiedItem : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepAP203_HArray1OfSpecifiedItem::~Handle_StepAP203_HArray1OfSpecifiedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_HArray1OfSpecifiedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_HArray1OfCertifiedItem;
@@ -511,8 +671,18 @@ class Handle_StepAP203_HArray1OfCertifiedItem : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepAP203_HArray1OfCertifiedItem::~Handle_StepAP203_HArray1OfCertifiedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_HArray1OfCertifiedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_CcDesignContract;
@@ -539,8 +709,18 @@ class Handle_StepAP203_CcDesignContract : public Handle_StepBasic_ContractAssign
 };
 %feature("shadow") Handle_StepAP203_CcDesignContract::~Handle_StepAP203_CcDesignContract %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_CcDesignContract {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_HArray1OfDateTimeItem;
@@ -567,8 +747,18 @@ class Handle_StepAP203_HArray1OfDateTimeItem : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepAP203_HArray1OfDateTimeItem::~Handle_StepAP203_HArray1OfDateTimeItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_HArray1OfDateTimeItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_CcDesignCertification;
@@ -595,8 +785,18 @@ class Handle_StepAP203_CcDesignCertification : public Handle_StepBasic_Certifica
 };
 %feature("shadow") Handle_StepAP203_CcDesignCertification::~Handle_StepAP203_CcDesignCertification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_CcDesignCertification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepAP203_HArray1OfContractedItem;
@@ -623,8 +823,18 @@ class Handle_StepAP203_HArray1OfContractedItem : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepAP203_HArray1OfContractedItem::~Handle_StepAP203_HArray1OfContractedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepAP203_HArray1OfContractedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_HArray1OfSpecifiedItem;
@@ -668,8 +878,18 @@ class StepAP203_HArray1OfSpecifiedItem : public MMgt_TShared {
 };
 %feature("shadow") StepAP203_HArray1OfSpecifiedItem::~StepAP203_HArray1OfSpecifiedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_HArray1OfSpecifiedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_Array1OfCertifiedItem;
@@ -709,8 +929,18 @@ class StepAP203_Array1OfCertifiedItem {
 };
 %feature("shadow") StepAP203_Array1OfCertifiedItem::~StepAP203_Array1OfCertifiedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_Array1OfCertifiedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_ChangeRequestItem;
@@ -726,8 +956,18 @@ class StepAP203_ChangeRequestItem : public StepData_SelectType {
 };
 %feature("shadow") StepAP203_ChangeRequestItem::~StepAP203_ChangeRequestItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_ChangeRequestItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_ClassifiedItem;
@@ -745,8 +985,18 @@ class StepAP203_ClassifiedItem : public StepData_SelectType {
 };
 %feature("shadow") StepAP203_ClassifiedItem::~StepAP203_ClassifiedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_ClassifiedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_Array1OfClassifiedItem;
@@ -786,8 +1036,18 @@ class StepAP203_Array1OfClassifiedItem {
 };
 %feature("shadow") StepAP203_Array1OfClassifiedItem::~StepAP203_Array1OfClassifiedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_Array1OfClassifiedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_ContractedItem;
@@ -803,8 +1063,18 @@ class StepAP203_ContractedItem : public StepData_SelectType {
 };
 %feature("shadow") StepAP203_ContractedItem::~StepAP203_ContractedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_ContractedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_Array1OfWorkItem;
@@ -844,8 +1114,18 @@ class StepAP203_Array1OfWorkItem {
 };
 %feature("shadow") StepAP203_Array1OfWorkItem::~StepAP203_Array1OfWorkItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_Array1OfWorkItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_HArray1OfChangeRequestItem;
@@ -889,8 +1169,18 @@ class StepAP203_HArray1OfChangeRequestItem : public MMgt_TShared {
 };
 %feature("shadow") StepAP203_HArray1OfChangeRequestItem::~StepAP203_HArray1OfChangeRequestItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_HArray1OfChangeRequestItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_ChangeRequest;
@@ -920,8 +1210,18 @@ class StepAP203_ChangeRequest : public StepBasic_ActionRequestAssignment {
 };
 %feature("shadow") StepAP203_ChangeRequest::~StepAP203_ChangeRequest %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_ChangeRequest {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_CcDesignDateAndTimeAssignment;
@@ -951,8 +1251,18 @@ class StepAP203_CcDesignDateAndTimeAssignment : public StepBasic_DateAndTimeAssi
 };
 %feature("shadow") StepAP203_CcDesignDateAndTimeAssignment::~StepAP203_CcDesignDateAndTimeAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_CcDesignDateAndTimeAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_CertifiedItem;
@@ -968,8 +1278,18 @@ class StepAP203_CertifiedItem : public StepData_SelectType {
 };
 %feature("shadow") StepAP203_CertifiedItem::~StepAP203_CertifiedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_CertifiedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_HArray1OfCertifiedItem;
@@ -1013,8 +1333,18 @@ class StepAP203_HArray1OfCertifiedItem : public MMgt_TShared {
 };
 %feature("shadow") StepAP203_HArray1OfCertifiedItem::~StepAP203_HArray1OfCertifiedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_HArray1OfCertifiedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_SpecifiedItem;
@@ -1032,8 +1362,18 @@ class StepAP203_SpecifiedItem : public StepData_SelectType {
 };
 %feature("shadow") StepAP203_SpecifiedItem::~StepAP203_SpecifiedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_SpecifiedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_CcDesignSecurityClassification;
@@ -1063,8 +1403,18 @@ class StepAP203_CcDesignSecurityClassification : public StepBasic_SecurityClassi
 };
 %feature("shadow") StepAP203_CcDesignSecurityClassification::~StepAP203_CcDesignSecurityClassification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_CcDesignSecurityClassification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_Array1OfContractedItem;
@@ -1104,8 +1454,18 @@ class StepAP203_Array1OfContractedItem {
 };
 %feature("shadow") StepAP203_Array1OfContractedItem::~StepAP203_Array1OfContractedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_Array1OfContractedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_StartWork;
@@ -1135,8 +1495,18 @@ class StepAP203_StartWork : public StepBasic_ActionAssignment {
 };
 %feature("shadow") StepAP203_StartWork::~StepAP203_StartWork %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_StartWork {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_HArray1OfClassifiedItem;
@@ -1180,8 +1550,18 @@ class StepAP203_HArray1OfClassifiedItem : public MMgt_TShared {
 };
 %feature("shadow") StepAP203_HArray1OfClassifiedItem::~StepAP203_HArray1OfClassifiedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_HArray1OfClassifiedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_Array1OfChangeRequestItem;
@@ -1221,8 +1601,18 @@ class StepAP203_Array1OfChangeRequestItem {
 };
 %feature("shadow") StepAP203_Array1OfChangeRequestItem::~StepAP203_Array1OfChangeRequestItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_Array1OfChangeRequestItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_HArray1OfApprovedItem;
@@ -1266,8 +1656,18 @@ class StepAP203_HArray1OfApprovedItem : public MMgt_TShared {
 };
 %feature("shadow") StepAP203_HArray1OfApprovedItem::~StepAP203_HArray1OfApprovedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_HArray1OfApprovedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_HArray1OfWorkItem;
@@ -1311,8 +1711,18 @@ class StepAP203_HArray1OfWorkItem : public MMgt_TShared {
 };
 %feature("shadow") StepAP203_HArray1OfWorkItem::~StepAP203_HArray1OfWorkItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_HArray1OfWorkItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_CcDesignCertification;
@@ -1342,8 +1752,18 @@ class StepAP203_CcDesignCertification : public StepBasic_CertificationAssignment
 };
 %feature("shadow") StepAP203_CcDesignCertification::~StepAP203_CcDesignCertification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_CcDesignCertification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_StartRequestItem;
@@ -1359,8 +1779,18 @@ class StepAP203_StartRequestItem : public StepData_SelectType {
 };
 %feature("shadow") StepAP203_StartRequestItem::~StepAP203_StartRequestItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_StartRequestItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_PersonOrganizationItem;
@@ -1394,8 +1824,18 @@ class StepAP203_PersonOrganizationItem : public StepData_SelectType {
 };
 %feature("shadow") StepAP203_PersonOrganizationItem::~StepAP203_PersonOrganizationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_PersonOrganizationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_WorkItem;
@@ -1411,8 +1851,18 @@ class StepAP203_WorkItem : public StepData_SelectType {
 };
 %feature("shadow") StepAP203_WorkItem::~StepAP203_WorkItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_WorkItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_HArray1OfContractedItem;
@@ -1456,8 +1906,18 @@ class StepAP203_HArray1OfContractedItem : public MMgt_TShared {
 };
 %feature("shadow") StepAP203_HArray1OfContractedItem::~StepAP203_HArray1OfContractedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_HArray1OfContractedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_HArray1OfPersonOrganizationItem;
@@ -1501,8 +1961,18 @@ class StepAP203_HArray1OfPersonOrganizationItem : public MMgt_TShared {
 };
 %feature("shadow") StepAP203_HArray1OfPersonOrganizationItem::~StepAP203_HArray1OfPersonOrganizationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_HArray1OfPersonOrganizationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_CcDesignPersonAndOrganizationAssignment;
@@ -1532,8 +2002,18 @@ class StepAP203_CcDesignPersonAndOrganizationAssignment : public StepBasic_Perso
 };
 %feature("shadow") StepAP203_CcDesignPersonAndOrganizationAssignment::~StepAP203_CcDesignPersonAndOrganizationAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_CcDesignPersonAndOrganizationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_Array1OfStartRequestItem;
@@ -1573,8 +2053,18 @@ class StepAP203_Array1OfStartRequestItem {
 };
 %feature("shadow") StepAP203_Array1OfStartRequestItem::~StepAP203_Array1OfStartRequestItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_Array1OfStartRequestItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_Array1OfPersonOrganizationItem;
@@ -1614,8 +2104,18 @@ class StepAP203_Array1OfPersonOrganizationItem {
 };
 %feature("shadow") StepAP203_Array1OfPersonOrganizationItem::~StepAP203_Array1OfPersonOrganizationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_Array1OfPersonOrganizationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_Change;
@@ -1645,8 +2145,18 @@ class StepAP203_Change : public StepBasic_ActionAssignment {
 };
 %feature("shadow") StepAP203_Change::~StepAP203_Change %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_Change {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_HArray1OfStartRequestItem;
@@ -1690,8 +2200,18 @@ class StepAP203_HArray1OfStartRequestItem : public MMgt_TShared {
 };
 %feature("shadow") StepAP203_HArray1OfStartRequestItem::~StepAP203_HArray1OfStartRequestItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_HArray1OfStartRequestItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_StartRequest;
@@ -1721,8 +2241,18 @@ class StepAP203_StartRequest : public StepBasic_ActionRequestAssignment {
 };
 %feature("shadow") StepAP203_StartRequest::~StepAP203_StartRequest %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_StartRequest {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_ApprovedItem;
@@ -1758,8 +2288,18 @@ class StepAP203_ApprovedItem : public StepData_SelectType {
 };
 %feature("shadow") StepAP203_ApprovedItem::~StepAP203_ApprovedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_ApprovedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_Array1OfSpecifiedItem;
@@ -1799,8 +2339,18 @@ class StepAP203_Array1OfSpecifiedItem {
 };
 %feature("shadow") StepAP203_Array1OfSpecifiedItem::~StepAP203_Array1OfSpecifiedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_Array1OfSpecifiedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_CcDesignApproval;
@@ -1830,8 +2380,18 @@ class StepAP203_CcDesignApproval : public StepBasic_ApprovalAssignment {
 };
 %feature("shadow") StepAP203_CcDesignApproval::~StepAP203_CcDesignApproval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_CcDesignApproval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_Array1OfDateTimeItem;
@@ -1871,8 +2431,18 @@ class StepAP203_Array1OfDateTimeItem {
 };
 %feature("shadow") StepAP203_Array1OfDateTimeItem::~StepAP203_Array1OfDateTimeItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_Array1OfDateTimeItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_Array1OfApprovedItem;
@@ -1912,8 +2482,18 @@ class StepAP203_Array1OfApprovedItem {
 };
 %feature("shadow") StepAP203_Array1OfApprovedItem::~StepAP203_Array1OfApprovedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_Array1OfApprovedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_CcDesignSpecificationReference;
@@ -1943,8 +2523,18 @@ class StepAP203_CcDesignSpecificationReference : public StepBasic_DocumentRefere
 };
 %feature("shadow") StepAP203_CcDesignSpecificationReference::~StepAP203_CcDesignSpecificationReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_CcDesignSpecificationReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_CcDesignContract;
@@ -1974,8 +2564,18 @@ class StepAP203_CcDesignContract : public StepBasic_ContractAssignment {
 };
 %feature("shadow") StepAP203_CcDesignContract::~StepAP203_CcDesignContract %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_CcDesignContract {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_HArray1OfDateTimeItem;
@@ -2019,8 +2619,18 @@ class StepAP203_HArray1OfDateTimeItem : public MMgt_TShared {
 };
 %feature("shadow") StepAP203_HArray1OfDateTimeItem::~StepAP203_HArray1OfDateTimeItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_HArray1OfDateTimeItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepAP203_DateTimeItem;
@@ -2052,5 +2662,15 @@ class StepAP203_DateTimeItem : public StepData_SelectType {
 };
 %feature("shadow") StepAP203_DateTimeItem::~StepAP203_DateTimeItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepAP203_DateTimeItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

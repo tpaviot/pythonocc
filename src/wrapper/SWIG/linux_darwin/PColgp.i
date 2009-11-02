@@ -63,8 +63,18 @@ class Handle_PColgp_HArray2OfVec : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray2OfVec::~Handle_PColgp_HArray2OfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray2OfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray1OfVec;
@@ -91,8 +101,18 @@ class Handle_PColgp_HArray1OfVec : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray1OfVec::~Handle_PColgp_HArray1OfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray1OfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray2OfXY;
@@ -119,8 +139,18 @@ class Handle_PColgp_HArray2OfXY : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray2OfXY::~Handle_PColgp_HArray2OfXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray2OfXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d;
@@ -147,8 +177,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public Handle_PStandard_
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d::~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir;
@@ -175,8 +215,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir : public Handle_PStandard_Ar
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir::~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec;
@@ -203,8 +253,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec : public Handle_PStandard_Ar
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec::~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray2OfDir;
@@ -231,8 +291,18 @@ class Handle_PColgp_HArray2OfDir : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray2OfDir::~Handle_PColgp_HArray2OfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray2OfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray1OfXY;
@@ -259,8 +329,18 @@ class Handle_PColgp_HArray1OfXY : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray1OfXY::~Handle_PColgp_HArray1OfXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray1OfXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray1OfDir2d;
@@ -287,8 +367,18 @@ class Handle_PColgp_HArray1OfDir2d : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray1OfDir2d::~Handle_PColgp_HArray1OfDir2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray1OfDir2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir;
@@ -315,8 +405,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir : public Handle_PStandard_Ar
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir::~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d;
@@ -343,8 +443,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public Handle_PStandard_
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d::~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfVec;
@@ -371,8 +481,18 @@ class Handle_PColgp_SeqNodeOfHSequenceOfVec : public Handle_PMMgt_PManaged {
 };
 %feature("shadow") Handle_PColgp_SeqNodeOfHSequenceOfVec::~Handle_PColgp_SeqNodeOfHSequenceOfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_SeqNodeOfHSequenceOfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HSequenceOfXYZ;
@@ -399,8 +519,18 @@ class Handle_PColgp_HSequenceOfXYZ : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HSequenceOfXYZ::~Handle_PColgp_HSequenceOfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HSequenceOfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray1OfVec2d;
@@ -427,8 +557,18 @@ class Handle_PColgp_HArray1OfVec2d : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray1OfVec2d::~Handle_PColgp_HArray1OfVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray1OfVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray1OfLin2d;
@@ -455,8 +595,18 @@ class Handle_PColgp_HArray1OfLin2d : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray1OfLin2d::~Handle_PColgp_HArray1OfLin2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray1OfLin2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray1OfCirc2d;
@@ -483,8 +633,18 @@ class Handle_PColgp_HArray1OfCirc2d : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray1OfCirc2d::~Handle_PColgp_HArray1OfCirc2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray1OfCirc2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfDir;
@@ -511,8 +671,18 @@ class Handle_PColgp_SeqNodeOfHSequenceOfDir : public Handle_PMMgt_PManaged {
 };
 %feature("shadow") Handle_PColgp_SeqNodeOfHSequenceOfDir::~Handle_PColgp_SeqNodeOfHSequenceOfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_SeqNodeOfHSequenceOfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d;
@@ -539,8 +709,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public Handle_PStandard_
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d::~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray1OfDir;
@@ -567,8 +747,18 @@ class Handle_PColgp_HArray1OfDir : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray1OfDir::~Handle_PColgp_HArray1OfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray1OfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HSequenceOfVec;
@@ -595,8 +785,18 @@ class Handle_PColgp_HSequenceOfVec : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HSequenceOfVec::~Handle_PColgp_HSequenceOfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HSequenceOfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt;
@@ -623,8 +823,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public Handle_PStandard_Ar
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt::~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HSequenceOfDir;
@@ -651,8 +861,18 @@ class Handle_PColgp_HSequenceOfDir : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HSequenceOfDir::~Handle_PColgp_HSequenceOfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HSequenceOfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray2OfXYZ;
@@ -679,8 +899,18 @@ class Handle_PColgp_HArray2OfXYZ : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray2OfXYZ::~Handle_PColgp_HArray2OfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray2OfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d;
@@ -707,8 +937,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d : public Handle_PStandard_
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d::~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ;
@@ -735,8 +975,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public Handle_PStandard_Ar
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ::~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray2OfPnt2d;
@@ -763,8 +1013,18 @@ class Handle_PColgp_HArray2OfPnt2d : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray2OfPnt2d::~Handle_PColgp_HArray2OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray2OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfPnt;
@@ -791,8 +1051,18 @@ class Handle_PColgp_SeqNodeOfHSequenceOfPnt : public Handle_PMMgt_PManaged {
 };
 %feature("shadow") Handle_PColgp_SeqNodeOfHSequenceOfPnt::~Handle_PColgp_SeqNodeOfHSequenceOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_SeqNodeOfHSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray2OfPnt;
@@ -819,8 +1089,18 @@ class Handle_PColgp_HArray2OfPnt : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray2OfPnt::~Handle_PColgp_HArray2OfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray2OfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ;
@@ -847,8 +1127,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public Handle_PStandard_Ar
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ::~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt;
@@ -875,8 +1165,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public Handle_PStandard_Ar
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt::~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfXYZ;
@@ -903,8 +1203,18 @@ class Handle_PColgp_SeqNodeOfHSequenceOfXYZ : public Handle_PMMgt_PManaged {
 };
 %feature("shadow") Handle_PColgp_SeqNodeOfHSequenceOfXYZ::~Handle_PColgp_SeqNodeOfHSequenceOfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_SeqNodeOfHSequenceOfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d;
@@ -931,8 +1241,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public Handle_PStandard_
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d::~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d;
@@ -959,8 +1279,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public Handle_PStandard_
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d::~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray2OfCirc2d;
@@ -987,8 +1317,18 @@ class Handle_PColgp_HArray2OfCirc2d : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray2OfCirc2d::~Handle_PColgp_HArray2OfCirc2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray2OfCirc2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray1OfXYZ;
@@ -1015,8 +1355,18 @@ class Handle_PColgp_HArray1OfXYZ : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray1OfXYZ::~Handle_PColgp_HArray1OfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray1OfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HSequenceOfPnt;
@@ -1043,8 +1393,18 @@ class Handle_PColgp_HSequenceOfPnt : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HSequenceOfPnt::~Handle_PColgp_HSequenceOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d;
@@ -1071,8 +1431,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public Handle_PStandard
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d::~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray1OfPnt;
@@ -1099,8 +1469,18 @@ class Handle_PColgp_HArray1OfPnt : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray1OfPnt::~Handle_PColgp_HArray1OfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray1OfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray2OfDir2d;
@@ -1127,8 +1507,18 @@ class Handle_PColgp_HArray2OfDir2d : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray2OfDir2d::~Handle_PColgp_HArray2OfDir2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray2OfDir2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d;
@@ -1155,8 +1545,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public Handle_PStandard_
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d::~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY;
@@ -1183,8 +1583,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY : public Handle_PStandard_Arr
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY::~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray1OfPnt2d;
@@ -1211,8 +1621,18 @@ class Handle_PColgp_HArray1OfPnt2d : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray1OfPnt2d::~Handle_PColgp_HArray1OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray1OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d;
@@ -1239,8 +1659,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d : public Handle_PStandard_
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d::~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray2OfLin2d;
@@ -1267,8 +1697,18 @@ class Handle_PColgp_HArray2OfLin2d : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray2OfLin2d::~Handle_PColgp_HArray2OfLin2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray2OfLin2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec;
@@ -1295,8 +1735,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec : public Handle_PStandard_Ar
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec::~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY;
@@ -1323,8 +1773,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY : public Handle_PStandard_Arr
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY::~Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d;
@@ -1351,8 +1811,18 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public Handle_PStandard
 };
 %feature("shadow") Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d::~Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColgp_HArray2OfVec2d;
@@ -1379,8 +1849,18 @@ class Handle_PColgp_HArray2OfVec2d : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColgp_HArray2OfVec2d::~Handle_PColgp_HArray2OfVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColgp_HArray2OfVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray1OfXY;
@@ -1440,8 +1920,18 @@ class PColgp_HArray1OfXY : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray1OfXY::~PColgp_HArray1OfXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray1OfXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray2OfPnt;
@@ -1471,8 +1961,18 @@ class PColgp_FieldOfHArray2OfPnt : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray2OfPnt::~PColgp_FieldOfHArray2OfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray2OfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray1OfLin2d;
@@ -1502,8 +2002,18 @@ class PColgp_FieldOfHArray1OfLin2d : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray1OfLin2d::~PColgp_FieldOfHArray1OfLin2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray1OfLin2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray2OfPnt2d;
@@ -1533,8 +2043,18 @@ class PColgp_FieldOfHArray2OfPnt2d : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray2OfPnt2d::~PColgp_FieldOfHArray2OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray2OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray1OfVec;
@@ -1594,8 +2114,18 @@ class PColgp_HArray1OfVec : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray1OfVec::~PColgp_HArray1OfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray1OfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d;
@@ -1613,8 +2143,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d::~PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray2OfVec;
@@ -1688,8 +2228,18 @@ class PColgp_HArray2OfVec : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray2OfVec::~PColgp_HArray2OfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray2OfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfPnt;
@@ -1707,8 +2257,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray2OfPnt::~PColgp_VArrayTNodeOfFieldOfHArray2OfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ;
@@ -1726,8 +2286,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ::~PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_SeqExplorerOfHSequenceOfXYZ;
@@ -1747,8 +2317,18 @@ class PColgp_SeqExplorerOfHSequenceOfXYZ {
 };
 %feature("shadow") PColgp_SeqExplorerOfHSequenceOfXYZ::~PColgp_SeqExplorerOfHSequenceOfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_SeqExplorerOfHSequenceOfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfLin2d;
@@ -1782,8 +2362,18 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfLin2d::~PColgp_VArrayNodeOfFieldOfHArray2OfLin2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d;
@@ -1801,8 +2391,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d::~PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray1OfVec;
@@ -1832,8 +2432,18 @@ class PColgp_FieldOfHArray1OfVec : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray1OfVec::~PColgp_FieldOfHArray1OfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray1OfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray2OfVec2d;
@@ -1907,8 +2517,18 @@ class PColgp_HArray2OfVec2d : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray2OfVec2d::~PColgp_HArray2OfVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray2OfVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfVec;
@@ -1942,8 +2562,18 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfVec : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfVec::~PColgp_VArrayNodeOfFieldOfHArray1OfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray1OfDir;
@@ -2003,8 +2633,18 @@ class PColgp_HArray1OfDir : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray1OfDir::~PColgp_HArray1OfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray1OfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray1OfXYZ;
@@ -2034,8 +2674,18 @@ class PColgp_FieldOfHArray1OfXYZ : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray1OfXYZ::~PColgp_FieldOfHArray1OfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray1OfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray1OfPnt2d;
@@ -2065,8 +2715,18 @@ class PColgp_FieldOfHArray1OfPnt2d : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray1OfPnt2d::~PColgp_FieldOfHArray1OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray1OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d;
@@ -2084,8 +2744,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d::~PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d;
@@ -2103,8 +2773,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d::~PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d;
@@ -2122,8 +2802,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d::~PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray2OfDir;
@@ -2197,8 +2887,18 @@ class PColgp_HArray2OfDir : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray2OfDir::~PColgp_HArray2OfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray2OfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray2OfVec;
@@ -2228,8 +2928,18 @@ class PColgp_FieldOfHArray2OfVec : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray2OfVec::~PColgp_FieldOfHArray2OfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray2OfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray2OfLin2d;
@@ -2303,8 +3013,18 @@ class PColgp_HArray2OfLin2d : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray2OfLin2d::~PColgp_HArray2OfLin2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray2OfLin2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfVec;
@@ -2322,8 +3042,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfVec {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray2OfVec::~PColgp_VArrayTNodeOfFieldOfHArray2OfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfDir2d;
@@ -2357,8 +3087,18 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfDir2d : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfDir2d::~PColgp_VArrayNodeOfFieldOfHArray2OfDir2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfDir2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfDir;
@@ -2392,8 +3132,18 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfDir : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfDir::~PColgp_VArrayNodeOfFieldOfHArray2OfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray2OfPnt2d;
@@ -2467,8 +3217,18 @@ class PColgp_HArray2OfPnt2d : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray2OfPnt2d::~PColgp_HArray2OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray2OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray2OfXYZ;
@@ -2542,8 +3302,18 @@ class PColgp_HArray2OfXYZ : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray2OfXYZ::~PColgp_HArray2OfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray2OfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfVec;
@@ -2577,8 +3347,18 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfVec : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfVec::~PColgp_VArrayNodeOfFieldOfHArray2OfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HSequenceOfVec;
@@ -2676,8 +3456,18 @@ class PColgp_HSequenceOfVec : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HSequenceOfVec::~PColgp_HSequenceOfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HSequenceOfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfXYZ;
@@ -2711,8 +3501,18 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfXYZ::~PColgp_VArrayNodeOfFieldOfHArray1OfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray1OfLin2d;
@@ -2772,8 +3572,18 @@ class PColgp_HArray1OfLin2d : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray1OfLin2d::~PColgp_HArray1OfLin2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray1OfLin2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray1OfPnt;
@@ -2833,8 +3643,18 @@ class PColgp_HArray1OfPnt : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray1OfPnt::~PColgp_HArray1OfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray1OfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray2OfCirc2d;
@@ -2908,8 +3728,18 @@ class PColgp_HArray2OfCirc2d : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray2OfCirc2d::~PColgp_HArray2OfCirc2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray2OfCirc2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray1OfCirc2d;
@@ -2939,8 +3769,18 @@ class PColgp_FieldOfHArray1OfCirc2d : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray1OfCirc2d::~PColgp_FieldOfHArray1OfCirc2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray1OfCirc2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HSequenceOfDir;
@@ -3038,8 +3878,18 @@ class PColgp_HSequenceOfDir : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HSequenceOfDir::~PColgp_HSequenceOfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HSequenceOfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_SeqExplorerOfHSequenceOfVec;
@@ -3059,8 +3909,18 @@ class PColgp_SeqExplorerOfHSequenceOfVec {
 };
 %feature("shadow") PColgp_SeqExplorerOfHSequenceOfVec::~PColgp_SeqExplorerOfHSequenceOfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_SeqExplorerOfHSequenceOfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_SeqNodeOfHSequenceOfXYZ;
@@ -3114,8 +3974,18 @@ class PColgp_SeqNodeOfHSequenceOfXYZ : public PMMgt_PManaged {
 };
 %feature("shadow") PColgp_SeqNodeOfHSequenceOfXYZ::~PColgp_SeqNodeOfHSequenceOfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_SeqNodeOfHSequenceOfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray2OfDir;
@@ -3145,8 +4015,18 @@ class PColgp_FieldOfHArray2OfDir : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray2OfDir::~PColgp_FieldOfHArray2OfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray2OfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray2OfDir2d;
@@ -3220,8 +4100,18 @@ class PColgp_HArray2OfDir2d : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray2OfDir2d::~PColgp_HArray2OfDir2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray2OfDir2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfDir;
@@ -3239,8 +4129,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfDir {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray2OfDir::~PColgp_VArrayTNodeOfFieldOfHArray2OfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_SeqNodeOfHSequenceOfPnt;
@@ -3294,8 +4194,18 @@ class PColgp_SeqNodeOfHSequenceOfPnt : public PMMgt_PManaged {
 };
 %feature("shadow") PColgp_SeqNodeOfHSequenceOfPnt::~PColgp_SeqNodeOfHSequenceOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_SeqNodeOfHSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray1OfPnt;
@@ -3325,8 +4235,18 @@ class PColgp_FieldOfHArray1OfPnt : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray1OfPnt::~PColgp_FieldOfHArray1OfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray1OfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d;
@@ -3360,8 +4280,18 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d::~PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray2OfPnt;
@@ -3435,8 +4365,18 @@ class PColgp_HArray2OfPnt : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray2OfPnt::~PColgp_HArray2OfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray2OfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray2OfDir2d;
@@ -3466,8 +4406,18 @@ class PColgp_FieldOfHArray2OfDir2d : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray2OfDir2d::~PColgp_FieldOfHArray2OfDir2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray2OfDir2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray1OfVec2d;
@@ -3527,8 +4477,18 @@ class PColgp_HArray1OfVec2d : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray1OfVec2d::~PColgp_HArray1OfVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray1OfVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray2OfCirc2d;
@@ -3558,8 +4518,18 @@ class PColgp_FieldOfHArray2OfCirc2d : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray2OfCirc2d::~PColgp_FieldOfHArray2OfCirc2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray2OfCirc2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray1OfPnt2d;
@@ -3619,8 +4589,18 @@ class PColgp_HArray1OfPnt2d : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray1OfPnt2d::~PColgp_HArray1OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray1OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d;
@@ -3638,8 +4618,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d::~PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfVec;
@@ -3657,8 +4647,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfVec {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray1OfVec::~PColgp_VArrayTNodeOfFieldOfHArray1OfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray2OfXY;
@@ -3732,8 +4732,18 @@ class PColgp_HArray2OfXY : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray2OfXY::~PColgp_HArray2OfXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray2OfXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray1OfXYZ;
@@ -3793,8 +4803,18 @@ class PColgp_HArray1OfXYZ : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray1OfXYZ::~PColgp_HArray1OfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray1OfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfXY;
@@ -3828,8 +4848,18 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfXY : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfXY::~PColgp_VArrayNodeOfFieldOfHArray2OfXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfVec2d;
@@ -3863,8 +4893,18 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfVec2d : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfVec2d::~PColgp_VArrayNodeOfFieldOfHArray1OfVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfPnt;
@@ -3898,8 +4938,18 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfPnt::~PColgp_VArrayNodeOfFieldOfHArray2OfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfXY;
@@ -3917,8 +4967,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfXY {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray1OfXY::~PColgp_VArrayTNodeOfFieldOfHArray1OfXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_SeqExplorerOfHSequenceOfDir;
@@ -3938,8 +4998,18 @@ class PColgp_SeqExplorerOfHSequenceOfDir {
 };
 %feature("shadow") PColgp_SeqExplorerOfHSequenceOfDir::~PColgp_SeqExplorerOfHSequenceOfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_SeqExplorerOfHSequenceOfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfDir;
@@ -3957,8 +5027,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfDir {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray1OfDir::~PColgp_VArrayTNodeOfFieldOfHArray1OfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfDir2d;
@@ -3992,8 +5072,18 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfDir2d::~PColgp_VArrayNodeOfFieldOfHArray1OfDir2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfDir2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfXY;
@@ -4027,8 +5117,18 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfXY : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfXY::~PColgp_VArrayNodeOfFieldOfHArray1OfXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray2OfVec2d;
@@ -4058,8 +5158,18 @@ class PColgp_FieldOfHArray2OfVec2d : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray2OfVec2d::~PColgp_FieldOfHArray2OfVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray2OfVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray1OfCirc2d;
@@ -4119,8 +5229,18 @@ class PColgp_HArray1OfCirc2d : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray1OfCirc2d::~PColgp_HArray1OfCirc2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray1OfCirc2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ;
@@ -4138,8 +5258,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ::~PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d;
@@ -4157,8 +5287,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d::~PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray2OfXYZ;
@@ -4188,8 +5328,18 @@ class PColgp_FieldOfHArray2OfXYZ : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray2OfXYZ::~PColgp_FieldOfHArray2OfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray2OfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_SeqNodeOfHSequenceOfVec;
@@ -4243,8 +5393,18 @@ class PColgp_SeqNodeOfHSequenceOfVec : public PMMgt_PManaged {
 };
 %feature("shadow") PColgp_SeqNodeOfHSequenceOfVec::~PColgp_SeqNodeOfHSequenceOfVec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_SeqNodeOfHSequenceOfVec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray2OfXY;
@@ -4274,8 +5434,18 @@ class PColgp_FieldOfHArray2OfXY : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray2OfXY::~PColgp_FieldOfHArray2OfXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray2OfXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_SeqNodeOfHSequenceOfDir;
@@ -4329,8 +5499,18 @@ class PColgp_SeqNodeOfHSequenceOfDir : public PMMgt_PManaged {
 };
 %feature("shadow") PColgp_SeqNodeOfHSequenceOfDir::~PColgp_SeqNodeOfHSequenceOfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_SeqNodeOfHSequenceOfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_SeqExplorerOfHSequenceOfPnt;
@@ -4350,8 +5530,18 @@ class PColgp_SeqExplorerOfHSequenceOfPnt {
 };
 %feature("shadow") PColgp_SeqExplorerOfHSequenceOfPnt::~PColgp_SeqExplorerOfHSequenceOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_SeqExplorerOfHSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HSequenceOfPnt;
@@ -4449,8 +5639,18 @@ class PColgp_HSequenceOfPnt : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HSequenceOfPnt::~PColgp_HSequenceOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d;
@@ -4484,8 +5684,18 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d::~PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray1OfDir;
@@ -4515,8 +5725,18 @@ class PColgp_FieldOfHArray1OfDir : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray1OfDir::~PColgp_FieldOfHArray1OfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray1OfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HArray1OfDir2d;
@@ -4576,8 +5796,18 @@ class PColgp_HArray1OfDir2d : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HArray1OfDir2d::~PColgp_HArray1OfDir2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HArray1OfDir2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfXY;
@@ -4595,8 +5825,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfXY {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray2OfXY::~PColgp_VArrayTNodeOfFieldOfHArray2OfXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfLin2d;
@@ -4630,8 +5870,18 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfLin2d::~PColgp_VArrayNodeOfFieldOfHArray1OfLin2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfLin2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfXYZ;
@@ -4665,8 +5915,18 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfXYZ::~PColgp_VArrayNodeOfFieldOfHArray2OfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray1OfXY;
@@ -4696,8 +5956,18 @@ class PColgp_FieldOfHArray1OfXY : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray1OfXY::~PColgp_FieldOfHArray1OfXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray1OfXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d;
@@ -4715,8 +5985,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d::~PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray2OfLin2d;
@@ -4746,8 +6026,18 @@ class PColgp_FieldOfHArray2OfLin2d : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray2OfLin2d::~PColgp_FieldOfHArray2OfLin2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray2OfLin2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_HSequenceOfXYZ;
@@ -4845,8 +6135,18 @@ class PColgp_HSequenceOfXYZ : public Standard_Persistent {
 };
 %feature("shadow") PColgp_HSequenceOfXYZ::~PColgp_HSequenceOfXYZ %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_HSequenceOfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d;
@@ -4864,8 +6164,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d::~PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray1OfVec2d;
@@ -4895,8 +6205,18 @@ class PColgp_FieldOfHArray1OfVec2d : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray1OfVec2d::~PColgp_FieldOfHArray1OfVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray1OfVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_FieldOfHArray1OfDir2d;
@@ -4926,8 +6246,18 @@ class PColgp_FieldOfHArray1OfDir2d : public DBC_BaseArray {
 };
 %feature("shadow") PColgp_FieldOfHArray1OfDir2d::~PColgp_FieldOfHArray1OfDir2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_FieldOfHArray1OfDir2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d;
@@ -4961,8 +6291,18 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d::~PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d;
@@ -4996,8 +6336,18 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d::~PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d;
@@ -5015,8 +6365,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d::~PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfPnt;
@@ -5034,8 +6394,18 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt {
 };
 %feature("shadow") PColgp_VArrayTNodeOfFieldOfHArray1OfPnt::~PColgp_VArrayTNodeOfFieldOfHArray1OfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayTNodeOfFieldOfHArray1OfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfDir;
@@ -5069,8 +6439,18 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfDir : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfDir::~PColgp_VArrayNodeOfFieldOfHArray1OfDir %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfDir {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfVec2d;
@@ -5104,8 +6484,18 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfVec2d::~PColgp_VArrayNodeOfFieldOfHArray2OfVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray2OfVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfPnt;
@@ -5139,5 +6529,15 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public PStandard_ArrayNode {
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfPnt::~PColgp_VArrayNodeOfFieldOfHArray1OfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

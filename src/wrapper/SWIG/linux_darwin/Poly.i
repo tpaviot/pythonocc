@@ -63,8 +63,18 @@ class Handle_Poly_PolygonOnTriangulation : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Poly_PolygonOnTriangulation::~Handle_Poly_PolygonOnTriangulation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Poly_PolygonOnTriangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Poly_HArray1OfTriangle;
@@ -91,8 +101,18 @@ class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Poly_HArray1OfTriangle::~Handle_Poly_HArray1OfTriangle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Poly_HArray1OfTriangle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Poly_Polygon3D;
@@ -119,8 +139,18 @@ class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Poly_Polygon3D::~Handle_Poly_Polygon3D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Poly_Polygon3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Poly_Polygon2D;
@@ -147,8 +177,18 @@ class Handle_Poly_Polygon2D : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Poly_Polygon2D::~Handle_Poly_Polygon2D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Poly_Polygon2D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Poly_CoherentTriangulation;
@@ -175,8 +215,18 @@ class Handle_Poly_CoherentTriangulation : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_Poly_CoherentTriangulation::~Handle_Poly_CoherentTriangulation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Poly_CoherentTriangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Poly_Triangulation;
@@ -203,8 +253,18 @@ class Handle_Poly_Triangulation : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Poly_Triangulation::~Handle_Poly_Triangulation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Poly_Triangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Poly_Triangulation;
@@ -264,8 +324,18 @@ class Poly_Triangulation : public MMgt_TShared {
 };
 %feature("shadow") Poly_Triangulation::~Poly_Triangulation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Poly_Triangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Poly_Connect;
@@ -293,8 +363,18 @@ class Poly_Connect {
 };
 %feature("shadow") Poly_Connect::~Poly_Connect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Poly_Connect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Poly_CoherentNode;
@@ -340,8 +420,18 @@ class Poly_CoherentNode : public gp_XYZ {
 };
 %feature("shadow") Poly_CoherentNode::~Poly_CoherentNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Poly_CoherentNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Poly_PolygonOnTriangulation;
@@ -379,8 +469,18 @@ class Poly_PolygonOnTriangulation : public MMgt_TShared {
 };
 %feature("shadow") Poly_PolygonOnTriangulation::~Poly_PolygonOnTriangulation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Poly_PolygonOnTriangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Poly_Array1OfTriangle;
@@ -420,8 +520,18 @@ class Poly_Array1OfTriangle {
 };
 %feature("shadow") Poly_Array1OfTriangle::~Poly_Array1OfTriangle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Poly_Array1OfTriangle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Poly_CoherentTriangle;
@@ -457,8 +567,18 @@ class Poly_CoherentTriangle {
 };
 %feature("shadow") Poly_CoherentTriangle::~Poly_CoherentTriangle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Poly_CoherentTriangle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Poly_Triangle;
@@ -496,8 +616,18 @@ class Poly_Triangle {
 };
 %feature("shadow") Poly_Triangle::~Poly_Triangle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Poly_Triangle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Poly_Polygon2D;
@@ -529,8 +659,18 @@ class Poly_Polygon2D : public MMgt_TShared {
 };
 %feature("shadow") Poly_Polygon2D::~Poly_Polygon2D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Poly_Polygon2D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Poly;
@@ -577,8 +717,18 @@ class Poly {
 };
 %feature("shadow") Poly::~Poly %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Poly {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Poly_HArray1OfTriangle;
@@ -622,8 +772,18 @@ class Poly_HArray1OfTriangle : public MMgt_TShared {
 };
 %feature("shadow") Poly_HArray1OfTriangle::~Poly_HArray1OfTriangle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Poly_HArray1OfTriangle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Poly_CoherentLink;
@@ -651,8 +811,18 @@ class Poly_CoherentLink {
 };
 %feature("shadow") Poly_CoherentLink::~Poly_CoherentLink %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Poly_CoherentLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Poly_Polygon3D;
@@ -692,5 +862,15 @@ class Poly_Polygon3D : public MMgt_TShared {
 };
 %feature("shadow") Poly_Polygon3D::~Poly_Polygon3D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Poly_Polygon3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

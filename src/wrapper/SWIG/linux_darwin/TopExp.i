@@ -64,8 +64,18 @@ class Handle_TopExp_StackNodeOfStackOfIterator : public Handle_TCollection_MapNo
 };
 %feature("shadow") Handle_TopExp_StackNodeOfStackOfIterator::~Handle_TopExp_StackNodeOfStackOfIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopExp_StackNodeOfStackOfIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopExp_StackNodeOfStackOfIterator;
@@ -91,8 +101,18 @@ class TopExp_StackNodeOfStackOfIterator : public TCollection_MapNode {
 };
 %feature("shadow") TopExp_StackNodeOfStackOfIterator::~TopExp_StackNodeOfStackOfIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopExp_StackNodeOfStackOfIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopExp_StackIteratorOfStackOfIterator;
@@ -114,8 +134,18 @@ class TopExp_StackIteratorOfStackOfIterator {
 };
 %feature("shadow") TopExp_StackIteratorOfStackOfIterator::~TopExp_StackIteratorOfStackOfIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopExp_StackIteratorOfStackOfIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopExp_StackOfIterator;
@@ -145,8 +175,18 @@ class TopExp_StackOfIterator {
 };
 %feature("shadow") TopExp_StackOfIterator::~TopExp_StackOfIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopExp_StackOfIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopExp_Explorer;
@@ -176,8 +216,18 @@ class TopExp_Explorer {
 };
 %feature("shadow") TopExp_Explorer::~TopExp_Explorer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopExp_Explorer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopExp;
@@ -205,5 +255,15 @@ class TopExp {
 };
 %feature("shadow") TopExp::~TopExp %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopExp {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

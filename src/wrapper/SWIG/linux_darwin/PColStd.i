@@ -63,8 +63,18 @@ class Handle_PColStd_HSingleListOfReal : public Handle_PMMgt_PManaged {
 };
 %feature("shadow") Handle_PColStd_HSingleListOfReal::~Handle_PColStd_HSingleListOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HSingleListOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HArray1OfExtendedString;
@@ -91,8 +101,18 @@ class Handle_PColStd_HArray1OfExtendedString : public Handle_Standard_Persistent
 };
 %feature("shadow") Handle_PColStd_HArray1OfExtendedString::~Handle_PColStd_HArray1OfExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HArray1OfExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HDoubleListOfInteger;
@@ -119,8 +139,18 @@ class Handle_PColStd_HDoubleListOfInteger : public Handle_PMMgt_PManaged {
 };
 %feature("shadow") Handle_PColStd_HDoubleListOfInteger::~Handle_PColStd_HDoubleListOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HDoubleListOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent;
@@ -147,8 +177,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent : public Handle_PSta
 };
 %feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent::~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HArray2OfPersistent;
@@ -175,8 +215,18 @@ class Handle_PColStd_HArray2OfPersistent : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColStd_HArray2OfPersistent::~Handle_PColStd_HArray2OfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HArray2OfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal;
@@ -203,8 +253,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal : public Handle_PStandard_
 };
 %feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal::~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HDoubleListOfReal;
@@ -231,8 +291,18 @@ class Handle_PColStd_HDoubleListOfReal : public Handle_PMMgt_PManaged {
 };
 %feature("shadow") Handle_PColStd_HDoubleListOfReal::~Handle_PColStd_HDoubleListOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HDoubleListOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HArray1OfReal;
@@ -259,8 +329,18 @@ class Handle_PColStd_HArray1OfReal : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColStd_HArray1OfReal::~Handle_PColStd_HArray1OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfInteger;
@@ -287,8 +367,18 @@ class Handle_PColStd_SeqNodeOfHSequenceOfInteger : public Handle_PMMgt_PManaged 
 };
 %feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfInteger::~Handle_PColStd_SeqNodeOfHSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_SeqNodeOfHSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HSequenceOfReal;
@@ -315,8 +405,18 @@ class Handle_PColStd_HSequenceOfReal : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColStd_HSequenceOfReal::~Handle_PColStd_HSequenceOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HSequenceOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HSequenceOfHAsciiString;
@@ -343,8 +443,18 @@ class Handle_PColStd_HSequenceOfHAsciiString : public Handle_Standard_Persistent
 };
 %feature("shadow") Handle_PColStd_HSequenceOfHAsciiString::~Handle_PColStd_HSequenceOfHAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HSequenceOfHAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger;
@@ -371,8 +481,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public Handle_PStanda
 };
 %feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger::~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HSequenceOfHExtendedString;
@@ -399,8 +519,18 @@ class Handle_PColStd_HSequenceOfHExtendedString : public Handle_Standard_Persist
 };
 %feature("shadow") Handle_PColStd_HSequenceOfHExtendedString::~Handle_PColStd_HSequenceOfHExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HSequenceOfHExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HSequenceOfInteger;
@@ -427,8 +557,18 @@ class Handle_PColStd_HSequenceOfInteger : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColStd_HSequenceOfInteger::~Handle_PColStd_HSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent;
@@ -455,8 +595,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public Handle_PSta
 };
 %feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent::~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfReal;
@@ -483,8 +633,18 @@ class Handle_PColStd_SeqNodeOfHSequenceOfReal : public Handle_PMMgt_PManaged {
 };
 %feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfReal::~Handle_PColStd_SeqNodeOfHSequenceOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_SeqNodeOfHSequenceOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HArray1OfPersistent;
@@ -511,8 +671,18 @@ class Handle_PColStd_HArray1OfPersistent : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColStd_HArray1OfPersistent::~Handle_PColStd_HArray1OfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HArray1OfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HSequenceOfPersistent;
@@ -539,8 +709,18 @@ class Handle_PColStd_HSequenceOfPersistent : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColStd_HSequenceOfPersistent::~Handle_PColStd_HSequenceOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HSequenceOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HArray2OfInteger;
@@ -567,8 +747,18 @@ class Handle_PColStd_HArray2OfInteger : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColStd_HArray2OfInteger::~Handle_PColStd_HArray2OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HArray2OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HArray2OfReal;
@@ -595,8 +785,18 @@ class Handle_PColStd_HArray2OfReal : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColStd_HArray2OfReal::~Handle_PColStd_HArray2OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HArray2OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString;
@@ -623,8 +823,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public Handle_
 };
 %feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString::~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString;
@@ -651,8 +861,18 @@ class Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString : public Handle_PMMgt_PMan
 };
 %feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString::~Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString;
@@ -679,8 +899,18 @@ class Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString : public Handle_PMMgt_P
 };
 %feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString::~Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HSingleListOfPersistent;
@@ -707,8 +937,18 @@ class Handle_PColStd_HSingleListOfPersistent : public Handle_PMMgt_PManaged {
 };
 %feature("shadow") Handle_PColStd_HSingleListOfPersistent::~Handle_PColStd_HSingleListOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HSingleListOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger;
@@ -735,8 +975,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger : public Handle_PStanda
 };
 %feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger::~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfPersistent;
@@ -763,8 +1013,18 @@ class Handle_PColStd_SeqNodeOfHSequenceOfPersistent : public Handle_PMMgt_PManag
 };
 %feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfPersistent::~Handle_PColStd_SeqNodeOfHSequenceOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_SeqNodeOfHSequenceOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HArray1OfInteger;
@@ -791,8 +1051,18 @@ class Handle_PColStd_HArray1OfInteger : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PColStd_HArray1OfInteger::~Handle_PColStd_HArray1OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HSingleListOfInteger;
@@ -819,8 +1089,18 @@ class Handle_PColStd_HSingleListOfInteger : public Handle_PMMgt_PManaged {
 };
 %feature("shadow") Handle_PColStd_HSingleListOfInteger::~Handle_PColStd_HSingleListOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HSingleListOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal;
@@ -847,8 +1127,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal : public Handle_PStandard_
 };
 %feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal::~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PColStd_HDoubleListOfPersistent;
@@ -875,8 +1165,18 @@ class Handle_PColStd_HDoubleListOfPersistent : public Handle_PMMgt_PManaged {
 };
 %feature("shadow") Handle_PColStd_HDoubleListOfPersistent::~Handle_PColStd_HDoubleListOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PColStd_HDoubleListOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfReal;
@@ -894,8 +1194,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfReal {
 };
 %feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray1OfReal::~PColStd_VArrayTNodeOfFieldOfHArray1OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayTNodeOfFieldOfHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HDoubleListOfInteger;
@@ -963,8 +1273,18 @@ class PColStd_HDoubleListOfInteger : public PMMgt_PManaged {
 };
 %feature("shadow") PColStd_HDoubleListOfInteger::~PColStd_HDoubleListOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HDoubleListOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfInteger;
@@ -984,8 +1304,18 @@ class PColStd_SeqExplorerOfHSequenceOfInteger {
 };
 %feature("shadow") PColStd_SeqExplorerOfHSequenceOfInteger::~PColStd_SeqExplorerOfHSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_SeqExplorerOfHSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent;
@@ -1003,8 +1333,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
 };
 %feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent::~PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HSequenceOfInteger;
@@ -1102,8 +1442,18 @@ class PColStd_HSequenceOfInteger : public Standard_Persistent {
 };
 %feature("shadow") PColStd_HSequenceOfInteger::~PColStd_HSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_FieldOfHArray2OfInteger;
@@ -1143,8 +1493,18 @@ class PColStd_FieldOfHArray2OfInteger : public DBC_BaseArray {
 };
 %feature("shadow") PColStd_FieldOfHArray2OfInteger::~PColStd_FieldOfHArray2OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_FieldOfHArray2OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfHAsciiString;
@@ -1200,8 +1560,18 @@ class PColStd_SeqNodeOfHSequenceOfHAsciiString : public PMMgt_PManaged {
 };
 %feature("shadow") PColStd_SeqNodeOfHSequenceOfHAsciiString::~PColStd_SeqNodeOfHSequenceOfHAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_SeqNodeOfHSequenceOfHAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_FieldOfHArray1OfExtendedString;
@@ -1231,8 +1601,18 @@ class PColStd_FieldOfHArray1OfExtendedString : public DBC_BaseArray {
 };
 %feature("shadow") PColStd_FieldOfHArray1OfExtendedString::~PColStd_FieldOfHArray1OfExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_FieldOfHArray1OfExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfInteger;
@@ -1250,8 +1630,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfInteger {
 };
 %feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray2OfInteger::~PColStd_VArrayTNodeOfFieldOfHArray2OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayTNodeOfFieldOfHArray2OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_FieldOfHArray2OfReal;
@@ -1291,8 +1681,18 @@ class PColStd_FieldOfHArray2OfReal : public DBC_BaseArray {
 };
 %feature("shadow") PColStd_FieldOfHArray2OfReal::~PColStd_FieldOfHArray2OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_FieldOfHArray2OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HArray1OfReal;
@@ -1352,8 +1752,18 @@ class PColStd_HArray1OfReal : public Standard_Persistent {
 };
 %feature("shadow") PColStd_HArray1OfReal::~PColStd_HArray1OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HSequenceOfPersistent;
@@ -1451,8 +1861,18 @@ class PColStd_HSequenceOfPersistent : public Standard_Persistent {
 };
 %feature("shadow") PColStd_HSequenceOfPersistent::~PColStd_HSequenceOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HSequenceOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString;
@@ -1488,8 +1908,18 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public PStandard_Arra
 };
 %feature("shadow") PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString::~PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfReal;
@@ -1545,8 +1975,18 @@ class PColStd_SeqNodeOfHSequenceOfReal : public PMMgt_PManaged {
 };
 %feature("shadow") PColStd_SeqNodeOfHSequenceOfReal::~PColStd_SeqNodeOfHSequenceOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_SeqNodeOfHSequenceOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfInteger;
@@ -1564,8 +2004,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfInteger {
 };
 %feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray1OfInteger::~PColStd_VArrayTNodeOfFieldOfHArray1OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayTNodeOfFieldOfHArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HOfAsciiString;
@@ -1581,8 +2031,18 @@ class PColStd_HOfAsciiString {
 };
 %feature("shadow") PColStd_HOfAsciiString::~PColStd_HOfAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HOfAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_FieldOfHArray2OfPersistent;
@@ -1612,8 +2072,18 @@ class PColStd_FieldOfHArray2OfPersistent : public DBC_BaseArray {
 };
 %feature("shadow") PColStd_FieldOfHArray2OfPersistent::~PColStd_FieldOfHArray2OfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_FieldOfHArray2OfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfHAsciiString;
@@ -1633,8 +2103,18 @@ class PColStd_SeqExplorerOfHSequenceOfHAsciiString {
 };
 %feature("shadow") PColStd_SeqExplorerOfHSequenceOfHAsciiString::~PColStd_SeqExplorerOfHSequenceOfHAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_SeqExplorerOfHSequenceOfHAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HArray1OfInteger;
@@ -1694,8 +2174,18 @@ class PColStd_HArray1OfInteger : public Standard_Persistent {
 };
 %feature("shadow") PColStd_HArray1OfInteger::~PColStd_HArray1OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfInteger;
@@ -1731,8 +2221,18 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public PStandard_ArrayNode {
 };
 %feature("shadow") PColStd_VArrayNodeOfFieldOfHArray2OfInteger::~PColStd_VArrayNodeOfFieldOfHArray2OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfReal;
@@ -1768,8 +2268,18 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfReal : public PStandard_ArrayNode {
 };
 %feature("shadow") PColStd_VArrayNodeOfFieldOfHArray2OfReal::~PColStd_VArrayNodeOfFieldOfHArray2OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HSingleListOfPersistent;
@@ -1827,8 +2337,18 @@ class PColStd_HSingleListOfPersistent : public PMMgt_PManaged {
 };
 %feature("shadow") PColStd_HSingleListOfPersistent::~PColStd_HSingleListOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HSingleListOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfPersistent;
@@ -1864,8 +2384,18 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public PStandard_ArrayNod
 };
 %feature("shadow") PColStd_VArrayNodeOfFieldOfHArray1OfPersistent::~PColStd_VArrayNodeOfFieldOfHArray1OfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HSequenceOfHAsciiString;
@@ -1963,8 +2493,18 @@ class PColStd_HSequenceOfHAsciiString : public Standard_Persistent {
 };
 %feature("shadow") PColStd_HSequenceOfHAsciiString::~PColStd_HSequenceOfHAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HSequenceOfHAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HArray2OfPersistent;
@@ -2038,8 +2578,18 @@ class PColStd_HArray2OfPersistent : public Standard_Persistent {
 };
 %feature("shadow") PColStd_HArray2OfPersistent::~PColStd_HArray2OfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HArray2OfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfReal;
@@ -2059,8 +2609,18 @@ class PColStd_SeqExplorerOfHSequenceOfReal {
 };
 %feature("shadow") PColStd_SeqExplorerOfHSequenceOfReal::~PColStd_SeqExplorerOfHSequenceOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_SeqExplorerOfHSequenceOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfReal;
@@ -2078,8 +2638,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
 };
 %feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray2OfReal::~PColStd_VArrayTNodeOfFieldOfHArray2OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfHExtendedString;
@@ -2099,8 +2669,18 @@ class PColStd_SeqExplorerOfHSequenceOfHExtendedString {
 };
 %feature("shadow") PColStd_SeqExplorerOfHSequenceOfHExtendedString::~PColStd_SeqExplorerOfHSequenceOfHExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_SeqExplorerOfHSequenceOfHExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HOfInteger;
@@ -2116,8 +2696,18 @@ class PColStd_HOfInteger {
 };
 %feature("shadow") PColStd_HOfInteger::~PColStd_HOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfInteger;
@@ -2173,8 +2763,18 @@ class PColStd_SeqNodeOfHSequenceOfInteger : public PMMgt_PManaged {
 };
 %feature("shadow") PColStd_SeqNodeOfHSequenceOfInteger::~PColStd_SeqNodeOfHSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_SeqNodeOfHSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HDoubleListOfPersistent;
@@ -2242,8 +2842,18 @@ class PColStd_HDoubleListOfPersistent : public PMMgt_PManaged {
 };
 %feature("shadow") PColStd_HDoubleListOfPersistent::~PColStd_HDoubleListOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HDoubleListOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfReal;
@@ -2279,8 +2889,18 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfReal : public PStandard_ArrayNode {
 };
 %feature("shadow") PColStd_VArrayNodeOfFieldOfHArray1OfReal::~PColStd_VArrayNodeOfFieldOfHArray1OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayNodeOfFieldOfHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HSingleListOfReal;
@@ -2338,8 +2958,18 @@ class PColStd_HSingleListOfReal : public PMMgt_PManaged {
 };
 %feature("shadow") PColStd_HSingleListOfReal::~PColStd_HSingleListOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HSingleListOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HDoubleListOfReal;
@@ -2407,8 +3037,18 @@ class PColStd_HDoubleListOfReal : public PMMgt_PManaged {
 };
 %feature("shadow") PColStd_HDoubleListOfReal::~PColStd_HDoubleListOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HDoubleListOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_FieldOfHArray1OfInteger;
@@ -2448,8 +3088,18 @@ class PColStd_FieldOfHArray1OfInteger : public DBC_BaseArray {
 };
 %feature("shadow") PColStd_FieldOfHArray1OfInteger::~PColStd_FieldOfHArray1OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_FieldOfHArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HashAsciiString;
@@ -2465,8 +3115,18 @@ class PColStd_HashAsciiString : public PColStd_HOfAsciiString {
 };
 %feature("shadow") PColStd_HashAsciiString::~PColStd_HashAsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HashAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HOfReal;
@@ -2482,8 +3142,18 @@ class PColStd_HOfReal {
 };
 %feature("shadow") PColStd_HOfReal::~PColStd_HOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfPersistent;
@@ -2503,8 +3173,18 @@ class PColStd_SeqExplorerOfHSequenceOfPersistent {
 };
 %feature("shadow") PColStd_SeqExplorerOfHSequenceOfPersistent::~PColStd_SeqExplorerOfHSequenceOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_SeqExplorerOfHSequenceOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_FieldOfHArray1OfReal;
@@ -2544,8 +3224,18 @@ class PColStd_FieldOfHArray1OfReal : public DBC_BaseArray {
 };
 %feature("shadow") PColStd_FieldOfHArray1OfReal::~PColStd_FieldOfHArray1OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_FieldOfHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent;
@@ -2563,8 +3253,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
 };
 %feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent::~PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString;
@@ -2582,8 +3282,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
 };
 %feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString::~PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HArray1OfPersistent;
@@ -2643,8 +3353,18 @@ class PColStd_HArray1OfPersistent : public Standard_Persistent {
 };
 %feature("shadow") PColStd_HArray1OfPersistent::~PColStd_HArray1OfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HArray1OfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HSequenceOfHExtendedString;
@@ -2742,8 +3462,18 @@ class PColStd_HSequenceOfHExtendedString : public Standard_Persistent {
 };
 %feature("shadow") PColStd_HSequenceOfHExtendedString::~PColStd_HSequenceOfHExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HSequenceOfHExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfInteger;
@@ -2779,8 +3509,18 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfInteger : public PStandard_ArrayNode {
 };
 %feature("shadow") PColStd_VArrayNodeOfFieldOfHArray1OfInteger::~PColStd_VArrayNodeOfFieldOfHArray1OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_FieldOfHArray1OfPersistent;
@@ -2810,8 +3550,18 @@ class PColStd_FieldOfHArray1OfPersistent : public DBC_BaseArray {
 };
 %feature("shadow") PColStd_FieldOfHArray1OfPersistent::~PColStd_FieldOfHArray1OfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_FieldOfHArray1OfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HSingleListOfInteger;
@@ -2869,8 +3619,18 @@ class PColStd_HSingleListOfInteger : public PMMgt_PManaged {
 };
 %feature("shadow") PColStd_HSingleListOfInteger::~PColStd_HSingleListOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HSingleListOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfPersistent;
@@ -2906,8 +3666,18 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfPersistent : public PStandard_ArrayNod
 };
 %feature("shadow") PColStd_VArrayNodeOfFieldOfHArray2OfPersistent::~PColStd_VArrayNodeOfFieldOfHArray2OfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_VArrayNodeOfFieldOfHArray2OfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HArray2OfInteger;
@@ -2981,8 +3751,18 @@ class PColStd_HArray2OfInteger : public Standard_Persistent {
 };
 %feature("shadow") PColStd_HArray2OfInteger::~PColStd_HArray2OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HArray2OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfHExtendedString;
@@ -3038,8 +3818,18 @@ class PColStd_SeqNodeOfHSequenceOfHExtendedString : public PMMgt_PManaged {
 };
 %feature("shadow") PColStd_SeqNodeOfHSequenceOfHExtendedString::~PColStd_SeqNodeOfHSequenceOfHExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_SeqNodeOfHSequenceOfHExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfPersistent;
@@ -3095,8 +3885,18 @@ class PColStd_SeqNodeOfHSequenceOfPersistent : public PMMgt_PManaged {
 };
 %feature("shadow") PColStd_SeqNodeOfHSequenceOfPersistent::~PColStd_SeqNodeOfHSequenceOfPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_SeqNodeOfHSequenceOfPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HOfExtendedString;
@@ -3112,8 +3912,18 @@ class PColStd_HOfExtendedString {
 };
 %feature("shadow") PColStd_HOfExtendedString::~PColStd_HOfExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HOfExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HArray2OfReal;
@@ -3187,8 +3997,18 @@ class PColStd_HArray2OfReal : public Standard_Persistent {
 };
 %feature("shadow") PColStd_HArray2OfReal::~PColStd_HArray2OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HArray2OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HSequenceOfReal;
@@ -3286,8 +4106,18 @@ class PColStd_HSequenceOfReal : public Standard_Persistent {
 };
 %feature("shadow") PColStd_HSequenceOfReal::~PColStd_HSequenceOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HSequenceOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HashExtendedString;
@@ -3303,8 +4133,18 @@ class PColStd_HashExtendedString : public PColStd_HOfExtendedString {
 };
 %feature("shadow") PColStd_HashExtendedString::~PColStd_HashExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HashExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PColStd_HArray1OfExtendedString;
@@ -3364,5 +4204,15 @@ class PColStd_HArray1OfExtendedString : public Standard_Persistent {
 };
 %feature("shadow") PColStd_HArray1OfExtendedString::~PColStd_HArray1OfExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PColStd_HArray1OfExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -69,8 +69,18 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public Handl
 };
 %feature("shadow") Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient::~Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshShape_ListNodeOfPolygon;
@@ -97,8 +107,18 @@ class Handle_MeshShape_ListNodeOfPolygon : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_MeshShape_ListNodeOfPolygon::~Handle_MeshShape_ListNodeOfPolygon %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshShape_ListNodeOfPolygon {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshShape_ListNodeOfListOfSurfacePoint;
@@ -125,8 +145,18 @@ class Handle_MeshShape_ListNodeOfListOfSurfacePoint : public Handle_TCollection_
 };
 %feature("shadow") Handle_MeshShape_ListNodeOfListOfSurfacePoint::~Handle_MeshShape_ListNodeOfListOfSurfacePoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshShape_ListNodeOfListOfSurfacePoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshShape_StdMapNodeOfMapOfCouple;
@@ -153,8 +183,18 @@ class Handle_MeshShape_StdMapNodeOfMapOfCouple : public Handle_TCollection_MapNo
 };
 %feature("shadow") Handle_MeshShape_StdMapNodeOfMapOfCouple::~Handle_MeshShape_StdMapNodeOfMapOfCouple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshShape_StdMapNodeOfMapOfCouple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY;
@@ -181,8 +221,18 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY : public Handle_TCollecti
 };
 %feature("shadow") Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY::~Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt;
@@ -209,8 +259,18 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public Handle_TCollect
 };
 %feature("shadow") Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt::~Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_DataMapNodeOfDataMapOfIntegerPnt;
@@ -248,8 +308,18 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public TCollection_MapNode {
 };
 %feature("shadow") MeshShape_DataMapNodeOfDataMapOfIntegerPnt::~MeshShape_DataMapNodeOfDataMapOfIntegerPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_DataMapNodeOfDataMapOfIntegerPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_Couple;
@@ -274,8 +344,18 @@ class MeshShape_Couple {
 };
 %feature("shadow") MeshShape_Couple::~MeshShape_Couple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_Couple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_DataMapOfIntegerPnt;
@@ -309,8 +389,18 @@ class MeshShape_DataMapOfIntegerPnt : public TCollection_BasicMap {
 };
 %feature("shadow") MeshShape_DataMapOfIntegerPnt::~MeshShape_DataMapOfIntegerPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_DataMapOfIntegerPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_CoupleHasher;
@@ -326,8 +416,18 @@ class MeshShape_CoupleHasher {
 };
 %feature("shadow") MeshShape_CoupleHasher::~MeshShape_CoupleHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_CoupleHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape;
@@ -343,8 +443,18 @@ class MeshShape {
 };
 %feature("shadow") MeshShape::~MeshShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_PolygonPoint;
@@ -362,8 +472,18 @@ class MeshShape_PolygonPoint {
 };
 %feature("shadow") MeshShape_PolygonPoint::~MeshShape_PolygonPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_PolygonPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_MapIteratorOfMapOfCouple;
@@ -381,8 +501,18 @@ class MeshShape_MapIteratorOfMapOfCouple : public TCollection_BasicMapIterator {
 };
 %feature("shadow") MeshShape_MapIteratorOfMapOfCouple::~MeshShape_MapIteratorOfMapOfCouple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_MapIteratorOfMapOfCouple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_Polygon;
@@ -432,8 +562,18 @@ class MeshShape_Polygon {
 };
 %feature("shadow") MeshShape_Polygon::~MeshShape_Polygon %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_Polygon {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_ListOfSurfacePoint;
@@ -483,8 +623,18 @@ class MeshShape_ListOfSurfacePoint {
 };
 %feature("shadow") MeshShape_ListOfSurfacePoint::~MeshShape_ListOfSurfacePoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_ListOfSurfacePoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_ListIteratorOfPolygon;
@@ -506,8 +656,18 @@ class MeshShape_ListIteratorOfPolygon {
 };
 %feature("shadow") MeshShape_ListIteratorOfPolygon::~MeshShape_ListIteratorOfPolygon %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_ListIteratorOfPolygon {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_DataMapOfShapeListOfTransient;
@@ -541,8 +701,18 @@ class MeshShape_DataMapOfShapeListOfTransient : public TCollection_BasicMap {
 };
 %feature("shadow") MeshShape_DataMapOfShapeListOfTransient::~MeshShape_DataMapOfShapeListOfTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_DataMapOfShapeListOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_ListNodeOfPolygon;
@@ -568,8 +738,18 @@ class MeshShape_ListNodeOfPolygon : public TCollection_MapNode {
 };
 %feature("shadow") MeshShape_ListNodeOfPolygon::~MeshShape_ListNodeOfPolygon %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_ListNodeOfPolygon {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_DataMapIteratorOfDataMapOfIntegerPnt;
@@ -589,8 +769,18 @@ class MeshShape_DataMapIteratorOfDataMapOfIntegerPnt : public TCollection_BasicM
 };
 %feature("shadow") MeshShape_DataMapIteratorOfDataMapOfIntegerPnt::~MeshShape_DataMapIteratorOfDataMapOfIntegerPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_DataMapIteratorOfDataMapOfIntegerPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_DataMapIteratorOfDataMapOfIntegerXY;
@@ -610,8 +800,18 @@ class MeshShape_DataMapIteratorOfDataMapOfIntegerXY : public TCollection_BasicMa
 };
 %feature("shadow") MeshShape_DataMapIteratorOfDataMapOfIntegerXY::~MeshShape_DataMapIteratorOfDataMapOfIntegerXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_DataMapIteratorOfDataMapOfIntegerXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_StdMapNodeOfMapOfCouple;
@@ -637,8 +837,18 @@ class MeshShape_StdMapNodeOfMapOfCouple : public TCollection_MapNode {
 };
 %feature("shadow") MeshShape_StdMapNodeOfMapOfCouple::~MeshShape_StdMapNodeOfMapOfCouple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_StdMapNodeOfMapOfCouple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_DataMapOfIntegerXY;
@@ -672,8 +882,18 @@ class MeshShape_DataMapOfIntegerXY : public TCollection_BasicMap {
 };
 %feature("shadow") MeshShape_DataMapOfIntegerXY::~MeshShape_DataMapOfIntegerXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_DataMapOfIntegerXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_ListIteratorOfListOfSurfacePoint;
@@ -695,8 +915,18 @@ class MeshShape_ListIteratorOfListOfSurfacePoint {
 };
 %feature("shadow") MeshShape_ListIteratorOfListOfSurfacePoint::~MeshShape_ListIteratorOfListOfSurfacePoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_ListIteratorOfListOfSurfacePoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient;
@@ -724,8 +954,18 @@ class MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public TCollection_
 };
 %feature("shadow") MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient::~MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_SurfacePoint;
@@ -747,8 +987,18 @@ class MeshShape_SurfacePoint {
 };
 %feature("shadow") MeshShape_SurfacePoint::~MeshShape_SurfacePoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_SurfacePoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_MapOfCouple;
@@ -774,8 +1024,18 @@ class MeshShape_MapOfCouple : public TCollection_BasicMap {
 };
 %feature("shadow") MeshShape_MapOfCouple::~MeshShape_MapOfCouple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_MapOfCouple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_DataMapNodeOfDataMapOfIntegerXY;
@@ -813,8 +1073,18 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerXY : public TCollection_MapNode {
 };
 %feature("shadow") MeshShape_DataMapNodeOfDataMapOfIntegerXY::~MeshShape_DataMapNodeOfDataMapOfIntegerXY %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_DataMapNodeOfDataMapOfIntegerXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient;
@@ -834,8 +1104,18 @@ class MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient : public TCollect
 };
 %feature("shadow") MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient::~MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshShape_ListNodeOfListOfSurfacePoint;
@@ -861,5 +1141,15 @@ class MeshShape_ListNodeOfListOfSurfacePoint : public TCollection_MapNode {
 };
 %feature("shadow") MeshShape_ListNodeOfListOfSurfacePoint::~MeshShape_ListNodeOfListOfSurfacePoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshShape_ListNodeOfListOfSurfacePoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

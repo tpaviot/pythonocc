@@ -63,8 +63,18 @@ class Handle_AppStd_Application : public Handle_TDocStd_Application {
 };
 %feature("shadow") Handle_AppStd_Application::~Handle_AppStd_Application %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AppStd_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppStd_Application;
@@ -94,5 +104,15 @@ class AppStd_Application : public TDocStd_Application {
 };
 %feature("shadow") AppStd_Application::~AppStd_Application %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppStd_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

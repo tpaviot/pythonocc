@@ -68,8 +68,18 @@ class Handle_BRepAlgo_AsDes : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_BRepAlgo_AsDes::~Handle_BRepAlgo_AsDes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepAlgo_AsDes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean;
@@ -96,8 +106,18 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public Handle_TCollec
 };
 %feature("shadow") Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean::~Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepAlgo_EdgeConnector;
@@ -124,8 +144,18 @@ class Handle_BRepAlgo_EdgeConnector : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_BRepAlgo_EdgeConnector::~Handle_BRepAlgo_EdgeConnector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepAlgo_EdgeConnector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger;
@@ -152,8 +182,18 @@ class Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public Handle_
 };
 %feature("shadow") Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger::~Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger;
@@ -180,8 +220,18 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_T
 };
 %feature("shadow") Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger::~Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference;
@@ -208,8 +258,18 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public Handle_TC
 };
 %feature("shadow") Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference::~Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_Tool;
@@ -223,8 +283,18 @@ class BRepAlgo_Tool {
 };
 %feature("shadow") BRepAlgo_Tool::~BRepAlgo_Tool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger;
@@ -252,8 +322,18 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_Map
 };
 %feature("shadow") BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger::~BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo;
@@ -273,8 +353,18 @@ class BRepAlgo {
 };
 %feature("shadow") BRepAlgo::~BRepAlgo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_BooleanOperation;
@@ -300,8 +390,18 @@ class BRepAlgo_BooleanOperation : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepAlgo_BooleanOperation::~BRepAlgo_BooleanOperation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_BooleanOperation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_Common;
@@ -313,8 +413,18 @@ class BRepAlgo_Common : public BRepAlgo_BooleanOperation {
 };
 %feature("shadow") BRepAlgo_Common::~BRepAlgo_Common %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_Common {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_Loop;
@@ -350,8 +460,18 @@ class BRepAlgo_Loop {
 };
 %feature("shadow") BRepAlgo_Loop::~BRepAlgo_Loop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_Loop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_EdgeConnector;
@@ -393,8 +513,18 @@ class BRepAlgo_EdgeConnector : public MMgt_TShared {
 };
 %feature("shadow") BRepAlgo_EdgeConnector::~BRepAlgo_EdgeConnector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_EdgeConnector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference;
@@ -414,8 +544,18 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference : public TCollection_
 };
 %feature("shadow") BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference::~BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_DataMapNodeOfDataMapOfShapeInterference;
@@ -443,8 +583,18 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public TCollection_MapN
 };
 %feature("shadow") BRepAlgo_DataMapNodeOfDataMapOfShapeInterference::~BRepAlgo_DataMapNodeOfDataMapOfShapeInterference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_DataMapOfShapeBoolean;
@@ -478,8 +628,18 @@ class BRepAlgo_DataMapOfShapeBoolean : public TCollection_BasicMap {
 };
 %feature("shadow") BRepAlgo_DataMapOfShapeBoolean::~BRepAlgo_DataMapOfShapeBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_DataMapOfShapeBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_NormalProjection;
@@ -523,8 +683,18 @@ class BRepAlgo_NormalProjection {
 };
 %feature("shadow") BRepAlgo_NormalProjection::~BRepAlgo_NormalProjection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_NormalProjection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_AsDes;
@@ -570,8 +740,18 @@ class BRepAlgo_AsDes : public MMgt_TShared {
 };
 %feature("shadow") BRepAlgo_AsDes::~BRepAlgo_AsDes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_AsDes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean;
@@ -599,8 +779,18 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public TCollection_MapNode {
 };
 %feature("shadow") BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean::~BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_TopOpe;
@@ -642,8 +832,18 @@ class BRepAlgo_TopOpe {
 };
 %feature("shadow") BRepAlgo_TopOpe::~BRepAlgo_TopOpe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_TopOpe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_DSAccess;
@@ -703,8 +903,18 @@ class BRepAlgo_DSAccess {
 };
 %feature("shadow") BRepAlgo_DSAccess::~BRepAlgo_DSAccess %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_DSAccess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_Fuse;
@@ -716,8 +926,18 @@ class BRepAlgo_Fuse : public BRepAlgo_BooleanOperation {
 };
 %feature("shadow") BRepAlgo_Fuse::~BRepAlgo_Fuse %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_Fuse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_Image;
@@ -761,8 +981,18 @@ class BRepAlgo_Image {
 };
 %feature("shadow") BRepAlgo_Image::~BRepAlgo_Image %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_Image {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_BooleanOperations;
@@ -808,8 +1038,18 @@ class BRepAlgo_BooleanOperations {
 };
 %feature("shadow") BRepAlgo_BooleanOperations::~BRepAlgo_BooleanOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_BooleanOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_Section;
@@ -857,8 +1097,18 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 };
 %feature("shadow") BRepAlgo_Section::~BRepAlgo_Section %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_Section {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_FaceRestrictor;
@@ -886,8 +1136,18 @@ class BRepAlgo_FaceRestrictor {
 };
 %feature("shadow") BRepAlgo_FaceRestrictor::~BRepAlgo_FaceRestrictor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_FaceRestrictor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_DataMapOfShapeInterference;
@@ -921,8 +1181,18 @@ class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
 };
 %feature("shadow") BRepAlgo_DataMapOfShapeInterference::~BRepAlgo_DataMapOfShapeInterference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_DataMapOfShapeInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_DataMapOfShapeListOfInteger;
@@ -956,8 +1226,18 @@ class BRepAlgo_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
 };
 %feature("shadow") BRepAlgo_DataMapOfShapeListOfInteger::~BRepAlgo_DataMapOfShapeListOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_DataMapOfShapeListOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_SequenceOfSequenceOfInteger;
@@ -1011,8 +1291,18 @@ class BRepAlgo_SequenceOfSequenceOfInteger : public TCollection_BaseSequence {
 };
 %feature("shadow") BRepAlgo_SequenceOfSequenceOfInteger::~BRepAlgo_SequenceOfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_SequenceOfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean;
@@ -1032,8 +1322,18 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean : public TCollection_Basic
 };
 %feature("shadow") BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean::~BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_Cut;
@@ -1045,8 +1345,18 @@ class BRepAlgo_Cut : public BRepAlgo_BooleanOperation {
 };
 %feature("shadow") BRepAlgo_Cut::~BRepAlgo_Cut %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_Cut {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger;
@@ -1066,8 +1376,18 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection
 };
 %feature("shadow") BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger::~BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger;
@@ -1093,5 +1413,15 @@ class BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public TCollection_Se
 };
 %feature("shadow") BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger::~BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

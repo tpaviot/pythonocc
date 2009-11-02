@@ -71,8 +71,18 @@ class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_GccEnt_BadQualifier::~Handle_GccEnt_BadQualifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GccEnt_BadQualifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccEnt_QualifiedLin;
@@ -102,8 +112,18 @@ class GccEnt_QualifiedLin {
 };
 %feature("shadow") GccEnt_QualifiedLin::~GccEnt_QualifiedLin %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccEnt_QualifiedLin {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccEnt_Array1OfPosition;
@@ -143,8 +163,18 @@ class GccEnt_Array1OfPosition {
 };
 %feature("shadow") GccEnt_Array1OfPosition::~GccEnt_Array1OfPosition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccEnt_Array1OfPosition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccEnt_BadQualifier;
@@ -176,8 +206,18 @@ class GccEnt_BadQualifier : public Standard_DomainError {
 };
 %feature("shadow") GccEnt_BadQualifier::~GccEnt_BadQualifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccEnt_BadQualifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccEnt;
@@ -203,8 +243,18 @@ class GccEnt {
 };
 %feature("shadow") GccEnt::~GccEnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccEnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccEnt_QualifiedCirc;
@@ -236,5 +286,15 @@ class GccEnt_QualifiedCirc {
 };
 %feature("shadow") GccEnt_QualifiedCirc::~GccEnt_QualifiedCirc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccEnt_QualifiedCirc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

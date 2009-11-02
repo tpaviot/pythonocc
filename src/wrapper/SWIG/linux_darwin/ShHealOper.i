@@ -69,8 +69,18 @@ class Handle_ShHealOper_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve3d {
 };
 %feature("shadow") Handle_ShHealOper_SplitCurve3d::~Handle_ShHealOper_SplitCurve3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShHealOper_SplitCurve3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShHealOper_SplitCurve2d;
@@ -97,8 +107,18 @@ class Handle_ShHealOper_SplitCurve2d : public Handle_ShapeUpgrade_SplitCurve2d {
 };
 %feature("shadow") Handle_ShHealOper_SplitCurve2d::~Handle_ShHealOper_SplitCurve2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShHealOper_SplitCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShHealOper_Tool;
@@ -126,8 +146,18 @@ class ShHealOper_Tool {
 };
 %feature("shadow") ShHealOper_Tool::~ShHealOper_Tool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShHealOper_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShHealOper_Sewing;
@@ -165,8 +195,18 @@ class ShHealOper_Sewing : public ShHealOper_Tool {
 };
 %feature("shadow") ShHealOper_Sewing::~ShHealOper_Sewing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShHealOper_Sewing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShHealOper_RemoveInternalWires;
@@ -186,8 +226,18 @@ class ShHealOper_RemoveInternalWires : public ShHealOper_Tool {
 };
 %feature("shadow") ShHealOper_RemoveInternalWires::~ShHealOper_RemoveInternalWires %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShHealOper_RemoveInternalWires {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShHealOper_SplitCurve2d;
@@ -215,8 +265,18 @@ class ShHealOper_SplitCurve2d : public ShapeUpgrade_SplitCurve2d {
 };
 %feature("shadow") ShHealOper_SplitCurve2d::~ShHealOper_SplitCurve2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShHealOper_SplitCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShHealOper_ShapeProcess;
@@ -248,8 +308,18 @@ class ShHealOper_ShapeProcess {
 };
 %feature("shadow") ShHealOper_ShapeProcess::~ShHealOper_ShapeProcess %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShHealOper_ShapeProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShHealOper_CloseContour;
@@ -281,8 +351,18 @@ class ShHealOper_CloseContour : public ShHealOper_Tool {
 };
 %feature("shadow") ShHealOper_CloseContour::~ShHealOper_CloseContour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShHealOper_CloseContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShHealOper_FillHoles;
@@ -304,8 +384,18 @@ class ShHealOper_FillHoles : public ShHealOper_Tool {
 };
 %feature("shadow") ShHealOper_FillHoles::~ShHealOper_FillHoles %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShHealOper_FillHoles {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShHealOper_ChangeOrientation;
@@ -323,8 +413,18 @@ class ShHealOper_ChangeOrientation : public ShHealOper_Tool {
 };
 %feature("shadow") ShHealOper_ChangeOrientation::~ShHealOper_ChangeOrientation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShHealOper_ChangeOrientation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShHealOper_RemoveFace;
@@ -344,8 +444,18 @@ class ShHealOper_RemoveFace : public ShHealOper_Tool {
 };
 %feature("shadow") ShHealOper_RemoveFace::~ShHealOper_RemoveFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShHealOper_RemoveFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShHealOper_EdgeDivide;
@@ -365,8 +475,18 @@ class ShHealOper_EdgeDivide : public ShHealOper_Tool {
 };
 %feature("shadow") ShHealOper_EdgeDivide::~ShHealOper_EdgeDivide %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShHealOper_EdgeDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShHealOper_SplitCurve3d;
@@ -394,5 +514,15 @@ class ShHealOper_SplitCurve3d : public ShapeUpgrade_SplitCurve3d {
 };
 %feature("shadow") ShHealOper_SplitCurve3d::~ShHealOper_SplitCurve3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShHealOper_SplitCurve3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

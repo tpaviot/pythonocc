@@ -72,8 +72,18 @@ class Handle_GccInt_Bisec : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GccInt_Bisec::~Handle_GccInt_Bisec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GccInt_Bisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GccInt_BLine;
@@ -100,8 +110,18 @@ class Handle_GccInt_BLine : public Handle_GccInt_Bisec {
 };
 %feature("shadow") Handle_GccInt_BLine::~Handle_GccInt_BLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GccInt_BLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GccInt_BParab;
@@ -128,8 +148,18 @@ class Handle_GccInt_BParab : public Handle_GccInt_Bisec {
 };
 %feature("shadow") Handle_GccInt_BParab::~Handle_GccInt_BParab %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GccInt_BParab {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GccInt_BElips;
@@ -156,8 +186,18 @@ class Handle_GccInt_BElips : public Handle_GccInt_Bisec {
 };
 %feature("shadow") Handle_GccInt_BElips::~Handle_GccInt_BElips %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GccInt_BElips {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GccInt_BPoint;
@@ -184,8 +224,18 @@ class Handle_GccInt_BPoint : public Handle_GccInt_Bisec {
 };
 %feature("shadow") Handle_GccInt_BPoint::~Handle_GccInt_BPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GccInt_BPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GccInt_BCirc;
@@ -212,8 +262,18 @@ class Handle_GccInt_BCirc : public Handle_GccInt_Bisec {
 };
 %feature("shadow") Handle_GccInt_BCirc::~Handle_GccInt_BCirc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GccInt_BCirc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GccInt_BHyper;
@@ -240,8 +300,18 @@ class Handle_GccInt_BHyper : public Handle_GccInt_Bisec {
 };
 %feature("shadow") Handle_GccInt_BHyper::~Handle_GccInt_BHyper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GccInt_BHyper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccInt_Bisec;
@@ -277,8 +347,18 @@ class GccInt_Bisec : public MMgt_TShared {
 };
 %feature("shadow") GccInt_Bisec::~GccInt_Bisec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccInt_Bisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccInt_BParab;
@@ -300,8 +380,18 @@ class GccInt_BParab : public GccInt_Bisec {
 };
 %feature("shadow") GccInt_BParab::~GccInt_BParab %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccInt_BParab {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccInt_BCirc;
@@ -329,8 +419,18 @@ class GccInt_BCirc : public GccInt_Bisec {
 };
 %feature("shadow") GccInt_BCirc::~GccInt_BCirc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccInt_BCirc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccInt_BElips;
@@ -358,8 +458,18 @@ class GccInt_BElips : public GccInt_Bisec {
 };
 %feature("shadow") GccInt_BElips::~GccInt_BElips %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccInt_BElips {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccInt_BPoint;
@@ -387,8 +497,18 @@ class GccInt_BPoint : public GccInt_Bisec {
 };
 %feature("shadow") GccInt_BPoint::~GccInt_BPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccInt_BPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccInt_BLine;
@@ -416,8 +536,18 @@ class GccInt_BLine : public GccInt_Bisec {
 };
 %feature("shadow") GccInt_BLine::~GccInt_BLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccInt_BLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccInt_BHyper;
@@ -445,5 +575,15 @@ class GccInt_BHyper : public GccInt_Bisec {
 };
 %feature("shadow") GccInt_BHyper::~GccInt_BHyper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccInt_BHyper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

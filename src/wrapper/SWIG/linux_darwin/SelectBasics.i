@@ -63,8 +63,18 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfAddress : public Handle_TColle
 };
 %feature("shadow") Handle_SelectBasics_SequenceNodeOfSequenceOfAddress::~Handle_SelectBasics_SequenceNodeOfSequenceOfAddress %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectBasics_SequenceNodeOfSequenceOfAddress {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectBasics_ListNodeOfListOfBox2d;
@@ -91,8 +101,18 @@ class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapN
 };
 %feature("shadow") Handle_SelectBasics_ListNodeOfListOfBox2d::~Handle_SelectBasics_ListNodeOfListOfBox2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectBasics_ListNodeOfListOfBox2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectBasics_ListNodeOfListOfSensitive;
@@ -119,8 +139,18 @@ class Handle_SelectBasics_ListNodeOfListOfSensitive : public Handle_TCollection_
 };
 %feature("shadow") Handle_SelectBasics_ListNodeOfListOfSensitive::~Handle_SelectBasics_ListNodeOfListOfSensitive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectBasics_ListNodeOfListOfSensitive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectBasics_SequenceNodeOfSequenceOfOwner;
@@ -147,8 +177,18 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollect
 };
 %feature("shadow") Handle_SelectBasics_SequenceNodeOfSequenceOfOwner::~Handle_SelectBasics_SequenceNodeOfSequenceOfOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectBasics_SensitiveEntity;
@@ -175,8 +215,18 @@ class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_SelectBasics_SensitiveEntity::~Handle_SelectBasics_SensitiveEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectBasics_SensitiveEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_SelectBasics_EntityOwner;
@@ -203,8 +253,18 @@ class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_SelectBasics_EntityOwner::~Handle_SelectBasics_EntityOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_SelectBasics_EntityOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_SortAlgo;
@@ -230,8 +290,18 @@ class SelectBasics_SortAlgo {
 };
 %feature("shadow") SelectBasics_SortAlgo::~SelectBasics_SortAlgo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_SortAlgo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_ListNodeOfListOfBox2d;
@@ -257,8 +327,18 @@ class SelectBasics_ListNodeOfListOfBox2d : public TCollection_MapNode {
 };
 %feature("shadow") SelectBasics_ListNodeOfListOfBox2d::~SelectBasics_ListNodeOfListOfBox2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_ListNodeOfListOfBox2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_SequenceNodeOfSequenceOfAddress;
@@ -284,8 +364,18 @@ class SelectBasics_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode 
 };
 %feature("shadow") SelectBasics_SequenceNodeOfSequenceOfAddress::~SelectBasics_SequenceNodeOfSequenceOfAddress %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_SequenceNodeOfSequenceOfAddress {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_SequenceOfAddress;
@@ -339,8 +429,18 @@ class SelectBasics_SequenceOfAddress : public TCollection_BaseSequence {
 };
 %feature("shadow") SelectBasics_SequenceOfAddress::~SelectBasics_SequenceOfAddress %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_SequenceOfAddress {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_ListOfBox2d;
@@ -390,8 +490,18 @@ class SelectBasics_ListOfBox2d {
 };
 %feature("shadow") SelectBasics_ListOfBox2d::~SelectBasics_ListOfBox2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_ListOfBox2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_BasicTool;
@@ -409,8 +519,18 @@ class SelectBasics_BasicTool {
 };
 %feature("shadow") SelectBasics_BasicTool::~SelectBasics_BasicTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_BasicTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_SensitiveEntity;
@@ -456,8 +576,18 @@ class SelectBasics_SensitiveEntity : public MMgt_TShared {
 };
 %feature("shadow") SelectBasics_SensitiveEntity::~SelectBasics_SensitiveEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_SensitiveEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics;
@@ -473,8 +603,18 @@ class SelectBasics {
 };
 %feature("shadow") SelectBasics::~SelectBasics %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_ListIteratorOfListOfBox2d;
@@ -496,8 +636,18 @@ class SelectBasics_ListIteratorOfListOfBox2d {
 };
 %feature("shadow") SelectBasics_ListIteratorOfListOfBox2d::~SelectBasics_ListIteratorOfListOfBox2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_ListIteratorOfListOfBox2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_SequenceOfOwner;
@@ -551,8 +701,18 @@ class SelectBasics_SequenceOfOwner : public TCollection_BaseSequence {
 };
 %feature("shadow") SelectBasics_SequenceOfOwner::~SelectBasics_SequenceOfOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_SequenceOfOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_ListIteratorOfListOfSensitive;
@@ -574,8 +734,18 @@ class SelectBasics_ListIteratorOfListOfSensitive {
 };
 %feature("shadow") SelectBasics_ListIteratorOfListOfSensitive::~SelectBasics_ListIteratorOfListOfSensitive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_ListIteratorOfListOfSensitive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_EntityOwner;
@@ -609,8 +779,18 @@ class SelectBasics_EntityOwner : public MMgt_TShared {
 };
 %feature("shadow") SelectBasics_EntityOwner::~SelectBasics_EntityOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_EntityOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_SequenceNodeOfSequenceOfOwner;
@@ -636,8 +816,18 @@ class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 };
 %feature("shadow") SelectBasics_SequenceNodeOfSequenceOfOwner::~SelectBasics_SequenceNodeOfSequenceOfOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_SequenceNodeOfSequenceOfOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_ListNodeOfListOfSensitive;
@@ -663,8 +853,18 @@ class SelectBasics_ListNodeOfListOfSensitive : public TCollection_MapNode {
 };
 %feature("shadow") SelectBasics_ListNodeOfListOfSensitive::~SelectBasics_ListNodeOfListOfSensitive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_ListNodeOfListOfSensitive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SelectBasics_ListOfSensitive;
@@ -714,5 +914,15 @@ class SelectBasics_ListOfSensitive {
 };
 %feature("shadow") SelectBasics_ListOfSensitive::~SelectBasics_ListOfSensitive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend SelectBasics_ListOfSensitive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

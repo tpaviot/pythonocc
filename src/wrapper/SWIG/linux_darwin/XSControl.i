@@ -63,8 +63,18 @@ class Handle_XSControl_TransferWriter : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_XSControl_TransferWriter::~Handle_XSControl_TransferWriter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XSControl_TransferWriter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XSControl_SignTransferStatus;
@@ -91,8 +101,18 @@ class Handle_XSControl_SignTransferStatus : public Handle_IFSelect_Signature {
 };
 %feature("shadow") Handle_XSControl_SignTransferStatus::~Handle_XSControl_SignTransferStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XSControl_SignTransferStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XSControl_TransferReader;
@@ -119,8 +139,18 @@ class Handle_XSControl_TransferReader : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_XSControl_TransferReader::~Handle_XSControl_TransferReader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XSControl_TransferReader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XSControl_Vars;
@@ -147,8 +177,18 @@ class Handle_XSControl_Vars : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_XSControl_Vars::~Handle_XSControl_Vars %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XSControl_Vars {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XSControl_SelectForTransfer;
@@ -175,8 +215,18 @@ class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract 
 };
 %feature("shadow") Handle_XSControl_SelectForTransfer::~Handle_XSControl_SelectForTransfer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XSControl_SelectForTransfer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XSControl_WorkSession;
@@ -203,8 +253,18 @@ class Handle_XSControl_WorkSession : public Handle_IFSelect_WorkSession {
 };
 %feature("shadow") Handle_XSControl_WorkSession::~Handle_XSControl_WorkSession %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XSControl_WorkSession {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XSControl_Controller;
@@ -231,8 +291,18 @@ class Handle_XSControl_Controller : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_XSControl_Controller::~Handle_XSControl_Controller %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XSControl_Controller {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XSControl_ConnectedShapes;
@@ -259,8 +329,18 @@ class Handle_XSControl_ConnectedShapes : public Handle_IFSelect_SelectExplore {
 };
 %feature("shadow") Handle_XSControl_ConnectedShapes::~Handle_XSControl_ConnectedShapes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XSControl_ConnectedShapes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSControl_SignTransferStatus;
@@ -296,8 +376,18 @@ class XSControl_SignTransferStatus : public IFSelect_Signature {
 };
 %feature("shadow") XSControl_SignTransferStatus::~XSControl_SignTransferStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSControl_SignTransferStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSControl_Writer;
@@ -327,8 +417,18 @@ class XSControl_Writer {
 };
 %feature("shadow") XSControl_Writer::~XSControl_Writer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSControl_Writer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSControl_Functions;
@@ -342,8 +442,18 @@ class XSControl_Functions {
 };
 %feature("shadow") XSControl_Functions::~XSControl_Functions %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSControl_Functions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSControl_ConnectedShapes;
@@ -377,8 +487,18 @@ class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 };
 %feature("shadow") XSControl_ConnectedShapes::~XSControl_ConnectedShapes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSControl_ConnectedShapes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSControl_Utils;
@@ -474,8 +594,18 @@ class XSControl_Utils {
 };
 %feature("shadow") XSControl_Utils::~XSControl_Utils %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSControl_Utils {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSControl_FuncShape;
@@ -493,8 +623,18 @@ class XSControl_FuncShape {
 };
 %feature("shadow") XSControl_FuncShape::~XSControl_FuncShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSControl_FuncShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSControl_Controller;
@@ -594,8 +734,18 @@ class XSControl_Controller : public MMgt_TShared {
 };
 %feature("shadow") XSControl_Controller::~XSControl_Controller %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSControl_Controller {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSControl_Reader;
@@ -655,8 +805,18 @@ class XSControl_Reader {
 };
 %feature("shadow") XSControl_Reader::~XSControl_Reader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSControl_Reader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSControl_TransferWriter;
@@ -710,8 +870,18 @@ class XSControl_TransferWriter : public MMgt_TShared {
 };
 %feature("shadow") XSControl_TransferWriter::~XSControl_TransferWriter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSControl_TransferWriter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSControl_WorkSession;
@@ -793,8 +963,18 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 };
 %feature("shadow") XSControl_WorkSession::~XSControl_WorkSession %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSControl_WorkSession {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSControl_TransferReader;
@@ -910,8 +1090,18 @@ class XSControl_TransferReader : public MMgt_TShared {
 };
 %feature("shadow") XSControl_TransferReader::~XSControl_TransferReader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSControl_TransferReader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSControl;
@@ -927,8 +1117,18 @@ class XSControl {
 };
 %feature("shadow") XSControl::~XSControl %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSControl {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XSControl_SelectForTransfer;
@@ -966,5 +1166,15 @@ class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
 };
 %feature("shadow") XSControl_SelectForTransfer::~XSControl_SelectForTransfer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XSControl_SelectForTransfer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

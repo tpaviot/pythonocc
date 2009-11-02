@@ -100,8 +100,18 @@ class Handle_BRepCheck_Result : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_BRepCheck_Result::~Handle_BRepCheck_Result %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepCheck_Result {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepCheck_Vertex;
@@ -128,8 +138,18 @@ class Handle_BRepCheck_Vertex : public Handle_BRepCheck_Result {
 };
 %feature("shadow") Handle_BRepCheck_Vertex::~Handle_BRepCheck_Vertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepCheck_Vertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepCheck_Shell;
@@ -156,8 +176,18 @@ class Handle_BRepCheck_Shell : public Handle_BRepCheck_Result {
 };
 %feature("shadow") Handle_BRepCheck_Shell::~Handle_BRepCheck_Shell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepCheck_Shell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepCheck_Face;
@@ -184,8 +214,18 @@ class Handle_BRepCheck_Face : public Handle_BRepCheck_Result {
 };
 %feature("shadow") Handle_BRepCheck_Face::~Handle_BRepCheck_Face %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepCheck_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus;
@@ -212,8 +252,18 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public Handle_T
 };
 %feature("shadow") Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus::~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepCheck_Wire;
@@ -240,8 +290,18 @@ class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
 };
 %feature("shadow") Handle_BRepCheck_Wire::~Handle_BRepCheck_Wire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepCheck_Wire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepCheck_ListNodeOfListOfStatus;
@@ -268,8 +328,18 @@ class Handle_BRepCheck_ListNodeOfListOfStatus : public Handle_TCollection_MapNod
 };
 %feature("shadow") Handle_BRepCheck_ListNodeOfListOfStatus::~Handle_BRepCheck_ListNodeOfListOfStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepCheck_ListNodeOfListOfStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepCheck_Edge;
@@ -296,8 +366,18 @@ class Handle_BRepCheck_Edge : public Handle_BRepCheck_Result {
 };
 %feature("shadow") Handle_BRepCheck_Edge::~Handle_BRepCheck_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepCheck_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult;
@@ -324,8 +404,18 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult : public Handle_TCollec
 };
 %feature("shadow") Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult::~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_ListNodeOfListOfStatus;
@@ -351,8 +441,18 @@ class BRepCheck_ListNodeOfListOfStatus : public TCollection_MapNode {
 };
 %feature("shadow") BRepCheck_ListNodeOfListOfStatus::~BRepCheck_ListNodeOfListOfStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_ListNodeOfListOfStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_Result;
@@ -402,8 +502,18 @@ class BRepCheck_Result : public MMgt_TShared {
 };
 %feature("shadow") BRepCheck_Result::~BRepCheck_Result %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_Result {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_Shell;
@@ -443,8 +553,18 @@ class BRepCheck_Shell : public BRepCheck_Result {
 };
 %feature("shadow") BRepCheck_Shell::~BRepCheck_Shell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_Shell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_DataMapIteratorOfDataMapOfShapeResult;
@@ -464,8 +584,18 @@ class BRepCheck_DataMapIteratorOfDataMapOfShapeResult : public TCollection_Basic
 };
 %feature("shadow") BRepCheck_DataMapIteratorOfDataMapOfShapeResult::~BRepCheck_DataMapIteratorOfDataMapOfShapeResult %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_DataMapIteratorOfDataMapOfShapeResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_DataMapOfShapeResult;
@@ -499,8 +629,18 @@ class BRepCheck_DataMapOfShapeResult : public TCollection_BasicMap {
 };
 %feature("shadow") BRepCheck_DataMapOfShapeResult::~BRepCheck_DataMapOfShapeResult %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_DataMapOfShapeResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_Face;
@@ -544,8 +684,18 @@ class BRepCheck_Face : public BRepCheck_Result {
 };
 %feature("shadow") BRepCheck_Face::~BRepCheck_Face %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_DataMapNodeOfDataMapOfShapeResult;
@@ -573,8 +723,18 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeResult : public TCollection_MapNode {
 };
 %feature("shadow") BRepCheck_DataMapNodeOfDataMapOfShapeResult::~BRepCheck_DataMapNodeOfDataMapOfShapeResult %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_DataMapNodeOfDataMapOfShapeResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_Vertex;
@@ -606,8 +766,18 @@ class BRepCheck_Vertex : public BRepCheck_Result {
 };
 %feature("shadow") BRepCheck_Vertex::~BRepCheck_Vertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_Vertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck;
@@ -625,8 +795,18 @@ class BRepCheck {
 };
 %feature("shadow") BRepCheck::~BRepCheck %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_Wire;
@@ -668,8 +848,18 @@ class BRepCheck_Wire : public BRepCheck_Result {
 };
 %feature("shadow") BRepCheck_Wire::~BRepCheck_Wire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_Wire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_DataMapOfShapeListOfStatus;
@@ -703,8 +893,18 @@ class BRepCheck_DataMapOfShapeListOfStatus : public TCollection_BasicMap {
 };
 %feature("shadow") BRepCheck_DataMapOfShapeListOfStatus::~BRepCheck_DataMapOfShapeListOfStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_DataMapOfShapeListOfStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_Edge;
@@ -740,8 +940,18 @@ class BRepCheck_Edge : public BRepCheck_Result {
 };
 %feature("shadow") BRepCheck_Edge::~BRepCheck_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus;
@@ -769,8 +979,18 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public TCollection_Map
 };
 %feature("shadow") BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus::~BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus;
@@ -790,8 +1010,18 @@ class BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus : public TCollection
 };
 %feature("shadow") BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus::~BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_ListOfStatus;
@@ -841,8 +1071,18 @@ class BRepCheck_ListOfStatus {
 };
 %feature("shadow") BRepCheck_ListOfStatus::~BRepCheck_ListOfStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_ListOfStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_ListIteratorOfListOfStatus;
@@ -864,8 +1104,18 @@ class BRepCheck_ListIteratorOfListOfStatus {
 };
 %feature("shadow") BRepCheck_ListIteratorOfListOfStatus::~BRepCheck_ListIteratorOfListOfStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_ListIteratorOfListOfStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepCheck_Analyzer;
@@ -885,5 +1135,15 @@ class BRepCheck_Analyzer {
 };
 %feature("shadow") BRepCheck_Analyzer::~BRepCheck_Analyzer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepCheck_Analyzer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

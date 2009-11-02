@@ -63,8 +63,18 @@ class Handle_STEPSelections_AssemblyLink : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_STEPSelections_AssemblyLink::~Handle_STEPSelections_AssemblyLink %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPSelections_AssemblyLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPSelections_SelectForTransfer;
@@ -91,8 +101,18 @@ class Handle_STEPSelections_SelectForTransfer : public Handle_XSControl_SelectFo
 };
 %feature("shadow") Handle_STEPSelections_SelectForTransfer::~Handle_STEPSelections_SelectForTransfer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPSelections_SelectForTransfer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPSelections_SelectGSCurves;
@@ -119,8 +139,18 @@ class Handle_STEPSelections_SelectGSCurves : public Handle_IFSelect_SelectExplor
 };
 %feature("shadow") Handle_STEPSelections_SelectGSCurves::~Handle_STEPSelections_SelectGSCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPSelections_SelectGSCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPSelections_SelectDerived;
@@ -147,8 +177,18 @@ class Handle_STEPSelections_SelectDerived : public Handle_StepSelect_StepType {
 };
 %feature("shadow") Handle_STEPSelections_SelectDerived::~Handle_STEPSelections_SelectDerived %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPSelections_SelectDerived {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPSelections_SelectInstances;
@@ -175,8 +215,18 @@ class Handle_STEPSelections_SelectInstances : public Handle_IFSelect_SelectExplo
 };
 %feature("shadow") Handle_STEPSelections_SelectInstances::~Handle_STEPSelections_SelectInstances %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPSelections_SelectInstances {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPSelections_SelectAssembly;
@@ -203,8 +253,18 @@ class Handle_STEPSelections_SelectAssembly : public Handle_IFSelect_SelectExplor
 };
 %feature("shadow") Handle_STEPSelections_SelectAssembly::~Handle_STEPSelections_SelectAssembly %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPSelections_SelectAssembly {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPSelections_HSequenceOfAssemblyLink;
@@ -231,8 +291,18 @@ class Handle_STEPSelections_HSequenceOfAssemblyLink : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_STEPSelections_HSequenceOfAssemblyLink::~Handle_STEPSelections_HSequenceOfAssemblyLink %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPSelections_HSequenceOfAssemblyLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPSelections_AssemblyComponent;
@@ -259,8 +329,18 @@ class Handle_STEPSelections_AssemblyComponent : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_STEPSelections_AssemblyComponent::~Handle_STEPSelections_AssemblyComponent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPSelections_AssemblyComponent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink;
@@ -287,8 +367,18 @@ class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public Handle
 };
 %feature("shadow") Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink::~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPSelections_SelectFaces;
@@ -315,8 +405,18 @@ class Handle_STEPSelections_SelectFaces : public Handle_IFSelect_SelectExplore {
 };
 %feature("shadow") Handle_STEPSelections_SelectFaces::~Handle_STEPSelections_SelectFaces %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPSelections_SelectFaces {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
@@ -343,8 +443,18 @@ class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public H
 };
 %feature("shadow") Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent::~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_SequenceOfAssemblyComponent;
@@ -398,8 +508,18 @@ class STEPSelections_SequenceOfAssemblyComponent : public TCollection_BaseSequen
 };
 %feature("shadow") STEPSelections_SequenceOfAssemblyComponent::~STEPSelections_SequenceOfAssemblyComponent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_SequenceOfAssemblyComponent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_AssemblyExplorer;
@@ -431,8 +551,18 @@ class STEPSelections_AssemblyExplorer {
 };
 %feature("shadow") STEPSelections_AssemblyExplorer::~STEPSelections_AssemblyExplorer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_AssemblyExplorer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_AssemblyComponent;
@@ -466,8 +596,18 @@ class STEPSelections_AssemblyComponent : public MMgt_TShared {
 };
 %feature("shadow") STEPSelections_AssemblyComponent::~STEPSelections_AssemblyComponent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_AssemblyComponent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
@@ -493,8 +633,18 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollect
 };
 %feature("shadow") STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent::~STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_SequenceNodeOfSequenceOfAssemblyLink;
@@ -520,8 +670,18 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_S
 };
 %feature("shadow") STEPSelections_SequenceNodeOfSequenceOfAssemblyLink::~STEPSelections_SequenceNodeOfSequenceOfAssemblyLink %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_Counter;
@@ -557,8 +717,18 @@ class STEPSelections_Counter {
 };
 %feature("shadow") STEPSelections_Counter::~STEPSelections_Counter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_Counter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_SelectInstances;
@@ -588,8 +758,18 @@ class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 };
 %feature("shadow") STEPSelections_SelectInstances::~STEPSelections_SelectInstances %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_SelectInstances {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_SelectDerived;
@@ -615,8 +795,18 @@ class STEPSelections_SelectDerived : public StepSelect_StepType {
 };
 %feature("shadow") STEPSelections_SelectDerived::~STEPSelections_SelectDerived %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_SelectDerived {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_SelectForTransfer;
@@ -644,8 +834,18 @@ class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
 };
 %feature("shadow") STEPSelections_SelectForTransfer::~STEPSelections_SelectForTransfer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_SelectForTransfer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_HSequenceOfAssemblyLink;
@@ -713,8 +913,18 @@ class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
 };
 %feature("shadow") STEPSelections_HSequenceOfAssemblyLink::~STEPSelections_HSequenceOfAssemblyLink %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_HSequenceOfAssemblyLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_SelectGSCurves;
@@ -742,8 +952,18 @@ class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
 };
 %feature("shadow") STEPSelections_SelectGSCurves::~STEPSelections_SelectGSCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_SelectGSCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_SequenceOfAssemblyLink;
@@ -797,8 +1017,18 @@ class STEPSelections_SequenceOfAssemblyLink : public TCollection_BaseSequence {
 };
 %feature("shadow") STEPSelections_SequenceOfAssemblyLink::~STEPSelections_SequenceOfAssemblyLink %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_SequenceOfAssemblyLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_SelectAssembly;
@@ -826,8 +1056,18 @@ class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 };
 %feature("shadow") STEPSelections_SelectAssembly::~STEPSelections_SelectAssembly %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_SelectAssembly {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_AssemblyLink;
@@ -865,8 +1105,18 @@ class STEPSelections_AssemblyLink : public MMgt_TShared {
 };
 %feature("shadow") STEPSelections_AssemblyLink::~STEPSelections_AssemblyLink %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_AssemblyLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor STEPSelections_SelectFaces;
@@ -894,5 +1144,15 @@ class STEPSelections_SelectFaces : public IFSelect_SelectExplore {
 };
 %feature("shadow") STEPSelections_SelectFaces::~STEPSelections_SelectFaces %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend STEPSelections_SelectFaces {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

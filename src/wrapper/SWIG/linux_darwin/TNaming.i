@@ -88,8 +88,18 @@ class Handle_TNaming_DeltaOnModification : public Handle_TDF_DeltaOnModification
 };
 %feature("shadow") Handle_TNaming_DeltaOnModification::~Handle_TNaming_DeltaOnModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TNaming_DeltaOnModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TNaming_Naming;
@@ -116,8 +126,18 @@ class Handle_TNaming_Naming : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TNaming_Naming::~Handle_TNaming_Naming %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TNaming_Naming {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape;
@@ -144,8 +164,18 @@ class Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public H
 };
 %feature("shadow") Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape::~Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TNaming_UsedShapes;
@@ -172,8 +202,18 @@ class Handle_TNaming_UsedShapes : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TNaming_UsedShapes::~Handle_TNaming_UsedShapes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TNaming_UsedShapes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TNaming_ListNodeOfListOfNamedShape;
@@ -200,8 +240,18 @@ class Handle_TNaming_ListNodeOfListOfNamedShape : public Handle_TCollection_MapN
 };
 %feature("shadow") Handle_TNaming_ListNodeOfListOfNamedShape::~Handle_TNaming_ListNodeOfListOfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TNaming_ListNodeOfListOfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TNaming_TranslateTool;
@@ -228,8 +278,18 @@ class Handle_TNaming_TranslateTool : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TNaming_TranslateTool::~Handle_TNaming_TranslateTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TNaming_TranslateTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TNaming_NamedShape;
@@ -256,8 +316,18 @@ class Handle_TNaming_NamedShape : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TNaming_NamedShape::~Handle_TNaming_NamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TNaming_NamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TNaming_DeltaOnRemoval;
@@ -284,8 +354,18 @@ class Handle_TNaming_DeltaOnRemoval : public Handle_TDF_DeltaOnRemoval {
 };
 %feature("shadow") Handle_TNaming_DeltaOnRemoval::~Handle_TNaming_DeltaOnRemoval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TNaming_DeltaOnRemoval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TNaming_ListNodeOfListOfMapOfShape;
@@ -312,8 +392,18 @@ class Handle_TNaming_ListNodeOfListOfMapOfShape : public Handle_TCollection_MapN
 };
 %feature("shadow") Handle_TNaming_ListNodeOfListOfMapOfShape::~Handle_TNaming_ListNodeOfListOfMapOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TNaming_ListNodeOfListOfMapOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet;
@@ -340,8 +430,18 @@ class Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public Handle_TColle
 };
 %feature("shadow") Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet::~Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape;
@@ -368,8 +468,18 @@ class Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape : public Handle_TCol
 };
 %feature("shadow") Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape::~Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TNaming_StdMapNodeOfMapOfNamedShape;
@@ -396,8 +506,18 @@ class Handle_TNaming_StdMapNodeOfMapOfNamedShape : public Handle_TCollection_Map
 };
 %feature("shadow") Handle_TNaming_StdMapNodeOfMapOfNamedShape::~Handle_TNaming_StdMapNodeOfMapOfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TNaming_StdMapNodeOfMapOfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_NamedShapeHasher;
@@ -413,8 +533,18 @@ class TNaming_NamedShapeHasher {
 };
 %feature("shadow") TNaming_NamedShapeHasher::~TNaming_NamedShapeHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_NamedShapeHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_Tool;
@@ -454,8 +584,18 @@ class TNaming_Tool {
 };
 %feature("shadow") TNaming_Tool::~TNaming_Tool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_Name;
@@ -495,8 +635,18 @@ class TNaming_Name {
 };
 %feature("shadow") TNaming_Name::~TNaming_Name %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_Name {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_UsedShapes;
@@ -548,8 +698,18 @@ class TNaming_UsedShapes : public TDF_Attribute {
 };
 %feature("shadow") TNaming_UsedShapes::~TNaming_UsedShapes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_UsedShapes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_NamingTool;
@@ -567,8 +727,18 @@ class TNaming_NamingTool {
 };
 %feature("shadow") TNaming_NamingTool::~TNaming_NamingTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_NamingTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_TranslateTool;
@@ -618,8 +788,18 @@ class TNaming_TranslateTool : public MMgt_TShared {
 };
 %feature("shadow") TNaming_TranslateTool::~TNaming_TranslateTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_TranslateTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_MapOfNamedShape;
@@ -645,8 +825,18 @@ class TNaming_MapOfNamedShape : public TCollection_BasicMap {
 };
 %feature("shadow") TNaming_MapOfNamedShape::~TNaming_MapOfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_MapOfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_IteratorOnShapesSet;
@@ -668,8 +858,18 @@ class TNaming_IteratorOnShapesSet {
 };
 %feature("shadow") TNaming_IteratorOnShapesSet::~TNaming_IteratorOnShapesSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_IteratorOnShapesSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_Builder;
@@ -695,8 +895,18 @@ class TNaming_Builder {
 };
 %feature("shadow") TNaming_Builder::~TNaming_Builder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_Builder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_ListIteratorOfListOfNamedShape;
@@ -718,8 +928,18 @@ class TNaming_ListIteratorOfListOfNamedShape {
 };
 %feature("shadow") TNaming_ListIteratorOfListOfNamedShape::~TNaming_ListIteratorOfListOfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_ListIteratorOfListOfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_ListNodeOfListOfNamedShape;
@@ -745,8 +965,18 @@ class TNaming_ListNodeOfListOfNamedShape : public TCollection_MapNode {
 };
 %feature("shadow") TNaming_ListNodeOfListOfNamedShape::~TNaming_ListNodeOfListOfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_ListNodeOfListOfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape;
@@ -772,8 +1002,18 @@ class TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public TCollect
 };
 %feature("shadow") TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape::~TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_StdMapNodeOfMapOfNamedShape;
@@ -799,8 +1039,18 @@ class TNaming_StdMapNodeOfMapOfNamedShape : public TCollection_MapNode {
 };
 %feature("shadow") TNaming_StdMapNodeOfMapOfNamedShape::~TNaming_StdMapNodeOfMapOfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_StdMapNodeOfMapOfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_ShapesSet;
@@ -836,8 +1086,18 @@ class TNaming_ShapesSet {
 };
 %feature("shadow") TNaming_ShapesSet::~TNaming_ShapesSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_ShapesSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_ListOfMapOfShape;
@@ -887,8 +1147,18 @@ class TNaming_ListOfMapOfShape {
 };
 %feature("shadow") TNaming_ListOfMapOfShape::~TNaming_ListOfMapOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_ListOfMapOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_ListOfIndexedDataMapOfShapeListOfShape;
@@ -938,8 +1208,18 @@ class TNaming_ListOfIndexedDataMapOfShapeListOfShape {
 };
 %feature("shadow") TNaming_ListOfIndexedDataMapOfShapeListOfShape::~TNaming_ListOfIndexedDataMapOfShapeListOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_ListOfIndexedDataMapOfShapeListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_Translator;
@@ -963,8 +1243,18 @@ class TNaming_Translator {
 };
 %feature("shadow") TNaming_Translator::~TNaming_Translator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_Translator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_Scope;
@@ -1002,8 +1292,18 @@ class TNaming_Scope {
 };
 %feature("shadow") TNaming_Scope::~TNaming_Scope %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_Scope {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_RefShape;
@@ -1029,8 +1329,18 @@ class TNaming_RefShape {
 };
 %feature("shadow") TNaming_RefShape::~TNaming_RefShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_RefShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape;
@@ -1050,8 +1360,18 @@ class TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape : public TCollection_Ba
 };
 %feature("shadow") TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape::~TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_Iterator;
@@ -1079,8 +1399,18 @@ class TNaming_Iterator {
 };
 %feature("shadow") TNaming_Iterator::~TNaming_Iterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_Iterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_SameShapeIterator;
@@ -1098,8 +1428,18 @@ class TNaming_SameShapeIterator {
 };
 %feature("shadow") TNaming_SameShapeIterator::~TNaming_SameShapeIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_SameShapeIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_DeltaOnRemoval;
@@ -1125,8 +1465,18 @@ class TNaming_DeltaOnRemoval : public TDF_DeltaOnRemoval {
 };
 %feature("shadow") TNaming_DeltaOnRemoval::~TNaming_DeltaOnRemoval %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_DeltaOnRemoval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_CopyShape;
@@ -1144,8 +1494,18 @@ class TNaming_CopyShape {
 };
 %feature("shadow") TNaming_CopyShape::~TNaming_CopyShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_CopyShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_DataMapNodeOfDataMapOfShapeShapesSet;
@@ -1173,8 +1533,18 @@ class TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public TCollection_MapNode 
 };
 %feature("shadow") TNaming_DataMapNodeOfDataMapOfShapeShapesSet::~TNaming_DataMapNodeOfDataMapOfShapeShapesSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_DataMapNodeOfDataMapOfShapeShapesSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_DeltaOnModification;
@@ -1200,8 +1570,18 @@ class TNaming_DeltaOnModification : public TDF_DeltaOnModification {
 };
 %feature("shadow") TNaming_DeltaOnModification::~TNaming_DeltaOnModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_DeltaOnModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_Selector;
@@ -1225,8 +1605,18 @@ class TNaming_Selector {
 };
 %feature("shadow") TNaming_Selector::~TNaming_Selector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_Selector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_ListNodeOfListOfMapOfShape;
@@ -1252,8 +1642,18 @@ class TNaming_ListNodeOfListOfMapOfShape : public TCollection_MapNode {
 };
 %feature("shadow") TNaming_ListNodeOfListOfMapOfShape::~TNaming_ListNodeOfListOfMapOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_ListNodeOfListOfMapOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_NamedShape;
@@ -1325,8 +1725,18 @@ class TNaming_NamedShape : public TDF_Attribute {
 };
 %feature("shadow") TNaming_NamedShape::~TNaming_NamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_NamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape;
@@ -1348,8 +1758,18 @@ class TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape {
 };
 %feature("shadow") TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape::~TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_ListOfNamedShape;
@@ -1399,8 +1819,18 @@ class TNaming_ListOfNamedShape {
 };
 %feature("shadow") TNaming_ListOfNamedShape::~TNaming_ListOfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_ListOfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_ListIteratorOfListOfMapOfShape;
@@ -1422,8 +1852,18 @@ class TNaming_ListIteratorOfListOfMapOfShape {
 };
 %feature("shadow") TNaming_ListIteratorOfListOfMapOfShape::~TNaming_ListIteratorOfListOfMapOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_ListIteratorOfListOfMapOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_OldShapeIterator;
@@ -1453,8 +1893,18 @@ class TNaming_OldShapeIterator {
 };
 %feature("shadow") TNaming_OldShapeIterator::~TNaming_OldShapeIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_OldShapeIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_MapIteratorOfMapOfNamedShape;
@@ -1472,8 +1922,18 @@ class TNaming_MapIteratorOfMapOfNamedShape : public TCollection_BasicMapIterator
 };
 %feature("shadow") TNaming_MapIteratorOfMapOfNamedShape::~TNaming_MapIteratorOfMapOfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_MapIteratorOfMapOfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_DataMapNodeOfDataMapOfShapePtrRefShape;
@@ -1501,8 +1961,18 @@ class TNaming_DataMapNodeOfDataMapOfShapePtrRefShape : public TCollection_MapNod
 };
 %feature("shadow") TNaming_DataMapNodeOfDataMapOfShapePtrRefShape::~TNaming_DataMapNodeOfDataMapOfShapePtrRefShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_DataMapNodeOfDataMapOfShapePtrRefShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_DataMapIteratorOfDataMapOfShapeShapesSet;
@@ -1522,8 +1992,18 @@ class TNaming_DataMapIteratorOfDataMapOfShapeShapesSet : public TCollection_Basi
 };
 %feature("shadow") TNaming_DataMapIteratorOfDataMapOfShapeShapesSet::~TNaming_DataMapIteratorOfDataMapOfShapeShapesSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_DataMapIteratorOfDataMapOfShapeShapesSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_Localizer;
@@ -1555,8 +2035,18 @@ class TNaming_Localizer {
 };
 %feature("shadow") TNaming_Localizer::~TNaming_Localizer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_Localizer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_DataMapOfShapePtrRefShape;
@@ -1590,8 +2080,18 @@ class TNaming_DataMapOfShapePtrRefShape : public TCollection_BasicMap {
 };
 %feature("shadow") TNaming_DataMapOfShapePtrRefShape::~TNaming_DataMapOfShapePtrRefShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_DataMapOfShapePtrRefShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_NewShapeIterator;
@@ -1621,8 +2121,18 @@ class TNaming_NewShapeIterator {
 };
 %feature("shadow") TNaming_NewShapeIterator::~TNaming_NewShapeIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_NewShapeIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_Naming;
@@ -1682,8 +2192,18 @@ class TNaming_Naming : public TDF_Attribute {
 };
 %feature("shadow") TNaming_Naming::~TNaming_Naming %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_Naming {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming;
@@ -1717,8 +2237,18 @@ class TNaming {
 };
 %feature("shadow") TNaming::~TNaming %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TNaming_DataMapOfShapeShapesSet;
@@ -1752,5 +2282,15 @@ class TNaming_DataMapOfShapeShapesSet : public TCollection_BasicMap {
 };
 %feature("shadow") TNaming_DataMapOfShapeShapesSet::~TNaming_DataMapOfShapeShapesSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TNaming_DataMapOfShapeShapesSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

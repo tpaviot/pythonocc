@@ -63,8 +63,18 @@ class Handle_BlockFix_SphereSpaceModifier : public Handle_BRepTools_Modification
 };
 %feature("shadow") Handle_BlockFix_SphereSpaceModifier::~Handle_BlockFix_SphereSpaceModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BlockFix_SphereSpaceModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BlockFix_PeriodicSurfaceModifier;
@@ -91,8 +101,18 @@ class Handle_BlockFix_PeriodicSurfaceModifier : public Handle_BRepTools_Modifica
 };
 %feature("shadow") Handle_BlockFix_PeriodicSurfaceModifier::~Handle_BlockFix_PeriodicSurfaceModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BlockFix_PeriodicSurfaceModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BlockFix_BlockFixAPI;
@@ -119,8 +139,18 @@ class Handle_BlockFix_BlockFixAPI : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_BlockFix_BlockFixAPI::~Handle_BlockFix_BlockFixAPI %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BlockFix_BlockFixAPI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BlockFix;
@@ -136,8 +166,18 @@ class BlockFix {
 };
 %feature("shadow") BlockFix::~BlockFix %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BlockFix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BlockFix_UnionEdges;
@@ -151,8 +191,18 @@ class BlockFix_UnionEdges {
 };
 %feature("shadow") BlockFix_UnionEdges::~BlockFix_UnionEdges %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BlockFix_UnionEdges {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BlockFix_SphereSpaceModifier;
@@ -192,8 +242,18 @@ class BlockFix_SphereSpaceModifier : public BRepTools_Modification {
 };
 %feature("shadow") BlockFix_SphereSpaceModifier::~BlockFix_SphereSpaceModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BlockFix_SphereSpaceModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BlockFix_CheckTool;
@@ -221,8 +281,18 @@ class BlockFix_CheckTool {
 };
 %feature("shadow") BlockFix_CheckTool::~BlockFix_CheckTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BlockFix_CheckTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BlockFix_PeriodicSurfaceModifier;
@@ -262,8 +332,18 @@ class BlockFix_PeriodicSurfaceModifier : public BRepTools_Modification {
 };
 %feature("shadow") BlockFix_PeriodicSurfaceModifier::~BlockFix_PeriodicSurfaceModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BlockFix_PeriodicSurfaceModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BlockFix_UnionFaces;
@@ -305,8 +385,18 @@ class BlockFix_UnionFaces {
 };
 %feature("shadow") BlockFix_UnionFaces::~BlockFix_UnionFaces %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BlockFix_UnionFaces {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BlockFix_BlockFixAPI;
@@ -364,5 +454,15 @@ class BlockFix_BlockFixAPI : public MMgt_TShared {
 };
 %feature("shadow") BlockFix_BlockFixAPI::~BlockFix_BlockFixAPI %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BlockFix_BlockFixAPI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

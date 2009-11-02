@@ -76,8 +76,18 @@ class CSLib_NormalPolyDef : public math_FunctionWithDerivative {
 };
 %feature("shadow") CSLib_NormalPolyDef::~CSLib_NormalPolyDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CSLib_NormalPolyDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CSLib_Class2d;
@@ -103,8 +113,18 @@ class CSLib_Class2d {
 };
 %feature("shadow") CSLib_Class2d::~CSLib_Class2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CSLib_Class2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor CSLib;
@@ -130,5 +150,15 @@ class CSLib {
 };
 %feature("shadow") CSLib::~CSLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend CSLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

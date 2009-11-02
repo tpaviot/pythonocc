@@ -63,8 +63,18 @@ class Handle_GEOMImpl_CircleDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_CircleDriver::~Handle_GEOMImpl_CircleDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_CircleDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_MeasureDriver;
@@ -91,8 +101,18 @@ class Handle_GEOMImpl_MeasureDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_MeasureDriver::~Handle_GEOMImpl_MeasureDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_MeasureDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_FillingDriver;
@@ -119,8 +139,18 @@ class Handle_GEOMImpl_FillingDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_FillingDriver::~Handle_GEOMImpl_FillingDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_FillingDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_ScaleDriver;
@@ -147,8 +177,18 @@ class Handle_GEOMImpl_ScaleDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_ScaleDriver::~Handle_GEOMImpl_ScaleDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_ScaleDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_FaceDriver;
@@ -175,8 +215,18 @@ class Handle_GEOMImpl_FaceDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_FaceDriver::~Handle_GEOMImpl_FaceDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_FaceDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_SplineDriver;
@@ -203,8 +253,18 @@ class Handle_GEOMImpl_SplineDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_SplineDriver::~Handle_GEOMImpl_SplineDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_SplineDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_ThickSolidDriver;
@@ -231,8 +291,18 @@ class Handle_GEOMImpl_ThickSolidDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_ThickSolidDriver::~Handle_GEOMImpl_ThickSolidDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_ThickSolidDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_MirrorDriver;
@@ -259,8 +329,18 @@ class Handle_GEOMImpl_MirrorDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_MirrorDriver::~Handle_GEOMImpl_MirrorDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_MirrorDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_BooleanDriver;
@@ -287,8 +367,18 @@ class Handle_GEOMImpl_BooleanDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_BooleanDriver::~Handle_GEOMImpl_BooleanDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_BooleanDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_ConeDriver;
@@ -315,8 +405,18 @@ class Handle_GEOMImpl_ConeDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_ConeDriver::~Handle_GEOMImpl_ConeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_ConeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_PositionDriver;
@@ -343,8 +443,18 @@ class Handle_GEOMImpl_PositionDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_PositionDriver::~Handle_GEOMImpl_PositionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_PositionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_CylinderDriver;
@@ -371,8 +481,18 @@ class Handle_GEOMImpl_CylinderDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_CylinderDriver::~Handle_GEOMImpl_CylinderDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_CylinderDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_PipeDriver;
@@ -399,8 +519,18 @@ class Handle_GEOMImpl_PipeDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_PipeDriver::~Handle_GEOMImpl_PipeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_PipeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_ArchimedeDriver;
@@ -427,8 +557,18 @@ class Handle_GEOMImpl_ArchimedeDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_ArchimedeDriver::~Handle_GEOMImpl_ArchimedeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_ArchimedeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_DiskDriver;
@@ -455,8 +595,18 @@ class Handle_GEOMImpl_DiskDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_DiskDriver::~Handle_GEOMImpl_DiskDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_DiskDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_PolylineDriver;
@@ -483,8 +633,18 @@ class Handle_GEOMImpl_PolylineDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_PolylineDriver::~Handle_GEOMImpl_PolylineDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_PolylineDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_PointDriver;
@@ -511,8 +671,18 @@ class Handle_GEOMImpl_PointDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_PointDriver::~Handle_GEOMImpl_PointDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_PointDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_PrismDriver;
@@ -539,8 +709,18 @@ class Handle_GEOMImpl_PrismDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_PrismDriver::~Handle_GEOMImpl_PrismDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_PrismDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_PlaneDriver;
@@ -567,8 +747,18 @@ class Handle_GEOMImpl_PlaneDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_PlaneDriver::~Handle_GEOMImpl_PlaneDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_PlaneDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_ThruSectionsDriver;
@@ -595,8 +785,18 @@ class Handle_GEOMImpl_ThruSectionsDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_ThruSectionsDriver::~Handle_GEOMImpl_ThruSectionsDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_ThruSectionsDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_DraftDriver;
@@ -623,8 +823,18 @@ class Handle_GEOMImpl_DraftDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_DraftDriver::~Handle_GEOMImpl_DraftDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_DraftDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_PartitionDriver;
@@ -651,8 +861,18 @@ class Handle_GEOMImpl_PartitionDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_PartitionDriver::~Handle_GEOMImpl_PartitionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_PartitionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_VariableFilletDriver;
@@ -679,8 +899,18 @@ class Handle_GEOMImpl_VariableFilletDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_VariableFilletDriver::~Handle_GEOMImpl_VariableFilletDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_VariableFilletDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_ShapeDriver;
@@ -707,8 +937,18 @@ class Handle_GEOMImpl_ShapeDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_ShapeDriver::~Handle_GEOMImpl_ShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_ShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_GlueDriver;
@@ -735,8 +975,18 @@ class Handle_GEOMImpl_GlueDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_GlueDriver::~Handle_GEOMImpl_GlueDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_GlueDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_ExportDriver;
@@ -763,8 +1013,18 @@ class Handle_GEOMImpl_ExportDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_ExportDriver::~Handle_GEOMImpl_ExportDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_ExportDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_RotateDriver;
@@ -791,8 +1051,18 @@ class Handle_GEOMImpl_RotateDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_RotateDriver::~Handle_GEOMImpl_RotateDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_RotateDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_SphereDriver;
@@ -819,8 +1089,18 @@ class Handle_GEOMImpl_SphereDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_SphereDriver::~Handle_GEOMImpl_SphereDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_SphereDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_RevolutionDriver;
@@ -847,8 +1127,18 @@ class Handle_GEOMImpl_RevolutionDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_RevolutionDriver::~Handle_GEOMImpl_RevolutionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_RevolutionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_EllipseDriver;
@@ -875,8 +1165,18 @@ class Handle_GEOMImpl_EllipseDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_EllipseDriver::~Handle_GEOMImpl_EllipseDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_EllipseDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_TorusDriver;
@@ -903,8 +1203,18 @@ class Handle_GEOMImpl_TorusDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_TorusDriver::~Handle_GEOMImpl_TorusDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_TorusDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_PlateDriver;
@@ -931,8 +1241,18 @@ class Handle_GEOMImpl_PlateDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_PlateDriver::~Handle_GEOMImpl_PlateDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_PlateDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_LineDriver;
@@ -959,8 +1279,18 @@ class Handle_GEOMImpl_LineDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_LineDriver::~Handle_GEOMImpl_LineDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_LineDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_HealingDriver;
@@ -987,8 +1317,18 @@ class Handle_GEOMImpl_HealingDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_HealingDriver::~Handle_GEOMImpl_HealingDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_HealingDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_ImportDriver;
@@ -1015,8 +1355,18 @@ class Handle_GEOMImpl_ImportDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_ImportDriver::~Handle_GEOMImpl_ImportDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_ImportDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_3DSketcherDriver;
@@ -1043,8 +1393,18 @@ class Handle_GEOMImpl_3DSketcherDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_3DSketcherDriver::~Handle_GEOMImpl_3DSketcherDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_3DSketcherDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_BoxDriver;
@@ -1071,8 +1431,18 @@ class Handle_GEOMImpl_BoxDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_BoxDriver::~Handle_GEOMImpl_BoxDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_BoxDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_CopyDriver;
@@ -1099,8 +1469,18 @@ class Handle_GEOMImpl_CopyDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_CopyDriver::~Handle_GEOMImpl_CopyDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_CopyDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_TranslateDriver;
@@ -1127,8 +1507,18 @@ class Handle_GEOMImpl_TranslateDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_TranslateDriver::~Handle_GEOMImpl_TranslateDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_TranslateDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_BlockDriver;
@@ -1155,8 +1545,18 @@ class Handle_GEOMImpl_BlockDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_BlockDriver::~Handle_GEOMImpl_BlockDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_BlockDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_ChamferDriver;
@@ -1183,8 +1583,18 @@ class Handle_GEOMImpl_ChamferDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_ChamferDriver::~Handle_GEOMImpl_ChamferDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_ChamferDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_ArcDriver;
@@ -1211,8 +1621,18 @@ class Handle_GEOMImpl_ArcDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_ArcDriver::~Handle_GEOMImpl_ArcDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_ArcDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_FilletDriver;
@@ -1239,8 +1659,18 @@ class Handle_GEOMImpl_FilletDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_FilletDriver::~Handle_GEOMImpl_FilletDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_FilletDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_SketcherDriver;
@@ -1267,8 +1697,18 @@ class Handle_GEOMImpl_SketcherDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_SketcherDriver::~Handle_GEOMImpl_SketcherDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_SketcherDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_VectorDriver;
@@ -1295,8 +1735,18 @@ class Handle_GEOMImpl_VectorDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_VectorDriver::~Handle_GEOMImpl_VectorDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_VectorDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_CurveDriver;
@@ -1323,8 +1773,18 @@ class Handle_GEOMImpl_CurveDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_CurveDriver::~Handle_GEOMImpl_CurveDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_CurveDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_OffsetDriver;
@@ -1351,8 +1811,18 @@ class Handle_GEOMImpl_OffsetDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_OffsetDriver::~Handle_GEOMImpl_OffsetDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_OffsetDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GEOMImpl_MarkerDriver;
@@ -1379,8 +1849,18 @@ class Handle_GEOMImpl_MarkerDriver : public Handle_TFunction_Driver {
 };
 %feature("shadow") Handle_GEOMImpl_MarkerDriver::~Handle_GEOMImpl_MarkerDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GEOMImpl_MarkerDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IPartition;
@@ -1428,8 +1908,18 @@ class GEOMImpl_IPartition {
 };
 %feature("shadow") GEOMImpl_IPartition::~GEOMImpl_IPartition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IPartition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ICircle;
@@ -1467,8 +1957,18 @@ class GEOMImpl_ICircle {
 };
 %feature("shadow") GEOMImpl_ICircle::~GEOMImpl_ICircle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ICircle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_PartitionDriver;
@@ -1502,8 +2002,18 @@ class GEOMImpl_PartitionDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_PartitionDriver::~GEOMImpl_PartitionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_PartitionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_MarkerDriver;
@@ -1537,8 +2047,18 @@ class GEOMImpl_MarkerDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_MarkerDriver::~GEOMImpl_MarkerDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_MarkerDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IVariableFillet;
@@ -1570,8 +2090,18 @@ class GEOMImpl_IVariableFillet {
 };
 %feature("shadow") GEOMImpl_IVariableFillet::~GEOMImpl_IVariableFillet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IVariableFillet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_FilletDriver;
@@ -1605,8 +2135,18 @@ class GEOMImpl_FilletDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_FilletDriver::~GEOMImpl_FilletDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_FilletDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_SplineDriver;
@@ -1640,8 +2180,18 @@ class GEOMImpl_SplineDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_SplineDriver::~GEOMImpl_SplineDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_SplineDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_TorusDriver;
@@ -1675,8 +2225,18 @@ class GEOMImpl_TorusDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_TorusDriver::~GEOMImpl_TorusDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_TorusDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ScaleDriver;
@@ -1710,8 +2270,18 @@ class GEOMImpl_ScaleDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_ScaleDriver::~GEOMImpl_ScaleDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ScaleDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ITranslate;
@@ -1795,8 +2365,18 @@ class GEOMImpl_ITranslate {
 };
 %feature("shadow") GEOMImpl_ITranslate::~GEOMImpl_ITranslate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ITranslate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_MirrorDriver;
@@ -1830,8 +2410,18 @@ class GEOMImpl_MirrorDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_MirrorDriver::~GEOMImpl_MirrorDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_MirrorDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IShapesOperations;
@@ -1927,8 +2517,18 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations {
 };
 %feature("shadow") GEOMImpl_IShapesOperations::~GEOMImpl_IShapesOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IShapesOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IGlue;
@@ -1956,8 +2556,18 @@ class GEOMImpl_IGlue {
 };
 %feature("shadow") GEOMImpl_IGlue::~GEOMImpl_IGlue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IGlue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IRotate;
@@ -2013,8 +2623,18 @@ class GEOMImpl_IRotate {
 };
 %feature("shadow") GEOMImpl_IRotate::~GEOMImpl_IRotate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IRotate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IThruSections;
@@ -2038,8 +2658,18 @@ class GEOMImpl_IThruSections {
 };
 %feature("shadow") GEOMImpl_IThruSections::~GEOMImpl_IThruSections %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IThruSections {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IPosition;
@@ -2063,8 +2693,18 @@ class GEOMImpl_IPosition {
 };
 %feature("shadow") GEOMImpl_IPosition::~GEOMImpl_IPosition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IPosition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IThickSolid;
@@ -2096,8 +2736,18 @@ class GEOMImpl_IThickSolid {
 };
 %feature("shadow") GEOMImpl_IThickSolid::~GEOMImpl_IThickSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IThickSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IPipe;
@@ -2117,8 +2767,18 @@ class GEOMImpl_IPipe {
 };
 %feature("shadow") GEOMImpl_IPipe::~GEOMImpl_IPipe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IPipe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IPipeBiNormal;
@@ -2134,8 +2794,18 @@ class GEOMImpl_IPipeBiNormal : public GEOMImpl_IPipe {
 };
 %feature("shadow") GEOMImpl_IPipeBiNormal::~GEOMImpl_IPipeBiNormal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IPipeBiNormal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ICylinder;
@@ -2173,8 +2843,18 @@ class GEOMImpl_ICylinder {
 };
 %feature("shadow") GEOMImpl_ICylinder::~GEOMImpl_ICylinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ICylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IDisk;
@@ -2216,8 +2896,18 @@ class GEOMImpl_IDisk {
 };
 %feature("shadow") GEOMImpl_IDisk::~GEOMImpl_IDisk %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IDisk {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_OffsetDriver;
@@ -2251,8 +2941,18 @@ class GEOMImpl_OffsetDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_OffsetDriver::~GEOMImpl_OffsetDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_OffsetDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_GlueDriver;
@@ -2292,8 +2992,18 @@ class GEOMImpl_GlueDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_GlueDriver::~GEOMImpl_GlueDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_GlueDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_PlaneDriver;
@@ -2327,8 +3037,18 @@ class GEOMImpl_PlaneDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_PlaneDriver::~GEOMImpl_PlaneDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_PlaneDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IRevolution;
@@ -2366,8 +3086,18 @@ class GEOMImpl_IRevolution {
 };
 %feature("shadow") GEOMImpl_IRevolution::~GEOMImpl_IRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ICurve;
@@ -2393,8 +3123,18 @@ class GEOMImpl_ICurve {
 };
 %feature("shadow") GEOMImpl_ICurve::~GEOMImpl_ICurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ICurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IVector;
@@ -2440,8 +3180,18 @@ class GEOMImpl_IVector {
 };
 %feature("shadow") GEOMImpl_IVector::~GEOMImpl_IVector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IPolyline;
@@ -2465,8 +3215,18 @@ class GEOMImpl_IPolyline {
 };
 %feature("shadow") GEOMImpl_IPolyline::~GEOMImpl_IPolyline %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IPolyline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IBasicOperations;
@@ -2520,8 +3280,18 @@ class GEOMImpl_IBasicOperations : public GEOM_IOperations {
 };
 %feature("shadow") GEOMImpl_IBasicOperations::~GEOMImpl_IBasicOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IBasicOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IMeasureOperations;
@@ -2606,8 +3376,18 @@ class GEOMImpl_IMeasureOperations : public GEOM_IOperations {
 };
 %feature("shadow") GEOMImpl_IMeasureOperations::~GEOMImpl_IMeasureOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IMeasureOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ISpline;
@@ -2627,8 +3407,18 @@ class GEOMImpl_ISpline {
 };
 %feature("shadow") GEOMImpl_ISpline::~GEOMImpl_ISpline %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ISpline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IDraft;
@@ -2666,8 +3456,18 @@ class GEOMImpl_IDraft {
 };
 %feature("shadow") GEOMImpl_IDraft::~GEOMImpl_IDraft %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IDraft {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IArc;
@@ -2695,8 +3495,18 @@ class GEOMImpl_IArc {
 };
 %feature("shadow") GEOMImpl_IArc::~GEOMImpl_IArc %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_I3DSketcher;
@@ -2712,8 +3522,18 @@ class GEOMImpl_I3DSketcher {
 };
 %feature("shadow") GEOMImpl_I3DSketcher::~GEOMImpl_I3DSketcher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_I3DSketcher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IHealingOperations;
@@ -2751,8 +3571,18 @@ class GEOMImpl_IHealingOperations : public GEOM_IOperations {
 };
 %feature("shadow") GEOMImpl_IHealingOperations::~GEOMImpl_IHealingOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IHealingOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_PipeDriver;
@@ -2786,8 +3616,18 @@ class GEOMImpl_PipeDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_PipeDriver::~GEOMImpl_PipeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_PipeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_Gen;
@@ -2823,8 +3663,18 @@ class GEOMImpl_Gen : public GEOM_Engine {
 };
 %feature("shadow") GEOMImpl_Gen::~GEOMImpl_Gen %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_Gen {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_LineDriver;
@@ -2858,8 +3708,18 @@ class GEOMImpl_LineDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_LineDriver::~GEOMImpl_LineDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_LineDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_MeasureDriver;
@@ -2893,8 +3753,18 @@ class GEOMImpl_MeasureDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_MeasureDriver::~GEOMImpl_MeasureDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_MeasureDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_DraftDriver;
@@ -2928,8 +3798,18 @@ class GEOMImpl_DraftDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_DraftDriver::~GEOMImpl_DraftDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_DraftDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IPlane;
@@ -3001,8 +3881,18 @@ class GEOMImpl_IPlane {
 };
 %feature("shadow") GEOMImpl_IPlane::~GEOMImpl_IPlane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IPlane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IFace;
@@ -3050,8 +3940,18 @@ class GEOMImpl_IFace {
 };
 %feature("shadow") GEOMImpl_IFace::~GEOMImpl_IFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_FillingDriver;
@@ -3085,8 +3985,18 @@ class GEOMImpl_FillingDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_FillingDriver::~GEOMImpl_FillingDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_FillingDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IScale;
@@ -3134,8 +4044,18 @@ class GEOMImpl_IScale {
 };
 %feature("shadow") GEOMImpl_IScale::~GEOMImpl_IScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_I3DPrimOperations;
@@ -3215,8 +4135,18 @@ class GEOMImpl_I3DPrimOperations : public GEOM_IOperations {
 };
 %feature("shadow") GEOMImpl_I3DPrimOperations::~GEOMImpl_I3DPrimOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_I3DPrimOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_TranslateDriver;
@@ -3250,8 +4180,18 @@ class GEOMImpl_TranslateDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_TranslateDriver::~GEOMImpl_TranslateDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_TranslateDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IBox;
@@ -3289,8 +4229,18 @@ class GEOMImpl_IBox {
 };
 %feature("shadow") GEOMImpl_IBox::~GEOMImpl_IBox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IPoint;
@@ -3352,8 +4302,18 @@ class GEOMImpl_IPoint {
 };
 %feature("shadow") GEOMImpl_IPoint::~GEOMImpl_IPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_CopyDriver;
@@ -3387,8 +4347,18 @@ class GEOMImpl_CopyDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_CopyDriver::~GEOMImpl_CopyDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_CopyDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ExportDriver;
@@ -3422,8 +4392,18 @@ class GEOMImpl_ExportDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_ExportDriver::~GEOMImpl_ExportDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ExportDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ITransformOperations;
@@ -3495,8 +4475,18 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations {
 };
 %feature("shadow") GEOMImpl_ITransformOperations::~GEOMImpl_ITransformOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ITransformOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_BooleanDriver;
@@ -3530,8 +4520,18 @@ class GEOMImpl_BooleanDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_BooleanDriver::~GEOMImpl_BooleanDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_BooleanDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_3DSketcherDriver;
@@ -3565,8 +4565,18 @@ class GEOMImpl_3DSketcherDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_3DSketcherDriver::~GEOMImpl_3DSketcherDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_3DSketcherDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_SphereDriver;
@@ -3600,8 +4610,18 @@ class GEOMImpl_SphereDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_SphereDriver::~GEOMImpl_SphereDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_SphereDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_VariableFilletDriver;
@@ -3635,8 +4655,18 @@ class GEOMImpl_VariableFilletDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_VariableFilletDriver::~GEOMImpl_VariableFilletDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_VariableFilletDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ICurvesOperations;
@@ -3680,8 +4710,18 @@ class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
 };
 %feature("shadow") GEOMImpl_ICurvesOperations::~GEOMImpl_ICurvesOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ICurvesOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ILine;
@@ -3709,8 +4749,18 @@ class GEOMImpl_ILine {
 };
 %feature("shadow") GEOMImpl_ILine::~GEOMImpl_ILine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ILine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ITorus;
@@ -3760,8 +4810,18 @@ class GEOMImpl_ITorus {
 };
 %feature("shadow") GEOMImpl_ITorus::~GEOMImpl_ITorus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ITorus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IShapes;
@@ -3797,8 +4857,18 @@ class GEOMImpl_IShapes {
 };
 %feature("shadow") GEOMImpl_IShapes::~GEOMImpl_IShapes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IShapes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_RotateDriver;
@@ -3832,8 +4902,18 @@ class GEOMImpl_RotateDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_RotateDriver::~GEOMImpl_RotateDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_RotateDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IMirror;
@@ -3861,8 +4941,18 @@ class GEOMImpl_IMirror {
 };
 %feature("shadow") GEOMImpl_IMirror::~GEOMImpl_IMirror %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IMirror {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IFilling;
@@ -3902,8 +4992,18 @@ class GEOMImpl_IFilling {
 };
 %feature("shadow") GEOMImpl_IFilling::~GEOMImpl_IFilling %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IFilling {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_BoxDriver;
@@ -3937,8 +5037,18 @@ class GEOMImpl_BoxDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_BoxDriver::~GEOMImpl_BoxDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_BoxDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IPipeDiffSect;
@@ -3966,8 +5076,18 @@ class GEOMImpl_IPipeDiffSect : public GEOMImpl_IPipe {
 };
 %feature("shadow") GEOMImpl_IPipeDiffSect::~GEOMImpl_IPipeDiffSect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IPipeDiffSect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IPipeShellSect;
@@ -3983,8 +5103,18 @@ class GEOMImpl_IPipeShellSect : public GEOMImpl_IPipeDiffSect {
 };
 %feature("shadow") GEOMImpl_IPipeShellSect::~GEOMImpl_IPipeShellSect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IPipeShellSect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ISphere;
@@ -4024,8 +5154,18 @@ class GEOMImpl_ISphere {
 };
 %feature("shadow") GEOMImpl_ISphere::~GEOMImpl_ISphere %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ISphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ISketcher;
@@ -4051,8 +5191,18 @@ class GEOMImpl_ISketcher {
 };
 %feature("shadow") GEOMImpl_ISketcher::~GEOMImpl_ISketcher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ISketcher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ImportDriver;
@@ -4086,8 +5236,18 @@ class GEOMImpl_ImportDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_ImportDriver::~GEOMImpl_ImportDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ImportDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_PositionDriver;
@@ -4121,8 +5281,18 @@ class GEOMImpl_PositionDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_PositionDriver::~GEOMImpl_PositionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_PositionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_CylinderDriver;
@@ -4156,8 +5326,18 @@ class GEOMImpl_CylinderDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_CylinderDriver::~GEOMImpl_CylinderDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_CylinderDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IInsertOperations;
@@ -4181,8 +5361,18 @@ class GEOMImpl_IInsertOperations : public GEOM_IOperations {
 };
 %feature("shadow") GEOMImpl_IInsertOperations::~GEOMImpl_IInsertOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IInsertOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IBlockTrsf;
@@ -4230,8 +5420,18 @@ class GEOMImpl_IBlockTrsf {
 };
 %feature("shadow") GEOMImpl_IBlockTrsf::~GEOMImpl_IBlockTrsf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IBlockTrsf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_SketcherDriver;
@@ -4265,8 +5465,18 @@ class GEOMImpl_SketcherDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_SketcherDriver::~GEOMImpl_SketcherDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_SketcherDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_PolylineDriver;
@@ -4300,8 +5510,18 @@ class GEOMImpl_PolylineDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_PolylineDriver::~GEOMImpl_PolylineDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_PolylineDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ConeDriver;
@@ -4335,8 +5555,18 @@ class GEOMImpl_ConeDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_ConeDriver::~GEOMImpl_ConeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ConeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IOffset;
@@ -4364,8 +5594,18 @@ class GEOMImpl_IOffset {
 };
 %feature("shadow") GEOMImpl_IOffset::~GEOMImpl_IOffset %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IOffset {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IGroupOperations;
@@ -4397,8 +5637,18 @@ class GEOMImpl_IGroupOperations : public GEOM_IOperations {
 };
 %feature("shadow") GEOMImpl_IGroupOperations::~GEOMImpl_IGroupOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IGroupOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_RevolutionDriver;
@@ -4432,8 +5682,18 @@ class GEOMImpl_RevolutionDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_RevolutionDriver::~GEOMImpl_RevolutionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_RevolutionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IArchimede;
@@ -4467,8 +5727,18 @@ class GEOMImpl_IArchimede {
 };
 %feature("shadow") GEOMImpl_IArchimede::~GEOMImpl_IArchimede %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IArchimede {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ICone;
@@ -4512,8 +5782,18 @@ class GEOMImpl_ICone {
 };
 %feature("shadow") GEOMImpl_ICone::~GEOMImpl_ICone %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ICone {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ICopy;
@@ -4529,8 +5809,18 @@ class GEOMImpl_ICopy {
 };
 %feature("shadow") GEOMImpl_ICopy::~GEOMImpl_ICopy %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ICopy {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IFillet;
@@ -4582,8 +5872,18 @@ class GEOMImpl_IFillet {
 };
 %feature("shadow") GEOMImpl_IFillet::~GEOMImpl_IFillet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IFillet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IPlate;
@@ -4607,8 +5907,18 @@ class GEOMImpl_IPlate {
 };
 %feature("shadow") GEOMImpl_IPlate::~GEOMImpl_IPlate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IPlate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_FaceDriver;
@@ -4642,8 +5952,18 @@ class GEOMImpl_FaceDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_FaceDriver::~GEOMImpl_FaceDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_FaceDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IBlocks;
@@ -4659,8 +5979,18 @@ class GEOMImpl_IBlocks {
 };
 %feature("shadow") GEOMImpl_IBlocks::~GEOMImpl_IBlocks %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IBlocks {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ILocalOperations;
@@ -4714,8 +6044,18 @@ class GEOMImpl_ILocalOperations : public GEOM_IOperations {
 };
 %feature("shadow") GEOMImpl_ILocalOperations::~GEOMImpl_ILocalOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ILocalOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_BlockDriver;
@@ -4749,8 +6089,18 @@ class GEOMImpl_BlockDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_BlockDriver::~GEOMImpl_BlockDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_BlockDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ArchimedeDriver;
@@ -4784,8 +6134,18 @@ class GEOMImpl_ArchimedeDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_ArchimedeDriver::~GEOMImpl_ArchimedeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ArchimedeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IMarker;
@@ -4851,8 +6211,18 @@ class GEOMImpl_IMarker {
 };
 %feature("shadow") GEOMImpl_IMarker::~GEOMImpl_IMarker %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IMarker {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IBooleanOperations;
@@ -4870,8 +6240,18 @@ class GEOMImpl_IBooleanOperations : public GEOM_IOperations {
 };
 %feature("shadow") GEOMImpl_IBooleanOperations::~GEOMImpl_IBooleanOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IBooleanOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IHealing;
@@ -4927,8 +6307,18 @@ class GEOMImpl_IHealing {
 };
 %feature("shadow") GEOMImpl_IHealing::~GEOMImpl_IHealing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IHealing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ShapeDriver;
@@ -4962,8 +6352,18 @@ class GEOMImpl_ShapeDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_ShapeDriver::~GEOMImpl_ShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IMeasure;
@@ -4983,8 +6383,18 @@ class GEOMImpl_IMeasure {
 };
 %feature("shadow") GEOMImpl_IMeasure::~GEOMImpl_IMeasure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IMeasure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_EllipseDriver;
@@ -5018,8 +6428,18 @@ class GEOMImpl_EllipseDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_EllipseDriver::~GEOMImpl_EllipseDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_EllipseDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_VectorDriver;
@@ -5053,8 +6473,18 @@ class GEOMImpl_VectorDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_VectorDriver::~GEOMImpl_VectorDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_VectorDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IEllipse;
@@ -5098,8 +6528,18 @@ class GEOMImpl_IEllipse {
 };
 %feature("shadow") GEOMImpl_IEllipse::~GEOMImpl_IEllipse %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IEllipse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ThickSolidDriver;
@@ -5133,8 +6573,18 @@ class GEOMImpl_ThickSolidDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_ThickSolidDriver::~GEOMImpl_ThickSolidDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ThickSolidDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_PlateDriver;
@@ -5168,8 +6618,18 @@ class GEOMImpl_PlateDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_PlateDriver::~GEOMImpl_PlateDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_PlateDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ThruSectionsDriver;
@@ -5203,8 +6663,18 @@ class GEOMImpl_ThruSectionsDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_ThruSectionsDriver::~GEOMImpl_ThruSectionsDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ThruSectionsDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ChamferDriver;
@@ -5238,8 +6708,18 @@ class GEOMImpl_ChamferDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_ChamferDriver::~GEOMImpl_ChamferDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ChamferDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_PrismDriver;
@@ -5273,8 +6753,18 @@ class GEOMImpl_PrismDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_PrismDriver::~GEOMImpl_PrismDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_PrismDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_DiskDriver;
@@ -5308,8 +6798,18 @@ class GEOMImpl_DiskDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_DiskDriver::~GEOMImpl_DiskDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_DiskDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IChamfer;
@@ -5377,8 +6877,18 @@ class GEOMImpl_IChamfer {
 };
 %feature("shadow") GEOMImpl_IChamfer::~GEOMImpl_IChamfer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IChamfer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_ArcDriver;
@@ -5412,8 +6922,18 @@ class GEOMImpl_ArcDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_ArcDriver::~GEOMImpl_ArcDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_ArcDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IBlocksOperations;
@@ -5488,8 +7008,18 @@ class GEOMImpl_IBlocksOperations : public GEOM_IOperations {
 };
 %feature("shadow") GEOMImpl_IBlocksOperations::~GEOMImpl_IBlocksOperations %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IBlocksOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IImportExport;
@@ -5517,8 +7047,18 @@ class GEOMImpl_IImportExport {
 };
 %feature("shadow") GEOMImpl_IImportExport::~GEOMImpl_IImportExport %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IImportExport {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IPrism;
@@ -5576,8 +7116,18 @@ class GEOMImpl_IPrism {
 };
 %feature("shadow") GEOMImpl_IPrism::~GEOMImpl_IPrism %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IPrism {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_PointDriver;
@@ -5611,8 +7161,18 @@ class GEOMImpl_PointDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_PointDriver::~GEOMImpl_PointDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_PointDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_IBoolean;
@@ -5632,8 +7192,18 @@ class GEOMImpl_IBoolean {
 };
 %feature("shadow") GEOMImpl_IBoolean::~GEOMImpl_IBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_IBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_HealingDriver;
@@ -5667,8 +7237,18 @@ class GEOMImpl_HealingDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_HealingDriver::~GEOMImpl_HealingDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_HealingDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_CurveDriver;
@@ -5702,8 +7282,18 @@ class GEOMImpl_CurveDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_CurveDriver::~GEOMImpl_CurveDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_CurveDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GEOMImpl_CircleDriver;
@@ -5737,5 +7327,15 @@ class GEOMImpl_CircleDriver : public TFunction_Driver {
 };
 %feature("shadow") GEOMImpl_CircleDriver::~GEOMImpl_CircleDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GEOMImpl_CircleDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

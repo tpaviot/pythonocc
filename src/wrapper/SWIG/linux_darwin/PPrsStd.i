@@ -63,8 +63,18 @@ class Handle_PPrsStd_AISPresentation : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PPrsStd_AISPresentation::~Handle_PPrsStd_AISPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PPrsStd_AISPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PPrsStd_AISPresentation_1;
@@ -91,8 +101,18 @@ class Handle_PPrsStd_AISPresentation_1 : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PPrsStd_AISPresentation_1::~Handle_PPrsStd_AISPresentation_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PPrsStd_AISPresentation_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PPrsStd_AISPresentation_1;
@@ -174,8 +194,18 @@ class PPrsStd_AISPresentation_1 : public PDF_Attribute {
 };
 %feature("shadow") PPrsStd_AISPresentation_1::~PPrsStd_AISPresentation_1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PPrsStd_AISPresentation_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PPrsStd_AISPresentation;
@@ -249,5 +279,15 @@ class PPrsStd_AISPresentation : public PDF_Attribute {
 };
 %feature("shadow") PPrsStd_AISPresentation::~PPrsStd_AISPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PPrsStd_AISPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

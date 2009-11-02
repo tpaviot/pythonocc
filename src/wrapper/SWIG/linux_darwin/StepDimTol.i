@@ -69,8 +69,18 @@ class Handle_StepDimTol_GeometricTolerance : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepDimTol_GeometricTolerance::~Handle_StepDimTol_GeometricTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_GeometricTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_GeometricToleranceWithDatumReference;
@@ -97,8 +107,18 @@ class Handle_StepDimTol_GeometricToleranceWithDatumReference : public Handle_Ste
 };
 %feature("shadow") Handle_StepDimTol_GeometricToleranceWithDatumReference::~Handle_StepDimTol_GeometricToleranceWithDatumReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_GeometricToleranceWithDatumReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_CoaxialityTolerance;
@@ -125,8 +145,18 @@ class Handle_StepDimTol_CoaxialityTolerance : public Handle_StepDimTol_Geometric
 };
 %feature("shadow") Handle_StepDimTol_CoaxialityTolerance::~Handle_StepDimTol_CoaxialityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_CoaxialityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_Datum;
@@ -153,8 +183,18 @@ class Handle_StepDimTol_Datum : public Handle_StepRepr_ShapeAspect {
 };
 %feature("shadow") Handle_StepDimTol_Datum::~Handle_StepDimTol_Datum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_Datum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_DatumTarget;
@@ -181,8 +221,18 @@ class Handle_StepDimTol_DatumTarget : public Handle_StepRepr_ShapeAspect {
 };
 %feature("shadow") Handle_StepDimTol_DatumTarget::~Handle_StepDimTol_DatumTarget %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_DatumTarget {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_PlacedDatumTargetFeature;
@@ -209,8 +259,18 @@ class Handle_StepDimTol_PlacedDatumTargetFeature : public Handle_StepDimTol_Datu
 };
 %feature("shadow") Handle_StepDimTol_PlacedDatumTargetFeature::~Handle_StepDimTol_PlacedDatumTargetFeature %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_PlacedDatumTargetFeature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_HArray1OfDatumReference;
@@ -237,8 +297,18 @@ class Handle_StepDimTol_HArray1OfDatumReference : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepDimTol_HArray1OfDatumReference::~Handle_StepDimTol_HArray1OfDatumReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_HArray1OfDatumReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_LineProfileTolerance;
@@ -265,8 +335,18 @@ class Handle_StepDimTol_LineProfileTolerance : public Handle_StepDimTol_Geometri
 };
 %feature("shadow") Handle_StepDimTol_LineProfileTolerance::~Handle_StepDimTol_LineProfileTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_LineProfileTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_GeometricToleranceRelationship;
@@ -293,8 +373,18 @@ class Handle_StepDimTol_GeometricToleranceRelationship : public Handle_MMgt_TSha
 };
 %feature("shadow") Handle_StepDimTol_GeometricToleranceRelationship::~Handle_StepDimTol_GeometricToleranceRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_GeometricToleranceRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_PositionTolerance;
@@ -321,8 +411,18 @@ class Handle_StepDimTol_PositionTolerance : public Handle_StepDimTol_GeometricTo
 };
 %feature("shadow") Handle_StepDimTol_PositionTolerance::~Handle_StepDimTol_PositionTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_PositionTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_PerpendicularityTolerance;
@@ -349,8 +449,18 @@ class Handle_StepDimTol_PerpendicularityTolerance : public Handle_StepDimTol_Geo
 };
 %feature("shadow") Handle_StepDimTol_PerpendicularityTolerance::~Handle_StepDimTol_PerpendicularityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_PerpendicularityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_AngularityTolerance;
@@ -377,8 +487,18 @@ class Handle_StepDimTol_AngularityTolerance : public Handle_StepDimTol_Geometric
 };
 %feature("shadow") Handle_StepDimTol_AngularityTolerance::~Handle_StepDimTol_AngularityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_AngularityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_TotalRunoutTolerance;
@@ -405,8 +525,18 @@ class Handle_StepDimTol_TotalRunoutTolerance : public Handle_StepDimTol_Geometri
 };
 %feature("shadow") Handle_StepDimTol_TotalRunoutTolerance::~Handle_StepDimTol_TotalRunoutTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_TotalRunoutTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_ConcentricityTolerance;
@@ -433,8 +563,18 @@ class Handle_StepDimTol_ConcentricityTolerance : public Handle_StepDimTol_Geomet
 };
 %feature("shadow") Handle_StepDimTol_ConcentricityTolerance::~Handle_StepDimTol_ConcentricityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_ConcentricityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_ParallelismTolerance;
@@ -461,8 +601,18 @@ class Handle_StepDimTol_ParallelismTolerance : public Handle_StepDimTol_Geometri
 };
 %feature("shadow") Handle_StepDimTol_ParallelismTolerance::~Handle_StepDimTol_ParallelismTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_ParallelismTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_StraightnessTolerance;
@@ -489,8 +639,18 @@ class Handle_StepDimTol_StraightnessTolerance : public Handle_StepDimTol_Geometr
 };
 %feature("shadow") Handle_StepDimTol_StraightnessTolerance::~Handle_StepDimTol_StraightnessTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_StraightnessTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_FlatnessTolerance;
@@ -517,8 +677,18 @@ class Handle_StepDimTol_FlatnessTolerance : public Handle_StepDimTol_GeometricTo
 };
 %feature("shadow") Handle_StepDimTol_FlatnessTolerance::~Handle_StepDimTol_FlatnessTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_FlatnessTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_DatumReference;
@@ -545,8 +715,18 @@ class Handle_StepDimTol_DatumReference : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepDimTol_DatumReference::~Handle_StepDimTol_DatumReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_DatumReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_DatumFeature;
@@ -573,8 +753,18 @@ class Handle_StepDimTol_DatumFeature : public Handle_StepRepr_ShapeAspect {
 };
 %feature("shadow") Handle_StepDimTol_DatumFeature::~Handle_StepDimTol_DatumFeature %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_DatumFeature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_CircularRunoutTolerance;
@@ -601,8 +791,18 @@ class Handle_StepDimTol_CircularRunoutTolerance : public Handle_StepDimTol_Geome
 };
 %feature("shadow") Handle_StepDimTol_CircularRunoutTolerance::~Handle_StepDimTol_CircularRunoutTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_CircularRunoutTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_CylindricityTolerance;
@@ -629,8 +829,18 @@ class Handle_StepDimTol_CylindricityTolerance : public Handle_StepDimTol_Geometr
 };
 %feature("shadow") Handle_StepDimTol_CylindricityTolerance::~Handle_StepDimTol_CylindricityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_CylindricityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_SymmetryTolerance;
@@ -657,8 +867,18 @@ class Handle_StepDimTol_SymmetryTolerance : public Handle_StepDimTol_GeometricTo
 };
 %feature("shadow") Handle_StepDimTol_SymmetryTolerance::~Handle_StepDimTol_SymmetryTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_SymmetryTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_SurfaceProfileTolerance;
@@ -685,8 +905,18 @@ class Handle_StepDimTol_SurfaceProfileTolerance : public Handle_StepDimTol_Geome
 };
 %feature("shadow") Handle_StepDimTol_SurfaceProfileTolerance::~Handle_StepDimTol_SurfaceProfileTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_SurfaceProfileTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_ModifiedGeometricTolerance;
@@ -713,8 +943,18 @@ class Handle_StepDimTol_ModifiedGeometricTolerance : public Handle_StepDimTol_Ge
 };
 %feature("shadow") Handle_StepDimTol_ModifiedGeometricTolerance::~Handle_StepDimTol_ModifiedGeometricTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_ModifiedGeometricTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_CommonDatum;
@@ -741,8 +981,18 @@ class Handle_StepDimTol_CommonDatum : public Handle_StepRepr_CompositeShapeAspec
 };
 %feature("shadow") Handle_StepDimTol_CommonDatum::~Handle_StepDimTol_CommonDatum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_CommonDatum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_RoundnessTolerance;
@@ -769,8 +1019,18 @@ class Handle_StepDimTol_RoundnessTolerance : public Handle_StepDimTol_GeometricT
 };
 %feature("shadow") Handle_StepDimTol_RoundnessTolerance::~Handle_StepDimTol_RoundnessTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_RoundnessTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
@@ -797,8 +1057,18 @@ class Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public H
 };
 %feature("shadow") Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol::~Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_GeometricTolerance;
@@ -840,8 +1110,18 @@ class StepDimTol_GeometricTolerance : public MMgt_TShared {
 };
 %feature("shadow") StepDimTol_GeometricTolerance::~StepDimTol_GeometricTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_GeometricTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_StraightnessTolerance;
@@ -863,8 +1143,18 @@ class StepDimTol_StraightnessTolerance : public StepDimTol_GeometricTolerance {
 };
 %feature("shadow") StepDimTol_StraightnessTolerance::~StepDimTol_StraightnessTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_StraightnessTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_LineProfileTolerance;
@@ -888,8 +1178,18 @@ class StepDimTol_LineProfileTolerance : public StepDimTol_GeometricTolerance {
 };
 %feature("shadow") StepDimTol_LineProfileTolerance::~StepDimTol_LineProfileTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_LineProfileTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_SurfaceProfileTolerance;
@@ -913,8 +1213,18 @@ class StepDimTol_SurfaceProfileTolerance : public StepDimTol_GeometricTolerance 
 };
 %feature("shadow") StepDimTol_SurfaceProfileTolerance::~StepDimTol_SurfaceProfileTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_SurfaceProfileTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_CylindricityTolerance;
@@ -938,8 +1248,18 @@ class StepDimTol_CylindricityTolerance : public StepDimTol_GeometricTolerance {
 };
 %feature("shadow") StepDimTol_CylindricityTolerance::~StepDimTol_CylindricityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_CylindricityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_RoundnessTolerance;
@@ -963,8 +1283,18 @@ class StepDimTol_RoundnessTolerance : public StepDimTol_GeometricTolerance {
 };
 %feature("shadow") StepDimTol_RoundnessTolerance::~StepDimTol_RoundnessTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_RoundnessTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_GeometricToleranceWithDatumReference;
@@ -994,8 +1324,18 @@ class StepDimTol_GeometricToleranceWithDatumReference : public StepDimTol_Geomet
 };
 %feature("shadow") StepDimTol_GeometricToleranceWithDatumReference::~StepDimTol_GeometricToleranceWithDatumReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_GeometricToleranceWithDatumReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_TotalRunoutTolerance;
@@ -1017,8 +1357,18 @@ class StepDimTol_TotalRunoutTolerance : public StepDimTol_GeometricToleranceWith
 };
 %feature("shadow") StepDimTol_TotalRunoutTolerance::~StepDimTol_TotalRunoutTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_TotalRunoutTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_Array1OfDatumReference;
@@ -1058,8 +1408,18 @@ class StepDimTol_Array1OfDatumReference {
 };
 %feature("shadow") StepDimTol_Array1OfDatumReference::~StepDimTol_Array1OfDatumReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_Array1OfDatumReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_DatumTarget;
@@ -1089,8 +1449,18 @@ class StepDimTol_DatumTarget : public StepRepr_ShapeAspect {
 };
 %feature("shadow") StepDimTol_DatumTarget::~StepDimTol_DatumTarget %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_DatumTarget {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_AngularityTolerance;
@@ -1114,8 +1484,18 @@ class StepDimTol_AngularityTolerance : public StepDimTol_GeometricToleranceWithD
 };
 %feature("shadow") StepDimTol_AngularityTolerance::~StepDimTol_AngularityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_AngularityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_ConcentricityTolerance;
@@ -1139,8 +1519,18 @@ class StepDimTol_ConcentricityTolerance : public StepDimTol_GeometricToleranceWi
 };
 %feature("shadow") StepDimTol_ConcentricityTolerance::~StepDimTol_ConcentricityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_ConcentricityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_HArray1OfDatumReference;
@@ -1184,8 +1574,18 @@ class StepDimTol_HArray1OfDatumReference : public MMgt_TShared {
 };
 %feature("shadow") StepDimTol_HArray1OfDatumReference::~StepDimTol_HArray1OfDatumReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_HArray1OfDatumReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_DatumReference;
@@ -1219,8 +1619,18 @@ class StepDimTol_DatumReference : public MMgt_TShared {
 };
 %feature("shadow") StepDimTol_DatumReference::~StepDimTol_DatumReference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_DatumReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_ShapeToleranceSelect;
@@ -1238,8 +1648,18 @@ class StepDimTol_ShapeToleranceSelect : public StepData_SelectType {
 };
 %feature("shadow") StepDimTol_ShapeToleranceSelect::~StepDimTol_ShapeToleranceSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_ShapeToleranceSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_SymmetryTolerance;
@@ -1263,8 +1683,18 @@ class StepDimTol_SymmetryTolerance : public StepDimTol_GeometricToleranceWithDat
 };
 %feature("shadow") StepDimTol_SymmetryTolerance::~StepDimTol_SymmetryTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_SymmetryTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_FlatnessTolerance;
@@ -1288,8 +1718,18 @@ class StepDimTol_FlatnessTolerance : public StepDimTol_GeometricTolerance {
 };
 %feature("shadow") StepDimTol_FlatnessTolerance::~StepDimTol_FlatnessTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_FlatnessTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_ParallelismTolerance;
@@ -1313,8 +1753,18 @@ class StepDimTol_ParallelismTolerance : public StepDimTol_GeometricToleranceWith
 };
 %feature("shadow") StepDimTol_ParallelismTolerance::~StepDimTol_ParallelismTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_ParallelismTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_CommonDatum;
@@ -1344,8 +1794,18 @@ class StepDimTol_CommonDatum : public StepRepr_CompositeShapeAspect {
 };
 %feature("shadow") StepDimTol_CommonDatum::~StepDimTol_CommonDatum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_CommonDatum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
@@ -1383,8 +1843,18 @@ class StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public StepDimT
 };
 %feature("shadow") StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol::~StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_ModifiedGeometricTolerance;
@@ -1414,8 +1884,18 @@ class StepDimTol_ModifiedGeometricTolerance : public StepDimTol_GeometricToleran
 };
 %feature("shadow") StepDimTol_ModifiedGeometricTolerance::~StepDimTol_ModifiedGeometricTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_ModifiedGeometricTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_PerpendicularityTolerance;
@@ -1439,8 +1919,18 @@ class StepDimTol_PerpendicularityTolerance : public StepDimTol_GeometricToleranc
 };
 %feature("shadow") StepDimTol_PerpendicularityTolerance::~StepDimTol_PerpendicularityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_PerpendicularityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_CoaxialityTolerance;
@@ -1464,8 +1954,18 @@ class StepDimTol_CoaxialityTolerance : public StepDimTol_GeometricToleranceWithD
 };
 %feature("shadow") StepDimTol_CoaxialityTolerance::~StepDimTol_CoaxialityTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_CoaxialityTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_DatumFeature;
@@ -1489,8 +1989,18 @@ class StepDimTol_DatumFeature : public StepRepr_ShapeAspect {
 };
 %feature("shadow") StepDimTol_DatumFeature::~StepDimTol_DatumFeature %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_DatumFeature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_Datum;
@@ -1520,8 +2030,18 @@ class StepDimTol_Datum : public StepRepr_ShapeAspect {
 };
 %feature("shadow") StepDimTol_Datum::~StepDimTol_Datum %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_Datum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_CircularRunoutTolerance;
@@ -1545,8 +2065,18 @@ class StepDimTol_CircularRunoutTolerance : public StepDimTol_GeometricToleranceW
 };
 %feature("shadow") StepDimTol_CircularRunoutTolerance::~StepDimTol_CircularRunoutTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_CircularRunoutTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_PositionTolerance;
@@ -1570,8 +2100,18 @@ class StepDimTol_PositionTolerance : public StepDimTol_GeometricTolerance {
 };
 %feature("shadow") StepDimTol_PositionTolerance::~StepDimTol_PositionTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_PositionTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_PlacedDatumTargetFeature;
@@ -1595,8 +2135,18 @@ class StepDimTol_PlacedDatumTargetFeature : public StepDimTol_DatumTarget {
 };
 %feature("shadow") StepDimTol_PlacedDatumTargetFeature::~StepDimTol_PlacedDatumTargetFeature %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_PlacedDatumTargetFeature {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepDimTol_GeometricToleranceRelationship;
@@ -1638,5 +2188,15 @@ class StepDimTol_GeometricToleranceRelationship : public MMgt_TShared {
 };
 %feature("shadow") StepDimTol_GeometricToleranceRelationship::~StepDimTol_GeometricToleranceRelationship %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepDimTol_GeometricToleranceRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TCol
 };
 %feature("shadow") Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d::~Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d;
@@ -90,8 +100,18 @@ class AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNod
 };
 %feature("shadow") AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d::~AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppBlend_Approx;
@@ -143,8 +163,18 @@ class AppBlend_Approx {
 };
 %feature("shadow") AppBlend_Approx::~AppBlend_Approx %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppBlend_Approx {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AppBlend_SequenceOfArray1OfPnt2d;
@@ -198,5 +228,15 @@ class AppBlend_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 };
 %feature("shadow") AppBlend_SequenceOfArray1OfPnt2d::~AppBlend_SequenceOfArray1OfPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AppBlend_SequenceOfArray1OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

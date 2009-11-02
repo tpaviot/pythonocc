@@ -67,8 +67,18 @@ class Handle_XmlObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 };
 %feature("shadow") Handle_XmlObjMgt_DataMapNodeOfRRelocationTable::~Handle_XmlObjMgt_DataMapNodeOfRRelocationTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlObjMgt_DataMapNodeOfRRelocationTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlObjMgt_DataMapIteratorOfRRelocationTable;
@@ -88,8 +98,18 @@ class XmlObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapI
 };
 %feature("shadow") XmlObjMgt_DataMapIteratorOfRRelocationTable::~XmlObjMgt_DataMapIteratorOfRRelocationTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlObjMgt_DataMapIteratorOfRRelocationTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlObjMgt;
@@ -125,8 +145,18 @@ class XmlObjMgt {
 };
 %feature("shadow") XmlObjMgt::~XmlObjMgt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlObjMgt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlObjMgt_DataMapNodeOfRRelocationTable;
@@ -164,8 +194,18 @@ class XmlObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 };
 %feature("shadow") XmlObjMgt_DataMapNodeOfRRelocationTable::~XmlObjMgt_DataMapNodeOfRRelocationTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlObjMgt_DataMapNodeOfRRelocationTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlObjMgt_GP;
@@ -189,8 +229,18 @@ class XmlObjMgt_GP {
 };
 %feature("shadow") XmlObjMgt_GP::~XmlObjMgt_GP %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlObjMgt_GP {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlObjMgt_Persistent;
@@ -216,8 +266,18 @@ class XmlObjMgt_Persistent {
 };
 %feature("shadow") XmlObjMgt_Persistent::~XmlObjMgt_Persistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlObjMgt_Persistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlObjMgt_RRelocationTable;
@@ -251,5 +311,15 @@ class XmlObjMgt_RRelocationTable : public TCollection_BasicMap {
 };
 %feature("shadow") XmlObjMgt_RRelocationTable::~XmlObjMgt_RRelocationTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlObjMgt_RRelocationTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

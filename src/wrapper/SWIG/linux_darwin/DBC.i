@@ -64,8 +64,18 @@ class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode
 };
 %feature("shadow") Handle_DBC_VArrayNodeOfVArrayOfInteger::~Handle_DBC_VArrayNodeOfVArrayOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_DBC_VArrayNodeOfVArrayOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfExtCharacter;
@@ -92,8 +102,18 @@ class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_Arra
 };
 %feature("shadow") Handle_DBC_VArrayNodeOfVArrayOfExtCharacter::~Handle_DBC_VArrayNodeOfVArrayOfExtCharacter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_DBC_VArrayNodeOfVArrayOfExtCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfCharacter;
@@ -120,8 +140,18 @@ class Handle_DBC_VArrayNodeOfVArrayOfCharacter : public Handle_PStandard_ArrayNo
 };
 %feature("shadow") Handle_DBC_VArrayNodeOfVArrayOfCharacter::~Handle_DBC_VArrayNodeOfVArrayOfCharacter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_DBC_VArrayNodeOfVArrayOfCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfReal;
@@ -148,8 +178,18 @@ class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 };
 %feature("shadow") Handle_DBC_VArrayNodeOfVArrayOfReal::~Handle_DBC_VArrayNodeOfVArrayOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_DBC_VArrayNodeOfVArrayOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfCharacter;
@@ -167,8 +207,18 @@ class DBC_VArrayTNodeOfVArrayOfCharacter {
 };
 %feature("shadow") DBC_VArrayTNodeOfVArrayOfCharacter::~DBC_VArrayTNodeOfVArrayOfCharacter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DBC_VArrayTNodeOfVArrayOfCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DBC_BaseArray;
@@ -210,8 +260,18 @@ class DBC_BaseArray {
 };
 %feature("shadow") DBC_BaseArray::~DBC_BaseArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DBC_BaseArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfInteger;
@@ -229,8 +289,18 @@ class DBC_VArrayTNodeOfVArrayOfInteger {
 };
 %feature("shadow") DBC_VArrayTNodeOfVArrayOfInteger::~DBC_VArrayTNodeOfVArrayOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DBC_VArrayTNodeOfVArrayOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfExtCharacter;
@@ -248,8 +318,18 @@ class DBC_VArrayTNodeOfVArrayOfExtCharacter {
 };
 %feature("shadow") DBC_VArrayTNodeOfVArrayOfExtCharacter::~DBC_VArrayTNodeOfVArrayOfExtCharacter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DBC_VArrayTNodeOfVArrayOfExtCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DBC_VArrayOfReal;
@@ -289,8 +369,18 @@ class DBC_VArrayOfReal : public DBC_BaseArray {
 };
 %feature("shadow") DBC_VArrayOfReal::~DBC_VArrayOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DBC_VArrayOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DBC_VArrayOfCharacter;
@@ -320,8 +410,18 @@ class DBC_VArrayOfCharacter : public DBC_BaseArray {
 };
 %feature("shadow") DBC_VArrayOfCharacter::~DBC_VArrayOfCharacter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DBC_VArrayOfCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfCharacter;
@@ -357,8 +457,18 @@ class DBC_VArrayNodeOfVArrayOfCharacter : public PStandard_ArrayNode {
 };
 %feature("shadow") DBC_VArrayNodeOfVArrayOfCharacter::~DBC_VArrayNodeOfVArrayOfCharacter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DBC_VArrayNodeOfVArrayOfCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DBC_VArrayOfInteger;
@@ -398,8 +508,18 @@ class DBC_VArrayOfInteger : public DBC_BaseArray {
 };
 %feature("shadow") DBC_VArrayOfInteger::~DBC_VArrayOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DBC_VArrayOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfReal;
@@ -435,8 +555,18 @@ class DBC_VArrayNodeOfVArrayOfReal : public PStandard_ArrayNode {
 };
 %feature("shadow") DBC_VArrayNodeOfVArrayOfReal::~DBC_VArrayNodeOfVArrayOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DBC_VArrayNodeOfVArrayOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfReal;
@@ -454,8 +584,18 @@ class DBC_VArrayTNodeOfVArrayOfReal {
 };
 %feature("shadow") DBC_VArrayTNodeOfVArrayOfReal::~DBC_VArrayTNodeOfVArrayOfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DBC_VArrayTNodeOfVArrayOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DBC_VArrayOfExtCharacter;
@@ -485,8 +625,18 @@ class DBC_VArrayOfExtCharacter : public DBC_BaseArray {
 };
 %feature("shadow") DBC_VArrayOfExtCharacter::~DBC_VArrayOfExtCharacter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DBC_VArrayOfExtCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfInteger;
@@ -522,8 +672,18 @@ class DBC_VArrayNodeOfVArrayOfInteger : public PStandard_ArrayNode {
 };
 %feature("shadow") DBC_VArrayNodeOfVArrayOfInteger::~DBC_VArrayNodeOfVArrayOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DBC_VArrayNodeOfVArrayOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfExtCharacter;
@@ -559,5 +719,15 @@ class DBC_VArrayNodeOfVArrayOfExtCharacter : public PStandard_ArrayNode {
 };
 %feature("shadow") DBC_VArrayNodeOfVArrayOfExtCharacter::~DBC_VArrayNodeOfVArrayOfExtCharacter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend DBC_VArrayNodeOfVArrayOfExtCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

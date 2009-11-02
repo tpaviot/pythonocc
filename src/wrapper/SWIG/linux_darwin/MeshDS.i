@@ -77,8 +77,18 @@ class Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TC
 };
 %feature("shadow") Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger::~Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger;
@@ -98,8 +108,18 @@ class MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger : public TCollection_
 };
 %feature("shadow") MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger::~MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger;
@@ -137,8 +157,18 @@ class MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public TCollection_MapN
 };
 %feature("shadow") MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger::~MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MeshDS_DataMapOfIntegerMapOfInteger;
@@ -172,5 +202,15 @@ class MeshDS_DataMapOfIntegerMapOfInteger : public TCollection_BasicMap {
 };
 %feature("shadow") MeshDS_DataMapOfIntegerMapOfInteger::~MeshDS_DataMapOfIntegerMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MeshDS_DataMapOfIntegerMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

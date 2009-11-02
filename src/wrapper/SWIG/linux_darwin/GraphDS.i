@@ -75,8 +75,18 @@ class Handle_GraphDS_DataMapNodeOfEntityRoleMap : public Handle_TCollection_MapN
 };
 %feature("shadow") Handle_GraphDS_DataMapNodeOfEntityRoleMap::~Handle_GraphDS_DataMapNodeOfEntityRoleMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GraphDS_DataMapNodeOfEntityRoleMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GraphDS_EntityRoleMap;
@@ -110,8 +120,18 @@ class GraphDS_EntityRoleMap : public TCollection_BasicMap {
 };
 %feature("shadow") GraphDS_EntityRoleMap::~GraphDS_EntityRoleMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GraphDS_EntityRoleMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GraphDS_DataMapNodeOfEntityRoleMap;
@@ -139,8 +159,18 @@ class GraphDS_DataMapNodeOfEntityRoleMap : public TCollection_MapNode {
 };
 %feature("shadow") GraphDS_DataMapNodeOfEntityRoleMap::~GraphDS_DataMapNodeOfEntityRoleMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GraphDS_DataMapNodeOfEntityRoleMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GraphDS_DataMapIteratorOfEntityRoleMap;
@@ -160,5 +190,15 @@ class GraphDS_DataMapIteratorOfEntityRoleMap : public TCollection_BasicMapIterat
 };
 %feature("shadow") GraphDS_DataMapIteratorOfEntityRoleMap::~GraphDS_DataMapIteratorOfEntityRoleMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GraphDS_DataMapIteratorOfEntityRoleMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

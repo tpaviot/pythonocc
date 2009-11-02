@@ -63,8 +63,18 @@ class Handle_StlMesh_MeshDomain : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StlMesh_MeshDomain::~Handle_StlMesh_MeshDomain %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StlMesh_MeshDomain {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StlMesh_Mesh;
@@ -91,8 +101,18 @@ class Handle_StlMesh_Mesh : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StlMesh_Mesh::~Handle_StlMesh_Mesh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StlMesh_Mesh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StlMesh_MeshTriangle;
@@ -119,8 +139,18 @@ class Handle_StlMesh_MeshTriangle : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StlMesh_MeshTriangle::~Handle_StlMesh_MeshTriangle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StlMesh_MeshTriangle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain;
@@ -147,8 +177,18 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain : public Handle_TCollect
 };
 %feature("shadow") Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain::~Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle;
@@ -175,8 +215,18 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public Handle_TColle
 };
 %feature("shadow") Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle::~Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMesh;
@@ -203,8 +253,18 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMesh : public Handle_TCollection_Se
 };
 %feature("shadow") Handle_StlMesh_SequenceNodeOfSequenceOfMesh::~Handle_StlMesh_SequenceNodeOfSequenceOfMesh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StlMesh_SequenceNodeOfSequenceOfMesh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StlMesh_MeshDomain;
@@ -246,8 +306,18 @@ class StlMesh_MeshDomain : public MMgt_TShared {
 };
 %feature("shadow") StlMesh_MeshDomain::~StlMesh_MeshDomain %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlMesh_MeshDomain {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StlMesh_SequenceOfMeshDomain;
@@ -301,8 +371,18 @@ class StlMesh_SequenceOfMeshDomain : public TCollection_BaseSequence {
 };
 %feature("shadow") StlMesh_SequenceOfMeshDomain::~StlMesh_SequenceOfMeshDomain %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlMesh_SequenceOfMeshDomain {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StlMesh_MeshExplorer;
@@ -326,8 +406,18 @@ class StlMesh_MeshExplorer {
 };
 %feature("shadow") StlMesh_MeshExplorer::~StlMesh_MeshExplorer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlMesh_MeshExplorer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StlMesh_SequenceNodeOfSequenceOfMeshDomain;
@@ -353,8 +443,18 @@ class StlMesh_SequenceNodeOfSequenceOfMeshDomain : public TCollection_SeqNode {
 };
 %feature("shadow") StlMesh_SequenceNodeOfSequenceOfMeshDomain::~StlMesh_SequenceNodeOfSequenceOfMeshDomain %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StlMesh_SequenceNodeOfSequenceOfMesh;
@@ -380,8 +480,18 @@ class StlMesh_SequenceNodeOfSequenceOfMesh : public TCollection_SeqNode {
 };
 %feature("shadow") StlMesh_SequenceNodeOfSequenceOfMesh::~StlMesh_SequenceNodeOfSequenceOfMesh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlMesh_SequenceNodeOfSequenceOfMesh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StlMesh;
@@ -395,8 +505,18 @@ class StlMesh {
 };
 %feature("shadow") StlMesh::~StlMesh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlMesh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StlMesh_Mesh;
@@ -452,8 +572,18 @@ class StlMesh_Mesh : public MMgt_TShared {
 };
 %feature("shadow") StlMesh_Mesh::~StlMesh_Mesh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlMesh_Mesh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StlMesh_SequenceOfMeshTriangle;
@@ -507,8 +637,18 @@ class StlMesh_SequenceOfMeshTriangle : public TCollection_BaseSequence {
 };
 %feature("shadow") StlMesh_SequenceOfMeshTriangle::~StlMesh_SequenceOfMeshTriangle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlMesh_SequenceOfMeshTriangle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StlMesh_MeshTriangle;
@@ -542,8 +682,18 @@ class StlMesh_MeshTriangle : public MMgt_TShared {
 };
 %feature("shadow") StlMesh_MeshTriangle::~StlMesh_MeshTriangle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlMesh_MeshTriangle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StlMesh_SequenceNodeOfSequenceOfMeshTriangle;
@@ -569,8 +719,18 @@ class StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public TCollection_SeqNode 
 };
 %feature("shadow") StlMesh_SequenceNodeOfSequenceOfMeshTriangle::~StlMesh_SequenceNodeOfSequenceOfMeshTriangle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StlMesh_SequenceOfMesh;
@@ -624,5 +784,15 @@ class StlMesh_SequenceOfMesh : public TCollection_BaseSequence {
 };
 %feature("shadow") StlMesh_SequenceOfMesh::~StlMesh_SequenceOfMesh %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StlMesh_SequenceOfMesh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

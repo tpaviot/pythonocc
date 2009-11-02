@@ -88,8 +88,18 @@ class BRepToIGES_BREntity {
 };
 %feature("shadow") BRepToIGES_BREntity::~BRepToIGES_BREntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepToIGES_BREntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepToIGES_BRShell;
@@ -109,8 +119,18 @@ class BRepToIGES_BRShell : public BRepToIGES_BREntity {
 };
 %feature("shadow") BRepToIGES_BRShell::~BRepToIGES_BRShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepToIGES_BRShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepToIGES_BRSolid;
@@ -132,8 +152,18 @@ class BRepToIGES_BRSolid : public BRepToIGES_BREntity {
 };
 %feature("shadow") BRepToIGES_BRSolid::~BRepToIGES_BRSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepToIGES_BRSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepToIGES_BRWire;
@@ -167,5 +197,15 @@ class BRepToIGES_BRWire : public BRepToIGES_BREntity {
 };
 %feature("shadow") BRepToIGES_BRWire::~BRepToIGES_BRWire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepToIGES_BRWire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

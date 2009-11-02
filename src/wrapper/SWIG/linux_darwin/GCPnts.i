@@ -83,8 +83,18 @@ class GCPnts_TangentialDeflection {
 };
 %feature("shadow") GCPnts_TangentialDeflection::~GCPnts_TangentialDeflection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCPnts_TangentialDeflection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCPnts_UniformAbscissa;
@@ -136,8 +146,18 @@ class GCPnts_UniformAbscissa {
 };
 %feature("shadow") GCPnts_UniformAbscissa::~GCPnts_UniformAbscissa %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCPnts_UniformAbscissa {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCPnts_UniformDeflection;
@@ -175,8 +195,18 @@ class GCPnts_UniformDeflection {
 };
 %feature("shadow") GCPnts_UniformDeflection::~GCPnts_UniformDeflection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCPnts_UniformDeflection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCPnts_QuasiUniformAbscissa;
@@ -210,8 +240,18 @@ class GCPnts_QuasiUniformAbscissa {
 };
 %feature("shadow") GCPnts_QuasiUniformAbscissa::~GCPnts_QuasiUniformAbscissa %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCPnts_QuasiUniformAbscissa {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCPnts_QuasiUniformDeflection;
@@ -249,8 +289,18 @@ class GCPnts_QuasiUniformDeflection {
 };
 %feature("shadow") GCPnts_QuasiUniformDeflection::~GCPnts_QuasiUniformDeflection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCPnts_QuasiUniformDeflection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCPnts_AbscissaPoint;
@@ -298,5 +348,15 @@ class GCPnts_AbscissaPoint {
 };
 %feature("shadow") GCPnts_AbscissaPoint::~GCPnts_AbscissaPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCPnts_AbscissaPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

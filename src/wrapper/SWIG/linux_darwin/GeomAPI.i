@@ -60,8 +60,18 @@ class GeomAPI_Interpolate {
 };
 %feature("shadow") GeomAPI_Interpolate::~GeomAPI_Interpolate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomAPI_Interpolate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomAPI_ExtremaSurfaceSurface;
@@ -97,8 +107,18 @@ class GeomAPI_ExtremaSurfaceSurface {
 };
 %feature("shadow") GeomAPI_ExtremaSurfaceSurface::~GeomAPI_ExtremaSurfaceSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomAPI_ExtremaSurfaceSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomAPI_ProjectPointOnCurve;
@@ -140,8 +160,18 @@ class GeomAPI_ProjectPointOnCurve {
 };
 %feature("shadow") GeomAPI_ProjectPointOnCurve::~GeomAPI_ProjectPointOnCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomAPI_ProjectPointOnCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomAPI;
@@ -157,8 +187,18 @@ class GeomAPI {
 };
 %feature("shadow") GeomAPI::~GeomAPI %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomAPI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomAPI_IntSS;
@@ -180,8 +220,18 @@ class GeomAPI_IntSS {
 };
 %feature("shadow") GeomAPI_IntSS::~GeomAPI_IntSS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomAPI_IntSS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomAPI_ExtremaCurveSurface;
@@ -217,8 +267,18 @@ class GeomAPI_ExtremaCurveSurface {
 };
 %feature("shadow") GeomAPI_ExtremaCurveSurface::~GeomAPI_ExtremaCurveSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomAPI_ExtremaCurveSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomAPI_IntCS;
@@ -248,8 +308,18 @@ class GeomAPI_IntCS {
 };
 %feature("shadow") GeomAPI_IntCS::~GeomAPI_IntCS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomAPI_IntCS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomAPI_PointsToBSpline;
@@ -271,8 +341,18 @@ class GeomAPI_PointsToBSpline {
 };
 %feature("shadow") GeomAPI_PointsToBSpline::~GeomAPI_PointsToBSpline %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomAPI_PointsToBSpline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomAPI_PointsToBSplineSurface;
@@ -298,8 +378,18 @@ class GeomAPI_PointsToBSplineSurface {
 };
 %feature("shadow") GeomAPI_PointsToBSplineSurface::~GeomAPI_PointsToBSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomAPI_PointsToBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomAPI_ExtremaCurveCurve;
@@ -341,8 +431,18 @@ class GeomAPI_ExtremaCurveCurve {
 };
 %feature("shadow") GeomAPI_ExtremaCurveCurve::~GeomAPI_ExtremaCurveCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomAPI_ExtremaCurveCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GeomAPI_ProjectPointOnSurf;
@@ -394,5 +494,15 @@ class GeomAPI_ProjectPointOnSurf {
 };
 %feature("shadow") GeomAPI_ProjectPointOnSurf::~GeomAPI_ProjectPointOnSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GeomAPI_ProjectPointOnSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

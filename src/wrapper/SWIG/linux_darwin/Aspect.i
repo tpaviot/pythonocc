@@ -391,8 +391,18 @@ class Handle_Aspect_TypeMapDefinitionError : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_Aspect_TypeMapDefinitionError::~Handle_Aspect_TypeMapDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_TypeMapDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_AspectLineDefinitionError;
@@ -419,8 +429,18 @@ class Handle_Aspect_AspectLineDefinitionError : public Handle_Standard_OutOfRang
 };
 %feature("shadow") Handle_Aspect_AspectLineDefinitionError::~Handle_Aspect_AspectLineDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_AspectLineDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry;
@@ -447,8 +467,18 @@ class Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public Handle_TColle
 };
 %feature("shadow") Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry::~Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_ColorMap;
@@ -475,8 +505,18 @@ class Handle_Aspect_ColorMap : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_ColorMap::~Handle_Aspect_ColorMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_ColorMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_GenericColorMap;
@@ -503,8 +543,18 @@ class Handle_Aspect_GenericColorMap : public Handle_Aspect_ColorMap {
 };
 %feature("shadow") Handle_Aspect_GenericColorMap::~Handle_Aspect_GenericColorMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_GenericColorMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry;
@@ -531,8 +581,18 @@ class Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry : public Handle_TColle
 };
 %feature("shadow") Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry::~Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry;
@@ -559,8 +619,18 @@ class Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public Handle_TCollec
 };
 %feature("shadow") Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry::~Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_MarkerStyleDefinitionError;
@@ -587,8 +657,18 @@ class Handle_Aspect_MarkerStyleDefinitionError : public Handle_Standard_OutOfRan
 };
 %feature("shadow") Handle_Aspect_MarkerStyleDefinitionError::~Handle_Aspect_MarkerStyleDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_MarkerStyleDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_Driver;
@@ -615,8 +695,18 @@ class Handle_Aspect_Driver : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_Driver::~Handle_Aspect_Driver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_WindowDriver;
@@ -643,8 +733,18 @@ class Handle_Aspect_WindowDriver : public Handle_Aspect_Driver {
 };
 %feature("shadow") Handle_Aspect_WindowDriver::~Handle_Aspect_WindowDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_WindowDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_PixMap;
@@ -671,8 +771,18 @@ class Handle_Aspect_PixMap : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_PixMap::~Handle_Aspect_PixMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_PixMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_DriverDefinitionError;
@@ -699,8 +809,18 @@ class Handle_Aspect_DriverDefinitionError : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_Aspect_DriverDefinitionError::~Handle_Aspect_DriverDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_DriverDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_GraphicDeviceDefinitionError;
@@ -727,8 +847,18 @@ class Handle_Aspect_GraphicDeviceDefinitionError : public Handle_Standard_OutOfR
 };
 %feature("shadow") Handle_Aspect_GraphicDeviceDefinitionError::~Handle_Aspect_GraphicDeviceDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_GraphicDeviceDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_MarkMap;
@@ -755,8 +885,18 @@ class Handle_Aspect_MarkMap : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_MarkMap::~Handle_Aspect_MarkMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_MarkMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_Grid;
@@ -783,8 +923,18 @@ class Handle_Aspect_Grid : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_Grid::~Handle_Aspect_Grid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_Grid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_PixmapError;
@@ -811,8 +961,18 @@ class Handle_Aspect_PixmapError : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_Aspect_PixmapError::~Handle_Aspect_PixmapError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_PixmapError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_AspectMarker;
@@ -839,8 +999,18 @@ class Handle_Aspect_AspectMarker : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_AspectMarker::~Handle_Aspect_AspectMarker %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_AspectMarker {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_ColorMapDefinitionError;
@@ -867,8 +1037,18 @@ class Handle_Aspect_ColorMapDefinitionError : public Handle_Standard_OutOfRange 
 };
 %feature("shadow") Handle_Aspect_ColorMapDefinitionError::~Handle_Aspect_ColorMapDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_ColorMapDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_Window;
@@ -895,8 +1075,18 @@ class Handle_Aspect_Window : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_Window::~Handle_Aspect_Window %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_Window {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_CircularGrid;
@@ -923,8 +1113,18 @@ class Handle_Aspect_CircularGrid : public Handle_Aspect_Grid {
 };
 %feature("shadow") Handle_Aspect_CircularGrid::~Handle_Aspect_CircularGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_CircularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_BadAccess;
@@ -951,8 +1151,18 @@ class Handle_Aspect_BadAccess : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_Aspect_BadAccess::~Handle_Aspect_BadAccess %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_BadAccess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_WidthMap;
@@ -979,8 +1189,18 @@ class Handle_Aspect_WidthMap : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_WidthMap::~Handle_Aspect_WidthMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_WidthMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_AspectFillArea;
@@ -1007,8 +1227,18 @@ class Handle_Aspect_AspectFillArea : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_AspectFillArea::~Handle_Aspect_AspectFillArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_AspectFillArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry;
@@ -1035,8 +1265,18 @@ class Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public Handle_TCollec
 };
 %feature("shadow") Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry::~Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_EdgeDefinitionError;
@@ -1063,8 +1303,18 @@ class Handle_Aspect_EdgeDefinitionError : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_Aspect_EdgeDefinitionError::~Handle_Aspect_EdgeDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_EdgeDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_FontStyleDefinitionError;
@@ -1091,8 +1341,18 @@ class Handle_Aspect_FontStyleDefinitionError : public Handle_Standard_OutOfRange
 };
 %feature("shadow") Handle_Aspect_FontStyleDefinitionError::~Handle_Aspect_FontStyleDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_FontStyleDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_WidthMapDefinitionError;
@@ -1119,8 +1379,18 @@ class Handle_Aspect_WidthMapDefinitionError : public Handle_Standard_OutOfRange 
 };
 %feature("shadow") Handle_Aspect_WidthMapDefinitionError::~Handle_Aspect_WidthMapDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_WidthMapDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_RectangularGrid;
@@ -1147,8 +1417,18 @@ class Handle_Aspect_RectangularGrid : public Handle_Aspect_Grid {
 };
 %feature("shadow") Handle_Aspect_RectangularGrid::~Handle_Aspect_RectangularGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_RectangularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_LineStyleDefinitionError;
@@ -1175,8 +1455,18 @@ class Handle_Aspect_LineStyleDefinitionError : public Handle_Standard_OutOfRange
 };
 %feature("shadow") Handle_Aspect_LineStyleDefinitionError::~Handle_Aspect_LineStyleDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_LineStyleDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry;
@@ -1203,8 +1493,18 @@ class Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry : public Handle_TCollec
 };
 %feature("shadow") Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry::~Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_IdentDefinitionError;
@@ -1231,8 +1531,18 @@ class Handle_Aspect_IdentDefinitionError : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_Aspect_IdentDefinitionError::~Handle_Aspect_IdentDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_IdentDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_UndefinedMap;
@@ -1259,8 +1569,18 @@ class Handle_Aspect_UndefinedMap : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_Aspect_UndefinedMap::~Handle_Aspect_UndefinedMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_UndefinedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_ColorRampColorMap;
@@ -1287,8 +1607,18 @@ class Handle_Aspect_ColorRampColorMap : public Handle_Aspect_ColorMap {
 };
 %feature("shadow") Handle_Aspect_ColorRampColorMap::~Handle_Aspect_ColorRampColorMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_ColorRampColorMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_AspectMarkerDefinitionError;
@@ -1315,8 +1645,18 @@ class Handle_Aspect_AspectMarkerDefinitionError : public Handle_Standard_OutOfRa
 };
 %feature("shadow") Handle_Aspect_AspectMarkerDefinitionError::~Handle_Aspect_AspectMarkerDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_AspectMarkerDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_PixmapDefinitionError;
@@ -1343,8 +1683,18 @@ class Handle_Aspect_PixmapDefinitionError : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_Aspect_PixmapDefinitionError::~Handle_Aspect_PixmapDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_PixmapDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_MarkMapDefinitionError;
@@ -1371,8 +1721,18 @@ class Handle_Aspect_MarkMapDefinitionError : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_Aspect_MarkMapDefinitionError::~Handle_Aspect_MarkMapDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_MarkMapDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_FontMap;
@@ -1399,8 +1759,18 @@ class Handle_Aspect_FontMap : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_FontMap::~Handle_Aspect_FontMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_FontMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_LineWidthDefinitionError;
@@ -1427,8 +1797,18 @@ class Handle_Aspect_LineWidthDefinitionError : public Handle_Standard_OutOfRange
 };
 %feature("shadow") Handle_Aspect_LineWidthDefinitionError::~Handle_Aspect_LineWidthDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_LineWidthDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_AspectLine;
@@ -1455,8 +1835,18 @@ class Handle_Aspect_AspectLine : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_AspectLine::~Handle_Aspect_AspectLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_AspectLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_DriverError;
@@ -1483,8 +1873,18 @@ class Handle_Aspect_DriverError : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_Aspect_DriverError::~Handle_Aspect_DriverError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_DriverError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_ColorCubeColorMap;
@@ -1511,8 +1911,18 @@ class Handle_Aspect_ColorCubeColorMap : public Handle_Aspect_ColorMap {
 };
 %feature("shadow") Handle_Aspect_ColorCubeColorMap::~Handle_Aspect_ColorCubeColorMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_ColorCubeColorMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_ColorScale;
@@ -1539,8 +1949,18 @@ class Handle_Aspect_ColorScale : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_ColorScale::~Handle_Aspect_ColorScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_ColorScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_GraphicDriver;
@@ -1567,8 +1987,18 @@ class Handle_Aspect_GraphicDriver : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_GraphicDriver::~Handle_Aspect_GraphicDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_GraphicDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_FontMapDefinitionError;
@@ -1595,8 +2025,18 @@ class Handle_Aspect_FontMapDefinitionError : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_Aspect_FontMapDefinitionError::~Handle_Aspect_FontMapDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_FontMapDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_WindowError;
@@ -1623,8 +2063,18 @@ class Handle_Aspect_WindowError : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_Aspect_WindowError::~Handle_Aspect_WindowError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_WindowError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfColor;
@@ -1651,8 +2101,18 @@ class Handle_Aspect_SequenceNodeOfSequenceOfColor : public Handle_TCollection_Se
 };
 %feature("shadow") Handle_Aspect_SequenceNodeOfSequenceOfColor::~Handle_Aspect_SequenceNodeOfSequenceOfColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_SequenceNodeOfSequenceOfColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_GraphicDevice;
@@ -1679,8 +2139,18 @@ class Handle_Aspect_GraphicDevice : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_GraphicDevice::~Handle_Aspect_GraphicDevice %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_GraphicDevice {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_WindowDefinitionError;
@@ -1707,8 +2177,18 @@ class Handle_Aspect_WindowDefinitionError : public Handle_Standard_OutOfRange {
 };
 %feature("shadow") Handle_Aspect_WindowDefinitionError::~Handle_Aspect_WindowDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_WindowDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_AspectFillAreaDefinitionError;
@@ -1735,8 +2215,18 @@ class Handle_Aspect_AspectFillAreaDefinitionError : public Handle_Standard_OutOf
 };
 %feature("shadow") Handle_Aspect_AspectFillAreaDefinitionError::~Handle_Aspect_AspectFillAreaDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_AspectFillAreaDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_TypeMap;
@@ -1763,8 +2253,18 @@ class Handle_Aspect_TypeMap : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Aspect_TypeMap::~Handle_Aspect_TypeMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_TypeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Aspect_PolyStyleDefinitionError;
@@ -1791,8 +2291,18 @@ class Handle_Aspect_PolyStyleDefinitionError : public Handle_Standard_OutOfRange
 };
 %feature("shadow") Handle_Aspect_PolyStyleDefinitionError::~Handle_Aspect_PolyStyleDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Aspect_PolyStyleDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_Edge;
@@ -1816,8 +2326,18 @@ class Aspect_Edge {
 };
 %feature("shadow") Aspect_Edge::~Aspect_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfFontMapEntry;
@@ -1843,8 +2363,18 @@ class Aspect_SequenceNodeOfSequenceOfFontMapEntry : public TCollection_SeqNode {
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfFontMapEntry::~Aspect_SequenceNodeOfSequenceOfFontMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_SequenceNodeOfSequenceOfFontMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_GraphicDevice;
@@ -1868,8 +2398,18 @@ class Aspect_GraphicDevice : public MMgt_TShared {
 };
 %feature("shadow") Aspect_GraphicDevice::~Aspect_GraphicDevice %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_GraphicDevice {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_GraphicCallbackStruct;
@@ -1881,8 +2421,18 @@ class Aspect_GraphicCallbackStruct {
 };
 %feature("shadow") Aspect_GraphicCallbackStruct::~Aspect_GraphicCallbackStruct %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_GraphicCallbackStruct {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_ColorMapDefinitionError;
@@ -1914,8 +2464,18 @@ class Aspect_ColorMapDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_ColorMapDefinitionError::~Aspect_ColorMapDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_ColorMapDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_PixMap;
@@ -1947,8 +2507,18 @@ class Aspect_PixMap : public MMgt_TShared {
 };
 %feature("shadow") Aspect_PixMap::~Aspect_PixMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_PixMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_UndefinedMap;
@@ -1980,8 +2550,18 @@ class Aspect_UndefinedMap : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_UndefinedMap::~Aspect_UndefinedMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_UndefinedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_AspectMarker;
@@ -2011,8 +2591,18 @@ class Aspect_AspectMarker : public MMgt_TShared {
 };
 %feature("shadow") Aspect_AspectMarker::~Aspect_AspectMarker %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_AspectMarker {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_ColorMap;
@@ -2054,8 +2644,18 @@ class Aspect_ColorMap : public MMgt_TShared {
 };
 %feature("shadow") Aspect_ColorMap::~Aspect_ColorMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_ColorMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_ColorCubeColorMap;
@@ -2079,8 +2679,18 @@ class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
 };
 %feature("shadow") Aspect_ColorCubeColorMap::~Aspect_ColorCubeColorMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_ColorCubeColorMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_Pixel;
@@ -2098,8 +2708,18 @@ class Aspect_Pixel {
 };
 %feature("shadow") Aspect_Pixel::~Aspect_Pixel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_Pixel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_IndexPixel;
@@ -2144,8 +2764,18 @@ class Aspect_IndexPixel : public Aspect_Pixel {
 };
 %feature("shadow") Aspect_IndexPixel::~Aspect_IndexPixel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_IndexPixel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_RGBPixel;
@@ -2157,8 +2787,18 @@ class Aspect_RGBPixel {
 };
 %feature("shadow") Aspect_RGBPixel::~Aspect_RGBPixel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_RGBPixel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_PixmapError;
@@ -2190,8 +2830,18 @@ class Aspect_PixmapError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_PixmapError::~Aspect_PixmapError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_PixmapError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_SequenceOfTypeMapEntry;
@@ -2245,8 +2895,18 @@ class Aspect_SequenceOfTypeMapEntry : public TCollection_BaseSequence {
 };
 %feature("shadow") Aspect_SequenceOfTypeMapEntry::~Aspect_SequenceOfTypeMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_SequenceOfTypeMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_WindowError;
@@ -2278,8 +2938,18 @@ class Aspect_WindowError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_WindowError::~Aspect_WindowError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_WindowError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_Driver;
@@ -2395,8 +3065,18 @@ class Aspect_Driver : public MMgt_TShared {
 };
 %feature("shadow") Aspect_Driver::~Aspect_Driver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_AspectFillAreaDefinitionError;
@@ -2428,8 +3108,18 @@ class Aspect_AspectFillAreaDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_AspectFillAreaDefinitionError::~Aspect_AspectFillAreaDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_AspectFillAreaDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_DriverDefinitionError;
@@ -2461,8 +3151,18 @@ class Aspect_DriverDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_DriverDefinitionError::~Aspect_DriverDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_DriverDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_Grid;
@@ -2526,8 +3226,18 @@ class Aspect_Grid : public MMgt_TShared {
 };
 %feature("shadow") Aspect_Grid::~Aspect_Grid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_Grid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_CircularGrid;
@@ -2559,8 +3269,18 @@ class Aspect_CircularGrid : public Aspect_Grid {
 };
 %feature("shadow") Aspect_CircularGrid::~Aspect_CircularGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_CircularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_LineStyleDefinitionError;
@@ -2592,8 +3312,18 @@ class Aspect_LineStyleDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_LineStyleDefinitionError::~Aspect_LineStyleDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_LineStyleDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_ColorRampColorMap;
@@ -2631,8 +3361,18 @@ class Aspect_ColorRampColorMap : public Aspect_ColorMap {
 };
 %feature("shadow") Aspect_ColorRampColorMap::~Aspect_ColorRampColorMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_ColorRampColorMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_GenId;
@@ -2658,8 +3398,18 @@ class Aspect_GenId {
 };
 %feature("shadow") Aspect_GenId::~Aspect_GenId %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_GenId {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_GenericColorMap;
@@ -2697,8 +3447,18 @@ class Aspect_GenericColorMap : public Aspect_ColorMap {
 };
 %feature("shadow") Aspect_GenericColorMap::~Aspect_GenericColorMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_GenericColorMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_PixmapDefinitionError;
@@ -2730,8 +3490,18 @@ class Aspect_PixmapDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_PixmapDefinitionError::~Aspect_PixmapDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_PixmapDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_TypeMap;
@@ -2767,8 +3537,18 @@ class Aspect_TypeMap : public MMgt_TShared {
 };
 %feature("shadow") Aspect_TypeMap::~Aspect_TypeMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_TypeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfMarkMapEntry;
@@ -2794,8 +3574,18 @@ class Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public TCollection_SeqNode {
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfMarkMapEntry::~Aspect_SequenceNodeOfSequenceOfMarkMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_SequenceNodeOfSequenceOfMarkMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_MarkMap;
@@ -2831,8 +3621,18 @@ class Aspect_MarkMap : public MMgt_TShared {
 };
 %feature("shadow") Aspect_MarkMap::~Aspect_MarkMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_MarkMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfTypeMapEntry;
@@ -2858,8 +3658,18 @@ class Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public TCollection_SeqNode {
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfTypeMapEntry::~Aspect_SequenceNodeOfSequenceOfTypeMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_SequenceNodeOfSequenceOfTypeMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_SequenceOfColor;
@@ -2913,8 +3723,18 @@ class Aspect_SequenceOfColor : public TCollection_BaseSequence {
 };
 %feature("shadow") Aspect_SequenceOfColor::~Aspect_SequenceOfColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_SequenceOfColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_GraphicDeviceDefinitionError;
@@ -2946,8 +3766,18 @@ class Aspect_GraphicDeviceDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_GraphicDeviceDefinitionError::~Aspect_GraphicDeviceDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_GraphicDeviceDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_WidthMap;
@@ -2985,8 +3815,18 @@ class Aspect_WidthMap : public MMgt_TShared {
 };
 %feature("shadow") Aspect_WidthMap::~Aspect_WidthMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_WidthMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_EdgeDefinitionError;
@@ -3018,8 +3858,18 @@ class Aspect_EdgeDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_EdgeDefinitionError::~Aspect_EdgeDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_EdgeDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_AspectFillArea;
@@ -3061,8 +3911,18 @@ class Aspect_AspectFillArea : public MMgt_TShared {
 };
 %feature("shadow") Aspect_AspectFillArea::~Aspect_AspectFillArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_AspectFillArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_MarkMapDefinitionError;
@@ -3094,8 +3954,18 @@ class Aspect_MarkMapDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_MarkMapDefinitionError::~Aspect_MarkMapDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_MarkMapDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_FontStyleDefinitionError;
@@ -3127,8 +3997,18 @@ class Aspect_FontStyleDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_FontStyleDefinitionError::~Aspect_FontStyleDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_FontStyleDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_MarkMapEntry;
@@ -3164,8 +4044,18 @@ class Aspect_MarkMapEntry {
 };
 %feature("shadow") Aspect_MarkMapEntry::~Aspect_MarkMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_MarkMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_AspectMarkerDefinitionError;
@@ -3197,8 +4087,18 @@ class Aspect_AspectMarkerDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_AspectMarkerDefinitionError::~Aspect_AspectMarkerDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_AspectMarkerDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_TypeMapDefinitionError;
@@ -3230,8 +4130,18 @@ class Aspect_TypeMapDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_TypeMapDefinitionError::~Aspect_TypeMapDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_TypeMapDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_WidthMapEntry;
@@ -3275,8 +4185,18 @@ class Aspect_WidthMapEntry {
 };
 %feature("shadow") Aspect_WidthMapEntry::~Aspect_WidthMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_WidthMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_FontMapEntry;
@@ -3312,8 +4232,18 @@ class Aspect_FontMapEntry {
 };
 %feature("shadow") Aspect_FontMapEntry::~Aspect_FontMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_FontMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_ColorPixel;
@@ -3356,8 +4286,18 @@ class Aspect_ColorPixel : public Aspect_Pixel {
 };
 %feature("shadow") Aspect_ColorPixel::~Aspect_ColorPixel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_ColorPixel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_MarkerStyleDefinitionError;
@@ -3389,8 +4329,18 @@ class Aspect_MarkerStyleDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_MarkerStyleDefinitionError::~Aspect_MarkerStyleDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_MarkerStyleDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_Window;
@@ -3488,8 +4438,18 @@ class Aspect_Window : public MMgt_TShared {
 };
 %feature("shadow") Aspect_Window::~Aspect_Window %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_Window {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_PolyStyleDefinitionError;
@@ -3521,8 +4481,18 @@ class Aspect_PolyStyleDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_PolyStyleDefinitionError::~Aspect_PolyStyleDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_PolyStyleDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_DriverError;
@@ -3554,8 +4524,18 @@ class Aspect_DriverError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_DriverError::~Aspect_DriverError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_DriverError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_SequenceOfFontMapEntry;
@@ -3609,8 +4589,18 @@ class Aspect_SequenceOfFontMapEntry : public TCollection_BaseSequence {
 };
 %feature("shadow") Aspect_SequenceOfFontMapEntry::~Aspect_SequenceOfFontMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_SequenceOfFontMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_RectangularGrid;
@@ -3654,8 +4644,18 @@ class Aspect_RectangularGrid : public Aspect_Grid {
 };
 %feature("shadow") Aspect_RectangularGrid::~Aspect_RectangularGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_RectangularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_Array1OfEdge;
@@ -3695,8 +4695,18 @@ class Aspect_Array1OfEdge {
 };
 %feature("shadow") Aspect_Array1OfEdge::~Aspect_Array1OfEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_Array1OfEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_FontStyle;
@@ -3786,8 +4796,18 @@ class Aspect_FontStyle {
 };
 %feature("shadow") Aspect_FontStyle::~Aspect_FontStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_FontStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_LineWidthDefinitionError;
@@ -3819,8 +4839,18 @@ class Aspect_LineWidthDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_LineWidthDefinitionError::~Aspect_LineWidthDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_LineWidthDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfColorMapEntry;
@@ -3846,8 +4876,18 @@ class Aspect_SequenceNodeOfSequenceOfColorMapEntry : public TCollection_SeqNode 
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfColorMapEntry::~Aspect_SequenceNodeOfSequenceOfColorMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_SequenceNodeOfSequenceOfColorMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_ColorMapEntry;
@@ -3901,8 +4941,18 @@ class Aspect_ColorMapEntry {
 };
 %feature("shadow") Aspect_ColorMapEntry::~Aspect_ColorMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_ColorMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect;
@@ -3920,8 +4970,18 @@ class Aspect {
 };
 %feature("shadow") Aspect::~Aspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_BadAccess;
@@ -3953,8 +5013,18 @@ class Aspect_BadAccess : public Standard_DomainError {
 };
 %feature("shadow") Aspect_BadAccess::~Aspect_BadAccess %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_BadAccess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_AspectLineDefinitionError;
@@ -3986,8 +5056,18 @@ class Aspect_AspectLineDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_AspectLineDefinitionError::~Aspect_AspectLineDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_AspectLineDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_SequenceOfColorMapEntry;
@@ -4041,8 +5121,18 @@ class Aspect_SequenceOfColorMapEntry : public TCollection_BaseSequence {
 };
 %feature("shadow") Aspect_SequenceOfColorMapEntry::~Aspect_SequenceOfColorMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_SequenceOfColorMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_FontMap;
@@ -4078,8 +5168,18 @@ class Aspect_FontMap : public MMgt_TShared {
 };
 %feature("shadow") Aspect_FontMap::~Aspect_FontMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_FontMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_LineStyle;
@@ -4117,8 +5217,18 @@ class Aspect_LineStyle {
 };
 %feature("shadow") Aspect_LineStyle::~Aspect_LineStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_LineStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_MarkerStyle;
@@ -4160,8 +5270,18 @@ class Aspect_MarkerStyle {
 };
 %feature("shadow") Aspect_MarkerStyle::~Aspect_MarkerStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_MarkerStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_IdentDefinitionError;
@@ -4193,8 +5313,18 @@ class Aspect_IdentDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_IdentDefinitionError::~Aspect_IdentDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_IdentDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_SequenceOfMarkMapEntry;
@@ -4248,8 +5378,18 @@ class Aspect_SequenceOfMarkMapEntry : public TCollection_BaseSequence {
 };
 %feature("shadow") Aspect_SequenceOfMarkMapEntry::~Aspect_SequenceOfMarkMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_SequenceOfMarkMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_Background;
@@ -4267,8 +5407,18 @@ class Aspect_Background {
 };
 %feature("shadow") Aspect_Background::~Aspect_Background %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_Background {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_WindowDefinitionError;
@@ -4300,8 +5450,18 @@ class Aspect_WindowDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_WindowDefinitionError::~Aspect_WindowDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_WindowDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_WindowDriver;
@@ -4385,8 +5545,18 @@ class Aspect_WindowDriver : public Aspect_Driver {
 };
 %feature("shadow") Aspect_WindowDriver::~Aspect_WindowDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_WindowDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfWidthMapEntry;
@@ -4412,8 +5582,18 @@ class Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public TCollection_SeqNode 
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfWidthMapEntry::~Aspect_SequenceNodeOfSequenceOfWidthMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_SequenceNodeOfSequenceOfWidthMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_TypeMapEntry;
@@ -4449,8 +5629,18 @@ class Aspect_TypeMapEntry {
 };
 %feature("shadow") Aspect_TypeMapEntry::~Aspect_TypeMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_TypeMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_SequenceOfWidthMapEntry;
@@ -4504,8 +5694,18 @@ class Aspect_SequenceOfWidthMapEntry : public TCollection_BaseSequence {
 };
 %feature("shadow") Aspect_SequenceOfWidthMapEntry::~Aspect_SequenceOfWidthMapEntry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_SequenceOfWidthMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_GraphicDriver;
@@ -4527,8 +5727,18 @@ class Aspect_GraphicDriver : public MMgt_TShared {
 };
 %feature("shadow") Aspect_GraphicDriver::~Aspect_GraphicDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_GraphicDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_WidthMapDefinitionError;
@@ -4560,8 +5770,18 @@ class Aspect_WidthMapDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_WidthMapDefinitionError::~Aspect_WidthMapDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_WidthMapDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_FontMapDefinitionError;
@@ -4593,8 +5813,18 @@ class Aspect_FontMapDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") Aspect_FontMapDefinitionError::~Aspect_FontMapDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_FontMapDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_AspectLine;
@@ -4624,8 +5854,18 @@ class Aspect_AspectLine : public MMgt_TShared {
 };
 %feature("shadow") Aspect_AspectLine::~Aspect_AspectLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_AspectLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfColor;
@@ -4651,8 +5891,18 @@ class Aspect_SequenceNodeOfSequenceOfColor : public TCollection_SeqNode {
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfColor::~Aspect_SequenceNodeOfSequenceOfColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_SequenceNodeOfSequenceOfColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Aspect_ColorScale;
@@ -4780,5 +6030,15 @@ class Aspect_ColorScale : public MMgt_TShared {
 };
 %feature("shadow") Aspect_ColorScale::~Aspect_ColorScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Aspect_ColorScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_HLRAlgo_PolyShellData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_HLRAlgo_PolyShellData::~Handle_HLRAlgo_PolyShellData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HLRAlgo_PolyShellData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HLRAlgo_EdgesBlock;
@@ -91,8 +101,18 @@ class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_HLRAlgo_EdgesBlock::~Handle_HLRAlgo_EdgesBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HLRAlgo_EdgesBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HLRAlgo_ListNodeOfInterferenceList;
@@ -119,8 +139,18 @@ class Handle_HLRAlgo_ListNodeOfInterferenceList : public Handle_TCollection_MapN
 };
 %feature("shadow") Handle_HLRAlgo_ListNodeOfInterferenceList::~Handle_HLRAlgo_ListNodeOfInterferenceList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HLRAlgo_ListNodeOfInterferenceList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HLRAlgo_HArray1OfPINod;
@@ -147,8 +177,18 @@ class Handle_HLRAlgo_HArray1OfPINod : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_HLRAlgo_HArray1OfPINod::~Handle_HLRAlgo_HArray1OfPINod %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HLRAlgo_HArray1OfPINod {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HLRAlgo_WiresBlock;
@@ -175,8 +215,18 @@ class Handle_HLRAlgo_WiresBlock : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_HLRAlgo_WiresBlock::~Handle_HLRAlgo_WiresBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HLRAlgo_WiresBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HLRAlgo_HArray1OfTData;
@@ -203,8 +253,18 @@ class Handle_HLRAlgo_HArray1OfTData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_HLRAlgo_HArray1OfTData::~Handle_HLRAlgo_HArray1OfTData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HLRAlgo_HArray1OfTData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HLRAlgo_PolyInternalData;
@@ -231,8 +291,18 @@ class Handle_HLRAlgo_PolyInternalData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_HLRAlgo_PolyInternalData::~Handle_HLRAlgo_PolyInternalData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HLRAlgo_PolyInternalData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HLRAlgo_ListNodeOfListOfBPoint;
@@ -259,8 +329,18 @@ class Handle_HLRAlgo_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode 
 };
 %feature("shadow") Handle_HLRAlgo_ListNodeOfListOfBPoint::~Handle_HLRAlgo_ListNodeOfListOfBPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HLRAlgo_ListNodeOfListOfBPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HLRAlgo_PolyData;
@@ -287,8 +367,18 @@ class Handle_HLRAlgo_PolyData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_HLRAlgo_PolyData::~Handle_HLRAlgo_PolyData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HLRAlgo_PolyData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HLRAlgo_PolyAlgo;
@@ -315,8 +405,18 @@ class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_HLRAlgo_PolyAlgo::~Handle_HLRAlgo_PolyAlgo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HLRAlgo_PolyAlgo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HLRAlgo_PolyInternalNode;
@@ -343,8 +443,18 @@ class Handle_HLRAlgo_PolyInternalNode : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_HLRAlgo_PolyInternalNode::~Handle_HLRAlgo_PolyInternalNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HLRAlgo_PolyInternalNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HLRAlgo_HArray1OfPISeg;
@@ -371,8 +481,18 @@ class Handle_HLRAlgo_HArray1OfPISeg : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_HLRAlgo_HArray1OfPISeg::~Handle_HLRAlgo_HArray1OfPISeg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HLRAlgo_HArray1OfPISeg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_HLRAlgo_HArray1OfPHDat;
@@ -399,8 +519,18 @@ class Handle_HLRAlgo_HArray1OfPHDat : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_HLRAlgo_HArray1OfPHDat::~Handle_HLRAlgo_HArray1OfPHDat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_HLRAlgo_HArray1OfPHDat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_Array1OfPHDat;
@@ -440,8 +570,18 @@ class HLRAlgo_Array1OfPHDat {
 };
 %feature("shadow") HLRAlgo_Array1OfPHDat::~HLRAlgo_Array1OfPHDat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_Array1OfPHDat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_ListIteratorOfInterferenceList;
@@ -463,8 +603,18 @@ class HLRAlgo_ListIteratorOfInterferenceList {
 };
 %feature("shadow") HLRAlgo_ListIteratorOfInterferenceList::~HLRAlgo_ListIteratorOfInterferenceList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_ListIteratorOfInterferenceList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_PolyHidingData;
@@ -482,8 +632,18 @@ class HLRAlgo_PolyHidingData {
 };
 %feature("shadow") HLRAlgo_PolyHidingData::~HLRAlgo_PolyHidingData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_PolyHidingData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_HArray1OfPISeg;
@@ -527,8 +687,18 @@ class HLRAlgo_HArray1OfPISeg : public MMgt_TShared {
 };
 %feature("shadow") HLRAlgo_HArray1OfPISeg::~HLRAlgo_HArray1OfPISeg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_HArray1OfPISeg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_PolyInternalNode;
@@ -556,8 +726,18 @@ class HLRAlgo_PolyInternalNode : public MMgt_TShared {
 };
 %feature("shadow") HLRAlgo_PolyInternalNode::~HLRAlgo_PolyInternalNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_PolyInternalNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_Array1OfPINod;
@@ -597,8 +777,18 @@ class HLRAlgo_Array1OfPINod {
 };
 %feature("shadow") HLRAlgo_Array1OfPINod::~HLRAlgo_Array1OfPINod %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_Array1OfPINod {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_Projector;
@@ -646,8 +836,18 @@ class HLRAlgo_Projector {
 };
 %feature("shadow") HLRAlgo_Projector::~HLRAlgo_Projector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_Projector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_EdgeIterator;
@@ -675,8 +875,18 @@ class HLRAlgo_EdgeIterator {
 };
 %feature("shadow") HLRAlgo_EdgeIterator::~HLRAlgo_EdgeIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_EdgeIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_BiPoint;
@@ -724,8 +934,18 @@ class HLRAlgo_BiPoint {
 };
 %feature("shadow") HLRAlgo_BiPoint::~HLRAlgo_BiPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_BiPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_PolyInternalSegment;
@@ -739,8 +959,18 @@ class HLRAlgo_PolyInternalSegment {
 };
 %feature("shadow") HLRAlgo_PolyInternalSegment::~HLRAlgo_PolyInternalSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_PolyInternalSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_EdgesBlock;
@@ -794,8 +1024,18 @@ class HLRAlgo_EdgesBlock : public MMgt_TShared {
 };
 %feature("shadow") HLRAlgo_EdgesBlock::~HLRAlgo_EdgesBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_EdgesBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_ListNodeOfListOfBPoint;
@@ -821,8 +1061,18 @@ class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
 };
 %feature("shadow") HLRAlgo_ListNodeOfListOfBPoint::~HLRAlgo_ListNodeOfListOfBPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_ListNodeOfListOfBPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_Array1OfTData;
@@ -862,8 +1112,18 @@ class HLRAlgo_Array1OfTData {
 };
 %feature("shadow") HLRAlgo_Array1OfTData::~HLRAlgo_Array1OfTData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_Array1OfTData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_ListNodeOfInterferenceList;
@@ -889,8 +1149,18 @@ class HLRAlgo_ListNodeOfInterferenceList : public TCollection_MapNode {
 };
 %feature("shadow") HLRAlgo_ListNodeOfInterferenceList::~HLRAlgo_ListNodeOfInterferenceList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_ListNodeOfInterferenceList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_WiresBlock;
@@ -924,8 +1194,18 @@ class HLRAlgo_WiresBlock : public MMgt_TShared {
 };
 %feature("shadow") HLRAlgo_WiresBlock::~HLRAlgo_WiresBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_WiresBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_PolyAlgo;
@@ -973,8 +1253,18 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 };
 %feature("shadow") HLRAlgo_PolyAlgo::~HLRAlgo_PolyAlgo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_PolyAlgo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_PolyShellData;
@@ -1012,8 +1302,18 @@ class HLRAlgo_PolyShellData : public MMgt_TShared {
 };
 %feature("shadow") HLRAlgo_PolyShellData::~HLRAlgo_PolyShellData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_PolyShellData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_Array1OfPISeg;
@@ -1053,8 +1353,18 @@ class HLRAlgo_Array1OfPISeg {
 };
 %feature("shadow") HLRAlgo_Array1OfPISeg::~HLRAlgo_Array1OfPISeg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_Array1OfPISeg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_PolyData;
@@ -1102,8 +1412,18 @@ class HLRAlgo_PolyData : public MMgt_TShared {
 };
 %feature("shadow") HLRAlgo_PolyData::~HLRAlgo_PolyData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_PolyData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_ListIteratorOfListOfBPoint;
@@ -1125,8 +1445,18 @@ class HLRAlgo_ListIteratorOfListOfBPoint {
 };
 %feature("shadow") HLRAlgo_ListIteratorOfListOfBPoint::~HLRAlgo_ListIteratorOfListOfBPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_ListIteratorOfListOfBPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_Interference;
@@ -1164,8 +1494,18 @@ class HLRAlgo_Interference {
 };
 %feature("shadow") HLRAlgo_Interference::~HLRAlgo_Interference %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_Interference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_HArray1OfPHDat;
@@ -1209,8 +1549,18 @@ class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
 };
 %feature("shadow") HLRAlgo_HArray1OfPHDat::~HLRAlgo_HArray1OfPHDat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_HArray1OfPHDat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_ListOfBPoint;
@@ -1260,8 +1610,18 @@ class HLRAlgo_ListOfBPoint {
 };
 %feature("shadow") HLRAlgo_ListOfBPoint::~HLRAlgo_ListOfBPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_ListOfBPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_HArray1OfPINod;
@@ -1305,8 +1665,18 @@ class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
 };
 %feature("shadow") HLRAlgo_HArray1OfPINod::~HLRAlgo_HArray1OfPINod %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_HArray1OfPINod {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_Intersection;
@@ -1348,8 +1718,18 @@ class HLRAlgo_Intersection {
 };
 %feature("shadow") HLRAlgo_Intersection::~HLRAlgo_Intersection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_Intersection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_PolyInternalData;
@@ -1413,8 +1793,18 @@ class HLRAlgo_PolyInternalData : public MMgt_TShared {
 };
 %feature("shadow") HLRAlgo_PolyInternalData::~HLRAlgo_PolyInternalData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_PolyInternalData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_TriangleData;
@@ -1428,8 +1818,18 @@ class HLRAlgo_TriangleData {
 };
 %feature("shadow") HLRAlgo_TriangleData::~HLRAlgo_TriangleData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_TriangleData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo;
@@ -1457,8 +1857,18 @@ class HLRAlgo {
 };
 %feature("shadow") HLRAlgo::~HLRAlgo %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_HArray1OfTData;
@@ -1502,8 +1912,18 @@ class HLRAlgo_HArray1OfTData : public MMgt_TShared {
 };
 %feature("shadow") HLRAlgo_HArray1OfTData::~HLRAlgo_HArray1OfTData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_HArray1OfTData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_EdgeStatus;
@@ -1539,8 +1959,18 @@ class HLRAlgo_EdgeStatus {
 };
 %feature("shadow") HLRAlgo_EdgeStatus::~HLRAlgo_EdgeStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_EdgeStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_Coincidence;
@@ -1560,8 +1990,18 @@ class HLRAlgo_Coincidence {
 };
 %feature("shadow") HLRAlgo_Coincidence::~HLRAlgo_Coincidence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_Coincidence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor HLRAlgo_InterferenceList;
@@ -1611,5 +2051,15 @@ class HLRAlgo_InterferenceList {
 };
 %feature("shadow") HLRAlgo_InterferenceList::~HLRAlgo_InterferenceList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend HLRAlgo_InterferenceList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

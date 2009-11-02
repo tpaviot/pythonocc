@@ -58,5 +58,15 @@ class TopCnx_EdgeFaceTransition {
 };
 %feature("shadow") TopCnx_EdgeFaceTransition::~TopCnx_EdgeFaceTransition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopCnx_EdgeFaceTransition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

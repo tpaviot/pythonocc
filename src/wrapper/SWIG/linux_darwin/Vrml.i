@@ -145,8 +145,18 @@ class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Vrml_LOD::~Handle_Vrml_LOD %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Vrml_LOD {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Vrml_Coordinate3;
@@ -173,8 +183,18 @@ class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Vrml_Coordinate3::~Handle_Vrml_Coordinate3 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Vrml_Coordinate3 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Vrml_AsciiText;
@@ -201,8 +221,18 @@ class Handle_Vrml_AsciiText : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Vrml_AsciiText::~Handle_Vrml_AsciiText %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Vrml_AsciiText {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Vrml_SFImage;
@@ -229,8 +259,18 @@ class Handle_Vrml_SFImage : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Vrml_SFImage::~Handle_Vrml_SFImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Vrml_SFImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Vrml_Normal;
@@ -257,8 +297,18 @@ class Handle_Vrml_Normal : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Vrml_Normal::~Handle_Vrml_Normal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Vrml_Normal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Vrml_Material;
@@ -285,8 +335,18 @@ class Handle_Vrml_Material : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Vrml_Material::~Handle_Vrml_Material %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Vrml_Material {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Vrml_IndexedLineSet;
@@ -313,8 +373,18 @@ class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Vrml_IndexedLineSet::~Handle_Vrml_IndexedLineSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Vrml_IndexedLineSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Vrml_IndexedFaceSet;
@@ -341,8 +411,18 @@ class Handle_Vrml_IndexedFaceSet : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Vrml_IndexedFaceSet::~Handle_Vrml_IndexedFaceSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Vrml_IndexedFaceSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Vrml_TextureCoordinate2;
@@ -369,8 +449,18 @@ class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Vrml_TextureCoordinate2::~Handle_Vrml_TextureCoordinate2 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Vrml_TextureCoordinate2 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Switch;
@@ -394,8 +484,18 @@ class Vrml_Switch {
 };
 %feature("shadow") Vrml_Switch::~Vrml_Switch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Switch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_MaterialBinding;
@@ -421,8 +521,18 @@ class Vrml_MaterialBinding {
 };
 %feature("shadow") Vrml_MaterialBinding::~Vrml_MaterialBinding %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_MaterialBinding {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_TransformSeparator;
@@ -442,8 +552,18 @@ class Vrml_TransformSeparator {
 };
 %feature("shadow") Vrml_TransformSeparator::~Vrml_TransformSeparator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_TransformSeparator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Cube;
@@ -475,8 +595,18 @@ class Vrml_Cube {
 };
 %feature("shadow") Vrml_Cube::~Vrml_Cube %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Cube {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_FontStyle;
@@ -508,8 +638,18 @@ class Vrml_FontStyle {
 };
 %feature("shadow") Vrml_FontStyle::~Vrml_FontStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_FontStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Sphere;
@@ -533,8 +673,18 @@ class Vrml_Sphere {
 };
 %feature("shadow") Vrml_Sphere::~Vrml_Sphere %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Sphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_IndexedFaceSet;
@@ -584,8 +734,18 @@ class Vrml_IndexedFaceSet : public MMgt_TShared {
 };
 %feature("shadow") Vrml_IndexedFaceSet::~Vrml_IndexedFaceSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_IndexedFaceSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_NormalBinding;
@@ -611,8 +771,18 @@ class Vrml_NormalBinding {
 };
 %feature("shadow") Vrml_NormalBinding::~Vrml_NormalBinding %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_NormalBinding {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Instancing;
@@ -640,8 +810,18 @@ class Vrml_Instancing {
 };
 %feature("shadow") Vrml_Instancing::~Vrml_Instancing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Instancing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_AsciiText;
@@ -691,8 +871,18 @@ class Vrml_AsciiText : public MMgt_TShared {
 };
 %feature("shadow") Vrml_AsciiText::~Vrml_AsciiText %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_AsciiText {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_IndexedLineSet;
@@ -742,8 +932,18 @@ class Vrml_IndexedLineSet : public MMgt_TShared {
 };
 %feature("shadow") Vrml_IndexedLineSet::~Vrml_IndexedLineSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_IndexedLineSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Normal;
@@ -781,8 +981,18 @@ class Vrml_Normal : public MMgt_TShared {
 };
 %feature("shadow") Vrml_Normal::~Vrml_Normal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Normal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_SpotLight;
@@ -832,8 +1042,18 @@ class Vrml_SpotLight {
 };
 %feature("shadow") Vrml_SpotLight::~Vrml_SpotLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_SpotLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Texture2;
@@ -871,8 +1091,18 @@ class Vrml_Texture2 {
 };
 %feature("shadow") Vrml_Texture2::~Vrml_Texture2 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Texture2 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_SFImage;
@@ -916,8 +1146,18 @@ class Vrml_SFImage : public MMgt_TShared {
 };
 %feature("shadow") Vrml_SFImage::~Vrml_SFImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_SFImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_WWWInline;
@@ -951,8 +1191,18 @@ class Vrml_WWWInline {
 };
 %feature("shadow") Vrml_WWWInline::~Vrml_WWWInline %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_WWWInline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_PointLight;
@@ -990,8 +1240,18 @@ class Vrml_PointLight {
 };
 %feature("shadow") Vrml_PointLight::~Vrml_PointLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_PointLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Transform;
@@ -1033,8 +1293,18 @@ class Vrml_Transform {
 };
 %feature("shadow") Vrml_Transform::~Vrml_Transform %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Transform {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Scale;
@@ -1060,8 +1330,18 @@ class Vrml_Scale {
 };
 %feature("shadow") Vrml_Scale::~Vrml_Scale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Scale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Cylinder;
@@ -1093,8 +1373,18 @@ class Vrml_Cylinder {
 };
 %feature("shadow") Vrml_Cylinder::~Vrml_Cylinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Cylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_PerspectiveCamera;
@@ -1132,8 +1422,18 @@ class Vrml_PerspectiveCamera {
 };
 %feature("shadow") Vrml_PerspectiveCamera::~Vrml_PerspectiveCamera %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_PerspectiveCamera {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Texture2Transform;
@@ -1171,8 +1471,18 @@ class Vrml_Texture2Transform {
 };
 %feature("shadow") Vrml_Texture2Transform::~Vrml_Texture2Transform %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Texture2Transform {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_SFRotation;
@@ -1202,8 +1512,18 @@ class Vrml_SFRotation {
 };
 %feature("shadow") Vrml_SFRotation::~Vrml_SFRotation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_SFRotation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_OrthographicCamera;
@@ -1241,8 +1561,18 @@ class Vrml_OrthographicCamera {
 };
 %feature("shadow") Vrml_OrthographicCamera::~Vrml_OrthographicCamera %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_OrthographicCamera {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Cone;
@@ -1274,8 +1604,18 @@ class Vrml_Cone {
 };
 %feature("shadow") Vrml_Cone::~Vrml_Cone %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Cone {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Coordinate3;
@@ -1313,8 +1653,18 @@ class Vrml_Coordinate3 : public MMgt_TShared {
 };
 %feature("shadow") Vrml_Coordinate3::~Vrml_Coordinate3 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Coordinate3 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml;
@@ -1336,8 +1686,18 @@ class Vrml {
 };
 %feature("shadow") Vrml::~Vrml %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Info;
@@ -1361,8 +1721,18 @@ class Vrml_Info {
 };
 %feature("shadow") Vrml_Info::~Vrml_Info %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Info {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_MatrixTransform;
@@ -1388,8 +1758,18 @@ class Vrml_MatrixTransform {
 };
 %feature("shadow") Vrml_MatrixTransform::~Vrml_MatrixTransform %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_MatrixTransform {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_LOD;
@@ -1431,8 +1811,18 @@ class Vrml_LOD : public MMgt_TShared {
 };
 %feature("shadow") Vrml_LOD::~Vrml_LOD %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_LOD {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_DirectionalLight;
@@ -1470,8 +1860,18 @@ class Vrml_DirectionalLight {
 };
 %feature("shadow") Vrml_DirectionalLight::~Vrml_DirectionalLight %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_DirectionalLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Material;
@@ -1529,8 +1929,18 @@ class Vrml_Material : public MMgt_TShared {
 };
 %feature("shadow") Vrml_Material::~Vrml_Material %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Material {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_WWWAnchor;
@@ -1562,8 +1972,18 @@ class Vrml_WWWAnchor {
 };
 %feature("shadow") Vrml_WWWAnchor::~Vrml_WWWAnchor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_WWWAnchor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Rotation;
@@ -1589,8 +2009,18 @@ class Vrml_Rotation {
 };
 %feature("shadow") Vrml_Rotation::~Vrml_Rotation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Rotation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_ShapeHints;
@@ -1626,8 +2056,18 @@ class Vrml_ShapeHints {
 };
 %feature("shadow") Vrml_ShapeHints::~Vrml_ShapeHints %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_ShapeHints {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_PointSet;
@@ -1655,8 +2095,18 @@ class Vrml_PointSet {
 };
 %feature("shadow") Vrml_PointSet::~Vrml_PointSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_PointSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Separator;
@@ -1682,8 +2132,18 @@ class Vrml_Separator {
 };
 %feature("shadow") Vrml_Separator::~Vrml_Separator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Separator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Translation;
@@ -1709,8 +2169,18 @@ class Vrml_Translation {
 };
 %feature("shadow") Vrml_Translation::~Vrml_Translation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Translation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_Group;
@@ -1730,8 +2200,18 @@ class Vrml_Group {
 };
 %feature("shadow") Vrml_Group::~Vrml_Group %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_Group {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Vrml_TextureCoordinate2;
@@ -1769,5 +2249,15 @@ class Vrml_TextureCoordinate2 : public MMgt_TShared {
 };
 %feature("shadow") Vrml_TextureCoordinate2::~Vrml_TextureCoordinate2 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Vrml_TextureCoordinate2 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

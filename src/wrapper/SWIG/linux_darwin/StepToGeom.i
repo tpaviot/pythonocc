@@ -50,8 +50,18 @@ class StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_Root::~StepToGeom_Root %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_Root {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeAxisPlacement;
@@ -65,8 +75,18 @@ class StepToGeom_MakeAxisPlacement : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeAxisPlacement::~StepToGeom_MakeAxisPlacement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeAxisPlacement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeEllipse2d;
@@ -80,8 +100,18 @@ class StepToGeom_MakeEllipse2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeEllipse2d::~StepToGeom_MakeEllipse2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeEllipse2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeDirection;
@@ -95,8 +125,18 @@ class StepToGeom_MakeDirection : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeDirection::~StepToGeom_MakeDirection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeDirection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeBoundedCurve2d;
@@ -110,8 +150,18 @@ class StepToGeom_MakeBoundedCurve2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeBoundedCurve2d::~StepToGeom_MakeBoundedCurve2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeBoundedCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeAxis1Placement;
@@ -125,8 +175,18 @@ class StepToGeom_MakeAxis1Placement : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeAxis1Placement::~StepToGeom_MakeAxis1Placement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeAxis1Placement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakePolyline;
@@ -140,8 +200,18 @@ class StepToGeom_MakePolyline : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakePolyline::~StepToGeom_MakePolyline %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakePolyline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakePolyline2d;
@@ -155,8 +225,18 @@ class StepToGeom_MakePolyline2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakePolyline2d::~StepToGeom_MakePolyline2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakePolyline2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeEllipse;
@@ -170,8 +250,18 @@ class StepToGeom_MakeEllipse : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeEllipse::~StepToGeom_MakeEllipse %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeEllipse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeToroidalSurface;
@@ -185,8 +275,18 @@ class StepToGeom_MakeToroidalSurface : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeToroidalSurface::~StepToGeom_MakeToroidalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeToroidalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeBoundedCurve;
@@ -200,8 +300,18 @@ class StepToGeom_MakeBoundedCurve : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeBoundedCurve::~StepToGeom_MakeBoundedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeVectorWithMagnitude2d;
@@ -215,8 +325,18 @@ class StepToGeom_MakeVectorWithMagnitude2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeVectorWithMagnitude2d::~StepToGeom_MakeVectorWithMagnitude2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeVectorWithMagnitude2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeSurface;
@@ -230,8 +350,18 @@ class StepToGeom_MakeSurface : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeSurface::~StepToGeom_MakeSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeElementarySurface;
@@ -245,8 +375,18 @@ class StepToGeom_MakeElementarySurface : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeElementarySurface::~StepToGeom_MakeElementarySurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeElementarySurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeHyperbola;
@@ -260,8 +400,18 @@ class StepToGeom_MakeHyperbola : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeHyperbola::~StepToGeom_MakeHyperbola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeHyperbola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeCartesianPoint2d;
@@ -275,8 +425,18 @@ class StepToGeom_MakeCartesianPoint2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeCartesianPoint2d::~StepToGeom_MakeCartesianPoint2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeCartesianPoint2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeTrimmedCurve2d;
@@ -290,8 +450,18 @@ class StepToGeom_MakeTrimmedCurve2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeTrimmedCurve2d::~StepToGeom_MakeTrimmedCurve2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeTrimmedCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeConic;
@@ -305,8 +475,18 @@ class StepToGeom_MakeConic : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeConic::~StepToGeom_MakeConic %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeConic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeBoundedSurface;
@@ -320,8 +500,18 @@ class StepToGeom_MakeBoundedSurface : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeBoundedSurface::~StepToGeom_MakeBoundedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeConic2d;
@@ -335,8 +525,18 @@ class StepToGeom_MakeConic2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeConic2d::~StepToGeom_MakeConic2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeConic2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeSweptSurface;
@@ -350,8 +550,18 @@ class StepToGeom_MakeSweptSurface : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeSweptSurface::~StepToGeom_MakeSweptSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeSweptSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakePlane;
@@ -365,8 +575,18 @@ class StepToGeom_MakePlane : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakePlane::~StepToGeom_MakePlane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakePlane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeCircle2d;
@@ -380,8 +600,18 @@ class StepToGeom_MakeCircle2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeCircle2d::~StepToGeom_MakeCircle2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeCircle2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeLine2d;
@@ -395,8 +625,18 @@ class StepToGeom_MakeLine2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeLine2d::~StepToGeom_MakeLine2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeLine2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeLine;
@@ -410,8 +650,18 @@ class StepToGeom_MakeLine : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeLine::~StepToGeom_MakeLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeParabola2d;
@@ -425,8 +675,18 @@ class StepToGeom_MakeParabola2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeParabola2d::~StepToGeom_MakeParabola2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeParabola2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeParabola;
@@ -440,8 +700,18 @@ class StepToGeom_MakeParabola : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeParabola::~StepToGeom_MakeParabola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeParabola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeTrimmedCurve;
@@ -455,8 +725,18 @@ class StepToGeom_MakeTrimmedCurve : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeTrimmedCurve::~StepToGeom_MakeTrimmedCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeTrimmedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeSurfaceOfRevolution;
@@ -470,8 +750,18 @@ class StepToGeom_MakeSurfaceOfRevolution : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeSurfaceOfRevolution::~StepToGeom_MakeSurfaceOfRevolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeSurfaceOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeCartesianPoint;
@@ -485,8 +775,18 @@ class StepToGeom_MakeCartesianPoint : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeCartesianPoint::~StepToGeom_MakeCartesianPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeCartesianPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeVectorWithMagnitude;
@@ -500,8 +800,18 @@ class StepToGeom_MakeVectorWithMagnitude : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeVectorWithMagnitude::~StepToGeom_MakeVectorWithMagnitude %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeVectorWithMagnitude {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeTransformation3d;
@@ -515,8 +825,18 @@ class StepToGeom_MakeTransformation3d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeTransformation3d::~StepToGeom_MakeTransformation3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeTransformation3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeBSplineCurve2d;
@@ -530,8 +850,18 @@ class StepToGeom_MakeBSplineCurve2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeBSplineCurve2d::~StepToGeom_MakeBSplineCurve2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeBSplineCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeSphericalSurface;
@@ -545,8 +875,18 @@ class StepToGeom_MakeSphericalSurface : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeSphericalSurface::~StepToGeom_MakeSphericalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeSphericalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeCurve;
@@ -560,8 +900,18 @@ class StepToGeom_MakeCurve : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeCurve::~StepToGeom_MakeCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeTransformation2d;
@@ -575,8 +925,18 @@ class StepToGeom_MakeTransformation2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeTransformation2d::~StepToGeom_MakeTransformation2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeTransformation2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeConicalSurface;
@@ -590,8 +950,18 @@ class StepToGeom_MakeConicalSurface : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeConicalSurface::~StepToGeom_MakeConicalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeConicalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeBSplineCurve;
@@ -605,8 +975,18 @@ class StepToGeom_MakeBSplineCurve : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeBSplineCurve::~StepToGeom_MakeBSplineCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeRectangularTrimmedSurface;
@@ -620,8 +1000,18 @@ class StepToGeom_MakeRectangularTrimmedSurface : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeRectangularTrimmedSurface::~StepToGeom_MakeRectangularTrimmedSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeRectangularTrimmedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeBSplineSurface;
@@ -635,8 +1025,18 @@ class StepToGeom_MakeBSplineSurface : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeBSplineSurface::~StepToGeom_MakeBSplineSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeCylindricalSurface;
@@ -650,8 +1050,18 @@ class StepToGeom_MakeCylindricalSurface : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeCylindricalSurface::~StepToGeom_MakeCylindricalSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeCylindricalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeHyperbola2d;
@@ -665,8 +1075,18 @@ class StepToGeom_MakeHyperbola2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeHyperbola2d::~StepToGeom_MakeHyperbola2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeHyperbola2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeCircle;
@@ -680,8 +1100,18 @@ class StepToGeom_MakeCircle : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeCircle::~StepToGeom_MakeCircle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeCircle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeAxis2Placement;
@@ -695,8 +1125,18 @@ class StepToGeom_MakeAxis2Placement : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeAxis2Placement::~StepToGeom_MakeAxis2Placement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeAxis2Placement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeCurve2d;
@@ -710,8 +1150,18 @@ class StepToGeom_MakeCurve2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeCurve2d::~StepToGeom_MakeCurve2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeDirection2d;
@@ -725,8 +1175,18 @@ class StepToGeom_MakeDirection2d : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeDirection2d::~StepToGeom_MakeDirection2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeDirection2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepToGeom_MakeSurfaceOfLinearExtrusion;
@@ -740,5 +1200,15 @@ class StepToGeom_MakeSurfaceOfLinearExtrusion : public StepToGeom_Root {
 };
 %feature("shadow") StepToGeom_MakeSurfaceOfLinearExtrusion::~StepToGeom_MakeSurfaceOfLinearExtrusion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepToGeom_MakeSurfaceOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

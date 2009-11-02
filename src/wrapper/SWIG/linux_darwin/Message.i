@@ -210,8 +210,18 @@ class Handle_Message_Printer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Message_Printer::~Handle_Message_Printer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Message_Printer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Message_PrinterOStream;
@@ -238,8 +248,18 @@ class Handle_Message_PrinterOStream : public Handle_Message_Printer {
 };
 %feature("shadow") Handle_Message_PrinterOStream::~Handle_Message_PrinterOStream %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Message_PrinterOStream {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Message_Messenger;
@@ -266,8 +286,18 @@ class Handle_Message_Messenger : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Message_Messenger::~Handle_Message_Messenger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Message_Messenger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Message_SequenceNodeOfSequenceOfPrinters;
@@ -294,8 +324,18 @@ class Handle_Message_SequenceNodeOfSequenceOfPrinters : public Handle_TCollectio
 };
 %feature("shadow") Handle_Message_SequenceNodeOfSequenceOfPrinters::~Handle_Message_SequenceNodeOfSequenceOfPrinters %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Message_SequenceNodeOfSequenceOfPrinters {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Message_ListNodeOfListOfMsg;
@@ -322,8 +362,18 @@ class Handle_Message_ListNodeOfListOfMsg : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_Message_ListNodeOfListOfMsg::~Handle_Message_ListNodeOfListOfMsg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Message_ListNodeOfListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Message_ProgressIndicator;
@@ -350,8 +400,18 @@ class Handle_Message_ProgressIndicator : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Message_ProgressIndicator::~Handle_Message_ProgressIndicator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Message_ProgressIndicator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Message_SequenceNodeOfSequenceOfProgressScale;
@@ -378,8 +438,18 @@ class Handle_Message_SequenceNodeOfSequenceOfProgressScale : public Handle_TColl
 };
 %feature("shadow") Handle_Message_SequenceNodeOfSequenceOfProgressScale::~Handle_Message_SequenceNodeOfSequenceOfProgressScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Message_SequenceNodeOfSequenceOfProgressScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Message_Algorithm;
@@ -406,8 +476,18 @@ class Handle_Message_Algorithm : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Message_Algorithm::~Handle_Message_Algorithm %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Message_Algorithm {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_ProgressIndicator;
@@ -479,8 +559,18 @@ class Message_ProgressIndicator : public MMgt_TShared {
 };
 %feature("shadow") Message_ProgressIndicator::~Message_ProgressIndicator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_ProgressIndicator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_ProgressScale;
@@ -528,8 +618,18 @@ class Message_ProgressScale {
 };
 %feature("shadow") Message_ProgressScale::~Message_ProgressScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_ProgressScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_Messenger;
@@ -571,8 +671,18 @@ class Message_Messenger : public MMgt_TShared {
 };
 %feature("shadow") Message_Messenger::~Message_Messenger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_Messenger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message;
@@ -588,8 +698,18 @@ class Message {
 };
 %feature("shadow") Message::~Message %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_SequenceOfPrinters;
@@ -643,8 +763,18 @@ class Message_SequenceOfPrinters : public TCollection_BaseSequence {
 };
 %feature("shadow") Message_SequenceOfPrinters::~Message_SequenceOfPrinters %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_SequenceOfPrinters {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_SequenceOfProgressScale;
@@ -698,8 +828,18 @@ class Message_SequenceOfProgressScale : public TCollection_BaseSequence {
 };
 %feature("shadow") Message_SequenceOfProgressScale::~Message_SequenceOfProgressScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_SequenceOfProgressScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_SequenceNodeOfSequenceOfPrinters;
@@ -725,8 +865,18 @@ class Message_SequenceNodeOfSequenceOfPrinters : public TCollection_SeqNode {
 };
 %feature("shadow") Message_SequenceNodeOfSequenceOfPrinters::~Message_SequenceNodeOfSequenceOfPrinters %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_SequenceNodeOfSequenceOfPrinters {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_ProgressSentry;
@@ -752,8 +902,18 @@ class Message_ProgressSentry {
 };
 %feature("shadow") Message_ProgressSentry::~Message_ProgressSentry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_ProgressSentry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_ListOfMsg;
@@ -803,8 +963,18 @@ class Message_ListOfMsg {
 };
 %feature("shadow") Message_ListOfMsg::~Message_ListOfMsg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_ListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_MsgFile;
@@ -828,8 +998,18 @@ class Message_MsgFile {
 };
 %feature("shadow") Message_MsgFile::~Message_MsgFile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_MsgFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_SequenceNodeOfSequenceOfProgressScale;
@@ -855,8 +1035,18 @@ class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode
 };
 %feature("shadow") Message_SequenceNodeOfSequenceOfProgressScale::~Message_SequenceNodeOfSequenceOfProgressScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_ListNodeOfListOfMsg;
@@ -882,8 +1072,18 @@ class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
 };
 %feature("shadow") Message_ListNodeOfListOfMsg::~Message_ListNodeOfListOfMsg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_ListNodeOfListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_Printer;
@@ -911,8 +1111,18 @@ class Message_Printer : public MMgt_TShared {
 };
 %feature("shadow") Message_Printer::~Message_Printer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_Printer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_PrinterOStream;
@@ -956,8 +1166,18 @@ class Message_PrinterOStream : public Message_Printer {
 };
 %feature("shadow") Message_PrinterOStream::~Message_PrinterOStream %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_PrinterOStream {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_ListIteratorOfListOfMsg;
@@ -979,8 +1199,18 @@ class Message_ListIteratorOfListOfMsg {
 };
 %feature("shadow") Message_ListIteratorOfListOfMsg::~Message_ListIteratorOfListOfMsg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_ListIteratorOfListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Message_Msg;
@@ -1024,5 +1254,15 @@ class Message_Msg {
 };
 %feature("shadow") Message_Msg::~Message_Msg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Message_Msg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

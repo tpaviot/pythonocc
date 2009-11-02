@@ -95,8 +95,18 @@ class Handle_IGESData_ReadWriteModule : public Handle_Interface_ReaderModule {
 };
 %feature("shadow") Handle_IGESData_ReadWriteModule::~Handle_IGESData_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_GeneralModule;
@@ -123,8 +133,18 @@ class Handle_IGESData_GeneralModule : public Handle_Interface_GeneralModule {
 };
 %feature("shadow") Handle_IGESData_GeneralModule::~Handle_IGESData_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_ToolLocation;
@@ -151,8 +171,18 @@ class Handle_IGESData_ToolLocation : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESData_ToolLocation::~Handle_IGESData_ToolLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_ToolLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_IGESEntity;
@@ -179,8 +209,18 @@ class Handle_IGESData_IGESEntity : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESData_IGESEntity::~Handle_IGESData_IGESEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_IGESEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_UndefinedEntity;
@@ -207,8 +247,18 @@ class Handle_IGESData_UndefinedEntity : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESData_UndefinedEntity::~Handle_IGESData_UndefinedEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_UndefinedEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_FreeFormatEntity;
@@ -235,8 +285,18 @@ class Handle_IGESData_FreeFormatEntity : public Handle_IGESData_UndefinedEntity 
 };
 %feature("shadow") Handle_IGESData_FreeFormatEntity::~Handle_IGESData_FreeFormatEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_FreeFormatEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_Protocol;
@@ -263,8 +323,18 @@ class Handle_IGESData_Protocol : public Handle_Interface_Protocol {
 };
 %feature("shadow") Handle_IGESData_Protocol::~Handle_IGESData_Protocol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_Protocol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_NodeOfSpecificLib;
@@ -291,8 +361,18 @@ class Handle_IGESData_NodeOfSpecificLib : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESData_NodeOfSpecificLib::~Handle_IGESData_NodeOfSpecificLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_NodeOfSpecificLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_SpecificModule;
@@ -319,8 +399,18 @@ class Handle_IGESData_SpecificModule : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_IGESData_SpecificModule::~Handle_IGESData_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_DefaultSpecific;
@@ -347,8 +437,18 @@ class Handle_IGESData_DefaultSpecific : public Handle_IGESData_SpecificModule {
 };
 %feature("shadow") Handle_IGESData_DefaultSpecific::~Handle_IGESData_DefaultSpecific %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_DefaultSpecific {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_LevelListEntity;
@@ -375,8 +475,18 @@ class Handle_IGESData_LevelListEntity : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESData_LevelListEntity::~Handle_IGESData_LevelListEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_LevelListEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_NameEntity;
@@ -403,8 +513,18 @@ class Handle_IGESData_NameEntity : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESData_NameEntity::~Handle_IGESData_NameEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_NameEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_ColorEntity;
@@ -431,8 +551,18 @@ class Handle_IGESData_ColorEntity : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESData_ColorEntity::~Handle_IGESData_ColorEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_ColorEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_LineFontEntity;
@@ -459,8 +589,18 @@ class Handle_IGESData_LineFontEntity : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESData_LineFontEntity::~Handle_IGESData_LineFontEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_LineFontEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_TransfEntity;
@@ -487,8 +627,18 @@ class Handle_IGESData_TransfEntity : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESData_TransfEntity::~Handle_IGESData_TransfEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_TransfEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_FileProtocol;
@@ -515,8 +665,18 @@ class Handle_IGESData_FileProtocol : public Handle_IGESData_Protocol {
 };
 %feature("shadow") Handle_IGESData_FileProtocol::~Handle_IGESData_FileProtocol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_FileProtocol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_GlobalNodeOfWriterLib;
@@ -543,8 +703,18 @@ class Handle_IGESData_GlobalNodeOfWriterLib : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_IGESData_GlobalNodeOfWriterLib::~Handle_IGESData_GlobalNodeOfWriterLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_GlobalNodeOfWriterLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_HArray1OfIGESEntity;
@@ -571,8 +741,18 @@ class Handle_IGESData_HArray1OfIGESEntity : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESData_HArray1OfIGESEntity::~Handle_IGESData_HArray1OfIGESEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_HArray1OfIGESEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_ViewKindEntity;
@@ -599,8 +779,18 @@ class Handle_IGESData_ViewKindEntity : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESData_ViewKindEntity::~Handle_IGESData_ViewKindEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_ViewKindEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_GlobalNodeOfSpecificLib;
@@ -627,8 +817,18 @@ class Handle_IGESData_GlobalNodeOfSpecificLib : public Handle_Standard_Transient
 };
 %feature("shadow") Handle_IGESData_GlobalNodeOfSpecificLib::~Handle_IGESData_GlobalNodeOfSpecificLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_GlobalNodeOfSpecificLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_FileRecognizer;
@@ -655,8 +855,18 @@ class Handle_IGESData_FileRecognizer : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_IGESData_FileRecognizer::~Handle_IGESData_FileRecognizer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_FileRecognizer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_DefaultGeneral;
@@ -683,8 +893,18 @@ class Handle_IGESData_DefaultGeneral : public Handle_IGESData_GeneralModule {
 };
 %feature("shadow") Handle_IGESData_DefaultGeneral::~Handle_IGESData_DefaultGeneral %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_DefaultGeneral {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_SingleParentEntity;
@@ -711,8 +931,18 @@ class Handle_IGESData_SingleParentEntity : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESData_SingleParentEntity::~Handle_IGESData_SingleParentEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_SingleParentEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_NodeOfWriterLib;
@@ -739,8 +969,18 @@ class Handle_IGESData_NodeOfWriterLib : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESData_NodeOfWriterLib::~Handle_IGESData_NodeOfWriterLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_NodeOfWriterLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_IGESModel;
@@ -767,8 +1007,18 @@ class Handle_IGESData_IGESModel : public Handle_Interface_InterfaceModel {
 };
 %feature("shadow") Handle_IGESData_IGESModel::~Handle_IGESData_IGESModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_IGESModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_LabelDisplayEntity;
@@ -795,8 +1045,18 @@ class Handle_IGESData_LabelDisplayEntity : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESData_LabelDisplayEntity::~Handle_IGESData_LabelDisplayEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_LabelDisplayEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESData_IGESReaderData;
@@ -823,8 +1083,18 @@ class Handle_IGESData_IGESReaderData : public Handle_Interface_FileReaderData {
 };
 %feature("shadow") Handle_IGESData_IGESReaderData::~Handle_IGESData_IGESReaderData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESData_IGESReaderData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_IGESEntity;
@@ -976,8 +1246,18 @@ class IGESData_IGESEntity : public MMgt_TShared {
 };
 %feature("shadow") IGESData_IGESEntity::~IGESData_IGESEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_IGESEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_TransfEntity;
@@ -999,8 +1279,18 @@ class IGESData_TransfEntity : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESData_TransfEntity::~IGESData_TransfEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_TransfEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_SpecificModule;
@@ -1026,8 +1316,18 @@ class IGESData_SpecificModule : public Standard_Transient {
 };
 %feature("shadow") IGESData_SpecificModule::~IGESData_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_DefaultSpecific;
@@ -1049,8 +1349,18 @@ class IGESData_DefaultSpecific : public IGESData_SpecificModule {
 };
 %feature("shadow") IGESData_DefaultSpecific::~IGESData_DefaultSpecific %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_DefaultSpecific {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_ReadWriteModule;
@@ -1082,8 +1392,18 @@ class IGESData_ReadWriteModule : public Interface_ReaderModule {
 };
 %feature("shadow") IGESData_ReadWriteModule::~IGESData_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_IGESReaderData;
@@ -1135,8 +1455,18 @@ class IGESData_IGESReaderData : public Interface_FileReaderData {
 };
 %feature("shadow") IGESData_IGESReaderData::~IGESData_IGESReaderData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_IGESReaderData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_ColorEntity;
@@ -1160,8 +1490,18 @@ class IGESData_ColorEntity : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESData_ColorEntity::~IGESData_ColorEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_ColorEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_IGESDumper;
@@ -1181,8 +1521,18 @@ class IGESData_IGESDumper {
 };
 %feature("shadow") IGESData_IGESDumper::~IGESData_IGESDumper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_IGESDumper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData;
@@ -1198,8 +1548,18 @@ class IGESData {
 };
 %feature("shadow") IGESData::~IGESData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_IGESType;
@@ -1223,8 +1583,18 @@ class IGESData_IGESType {
 };
 %feature("shadow") IGESData_IGESType::~IGESData_IGESType %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_IGESType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_ToolLocation;
@@ -1284,8 +1654,18 @@ class IGESData_ToolLocation : public MMgt_TShared {
 };
 %feature("shadow") IGESData_ToolLocation::~IGESData_ToolLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_ToolLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_ParamReader;
@@ -1413,8 +1793,18 @@ class IGESData_ParamReader {
 };
 %feature("shadow") IGESData_ParamReader::~IGESData_ParamReader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_ParamReader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_GlobalNodeOfSpecificLib;
@@ -1446,8 +1836,18 @@ class IGESData_GlobalNodeOfSpecificLib : public Standard_Transient {
 };
 %feature("shadow") IGESData_GlobalNodeOfSpecificLib::~IGESData_GlobalNodeOfSpecificLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_GlobalNodeOfSpecificLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_Array1OfIGESEntity;
@@ -1487,8 +1887,18 @@ class IGESData_Array1OfIGESEntity {
 };
 %feature("shadow") IGESData_Array1OfIGESEntity::~IGESData_Array1OfIGESEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_Array1OfIGESEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_ParamCursor;
@@ -1526,8 +1936,18 @@ class IGESData_ParamCursor {
 };
 %feature("shadow") IGESData_ParamCursor::~IGESData_ParamCursor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_ParamCursor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_UndefinedEntity;
@@ -1579,8 +1999,18 @@ class IGESData_UndefinedEntity : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESData_UndefinedEntity::~IGESData_UndefinedEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_UndefinedEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_Array1OfDirPart;
@@ -1620,8 +2050,18 @@ class IGESData_Array1OfDirPart {
 };
 %feature("shadow") IGESData_Array1OfDirPart::~IGESData_Array1OfDirPart %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_Array1OfDirPart {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_HArray1OfIGESEntity;
@@ -1665,8 +2105,18 @@ class IGESData_HArray1OfIGESEntity : public MMgt_TShared {
 };
 %feature("shadow") IGESData_HArray1OfIGESEntity::~IGESData_HArray1OfIGESEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_HArray1OfIGESEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_FileProtocol;
@@ -1696,8 +2146,18 @@ class IGESData_FileProtocol : public IGESData_Protocol {
 };
 %feature("shadow") IGESData_FileProtocol::~IGESData_FileProtocol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_FileProtocol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_WriterLib;
@@ -1731,8 +2191,18 @@ class IGESData_WriterLib {
 };
 %feature("shadow") IGESData_WriterLib::~IGESData_WriterLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_WriterLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_LevelListEntity;
@@ -1760,8 +2230,18 @@ class IGESData_LevelListEntity : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESData_LevelListEntity::~IGESData_LevelListEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_LevelListEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_NodeOfSpecificLib;
@@ -1793,8 +2273,18 @@ class IGESData_NodeOfSpecificLib : public MMgt_TShared {
 };
 %feature("shadow") IGESData_NodeOfSpecificLib::~IGESData_NodeOfSpecificLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_NodeOfSpecificLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_NameEntity;
@@ -1818,8 +2308,18 @@ class IGESData_NameEntity : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESData_NameEntity::~IGESData_NameEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_NameEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_SpecificLib;
@@ -1853,8 +2353,18 @@ class IGESData_SpecificLib {
 };
 %feature("shadow") IGESData_SpecificLib::~IGESData_SpecificLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_SpecificLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_FreeFormatEntity;
@@ -1912,8 +2422,18 @@ class IGESData_FreeFormatEntity : public IGESData_UndefinedEntity {
 };
 %feature("shadow") IGESData_FreeFormatEntity::~IGESData_FreeFormatEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_FreeFormatEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_SingleParentEntity;
@@ -1941,8 +2461,18 @@ class IGESData_SingleParentEntity : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESData_SingleParentEntity::~IGESData_SingleParentEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_SingleParentEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_GeneralModule;
@@ -1996,8 +2526,18 @@ class IGESData_GeneralModule : public Interface_GeneralModule {
 };
 %feature("shadow") IGESData_GeneralModule::~IGESData_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_LabelDisplayEntity;
@@ -2021,8 +2561,18 @@ class IGESData_LabelDisplayEntity : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESData_LabelDisplayEntity::~IGESData_LabelDisplayEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_LabelDisplayEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_FileRecognizer;
@@ -2050,8 +2600,18 @@ class IGESData_FileRecognizer : public Standard_Transient {
 };
 %feature("shadow") IGESData_FileRecognizer::~IGESData_FileRecognizer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_FileRecognizer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_NodeOfWriterLib;
@@ -2083,8 +2643,18 @@ class IGESData_NodeOfWriterLib : public MMgt_TShared {
 };
 %feature("shadow") IGESData_NodeOfWriterLib::~IGESData_NodeOfWriterLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_NodeOfWriterLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_DefSwitch;
@@ -2110,8 +2680,18 @@ class IGESData_DefSwitch {
 };
 %feature("shadow") IGESData_DefSwitch::~IGESData_DefSwitch %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_DefSwitch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_IGESModel;
@@ -2179,8 +2759,18 @@ class IGESData_IGESModel : public Interface_InterfaceModel {
 };
 %feature("shadow") IGESData_IGESModel::~IGESData_IGESModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_IGESModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_ViewKindEntity;
@@ -2208,8 +2798,18 @@ class IGESData_ViewKindEntity : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESData_ViewKindEntity::~IGESData_ViewKindEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_ViewKindEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_DefaultGeneral;
@@ -2243,8 +2843,18 @@ class IGESData_DefaultGeneral : public IGESData_GeneralModule {
 };
 %feature("shadow") IGESData_DefaultGeneral::~IGESData_DefaultGeneral %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_DefaultGeneral {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_DirChecker;
@@ -2298,8 +2908,18 @@ class IGESData_DirChecker {
 };
 %feature("shadow") IGESData_DirChecker::~IGESData_DirChecker %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_DirChecker {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_LineFontEntity;
@@ -2323,8 +2943,18 @@ class IGESData_LineFontEntity : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESData_LineFontEntity::~IGESData_LineFontEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_LineFontEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_GlobalSection;
@@ -2466,8 +3096,18 @@ class IGESData_GlobalSection {
 };
 %feature("shadow") IGESData_GlobalSection::~IGESData_GlobalSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_GlobalSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_GlobalNodeOfWriterLib;
@@ -2499,8 +3139,18 @@ class IGESData_GlobalNodeOfWriterLib : public Standard_Transient {
 };
 %feature("shadow") IGESData_GlobalNodeOfWriterLib::~IGESData_GlobalNodeOfWriterLib %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_GlobalNodeOfWriterLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_BasicEditor;
@@ -2544,8 +3194,18 @@ class IGESData_BasicEditor {
 };
 %feature("shadow") IGESData_BasicEditor::~IGESData_BasicEditor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_BasicEditor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_DirPart;
@@ -2583,8 +3243,18 @@ class IGESData_DirPart {
 };
 %feature("shadow") IGESData_DirPart::~IGESData_DirPart %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_DirPart {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_IGESWriter;
@@ -2664,8 +3334,18 @@ class IGESData_IGESWriter {
 };
 %feature("shadow") IGESData_IGESWriter::~IGESData_IGESWriter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_IGESWriter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESData_IGESReaderTool;
@@ -2695,5 +3375,15 @@ class IGESData_IGESReaderTool : public Interface_FileReaderTool {
 };
 %feature("shadow") IGESData_IGESReaderTool::~IGESData_IGESReaderTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESData_IGESReaderTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public Handle_TColle
 };
 %feature("shadow") Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion::~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfConnexion;
@@ -91,8 +101,18 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfConnexion : public Handle_TCollection
 };
 %feature("shadow") Handle_MAT2d_SequenceNodeOfSequenceOfConnexion::~Handle_MAT2d_SequenceNodeOfSequenceOfConnexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MAT2d_SequenceNodeOfSequenceOfConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion;
@@ -119,8 +139,18 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public Han
 };
 %feature("shadow") Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion::~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry;
@@ -147,8 +177,18 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public Handle_TC
 };
 %feature("shadow") Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry::~Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MAT2d_Circuit;
@@ -175,8 +215,18 @@ class Handle_MAT2d_Circuit : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MAT2d_Circuit::~Handle_MAT2d_Circuit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MAT2d_Circuit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger;
@@ -203,8 +253,18 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public Handle_TCollectio
 };
 %feature("shadow") Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger::~Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MAT2d_Connexion;
@@ -231,8 +291,18 @@ class Handle_MAT2d_Connexion : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_MAT2d_Connexion::~Handle_MAT2d_Connexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MAT2d_Connexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
@@ -259,8 +329,18 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public Handle_TCollectio
 };
 %feature("shadow") Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d::~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve;
@@ -287,8 +367,18 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public Handle_TColl
 };
 %feature("shadow") Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve::~Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfBoolean;
@@ -315,8 +405,18 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection_S
 };
 %feature("shadow") Handle_MAT2d_SequenceNodeOfSequenceOfBoolean::~Handle_MAT2d_SequenceNodeOfSequenceOfBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MAT2d_SequenceNodeOfSequenceOfBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec;
@@ -343,8 +443,18 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public Handle_TCollectio
 };
 %feature("shadow") Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec::~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d;
@@ -371,8 +481,18 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public Handle_TCollectio
 };
 %feature("shadow") Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d::~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger;
@@ -399,8 +519,18 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public Handle_
 };
 %feature("shadow") Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger::~Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger;
@@ -428,8 +558,18 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public TCollection_Ma
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger::~MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerBisec;
@@ -467,8 +607,18 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public TCollection_MapNode {
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerBisec::~MAT2d_DataMapNodeOfDataMapOfIntegerBisec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerBisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_Circuit;
@@ -506,8 +656,18 @@ class MAT2d_Circuit : public MMgt_TShared {
 };
 %feature("shadow") MAT2d_Circuit::~MAT2d_Circuit %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_Circuit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry;
@@ -533,8 +693,18 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqN
 };
 %feature("shadow") MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry::~MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_BiInt;
@@ -558,8 +728,18 @@ class MAT2d_BiInt {
 };
 %feature("shadow") MAT2d_BiInt::~MAT2d_BiInt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_BiInt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfConnexion;
@@ -585,8 +765,18 @@ class MAT2d_SequenceNodeOfSequenceOfConnexion : public TCollection_SeqNode {
 };
 %feature("shadow") MAT2d_SequenceNodeOfSequenceOfConnexion::~MAT2d_SequenceNodeOfSequenceOfConnexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_SequenceNodeOfSequenceOfConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_SequenceOfSequenceOfGeometry;
@@ -640,8 +830,18 @@ class MAT2d_SequenceOfSequenceOfGeometry : public TCollection_BaseSequence {
 };
 %feature("shadow") MAT2d_SequenceOfSequenceOfGeometry::~MAT2d_SequenceOfSequenceOfGeometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_SequenceOfSequenceOfGeometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion;
@@ -661,8 +861,18 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion : public TColle
 };
 %feature("shadow") MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion::~MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_SequenceOfConnexion;
@@ -716,8 +926,18 @@ class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
 };
 %feature("shadow") MAT2d_SequenceOfConnexion::~MAT2d_SequenceOfConnexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_SequenceOfConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapOfIntegerVec2d;
@@ -751,8 +971,18 @@ class MAT2d_DataMapOfIntegerVec2d : public TCollection_BasicMap {
 };
 %feature("shadow") MAT2d_DataMapOfIntegerVec2d::~MAT2d_DataMapOfIntegerVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapOfIntegerVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_Tool2d;
@@ -806,8 +1036,18 @@ class MAT2d_Tool2d {
 };
 %feature("shadow") MAT2d_Tool2d::~MAT2d_Tool2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_Tool2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfBoolean;
@@ -833,8 +1073,18 @@ class MAT2d_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 };
 %feature("shadow") MAT2d_SequenceNodeOfSequenceOfBoolean::~MAT2d_SequenceNodeOfSequenceOfBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_SequenceNodeOfSequenceOfBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d;
@@ -854,8 +1104,18 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d : public TCollection_BasicMap
 };
 %feature("shadow") MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d::~MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_SequenceOfSequenceOfCurve;
@@ -909,8 +1169,18 @@ class MAT2d_SequenceOfSequenceOfCurve : public TCollection_BaseSequence {
 };
 %feature("shadow") MAT2d_SequenceOfSequenceOfCurve::~MAT2d_SequenceOfSequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_SequenceOfSequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_Array2OfConnexion;
@@ -954,8 +1224,18 @@ class MAT2d_Array2OfConnexion {
 };
 %feature("shadow") MAT2d_Array2OfConnexion::~MAT2d_Array2OfConnexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_Array2OfConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_MapBiIntHasher;
@@ -971,8 +1251,18 @@ class MAT2d_MapBiIntHasher {
 };
 %feature("shadow") MAT2d_MapBiIntHasher::~MAT2d_MapBiIntHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_MapBiIntHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_Connexion;
@@ -1040,8 +1330,18 @@ class MAT2d_Connexion : public MMgt_TShared {
 };
 %feature("shadow") MAT2d_Connexion::~MAT2d_Connexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_Connexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapOfIntegerPnt2d;
@@ -1075,8 +1375,18 @@ class MAT2d_DataMapOfIntegerPnt2d : public TCollection_BasicMap {
 };
 %feature("shadow") MAT2d_DataMapOfIntegerPnt2d::~MAT2d_DataMapOfIntegerPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapOfIntegerPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapOfBiIntSequenceOfInteger;
@@ -1110,8 +1420,18 @@ class MAT2d_DataMapOfBiIntSequenceOfInteger : public TCollection_BasicMap {
 };
 %feature("shadow") MAT2d_DataMapOfBiIntSequenceOfInteger::~MAT2d_DataMapOfBiIntSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapOfBiIntSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerVec2d;
@@ -1149,8 +1469,18 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public TCollection_MapNode {
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerVec2d::~MAT2d_DataMapNodeOfDataMapOfIntegerVec2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapOfBiIntInteger;
@@ -1194,8 +1524,18 @@ class MAT2d_DataMapOfBiIntInteger : public TCollection_BasicMap {
 };
 %feature("shadow") MAT2d_DataMapOfBiIntInteger::~MAT2d_DataMapOfBiIntInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapOfBiIntInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion;
@@ -1215,8 +1555,18 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion : public TCollection_Basi
 };
 %feature("shadow") MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion::~MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve;
@@ -1242,8 +1592,18 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public TCollection_SeqNode
 };
 %feature("shadow") MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve::~MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfBiIntInteger;
@@ -1281,8 +1641,18 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public TCollection_MapNode {
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfBiIntInteger::~MAT2d_DataMapNodeOfDataMapOfBiIntInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d;
@@ -1302,8 +1672,18 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d : public TCollection_BasicMap
 };
 %feature("shadow") MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d::~MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapOfIntegerSequenceOfConnexion;
@@ -1337,8 +1717,18 @@ class MAT2d_DataMapOfIntegerSequenceOfConnexion : public TCollection_BasicMap {
 };
 %feature("shadow") MAT2d_DataMapOfIntegerSequenceOfConnexion::~MAT2d_DataMapOfIntegerSequenceOfConnexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapOfIntegerSequenceOfConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapOfIntegerBisec;
@@ -1372,8 +1762,18 @@ class MAT2d_DataMapOfIntegerBisec : public TCollection_BasicMap {
 };
 %feature("shadow") MAT2d_DataMapOfIntegerBisec::~MAT2d_DataMapOfIntegerBisec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapOfIntegerBisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion;
@@ -1411,8 +1811,18 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public TCollectio
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion::~MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerBisec;
@@ -1432,8 +1842,18 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerBisec : public TCollection_BasicMap
 };
 %feature("shadow") MAT2d_DataMapIteratorOfDataMapOfIntegerBisec::~MAT2d_DataMapIteratorOfDataMapOfIntegerBisec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerBisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapOfIntegerConnexion;
@@ -1467,8 +1887,18 @@ class MAT2d_DataMapOfIntegerConnexion : public TCollection_BasicMap {
 };
 %feature("shadow") MAT2d_DataMapOfIntegerConnexion::~MAT2d_DataMapOfIntegerConnexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapOfIntegerConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfBiIntInteger;
@@ -1488,8 +1918,18 @@ class MAT2d_DataMapIteratorOfDataMapOfBiIntInteger : public TCollection_BasicMap
 };
 %feature("shadow") MAT2d_DataMapIteratorOfDataMapOfBiIntInteger::~MAT2d_DataMapIteratorOfDataMapOfBiIntInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapIteratorOfDataMapOfBiIntInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger;
@@ -1509,8 +1949,18 @@ class MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger : public TCollectio
 };
 %feature("shadow") MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger::~MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_SequenceOfBoolean;
@@ -1564,8 +2014,18 @@ class MAT2d_SequenceOfBoolean : public TCollection_BaseSequence {
 };
 %feature("shadow") MAT2d_SequenceOfBoolean::~MAT2d_SequenceOfBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_SequenceOfBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerConnexion;
@@ -1603,8 +2063,18 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public TCollection_MapNode 
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerConnexion::~MAT2d_DataMapNodeOfDataMapOfIntegerConnexion %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_MiniPath;
@@ -1630,8 +2100,18 @@ class MAT2d_MiniPath {
 };
 %feature("shadow") MAT2d_MiniPath::~MAT2d_MiniPath %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_MiniPath {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
@@ -1669,8 +2149,18 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d::~MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MAT2d_Mat2d;
@@ -1698,5 +2188,15 @@ class MAT2d_Mat2d {
 };
 %feature("shadow") MAT2d_Mat2d::~MAT2d_Mat2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MAT2d_Mat2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_MMgt_TShared : public Handle_Standard_Transient {
 };
 %feature("shadow") Handle_MMgt_TShared::~Handle_MMgt_TShared %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_MMgt_TShared {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MMgt_TShared;
@@ -90,8 +100,18 @@ class MMgt_TShared : public Standard_Transient {
 };
 %feature("shadow") MMgt_TShared::~MMgt_TShared %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MMgt_TShared {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor MMgt_StackManager;
@@ -119,5 +139,15 @@ class MMgt_StackManager {
 };
 %feature("shadow") MMgt_StackManager::~MMgt_StackManager %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend MMgt_StackManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

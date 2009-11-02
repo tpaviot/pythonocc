@@ -69,8 +69,18 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg : public Handle_TCollec
 };
 %feature("shadow") Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg::~Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt;
@@ -97,8 +107,18 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt : public Handle_TCollec
 };
 %feature("shadow") Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt::~Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_ThePolyhedronToolOfHInter;
@@ -130,8 +150,18 @@ class IntCurveSurface_ThePolyhedronToolOfHInter {
 };
 %feature("shadow") IntCurveSurface_ThePolyhedronToolOfHInter::~IntCurveSurface_ThePolyhedronToolOfHInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_ThePolyhedronToolOfHInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_Intersection;
@@ -153,8 +183,18 @@ class IntCurveSurface_Intersection {
 };
 %feature("shadow") IntCurveSurface_Intersection::~IntCurveSurface_Intersection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_Intersection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_SequenceOfPnt;
@@ -208,8 +248,18 @@ class IntCurveSurface_SequenceOfPnt : public TCollection_BaseSequence {
 };
 %feature("shadow") IntCurveSurface_SequenceOfPnt::~IntCurveSurface_SequenceOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_SequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_IntersectionPoint;
@@ -239,8 +289,18 @@ class IntCurveSurface_IntersectionPoint {
 };
 %feature("shadow") IntCurveSurface_IntersectionPoint::~IntCurveSurface_IntersectionPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_IntersectionPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_HInter;
@@ -262,8 +322,18 @@ class IntCurveSurface_HInter : public IntCurveSurface_Intersection {
 };
 %feature("shadow") IntCurveSurface_HInter::~IntCurveSurface_HInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_HInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_IntersectionSegment;
@@ -291,8 +361,18 @@ class IntCurveSurface_IntersectionSegment {
 };
 %feature("shadow") IntCurveSurface_IntersectionSegment::~IntCurveSurface_IntersectionSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_IntersectionSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_TheQuadCurvExactHInter;
@@ -314,8 +394,18 @@ class IntCurveSurface_TheQuadCurvExactHInter {
 };
 %feature("shadow") IntCurveSurface_TheQuadCurvExactHInter::~IntCurveSurface_TheQuadCurvExactHInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_TheQuadCurvExactHInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_TheHSurfaceTool;
@@ -409,8 +499,18 @@ class IntCurveSurface_TheHSurfaceTool {
 };
 %feature("shadow") IntCurveSurface_TheHSurfaceTool::~IntCurveSurface_TheHSurfaceTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_TheHSurfaceTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_TheExactHInter;
@@ -438,8 +538,18 @@ class IntCurveSurface_TheExactHInter {
 };
 %feature("shadow") IntCurveSurface_TheExactHInter::~IntCurveSurface_TheExactHInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_TheExactHInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter;
@@ -457,8 +567,18 @@ class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_Func
 };
 %feature("shadow") IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter::~IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_ThePolygonToolOfHInter;
@@ -484,8 +604,18 @@ class IntCurveSurface_ThePolygonToolOfHInter {
 };
 %feature("shadow") IntCurveSurface_ThePolygonToolOfHInter::~IntCurveSurface_ThePolygonToolOfHInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_ThePolygonToolOfHInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_ThePolygonOfHInter;
@@ -525,8 +655,18 @@ class IntCurveSurface_ThePolygonOfHInter {
 };
 %feature("shadow") IntCurveSurface_ThePolygonOfHInter::~IntCurveSurface_ThePolygonOfHInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_ThePolygonOfHInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_SequenceNodeOfSequenceOfSeg;
@@ -552,8 +692,18 @@ class IntCurveSurface_SequenceNodeOfSequenceOfSeg : public TCollection_SeqNode {
 };
 %feature("shadow") IntCurveSurface_SequenceNodeOfSequenceOfSeg::~IntCurveSurface_SequenceNodeOfSequenceOfSeg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_SequenceNodeOfSequenceOfSeg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_TheCSFunctionOfHInter;
@@ -583,8 +733,18 @@ class IntCurveSurface_TheCSFunctionOfHInter : public math_FunctionSetWithDerivat
 };
 %feature("shadow") IntCurveSurface_TheCSFunctionOfHInter::~IntCurveSurface_TheCSFunctionOfHInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_TheCSFunctionOfHInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_SequenceOfSeg;
@@ -638,8 +798,18 @@ class IntCurveSurface_SequenceOfSeg : public TCollection_BaseSequence {
 };
 %feature("shadow") IntCurveSurface_SequenceOfSeg::~IntCurveSurface_SequenceOfSeg %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_SequenceOfSeg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_TheHCurveTool;
@@ -701,8 +871,18 @@ class IntCurveSurface_TheHCurveTool {
 };
 %feature("shadow") IntCurveSurface_TheHCurveTool::~IntCurveSurface_TheHCurveTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_TheHCurveTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_TheInterferenceOfHInter;
@@ -742,8 +922,18 @@ class IntCurveSurface_TheInterferenceOfHInter : public Intf_Interference {
 };
 %feature("shadow") IntCurveSurface_TheInterferenceOfHInter::~IntCurveSurface_TheInterferenceOfHInter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_TheInterferenceOfHInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntCurveSurface_SequenceNodeOfSequenceOfPnt;
@@ -769,5 +959,15 @@ class IntCurveSurface_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
 };
 %feature("shadow") IntCurveSurface_SequenceNodeOfSequenceOfPnt::~IntCurveSurface_SequenceNodeOfSequenceOfPnt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

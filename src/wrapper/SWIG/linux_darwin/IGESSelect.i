@@ -63,8 +63,18 @@ class Handle_IGESSelect_SignLevelNumber : public Handle_IFSelect_Signature {
 };
 %feature("shadow") Handle_IGESSelect_SignLevelNumber::~Handle_IGESSelect_SignLevelNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SignLevelNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_FileModifier;
@@ -91,8 +101,18 @@ class Handle_IGESSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 };
 %feature("shadow") Handle_IGESSelect_FileModifier::~Handle_IGESSelect_FileModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_FileModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_FloatFormat;
@@ -119,8 +139,18 @@ class Handle_IGESSelect_FloatFormat : public Handle_IGESSelect_FileModifier {
 };
 %feature("shadow") Handle_IGESSelect_FloatFormat::~Handle_IGESSelect_FloatFormat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_FloatFormat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SplineToBSpline;
@@ -147,8 +177,18 @@ class Handle_IGESSelect_SplineToBSpline : public Handle_IFSelect_Transformer {
 };
 %feature("shadow") Handle_IGESSelect_SplineToBSpline::~Handle_IGESSelect_SplineToBSpline %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SplineToBSpline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_ModelModifier;
@@ -175,8 +215,18 @@ class Handle_IGESSelect_ModelModifier : public Handle_IFSelect_Modifier {
 };
 %feature("shadow") Handle_IGESSelect_ModelModifier::~Handle_IGESSelect_ModelModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_ModelModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_ChangeLevelList;
@@ -203,8 +253,18 @@ class Handle_IGESSelect_ChangeLevelList : public Handle_IGESSelect_ModelModifier
 };
 %feature("shadow") Handle_IGESSelect_ChangeLevelList::~Handle_IGESSelect_ChangeLevelList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_ChangeLevelList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_UpdateCreationDate;
@@ -231,8 +291,18 @@ class Handle_IGESSelect_UpdateCreationDate : public Handle_IGESSelect_ModelModif
 };
 %feature("shadow") Handle_IGESSelect_UpdateCreationDate::~Handle_IGESSelect_UpdateCreationDate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_UpdateCreationDate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SelectPCurves;
@@ -259,8 +329,18 @@ class Handle_IGESSelect_SelectPCurves : public Handle_IFSelect_SelectExplore {
 };
 %feature("shadow") Handle_IGESSelect_SelectPCurves::~Handle_IGESSelect_SelectPCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SelectPCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SelectVisibleStatus;
@@ -287,8 +367,18 @@ class Handle_IGESSelect_SelectVisibleStatus : public Handle_IFSelect_SelectExtra
 };
 %feature("shadow") Handle_IGESSelect_SelectVisibleStatus::~Handle_IGESSelect_SelectVisibleStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SelectVisibleStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SetGlobalParameter;
@@ -315,8 +405,18 @@ class Handle_IGESSelect_SetGlobalParameter : public Handle_IGESSelect_ModelModif
 };
 %feature("shadow") Handle_IGESSelect_SetGlobalParameter::~Handle_IGESSelect_SetGlobalParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SetGlobalParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_WorkLibrary;
@@ -343,8 +443,18 @@ class Handle_IGESSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 };
 %feature("shadow") Handle_IGESSelect_WorkLibrary::~Handle_IGESSelect_WorkLibrary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_WorkLibrary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SelectName;
@@ -371,8 +481,18 @@ class Handle_IGESSelect_SelectName : public Handle_IFSelect_SelectExtract {
 };
 %feature("shadow") Handle_IGESSelect_SelectName::~Handle_IGESSelect_SelectName %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SelectName {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_IGESTypeForm;
@@ -399,8 +519,18 @@ class Handle_IGESSelect_IGESTypeForm : public Handle_IFSelect_Signature {
 };
 %feature("shadow") Handle_IGESSelect_IGESTypeForm::~Handle_IGESSelect_IGESTypeForm %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_IGESTypeForm {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_ChangeLevelNumber;
@@ -427,8 +557,18 @@ class Handle_IGESSelect_ChangeLevelNumber : public Handle_IGESSelect_ModelModifi
 };
 %feature("shadow") Handle_IGESSelect_ChangeLevelNumber::~Handle_IGESSelect_ChangeLevelNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_ChangeLevelNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SelectFromSingleView;
@@ -455,8 +595,18 @@ class Handle_IGESSelect_SelectFromSingleView : public Handle_IFSelect_SelectDedu
 };
 %feature("shadow") Handle_IGESSelect_SelectFromSingleView::~Handle_IGESSelect_SelectFromSingleView %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SelectFromSingleView {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SelectLevelNumber;
@@ -483,8 +633,18 @@ class Handle_IGESSelect_SelectLevelNumber : public Handle_IFSelect_SelectExtract
 };
 %feature("shadow") Handle_IGESSelect_SelectLevelNumber::~Handle_IGESSelect_SelectLevelNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SelectLevelNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_UpdateFileName;
@@ -511,8 +671,18 @@ class Handle_IGESSelect_UpdateFileName : public Handle_IGESSelect_ModelModifier 
 };
 %feature("shadow") Handle_IGESSelect_UpdateFileName::~Handle_IGESSelect_UpdateFileName %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_UpdateFileName {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_RemoveCurves;
@@ -539,8 +709,18 @@ class Handle_IGESSelect_RemoveCurves : public Handle_IGESSelect_ModelModifier {
 };
 %feature("shadow") Handle_IGESSelect_RemoveCurves::~Handle_IGESSelect_RemoveCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_RemoveCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SelectSingleViewFrom;
@@ -567,8 +747,18 @@ class Handle_IGESSelect_SelectSingleViewFrom : public Handle_IFSelect_SelectDedu
 };
 %feature("shadow") Handle_IGESSelect_SelectSingleViewFrom::~Handle_IGESSelect_SelectSingleViewFrom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SelectSingleViewFrom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_EditHeader;
@@ -595,8 +785,18 @@ class Handle_IGESSelect_EditHeader : public Handle_IFSelect_Editor {
 };
 %feature("shadow") Handle_IGESSelect_EditHeader::~Handle_IGESSelect_EditHeader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_EditHeader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_ComputeStatus;
@@ -623,8 +823,18 @@ class Handle_IGESSelect_ComputeStatus : public Handle_IGESSelect_ModelModifier {
 };
 %feature("shadow") Handle_IGESSelect_ComputeStatus::~Handle_IGESSelect_ComputeStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_ComputeStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_RebuildDrawings;
@@ -651,8 +861,18 @@ class Handle_IGESSelect_RebuildDrawings : public Handle_IGESSelect_ModelModifier
 };
 %feature("shadow") Handle_IGESSelect_RebuildDrawings::~Handle_IGESSelect_RebuildDrawings %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_RebuildDrawings {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SelectFromDrawing;
@@ -679,8 +899,18 @@ class Handle_IGESSelect_SelectFromDrawing : public Handle_IFSelect_SelectDeduct 
 };
 %feature("shadow") Handle_IGESSelect_SelectFromDrawing::~Handle_IGESSelect_SelectFromDrawing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SelectFromDrawing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_Dumper;
@@ -707,8 +937,18 @@ class Handle_IGESSelect_Dumper : public Handle_IFSelect_SessionDumper {
 };
 %feature("shadow") Handle_IGESSelect_Dumper::~Handle_IGESSelect_Dumper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_Dumper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_CounterOfLevelNumber;
@@ -735,8 +975,18 @@ class Handle_IGESSelect_CounterOfLevelNumber : public Handle_IFSelect_SignCounte
 };
 %feature("shadow") Handle_IGESSelect_CounterOfLevelNumber::~Handle_IGESSelect_CounterOfLevelNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_CounterOfLevelNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SetLabel;
@@ -763,8 +1013,18 @@ class Handle_IGESSelect_SetLabel : public Handle_IGESSelect_ModelModifier {
 };
 %feature("shadow") Handle_IGESSelect_SetLabel::~Handle_IGESSelect_SetLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SetLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_EditDirPart;
@@ -791,8 +1051,18 @@ class Handle_IGESSelect_EditDirPart : public Handle_IFSelect_Editor {
 };
 %feature("shadow") Handle_IGESSelect_EditDirPart::~Handle_IGESSelect_EditDirPart %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_EditDirPart {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SelectBypassSubfigure;
@@ -819,8 +1089,18 @@ class Handle_IGESSelect_SelectBypassSubfigure : public Handle_IFSelect_SelectExp
 };
 %feature("shadow") Handle_IGESSelect_SelectBypassSubfigure::~Handle_IGESSelect_SelectBypassSubfigure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SelectBypassSubfigure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SelectBasicGeom;
@@ -847,8 +1127,18 @@ class Handle_IGESSelect_SelectBasicGeom : public Handle_IFSelect_SelectExplore {
 };
 %feature("shadow") Handle_IGESSelect_SelectBasicGeom::~Handle_IGESSelect_SelectBasicGeom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SelectBasicGeom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_DispPerDrawing;
@@ -875,8 +1165,18 @@ class Handle_IGESSelect_DispPerDrawing : public Handle_IFSelect_Dispatch {
 };
 %feature("shadow") Handle_IGESSelect_DispPerDrawing::~Handle_IGESSelect_DispPerDrawing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_DispPerDrawing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_AddFileComment;
@@ -903,8 +1203,18 @@ class Handle_IGESSelect_AddFileComment : public Handle_IGESSelect_FileModifier {
 };
 %feature("shadow") Handle_IGESSelect_AddFileComment::~Handle_IGESSelect_AddFileComment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_AddFileComment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_ViewSorter;
@@ -931,8 +1241,18 @@ class Handle_IGESSelect_ViewSorter : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESSelect_ViewSorter::~Handle_IGESSelect_ViewSorter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_ViewSorter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SelectFaces;
@@ -959,8 +1279,18 @@ class Handle_IGESSelect_SelectFaces : public Handle_IFSelect_SelectExplore {
 };
 %feature("shadow") Handle_IGESSelect_SelectFaces::~Handle_IGESSelect_SelectFaces %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SelectFaces {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SetVersion5;
@@ -987,8 +1317,18 @@ class Handle_IGESSelect_SetVersion5 : public Handle_IGESSelect_ModelModifier {
 };
 %feature("shadow") Handle_IGESSelect_SetVersion5::~Handle_IGESSelect_SetVersion5 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SetVersion5 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SelectSubordinate;
@@ -1015,8 +1355,18 @@ class Handle_IGESSelect_SelectSubordinate : public Handle_IFSelect_SelectExtract
 };
 %feature("shadow") Handle_IGESSelect_SelectSubordinate::~Handle_IGESSelect_SelectSubordinate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SelectSubordinate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_IGESName;
@@ -1043,8 +1393,18 @@ class Handle_IGESSelect_IGESName : public Handle_IFSelect_Signature {
 };
 %feature("shadow") Handle_IGESSelect_IGESName::~Handle_IGESSelect_IGESName %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_IGESName {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_AddGroup;
@@ -1071,8 +1431,18 @@ class Handle_IGESSelect_AddGroup : public Handle_IGESSelect_ModelModifier {
 };
 %feature("shadow") Handle_IGESSelect_AddGroup::~Handle_IGESSelect_AddGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_AddGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_DispPerSingleView;
@@ -1099,8 +1469,18 @@ class Handle_IGESSelect_DispPerSingleView : public Handle_IFSelect_Dispatch {
 };
 %feature("shadow") Handle_IGESSelect_DispPerSingleView::~Handle_IGESSelect_DispPerSingleView %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_DispPerSingleView {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SelectBypassGroup;
@@ -1127,8 +1507,18 @@ class Handle_IGESSelect_SelectBypassGroup : public Handle_IFSelect_SelectExplore
 };
 %feature("shadow") Handle_IGESSelect_SelectBypassGroup::~Handle_IGESSelect_SelectBypassGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SelectBypassGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_RebuildGroups;
@@ -1155,8 +1545,18 @@ class Handle_IGESSelect_RebuildGroups : public Handle_IGESSelect_ModelModifier {
 };
 %feature("shadow") Handle_IGESSelect_RebuildGroups::~Handle_IGESSelect_RebuildGroups %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_RebuildGroups {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SignStatus;
@@ -1183,8 +1583,18 @@ class Handle_IGESSelect_SignStatus : public Handle_IFSelect_Signature {
 };
 %feature("shadow") Handle_IGESSelect_SignStatus::~Handle_IGESSelect_SignStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SignStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SignColor;
@@ -1211,8 +1621,18 @@ class Handle_IGESSelect_SignColor : public Handle_IFSelect_Signature {
 };
 %feature("shadow") Handle_IGESSelect_SignColor::~Handle_IGESSelect_SignColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SignColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_AutoCorrect;
@@ -1239,8 +1659,18 @@ class Handle_IGESSelect_AutoCorrect : public Handle_IGESSelect_ModelModifier {
 };
 %feature("shadow") Handle_IGESSelect_AutoCorrect::~Handle_IGESSelect_AutoCorrect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_AutoCorrect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_Activator;
@@ -1267,8 +1697,18 @@ class Handle_IGESSelect_Activator : public Handle_IFSelect_Activator {
 };
 %feature("shadow") Handle_IGESSelect_Activator::~Handle_IGESSelect_Activator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_Activator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_UpdateLastChange;
@@ -1295,8 +1735,18 @@ class Handle_IGESSelect_UpdateLastChange : public Handle_IGESSelect_ModelModifie
 };
 %feature("shadow") Handle_IGESSelect_UpdateLastChange::~Handle_IGESSelect_UpdateLastChange %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_UpdateLastChange {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESSelect_SelectDrawingFrom;
@@ -1323,8 +1773,18 @@ class Handle_IGESSelect_SelectDrawingFrom : public Handle_IFSelect_SelectDeduct 
 };
 %feature("shadow") Handle_IGESSelect_SelectDrawingFrom::~Handle_IGESSelect_SelectDrawingFrom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESSelect_SelectDrawingFrom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_ModelModifier;
@@ -1352,8 +1812,18 @@ class IGESSelect_ModelModifier : public IFSelect_Modifier {
 };
 %feature("shadow") IGESSelect_ModelModifier::~IGESSelect_ModelModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_ModelModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_UpdateLastChange;
@@ -1377,8 +1847,18 @@ class IGESSelect_UpdateLastChange : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_UpdateLastChange::~IGESSelect_UpdateLastChange %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_UpdateLastChange {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_ChangeLevelNumber;
@@ -1416,8 +1896,18 @@ class IGESSelect_ChangeLevelNumber : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_ChangeLevelNumber::~IGESSelect_ChangeLevelNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_ChangeLevelNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SignStatus;
@@ -1445,8 +1935,18 @@ class IGESSelect_SignStatus : public IFSelect_Signature {
 };
 %feature("shadow") IGESSelect_SignStatus::~IGESSelect_SignStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SignStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_UpdateCreationDate;
@@ -1474,8 +1974,18 @@ class IGESSelect_UpdateCreationDate : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_UpdateCreationDate::~IGESSelect_UpdateCreationDate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_UpdateCreationDate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SelectName;
@@ -1507,8 +2017,18 @@ class IGESSelect_SelectName : public IFSelect_SelectExtract {
 };
 %feature("shadow") IGESSelect_SelectName::~IGESSelect_SelectName %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SelectName {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SelectDrawingFrom;
@@ -1536,8 +2056,18 @@ class IGESSelect_SelectDrawingFrom : public IFSelect_SelectDeduct {
 };
 %feature("shadow") IGESSelect_SelectDrawingFrom::~IGESSelect_SelectDrawingFrom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SelectDrawingFrom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_IGESTypeForm;
@@ -1565,8 +2095,18 @@ class IGESSelect_IGESTypeForm : public IFSelect_Signature {
 };
 %feature("shadow") IGESSelect_IGESTypeForm::~IGESSelect_IGESTypeForm %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_IGESTypeForm {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SetGlobalParameter;
@@ -1600,8 +2140,18 @@ class IGESSelect_SetGlobalParameter : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_SetGlobalParameter::~IGESSelect_SetGlobalParameter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SetGlobalParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_ViewSorter;
@@ -1649,8 +2199,18 @@ class IGESSelect_ViewSorter : public MMgt_TShared {
 };
 %feature("shadow") IGESSelect_ViewSorter::~IGESSelect_ViewSorter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_ViewSorter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SelectSingleViewFrom;
@@ -1678,8 +2238,18 @@ class IGESSelect_SelectSingleViewFrom : public IFSelect_SelectDeduct {
 };
 %feature("shadow") IGESSelect_SelectSingleViewFrom::~IGESSelect_SelectSingleViewFrom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SelectSingleViewFrom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_ComputeStatus;
@@ -1707,8 +2277,18 @@ class IGESSelect_ComputeStatus : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_ComputeStatus::~IGESSelect_ComputeStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_ComputeStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_RemoveCurves;
@@ -1736,8 +2316,18 @@ class IGESSelect_RemoveCurves : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_RemoveCurves::~IGESSelect_RemoveCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_RemoveCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SelectPCurves;
@@ -1765,8 +2355,18 @@ class IGESSelect_SelectPCurves : public IFSelect_SelectExplore {
 };
 %feature("shadow") IGESSelect_SelectPCurves::~IGESSelect_SelectPCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SelectPCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SelectFromDrawing;
@@ -1794,8 +2394,18 @@ class IGESSelect_SelectFromDrawing : public IFSelect_SelectDeduct {
 };
 %feature("shadow") IGESSelect_SelectFromDrawing::~IGESSelect_SelectFromDrawing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SelectFromDrawing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_EditHeader;
@@ -1831,8 +2441,18 @@ class IGESSelect_EditHeader : public IFSelect_Editor {
 };
 %feature("shadow") IGESSelect_EditHeader::~IGESSelect_EditHeader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_EditHeader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_WorkLibrary;
@@ -1864,8 +2484,18 @@ class IGESSelect_WorkLibrary : public IFSelect_WorkLibrary {
 };
 %feature("shadow") IGESSelect_WorkLibrary::~IGESSelect_WorkLibrary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_WorkLibrary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_FileModifier;
@@ -1889,8 +2519,18 @@ class IGESSelect_FileModifier : public IFSelect_GeneralModifier {
 };
 %feature("shadow") IGESSelect_FileModifier::~IGESSelect_FileModifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_FileModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_CounterOfLevelNumber;
@@ -1930,8 +2570,18 @@ class IGESSelect_CounterOfLevelNumber : public IFSelect_SignCounter {
 };
 %feature("shadow") IGESSelect_CounterOfLevelNumber::~IGESSelect_CounterOfLevelNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_CounterOfLevelNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SelectBypassSubfigure;
@@ -1959,8 +2609,18 @@ class IGESSelect_SelectBypassSubfigure : public IFSelect_SelectExplore {
 };
 %feature("shadow") IGESSelect_SelectBypassSubfigure::~IGESSelect_SelectBypassSubfigure %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SelectBypassSubfigure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SelectSubordinate;
@@ -1990,8 +2650,18 @@ class IGESSelect_SelectSubordinate : public IFSelect_SelectExtract {
 };
 %feature("shadow") IGESSelect_SelectSubordinate::~IGESSelect_SelectSubordinate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SelectSubordinate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_AddGroup;
@@ -2019,8 +2689,18 @@ class IGESSelect_AddGroup : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_AddGroup::~IGESSelect_AddGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_AddGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SelectFaces;
@@ -2048,8 +2728,18 @@ class IGESSelect_SelectFaces : public IFSelect_SelectExplore {
 };
 %feature("shadow") IGESSelect_SelectFaces::~IGESSelect_SelectFaces %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SelectFaces {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_EditDirPart;
@@ -2085,8 +2775,18 @@ class IGESSelect_EditDirPart : public IFSelect_Editor {
 };
 %feature("shadow") IGESSelect_EditDirPart::~IGESSelect_EditDirPart %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_EditDirPart {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_IGESName;
@@ -2112,8 +2812,18 @@ class IGESSelect_IGESName : public IFSelect_Signature {
 };
 %feature("shadow") IGESSelect_IGESName::~IGESSelect_IGESName %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_IGESName {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SelectBypassGroup;
@@ -2141,8 +2851,18 @@ class IGESSelect_SelectBypassGroup : public IFSelect_SelectExplore {
 };
 %feature("shadow") IGESSelect_SelectBypassGroup::~IGESSelect_SelectBypassGroup %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SelectBypassGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_Dumper;
@@ -2170,8 +2890,18 @@ class IGESSelect_Dumper : public IFSelect_SessionDumper {
 };
 %feature("shadow") IGESSelect_Dumper::~IGESSelect_Dumper %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_Dumper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect;
@@ -2187,8 +2917,18 @@ class IGESSelect {
 };
 %feature("shadow") IGESSelect::~IGESSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_AutoCorrect;
@@ -2216,8 +2956,18 @@ class IGESSelect_AutoCorrect : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_AutoCorrect::~IGESSelect_AutoCorrect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_AutoCorrect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_RebuildDrawings;
@@ -2245,8 +2995,18 @@ class IGESSelect_RebuildDrawings : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_RebuildDrawings::~IGESSelect_RebuildDrawings %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_RebuildDrawings {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_Activator;
@@ -2274,8 +3034,18 @@ class IGESSelect_Activator : public IFSelect_Activator {
 };
 %feature("shadow") IGESSelect_Activator::~IGESSelect_Activator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_Activator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_UpdateFileName;
@@ -2303,8 +3073,18 @@ class IGESSelect_UpdateFileName : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_UpdateFileName::~IGESSelect_UpdateFileName %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_UpdateFileName {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_FloatFormat;
@@ -2342,8 +3122,18 @@ class IGESSelect_FloatFormat : public IGESSelect_FileModifier {
 };
 %feature("shadow") IGESSelect_FloatFormat::~IGESSelect_FloatFormat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_FloatFormat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SelectFromSingleView;
@@ -2371,8 +3161,18 @@ class IGESSelect_SelectFromSingleView : public IFSelect_SelectDeduct {
 };
 %feature("shadow") IGESSelect_SelectFromSingleView::~IGESSelect_SelectFromSingleView %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SelectFromSingleView {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_DispPerSingleView;
@@ -2404,8 +3204,18 @@ class IGESSelect_DispPerSingleView : public IFSelect_Dispatch {
 };
 %feature("shadow") IGESSelect_DispPerSingleView::~IGESSelect_DispPerSingleView %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_DispPerSingleView {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_RebuildGroups;
@@ -2433,8 +3243,18 @@ class IGESSelect_RebuildGroups : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_RebuildGroups::~IGESSelect_RebuildGroups %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_RebuildGroups {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SelectBasicGeom;
@@ -2464,8 +3284,18 @@ class IGESSelect_SelectBasicGeom : public IFSelect_SelectExplore {
 };
 %feature("shadow") IGESSelect_SelectBasicGeom::~IGESSelect_SelectBasicGeom %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SelectBasicGeom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SetVersion5;
@@ -2493,8 +3323,18 @@ class IGESSelect_SetVersion5 : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_SetVersion5::~IGESSelect_SetVersion5 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SetVersion5 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_ChangeLevelList;
@@ -2534,8 +3374,18 @@ class IGESSelect_ChangeLevelList : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_ChangeLevelList::~IGESSelect_ChangeLevelList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_ChangeLevelList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SignColor;
@@ -2561,8 +3411,18 @@ class IGESSelect_SignColor : public IFSelect_Signature {
 };
 %feature("shadow") IGESSelect_SignColor::~IGESSelect_SignColor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SignColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SelectVisibleStatus;
@@ -2590,8 +3450,18 @@ class IGESSelect_SelectVisibleStatus : public IFSelect_SelectExtract {
 };
 %feature("shadow") IGESSelect_SelectVisibleStatus::~IGESSelect_SelectVisibleStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SelectVisibleStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_AddFileComment;
@@ -2631,8 +3501,18 @@ class IGESSelect_AddFileComment : public IGESSelect_FileModifier {
 };
 %feature("shadow") IGESSelect_AddFileComment::~IGESSelect_AddFileComment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_AddFileComment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_DispPerDrawing;
@@ -2664,8 +3544,18 @@ class IGESSelect_DispPerDrawing : public IFSelect_Dispatch {
 };
 %feature("shadow") IGESSelect_DispPerDrawing::~IGESSelect_DispPerDrawing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_DispPerDrawing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SplineToBSpline;
@@ -2697,8 +3587,18 @@ class IGESSelect_SplineToBSpline : public IFSelect_Transformer {
 };
 %feature("shadow") IGESSelect_SplineToBSpline::~IGESSelect_SplineToBSpline %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SplineToBSpline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SetLabel;
@@ -2726,8 +3626,18 @@ class IGESSelect_SetLabel : public IGESSelect_ModelModifier {
 };
 %feature("shadow") IGESSelect_SetLabel::~IGESSelect_SetLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SetLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SignLevelNumber;
@@ -2753,8 +3663,18 @@ class IGESSelect_SignLevelNumber : public IFSelect_Signature {
 };
 %feature("shadow") IGESSelect_SignLevelNumber::~IGESSelect_SignLevelNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SignLevelNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESSelect_SelectLevelNumber;
@@ -2786,5 +3706,15 @@ class IGESSelect_SelectLevelNumber : public IFSelect_SelectExtract {
 };
 %feature("shadow") IGESSelect_SelectLevelNumber::~IGESSelect_SelectLevelNumber %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESSelect_SelectLevelNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

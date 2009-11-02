@@ -58,5 +58,15 @@ class Sketcher_Profile {
 };
 %feature("shadow") Sketcher_Profile::~Sketcher_Profile %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Sketcher_Profile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

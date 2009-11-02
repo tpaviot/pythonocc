@@ -63,8 +63,18 @@ class Handle_ShapeFix_EdgeProjAux : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeFix_EdgeProjAux::~Handle_ShapeFix_EdgeProjAux %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_EdgeProjAux {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeFix_Root;
@@ -91,8 +101,18 @@ class Handle_ShapeFix_Root : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeFix_Root::~Handle_ShapeFix_Root %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_Root {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeFix_Face;
@@ -119,8 +139,18 @@ class Handle_ShapeFix_Face : public Handle_ShapeFix_Root {
 };
 %feature("shadow") Handle_ShapeFix_Face::~Handle_ShapeFix_Face %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeFix_Edge;
@@ -147,8 +177,18 @@ class Handle_ShapeFix_Edge : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_ShapeFix_Edge::~Handle_ShapeFix_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeFix_ComposeShell;
@@ -175,8 +215,18 @@ class Handle_ShapeFix_ComposeShell : public Handle_ShapeFix_Root {
 };
 %feature("shadow") Handle_ShapeFix_ComposeShell::~Handle_ShapeFix_ComposeShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_ComposeShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeFix_Solid;
@@ -203,8 +253,18 @@ class Handle_ShapeFix_Solid : public Handle_ShapeFix_Root {
 };
 %feature("shadow") Handle_ShapeFix_Solid::~Handle_ShapeFix_Solid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_Solid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeFix_Wire;
@@ -231,8 +291,18 @@ class Handle_ShapeFix_Wire : public Handle_ShapeFix_Root {
 };
 %feature("shadow") Handle_ShapeFix_Wire::~Handle_ShapeFix_Wire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_Wire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment;
@@ -259,8 +329,18 @@ class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TColle
 };
 %feature("shadow") Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment::~Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeFix_Wireframe;
@@ -287,8 +367,18 @@ class Handle_ShapeFix_Wireframe : public Handle_ShapeFix_Root {
 };
 %feature("shadow") Handle_ShapeFix_Wireframe::~Handle_ShapeFix_Wireframe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_Wireframe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
@@ -315,8 +405,18 @@ class Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public Handle_TCollecti
 };
 %feature("shadow") Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d::~Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeFix_Shape;
@@ -343,8 +443,18 @@ class Handle_ShapeFix_Shape : public Handle_ShapeFix_Root {
 };
 %feature("shadow") Handle_ShapeFix_Shape::~Handle_ShapeFix_Shape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_Shape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeFix_FixSmallFace;
@@ -371,8 +481,18 @@ class Handle_ShapeFix_FixSmallFace : public Handle_ShapeFix_Root {
 };
 %feature("shadow") Handle_ShapeFix_FixSmallFace::~Handle_ShapeFix_FixSmallFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_FixSmallFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeFix_Shell;
@@ -399,8 +519,18 @@ class Handle_ShapeFix_Shell : public Handle_ShapeFix_Root {
 };
 %feature("shadow") Handle_ShapeFix_Shell::~Handle_ShapeFix_Shell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_Shell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ShapeFix_SplitCommonVertex;
@@ -427,8 +557,18 @@ class Handle_ShapeFix_SplitCommonVertex : public Handle_ShapeFix_Root {
 };
 %feature("shadow") Handle_ShapeFix_SplitCommonVertex::~Handle_ShapeFix_SplitCommonVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeFix_SplitCommonVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_Root;
@@ -488,8 +628,18 @@ class ShapeFix_Root : public MMgt_TShared {
 };
 %feature("shadow") ShapeFix_Root::~ShapeFix_Root %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_Root {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_ComposeShell;
@@ -531,8 +681,18 @@ class ShapeFix_ComposeShell : public ShapeFix_Root {
 };
 %feature("shadow") ShapeFix_ComposeShell::~ShapeFix_ComposeShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_ComposeShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_EdgeProjAux;
@@ -572,8 +732,18 @@ class ShapeFix_EdgeProjAux : public MMgt_TShared {
 };
 %feature("shadow") ShapeFix_EdgeProjAux::~ShapeFix_EdgeProjAux %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_EdgeProjAux {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_FreeBounds;
@@ -595,8 +765,18 @@ class ShapeFix_FreeBounds {
 };
 %feature("shadow") ShapeFix_FreeBounds::~ShapeFix_FreeBounds %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_FreeBounds {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_Wire;
@@ -1014,8 +1194,18 @@ class ShapeFix_Wire : public ShapeFix_Root {
 };
 %feature("shadow") ShapeFix_Wire::~ShapeFix_Wire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_Wire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_Solid;
@@ -1077,8 +1267,18 @@ class ShapeFix_Solid : public ShapeFix_Root {
 };
 %feature("shadow") ShapeFix_Solid::~ShapeFix_Solid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_Solid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d;
@@ -1098,8 +1298,18 @@ class ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d : public TCollection_BasicMa
 };
 %feature("shadow") ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d::~ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_SequenceNodeOfSequenceOfWireSegment;
@@ -1125,8 +1335,18 @@ class ShapeFix_SequenceNodeOfSequenceOfWireSegment : public TCollection_SeqNode 
 };
 %feature("shadow") ShapeFix_SequenceNodeOfSequenceOfWireSegment::~ShapeFix_SequenceNodeOfSequenceOfWireSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_SequenceNodeOfSequenceOfWireSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_DataMapOfShapeBox2d;
@@ -1160,8 +1380,18 @@ class ShapeFix_DataMapOfShapeBox2d : public TCollection_BasicMap {
 };
 %feature("shadow") ShapeFix_DataMapOfShapeBox2d::~ShapeFix_DataMapOfShapeBox2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_DataMapOfShapeBox2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_EdgeConnect;
@@ -1181,8 +1411,18 @@ class ShapeFix_EdgeConnect {
 };
 %feature("shadow") ShapeFix_EdgeConnect::~ShapeFix_EdgeConnect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_EdgeConnect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
@@ -1210,8 +1450,18 @@ class ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public TCollection_MapNode {
 };
 %feature("shadow") ShapeFix_DataMapNodeOfDataMapOfShapeBox2d::~ShapeFix_DataMapNodeOfDataMapOfShapeBox2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_Wireframe;
@@ -1261,8 +1511,18 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 };
 %feature("shadow") ShapeFix_Wireframe::~ShapeFix_Wireframe %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_Wireframe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix;
@@ -1282,8 +1542,18 @@ class ShapeFix {
 };
 %feature("shadow") ShapeFix::~ShapeFix %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_IntersectionTool;
@@ -1305,8 +1575,18 @@ class ShapeFix_IntersectionTool {
 };
 %feature("shadow") ShapeFix_IntersectionTool::~ShapeFix_IntersectionTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_IntersectionTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_WireVertex;
@@ -1334,8 +1614,18 @@ class ShapeFix_WireVertex {
 };
 %feature("shadow") ShapeFix_WireVertex::~ShapeFix_WireVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_WireVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_FixSmallFace;
@@ -1393,8 +1683,18 @@ class ShapeFix_FixSmallFace : public ShapeFix_Root {
 };
 %feature("shadow") ShapeFix_FixSmallFace::~ShapeFix_FixSmallFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_FixSmallFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_ShapeTolerance;
@@ -1410,8 +1710,18 @@ class ShapeFix_ShapeTolerance {
 };
 %feature("shadow") ShapeFix_ShapeTolerance::~ShapeFix_ShapeTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_ShapeTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_SequenceOfWireSegment;
@@ -1465,8 +1775,18 @@ class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
 };
 %feature("shadow") ShapeFix_SequenceOfWireSegment::~ShapeFix_SequenceOfWireSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_SequenceOfWireSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_Shell;
@@ -1542,8 +1862,18 @@ class ShapeFix_Shell : public ShapeFix_Root {
 };
 %feature("shadow") ShapeFix_Shell::~ShapeFix_Shell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_Shell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_Face;
@@ -1711,8 +2041,18 @@ class ShapeFix_Face : public ShapeFix_Root {
 };
 %feature("shadow") ShapeFix_Face::~ShapeFix_Face %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_Shape;
@@ -1836,8 +2176,18 @@ class ShapeFix_Shape : public ShapeFix_Root {
 };
 %feature("shadow") ShapeFix_Shape::~ShapeFix_Shape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_Shape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_SplitTool;
@@ -1857,8 +2207,18 @@ class ShapeFix_SplitTool {
 };
 %feature("shadow") ShapeFix_SplitTool::~ShapeFix_SplitTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_SplitTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_FaceConnect;
@@ -1876,8 +2236,18 @@ class ShapeFix_FaceConnect {
 };
 %feature("shadow") ShapeFix_FaceConnect::~ShapeFix_FaceConnect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_FaceConnect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_SplitCommonVertex;
@@ -1907,8 +2277,18 @@ class ShapeFix_SplitCommonVertex : public ShapeFix_Root {
 };
 %feature("shadow") ShapeFix_SplitCommonVertex::~ShapeFix_SplitCommonVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_SplitCommonVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeFix_Edge;
@@ -1962,5 +2342,15 @@ class ShapeFix_Edge : public MMgt_TShared {
 };
 %feature("shadow") ShapeFix_Edge::~ShapeFix_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeFix_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

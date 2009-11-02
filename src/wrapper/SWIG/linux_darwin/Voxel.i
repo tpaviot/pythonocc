@@ -70,8 +70,18 @@ class Handle_Voxel_Prs : public Handle_AIS_InteractiveObject {
 };
 %feature("shadow") Handle_Voxel_Prs::~Handle_Voxel_Prs %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Voxel_Prs {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Voxel_DS;
@@ -115,8 +125,18 @@ class Voxel_DS {
 };
 %feature("shadow") Voxel_DS::~Voxel_DS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Voxel_DS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Voxel_BoolDS;
@@ -138,8 +158,18 @@ class Voxel_BoolDS : public Voxel_DS {
 };
 %feature("shadow") Voxel_BoolDS::~Voxel_BoolDS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Voxel_BoolDS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Voxel_FloatDS;
@@ -163,8 +193,18 @@ class Voxel_FloatDS : public Voxel_DS {
 };
 %feature("shadow") Voxel_FloatDS::~Voxel_FloatDS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Voxel_FloatDS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Voxel_CollisionDetection;
@@ -202,8 +242,18 @@ class Voxel_CollisionDetection {
 };
 %feature("shadow") Voxel_CollisionDetection::~Voxel_CollisionDetection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Voxel_CollisionDetection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Voxel_Prs;
@@ -259,8 +309,18 @@ class Voxel_Prs : public AIS_InteractiveObject {
 };
 %feature("shadow") Voxel_Prs::~Voxel_Prs %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Voxel_Prs {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Voxel_FastConverter;
@@ -280,8 +340,18 @@ class Voxel_FastConverter {
 };
 %feature("shadow") Voxel_FastConverter::~Voxel_FastConverter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Voxel_FastConverter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Voxel_ColorDS;
@@ -305,8 +375,18 @@ class Voxel_ColorDS : public Voxel_DS {
 };
 %feature("shadow") Voxel_ColorDS::~Voxel_ColorDS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Voxel_ColorDS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Voxel_BooleanOperation;
@@ -330,8 +410,18 @@ class Voxel_BooleanOperation {
 };
 %feature("shadow") Voxel_BooleanOperation::~Voxel_BooleanOperation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Voxel_BooleanOperation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Voxel_Selector;
@@ -353,5 +443,15 @@ class Voxel_Selector {
 };
 %feature("shadow") Voxel_Selector::~Voxel_Selector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Voxel_Selector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

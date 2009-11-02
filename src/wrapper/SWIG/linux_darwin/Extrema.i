@@ -63,8 +63,18 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC::~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC;
@@ -91,8 +101,18 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public Handle_TColle
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC::~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_HArray1OfPOnCurv;
@@ -119,8 +139,18 @@ class Handle_Extrema_HArray1OfPOnCurv : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Extrema_HArray1OfPOnCurv::~Handle_Extrema_HArray1OfPOnCurv %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_HArray1OfPOnCurv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d;
@@ -147,8 +177,18 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : pu
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d::~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_HArray2OfPOnSurf;
@@ -175,8 +215,18 @@ class Handle_Extrema_HArray2OfPOnSurf : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Extrema_HArray2OfPOnSurf::~Handle_Extrema_HArray2OfPOnSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_HArray2OfPOnSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC;
@@ -203,8 +253,18 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public Handle_TCol
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC::~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
@@ -231,8 +291,18 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d::~Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC;
@@ -259,8 +329,18 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public H
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC::~Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_HArray2OfPOnCurv;
@@ -287,8 +367,18 @@ class Handle_Extrema_HArray2OfPOnCurv : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Extrema_HArray2OfPOnCurv::~Handle_Extrema_HArray2OfPOnCurv %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_HArray2OfPOnCurv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv;
@@ -315,8 +405,18 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv : public Handle_TCollection
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv::~Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d;
@@ -343,8 +443,18 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d::~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
@@ -371,8 +481,18 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public 
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d::~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC;
@@ -399,8 +519,18 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public H
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC::~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d;
@@ -427,8 +557,18 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public Handle_
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d::~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d;
@@ -455,8 +595,18 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public Handle_TCollecti
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d::~Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfBoolean;
@@ -483,8 +633,18 @@ class Handle_Extrema_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSequenceOfBoolean::~Handle_Extrema_SequenceNodeOfSequenceOfBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSequenceOfBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d;
@@ -511,8 +671,18 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCol
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d::~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_HArray1OfPOnSurf;
@@ -539,8 +709,18 @@ class Handle_Extrema_HArray1OfPOnSurf : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Extrema_HArray1OfPOnSurf::~Handle_Extrema_HArray1OfPOnSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_HArray1OfPOnSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_HArray1OfPOnCurv2d;
@@ -567,8 +747,18 @@ class Handle_Extrema_HArray1OfPOnCurv2d : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Extrema_HArray1OfPOnCurv2d::~Handle_Extrema_HArray1OfPOnCurv2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_HArray1OfPOnCurv2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_HArray2OfPOnCurv2d;
@@ -595,8 +785,18 @@ class Handle_Extrema_HArray2OfPOnCurv2d : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Extrema_HArray2OfPOnCurv2d::~Handle_Extrema_HArray2OfPOnCurv2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_HArray2OfPOnCurv2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC;
@@ -623,8 +823,18 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public Hand
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC::~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf;
@@ -651,8 +861,18 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf : public Handle_TCollection
 };
 %feature("shadow") Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf::~Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_POnCurv2d;
@@ -678,8 +898,18 @@ class Extrema_POnCurv2d {
 };
 %feature("shadow") Extrema_POnCurv2d::~Extrema_POnCurv2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_POnCurv2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_POnSurf;
@@ -707,8 +937,18 @@ class Extrema_POnSurf {
 };
 %feature("shadow") Extrema_POnSurf::~Extrema_POnSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_POnSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSequenceOfBoolean;
@@ -734,8 +974,18 @@ class Extrema_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 };
 %feature("shadow") Extrema_SequenceNodeOfSequenceOfBoolean::~Extrema_SequenceNodeOfSequenceOfBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSequenceOfBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC;
@@ -789,8 +1039,18 @@ class Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection_BaseSequence 
 };
 %feature("shadow") Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC::~Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d;
@@ -844,8 +1104,18 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_BaseSequ
 };
 %feature("shadow") Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d::~Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_EPCOfExtPC2d;
@@ -881,8 +1151,18 @@ class Extrema_EPCOfExtPC2d {
 };
 %feature("shadow") Extrema_EPCOfExtPC2d::~Extrema_EPCOfExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_EPCOfExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtSS;
@@ -912,8 +1192,18 @@ class Extrema_ExtSS {
 };
 %feature("shadow") Extrema_ExtSS::~Extrema_ExtSS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtSS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_CCFOfELCCOfLocateExtCC;
@@ -943,8 +1233,18 @@ class Extrema_CCFOfELCCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 };
 %feature("shadow") Extrema_CCFOfELCCOfLocateExtCC::~Extrema_CCFOfELCCOfLocateExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_CCFOfELCCOfLocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_HArray1OfPOnCurv2d;
@@ -988,8 +1288,18 @@ class Extrema_HArray1OfPOnCurv2d : public MMgt_TShared {
 };
 %feature("shadow") Extrema_HArray1OfPOnCurv2d::~Extrema_HArray1OfPOnCurv2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_HArray1OfPOnCurv2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ECC2dOfExtCC2d;
@@ -1013,8 +1323,18 @@ class Extrema_ECC2dOfExtCC2d {
 };
 %feature("shadow") Extrema_ECC2dOfExtCC2d::~Extrema_ECC2dOfExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ECC2dOfExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_Array1OfPOnSurf;
@@ -1054,8 +1374,18 @@ class Extrema_Array1OfPOnSurf {
 };
 %feature("shadow") Extrema_Array1OfPOnSurf::~Extrema_Array1OfPOnSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_Array1OfPOnSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtElCS;
@@ -1121,8 +1451,18 @@ class Extrema_ExtElCS {
 };
 %feature("shadow") Extrema_ExtElCS::~Extrema_ExtElCS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtElCS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_GenLocateExtSS;
@@ -1146,8 +1486,18 @@ class Extrema_GenLocateExtSS {
 };
 %feature("shadow") Extrema_GenLocateExtSS::~Extrema_GenLocateExtSS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_GenLocateExtSS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_HArray2OfPOnCurv2d;
@@ -1197,8 +1547,18 @@ class Extrema_HArray2OfPOnCurv2d : public MMgt_TShared {
 };
 %feature("shadow") Extrema_HArray2OfPOnCurv2d::~Extrema_HArray2OfPOnCurv2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_HArray2OfPOnCurv2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ELCC2dOfLocateExtCC2d;
@@ -1222,8 +1582,18 @@ class Extrema_ELCC2dOfLocateExtCC2d {
 };
 %feature("shadow") Extrema_ELCC2dOfLocateExtCC2d::~Extrema_ELCC2dOfLocateExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ELCC2dOfLocateExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_LocECCOfLocateExtCC;
@@ -1241,8 +1611,18 @@ class Extrema_LocECCOfLocateExtCC {
 };
 %feature("shadow") Extrema_LocECCOfLocateExtCC::~Extrema_LocECCOfLocateExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_LocECCOfLocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_LocateExtCC;
@@ -1260,8 +1640,18 @@ class Extrema_LocateExtCC {
 };
 %feature("shadow") Extrema_LocateExtCC::~Extrema_LocateExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_LocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtCC2d;
@@ -1293,8 +1683,18 @@ class Extrema_ExtCC2d {
 };
 %feature("shadow") Extrema_ExtCC2d::~Extrema_ExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtElSS;
@@ -1340,8 +1740,18 @@ class Extrema_ExtElSS {
 };
 %feature("shadow") Extrema_ExtElSS::~Extrema_ExtElSS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtElSS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtElC2d;
@@ -1393,8 +1803,18 @@ class Extrema_ExtElC2d {
 };
 %feature("shadow") Extrema_ExtElC2d::~Extrema_ExtElC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtElC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_LocEPCOfLocateExtPC;
@@ -1422,8 +1842,18 @@ class Extrema_LocEPCOfLocateExtPC {
 };
 %feature("shadow") Extrema_LocEPCOfLocateExtPC::~Extrema_LocEPCOfLocateExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_LocEPCOfLocateExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_HArray1OfPOnCurv;
@@ -1467,8 +1897,18 @@ class Extrema_HArray1OfPOnCurv : public MMgt_TShared {
 };
 %feature("shadow") Extrema_HArray1OfPOnCurv::~Extrema_HArray1OfPOnCurv %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_HArray1OfPOnCurv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d;
@@ -1494,8 +1934,18 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_Se
 };
 %feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d::~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC;
@@ -1521,8 +1971,18 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public TCollection_SeqNod
 };
 %feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC::~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d;
@@ -1548,8 +2008,18 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TColle
 };
 %feature("shadow") Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d::~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_CurveTool;
@@ -1607,8 +2077,18 @@ class Extrema_CurveTool {
 };
 %feature("shadow") Extrema_CurveTool::~Extrema_CurveTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_CurveTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_PCFOfEPCOfExtPC2d;
@@ -1642,8 +2122,18 @@ class Extrema_PCFOfEPCOfExtPC2d : public math_FunctionWithDerivative {
 };
 %feature("shadow") Extrema_PCFOfEPCOfExtPC2d::~Extrema_PCFOfEPCOfExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_PCFOfEPCOfExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_CCLocFOfLocECC2dOfLocateExtCC2d;
@@ -1673,8 +2163,18 @@ class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDeriv
 };
 %feature("shadow") Extrema_CCLocFOfLocECC2dOfLocateExtCC2d::~Extrema_CCLocFOfLocECC2dOfLocateExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_CCLocFOfLocECC2dOfLocateExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_Array2OfPOnCurv;
@@ -1718,8 +2218,18 @@ class Extrema_Array2OfPOnCurv {
 };
 %feature("shadow") Extrema_Array2OfPOnCurv::~Extrema_Array2OfPOnCurv %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_Array2OfPOnCurv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC;
@@ -1773,8 +2283,18 @@ class Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_BaseSequ
 };
 %feature("shadow") Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC::~Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceOfBoolean;
@@ -1828,8 +2348,18 @@ class Extrema_SequenceOfBoolean : public TCollection_BaseSequence {
 };
 %feature("shadow") Extrema_SequenceOfBoolean::~Extrema_SequenceOfBoolean %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceOfBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtPExtS;
@@ -1857,8 +2387,18 @@ class Extrema_ExtPExtS {
 };
 %feature("shadow") Extrema_ExtPExtS::~Extrema_ExtPExtS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtPExtS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_HArray2OfPOnSurf;
@@ -1908,8 +2448,18 @@ class Extrema_HArray2OfPOnSurf : public MMgt_TShared {
 };
 %feature("shadow") Extrema_HArray2OfPOnSurf::~Extrema_HArray2OfPOnSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_HArray2OfPOnSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtCC;
@@ -1941,8 +2491,18 @@ class Extrema_ExtCC {
 };
 %feature("shadow") Extrema_ExtCC::~Extrema_ExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SeqPOnCOfCCFOfECCOfExtCC;
@@ -1996,8 +2556,18 @@ class Extrema_SeqPOnCOfCCFOfECCOfExtCC : public TCollection_BaseSequence {
 };
 %feature("shadow") Extrema_SeqPOnCOfCCFOfECCOfExtCC::~Extrema_SeqPOnCOfCCFOfECCOfExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SeqPOnCOfCCFOfECCOfExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_Array1OfPOnCurv;
@@ -2037,8 +2607,18 @@ class Extrema_Array1OfPOnCurv {
 };
 %feature("shadow") Extrema_Array1OfPOnCurv::~Extrema_Array1OfPOnCurv %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_Array1OfPOnCurv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_PCFOfEPCOfELPCOfLocateExtPC2d;
@@ -2072,8 +2652,18 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC2d : public math_FunctionWithDerivative
 };
 %feature("shadow") Extrema_PCFOfEPCOfELPCOfLocateExtPC2d::~Extrema_PCFOfEPCOfELPCOfLocateExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_PCFOfEPCOfELPCOfLocateExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceOfPOnSurf;
@@ -2127,8 +2717,18 @@ class Extrema_SequenceOfPOnSurf : public TCollection_BaseSequence {
 };
 %feature("shadow") Extrema_SequenceOfPOnSurf::~Extrema_SequenceOfPOnSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceOfPOnSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtPC;
@@ -2160,8 +2760,18 @@ class Extrema_ExtPC {
 };
 %feature("shadow") Extrema_ExtPC::~Extrema_ExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_LocateExtPC2d;
@@ -2189,8 +2799,18 @@ class Extrema_LocateExtPC2d {
 };
 %feature("shadow") Extrema_LocateExtPC2d::~Extrema_LocateExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_LocateExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC;
@@ -2216,8 +2836,18 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TColle
 };
 %feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC::~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_LocateExtPC;
@@ -2245,8 +2875,18 @@ class Extrema_LocateExtPC {
 };
 %feature("shadow") Extrema_LocateExtPC::~Extrema_LocateExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_LocateExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_GenLocateExtCS;
@@ -2270,8 +2910,18 @@ class Extrema_GenLocateExtCS {
 };
 %feature("shadow") Extrema_GenLocateExtCS::~Extrema_GenLocateExtCS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_GenLocateExtCS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
@@ -2297,8 +2947,18 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollec
 };
 %feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d::~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d;
@@ -2352,8 +3012,18 @@ class Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_BaseSequence {
 };
 %feature("shadow") Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d::~Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_LocEPCOfLocateExtPC2d;
@@ -2381,8 +3051,18 @@ class Extrema_LocEPCOfLocateExtPC2d {
 };
 %feature("shadow") Extrema_LocEPCOfLocateExtPC2d::~Extrema_LocEPCOfLocateExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_LocEPCOfLocateExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_Array2OfPOnCurv2d;
@@ -2426,8 +3106,18 @@ class Extrema_Array2OfPOnCurv2d {
 };
 %feature("shadow") Extrema_Array2OfPOnCurv2d::~Extrema_Array2OfPOnCurv2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_Array2OfPOnCurv2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_PCLocFOfLocEPCOfLocateExtPC2d;
@@ -2461,8 +3151,18 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative
 };
 %feature("shadow") Extrema_PCLocFOfLocEPCOfLocateExtPC2d::~Extrema_PCLocFOfLocEPCOfLocateExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_PCLocFOfLocEPCOfLocateExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_Array2OfPOnSurf;
@@ -2506,8 +3206,18 @@ class Extrema_Array2OfPOnSurf {
 };
 %feature("shadow") Extrema_Array2OfPOnSurf::~Extrema_Array2OfPOnSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_Array2OfPOnSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtPElS;
@@ -2547,8 +3257,18 @@ class Extrema_ExtPElS {
 };
 %feature("shadow") Extrema_ExtPElS::~Extrema_ExtPElS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtPElS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtElC;
@@ -2600,8 +3320,18 @@ class Extrema_ExtElC {
 };
 %feature("shadow") Extrema_ExtElC::~Extrema_ExtElC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtElC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnCurv;
@@ -2627,8 +3357,18 @@ class Extrema_SequenceNodeOfSequenceOfPOnCurv : public TCollection_SeqNode {
 };
 %feature("shadow") Extrema_SequenceNodeOfSequenceOfPOnCurv::~Extrema_SequenceNodeOfSequenceOfPOnCurv %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_EPCOfELPCOfLocateExtPC;
@@ -2664,8 +3404,18 @@ class Extrema_EPCOfELPCOfLocateExtPC {
 };
 %feature("shadow") Extrema_EPCOfELPCOfLocateExtPC::~Extrema_EPCOfELPCOfLocateExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_EPCOfELPCOfLocateExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_CCFOfECC2dOfExtCC2d;
@@ -2695,8 +3445,18 @@ class Extrema_CCFOfECC2dOfExtCC2d : public math_FunctionSetWithDerivatives {
 };
 %feature("shadow") Extrema_CCFOfECC2dOfExtCC2d::~Extrema_CCFOfECC2dOfExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_CCFOfECC2dOfExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceOfPOnCurv2d;
@@ -2750,8 +3510,18 @@ class Extrema_SequenceOfPOnCurv2d : public TCollection_BaseSequence {
 };
 %feature("shadow") Extrema_SequenceOfPOnCurv2d::~Extrema_SequenceOfPOnCurv2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceOfPOnCurv2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
@@ -2805,8 +3575,18 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequ
 };
 %feature("shadow") Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d::~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_HArray2OfPOnCurv;
@@ -2856,8 +3636,18 @@ class Extrema_HArray2OfPOnCurv : public MMgt_TShared {
 };
 %feature("shadow") Extrema_HArray2OfPOnCurv::~Extrema_HArray2OfPOnCurv %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_HArray2OfPOnCurv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_PCFOfEPCOfExtPC;
@@ -2891,8 +3681,18 @@ class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 };
 %feature("shadow") Extrema_PCFOfEPCOfExtPC::~Extrema_PCFOfEPCOfExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_PCFOfEPCOfExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_GenLocateExtPS;
@@ -2912,8 +3712,18 @@ class Extrema_GenLocateExtPS {
 };
 %feature("shadow") Extrema_GenLocateExtPS::~Extrema_GenLocateExtPS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_GenLocateExtPS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
@@ -2939,8 +3749,18 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TColle
 };
 %feature("shadow") Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d::~Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d;
@@ -2966,8 +3786,18 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public TCollection_SeqNod
 };
 %feature("shadow") Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d::~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_CCFOfELCC2dOfLocateExtCC2d;
@@ -2997,8 +3827,18 @@ class Extrema_CCFOfELCC2dOfLocateExtCC2d : public math_FunctionSetWithDerivative
 };
 %feature("shadow") Extrema_CCFOfELCC2dOfLocateExtCC2d::~Extrema_CCFOfELCC2dOfLocateExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_CCFOfELCC2dOfLocateExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_CCLocFOfLocECCOfLocateExtCC;
@@ -3028,8 +3868,18 @@ class Extrema_CCLocFOfLocECCOfLocateExtCC : public math_FunctionSetWithDerivativ
 };
 %feature("shadow") Extrema_CCLocFOfLocECCOfLocateExtCC::~Extrema_CCLocFOfLocECCOfLocateExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_CCLocFOfLocECCOfLocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_Array1OfPOnCurv2d;
@@ -3069,8 +3919,18 @@ class Extrema_Array1OfPOnCurv2d {
 };
 %feature("shadow") Extrema_Array1OfPOnCurv2d::~Extrema_Array1OfPOnCurv2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_Array1OfPOnCurv2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_EPCOfExtPC;
@@ -3106,8 +3966,18 @@ class Extrema_EPCOfExtPC {
 };
 %feature("shadow") Extrema_EPCOfExtPC::~Extrema_EPCOfExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_EPCOfExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_GenExtCS;
@@ -3141,8 +4011,18 @@ class Extrema_GenExtCS {
 };
 %feature("shadow") Extrema_GenExtCS::~Extrema_GenExtCS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_GenExtCS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d;
@@ -3168,8 +4048,18 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TC
 };
 %feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d::~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtPRevS;
@@ -3197,8 +4087,18 @@ class Extrema_ExtPRevS {
 };
 %feature("shadow") Extrema_ExtPRevS::~Extrema_ExtPRevS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtPRevS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_GenExtPS;
@@ -3228,8 +4128,18 @@ class Extrema_GenExtPS {
 };
 %feature("shadow") Extrema_GenExtPS::~Extrema_GenExtPS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_GenExtPS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtPC2d;
@@ -3261,8 +4171,18 @@ class Extrema_ExtPC2d {
 };
 %feature("shadow") Extrema_ExtPC2d::~Extrema_ExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_LocateExtCC2d;
@@ -3280,8 +4200,18 @@ class Extrema_LocateExtCC2d {
 };
 %feature("shadow") Extrema_LocateExtCC2d::~Extrema_LocateExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_LocateExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_GenExtSS;
@@ -3315,8 +4245,18 @@ class Extrema_GenExtSS {
 };
 %feature("shadow") Extrema_GenExtSS::~Extrema_GenExtSS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_GenExtSS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_Curve2dTool;
@@ -3382,8 +4322,18 @@ class Extrema_Curve2dTool {
 };
 %feature("shadow") Extrema_Curve2dTool::~Extrema_Curve2dTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_Curve2dTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_PCFOfEPCOfELPCOfLocateExtPC;
@@ -3417,8 +4367,18 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC : public math_FunctionWithDerivative {
 };
 %feature("shadow") Extrema_PCFOfEPCOfELPCOfLocateExtPC::~Extrema_PCFOfEPCOfELPCOfLocateExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_PCFOfEPCOfELPCOfLocateExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ECCOfExtCC;
@@ -3442,8 +4402,18 @@ class Extrema_ECCOfExtCC {
 };
 %feature("shadow") Extrema_ECCOfExtCC::~Extrema_ECCOfExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ECCOfExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtPS;
@@ -3473,8 +4443,18 @@ class Extrema_ExtPS {
 };
 %feature("shadow") Extrema_ExtPS::~Extrema_ExtPS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtPS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC;
@@ -3500,8 +4480,18 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public TCollection_SeqNode 
 };
 %feature("shadow") Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC::~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_FuncExtPS;
@@ -3539,8 +4529,18 @@ class Extrema_FuncExtPS : public math_FunctionSetWithDerivatives {
 };
 %feature("shadow") Extrema_FuncExtPS::~Extrema_FuncExtPS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_FuncExtPS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_PCLocFOfLocEPCOfLocateExtPC;
@@ -3574,8 +4574,18 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
 };
 %feature("shadow") Extrema_PCLocFOfLocEPCOfLocateExtPC::~Extrema_PCLocFOfLocEPCOfLocateExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_PCLocFOfLocEPCOfLocateExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC;
@@ -3629,8 +4639,18 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollection_BaseSequen
 };
 %feature("shadow") Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC::~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC;
@@ -3684,8 +4704,18 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollection_BaseSequen
 };
 %feature("shadow") Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC::~Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SeqPCOfPCFOfEPCOfExtPC;
@@ -3739,8 +4769,18 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC : public TCollection_BaseSequence {
 };
 %feature("shadow") Extrema_SeqPCOfPCFOfEPCOfExtPC::~Extrema_SeqPCOfPCFOfEPCOfExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SeqPCOfPCFOfEPCOfExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ELPCOfLocateExtPC;
@@ -3772,8 +4812,18 @@ class Extrema_ELPCOfLocateExtPC {
 };
 %feature("shadow") Extrema_ELPCOfLocateExtPC::~Extrema_ELPCOfLocateExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ELPCOfLocateExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtPElC;
@@ -3815,8 +4865,18 @@ class Extrema_ExtPElC {
 };
 %feature("shadow") Extrema_ExtPElC::~Extrema_ExtPElC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtPElC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC;
@@ -3842,8 +4902,18 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection
 };
 %feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC::~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ELCCOfLocateExtCC;
@@ -3867,8 +4937,18 @@ class Extrema_ELCCOfLocateExtCC {
 };
 %feature("shadow") Extrema_ELCCOfLocateExtCC::~Extrema_ELCCOfLocateExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ELCCOfLocateExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_HArray1OfPOnSurf;
@@ -3912,8 +4992,18 @@ class Extrema_HArray1OfPOnSurf : public MMgt_TShared {
 };
 %feature("shadow") Extrema_HArray1OfPOnSurf::~Extrema_HArray1OfPOnSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_HArray1OfPOnSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_LocECC2dOfLocateExtCC2d;
@@ -3931,8 +5021,18 @@ class Extrema_LocECC2dOfLocateExtCC2d {
 };
 %feature("shadow") Extrema_LocECC2dOfLocateExtCC2d::~Extrema_LocECC2dOfLocateExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_LocECC2dOfLocateExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ELPCOfLocateExtPC2d;
@@ -3964,8 +5064,18 @@ class Extrema_ELPCOfLocateExtPC2d {
 };
 %feature("shadow") Extrema_ELPCOfLocateExtPC2d::~Extrema_ELPCOfLocateExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ELPCOfLocateExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_POnCurv;
@@ -3991,8 +5101,18 @@ class Extrema_POnCurv {
 };
 %feature("shadow") Extrema_POnCurv::~Extrema_POnCurv %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_POnCurv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC;
@@ -4018,8 +5138,18 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollect
 };
 %feature("shadow") Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC::~Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC;
@@ -4045,8 +5175,18 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollect
 };
 %feature("shadow") Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC::~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
@@ -4100,8 +5240,18 @@ class Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollection_BaseSeque
 };
 %feature("shadow") Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d::~Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtPElC2d;
@@ -4143,8 +5293,18 @@ class Extrema_ExtPElC2d {
 };
 %feature("shadow") Extrema_ExtPElC2d::~Extrema_ExtPElC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtPElC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_EPCOfELPCOfLocateExtPC2d;
@@ -4180,8 +5340,18 @@ class Extrema_EPCOfELPCOfLocateExtPC2d {
 };
 %feature("shadow") Extrema_EPCOfELPCOfLocateExtPC2d::~Extrema_EPCOfELPCOfLocateExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_EPCOfELPCOfLocateExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnSurf;
@@ -4207,8 +5377,18 @@ class Extrema_SequenceNodeOfSequenceOfPOnSurf : public TCollection_SeqNode {
 };
 %feature("shadow") Extrema_SequenceNodeOfSequenceOfPOnSurf::~Extrema_SequenceNodeOfSequenceOfPOnSurf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSequenceOfPOnSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_FuncExtCS;
@@ -4244,8 +5424,18 @@ class Extrema_FuncExtCS : public math_FunctionSetWithDerivatives {
 };
 %feature("shadow") Extrema_FuncExtCS::~Extrema_FuncExtCS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_FuncExtCS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnCurv2d;
@@ -4271,8 +5461,18 @@ class Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public TCollection_SeqNode {
 };
 %feature("shadow") Extrema_SequenceNodeOfSequenceOfPOnCurv2d::~Extrema_SequenceNodeOfSequenceOfPOnCurv2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d;
@@ -4326,8 +5526,18 @@ class Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TCollection_Base
 };
 %feature("shadow") Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d::~Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_FuncExtSS;
@@ -4363,8 +5573,18 @@ class Extrema_FuncExtSS : public math_FunctionSetWithDerivatives {
 };
 %feature("shadow") Extrema_FuncExtSS::~Extrema_FuncExtSS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_FuncExtSS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SeqPCOfPCFOfEPCOfExtPC2d;
@@ -4418,8 +5638,18 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC2d : public TCollection_BaseSequence {
 };
 %feature("shadow") Extrema_SeqPCOfPCFOfEPCOfExtPC2d::~Extrema_SeqPCOfPCFOfEPCOfExtPC2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SeqPCOfPCFOfEPCOfExtPC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_ExtCS;
@@ -4449,8 +5679,18 @@ class Extrema_ExtCS {
 };
 %feature("shadow") Extrema_ExtCS::~Extrema_ExtCS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_ExtCS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_SequenceOfPOnCurv;
@@ -4504,8 +5744,18 @@ class Extrema_SequenceOfPOnCurv : public TCollection_BaseSequence {
 };
 %feature("shadow") Extrema_SequenceOfPOnCurv::~Extrema_SequenceOfPOnCurv %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_SequenceOfPOnCurv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Extrema_CCFOfECCOfExtCC;
@@ -4535,5 +5785,15 @@ class Extrema_CCFOfECCOfExtCC : public math_FunctionSetWithDerivatives {
 };
 %feature("shadow") Extrema_CCFOfECCOfExtCC::~Extrema_CCFOfECCOfExtCC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Extrema_CCFOfECCOfExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -71,8 +71,18 @@ class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_TFunction_HArray1OfDataMapOfGUIDDriver::~Handle_TFunction_HArray1OfDataMapOfGUIDDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TFunction_DriverTable;
@@ -99,8 +109,18 @@ class Handle_TFunction_DriverTable : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TFunction_DriverTable::~Handle_TFunction_DriverTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TFunction_DriverTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TFunction_GraphNode;
@@ -127,8 +147,18 @@ class Handle_TFunction_GraphNode : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TFunction_GraphNode::~Handle_TFunction_GraphNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TFunction_GraphNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TFunction_Scope;
@@ -155,8 +185,18 @@ class Handle_TFunction_Scope : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TFunction_Scope::~Handle_TFunction_Scope %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TFunction_Scope {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TFunction_Driver;
@@ -183,8 +223,18 @@ class Handle_TFunction_Driver : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TFunction_Driver::~Handle_TFunction_Driver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TFunction_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver;
@@ -211,8 +261,18 @@ class Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollect
 };
 %feature("shadow") Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver::~Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
@@ -239,8 +299,18 @@ class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TC
 };
 %feature("shadow") Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel::~Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TFunction_Function;
@@ -267,8 +337,18 @@ class Handle_TFunction_Function : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TFunction_Function::~Handle_TFunction_Function %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TFunction_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel;
@@ -295,8 +375,18 @@ class Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public Handle_TC
 };
 %feature("shadow") Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel::~Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_DataMapOfLabelListOfLabel;
@@ -330,8 +420,18 @@ class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
 };
 %feature("shadow") TFunction_DataMapOfLabelListOfLabel::~TFunction_DataMapOfLabelListOfLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_DataMapOfLabelListOfLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_HArray1OfDataMapOfGUIDDriver;
@@ -375,8 +475,18 @@ class TFunction_HArray1OfDataMapOfGUIDDriver : public MMgt_TShared {
 };
 %feature("shadow") TFunction_HArray1OfDataMapOfGUIDDriver::~TFunction_HArray1OfDataMapOfGUIDDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_HArray1OfDataMapOfGUIDDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_DoubleMapOfIntegerLabel;
@@ -412,8 +522,18 @@ class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
 };
 %feature("shadow") TFunction_DoubleMapOfIntegerLabel::~TFunction_DoubleMapOfIntegerLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_DoubleMapOfIntegerLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_Driver;
@@ -449,8 +569,18 @@ class TFunction_Driver : public MMgt_TShared {
 };
 %feature("shadow") TFunction_Driver::~TFunction_Driver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_DataMapOfGUIDDriver;
@@ -484,8 +614,18 @@ class TFunction_DataMapOfGUIDDriver : public TCollection_BasicMap {
 };
 %feature("shadow") TFunction_DataMapOfGUIDDriver::~TFunction_DataMapOfGUIDDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_DataMapOfGUIDDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_Function;
@@ -543,8 +683,18 @@ class TFunction_Function : public TDF_Attribute {
 };
 %feature("shadow") TFunction_Function::~TFunction_Function %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_DataMapIteratorOfDataMapOfGUIDDriver;
@@ -564,8 +714,18 @@ class TFunction_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicM
 };
 %feature("shadow") TFunction_DataMapIteratorOfDataMapOfGUIDDriver::~TFunction_DataMapIteratorOfDataMapOfGUIDDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_DataMapIteratorOfDataMapOfGUIDDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_IFunction;
@@ -611,8 +771,18 @@ class TFunction_IFunction {
 };
 %feature("shadow") TFunction_IFunction::~TFunction_IFunction %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_IFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_DataMapNodeOfDataMapOfGUIDDriver;
@@ -640,8 +810,18 @@ class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 };
 %feature("shadow") TFunction_DataMapNodeOfDataMapOfGUIDDriver::~TFunction_DataMapNodeOfDataMapOfGUIDDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_Array1OfDataMapOfGUIDDriver;
@@ -681,8 +861,18 @@ class TFunction_Array1OfDataMapOfGUIDDriver {
 };
 %feature("shadow") TFunction_Array1OfDataMapOfGUIDDriver::~TFunction_Array1OfDataMapOfGUIDDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_Array1OfDataMapOfGUIDDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
@@ -722,8 +912,18 @@ class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapN
 };
 %feature("shadow") TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel::~TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_DriverTable;
@@ -767,8 +967,18 @@ class TFunction_DriverTable : public MMgt_TShared {
 };
 %feature("shadow") TFunction_DriverTable::~TFunction_DriverTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_DriverTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_Iterator;
@@ -808,8 +1018,18 @@ class TFunction_Iterator {
 };
 %feature("shadow") TFunction_Iterator::~TFunction_Iterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_Iterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_DataMapNodeOfDataMapOfLabelListOfLabel;
@@ -837,8 +1057,18 @@ class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapN
 };
 %feature("shadow") TFunction_DataMapNodeOfDataMapOfLabelListOfLabel::~TFunction_DataMapNodeOfDataMapOfLabelListOfLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_Logbook;
@@ -882,8 +1112,18 @@ class TFunction_Logbook {
 };
 %feature("shadow") TFunction_Logbook::~TFunction_Logbook %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_Logbook {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel;
@@ -903,8 +1143,18 @@ class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_
 };
 %feature("shadow") TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel::~TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_GraphNode;
@@ -978,8 +1228,18 @@ class TFunction_GraphNode : public TDF_Attribute {
 };
 %feature("shadow") TFunction_GraphNode::~TFunction_GraphNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_GraphNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel;
@@ -999,8 +1259,18 @@ class TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel : public TCollection_
 };
 %feature("shadow") TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel::~TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TFunction_Scope;
@@ -1070,5 +1340,15 @@ class TFunction_Scope : public TDF_Attribute {
 };
 %feature("shadow") TFunction_Scope::~TFunction_Scope %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TFunction_Scope {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -63,8 +63,18 @@ class Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence : public Handle_PMMgt_PManaged 
 };
 %feature("shadow") Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence::~Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PXCAFDoc_Location;
@@ -91,8 +101,18 @@ class Handle_PXCAFDoc_Location : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PXCAFDoc_Location::~Handle_PXCAFDoc_Location %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PXCAFDoc_Location {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PXCAFDoc_GraphNodeSequence;
@@ -119,8 +139,18 @@ class Handle_PXCAFDoc_GraphNodeSequence : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PXCAFDoc_GraphNodeSequence::~Handle_PXCAFDoc_GraphNodeSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PXCAFDoc_GraphNodeSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PXCAFDoc_GraphNode;
@@ -147,8 +177,18 @@ class Handle_PXCAFDoc_GraphNode : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PXCAFDoc_GraphNode::~Handle_PXCAFDoc_GraphNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PXCAFDoc_GraphNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PXCAFDoc_DocumentTool;
@@ -175,8 +215,18 @@ class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PXCAFDoc_DocumentTool::~Handle_PXCAFDoc_DocumentTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PXCAFDoc_DocumentTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PXCAFDoc_ShapeTool;
@@ -203,8 +253,18 @@ class Handle_PXCAFDoc_ShapeTool : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PXCAFDoc_ShapeTool::~Handle_PXCAFDoc_ShapeTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PXCAFDoc_ShapeTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PXCAFDoc_Volume;
@@ -231,8 +291,18 @@ class Handle_PXCAFDoc_Volume : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PXCAFDoc_Volume::~Handle_PXCAFDoc_Volume %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PXCAFDoc_Volume {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PXCAFDoc_Area;
@@ -259,8 +329,18 @@ class Handle_PXCAFDoc_Area : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PXCAFDoc_Area::~Handle_PXCAFDoc_Area %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PXCAFDoc_Area {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PXCAFDoc_LayerTool;
@@ -287,8 +367,18 @@ class Handle_PXCAFDoc_LayerTool : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PXCAFDoc_LayerTool::~Handle_PXCAFDoc_LayerTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PXCAFDoc_LayerTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PXCAFDoc_ColorTool;
@@ -315,8 +405,18 @@ class Handle_PXCAFDoc_ColorTool : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PXCAFDoc_ColorTool::~Handle_PXCAFDoc_ColorTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PXCAFDoc_ColorTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PXCAFDoc_Color;
@@ -343,8 +443,18 @@ class Handle_PXCAFDoc_Color : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PXCAFDoc_Color::~Handle_PXCAFDoc_Color %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PXCAFDoc_Color {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PXCAFDoc_Centroid;
@@ -371,8 +481,18 @@ class Handle_PXCAFDoc_Centroid : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PXCAFDoc_Centroid::~Handle_PXCAFDoc_Centroid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PXCAFDoc_Centroid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PXCAFDoc_Volume;
@@ -408,8 +528,18 @@ class PXCAFDoc_Volume : public PDF_Attribute {
 };
 %feature("shadow") PXCAFDoc_Volume::~PXCAFDoc_Volume %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PXCAFDoc_Volume {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PXCAFDoc_GraphNodeSequence;
@@ -507,8 +637,18 @@ class PXCAFDoc_GraphNodeSequence : public Standard_Persistent {
 };
 %feature("shadow") PXCAFDoc_GraphNodeSequence::~PXCAFDoc_GraphNodeSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PXCAFDoc_GraphNodeSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PXCAFDoc_SeqExplorerOfGraphNodeSequence;
@@ -528,8 +668,18 @@ class PXCAFDoc_SeqExplorerOfGraphNodeSequence {
 };
 %feature("shadow") PXCAFDoc_SeqExplorerOfGraphNodeSequence::~PXCAFDoc_SeqExplorerOfGraphNodeSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PXCAFDoc_SeqExplorerOfGraphNodeSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PXCAFDoc_Location;
@@ -563,8 +713,18 @@ class PXCAFDoc_Location : public PDF_Attribute {
 };
 %feature("shadow") PXCAFDoc_Location::~PXCAFDoc_Location %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PXCAFDoc_Location {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PXCAFDoc_SeqNodeOfGraphNodeSequence;
@@ -620,8 +780,18 @@ class PXCAFDoc_SeqNodeOfGraphNodeSequence : public PMMgt_PManaged {
 };
 %feature("shadow") PXCAFDoc_SeqNodeOfGraphNodeSequence::~PXCAFDoc_SeqNodeOfGraphNodeSequence %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PXCAFDoc_SeqNodeOfGraphNodeSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PXCAFDoc_GraphNode;
@@ -677,8 +847,18 @@ class PXCAFDoc_GraphNode : public PDF_Attribute {
 };
 %feature("shadow") PXCAFDoc_GraphNode::~PXCAFDoc_GraphNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PXCAFDoc_GraphNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PXCAFDoc_ShapeTool;
@@ -704,8 +884,18 @@ class PXCAFDoc_ShapeTool : public PDF_Attribute {
 };
 %feature("shadow") PXCAFDoc_ShapeTool::~PXCAFDoc_ShapeTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PXCAFDoc_ShapeTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PXCAFDoc_Centroid;
@@ -739,8 +929,18 @@ class PXCAFDoc_Centroid : public PDF_Attribute {
 };
 %feature("shadow") PXCAFDoc_Centroid::~PXCAFDoc_Centroid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PXCAFDoc_Centroid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PXCAFDoc_Area;
@@ -776,8 +976,18 @@ class PXCAFDoc_Area : public PDF_Attribute {
 };
 %feature("shadow") PXCAFDoc_Area::~PXCAFDoc_Area %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PXCAFDoc_Area {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PXCAFDoc_ColorTool;
@@ -803,8 +1013,18 @@ class PXCAFDoc_ColorTool : public PDF_Attribute {
 };
 %feature("shadow") PXCAFDoc_ColorTool::~PXCAFDoc_ColorTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PXCAFDoc_ColorTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PXCAFDoc_DocumentTool;
@@ -830,8 +1050,18 @@ class PXCAFDoc_DocumentTool : public PDF_Attribute {
 };
 %feature("shadow") PXCAFDoc_DocumentTool::~PXCAFDoc_DocumentTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PXCAFDoc_DocumentTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PXCAFDoc_LayerTool;
@@ -857,8 +1087,18 @@ class PXCAFDoc_LayerTool : public PDF_Attribute {
 };
 %feature("shadow") PXCAFDoc_LayerTool::~PXCAFDoc_LayerTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PXCAFDoc_LayerTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PXCAFDoc_Color;
@@ -892,5 +1132,15 @@ class PXCAFDoc_Color : public PDF_Attribute {
 };
 %feature("shadow") PXCAFDoc_Color::~PXCAFDoc_Color %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PXCAFDoc_Color {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

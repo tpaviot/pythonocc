@@ -56,8 +56,18 @@ class VrmlAPI {
 };
 %feature("shadow") VrmlAPI::~VrmlAPI %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlAPI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor VrmlAPI_Writer;
@@ -109,5 +119,15 @@ class VrmlAPI_Writer {
 };
 %feature("shadow") VrmlAPI_Writer::~VrmlAPI_Writer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend VrmlAPI_Writer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

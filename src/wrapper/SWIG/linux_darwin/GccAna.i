@@ -63,8 +63,18 @@ class Handle_GccAna_NoSolution : public Handle_Standard_Failure {
 };
 %feature("shadow") Handle_GccAna_NoSolution::~Handle_GccAna_NoSolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GccAna_NoSolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_CircLin2dBisec;
@@ -82,8 +92,18 @@ class GccAna_CircLin2dBisec {
 };
 %feature("shadow") GccAna_CircLin2dBisec::~GccAna_CircLin2dBisec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_CircLin2dBisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_Lin2dTanObl;
@@ -109,8 +129,18 @@ class GccAna_Lin2dTanObl {
 };
 %feature("shadow") GccAna_Lin2dTanObl::~GccAna_Lin2dTanObl %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_Lin2dTanObl {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_Lin2dBisec;
@@ -132,8 +162,18 @@ class GccAna_Lin2dBisec {
 };
 %feature("shadow") GccAna_Lin2dBisec::~GccAna_Lin2dBisec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_Lin2dBisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_Pnt2dBisec;
@@ -151,8 +191,18 @@ class GccAna_Pnt2dBisec {
 };
 %feature("shadow") GccAna_Pnt2dBisec::~GccAna_Pnt2dBisec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_Pnt2dBisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_Circ2dTanOnRad;
@@ -188,8 +238,18 @@ class GccAna_Circ2dTanOnRad {
 };
 %feature("shadow") GccAna_Circ2dTanOnRad::~GccAna_Circ2dTanOnRad %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_Circ2dTanOnRad {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_Circ2dTanCen;
@@ -217,8 +277,18 @@ class GccAna_Circ2dTanCen {
 };
 %feature("shadow") GccAna_Circ2dTanCen::~GccAna_Circ2dTanCen %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_Circ2dTanCen {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_Lin2dTanPer;
@@ -248,8 +318,18 @@ class GccAna_Lin2dTanPer {
 };
 %feature("shadow") GccAna_Lin2dTanPer::~GccAna_Lin2dTanPer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_Lin2dTanPer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_Circ2d3Tan;
@@ -299,8 +379,18 @@ class GccAna_Circ2d3Tan {
 };
 %feature("shadow") GccAna_Circ2d3Tan::~GccAna_Circ2d3Tan %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_Circ2d3Tan {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_NoSolution;
@@ -332,8 +422,18 @@ class GccAna_NoSolution : public Standard_Failure {
 };
 %feature("shadow") GccAna_NoSolution::~GccAna_NoSolution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_NoSolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_LinPnt2dBisec;
@@ -349,8 +449,18 @@ class GccAna_LinPnt2dBisec {
 };
 %feature("shadow") GccAna_LinPnt2dBisec::~GccAna_LinPnt2dBisec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_LinPnt2dBisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_Circ2d2TanRad;
@@ -388,8 +498,18 @@ class GccAna_Circ2d2TanRad {
 };
 %feature("shadow") GccAna_Circ2d2TanRad::~GccAna_Circ2d2TanRad %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_Circ2d2TanRad {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_Lin2d2Tan;
@@ -417,8 +537,18 @@ class GccAna_Lin2d2Tan {
 };
 %feature("shadow") GccAna_Lin2d2Tan::~GccAna_Lin2d2Tan %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_Lin2d2Tan {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_Lin2dTanPar;
@@ -442,8 +572,18 @@ class GccAna_Lin2dTanPar {
 };
 %feature("shadow") GccAna_Lin2dTanPar::~GccAna_Lin2dTanPar %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_Lin2dTanPar {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_CircPnt2dBisec;
@@ -461,8 +601,18 @@ class GccAna_CircPnt2dBisec {
 };
 %feature("shadow") GccAna_CircPnt2dBisec::~GccAna_CircPnt2dBisec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_CircPnt2dBisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_Circ2dBisec;
@@ -480,8 +630,18 @@ class GccAna_Circ2dBisec {
 };
 %feature("shadow") GccAna_Circ2dBisec::~GccAna_Circ2dBisec %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_Circ2dBisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GccAna_Circ2d2TanOn;
@@ -533,5 +693,15 @@ class GccAna_Circ2d2TanOn {
 };
 %feature("shadow") GccAna_Circ2d2TanOn::~GccAna_Circ2d2TanOn %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GccAna_Circ2d2TanOn {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

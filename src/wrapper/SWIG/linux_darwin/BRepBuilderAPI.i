@@ -117,8 +117,18 @@ class Handle_BRepBuilderAPI_Sewing : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_BRepBuilderAPI_Sewing::~Handle_BRepBuilderAPI_Sewing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepBuilderAPI_Sewing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_Command;
@@ -134,8 +144,18 @@ class BRepBuilderAPI_Command {
 };
 %feature("shadow") BRepBuilderAPI_Command::~BRepBuilderAPI_Command %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_Command {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_MakeShape;
@@ -155,8 +175,18 @@ class BRepBuilderAPI_MakeShape : public BRepBuilderAPI_Command {
 };
 %feature("shadow") BRepBuilderAPI_MakeShape::~BRepBuilderAPI_MakeShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_MakeShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_ModifyShape;
@@ -168,8 +198,18 @@ class BRepBuilderAPI_ModifyShape : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepBuilderAPI_ModifyShape::~BRepBuilderAPI_ModifyShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_ModifyShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_Copy;
@@ -185,8 +225,18 @@ class BRepBuilderAPI_Copy : public BRepBuilderAPI_ModifyShape {
 };
 %feature("shadow") BRepBuilderAPI_Copy::~BRepBuilderAPI_Copy %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_Copy {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_Sewing;
@@ -292,8 +342,18 @@ class BRepBuilderAPI_Sewing : public MMgt_TShared {
 };
 %feature("shadow") BRepBuilderAPI_Sewing::~BRepBuilderAPI_Sewing %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_Sewing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_MakeWire;
@@ -333,8 +393,18 @@ class BRepBuilderAPI_MakeWire : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepBuilderAPI_MakeWire::~BRepBuilderAPI_MakeWire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_MakeWire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_MakeEdge;
@@ -448,8 +518,18 @@ class BRepBuilderAPI_MakeEdge : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepBuilderAPI_MakeEdge::~BRepBuilderAPI_MakeEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_MakeEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_FindPlane;
@@ -469,8 +549,18 @@ class BRepBuilderAPI_FindPlane {
 };
 %feature("shadow") BRepBuilderAPI_FindPlane::~BRepBuilderAPI_FindPlane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_FindPlane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_MakeEdge2d;
@@ -558,8 +648,18 @@ class BRepBuilderAPI_MakeEdge2d : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepBuilderAPI_MakeEdge2d::~BRepBuilderAPI_MakeEdge2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_MakeEdge2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_NurbsConvert;
@@ -575,8 +675,18 @@ class BRepBuilderAPI_NurbsConvert : public BRepBuilderAPI_ModifyShape {
 };
 %feature("shadow") BRepBuilderAPI_NurbsConvert::~BRepBuilderAPI_NurbsConvert %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_NurbsConvert {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_MakeVertex;
@@ -590,8 +700,18 @@ class BRepBuilderAPI_MakeVertex : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepBuilderAPI_MakeVertex::~BRepBuilderAPI_MakeVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_MakeVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_Transform;
@@ -611,8 +731,18 @@ class BRepBuilderAPI_Transform : public BRepBuilderAPI_ModifyShape {
 };
 %feature("shadow") BRepBuilderAPI_Transform::~BRepBuilderAPI_Transform %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_Transform {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_Collect;
@@ -636,8 +766,18 @@ class BRepBuilderAPI_Collect {
 };
 %feature("shadow") BRepBuilderAPI_Collect::~BRepBuilderAPI_Collect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_Collect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_GTransform;
@@ -657,8 +797,18 @@ class BRepBuilderAPI_GTransform : public BRepBuilderAPI_ModifyShape {
 };
 %feature("shadow") BRepBuilderAPI_GTransform::~BRepBuilderAPI_GTransform %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_GTransform {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_MakePolygon;
@@ -700,8 +850,18 @@ class BRepBuilderAPI_MakePolygon : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepBuilderAPI_MakePolygon::~BRepBuilderAPI_MakePolygon %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_MakePolygon {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_MakeSolid;
@@ -733,8 +893,18 @@ class BRepBuilderAPI_MakeSolid : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepBuilderAPI_MakeSolid::~BRepBuilderAPI_MakeSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_MakeSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_MakeFace;
@@ -802,8 +972,18 @@ class BRepBuilderAPI_MakeFace : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepBuilderAPI_MakeFace::~BRepBuilderAPI_MakeFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_MakeFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI_MakeShell;
@@ -827,8 +1007,18 @@ class BRepBuilderAPI_MakeShell : public BRepBuilderAPI_MakeShape {
 };
 %feature("shadow") BRepBuilderAPI_MakeShell::~BRepBuilderAPI_MakeShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI_MakeShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepBuilderAPI;
@@ -848,5 +1038,15 @@ class BRepBuilderAPI {
 };
 %feature("shadow") BRepBuilderAPI::~BRepBuilderAPI %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepBuilderAPI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

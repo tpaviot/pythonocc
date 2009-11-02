@@ -52,8 +52,18 @@ class IGESCAFControl {
 };
 %feature("shadow") IGESCAFControl::~IGESCAFControl %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESCAFControl {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESCAFControl_Writer;
@@ -85,8 +95,18 @@ class IGESCAFControl_Writer : public IGESControl_Writer {
 };
 %feature("shadow") IGESCAFControl_Writer::~IGESCAFControl_Writer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESCAFControl_Writer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESCAFControl_Reader;
@@ -118,5 +138,15 @@ class IGESCAFControl_Reader : public IGESControl_Reader {
 };
 %feature("shadow") IGESCAFControl_Reader::~IGESCAFControl_Reader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESCAFControl_Reader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

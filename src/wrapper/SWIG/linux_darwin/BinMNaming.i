@@ -63,8 +63,18 @@ class Handle_BinMNaming_NamingDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMNaming_NamingDriver::~Handle_BinMNaming_NamingDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMNaming_NamingDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMNaming_NamedShapeDriver;
@@ -91,8 +101,18 @@ class Handle_BinMNaming_NamedShapeDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMNaming_NamedShapeDriver::~Handle_BinMNaming_NamedShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMNaming_NamedShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMNaming;
@@ -106,8 +126,18 @@ class BinMNaming {
 };
 %feature("shadow") BinMNaming::~BinMNaming %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMNaming {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMNaming_NamingDriver;
@@ -137,8 +167,18 @@ class BinMNaming_NamingDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMNaming_NamingDriver::~BinMNaming_NamingDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMNaming_NamingDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMNaming_NamedShapeDriver;
@@ -189,5 +229,15 @@ class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMNaming_NamedShapeDriver::~BinMNaming_NamedShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMNaming_NamedShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

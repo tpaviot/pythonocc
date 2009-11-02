@@ -110,8 +110,18 @@ class Handle_TDataStd_DeltaOnModificationOfExtStringArray : public Handle_TDF_De
 };
 %feature("shadow") Handle_TDataStd_DeltaOnModificationOfExtStringArray::~Handle_TDataStd_DeltaOnModificationOfExtStringArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_DeltaOnModificationOfExtStringArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Relation;
@@ -138,8 +148,18 @@ class Handle_TDataStd_Relation : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Relation::~Handle_TDataStd_Relation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Relation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringByte;
@@ -166,8 +186,18 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringByte : public Handle_TCollecti
 };
 %feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringByte::~Handle_TDataStd_DataMapNodeOfDataMapOfStringByte %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_ListNodeOfListOfExtendedString;
@@ -194,8 +224,18 @@ class Handle_TDataStd_ListNodeOfListOfExtendedString : public Handle_TCollection
 };
 %feature("shadow") Handle_TDataStd_ListNodeOfListOfExtendedString::~Handle_TDataStd_ListNodeOfListOfExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_ListNodeOfListOfExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_ExtStringList;
@@ -222,8 +262,18 @@ class Handle_TDataStd_ExtStringList : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_ExtStringList::~Handle_TDataStd_ExtStringList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_ExtStringList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_TreeNode;
@@ -250,8 +300,18 @@ class Handle_TDataStd_TreeNode : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_TreeNode::~Handle_TDataStd_TreeNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_TreeNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_BooleanList;
@@ -278,8 +338,18 @@ class Handle_TDataStd_BooleanList : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_BooleanList::~Handle_TDataStd_BooleanList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_BooleanList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Pattern;
@@ -306,8 +376,18 @@ class Handle_TDataStd_Pattern : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Pattern::~Handle_TDataStd_Pattern %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Pattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Geometry;
@@ -334,8 +414,18 @@ class Handle_TDataStd_Geometry : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Geometry::~Handle_TDataStd_Geometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Geometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_UAttribute;
@@ -362,8 +452,18 @@ class Handle_TDataStd_UAttribute : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_UAttribute::~Handle_TDataStd_UAttribute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_UAttribute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Axis;
@@ -390,8 +490,18 @@ class Handle_TDataStd_Axis : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Axis::~Handle_TDataStd_Axis %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Axis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringReal;
@@ -418,8 +528,18 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringReal : public Handle_TCollecti
 };
 %feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringReal::~Handle_TDataStd_DataMapNodeOfDataMapOfStringReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_AsciiString;
@@ -446,8 +566,18 @@ class Handle_TDataStd_AsciiString : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_AsciiString::~Handle_TDataStd_AsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_AsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringHArray1OfReal;
@@ -474,8 +604,18 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfReal : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_TDataStd_HDataMapOfStringHArray1OfReal::~Handle_TDataStd_HDataMapOfStringHArray1OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_HDataMapOfStringHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringByte;
@@ -502,8 +642,18 @@ class Handle_TDataStd_HDataMapOfStringByte : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDataStd_HDataMapOfStringByte::~Handle_TDataStd_HDataMapOfStringByte %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_HDataMapOfStringByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_ReferenceArray;
@@ -530,8 +680,18 @@ class Handle_TDataStd_ReferenceArray : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_ReferenceArray::~Handle_TDataStd_ReferenceArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_ReferenceArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger;
@@ -558,8 +718,18 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public Hand
 };
 %feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger::~Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_HArray1OfByte;
@@ -586,8 +756,18 @@ class Handle_TDataStd_HArray1OfByte : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDataStd_HArray1OfByte::~Handle_TDataStd_HArray1OfByte %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_HArray1OfByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfIntArray;
@@ -614,8 +794,18 @@ class Handle_TDataStd_DeltaOnModificationOfIntArray : public Handle_TDF_DeltaOnM
 };
 %feature("shadow") Handle_TDataStd_DeltaOnModificationOfIntArray::~Handle_TDataStd_DeltaOnModificationOfIntArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_DeltaOnModificationOfIntArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Point;
@@ -642,8 +832,18 @@ class Handle_TDataStd_Point : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Point::~Handle_TDataStd_Point %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Constraint;
@@ -670,8 +870,18 @@ class Handle_TDataStd_Constraint : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Constraint::~Handle_TDataStd_Constraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Constraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringInteger;
@@ -698,8 +908,18 @@ class Handle_TDataStd_HDataMapOfStringInteger : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDataStd_HDataMapOfStringInteger::~Handle_TDataStd_HDataMapOfStringInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_HDataMapOfStringInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfByteArray;
@@ -726,8 +946,18 @@ class Handle_TDataStd_DeltaOnModificationOfByteArray : public Handle_TDF_DeltaOn
 };
 %feature("shadow") Handle_TDataStd_DeltaOnModificationOfByteArray::~Handle_TDataStd_DeltaOnModificationOfByteArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_DeltaOnModificationOfByteArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_IntegerList;
@@ -754,8 +984,18 @@ class Handle_TDataStd_IntegerList : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_IntegerList::~Handle_TDataStd_IntegerList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_IntegerList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfIntPackedMap;
@@ -782,8 +1022,18 @@ class Handle_TDataStd_DeltaOnModificationOfIntPackedMap : public Handle_TDF_Delt
 };
 %feature("shadow") Handle_TDataStd_DeltaOnModificationOfIntPackedMap::~Handle_TDataStd_DeltaOnModificationOfIntPackedMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_DeltaOnModificationOfIntPackedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_ExtStringArray;
@@ -810,8 +1060,18 @@ class Handle_TDataStd_ExtStringArray : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_ExtStringArray::~Handle_TDataStd_ExtStringArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_ExtStringArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Position;
@@ -838,8 +1098,18 @@ class Handle_TDataStd_Position : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Position::~Handle_TDataStd_Position %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Position {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_IntegerArray;
@@ -866,8 +1136,18 @@ class Handle_TDataStd_IntegerArray : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_IntegerArray::~Handle_TDataStd_IntegerArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_IntegerArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringReal;
@@ -894,8 +1174,18 @@ class Handle_TDataStd_HDataMapOfStringReal : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDataStd_HDataMapOfStringReal::~Handle_TDataStd_HDataMapOfStringReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_HDataMapOfStringReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Plane;
@@ -922,8 +1212,18 @@ class Handle_TDataStd_Plane : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Plane::~Handle_TDataStd_Plane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Plane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_ReferenceList;
@@ -950,8 +1250,18 @@ class Handle_TDataStd_ReferenceList : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_ReferenceList::~Handle_TDataStd_ReferenceList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_ReferenceList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringString;
@@ -978,8 +1288,18 @@ class Handle_TDataStd_HDataMapOfStringString : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDataStd_HDataMapOfStringString::~Handle_TDataStd_HDataMapOfStringString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_HDataMapOfStringString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringHArray1OfInteger;
@@ -1006,8 +1326,18 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfInteger : public Handle_MMgt_TSha
 };
 %feature("shadow") Handle_TDataStd_HDataMapOfStringHArray1OfInteger::~Handle_TDataStd_HDataMapOfStringHArray1OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_HDataMapOfStringHArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfRealArray;
@@ -1034,8 +1364,18 @@ class Handle_TDataStd_DeltaOnModificationOfRealArray : public Handle_TDF_DeltaOn
 };
 %feature("shadow") Handle_TDataStd_DeltaOnModificationOfRealArray::~Handle_TDataStd_DeltaOnModificationOfRealArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_DeltaOnModificationOfRealArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger;
@@ -1062,8 +1402,18 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger : public Handle_TColle
 };
 %feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger::~Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Variable;
@@ -1090,8 +1440,18 @@ class Handle_TDataStd_Variable : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Variable::~Handle_TDataStd_Variable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Variable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_BooleanArray;
@@ -1118,8 +1478,18 @@ class Handle_TDataStd_BooleanArray : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_BooleanArray::~Handle_TDataStd_BooleanArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_BooleanArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_PatternStd;
@@ -1146,8 +1516,18 @@ class Handle_TDataStd_PatternStd : public Handle_TDataStd_Pattern {
 };
 %feature("shadow") Handle_TDataStd_PatternStd::~Handle_TDataStd_PatternStd %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_PatternStd {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_IntPackedMap;
@@ -1174,8 +1554,18 @@ class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_IntPackedMap::~Handle_TDataStd_IntPackedMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_IntPackedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_HLabelArray1;
@@ -1202,8 +1592,18 @@ class Handle_TDataStd_HLabelArray1 : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDataStd_HLabelArray1::~Handle_TDataStd_HLabelArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_HLabelArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_HArray1OfTrsf;
@@ -1230,8 +1630,18 @@ class Handle_TDataStd_HArray1OfTrsf : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TDataStd_HArray1OfTrsf::~Handle_TDataStd_HArray1OfTrsf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_HArray1OfTrsf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Name;
@@ -1258,8 +1668,18 @@ class Handle_TDataStd_Name : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Name::~Handle_TDataStd_Name %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Name {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_ListNodeOfListOfByte;
@@ -1286,8 +1706,18 @@ class Handle_TDataStd_ListNodeOfListOfByte : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_TDataStd_ListNodeOfListOfByte::~Handle_TDataStd_ListNodeOfListOfByte %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_ListNodeOfListOfByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Tick;
@@ -1314,8 +1744,18 @@ class Handle_TDataStd_Tick : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Tick::~Handle_TDataStd_Tick %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Tick {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Expression;
@@ -1342,8 +1782,18 @@ class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Expression::~Handle_TDataStd_Expression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Expression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Placement;
@@ -1370,8 +1820,18 @@ class Handle_TDataStd_Placement : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Placement::~Handle_TDataStd_Placement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Placement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Shape;
@@ -1398,8 +1858,18 @@ class Handle_TDataStd_Shape : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Shape::~Handle_TDataStd_Shape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Shape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Comment;
@@ -1426,8 +1896,18 @@ class Handle_TDataStd_Comment : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Comment::~Handle_TDataStd_Comment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Comment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringString;
@@ -1454,8 +1934,18 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringString : public Handle_TCollec
 };
 %feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringString::~Handle_TDataStd_DataMapNodeOfDataMapOfStringString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Integer;
@@ -1482,8 +1972,18 @@ class Handle_TDataStd_Integer : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Integer::~Handle_TDataStd_Integer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Integer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Directory;
@@ -1510,8 +2010,18 @@ class Handle_TDataStd_Directory : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Directory::~Handle_TDataStd_Directory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Directory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Current;
@@ -1538,8 +2048,18 @@ class Handle_TDataStd_Current : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Current::~Handle_TDataStd_Current %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Current {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_RealArray;
@@ -1566,8 +2086,18 @@ class Handle_TDataStd_RealArray : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_RealArray::~Handle_TDataStd_RealArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_RealArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_NoteBook;
@@ -1594,8 +2124,18 @@ class Handle_TDataStd_NoteBook : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_NoteBook::~Handle_TDataStd_NoteBook %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_NoteBook {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_RealList;
@@ -1622,8 +2162,18 @@ class Handle_TDataStd_RealList : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_RealList::~Handle_TDataStd_RealList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_RealList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_ByteArray;
@@ -1650,8 +2200,18 @@ class Handle_TDataStd_ByteArray : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_ByteArray::~Handle_TDataStd_ByteArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_ByteArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal;
@@ -1678,8 +2238,18 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public Handle_
 };
 %feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal::~Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_Real;
@@ -1706,8 +2276,18 @@ class Handle_TDataStd_Real : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_Real::~Handle_TDataStd_Real %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_Real {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TDataStd_NamedData;
@@ -1734,8 +2314,18 @@ class Handle_TDataStd_NamedData : public Handle_TDF_Attribute {
 };
 %feature("shadow") Handle_TDataStd_NamedData::~Handle_TDataStd_NamedData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TDataStd_NamedData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_HDataMapOfStringHArray1OfInteger;
@@ -1765,8 +2355,18 @@ class TDataStd_HDataMapOfStringHArray1OfInteger : public MMgt_TShared {
 };
 %feature("shadow") TDataStd_HDataMapOfStringHArray1OfInteger::~TDataStd_HDataMapOfStringHArray1OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_HDataMapOfStringHArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringByte;
@@ -1786,8 +2386,18 @@ class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMa
 };
 %feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringByte::~TDataStd_DataMapIteratorOfDataMapOfStringByte %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapIteratorOfDataMapOfStringByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_NoteBook;
@@ -1837,8 +2447,18 @@ class TDataStd_NoteBook : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_NoteBook::~TDataStd_NoteBook %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_NoteBook {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringString;
@@ -1866,8 +2486,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringString : public TCollection_MapNode {
 };
 %feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringString::~TDataStd_DataMapNodeOfDataMapOfStringString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapNodeOfDataMapOfStringString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_LabelArray1;
@@ -1907,8 +2537,18 @@ class TDataStd_LabelArray1 {
 };
 %feature("shadow") TDataStd_LabelArray1::~TDataStd_LabelArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_LabelArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_ListIteratorOfListOfExtendedString;
@@ -1930,8 +2570,18 @@ class TDataStd_ListIteratorOfListOfExtendedString {
 };
 %feature("shadow") TDataStd_ListIteratorOfListOfExtendedString::~TDataStd_ListIteratorOfListOfExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_ListIteratorOfListOfExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Array1OfByte;
@@ -1971,8 +2621,18 @@ class TDataStd_Array1OfByte {
 };
 %feature("shadow") TDataStd_Array1OfByte::~TDataStd_Array1OfByte %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Array1OfByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_NamedData;
@@ -2088,8 +2748,18 @@ class TDataStd_NamedData : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_NamedData::~TDataStd_NamedData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_NamedData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Placement;
@@ -2133,8 +2803,18 @@ class TDataStd_Placement : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Placement::~TDataStd_Placement %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Placement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapOfStringReal;
@@ -2178,8 +2858,18 @@ class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
 };
 %feature("shadow") TDataStd_DataMapOfStringReal::~TDataStd_DataMapOfStringReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapOfStringReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Pattern;
@@ -2211,8 +2901,18 @@ class TDataStd_Pattern : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Pattern::~TDataStd_Pattern %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Pattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_PatternStd;
@@ -2294,8 +2994,18 @@ class TDataStd_PatternStd : public TDataStd_Pattern {
 };
 %feature("shadow") TDataStd_PatternStd::~TDataStd_PatternStd %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_PatternStd {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_RealArray;
@@ -2363,8 +3073,18 @@ class TDataStd_RealArray : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_RealArray::~TDataStd_RealArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_RealArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringInteger;
@@ -2402,8 +3122,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringInteger : public TCollection_MapNode 
 };
 %feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringInteger::~TDataStd_DataMapNodeOfDataMapOfStringInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapNodeOfDataMapOfStringInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_ListOfExtendedString;
@@ -2453,8 +3183,18 @@ class TDataStd_ListOfExtendedString {
 };
 %feature("shadow") TDataStd_ListOfExtendedString::~TDataStd_ListOfExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_ListOfExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringReal;
@@ -2474,8 +3214,18 @@ class TDataStd_DataMapIteratorOfDataMapOfStringReal : public TCollection_BasicMa
 };
 %feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringReal::~TDataStd_DataMapIteratorOfDataMapOfStringReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapIteratorOfDataMapOfStringReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DeltaOnModificationOfIntPackedMap;
@@ -2501,8 +3251,18 @@ class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModificatio
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfIntPackedMap::~TDataStd_DeltaOnModificationOfIntPackedMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DeltaOnModificationOfIntPackedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Relation;
@@ -2554,8 +3314,18 @@ class TDataStd_Relation : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Relation::~TDataStd_Relation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Relation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_ListNodeOfListOfExtendedString;
@@ -2581,8 +3351,18 @@ class TDataStd_ListNodeOfListOfExtendedString : public TCollection_MapNode {
 };
 %feature("shadow") TDataStd_ListNodeOfListOfExtendedString::~TDataStd_ListNodeOfListOfExtendedString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_ListNodeOfListOfExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_AsciiString;
@@ -2632,8 +3412,18 @@ class TDataStd_AsciiString : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_AsciiString::~TDataStd_AsciiString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_AsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringString;
@@ -2653,8 +3443,18 @@ class TDataStd_DataMapIteratorOfDataMapOfStringString : public TCollection_Basic
 };
 %feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringString::~TDataStd_DataMapIteratorOfDataMapOfStringString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapIteratorOfDataMapOfStringString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Expression;
@@ -2706,8 +3506,18 @@ class TDataStd_Expression : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Expression::~TDataStd_Expression %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Expression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DeltaOnModificationOfExtStringArray;
@@ -2733,8 +3543,18 @@ class TDataStd_DeltaOnModificationOfExtStringArray : public TDF_DeltaOnModificat
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfExtStringArray::~TDataStd_DeltaOnModificationOfExtStringArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DeltaOnModificationOfExtStringArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Point;
@@ -2780,8 +3600,18 @@ class TDataStd_Point : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Point::~TDataStd_Point %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_ListNodeOfListOfByte;
@@ -2807,8 +3637,18 @@ class TDataStd_ListNodeOfListOfByte : public TCollection_MapNode {
 };
 %feature("shadow") TDataStd_ListNodeOfListOfByte::~TDataStd_ListNodeOfListOfByte %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_ListNodeOfListOfByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Position;
@@ -2852,8 +3692,18 @@ class TDataStd_Position : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Position::~TDataStd_Position %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Position {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DeltaOnModificationOfRealArray;
@@ -2879,8 +3729,18 @@ class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfRealArray::~TDataStd_DeltaOnModificationOfRealArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DeltaOnModificationOfRealArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_ListOfByte;
@@ -2930,8 +3790,18 @@ class TDataStd_ListOfByte {
 };
 %feature("shadow") TDataStd_ListOfByte::~TDataStd_ListOfByte %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_ListOfByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_BooleanArray;
@@ -2993,8 +3863,18 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_BooleanArray::~TDataStd_BooleanArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_BooleanArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_HDataMapOfStringInteger;
@@ -3024,8 +3904,18 @@ class TDataStd_HDataMapOfStringInteger : public MMgt_TShared {
 };
 %feature("shadow") TDataStd_HDataMapOfStringInteger::~TDataStd_HDataMapOfStringInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_HDataMapOfStringInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_ByteArray;
@@ -3093,8 +3983,18 @@ class TDataStd_ByteArray : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_ByteArray::~TDataStd_ByteArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_ByteArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_IntPackedMap;
@@ -3162,8 +4062,18 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_IntPackedMap::~TDataStd_IntPackedMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_IntPackedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal;
@@ -3183,8 +4093,18 @@ class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal : public TCollectio
 };
 %feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal::~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DeltaOnModificationOfByteArray;
@@ -3210,8 +4130,18 @@ class TDataStd_DeltaOnModificationOfByteArray : public TDF_DeltaOnModification {
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfByteArray::~TDataStd_DeltaOnModificationOfByteArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DeltaOnModificationOfByteArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapOfStringByte;
@@ -3245,8 +4175,18 @@ class TDataStd_DataMapOfStringByte : public TCollection_BasicMap {
 };
 %feature("shadow") TDataStd_DataMapOfStringByte::~TDataStd_DataMapOfStringByte %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapOfStringByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_ExtStringList;
@@ -3312,8 +4252,18 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_ExtStringList::~TDataStd_ExtStringList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_ExtStringList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapOfStringHArray1OfInteger;
@@ -3347,8 +4297,18 @@ class TDataStd_DataMapOfStringHArray1OfInteger : public TCollection_BasicMap {
 };
 %feature("shadow") TDataStd_DataMapOfStringHArray1OfInteger::~TDataStd_DataMapOfStringHArray1OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapOfStringHArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Integer;
@@ -3398,8 +4358,18 @@ class TDataStd_Integer : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Integer::~TDataStd_Integer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Integer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Array1OfTrsf;
@@ -3439,8 +4409,18 @@ class TDataStd_Array1OfTrsf {
 };
 %feature("shadow") TDataStd_Array1OfTrsf::~TDataStd_Array1OfTrsf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Array1OfTrsf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapOfStringHArray1OfReal;
@@ -3474,8 +4454,18 @@ class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
 };
 %feature("shadow") TDataStd_DataMapOfStringHArray1OfReal::~TDataStd_DataMapOfStringHArray1OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapOfStringHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_BooleanList;
@@ -3535,8 +4525,18 @@ class TDataStd_BooleanList : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_BooleanList::~TDataStd_BooleanList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_BooleanList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringByte;
@@ -3564,8 +4564,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringByte : public TCollection_MapNode {
 };
 %feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringByte::~TDataStd_DataMapNodeOfDataMapOfStringByte %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapNodeOfDataMapOfStringByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_HDataMapOfStringReal;
@@ -3595,8 +4605,18 @@ class TDataStd_HDataMapOfStringReal : public MMgt_TShared {
 };
 %feature("shadow") TDataStd_HDataMapOfStringReal::~TDataStd_HDataMapOfStringReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_HDataMapOfStringReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringInteger;
@@ -3616,8 +4636,18 @@ class TDataStd_DataMapIteratorOfDataMapOfStringInteger : public TCollection_Basi
 };
 %feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringInteger::~TDataStd_DataMapIteratorOfDataMapOfStringInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapIteratorOfDataMapOfStringInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_IntegerList;
@@ -3683,8 +4713,18 @@ class TDataStd_IntegerList : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_IntegerList::~TDataStd_IntegerList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_IntegerList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DeltaOnModificationOfIntArray;
@@ -3710,8 +4750,18 @@ class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfIntArray::~TDataStd_DeltaOnModificationOfIntArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DeltaOnModificationOfIntArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal;
@@ -3739,8 +4789,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public TCollection_Ma
 };
 %feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal::~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapOfStringString;
@@ -3774,8 +4834,18 @@ class TDataStd_DataMapOfStringString : public TCollection_BasicMap {
 };
 %feature("shadow") TDataStd_DataMapOfStringString::~TDataStd_DataMapOfStringString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapOfStringString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_IntegerArray;
@@ -3843,8 +4913,18 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_IntegerArray::~TDataStd_IntegerArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_IntegerArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Current;
@@ -3896,8 +4976,18 @@ class TDataStd_Current : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Current::~TDataStd_Current %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Current {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_HDataMapOfStringByte;
@@ -3927,8 +5017,18 @@ class TDataStd_HDataMapOfStringByte : public MMgt_TShared {
 };
 %feature("shadow") TDataStd_HDataMapOfStringByte::~TDataStd_HDataMapOfStringByte %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_HDataMapOfStringByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringReal;
@@ -3966,8 +5066,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringReal : public TCollection_MapNode {
 };
 %feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringReal::~TDataStd_DataMapNodeOfDataMapOfStringReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_HDataMapOfStringString;
@@ -3997,8 +5107,18 @@ class TDataStd_HDataMapOfStringString : public MMgt_TShared {
 };
 %feature("shadow") TDataStd_HDataMapOfStringString::~TDataStd_HDataMapOfStringString %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_HDataMapOfStringString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_UAttribute;
@@ -4044,8 +5164,18 @@ class TDataStd_UAttribute : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_UAttribute::~TDataStd_UAttribute %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_UAttribute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_HLabelArray1;
@@ -4089,8 +5219,18 @@ class TDataStd_HLabelArray1 : public MMgt_TShared {
 };
 %feature("shadow") TDataStd_HLabelArray1::~TDataStd_HLabelArray1 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_HLabelArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd;
@@ -4110,8 +5250,18 @@ class TDataStd {
 };
 %feature("shadow") TDataStd::~TDataStd %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapOfStringInteger;
@@ -4155,8 +5305,18 @@ class TDataStd_DataMapOfStringInteger : public TCollection_BasicMap {
 };
 %feature("shadow") TDataStd_DataMapOfStringInteger::~TDataStd_DataMapOfStringInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapOfStringInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_ReferenceList;
@@ -4224,8 +5384,18 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_ReferenceList::~TDataStd_ReferenceList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_ReferenceList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger;
@@ -4253,8 +5423,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public TCollection
 };
 %feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger::~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Tick;
@@ -4298,8 +5478,18 @@ class TDataStd_Tick : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Tick::~TDataStd_Tick %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Tick {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Shape;
@@ -4351,8 +5541,18 @@ class TDataStd_Shape : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Shape::~TDataStd_Shape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Shape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_ReferenceArray;
@@ -4416,8 +5616,18 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_ReferenceArray::~TDataStd_ReferenceArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_ReferenceArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Comment;
@@ -4469,8 +5679,18 @@ class TDataStd_Comment : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Comment::~TDataStd_Comment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Comment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Name;
@@ -4518,8 +5738,18 @@ class TDataStd_Name : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Name::~TDataStd_Name %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Name {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_ChildNodeIterator;
@@ -4543,8 +5773,18 @@ class TDataStd_ChildNodeIterator {
 };
 %feature("shadow") TDataStd_ChildNodeIterator::~TDataStd_ChildNodeIterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_ChildNodeIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Directory;
@@ -4596,8 +5836,18 @@ class TDataStd_Directory : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Directory::~TDataStd_Directory %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Directory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_RealList;
@@ -4663,8 +5913,18 @@ class TDataStd_RealList : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_RealList::~TDataStd_RealList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_RealList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_HDataMapOfStringHArray1OfReal;
@@ -4694,8 +5954,18 @@ class TDataStd_HDataMapOfStringHArray1OfReal : public MMgt_TShared {
 };
 %feature("shadow") TDataStd_HDataMapOfStringHArray1OfReal::~TDataStd_HDataMapOfStringHArray1OfReal %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_HDataMapOfStringHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Constraint;
@@ -4787,8 +6057,18 @@ class TDataStd_Constraint : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Constraint::~TDataStd_Constraint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Constraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Variable;
@@ -4864,8 +6144,18 @@ class TDataStd_Variable : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Variable::~TDataStd_Variable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Variable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_HArray1OfByte;
@@ -4909,8 +6199,18 @@ class TDataStd_HArray1OfByte : public MMgt_TShared {
 };
 %feature("shadow") TDataStd_HArray1OfByte::~TDataStd_HArray1OfByte %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_HArray1OfByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Real;
@@ -4964,8 +6264,18 @@ class TDataStd_Real : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Real::~TDataStd_Real %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Real {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger;
@@ -4985,8 +6295,18 @@ class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger : public TCollec
 };
 %feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger::~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Plane;
@@ -5032,8 +6352,18 @@ class TDataStd_Plane : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Plane::~TDataStd_Plane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Plane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_HArray1OfTrsf;
@@ -5077,8 +6407,18 @@ class TDataStd_HArray1OfTrsf : public MMgt_TShared {
 };
 %feature("shadow") TDataStd_HArray1OfTrsf::~TDataStd_HArray1OfTrsf %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_HArray1OfTrsf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_ListIteratorOfListOfByte;
@@ -5100,8 +6440,18 @@ class TDataStd_ListIteratorOfListOfByte {
 };
 %feature("shadow") TDataStd_ListIteratorOfListOfByte::~TDataStd_ListIteratorOfListOfByte %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_ListIteratorOfListOfByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Geometry;
@@ -5181,8 +6531,18 @@ class TDataStd_Geometry : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Geometry::~TDataStd_Geometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Geometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_Axis;
@@ -5228,8 +6588,18 @@ class TDataStd_Axis : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_Axis::~TDataStd_Axis %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_Axis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_TreeNode;
@@ -5345,8 +6715,18 @@ class TDataStd_TreeNode : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_TreeNode::~TDataStd_TreeNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_TreeNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TDataStd_ExtStringArray;
@@ -5414,5 +6794,15 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 };
 %feature("shadow") TDataStd_ExtStringArray::~TDataStd_ExtStringArray %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TDataStd_ExtStringArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

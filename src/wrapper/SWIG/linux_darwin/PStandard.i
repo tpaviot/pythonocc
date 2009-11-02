@@ -63,8 +63,18 @@ class Handle_PStandard_ArrayNode : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PStandard_ArrayNode::~Handle_PStandard_ArrayNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PStandard_ArrayNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PStandard_ArrayNode;
@@ -90,5 +100,15 @@ class PStandard_ArrayNode : public Standard_Persistent {
 };
 %feature("shadow") PStandard_ArrayNode::~PStandard_ArrayNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PStandard_ArrayNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

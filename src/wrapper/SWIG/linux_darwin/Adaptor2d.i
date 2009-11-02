@@ -64,8 +64,18 @@ class Handle_Adaptor2d_HCurve2d : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Adaptor2d_HCurve2d::~Handle_Adaptor2d_HCurve2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Adaptor2d_HCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Adaptor2d_HLine2d;
@@ -92,8 +102,18 @@ class Handle_Adaptor2d_HLine2d : public Handle_Adaptor2d_HCurve2d {
 };
 %feature("shadow") Handle_Adaptor2d_HLine2d::~Handle_Adaptor2d_HLine2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Adaptor2d_HLine2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor2d_HCurve2d;
@@ -173,8 +193,18 @@ class Adaptor2d_HCurve2d : public MMgt_TShared {
 };
 %feature("shadow") Adaptor2d_HCurve2d::~Adaptor2d_HCurve2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor2d_HCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor2d_Curve2d;
@@ -244,8 +274,18 @@ class Adaptor2d_Curve2d {
 };
 %feature("shadow") Adaptor2d_Curve2d::~Adaptor2d_Curve2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor2d_Curve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor2d_Line2d;
@@ -273,8 +313,18 @@ class Adaptor2d_Line2d : public Adaptor2d_Curve2d {
 };
 %feature("shadow") Adaptor2d_Line2d::~Adaptor2d_Line2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor2d_Line2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Adaptor2d_HLine2d;
@@ -306,5 +356,15 @@ class Adaptor2d_HLine2d : public Adaptor2d_HCurve2d {
 };
 %feature("shadow") Adaptor2d_HLine2d::~Adaptor2d_HLine2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Adaptor2d_HLine2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

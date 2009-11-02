@@ -63,8 +63,18 @@ class Handle_ObjMgt_SeqNodeOfPSeqOfExtRef : public Handle_PMMgt_PManaged {
 };
 %feature("shadow") Handle_ObjMgt_SeqNodeOfPSeqOfExtRef::~Handle_ObjMgt_SeqNodeOfPSeqOfExtRef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ObjMgt_ExternRef;
@@ -91,8 +101,18 @@ class Handle_ObjMgt_ExternRef : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_ObjMgt_ExternRef::~Handle_ObjMgt_ExternRef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ObjMgt_ExternRef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ObjMgt_ExternShareable;
@@ -119,8 +139,18 @@ class Handle_ObjMgt_ExternShareable : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_ObjMgt_ExternShareable::~Handle_ObjMgt_ExternShareable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ObjMgt_ExternShareable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_ObjMgt_PSeqOfExtRef;
@@ -147,8 +177,18 @@ class Handle_ObjMgt_PSeqOfExtRef : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_ObjMgt_PSeqOfExtRef::~Handle_ObjMgt_PSeqOfExtRef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ObjMgt_PSeqOfExtRef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ObjMgt_SeqExplorerOfPSeqOfExtRef;
@@ -168,8 +208,18 @@ class ObjMgt_SeqExplorerOfPSeqOfExtRef {
 };
 %feature("shadow") ObjMgt_SeqExplorerOfPSeqOfExtRef::~ObjMgt_SeqExplorerOfPSeqOfExtRef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ObjMgt_SeqExplorerOfPSeqOfExtRef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ObjMgt_SeqNodeOfPSeqOfExtRef;
@@ -225,8 +275,18 @@ class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
 };
 %feature("shadow") ObjMgt_SeqNodeOfPSeqOfExtRef::~ObjMgt_SeqNodeOfPSeqOfExtRef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ObjMgt_PSeqOfExtRef;
@@ -324,8 +384,18 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 };
 %feature("shadow") ObjMgt_PSeqOfExtRef::~ObjMgt_PSeqOfExtRef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ObjMgt_PSeqOfExtRef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ObjMgt_ExternRef;
@@ -359,8 +429,18 @@ class ObjMgt_ExternRef : public Standard_Persistent {
 };
 %feature("shadow") ObjMgt_ExternRef::~ObjMgt_ExternRef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ObjMgt_ExternRef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ObjMgt_ExternShareable;
@@ -390,5 +470,15 @@ class ObjMgt_ExternShareable : public Standard_Persistent {
 };
 %feature("shadow") ObjMgt_ExternShareable::~ObjMgt_ExternShareable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ObjMgt_ExternShareable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

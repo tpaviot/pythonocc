@@ -58,5 +58,15 @@ class ApproxInt_SvSurfaces {
 };
 %feature("shadow") ApproxInt_SvSurfaces::~ApproxInt_SvSurfaces %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ApproxInt_SvSurfaces {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

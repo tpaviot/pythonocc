@@ -63,8 +63,18 @@ class Handle_Geom2dAdaptor_GHCurve : public Handle_Adaptor2d_HCurve2d {
 };
 %feature("shadow") Handle_Geom2dAdaptor_GHCurve::~Handle_Geom2dAdaptor_GHCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2dAdaptor_GHCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Geom2dAdaptor_HCurve;
@@ -91,8 +101,18 @@ class Handle_Geom2dAdaptor_HCurve : public Handle_Geom2dAdaptor_GHCurve {
 };
 %feature("shadow") Handle_Geom2dAdaptor_HCurve::~Handle_Geom2dAdaptor_HCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Geom2dAdaptor_HCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dAdaptor_Curve;
@@ -170,8 +190,18 @@ class Geom2dAdaptor_Curve : public Adaptor2d_Curve2d {
 };
 %feature("shadow") Geom2dAdaptor_Curve::~Geom2dAdaptor_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dAdaptor_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dAdaptor;
@@ -185,8 +215,18 @@ class Geom2dAdaptor {
 };
 %feature("shadow") Geom2dAdaptor::~Geom2dAdaptor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dAdaptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dAdaptor_GHCurve;
@@ -218,8 +258,18 @@ class Geom2dAdaptor_GHCurve : public Adaptor2d_HCurve2d {
 };
 %feature("shadow") Geom2dAdaptor_GHCurve::~Geom2dAdaptor_GHCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dAdaptor_GHCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Geom2dAdaptor_HCurve;
@@ -247,5 +297,15 @@ class Geom2dAdaptor_HCurve : public Geom2dAdaptor_GHCurve {
 };
 %feature("shadow") Geom2dAdaptor_HCurve::~Geom2dAdaptor_HCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Geom2dAdaptor_HCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

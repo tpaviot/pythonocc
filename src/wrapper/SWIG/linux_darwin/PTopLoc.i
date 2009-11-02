@@ -63,8 +63,18 @@ class Handle_PTopLoc_Datum3D : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PTopLoc_Datum3D::~Handle_PTopLoc_Datum3D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopLoc_Datum3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTopLoc_ItemLocation;
@@ -91,8 +101,18 @@ class Handle_PTopLoc_ItemLocation : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PTopLoc_ItemLocation::~Handle_PTopLoc_ItemLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTopLoc_ItemLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopLoc_Datum3D;
@@ -124,8 +144,18 @@ class PTopLoc_Datum3D : public Standard_Persistent {
 };
 %feature("shadow") PTopLoc_Datum3D::~PTopLoc_Datum3D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopLoc_Datum3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopLoc_Location;
@@ -151,8 +181,18 @@ class PTopLoc_Location {
 };
 %feature("shadow") PTopLoc_Location::~PTopLoc_Location %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopLoc_Location {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTopLoc_ItemLocation;
@@ -196,5 +236,15 @@ class PTopLoc_ItemLocation : public Standard_Persistent {
 };
 %feature("shadow") PTopLoc_ItemLocation::~PTopLoc_ItemLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTopLoc_ItemLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

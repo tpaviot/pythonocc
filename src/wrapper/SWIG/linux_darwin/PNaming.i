@@ -63,8 +63,18 @@ class Handle_PNaming_Name : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PNaming_Name::~Handle_PNaming_Name %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PNaming_Name {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PNaming_NamedShape;
@@ -91,8 +101,18 @@ class Handle_PNaming_NamedShape : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PNaming_NamedShape::~Handle_PNaming_NamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PNaming_NamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PNaming_HArray1OfNamedShape;
@@ -119,8 +139,18 @@ class Handle_PNaming_HArray1OfNamedShape : public Handle_Standard_Persistent {
 };
 %feature("shadow") Handle_PNaming_HArray1OfNamedShape::~Handle_PNaming_HArray1OfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PNaming_HArray1OfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape;
@@ -147,8 +177,18 @@ class Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public Handle_PSta
 };
 %feature("shadow") Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape::~Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PNaming_Naming;
@@ -175,8 +215,18 @@ class Handle_PNaming_Naming : public Handle_PDF_Attribute {
 };
 %feature("shadow") Handle_PNaming_Naming::~Handle_PNaming_Naming %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PNaming_Naming {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PNaming_Naming;
@@ -210,8 +260,18 @@ class PNaming_Naming : public PDF_Attribute {
 };
 %feature("shadow") PNaming_Naming::~PNaming_Naming %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PNaming_Naming {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PNaming_NamedShape;
@@ -271,8 +331,18 @@ class PNaming_NamedShape : public PDF_Attribute {
 };
 %feature("shadow") PNaming_NamedShape::~PNaming_NamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PNaming_NamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape;
@@ -290,8 +360,18 @@ class PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
 };
 %feature("shadow") PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape::~PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PNaming_FieldOfHArray1OfNamedShape;
@@ -321,8 +401,18 @@ class PNaming_FieldOfHArray1OfNamedShape : public DBC_BaseArray {
 };
 %feature("shadow") PNaming_FieldOfHArray1OfNamedShape::~PNaming_FieldOfHArray1OfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PNaming_FieldOfHArray1OfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PNaming_HArray1OfNamedShape;
@@ -382,8 +472,18 @@ class PNaming_HArray1OfNamedShape : public Standard_Persistent {
 };
 %feature("shadow") PNaming_HArray1OfNamedShape::~PNaming_HArray1OfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PNaming_HArray1OfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PNaming_Name;
@@ -449,8 +549,18 @@ class PNaming_Name : public Standard_Persistent {
 };
 %feature("shadow") PNaming_Name::~PNaming_Name %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PNaming_Name {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape;
@@ -486,5 +596,15 @@ class PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public PStandard_ArrayNod
 };
 %feature("shadow") PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape::~PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

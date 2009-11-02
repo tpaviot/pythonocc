@@ -63,8 +63,18 @@ class Handle_IGESDimen_CenterLine : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_CenterLine::~Handle_IGESDimen_CenterLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_CenterLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_DimensionDisplayData;
@@ -91,8 +101,18 @@ class Handle_IGESDimen_DimensionDisplayData : public Handle_IGESData_IGESEntity 
 };
 %feature("shadow") Handle_IGESDimen_DimensionDisplayData::~Handle_IGESDimen_DimensionDisplayData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_DimensionDisplayData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_GeneralSymbol;
@@ -119,8 +139,18 @@ class Handle_IGESDimen_GeneralSymbol : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_GeneralSymbol::~Handle_IGESDimen_GeneralSymbol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_GeneralSymbol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_GeneralLabel;
@@ -147,8 +177,18 @@ class Handle_IGESDimen_GeneralLabel : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_GeneralLabel::~Handle_IGESDimen_GeneralLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_GeneralLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_WitnessLine;
@@ -175,8 +215,18 @@ class Handle_IGESDimen_WitnessLine : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_WitnessLine::~Handle_IGESDimen_WitnessLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_WitnessLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_CurveDimension;
@@ -203,8 +253,18 @@ class Handle_IGESDimen_CurveDimension : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_CurveDimension::~Handle_IGESDimen_CurveDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_CurveDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_GeneralModule;
@@ -231,8 +291,18 @@ class Handle_IGESDimen_GeneralModule : public Handle_IGESData_GeneralModule {
 };
 %feature("shadow") Handle_IGESDimen_GeneralModule::~Handle_IGESDimen_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_DimensionTolerance;
@@ -259,8 +329,18 @@ class Handle_IGESDimen_DimensionTolerance : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_DimensionTolerance::~Handle_IGESDimen_DimensionTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_DimensionTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_BasicDimension;
@@ -287,8 +367,18 @@ class Handle_IGESDimen_BasicDimension : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_BasicDimension::~Handle_IGESDimen_BasicDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_BasicDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_AngularDimension;
@@ -315,8 +405,18 @@ class Handle_IGESDimen_AngularDimension : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_AngularDimension::~Handle_IGESDimen_AngularDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_AngularDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_PointDimension;
@@ -343,8 +443,18 @@ class Handle_IGESDimen_PointDimension : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_PointDimension::~Handle_IGESDimen_PointDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_PointDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_Section;
@@ -371,8 +481,18 @@ class Handle_IGESDimen_Section : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_Section::~Handle_IGESDimen_Section %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_Section {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_RadiusDimension;
@@ -399,8 +519,18 @@ class Handle_IGESDimen_RadiusDimension : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_RadiusDimension::~Handle_IGESDimen_RadiusDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_RadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_OrdinateDimension;
@@ -427,8 +557,18 @@ class Handle_IGESDimen_OrdinateDimension : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_OrdinateDimension::~Handle_IGESDimen_OrdinateDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_OrdinateDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_HArray1OfLeaderArrow;
@@ -455,8 +595,18 @@ class Handle_IGESDimen_HArray1OfLeaderArrow : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESDimen_HArray1OfLeaderArrow::~Handle_IGESDimen_HArray1OfLeaderArrow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_HArray1OfLeaderArrow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_ReadWriteModule;
@@ -483,8 +633,18 @@ class Handle_IGESDimen_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 };
 %feature("shadow") Handle_IGESDimen_ReadWriteModule::~Handle_IGESDimen_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_Protocol;
@@ -511,8 +671,18 @@ class Handle_IGESDimen_Protocol : public Handle_IGESData_Protocol {
 };
 %feature("shadow") Handle_IGESDimen_Protocol::~Handle_IGESDimen_Protocol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_Protocol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_FlagNote;
@@ -539,8 +709,18 @@ class Handle_IGESDimen_FlagNote : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_FlagNote::~Handle_IGESDimen_FlagNote %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_FlagNote {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_DimensionUnits;
@@ -567,8 +747,18 @@ class Handle_IGESDimen_DimensionUnits : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_DimensionUnits::~Handle_IGESDimen_DimensionUnits %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_DimensionUnits {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_NewDimensionedGeometry;
@@ -595,8 +785,18 @@ class Handle_IGESDimen_NewDimensionedGeometry : public Handle_IGESData_IGESEntit
 };
 %feature("shadow") Handle_IGESDimen_NewDimensionedGeometry::~Handle_IGESDimen_NewDimensionedGeometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_NewDimensionedGeometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_SpecificModule;
@@ -623,8 +823,18 @@ class Handle_IGESDimen_SpecificModule : public Handle_IGESData_SpecificModule {
 };
 %feature("shadow") Handle_IGESDimen_SpecificModule::~Handle_IGESDimen_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_SectionedArea;
@@ -651,8 +861,18 @@ class Handle_IGESDimen_SectionedArea : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_SectionedArea::~Handle_IGESDimen_SectionedArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_SectionedArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_HArray1OfGeneralNote;
@@ -679,8 +899,18 @@ class Handle_IGESDimen_HArray1OfGeneralNote : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESDimen_HArray1OfGeneralNote::~Handle_IGESDimen_HArray1OfGeneralNote %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_HArray1OfGeneralNote {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_DiameterDimension;
@@ -707,8 +937,18 @@ class Handle_IGESDimen_DiameterDimension : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_DiameterDimension::~Handle_IGESDimen_DiameterDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_DiameterDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_NewGeneralNote;
@@ -735,8 +975,18 @@ class Handle_IGESDimen_NewGeneralNote : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_NewGeneralNote::~Handle_IGESDimen_NewGeneralNote %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_NewGeneralNote {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_DimensionedGeometry;
@@ -763,8 +1013,18 @@ class Handle_IGESDimen_DimensionedGeometry : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_DimensionedGeometry::~Handle_IGESDimen_DimensionedGeometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_DimensionedGeometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_LeaderArrow;
@@ -791,8 +1051,18 @@ class Handle_IGESDimen_LeaderArrow : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_LeaderArrow::~Handle_IGESDimen_LeaderArrow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_LeaderArrow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_GeneralNote;
@@ -819,8 +1089,18 @@ class Handle_IGESDimen_GeneralNote : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_GeneralNote::~Handle_IGESDimen_GeneralNote %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_GeneralNote {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDimen_LinearDimension;
@@ -847,8 +1127,18 @@ class Handle_IGESDimen_LinearDimension : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDimen_LinearDimension::~Handle_IGESDimen_LinearDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDimen_LinearDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_BasicDimension;
@@ -884,8 +1174,18 @@ class IGESDimen_BasicDimension : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_BasicDimension::~IGESDimen_BasicDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_BasicDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_HArray1OfLeaderArrow;
@@ -929,8 +1229,18 @@ class IGESDimen_HArray1OfLeaderArrow : public MMgt_TShared {
 };
 %feature("shadow") IGESDimen_HArray1OfLeaderArrow::~IGESDimen_HArray1OfLeaderArrow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_HArray1OfLeaderArrow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolCenterLine;
@@ -958,8 +1268,18 @@ class IGESDimen_ToolCenterLine {
 };
 %feature("shadow") IGESDimen_ToolCenterLine::~IGESDimen_ToolCenterLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolCenterLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_CenterLine;
@@ -999,8 +1319,18 @@ class IGESDimen_CenterLine : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_CenterLine::~IGESDimen_CenterLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_CenterLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_GeneralSymbol;
@@ -1040,8 +1370,18 @@ class IGESDimen_GeneralSymbol : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_GeneralSymbol::~IGESDimen_GeneralSymbol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_GeneralSymbol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_DimensionedGeometry;
@@ -1075,8 +1415,18 @@ class IGESDimen_DimensionedGeometry : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_DimensionedGeometry::~IGESDimen_DimensionedGeometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_DimensionedGeometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolSection;
@@ -1104,8 +1454,18 @@ class IGESDimen_ToolSection {
 };
 %feature("shadow") IGESDimen_ToolSection::~IGESDimen_ToolSection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_LeaderArrow;
@@ -1149,8 +1509,18 @@ class IGESDimen_LeaderArrow : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_LeaderArrow::~IGESDimen_LeaderArrow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_LeaderArrow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_SectionedArea;
@@ -1198,8 +1568,18 @@ class IGESDimen_SectionedArea : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_SectionedArea::~IGESDimen_SectionedArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_SectionedArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_GeneralNote;
@@ -1257,8 +1637,18 @@ class IGESDimen_GeneralNote : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_GeneralNote::~IGESDimen_GeneralNote %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_GeneralNote {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ReadWriteModule;
@@ -1288,8 +1678,18 @@ class IGESDimen_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %feature("shadow") IGESDimen_ReadWriteModule::~IGESDimen_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_WitnessLine;
@@ -1325,8 +1725,18 @@ class IGESDimen_WitnessLine : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_WitnessLine::~IGESDimen_WitnessLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_WitnessLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_PointDimension;
@@ -1364,8 +1774,18 @@ class IGESDimen_PointDimension : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_PointDimension::~IGESDimen_PointDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_PointDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolGeneralNote;
@@ -1391,8 +1811,18 @@ class IGESDimen_ToolGeneralNote {
 };
 %feature("shadow") IGESDimen_ToolGeneralNote::~IGESDimen_ToolGeneralNote %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolGeneralNote {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_Array1OfGeneralNote;
@@ -1432,8 +1862,18 @@ class IGESDimen_Array1OfGeneralNote {
 };
 %feature("shadow") IGESDimen_Array1OfGeneralNote::~IGESDimen_Array1OfGeneralNote %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_Array1OfGeneralNote {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolRadiusDimension;
@@ -1459,8 +1899,18 @@ class IGESDimen_ToolRadiusDimension {
 };
 %feature("shadow") IGESDimen_ToolRadiusDimension::~IGESDimen_ToolRadiusDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolRadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolDimensionedGeometry;
@@ -1488,8 +1938,18 @@ class IGESDimen_ToolDimensionedGeometry {
 };
 %feature("shadow") IGESDimen_ToolDimensionedGeometry::~IGESDimen_ToolDimensionedGeometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolDimensionedGeometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolFlagNote;
@@ -1515,8 +1975,18 @@ class IGESDimen_ToolFlagNote {
 };
 %feature("shadow") IGESDimen_ToolFlagNote::~IGESDimen_ToolFlagNote %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolFlagNote {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_SpecificModule;
@@ -1544,8 +2014,18 @@ class IGESDimen_SpecificModule : public IGESData_SpecificModule {
 };
 %feature("shadow") IGESDimen_SpecificModule::~IGESDimen_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_Section;
@@ -1583,8 +2063,18 @@ class IGESDimen_Section : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_Section::~IGESDimen_Section %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_Section {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolGeneralLabel;
@@ -1610,8 +2100,18 @@ class IGESDimen_ToolGeneralLabel {
 };
 %feature("shadow") IGESDimen_ToolGeneralLabel::~IGESDimen_ToolGeneralLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolGeneralLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_DimensionTolerance;
@@ -1655,8 +2155,18 @@ class IGESDimen_DimensionTolerance : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_DimensionTolerance::~IGESDimen_DimensionTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_DimensionTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolDimensionTolerance;
@@ -1684,8 +2194,18 @@ class IGESDimen_ToolDimensionTolerance {
 };
 %feature("shadow") IGESDimen_ToolDimensionTolerance::~IGESDimen_ToolDimensionTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolDimensionTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_FlagNote;
@@ -1733,8 +2253,18 @@ class IGESDimen_FlagNote : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_FlagNote::~IGESDimen_FlagNote %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_FlagNote {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_DiameterDimension;
@@ -1772,8 +2302,18 @@ class IGESDimen_DiameterDimension : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_DiameterDimension::~IGESDimen_DiameterDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_DiameterDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolLeaderArrow;
@@ -1799,8 +2339,18 @@ class IGESDimen_ToolLeaderArrow {
 };
 %feature("shadow") IGESDimen_ToolLeaderArrow::~IGESDimen_ToolLeaderArrow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolLeaderArrow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolAngularDimension;
@@ -1826,8 +2376,18 @@ class IGESDimen_ToolAngularDimension {
 };
 %feature("shadow") IGESDimen_ToolAngularDimension::~IGESDimen_ToolAngularDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolAngularDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolBasicDimension;
@@ -1855,8 +2415,18 @@ class IGESDimen_ToolBasicDimension {
 };
 %feature("shadow") IGESDimen_ToolBasicDimension::~IGESDimen_ToolBasicDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolBasicDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_Array1OfLeaderArrow;
@@ -1896,8 +2466,18 @@ class IGESDimen_Array1OfLeaderArrow {
 };
 %feature("shadow") IGESDimen_Array1OfLeaderArrow::~IGESDimen_Array1OfLeaderArrow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_Array1OfLeaderArrow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolWitnessLine;
@@ -1925,8 +2505,18 @@ class IGESDimen_ToolWitnessLine {
 };
 %feature("shadow") IGESDimen_ToolWitnessLine::~IGESDimen_ToolWitnessLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolWitnessLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_HArray1OfGeneralNote;
@@ -1970,8 +2560,18 @@ class IGESDimen_HArray1OfGeneralNote : public MMgt_TShared {
 };
 %feature("shadow") IGESDimen_HArray1OfGeneralNote::~IGESDimen_HArray1OfGeneralNote %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_HArray1OfGeneralNote {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolDiameterDimension;
@@ -1997,8 +2597,18 @@ class IGESDimen_ToolDiameterDimension {
 };
 %feature("shadow") IGESDimen_ToolDiameterDimension::~IGESDimen_ToolDiameterDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolDiameterDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_CurveDimension;
@@ -2044,8 +2654,18 @@ class IGESDimen_CurveDimension : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_CurveDimension::~IGESDimen_CurveDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_CurveDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolGeneralSymbol;
@@ -2071,8 +2691,18 @@ class IGESDimen_ToolGeneralSymbol {
 };
 %feature("shadow") IGESDimen_ToolGeneralSymbol::~IGESDimen_ToolGeneralSymbol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolGeneralSymbol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_DimensionDisplayData;
@@ -2130,8 +2760,18 @@ class IGESDimen_DimensionDisplayData : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_DimensionDisplayData::~IGESDimen_DimensionDisplayData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_DimensionDisplayData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolNewDimensionedGeometry;
@@ -2159,8 +2799,18 @@ class IGESDimen_ToolNewDimensionedGeometry {
 };
 %feature("shadow") IGESDimen_ToolNewDimensionedGeometry::~IGESDimen_ToolNewDimensionedGeometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolNewDimensionedGeometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolDimensionUnits;
@@ -2188,8 +2838,18 @@ class IGESDimen_ToolDimensionUnits {
 };
 %feature("shadow") IGESDimen_ToolDimensionUnits::~IGESDimen_ToolDimensionUnits %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolDimensionUnits {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_NewGeneralNote;
@@ -2287,8 +2947,18 @@ class IGESDimen_NewGeneralNote : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_NewGeneralNote::~IGESDimen_NewGeneralNote %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_NewGeneralNote {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolOrdinateDimension;
@@ -2314,8 +2984,18 @@ class IGESDimen_ToolOrdinateDimension {
 };
 %feature("shadow") IGESDimen_ToolOrdinateDimension::~IGESDimen_ToolOrdinateDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolOrdinateDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_LinearDimension;
@@ -2357,8 +3037,18 @@ class IGESDimen_LinearDimension : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_LinearDimension::~IGESDimen_LinearDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_LinearDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_GeneralModule;
@@ -2394,8 +3084,18 @@ class IGESDimen_GeneralModule : public IGESData_GeneralModule {
 };
 %feature("shadow") IGESDimen_GeneralModule::~IGESDimen_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen;
@@ -2411,8 +3111,18 @@ class IGESDimen {
 };
 %feature("shadow") IGESDimen::~IGESDimen %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_OrdinateDimension;
@@ -2448,8 +3158,18 @@ class IGESDimen_OrdinateDimension : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_OrdinateDimension::~IGESDimen_OrdinateDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_OrdinateDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_GeneralLabel;
@@ -2481,8 +3201,18 @@ class IGESDimen_GeneralLabel : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_GeneralLabel::~IGESDimen_GeneralLabel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_GeneralLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolCurveDimension;
@@ -2508,8 +3238,18 @@ class IGESDimen_ToolCurveDimension {
 };
 %feature("shadow") IGESDimen_ToolCurveDimension::~IGESDimen_ToolCurveDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolCurveDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_AngularDimension;
@@ -2555,8 +3295,18 @@ class IGESDimen_AngularDimension : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_AngularDimension::~IGESDimen_AngularDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_AngularDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolSectionedArea;
@@ -2582,8 +3332,18 @@ class IGESDimen_ToolSectionedArea {
 };
 %feature("shadow") IGESDimen_ToolSectionedArea::~IGESDimen_ToolSectionedArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolSectionedArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolPointDimension;
@@ -2609,8 +3369,18 @@ class IGESDimen_ToolPointDimension {
 };
 %feature("shadow") IGESDimen_ToolPointDimension::~IGESDimen_ToolPointDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolPointDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolNewGeneralNote;
@@ -2636,8 +3406,18 @@ class IGESDimen_ToolNewGeneralNote {
 };
 %feature("shadow") IGESDimen_ToolNewGeneralNote::~IGESDimen_ToolNewGeneralNote %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolNewGeneralNote {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_DimensionUnits;
@@ -2677,8 +3457,18 @@ class IGESDimen_DimensionUnits : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_DimensionUnits::~IGESDimen_DimensionUnits %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_DimensionUnits {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolDimensionDisplayData;
@@ -2706,8 +3496,18 @@ class IGESDimen_ToolDimensionDisplayData {
 };
 %feature("shadow") IGESDimen_ToolDimensionDisplayData::~IGESDimen_ToolDimensionDisplayData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolDimensionDisplayData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_RadiusDimension;
@@ -2747,8 +3547,18 @@ class IGESDimen_RadiusDimension : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_RadiusDimension::~IGESDimen_RadiusDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_RadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_ToolLinearDimension;
@@ -2774,8 +3584,18 @@ class IGESDimen_ToolLinearDimension {
 };
 %feature("shadow") IGESDimen_ToolLinearDimension::~IGESDimen_ToolLinearDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_ToolLinearDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDimen_NewDimensionedGeometry;
@@ -2819,5 +3639,15 @@ class IGESDimen_NewDimensionedGeometry : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDimen_NewDimensionedGeometry::~IGESDimen_NewDimensionedGeometry %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDimen_NewDimensionedGeometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

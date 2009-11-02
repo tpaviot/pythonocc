@@ -60,8 +60,18 @@ class BRepLProp_SurfaceTool {
 };
 %feature("shadow") BRepLProp_SurfaceTool::~BRepLProp_SurfaceTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLProp_SurfaceTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLProp_SLProps;
@@ -119,8 +129,18 @@ class BRepLProp_SLProps {
 };
 %feature("shadow") BRepLProp_SLProps::~BRepLProp_SLProps %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLProp_SLProps {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLProp_CurveTool;
@@ -146,8 +166,18 @@ class BRepLProp_CurveTool {
 };
 %feature("shadow") BRepLProp_CurveTool::~BRepLProp_CurveTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLProp_CurveTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLProp_CLProps;
@@ -185,8 +215,18 @@ class BRepLProp_CLProps {
 };
 %feature("shadow") BRepLProp_CLProps::~BRepLProp_CLProps %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLProp_CLProps {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepLProp;
@@ -202,5 +242,15 @@ class BRepLProp {
 };
 %feature("shadow") BRepLProp::~BRepLProp %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepLProp {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

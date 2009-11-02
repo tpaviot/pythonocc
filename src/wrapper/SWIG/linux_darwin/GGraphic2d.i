@@ -63,8 +63,18 @@ class Handle_GGraphic2d_Curve : public Handle_Graphic2d_Line {
 };
 %feature("shadow") Handle_GGraphic2d_Curve::~Handle_GGraphic2d_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GGraphic2d_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GGraphic2d_SetOfCurves;
@@ -91,8 +101,18 @@ class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 };
 %feature("shadow") Handle_GGraphic2d_SetOfCurves::~Handle_GGraphic2d_SetOfCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GGraphic2d_SetOfCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GGraphic2d_CurveDefinitionError;
@@ -119,8 +139,18 @@ class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange
 };
 %feature("shadow") Handle_GGraphic2d_CurveDefinitionError::~Handle_GGraphic2d_CurveDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GGraphic2d_CurveDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve;
@@ -147,8 +177,18 @@ class Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollectio
 };
 %feature("shadow") Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve::~Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GGraphic2d_SequenceNodeOfSequenceOfCurve;
@@ -174,8 +214,18 @@ class GGraphic2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 };
 %feature("shadow") GGraphic2d_SequenceNodeOfSequenceOfCurve::~GGraphic2d_SequenceNodeOfSequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GGraphic2d_SequenceNodeOfSequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GGraphic2d_SetOfCurves;
@@ -205,8 +255,18 @@ class GGraphic2d_SetOfCurves : public Graphic2d_Line {
 };
 %feature("shadow") GGraphic2d_SetOfCurves::~GGraphic2d_SetOfCurves %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GGraphic2d_SetOfCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GGraphic2d_SequenceOfCurve;
@@ -260,8 +320,18 @@ class GGraphic2d_SequenceOfCurve : public TCollection_BaseSequence {
 };
 %feature("shadow") GGraphic2d_SequenceOfCurve::~GGraphic2d_SequenceOfCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GGraphic2d_SequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GGraphic2d_CurveDefinitionError;
@@ -293,8 +363,18 @@ class GGraphic2d_CurveDefinitionError : public Standard_OutOfRange {
 };
 %feature("shadow") GGraphic2d_CurveDefinitionError::~GGraphic2d_CurveDefinitionError %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GGraphic2d_CurveDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GGraphic2d_Curve;
@@ -322,5 +402,15 @@ class GGraphic2d_Curve : public Graphic2d_Line {
 };
 %feature("shadow") GGraphic2d_Curve::~GGraphic2d_Curve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GGraphic2d_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

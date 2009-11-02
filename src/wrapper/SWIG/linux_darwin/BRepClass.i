@@ -58,8 +58,18 @@ class BRepClass_Edge {
 };
 %feature("shadow") BRepClass_Edge::~BRepClass_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass_Intersector;
@@ -75,8 +85,18 @@ class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
 };
 %feature("shadow") BRepClass_Intersector::~BRepClass_Intersector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass_Intersector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass_FClassifier;
@@ -104,8 +124,18 @@ class BRepClass_FClassifier {
 };
 %feature("shadow") BRepClass_FClassifier::~BRepClass_FClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass_FClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass_FaceClassifier;
@@ -119,8 +149,18 @@ class BRepClass_FaceClassifier : public BRepClass_FClassifier {
 };
 %feature("shadow") BRepClass_FaceClassifier::~BRepClass_FaceClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass_FaceClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass_FClass2dOfFClassifier;
@@ -146,8 +186,18 @@ class BRepClass_FClass2dOfFClassifier {
 };
 %feature("shadow") BRepClass_FClass2dOfFClassifier::~BRepClass_FClass2dOfFClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass_FClass2dOfFClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass_FaceExplorer;
@@ -183,8 +233,18 @@ class BRepClass_FaceExplorer {
 };
 %feature("shadow") BRepClass_FaceExplorer::~BRepClass_FaceExplorer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass_FaceExplorer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepClass_FacePassiveClassifier;
@@ -210,5 +270,15 @@ class BRepClass_FacePassiveClassifier {
 };
 %feature("shadow") BRepClass_FacePassiveClassifier::~BRepClass_FacePassiveClassifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepClass_FacePassiveClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

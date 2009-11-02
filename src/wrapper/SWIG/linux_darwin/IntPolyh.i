@@ -64,8 +64,18 @@ class Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints : public Handle_TCollection
 };
 %feature("shadow") Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints::~Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_SeqOfStartPoints;
@@ -119,8 +129,18 @@ class IntPolyh_SeqOfStartPoints : public TCollection_BaseSequence {
 };
 %feature("shadow") IntPolyh_SeqOfStartPoints::~IntPolyh_SeqOfStartPoints %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_SeqOfStartPoints {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_ArrayOfCouples;
@@ -154,8 +174,18 @@ class IntPolyh_ArrayOfCouples {
 };
 %feature("shadow") IntPolyh_ArrayOfCouples::~IntPolyh_ArrayOfCouples %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_ArrayOfCouples {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_ArrayOfSectionLines;
@@ -193,8 +223,18 @@ class IntPolyh_ArrayOfSectionLines {
 };
 %feature("shadow") IntPolyh_ArrayOfSectionLines::~IntPolyh_ArrayOfSectionLines %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_ArrayOfSectionLines {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_SectionLine;
@@ -234,8 +274,18 @@ class IntPolyh_SectionLine {
 };
 %feature("shadow") IntPolyh_SectionLine::~IntPolyh_SectionLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_SectionLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_Couple;
@@ -265,8 +315,18 @@ class IntPolyh_Couple {
 };
 %feature("shadow") IntPolyh_Couple::~IntPolyh_Couple %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_Couple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_ArrayOfEdges;
@@ -306,8 +366,18 @@ class IntPolyh_ArrayOfEdges {
 };
 %feature("shadow") IntPolyh_ArrayOfEdges::~IntPolyh_ArrayOfEdges %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_ArrayOfEdges {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_ArrayOfTangentZones;
@@ -345,8 +415,18 @@ class IntPolyh_ArrayOfTangentZones {
 };
 %feature("shadow") IntPolyh_ArrayOfTangentZones::~IntPolyh_ArrayOfTangentZones %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_ArrayOfTangentZones {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_Point;
@@ -420,8 +500,18 @@ class IntPolyh_Point {
 };
 %feature("shadow") IntPolyh_Point::~IntPolyh_Point %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_StartPoint;
@@ -497,8 +587,18 @@ class IntPolyh_StartPoint {
 };
 %feature("shadow") IntPolyh_StartPoint::~IntPolyh_StartPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_StartPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_Edge;
@@ -534,8 +634,18 @@ class IntPolyh_Edge {
 };
 %feature("shadow") IntPolyh_Edge::~IntPolyh_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_ArrayOfStartPoints;
@@ -569,8 +679,18 @@ class IntPolyh_ArrayOfStartPoints {
 };
 %feature("shadow") IntPolyh_ArrayOfStartPoints::~IntPolyh_ArrayOfStartPoints %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_ArrayOfStartPoints {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_Intersection;
@@ -604,8 +724,18 @@ class IntPolyh_Intersection {
 };
 %feature("shadow") IntPolyh_Intersection::~IntPolyh_Intersection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_Intersection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_SequenceNodeOfSeqOfStartPoints;
@@ -631,8 +761,18 @@ class IntPolyh_SequenceNodeOfSeqOfStartPoints : public TCollection_SeqNode {
 };
 %feature("shadow") IntPolyh_SequenceNodeOfSeqOfStartPoints::~IntPolyh_SequenceNodeOfSeqOfStartPoints %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_ArrayOfPoints;
@@ -672,8 +812,18 @@ class IntPolyh_ArrayOfPoints {
 };
 %feature("shadow") IntPolyh_ArrayOfPoints::~IntPolyh_ArrayOfPoints %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_ArrayOfPoints {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntPolyh_ArrayOfTriangles;
@@ -715,5 +865,15 @@ class IntPolyh_ArrayOfTriangles {
 };
 %feature("shadow") IntPolyh_ArrayOfTriangles::~IntPolyh_ArrayOfTriangles %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntPolyh_ArrayOfTriangles {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

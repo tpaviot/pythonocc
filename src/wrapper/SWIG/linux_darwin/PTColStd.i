@@ -63,8 +63,18 @@ class Handle_PTColStd_DataMapNodeOfTransientPersistentMap : public Handle_TColle
 };
 %feature("shadow") Handle_PTColStd_DataMapNodeOfTransientPersistentMap::~Handle_PTColStd_DataMapNodeOfTransientPersistentMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTColStd_DataMapNodeOfTransientPersistentMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTColStd_DataMapNodeOfPersistentTransientMap;
@@ -91,8 +101,18 @@ class Handle_PTColStd_DataMapNodeOfPersistentTransientMap : public Handle_TColle
 };
 %feature("shadow") Handle_PTColStd_DataMapNodeOfPersistentTransientMap::~Handle_PTColStd_DataMapNodeOfPersistentTransientMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTColStd_DataMapNodeOfPersistentTransientMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent;
@@ -119,8 +139,18 @@ class Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public Han
 };
 %feature("shadow") Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent::~Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTColStd_MapPersistentHasher;
@@ -136,8 +166,18 @@ class PTColStd_MapPersistentHasher {
 };
 %feature("shadow") PTColStd_MapPersistentHasher::~PTColStd_MapPersistentHasher %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTColStd_MapPersistentHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTColStd_DataMapNodeOfPersistentTransientMap;
@@ -165,8 +205,18 @@ class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode 
 };
 %feature("shadow") PTColStd_DataMapNodeOfPersistentTransientMap::~PTColStd_DataMapNodeOfPersistentTransientMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTColStd_DataMapNodeOfPersistentTransientMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent;
@@ -186,8 +236,18 @@ class PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent : public TColle
 };
 %feature("shadow") PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent::~PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTColStd_DataMapIteratorOfPersistentTransientMap;
@@ -207,8 +267,18 @@ class PTColStd_DataMapIteratorOfPersistentTransientMap : public TCollection_Basi
 };
 %feature("shadow") PTColStd_DataMapIteratorOfPersistentTransientMap::~PTColStd_DataMapIteratorOfPersistentTransientMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTColStd_DataMapIteratorOfPersistentTransientMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTColStd_PersistentTransientMap;
@@ -242,8 +312,18 @@ class PTColStd_PersistentTransientMap : public TCollection_BasicMap {
 };
 %feature("shadow") PTColStd_PersistentTransientMap::~PTColStd_PersistentTransientMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTColStd_PersistentTransientMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTColStd_DoubleMapOfTransientPersistent;
@@ -279,8 +359,18 @@ class PTColStd_DoubleMapOfTransientPersistent : public TCollection_BasicMap {
 };
 %feature("shadow") PTColStd_DoubleMapOfTransientPersistent::~PTColStd_DoubleMapOfTransientPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTColStd_DoubleMapOfTransientPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTColStd_TransientPersistentMap;
@@ -314,8 +404,18 @@ class PTColStd_TransientPersistentMap : public TCollection_BasicMap {
 };
 %feature("shadow") PTColStd_TransientPersistentMap::~PTColStd_TransientPersistentMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTColStd_TransientPersistentMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent;
@@ -345,8 +445,18 @@ class PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public TCollectio
 };
 %feature("shadow") PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent::~PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTColStd_DataMapIteratorOfTransientPersistentMap;
@@ -366,8 +476,18 @@ class PTColStd_DataMapIteratorOfTransientPersistentMap : public TCollection_Basi
 };
 %feature("shadow") PTColStd_DataMapIteratorOfTransientPersistentMap::~PTColStd_DataMapIteratorOfTransientPersistentMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTColStd_DataMapIteratorOfTransientPersistentMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor PTColStd_DataMapNodeOfTransientPersistentMap;
@@ -395,5 +515,15 @@ class PTColStd_DataMapNodeOfTransientPersistentMap : public TCollection_MapNode 
 };
 %feature("shadow") PTColStd_DataMapNodeOfTransientPersistentMap::~PTColStd_DataMapNodeOfTransientPersistentMap %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend PTColStd_DataMapNodeOfTransientPersistentMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

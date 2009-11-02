@@ -63,8 +63,18 @@ class Handle_BinMDataStd_PlacementDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_PlacementDriver::~Handle_BinMDataStd_PlacementDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_PlacementDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_ReferenceArrayDriver;
@@ -91,8 +101,18 @@ class Handle_BinMDataStd_ReferenceArrayDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_ReferenceArrayDriver::~Handle_BinMDataStd_ReferenceArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_ReferenceArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_PatternStdDriver;
@@ -119,8 +139,18 @@ class Handle_BinMDataStd_PatternStdDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_PatternStdDriver::~Handle_BinMDataStd_PatternStdDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_PatternStdDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_ByteArrayDriver;
@@ -147,8 +177,18 @@ class Handle_BinMDataStd_ByteArrayDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_ByteArrayDriver::~Handle_BinMDataStd_ByteArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_ByteArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_PointDriver;
@@ -175,8 +215,18 @@ class Handle_BinMDataStd_PointDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_PointDriver::~Handle_BinMDataStd_PointDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_PointDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_ReferenceListDriver;
@@ -203,8 +253,18 @@ class Handle_BinMDataStd_ReferenceListDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_ReferenceListDriver::~Handle_BinMDataStd_ReferenceListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_ReferenceListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_ConstraintDriver;
@@ -231,8 +291,18 @@ class Handle_BinMDataStd_ConstraintDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_ConstraintDriver::~Handle_BinMDataStd_ConstraintDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_ConstraintDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_PlaneDriver;
@@ -259,8 +329,18 @@ class Handle_BinMDataStd_PlaneDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_PlaneDriver::~Handle_BinMDataStd_PlaneDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_PlaneDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_IntegerArrayDriver;
@@ -287,8 +367,18 @@ class Handle_BinMDataStd_IntegerArrayDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_IntegerArrayDriver::~Handle_BinMDataStd_IntegerArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_IntegerArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_AxisDriver;
@@ -315,8 +405,18 @@ class Handle_BinMDataStd_AxisDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_AxisDriver::~Handle_BinMDataStd_AxisDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_AxisDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_ExtStringListDriver;
@@ -343,8 +443,18 @@ class Handle_BinMDataStd_ExtStringListDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_ExtStringListDriver::~Handle_BinMDataStd_ExtStringListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_ExtStringListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_BooleanListDriver;
@@ -371,8 +481,18 @@ class Handle_BinMDataStd_BooleanListDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_BooleanListDriver::~Handle_BinMDataStd_BooleanListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_BooleanListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_ExtStringArrayDriver;
@@ -399,8 +519,18 @@ class Handle_BinMDataStd_ExtStringArrayDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_ExtStringArrayDriver::~Handle_BinMDataStd_ExtStringArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_ExtStringArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_IntegerDriver;
@@ -427,8 +557,18 @@ class Handle_BinMDataStd_IntegerDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_IntegerDriver::~Handle_BinMDataStd_IntegerDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_IntegerDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_RealArrayDriver;
@@ -455,8 +595,18 @@ class Handle_BinMDataStd_RealArrayDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_RealArrayDriver::~Handle_BinMDataStd_RealArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_RealArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_VariableDriver;
@@ -483,8 +633,18 @@ class Handle_BinMDataStd_VariableDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_VariableDriver::~Handle_BinMDataStd_VariableDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_VariableDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_TickDriver;
@@ -511,8 +671,18 @@ class Handle_BinMDataStd_TickDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_TickDriver::~Handle_BinMDataStd_TickDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_TickDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_ShapeDriver;
@@ -539,8 +709,18 @@ class Handle_BinMDataStd_ShapeDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_ShapeDriver::~Handle_BinMDataStd_ShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_ShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_ExpressionDriver;
@@ -567,8 +747,18 @@ class Handle_BinMDataStd_ExpressionDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_ExpressionDriver::~Handle_BinMDataStd_ExpressionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_ExpressionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_UAttributeDriver;
@@ -595,8 +785,18 @@ class Handle_BinMDataStd_UAttributeDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_UAttributeDriver::~Handle_BinMDataStd_UAttributeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_UAttributeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_NameDriver;
@@ -623,8 +823,18 @@ class Handle_BinMDataStd_NameDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_NameDriver::~Handle_BinMDataStd_NameDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_NameDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_TreeNodeDriver;
@@ -651,8 +861,18 @@ class Handle_BinMDataStd_TreeNodeDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_TreeNodeDriver::~Handle_BinMDataStd_TreeNodeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_TreeNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_RealDriver;
@@ -679,8 +899,18 @@ class Handle_BinMDataStd_RealDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_RealDriver::~Handle_BinMDataStd_RealDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_RealDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_CommentDriver;
@@ -707,8 +937,18 @@ class Handle_BinMDataStd_CommentDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_CommentDriver::~Handle_BinMDataStd_CommentDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_CommentDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_BooleanArrayDriver;
@@ -735,8 +975,18 @@ class Handle_BinMDataStd_BooleanArrayDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_BooleanArrayDriver::~Handle_BinMDataStd_BooleanArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_BooleanArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_IntPackedMapDriver;
@@ -763,8 +1013,18 @@ class Handle_BinMDataStd_IntPackedMapDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_IntPackedMapDriver::~Handle_BinMDataStd_IntPackedMapDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_IntPackedMapDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_NamedDataDriver;
@@ -791,8 +1051,18 @@ class Handle_BinMDataStd_NamedDataDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_NamedDataDriver::~Handle_BinMDataStd_NamedDataDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_NamedDataDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_DirectoryDriver;
@@ -819,8 +1089,18 @@ class Handle_BinMDataStd_DirectoryDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_DirectoryDriver::~Handle_BinMDataStd_DirectoryDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_DirectoryDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_IntegerListDriver;
@@ -847,8 +1127,18 @@ class Handle_BinMDataStd_IntegerListDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_IntegerListDriver::~Handle_BinMDataStd_IntegerListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_IntegerListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_NoteBookDriver;
@@ -875,8 +1165,18 @@ class Handle_BinMDataStd_NoteBookDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_NoteBookDriver::~Handle_BinMDataStd_NoteBookDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_NoteBookDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_RealListDriver;
@@ -903,8 +1203,18 @@ class Handle_BinMDataStd_RealListDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_RealListDriver::~Handle_BinMDataStd_RealListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_RealListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_AsciiStringDriver;
@@ -931,8 +1241,18 @@ class Handle_BinMDataStd_AsciiStringDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_AsciiStringDriver::~Handle_BinMDataStd_AsciiStringDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_AsciiStringDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_RelationDriver;
@@ -959,8 +1279,18 @@ class Handle_BinMDataStd_RelationDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_RelationDriver::~Handle_BinMDataStd_RelationDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_RelationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BinMDataStd_GeometryDriver;
@@ -987,8 +1317,18 @@ class Handle_BinMDataStd_GeometryDriver : public Handle_BinMDF_ADriver {
 };
 %feature("shadow") Handle_BinMDataStd_GeometryDriver::~Handle_BinMDataStd_GeometryDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BinMDataStd_GeometryDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_VariableDriver;
@@ -1018,8 +1358,18 @@ class BinMDataStd_VariableDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_VariableDriver::~BinMDataStd_VariableDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_VariableDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_IntegerArrayDriver;
@@ -1049,8 +1399,18 @@ class BinMDataStd_IntegerArrayDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_IntegerArrayDriver::~BinMDataStd_IntegerArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_IntegerArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_UAttributeDriver;
@@ -1080,8 +1440,18 @@ class BinMDataStd_UAttributeDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_UAttributeDriver::~BinMDataStd_UAttributeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_UAttributeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_TickDriver;
@@ -1111,8 +1481,18 @@ class BinMDataStd_TickDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_TickDriver::~BinMDataStd_TickDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_TickDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_ShapeDriver;
@@ -1142,8 +1522,18 @@ class BinMDataStd_ShapeDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_ShapeDriver::~BinMDataStd_ShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_ShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_PointDriver;
@@ -1173,8 +1563,18 @@ class BinMDataStd_PointDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_PointDriver::~BinMDataStd_PointDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_PointDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_GeometryDriver;
@@ -1204,8 +1604,18 @@ class BinMDataStd_GeometryDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_GeometryDriver::~BinMDataStd_GeometryDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_GeometryDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_BooleanArrayDriver;
@@ -1235,8 +1645,18 @@ class BinMDataStd_BooleanArrayDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_BooleanArrayDriver::~BinMDataStd_BooleanArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_BooleanArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_NoteBookDriver;
@@ -1266,8 +1686,18 @@ class BinMDataStd_NoteBookDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_NoteBookDriver::~BinMDataStd_NoteBookDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_NoteBookDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_ConstraintDriver;
@@ -1297,8 +1727,18 @@ class BinMDataStd_ConstraintDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_ConstraintDriver::~BinMDataStd_ConstraintDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_ConstraintDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_CommentDriver;
@@ -1328,8 +1768,18 @@ class BinMDataStd_CommentDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_CommentDriver::~BinMDataStd_CommentDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_CommentDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_ExtStringListDriver;
@@ -1359,8 +1809,18 @@ class BinMDataStd_ExtStringListDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_ExtStringListDriver::~BinMDataStd_ExtStringListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_ExtStringListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_ReferenceArrayDriver;
@@ -1390,8 +1850,18 @@ class BinMDataStd_ReferenceArrayDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_ReferenceArrayDriver::~BinMDataStd_ReferenceArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_ReferenceArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_TreeNodeDriver;
@@ -1421,8 +1891,18 @@ class BinMDataStd_TreeNodeDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_TreeNodeDriver::~BinMDataStd_TreeNodeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_TreeNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_IntegerDriver;
@@ -1452,8 +1932,18 @@ class BinMDataStd_IntegerDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_IntegerDriver::~BinMDataStd_IntegerDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_IntegerDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_RelationDriver;
@@ -1483,8 +1973,18 @@ class BinMDataStd_RelationDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_RelationDriver::~BinMDataStd_RelationDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_RelationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_ReferenceListDriver;
@@ -1514,8 +2014,18 @@ class BinMDataStd_ReferenceListDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_ReferenceListDriver::~BinMDataStd_ReferenceListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_ReferenceListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_PatternStdDriver;
@@ -1545,8 +2055,18 @@ class BinMDataStd_PatternStdDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_PatternStdDriver::~BinMDataStd_PatternStdDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_PatternStdDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_NameDriver;
@@ -1576,8 +2096,18 @@ class BinMDataStd_NameDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_NameDriver::~BinMDataStd_NameDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_NameDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_RealListDriver;
@@ -1607,8 +2137,18 @@ class BinMDataStd_RealListDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_RealListDriver::~BinMDataStd_RealListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_RealListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_IntPackedMapDriver;
@@ -1638,8 +2178,18 @@ class BinMDataStd_IntPackedMapDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_IntPackedMapDriver::~BinMDataStd_IntPackedMapDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_IntPackedMapDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_ByteArrayDriver;
@@ -1669,8 +2219,18 @@ class BinMDataStd_ByteArrayDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_ByteArrayDriver::~BinMDataStd_ByteArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_ByteArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_RealArrayDriver;
@@ -1700,8 +2260,18 @@ class BinMDataStd_RealArrayDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_RealArrayDriver::~BinMDataStd_RealArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_RealArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_RealDriver;
@@ -1731,8 +2301,18 @@ class BinMDataStd_RealDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_RealDriver::~BinMDataStd_RealDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_RealDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_BooleanListDriver;
@@ -1762,8 +2342,18 @@ class BinMDataStd_BooleanListDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_BooleanListDriver::~BinMDataStd_BooleanListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_BooleanListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_ExpressionDriver;
@@ -1793,8 +2383,18 @@ class BinMDataStd_ExpressionDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_ExpressionDriver::~BinMDataStd_ExpressionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_ExpressionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_DirectoryDriver;
@@ -1824,8 +2424,18 @@ class BinMDataStd_DirectoryDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_DirectoryDriver::~BinMDataStd_DirectoryDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_DirectoryDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_ExtStringArrayDriver;
@@ -1855,8 +2465,18 @@ class BinMDataStd_ExtStringArrayDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_ExtStringArrayDriver::~BinMDataStd_ExtStringArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_ExtStringArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_IntegerListDriver;
@@ -1886,8 +2506,18 @@ class BinMDataStd_IntegerListDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_IntegerListDriver::~BinMDataStd_IntegerListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_IntegerListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_NamedDataDriver;
@@ -1917,8 +2547,18 @@ class BinMDataStd_NamedDataDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_NamedDataDriver::~BinMDataStd_NamedDataDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_NamedDataDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_AxisDriver;
@@ -1948,8 +2588,18 @@ class BinMDataStd_AxisDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_AxisDriver::~BinMDataStd_AxisDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_AxisDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd;
@@ -1967,8 +2617,18 @@ class BinMDataStd {
 };
 %feature("shadow") BinMDataStd::~BinMDataStd %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_PlacementDriver;
@@ -1998,8 +2658,18 @@ class BinMDataStd_PlacementDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_PlacementDriver::~BinMDataStd_PlacementDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_PlacementDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_PlaneDriver;
@@ -2029,8 +2699,18 @@ class BinMDataStd_PlaneDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_PlaneDriver::~BinMDataStd_PlaneDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_PlaneDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BinMDataStd_AsciiStringDriver;
@@ -2060,5 +2740,15 @@ class BinMDataStd_AsciiStringDriver : public BinMDF_ADriver {
 };
 %feature("shadow") BinMDataStd_AsciiStringDriver::~BinMDataStd_AsciiStringDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BinMDataStd_AsciiStringDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

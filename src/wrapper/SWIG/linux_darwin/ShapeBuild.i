@@ -63,8 +63,18 @@ class Handle_ShapeBuild_ReShape : public Handle_BRepTools_ReShape {
 };
 %feature("shadow") Handle_ShapeBuild_ReShape::~Handle_ShapeBuild_ReShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_ShapeBuild_ReShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeBuild;
@@ -78,8 +88,18 @@ class ShapeBuild {
 };
 %feature("shadow") ShapeBuild::~ShapeBuild %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeBuild {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeBuild_ReShape;
@@ -111,8 +131,18 @@ class ShapeBuild_ReShape : public BRepTools_ReShape {
 };
 %feature("shadow") ShapeBuild_ReShape::~ShapeBuild_ReShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeBuild_ReShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeBuild_Edge;
@@ -162,8 +192,18 @@ class ShapeBuild_Edge {
 };
 %feature("shadow") ShapeBuild_Edge::~ShapeBuild_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeBuild_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor ShapeBuild_Vertex;
@@ -179,5 +219,15 @@ class ShapeBuild_Vertex {
 };
 %feature("shadow") ShapeBuild_Vertex::~ShapeBuild_Vertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend ShapeBuild_Vertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

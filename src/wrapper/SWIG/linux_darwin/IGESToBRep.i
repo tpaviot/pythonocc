@@ -63,8 +63,18 @@ class Handle_IGESToBRep_Actor : public Handle_Transfer_ActorOfTransientProcess {
 };
 %feature("shadow") Handle_IGESToBRep_Actor::~Handle_IGESToBRep_Actor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESToBRep_Actor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESToBRep_IGESBoundary;
@@ -91,8 +101,18 @@ class Handle_IGESToBRep_IGESBoundary : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESToBRep_IGESBoundary::~Handle_IGESToBRep_IGESBoundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESToBRep_IGESBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESToBRep_AlgoContainer;
@@ -119,8 +139,18 @@ class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESToBRep_AlgoContainer::~Handle_IGESToBRep_AlgoContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESToBRep_AlgoContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESToBRep_ToolContainer;
@@ -147,8 +177,18 @@ class Handle_IGESToBRep_ToolContainer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESToBRep_ToolContainer::~Handle_IGESToBRep_ToolContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESToBRep_ToolContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESToBRep_CurveAndSurface;
@@ -246,8 +286,18 @@ class IGESToBRep_CurveAndSurface {
 };
 %feature("shadow") IGESToBRep_CurveAndSurface::~IGESToBRep_CurveAndSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESToBRep_CurveAndSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESToBRep_TopoCurve;
@@ -309,8 +359,18 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 };
 %feature("shadow") IGESToBRep_TopoCurve::~IGESToBRep_TopoCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESToBRep_TopoCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESToBRep_ToolContainer;
@@ -336,8 +396,18 @@ class IGESToBRep_ToolContainer : public MMgt_TShared {
 };
 %feature("shadow") IGESToBRep_ToolContainer::~IGESToBRep_ToolContainer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESToBRep_ToolContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESToBRep_BasicCurve;
@@ -383,8 +453,18 @@ class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
 };
 %feature("shadow") IGESToBRep_BasicCurve::~IGESToBRep_BasicCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESToBRep_BasicCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESToBRep_Actor;
@@ -420,8 +500,18 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 };
 %feature("shadow") IGESToBRep_Actor::~IGESToBRep_Actor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESToBRep_Actor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESToBRep;
@@ -457,8 +547,18 @@ class IGESToBRep {
 };
 %feature("shadow") IGESToBRep::~IGESToBRep %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESToBRep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESToBRep_IGESBoundary;
@@ -498,8 +598,18 @@ class IGESToBRep_IGESBoundary : public MMgt_TShared {
 };
 %feature("shadow") IGESToBRep_IGESBoundary::~IGESToBRep_IGESBoundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESToBRep_IGESBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESToBRep_BRepEntity;
@@ -529,8 +639,18 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 };
 %feature("shadow") IGESToBRep_BRepEntity::~IGESToBRep_BRepEntity %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESToBRep_BRepEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESToBRep_TopoSurface;
@@ -568,8 +688,18 @@ class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 };
 %feature("shadow") IGESToBRep_TopoSurface::~IGESToBRep_TopoSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESToBRep_TopoSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESToBRep_BasicSurface;
@@ -601,8 +731,18 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 };
 %feature("shadow") IGESToBRep_BasicSurface::~IGESToBRep_BasicSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESToBRep_BasicSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESToBRep_Reader;
@@ -644,5 +784,15 @@ class IGESToBRep_Reader {
 };
 %feature("shadow") IGESToBRep_Reader::~IGESToBRep_Reader %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESToBRep_Reader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

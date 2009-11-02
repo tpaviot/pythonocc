@@ -54,8 +54,18 @@ class RWStepVisual_RWAreaInSet {
 };
 %feature("shadow") RWStepVisual_RWAreaInSet::~RWStepVisual_RWAreaInSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWAreaInSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWCompositeTextWithExtent;
@@ -73,8 +83,18 @@ class RWStepVisual_RWCompositeTextWithExtent {
 };
 %feature("shadow") RWStepVisual_RWCompositeTextWithExtent::~RWStepVisual_RWCompositeTextWithExtent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWCompositeTextWithExtent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWBackgroundColour;
@@ -92,8 +112,18 @@ class RWStepVisual_RWBackgroundColour {
 };
 %feature("shadow") RWStepVisual_RWBackgroundColour::~RWStepVisual_RWBackgroundColour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWBackgroundColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWContextDependentInvisibility;
@@ -111,8 +141,18 @@ class RWStepVisual_RWContextDependentInvisibility {
 };
 %feature("shadow") RWStepVisual_RWContextDependentInvisibility::~RWStepVisual_RWContextDependentInvisibility %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWContextDependentInvisibility {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWTextStyle;
@@ -130,8 +170,18 @@ class RWStepVisual_RWTextStyle {
 };
 %feature("shadow") RWStepVisual_RWTextStyle::~RWStepVisual_RWTextStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWTextStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWFillAreaStyle;
@@ -149,8 +199,18 @@ class RWStepVisual_RWFillAreaStyle {
 };
 %feature("shadow") RWStepVisual_RWFillAreaStyle::~RWStepVisual_RWFillAreaStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWFillAreaStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWCompositeText;
@@ -168,8 +228,18 @@ class RWStepVisual_RWCompositeText {
 };
 %feature("shadow") RWStepVisual_RWCompositeText::~RWStepVisual_RWCompositeText %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWCompositeText {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWCameraModelD2;
@@ -187,8 +257,18 @@ class RWStepVisual_RWCameraModelD2 {
 };
 %feature("shadow") RWStepVisual_RWCameraModelD2::~RWStepVisual_RWCameraModelD2 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWCameraModelD2 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleSilhouette;
@@ -206,8 +286,18 @@ class RWStepVisual_RWSurfaceStyleSilhouette {
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleSilhouette::~RWStepVisual_RWSurfaceStyleSilhouette %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWSurfaceStyleSilhouette {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation;
@@ -225,8 +315,18 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
 };
 %feature("shadow") RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation::~RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPresentedItemRepresentation;
@@ -244,8 +344,18 @@ class RWStepVisual_RWPresentedItemRepresentation {
 };
 %feature("shadow") RWStepVisual_RWPresentedItemRepresentation::~RWStepVisual_RWPresentedItemRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPresentedItemRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleUsage;
@@ -263,8 +373,18 @@ class RWStepVisual_RWSurfaceStyleUsage {
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleUsage::~RWStepVisual_RWSurfaceStyleUsage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWSurfaceStyleUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPreDefinedColour;
@@ -280,8 +400,18 @@ class RWStepVisual_RWPreDefinedColour {
 };
 %feature("shadow") RWStepVisual_RWPreDefinedColour::~RWStepVisual_RWPreDefinedColour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPreDefinedColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPreDefinedCurveFont;
@@ -297,8 +427,18 @@ class RWStepVisual_RWPreDefinedCurveFont {
 };
 %feature("shadow") RWStepVisual_RWPreDefinedCurveFont::~RWStepVisual_RWPreDefinedCurveFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPreDefinedCurveFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPresentationLayerUsage;
@@ -316,8 +456,18 @@ class RWStepVisual_RWPresentationLayerUsage {
 };
 %feature("shadow") RWStepVisual_RWPresentationLayerUsage::~RWStepVisual_RWPresentationLayerUsage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPresentationLayerUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleControlGrid;
@@ -335,8 +485,18 @@ class RWStepVisual_RWSurfaceStyleControlGrid {
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleControlGrid::~RWStepVisual_RWSurfaceStyleControlGrid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWSurfaceStyleControlGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWMechanicalDesignGeometricPresentationArea;
@@ -354,8 +514,18 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationArea {
 };
 %feature("shadow") RWStepVisual_RWMechanicalDesignGeometricPresentationArea::~RWStepVisual_RWMechanicalDesignGeometricPresentationArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWMechanicalDesignGeometricPresentationArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPresentationView;
@@ -373,8 +543,18 @@ class RWStepVisual_RWPresentationView {
 };
 %feature("shadow") RWStepVisual_RWPresentationView::~RWStepVisual_RWPresentationView %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPresentationView {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPresentationSize;
@@ -392,8 +572,18 @@ class RWStepVisual_RWPresentationSize {
 };
 %feature("shadow") RWStepVisual_RWPresentationSize::~RWStepVisual_RWPresentationSize %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPresentationSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPresentationStyleByContext;
@@ -411,8 +601,18 @@ class RWStepVisual_RWPresentationStyleByContext {
 };
 %feature("shadow") RWStepVisual_RWPresentationStyleByContext::~RWStepVisual_RWPresentationStyleByContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPresentationStyleByContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPresentationSet;
@@ -428,8 +628,18 @@ class RWStepVisual_RWPresentationSet {
 };
 %feature("shadow") RWStepVisual_RWPresentationSet::~RWStepVisual_RWPresentationSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPresentationSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWContextDependentOverRidingStyledItem;
@@ -447,8 +657,18 @@ class RWStepVisual_RWContextDependentOverRidingStyledItem {
 };
 %feature("shadow") RWStepVisual_RWContextDependentOverRidingStyledItem::~RWStepVisual_RWContextDependentOverRidingStyledItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWContextDependentOverRidingStyledItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleSegmentationCurve;
@@ -466,8 +686,18 @@ class RWStepVisual_RWSurfaceStyleSegmentationCurve {
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleSegmentationCurve::~RWStepVisual_RWSurfaceStyleSegmentationCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWSurfaceStyleSegmentationCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPresentationArea;
@@ -485,8 +715,18 @@ class RWStepVisual_RWPresentationArea {
 };
 %feature("shadow") RWStepVisual_RWPresentationArea::~RWStepVisual_RWPresentationArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPresentationArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWOverRidingStyledItem;
@@ -504,8 +744,18 @@ class RWStepVisual_RWOverRidingStyledItem {
 };
 %feature("shadow") RWStepVisual_RWOverRidingStyledItem::~RWStepVisual_RWOverRidingStyledItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWOverRidingStyledItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWTextStyleWithBoxCharacteristics;
@@ -523,8 +773,18 @@ class RWStepVisual_RWTextStyleWithBoxCharacteristics {
 };
 %feature("shadow") RWStepVisual_RWTextStyleWithBoxCharacteristics::~RWStepVisual_RWTextStyleWithBoxCharacteristics %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWTextStyleWithBoxCharacteristics {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWSurfaceSideStyle;
@@ -542,8 +802,18 @@ class RWStepVisual_RWSurfaceSideStyle {
 };
 %feature("shadow") RWStepVisual_RWSurfaceSideStyle::~RWStepVisual_RWSurfaceSideStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWSurfaceSideStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWDraughtingModel;
@@ -561,8 +831,18 @@ class RWStepVisual_RWDraughtingModel {
 };
 %feature("shadow") RWStepVisual_RWDraughtingModel::~RWStepVisual_RWDraughtingModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWDraughtingModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPresentationLayerAssignment;
@@ -580,8 +860,18 @@ class RWStepVisual_RWPresentationLayerAssignment {
 };
 %feature("shadow") RWStepVisual_RWPresentationLayerAssignment::~RWStepVisual_RWPresentationLayerAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPresentationLayerAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPlanarExtent;
@@ -597,8 +887,18 @@ class RWStepVisual_RWPlanarExtent {
 };
 %feature("shadow") RWStepVisual_RWPlanarExtent::~RWStepVisual_RWPlanarExtent %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPlanarExtent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWInvisibility;
@@ -616,8 +916,18 @@ class RWStepVisual_RWInvisibility {
 };
 %feature("shadow") RWStepVisual_RWInvisibility::~RWStepVisual_RWInvisibility %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWInvisibility {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWStyledItem;
@@ -635,8 +945,18 @@ class RWStepVisual_RWStyledItem {
 };
 %feature("shadow") RWStepVisual_RWStyledItem::~RWStepVisual_RWStyledItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWStyledItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPlanarBox;
@@ -654,8 +974,18 @@ class RWStepVisual_RWPlanarBox {
 };
 %feature("shadow") RWStepVisual_RWPlanarBox::~RWStepVisual_RWPlanarBox %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPlanarBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleBoundary;
@@ -673,8 +1003,18 @@ class RWStepVisual_RWSurfaceStyleBoundary {
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleBoundary::~RWStepVisual_RWSurfaceStyleBoundary %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWSurfaceStyleBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWCameraImage;
@@ -692,8 +1032,18 @@ class RWStepVisual_RWCameraImage {
 };
 %feature("shadow") RWStepVisual_RWCameraImage::~RWStepVisual_RWCameraImage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWCameraImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPreDefinedItem;
@@ -709,8 +1059,18 @@ class RWStepVisual_RWPreDefinedItem {
 };
 %feature("shadow") RWStepVisual_RWPreDefinedItem::~RWStepVisual_RWPreDefinedItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPreDefinedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWColourSpecification;
@@ -726,8 +1086,18 @@ class RWStepVisual_RWColourSpecification {
 };
 %feature("shadow") RWStepVisual_RWColourSpecification::~RWStepVisual_RWColourSpecification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWColourSpecification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWFillAreaStyleColour;
@@ -745,8 +1115,18 @@ class RWStepVisual_RWFillAreaStyleColour {
 };
 %feature("shadow") RWStepVisual_RWFillAreaStyleColour::~RWStepVisual_RWFillAreaStyleColour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWFillAreaStyleColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWTemplateInstance;
@@ -764,8 +1144,18 @@ class RWStepVisual_RWTemplateInstance {
 };
 %feature("shadow") RWStepVisual_RWTemplateInstance::~RWStepVisual_RWTemplateInstance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWTemplateInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWTextLiteral;
@@ -783,8 +1173,18 @@ class RWStepVisual_RWTextLiteral {
 };
 %feature("shadow") RWStepVisual_RWTextLiteral::~RWStepVisual_RWTextLiteral %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWTextLiteral {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleFillArea;
@@ -802,8 +1202,18 @@ class RWStepVisual_RWSurfaceStyleFillArea {
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleFillArea::~RWStepVisual_RWSurfaceStyleFillArea %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWSurfaceStyleFillArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWViewVolume;
@@ -821,8 +1231,18 @@ class RWStepVisual_RWViewVolume {
 };
 %feature("shadow") RWStepVisual_RWViewVolume::~RWStepVisual_RWViewVolume %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWViewVolume {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWDraughtingPreDefinedCurveFont;
@@ -838,8 +1258,18 @@ class RWStepVisual_RWDraughtingPreDefinedCurveFont {
 };
 %feature("shadow") RWStepVisual_RWDraughtingPreDefinedCurveFont::~RWStepVisual_RWDraughtingPreDefinedCurveFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWDraughtingPreDefinedCurveFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWCurveStyle;
@@ -857,8 +1287,18 @@ class RWStepVisual_RWCurveStyle {
 };
 %feature("shadow") RWStepVisual_RWCurveStyle::~RWStepVisual_RWCurveStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWCurveStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWTemplate;
@@ -876,8 +1316,18 @@ class RWStepVisual_RWTemplate {
 };
 %feature("shadow") RWStepVisual_RWTemplate::~RWStepVisual_RWTemplate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWTemplate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWColourRgb;
@@ -893,8 +1343,18 @@ class RWStepVisual_RWColourRgb {
 };
 %feature("shadow") RWStepVisual_RWColourRgb::~RWStepVisual_RWColourRgb %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWColourRgb {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWCameraModel;
@@ -910,8 +1370,18 @@ class RWStepVisual_RWCameraModel {
 };
 %feature("shadow") RWStepVisual_RWCameraModel::~RWStepVisual_RWCameraModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWCameraModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPointStyle;
@@ -929,8 +1399,18 @@ class RWStepVisual_RWPointStyle {
 };
 %feature("shadow") RWStepVisual_RWPointStyle::~RWStepVisual_RWPointStyle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPointStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWCurveStyleFontPattern;
@@ -946,8 +1426,18 @@ class RWStepVisual_RWCurveStyleFontPattern {
 };
 %feature("shadow") RWStepVisual_RWCurveStyleFontPattern::~RWStepVisual_RWCurveStyleFontPattern %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWCurveStyleFontPattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWCameraUsage;
@@ -965,8 +1455,18 @@ class RWStepVisual_RWCameraUsage {
 };
 %feature("shadow") RWStepVisual_RWCameraUsage::~RWStepVisual_RWCameraUsage %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWCameraUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWTextStyleForDefinedFont;
@@ -984,8 +1484,18 @@ class RWStepVisual_RWTextStyleForDefinedFont {
 };
 %feature("shadow") RWStepVisual_RWTextStyleForDefinedFont::~RWStepVisual_RWTextStyleForDefinedFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWTextStyleForDefinedFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWColour;
@@ -1001,8 +1511,18 @@ class RWStepVisual_RWColour {
 };
 %feature("shadow") RWStepVisual_RWColour::~RWStepVisual_RWColour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPresentationRepresentation;
@@ -1020,8 +1540,18 @@ class RWStepVisual_RWPresentationRepresentation {
 };
 %feature("shadow") RWStepVisual_RWPresentationRepresentation::~RWStepVisual_RWPresentationRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPresentationRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWCurveStyleFont;
@@ -1039,8 +1569,18 @@ class RWStepVisual_RWCurveStyleFont {
 };
 %feature("shadow") RWStepVisual_RWCurveStyleFont::~RWStepVisual_RWCurveStyleFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWCurveStyleFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleParameterLine;
@@ -1058,8 +1598,18 @@ class RWStepVisual_RWSurfaceStyleParameterLine {
 };
 %feature("shadow") RWStepVisual_RWSurfaceStyleParameterLine::~RWStepVisual_RWSurfaceStyleParameterLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWSurfaceStyleParameterLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWExternallyDefinedCurveFont;
@@ -1077,8 +1627,18 @@ class RWStepVisual_RWExternallyDefinedCurveFont {
 };
 %feature("shadow") RWStepVisual_RWExternallyDefinedCurveFont::~RWStepVisual_RWExternallyDefinedCurveFont %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWExternallyDefinedCurveFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWPresentationStyleAssignment;
@@ -1096,8 +1656,18 @@ class RWStepVisual_RWPresentationStyleAssignment {
 };
 %feature("shadow") RWStepVisual_RWPresentationStyleAssignment::~RWStepVisual_RWPresentationStyleAssignment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWPresentationStyleAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWCameraModelD3;
@@ -1115,8 +1685,18 @@ class RWStepVisual_RWCameraModelD3 {
 };
 %feature("shadow") RWStepVisual_RWCameraModelD3::~RWStepVisual_RWCameraModelD3 %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWCameraModelD3 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor RWStepVisual_RWDraughtingPreDefinedColour;
@@ -1132,5 +1712,15 @@ class RWStepVisual_RWDraughtingPreDefinedColour {
 };
 %feature("shadow") RWStepVisual_RWDraughtingPreDefinedColour::~RWStepVisual_RWDraughtingPreDefinedColour %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend RWStepVisual_RWDraughtingPreDefinedColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

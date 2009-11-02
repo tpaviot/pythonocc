@@ -63,8 +63,18 @@ class Handle_Dico_DictionaryOfTransient : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dico_DictionaryOfTransient::~Handle_Dico_DictionaryOfTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dico_DictionaryOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dico_StackItemOfDictionaryOfTransient;
@@ -91,8 +101,18 @@ class Handle_Dico_StackItemOfDictionaryOfTransient : public Handle_MMgt_TShared 
 };
 %feature("shadow") Handle_Dico_StackItemOfDictionaryOfTransient::~Handle_Dico_StackItemOfDictionaryOfTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dico_StackItemOfDictionaryOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dico_DictionaryOfInteger;
@@ -119,8 +139,18 @@ class Handle_Dico_DictionaryOfInteger : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dico_DictionaryOfInteger::~Handle_Dico_DictionaryOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dico_DictionaryOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Dico_StackItemOfDictionaryOfInteger;
@@ -147,8 +177,18 @@ class Handle_Dico_StackItemOfDictionaryOfInteger : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Dico_StackItemOfDictionaryOfInteger::~Handle_Dico_StackItemOfDictionaryOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Dico_StackItemOfDictionaryOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dico_DictionaryOfInteger;
@@ -226,8 +266,18 @@ class Dico_DictionaryOfInteger : public MMgt_TShared {
 };
 %feature("shadow") Dico_DictionaryOfInteger::~Dico_DictionaryOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dico_DictionaryOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dico_IteratorOfDictionaryOfTransient;
@@ -253,8 +303,18 @@ class Dico_IteratorOfDictionaryOfTransient {
 };
 %feature("shadow") Dico_IteratorOfDictionaryOfTransient::~Dico_IteratorOfDictionaryOfTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dico_IteratorOfDictionaryOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dico_StackItemOfDictionaryOfTransient;
@@ -286,8 +346,18 @@ class Dico_StackItemOfDictionaryOfTransient : public MMgt_TShared {
 };
 %feature("shadow") Dico_StackItemOfDictionaryOfTransient::~Dico_StackItemOfDictionaryOfTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dico_StackItemOfDictionaryOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dico_DictionaryOfTransient;
@@ -345,8 +415,18 @@ class Dico_DictionaryOfTransient : public MMgt_TShared {
 };
 %feature("shadow") Dico_DictionaryOfTransient::~Dico_DictionaryOfTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dico_DictionaryOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dico_IteratorOfDictionaryOfInteger;
@@ -372,8 +452,18 @@ class Dico_IteratorOfDictionaryOfInteger {
 };
 %feature("shadow") Dico_IteratorOfDictionaryOfInteger::~Dico_IteratorOfDictionaryOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dico_IteratorOfDictionaryOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Dico_StackItemOfDictionaryOfInteger;
@@ -405,5 +495,15 @@ class Dico_StackItemOfDictionaryOfInteger : public MMgt_TShared {
 };
 %feature("shadow") Dico_StackItemOfDictionaryOfInteger::~Dico_StackItemOfDictionaryOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Dico_StackItemOfDictionaryOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

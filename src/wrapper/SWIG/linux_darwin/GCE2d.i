@@ -52,8 +52,18 @@ class GCE2d_Root {
 };
 %feature("shadow") GCE2d_Root::~GCE2d_Root %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_Root {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeLine;
@@ -79,8 +89,18 @@ class GCE2d_MakeLine : public GCE2d_Root {
 };
 %feature("shadow") GCE2d_MakeLine::~GCE2d_MakeLine %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeParabola;
@@ -106,8 +126,18 @@ class GCE2d_MakeParabola : public GCE2d_Root {
 };
 %feature("shadow") GCE2d_MakeParabola::~GCE2d_MakeParabola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeParabola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeArcOfCircle;
@@ -131,8 +161,18 @@ class GCE2d_MakeArcOfCircle : public GCE2d_Root {
 };
 %feature("shadow") GCE2d_MakeArcOfCircle::~GCE2d_MakeArcOfCircle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeArcOfCircle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeScale;
@@ -148,8 +188,18 @@ class GCE2d_MakeScale {
 };
 %feature("shadow") GCE2d_MakeScale::~GCE2d_MakeScale %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeMirror;
@@ -171,8 +221,18 @@ class GCE2d_MakeMirror {
 };
 %feature("shadow") GCE2d_MakeMirror::~GCE2d_MakeMirror %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeMirror {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeHyperbola;
@@ -194,8 +254,18 @@ class GCE2d_MakeHyperbola : public GCE2d_Root {
 };
 %feature("shadow") GCE2d_MakeHyperbola::~GCE2d_MakeHyperbola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeHyperbola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeSegment;
@@ -219,8 +289,18 @@ class GCE2d_MakeSegment : public GCE2d_Root {
 };
 %feature("shadow") GCE2d_MakeSegment::~GCE2d_MakeSegment %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeEllipse;
@@ -242,8 +322,18 @@ class GCE2d_MakeEllipse : public GCE2d_Root {
 };
 %feature("shadow") GCE2d_MakeEllipse::~GCE2d_MakeEllipse %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeEllipse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeArcOfEllipse;
@@ -263,8 +353,18 @@ class GCE2d_MakeArcOfEllipse : public GCE2d_Root {
 };
 %feature("shadow") GCE2d_MakeArcOfEllipse::~GCE2d_MakeArcOfEllipse %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeArcOfEllipse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeArcOfParabola;
@@ -284,8 +384,18 @@ class GCE2d_MakeArcOfParabola : public GCE2d_Root {
 };
 %feature("shadow") GCE2d_MakeArcOfParabola::~GCE2d_MakeArcOfParabola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeArcOfParabola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeCircle;
@@ -315,8 +425,18 @@ class GCE2d_MakeCircle : public GCE2d_Root {
 };
 %feature("shadow") GCE2d_MakeCircle::~GCE2d_MakeCircle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeCircle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeRotation;
@@ -332,8 +452,18 @@ class GCE2d_MakeRotation {
 };
 %feature("shadow") GCE2d_MakeRotation::~GCE2d_MakeRotation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeRotation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeArcOfHyperbola;
@@ -353,8 +483,18 @@ class GCE2d_MakeArcOfHyperbola : public GCE2d_Root {
 };
 %feature("shadow") GCE2d_MakeArcOfHyperbola::~GCE2d_MakeArcOfHyperbola %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeArcOfHyperbola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GCE2d_MakeTranslation;
@@ -372,5 +512,15 @@ class GCE2d_MakeTranslation {
 };
 %feature("shadow") GCE2d_MakeTranslation::~GCE2d_MakeTranslation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GCE2d_MakeTranslation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

@@ -224,8 +224,18 @@ class Handle_AIS_InteractiveObject : public Handle_SelectMgr_SelectableObject {
 };
 %feature("shadow") Handle_AIS_InteractiveObject::~Handle_AIS_InteractiveObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_InteractiveObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_Relation;
@@ -252,8 +262,18 @@ class Handle_AIS_Relation : public Handle_AIS_InteractiveObject {
 };
 %feature("shadow") Handle_AIS_Relation::~Handle_AIS_Relation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_Relation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_MidPointRelation;
@@ -280,8 +300,18 @@ class Handle_AIS_MidPointRelation : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_MidPointRelation::~Handle_AIS_MidPointRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_MidPointRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_DiameterDimension;
@@ -308,8 +338,18 @@ class Handle_AIS_DiameterDimension : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_DiameterDimension::~Handle_AIS_DiameterDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_DiameterDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_MultipleConnectedInteractive;
@@ -336,8 +376,18 @@ class Handle_AIS_MultipleConnectedInteractive : public Handle_AIS_InteractiveObj
 };
 %feature("shadow") Handle_AIS_MultipleConnectedInteractive::~Handle_AIS_MultipleConnectedInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_MultipleConnectedInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_FixRelation;
@@ -364,8 +414,18 @@ class Handle_AIS_FixRelation : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_FixRelation::~Handle_AIS_FixRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_FixRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_EqualDistanceRelation;
@@ -392,8 +452,18 @@ class Handle_AIS_EqualDistanceRelation : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_EqualDistanceRelation::~Handle_AIS_EqualDistanceRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_EqualDistanceRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfIOStatus;
@@ -420,8 +490,18 @@ class Handle_AIS_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_MapN
 };
 %feature("shadow") Handle_AIS_DataMapNodeOfDataMapOfIOStatus::~Handle_AIS_DataMapNodeOfDataMapOfIOStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_DataMapNodeOfDataMapOfIOStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_TangentRelation;
@@ -448,8 +528,18 @@ class Handle_AIS_TangentRelation : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_TangentRelation::~Handle_AIS_TangentRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_TangentRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_ConnectedInteractive;
@@ -476,8 +566,18 @@ class Handle_AIS_ConnectedInteractive : public Handle_AIS_InteractiveObject {
 };
 %feature("shadow") Handle_AIS_ConnectedInteractive::~Handle_AIS_ConnectedInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_ConnectedInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_ConnectedShape;
@@ -504,8 +604,18 @@ class Handle_AIS_ConnectedShape : public Handle_AIS_ConnectedInteractive {
 };
 %feature("shadow") Handle_AIS_ConnectedShape::~Handle_AIS_ConnectedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_ConnectedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_Trihedron;
@@ -532,8 +642,18 @@ class Handle_AIS_Trihedron : public Handle_AIS_InteractiveObject {
 };
 %feature("shadow") Handle_AIS_Trihedron::~Handle_AIS_Trihedron %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_Trihedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_RadiusDimension;
@@ -560,8 +680,18 @@ class Handle_AIS_RadiusDimension : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_RadiusDimension::~Handle_AIS_RadiusDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_RadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_Point;
@@ -588,8 +718,18 @@ class Handle_AIS_Point : public Handle_AIS_InteractiveObject {
 };
 %feature("shadow") Handle_AIS_Point::~Handle_AIS_Point %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_LengthDimension;
@@ -616,8 +756,18 @@ class Handle_AIS_LengthDimension : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_LengthDimension::~Handle_AIS_LengthDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_LengthDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_MultipleConnectedShape;
@@ -644,8 +794,18 @@ class Handle_AIS_MultipleConnectedShape : public Handle_AIS_MultipleConnectedInt
 };
 %feature("shadow") Handle_AIS_MultipleConnectedShape::~Handle_AIS_MultipleConnectedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_MultipleConnectedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_ConcentricRelation;
@@ -672,8 +832,18 @@ class Handle_AIS_ConcentricRelation : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_ConcentricRelation::~Handle_AIS_ConcentricRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_ConcentricRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_Chamf2dDimension;
@@ -700,8 +870,18 @@ class Handle_AIS_Chamf2dDimension : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_Chamf2dDimension::~Handle_AIS_Chamf2dDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_Chamf2dDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_ExclusionFilter;
@@ -728,8 +908,18 @@ class Handle_AIS_ExclusionFilter : public Handle_SelectMgr_Filter {
 };
 %feature("shadow") Handle_AIS_ExclusionFilter::~Handle_AIS_ExclusionFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_ExclusionFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfILC;
@@ -756,8 +946,18 @@ class Handle_AIS_DataMapNodeOfDataMapOfILC : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_AIS_DataMapNodeOfDataMapOfILC::~Handle_AIS_DataMapNodeOfDataMapOfILC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_DataMapNodeOfDataMapOfILC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_AttributeFilter;
@@ -784,8 +984,18 @@ class Handle_AIS_AttributeFilter : public Handle_SelectMgr_Filter {
 };
 %feature("shadow") Handle_AIS_AttributeFilter::~Handle_AIS_AttributeFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_AttributeFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_SequenceNodeOfSequenceOfDimension;
@@ -812,8 +1022,18 @@ class Handle_AIS_SequenceNodeOfSequenceOfDimension : public Handle_TCollection_S
 };
 %feature("shadow") Handle_AIS_SequenceNodeOfSequenceOfDimension::~Handle_AIS_SequenceNodeOfSequenceOfDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_SequenceNodeOfSequenceOfDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_EqualRadiusRelation;
@@ -840,8 +1060,18 @@ class Handle_AIS_EqualRadiusRelation : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_EqualRadiusRelation::~Handle_AIS_EqualRadiusRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_EqualRadiusRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_GlobalStatus;
@@ -868,8 +1098,18 @@ class Handle_AIS_GlobalStatus : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AIS_GlobalStatus::~Handle_AIS_GlobalStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_GlobalStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_Line;
@@ -896,8 +1136,18 @@ class Handle_AIS_Line : public Handle_AIS_InteractiveObject {
 };
 %feature("shadow") Handle_AIS_Line::~Handle_AIS_Line %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_DimensionOwner;
@@ -924,8 +1174,18 @@ class Handle_AIS_DimensionOwner : public Handle_SelectMgr_EntityOwner {
 };
 %feature("shadow") Handle_AIS_DimensionOwner::~Handle_AIS_DimensionOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_DimensionOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_PerpendicularRelation;
@@ -952,8 +1212,18 @@ class Handle_AIS_PerpendicularRelation : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_PerpendicularRelation::~Handle_AIS_PerpendicularRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_PerpendicularRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_TypeFilter;
@@ -980,8 +1250,18 @@ class Handle_AIS_TypeFilter : public Handle_SelectMgr_Filter {
 };
 %feature("shadow") Handle_AIS_TypeFilter::~Handle_AIS_TypeFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_TypeFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_SignatureFilter;
@@ -1008,8 +1288,18 @@ class Handle_AIS_SignatureFilter : public Handle_AIS_TypeFilter {
 };
 %feature("shadow") Handle_AIS_SignatureFilter::~Handle_AIS_SignatureFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_SignatureFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_InteractiveContext;
@@ -1036,8 +1326,18 @@ class Handle_AIS_InteractiveContext : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AIS_InteractiveContext::~Handle_AIS_InteractiveContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_InteractiveContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_OffsetDimension;
@@ -1064,8 +1364,18 @@ class Handle_AIS_OffsetDimension : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_OffsetDimension::~Handle_AIS_OffsetDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_OffsetDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_EllipseRadiusDimension;
@@ -1092,8 +1402,18 @@ class Handle_AIS_EllipseRadiusDimension : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_EllipseRadiusDimension::~Handle_AIS_EllipseRadiusDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_EllipseRadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_Axis;
@@ -1120,8 +1440,18 @@ class Handle_AIS_Axis : public Handle_AIS_InteractiveObject {
 };
 %feature("shadow") Handle_AIS_Axis::~Handle_AIS_Axis %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_Axis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_MinRadiusDimension;
@@ -1148,8 +1478,18 @@ class Handle_AIS_MinRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
 };
 %feature("shadow") Handle_AIS_MinRadiusDimension::~Handle_AIS_MinRadiusDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_MinRadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_C0RegularityFilter;
@@ -1176,8 +1516,18 @@ class Handle_AIS_C0RegularityFilter : public Handle_SelectMgr_Filter {
 };
 %feature("shadow") Handle_AIS_C0RegularityFilter::~Handle_AIS_C0RegularityFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_C0RegularityFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive;
@@ -1204,8 +1554,18 @@ class Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public Handle_
 };
 %feature("shadow") Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive::~Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_Plane;
@@ -1232,8 +1592,18 @@ class Handle_AIS_Plane : public Handle_AIS_InteractiveObject {
 };
 %feature("shadow") Handle_AIS_Plane::~Handle_AIS_Plane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_Plane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_MaxRadiusDimension;
@@ -1260,8 +1630,18 @@ class Handle_AIS_MaxRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
 };
 %feature("shadow") Handle_AIS_MaxRadiusDimension::~Handle_AIS_MaxRadiusDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_MaxRadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_LocalStatus;
@@ -1288,8 +1668,18 @@ class Handle_AIS_LocalStatus : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AIS_LocalStatus::~Handle_AIS_LocalStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_LocalStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_LocalContext;
@@ -1316,8 +1706,18 @@ class Handle_AIS_LocalContext : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AIS_LocalContext::~Handle_AIS_LocalContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_LocalContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_BadEdgeFilter;
@@ -1344,8 +1744,18 @@ class Handle_AIS_BadEdgeFilter : public Handle_SelectMgr_Filter {
 };
 %feature("shadow") Handle_AIS_BadEdgeFilter::~Handle_AIS_BadEdgeFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_BadEdgeFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_Circle;
@@ -1372,8 +1782,18 @@ class Handle_AIS_Circle : public Handle_AIS_InteractiveObject {
 };
 %feature("shadow") Handle_AIS_Circle::~Handle_AIS_Circle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_Circle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_StdMapNodeOfMapOfInteractive;
@@ -1400,8 +1820,18 @@ class Handle_AIS_StdMapNodeOfMapOfInteractive : public Handle_TCollection_MapNod
 };
 %feature("shadow") Handle_AIS_StdMapNodeOfMapOfInteractive::~Handle_AIS_StdMapNodeOfMapOfInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_StdMapNodeOfMapOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_SequenceNodeOfSequenceOfInteractive;
@@ -1428,8 +1858,18 @@ class Handle_AIS_SequenceNodeOfSequenceOfInteractive : public Handle_TCollection
 };
 %feature("shadow") Handle_AIS_SequenceNodeOfSequenceOfInteractive::~Handle_AIS_SequenceNodeOfSequenceOfInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_SequenceNodeOfSequenceOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_Shape;
@@ -1456,8 +1896,18 @@ class Handle_AIS_Shape : public Handle_AIS_InteractiveObject {
 };
 %feature("shadow") Handle_AIS_Shape::~Handle_AIS_Shape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_Shape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_SymmetricRelation;
@@ -1484,8 +1934,18 @@ class Handle_AIS_SymmetricRelation : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_SymmetricRelation::~Handle_AIS_SymmetricRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_SymmetricRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfTransientTransient;
@@ -1512,8 +1972,18 @@ class Handle_AIS_DataMapNodeOfDataMapOfTransientTransient : public Handle_TColle
 };
 %feature("shadow") Handle_AIS_DataMapNodeOfDataMapOfTransientTransient::~Handle_AIS_DataMapNodeOfDataMapOfTransientTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_DataMapNodeOfDataMapOfTransientTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_Selection;
@@ -1540,8 +2010,18 @@ class Handle_AIS_Selection : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_AIS_Selection::~Handle_AIS_Selection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_Selection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs;
@@ -1568,8 +2048,18 @@ class Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Handle_TC
 };
 %feature("shadow") Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs::~Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_ParallelRelation;
@@ -1596,8 +2086,18 @@ class Handle_AIS_ParallelRelation : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_ParallelRelation::~Handle_AIS_ParallelRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_ParallelRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfSelStat;
@@ -1624,8 +2124,18 @@ class Handle_AIS_DataMapNodeOfDataMapOfSelStat : public Handle_TCollection_MapNo
 };
 %feature("shadow") Handle_AIS_DataMapNodeOfDataMapOfSelStat::~Handle_AIS_DataMapNodeOfDataMapOfSelStat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_DataMapNodeOfDataMapOfSelStat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_TexturedShape;
@@ -1652,8 +2162,18 @@ class Handle_AIS_TexturedShape : public Handle_AIS_Shape {
 };
 %feature("shadow") Handle_AIS_TexturedShape::~Handle_AIS_TexturedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_TexturedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_IdenticRelation;
@@ -1680,8 +2200,18 @@ class Handle_AIS_IdenticRelation : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_IdenticRelation::~Handle_AIS_IdenticRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_IdenticRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_Drawer;
@@ -1708,8 +2238,18 @@ class Handle_AIS_Drawer : public Handle_Prs3d_Drawer {
 };
 %feature("shadow") Handle_AIS_Drawer::~Handle_AIS_Drawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_ListNodeOfListOfInteractive;
@@ -1736,8 +2276,18 @@ class Handle_AIS_ListNodeOfListOfInteractive : public Handle_TCollection_MapNode
 };
 %feature("shadow") Handle_AIS_ListNodeOfListOfInteractive::~Handle_AIS_ListNodeOfListOfInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_ListNodeOfListOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_AngleDimension;
@@ -1764,8 +2314,18 @@ class Handle_AIS_AngleDimension : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_AngleDimension::~Handle_AIS_AngleDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_AngleDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_PlaneTrihedron;
@@ -1792,8 +2352,18 @@ class Handle_AIS_PlaneTrihedron : public Handle_AIS_InteractiveObject {
 };
 %feature("shadow") Handle_AIS_PlaneTrihedron::~Handle_AIS_PlaneTrihedron %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_PlaneTrihedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_AIS_Chamf3dDimension;
@@ -1820,8 +2390,18 @@ class Handle_AIS_Chamf3dDimension : public Handle_AIS_Relation {
 };
 %feature("shadow") Handle_AIS_Chamf3dDimension::~Handle_AIS_Chamf3dDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_AIS_Chamf3dDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_Drawer;
@@ -1975,8 +2555,18 @@ class AIS_Drawer : public Prs3d_Drawer {
 };
 %feature("shadow") AIS_Drawer::~AIS_Drawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapIteratorOfDataMapOfTransientTransient;
@@ -1996,8 +2586,18 @@ class AIS_DataMapIteratorOfDataMapOfTransientTransient : public TCollection_Basi
 };
 %feature("shadow") AIS_DataMapIteratorOfDataMapOfTransientTransient::~AIS_DataMapIteratorOfDataMapOfTransientTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapIteratorOfDataMapOfTransientTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_InteractiveObject;
@@ -2165,8 +2765,18 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 };
 %feature("shadow") AIS_InteractiveObject::~AIS_InteractiveObject %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_InteractiveObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_Relation;
@@ -2234,8 +2844,18 @@ class AIS_Relation : public AIS_InteractiveObject {
 };
 %feature("shadow") AIS_Relation::~AIS_Relation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_Relation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DiameterDimension;
@@ -2265,8 +2885,18 @@ class AIS_DiameterDimension : public AIS_Relation {
 };
 %feature("shadow") AIS_DiameterDimension::~AIS_DiameterDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DiameterDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_EllipseRadiusDimension;
@@ -2294,8 +2924,18 @@ class AIS_EllipseRadiusDimension : public AIS_Relation {
 };
 %feature("shadow") AIS_EllipseRadiusDimension::~AIS_EllipseRadiusDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_EllipseRadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapNodeOfDataMapOfSelStat;
@@ -2323,8 +2963,18 @@ class AIS_DataMapNodeOfDataMapOfSelStat : public TCollection_MapNode {
 };
 %feature("shadow") AIS_DataMapNodeOfDataMapOfSelStat::~AIS_DataMapNodeOfDataMapOfSelStat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapNodeOfDataMapOfSelStat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapOfSelStat;
@@ -2358,8 +3008,18 @@ class AIS_DataMapOfSelStat : public TCollection_BasicMap {
 };
 %feature("shadow") AIS_DataMapOfSelStat::~AIS_DataMapOfSelStat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapOfSelStat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_ExclusionFilter;
@@ -2409,8 +3069,18 @@ class AIS_ExclusionFilter : public SelectMgr_Filter {
 };
 %feature("shadow") AIS_ExclusionFilter::~AIS_ExclusionFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_ExclusionFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_SequenceOfDimension;
@@ -2464,8 +3134,18 @@ class AIS_SequenceOfDimension : public TCollection_BaseSequence {
 };
 %feature("shadow") AIS_SequenceOfDimension::~AIS_SequenceOfDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_SequenceOfDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs;
@@ -2507,8 +3187,18 @@ class AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollection_MapN
 };
 %feature("shadow") AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs::~AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_ConnectedInteractive;
@@ -2558,8 +3248,18 @@ class AIS_ConnectedInteractive : public AIS_InteractiveObject {
 };
 %feature("shadow") AIS_ConnectedInteractive::~AIS_ConnectedInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_ConnectedInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_ConnectedShape;
@@ -2589,8 +3289,18 @@ class AIS_ConnectedShape : public AIS_ConnectedInteractive {
 };
 %feature("shadow") AIS_ConnectedShape::~AIS_ConnectedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_ConnectedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_Shape;
@@ -2690,8 +3400,18 @@ class AIS_Shape : public AIS_InteractiveObject {
 };
 %feature("shadow") AIS_Shape::~AIS_Shape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_Shape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_TexturedShape;
@@ -2761,8 +3481,18 @@ class AIS_TexturedShape : public AIS_Shape {
 };
 %feature("shadow") AIS_TexturedShape::~AIS_TexturedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_TexturedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_SequenceOfInteractive;
@@ -2816,8 +3546,18 @@ class AIS_SequenceOfInteractive : public TCollection_BaseSequence {
 };
 %feature("shadow") AIS_SequenceOfInteractive::~AIS_SequenceOfInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_SequenceOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_Line;
@@ -2867,8 +3607,18 @@ class AIS_Line : public AIS_InteractiveObject {
 };
 %feature("shadow") AIS_Line::~AIS_Line %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_AttributeFilter;
@@ -2910,8 +3660,18 @@ class AIS_AttributeFilter : public SelectMgr_Filter {
 };
 %feature("shadow") AIS_AttributeFilter::~AIS_AttributeFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_AttributeFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapIteratorOfDataMapOfILC;
@@ -2931,8 +3691,18 @@ class AIS_DataMapIteratorOfDataMapOfILC : public TCollection_BasicMapIterator {
 };
 %feature("shadow") AIS_DataMapIteratorOfDataMapOfILC::~AIS_DataMapIteratorOfDataMapOfILC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapIteratorOfDataMapOfILC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapNodeOfDataMapOfTransientTransient;
@@ -2960,8 +3730,18 @@ class AIS_DataMapNodeOfDataMapOfTransientTransient : public TCollection_MapNode 
 };
 %feature("shadow") AIS_DataMapNodeOfDataMapOfTransientTransient::~AIS_DataMapNodeOfDataMapOfTransientTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapNodeOfDataMapOfTransientTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_BadEdgeFilter;
@@ -2995,8 +3775,18 @@ class AIS_BadEdgeFilter : public SelectMgr_Filter {
 };
 %feature("shadow") AIS_BadEdgeFilter::~AIS_BadEdgeFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_BadEdgeFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_TypeFilter;
@@ -3022,8 +3812,18 @@ class AIS_TypeFilter : public SelectMgr_Filter {
 };
 %feature("shadow") AIS_TypeFilter::~AIS_TypeFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_TypeFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_SignatureFilter;
@@ -3045,8 +3845,18 @@ class AIS_SignatureFilter : public AIS_TypeFilter {
 };
 %feature("shadow") AIS_SignatureFilter::~AIS_SignatureFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_SignatureFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_OffsetDimension;
@@ -3078,8 +3888,18 @@ class AIS_OffsetDimension : public AIS_Relation {
 };
 %feature("shadow") AIS_OffsetDimension::~AIS_OffsetDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_OffsetDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_Axis;
@@ -3141,8 +3961,18 @@ class AIS_Axis : public AIS_InteractiveObject {
 };
 %feature("shadow") AIS_Axis::~AIS_Axis %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_Axis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_LocalStatus;
@@ -3212,8 +4042,18 @@ class AIS_LocalStatus : public MMgt_TShared {
 };
 %feature("shadow") AIS_LocalStatus::~AIS_LocalStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_LocalStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_FixRelation;
@@ -3251,8 +4091,18 @@ class AIS_FixRelation : public AIS_Relation {
 };
 %feature("shadow") AIS_FixRelation::~AIS_FixRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_FixRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapIteratorOfDataMapOfSelStat;
@@ -3272,8 +4122,18 @@ class AIS_DataMapIteratorOfDataMapOfSelStat : public TCollection_BasicMapIterato
 };
 %feature("shadow") AIS_DataMapIteratorOfDataMapOfSelStat::~AIS_DataMapIteratorOfDataMapOfSelStat %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapIteratorOfDataMapOfSelStat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_ListOfInteractive;
@@ -3323,8 +4183,18 @@ class AIS_ListOfInteractive {
 };
 %feature("shadow") AIS_ListOfInteractive::~AIS_ListOfInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_ListOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_PerpendicularRelation;
@@ -3352,8 +4222,18 @@ class AIS_PerpendicularRelation : public AIS_Relation {
 };
 %feature("shadow") AIS_PerpendicularRelation::~AIS_PerpendicularRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_PerpendicularRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_Chamf3dDimension;
@@ -3385,8 +4265,18 @@ class AIS_Chamf3dDimension : public AIS_Relation {
 };
 %feature("shadow") AIS_Chamf3dDimension::~AIS_Chamf3dDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_Chamf3dDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_MultipleConnectedInteractive;
@@ -3430,8 +4320,18 @@ class AIS_MultipleConnectedInteractive : public AIS_InteractiveObject {
 };
 %feature("shadow") AIS_MultipleConnectedInteractive::~AIS_MultipleConnectedInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_MultipleConnectedInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_Trihedron;
@@ -3513,8 +4413,18 @@ class AIS_Trihedron : public AIS_InteractiveObject {
 };
 %feature("shadow") AIS_Trihedron::~AIS_Trihedron %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_Trihedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_MidPointRelation;
@@ -3546,8 +4456,18 @@ class AIS_MidPointRelation : public AIS_Relation {
 };
 %feature("shadow") AIS_MidPointRelation::~AIS_MidPointRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_MidPointRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_IndexedDataMapOfOwnerPrs;
@@ -3591,8 +4511,18 @@ class AIS_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 };
 %feature("shadow") AIS_IndexedDataMapOfOwnerPrs::~AIS_IndexedDataMapOfOwnerPrs %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_IndexedDataMapOfOwnerPrs {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_Point;
@@ -3642,8 +4572,18 @@ class AIS_Point : public AIS_InteractiveObject {
 };
 %feature("shadow") AIS_Point::~AIS_Point %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapIteratorOfDataMapOfIOStatus;
@@ -3663,8 +4603,18 @@ class AIS_DataMapIteratorOfDataMapOfIOStatus : public TCollection_BasicMapIterat
 };
 %feature("shadow") AIS_DataMapIteratorOfDataMapOfIOStatus::~AIS_DataMapIteratorOfDataMapOfIOStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapIteratorOfDataMapOfIOStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapOfIOStatus;
@@ -3698,8 +4648,18 @@ class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
 };
 %feature("shadow") AIS_DataMapOfIOStatus::~AIS_DataMapOfIOStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapOfIOStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS;
@@ -3755,8 +4715,18 @@ class AIS {
 };
 %feature("shadow") AIS::~AIS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_ParallelRelation;
@@ -3786,8 +4756,18 @@ class AIS_ParallelRelation : public AIS_Relation {
 };
 %feature("shadow") AIS_ParallelRelation::~AIS_ParallelRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_ParallelRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_MaxRadiusDimension;
@@ -3815,8 +4795,18 @@ class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
 };
 %feature("shadow") AIS_MaxRadiusDimension::~AIS_MaxRadiusDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_MaxRadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_C0RegularityFilter;
@@ -3844,8 +4834,18 @@ class AIS_C0RegularityFilter : public SelectMgr_Filter {
 };
 %feature("shadow") AIS_C0RegularityFilter::~AIS_C0RegularityFilter %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_C0RegularityFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_ListNodeOfListOfInteractive;
@@ -3871,8 +4871,18 @@ class AIS_ListNodeOfListOfInteractive : public TCollection_MapNode {
 };
 %feature("shadow") AIS_ListNodeOfListOfInteractive::~AIS_ListNodeOfListOfInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_ListNodeOfListOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapNodeOfDataMapOfIOStatus;
@@ -3900,8 +4910,18 @@ class AIS_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 };
 %feature("shadow") AIS_DataMapNodeOfDataMapOfIOStatus::~AIS_DataMapNodeOfDataMapOfIOStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapNodeOfDataMapOfIOStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DimensionOwner;
@@ -3929,8 +4949,18 @@ class AIS_DimensionOwner : public SelectMgr_EntityOwner {
 };
 %feature("shadow") AIS_DimensionOwner::~AIS_DimensionOwner %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DimensionOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_LocalContext;
@@ -4146,8 +5176,18 @@ class AIS_LocalContext : public MMgt_TShared {
 };
 %feature("shadow") AIS_LocalContext::~AIS_LocalContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_LocalContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapNodeOfDataMapOfILC;
@@ -4185,8 +5225,18 @@ class AIS_DataMapNodeOfDataMapOfILC : public TCollection_MapNode {
 };
 %feature("shadow") AIS_DataMapNodeOfDataMapOfILC::~AIS_DataMapNodeOfDataMapOfILC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapNodeOfDataMapOfILC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_MapOfInteractive;
@@ -4212,8 +5262,18 @@ class AIS_MapOfInteractive : public TCollection_BasicMap {
 };
 %feature("shadow") AIS_MapOfInteractive::~AIS_MapOfInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_MapOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_Plane;
@@ -4295,8 +5355,18 @@ class AIS_Plane : public AIS_InteractiveObject {
 };
 %feature("shadow") AIS_Plane::~AIS_Plane %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_Plane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_ListIteratorOfListOfInteractive;
@@ -4318,8 +5388,18 @@ class AIS_ListIteratorOfListOfInteractive {
 };
 %feature("shadow") AIS_ListIteratorOfListOfInteractive::~AIS_ListIteratorOfListOfInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_ListIteratorOfListOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_ConcentricRelation;
@@ -4345,8 +5425,18 @@ class AIS_ConcentricRelation : public AIS_Relation {
 };
 %feature("shadow") AIS_ConcentricRelation::~AIS_ConcentricRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_ConcentricRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_IdenticRelation;
@@ -4374,8 +5464,18 @@ class AIS_IdenticRelation : public AIS_Relation {
 };
 %feature("shadow") AIS_IdenticRelation::~AIS_IdenticRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_IdenticRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_Selection;
@@ -4439,8 +5539,18 @@ class AIS_Selection : public MMgt_TShared {
 };
 %feature("shadow") AIS_Selection::~AIS_Selection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_Selection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_StdMapNodeOfMapOfInteractive;
@@ -4466,8 +5576,18 @@ class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
 };
 %feature("shadow") AIS_StdMapNodeOfMapOfInteractive::~AIS_StdMapNodeOfMapOfInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_StdMapNodeOfMapOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_SequenceNodeOfSequenceOfInteractive;
@@ -4493,8 +5613,18 @@ class AIS_SequenceNodeOfSequenceOfInteractive : public TCollection_SeqNode {
 };
 %feature("shadow") AIS_SequenceNodeOfSequenceOfInteractive::~AIS_SequenceNodeOfSequenceOfInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_SequenceNodeOfSequenceOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_Circle;
@@ -4546,8 +5676,18 @@ class AIS_Circle : public AIS_InteractiveObject {
 };
 %feature("shadow") AIS_Circle::~AIS_Circle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_Circle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_SymmetricRelation;
@@ -4579,8 +5719,18 @@ class AIS_SymmetricRelation : public AIS_Relation {
 };
 %feature("shadow") AIS_SymmetricRelation::~AIS_SymmetricRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_SymmetricRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_Chamf2dDimension;
@@ -4612,8 +5762,18 @@ class AIS_Chamf2dDimension : public AIS_Relation {
 };
 %feature("shadow") AIS_Chamf2dDimension::~AIS_Chamf2dDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_Chamf2dDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_GlobalStatus;
@@ -4677,8 +5837,18 @@ class AIS_GlobalStatus : public MMgt_TShared {
 };
 %feature("shadow") AIS_GlobalStatus::~AIS_GlobalStatus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_GlobalStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive;
@@ -4698,8 +5868,18 @@ class AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive : public TCollectio
 };
 %feature("shadow") AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive::~AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_InteractiveContext;
@@ -5205,8 +6385,18 @@ class AIS_InteractiveContext : public MMgt_TShared {
 };
 %feature("shadow") AIS_InteractiveContext::~AIS_InteractiveContext %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_InteractiveContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_PlaneTrihedron;
@@ -5260,8 +6450,18 @@ class AIS_PlaneTrihedron : public AIS_InteractiveObject {
 };
 %feature("shadow") AIS_PlaneTrihedron::~AIS_PlaneTrihedron %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_PlaneTrihedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapofIntegerListOfinteractive;
@@ -5295,8 +6495,18 @@ class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
 };
 %feature("shadow") AIS_DataMapofIntegerListOfinteractive::~AIS_DataMapofIntegerListOfinteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapofIntegerListOfinteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_GraphicTool;
@@ -5324,8 +6534,18 @@ class AIS_GraphicTool {
 };
 %feature("shadow") AIS_GraphicTool::~AIS_GraphicTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_GraphicTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_MultipleConnectedShape;
@@ -5361,8 +6581,18 @@ class AIS_MultipleConnectedShape : public AIS_MultipleConnectedInteractive {
 };
 %feature("shadow") AIS_MultipleConnectedShape::~AIS_MultipleConnectedShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_MultipleConnectedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapNodeOfDataMapofIntegerListOfinteractive;
@@ -5400,8 +6630,18 @@ class AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public TCollection_Ma
 };
 %feature("shadow") AIS_DataMapNodeOfDataMapofIntegerListOfinteractive::~AIS_DataMapNodeOfDataMapofIntegerListOfinteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_AngleDimension;
@@ -5455,8 +6695,18 @@ class AIS_AngleDimension : public AIS_Relation {
 };
 %feature("shadow") AIS_AngleDimension::~AIS_AngleDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_AngleDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapOfTransientTransient;
@@ -5490,8 +6740,18 @@ class AIS_DataMapOfTransientTransient : public TCollection_BasicMap {
 };
 %feature("shadow") AIS_DataMapOfTransientTransient::~AIS_DataMapOfTransientTransient %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapOfTransientTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_DataMapOfILC;
@@ -5525,8 +6785,18 @@ class AIS_DataMapOfILC : public TCollection_BasicMap {
 };
 %feature("shadow") AIS_DataMapOfILC::~AIS_DataMapOfILC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_DataMapOfILC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_TangentRelation;
@@ -5556,8 +6826,18 @@ class AIS_TangentRelation : public AIS_Relation {
 };
 %feature("shadow") AIS_TangentRelation::~AIS_TangentRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_TangentRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_EqualRadiusRelation;
@@ -5583,8 +6863,18 @@ class AIS_EqualRadiusRelation : public AIS_Relation {
 };
 %feature("shadow") AIS_EqualRadiusRelation::~AIS_EqualRadiusRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_EqualRadiusRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_RadiusDimension;
@@ -5622,8 +6912,18 @@ class AIS_RadiusDimension : public AIS_Relation {
 };
 %feature("shadow") AIS_RadiusDimension::~AIS_RadiusDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_RadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_MapIteratorOfMapOfInteractive;
@@ -5641,8 +6941,18 @@ class AIS_MapIteratorOfMapOfInteractive : public TCollection_BasicMapIterator {
 };
 %feature("shadow") AIS_MapIteratorOfMapOfInteractive::~AIS_MapIteratorOfMapOfInteractive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_MapIteratorOfMapOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_EqualDistanceRelation;
@@ -5682,8 +6992,18 @@ class AIS_EqualDistanceRelation : public AIS_Relation {
 };
 %feature("shadow") AIS_EqualDistanceRelation::~AIS_EqualDistanceRelation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_EqualDistanceRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_LengthDimension;
@@ -5735,8 +7055,18 @@ class AIS_LengthDimension : public AIS_Relation {
 };
 %feature("shadow") AIS_LengthDimension::~AIS_LengthDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_LengthDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_MinRadiusDimension;
@@ -5764,8 +7094,18 @@ class AIS_MinRadiusDimension : public AIS_EllipseRadiusDimension {
 };
 %feature("shadow") AIS_MinRadiusDimension::~AIS_MinRadiusDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_MinRadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor AIS_SequenceNodeOfSequenceOfDimension;
@@ -5791,5 +7131,15 @@ class AIS_SequenceNodeOfSequenceOfDimension : public TCollection_SeqNode {
 };
 %feature("shadow") AIS_SequenceNodeOfSequenceOfDimension::~AIS_SequenceNodeOfSequenceOfDimension %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend AIS_SequenceNodeOfSequenceOfDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

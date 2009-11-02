@@ -63,8 +63,18 @@ class Handle_GraphTools_SC : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_GraphTools_SC::~Handle_GraphTools_SC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GraphTools_SC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GraphTools_ListNodeOfSCList;
@@ -91,8 +101,18 @@ class Handle_GraphTools_ListNodeOfSCList : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_GraphTools_ListNodeOfSCList::~Handle_GraphTools_ListNodeOfSCList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GraphTools_ListNodeOfSCList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GraphTools_ListNodeOfListOfSequenceOfInteger;
@@ -119,8 +139,18 @@ class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TColle
 };
 %feature("shadow") Handle_GraphTools_ListNodeOfListOfSequenceOfInteger::~Handle_GraphTools_ListNodeOfListOfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_GraphTools_ListNodeOfListOfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GraphTools_SC;
@@ -160,8 +190,18 @@ class GraphTools_SC : public MMgt_TShared {
 };
 %feature("shadow") GraphTools_SC::~GraphTools_SC %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GraphTools_SC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GraphTools_SCList;
@@ -211,8 +251,18 @@ class GraphTools_SCList {
 };
 %feature("shadow") GraphTools_SCList::~GraphTools_SCList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GraphTools_SCList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GraphTools_ListOfSequenceOfInteger;
@@ -262,8 +312,18 @@ class GraphTools_ListOfSequenceOfInteger {
 };
 %feature("shadow") GraphTools_ListOfSequenceOfInteger::~GraphTools_ListOfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GraphTools_ListOfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GraphTools_ListIteratorOfListOfSequenceOfInteger;
@@ -285,8 +345,18 @@ class GraphTools_ListIteratorOfListOfSequenceOfInteger {
 };
 %feature("shadow") GraphTools_ListIteratorOfListOfSequenceOfInteger::~GraphTools_ListIteratorOfListOfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GraphTools_ListIteratorOfListOfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GraphTools_TSNode;
@@ -312,8 +382,18 @@ class GraphTools_TSNode {
 };
 %feature("shadow") GraphTools_TSNode::~GraphTools_TSNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GraphTools_TSNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GraphTools_RGNode;
@@ -341,8 +421,18 @@ class GraphTools_RGNode {
 };
 %feature("shadow") GraphTools_RGNode::~GraphTools_RGNode %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GraphTools_RGNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GraphTools_ListIteratorOfSCList;
@@ -364,8 +454,18 @@ class GraphTools_ListIteratorOfSCList {
 };
 %feature("shadow") GraphTools_ListIteratorOfSCList::~GraphTools_ListIteratorOfSCList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GraphTools_ListIteratorOfSCList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GraphTools_ListNodeOfSCList;
@@ -391,8 +491,18 @@ class GraphTools_ListNodeOfSCList : public TCollection_MapNode {
 };
 %feature("shadow") GraphTools_ListNodeOfSCList::~GraphTools_ListNodeOfSCList %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GraphTools_ListNodeOfSCList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor GraphTools_ListNodeOfListOfSequenceOfInteger;
@@ -418,5 +528,15 @@ class GraphTools_ListNodeOfListOfSequenceOfInteger : public TCollection_MapNode 
 };
 %feature("shadow") GraphTools_ListNodeOfListOfSequenceOfInteger::~GraphTools_ListNodeOfListOfSequenceOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend GraphTools_ListNodeOfListOfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

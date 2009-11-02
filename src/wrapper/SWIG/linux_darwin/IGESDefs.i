@@ -63,8 +63,18 @@ class Handle_IGESDefs_Protocol : public Handle_IGESData_Protocol {
 };
 %feature("shadow") Handle_IGESDefs_Protocol::~Handle_IGESDefs_Protocol %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDefs_Protocol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate;
@@ -91,8 +101,18 @@ class Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public Handle_MMgt
 };
 %feature("shadow") Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate::~Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDefs_GeneralModule;
@@ -119,8 +139,18 @@ class Handle_IGESDefs_GeneralModule : public Handle_IGESData_GeneralModule {
 };
 %feature("shadow") Handle_IGESDefs_GeneralModule::~Handle_IGESDefs_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDefs_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDefs_SpecificModule;
@@ -147,8 +177,18 @@ class Handle_IGESDefs_SpecificModule : public Handle_IGESData_SpecificModule {
 };
 %feature("shadow") Handle_IGESDefs_SpecificModule::~Handle_IGESDefs_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDefs_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDefs_HArray1OfTabularData;
@@ -175,8 +215,18 @@ class Handle_IGESDefs_HArray1OfTabularData : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_IGESDefs_HArray1OfTabularData::~Handle_IGESDefs_HArray1OfTabularData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDefs_HArray1OfTabularData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDefs_AttributeTable;
@@ -203,8 +253,18 @@ class Handle_IGESDefs_AttributeTable : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDefs_AttributeTable::~Handle_IGESDefs_AttributeTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDefs_AttributeTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDefs_GenericData;
@@ -231,8 +291,18 @@ class Handle_IGESDefs_GenericData : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDefs_GenericData::~Handle_IGESDefs_GenericData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDefs_GenericData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDefs_TabularData;
@@ -259,8 +329,18 @@ class Handle_IGESDefs_TabularData : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDefs_TabularData::~Handle_IGESDefs_TabularData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDefs_TabularData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDefs_AssociativityDef;
@@ -287,8 +367,18 @@ class Handle_IGESDefs_AssociativityDef : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDefs_AssociativityDef::~Handle_IGESDefs_AssociativityDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDefs_AssociativityDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDefs_AttributeDef;
@@ -315,8 +405,18 @@ class Handle_IGESDefs_AttributeDef : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDefs_AttributeDef::~Handle_IGESDefs_AttributeDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDefs_AttributeDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDefs_UnitsData;
@@ -343,8 +443,18 @@ class Handle_IGESDefs_UnitsData : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDefs_UnitsData::~Handle_IGESDefs_UnitsData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDefs_UnitsData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDefs_ReadWriteModule;
@@ -371,8 +481,18 @@ class Handle_IGESDefs_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 };
 %feature("shadow") Handle_IGESDefs_ReadWriteModule::~Handle_IGESDefs_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDefs_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_IGESDefs_MacroDef;
@@ -399,8 +519,18 @@ class Handle_IGESDefs_MacroDef : public Handle_IGESData_IGESEntity {
 };
 %feature("shadow") Handle_IGESDefs_MacroDef::~Handle_IGESDefs_MacroDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_IGESDefs_MacroDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_ToolAttributeDef;
@@ -426,8 +556,18 @@ class IGESDefs_ToolAttributeDef {
 };
 %feature("shadow") IGESDefs_ToolAttributeDef::~IGESDefs_ToolAttributeDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_ToolAttributeDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_GenericData;
@@ -473,8 +613,18 @@ class IGESDefs_GenericData : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDefs_GenericData::~IGESDefs_GenericData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_GenericData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_HArray1OfTabularData;
@@ -518,8 +668,18 @@ class IGESDefs_HArray1OfTabularData : public MMgt_TShared {
 };
 %feature("shadow") IGESDefs_HArray1OfTabularData::~IGESDefs_HArray1OfTabularData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_HArray1OfTabularData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_GeneralModule;
@@ -555,8 +715,18 @@ class IGESDefs_GeneralModule : public IGESData_GeneralModule {
 };
 %feature("shadow") IGESDefs_GeneralModule::~IGESDefs_GeneralModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_SpecificModule;
@@ -582,8 +752,18 @@ class IGESDefs_SpecificModule : public IGESData_SpecificModule {
 };
 %feature("shadow") IGESDefs_SpecificModule::~IGESDefs_SpecificModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_ToolAssociativityDef;
@@ -609,8 +789,18 @@ class IGESDefs_ToolAssociativityDef {
 };
 %feature("shadow") IGESDefs_ToolAssociativityDef::~IGESDefs_ToolAssociativityDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_ToolAssociativityDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_ToolUnitsData;
@@ -636,8 +826,18 @@ class IGESDefs_ToolUnitsData {
 };
 %feature("shadow") IGESDefs_ToolUnitsData::~IGESDefs_ToolUnitsData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_ToolUnitsData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_ReadWriteModule;
@@ -667,8 +867,18 @@ class IGESDefs_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %feature("shadow") IGESDefs_ReadWriteModule::~IGESDefs_ReadWriteModule %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_AssociativityDef;
@@ -710,8 +920,18 @@ class IGESDefs_AssociativityDef : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDefs_AssociativityDef::~IGESDefs_AssociativityDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_AssociativityDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs;
@@ -727,8 +947,18 @@ class IGESDefs {
 };
 %feature("shadow") IGESDefs::~IGESDefs %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_ToolGenericData;
@@ -754,8 +984,18 @@ class IGESDefs_ToolGenericData {
 };
 %feature("shadow") IGESDefs_ToolGenericData::~IGESDefs_ToolGenericData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_ToolGenericData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_ToolTabularData;
@@ -781,8 +1021,18 @@ class IGESDefs_ToolTabularData {
 };
 %feature("shadow") IGESDefs_ToolTabularData::~IGESDefs_ToolTabularData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_ToolTabularData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_ToolMacroDef;
@@ -808,8 +1058,18 @@ class IGESDefs_ToolMacroDef {
 };
 %feature("shadow") IGESDefs_ToolMacroDef::~IGESDefs_ToolMacroDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_ToolMacroDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_ToolAttributeTable;
@@ -835,8 +1095,18 @@ class IGESDefs_ToolAttributeTable {
 };
 %feature("shadow") IGESDefs_ToolAttributeTable::~IGESDefs_ToolAttributeTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_ToolAttributeTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_MacroDef;
@@ -872,8 +1142,18 @@ class IGESDefs_MacroDef : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDefs_MacroDef::~IGESDefs_MacroDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_MacroDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_UnitsData;
@@ -907,8 +1187,18 @@ class IGESDefs_UnitsData : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDefs_UnitsData::~IGESDefs_UnitsData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_UnitsData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_AttributeDef;
@@ -966,8 +1256,18 @@ class IGESDefs_AttributeDef : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDefs_AttributeDef::~IGESDefs_AttributeDef %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_AttributeDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_HArray1OfHArray1OfTextDisplayTemplate;
@@ -1001,8 +1301,18 @@ class IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public MMgt_TShared {
 };
 %feature("shadow") IGESDefs_HArray1OfHArray1OfTextDisplayTemplate::~IGESDefs_HArray1OfHArray1OfTextDisplayTemplate %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_TabularData;
@@ -1050,8 +1360,18 @@ class IGESDefs_TabularData : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDefs_TabularData::~IGESDefs_TabularData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_TabularData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_Array1OfTabularData;
@@ -1091,8 +1411,18 @@ class IGESDefs_Array1OfTabularData {
 };
 %feature("shadow") IGESDefs_Array1OfTabularData::~IGESDefs_Array1OfTabularData %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_Array1OfTabularData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IGESDefs_AttributeTable;
@@ -1142,5 +1472,15 @@ class IGESDefs_AttributeTable : public IGESData_IGESEntity {
 };
 %feature("shadow") IGESDefs_AttributeTable::~IGESDefs_AttributeTable %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IGESDefs_AttributeTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

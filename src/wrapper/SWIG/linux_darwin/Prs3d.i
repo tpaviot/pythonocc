@@ -71,8 +71,18 @@ class Handle_Prs3d_Drawer : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Prs3d_Drawer::~Handle_Prs3d_Drawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_BasicAspect;
@@ -99,8 +109,18 @@ class Handle_Prs3d_BasicAspect : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Prs3d_BasicAspect::~Handle_Prs3d_BasicAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_BasicAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_PlaneSet;
@@ -127,8 +147,18 @@ class Handle_Prs3d_PlaneSet : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Prs3d_PlaneSet::~Handle_Prs3d_PlaneSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_PlaneSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_CompositeAspect;
@@ -155,8 +185,18 @@ class Handle_Prs3d_CompositeAspect : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Prs3d_CompositeAspect::~Handle_Prs3d_CompositeAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_CompositeAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_LengthAspect;
@@ -183,8 +223,18 @@ class Handle_Prs3d_LengthAspect : public Handle_Prs3d_CompositeAspect {
 };
 %feature("shadow") Handle_Prs3d_LengthAspect::~Handle_Prs3d_LengthAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_LengthAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_LineAspect;
@@ -211,8 +261,18 @@ class Handle_Prs3d_LineAspect : public Handle_Prs3d_BasicAspect {
 };
 %feature("shadow") Handle_Prs3d_LineAspect::~Handle_Prs3d_LineAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_LineAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_IsoAspect;
@@ -239,8 +299,18 @@ class Handle_Prs3d_IsoAspect : public Handle_Prs3d_LineAspect {
 };
 %feature("shadow") Handle_Prs3d_IsoAspect::~Handle_Prs3d_IsoAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_IsoAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_ShadingAspect;
@@ -267,8 +337,18 @@ class Handle_Prs3d_ShadingAspect : public Handle_Prs3d_BasicAspect {
 };
 %feature("shadow") Handle_Prs3d_ShadingAspect::~Handle_Prs3d_ShadingAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_ShadingAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_PointAspect;
@@ -295,8 +375,18 @@ class Handle_Prs3d_PointAspect : public Handle_Prs3d_BasicAspect {
 };
 %feature("shadow") Handle_Prs3d_PointAspect::~Handle_Prs3d_PointAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_PointAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_ArrowAspect;
@@ -323,8 +413,18 @@ class Handle_Prs3d_ArrowAspect : public Handle_Prs3d_CompositeAspect {
 };
 %feature("shadow") Handle_Prs3d_ArrowAspect::~Handle_Prs3d_ArrowAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_ArrowAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_Projector;
@@ -351,8 +451,18 @@ class Handle_Prs3d_Projector : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_Prs3d_Projector::~Handle_Prs3d_Projector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_Projector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_RadiusAspect;
@@ -379,8 +489,18 @@ class Handle_Prs3d_RadiusAspect : public Handle_Prs3d_CompositeAspect {
 };
 %feature("shadow") Handle_Prs3d_RadiusAspect::~Handle_Prs3d_RadiusAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_RadiusAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_InvalidAngle;
@@ -407,8 +527,18 @@ class Handle_Prs3d_InvalidAngle : public Handle_Standard_RangeError {
 };
 %feature("shadow") Handle_Prs3d_InvalidAngle::~Handle_Prs3d_InvalidAngle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_InvalidAngle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_DatumAspect;
@@ -435,8 +565,18 @@ class Handle_Prs3d_DatumAspect : public Handle_Prs3d_CompositeAspect {
 };
 %feature("shadow") Handle_Prs3d_DatumAspect::~Handle_Prs3d_DatumAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_DatumAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_PlaneAspect;
@@ -463,8 +603,18 @@ class Handle_Prs3d_PlaneAspect : public Handle_Prs3d_CompositeAspect {
 };
 %feature("shadow") Handle_Prs3d_PlaneAspect::~Handle_Prs3d_PlaneAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_PlaneAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_AngleAspect;
@@ -491,8 +641,18 @@ class Handle_Prs3d_AngleAspect : public Handle_Prs3d_CompositeAspect {
 };
 %feature("shadow") Handle_Prs3d_AngleAspect::~Handle_Prs3d_AngleAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_AngleAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_Presentation;
@@ -519,8 +679,18 @@ class Handle_Prs3d_Presentation : public Handle_Graphic3d_Structure {
 };
 %feature("shadow") Handle_Prs3d_Presentation::~Handle_Prs3d_Presentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_Presentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_TextAspect;
@@ -547,8 +717,18 @@ class Handle_Prs3d_TextAspect : public Handle_Prs3d_BasicAspect {
 };
 %feature("shadow") Handle_Prs3d_TextAspect::~Handle_Prs3d_TextAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_Prs3d_TextAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_Presentation;
@@ -614,8 +794,18 @@ class Prs3d_Presentation : public Graphic3d_Structure {
 };
 %feature("shadow") Prs3d_Presentation::~Prs3d_Presentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_Presentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_Root;
@@ -631,8 +821,18 @@ class Prs3d_Root {
 };
 %feature("shadow") Prs3d_Root::~Prs3d_Root %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_Root {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_AnglePresentation;
@@ -646,8 +846,18 @@ class Prs3d_AnglePresentation : public Prs3d_Root {
 };
 %feature("shadow") Prs3d_AnglePresentation::~Prs3d_AnglePresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_AnglePresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_CompositeAspect;
@@ -671,8 +881,18 @@ class Prs3d_CompositeAspect : public MMgt_TShared {
 };
 %feature("shadow") Prs3d_CompositeAspect::~Prs3d_CompositeAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_CompositeAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_AngleAspect;
@@ -714,8 +934,18 @@ class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 };
 %feature("shadow") Prs3d_AngleAspect::~Prs3d_AngleAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_AngleAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_LengthPresentation;
@@ -729,8 +959,18 @@ class Prs3d_LengthPresentation : public Prs3d_Root {
 };
 %feature("shadow") Prs3d_LengthPresentation::~Prs3d_LengthPresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_LengthPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_DatumAspect;
@@ -784,8 +1024,18 @@ class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
 };
 %feature("shadow") Prs3d_DatumAspect::~Prs3d_DatumAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_DatumAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_BasicAspect;
@@ -809,8 +1059,18 @@ class Prs3d_BasicAspect : public MMgt_TShared {
 };
 %feature("shadow") Prs3d_BasicAspect::~Prs3d_BasicAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_BasicAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_PointAspect;
@@ -858,8 +1118,18 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 };
 %feature("shadow") Prs3d_PointAspect::~Prs3d_PointAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_PointAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_ArrowAspect;
@@ -907,8 +1177,18 @@ class Prs3d_ArrowAspect : public Prs3d_CompositeAspect {
 };
 %feature("shadow") Prs3d_ArrowAspect::~Prs3d_ArrowAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_ArrowAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d;
@@ -922,8 +1202,18 @@ class Prs3d {
 };
 %feature("shadow") Prs3d::~Prs3d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_Projector;
@@ -951,8 +1241,18 @@ class Prs3d_Projector : public MMgt_TShared {
 };
 %feature("shadow") Prs3d_Projector::~Prs3d_Projector %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_Projector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_LineAspect;
@@ -996,8 +1296,18 @@ class Prs3d_LineAspect : public Prs3d_BasicAspect {
 };
 %feature("shadow") Prs3d_LineAspect::~Prs3d_LineAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_LineAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_PlaneAspect;
@@ -1065,8 +1375,18 @@ class Prs3d_PlaneAspect : public Prs3d_CompositeAspect {
 };
 %feature("shadow") Prs3d_PlaneAspect::~Prs3d_PlaneAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_PlaneAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_Drawer;
@@ -1236,8 +1556,18 @@ class Prs3d_Drawer : public MMgt_TShared {
 };
 %feature("shadow") Prs3d_Drawer::~Prs3d_Drawer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_ShapeTool;
@@ -1293,8 +1623,18 @@ class Prs3d_ShapeTool {
 };
 %feature("shadow") Prs3d_ShapeTool::~Prs3d_ShapeTool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_ShapeTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_TextAspect;
@@ -1358,8 +1698,18 @@ class Prs3d_TextAspect : public Prs3d_BasicAspect {
 };
 %feature("shadow") Prs3d_TextAspect::~Prs3d_TextAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_TextAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_IsoAspect;
@@ -1397,8 +1747,18 @@ class Prs3d_IsoAspect : public Prs3d_LineAspect {
 };
 %feature("shadow") Prs3d_IsoAspect::~Prs3d_IsoAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_IsoAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_InvalidAngle;
@@ -1430,8 +1790,18 @@ class Prs3d_InvalidAngle : public Standard_RangeError {
 };
 %feature("shadow") Prs3d_InvalidAngle::~Prs3d_InvalidAngle %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_InvalidAngle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_PlaneSet;
@@ -1469,8 +1839,18 @@ class Prs3d_PlaneSet : public MMgt_TShared {
 };
 %feature("shadow") Prs3d_PlaneSet::~Prs3d_PlaneSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_PlaneSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_Text;
@@ -1486,8 +1866,18 @@ class Prs3d_Text : public Prs3d_Root {
 };
 %feature("shadow") Prs3d_Text::~Prs3d_Text %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_Text {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_RadiusAspect;
@@ -1511,8 +1901,18 @@ class Prs3d_RadiusAspect : public Prs3d_CompositeAspect {
 };
 %feature("shadow") Prs3d_RadiusAspect::~Prs3d_RadiusAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_RadiusAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_ShadingAspect;
@@ -1556,8 +1956,18 @@ class Prs3d_ShadingAspect : public Prs3d_BasicAspect {
 };
 %feature("shadow") Prs3d_ShadingAspect::~Prs3d_ShadingAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_ShadingAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_Arrow;
@@ -1573,8 +1983,18 @@ class Prs3d_Arrow : public Prs3d_Root {
 };
 %feature("shadow") Prs3d_Arrow::~Prs3d_Arrow %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_Arrow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Prs3d_LengthAspect;
@@ -1630,5 +2050,15 @@ class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
 };
 %feature("shadow") Prs3d_LengthAspect::~Prs3d_LengthAspect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Prs3d_LengthAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

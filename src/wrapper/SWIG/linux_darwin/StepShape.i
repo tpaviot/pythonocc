@@ -75,8 +75,18 @@ class Handle_StepShape_TopologicalRepresentationItem : public Handle_StepRepr_Re
 };
 %feature("shadow") Handle_StepShape_TopologicalRepresentationItem::~Handle_StepShape_TopologicalRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_TopologicalRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ConnectedEdgeSet;
@@ -103,8 +113,18 @@ class Handle_StepShape_ConnectedEdgeSet : public Handle_StepShape_TopologicalRep
 };
 %feature("shadow") Handle_StepShape_ConnectedEdgeSet::~Handle_StepShape_ConnectedEdgeSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ConnectedEdgeSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_HArray1OfConnectedEdgeSet;
@@ -131,8 +151,18 @@ class Handle_StepShape_HArray1OfConnectedEdgeSet : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_HArray1OfConnectedEdgeSet::~Handle_StepShape_HArray1OfConnectedEdgeSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_HArray1OfConnectedEdgeSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_SolidModel;
@@ -159,8 +189,18 @@ class Handle_StepShape_SolidModel : public Handle_StepGeom_GeometricRepresentati
 };
 %feature("shadow") Handle_StepShape_SolidModel::~Handle_StepShape_SolidModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_SolidModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_SweptFaceSolid;
@@ -187,8 +227,18 @@ class Handle_StepShape_SweptFaceSolid : public Handle_StepShape_SolidModel {
 };
 %feature("shadow") Handle_StepShape_SweptFaceSolid::~Handle_StepShape_SweptFaceSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_SweptFaceSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_RevolvedFaceSolid;
@@ -215,8 +265,18 @@ class Handle_StepShape_RevolvedFaceSolid : public Handle_StepShape_SweptFaceSoli
 };
 %feature("shadow") Handle_StepShape_RevolvedFaceSolid::~Handle_StepShape_RevolvedFaceSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_RevolvedFaceSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ShapeRepresentation;
@@ -243,8 +303,18 @@ class Handle_StepShape_ShapeRepresentation : public Handle_StepRepr_Representati
 };
 %feature("shadow") Handle_StepShape_ShapeRepresentation::~Handle_StepShape_ShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_FacetedBrepShapeRepresentation;
@@ -271,8 +341,18 @@ class Handle_StepShape_FacetedBrepShapeRepresentation : public Handle_StepShape_
 };
 %feature("shadow") Handle_StepShape_FacetedBrepShapeRepresentation::~Handle_StepShape_FacetedBrepShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_FacetedBrepShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_NonManifoldSurfaceShapeRepresentation;
@@ -299,8 +379,18 @@ class Handle_StepShape_NonManifoldSurfaceShapeRepresentation : public Handle_Ste
 };
 %feature("shadow") Handle_StepShape_NonManifoldSurfaceShapeRepresentation::~Handle_StepShape_NonManifoldSurfaceShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_NonManifoldSurfaceShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_RightCircularCone;
@@ -327,8 +417,18 @@ class Handle_StepShape_RightCircularCone : public Handle_StepGeom_GeometricRepre
 };
 %feature("shadow") Handle_StepShape_RightCircularCone::~Handle_StepShape_RightCircularCone %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_RightCircularCone {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_Edge;
@@ -355,8 +455,18 @@ class Handle_StepShape_Edge : public Handle_StepShape_TopologicalRepresentationI
 };
 %feature("shadow") Handle_StepShape_Edge::~Handle_StepShape_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_OrientedEdge;
@@ -383,8 +493,18 @@ class Handle_StepShape_OrientedEdge : public Handle_StepShape_Edge {
 };
 %feature("shadow") Handle_StepShape_OrientedEdge::~Handle_StepShape_OrientedEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_OrientedEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_SeamEdge;
@@ -411,8 +531,18 @@ class Handle_StepShape_SeamEdge : public Handle_StepShape_OrientedEdge {
 };
 %feature("shadow") Handle_StepShape_SeamEdge::~Handle_StepShape_SeamEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_SeamEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ManifoldSurfaceShapeRepresentation;
@@ -439,8 +569,18 @@ class Handle_StepShape_ManifoldSurfaceShapeRepresentation : public Handle_StepSh
 };
 %feature("shadow") Handle_StepShape_ManifoldSurfaceShapeRepresentation::~Handle_StepShape_ManifoldSurfaceShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ManifoldSurfaceShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_HArray1OfFaceBound;
@@ -467,8 +607,18 @@ class Handle_StepShape_HArray1OfFaceBound : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_HArray1OfFaceBound::~Handle_StepShape_HArray1OfFaceBound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_HArray1OfFaceBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ConnectedFaceSet;
@@ -495,8 +645,18 @@ class Handle_StepShape_ConnectedFaceSet : public Handle_StepShape_TopologicalRep
 };
 %feature("shadow") Handle_StepShape_ConnectedFaceSet::~Handle_StepShape_ConnectedFaceSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ConnectedFaceSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_OpenShell;
@@ -523,8 +683,18 @@ class Handle_StepShape_OpenShell : public Handle_StepShape_ConnectedFaceSet {
 };
 %feature("shadow") Handle_StepShape_OpenShell::~Handle_StepShape_OpenShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_OpenShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_OrientedOpenShell;
@@ -551,8 +721,18 @@ class Handle_StepShape_OrientedOpenShell : public Handle_StepShape_OpenShell {
 };
 %feature("shadow") Handle_StepShape_OrientedOpenShell::~Handle_StepShape_OrientedOpenShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_OrientedOpenShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ExtrudedFaceSolid;
@@ -579,8 +759,18 @@ class Handle_StepShape_ExtrudedFaceSolid : public Handle_StepShape_SweptFaceSoli
 };
 %feature("shadow") Handle_StepShape_ExtrudedFaceSolid::~Handle_StepShape_ExtrudedFaceSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ExtrudedFaceSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_MeasureQualification;
@@ -607,8 +797,18 @@ class Handle_StepShape_MeasureQualification : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_MeasureQualification::~Handle_StepShape_MeasureQualification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_MeasureQualification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_Loop;
@@ -635,8 +835,18 @@ class Handle_StepShape_Loop : public Handle_StepShape_TopologicalRepresentationI
 };
 %feature("shadow") Handle_StepShape_Loop::~Handle_StepShape_Loop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_Loop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_PointRepresentation;
@@ -663,8 +873,18 @@ class Handle_StepShape_PointRepresentation : public Handle_StepShape_ShapeRepres
 };
 %feature("shadow") Handle_StepShape_PointRepresentation::~Handle_StepShape_PointRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_PointRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_Face;
@@ -691,8 +911,18 @@ class Handle_StepShape_Face : public Handle_StepShape_TopologicalRepresentationI
 };
 %feature("shadow") Handle_StepShape_Face::~Handle_StepShape_Face %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_Subface;
@@ -719,8 +949,18 @@ class Handle_StepShape_Subface : public Handle_StepShape_Face {
 };
 %feature("shadow") Handle_StepShape_Subface::~Handle_StepShape_Subface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_Subface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_BooleanResult;
@@ -747,8 +987,18 @@ class Handle_StepShape_BooleanResult : public Handle_StepGeom_GeometricRepresent
 };
 %feature("shadow") Handle_StepShape_BooleanResult::~Handle_StepShape_BooleanResult %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_BooleanResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem;
@@ -775,8 +1025,18 @@ class Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem :
 };
 %feature("shadow") Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem::~Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_PolyLoop;
@@ -803,8 +1063,18 @@ class Handle_StepShape_PolyLoop : public Handle_StepShape_Loop {
 };
 %feature("shadow") Handle_StepShape_PolyLoop::~Handle_StepShape_PolyLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_PolyLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_HArray1OfValueQualifier;
@@ -831,8 +1101,18 @@ class Handle_StepShape_HArray1OfValueQualifier : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_HArray1OfValueQualifier::~Handle_StepShape_HArray1OfValueQualifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_HArray1OfValueQualifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_HalfSpaceSolid;
@@ -859,8 +1139,18 @@ class Handle_StepShape_HalfSpaceSolid : public Handle_StepGeom_GeometricRepresen
 };
 %feature("shadow") Handle_StepShape_HalfSpaceSolid::~Handle_StepShape_HalfSpaceSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_HalfSpaceSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_BoxedHalfSpace;
@@ -887,8 +1177,18 @@ class Handle_StepShape_BoxedHalfSpace : public Handle_StepShape_HalfSpaceSolid {
 };
 %feature("shadow") Handle_StepShape_BoxedHalfSpace::~Handle_StepShape_BoxedHalfSpace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_BoxedHalfSpace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_Path;
@@ -915,8 +1215,18 @@ class Handle_StepShape_Path : public Handle_StepShape_TopologicalRepresentationI
 };
 %feature("shadow") Handle_StepShape_Path::~Handle_StepShape_Path %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_Path {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_OrientedPath;
@@ -943,8 +1253,18 @@ class Handle_StepShape_OrientedPath : public Handle_StepShape_Path {
 };
 %feature("shadow") Handle_StepShape_OrientedPath::~Handle_StepShape_OrientedPath %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_OrientedPath {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_FaceBound;
@@ -971,8 +1291,18 @@ class Handle_StepShape_FaceBound : public Handle_StepShape_TopologicalRepresenta
 };
 %feature("shadow") Handle_StepShape_FaceBound::~Handle_StepShape_FaceBound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_FaceBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_FaceOuterBound;
@@ -999,8 +1329,18 @@ class Handle_StepShape_FaceOuterBound : public Handle_StepShape_FaceBound {
 };
 %feature("shadow") Handle_StepShape_FaceOuterBound::~Handle_StepShape_FaceOuterBound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_FaceOuterBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_HArray1OfOrientedClosedShell;
@@ -1027,8 +1367,18 @@ class Handle_StepShape_HArray1OfOrientedClosedShell : public Handle_MMgt_TShared
 };
 %feature("shadow") Handle_StepShape_HArray1OfOrientedClosedShell::~Handle_StepShape_HArray1OfOrientedClosedShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_HArray1OfOrientedClosedShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_SolidReplica;
@@ -1055,8 +1405,18 @@ class Handle_StepShape_SolidReplica : public Handle_StepShape_SolidModel {
 };
 %feature("shadow") Handle_StepShape_SolidReplica::~Handle_StepShape_SolidReplica %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_SolidReplica {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_HArray1OfGeometricSetSelect;
@@ -1083,8 +1443,18 @@ class Handle_StepShape_HArray1OfGeometricSetSelect : public Handle_MMgt_TShared 
 };
 %feature("shadow") Handle_StepShape_HArray1OfGeometricSetSelect::~Handle_StepShape_HArray1OfGeometricSetSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_HArray1OfGeometricSetSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_HArray1OfFace;
@@ -1111,8 +1481,18 @@ class Handle_StepShape_HArray1OfFace : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_HArray1OfFace::~Handle_StepShape_HArray1OfFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_HArray1OfFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ClosedShell;
@@ -1139,8 +1519,18 @@ class Handle_StepShape_ClosedShell : public Handle_StepShape_ConnectedFaceSet {
 };
 %feature("shadow") Handle_StepShape_ClosedShell::~Handle_StepShape_ClosedShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ClosedShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_DimensionalCharacteristicRepresentation;
@@ -1167,8 +1557,18 @@ class Handle_StepShape_DimensionalCharacteristicRepresentation : public Handle_M
 };
 %feature("shadow") Handle_StepShape_DimensionalCharacteristicRepresentation::~Handle_StepShape_DimensionalCharacteristicRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_DimensionalCharacteristicRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_FaceSurface;
@@ -1195,8 +1595,18 @@ class Handle_StepShape_FaceSurface : public Handle_StepShape_Face {
 };
 %feature("shadow") Handle_StepShape_FaceSurface::~Handle_StepShape_FaceSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_FaceSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_LimitsAndFits;
@@ -1223,8 +1633,18 @@ class Handle_StepShape_LimitsAndFits : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_LimitsAndFits::~Handle_StepShape_LimitsAndFits %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_LimitsAndFits {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_SweptAreaSolid;
@@ -1251,8 +1671,18 @@ class Handle_StepShape_SweptAreaSolid : public Handle_StepShape_SolidModel {
 };
 %feature("shadow") Handle_StepShape_SweptAreaSolid::~Handle_StepShape_SweptAreaSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_SweptAreaSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_RevolvedAreaSolid;
@@ -1279,8 +1709,18 @@ class Handle_StepShape_RevolvedAreaSolid : public Handle_StepShape_SweptAreaSoli
 };
 %feature("shadow") Handle_StepShape_RevolvedAreaSolid::~Handle_StepShape_RevolvedAreaSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_RevolvedAreaSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_DimensionalSize;
@@ -1307,8 +1747,18 @@ class Handle_StepShape_DimensionalSize : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_DimensionalSize::~Handle_StepShape_DimensionalSize %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_DimensionalSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_DimensionalSizeWithPath;
@@ -1335,8 +1785,18 @@ class Handle_StepShape_DimensionalSizeWithPath : public Handle_StepShape_Dimensi
 };
 %feature("shadow") Handle_StepShape_DimensionalSizeWithPath::~Handle_StepShape_DimensionalSizeWithPath %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_DimensionalSizeWithPath {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_LoopAndPath;
@@ -1363,8 +1823,18 @@ class Handle_StepShape_LoopAndPath : public Handle_StepShape_TopologicalRepresen
 };
 %feature("shadow") Handle_StepShape_LoopAndPath::~Handle_StepShape_LoopAndPath %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_LoopAndPath {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_HArray1OfConnectedFaceSet;
@@ -1391,8 +1861,18 @@ class Handle_StepShape_HArray1OfConnectedFaceSet : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_HArray1OfConnectedFaceSet::~Handle_StepShape_HArray1OfConnectedFaceSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_HArray1OfConnectedFaceSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation;
@@ -1419,8 +1899,18 @@ class Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation : public
 };
 %feature("shadow") Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation::~Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_HArray1OfShell;
@@ -1447,8 +1937,18 @@ class Handle_StepShape_HArray1OfShell : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_HArray1OfShell::~Handle_StepShape_HArray1OfShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_HArray1OfShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_DimensionalLocation;
@@ -1475,8 +1975,18 @@ class Handle_StepShape_DimensionalLocation : public Handle_StepRepr_ShapeAspectR
 };
 %feature("shadow") Handle_StepShape_DimensionalLocation::~Handle_StepShape_DimensionalLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_DimensionalLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_TransitionalShapeRepresentation;
@@ -1503,8 +2013,18 @@ class Handle_StepShape_TransitionalShapeRepresentation : public Handle_StepShape
 };
 %feature("shadow") Handle_StepShape_TransitionalShapeRepresentation::~Handle_StepShape_TransitionalShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_TransitionalShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ManifoldSolidBrep;
@@ -1531,8 +2051,18 @@ class Handle_StepShape_ManifoldSolidBrep : public Handle_StepShape_SolidModel {
 };
 %feature("shadow") Handle_StepShape_ManifoldSolidBrep::~Handle_StepShape_ManifoldSolidBrep %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ManifoldSolidBrep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_FaceBasedSurfaceModel;
@@ -1559,8 +2089,18 @@ class Handle_StepShape_FaceBasedSurfaceModel : public Handle_StepGeom_GeometricR
 };
 %feature("shadow") Handle_StepShape_FaceBasedSurfaceModel::~Handle_StepShape_FaceBasedSurfaceModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_FaceBasedSurfaceModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_CsgSolid;
@@ -1587,8 +2127,18 @@ class Handle_StepShape_CsgSolid : public Handle_StepShape_SolidModel {
 };
 %feature("shadow") Handle_StepShape_CsgSolid::~Handle_StepShape_CsgSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_CsgSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_GeometricSet;
@@ -1615,8 +2165,18 @@ class Handle_StepShape_GeometricSet : public Handle_StepGeom_GeometricRepresenta
 };
 %feature("shadow") Handle_StepShape_GeometricSet::~Handle_StepShape_GeometricSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_GeometricSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ExtrudedAreaSolid;
@@ -1643,8 +2203,18 @@ class Handle_StepShape_ExtrudedAreaSolid : public Handle_StepShape_SweptAreaSoli
 };
 %feature("shadow") Handle_StepShape_ExtrudedAreaSolid::~Handle_StepShape_ExtrudedAreaSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ExtrudedAreaSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_PrecisionQualifier;
@@ -1671,8 +2241,18 @@ class Handle_StepShape_PrecisionQualifier : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_PrecisionQualifier::~Handle_StepShape_PrecisionQualifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_PrecisionQualifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ToleranceValue;
@@ -1699,8 +2279,18 @@ class Handle_StepShape_ToleranceValue : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_ToleranceValue::~Handle_StepShape_ToleranceValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ToleranceValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_EdgeCurve;
@@ -1727,8 +2317,18 @@ class Handle_StepShape_EdgeCurve : public Handle_StepShape_Edge {
 };
 %feature("shadow") Handle_StepShape_EdgeCurve::~Handle_StepShape_EdgeCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_EdgeCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ConnectedFaceSubSet;
@@ -1755,8 +2355,18 @@ class Handle_StepShape_ConnectedFaceSubSet : public Handle_StepShape_ConnectedFa
 };
 %feature("shadow") Handle_StepShape_ConnectedFaceSubSet::~Handle_StepShape_ConnectedFaceSubSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ConnectedFaceSubSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ShapeRepresentationWithParameters;
@@ -1783,8 +2393,18 @@ class Handle_StepShape_ShapeRepresentationWithParameters : public Handle_StepSha
 };
 %feature("shadow") Handle_StepShape_ShapeRepresentationWithParameters::~Handle_StepShape_ShapeRepresentationWithParameters %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ShapeRepresentationWithParameters {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_DimensionalLocationWithPath;
@@ -1811,8 +2431,18 @@ class Handle_StepShape_DimensionalLocationWithPath : public Handle_StepShape_Dim
 };
 %feature("shadow") Handle_StepShape_DimensionalLocationWithPath::~Handle_StepShape_DimensionalLocationWithPath %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_DimensionalLocationWithPath {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_RightAngularWedge;
@@ -1839,8 +2469,18 @@ class Handle_StepShape_RightAngularWedge : public Handle_StepGeom_GeometricRepre
 };
 %feature("shadow") Handle_StepShape_RightAngularWedge::~Handle_StepShape_RightAngularWedge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_RightAngularWedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_CompoundShapeRepresentation;
@@ -1867,8 +2507,18 @@ class Handle_StepShape_CompoundShapeRepresentation : public Handle_StepShape_Sha
 };
 %feature("shadow") Handle_StepShape_CompoundShapeRepresentation::~Handle_StepShape_CompoundShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_CompoundShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_DirectedDimensionalLocation;
@@ -1895,8 +2545,18 @@ class Handle_StepShape_DirectedDimensionalLocation : public Handle_StepShape_Dim
 };
 %feature("shadow") Handle_StepShape_DirectedDimensionalLocation::~Handle_StepShape_DirectedDimensionalLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_DirectedDimensionalLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_AdvancedBrepShapeRepresentation;
@@ -1923,8 +2583,18 @@ class Handle_StepShape_AdvancedBrepShapeRepresentation : public Handle_StepShape
 };
 %feature("shadow") Handle_StepShape_AdvancedBrepShapeRepresentation::~Handle_StepShape_AdvancedBrepShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_AdvancedBrepShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_TypeQualifier;
@@ -1951,8 +2621,18 @@ class Handle_StepShape_TypeQualifier : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_TypeQualifier::~Handle_StepShape_TypeQualifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_TypeQualifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ShapeDefinitionRepresentation;
@@ -1979,8 +2659,18 @@ class Handle_StepShape_ShapeDefinitionRepresentation : public Handle_StepRepr_Pr
 };
 %feature("shadow") Handle_StepShape_ShapeDefinitionRepresentation::~Handle_StepShape_ShapeDefinitionRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ShapeDefinitionRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_PlusMinusTolerance;
@@ -2007,8 +2697,18 @@ class Handle_StepShape_PlusMinusTolerance : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_PlusMinusTolerance::~Handle_StepShape_PlusMinusTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_PlusMinusTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_Torus;
@@ -2035,8 +2735,18 @@ class Handle_StepShape_Torus : public Handle_StepGeom_GeometricRepresentationIte
 };
 %feature("shadow") Handle_StepShape_Torus::~Handle_StepShape_Torus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_Torus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_OrientedFace;
@@ -2063,8 +2773,18 @@ class Handle_StepShape_OrientedFace : public Handle_StepShape_Face {
 };
 %feature("shadow") Handle_StepShape_OrientedFace::~Handle_StepShape_OrientedFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_OrientedFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ConnectedFaceShapeRepresentation;
@@ -2091,8 +2811,18 @@ class Handle_StepShape_ConnectedFaceShapeRepresentation : public Handle_StepRepr
 };
 %feature("shadow") Handle_StepShape_ConnectedFaceShapeRepresentation::~Handle_StepShape_ConnectedFaceShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ConnectedFaceShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ShellBasedSurfaceModel;
@@ -2119,8 +2849,18 @@ class Handle_StepShape_ShellBasedSurfaceModel : public Handle_StepGeom_Geometric
 };
 %feature("shadow") Handle_StepShape_ShellBasedSurfaceModel::~Handle_StepShape_ShellBasedSurfaceModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ShellBasedSurfaceModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_BoxDomain;
@@ -2147,8 +2887,18 @@ class Handle_StepShape_BoxDomain : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_BoxDomain::~Handle_StepShape_BoxDomain %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_BoxDomain {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_Sphere;
@@ -2175,8 +2925,18 @@ class Handle_StepShape_Sphere : public Handle_StepGeom_GeometricRepresentationIt
 };
 %feature("shadow") Handle_StepShape_Sphere::~Handle_StepShape_Sphere %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_Sphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_EdgeBasedWireframeShapeRepresentation;
@@ -2203,8 +2963,18 @@ class Handle_StepShape_EdgeBasedWireframeShapeRepresentation : public Handle_Ste
 };
 %feature("shadow") Handle_StepShape_EdgeBasedWireframeShapeRepresentation::~Handle_StepShape_EdgeBasedWireframeShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_EdgeBasedWireframeShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_Block;
@@ -2231,8 +3001,18 @@ class Handle_StepShape_Block : public Handle_StepGeom_GeometricRepresentationIte
 };
 %feature("shadow") Handle_StepShape_Block::~Handle_StepShape_Block %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_Block {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation;
@@ -2259,8 +3039,18 @@ class Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation : public
 };
 %feature("shadow") Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation::~Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_CsgShapeRepresentation;
@@ -2287,8 +3077,18 @@ class Handle_StepShape_CsgShapeRepresentation : public Handle_StepShape_ShapeRep
 };
 %feature("shadow") Handle_StepShape_CsgShapeRepresentation::~Handle_StepShape_CsgShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_CsgShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_AngularLocation;
@@ -2315,8 +3115,18 @@ class Handle_StepShape_AngularLocation : public Handle_StepShape_DimensionalLoca
 };
 %feature("shadow") Handle_StepShape_AngularLocation::~Handle_StepShape_AngularLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_AngularLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_Subedge;
@@ -2343,8 +3153,18 @@ class Handle_StepShape_Subedge : public Handle_StepShape_Edge {
 };
 %feature("shadow") Handle_StepShape_Subedge::~Handle_StepShape_Subedge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_Subedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_Vertex;
@@ -2371,8 +3191,18 @@ class Handle_StepShape_Vertex : public Handle_StepShape_TopologicalRepresentatio
 };
 %feature("shadow") Handle_StepShape_Vertex::~Handle_StepShape_Vertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_Vertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_HArray1OfOrientedEdge;
@@ -2399,8 +3229,18 @@ class Handle_StepShape_HArray1OfOrientedEdge : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_HArray1OfOrientedEdge::~Handle_StepShape_HArray1OfOrientedEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_HArray1OfOrientedEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_RightCircularCylinder;
@@ -2427,8 +3267,18 @@ class Handle_StepShape_RightCircularCylinder : public Handle_StepGeom_GeometricR
 };
 %feature("shadow") Handle_StepShape_RightCircularCylinder::~Handle_StepShape_RightCircularCylinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_RightCircularCylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_EdgeLoop;
@@ -2455,8 +3305,18 @@ class Handle_StepShape_EdgeLoop : public Handle_StepShape_Loop {
 };
 %feature("shadow") Handle_StepShape_EdgeLoop::~Handle_StepShape_EdgeLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_EdgeLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_GeometricCurveSet;
@@ -2483,8 +3343,18 @@ class Handle_StepShape_GeometricCurveSet : public Handle_StepShape_GeometricSet 
 };
 %feature("shadow") Handle_StepShape_GeometricCurveSet::~Handle_StepShape_GeometricCurveSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_GeometricCurveSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_EdgeBasedWireframeModel;
@@ -2511,8 +3381,18 @@ class Handle_StepShape_EdgeBasedWireframeModel : public Handle_StepGeom_Geometri
 };
 %feature("shadow") Handle_StepShape_EdgeBasedWireframeModel::~Handle_StepShape_EdgeBasedWireframeModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_EdgeBasedWireframeModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_FacetedBrep;
@@ -2539,8 +3419,18 @@ class Handle_StepShape_FacetedBrep : public Handle_StepShape_ManifoldSolidBrep {
 };
 %feature("shadow") Handle_StepShape_FacetedBrep::~Handle_StepShape_FacetedBrep %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_FacetedBrep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_AngularSize;
@@ -2567,8 +3457,18 @@ class Handle_StepShape_AngularSize : public Handle_StepShape_DimensionalSize {
 };
 %feature("shadow") Handle_StepShape_AngularSize::~Handle_StepShape_AngularSize %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_AngularSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_VertexPoint;
@@ -2595,8 +3495,18 @@ class Handle_StepShape_VertexPoint : public Handle_StepShape_Vertex {
 };
 %feature("shadow") Handle_StepShape_VertexPoint::~Handle_StepShape_VertexPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_VertexPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_VertexLoop;
@@ -2623,8 +3533,18 @@ class Handle_StepShape_VertexLoop : public Handle_StepShape_Loop {
 };
 %feature("shadow") Handle_StepShape_VertexLoop::~Handle_StepShape_VertexLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_VertexLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation;
@@ -2651,8 +3571,18 @@ class Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation : public H
 };
 %feature("shadow") Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation::~Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_BrepWithVoids;
@@ -2679,8 +3609,18 @@ class Handle_StepShape_BrepWithVoids : public Handle_StepShape_ManifoldSolidBrep
 };
 %feature("shadow") Handle_StepShape_BrepWithVoids::~Handle_StepShape_BrepWithVoids %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_BrepWithVoids {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_FacetedBrepAndBrepWithVoids;
@@ -2707,8 +3647,18 @@ class Handle_StepShape_FacetedBrepAndBrepWithVoids : public Handle_StepShape_Man
 };
 %feature("shadow") Handle_StepShape_FacetedBrepAndBrepWithVoids::~Handle_StepShape_FacetedBrepAndBrepWithVoids %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_FacetedBrepAndBrepWithVoids {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_AdvancedFace;
@@ -2735,8 +3685,18 @@ class Handle_StepShape_AdvancedFace : public Handle_StepShape_FaceSurface {
 };
 %feature("shadow") Handle_StepShape_AdvancedFace::~Handle_StepShape_AdvancedFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_AdvancedFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_QualifiedRepresentationItem;
@@ -2763,8 +3723,18 @@ class Handle_StepShape_QualifiedRepresentationItem : public Handle_StepRepr_Repr
 };
 %feature("shadow") Handle_StepShape_QualifiedRepresentationItem::~Handle_StepShape_QualifiedRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_QualifiedRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_OrientedClosedShell;
@@ -2791,8 +3761,18 @@ class Handle_StepShape_OrientedClosedShell : public Handle_StepShape_ClosedShell
 };
 %feature("shadow") Handle_StepShape_OrientedClosedShell::~Handle_StepShape_OrientedClosedShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_OrientedClosedShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ShapeDimensionRepresentation;
@@ -2819,8 +3799,18 @@ class Handle_StepShape_ShapeDimensionRepresentation : public Handle_StepShape_Sh
 };
 %feature("shadow") Handle_StepShape_ShapeDimensionRepresentation::~Handle_StepShape_ShapeDimensionRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ShapeDimensionRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_HArray1OfEdge;
@@ -2847,8 +3837,18 @@ class Handle_StepShape_HArray1OfEdge : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_StepShape_HArray1OfEdge::~Handle_StepShape_HArray1OfEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_HArray1OfEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_StepShape_ContextDependentShapeRepresentation;
@@ -2875,8 +3875,18 @@ class Handle_StepShape_ContextDependentShapeRepresentation : public Handle_MMgt_
 };
 %feature("shadow") Handle_StepShape_ContextDependentShapeRepresentation::~Handle_StepShape_ContextDependentShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_StepShape_ContextDependentShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_BooleanOperand;
@@ -2908,8 +3918,18 @@ class StepShape_BooleanOperand {
 };
 %feature("shadow") StepShape_BooleanOperand::~StepShape_BooleanOperand %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_BooleanOperand {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_SolidModel;
@@ -2933,8 +3953,18 @@ class StepShape_SolidModel : public StepGeom_GeometricRepresentationItem {
 };
 %feature("shadow") StepShape_SolidModel::~StepShape_SolidModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_SolidModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_SweptFaceSolid;
@@ -2964,8 +3994,18 @@ class StepShape_SweptFaceSolid : public StepShape_SolidModel {
 };
 %feature("shadow") StepShape_SweptFaceSolid::~StepShape_SweptFaceSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_SweptFaceSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_RevolvedFaceSolid;
@@ -2997,8 +4037,18 @@ class StepShape_RevolvedFaceSolid : public StepShape_SweptFaceSolid {
 };
 %feature("shadow") StepShape_RevolvedFaceSolid::~StepShape_RevolvedFaceSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_RevolvedFaceSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_HArray1OfFaceBound;
@@ -3042,8 +4092,18 @@ class StepShape_HArray1OfFaceBound : public MMgt_TShared {
 };
 %feature("shadow") StepShape_HArray1OfFaceBound::~StepShape_HArray1OfFaceBound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_HArray1OfFaceBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_TopologicalRepresentationItem;
@@ -3067,8 +4127,18 @@ class StepShape_TopologicalRepresentationItem : public StepRepr_RepresentationIt
 };
 %feature("shadow") StepShape_TopologicalRepresentationItem::~StepShape_TopologicalRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_TopologicalRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Loop;
@@ -3090,8 +4160,18 @@ class StepShape_Loop : public StepShape_TopologicalRepresentationItem {
 };
 %feature("shadow") StepShape_Loop::~StepShape_Loop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Loop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_PolyLoop;
@@ -3125,8 +4205,18 @@ class StepShape_PolyLoop : public StepShape_Loop {
 };
 %feature("shadow") StepShape_PolyLoop::~StepShape_PolyLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_PolyLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ShapeRepresentation;
@@ -3150,8 +4240,18 @@ class StepShape_ShapeRepresentation : public StepRepr_Representation {
 };
 %feature("shadow") StepShape_ShapeRepresentation::~StepShape_ShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_GeometricallyBoundedWireframeShapeRepresentation;
@@ -3173,8 +4273,18 @@ class StepShape_GeometricallyBoundedWireframeShapeRepresentation : public StepSh
 };
 %feature("shadow") StepShape_GeometricallyBoundedWireframeShapeRepresentation::~StepShape_GeometricallyBoundedWireframeShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_GeometricallyBoundedWireframeShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Shell;
@@ -3192,8 +4302,18 @@ class StepShape_Shell : public StepData_SelectType {
 };
 %feature("shadow") StepShape_Shell::~StepShape_Shell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Shell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Array1OfFaceBound;
@@ -3233,8 +4353,18 @@ class StepShape_Array1OfFaceBound {
 };
 %feature("shadow") StepShape_Array1OfFaceBound::~StepShape_Array1OfFaceBound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Array1OfFaceBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_TransitionalShapeRepresentation;
@@ -3258,8 +4388,18 @@ class StepShape_TransitionalShapeRepresentation : public StepShape_ShapeRepresen
 };
 %feature("shadow") StepShape_TransitionalShapeRepresentation::~StepShape_TransitionalShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_TransitionalShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ExtrudedFaceSolid;
@@ -3295,8 +4435,18 @@ class StepShape_ExtrudedFaceSolid : public StepShape_SweptFaceSolid {
 };
 %feature("shadow") StepShape_ExtrudedFaceSolid::~StepShape_ExtrudedFaceSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ExtrudedFaceSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Array1OfFace;
@@ -3336,8 +4486,18 @@ class StepShape_Array1OfFace {
 };
 %feature("shadow") StepShape_Array1OfFace::~StepShape_Array1OfFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Array1OfFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_CompoundShapeRepresentation;
@@ -3361,8 +4521,18 @@ class StepShape_CompoundShapeRepresentation : public StepShape_ShapeRepresentati
 };
 %feature("shadow") StepShape_CompoundShapeRepresentation::~StepShape_CompoundShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_CompoundShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_BoxDomain;
@@ -3404,8 +4574,18 @@ class StepShape_BoxDomain : public MMgt_TShared {
 };
 %feature("shadow") StepShape_BoxDomain::~StepShape_BoxDomain %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_BoxDomain {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ManifoldSolidBrep;
@@ -3437,8 +4617,18 @@ class StepShape_ManifoldSolidBrep : public StepShape_SolidModel {
 };
 %feature("shadow") StepShape_ManifoldSolidBrep::~StepShape_ManifoldSolidBrep %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ManifoldSolidBrep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_BrepWithVoids;
@@ -3470,8 +4660,18 @@ class StepShape_BrepWithVoids : public StepShape_ManifoldSolidBrep {
 };
 %feature("shadow") StepShape_BrepWithVoids::~StepShape_BrepWithVoids %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_BrepWithVoids {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_FacetedBrepShapeRepresentation;
@@ -3495,8 +4695,18 @@ class StepShape_FacetedBrepShapeRepresentation : public StepShape_ShapeRepresent
 };
 %feature("shadow") StepShape_FacetedBrepShapeRepresentation::~StepShape_FacetedBrepShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_FacetedBrepShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_CsgSolid;
@@ -3528,8 +4738,18 @@ class StepShape_CsgSolid : public StepShape_SolidModel {
 };
 %feature("shadow") StepShape_CsgSolid::~StepShape_CsgSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_CsgSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_PointRepresentation;
@@ -3553,8 +4773,18 @@ class StepShape_PointRepresentation : public StepShape_ShapeRepresentation {
 };
 %feature("shadow") StepShape_PointRepresentation::~StepShape_PointRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_PointRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_GeometricSetSelect;
@@ -3574,8 +4804,18 @@ class StepShape_GeometricSetSelect : public StepData_SelectType {
 };
 %feature("shadow") StepShape_GeometricSetSelect::~StepShape_GeometricSetSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_GeometricSetSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_FaceBound;
@@ -3611,8 +4851,18 @@ class StepShape_FaceBound : public StepShape_TopologicalRepresentationItem {
 };
 %feature("shadow") StepShape_FaceBound::~StepShape_FaceBound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_FaceBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ToleranceValue;
@@ -3646,8 +4896,18 @@ class StepShape_ToleranceValue : public MMgt_TShared {
 };
 %feature("shadow") StepShape_ToleranceValue::~StepShape_ToleranceValue %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ToleranceValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_PlusMinusTolerance;
@@ -3681,8 +4941,18 @@ class StepShape_PlusMinusTolerance : public MMgt_TShared {
 };
 %feature("shadow") StepShape_PlusMinusTolerance::~StepShape_PlusMinusTolerance %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_PlusMinusTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_NonManifoldSurfaceShapeRepresentation;
@@ -3706,8 +4976,18 @@ class StepShape_NonManifoldSurfaceShapeRepresentation : public StepShape_ShapeRe
 };
 %feature("shadow") StepShape_NonManifoldSurfaceShapeRepresentation::~StepShape_NonManifoldSurfaceShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_NonManifoldSurfaceShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_HalfSpaceSolid;
@@ -3743,8 +5023,18 @@ class StepShape_HalfSpaceSolid : public StepGeom_GeometricRepresentationItem {
 };
 %feature("shadow") StepShape_HalfSpaceSolid::~StepShape_HalfSpaceSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_HalfSpaceSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Face;
@@ -3780,8 +5070,18 @@ class StepShape_Face : public StepShape_TopologicalRepresentationItem {
 };
 %feature("shadow") StepShape_Face::~StepShape_Face %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Subface;
@@ -3809,8 +5109,18 @@ class StepShape_Subface : public StepShape_Face {
 };
 %feature("shadow") StepShape_Subface::~StepShape_Subface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Subface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_DimensionalCharacteristicRepresentation;
@@ -3844,8 +5154,18 @@ class StepShape_DimensionalCharacteristicRepresentation : public MMgt_TShared {
 };
 %feature("shadow") StepShape_DimensionalCharacteristicRepresentation::~StepShape_DimensionalCharacteristicRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_DimensionalCharacteristicRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_EdgeBasedWireframeModel;
@@ -3875,8 +5195,18 @@ class StepShape_EdgeBasedWireframeModel : public StepGeom_GeometricRepresentatio
 };
 %feature("shadow") StepShape_EdgeBasedWireframeModel::~StepShape_EdgeBasedWireframeModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_EdgeBasedWireframeModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_RightAngularWedge;
@@ -3924,8 +5254,18 @@ class StepShape_RightAngularWedge : public StepGeom_GeometricRepresentationItem 
 };
 %feature("shadow") StepShape_RightAngularWedge::~StepShape_RightAngularWedge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_RightAngularWedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ConnectedFaceSet;
@@ -3961,8 +5301,18 @@ class StepShape_ConnectedFaceSet : public StepShape_TopologicalRepresentationIte
 };
 %feature("shadow") StepShape_ConnectedFaceSet::~StepShape_ConnectedFaceSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ConnectedFaceSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_OpenShell;
@@ -3984,8 +5334,18 @@ class StepShape_OpenShell : public StepShape_ConnectedFaceSet {
 };
 %feature("shadow") StepShape_OpenShell::~StepShape_OpenShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_OpenShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_OrientedOpenShell;
@@ -4017,8 +5377,18 @@ class StepShape_OrientedOpenShell : public StepShape_OpenShell {
 };
 %feature("shadow") StepShape_OrientedOpenShell::~StepShape_OrientedOpenShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_OrientedOpenShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_SweptAreaSolid;
@@ -4050,8 +5420,18 @@ class StepShape_SweptAreaSolid : public StepShape_SolidModel {
 };
 %feature("shadow") StepShape_SweptAreaSolid::~StepShape_SweptAreaSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_SweptAreaSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Array1OfConnectedEdgeSet;
@@ -4091,8 +5471,18 @@ class StepShape_Array1OfConnectedEdgeSet {
 };
 %feature("shadow") StepShape_Array1OfConnectedEdgeSet::~StepShape_Array1OfConnectedEdgeSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Array1OfConnectedEdgeSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Path;
@@ -4128,8 +5518,18 @@ class StepShape_Path : public StepShape_TopologicalRepresentationItem {
 };
 %feature("shadow") StepShape_Path::~StepShape_Path %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Path {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_CsgShapeRepresentation;
@@ -4153,8 +5553,18 @@ class StepShape_CsgShapeRepresentation : public StepShape_ShapeRepresentation {
 };
 %feature("shadow") StepShape_CsgShapeRepresentation::~StepShape_CsgShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_CsgShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Edge;
@@ -4190,8 +5600,18 @@ class StepShape_Edge : public StepShape_TopologicalRepresentationItem {
 };
 %feature("shadow") StepShape_Edge::~StepShape_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Subedge;
@@ -4219,8 +5639,18 @@ class StepShape_Subedge : public StepShape_Edge {
 };
 %feature("shadow") StepShape_Subedge::~StepShape_Subedge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Subedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_FaceSurface;
@@ -4256,8 +5686,18 @@ class StepShape_FaceSurface : public StepShape_Face {
 };
 %feature("shadow") StepShape_FaceSurface::~StepShape_FaceSurface %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_FaceSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_OrientedFace;
@@ -4301,8 +5741,18 @@ class StepShape_OrientedFace : public StepShape_Face {
 };
 %feature("shadow") StepShape_OrientedFace::~StepShape_OrientedFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_OrientedFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_LoopAndPath;
@@ -4348,8 +5798,18 @@ class StepShape_LoopAndPath : public StepShape_TopologicalRepresentationItem {
 };
 %feature("shadow") StepShape_LoopAndPath::~StepShape_LoopAndPath %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_LoopAndPath {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_LimitsAndFits;
@@ -4391,8 +5851,18 @@ class StepShape_LimitsAndFits : public MMgt_TShared {
 };
 %feature("shadow") StepShape_LimitsAndFits::~StepShape_LimitsAndFits %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_LimitsAndFits {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ConnectedEdgeSet;
@@ -4422,8 +5892,18 @@ class StepShape_ConnectedEdgeSet : public StepShape_TopologicalRepresentationIte
 };
 %feature("shadow") StepShape_ConnectedEdgeSet::~StepShape_ConnectedEdgeSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ConnectedEdgeSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_RevolvedAreaSolid;
@@ -4459,8 +5939,18 @@ class StepShape_RevolvedAreaSolid : public StepShape_SweptAreaSolid {
 };
 %feature("shadow") StepShape_RevolvedAreaSolid::~StepShape_RevolvedAreaSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_RevolvedAreaSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_DimensionalSize;
@@ -4494,8 +5984,18 @@ class StepShape_DimensionalSize : public MMgt_TShared {
 };
 %feature("shadow") StepShape_DimensionalSize::~StepShape_DimensionalSize %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_DimensionalSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_HArray1OfOrientedClosedShell;
@@ -4539,8 +6039,18 @@ class StepShape_HArray1OfOrientedClosedShell : public MMgt_TShared {
 };
 %feature("shadow") StepShape_HArray1OfOrientedClosedShell::~StepShape_HArray1OfOrientedClosedShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_HArray1OfOrientedClosedShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ShapeDimensionRepresentation;
@@ -4564,8 +6074,18 @@ class StepShape_ShapeDimensionRepresentation : public StepShape_ShapeRepresentat
 };
 %feature("shadow") StepShape_ShapeDimensionRepresentation::~StepShape_ShapeDimensionRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ShapeDimensionRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_OrientedEdge;
@@ -4607,8 +6127,18 @@ class StepShape_OrientedEdge : public StepShape_Edge {
 };
 %feature("shadow") StepShape_OrientedEdge::~StepShape_OrientedEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_OrientedEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_DimensionalLocation;
@@ -4632,8 +6162,18 @@ class StepShape_DimensionalLocation : public StepRepr_ShapeAspectRelationship {
 };
 %feature("shadow") StepShape_DimensionalLocation::~StepShape_DimensionalLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_DimensionalLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_DirectedDimensionalLocation;
@@ -4655,8 +6195,18 @@ class StepShape_DirectedDimensionalLocation : public StepShape_DimensionalLocati
 };
 %feature("shadow") StepShape_DirectedDimensionalLocation::~StepShape_DirectedDimensionalLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_DirectedDimensionalLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_DimensionalCharacteristic;
@@ -4674,8 +6224,18 @@ class StepShape_DimensionalCharacteristic : public StepData_SelectType {
 };
 %feature("shadow") StepShape_DimensionalCharacteristic::~StepShape_DimensionalCharacteristic %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_DimensionalCharacteristic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_PrecisionQualifier;
@@ -4705,8 +6265,18 @@ class StepShape_PrecisionQualifier : public MMgt_TShared {
 };
 %feature("shadow") StepShape_PrecisionQualifier::~StepShape_PrecisionQualifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_PrecisionQualifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Sphere;
@@ -4742,8 +6312,18 @@ class StepShape_Sphere : public StepGeom_GeometricRepresentationItem {
 };
 %feature("shadow") StepShape_Sphere::~StepShape_Sphere %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Sphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ContextDependentShapeRepresentation;
@@ -4777,8 +6357,18 @@ class StepShape_ContextDependentShapeRepresentation : public MMgt_TShared {
 };
 %feature("shadow") StepShape_ContextDependentShapeRepresentation::~StepShape_ContextDependentShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ContextDependentShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_BooleanResult;
@@ -4818,8 +6408,18 @@ class StepShape_BooleanResult : public StepGeom_GeometricRepresentationItem {
 };
 %feature("shadow") StepShape_BooleanResult::~StepShape_BooleanResult %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_BooleanResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ClosedShell;
@@ -4843,8 +6443,18 @@ class StepShape_ClosedShell : public StepShape_ConnectedFaceSet {
 };
 %feature("shadow") StepShape_ClosedShell::~StepShape_ClosedShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ClosedShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_OrientedClosedShell;
@@ -4886,8 +6496,18 @@ class StepShape_OrientedClosedShell : public StepShape_ClosedShell {
 };
 %feature("shadow") StepShape_OrientedClosedShell::~StepShape_OrientedClosedShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_OrientedClosedShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_CsgSelect;
@@ -4911,8 +6531,18 @@ class StepShape_CsgSelect {
 };
 %feature("shadow") StepShape_CsgSelect::~StepShape_CsgSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_CsgSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ValueQualifier;
@@ -4930,8 +6560,18 @@ class StepShape_ValueQualifier : public StepData_SelectType {
 };
 %feature("shadow") StepShape_ValueQualifier::~StepShape_ValueQualifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ValueQualifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_SurfaceModel;
@@ -4947,8 +6587,18 @@ class StepShape_SurfaceModel : public StepData_SelectType {
 };
 %feature("shadow") StepShape_SurfaceModel::~StepShape_SurfaceModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_SurfaceModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_FacetedBrepAndBrepWithVoids;
@@ -4994,8 +6644,18 @@ class StepShape_FacetedBrepAndBrepWithVoids : public StepShape_ManifoldSolidBrep
 };
 %feature("shadow") StepShape_FacetedBrepAndBrepWithVoids::~StepShape_FacetedBrepAndBrepWithVoids %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_FacetedBrepAndBrepWithVoids {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Vertex;
@@ -5019,8 +6679,18 @@ class StepShape_Vertex : public StepShape_TopologicalRepresentationItem {
 };
 %feature("shadow") StepShape_Vertex::~StepShape_Vertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Vertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_EdgeCurve;
@@ -5056,8 +6726,18 @@ class StepShape_EdgeCurve : public StepShape_Edge {
 };
 %feature("shadow") StepShape_EdgeCurve::~StepShape_EdgeCurve %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_EdgeCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_BoxedHalfSpace;
@@ -5089,8 +6769,18 @@ class StepShape_BoxedHalfSpace : public StepShape_HalfSpaceSolid {
 };
 %feature("shadow") StepShape_BoxedHalfSpace::~StepShape_BoxedHalfSpace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_BoxedHalfSpace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_GeometricSet;
@@ -5126,8 +6816,18 @@ class StepShape_GeometricSet : public StepGeom_GeometricRepresentationItem {
 };
 %feature("shadow") StepShape_GeometricSet::~StepShape_GeometricSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_GeometricSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_HArray1OfFace;
@@ -5171,8 +6871,18 @@ class StepShape_HArray1OfFace : public MMgt_TShared {
 };
 %feature("shadow") StepShape_HArray1OfFace::~StepShape_HArray1OfFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_HArray1OfFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Array1OfValueQualifier;
@@ -5212,8 +6922,18 @@ class StepShape_Array1OfValueQualifier {
 };
 %feature("shadow") StepShape_Array1OfValueQualifier::~StepShape_Array1OfValueQualifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Array1OfValueQualifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Array1OfOrientedClosedShell;
@@ -5253,8 +6973,18 @@ class StepShape_Array1OfOrientedClosedShell {
 };
 %feature("shadow") StepShape_Array1OfOrientedClosedShell::~StepShape_Array1OfOrientedClosedShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Array1OfOrientedClosedShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_HArray1OfValueQualifier;
@@ -5298,8 +7028,18 @@ class StepShape_HArray1OfValueQualifier : public MMgt_TShared {
 };
 %feature("shadow") StepShape_HArray1OfValueQualifier::~StepShape_HArray1OfValueQualifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_HArray1OfValueQualifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_FaceBasedSurfaceModel;
@@ -5329,8 +7069,18 @@ class StepShape_FaceBasedSurfaceModel : public StepGeom_GeometricRepresentationI
 };
 %feature("shadow") StepShape_FaceBasedSurfaceModel::~StepShape_FaceBasedSurfaceModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_FaceBasedSurfaceModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_AdvancedFace;
@@ -5354,8 +7104,18 @@ class StepShape_AdvancedFace : public StepShape_FaceSurface {
 };
 %feature("shadow") StepShape_AdvancedFace::~StepShape_AdvancedFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_AdvancedFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ReversibleTopologyItem;
@@ -5381,8 +7141,18 @@ class StepShape_ReversibleTopologyItem : public StepData_SelectType {
 };
 %feature("shadow") StepShape_ReversibleTopologyItem::~StepShape_ReversibleTopologyItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ReversibleTopologyItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Array1OfShell;
@@ -5422,8 +7192,18 @@ class StepShape_Array1OfShell {
 };
 %feature("shadow") StepShape_Array1OfShell::~StepShape_Array1OfShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Array1OfShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Array1OfOrientedEdge;
@@ -5463,8 +7243,18 @@ class StepShape_Array1OfOrientedEdge {
 };
 %feature("shadow") StepShape_Array1OfOrientedEdge::~StepShape_Array1OfOrientedEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Array1OfOrientedEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_QualifiedRepresentationItem;
@@ -5500,8 +7290,18 @@ class StepShape_QualifiedRepresentationItem : public StepRepr_RepresentationItem
 };
 %feature("shadow") StepShape_QualifiedRepresentationItem::~StepShape_QualifiedRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_QualifiedRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ShapeRepresentationWithParameters;
@@ -5525,8 +7325,18 @@ class StepShape_ShapeRepresentationWithParameters : public StepShape_ShapeRepres
 };
 %feature("shadow") StepShape_ShapeRepresentationWithParameters::~StepShape_ShapeRepresentationWithParameters %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ShapeRepresentationWithParameters {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_RightCircularCone;
@@ -5570,8 +7380,18 @@ class StepShape_RightCircularCone : public StepGeom_GeometricRepresentationItem 
 };
 %feature("shadow") StepShape_RightCircularCone::~StepShape_RightCircularCone %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_RightCircularCone {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_EdgeLoop;
@@ -5607,8 +7427,18 @@ class StepShape_EdgeLoop : public StepShape_Loop {
 };
 %feature("shadow") StepShape_EdgeLoop::~StepShape_EdgeLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_EdgeLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Array1OfEdge;
@@ -5648,8 +7478,18 @@ class StepShape_Array1OfEdge {
 };
 %feature("shadow") StepShape_Array1OfEdge::~StepShape_Array1OfEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Array1OfEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_GeometricallyBoundedSurfaceShapeRepresentation;
@@ -5673,8 +7513,18 @@ class StepShape_GeometricallyBoundedSurfaceShapeRepresentation : public StepShap
 };
 %feature("shadow") StepShape_GeometricallyBoundedSurfaceShapeRepresentation::~StepShape_GeometricallyBoundedSurfaceShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_GeometricallyBoundedSurfaceShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem;
@@ -5714,8 +7564,18 @@ class StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem : public
 };
 %feature("shadow") StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem::~StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_HArray1OfOrientedEdge;
@@ -5759,8 +7619,18 @@ class StepShape_HArray1OfOrientedEdge : public MMgt_TShared {
 };
 %feature("shadow") StepShape_HArray1OfOrientedEdge::~StepShape_HArray1OfOrientedEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_HArray1OfOrientedEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ConnectedFaceShapeRepresentation;
@@ -5784,8 +7654,18 @@ class StepShape_ConnectedFaceShapeRepresentation : public StepRepr_Representatio
 };
 %feature("shadow") StepShape_ConnectedFaceShapeRepresentation::~StepShape_ConnectedFaceShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ConnectedFaceShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_GeometricCurveSet;
@@ -5809,8 +7689,18 @@ class StepShape_GeometricCurveSet : public StepShape_GeometricSet {
 };
 %feature("shadow") StepShape_GeometricCurveSet::~StepShape_GeometricCurveSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_GeometricCurveSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_AdvancedBrepShapeRepresentation;
@@ -5834,8 +7724,18 @@ class StepShape_AdvancedBrepShapeRepresentation : public StepShape_ShapeRepresen
 };
 %feature("shadow") StepShape_AdvancedBrepShapeRepresentation::~StepShape_AdvancedBrepShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_AdvancedBrepShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_AngularSize;
@@ -5865,8 +7765,18 @@ class StepShape_AngularSize : public StepShape_DimensionalSize {
 };
 %feature("shadow") StepShape_AngularSize::~StepShape_AngularSize %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_AngularSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Array1OfConnectedFaceSet;
@@ -5906,8 +7816,18 @@ class StepShape_Array1OfConnectedFaceSet {
 };
 %feature("shadow") StepShape_Array1OfConnectedFaceSet::~StepShape_Array1OfConnectedFaceSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Array1OfConnectedFaceSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_VertexLoop;
@@ -5939,8 +7859,18 @@ class StepShape_VertexLoop : public StepShape_Loop {
 };
 %feature("shadow") StepShape_VertexLoop::~StepShape_VertexLoop %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_VertexLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_HArray1OfGeometricSetSelect;
@@ -5984,8 +7914,18 @@ class StepShape_HArray1OfGeometricSetSelect : public MMgt_TShared {
 };
 %feature("shadow") StepShape_HArray1OfGeometricSetSelect::~StepShape_HArray1OfGeometricSetSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_HArray1OfGeometricSetSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ShapeDefinitionRepresentation;
@@ -6009,8 +7949,18 @@ class StepShape_ShapeDefinitionRepresentation : public StepRepr_PropertyDefiniti
 };
 %feature("shadow") StepShape_ShapeDefinitionRepresentation::~StepShape_ShapeDefinitionRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ShapeDefinitionRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_HArray1OfShell;
@@ -6054,8 +8004,18 @@ class StepShape_HArray1OfShell : public MMgt_TShared {
 };
 %feature("shadow") StepShape_HArray1OfShell::~StepShape_HArray1OfShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_HArray1OfShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_EdgeBasedWireframeShapeRepresentation;
@@ -6079,8 +8039,18 @@ class StepShape_EdgeBasedWireframeShapeRepresentation : public StepShape_ShapeRe
 };
 %feature("shadow") StepShape_EdgeBasedWireframeShapeRepresentation::~StepShape_EdgeBasedWireframeShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_EdgeBasedWireframeShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_FacetedBrep;
@@ -6104,8 +8074,18 @@ class StepShape_FacetedBrep : public StepShape_ManifoldSolidBrep {
 };
 %feature("shadow") StepShape_FacetedBrep::~StepShape_FacetedBrep %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_FacetedBrep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_VertexPoint;
@@ -6137,8 +8117,18 @@ class StepShape_VertexPoint : public StepShape_Vertex {
 };
 %feature("shadow") StepShape_VertexPoint::~StepShape_VertexPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_VertexPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_HArray1OfConnectedEdgeSet;
@@ -6182,8 +8172,18 @@ class StepShape_HArray1OfConnectedEdgeSet : public MMgt_TShared {
 };
 %feature("shadow") StepShape_HArray1OfConnectedEdgeSet::~StepShape_HArray1OfConnectedEdgeSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_HArray1OfConnectedEdgeSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_CsgPrimitive;
@@ -6209,8 +8209,18 @@ class StepShape_CsgPrimitive : public StepData_SelectType {
 };
 %feature("shadow") StepShape_CsgPrimitive::~StepShape_CsgPrimitive %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_CsgPrimitive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ManifoldSurfaceShapeRepresentation;
@@ -6234,8 +8244,18 @@ class StepShape_ManifoldSurfaceShapeRepresentation : public StepShape_ShapeRepre
 };
 %feature("shadow") StepShape_ManifoldSurfaceShapeRepresentation::~StepShape_ManifoldSurfaceShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ManifoldSurfaceShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Torus;
@@ -6275,8 +8295,18 @@ class StepShape_Torus : public StepGeom_GeometricRepresentationItem {
 };
 %feature("shadow") StepShape_Torus::~StepShape_Torus %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Torus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_DimensionalSizeWithPath;
@@ -6306,8 +8336,18 @@ class StepShape_DimensionalSizeWithPath : public StepShape_DimensionalSize {
 };
 %feature("shadow") StepShape_DimensionalSizeWithPath::~StepShape_DimensionalSizeWithPath %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_DimensionalSizeWithPath {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_FaceOuterBound;
@@ -6331,8 +8371,18 @@ class StepShape_FaceOuterBound : public StepShape_FaceBound {
 };
 %feature("shadow") StepShape_FaceOuterBound::~StepShape_FaceOuterBound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_FaceOuterBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_HArray1OfConnectedFaceSet;
@@ -6376,8 +8426,18 @@ class StepShape_HArray1OfConnectedFaceSet : public MMgt_TShared {
 };
 %feature("shadow") StepShape_HArray1OfConnectedFaceSet::~StepShape_HArray1OfConnectedFaceSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_HArray1OfConnectedFaceSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Block;
@@ -6421,8 +8481,18 @@ class StepShape_Block : public StepGeom_GeometricRepresentationItem {
 };
 %feature("shadow") StepShape_Block::~StepShape_Block %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Block {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_DefinitionalRepresentationAndShapeRepresentation;
@@ -6446,8 +8516,18 @@ class StepShape_DefinitionalRepresentationAndShapeRepresentation : public StepRe
 };
 %feature("shadow") StepShape_DefinitionalRepresentationAndShapeRepresentation::~StepShape_DefinitionalRepresentationAndShapeRepresentation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_DefinitionalRepresentationAndShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ToleranceMethodDefinition;
@@ -6465,8 +8545,18 @@ class StepShape_ToleranceMethodDefinition : public StepData_SelectType {
 };
 %feature("shadow") StepShape_ToleranceMethodDefinition::~StepShape_ToleranceMethodDefinition %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ToleranceMethodDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ExtrudedAreaSolid;
@@ -6502,8 +8592,18 @@ class StepShape_ExtrudedAreaSolid : public StepShape_SweptAreaSolid {
 };
 %feature("shadow") StepShape_ExtrudedAreaSolid::~StepShape_ExtrudedAreaSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ExtrudedAreaSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_SeamEdge;
@@ -6533,8 +8633,18 @@ class StepShape_SeamEdge : public StepShape_OrientedEdge {
 };
 %feature("shadow") StepShape_SeamEdge::~StepShape_SeamEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_SeamEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_TypeQualifier;
@@ -6564,8 +8674,18 @@ class StepShape_TypeQualifier : public MMgt_TShared {
 };
 %feature("shadow") StepShape_TypeQualifier::~StepShape_TypeQualifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_TypeQualifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_DimensionalLocationWithPath;
@@ -6595,8 +8715,18 @@ class StepShape_DimensionalLocationWithPath : public StepShape_DimensionalLocati
 };
 %feature("shadow") StepShape_DimensionalLocationWithPath::~StepShape_DimensionalLocationWithPath %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_DimensionalLocationWithPath {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_MeasureQualification;
@@ -6644,8 +8774,18 @@ class StepShape_MeasureQualification : public MMgt_TShared {
 };
 %feature("shadow") StepShape_MeasureQualification::~StepShape_MeasureQualification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_MeasureQualification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ConnectedFaceSubSet;
@@ -6675,8 +8815,18 @@ class StepShape_ConnectedFaceSubSet : public StepShape_ConnectedFaceSet {
 };
 %feature("shadow") StepShape_ConnectedFaceSubSet::~StepShape_ConnectedFaceSubSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ConnectedFaceSubSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_AngularLocation;
@@ -6706,8 +8856,18 @@ class StepShape_AngularLocation : public StepShape_DimensionalLocation {
 };
 %feature("shadow") StepShape_AngularLocation::~StepShape_AngularLocation %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_AngularLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_SolidReplica;
@@ -6743,8 +8903,18 @@ class StepShape_SolidReplica : public StepShape_SolidModel {
 };
 %feature("shadow") StepShape_SolidReplica::~StepShape_SolidReplica %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_SolidReplica {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_OrientedPath;
@@ -6788,8 +8958,18 @@ class StepShape_OrientedPath : public StepShape_Path {
 };
 %feature("shadow") StepShape_OrientedPath::~StepShape_OrientedPath %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_OrientedPath {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_RightCircularCylinder;
@@ -6829,8 +9009,18 @@ class StepShape_RightCircularCylinder : public StepGeom_GeometricRepresentationI
 };
 %feature("shadow") StepShape_RightCircularCylinder::~StepShape_RightCircularCylinder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_RightCircularCylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_Array1OfGeometricSetSelect;
@@ -6870,8 +9060,18 @@ class StepShape_Array1OfGeometricSetSelect {
 };
 %feature("shadow") StepShape_Array1OfGeometricSetSelect::~StepShape_Array1OfGeometricSetSelect %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_Array1OfGeometricSetSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_HArray1OfEdge;
@@ -6915,8 +9115,18 @@ class StepShape_HArray1OfEdge : public MMgt_TShared {
 };
 %feature("shadow") StepShape_HArray1OfEdge::~StepShape_HArray1OfEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_HArray1OfEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor StepShape_ShellBasedSurfaceModel;
@@ -6952,5 +9162,15 @@ class StepShape_ShellBasedSurfaceModel : public StepGeom_GeometricRepresentation
 };
 %feature("shadow") StepShape_ShellBasedSurfaceModel::~StepShape_ShellBasedSurfaceModel %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend StepShape_ShellBasedSurfaceModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

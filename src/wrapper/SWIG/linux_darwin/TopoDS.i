@@ -63,8 +63,18 @@ class Handle_TopoDS_TShape : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TopoDS_TShape::~Handle_TopoDS_TShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopoDS_TShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopoDS_TVertex;
@@ -91,8 +101,18 @@ class Handle_TopoDS_TVertex : public Handle_TopoDS_TShape {
 };
 %feature("shadow") Handle_TopoDS_TVertex::~Handle_TopoDS_TVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopoDS_TVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopoDS_FrozenShape;
@@ -119,8 +139,18 @@ class Handle_TopoDS_FrozenShape : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_TopoDS_FrozenShape::~Handle_TopoDS_FrozenShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopoDS_FrozenShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopoDS_ListNodeOfListOfShape;
@@ -147,8 +177,18 @@ class Handle_TopoDS_ListNodeOfListOfShape : public Handle_TCollection_MapNode {
 };
 %feature("shadow") Handle_TopoDS_ListNodeOfListOfShape::~Handle_TopoDS_ListNodeOfListOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopoDS_ListNodeOfListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopoDS_TFace;
@@ -175,8 +215,18 @@ class Handle_TopoDS_TFace : public Handle_TopoDS_TShape {
 };
 %feature("shadow") Handle_TopoDS_TFace::~Handle_TopoDS_TFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopoDS_TFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopoDS_TCompSolid;
@@ -203,8 +253,18 @@ class Handle_TopoDS_TCompSolid : public Handle_TopoDS_TShape {
 };
 %feature("shadow") Handle_TopoDS_TCompSolid::~Handle_TopoDS_TCompSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopoDS_TCompSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopoDS_TCompound;
@@ -231,8 +291,18 @@ class Handle_TopoDS_TCompound : public Handle_TopoDS_TShape {
 };
 %feature("shadow") Handle_TopoDS_TCompound::~Handle_TopoDS_TCompound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopoDS_TCompound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopoDS_HShape;
@@ -259,8 +329,18 @@ class Handle_TopoDS_HShape : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_TopoDS_HShape::~Handle_TopoDS_HShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopoDS_HShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopoDS_UnCompatibleShapes;
@@ -287,8 +367,18 @@ class Handle_TopoDS_UnCompatibleShapes : public Handle_Standard_DomainError {
 };
 %feature("shadow") Handle_TopoDS_UnCompatibleShapes::~Handle_TopoDS_UnCompatibleShapes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopoDS_UnCompatibleShapes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopoDS_TEdge;
@@ -315,8 +405,18 @@ class Handle_TopoDS_TEdge : public Handle_TopoDS_TShape {
 };
 %feature("shadow") Handle_TopoDS_TEdge::~Handle_TopoDS_TEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopoDS_TEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopoDS_TShell;
@@ -343,8 +443,18 @@ class Handle_TopoDS_TShell : public Handle_TopoDS_TShape {
 };
 %feature("shadow") Handle_TopoDS_TShell::~Handle_TopoDS_TShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopoDS_TShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopoDS_TSolid;
@@ -371,8 +481,18 @@ class Handle_TopoDS_TSolid : public Handle_TopoDS_TShape {
 };
 %feature("shadow") Handle_TopoDS_TSolid::~Handle_TopoDS_TSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopoDS_TSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TopoDS_TWire;
@@ -399,8 +519,18 @@ class Handle_TopoDS_TWire : public Handle_TopoDS_TShape {
 };
 %feature("shadow") Handle_TopoDS_TWire::~Handle_TopoDS_TWire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_TopoDS_TWire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_ListNodeOfListOfShape;
@@ -426,8 +556,18 @@ class TopoDS_ListNodeOfListOfShape : public TCollection_MapNode {
 };
 %feature("shadow") TopoDS_ListNodeOfListOfShape::~TopoDS_ListNodeOfListOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_ListNodeOfListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_Shape;
@@ -528,8 +668,18 @@ class TopoDS_Shape {
 };
 %feature("shadow") TopoDS_Shape::~TopoDS_Shape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_Shape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 %extend TopoDS_Shape {
 %pythoncode {
 	def __getstate__(self):
@@ -557,8 +707,18 @@ class TopoDS_Vertex : public TopoDS_Shape {
 };
 %feature("shadow") TopoDS_Vertex::~TopoDS_Vertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_Vertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_FrozenShape;
@@ -590,8 +750,18 @@ class TopoDS_FrozenShape : public Standard_DomainError {
 };
 %feature("shadow") TopoDS_FrozenShape::~TopoDS_FrozenShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_FrozenShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_Iterator;
@@ -613,8 +783,18 @@ class TopoDS_Iterator {
 };
 %feature("shadow") TopoDS_Iterator::~TopoDS_Iterator %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_Iterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_TShape;
@@ -668,8 +848,18 @@ class TopoDS_TShape : public MMgt_TShared {
 };
 %feature("shadow") TopoDS_TShape::~TopoDS_TShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_TShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_CompSolid;
@@ -681,8 +871,18 @@ class TopoDS_CompSolid : public TopoDS_Shape {
 };
 %feature("shadow") TopoDS_CompSolid::~TopoDS_CompSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_CompSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_ListOfShape;
@@ -732,8 +932,18 @@ class TopoDS_ListOfShape {
 };
 %feature("shadow") TopoDS_ListOfShape::~TopoDS_ListOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_ListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS;
@@ -777,8 +987,18 @@ class TopoDS {
 };
 %feature("shadow") TopoDS::~TopoDS %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_TWire;
@@ -806,8 +1026,18 @@ class TopoDS_TWire : public TopoDS_TShape {
 };
 %feature("shadow") TopoDS_TWire::~TopoDS_TWire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_TWire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_Edge;
@@ -819,8 +1049,18 @@ class TopoDS_Edge : public TopoDS_Shape {
 };
 %feature("shadow") TopoDS_Edge::~TopoDS_Edge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_Shell;
@@ -832,8 +1072,18 @@ class TopoDS_Shell : public TopoDS_Shape {
 };
 %feature("shadow") TopoDS_Shell::~TopoDS_Shell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_Shell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_UnCompatibleShapes;
@@ -865,8 +1115,18 @@ class TopoDS_UnCompatibleShapes : public Standard_DomainError {
 };
 %feature("shadow") TopoDS_UnCompatibleShapes::~TopoDS_UnCompatibleShapes %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_UnCompatibleShapes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_ListIteratorOfListOfShape;
@@ -888,8 +1148,18 @@ class TopoDS_ListIteratorOfListOfShape {
 };
 %feature("shadow") TopoDS_ListIteratorOfListOfShape::~TopoDS_ListIteratorOfListOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_ListIteratorOfListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_HShape;
@@ -921,8 +1191,18 @@ class TopoDS_HShape : public MMgt_TShared {
 };
 %feature("shadow") TopoDS_HShape::~TopoDS_HShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_HShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_Solid;
@@ -934,8 +1214,18 @@ class TopoDS_Solid : public TopoDS_Shape {
 };
 %feature("shadow") TopoDS_Solid::~TopoDS_Solid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_Solid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_TCompound;
@@ -963,8 +1253,18 @@ class TopoDS_TCompound : public TopoDS_TShape {
 };
 %feature("shadow") TopoDS_TCompound::~TopoDS_TCompound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_TCompound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_TEdge;
@@ -988,8 +1288,18 @@ class TopoDS_TEdge : public TopoDS_TShape {
 };
 %feature("shadow") TopoDS_TEdge::~TopoDS_TEdge %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_TEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_Compound;
@@ -1001,8 +1311,18 @@ class TopoDS_Compound : public TopoDS_Shape {
 };
 %feature("shadow") TopoDS_Compound::~TopoDS_Compound %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_Compound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_TShell;
@@ -1030,8 +1350,18 @@ class TopoDS_TShell : public TopoDS_TShape {
 };
 %feature("shadow") TopoDS_TShell::~TopoDS_TShell %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_TShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_Builder;
@@ -1049,8 +1379,18 @@ class TopoDS_Builder {
 };
 %feature("shadow") TopoDS_Builder::~TopoDS_Builder %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_Builder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_Builder3D;
@@ -1066,8 +1406,18 @@ class TopoDS_Builder3D : public TopoDS_Builder {
 };
 %feature("shadow") TopoDS_Builder3D::~TopoDS_Builder3D %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_Builder3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_TFace;
@@ -1095,8 +1445,18 @@ class TopoDS_TFace : public TopoDS_TShape {
 };
 %feature("shadow") TopoDS_TFace::~TopoDS_TFace %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_TFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_TCompSolid;
@@ -1124,8 +1484,18 @@ class TopoDS_TCompSolid : public TopoDS_TShape {
 };
 %feature("shadow") TopoDS_TCompSolid::~TopoDS_TCompSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_TCompSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_Wire;
@@ -1137,8 +1507,18 @@ class TopoDS_Wire : public TopoDS_Shape {
 };
 %feature("shadow") TopoDS_Wire::~TopoDS_Wire %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_Wire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_TVertex;
@@ -1162,8 +1542,18 @@ class TopoDS_TVertex : public TopoDS_TShape {
 };
 %feature("shadow") TopoDS_TVertex::~TopoDS_TVertex %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_TVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_Face;
@@ -1175,8 +1565,18 @@ class TopoDS_Face : public TopoDS_Shape {
 };
 %feature("shadow") TopoDS_Face::~TopoDS_Face %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor TopoDS_TSolid;
@@ -1204,5 +1604,15 @@ class TopoDS_TSolid : public TopoDS_TShape {
 };
 %feature("shadow") TopoDS_TSolid::~TopoDS_TSolid %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend TopoDS_TSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

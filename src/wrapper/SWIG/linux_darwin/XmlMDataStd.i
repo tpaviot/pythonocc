@@ -63,8 +63,18 @@ class Handle_XmlMDataStd_PatternStdDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_PatternStdDriver::~Handle_XmlMDataStd_PatternStdDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_PatternStdDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_PointDriver;
@@ -91,8 +101,18 @@ class Handle_XmlMDataStd_PointDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_PointDriver::~Handle_XmlMDataStd_PointDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_PointDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_IntPackedMapDriver;
@@ -119,8 +139,18 @@ class Handle_XmlMDataStd_IntPackedMapDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_IntPackedMapDriver::~Handle_XmlMDataStd_IntPackedMapDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_IntPackedMapDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_BooleanListDriver;
@@ -147,8 +177,18 @@ class Handle_XmlMDataStd_BooleanListDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_BooleanListDriver::~Handle_XmlMDataStd_BooleanListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_BooleanListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_PlacementDriver;
@@ -175,8 +215,18 @@ class Handle_XmlMDataStd_PlacementDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_PlacementDriver::~Handle_XmlMDataStd_PlacementDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_PlacementDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_AxisDriver;
@@ -203,8 +253,18 @@ class Handle_XmlMDataStd_AxisDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_AxisDriver::~Handle_XmlMDataStd_AxisDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_AxisDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_ExpressionDriver;
@@ -231,8 +291,18 @@ class Handle_XmlMDataStd_ExpressionDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_ExpressionDriver::~Handle_XmlMDataStd_ExpressionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_ExpressionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_PlaneDriver;
@@ -259,8 +329,18 @@ class Handle_XmlMDataStd_PlaneDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_PlaneDriver::~Handle_XmlMDataStd_PlaneDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_PlaneDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_RealListDriver;
@@ -287,8 +367,18 @@ class Handle_XmlMDataStd_RealListDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_RealListDriver::~Handle_XmlMDataStd_RealListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_RealListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_ExtStringArrayDriver;
@@ -315,8 +405,18 @@ class Handle_XmlMDataStd_ExtStringArrayDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_ExtStringArrayDriver::~Handle_XmlMDataStd_ExtStringArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_ExtStringArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_ConstraintDriver;
@@ -343,8 +443,18 @@ class Handle_XmlMDataStd_ConstraintDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_ConstraintDriver::~Handle_XmlMDataStd_ConstraintDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_ConstraintDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_AsciiStringDriver;
@@ -371,8 +481,18 @@ class Handle_XmlMDataStd_AsciiStringDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_AsciiStringDriver::~Handle_XmlMDataStd_AsciiStringDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_AsciiStringDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_CommentDriver;
@@ -399,8 +519,18 @@ class Handle_XmlMDataStd_CommentDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_CommentDriver::~Handle_XmlMDataStd_CommentDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_CommentDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_ReferenceArrayDriver;
@@ -427,8 +557,18 @@ class Handle_XmlMDataStd_ReferenceArrayDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_ReferenceArrayDriver::~Handle_XmlMDataStd_ReferenceArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_ReferenceArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_TreeNodeDriver;
@@ -455,8 +595,18 @@ class Handle_XmlMDataStd_TreeNodeDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_TreeNodeDriver::~Handle_XmlMDataStd_TreeNodeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_TreeNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_GeometryDriver;
@@ -483,8 +633,18 @@ class Handle_XmlMDataStd_GeometryDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_GeometryDriver::~Handle_XmlMDataStd_GeometryDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_GeometryDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_ExtStringListDriver;
@@ -511,8 +671,18 @@ class Handle_XmlMDataStd_ExtStringListDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_ExtStringListDriver::~Handle_XmlMDataStd_ExtStringListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_ExtStringListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_NoteBookDriver;
@@ -539,8 +709,18 @@ class Handle_XmlMDataStd_NoteBookDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_NoteBookDriver::~Handle_XmlMDataStd_NoteBookDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_NoteBookDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_ByteArrayDriver;
@@ -567,8 +747,18 @@ class Handle_XmlMDataStd_ByteArrayDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_ByteArrayDriver::~Handle_XmlMDataStd_ByteArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_ByteArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_BooleanArrayDriver;
@@ -595,8 +785,18 @@ class Handle_XmlMDataStd_BooleanArrayDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_BooleanArrayDriver::~Handle_XmlMDataStd_BooleanArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_BooleanArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_IntegerDriver;
@@ -623,8 +823,18 @@ class Handle_XmlMDataStd_IntegerDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_IntegerDriver::~Handle_XmlMDataStd_IntegerDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_IntegerDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_RealDriver;
@@ -651,8 +861,18 @@ class Handle_XmlMDataStd_RealDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_RealDriver::~Handle_XmlMDataStd_RealDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_RealDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_DirectoryDriver;
@@ -679,8 +899,18 @@ class Handle_XmlMDataStd_DirectoryDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_DirectoryDriver::~Handle_XmlMDataStd_DirectoryDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_DirectoryDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_IntegerArrayDriver;
@@ -707,8 +937,18 @@ class Handle_XmlMDataStd_IntegerArrayDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_IntegerArrayDriver::~Handle_XmlMDataStd_IntegerArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_IntegerArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_UAttributeDriver;
@@ -735,8 +975,18 @@ class Handle_XmlMDataStd_UAttributeDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_UAttributeDriver::~Handle_XmlMDataStd_UAttributeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_UAttributeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_TickDriver;
@@ -763,8 +1013,18 @@ class Handle_XmlMDataStd_TickDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_TickDriver::~Handle_XmlMDataStd_TickDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_TickDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_IntegerListDriver;
@@ -791,8 +1051,18 @@ class Handle_XmlMDataStd_IntegerListDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_IntegerListDriver::~Handle_XmlMDataStd_IntegerListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_IntegerListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_ReferenceListDriver;
@@ -819,8 +1089,18 @@ class Handle_XmlMDataStd_ReferenceListDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_ReferenceListDriver::~Handle_XmlMDataStd_ReferenceListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_ReferenceListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_NamedDataDriver;
@@ -847,8 +1127,18 @@ class Handle_XmlMDataStd_NamedDataDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_NamedDataDriver::~Handle_XmlMDataStd_NamedDataDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_NamedDataDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_ShapeDriver;
@@ -875,8 +1165,18 @@ class Handle_XmlMDataStd_ShapeDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_ShapeDriver::~Handle_XmlMDataStd_ShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_ShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_RelationDriver;
@@ -903,8 +1203,18 @@ class Handle_XmlMDataStd_RelationDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_RelationDriver::~Handle_XmlMDataStd_RelationDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_RelationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_NameDriver;
@@ -931,8 +1241,18 @@ class Handle_XmlMDataStd_NameDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_NameDriver::~Handle_XmlMDataStd_NameDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_NameDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_VariableDriver;
@@ -959,8 +1279,18 @@ class Handle_XmlMDataStd_VariableDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_VariableDriver::~Handle_XmlMDataStd_VariableDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_VariableDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_XmlMDataStd_RealArrayDriver;
@@ -987,8 +1317,18 @@ class Handle_XmlMDataStd_RealArrayDriver : public Handle_XmlMDF_ADriver {
 };
 %feature("shadow") Handle_XmlMDataStd_RealArrayDriver::~Handle_XmlMDataStd_RealArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_XmlMDataStd_RealArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_DirectoryDriver;
@@ -1018,8 +1358,18 @@ class XmlMDataStd_DirectoryDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_DirectoryDriver::~XmlMDataStd_DirectoryDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_DirectoryDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_ExpressionDriver;
@@ -1049,8 +1399,18 @@ class XmlMDataStd_ExpressionDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_ExpressionDriver::~XmlMDataStd_ExpressionDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_ExpressionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_BooleanListDriver;
@@ -1080,8 +1440,18 @@ class XmlMDataStd_BooleanListDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_BooleanListDriver::~XmlMDataStd_BooleanListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_BooleanListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_NamedDataDriver;
@@ -1111,8 +1481,18 @@ class XmlMDataStd_NamedDataDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_NamedDataDriver::~XmlMDataStd_NamedDataDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_NamedDataDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_PlaneDriver;
@@ -1142,8 +1522,18 @@ class XmlMDataStd_PlaneDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_PlaneDriver::~XmlMDataStd_PlaneDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_PlaneDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_IntegerDriver;
@@ -1173,8 +1563,18 @@ class XmlMDataStd_IntegerDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_IntegerDriver::~XmlMDataStd_IntegerDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_IntegerDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_ConstraintDriver;
@@ -1204,8 +1604,18 @@ class XmlMDataStd_ConstraintDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_ConstraintDriver::~XmlMDataStd_ConstraintDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_ConstraintDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_RealArrayDriver;
@@ -1235,8 +1645,18 @@ class XmlMDataStd_RealArrayDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_RealArrayDriver::~XmlMDataStd_RealArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_RealArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_ExtStringListDriver;
@@ -1266,8 +1686,18 @@ class XmlMDataStd_ExtStringListDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_ExtStringListDriver::~XmlMDataStd_ExtStringListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_ExtStringListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_RelationDriver;
@@ -1297,8 +1727,18 @@ class XmlMDataStd_RelationDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_RelationDriver::~XmlMDataStd_RelationDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_RelationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_PlacementDriver;
@@ -1328,8 +1768,18 @@ class XmlMDataStd_PlacementDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_PlacementDriver::~XmlMDataStd_PlacementDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_PlacementDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_IntegerArrayDriver;
@@ -1359,8 +1809,18 @@ class XmlMDataStd_IntegerArrayDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_IntegerArrayDriver::~XmlMDataStd_IntegerArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_IntegerArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_PointDriver;
@@ -1390,8 +1850,18 @@ class XmlMDataStd_PointDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_PointDriver::~XmlMDataStd_PointDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_PointDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_ShapeDriver;
@@ -1421,8 +1891,18 @@ class XmlMDataStd_ShapeDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_ShapeDriver::~XmlMDataStd_ShapeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_ShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_VariableDriver;
@@ -1452,8 +1932,18 @@ class XmlMDataStd_VariableDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_VariableDriver::~XmlMDataStd_VariableDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_VariableDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_RealListDriver;
@@ -1483,8 +1973,18 @@ class XmlMDataStd_RealListDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_RealListDriver::~XmlMDataStd_RealListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_RealListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_AsciiStringDriver;
@@ -1514,8 +2014,18 @@ class XmlMDataStd_AsciiStringDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_AsciiStringDriver::~XmlMDataStd_AsciiStringDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_AsciiStringDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_RealDriver;
@@ -1545,8 +2055,18 @@ class XmlMDataStd_RealDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_RealDriver::~XmlMDataStd_RealDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_RealDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_ReferenceArrayDriver;
@@ -1576,8 +2096,18 @@ class XmlMDataStd_ReferenceArrayDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_ReferenceArrayDriver::~XmlMDataStd_ReferenceArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_ReferenceArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_NameDriver;
@@ -1607,8 +2137,18 @@ class XmlMDataStd_NameDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_NameDriver::~XmlMDataStd_NameDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_NameDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_IntegerListDriver;
@@ -1638,8 +2178,18 @@ class XmlMDataStd_IntegerListDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_IntegerListDriver::~XmlMDataStd_IntegerListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_IntegerListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd;
@@ -1657,8 +2207,18 @@ class XmlMDataStd {
 };
 %feature("shadow") XmlMDataStd::~XmlMDataStd %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_UAttributeDriver;
@@ -1688,8 +2248,18 @@ class XmlMDataStd_UAttributeDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_UAttributeDriver::~XmlMDataStd_UAttributeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_UAttributeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_TreeNodeDriver;
@@ -1719,8 +2289,18 @@ class XmlMDataStd_TreeNodeDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_TreeNodeDriver::~XmlMDataStd_TreeNodeDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_TreeNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_PatternStdDriver;
@@ -1750,8 +2330,18 @@ class XmlMDataStd_PatternStdDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_PatternStdDriver::~XmlMDataStd_PatternStdDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_PatternStdDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_BooleanArrayDriver;
@@ -1781,8 +2371,18 @@ class XmlMDataStd_BooleanArrayDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_BooleanArrayDriver::~XmlMDataStd_BooleanArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_BooleanArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_ByteArrayDriver;
@@ -1812,8 +2412,18 @@ class XmlMDataStd_ByteArrayDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_ByteArrayDriver::~XmlMDataStd_ByteArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_ByteArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_IntPackedMapDriver;
@@ -1843,8 +2453,18 @@ class XmlMDataStd_IntPackedMapDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_IntPackedMapDriver::~XmlMDataStd_IntPackedMapDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_IntPackedMapDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_ExtStringArrayDriver;
@@ -1874,8 +2494,18 @@ class XmlMDataStd_ExtStringArrayDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_ExtStringArrayDriver::~XmlMDataStd_ExtStringArrayDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_ExtStringArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_NoteBookDriver;
@@ -1905,8 +2535,18 @@ class XmlMDataStd_NoteBookDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_NoteBookDriver::~XmlMDataStd_NoteBookDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_NoteBookDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_ReferenceListDriver;
@@ -1936,8 +2576,18 @@ class XmlMDataStd_ReferenceListDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_ReferenceListDriver::~XmlMDataStd_ReferenceListDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_ReferenceListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_GeometryDriver;
@@ -1967,8 +2617,18 @@ class XmlMDataStd_GeometryDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_GeometryDriver::~XmlMDataStd_GeometryDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_GeometryDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_TickDriver;
@@ -1998,8 +2658,18 @@ class XmlMDataStd_TickDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_TickDriver::~XmlMDataStd_TickDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_TickDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_CommentDriver;
@@ -2029,8 +2699,18 @@ class XmlMDataStd_CommentDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_CommentDriver::~XmlMDataStd_CommentDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_CommentDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlMDataStd_AxisDriver;
@@ -2060,5 +2740,15 @@ class XmlMDataStd_AxisDriver : public XmlMDF_ADriver {
 };
 %feature("shadow") XmlMDataStd_AxisDriver::~XmlMDataStd_AxisDriver %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend XmlMDataStd_AxisDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

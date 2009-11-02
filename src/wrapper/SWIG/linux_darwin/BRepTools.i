@@ -63,8 +63,18 @@ class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_BRepTools_Modification::~Handle_BRepTools_Modification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepTools_Modification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepTools_GTrsfModification;
@@ -91,8 +101,18 @@ class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification 
 };
 %feature("shadow") Handle_BRepTools_GTrsfModification::~Handle_BRepTools_GTrsfModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepTools_GTrsfModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepTools_TrsfModification;
@@ -119,8 +139,18 @@ class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
 };
 %feature("shadow") Handle_BRepTools_TrsfModification::~Handle_BRepTools_TrsfModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepTools_TrsfModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepTools_ReShape;
@@ -147,8 +177,18 @@ class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 };
 %feature("shadow") Handle_BRepTools_ReShape::~Handle_BRepTools_ReShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepTools_ReShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepTools_NurbsConvertModification;
@@ -175,8 +215,18 @@ class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modifi
 };
 %feature("shadow") Handle_BRepTools_NurbsConvertModification::~Handle_BRepTools_NurbsConvertModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepTools_NurbsConvertModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d;
@@ -203,8 +253,18 @@ class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection
 };
 %feature("shadow") Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d::~Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools_Modifier;
@@ -228,8 +288,18 @@ class BRepTools_Modifier {
 };
 %feature("shadow") BRepTools_Modifier::~BRepTools_Modifier %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools_Modifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools_ReShape;
@@ -273,8 +343,18 @@ class BRepTools_ReShape : public MMgt_TShared {
 };
 %feature("shadow") BRepTools_ReShape::~BRepTools_ReShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools_ReShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools_ShapeSet;
@@ -376,8 +456,18 @@ class BRepTools_ShapeSet : public TopTools_ShapeSet {
 };
 %feature("shadow") BRepTools_ShapeSet::~BRepTools_ShapeSet %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools_ShapeSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools_MapOfVertexPnt2d;
@@ -411,8 +501,18 @@ class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
 };
 %feature("shadow") BRepTools_MapOfVertexPnt2d::~BRepTools_MapOfVertexPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools_MapOfVertexPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools_Modification;
@@ -446,8 +546,18 @@ class BRepTools_Modification : public MMgt_TShared {
 };
 %feature("shadow") BRepTools_Modification::~BRepTools_Modification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools_Modification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools_TrsfModification;
@@ -471,8 +581,18 @@ class BRepTools_TrsfModification : public BRepTools_Modification {
 };
 %feature("shadow") BRepTools_TrsfModification::~BRepTools_TrsfModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools_TrsfModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools;
@@ -542,8 +662,18 @@ class BRepTools {
 };
 %feature("shadow") BRepTools::~BRepTools %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools_GTrsfModification;
@@ -581,8 +711,18 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 };
 %feature("shadow") BRepTools_GTrsfModification::~BRepTools_GTrsfModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools_GTrsfModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools_Quilt;
@@ -606,8 +746,18 @@ class BRepTools_Quilt {
 };
 %feature("shadow") BRepTools_Quilt::~BRepTools_Quilt %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools_Quilt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools_WireExplorer;
@@ -639,8 +789,18 @@ class BRepTools_WireExplorer {
 };
 %feature("shadow") BRepTools_WireExplorer::~BRepTools_WireExplorer %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools_WireExplorer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools_DataMapIteratorOfMapOfVertexPnt2d;
@@ -660,8 +820,18 @@ class BRepTools_DataMapIteratorOfMapOfVertexPnt2d : public TCollection_BasicMapI
 };
 %feature("shadow") BRepTools_DataMapIteratorOfMapOfVertexPnt2d::~BRepTools_DataMapIteratorOfMapOfVertexPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools_DataMapIteratorOfMapOfVertexPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools_Substitution;
@@ -683,8 +853,18 @@ class BRepTools_Substitution {
 };
 %feature("shadow") BRepTools_Substitution::~BRepTools_Substitution %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools_Substitution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools_DataMapNodeOfMapOfVertexPnt2d;
@@ -712,8 +892,18 @@ class BRepTools_DataMapNodeOfMapOfVertexPnt2d : public TCollection_MapNode {
 };
 %feature("shadow") BRepTools_DataMapNodeOfMapOfVertexPnt2d::~BRepTools_DataMapNodeOfMapOfVertexPnt2d %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools_DataMapNodeOfMapOfVertexPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepTools_NurbsConvertModification;
@@ -749,5 +939,15 @@ class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 };
 %feature("shadow") BRepTools_NurbsConvertModification::~BRepTools_NurbsConvertModification %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend BRepTools_NurbsConvertModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

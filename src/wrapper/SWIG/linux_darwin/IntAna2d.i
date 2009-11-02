@@ -78,8 +78,18 @@ class IntAna2d_IntPoint {
 };
 %feature("shadow") IntAna2d_IntPoint::~IntAna2d_IntPoint %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntAna2d_IntPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntAna2d_Conic;
@@ -109,8 +119,18 @@ class IntAna2d_Conic {
 };
 %feature("shadow") IntAna2d_Conic::~IntAna2d_Conic %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntAna2d_Conic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor IntAna2d_AnaIntersection;
@@ -166,5 +186,15 @@ class IntAna2d_AnaIntersection {
 };
 %feature("shadow") IntAna2d_AnaIntersection::~IntAna2d_AnaIntersection %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend IntAna2d_AnaIntersection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

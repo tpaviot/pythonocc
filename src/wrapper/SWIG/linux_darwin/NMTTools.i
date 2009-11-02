@@ -64,8 +64,18 @@ class Handle_NMTTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_Ma
 };
 %feature("shadow") Handle_NMTTools_ListNodeOfListOfCommonBlock::~Handle_NMTTools_ListNodeOfListOfCommonBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTTools_ListNodeOfListOfCommonBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock;
@@ -92,8 +102,18 @@ class Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public Hand
 };
 %feature("shadow") Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock::~Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTTools_ListNodeOfListOfCoupleOfShape;
@@ -120,8 +140,18 @@ class Handle_NMTTools_ListNodeOfListOfCoupleOfShape : public Handle_TCollection_
 };
 %feature("shadow") Handle_NMTTools_ListNodeOfListOfCoupleOfShape::~Handle_NMTTools_ListNodeOfListOfCoupleOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTTools_ListNodeOfListOfCoupleOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock;
@@ -148,8 +178,18 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock : publi
 };
 %feature("shadow") Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock::~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape;
@@ -176,8 +216,18 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape
 };
 %feature("shadow") Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape::~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger;
@@ -204,8 +254,18 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : 
 };
 %feature("shadow") Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger::~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_NMTTools_StdMapNodeOfMapOfPaveBlock;
@@ -232,8 +292,18 @@ class Handle_NMTTools_StdMapNodeOfMapOfPaveBlock : public Handle_TCollection_Map
 };
 %feature("shadow") Handle_NMTTools_StdMapNodeOfMapOfPaveBlock::~Handle_NMTTools_StdMapNodeOfMapOfPaveBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend Handle_NMTTools_StdMapNodeOfMapOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_DEProcessor;
@@ -249,8 +319,18 @@ class NMTTools_DEProcessor {
 };
 %feature("shadow") NMTTools_DEProcessor::~NMTTools_DEProcessor %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_DEProcessor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_PaveFiller;
@@ -370,8 +450,18 @@ class NMTTools_PaveFiller {
 };
 %feature("shadow") NMTTools_PaveFiller::~NMTTools_PaveFiller %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_PaveFiller {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_IndexedDataMapOfShapeIndexedMapOfShape;
@@ -415,8 +505,18 @@ class NMTTools_IndexedDataMapOfShapeIndexedMapOfShape : public TCollection_Basic
 };
 %feature("shadow") NMTTools_IndexedDataMapOfShapeIndexedMapOfShape::~NMTTools_IndexedDataMapOfShapeIndexedMapOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_IndexedDataMapOfShapeIndexedMapOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger;
@@ -468,8 +568,18 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : public 
 };
 %feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_MapOfPaveBlock;
@@ -495,8 +605,18 @@ class NMTTools_MapOfPaveBlock : public TCollection_BasicMap {
 };
 %feature("shadow") NMTTools_MapOfPaveBlock::~NMTTools_MapOfPaveBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_MapOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_ListIteratorOfListOfCommonBlock;
@@ -518,8 +638,18 @@ class NMTTools_ListIteratorOfListOfCommonBlock {
 };
 %feature("shadow") NMTTools_ListIteratorOfListOfCommonBlock::~NMTTools_ListIteratorOfListOfCommonBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_ListIteratorOfListOfCommonBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_Tools;
@@ -551,8 +681,18 @@ class NMTTools_Tools {
 };
 %feature("shadow") NMTTools_Tools::~NMTTools_Tools %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_Tools {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_StdMapNodeOfMapOfPaveBlock;
@@ -578,8 +718,18 @@ class NMTTools_StdMapNodeOfMapOfPaveBlock : public TCollection_MapNode {
 };
 %feature("shadow") NMTTools_StdMapNodeOfMapOfPaveBlock::~NMTTools_StdMapNodeOfMapOfPaveBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_StdMapNodeOfMapOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_IteratorOfCoupleOfShape;
@@ -599,8 +749,18 @@ class NMTTools_IteratorOfCoupleOfShape : public BOPTools_IteratorOfCoupleOfShape
 };
 %feature("shadow") NMTTools_IteratorOfCoupleOfShape::~NMTTools_IteratorOfCoupleOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_IteratorOfCoupleOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_ListOfCommonBlock;
@@ -650,8 +810,18 @@ class NMTTools_ListOfCommonBlock {
 };
 %feature("shadow") NMTTools_ListOfCommonBlock::~NMTTools_ListOfCommonBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_ListOfCommonBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_CommonBlockAPI;
@@ -671,8 +841,18 @@ class NMTTools_CommonBlockAPI {
 };
 %feature("shadow") NMTTools_CommonBlockAPI::~NMTTools_CommonBlockAPI %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_CommonBlockAPI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_MapIteratorOfMapOfPaveBlock;
@@ -690,8 +870,18 @@ class NMTTools_MapIteratorOfMapOfPaveBlock : public TCollection_BasicMapIterator
 };
 %feature("shadow") NMTTools_MapIteratorOfMapOfPaveBlock::~NMTTools_MapIteratorOfMapOfPaveBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_MapIteratorOfMapOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock;
@@ -729,8 +919,18 @@ class NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public TCollection
 };
 %feature("shadow") NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_ListNodeOfListOfCommonBlock;
@@ -756,8 +956,18 @@ class NMTTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
 };
 %feature("shadow") NMTTools_ListNodeOfListOfCommonBlock::~NMTTools_ListNodeOfListOfCommonBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_ListNodeOfListOfCommonBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_CommonBlockPool;
@@ -795,8 +1005,18 @@ class NMTTools_CommonBlockPool {
 };
 %feature("shadow") NMTTools_CommonBlockPool::~NMTTools_CommonBlockPool %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_CommonBlockPool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_CommonBlock;
@@ -832,8 +1052,18 @@ class NMTTools_CommonBlock {
 };
 %feature("shadow") NMTTools_CommonBlock::~NMTTools_CommonBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_CommonBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_ListIteratorOfListOfCoupleOfShape;
@@ -855,8 +1085,18 @@ class NMTTools_ListIteratorOfListOfCoupleOfShape {
 };
 %feature("shadow") NMTTools_ListIteratorOfListOfCoupleOfShape::~NMTTools_ListIteratorOfListOfCoupleOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_ListIteratorOfListOfCoupleOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_IndexedDataMapOfIndexedMapOfInteger;
@@ -900,8 +1140,18 @@ class NMTTools_IndexedDataMapOfIndexedMapOfInteger : public TCollection_BasicMap
 };
 %feature("shadow") NMTTools_IndexedDataMapOfIndexedMapOfInteger::~NMTTools_IndexedDataMapOfIndexedMapOfInteger %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_IndexedDataMapOfIndexedMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_ListNodeOfListOfCoupleOfShape;
@@ -927,8 +1177,18 @@ class NMTTools_ListNodeOfListOfCoupleOfShape : public TCollection_MapNode {
 };
 %feature("shadow") NMTTools_ListNodeOfListOfCoupleOfShape::~NMTTools_ListNodeOfListOfCoupleOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_ListNodeOfListOfCoupleOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock;
@@ -970,8 +1230,18 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock : public TColl
 };
 %feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_IndexedDataMapOfShapePaveBlock;
@@ -1015,8 +1285,18 @@ class NMTTools_IndexedDataMapOfShapePaveBlock : public TCollection_BasicMap {
 };
 %feature("shadow") NMTTools_IndexedDataMapOfShapePaveBlock::~NMTTools_IndexedDataMapOfShapePaveBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_IndexedDataMapOfShapePaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock;
@@ -1036,8 +1316,18 @@ class NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock : public TCollec
 };
 %feature("shadow") NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape;
@@ -1079,8 +1369,18 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape : publ
 };
 %feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_DataMapOfIntegerListOfPaveBlock;
@@ -1114,8 +1414,18 @@ class NMTTools_DataMapOfIntegerListOfPaveBlock : public TCollection_BasicMap {
 };
 %feature("shadow") NMTTools_DataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapOfIntegerListOfPaveBlock %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_DataMapOfIntegerListOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_ListOfCoupleOfShape;
@@ -1165,8 +1475,18 @@ class NMTTools_ListOfCoupleOfShape {
 };
 %feature("shadow") NMTTools_ListOfCoupleOfShape::~NMTTools_ListOfCoupleOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_ListOfCoupleOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_CoupleOfShape;
@@ -1186,8 +1506,18 @@ class NMTTools_CoupleOfShape {
 };
 %feature("shadow") NMTTools_CoupleOfShape::~NMTTools_CoupleOfShape %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_CoupleOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTTools_CheckerSI;
@@ -1203,5 +1533,15 @@ class NMTTools_CheckerSI : public NMTTools_PaveFiller {
 };
 %feature("shadow") NMTTools_CheckerSI::~NMTTools_CheckerSI %{
 def __del__(self):
-	GarbageCollector.occ_gc.append(self)
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
 %}
+
+%extend NMTTools_CheckerSI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
