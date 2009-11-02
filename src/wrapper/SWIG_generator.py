@@ -945,9 +945,10 @@ class ModularBuilder(object):
         self.fp.write('%{\n')
         self.fp.write('def __del__(self):\n')
         #self.fp.write('\tglobal occ_gc\n')
-        self.fp.write('\tif type(GarbageCollector)!=type(None):\n')
+        self.fp.write('\ttry:\n')
         self.fp.write('\t\tself.thisown = False\n')#detach python object/C++ object
         self.fp.write('\t\tGarbageCollector.garbage.collect_object(self)\n')
+        self.fp.write('\texcept:\n\t\tpass\n')
         #self.fp.write('\texcept:\n\t\tpass\n')
         self.fp.write('%}\n')
         # Customize destructor
