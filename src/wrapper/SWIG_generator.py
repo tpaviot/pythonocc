@@ -86,6 +86,10 @@ PYOCC_HEADER_TEMPLATE = """
 %include ../ExceptionCatcher.i
 %include ../FunctionTransformers.i
 %include ../Operators.i
+
+%pythoncode {
+import GarbageCollector
+};
 """
 
 nb_exported_classes = 0
@@ -940,8 +944,11 @@ class ModularBuilder(object):
         self.fp.write('feature("shadow") %s::~%s '%(class_name,class_name))
         self.fp.write('%{\n')
         self.fp.write('def __del__(self):\n')
-        self.fp.write('\tglobal occ_gc\n')
-        self.fp.write('\tocc_gc.append(self)\n')
+        #self.fp.write('\tglobal occ_gc\n')
+        self.fp.write('\tif type(GarbageCollector)!=type(None):\n')
+        self.fp.write('\t\tself.thisown = False\n')#detach python object/C++ object
+        self.fp.write('\t\tGarbageCollector.garbage.collect_object(self)\n')
+        #self.fp.write('\texcept:\n\t\tpass\n')
         self.fp.write('%}\n')
         # Customize destructor
         #self.fp.write('\n%')
@@ -951,11 +958,11 @@ class ModularBuilder(object):
         #    self.fp.write('\n\t$self->Destroy();\n')
         #self.fp.write('\n\t}\n};\n')
         # Customize destructor
-        #self.fp.write('\n%')
-        #self.fp.write('extend %s {\n'%class_name)
-        #self.fp.write('\tvoid KillPointed() {\n\t')
-        #self.fp.write('\tdelete $self;')
-        #self.fp.write('\n\t}\n};\n')
+        self.fp.write('\n%')
+        self.fp.write('extend %s {\n'%class_name)
+        self.fp.write('\tvoid _kill_pointed() {\n\t')
+        self.fp.write('\tdelete $self;')
+        self.fp.write('\n\t}\n};\n')
         #
         # Special method for XCAFApp_Application
         #
