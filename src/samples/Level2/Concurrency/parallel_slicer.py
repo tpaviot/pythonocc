@@ -6,7 +6,7 @@ from OCC.BRepBuilderAPI import *
 from OCC.Geom import *
 from OCC.TopoDS import *
 
-from OCC.Display.wxSamplesGui import display, start_display
+from OCC.Display.SimpleGui import display, start_display
 
 import time, numpy, os, pickle, sys
 if sys.version_info[:3] >= (2,6,0):
@@ -14,13 +14,10 @@ if sys.version_info[:3] >= (2,6,0):
 else:
    import processing
 
-
-
-
 def get_brep():
     from OCC.Utils.DataExchange.utils import file_to_shape
     pth = os.path.split(os.path.abspath(__file__))[0]
-    pth = os.path.abspath( os.path.join(pth, '../../../data/_3dmodels/Pump_Bottom.brep') )
+    pth = os.path.abspath( os.path.join(pth, '../../../../data/_3dmodels/Pump_Bottom.brep') )
     return file_to_shape(pth)
 
 def vectorized_slicer( li ):
@@ -107,7 +104,7 @@ def run( n_procs, compare_by_number_of_processors=False ):
             print 'slicing took %s seconds for %s processors ' % ( time.time()-tA, i)
         sys.exit()
     
-    print '\n\n\n DONE SLICING ON 8 CORES \n\n\n'
+    print '\n\n\n DONE SLICING ON %i CORES \n\n\n'%nprocs
     time.sleep(3)
     
     for result_shp in _results:
@@ -118,10 +115,10 @@ def run( n_procs, compare_by_number_of_processors=False ):
     # update viewer when all is added:
     display.Repaint()
     total_time = time.time() - init_time
-    print "%s necessary to perform slice with a %s processor(s)." % ( total_time, n_procs )
+    print "%s necessary to perform slice with %s processor(s)." % ( total_time, n_procs )
     start_display()
 
 if __name__ == '__main__':
-    # use compare_by_number_of_processors=True to see speed up per number of processor added 
-    run( 8, compare_by_number_of_processors=False )
-#    run( 8, compare_by_number_of_processors=True )
+    # use compare_by_number_of_processors=True to see speed up per number of processor added
+    nprocs = processing.cpu_count()
+    run( nprocs , compare_by_number_of_processors=False )
