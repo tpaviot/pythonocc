@@ -26,7 +26,23 @@ from OCC.BRepBuilderAPI import *
 from OCC.gp import *
 
 class Test(unittest.TestCase):
-
+    
+    def testGarbageCollector(self):
+        '''
+        Test GarbageColector features
+        '''
+        print 'Test: GarbageCollector'
+        number_of_collected_objects_1 = len(GarbageCollector.garbage._collected_objects)
+        h = Standard_Transient().GetHandle()
+        # The Standard_Transient object was deleted, it should now be in the garbage
+        number_of_collected_objects_2 = len(GarbageCollector.garbage._collected_objects)
+        self.assertEqual(number_of_collected_objects_2-number_of_collected_objects_1,1)
+        self.assertEqual(h.IsNull(), False)
+        # Now free memory, i.e. kill all objects
+        GarbageCollector.garbage.purge()
+        # Now the handle should be NULL, since the Standard_Transient object was killed
+        self.assertEqual(h.IsNull(), False)
+        
     def testHandleManagement(self):
         '''
         Creates a Standard_Transient and check that GetHandle increases
