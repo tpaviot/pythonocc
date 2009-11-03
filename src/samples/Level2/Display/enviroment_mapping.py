@@ -33,7 +33,6 @@ from OCC.Aspect import *
 
 # construct a primitive
 box = BRepPrimAPI_MakeBox(1,1,1).Shape()
-
 #===============================================================================
 # This is how to set the spherical dynamic texcoord generation in the view
 #===============================================================================
@@ -51,41 +50,16 @@ display.View.Redraw()
 # And this is hot to enable spherical dynamic texture to an object 
 #===============================================================================
 
-
-import ipdb; ipdb.set_trace()
 mat_asp = Graphic3d_MaterialAspect(Graphic3d_NOM_SILVER)
 mat_asp.SetEnvReflexion(1)
 mat_asp.SetReflectionModeOn(True)
 mat_asp.SetShininess(1)
 mat_asp.SetSpecular(1)
-#mat_asp = shd_asp.Material(Aspect_TOFM_FRONT_SIDE)
 
 box_ais = display.DisplayShape(box, mat_asp).GetObject()
 attributes = box_ais.Attributes().GetObject()
 shd_asp = attributes.ShadingAspect().GetObject()
-
-
 shd_asp.SetMaterial(mat_asp, Aspect_TOFM_FRONT_SIDE)
 box_ais.Redisplay(False)
 
 start_display()
-
-'''
-
-This is hot to set the spherical dynamic texcoord generation in the view :
-
-Handle(Graphic3d_TextureEnv) aTexenv = new Graphic3d_TextureEnv(
-myView->View()->ViewManager(), Graphic3d_NOT_ENV_CLOUDS);
-myView->SetTextureEnv(aTexenv);
-myView->Redraw();
-
-Ans this is hot to enable spherical dynamic texture to an object :
-
-Graphic3d_MaterialAspect anAspect =
-ObjectPrs->GetAIS()->Attributes()->ShadingAspect()->
-Material(Aspect_TOFM_FRONT_SIDE);
-anAspect.SetEnvReflexion(val);
-ObjectPrs->GetAIS()->Attributes()->ShadingAspect()->SetMaterial(anAspect, Aspect_TOFM_FRONT_SIDE);
-ObjectPrs->GetAIS()->Redisplay(Standard_False);
-
-'''
