@@ -839,6 +839,9 @@ class ModularBuilder(object):
         #
         self.fp.write("\n\n%nodefaultctor ")
         self.fp.write("%s;\n"%class_name)
+        if class_name.startswith('GEOMALgo'):
+            self.fp.write("\n\n%nodefaultdtor ")
+            self.fp.write("%s;\n"%class_name)
         # Adding %docstring SWIG directive
         if self._generate_doc and not ('Handle' in class_name):
             self.fp.write('%feature("docstring") ')
@@ -940,17 +943,18 @@ class ModularBuilder(object):
         #
         # Or for functions that have a special HashCode function (TopoDS, Standard_GUID etc.)
         #
-        self.fp.write('\n%')
-        self.fp.write('feature("shadow") %s::~%s '%(class_name,class_name))
-        self.fp.write('%{\n')
-        self.fp.write('def __del__(self):\n')
-        #self.fp.write('\tglobal occ_gc\n')
-        self.fp.write('\ttry:\n')
-        self.fp.write('\t\tself.thisown = False\n')#detach python object/C++ object
-        self.fp.write('\t\tGarbageCollector.garbage.collect_object(self)\n')
-        self.fp.write('\texcept:\n\t\tpass\n')
-        #self.fp.write('\texcept:\n\t\tpass\n')
-        self.fp.write('%}\n')
+        if not (class_name.startswith('GEOMAlgo')):#issues with GEOMAlgo_Clsf destructor, protected
+            self.fp.write('\n%')
+            self.fp.write('feature("shadow") %s::~%s '%(class_name,class_name))
+            self.fp.write('%{\n')
+            self.fp.write('def __del__(self):\n')
+            #self.fp.write('\tglobal occ_gc\n')
+            self.fp.write('\ttry:\n')
+            self.fp.write('\t\tself.thisown = False\n')#detach python object/C++ object
+            self.fp.write('\t\tGarbageCollector.garbage.collect_object(self)\n')
+            self.fp.write('\texcept:\n\t\tpass\n')
+            #self.fp.write('\texcept:\n\t\tpass\n')
+            self.fp.write('%}\n')
         # Customize destructor
         #self.fp.write('\n%')
         #self.fp.write('extend %s {\n'%class_name)
@@ -959,11 +963,11 @@ class ModularBuilder(object):
         #    self.fp.write('\n\t$self->Destroy();\n')
         #self.fp.write('\n\t}\n};\n')
         # Customize destructor
-        self.fp.write('\n%')
-        self.fp.write('extend %s {\n'%class_name)
-        self.fp.write('\tvoid _kill_pointed() {\n\t')
-        self.fp.write('\tdelete $self;')
-        self.fp.write('\n\t}\n};\n')
+            self.fp.write('\n%')
+            self.fp.write('extend %s {\n'%class_name)
+            self.fp.write('\tvoid _kill_pointed() {\n\t')
+            self.fp.write('\tdelete $self;')
+            self.fp.write('\n\t}\n};\n')
         #
         # Special method for XCAFApp_Application
         #
