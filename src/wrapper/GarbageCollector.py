@@ -18,6 +18,8 @@
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+import sys
+
 class GarbageCollector(object):
     """ Garbage collector for OCC objects
     """
@@ -28,15 +30,36 @@ class GarbageCollector(object):
         """ Add an object to the garbage
         """
         self._collected_objects.append(obj_deleted)
-        
+    
+    def get_collected(self):
+        return self._collected_objects
+    
     def __str__(self):
         return "%i"%len(self._collected_objects)
     
     def purge(self):
-        """ Purge garbage, i.e. free OCC memory
+        """ Purge garbage, i.e. free OCC memory.
+        First pass: delete the Handle_*
+        Second pass: delete the other objects
         """
-        for item in self._collected_objects:
-            item._kill_pointed()
+        # First pass
+        for elem in self._collected_objects:
+            if hasattr(elem,"DownCast"): #it's an Handle_*
+                # Delete only handles that have only 1 reference
+                if sys.getrefcount(elem)-1 == 1: #if two references, do nothing
+                    elem._kill_pointed() #This kills the Handle and decrements OCC ref. counting
+        # Second pass: the other objects
+        for elem in self._collected_objects:
+            if not hasattr(elem,"DownCast"): #it's not an handle
+                # check if there are any other reference to this object
+                if sys.getrefcount(elem)-1 == 1:
+                    # then check if the GetRefCount method is available (it inherits from Standard_Transient):
+                    if hasattr(elem,"GetRefCount"):
+                        if elem.GetRefCount() == 0: #no reference to this object, we can delete it
+                            elem._kill_pointed()
+                    else:
+                        elem._kill_pointed()
+        # Re-init the object list      
         self._collected_objects = []
 
 garbage = GarbageCollector()
