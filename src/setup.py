@@ -23,13 +23,19 @@ import sys
 import shutil
 import time
 
+if sys.version_info[:3] >= (2,6,0):
+   import multiprocessing as processing
+else:
+   import processing
+nprocs = processing.cpu_count()
+
 # add the ./src directory to the sys.path list
 sys.path.append(os.path.join(os.getcwd(),'wrapper'))
 import Modules
 from environment import VERSION
 
 init_time = time.time()
-print "Building pythonOCC-%s for %s."%(VERSION,sys.platform)
+print "Building pythonOCC-%s for %s,%i cpus multiprocess."%(VERSION,sys.platform,nprocs)
 
 # Check whether generate swig .i files
 if '-generate_swig' in sys.argv:
@@ -91,6 +97,7 @@ from distutils import sysconfig
 import environment
 from environment import OCC_INC,OCC_LIB, VERSION,\
 ECA, ELA, PYGCCXML_DEFINES, SWIG_OPTS, DEFINE_MACROS, SWIG_FILES_PATH_MODULAR
+import SWIG_generator
 
 #
 # Customize compiler options
@@ -137,76 +144,96 @@ def customize_compiler(compiler):
             linker_so.append('-lpython2.%s'%python_version[2])
         compiler.compiler_so = compiler_so
         compiler.linker_so = linker_so
-    #lk
     return compiler
-     
+
+#
+# Function that builds an extension (setuptools). Necessar for multiprocess compilation
+#
+build_ext_instance = None
+
+def build_extension(ext):
+    #print build_ext_instance,ext
+    sources = ext.sources
+    if sources is None or type(sources) not in (ListType, TupleType):
+        raise DistutilsSetupError, \
+              ("in 'ext_modules' option (extension '%s'), " +
+               "'sources' must be present and must be " +
+               "a list of source filenames") % ext.name
+    sources = list(sources)
+
+    fullname = build_ext_instance.get_ext_fullname(ext.name)
+    if build_ext_instance.inplace:
+        # ignore build-lib -- put the compiled extension into
+        # the source tree along with pure Python modules
+
+        modpath = string.split(fullname, '.')
+        package = string.join(modpath[0:-1], '.')
+        base = modpath[-1]
+
+        build_py = build_ext_instance.get_finalized_command('build_py')
+        package_dir = build_py.get_package_dir(package)
+        ext_filename = os.path.join(package_dir,
+                                    build_ext_instance.get_ext_filename(base))
+    else:
+        ext_filename = os.path.join(build_ext_instance.build_lib,
+                                    build_ext_instance.get_ext_filename(fullname))            
+    depends = sources + ext.depends
+    if not (build_ext_instance.force or newer_group(depends, ext_filename, 'newer')):
+        log.debug("skipping '%s' extension (up-to-date)", ext.name)
+        return
+    else:
+        log.info("building '%s' extension", ext.name)
+    sources = build_ext_instance.swig_sources(sources, ext)
+    extra_args = ext.extra_compile_args or []
+    macros = ext.define_macros[:]
+    for undef in ext.undef_macros:
+        macros.append((undef,))
+    # Here are modified the compiler settings
+    build_ext_instance.compiler = customize_compiler(build_ext_instance.compiler)
+    objects = build_ext_instance.compiler.compile(sources,
+                                    output_dir=build_ext_instance.build_temp,
+                                    macros=macros,
+                                    include_dirs=ext.include_dirs,
+                                    debug=build_ext_instance.debug,
+                                    extra_postargs=extra_args,
+                                    depends=ext.depends)
+    build_ext_instance._built_objects = objects[:]
+    if ext.extra_objects:
+        objects.extend(ext.extra_objects)
+    extra_args = ext.extra_link_args or []
+
+    language = ext.language or build_ext_instance.compiler.detect_language(sources)
+
+    build_ext_instance.compiler.link_shared_object(
+        objects, ext_filename,
+        libraries=build_ext_instance.get_libraries(ext),
+        library_dirs=ext.library_dirs,
+        runtime_library_dirs=ext.runtime_library_dirs,
+        extra_postargs=extra_args,
+        export_symbols=build_ext_instance.get_export_symbols(ext),
+        debug=build_ext_instance.debug,
+        build_temp=build_ext_instance.build_temp,
+        target_lang=language)
+
 class build_ext(_build_ext):
     """Specialized Python source builder."""
-    # implement whatever needs to be different...    
-    def build_extension(self, ext):
-        sources = ext.sources
-        if sources is None or type(sources) not in (ListType, TupleType):
-            raise DistutilsSetupError, \
-                  ("in 'ext_modules' option (extension '%s'), " +
-                   "'sources' must be present and must be " +
-                   "a list of source filenames") % ext.name
-        sources = list(sources)
+    # implement whatever needs to be different...
+    def __init__(self,*kargs):
+        _build_ext.__init__(self,*kargs)
+        self._extensions = []
+        
+    def build_extension(self,ext):
+        ''' This method take the extensions, append them to a list, and pass it to a multiprocessing.Pool
+        '''
+        self._extensions.append(ext)
+        le = len(self._extensions)
+        global build_ext_instance
+        build_ext_instance = self
+        # Create Pool
+        if len(self._extensions) == NB_EXT:
+            pool = processing.Pool(nprocs)
+            pool.map(build_extension,self._extensions)
 
-        fullname = self.get_ext_fullname(ext.name)
-        if self.inplace:
-            # ignore build-lib -- put the compiled extension into
-            # the source tree along with pure Python modules
-
-            modpath = string.split(fullname, '.')
-            package = string.join(modpath[0:-1], '.')
-            base = modpath[-1]
-
-            build_py = self.get_finalized_command('build_py')
-            package_dir = build_py.get_package_dir(package)
-            ext_filename = os.path.join(package_dir,
-                                        self.get_ext_filename(base))
-        else:
-            ext_filename = os.path.join(self.build_lib,
-                                        self.get_ext_filename(fullname))
-        depends = sources + ext.depends
-        if not (self.force or newer_group(depends, ext_filename, 'newer')):
-            log.debug("skipping '%s' extension (up-to-date)", ext.name)
-            return
-        else:
-            log.info("building '%s' extension", ext.name)
-        sources = self.swig_sources(sources, ext)
-        extra_args = ext.extra_compile_args or []
-        macros = ext.define_macros[:]
-        for undef in ext.undef_macros:
-            macros.append((undef,))
-        # Here are modified the compiler settings
-        self.compiler = customize_compiler(self.compiler)
-        objects = self.compiler.compile(sources,
-                                        output_dir=self.build_temp,
-                                        macros=macros,
-                                        include_dirs=ext.include_dirs,
-                                        debug=self.debug,
-                                        extra_postargs=extra_args,
-                                        depends=ext.depends)
-        self._built_objects = objects[:]
-        if ext.extra_objects:
-            objects.extend(ext.extra_objects)
-        extra_args = ext.extra_link_args or []
-
-        language = ext.language or self.compiler.detect_language(sources)
-
-        self.compiler.link_shared_object(
-            objects, ext_filename,
-            libraries=self.get_libraries(ext),
-            library_dirs=ext.library_dirs,
-            runtime_library_dirs=ext.runtime_library_dirs,
-            extra_postargs=extra_args,
-            export_symbols=self.get_export_symbols(ext),
-            debug=self.debug,
-            build_temp=self.build_temp,
-            target_lang=language)
-
-import SWIG_generator
 if GENERATE_SWIG and not SWIG_generator.HAVE_PYGCCXML:
     print "pygccxml/py++ 1.0 have to be installed. Please check http://www.language-binding.net/pyplusplus/pyplusplus.html"
     sys.exit(0)
@@ -249,7 +276,9 @@ if GENERATE_SWIG:#a small things to do before building
         os.mkdir(SWIG_FILES_PATH_MODULAR)
 
 #
-# Create 'OCC' folder if it does not exist
+# Create 'OCC' folder if it does not exist.
+# TODO: remove this folder, generate .py files in the SWIG directory,
+# Add the python scripts to the *data list.
 #
 if not (os.path.isdir(os.path.join(os.getcwd(),'OCC'))):
         os.mkdir(os.path.join(os.getcwd(),'OCC'))
@@ -325,12 +354,26 @@ if WRAP_SALOME_SMESH:
                         'MEFISTO2','SMDS','SMESH',
                         'SMESHDS','StdMeshers'])
 #
+# Generate SIG files with parallalized processes
+#
+def generate_SWIG_file_for_module(module):
+    SWIG_generator.ModularBuilder(module, GENERATE_DOC)
+
+if GENERATE_SWIG:
+    init_time = time.time()
+    P = processing.Pool(nprocs)
+    P.map(generate_SWIG_file_for_module,Modules.MODULES)
+    final_time = time.time()
+    print final_time-init_time
+    raw_input("SWIG generation finished. Hit a key to resume.")
+#
 # OpenCascade wrapper extensions
 #
 extension = []
 for module in Modules.MODULES:
     SWIG_source_file = os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])
-    if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
+    #if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
+    if not (os.path.isfile(SWIG_source_file)):#a SWIG file is missing, need to re-generate the file
         builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC)
     module_extension = Extension("OCC._%s"%module[0],
                     sources = [SWIG_source_file],
@@ -376,7 +419,7 @@ if WRAP_SALOME_GEOM:
     for module in Modules.SALOME_GEOM_MODULES:
         SWIG_source_file = os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])
         if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
-            print SWIG_source_file
+            #print SWIG_source_file
             builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC, environment.SALOME_GEOM_INC)
         module_extension = Extension("OCC._%s"%module[0],
                     sources = [SWIG_source_file],
@@ -413,6 +456,8 @@ if WRAP_SALOME_SMESH:
                     extra_link_args = ELA,
                     )
         extension.append(module_extension)
+
+NB_EXT = len(extension)
 
 install_dir = os.path.join(sysconfig.get_python_lib(),'OCC')
 bg_image_install_dir = os.path.join(sysconfig.get_python_lib(),'OCC','Display')
