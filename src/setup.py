@@ -37,25 +37,6 @@ from environment import VERSION
 init_time = time.time()
 print "Building pythonOCC-%s for %s,%i cpus multiprocess."%(VERSION,sys.platform,nprocs)
 
-# Check whether generate swig .i files
-if '-generate_swig' in sys.argv:
-    GENERATE_SWIG = True
-    sys.argv.remove('-generate_swig')
-else:
-    GENERATE_SWIG = False
-# Check whether generate docstrings
-if ('-with_doc' in sys.argv) and GENERATE_SWIG:
-    GENERATE_DOC = True
-    sys.argv.remove('-with_doc')
-    r = raw_input("""IMPORTANT: the generate_doc argument extracts documentation strings from OCC header files.
-    You should not redistribute this package since it could break the OpenCascade and CeCILL licenses.
-    Enter 'Y' or 'y' if you accept this disclaimer and want to continue, 'n' otherwise.""")
-    if (r!='Y' and r!='y'):
-        print "on y est"
-        sys.exit(0)
-else:
-    GENERATE_DOC = False
-# Check whether Salome GEOM package must be wrapped. True by default.
 if '-NO_GEOM' in sys.argv:
     WRAP_SALOME_GEOM = False #overload default behaviour
     sys.argv.remove('-NO_GEOM')
@@ -80,7 +61,6 @@ if ('-help' in sys.argv) or ('-h' in sys.argv):
     help_str="""pythonOCC builder system - (c) Thomas Paviot, 2008-2009.
 Usage: python setup.py build [options]
 With [options]:
-    -generate_swig: process swig files generation (if .i files already exist, you should skip this option)
     -NO_GEOM: tells setup.py to *not* wrapp Salome GEOM package.
     -ccompiler: compiler can be either 'gcc', 'mingw32' or 'msvc'
 Examples:
@@ -97,8 +77,6 @@ from distutils import sysconfig
 import environment
 from environment import OCC_INC,OCC_LIB, VERSION,\
 ECA, ELA, PYGCCXML_DEFINES, SWIG_OPTS, DEFINE_MACROS, SWIG_FILES_PATH_MODULAR
-import SWIG_generator
-
 #
 # Customize compiler options
 #
@@ -234,55 +212,8 @@ class build_ext(_build_ext):
             pool = processing.Pool(nprocs)
             pool.map(build_extension,self._extensions)
 
-if GENERATE_SWIG and not SWIG_generator.HAVE_PYGCCXML:
-    print "pygccxml/py++ 1.0 have to be installed. Please check http://www.language-binding.net/pyplusplus/pyplusplus.html"
-    sys.exit(0)
-if GENERATE_SWIG:#a small things to do before building
-    #
-    # Under WNT, modify Standard_Real.hxx so that it can be parsed by GCCXML without issue
-    #
-    if sys.platform == 'win32':
-        standard_real_header = os.path.join(OCC_INC,"Standard_Real.hxx")
-        if not os.path.isfile(standard_real_header):
-            print "%s not found."%standard_file_header
-            sys.exit(0)
-        else:
-            fp = open(standard_real_header,"r")
-            file_content = fp.read()
-            fp.close()
-            if not '__SWIG_GENERATION__' in file_content:#need rewriting
-                key = raw_input("Original Standard_Real.hxx header file needs to be modified. Original file will be available with the name Standard_Real_Original.hxx.\nEnter 'y' or 'Y' if you whish to continue.'n' otherwise:")# first mode Standard_Real.hxx to Standard_Real_Original.hxx
-                if key.lower()=='y':
-                    shutil.copy(standard_real_header, os.path.join(OCC_INC,"Standard_Real_Original.hxx"))
-                    #replacing string
-                    file_content = file_content.replace("#if defined(WNT)","#if defined(WNT) && !defined(__SWIG_GENERATION__)")
-                    fp = open(standard_real_header,"w")
-                    fp.write(file_content)
-                    fp.close()
-                else:
-                    sys.exit(0)
-            else:
-                print "Found modified Standard_Real.hxx header file."
-    #
-    # Remove all files from OCC folder
-    #
-    files_to_remove = glob.glob(os.path.join(os.getcwd(),'OCC','*'))
-    for file_to_remove in files_to_remove:
-        os.remove(file_to_remove) 
-    #
-    # Create paths
-    #
-    if not os.path.isdir(SWIG_FILES_PATH_MODULAR):
-        os.mkdir(SWIG_FILES_PATH_MODULAR)
-
-#
-# Create 'OCC' folder if it does not exist.
-# TODO: remove this folder, generate .py files in the SWIG directory,
-# Add the python scripts to the *data list.
-#
 if not (os.path.isdir(os.path.join(os.getcwd(),'OCC'))):
-        os.mkdir(os.path.join(os.getcwd(),'OCC'))
-                               
+        os.mkdir(os.path.join(os.getcwd(),'OCC'))                      
 #
 # Package Name
 #
@@ -353,28 +284,12 @@ if WRAP_SALOME_SMESH:
     LIBS.extend(['Driver','DriverDAT','DriverSTL','DriverUNV',\
                         'MEFISTO2','SMDS','SMESH',
                         'SMESHDS','StdMeshers'])
-#
-# Generate SIG files with parallalized processes
-#
-def generate_SWIG_file_for_module(module):
-    SWIG_generator.ModularBuilder(module, GENERATE_DOC)
 
-if GENERATE_SWIG:
-    init_time = time.time()
-    P = processing.Pool(nprocs)
-    P.map(generate_SWIG_file_for_module,Modules.MODULES)
-    final_time = time.time()
-    print final_time-init_time
-    raw_input("SWIG generation finished. Hit a key to resume.")
-#
-# OpenCascade wrapper extensions
-#
 extension = []
 for module in Modules.MODULES:
     SWIG_source_file = os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])
-    #if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
-    if not (os.path.isfile(SWIG_source_file)):#a SWIG file is missing, need to re-generate the file
-        builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC)
+    if not (os.path.isfile(SWIG_source_file)):
+        raise NameError('Missins swig file:%s'%SWIG_source_file)
     module_extension = Extension("OCC._%s"%module[0],
                     sources = [SWIG_source_file],
                     include_dirs=[OCC_INC,SWIG_FILES_PATH_MODULAR], #for TopOpeBRep_tools.hxx
@@ -418,9 +333,8 @@ extension.append(Extension("OCC._Misc",
 if WRAP_SALOME_GEOM:
     for module in Modules.SALOME_GEOM_MODULES:
         SWIG_source_file = os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])
-        if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
-            #print SWIG_source_file
-            builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC, environment.SALOME_GEOM_INC)
+        if not (os.path.isfile(SWIG_source_file)):
+            raise NameError('Missins swig file:%s'%SWIG_source_file)
         module_extension = Extension("OCC._%s"%module[0],
                     sources = [SWIG_source_file],
                     include_dirs=[OCC_INC,environment.SALOME_GEOM_INC,SWIG_FILES_PATH_MODULAR], #for TopOpeBRep_tools.hxx
@@ -439,9 +353,9 @@ if WRAP_SALOME_GEOM:
 if WRAP_SALOME_SMESH:
     for module in Modules.SALOME_SMESH_MODULES:
         SWIG_source_file = os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])
-        if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
-            print SWIG_source_file
-            builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC, environment.SALOME_SMESH_INC)
+        #if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
+        if not (os.path.isfile(SWIG_source_file)):
+            raise NameError('Missins swig file:%s'%SWIG_source_file)
         INCLUDE_DIRS = [OCC_INC,environment.SALOME_SMESH_INC,SWIG_FILES_PATH_MODULAR] #for TopOpeBRep_tools.hxx
         if sys.platform=='win32':
             INCLUDE_DIRS.append(environment.BOOST_INC)
@@ -478,6 +392,11 @@ if ALL_IN_ONE and sys.platform=='win32':
 else:
     package_name = "pythonOCC"
 
+#
+# Create __init__ script
+#
+Create__init__()
+
 setup(cmdclass={'build_ext': build_ext},
       name = package_name,
       license = "GNU General Public License v3",
@@ -505,11 +424,6 @@ This version is built against OpenCascade 6.3.0""",
       data_files = data,
       **KARGS
       )
-#
-# At the end of the build process, create __init__ script
-#
-Create__init__()
-if GENERATE_SWIG:
-    print "%i exported classes"%SWIG_generator.nb_exported_classes
+
 final_time = time.time()
-print final_time-init_time
+print 'Compilation processed in %fs'%(final_time-init_time)
