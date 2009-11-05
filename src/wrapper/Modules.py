@@ -599,6 +599,8 @@ if sys.platform!='win32':
 else:
     SALOME_SMESH_MODULES.append(('StdMeshers',['SMDS'],['StdMeshers_ProjectionUtils'],{'StdMeshers_Hexa_3D':['OppositeVertex'],'StdMeshers_MEFISTO_2D':['LoadPoints']}))
 
+ALL_MODULES = MODULES + SALOME_GEOM_MODULES + SALOME_SMESH_MODULES
+
 def PythonOCCStats():
     """
     This function takes all *.hxx headers and returns a list of available packages:
