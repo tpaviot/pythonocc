@@ -27,10 +27,10 @@ import Modules
 import environment
 
 try:
-    if sys.version_info[:3] >= (2,6,0):
-       import multiprocessing as processing
-    else:
-       import processing
+    #if sys.version_info[:3] >= (2,6,0):
+    import multiprocessing as processing
+    #else:
+    #   import processing
     nprocs = processing.cpu_count()
     MULTI_PROCESS_GENERATION = True
 except:
@@ -44,9 +44,10 @@ def check_paths():
     if sys.platform == 'win32':
         standard_real_header = os.path.join(environment.OCC_INC,"Standard_Real.hxx")
         if not os.path.isfile(standard_real_header):
-            print "%s not found."%standard_file_header
+            print "%s not found."%standard_real_header
             sys.exit(0)
         else:
+            import shutil
             fp = open(standard_real_header,"r")
             file_content = fp.read()
             fp.close()
