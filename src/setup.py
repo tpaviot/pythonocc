@@ -48,10 +48,10 @@ except:
 init_time = time.time()
 
 if '--enable_geom' in sys.argv:
-    WRAP_SALOME_GEOM = False #overload default behaviour
+    WRAP_SALOME_GEOM = True #overload default behaviour
     sys.argv.remove('--enable_geom')
 else:
-    WRAP_SALOME_GEOM = True
+    WRAP_SALOME_GEOM = False
 
 # Check whether Salome GEOM package must be wrapped. True by default.
 if '--enable_smesh' in sys.argv:
@@ -64,6 +64,14 @@ else:
 if '--all_in_one' in sys.argv and sys.platform=='win32':
     ALL_IN_ONE = True #overload default behaviour
     sys.argv.remove('-ALL_IN_ONE')
+else:
+    ALL_IN_ONE = False
+
+#Windows hack to enable 'multiprocess compilation'
+if '--reverse' in sys.argv and sys.platform=='win32':
+    ALL_IN_ONE = True #overload default behaviour
+    sys.argv.remove('--reverse')
+    Modules.MODULES.reverse()
 else:
     ALL_IN_ONE = False
 
