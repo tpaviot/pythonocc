@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include XSAlgo_dependencies.i
 
 
@@ -63,10 +67,18 @@ class Handle_XSAlgo_ToolContainer : public Handle_MMgt_TShared {
 	return (XSAlgo_ToolContainer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XSAlgo_ToolContainer::~Handle_XSAlgo_ToolContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XSAlgo_ToolContainer {
-	~Handle_XSAlgo_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XSAlgo_ToolContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -93,10 +105,18 @@ class Handle_XSAlgo_AlgoContainer : public Handle_MMgt_TShared {
 	return (XSAlgo_AlgoContainer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XSAlgo_AlgoContainer::~Handle_XSAlgo_AlgoContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XSAlgo_AlgoContainer {
-	~Handle_XSAlgo_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XSAlgo_AlgoContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -114,10 +134,18 @@ class XSAlgo {
 		Handle_XSAlgo_AlgoContainer AlgoContainer();
 
 };
+%feature("shadow") XSAlgo::~XSAlgo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XSAlgo {
-	~XSAlgo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSAlgo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -141,9 +169,17 @@ class XSAlgo_ToolContainer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XSAlgo_ToolContainer::~XSAlgo_ToolContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XSAlgo_ToolContainer {
-	~XSAlgo_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XSAlgo_ToolContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

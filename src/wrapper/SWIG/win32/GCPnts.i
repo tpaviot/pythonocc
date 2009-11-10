@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GCPnts_dependencies.i
 
 
@@ -77,10 +81,18 @@ class GCPnts_TangentialDeflection {
 		gp_Pnt Value(const Standard_Integer I) const;
 
 };
+%feature("shadow") GCPnts_TangentialDeflection::~GCPnts_TangentialDeflection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCPnts_TangentialDeflection {
-	~GCPnts_TangentialDeflection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCPnts_TangentialDeflection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -132,10 +144,18 @@ class GCPnts_UniformAbscissa {
 		Standard_Real Abscissa() const;
 
 };
+%feature("shadow") GCPnts_UniformAbscissa::~GCPnts_UniformAbscissa %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCPnts_UniformAbscissa {
-	~GCPnts_UniformAbscissa() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCPnts_UniformAbscissa\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -173,10 +193,18 @@ class GCPnts_UniformDeflection {
 		Standard_Real Deflection() const;
 
 };
+%feature("shadow") GCPnts_UniformDeflection::~GCPnts_UniformDeflection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCPnts_UniformDeflection {
-	~GCPnts_UniformDeflection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCPnts_UniformDeflection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -224,10 +252,18 @@ class GCPnts_AbscissaPoint {
 		Standard_Real Parameter() const;
 
 };
+%feature("shadow") GCPnts_AbscissaPoint::~GCPnts_AbscissaPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCPnts_AbscissaPoint {
-	~GCPnts_AbscissaPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCPnts_AbscissaPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -261,10 +297,18 @@ class GCPnts_QuasiUniformAbscissa {
 		Standard_Real Parameter(const Standard_Integer Index) const;
 
 };
+%feature("shadow") GCPnts_QuasiUniformAbscissa::~GCPnts_QuasiUniformAbscissa %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCPnts_QuasiUniformAbscissa {
-	~GCPnts_QuasiUniformAbscissa() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCPnts_QuasiUniformAbscissa\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -302,9 +346,17 @@ class GCPnts_QuasiUniformDeflection {
 		Standard_Real Deflection() const;
 
 };
+%feature("shadow") GCPnts_QuasiUniformDeflection::~GCPnts_QuasiUniformDeflection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCPnts_QuasiUniformDeflection {
-	~GCPnts_QuasiUniformDeflection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCPnts_QuasiUniformDeflection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

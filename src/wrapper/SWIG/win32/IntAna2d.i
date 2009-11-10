@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntAna2d_dependencies.i
 
 
@@ -52,18 +56,26 @@ class IntAna2d_Conic {
 		Standard_Real Value(const Standard_Real X, const Standard_Real Y) const;
 		%feature("autodoc", "1");
 		gp_XY Grad(const Standard_Real X, const Standard_Real Y) const;
-		%feature("autodoc","ValAndGrad(Standard_Real X, Standard_Real Y)->Standard_Real");
+		%feature("autodoc","ValAndGrad(Standard_Real X, Standard_Real Y) -> Standard_Real");
 		void ValAndGrad(const Standard_Real X, const Standard_Real Y, Standard_Real &OutValue, gp_XY & Grd) const;
-		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","NewCoefficients(const Axis)->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","NewCoefficients(const Axis) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax2d &Axis) const;
 
 };
+%feature("shadow") IntAna2d_Conic::~IntAna2d_Conic %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntAna2d_Conic {
-	~IntAna2d_Conic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna2d_Conic\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -119,10 +131,18 @@ class IntAna2d_AnaIntersection {
 		const IntAna2d_IntPoint & Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") IntAna2d_AnaIntersection::~IntAna2d_AnaIntersection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntAna2d_AnaIntersection {
-	~IntAna2d_AnaIntersection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna2d_AnaIntersection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -164,9 +184,17 @@ class IntAna2d_IntPoint {
 		void _CSFDB_SetIntAna2d_IntPointmyimplicit(const Standard_Boolean p);
 
 };
+%feature("shadow") IntAna2d_IntPoint::~IntAna2d_IntPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntAna2d_IntPoint {
-	~IntAna2d_IntPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna2d_IntPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

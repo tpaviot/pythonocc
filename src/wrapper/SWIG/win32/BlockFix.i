@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BlockFix_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_BlockFix_PeriodicSurfaceModifier : public Handle_BRepTools_Modifica
 	return (BlockFix_PeriodicSurfaceModifier*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BlockFix_PeriodicSurfaceModifier::~Handle_BlockFix_PeriodicSurfaceModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BlockFix_PeriodicSurfaceModifier {
-	~Handle_BlockFix_PeriodicSurfaceModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BlockFix_PeriodicSurfaceModifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_BlockFix_SphereSpaceModifier : public Handle_BRepTools_Modification
 	return (BlockFix_SphereSpaceModifier*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BlockFix_SphereSpaceModifier::~Handle_BlockFix_SphereSpaceModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BlockFix_SphereSpaceModifier {
-	~Handle_BlockFix_SphereSpaceModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BlockFix_SphereSpaceModifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_BlockFix_BlockFixAPI : public Handle_MMgt_TShared {
 	return (BlockFix_BlockFixAPI*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BlockFix_BlockFixAPI::~Handle_BlockFix_BlockFixAPI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BlockFix_BlockFixAPI {
-	~Handle_BlockFix_BlockFixAPI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BlockFix_BlockFixAPI\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -136,10 +164,18 @@ class BlockFix {
 		TopoDS_Shape FixRanges(const TopoDS_Shape &S, const Standard_Real Tol);
 
 };
+%feature("shadow") BlockFix::~BlockFix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BlockFix {
-	~BlockFix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -153,10 +189,18 @@ class BlockFix_UnionEdges {
 		TopoDS_Shape Perform(const TopoDS_Shape &Shape, const Standard_Real Tol);
 
 };
+%feature("shadow") BlockFix_UnionEdges::~BlockFix_UnionEdges %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BlockFix_UnionEdges {
-	~BlockFix_UnionEdges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix_UnionEdges\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -168,15 +212,15 @@ class BlockFix_SphereSpaceModifier : public BRepTools_Modification {
 		BlockFix_SphereSpaceModifier();
 		%feature("autodoc", "1");
 		void SetTolerance(const Standard_Real Toler);
-		%feature("autodoc","NewSurface(const F)->Standard_Real");
+		%feature("autodoc","NewSurface(const F) -> Standard_Real");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc","NewCurve(const E)->Standard_Real");
+		%feature("autodoc","NewCurve(const E) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc","NewPoint(const V)->Standard_Real");
+		%feature("autodoc","NewPoint(const V) -> Standard_Real");
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF)->Standard_Real");
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc","NewParameter(const V, const E)->[Standard_RealStandard_Real]");
+		%feature("autodoc","NewParameter(const V, const E) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
@@ -196,10 +240,18 @@ class BlockFix_SphereSpaceModifier : public BRepTools_Modification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BlockFix_SphereSpaceModifier::~BlockFix_SphereSpaceModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BlockFix_SphereSpaceModifier {
-	~BlockFix_SphereSpaceModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix_SphereSpaceModifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -227,10 +279,18 @@ class BlockFix_CheckTool {
 		};
 
 };
+%feature("shadow") BlockFix_CheckTool::~BlockFix_CheckTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BlockFix_CheckTool {
-	~BlockFix_CheckTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix_CheckTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -242,15 +302,15 @@ class BlockFix_PeriodicSurfaceModifier : public BRepTools_Modification {
 		BlockFix_PeriodicSurfaceModifier();
 		%feature("autodoc", "1");
 		void SetTolerance(const Standard_Real Toler);
-		%feature("autodoc","NewSurface(const F)->Standard_Real");
+		%feature("autodoc","NewSurface(const F) -> Standard_Real");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc","NewCurve(const E)->Standard_Real");
+		%feature("autodoc","NewCurve(const E) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc","NewPoint(const V)->Standard_Real");
+		%feature("autodoc","NewPoint(const V) -> Standard_Real");
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF)->Standard_Real");
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc","NewParameter(const V, const E)->[Standard_RealStandard_Real]");
+		%feature("autodoc","NewParameter(const V, const E) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
@@ -270,10 +330,18 @@ class BlockFix_PeriodicSurfaceModifier : public BRepTools_Modification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BlockFix_PeriodicSurfaceModifier::~BlockFix_PeriodicSurfaceModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BlockFix_PeriodicSurfaceModifier {
-	~BlockFix_PeriodicSurfaceModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix_PeriodicSurfaceModifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -283,10 +351,30 @@ class BlockFix_UnionFaces {
 	public:
 		%feature("autodoc", "1");
 		BlockFix_UnionFaces();
-		%feature("autodoc", "1");
-		Standard_Real & GetTolerance();
-		%feature("autodoc", "1");
-		Standard_Integer & GetOptimumNbFaces();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetGetTolerance() {
+				return (Standard_Real) $self->GetTolerance();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetGetTolerance(Standard_Real value ) {
+				$self->GetTolerance()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetGetOptimumNbFaces() {
+				return (Standard_Integer) $self->GetOptimumNbFaces();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetGetOptimumNbFaces(Standard_Integer value ) {
+				$self->GetOptimumNbFaces()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopoDS_Shape Perform(const TopoDS_Shape &Shape);
 		%feature("autodoc", "1");
@@ -295,10 +383,18 @@ class BlockFix_UnionFaces {
 		virtual		void MovePCurves(TopoDS_Face & aTarget, const TopoDS_Face &aSource) const;
 
 };
+%feature("shadow") BlockFix_UnionFaces::~BlockFix_UnionFaces %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BlockFix_UnionFaces {
-	~BlockFix_UnionFaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix_UnionFaces\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -316,10 +412,30 @@ class BlockFix_BlockFixAPI : public MMgt_TShared {
 		TopoDS_Shape Shape() const;
 		%feature("autodoc", "1");
 		Handle_ShapeBuild_ReShape & Context();
-		%feature("autodoc", "1");
-		Standard_Real & Tolerance();
-		%feature("autodoc", "1");
-		Standard_Integer & OptimumNbFaces();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetTolerance() {
+				return (Standard_Real) $self->Tolerance();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetTolerance(Standard_Real value ) {
+				$self->Tolerance()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetOptimumNbFaces() {
+				return (Standard_Integer) $self->OptimumNbFaces();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetOptimumNbFaces(Standard_Integer value ) {
+				$self->OptimumNbFaces()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -336,9 +452,17 @@ class BlockFix_BlockFixAPI : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BlockFix_BlockFixAPI::~BlockFix_BlockFixAPI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BlockFix_BlockFixAPI {
-	~BlockFix_BlockFixAPI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlockFix_BlockFixAPI\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

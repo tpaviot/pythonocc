@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BinMFunction_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_BinMFunction_ScopeDriver : public Handle_BinMDF_ADriver {
 	return (BinMFunction_ScopeDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinMFunction_ScopeDriver::~Handle_BinMFunction_ScopeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinMFunction_ScopeDriver {
-	~Handle_BinMFunction_ScopeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMFunction_ScopeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_BinMFunction_GraphNodeDriver : public Handle_BinMDF_ADriver {
 	return (BinMFunction_GraphNodeDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinMFunction_GraphNodeDriver::~Handle_BinMFunction_GraphNodeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinMFunction_GraphNodeDriver {
-	~Handle_BinMFunction_GraphNodeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMFunction_GraphNodeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_BinMFunction_FunctionDriver : public Handle_BinMDF_ADriver {
 	return (BinMFunction_FunctionDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinMFunction_FunctionDriver::~Handle_BinMFunction_FunctionDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinMFunction_FunctionDriver {
-	~Handle_BinMFunction_FunctionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMFunction_FunctionDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -134,10 +162,18 @@ class BinMFunction {
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
 };
+%feature("shadow") BinMFunction::~BinMFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMFunction {
-	~BinMFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMFunction\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -167,10 +203,18 @@ class BinMFunction_FunctionDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinMFunction_FunctionDriver::~BinMFunction_FunctionDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMFunction_FunctionDriver {
-	~BinMFunction_FunctionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMFunction_FunctionDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -200,10 +244,18 @@ class BinMFunction_ScopeDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinMFunction_ScopeDriver::~BinMFunction_ScopeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMFunction_ScopeDriver {
-	~BinMFunction_ScopeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMFunction_ScopeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -233,9 +285,17 @@ class BinMFunction_GraphNodeDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinMFunction_GraphNodeDriver::~BinMFunction_GraphNodeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMFunction_GraphNodeDriver {
-	~BinMFunction_GraphNodeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMFunction_GraphNodeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

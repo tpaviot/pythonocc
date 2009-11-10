@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include XmlDrivers_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_XmlDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_Docume
 	return (XmlDrivers_DocumentStorageDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlDrivers_DocumentStorageDriver::~Handle_XmlDrivers_DocumentStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlDrivers_DocumentStorageDriver {
-	~Handle_XmlDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlDrivers_DocumentStorageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_XmlDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_Docu
 	return (XmlDrivers_DocumentRetrievalDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlDrivers_DocumentRetrievalDriver::~Handle_XmlDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlDrivers_DocumentRetrievalDriver {
-	~Handle_XmlDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlDrivers_DocumentRetrievalDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -116,10 +136,18 @@ class XmlDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageDrive
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlDrivers_DocumentStorageDriver::~XmlDrivers_DocumentStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlDrivers_DocumentStorageDriver {
-	~XmlDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlDrivers_DocumentStorageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -135,10 +163,18 @@ class XmlDrivers {
 		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 
 };
+%feature("shadow") XmlDrivers::~XmlDrivers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlDrivers {
-	~XmlDrivers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlDrivers\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -164,9 +200,17 @@ class XmlDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrievalD
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlDrivers_DocumentRetrievalDriver::~XmlDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlDrivers_DocumentRetrievalDriver {
-	~XmlDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlDrivers_DocumentRetrievalDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

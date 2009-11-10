@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepTools_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 	return (BRepTools_Modification*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepTools_Modification::~Handle_BRepTools_Modification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepTools_Modification {
-	~Handle_BRepTools_Modification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_Modification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification 
 	return (BRepTools_GTrsfModification*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepTools_GTrsfModification::~Handle_BRepTools_GTrsfModification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepTools_GTrsfModification {
-	~Handle_BRepTools_GTrsfModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_GTrsfModification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
 	return (BRepTools_TrsfModification*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepTools_TrsfModification::~Handle_BRepTools_TrsfModification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepTools_TrsfModification {
-	~Handle_BRepTools_TrsfModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_TrsfModification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 	return (BRepTools_ReShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepTools_ReShape::~Handle_BRepTools_ReShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepTools_ReShape {
-	~Handle_BRepTools_ReShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_ReShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modifi
 	return (BRepTools_NurbsConvertModification*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepTools_NurbsConvertModification::~Handle_BRepTools_NurbsConvertModification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepTools_NurbsConvertModification {
-	~Handle_BRepTools_NurbsConvertModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_NurbsConvertModification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection
 	return (BRepTools_DataMapNodeOfMapOfVertexPnt2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d::~Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d {
-	~Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -312,10 +364,18 @@ class BRepTools_ShapeSet : public TopTools_ShapeSet {
 		};
 
 };
+%feature("shadow") BRepTools_ShapeSet::~BRepTools_ShapeSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools_ShapeSet {
-	~BRepTools_ShapeSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_ShapeSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -339,10 +399,18 @@ class BRepTools_Quilt {
 		TopoDS_Shape Shells() const;
 
 };
+%feature("shadow") BRepTools_Quilt::~BRepTools_Quilt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools_Quilt {
-	~BRepTools_Quilt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_Quilt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -350,15 +418,15 @@ class BRepTools_Quilt {
 %nodefaultctor BRepTools_Modification;
 class BRepTools_Modification : public MMgt_TShared {
 	public:
-		%feature("autodoc","NewSurface(const F)->Standard_Real");
+		%feature("autodoc","NewSurface(const F) -> Standard_Real");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc","NewCurve(const E)->Standard_Real");
+		%feature("autodoc","NewCurve(const E) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc","NewPoint(const V)->Standard_Real");
+		%feature("autodoc","NewPoint(const V) -> Standard_Real");
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF)->Standard_Real");
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc","NewParameter(const V, const E)->[Standard_RealStandard_Real]");
+		%feature("autodoc","NewParameter(const V, const E) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
@@ -376,10 +444,18 @@ class BRepTools_Modification : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepTools_Modification::~BRepTools_Modification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools_Modification {
-	~BRepTools_Modification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_Modification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -413,10 +489,18 @@ class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
 		TColgp_SequenceOfPnt2d & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") BRepTools_MapOfVertexPnt2d::~BRepTools_MapOfVertexPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools_MapOfVertexPnt2d {
-	~BRepTools_MapOfVertexPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_MapOfVertexPnt2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -426,11 +510,11 @@ class BRepTools {
 	public:
 		%feature("autodoc", "1");
 		BRepTools();
-		%feature("autodoc","UVBounds(const F)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","UVBounds(const F) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void UVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","UVBounds(const F, const W)->[Standard_Real, Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","UVBounds(const F, const W) -> [Standard_Real, Standard_RealStandard_RealStandard_Real]");
 		void UVBounds(const TopoDS_Face &F, const TopoDS_Wire &W, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","UVBounds(const F, const E)->[Standard_Real, Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","UVBounds(const F, const E) -> [Standard_Real, Standard_RealStandard_RealStandard_Real]");
 		void UVBounds(const TopoDS_Face &F, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void AddUVBounds(const TopoDS_Face &F, Bnd_Box2d & B);
@@ -486,10 +570,18 @@ class BRepTools {
 		Standard_Boolean Read(TopoDS_Shape & Sh, const char * File, const BRep_Builder &B, const Handle_Message_ProgressIndicator &PR=0);
 
 };
+%feature("shadow") BRepTools::~BRepTools %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools {
-	~BRepTools() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -501,15 +593,15 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 		BRepTools_GTrsfModification(const gp_GTrsf &T);
 		%feature("autodoc", "1");
 		gp_GTrsf & GTrsf();
-		%feature("autodoc","NewSurface(const F)->Standard_Real");
+		%feature("autodoc","NewSurface(const F) -> Standard_Real");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc","NewCurve(const E)->Standard_Real");
+		%feature("autodoc","NewCurve(const E) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc","NewPoint(const V)->Standard_Real");
+		%feature("autodoc","NewPoint(const V) -> Standard_Real");
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF)->Standard_Real");
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc","NewParameter(const V, const E)->[Standard_RealStandard_Real]");
+		%feature("autodoc","NewParameter(const V, const E) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
@@ -527,10 +619,18 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepTools_GTrsfModification::~BRepTools_GTrsfModification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools_GTrsfModification {
-	~BRepTools_GTrsfModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_GTrsfModification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -554,10 +654,18 @@ class BRepTools_Modifier {
 		const TopoDS_Shape & ModifiedShape(const TopoDS_Shape &S) const;
 
 };
+%feature("shadow") BRepTools_Modifier::~BRepTools_Modifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools_Modifier {
-	~BRepTools_Modifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_Modifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -569,15 +677,15 @@ class BRepTools_TrsfModification : public BRepTools_Modification {
 		BRepTools_TrsfModification(const gp_Trsf &T);
 		%feature("autodoc", "1");
 		gp_Trsf & Trsf();
-		%feature("autodoc","NewSurface(const F)->Standard_Real");
+		%feature("autodoc","NewSurface(const F) -> Standard_Real");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc","NewCurve(const E)->Standard_Real");
+		%feature("autodoc","NewCurve(const E) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc","NewPoint(const V)->Standard_Real");
+		%feature("autodoc","NewPoint(const V) -> Standard_Real");
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF)->Standard_Real");
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc","NewParameter(const V, const E)->[Standard_RealStandard_Real]");
+		%feature("autodoc","NewParameter(const V, const E) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
@@ -595,10 +703,18 @@ class BRepTools_TrsfModification : public BRepTools_Modification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepTools_TrsfModification::~BRepTools_TrsfModification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools_TrsfModification {
-	~BRepTools_TrsfModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_TrsfModification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -630,10 +746,18 @@ class BRepTools_WireExplorer {
 		void Clear();
 
 };
+%feature("shadow") BRepTools_WireExplorer::~BRepTools_WireExplorer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools_WireExplorer {
-	~BRepTools_WireExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_WireExplorer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -677,10 +801,18 @@ class BRepTools_ReShape : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepTools_ReShape::~BRepTools_ReShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools_ReShape {
-	~BRepTools_ReShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_ReShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -690,15 +822,15 @@ class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 	public:
 		%feature("autodoc", "1");
 		BRepTools_NurbsConvertModification();
-		%feature("autodoc","NewSurface(const F)->Standard_Real");
+		%feature("autodoc","NewSurface(const F) -> Standard_Real");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc","NewCurve(const E)->Standard_Real");
+		%feature("autodoc","NewCurve(const E) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc","NewPoint(const V)->Standard_Real");
+		%feature("autodoc","NewPoint(const V) -> Standard_Real");
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF)->Standard_Real");
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc","NewParameter(const V, const E)->[Standard_RealStandard_Real]");
+		%feature("autodoc","NewParameter(const V, const E) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
@@ -716,10 +848,18 @@ class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepTools_NurbsConvertModification::~BRepTools_NurbsConvertModification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools_NurbsConvertModification {
-	~BRepTools_NurbsConvertModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_NurbsConvertModification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -739,10 +879,18 @@ class BRepTools_DataMapIteratorOfMapOfVertexPnt2d : public TCollection_BasicMapI
 		const TColgp_SequenceOfPnt2d & Value() const;
 
 };
+%feature("shadow") BRepTools_DataMapIteratorOfMapOfVertexPnt2d::~BRepTools_DataMapIteratorOfMapOfVertexPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools_DataMapIteratorOfMapOfVertexPnt2d {
-	~BRepTools_DataMapIteratorOfMapOfVertexPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_DataMapIteratorOfMapOfVertexPnt2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -764,10 +912,18 @@ class BRepTools_Substitution {
 		const TopTools_ListOfShape & Copy(const TopoDS_Shape &S) const;
 
 };
+%feature("shadow") BRepTools_Substitution::~BRepTools_Substitution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools_Substitution {
-	~BRepTools_Substitution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_Substitution\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -795,9 +951,17 @@ class BRepTools_DataMapNodeOfMapOfVertexPnt2d : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepTools_DataMapNodeOfMapOfVertexPnt2d::~BRepTools_DataMapNodeOfMapOfVertexPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTools_DataMapNodeOfMapOfVertexPnt2d {
-	~BRepTools_DataMapNodeOfMapOfVertexPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTools_DataMapNodeOfMapOfVertexPnt2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

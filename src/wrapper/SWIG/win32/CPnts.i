@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include CPnts_dependencies.i
 
 
@@ -68,10 +72,18 @@ class CPnts_UniformDeflection {
 		gp_Pnt Point() const;
 
 };
+%feature("shadow") CPnts_UniformDeflection::~CPnts_UniformDeflection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CPnts_UniformDeflection {
-	~CPnts_UniformDeflection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CPnts_UniformDeflection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -81,14 +93,22 @@ class CPnts_MyGaussFunction : public math_Function {
 	public:
 		%feature("autodoc", "1");
 		CPnts_MyGaussFunction();
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 
 };
+%feature("shadow") CPnts_MyGaussFunction::~CPnts_MyGaussFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CPnts_MyGaussFunction {
-	~CPnts_MyGaussFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CPnts_MyGaussFunction\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -152,10 +172,18 @@ class CPnts_AbscissaPoint {
 		void SetParameter(const Standard_Real P);
 
 };
+%feature("shadow") CPnts_AbscissaPoint::~CPnts_AbscissaPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CPnts_AbscissaPoint {
-	~CPnts_AbscissaPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CPnts_AbscissaPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -169,17 +197,25 @@ class CPnts_MyRootFunction : public math_FunctionWithDerivative {
 		void Init(const Standard_Real X0, const Standard_Real L);
 		%feature("autodoc", "1");
 		void Init(const Standard_Real X0, const Standard_Real L, const Standard_Real Tol);
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%feature("shadow") CPnts_MyRootFunction::~CPnts_MyRootFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CPnts_MyRootFunction {
-	~CPnts_MyRootFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CPnts_MyRootFunction\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

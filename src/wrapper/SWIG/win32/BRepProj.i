@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepProj_dependencies.i
 
 
@@ -56,9 +60,17 @@ class BRepProj_Projection {
 		TopoDS_Shape Shape() const;
 
 };
+%feature("shadow") BRepProj_Projection::~BRepProj_Projection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepProj_Projection {
-	~BRepProj_Projection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepProj_Projection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

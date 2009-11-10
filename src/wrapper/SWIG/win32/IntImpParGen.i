@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntImpParGen_dependencies.i
 
 
@@ -46,13 +50,21 @@ class IntImpParGen {
 		Standard_Boolean DetermineTransition(const IntRes2d_Position Pos1, gp_Vec2d & Tan1, IntRes2d_Transition & Trans1, const IntRes2d_Position Pos2, gp_Vec2d & Tan2, IntRes2d_Transition & Trans2, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void DeterminePosition(IntRes2d_Position & Pos1, const IntRes2d_Domain &Dom1, const gp_Pnt2d &P1, const Standard_Real Tol);
-		%feature("autodoc","NormalizeOnDomain(const Dom1)->Standard_Real");
+		%feature("autodoc","NormalizeOnDomain(const Dom1) -> Standard_Real");
 		Standard_Real NormalizeOnDomain(Standard_Real &OutValue, const IntRes2d_Domain &Dom1);
 
 };
+%feature("shadow") IntImpParGen::~IntImpParGen %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntImpParGen {
-	~IntImpParGen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntImpParGen\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

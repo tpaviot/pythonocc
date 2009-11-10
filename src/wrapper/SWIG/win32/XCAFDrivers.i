@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include XCAFDrivers_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_XCAFDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Documen
 	return (XCAFDrivers_DocumentRetrievalDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XCAFDrivers_DocumentRetrievalDriver::~Handle_XCAFDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XCAFDrivers_DocumentRetrievalDriver {
-	~Handle_XCAFDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDrivers_DocumentRetrievalDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_XCAFDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentS
 	return (XCAFDrivers_DocumentStorageDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XCAFDrivers_DocumentStorageDriver::~Handle_XCAFDrivers_DocumentStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XCAFDrivers_DocumentStorageDriver {
-	~Handle_XCAFDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDrivers_DocumentStorageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -116,10 +136,18 @@ class XCAFDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriv
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XCAFDrivers_DocumentRetrievalDriver::~XCAFDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XCAFDrivers_DocumentRetrievalDriver {
-	~XCAFDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDrivers_DocumentRetrievalDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -145,10 +173,18 @@ class XCAFDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XCAFDrivers_DocumentStorageDriver::~XCAFDrivers_DocumentStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XCAFDrivers_DocumentStorageDriver {
-	~XCAFDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDrivers_DocumentStorageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -162,9 +198,17 @@ class XCAFDrivers {
 		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
 
 };
+%feature("shadow") XCAFDrivers::~XCAFDrivers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XCAFDrivers {
-	~XCAFDrivers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XCAFDrivers\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

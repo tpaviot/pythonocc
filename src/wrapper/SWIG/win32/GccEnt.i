@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GccEnt_dependencies.i
 
 
@@ -65,10 +69,18 @@ class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 	return (GccEnt_BadQualifier*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GccEnt_BadQualifier::~Handle_GccEnt_BadQualifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GccEnt_BadQualifier {
-	~Handle_GccEnt_BadQualifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GccEnt_BadQualifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -94,10 +106,18 @@ class GccEnt {
 		GccEnt_QualifiedCirc Outside(const gp_Circ2d &Obj);
 
 };
+%feature("shadow") GccEnt::~GccEnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccEnt {
-	~GccEnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccEnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -127,10 +147,18 @@ class GccEnt_QualifiedLin {
 		const gp_Lin2d & _CSFDB_GetGccEnt_QualifiedLinTheQualified() const;
 
 };
+%feature("shadow") GccEnt_QualifiedLin::~GccEnt_QualifiedLin %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccEnt_QualifiedLin {
-	~GccEnt_QualifiedLin() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccEnt_QualifiedLin\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -170,10 +198,18 @@ class GccEnt_Array1OfPosition {
 		GccEnt_Position & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") GccEnt_Array1OfPosition::~GccEnt_Array1OfPosition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccEnt_Array1OfPosition {
-	~GccEnt_Array1OfPosition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccEnt_Array1OfPosition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -205,10 +241,18 @@ class GccEnt_BadQualifier : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GccEnt_BadQualifier::~GccEnt_BadQualifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccEnt_BadQualifier {
-	~GccEnt_BadQualifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccEnt_BadQualifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -240,9 +284,17 @@ class GccEnt_QualifiedCirc {
 		void _CSFDB_SetGccEnt_QualifiedCircTheQualifier(const GccEnt_Position p);
 
 };
+%feature("shadow") GccEnt_QualifiedCirc::~GccEnt_QualifiedCirc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccEnt_QualifiedCirc {
-	~GccEnt_QualifiedCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccEnt_QualifiedCirc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

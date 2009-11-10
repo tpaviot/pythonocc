@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StlAPI_dependencies.i
 
 
@@ -46,10 +50,18 @@ class StlAPI {
 		void Read(TopoDS_Shape & aShape, const char * aFile);
 
 };
+%feature("shadow") StlAPI::~StlAPI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StlAPI {
-	~StlAPI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlAPI\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -71,10 +83,18 @@ class StlAPI_Writer {
 		void Write(const TopoDS_Shape &aShape, const char * aFileName);
 
 };
+%feature("shadow") StlAPI_Writer::~StlAPI_Writer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StlAPI_Writer {
-	~StlAPI_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlAPI_Writer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -88,9 +108,17 @@ class StlAPI_Reader {
 		void Read(TopoDS_Shape & aShape, const char * aFileName);
 
 };
+%feature("shadow") StlAPI_Reader::~StlAPI_Reader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StlAPI_Reader {
-	~StlAPI_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StlAPI_Reader\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

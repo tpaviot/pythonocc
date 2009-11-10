@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IGESGraph_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_IGESGraph_LineFontDefPattern : public Handle_IGESData_LineFontEntit
 	return (IGESGraph_LineFontDefPattern*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_LineFontDefPattern::~Handle_IGESGraph_LineFontDefPattern %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_LineFontDefPattern {
-	~Handle_IGESGraph_LineFontDefPattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_LineFontDefPattern\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_IGESGraph_Pick : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_Pick*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_Pick::~Handle_IGESGraph_Pick %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_Pick {
-	~Handle_IGESGraph_Pick() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_Pick\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_IGESGraph_HArray1OfTextDisplayTemplate : public Handle_MMgt_TShared
 	return (IGESGraph_HArray1OfTextDisplayTemplate*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_HArray1OfTextDisplayTemplate::~Handle_IGESGraph_HArray1OfTextDisplayTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_HArray1OfTextDisplayTemplate {
-	~Handle_IGESGraph_HArray1OfTextDisplayTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_HArray1OfTextDisplayTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_IGESGraph_Color : public Handle_IGESData_ColorEntity {
 	return (IGESGraph_Color*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_Color::~Handle_IGESGraph_Color %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_Color {
-	~Handle_IGESGraph_Color() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_Color\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_IGESGraph_TextDisplayTemplate : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_TextDisplayTemplate*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_TextDisplayTemplate::~Handle_IGESGraph_TextDisplayTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_TextDisplayTemplate {
-	~Handle_IGESGraph_TextDisplayTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_TextDisplayTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_IGESGraph_NominalSize : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_NominalSize*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_NominalSize::~Handle_IGESGraph_NominalSize %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_NominalSize {
-	~Handle_IGESGraph_NominalSize() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_NominalSize\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_IGESGraph_DrawingSize : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_DrawingSize*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_DrawingSize::~Handle_IGESGraph_DrawingSize %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_DrawingSize {
-	~Handle_IGESGraph_DrawingSize() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_DrawingSize\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_IGESGraph_DrawingUnits : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_DrawingUnits*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_DrawingUnits::~Handle_IGESGraph_DrawingUnits %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_DrawingUnits {
-	~Handle_IGESGraph_DrawingUnits() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_DrawingUnits\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_IGESGraph_IntercharacterSpacing : public Handle_IGESData_IGESEntity
 	return (IGESGraph_IntercharacterSpacing*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_IntercharacterSpacing::~Handle_IGESGraph_IntercharacterSpacing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_IntercharacterSpacing {
-	~Handle_IGESGraph_IntercharacterSpacing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_IntercharacterSpacing\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_IGESGraph_GeneralModule : public Handle_IGESData_GeneralModule {
 	return (IGESGraph_GeneralModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_GeneralModule::~Handle_IGESGraph_GeneralModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_GeneralModule {
-	~Handle_IGESGraph_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_GeneralModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_IGESGraph_HArray1OfColor : public Handle_MMgt_TShared {
 	return (IGESGraph_HArray1OfColor*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_HArray1OfColor::~Handle_IGESGraph_HArray1OfColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_HArray1OfColor {
-	~Handle_IGESGraph_HArray1OfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_HArray1OfColor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_IGESGraph_DefinitionLevel : public Handle_IGESData_LevelListEntity 
 	return (IGESGraph_DefinitionLevel*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_DefinitionLevel::~Handle_IGESGraph_DefinitionLevel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_DefinitionLevel {
-	~Handle_IGESGraph_DefinitionLevel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_DefinitionLevel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_IGESGraph_HArray1OfTextFontDef : public Handle_MMgt_TShared {
 	return (IGESGraph_HArray1OfTextFontDef*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_HArray1OfTextFontDef::~Handle_IGESGraph_HArray1OfTextFontDef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_HArray1OfTextFontDef {
-	~Handle_IGESGraph_HArray1OfTextFontDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_HArray1OfTextFontDef\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +555,18 @@ class Handle_IGESGraph_SpecificModule : public Handle_IGESData_SpecificModule {
 	return (IGESGraph_SpecificModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_SpecificModule::~Handle_IGESGraph_SpecificModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_SpecificModule {
-	~Handle_IGESGraph_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_SpecificModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +593,18 @@ class Handle_IGESGraph_UniformRectGrid : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_UniformRectGrid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_UniformRectGrid::~Handle_IGESGraph_UniformRectGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_UniformRectGrid {
-	~Handle_IGESGraph_UniformRectGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_UniformRectGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +631,18 @@ class Handle_IGESGraph_HighLight : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_HighLight*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_HighLight::~Handle_IGESGraph_HighLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_HighLight {
-	~Handle_IGESGraph_HighLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_HighLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +669,18 @@ class Handle_IGESGraph_LineFontDefTemplate : public Handle_IGESData_LineFontEnti
 	return (IGESGraph_LineFontDefTemplate*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_LineFontDefTemplate::~Handle_IGESGraph_LineFontDefTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_LineFontDefTemplate {
-	~Handle_IGESGraph_LineFontDefTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_LineFontDefTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +707,18 @@ class Handle_IGESGraph_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	return (IGESGraph_ReadWriteModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_ReadWriteModule::~Handle_IGESGraph_ReadWriteModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_ReadWriteModule {
-	~Handle_IGESGraph_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_ReadWriteModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +745,18 @@ class Handle_IGESGraph_Protocol : public Handle_IGESData_Protocol {
 	return (IGESGraph_Protocol*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_Protocol::~Handle_IGESGraph_Protocol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_Protocol {
-	~Handle_IGESGraph_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_Protocol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +783,18 @@ class Handle_IGESGraph_TextFontDef : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_TextFontDef*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_TextFontDef::~Handle_IGESGraph_TextFontDef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_TextFontDef {
-	~Handle_IGESGraph_TextFontDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_TextFontDef\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -657,10 +821,18 @@ class Handle_IGESGraph_LineFontPredefined : public Handle_IGESData_IGESEntity {
 	return (IGESGraph_LineFontPredefined*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESGraph_LineFontPredefined::~Handle_IGESGraph_LineFontPredefined %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESGraph_LineFontPredefined {
-	~Handle_IGESGraph_LineFontPredefined() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_LineFontPredefined\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -692,10 +864,18 @@ class IGESGraph_HighLight : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_HighLight::~IGESGraph_HighLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_HighLight {
-	~IGESGraph_HighLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_HighLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -727,10 +907,18 @@ class IGESGraph_Pick : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_Pick::~IGESGraph_Pick %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_Pick {
-	~IGESGraph_Pick() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_Pick\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -758,10 +946,18 @@ class IGESGraph_ToolDrawingUnits {
 		void OwnDump(const Handle_IGESGraph_DrawingUnits &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolDrawingUnits::~IGESGraph_ToolDrawingUnits %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolDrawingUnits {
-	~IGESGraph_ToolDrawingUnits() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolDrawingUnits\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -795,10 +991,18 @@ class IGESGraph_DrawingUnits : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_DrawingUnits::~IGESGraph_DrawingUnits %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_DrawingUnits {
-	~IGESGraph_DrawingUnits() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_DrawingUnits\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -838,10 +1042,18 @@ class IGESGraph_Array1OfTextFontDef {
 		Handle_IGESGraph_TextFontDef & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") IGESGraph_Array1OfTextFontDef::~IGESGraph_Array1OfTextFontDef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_Array1OfTextFontDef {
-	~IGESGraph_Array1OfTextFontDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_Array1OfTextFontDef\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -883,10 +1095,18 @@ class IGESGraph_UniformRectGrid : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_UniformRectGrid::~IGESGraph_UniformRectGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_UniformRectGrid {
-	~IGESGraph_UniformRectGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_UniformRectGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -914,10 +1134,18 @@ class IGESGraph_ToolUniformRectGrid {
 		void OwnDump(const Handle_IGESGraph_UniformRectGrid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolUniformRectGrid::~IGESGraph_ToolUniformRectGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolUniformRectGrid {
-	~IGESGraph_ToolUniformRectGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolUniformRectGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -945,10 +1173,18 @@ class IGESGraph_ToolIntercharacterSpacing {
 		void OwnDump(const Handle_IGESGraph_IntercharacterSpacing &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolIntercharacterSpacing::~IGESGraph_ToolIntercharacterSpacing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolIntercharacterSpacing {
-	~IGESGraph_ToolIntercharacterSpacing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolIntercharacterSpacing\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -976,10 +1212,18 @@ class IGESGraph_ToolNominalSize {
 		void OwnDump(const Handle_IGESGraph_NominalSize &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolNominalSize::~IGESGraph_ToolNominalSize %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolNominalSize {
-	~IGESGraph_ToolNominalSize() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolNominalSize\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1023,10 +1267,18 @@ class IGESGraph_HArray1OfTextDisplayTemplate : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_HArray1OfTextDisplayTemplate::~IGESGraph_HArray1OfTextDisplayTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_HArray1OfTextDisplayTemplate {
-	~IGESGraph_HArray1OfTextDisplayTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_HArray1OfTextDisplayTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1054,10 +1306,18 @@ class IGESGraph_ToolDrawingSize {
 		void OwnDump(const Handle_IGESGraph_DrawingSize &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolDrawingSize::~IGESGraph_ToolDrawingSize %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolDrawingSize {
-	~IGESGraph_ToolDrawingSize() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolDrawingSize\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1087,10 +1347,18 @@ class IGESGraph_IntercharacterSpacing : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_IntercharacterSpacing::~IGESGraph_IntercharacterSpacing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_IntercharacterSpacing {
-	~IGESGraph_IntercharacterSpacing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_IntercharacterSpacing\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1116,10 +1384,18 @@ class IGESGraph_ToolTextFontDef {
 		void OwnDump(const Handle_IGESGraph_TextFontDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolTextFontDef::~IGESGraph_ToolTextFontDef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolTextFontDef {
-	~IGESGraph_ToolTextFontDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolTextFontDef\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1153,10 +1429,18 @@ class IGESGraph_LineFontDefTemplate : public IGESData_LineFontEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_LineFontDefTemplate::~IGESGraph_LineFontDefTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_LineFontDefTemplate {
-	~IGESGraph_LineFontDefTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_LineFontDefTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1172,10 +1456,18 @@ class IGESGraph {
 		Handle_IGESGraph_Protocol Protocol();
 
 };
+%feature("shadow") IGESGraph::~IGESGraph %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph {
-	~IGESGraph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1203,10 +1495,18 @@ class IGESGraph_ToolPick {
 		void OwnDump(const Handle_IGESGraph_Pick &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolPick::~IGESGraph_ToolPick %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolPick {
-	~IGESGraph_ToolPick() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolPick\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1232,10 +1532,18 @@ class IGESGraph_ToolColor {
 		void OwnDump(const Handle_IGESGraph_Color &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolColor::~IGESGraph_ToolColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolColor {
-	~IGESGraph_ToolColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolColor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1271,10 +1579,18 @@ class IGESGraph_GeneralModule : public IGESData_GeneralModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_GeneralModule::~IGESGraph_GeneralModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_GeneralModule {
-	~IGESGraph_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_GeneralModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1300,10 +1616,18 @@ class IGESGraph_ToolLineFontDefTemplate {
 		void OwnDump(const Handle_IGESGraph_LineFontDefTemplate &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolLineFontDefTemplate::~IGESGraph_ToolLineFontDefTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolLineFontDefTemplate {
-	~IGESGraph_ToolLineFontDefTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolLineFontDefTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1315,11 +1639,11 @@ class IGESGraph_Color : public IGESData_ColorEntity {
 		IGESGraph_Color();
 		%feature("autodoc", "1");
 		void Init(const Standard_Real red, const Standard_Real green, const Standard_Real blue, const Handle_TCollection_HAsciiString &aColorName);
-		%feature("autodoc","RGBIntensity()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","RGBIntensity() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void RGBIntensity(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","CMYIntensity()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","CMYIntensity() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void CMYIntensity(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","HLSPercentage()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","HLSPercentage() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void HLSPercentage(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasColorName() const;
@@ -1339,10 +1663,18 @@ class IGESGraph_Color : public IGESData_ColorEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_Color::~IGESGraph_Color %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_Color {
-	~IGESGraph_Color() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_Color\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1368,10 +1700,18 @@ class IGESGraph_ToolDefinitionLevel {
 		void OwnDump(const Handle_IGESGraph_DefinitionLevel &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolDefinitionLevel::~IGESGraph_ToolDefinitionLevel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolDefinitionLevel {
-	~IGESGraph_ToolDefinitionLevel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolDefinitionLevel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1423,10 +1763,18 @@ class IGESGraph_TextDisplayTemplate : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_TextDisplayTemplate::~IGESGraph_TextDisplayTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_TextDisplayTemplate {
-	~IGESGraph_TextDisplayTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_TextDisplayTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1454,10 +1802,18 @@ class IGESGraph_SpecificModule : public IGESData_SpecificModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_SpecificModule::~IGESGraph_SpecificModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_SpecificModule {
-	~IGESGraph_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_SpecificModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1497,10 +1853,18 @@ class IGESGraph_Array1OfTextDisplayTemplate {
 		Handle_IGESGraph_TextDisplayTemplate & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") IGESGraph_Array1OfTextDisplayTemplate::~IGESGraph_Array1OfTextDisplayTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_Array1OfTextDisplayTemplate {
-	~IGESGraph_Array1OfTextDisplayTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_Array1OfTextDisplayTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1532,10 +1896,18 @@ class IGESGraph_DefinitionLevel : public IGESData_LevelListEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_DefinitionLevel::~IGESGraph_DefinitionLevel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_DefinitionLevel {
-	~IGESGraph_DefinitionLevel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_DefinitionLevel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1565,10 +1937,18 @@ class IGESGraph_ReadWriteModule : public IGESData_ReadWriteModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_ReadWriteModule::~IGESGraph_ReadWriteModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ReadWriteModule {
-	~IGESGraph_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ReadWriteModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1594,10 +1974,18 @@ class IGESGraph_ToolTextDisplayTemplate {
 		void OwnDump(const Handle_IGESGraph_TextDisplayTemplate &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolTextDisplayTemplate::~IGESGraph_ToolTextDisplayTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolTextDisplayTemplate {
-	~IGESGraph_ToolTextDisplayTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolTextDisplayTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1633,10 +2021,18 @@ class IGESGraph_NominalSize : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_NominalSize::~IGESGraph_NominalSize %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_NominalSize {
-	~IGESGraph_NominalSize() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_NominalSize\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1662,10 +2058,18 @@ class IGESGraph_ToolLineFontDefPattern {
 		void OwnDump(const Handle_IGESGraph_LineFontDefPattern &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolLineFontDefPattern::~IGESGraph_ToolLineFontDefPattern %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolLineFontDefPattern {
-	~IGESGraph_ToolLineFontDefPattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolLineFontDefPattern\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1697,10 +2101,18 @@ class IGESGraph_DrawingSize : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_DrawingSize::~IGESGraph_DrawingSize %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_DrawingSize {
-	~IGESGraph_DrawingSize() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_DrawingSize\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1728,13 +2140,13 @@ class IGESGraph_TextFontDef : public IGESData_IGESEntity {
 		Standard_Integer NbCharacters() const;
 		%feature("autodoc", "1");
 		Standard_Integer ASCIICode(const Standard_Integer Chnum) const;
-		%feature("autodoc","NextCharOrigin(Standard_Integer Chnum)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","NextCharOrigin(Standard_Integer Chnum) -> [Standard_IntegerStandard_Integer]");
 		void NextCharOrigin(const Standard_Integer Chnum, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPenMotions(const Standard_Integer Chnum) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsPenUp(const Standard_Integer Chnum, const Standard_Integer Motionnum) const;
-		%feature("autodoc","NextPenPosition(Standard_Integer Chnum, Standard_Integer Motionnum)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","NextPenPosition(Standard_Integer Chnum, Standard_Integer Motionnum) -> [Standard_IntegerStandard_Integer]");
 		void NextPenPosition(const Standard_Integer Chnum, const Standard_Integer Motionnum, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1750,10 +2162,18 @@ class IGESGraph_TextFontDef : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_TextFontDef::~IGESGraph_TextFontDef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_TextFontDef {
-	~IGESGraph_TextFontDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_TextFontDef\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1783,10 +2203,18 @@ class IGESGraph_LineFontPredefined : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_LineFontPredefined::~IGESGraph_LineFontPredefined %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_LineFontPredefined {
-	~IGESGraph_LineFontPredefined() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_LineFontPredefined\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1814,10 +2242,18 @@ class IGESGraph_ToolHighLight {
 		void OwnDump(const Handle_IGESGraph_HighLight &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolHighLight::~IGESGraph_ToolHighLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolHighLight {
-	~IGESGraph_ToolHighLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolHighLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1845,10 +2281,18 @@ class IGESGraph_ToolLineFontPredefined {
 		void OwnDump(const Handle_IGESGraph_LineFontPredefined &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESGraph_ToolLineFontPredefined::~IGESGraph_ToolLineFontPredefined %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_ToolLineFontPredefined {
-	~IGESGraph_ToolLineFontPredefined() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolLineFontPredefined\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1888,10 +2332,18 @@ class IGESGraph_Array1OfColor {
 		Handle_IGESGraph_Color & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") IGESGraph_Array1OfColor::~IGESGraph_Array1OfColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_Array1OfColor {
-	~IGESGraph_Array1OfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_Array1OfColor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1925,10 +2377,18 @@ class IGESGraph_LineFontDefPattern : public IGESData_LineFontEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_LineFontDefPattern::~IGESGraph_LineFontDefPattern %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_LineFontDefPattern {
-	~IGESGraph_LineFontDefPattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_LineFontDefPattern\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1972,10 +2432,18 @@ class IGESGraph_HArray1OfColor : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_HArray1OfColor::~IGESGraph_HArray1OfColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_HArray1OfColor {
-	~IGESGraph_HArray1OfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_HArray1OfColor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2019,9 +2487,17 @@ class IGESGraph_HArray1OfTextFontDef : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESGraph_HArray1OfTextFontDef::~IGESGraph_HArray1OfTextFontDef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESGraph_HArray1OfTextFontDef {
-	~IGESGraph_HArray1OfTextFontDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESGraph_HArray1OfTextFontDef\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

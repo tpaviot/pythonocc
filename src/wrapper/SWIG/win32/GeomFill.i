@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GeomFill_dependencies.i
 
 
@@ -87,10 +91,18 @@ class Handle_GeomFill_TrihedronLaw : public Handle_MMgt_TShared {
 	return (GeomFill_TrihedronLaw*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_TrihedronLaw::~Handle_GeomFill_TrihedronLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_TrihedronLaw {
-	~Handle_GeomFill_TrihedronLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TrihedronLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +129,18 @@ class Handle_GeomFill_TrihedronWithGuide : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_TrihedronWithGuide*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_TrihedronWithGuide::~Handle_GeomFill_TrihedronWithGuide %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_TrihedronWithGuide {
-	~Handle_GeomFill_TrihedronWithGuide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TrihedronWithGuide\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +167,18 @@ class Handle_GeomFill_GuideTrihedronAC : public Handle_GeomFill_TrihedronWithGui
 	return (GeomFill_GuideTrihedronAC*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_GuideTrihedronAC::~Handle_GeomFill_GuideTrihedronAC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_GuideTrihedronAC {
-	~Handle_GeomFill_GuideTrihedronAC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_GuideTrihedronAC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +205,18 @@ class Handle_GeomFill_CircularBlendFunc : public Handle_Approx_SweepFunction {
 	return (GeomFill_CircularBlendFunc*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_CircularBlendFunc::~Handle_GeomFill_CircularBlendFunc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_CircularBlendFunc {
-	~Handle_GeomFill_CircularBlendFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CircularBlendFunc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +243,18 @@ class Handle_GeomFill_HArray1OfLocationLaw : public Handle_MMgt_TShared {
 	return (GeomFill_HArray1OfLocationLaw*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_HArray1OfLocationLaw::~Handle_GeomFill_HArray1OfLocationLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_HArray1OfLocationLaw {
-	~Handle_GeomFill_HArray1OfLocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_HArray1OfLocationLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +281,18 @@ class Handle_GeomFill_GuideTrihedronPlan : public Handle_GeomFill_TrihedronWithG
 	return (GeomFill_GuideTrihedronPlan*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_GuideTrihedronPlan::~Handle_GeomFill_GuideTrihedronPlan %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_GuideTrihedronPlan {
-	~Handle_GeomFill_GuideTrihedronPlan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_GuideTrihedronPlan\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +319,18 @@ class Handle_GeomFill_LocationLaw : public Handle_MMgt_TShared {
 	return (GeomFill_LocationLaw*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_LocationLaw::~Handle_GeomFill_LocationLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_LocationLaw {
-	~Handle_GeomFill_LocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_LocationLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +357,18 @@ class Handle_GeomFill_CurveAndTrihedron : public Handle_GeomFill_LocationLaw {
 	return (GeomFill_CurveAndTrihedron*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_CurveAndTrihedron::~Handle_GeomFill_CurveAndTrihedron %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_CurveAndTrihedron {
-	~Handle_GeomFill_CurveAndTrihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CurveAndTrihedron\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +395,18 @@ class Handle_GeomFill_LocationDraft : public Handle_GeomFill_LocationLaw {
 	return (GeomFill_LocationDraft*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_LocationDraft::~Handle_GeomFill_LocationDraft %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_LocationDraft {
-	~Handle_GeomFill_LocationDraft() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_LocationDraft\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +433,18 @@ class Handle_GeomFill_Boundary : public Handle_MMgt_TShared {
 	return (GeomFill_Boundary*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_Boundary::~Handle_GeomFill_Boundary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_Boundary {
-	~Handle_GeomFill_Boundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Boundary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +471,18 @@ class Handle_GeomFill_BoundWithSurf : public Handle_GeomFill_Boundary {
 	return (GeomFill_BoundWithSurf*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_BoundWithSurf::~Handle_GeomFill_BoundWithSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_BoundWithSurf {
-	~Handle_GeomFill_BoundWithSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_BoundWithSurf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +509,18 @@ class Handle_GeomFill_Line : public Handle_MMgt_TShared {
 	return (GeomFill_Line*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_Line::~Handle_GeomFill_Line %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_Line {
-	~Handle_GeomFill_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Line\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +547,18 @@ class Handle_GeomFill_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_
 	return (GeomFill_SequenceNodeOfSequenceOfCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_SequenceNodeOfSequenceOfCurve::~Handle_GeomFill_SequenceNodeOfSequenceOfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_SequenceNodeOfSequenceOfCurve {
-	~Handle_GeomFill_SequenceNodeOfSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SequenceNodeOfSequenceOfCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +585,18 @@ class Handle_GeomFill_TgtField : public Handle_MMgt_TShared {
 	return (GeomFill_TgtField*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_TgtField::~Handle_GeomFill_TgtField %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_TgtField {
-	~Handle_GeomFill_TgtField() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TgtField\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +623,18 @@ class Handle_GeomFill_Frenet : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_Frenet*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_Frenet::~Handle_GeomFill_Frenet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_Frenet {
-	~Handle_GeomFill_Frenet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Frenet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +661,18 @@ class Handle_GeomFill_Darboux : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_Darboux*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_Darboux::~Handle_GeomFill_Darboux %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_Darboux {
-	~Handle_GeomFill_Darboux() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Darboux\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +699,18 @@ class Handle_GeomFill_ConstantBiNormal : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_ConstantBiNormal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_ConstantBiNormal::~Handle_GeomFill_ConstantBiNormal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_ConstantBiNormal {
-	~Handle_GeomFill_ConstantBiNormal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_ConstantBiNormal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +737,18 @@ class Handle_GeomFill_DegeneratedBound : public Handle_GeomFill_Boundary {
 	return (GeomFill_DegeneratedBound*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_DegeneratedBound::~Handle_GeomFill_DegeneratedBound %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_DegeneratedBound {
-	~Handle_GeomFill_DegeneratedBound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_DegeneratedBound\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +775,18 @@ class Handle_GeomFill_CorrectedFrenet : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_CorrectedFrenet*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_CorrectedFrenet::~Handle_GeomFill_CorrectedFrenet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_CorrectedFrenet {
-	~Handle_GeomFill_CorrectedFrenet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CorrectedFrenet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -657,10 +813,18 @@ class Handle_GeomFill_SimpleBound : public Handle_GeomFill_Boundary {
 	return (GeomFill_SimpleBound*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_SimpleBound::~Handle_GeomFill_SimpleBound %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_SimpleBound {
-	~Handle_GeomFill_SimpleBound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SimpleBound\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -687,10 +851,18 @@ class Handle_GeomFill_TgtOnCoons : public Handle_GeomFill_TgtField {
 	return (GeomFill_TgtOnCoons*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_TgtOnCoons::~Handle_GeomFill_TgtOnCoons %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_TgtOnCoons {
-	~Handle_GeomFill_TgtOnCoons() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TgtOnCoons\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -717,10 +889,18 @@ class Handle_GeomFill_HArray1OfSectionLaw : public Handle_MMgt_TShared {
 	return (GeomFill_HArray1OfSectionLaw*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_HArray1OfSectionLaw::~Handle_GeomFill_HArray1OfSectionLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_HArray1OfSectionLaw {
-	~Handle_GeomFill_HArray1OfSectionLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_HArray1OfSectionLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -747,10 +927,18 @@ class Handle_GeomFill_SectionLaw : public Handle_MMgt_TShared {
 	return (GeomFill_SectionLaw*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_SectionLaw::~Handle_GeomFill_SectionLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_SectionLaw {
-	~Handle_GeomFill_SectionLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SectionLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -777,10 +965,18 @@ class Handle_GeomFill_NSections : public Handle_GeomFill_SectionLaw {
 	return (GeomFill_NSections*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_NSections::~Handle_GeomFill_NSections %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_NSections {
-	~Handle_GeomFill_NSections() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_NSections\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -807,10 +1003,18 @@ class Handle_GeomFill_UniformSection : public Handle_GeomFill_SectionLaw {
 	return (GeomFill_UniformSection*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_UniformSection::~Handle_GeomFill_UniformSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_UniformSection {
-	~Handle_GeomFill_UniformSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_UniformSection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -837,10 +1041,18 @@ class Handle_GeomFill_SequenceNodeOfSequenceOfTrsf : public Handle_TCollection_S
 	return (GeomFill_SequenceNodeOfSequenceOfTrsf*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_SequenceNodeOfSequenceOfTrsf::~Handle_GeomFill_SequenceNodeOfSequenceOfTrsf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_SequenceNodeOfSequenceOfTrsf {
-	~Handle_GeomFill_SequenceNodeOfSequenceOfTrsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SequenceNodeOfSequenceOfTrsf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -867,10 +1079,18 @@ class Handle_GeomFill_CoonsAlgPatch : public Handle_MMgt_TShared {
 	return (GeomFill_CoonsAlgPatch*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_CoonsAlgPatch::~Handle_GeomFill_CoonsAlgPatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_CoonsAlgPatch {
-	~Handle_GeomFill_CoonsAlgPatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CoonsAlgPatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -897,10 +1117,18 @@ class Handle_GeomFill_EvolvedSection : public Handle_GeomFill_SectionLaw {
 	return (GeomFill_EvolvedSection*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_EvolvedSection::~Handle_GeomFill_EvolvedSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_EvolvedSection {
-	~Handle_GeomFill_EvolvedSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_EvolvedSection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -927,10 +1155,18 @@ class Handle_GeomFill_DraftTrihedron : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_DraftTrihedron*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_DraftTrihedron::~Handle_GeomFill_DraftTrihedron %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_DraftTrihedron {
-	~Handle_GeomFill_DraftTrihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_DraftTrihedron\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -957,10 +1193,18 @@ class Handle_GeomFill_Fixed : public Handle_GeomFill_TrihedronLaw {
 	return (GeomFill_Fixed*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_Fixed::~Handle_GeomFill_Fixed %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_Fixed {
-	~Handle_GeomFill_Fixed() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Fixed\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -987,10 +1231,18 @@ class Handle_GeomFill_SweepFunction : public Handle_Approx_SweepFunction {
 	return (GeomFill_SweepFunction*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_SweepFunction::~Handle_GeomFill_SweepFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_SweepFunction {
-	~Handle_GeomFill_SweepFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SweepFunction\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1017,10 +1269,18 @@ class Handle_GeomFill_LocationGuide : public Handle_GeomFill_LocationLaw {
 	return (GeomFill_LocationGuide*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GeomFill_LocationGuide::~Handle_GeomFill_LocationGuide %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GeomFill_LocationGuide {
-	~Handle_GeomFill_LocationGuide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_LocationGuide\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1052,10 +1312,18 @@ class GeomFill_TgtField : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_TgtField::~GeomFill_TgtField %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_TgtField {
-	~GeomFill_TgtField() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_TgtField\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1085,10 +1353,18 @@ class GeomFill_TgtOnCoons : public GeomFill_TgtField {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_TgtOnCoons::~GeomFill_TgtOnCoons %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_TgtOnCoons {
-	~GeomFill_TgtOnCoons() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_TgtOnCoons\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1114,7 +1390,7 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetInterval() -> [Standard_Real, Standard_Real]");
 		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
@@ -1136,10 +1412,18 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_TrihedronLaw::~GeomFill_TrihedronLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_TrihedronLaw {
-	~GeomFill_TrihedronLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_TrihedronLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1163,10 +1447,18 @@ class GeomFill_Frenet : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_Frenet::~GeomFill_Frenet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Frenet {
-	~GeomFill_Frenet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Frenet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1200,10 +1492,18 @@ class GeomFill_Profiler {
 		const Handle_Geom_Curve & Curve(const Standard_Integer Index) const;
 
 };
+%feature("shadow") GeomFill_Profiler::~GeomFill_Profiler %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Profiler {
-	~GeomFill_Profiler() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Profiler\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1217,10 +1517,18 @@ class GeomFill_Generator : public GeomFill_Profiler {
 		const Handle_Geom_Surface & Surface() const;
 
 };
+%feature("shadow") GeomFill_Generator::~GeomFill_Generator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Generator {
-	~GeomFill_Generator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Generator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1256,10 +1564,18 @@ class GeomFill_SectionPlacement {
 		Handle_Geom_Curve ModifiedSection(const Standard_Boolean WithTranslation) const;
 
 };
+%feature("shadow") GeomFill_SectionPlacement::~GeomFill_SectionPlacement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_SectionPlacement {
-	~GeomFill_SectionPlacement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SectionPlacement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1281,7 +1597,7 @@ class GeomFill_Boundary : public MMgt_TShared {
 		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
 		%feature("autodoc", "1");
 		void Points(gp_Pnt & PFirst, gp_Pnt & PLast) const;
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDegenerated() const;
@@ -1307,10 +1623,18 @@ class GeomFill_Boundary : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_Boundary::~GeomFill_Boundary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Boundary {
-	~GeomFill_Boundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Boundary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1332,10 +1656,18 @@ class GeomFill_DegeneratedBound : public GeomFill_Boundary {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_DegeneratedBound::~GeomFill_DegeneratedBound %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_DegeneratedBound {
-	~GeomFill_DegeneratedBound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_DegeneratedBound\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1377,10 +1709,18 @@ class GeomFill_Darboux : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_Darboux::~GeomFill_Darboux %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Darboux {
-	~GeomFill_Darboux() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Darboux\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1420,10 +1760,18 @@ class GeomFill_Array1OfSectionLaw {
 		Handle_GeomFill_SectionLaw & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") GeomFill_Array1OfSectionLaw::~GeomFill_Array1OfSectionLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Array1OfSectionLaw {
-	~GeomFill_Array1OfSectionLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Array1OfSectionLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1477,10 +1825,18 @@ class GeomFill_SequenceOfCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") GeomFill_SequenceOfCurve::~GeomFill_SequenceOfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_SequenceOfCurve {
-	~GeomFill_SequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceOfCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1522,10 +1878,18 @@ class GeomFill_CoonsAlgPatch : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_CoonsAlgPatch::~GeomFill_CoonsAlgPatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_CoonsAlgPatch {
-	~GeomFill_CoonsAlgPatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CoonsAlgPatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1555,10 +1919,18 @@ class GeomFill_FunctionDraft : public math_FunctionSetWithDerivatives {
 		Standard_Boolean Deriv2X(const math_Vector &X, GeomFill_Tensor & T);
 
 };
+%feature("shadow") GeomFill_FunctionDraft::~GeomFill_FunctionDraft %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_FunctionDraft {
-	~GeomFill_FunctionDraft() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_FunctionDraft\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1598,11 +1970,11 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetInterval() -> [Standard_Real, Standard_Real]");
 		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","GetDomain()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetDomain() -> [Standard_Real, Standard_Real]");
 		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol) -> [Standard_RealStandard_Real]");
 		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void SetTolerance(const Standard_Real Tol3d, const Standard_Real Tol2d);
@@ -1610,9 +1982,9 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 		virtual		Standard_Real GetMaximalNorm();
 		%feature("autodoc", "1");
 		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
-		%feature("autodoc","IsTranslation()->Standard_Real");
+		%feature("autodoc","IsTranslation() -> Standard_Real");
 		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
-		%feature("autodoc","IsRotation()->Standard_Real");
+		%feature("autodoc","IsRotation() -> Standard_Real");
 		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Rotation(gp_Pnt & Center) const;
@@ -1630,10 +2002,18 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_LocationLaw::~GeomFill_LocationLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_LocationLaw {
-	~GeomFill_LocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_LocationLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1663,10 +2043,18 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_LocationDraft::~GeomFill_LocationDraft %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_LocationDraft {
-	~GeomFill_LocationDraft() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_LocationDraft\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1688,10 +2076,18 @@ class GeomFill_Filling {
 		void Weights(TColStd_Array2OfReal & Weights) const;
 
 };
+%feature("shadow") GeomFill_Filling::~GeomFill_Filling %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Filling {
-	~GeomFill_Filling() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Filling\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1717,10 +2113,18 @@ class GeomFill_TrihedronWithGuide : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_TrihedronWithGuide::~GeomFill_TrihedronWithGuide %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_TrihedronWithGuide {
-	~GeomFill_TrihedronWithGuide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_TrihedronWithGuide\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1766,10 +2170,18 @@ class GeomFill_GuideTrihedronAC : public GeomFill_TrihedronWithGuide {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_GuideTrihedronAC::~GeomFill_GuideTrihedronAC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_GuideTrihedronAC {
-	~GeomFill_GuideTrihedronAC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_GuideTrihedronAC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1807,10 +2219,18 @@ class GeomFill_SnglrFunc : public Adaptor3d_Curve {
 		virtual		GeomAbs_CurveType GetType() const;
 
 };
+%feature("shadow") GeomFill_SnglrFunc::~GeomFill_SnglrFunc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_SnglrFunc {
-	~GeomFill_SnglrFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SnglrFunc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1832,10 +2252,18 @@ class GeomFill_PolynomialConvertor {
 		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Vec &D2FirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, const gp_Vec &Dir, const gp_Vec &DDir, const gp_Vec &D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles) const;
 
 };
+%feature("shadow") GeomFill_PolynomialConvertor::~GeomFill_PolynomialConvertor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_PolynomialConvertor {
-	~GeomFill_PolynomialConvertor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_PolynomialConvertor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1853,7 +2281,7 @@ class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 		virtual		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Nb2dCurves() const;
-		%feature("autodoc","SectionShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","SectionShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -1891,10 +2319,18 @@ class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_CircularBlendFunc::~GeomFill_CircularBlendFunc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_CircularBlendFunc {
-	~GeomFill_CircularBlendFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CircularBlendFunc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1910,7 +2346,7 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 		virtual		Standard_Boolean D2(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineSurface BSplineSurface() const;
-		%feature("autodoc","SectionShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","SectionShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -1928,9 +2364,9 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetInterval() -> [Standard_Real, Standard_Real]");
 		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","GetDomain()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetDomain() -> [Standard_Real, Standard_Real]");
 		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
@@ -1942,11 +2378,11 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 		virtual		Standard_Real MaximalSection() const;
 		%feature("autodoc", "1");
 		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc","IsConstant()->Standard_Real");
+		%feature("autodoc","IsConstant() -> Standard_Real");
 		virtual		Standard_Boolean IsConstant(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Curve ConstantSection() const;
-		%feature("autodoc","IsConicalLaw()->Standard_Real");
+		%feature("autodoc","IsConicalLaw() -> Standard_Real");
 		virtual		Standard_Boolean IsConicalLaw(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Curve CirclSection(const Standard_Real Param) const;
@@ -1964,10 +2400,18 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_SectionLaw::~GeomFill_SectionLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_SectionLaw {
-	~GeomFill_SectionLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SectionLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2011,10 +2455,18 @@ class GeomFill_HArray1OfLocationLaw : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_HArray1OfLocationLaw::~GeomFill_HArray1OfLocationLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_HArray1OfLocationLaw {
-	~GeomFill_HArray1OfLocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_HArray1OfLocationLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2032,7 +2484,7 @@ class GeomFill {
 		Standard_Boolean GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &dn1w, const gp_Vec &dn2w, const gp_Vec &nplan, const gp_Vec &dnplan, const gp_Pnt &pts1, const gp_Pnt &pts2, const gp_Vec &tang1, const gp_Vec &tang2, const Standard_Real Rayon, const Standard_Real DRayon, const gp_Pnt &Center, const gp_Vec &DCenter, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 		%feature("autodoc", "1");
 		Standard_Boolean GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &dn1w, const gp_Vec &dn2w, const gp_Vec &d2n1w, const gp_Vec &d2n2w, const gp_Vec &nplan, const gp_Vec &dnplan, const gp_Vec &d2nplan, const gp_Pnt &pts1, const gp_Pnt &pts2, const gp_Vec &tang1, const gp_Vec &tang2, const gp_Vec &Dtang1, const gp_Vec &Dtang2, const Standard_Real Rayon, const Standard_Real DRayon, const Standard_Real D2Rayon, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-		%feature("autodoc","GetShape(Standard_Real MaxAng)->[Standard_Integer, Standard_IntegerStandard_Integer]");
+		%feature("autodoc","GetShape(Standard_Real MaxAng) -> [Standard_Integer, Standard_IntegerStandard_Integer]");
 		void GetShape(const Standard_Real MaxAng, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Convert_ParameterisationType & TypeConv);
 		%feature("autodoc", "1");
 		void Knots(const Convert_ParameterisationType TypeConv, TColStd_Array1OfReal & TKnots);
@@ -2044,10 +2496,18 @@ class GeomFill {
 		Standard_Real GetTolerance(const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real Radius, const Standard_Real AngularTol, const Standard_Real SpatialTol);
 
 };
+%feature("shadow") GeomFill::~GeomFill %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill {
-	~GeomFill() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2079,17 +2539,17 @@ class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetInterval() -> [Standard_Real, Standard_Real]");
 		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","GetDomain()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetDomain() -> [Standard_Real, Standard_Real]");
 		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real GetMaximalNorm();
 		%feature("autodoc", "1");
 		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
-		%feature("autodoc","IsTranslation()->Standard_Real");
+		%feature("autodoc","IsTranslation() -> Standard_Real");
 		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
-		%feature("autodoc","IsRotation()->Standard_Real");
+		%feature("autodoc","IsRotation() -> Standard_Real");
 		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Rotation(gp_Pnt & Center) const;
@@ -2107,10 +2567,18 @@ class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_CurveAndTrihedron::~GeomFill_CurveAndTrihedron %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_CurveAndTrihedron {
-	~GeomFill_CurveAndTrihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CurveAndTrihedron\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2136,10 +2604,18 @@ class GeomFill_SequenceNodeOfSequenceOfTrsf : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_SequenceNodeOfSequenceOfTrsf::~GeomFill_SequenceNodeOfSequenceOfTrsf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_SequenceNodeOfSequenceOfTrsf {
-	~GeomFill_SequenceNodeOfSequenceOfTrsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceNodeOfSequenceOfTrsf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2157,7 +2633,7 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 		virtual		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Nb2dCurves() const;
-		%feature("autodoc","SectionShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","SectionShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -2171,7 +2647,7 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol) -> [Standard_RealStandard_Real]");
 		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
@@ -2197,10 +2673,18 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_SweepFunction::~GeomFill_SweepFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_SweepFunction {
-	~GeomFill_SweepFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SweepFunction\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2222,7 +2706,7 @@ class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 		virtual		void D1Norm(const Standard_Real U, gp_Vec & N, gp_Vec & DN) const;
 		%feature("autodoc", "1");
 		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDegenerated() const;
@@ -2240,10 +2724,18 @@ class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_BoundWithSurf::~GeomFill_BoundWithSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_BoundWithSurf {
-	~GeomFill_BoundWithSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_BoundWithSurf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2259,14 +2751,22 @@ class GeomFill_LocFunction {
 		Standard_Boolean D1(const Standard_Real Param, const Standard_Real First, const Standard_Real Last);
 		%feature("autodoc", "1");
 		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","DN(Standard_Real Param, Standard_Real First, Standard_Real Last, Standard_Integer Order)->[Standard_RealStandard_Integer]");
+		%feature("autodoc","DN(Standard_Real Param, Standard_Real First, Standard_Real Last, Standard_Integer Order) -> [Standard_RealStandard_Integer]");
 		void DN(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, const Standard_Integer Order, Standard_Real &OutValue, Standard_Integer &OutValue);
 
 };
+%feature("shadow") GeomFill_LocFunction::~GeomFill_LocFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_LocFunction {
-	~GeomFill_LocFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_LocFunction\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2320,10 +2820,18 @@ class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") GeomFill_SequenceOfTrsf::~GeomFill_SequenceOfTrsf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_SequenceOfTrsf {
-	~GeomFill_SequenceOfTrsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceOfTrsf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2335,7 +2843,7 @@ class GeomFill_SectionGenerator : public GeomFill_Profiler {
 		GeomFill_SectionGenerator();
 		%feature("autodoc", "1");
 		void SetParam(const Handle_TColStd_HArray1OfReal &Params);
-		%feature("autodoc","GetShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -2349,10 +2857,18 @@ class GeomFill_SectionGenerator : public GeomFill_Profiler {
 		Standard_Real Parameter(const Standard_Integer P) const;
 
 };
+%feature("shadow") GeomFill_SectionGenerator::~GeomFill_SectionGenerator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_SectionGenerator {
-	~GeomFill_SectionGenerator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SectionGenerator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2404,10 +2920,18 @@ class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_GuideTrihedronPlan::~GeomFill_GuideTrihedronPlan %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_GuideTrihedronPlan {
-	~GeomFill_GuideTrihedronPlan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_GuideTrihedronPlan\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2427,7 +2951,7 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 		void Perform(const Handle_GeomFill_Line &Lin, GeomFill_SectionGenerator & SecGen, const Standard_Integer NbMaxP);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
-		%feature("autodoc","SurfShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","SurfShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
@@ -2449,7 +2973,7 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 		virtual		const TColStd_Array1OfInteger & SurfVMults() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbCurves2d() const;
-		%feature("autodoc","Curves2dShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Curves2dShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
@@ -2461,16 +2985,24 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 		virtual		const TColStd_Array1OfReal & Curves2dKnots() const;
 		%feature("autodoc", "1");
 		virtual		const TColStd_Array1OfInteger & Curves2dMults() const;
-		%feature("autodoc","TolReached()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","TolReached() -> [Standard_Real, Standard_Real]");
 		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
 
 };
+%feature("shadow") GeomFill_AppSurf::~GeomFill_AppSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_AppSurf {
-	~GeomFill_AppSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_AppSurf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2486,18 +3018,36 @@ class GeomFill_Tensor {
 		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) const;
 		%feature("autodoc", "1");
 		const Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) {
+				return (Standard_Real) $self->ChangeValue(Row,Col,Mat);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) {
+				$self->ChangeValue(Row,Col,Mat)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat);
 		%feature("autodoc", "1");
 		void Multiply(const math_Vector &Right, math_Matrix & Product) const;
 
 };
+%feature("shadow") GeomFill_Tensor::~GeomFill_Tensor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Tensor {
-	~GeomFill_Tensor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Tensor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2523,10 +3073,18 @@ class GeomFill_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_SequenceNodeOfSequenceOfCurve::~GeomFill_SequenceNodeOfSequenceOfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_SequenceNodeOfSequenceOfCurve {
-	~GeomFill_SequenceNodeOfSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceNodeOfSequenceOfCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2548,7 +3106,7 @@ class GeomFill_ConstrainedFilling {
 		Handle_GeomFill_Boundary Boundary(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineSurface Surface() const;
-		%feature("autodoc","Eval(Standard_Real W, Standard_Integer Ord)->Standard_Real");
+		%feature("autodoc","Eval(Standard_Real W, Standard_Integer Ord) -> Standard_Real");
 		Standard_Integer Eval(const Standard_Real W, const Standard_Integer Ord, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void CheckCoonsAlgPatch(const Standard_Integer I);
@@ -2560,10 +3118,18 @@ class GeomFill_ConstrainedFilling {
 		void CheckResult(const Standard_Integer I);
 
 };
+%feature("shadow") GeomFill_ConstrainedFilling::~GeomFill_ConstrainedFilling %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_ConstrainedFilling {
-	~GeomFill_ConstrainedFilling() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_ConstrainedFilling\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2581,7 +3147,7 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 		virtual		Standard_Boolean D2(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineSurface BSplineSurface() const;
-		%feature("autodoc","SectionShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","SectionShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -2599,9 +3165,9 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetInterval() -> [Standard_Real, Standard_Real]");
 		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","GetDomain()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetDomain() -> [Standard_Real, Standard_Real]");
 		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
@@ -2611,7 +3177,7 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 		virtual		Standard_Real MaximalSection() const;
 		%feature("autodoc", "1");
 		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc","IsConstant()->Standard_Real");
+		%feature("autodoc","IsConstant() -> Standard_Real");
 		virtual		Standard_Boolean IsConstant(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Curve ConstantSection() const;
@@ -2629,10 +3195,18 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_UniformSection::~GeomFill_UniformSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_UniformSection {
-	~GeomFill_UniformSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_UniformSection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2652,10 +3226,18 @@ class GeomFill_Stretch : public GeomFill_Filling {
 		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
 
 };
+%feature("shadow") GeomFill_Stretch::~GeomFill_Stretch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Stretch {
-	~GeomFill_Stretch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Stretch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2665,24 +3247,32 @@ class GeomFill_PlanFunc : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
 		GeomFill_PlanFunc(const gp_Pnt &P, const gp_Vec &V, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","D2(Standard_Real X) -> [Standard_Real, Standard_RealStandard_Real]");
 		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","DEDT(Standard_Real X, const DP, const DV)->Standard_Real");
+		%feature("autodoc","DEDT(Standard_Real X, const DP, const DV) -> Standard_Real");
 		void DEDT(const Standard_Real X, const gp_Vec &DP, const gp_Vec &DV, Standard_Real &OutValue);
-		%feature("autodoc","D2E(Standard_Real X, const DP, const D2P, const DV, const D2V)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","D2E(Standard_Real X, const DP, const D2P, const DV, const D2V) -> [Standard_RealStandard_RealStandard_Real]");
 		void D2E(const Standard_Real X, const gp_Vec &DP, const gp_Vec &D2P, const gp_Vec &DV, const gp_Vec &D2V, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%feature("shadow") GeomFill_PlanFunc::~GeomFill_PlanFunc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_PlanFunc {
-	~GeomFill_PlanFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_PlanFunc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2698,7 +3288,7 @@ class GeomFill_SimpleBound : public GeomFill_Boundary {
 		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
 		%feature("autodoc", "1");
 		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDegenerated() const;
@@ -2716,10 +3306,18 @@ class GeomFill_SimpleBound : public GeomFill_Boundary {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_SimpleBound::~GeomFill_SimpleBound %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_SimpleBound {
-	~GeomFill_SimpleBound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_SimpleBound\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2745,10 +3343,18 @@ class GeomFill_BSplineCurves {
 		const Handle_Geom_BSplineSurface & Surface() const;
 
 };
+%feature("shadow") GeomFill_BSplineCurves::~GeomFill_BSplineCurves %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_BSplineCurves {
-	~GeomFill_BSplineCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_BSplineCurves\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2774,16 +3380,24 @@ class GeomFill_CornerState {
 		Standard_Real NorAng() const;
 		%feature("autodoc", "1");
 		void NorAng(const Standard_Real Ang);
-		%feature("autodoc","IsToKill()->Standard_Real");
+		%feature("autodoc","IsToKill() -> Standard_Real");
 		Standard_Boolean IsToKill(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void DoKill(const Standard_Real Scal);
 
 };
+%feature("shadow") GeomFill_CornerState::~GeomFill_CornerState %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_CornerState {
-	~GeomFill_CornerState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CornerState\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2805,10 +3419,18 @@ class GeomFill_QuasiAngularConvertor {
 		void Section(const gp_Pnt &FirstPnt, const gp_Vec &DFirstPnt, const gp_Vec &D2FirstPnt, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, const gp_Vec &Dir, const gp_Vec &DDir, const gp_Vec &D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights, TColStd_Array1OfReal & D2Weights);
 
 };
+%feature("shadow") GeomFill_QuasiAngularConvertor::~GeomFill_QuasiAngularConvertor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_QuasiAngularConvertor {
-	~GeomFill_QuasiAngularConvertor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_QuasiAngularConvertor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2834,9 +3456,9 @@ class GeomFill_Sweep {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Real ErrorOnSurface() const;
-		%feature("autodoc","ErrorOnRestriction(Standard_Boolean IsFirst)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ErrorOnRestriction(Standard_Boolean IsFirst) -> [Standard_RealStandard_Real]");
 		void ErrorOnRestriction(const Standard_Boolean IsFirst, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ErrorOnTrace(Standard_Integer IndexOfTrace)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ErrorOnTrace(Standard_Integer IndexOfTrace) -> [Standard_RealStandard_Real]");
 		void ErrorOnTrace(const Standard_Integer IndexOfTrace, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Geom_Surface Surface() const;
@@ -2848,10 +3470,18 @@ class GeomFill_Sweep {
 		Handle_Geom2d_Curve Trace(const Standard_Integer IndexOfTrace) const;
 
 };
+%feature("shadow") GeomFill_Sweep::~GeomFill_Sweep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Sweep {
-	~GeomFill_Sweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Sweep\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2895,10 +3525,18 @@ class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_ConstantBiNormal::~GeomFill_ConstantBiNormal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_ConstantBiNormal {
-	~GeomFill_ConstantBiNormal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_ConstantBiNormal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2942,10 +3580,18 @@ class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_HArray1OfSectionLaw::~GeomFill_HArray1OfSectionLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_HArray1OfSectionLaw {
-	~GeomFill_HArray1OfSectionLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_HArray1OfSectionLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2965,7 +3611,7 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 		void Perform(const Handle_GeomFill_Line &Lin, GeomFill_SweepSectionGenerator & SecGen, const Standard_Integer NbMaxP);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
-		%feature("autodoc","SurfShape()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","SurfShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
@@ -2987,7 +3633,7 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 		virtual		const TColStd_Array1OfInteger & SurfVMults() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbCurves2d() const;
-		%feature("autodoc","Curves2dShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Curves2dShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
@@ -2999,16 +3645,24 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 		virtual		const TColStd_Array1OfReal & Curves2dKnots() const;
 		%feature("autodoc", "1");
 		virtual		const TColStd_Array1OfInteger & Curves2dMults() const;
-		%feature("autodoc","TolReached()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","TolReached() -> [Standard_Real, Standard_Real]");
 		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
 
 };
+%feature("shadow") GeomFill_AppSweep::~GeomFill_AppSweep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_AppSweep {
-	~GeomFill_AppSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_AppSweep\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3026,7 +3680,7 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 		virtual		Standard_Boolean D2(const Standard_Real Param, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineSurface BSplineSurface() const;
-		%feature("autodoc","SectionShape()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","SectionShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -3044,9 +3698,9 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetInterval() -> [Standard_Real, Standard_Real]");
 		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","GetDomain()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetDomain() -> [Standard_Real, Standard_Real]");
 		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
@@ -3056,7 +3710,7 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 		virtual		Standard_Real MaximalSection() const;
 		%feature("autodoc", "1");
 		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc","IsConstant()->Standard_Real");
+		%feature("autodoc","IsConstant() -> Standard_Real");
 		virtual		Standard_Boolean IsConstant(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Curve ConstantSection() const;
@@ -3074,10 +3728,18 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_EvolvedSection::~GeomFill_EvolvedSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_EvolvedSection {
-	~GeomFill_EvolvedSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_EvolvedSection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3121,10 +3783,18 @@ class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_DraftTrihedron::~GeomFill_DraftTrihedron %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_DraftTrihedron {
-	~GeomFill_DraftTrihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_DraftTrihedron\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3144,10 +3814,18 @@ class GeomFill_Coons : public GeomFill_Filling {
 		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
 
 };
+%feature("shadow") GeomFill_Coons::~GeomFill_Coons %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Coons {
-	~GeomFill_Coons() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Coons\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3173,10 +3851,18 @@ class GeomFill_BezierCurves {
 		const Handle_Geom_BezierSurface & Surface() const;
 
 };
+%feature("shadow") GeomFill_BezierCurves::~GeomFill_BezierCurves %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_BezierCurves {
-	~GeomFill_BezierCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_BezierCurves\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3206,10 +3892,18 @@ class GeomFill_Line : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_Line::~GeomFill_Line %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Line {
-	~GeomFill_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Line\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3249,10 +3943,18 @@ class GeomFill_Fixed : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_Fixed::~GeomFill_Fixed %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Fixed {
-	~GeomFill_Fixed() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Fixed\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3312,10 +4014,18 @@ class GeomFill_Pipe {
 		Standard_Real ErrorOnSurf() const;
 
 };
+%feature("shadow") GeomFill_Pipe::~GeomFill_Pipe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Pipe {
-	~GeomFill_Pipe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Pipe\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3361,10 +4071,18 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_CorrectedFrenet::~GeomFill_CorrectedFrenet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_CorrectedFrenet {
-	~GeomFill_CorrectedFrenet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_CorrectedFrenet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3400,10 +4118,18 @@ class GeomFill_Curved : public GeomFill_Filling {
 		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
 
 };
+%feature("shadow") GeomFill_Curved::~GeomFill_Curved %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Curved {
-	~GeomFill_Curved() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Curved\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3443,10 +4169,18 @@ class GeomFill_Array1OfLocationLaw {
 		Handle_GeomFill_LocationLaw & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") GeomFill_Array1OfLocationLaw::~GeomFill_Array1OfLocationLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_Array1OfLocationLaw {
-	~GeomFill_Array1OfLocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_Array1OfLocationLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3456,7 +4190,7 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 	public:
 		%feature("autodoc", "1");
 		GeomFill_LocationGuide(const Handle_GeomFill_TrihedronWithGuide &Triedre);
-		%feature("autodoc","Set(const Section, Standard_Boolean rotat, Standard_Real SFirst, Standard_Real SLast, Standard_Real PrecAngle)->Standard_Real");
+		%feature("autodoc","Set(const Section, Standard_Boolean rotat, Standard_Real SFirst, Standard_Real SLast, Standard_Real PrecAngle) -> Standard_Real");
 		void Set(const Handle_GeomFill_SectionLaw &Section, const Standard_Boolean rotat, const Standard_Real SFirst, const Standard_Real SLast, const Standard_Real PrecAngle, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void EraseRotation();
@@ -3490,21 +4224,21 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","GetInterval()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetInterval() -> [Standard_Real, Standard_Real]");
 		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","GetDomain()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetDomain() -> [Standard_Real, Standard_Real]");
 		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void SetTolerance(const Standard_Real Tol3d, const Standard_Real Tol2d);
-		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol) -> [Standard_RealStandard_Real]");
 		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real GetMaximalNorm();
 		%feature("autodoc", "1");
 		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
-		%feature("autodoc","IsTranslation()->Standard_Real");
+		%feature("autodoc","IsTranslation() -> Standard_Real");
 		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
-		%feature("autodoc","IsRotation()->Standard_Real");
+		%feature("autodoc","IsRotation() -> Standard_Real");
 		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Rotation(gp_Pnt & Center) const;
@@ -3528,9 +4262,17 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GeomFill_LocationGuide::~GeomFill_LocationGuide %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomFill_LocationGuide {
-	~GeomFill_LocationGuide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomFill_LocationGuide\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

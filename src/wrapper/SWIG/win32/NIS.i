@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include NIS_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_NIS_InteractiveObject : public Handle_Standard_Transient {
 	return (NIS_InteractiveObject*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NIS_InteractiveObject::~Handle_NIS_InteractiveObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NIS_InteractiveObject {
-	~Handle_NIS_InteractiveObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NIS_InteractiveObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_NIS_Triangulated : public Handle_NIS_InteractiveObject {
 	return (NIS_Triangulated*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NIS_Triangulated::~Handle_NIS_Triangulated %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NIS_Triangulated {
-	~Handle_NIS_Triangulated() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NIS_Triangulated\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_NIS_SelectFilter : public Handle_Standard_Transient {
 	return (NIS_SelectFilter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NIS_SelectFilter::~Handle_NIS_SelectFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NIS_SelectFilter {
-	~Handle_NIS_SelectFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NIS_SelectFilter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_NIS_Drawer : public Handle_Standard_Transient {
 	return (NIS_Drawer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NIS_Drawer::~Handle_NIS_Drawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NIS_Drawer {
-	~Handle_NIS_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NIS_Drawer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_NIS_TriangulatedDrawer : public Handle_NIS_Drawer {
 	return (NIS_TriangulatedDrawer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NIS_TriangulatedDrawer::~Handle_NIS_TriangulatedDrawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NIS_TriangulatedDrawer {
-	~Handle_NIS_TriangulatedDrawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NIS_TriangulatedDrawer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_NIS_InteractiveContext : public Handle_Standard_Transient {
 	return (NIS_InteractiveContext*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NIS_InteractiveContext::~Handle_NIS_InteractiveContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NIS_InteractiveContext {
-	~Handle_NIS_InteractiveContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NIS_InteractiveContext\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_NIS_Surface : public Handle_NIS_InteractiveObject {
 	return (NIS_Surface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NIS_Surface::~Handle_NIS_Surface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NIS_Surface {
-	~Handle_NIS_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NIS_Surface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_NIS_SurfaceDrawer : public Handle_NIS_Drawer {
 	return (NIS_SurfaceDrawer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NIS_SurfaceDrawer::~Handle_NIS_SurfaceDrawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NIS_SurfaceDrawer {
-	~Handle_NIS_SurfaceDrawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NIS_SurfaceDrawer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_NIS_View : public Handle_V3d_OrthographicView {
 	return (NIS_View*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NIS_View::~Handle_NIS_View %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NIS_View {
-	~Handle_NIS_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NIS_View\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -358,10 +434,18 @@ class NIS_InteractiveObject : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NIS_InteractiveObject::~NIS_InteractiveObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NIS_InteractiveObject {
-	~NIS_InteractiveObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NIS_InteractiveObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -443,10 +527,18 @@ class NIS_Triangulated : public NIS_InteractiveObject {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NIS_Triangulated::~NIS_Triangulated %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NIS_Triangulated {
-	~NIS_Triangulated() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NIS_Triangulated\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -478,10 +570,18 @@ class NIS_DrawList {
 		Standard_Boolean SetDynHilighted(const Standard_Boolean isHilight, const Handle_NIS_InteractiveObject &theObj);
 
 };
+%feature("shadow") NIS_DrawList::~NIS_DrawList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NIS_DrawList {
-	~NIS_DrawList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NIS_DrawList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -489,6 +589,12 @@ class NIS_DrawList {
 %nodefaultctor NIS_Drawer;
 class NIS_Drawer : public Standard_Transient {
 	public:
+		enum DrawType {
+			Draw_Normal,
+			Draw_Transparent,
+			Draw_Hilighted,
+			Draw_DynHilighted,
+		};
 		%feature("autodoc", "1");
 		NIS_InteractiveContext * GetContext() const;
 		%feature("autodoc", "1");
@@ -523,10 +629,18 @@ class NIS_Drawer : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NIS_Drawer::~NIS_Drawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NIS_Drawer {
-	~NIS_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NIS_Drawer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -566,10 +680,18 @@ class NIS_SurfaceDrawer : public NIS_Drawer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NIS_SurfaceDrawer::~NIS_SurfaceDrawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NIS_SurfaceDrawer {
-	~NIS_SurfaceDrawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NIS_SurfaceDrawer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -577,6 +699,12 @@ class NIS_SurfaceDrawer : public NIS_Drawer {
 %nodefaultctor NIS_InteractiveContext;
 class NIS_InteractiveContext : public Standard_Transient {
 	public:
+		enum SelectionMode {
+			Mode_NoSelection,
+			Mode_Normal,
+			Mode_Additive,
+			Mode_Exclusive,
+		};
 		%feature("autodoc", "1");
 		NIS_InteractiveContext();
 		%feature("autodoc", "1");
@@ -647,10 +775,18 @@ class NIS_InteractiveContext : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NIS_InteractiveContext::~NIS_InteractiveContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NIS_InteractiveContext {
-	~NIS_InteractiveContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NIS_InteractiveContext\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -700,10 +836,18 @@ class NIS_Surface : public NIS_InteractiveObject {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NIS_Surface::~NIS_Surface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NIS_Surface {
-	~NIS_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NIS_Surface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -725,10 +869,18 @@ class NIS_ObjectsIterator {
 		void Next();
 
 };
+%feature("shadow") NIS_ObjectsIterator::~NIS_ObjectsIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NIS_ObjectsIterator {
-	~NIS_ObjectsIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NIS_ObjectsIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -754,10 +906,18 @@ class NIS_SelectFilter : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NIS_SelectFilter::~NIS_SelectFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NIS_SelectFilter {
-	~NIS_SelectFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NIS_SelectFilter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -795,10 +955,18 @@ class NIS_View : public V3d_OrthographicView {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NIS_View::~NIS_View %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NIS_View {
-	~NIS_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NIS_View\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -832,9 +1000,17 @@ class NIS_TriangulatedDrawer : public NIS_Drawer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NIS_TriangulatedDrawer::~NIS_TriangulatedDrawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NIS_TriangulatedDrawer {
-	~NIS_TriangulatedDrawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NIS_TriangulatedDrawer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

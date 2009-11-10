@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepTopAdaptor_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_BRepTopAdaptor_TopolTool : public Handle_Adaptor3d_TopolTool {
 	return (BRepTopAdaptor_TopolTool*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepTopAdaptor_TopolTool::~Handle_BRepTopAdaptor_TopolTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepTopAdaptor_TopolTool {
-	~Handle_BRepTopAdaptor_TopolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepTopAdaptor_TopolTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_BRepTopAdaptor_HVertex : public Handle_Adaptor3d_HVertex {
 	return (BRepTopAdaptor_HVertex*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepTopAdaptor_HVertex::~Handle_BRepTopAdaptor_HVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepTopAdaptor_HVertex {
-	~Handle_BRepTopAdaptor_HVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepTopAdaptor_HVertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollect
 	return (BRepTopAdaptor_DataMapNodeOfMapOfShapeTool*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool::~Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
-	~Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public Handle_TCollection_S
 	return (BRepTopAdaptor_SequenceNodeOfSeqOfPtr*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr::~Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
-	~Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -184,10 +220,18 @@ class BRepTopAdaptor_MapOfShapeTool : public TCollection_BasicMap {
 		BRepTopAdaptor_Tool & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") BRepTopAdaptor_MapOfShapeTool::~BRepTopAdaptor_MapOfShapeTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTopAdaptor_MapOfShapeTool {
-	~BRepTopAdaptor_MapOfShapeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_MapOfShapeTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -225,10 +269,18 @@ class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepTopAdaptor_HVertex::~BRepTopAdaptor_HVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTopAdaptor_HVertex {
-	~BRepTopAdaptor_HVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_HVertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -248,10 +300,18 @@ class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicM
 		const BRepTopAdaptor_Tool & Value() const;
 
 };
+%feature("shadow") BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool::~BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool {
-	~BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -275,10 +335,18 @@ class BRepTopAdaptor_FClass2d {
 		TopAbs_State TestOnRestriction(const gp_Pnt2d &Puv, const Standard_Real Tol, const Standard_Boolean RecadreOnPeriodic=1) const;
 
 };
+%feature("shadow") BRepTopAdaptor_FClass2d::~BRepTopAdaptor_FClass2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTopAdaptor_FClass2d {
-	~BRepTopAdaptor_FClass2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_FClass2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -358,10 +426,18 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepTopAdaptor_TopolTool::~BRepTopAdaptor_TopolTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTopAdaptor_TopolTool {
-	~BRepTopAdaptor_TopolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_TopolTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -415,10 +491,18 @@ class BRepTopAdaptor_SeqOfPtr : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") BRepTopAdaptor_SeqOfPtr::~BRepTopAdaptor_SeqOfPtr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTopAdaptor_SeqOfPtr {
-	~BRepTopAdaptor_SeqOfPtr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_SeqOfPtr\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -446,10 +530,18 @@ class BRepTopAdaptor_Tool {
 		void Destroy();
 
 };
+%feature("shadow") BRepTopAdaptor_Tool::~BRepTopAdaptor_Tool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTopAdaptor_Tool {
-	~BRepTopAdaptor_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_Tool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -475,10 +567,18 @@ class BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepTopAdaptor_SequenceNodeOfSeqOfPtr::~BRepTopAdaptor_SequenceNodeOfSeqOfPtr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
-	~BRepTopAdaptor_SequenceNodeOfSeqOfPtr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -506,9 +606,17 @@ class BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepTopAdaptor_DataMapNodeOfMapOfShapeTool::~BRepTopAdaptor_DataMapNodeOfMapOfShapeTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
-	~BRepTopAdaptor_DataMapNodeOfMapOfShapeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_DataMapNodeOfMapOfShapeTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

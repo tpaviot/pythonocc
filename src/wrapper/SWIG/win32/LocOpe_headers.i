@@ -176,7 +176,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopOpeBRepDS_reDEB.hxx>
 #include<TopOpeBRepDS_repvg.hxx>
 #include<TopOpeBRepDS_samdom.hxx>
-#include<TopOpeBRepDS_tools.hxx>
 #include<TopOpeBRepDS_traceDSX.hxx>
 #include<TopOpeBRepTool.hxx>
 #include<TopOpeBRepTool_2d.hxx>

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Geom2dConvert_dependencies.i
 
 
@@ -60,10 +64,18 @@ class Geom2dConvert {
 		void C0BSplineToArrayOfC1BSplineCurve(const Handle_Geom2d_BSplineCurve &BS, Handle_TColGeom2d_HArray1OfBSplineCurve & tabBS, const Standard_Real AngularTolerance, const Standard_Real Tolerance);
 
 };
+%feature("shadow") Geom2dConvert::~Geom2dConvert %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dConvert {
-	~Geom2dConvert() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dConvert\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -81,10 +93,18 @@ class Geom2dConvert_BSplineCurveKnotSplitting {
 		Standard_Integer SplitValue(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Geom2dConvert_BSplineCurveKnotSplitting::~Geom2dConvert_BSplineCurveKnotSplitting %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dConvert_BSplineCurveKnotSplitting {
-	~Geom2dConvert_BSplineCurveKnotSplitting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_BSplineCurveKnotSplitting\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -106,10 +126,18 @@ class Geom2dConvert_BSplineCurveToBezierCurve {
 		Standard_Integer NbArcs() const;
 
 };
+%feature("shadow") Geom2dConvert_BSplineCurveToBezierCurve::~Geom2dConvert_BSplineCurveToBezierCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dConvert_BSplineCurveToBezierCurve {
-	~Geom2dConvert_BSplineCurveToBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_BSplineCurveToBezierCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -125,10 +153,18 @@ class Geom2dConvert_CompCurveToBSplineCurve {
 		Handle_Geom2d_BSplineCurve BSplineCurve() const;
 
 };
+%feature("shadow") Geom2dConvert_CompCurveToBSplineCurve::~Geom2dConvert_CompCurveToBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dConvert_CompCurveToBSplineCurve {
-	~Geom2dConvert_CompCurveToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_CompCurveToBSplineCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -156,9 +192,17 @@ class Geom2dConvert_ApproxCurve {
 		};
 
 };
+%feature("shadow") Geom2dConvert_ApproxCurve::~Geom2dConvert_ApproxCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dConvert_ApproxCurve {
-	~Geom2dConvert_ApproxCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_ApproxCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

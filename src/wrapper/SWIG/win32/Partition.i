@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Partition_dependencies.i
 
 
@@ -56,10 +60,18 @@ class Partition_Spliter {
 		void Clear();
 
 };
+%feature("shadow") Partition_Spliter::~Partition_Spliter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Partition_Spliter {
-	~Partition_Spliter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Spliter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -85,10 +97,18 @@ class Partition_Loop2d {
 		const TopTools_ListOfShape & NewFaces() const;
 
 };
+%feature("shadow") Partition_Loop2d::~Partition_Loop2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Partition_Loop2d {
-	~Partition_Loop2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Loop2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -100,7 +120,7 @@ class Partition_Inter2d {
 		Partition_Inter2d();
 		%feature("autodoc", "1");
 		void CompletPart2d(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges);
-		%feature("autodoc","FindEndVertex(const VertList, Standard_Real f, Standard_Real l, const E)->Standard_Real");
+		%feature("autodoc","FindEndVertex(const VertList, Standard_Real f, Standard_Real l, const E) -> Standard_Real");
 		TopoDS_Vertex FindEndVertex(const TopTools_ListOfShape &VertList, const Standard_Real f, const Standard_Real l, const TopoDS_Edge &E, Standard_Boolean & First, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		TopoDS_Vertex AddVonE(const TopoDS_Vertex &V, const TopoDS_Edge &E1, const TopoDS_Edge &E2, const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F);
@@ -108,10 +128,18 @@ class Partition_Inter2d {
 		Standard_Real GetTolerance(const TopoDS_Vertex &theV, const Standard_Real theU, const TopoDS_Edge &theE, const Handle_BRepAlgo_AsDes &theAsDes);
 
 };
+%feature("shadow") Partition_Inter2d::~Partition_Inter2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Partition_Inter2d {
-	~Partition_Inter2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Inter2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -135,10 +163,18 @@ class Partition_Loop {
 		const TopTools_ListOfShape & NewFaces() const;
 
 };
+%feature("shadow") Partition_Loop::~Partition_Loop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Partition_Loop {
-	~Partition_Loop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Loop\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -182,10 +218,18 @@ class Partition_Inter3d {
 		const TopTools_ListOfShape & SectionEdgeFaces(const TopoDS_Edge &SecE) const;
 
 };
+%feature("shadow") Partition_Inter3d::~Partition_Inter3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Partition_Inter3d {
-	~Partition_Inter3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Inter3d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -201,15 +245,23 @@ class Partition_Loop3d {
 		void AddSectionFaces(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & MakeShells(const TopTools_MapOfOrientedShape &AvoidFacesMap);
-		%feature("autodoc","IsInside(const E, const F1, const F2, Standard_Boolean CountDot)->Standard_Real");
+		%feature("autodoc","IsInside(const E, const F1, const F2, Standard_Boolean CountDot) -> Standard_Real");
 		Standard_Boolean IsInside(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const Standard_Boolean CountDot, Standard_Real &OutValue, Standard_Boolean & GoodOri);
 		%feature("autodoc", "1");
 		gp_Vec Normal(const TopoDS_Edge &E, const TopoDS_Face &F);
 
 };
+%feature("shadow") Partition_Loop3d::~Partition_Loop3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Partition_Loop3d {
-	~Partition_Loop3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Partition_Loop3d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

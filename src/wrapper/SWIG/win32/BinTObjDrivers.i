@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BinTObjDrivers_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_BinTObjDrivers_ModelDriver : public Handle_BinMDF_ADriver {
 	return (BinTObjDrivers_ModelDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinTObjDrivers_ModelDriver::~Handle_BinTObjDrivers_ModelDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinTObjDrivers_ModelDriver {
-	~Handle_BinTObjDrivers_ModelDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_ModelDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_BinTObjDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_
 	return (BinTObjDrivers_DocumentRetrievalDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinTObjDrivers_DocumentRetrievalDriver::~Handle_BinTObjDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinTObjDrivers_DocumentRetrievalDriver {
-	~Handle_BinTObjDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_DocumentRetrievalDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_BinTObjDrivers_ObjectDriver : public Handle_BinMDF_ADriver {
 	return (BinTObjDrivers_ObjectDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinTObjDrivers_ObjectDriver::~Handle_BinTObjDrivers_ObjectDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinTObjDrivers_ObjectDriver {
-	~Handle_BinTObjDrivers_ObjectDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_ObjectDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_BinTObjDrivers_IntSparseArrayDriver : public Handle_BinMDF_ADriver 
 	return (BinTObjDrivers_IntSparseArrayDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinTObjDrivers_IntSparseArrayDriver::~Handle_BinTObjDrivers_IntSparseArrayDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinTObjDrivers_IntSparseArrayDriver {
-	~Handle_BinTObjDrivers_IntSparseArrayDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_IntSparseArrayDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_BinTObjDrivers_ReferenceDriver : public Handle_BinMDF_ADriver {
 	return (BinTObjDrivers_ReferenceDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinTObjDrivers_ReferenceDriver::~Handle_BinTObjDrivers_ReferenceDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinTObjDrivers_ReferenceDriver {
-	~Handle_BinTObjDrivers_ReferenceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_ReferenceDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_BinTObjDrivers_XYZDriver : public Handle_BinMDF_ADriver {
 	return (BinTObjDrivers_XYZDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinTObjDrivers_XYZDriver::~Handle_BinTObjDrivers_XYZDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinTObjDrivers_XYZDriver {
-	~Handle_BinTObjDrivers_XYZDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_XYZDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_BinTObjDrivers_DocumentStorageDriver : public Handle_BinLDrivers_Do
 	return (BinTObjDrivers_DocumentStorageDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinTObjDrivers_DocumentStorageDriver::~Handle_BinTObjDrivers_DocumentStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinTObjDrivers_DocumentStorageDriver {
-	~Handle_BinTObjDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_DocumentStorageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -270,10 +330,18 @@ class BinTObjDrivers_ObjectDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinTObjDrivers_ObjectDriver::~BinTObjDrivers_ObjectDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTObjDrivers_ObjectDriver {
-	~BinTObjDrivers_ObjectDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_ObjectDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -303,10 +371,18 @@ class BinTObjDrivers_ReferenceDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinTObjDrivers_ReferenceDriver::~BinTObjDrivers_ReferenceDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTObjDrivers_ReferenceDriver {
-	~BinTObjDrivers_ReferenceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_ReferenceDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -332,10 +408,18 @@ class BinTObjDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrie
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinTObjDrivers_DocumentRetrievalDriver::~BinTObjDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTObjDrivers_DocumentRetrievalDriver {
-	~BinTObjDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_DocumentRetrievalDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -351,10 +435,18 @@ class BinTObjDrivers {
 		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
 };
+%feature("shadow") BinTObjDrivers::~BinTObjDrivers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTObjDrivers {
-	~BinTObjDrivers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -380,10 +472,18 @@ class BinTObjDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageD
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinTObjDrivers_DocumentStorageDriver::~BinTObjDrivers_DocumentStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTObjDrivers_DocumentStorageDriver {
-	~BinTObjDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_DocumentStorageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -413,10 +513,18 @@ class BinTObjDrivers_XYZDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinTObjDrivers_XYZDriver::~BinTObjDrivers_XYZDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTObjDrivers_XYZDriver {
-	~BinTObjDrivers_XYZDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_XYZDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -446,10 +554,18 @@ class BinTObjDrivers_IntSparseArrayDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinTObjDrivers_IntSparseArrayDriver::~BinTObjDrivers_IntSparseArrayDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTObjDrivers_IntSparseArrayDriver {
-	~BinTObjDrivers_IntSparseArrayDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_IntSparseArrayDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -479,9 +595,17 @@ class BinTObjDrivers_ModelDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinTObjDrivers_ModelDriver::~BinTObjDrivers_ModelDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTObjDrivers_ModelDriver {
-	~BinTObjDrivers_ModelDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_ModelDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

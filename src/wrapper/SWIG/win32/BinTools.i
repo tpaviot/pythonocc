@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BinTools_dependencies.i
 
 
@@ -67,10 +71,18 @@ class BinTools_LocationSet {
 		};
 
 };
+%feature("shadow") BinTools_LocationSet::~BinTools_LocationSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTools_LocationSet {
-	~BinTools_LocationSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTools_LocationSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -88,9 +100,9 @@ class BinTools {
 		Standard_OStream & PutBool(Standard_OStream & OS, const Standard_Boolean theValue);
 		%feature("autodoc", "1");
 		Standard_OStream & PutExtChar(Standard_OStream & OS, const Standard_ExtCharacter theValue);
-		%feature("autodoc","GetReal()->Standard_Real");
+		%feature("autodoc","GetReal() -> Standard_Real");
 		std::istream & GetReal(std::istream & IS, Standard_Real &OutValue);
-		%feature("autodoc","GetInteger()->Standard_Integer");
+		%feature("autodoc","GetInteger() -> Standard_Integer");
 		std::istream & GetInteger(std::istream & IS, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		std::istream & GetBool(std::istream & IS, Standard_Boolean & theValue);
@@ -98,10 +110,18 @@ class BinTools {
 		std::istream & GetExtChar(std::istream & IS, Standard_ExtCharacter & theValue);
 
 };
+%feature("shadow") BinTools::~BinTools %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTools {
-	~BinTools() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTools\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -220,10 +240,18 @@ class BinTools_ShapeSet {
 		};
 
 };
+%feature("shadow") BinTools_ShapeSet::~BinTools_ShapeSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTools_ShapeSet {
-	~BinTools_ShapeSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTools_ShapeSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -262,10 +290,18 @@ class BinTools_Curve2dSet {
 		std::istream & ReadCurve2d(std::istream & IS, Handle_Geom2d_Curve & C);
 
 };
+%feature("shadow") BinTools_Curve2dSet::~BinTools_Curve2dSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTools_Curve2dSet {
-	~BinTools_Curve2dSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTools_Curve2dSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -304,10 +340,18 @@ class BinTools_SurfaceSet {
 		std::istream & ReadSurface(std::istream & IS, Handle_Geom_Surface & S);
 
 };
+%feature("shadow") BinTools_SurfaceSet::~BinTools_SurfaceSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTools_SurfaceSet {
-	~BinTools_SurfaceSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTools_SurfaceSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -346,9 +390,17 @@ class BinTools_CurveSet {
 		std::istream & ReadCurve(std::istream & IS, Handle_Geom_Curve & C);
 
 };
+%feature("shadow") BinTools_CurveSet::~BinTools_CurveSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinTools_CurveSet {
-	~BinTools_CurveSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinTools_CurveSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

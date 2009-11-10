@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GProp_dependencies.i
 
 
@@ -79,10 +83,18 @@ class Handle_GProp_UndefinedAxis : public Handle_Standard_DomainError {
 	return (GProp_UndefinedAxis*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GProp_UndefinedAxis::~Handle_GProp_UndefinedAxis %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GProp_UndefinedAxis {
-	~Handle_GProp_UndefinedAxis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GProp_UndefinedAxis\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -102,7 +114,7 @@ class GProp_GProps {
 		gp_Pnt CentreOfMass() const;
 		%feature("autodoc", "1");
 		gp_Mat MatrixOfInertia() const;
-		%feature("autodoc","StaticMoments()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","StaticMoments() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void StaticMoments(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real MomentOfInertia(const gp_Ax1 &A) const;
@@ -112,10 +124,18 @@ class GProp_GProps {
 		Standard_Real RadiusOfGyration(const gp_Ax1 &A) const;
 
 };
+%feature("shadow") GProp_GProps::~GProp_GProps %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GProp_GProps {
-	~GProp_GProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GProp_GProps\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -141,16 +161,24 @@ class GProp_PGProps : public GProp_GProps {
 		gp_Pnt Barycentre(const TColgp_Array1OfPnt &Pnts);
 		%feature("autodoc", "1");
 		gp_Pnt Barycentre(const TColgp_Array2OfPnt &Pnts);
-		%feature("autodoc","Barycentre(const Pnts, const Density)->Standard_Real");
+		%feature("autodoc","Barycentre(const Pnts, const Density) -> Standard_Real");
 		void Barycentre(const TColgp_Array1OfPnt &Pnts, const TColStd_Array1OfReal &Density, Standard_Real &OutValue, gp_Pnt & G);
-		%feature("autodoc","Barycentre(const Pnts, const Density)->Standard_Real");
+		%feature("autodoc","Barycentre(const Pnts, const Density) -> Standard_Real");
 		void Barycentre(const TColgp_Array2OfPnt &Pnts, const TColStd_Array2OfReal &Density, Standard_Real &OutValue, gp_Pnt & G);
 
 };
+%feature("shadow") GProp_PGProps::~GProp_PGProps %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GProp_PGProps {
-	~GProp_PGProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GProp_PGProps\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -168,7 +196,7 @@ class GProp_PrincipalProps {
 		Standard_Boolean HasSymmetryPoint() const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasSymmetryPoint(const Standard_Real aTol) const;
-		%feature("autodoc","Moments()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Moments() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Moments(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const gp_Vec & FirstAxisOfInertia() const;
@@ -176,14 +204,22 @@ class GProp_PrincipalProps {
 		const gp_Vec & SecondAxisOfInertia() const;
 		%feature("autodoc", "1");
 		const gp_Vec & ThirdAxisOfInertia() const;
-		%feature("autodoc","RadiusOfGyration()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","RadiusOfGyration() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void RadiusOfGyration(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%feature("shadow") GProp_PrincipalProps::~GProp_PrincipalProps %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GProp_PrincipalProps {
-	~GProp_PrincipalProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GProp_PrincipalProps\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -215,10 +251,18 @@ class GProp_UndefinedAxis : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GProp_UndefinedAxis::~GProp_UndefinedAxis %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GProp_UndefinedAxis {
-	~GProp_UndefinedAxis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GProp_UndefinedAxis\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -248,10 +292,18 @@ class GProp_SelGProps : public GProp_GProps {
 		void Perform(const gp_Torus &S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2);
 
 };
+%feature("shadow") GProp_SelGProps::~GProp_SelGProps %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GProp_SelGProps {
-	~GProp_SelGProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GProp_SelGProps\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -275,10 +327,18 @@ class GProp_CelGProps : public GProp_GProps {
 		void Perform(const gp_Lin &C, const Standard_Real U1, const Standard_Real U2);
 
 };
+%feature("shadow") GProp_CelGProps::~GProp_CelGProps %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GProp_CelGProps {
-	~GProp_CelGProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GProp_CelGProps\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -308,10 +368,18 @@ class GProp_VelGProps : public GProp_GProps {
 		void Perform(const gp_Torus &S, const Standard_Real Teta1, const Standard_Real Teta2, const Standard_Real Alpha1, const Standard_Real Alpha2);
 
 };
+%feature("shadow") GProp_VelGProps::~GProp_VelGProps %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GProp_VelGProps {
-	~GProp_VelGProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GProp_VelGProps\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -325,10 +393,18 @@ class GProp {
 		void HOperator(const gp_Pnt &G, const gp_Pnt &Q, const Standard_Real Mass, gp_Mat & Operator);
 
 };
+%feature("shadow") GProp::~GProp %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GProp {
-	~GProp() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GProp\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -356,9 +432,17 @@ class GProp_PEquation {
 		void Box(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
 
 };
+%feature("shadow") GProp_PEquation::~GProp_PEquation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GProp_PEquation {
-	~GProp_PEquation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GProp_PEquation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

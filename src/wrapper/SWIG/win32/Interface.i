@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Interface_dependencies.i
 
 
@@ -91,10 +95,18 @@ class Handle_Interface_EntityCluster : public Handle_MMgt_TShared {
 	return (Interface_EntityCluster*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_EntityCluster::~Handle_Interface_EntityCluster %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_EntityCluster {
-	~Handle_Interface_EntityCluster() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_EntityCluster\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -121,10 +133,18 @@ class Handle_Interface_ReportEntity : public Handle_MMgt_TShared {
 	return (Interface_ReportEntity*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_ReportEntity::~Handle_Interface_ReportEntity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_ReportEntity {
-	~Handle_Interface_ReportEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_ReportEntity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -151,10 +171,18 @@ class Handle_Interface_GeneralModule : public Handle_MMgt_TShared {
 	return (Interface_GeneralModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_GeneralModule::~Handle_Interface_GeneralModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_GeneralModule {
-	~Handle_Interface_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GeneralModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -181,10 +209,18 @@ class Handle_Interface_GlobalNodeOfReaderLib : public Handle_Standard_Transient 
 	return (Interface_GlobalNodeOfReaderLib*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_GlobalNodeOfReaderLib::~Handle_Interface_GlobalNodeOfReaderLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_GlobalNodeOfReaderLib {
-	~Handle_Interface_GlobalNodeOfReaderLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GlobalNodeOfReaderLib\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -211,10 +247,18 @@ class Handle_Interface_ParamSet : public Handle_MMgt_TShared {
 	return (Interface_ParamSet*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_ParamSet::~Handle_Interface_ParamSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_ParamSet {
-	~Handle_Interface_ParamSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_ParamSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -241,10 +285,18 @@ class Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient : public Handle_TC
 	return (Interface_DataMapNodeOfDataMapOfIntegerTransient*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient::~Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient {
-	~Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -271,10 +323,18 @@ class Handle_Interface_InterfaceError : public Handle_Standard_Failure {
 	return (Interface_InterfaceError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_InterfaceError::~Handle_Interface_InterfaceError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_InterfaceError {
-	~Handle_Interface_InterfaceError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -301,10 +361,18 @@ class Handle_Interface_CheckFailure : public Handle_Interface_InterfaceError {
 	return (Interface_CheckFailure*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_CheckFailure::~Handle_Interface_CheckFailure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_CheckFailure {
-	~Handle_Interface_CheckFailure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_CheckFailure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -331,10 +399,18 @@ class Handle_Interface_HArray1OfHAsciiString : public Handle_MMgt_TShared {
 	return (Interface_HArray1OfHAsciiString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_HArray1OfHAsciiString::~Handle_Interface_HArray1OfHAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_HArray1OfHAsciiString {
-	~Handle_Interface_HArray1OfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_HArray1OfHAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -361,10 +437,18 @@ class Handle_Interface_Check : public Handle_MMgt_TShared {
 	return (Interface_Check*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_Check::~Handle_Interface_Check %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_Check {
-	~Handle_Interface_Check() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_Check\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -391,10 +475,18 @@ class Handle_Interface_SignType : public Handle_MoniTool_SignText {
 	return (Interface_SignType*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_SignType::~Handle_Interface_SignType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_SignType {
-	~Handle_Interface_SignType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_SignType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -421,10 +513,18 @@ class Handle_Interface_SignLabel : public Handle_MoniTool_SignText {
 	return (Interface_SignLabel*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_SignLabel::~Handle_Interface_SignLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_SignLabel {
-	~Handle_Interface_SignLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_SignLabel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -451,10 +551,18 @@ class Handle_Interface_CopyControl : public Handle_MMgt_TShared {
 	return (Interface_CopyControl*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_CopyControl::~Handle_Interface_CopyControl %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_CopyControl {
-	~Handle_Interface_CopyControl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_CopyControl\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -481,10 +589,18 @@ class Handle_Interface_NodeOfGeneralLib : public Handle_MMgt_TShared {
 	return (Interface_NodeOfGeneralLib*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_NodeOfGeneralLib::~Handle_Interface_NodeOfGeneralLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_NodeOfGeneralLib {
-	~Handle_Interface_NodeOfGeneralLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_NodeOfGeneralLib\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -511,10 +627,18 @@ class Handle_Interface_NodeOfReaderLib : public Handle_MMgt_TShared {
 	return (Interface_NodeOfReaderLib*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_NodeOfReaderLib::~Handle_Interface_NodeOfReaderLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_NodeOfReaderLib {
-	~Handle_Interface_NodeOfReaderLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_NodeOfReaderLib\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -541,10 +665,18 @@ class Handle_Interface_UndefinedContent : public Handle_MMgt_TShared {
 	return (Interface_UndefinedContent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_UndefinedContent::~Handle_Interface_UndefinedContent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_UndefinedContent {
-	~Handle_Interface_UndefinedContent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_UndefinedContent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -571,10 +703,18 @@ class Handle_Interface_TypedValue : public Handle_MoniTool_TypedValue {
 	return (Interface_TypedValue*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_TypedValue::~Handle_Interface_TypedValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_TypedValue {
-	~Handle_Interface_TypedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_TypedValue\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -601,10 +741,18 @@ class Handle_Interface_CopyMap : public Handle_Interface_CopyControl {
 	return (Interface_CopyMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_CopyMap::~Handle_Interface_CopyMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_CopyMap {
-	~Handle_Interface_CopyMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_CopyMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -631,10 +779,18 @@ class Handle_Interface_ReaderModule : public Handle_MMgt_TShared {
 	return (Interface_ReaderModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_ReaderModule::~Handle_Interface_ReaderModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_ReaderModule {
-	~Handle_Interface_ReaderModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_ReaderModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -661,10 +817,18 @@ class Handle_Interface_GTool : public Handle_MMgt_TShared {
 	return (Interface_GTool*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_GTool::~Handle_Interface_GTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_GTool {
-	~Handle_Interface_GTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -691,10 +855,18 @@ class Handle_Interface_InterfaceModel : public Handle_MMgt_TShared {
 	return (Interface_InterfaceModel*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_InterfaceModel::~Handle_Interface_InterfaceModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_InterfaceModel {
-	~Handle_Interface_InterfaceModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceModel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -721,10 +893,18 @@ class Handle_Interface_ParamList : public Handle_MMgt_TShared {
 	return (Interface_ParamList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_ParamList::~Handle_Interface_ParamList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_ParamList {
-	~Handle_Interface_ParamList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_ParamList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -751,10 +931,18 @@ class Handle_Interface_SequenceNodeOfSequenceOfCheck : public Handle_TCollection
 	return (Interface_SequenceNodeOfSequenceOfCheck*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_SequenceNodeOfSequenceOfCheck::~Handle_Interface_SequenceNodeOfSequenceOfCheck %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_SequenceNodeOfSequenceOfCheck {
-	~Handle_Interface_SequenceNodeOfSequenceOfCheck() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_SequenceNodeOfSequenceOfCheck\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -781,10 +969,18 @@ class Handle_Interface_Static : public Handle_Interface_TypedValue {
 	return (Interface_Static*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_Static::~Handle_Interface_Static %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_Static {
-	~Handle_Interface_Static() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_Static\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -811,10 +1007,18 @@ class Handle_Interface_FileReaderData : public Handle_MMgt_TShared {
 	return (Interface_FileReaderData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_FileReaderData::~Handle_Interface_FileReaderData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_FileReaderData {
-	~Handle_Interface_FileReaderData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_FileReaderData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -841,10 +1045,18 @@ class Handle_Interface_IntVal : public Handle_MMgt_TShared {
 	return (Interface_IntVal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_IntVal::~Handle_Interface_IntVal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_IntVal {
-	~Handle_Interface_IntVal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_IntVal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -871,10 +1083,18 @@ class Handle_Interface_GlobalNodeOfGeneralLib : public Handle_Standard_Transient
 	return (Interface_GlobalNodeOfGeneralLib*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_GlobalNodeOfGeneralLib::~Handle_Interface_GlobalNodeOfGeneralLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_GlobalNodeOfGeneralLib {
-	~Handle_Interface_GlobalNodeOfGeneralLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GlobalNodeOfGeneralLib\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -901,10 +1121,18 @@ class Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public Handle_T
 	return (Interface_IndexedMapNodeOfIndexedMapOfAsciiString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString::~Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
-	~Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -931,10 +1159,18 @@ class Handle_Interface_InterfaceMismatch : public Handle_Interface_InterfaceErro
 	return (Interface_InterfaceMismatch*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_InterfaceMismatch::~Handle_Interface_InterfaceMismatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_InterfaceMismatch {
-	~Handle_Interface_InterfaceMismatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceMismatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -961,10 +1197,18 @@ class Handle_Interface_HSequenceOfCheck : public Handle_MMgt_TShared {
 	return (Interface_HSequenceOfCheck*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_HSequenceOfCheck::~Handle_Interface_HSequenceOfCheck %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_HSequenceOfCheck {
-	~Handle_Interface_HSequenceOfCheck() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_HSequenceOfCheck\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -991,10 +1235,18 @@ class Handle_Interface_Protocol : public Handle_MMgt_TShared {
 	return (Interface_Protocol*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_Protocol::~Handle_Interface_Protocol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_Protocol {
-	~Handle_Interface_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_Protocol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1021,10 +1273,18 @@ class Handle_Interface_HGraph : public Handle_MMgt_TShared {
 	return (Interface_HGraph*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_HGraph::~Handle_Interface_HGraph %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_HGraph {
-	~Handle_Interface_HGraph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_HGraph\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1051,10 +1311,18 @@ class Handle_Interface_DataMapNodeOfDataMapOfTransientInteger : public Handle_TC
 	return (Interface_DataMapNodeOfDataMapOfTransientInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Interface_DataMapNodeOfDataMapOfTransientInteger::~Handle_Interface_DataMapNodeOfDataMapOfTransientInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Interface_DataMapNodeOfDataMapOfTransientInteger {
-	~Handle_Interface_DataMapNodeOfDataMapOfTransientInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Interface_DataMapNodeOfDataMapOfTransientInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1086,10 +1354,18 @@ class Interface_GlobalNodeOfReaderLib : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_GlobalNodeOfReaderLib::~Interface_GlobalNodeOfReaderLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_GlobalNodeOfReaderLib {
-	~Interface_GlobalNodeOfReaderLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_GlobalNodeOfReaderLib\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1109,7 +1385,7 @@ class Interface_ReaderLib {
 		void Clear();
 		%feature("autodoc", "1");
 		void SetComplete();
-		%feature("autodoc","Select(const obj)->Standard_Integer");
+		%feature("autodoc","Select(const obj) -> Standard_Integer");
 		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_Interface_ReaderModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
@@ -1123,10 +1399,18 @@ class Interface_ReaderLib {
 		const Handle_Interface_Protocol & Protocol() const;
 
 };
+%feature("shadow") Interface_ReaderLib::~Interface_ReaderLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_ReaderLib {
-	~Interface_ReaderLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_ReaderLib\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1154,10 +1438,18 @@ class Interface_ReaderModule : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_ReaderModule::~Interface_ReaderModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_ReaderModule {
-	~Interface_ReaderModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_ReaderModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1209,10 +1501,18 @@ class Interface_GeneralModule : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_GeneralModule::~Interface_GeneralModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_GeneralModule {
-	~Interface_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_GeneralModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1284,10 +1584,18 @@ class Interface_FileReaderData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_FileReaderData::~Interface_FileReaderData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_FileReaderData {
-	~Interface_FileReaderData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_FileReaderData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1355,10 +1663,18 @@ class Interface_HSequenceOfCheck : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_HSequenceOfCheck::~Interface_HSequenceOfCheck %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_HSequenceOfCheck {
-	~Interface_HSequenceOfCheck() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_HSequenceOfCheck\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1398,10 +1714,18 @@ class Interface_EntityIterator {
 		virtual		void Destroy();
 
 };
+%feature("shadow") Interface_EntityIterator::~Interface_EntityIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_EntityIterator {
-	~Interface_EntityIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_EntityIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1429,10 +1753,18 @@ class Interface_GraphContent : public Interface_EntityIterator {
 		virtual		void Evaluate();
 
 };
+%feature("shadow") Interface_GraphContent::~Interface_GraphContent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_GraphContent {
-	~Interface_GraphContent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_GraphContent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1474,10 +1806,18 @@ class Interface_ParamList : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_ParamList::~Interface_ParamList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_ParamList {
-	~Interface_ParamList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_ParamList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1497,10 +1837,18 @@ class Interface_DataMapIteratorOfDataMapOfTransientInteger : public TCollection_
 		const Standard_Integer & Value() const;
 
 };
+%feature("shadow") Interface_DataMapIteratorOfDataMapOfTransientInteger::~Interface_DataMapIteratorOfDataMapOfTransientInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_DataMapIteratorOfDataMapOfTransientInteger {
-	~Interface_DataMapIteratorOfDataMapOfTransientInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfTransientInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1520,10 +1868,18 @@ class Interface_DataMapIteratorOfDataMapOfIntegerTransient : public TCollection_
 		const Handle_Standard_Transient & Value() const;
 
 };
+%feature("shadow") Interface_DataMapIteratorOfDataMapOfIntegerTransient::~Interface_DataMapIteratorOfDataMapOfIntegerTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_DataMapIteratorOfDataMapOfIntegerTransient {
-	~Interface_DataMapIteratorOfDataMapOfIntegerTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfIntegerTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1555,10 +1911,18 @@ class Interface_GlobalNodeOfGeneralLib : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_GlobalNodeOfGeneralLib::~Interface_GlobalNodeOfGeneralLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_GlobalNodeOfGeneralLib {
-	~Interface_GlobalNodeOfGeneralLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_GlobalNodeOfGeneralLib\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1606,10 +1970,18 @@ class Interface_CopyTool {
 		virtual		void Destroy();
 
 };
+%feature("shadow") Interface_CopyTool::~Interface_CopyTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_CopyTool {
-	~Interface_CopyTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_CopyTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1639,10 +2011,18 @@ class Interface_ShareFlags {
 		Handle_Standard_Transient Root(const Standard_Integer num=1) const;
 
 };
+%feature("shadow") Interface_ShareFlags::~Interface_ShareFlags %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_ShareFlags {
-	~Interface_ShareFlags() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_ShareFlags\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1674,10 +2054,18 @@ class Interface_InterfaceError : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_InterfaceError::~Interface_InterfaceError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_InterfaceError {
-	~Interface_InterfaceError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_InterfaceError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1703,10 +2091,18 @@ class Interface_InterfaceMismatch : public Interface_InterfaceError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_InterfaceMismatch::~Interface_InterfaceMismatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_InterfaceMismatch {
-	~Interface_InterfaceMismatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_InterfaceMismatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1734,10 +2130,18 @@ class Interface_CopyControl : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_CopyControl::~Interface_CopyControl %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_CopyControl {
-	~Interface_CopyControl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_CopyControl\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1773,10 +2177,18 @@ class Interface_EntityList {
 		Handle_Standard_Transient TypedEntity(const Handle_Standard_Type &atype, const Standard_Integer num=0) const;
 
 };
+%feature("shadow") Interface_EntityList::~Interface_EntityList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_EntityList {
-	~Interface_EntityList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_EntityList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1816,10 +2228,18 @@ class Interface_Array1OfFileParameter {
 		Interface_FileParameter & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Interface_Array1OfFileParameter::~Interface_Array1OfFileParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_Array1OfFileParameter {
-	~Interface_Array1OfFileParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_Array1OfFileParameter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1831,8 +2251,18 @@ class Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public TCollection_Map
 		Interface_IndexedMapNodeOfIndexedMapOfAsciiString(const TCollection_AsciiString &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TCollection_AsciiString & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -1849,10 +2279,18 @@ class Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public TCollection_Map
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_IndexedMapNodeOfIndexedMapOfAsciiString::~Interface_IndexedMapNodeOfIndexedMapOfAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
-	~Interface_IndexedMapNodeOfIndexedMapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_IndexedMapNodeOfIndexedMapOfAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1884,10 +2322,18 @@ class Interface_CopyMap : public Interface_CopyControl {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_CopyMap::~Interface_CopyMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_CopyMap {
-	~Interface_CopyMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_CopyMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1921,10 +2367,18 @@ class Interface_DataMapOfIntegerTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & operator()(const Standard_Integer &K);
 
 };
+%feature("shadow") Interface_DataMapOfIntegerTransient::~Interface_DataMapOfIntegerTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_DataMapOfIntegerTransient {
-	~Interface_DataMapOfIntegerTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_DataMapOfIntegerTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1942,22 +2396,30 @@ class Interface_FloatWriter {
 		void SetZeroSuppress(const Standard_Boolean mode);
 		%feature("autodoc", "1");
 		void SetDefaults(const Standard_Integer chars=0);
-		%feature("autodoc","Options()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Options() -> [Standard_Real, Standard_Real]");
 		void Options(Standard_Boolean & zerosup, Standard_Boolean & range, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_CString MainFormat() const;
+		char * MainFormat() const;
 		%feature("autodoc", "1");
-		Standard_CString FormatForRange() const;
+		char * FormatForRange() const;
 		%feature("autodoc", "1");
 		Standard_Integer Write(const Standard_Real val, const char * text) const;
 		%feature("autodoc", "1");
 		Standard_Integer Convert(const Standard_Real val, const char * text, const Standard_Boolean zerosup, const Standard_Real Range1, const Standard_Real Range2, const char * mainform, const char * rangeform);
 
 };
+%feature("shadow") Interface_FloatWriter::~Interface_FloatWriter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_FloatWriter {
-	~Interface_FloatWriter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_FloatWriter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1977,7 +2439,7 @@ class Interface_GeneralLib {
 		void Clear();
 		%feature("autodoc", "1");
 		void SetComplete();
-		%feature("autodoc","Select(const obj)->Standard_Integer");
+		%feature("autodoc","Select(const obj) -> Standard_Integer");
 		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_Interface_GeneralModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
@@ -1991,10 +2453,18 @@ class Interface_GeneralLib {
 		const Handle_Interface_Protocol & Protocol() const;
 
 };
+%feature("shadow") Interface_GeneralLib::~Interface_GeneralLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_GeneralLib {
-	~Interface_GeneralLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_GeneralLib\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2034,10 +2504,18 @@ class Interface_Array1OfHAsciiString {
 		Handle_TCollection_HAsciiString & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Interface_Array1OfHAsciiString::~Interface_Array1OfHAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_Array1OfHAsciiString {
-	~Interface_Array1OfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_Array1OfHAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2081,10 +2559,18 @@ class Interface_ShareTool {
 		void Print(const Interface_EntityIterator &iter, const Handle_Message_Messenger &S) const;
 
 };
+%feature("shadow") Interface_ShareTool::~Interface_ShareTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_ShareTool {
-	~Interface_ShareTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_ShareTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2114,10 +2600,18 @@ class Interface_TypedValue : public MoniTool_TypedValue {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_TypedValue::~Interface_TypedValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_TypedValue {
-	~Interface_TypedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_TypedValue\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2132,7 +2626,7 @@ class Interface_Static : public Interface_TypedValue {
 		%feature("autodoc", "1");
 		void PrintStatic(const Handle_Message_Messenger &S) const;
 		%feature("autodoc", "1");
-		Standard_CString Family() const;
+		char * Family() const;
 		%feature("autodoc", "1");
 		void SetWild(const Handle_Interface_Static &wildcard);
 		%feature("autodoc", "1");
@@ -2189,10 +2683,18 @@ class Interface_Static : public Interface_TypedValue {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_Static::~Interface_Static %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_Static {
-	~Interface_Static() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_Static\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2204,8 +2706,18 @@ class Interface_IntVal : public MMgt_TShared {
 		Interface_IntVal();
 		%feature("autodoc", "1");
 		Standard_Integer Value() const;
-		%feature("autodoc", "1");
-		Standard_Integer & CValue();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetCValue() {
+				return (Standard_Integer) $self->CValue();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetCValue(Standard_Integer value ) {
+				$self->CValue()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2220,10 +2732,18 @@ class Interface_IntVal : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_IntVal::~Interface_IntVal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_IntVal {
-	~Interface_IntVal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_IntVal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2255,10 +2775,18 @@ class Interface_NodeOfGeneralLib : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_NodeOfGeneralLib::~Interface_NodeOfGeneralLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_NodeOfGeneralLib {
-	~Interface_NodeOfGeneralLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_NodeOfGeneralLib\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2314,10 +2842,18 @@ class Interface_UndefinedContent : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_UndefinedContent::~Interface_UndefinedContent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_UndefinedContent {
-	~Interface_UndefinedContent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_UndefinedContent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2333,7 +2869,7 @@ class Interface_IntList {
 		Interface_IntList(const Interface_IntList &other, const Standard_Boolean copied);
 		%feature("autodoc", "1");
 		void Initialize(const Standard_Integer nbe);
-		%feature("autodoc","Internals()->Standard_Integer");
+		%feature("autodoc","Internals() -> Standard_Integer");
 		void Internals(Standard_Integer &OutValue, Handle_TColStd_HArray1OfInteger & ents, Handle_TColStd_HArray1OfInteger & refs) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbEntities() const;
@@ -2365,10 +2901,18 @@ class Interface_IntList {
 		void AdjustSize(const Standard_Integer margin=0);
 
 };
+%feature("shadow") Interface_IntList::~Interface_IntList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_IntList {
-	~Interface_IntList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_IntList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2394,10 +2938,18 @@ class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_SequenceNodeOfSequenceOfCheck::~Interface_SequenceNodeOfSequenceOfCheck %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_SequenceNodeOfSequenceOfCheck {
-	~Interface_SequenceNodeOfSequenceOfCheck() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_SequenceNodeOfSequenceOfCheck\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2409,7 +2961,7 @@ class Interface_BitMap {
 		Interface_BitMap(const Standard_Integer nbitems, const Standard_Integer resflags=0);
 		%feature("autodoc", "1");
 		Interface_BitMap(const Interface_BitMap &other, const Standard_Boolean copied=0);
-		%feature("autodoc","Internals()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Internals() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		void Internals(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Handle_TColStd_HArray1OfInteger & flags, Handle_TColStd_HSequenceOfAsciiString & names) const;
 		%feature("autodoc", "1");
 		void Reservate(const Standard_Integer moreflags);
@@ -2447,10 +2999,18 @@ class Interface_BitMap {
 		void Init(const Standard_Boolean val, const Standard_Integer flag=0) const;
 
 };
+%feature("shadow") Interface_BitMap::~Interface_BitMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_BitMap {
-	~Interface_BitMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_BitMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2486,10 +3046,18 @@ class Interface_HGraph : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_HGraph::~Interface_HGraph %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_HGraph {
-	~Interface_HGraph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_HGraph\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2543,10 +3111,18 @@ class Interface_FileReaderTool {
 		virtual		void EndRead(const Handle_Interface_InterfaceModel &amodel);
 
 };
+%feature("shadow") Interface_FileReaderTool::~Interface_FileReaderTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_FileReaderTool {
-	~Interface_FileReaderTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_FileReaderTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2586,10 +3162,18 @@ class Interface_CheckTool {
 		Interface_EntityIterator UnknownEntities();
 
 };
+%feature("shadow") Interface_CheckTool::~Interface_CheckTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_CheckTool {
-	~Interface_CheckTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_CheckTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2633,10 +3217,18 @@ class Interface_HArray1OfHAsciiString : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_HArray1OfHAsciiString::~Interface_HArray1OfHAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_HArray1OfHAsciiString {
-	~Interface_HArray1OfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_HArray1OfHAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2670,8 +3262,18 @@ class Interface_Graph {
 		Standard_Boolean IsPresent(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
 		const Handle_Standard_Transient & Entity(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer & CStatus(const Standard_Integer num);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetCStatus(const Standard_Integer num) {
+				return (Standard_Integer) $self->CStatus(num);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetCStatus(Standard_Integer value ,const Standard_Integer num) {
+				$self->CStatus(num)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		void SetStatus(const Standard_Integer num, const Standard_Integer stat);
 		%feature("autodoc", "1");
@@ -2738,10 +3340,18 @@ class Interface_Graph {
 		Handle_TCollection_HAsciiString Name(const Handle_Standard_Transient &ent) const;
 
 };
+%feature("shadow") Interface_Graph::~Interface_Graph %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_Graph {
-	~Interface_Graph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_Graph\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2753,8 +3363,18 @@ class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapN
 		Interface_DataMapNodeOfDataMapOfTransientInteger(const Handle_Standard_Transient &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2769,10 +3389,18 @@ class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapN
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_DataMapNodeOfDataMapOfTransientInteger::~Interface_DataMapNodeOfDataMapOfTransientInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_DataMapNodeOfDataMapOfTransientInteger {
-	~Interface_DataMapNodeOfDataMapOfTransientInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_DataMapNodeOfDataMapOfTransientInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2782,8 +3410,18 @@ class Interface_DataMapNodeOfDataMapOfIntegerTransient : public TCollection_MapN
 	public:
 		%feature("autodoc", "1");
 		Interface_DataMapNodeOfDataMapOfIntegerTransient(const Standard_Integer &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Value() const;
 		%feature("autodoc", "1");
@@ -2800,10 +3438,18 @@ class Interface_DataMapNodeOfDataMapOfIntegerTransient : public TCollection_MapN
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_DataMapNodeOfDataMapOfIntegerTransient::~Interface_DataMapNodeOfDataMapOfIntegerTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_DataMapNodeOfDataMapOfIntegerTransient {
-	~Interface_DataMapNodeOfDataMapOfIntegerTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_DataMapNodeOfDataMapOfIntegerTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2911,10 +3557,18 @@ class Interface_Check : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_Check::~Interface_Check %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_Check {
-	~Interface_Check() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_Check\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2958,10 +3612,18 @@ class Interface_ReportEntity : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_ReportEntity::~Interface_ReportEntity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_ReportEntity {
-	~Interface_ReportEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_ReportEntity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2972,7 +3634,7 @@ class Interface_SignLabel : public MoniTool_SignText {
 		%feature("autodoc", "1");
 		Interface_SignLabel();
 		%feature("autodoc", "1");
-		virtual		Standard_CString Name() const;
+		virtual		char * Name() const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Text(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &context) const;
 		%feature("autodoc", "1");
@@ -2989,10 +3651,18 @@ class Interface_SignLabel : public MoniTool_SignText {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_SignLabel::~Interface_SignLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_SignLabel {
-	~Interface_SignLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_SignLabel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3044,10 +3714,18 @@ class Interface_Protocol : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_Protocol::~Interface_Protocol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_Protocol {
-	~Interface_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_Protocol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3063,10 +3741,18 @@ class Interface_MapAsciiStringHasher {
 		Standard_Boolean IsEqual(const TCollection_AsciiString &K1, const TCollection_AsciiString &K2);
 
 };
+%feature("shadow") Interface_MapAsciiStringHasher::~Interface_MapAsciiStringHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_MapAsciiStringHasher {
-	~Interface_MapAsciiStringHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_MapAsciiStringHasher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3120,10 +3806,18 @@ class Interface_SequenceOfCheck : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Interface_SequenceOfCheck::~Interface_SequenceOfCheck %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_SequenceOfCheck {
-	~Interface_SequenceOfCheck() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_SequenceOfCheck\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3142,7 +3836,7 @@ class Interface_GTool : public MMgt_TShared {
 		%feature("autodoc", "1");
 		char * SignValue(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
-		Standard_CString SignName() const;
+		char * SignName() const;
 		%feature("autodoc", "1");
 		void SetProtocol(const Handle_Interface_Protocol &proto, const Standard_Boolean enforce=0);
 		%feature("autodoc", "1");
@@ -3153,7 +3847,7 @@ class Interface_GTool : public MMgt_TShared {
 		void Reservate(const Standard_Integer nb, const Standard_Boolean enforce=0);
 		%feature("autodoc", "1");
 		void ClearEntities();
-		%feature("autodoc","Select(const ent, Standard_Boolean enforce=0)->Standard_Integer");
+		%feature("autodoc","Select(const ent, Standard_Boolean enforce=0) -> Standard_Integer");
 		Standard_Boolean Select(const Handle_Standard_Transient &ent, Handle_Interface_GeneralModule & gmod, Standard_Integer &OutValue, const Standard_Boolean enforce=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -3169,10 +3863,18 @@ class Interface_GTool : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_GTool::~Interface_GTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_GTool {
-	~Interface_GTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_GTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3195,7 +3897,7 @@ class Interface_MSG {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		Standard_CString Value() const;
+		char * Value() const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -3229,7 +3931,7 @@ class Interface_MSG {
 		Standard_Real Intervalled(const Standard_Real val, const Standard_Integer order=3, const Standard_Boolean upper=0);
 		%feature("autodoc", "1");
 		void TDate(const char * text, const Standard_Integer yy, const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const char * format="");
-		%feature("autodoc","NDate(Standard_CString text)->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_IntegerStandard_Integer]");
+		%feature("autodoc","NDate(Standard_CString text) -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_IntegerStandard_Integer]");
 		Standard_Boolean NDate(const char * text, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer CDate(const char * text1, const char * text2);
@@ -3243,10 +3945,18 @@ class Interface_MSG {
 		void Print(Standard_OStream & S, const char * val, const Standard_Integer max, const Standard_Integer just=-0x000000001);
 
 };
+%feature("shadow") Interface_MSG::~Interface_MSG %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_MSG {
-	~Interface_MSG() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_MSG\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3282,10 +3992,18 @@ class Interface_Category {
 		void Init();
 
 };
+%feature("shadow") Interface_Category::~Interface_Category %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_Category {
-	~Interface_Category() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_Category\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3313,10 +4031,18 @@ class Interface_SignType : public MoniTool_SignText {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_SignType::~Interface_SignType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_SignType {
-	~Interface_SignType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_SignType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3350,10 +4076,18 @@ class Interface_IndexedMapOfAsciiString : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const TCollection_AsciiString &K) const;
 
 };
+%feature("shadow") Interface_IndexedMapOfAsciiString::~Interface_IndexedMapOfAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_IndexedMapOfAsciiString {
-	~Interface_IndexedMapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_IndexedMapOfAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3381,16 +4115,34 @@ class Interface_DataMapOfTransientInteger : public TCollection_BasicMap {
 		const Standard_Integer & Find(const Handle_Standard_Transient &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const Handle_Standard_Transient &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const Handle_Standard_Transient &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const Handle_Standard_Transient &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const Handle_Standard_Transient &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Handle_Standard_Transient &K);
 
 };
+%feature("shadow") Interface_DataMapOfTransientInteger::~Interface_DataMapOfTransientInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_DataMapOfTransientInteger {
-	~Interface_DataMapOfTransientInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_DataMapOfTransientInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3422,10 +4174,18 @@ class Interface_CheckFailure : public Interface_InterfaceError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_CheckFailure::~Interface_CheckFailure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_CheckFailure {
-	~Interface_CheckFailure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_CheckFailure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3440,7 +4200,7 @@ class Interface_CheckIterator {
 		%feature("autodoc", "1");
 		void SetName(const char * name);
 		%feature("autodoc", "1");
-		Standard_CString Name() const;
+		char * Name() const;
 		%feature("autodoc", "1");
 		void SetModel(const Handle_Interface_InterfaceModel &model);
 		%feature("autodoc", "1");
@@ -3489,10 +4249,18 @@ class Interface_CheckIterator {
 		void Destroy();
 
 };
+%feature("shadow") Interface_CheckIterator::~Interface_CheckIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_CheckIterator {
-	~Interface_CheckIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_CheckIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3524,10 +4292,18 @@ class Interface_NodeOfReaderLib : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_NodeOfReaderLib::~Interface_NodeOfReaderLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_NodeOfReaderLib {
-	~Interface_NodeOfReaderLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_NodeOfReaderLib\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3546,7 +4322,7 @@ class Interface_LineBuffer {
 		%feature("autodoc", "1");
 		Standard_Boolean CanGet(const Standard_Integer more);
 		%feature("autodoc", "1");
-		Standard_CString Content() const;
+		char * Content() const;
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -3569,10 +4345,18 @@ class Interface_LineBuffer {
 		void Add(const Standard_Character text);
 
 };
+%feature("shadow") Interface_LineBuffer::~Interface_LineBuffer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_LineBuffer {
-	~Interface_LineBuffer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_LineBuffer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3612,10 +4396,18 @@ class Interface_ParamSet : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_ParamSet::~Interface_ParamSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_ParamSet {
-	~Interface_ParamSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_ParamSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3757,10 +4549,18 @@ class Interface_InterfaceModel : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_InterfaceModel::~Interface_InterfaceModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_InterfaceModel {
-	~Interface_InterfaceModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_InterfaceModel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3804,10 +4604,18 @@ class Interface_EntityCluster : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Interface_EntityCluster::~Interface_EntityCluster %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_EntityCluster {
-	~Interface_EntityCluster() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_EntityCluster\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3822,7 +4630,7 @@ class Interface_FileParameter {
 		%feature("autodoc", "1");
 		void Init(const char * val, const Interface_ParamType typ);
 		%feature("autodoc", "1");
-		Standard_CString CValue() const;
+		char * CValue() const;
 		%feature("autodoc", "1");
 		Interface_ParamType ParamType() const;
 		%feature("autodoc", "1");
@@ -3835,9 +4643,17 @@ class Interface_FileParameter {
 		void Destroy();
 
 };
+%feature("shadow") Interface_FileParameter::~Interface_FileParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Interface_FileParameter {
-	~Interface_FileParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Interface_FileParameter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

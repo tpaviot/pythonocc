@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepClass3d_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_BRepClass3d_DataMapNodeOfMapOfInter : public Handle_TCollection_Map
 	return (BRepClass3d_DataMapNodeOfMapOfInter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepClass3d_DataMapNodeOfMapOfInter::~Handle_BRepClass3d_DataMapNodeOfMapOfInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepClass3d_DataMapNodeOfMapOfInter {
-	~Handle_BRepClass3d_DataMapNodeOfMapOfInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepClass3d_DataMapNodeOfMapOfInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -86,10 +98,18 @@ class BRepClass3d_SClassifier {
 		TopoDS_Face Face() const;
 
 };
+%feature("shadow") BRepClass3d_SClassifier::~BRepClass3d_SClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepClass3d_SClassifier {
-	~BRepClass3d_SClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SClassifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -123,10 +143,18 @@ class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 		Standard_Address & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") BRepClass3d_MapOfInter::~BRepClass3d_MapOfInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepClass3d_MapOfInter {
-	~BRepClass3d_MapOfInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass3d_MapOfInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -146,19 +174,19 @@ class BRepClass3d_SolidExplorer {
 		void InitShape(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Reject(const gp_Pnt &P) const;
-		%feature("autodoc","FindAPointInTheFace(const F)->Standard_Real");
+		%feature("autodoc","FindAPointInTheFace(const F) -> Standard_Real");
 		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc","FindAPointInTheFace(const F)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","FindAPointInTheFace(const F) -> [Standard_Real, Standard_RealStandard_Real]");
 		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","FindAPointInTheFace(const F)->[Standard_RealStandard_Real]");
+		%feature("autodoc","FindAPointInTheFace(const F) -> [Standard_RealStandard_Real]");
 		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, gp_Pnt & P);
-		%feature("autodoc","FindAPointInTheFace(const F)->[Standard_RealStandard_Real]");
+		%feature("autodoc","FindAPointInTheFace(const F) -> [Standard_RealStandard_Real]");
 		Standard_Boolean FindAPointInTheFace(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","PointInTheFace(const F)->[Standard_Real, Standard_Real, Standard_RealStandard_Integer]");
+		%feature("autodoc","PointInTheFace(const F) -> [Standard_Real, Standard_Real, Standard_RealStandard_Integer]");
 		Standard_Boolean PointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","PointInTheFace(const F, const surf, Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2)->[Standard_RealStandard_RealStandard_RealStandard_Integer]");
+		%feature("autodoc","PointInTheFace(const F, const surf, Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2) -> [Standard_RealStandard_RealStandard_RealStandard_Integer]");
 		Standard_Boolean PointInTheFace(const TopoDS_Face &F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, const Handle_BRepAdaptor_HSurface &surf, const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2) const;
 		%feature("autodoc", "1");
 		void InitShell();
@@ -180,9 +208,9 @@ class BRepClass3d_SolidExplorer {
 		TopoDS_Face CurrentFace() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean RejectFace(const gp_Lin &L) const;
-		%feature("autodoc","Segment(const P)->Standard_Real");
+		%feature("autodoc","Segment(const P) -> Standard_Real");
 		Standard_Integer Segment(const gp_Pnt &P, gp_Lin & L, Standard_Real &OutValue);
-		%feature("autodoc","OtherSegment(const P)->Standard_Real");
+		%feature("autodoc","OtherSegment(const P) -> Standard_Real");
 		Standard_Integer OtherSegment(const gp_Pnt &P, gp_Lin & L, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer GetFaceSegmentIndex() const;
@@ -196,10 +224,18 @@ class BRepClass3d_SolidExplorer {
 		void Destroy();
 
 };
+%feature("shadow") BRepClass3d_SolidExplorer::~BRepClass3d_SolidExplorer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepClass3d_SolidExplorer {
-	~BRepClass3d_SolidExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidExplorer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -223,10 +259,18 @@ class BRepClass3d_SolidPassiveClassifier {
 		TopAbs_State State() const;
 
 };
+%feature("shadow") BRepClass3d_SolidPassiveClassifier::~BRepClass3d_SolidPassiveClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepClass3d_SolidPassiveClassifier {
-	~BRepClass3d_SolidPassiveClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidPassiveClassifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -246,10 +290,18 @@ class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapItera
 		const Standard_Address & Value() const;
 
 };
+%feature("shadow") BRepClass3d_DataMapIteratorOfMapOfInter::~BRepClass3d_DataMapIteratorOfMapOfInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepClass3d_DataMapIteratorOfMapOfInter {
-	~BRepClass3d_DataMapIteratorOfMapOfInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass3d_DataMapIteratorOfMapOfInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -273,10 +325,18 @@ class BRepClass3d_SolidClassifier : public BRepClass3d_SClassifier {
 		void Destroy();
 
 };
+%feature("shadow") BRepClass3d_SolidClassifier::~BRepClass3d_SolidClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepClass3d_SolidClassifier {
-	~BRepClass3d_SolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidClassifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -304,10 +364,18 @@ class BRepClass3d_DataMapNodeOfMapOfInter : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepClass3d_DataMapNodeOfMapOfInter::~BRepClass3d_DataMapNodeOfMapOfInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepClass3d_DataMapNodeOfMapOfInter {
-	~BRepClass3d_DataMapNodeOfMapOfInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass3d_DataMapNodeOfMapOfInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -339,9 +407,17 @@ class BRepClass3d_Intersector3d {
 		const TopoDS_Face & Face() const;
 
 };
+%feature("shadow") BRepClass3d_Intersector3d::~BRepClass3d_Intersector3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepClass3d_Intersector3d {
-	~BRepClass3d_Intersector3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepClass3d_Intersector3d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

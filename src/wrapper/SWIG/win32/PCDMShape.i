@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PCDMShape_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_PCDMShape_Document : public Handle_PCDM_Document {
 	return (PCDMShape_Document*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PCDMShape_Document::~Handle_PCDMShape_Document %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PCDMShape_Document {
-	~Handle_PCDMShape_Document() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCDMShape_Document\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -94,9 +106,17 @@ class PCDMShape_Document : public PCDM_Document {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PCDMShape_Document::~PCDMShape_Document %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PCDMShape_Document {
-	~PCDMShape_Document() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCDMShape_Document\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

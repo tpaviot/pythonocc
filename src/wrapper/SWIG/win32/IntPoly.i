@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntPoly_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TColl
 	return (IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt::~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
-	~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public Handle_TCollecti
 	return (IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d::~Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
-	~Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public Handle_TCo
 	return (IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d::~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
-	~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public Handle_TCollection
 	return (IntPoly_IndexedMapNodeOfIndexedMapOfPnt*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt::~Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt {
-	~Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -182,10 +218,18 @@ class IntPoly_PlaneSection {
 		TopoDS_Edge Edge(const Standard_Integer Index);
 
 };
+%feature("shadow") IntPoly_PlaneSection::~IntPoly_PlaneSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPoly_PlaneSection {
-	~IntPoly_PlaneSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_PlaneSection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -201,7 +245,7 @@ class IntPoly_ShapeSection {
 		void Section();
 		%feature("autodoc", "1");
 		void Explore();
-		%feature("autodoc","Intersect(const S1, const S2, const S3, const OS1, const VS0, const V1, const V2)->[Standard_RealStandard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","Intersect(const S1, const S2, const S3, const OS1, const VS0, const V1, const V2) -> [Standard_RealStandard_RealStandard_RealStandard_Real]");
 		Standard_Boolean Intersect(const gp_Pnt &S1, const gp_Pnt &S2, const gp_Pnt &S3, const gp_Vec &OS1, const gp_Vec &VS0, const gp_Vec &V1, const gp_Vec &V2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const gp_Pnt &Pt1, const gp_Pnt &Pt2);
@@ -225,10 +269,18 @@ class IntPoly_ShapeSection {
 		TopoDS_Edge Edge(const Standard_Integer Index);
 
 };
+%feature("shadow") IntPoly_ShapeSection::~IntPoly_ShapeSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPoly_ShapeSection {
-	~IntPoly_ShapeSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_ShapeSection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -244,10 +296,18 @@ class IntPoly_PntHasher {
 		Standard_Boolean IsEqual(const gp_Pnt &Point1, const gp_Pnt &Point2);
 
 };
+%feature("shadow") IntPoly_PntHasher::~IntPoly_PntHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPoly_PntHasher {
-	~IntPoly_PntHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_PntHasher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -301,10 +361,18 @@ class IntPoly_SequenceOfSequenceOfPnt : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") IntPoly_SequenceOfSequenceOfPnt::~IntPoly_SequenceOfSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPoly_SequenceOfSequenceOfPnt {
-	~IntPoly_SequenceOfSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_SequenceOfSequenceOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -330,10 +398,18 @@ class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public TCollection_SeqNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d::~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
-	~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +463,18 @@ class IntPoly_SequenceOfSequenceOfPnt2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") IntPoly_SequenceOfSequenceOfPnt2d::~IntPoly_SequenceOfSequenceOfPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPoly_SequenceOfSequenceOfPnt2d {
-	~IntPoly_SequenceOfSequenceOfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_SequenceOfSequenceOfPnt2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -424,10 +508,18 @@ class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const gp_Pnt2d &K) const;
 
 };
+%feature("shadow") IntPoly_IndexedMapOfPnt2d::~IntPoly_IndexedMapOfPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPoly_IndexedMapOfPnt2d {
-	~IntPoly_IndexedMapOfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_IndexedMapOfPnt2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -439,8 +531,18 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
 		IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d(const gp_Pnt2d &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		gp_Pnt2d & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -457,10 +559,18 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d::~IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
-	~IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -486,10 +596,18 @@ class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public TCollection_SeqNode
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt::~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
-	~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -523,10 +641,18 @@ class IntPoly_IndexedMapOfPnt : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const gp_Pnt &K) const;
 
 };
+%feature("shadow") IntPoly_IndexedMapOfPnt::~IntPoly_IndexedMapOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPoly_IndexedMapOfPnt {
-	~IntPoly_IndexedMapOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_IndexedMapOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -538,8 +664,18 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
 		IntPoly_IndexedMapNodeOfIndexedMapOfPnt(const gp_Pnt &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		gp_Pnt & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -556,10 +692,18 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IntPoly_IndexedMapNodeOfIndexedMapOfPnt::~IntPoly_IndexedMapNodeOfIndexedMapOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt {
-	~IntPoly_IndexedMapNodeOfIndexedMapOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_IndexedMapNodeOfIndexedMapOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -575,9 +719,17 @@ class IntPoly_Pnt2dHasher {
 		Standard_Boolean IsEqual(const gp_Pnt2d &Point1, const gp_Pnt2d &Point2);
 
 };
+%feature("shadow") IntPoly_Pnt2dHasher::~IntPoly_Pnt2dHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPoly_Pnt2dHasher {
-	~IntPoly_Pnt2dHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPoly_Pnt2dHasher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

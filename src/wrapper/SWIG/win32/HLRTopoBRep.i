@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include HLRTopoBRep_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public Handle_TCo
 	return (HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData::~Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData {
-	~Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_HLRTopoBRep_OutLiner : public Handle_MMgt_TShared {
 	return (HLRTopoBRep_OutLiner*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRTopoBRep_OutLiner::~Handle_HLRTopoBRep_OutLiner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRTopoBRep_OutLiner {
-	~Handle_HLRTopoBRep_OutLiner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_OutLiner\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public Handle_TCol
 	return (HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData::~Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
-	~Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_HLRTopoBRep_ListNodeOfListOfVData : public Handle_TCollection_MapNo
 	return (HLRTopoBRep_ListNodeOfListOfVData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRTopoBRep_ListNodeOfListOfVData::~Handle_HLRTopoBRep_ListNodeOfListOfVData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRTopoBRep_ListNodeOfListOfVData {
-	~Handle_HLRTopoBRep_ListNodeOfListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_ListNodeOfListOfVData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -178,10 +214,18 @@ class HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public TCollection_MapNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData::~HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData {
-	~HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -215,10 +259,18 @@ class HLRTopoBRep_MapOfShapeListOfVData : public TCollection_BasicMap {
 		HLRTopoBRep_ListOfVData & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") HLRTopoBRep_MapOfShapeListOfVData::~HLRTopoBRep_MapOfShapeListOfVData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_MapOfShapeListOfVData {
-	~HLRTopoBRep_MapOfShapeListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_MapOfShapeListOfVData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -300,10 +352,18 @@ class HLRTopoBRep_Data {
 		void Append(const TopoDS_Vertex &V, const Standard_Real P);
 
 };
+%feature("shadow") HLRTopoBRep_Data::~HLRTopoBRep_Data %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_Data {
-	~HLRTopoBRep_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_Data\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -323,10 +383,18 @@ class HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData : public TCollection_B
 		const HLRTopoBRep_FaceData & Value() const;
 
 };
+%feature("shadow") HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData::~HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData {
-	~HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -376,10 +444,18 @@ class HLRTopoBRep_ListOfVData {
 		void InsertAfter(HLRTopoBRep_ListOfVData & Other, HLRTopoBRep_ListIteratorOfListOfVData & It);
 
 };
+%feature("shadow") HLRTopoBRep_ListOfVData::~HLRTopoBRep_ListOfVData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_ListOfVData {
-	~HLRTopoBRep_ListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListOfVData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -399,10 +475,18 @@ class HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData : public TCollection_Ba
 		const HLRTopoBRep_ListOfVData & Value() const;
 
 };
+%feature("shadow") HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData::~HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData {
-	~HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -420,10 +504,18 @@ class HLRTopoBRep_VData {
 		const TopoDS_Shape & Vertex() const;
 
 };
+%feature("shadow") HLRTopoBRep_VData::~HLRTopoBRep_VData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_VData {
-	~HLRTopoBRep_VData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_VData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +539,18 @@ class HLRTopoBRep_FaceData {
 		TopTools_ListOfShape & AddIsoL();
 
 };
+%feature("shadow") HLRTopoBRep_FaceData::~HLRTopoBRep_FaceData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_FaceData {
-	~HLRTopoBRep_FaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_FaceData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -476,10 +576,18 @@ class HLRTopoBRep_ListNodeOfListOfVData : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRTopoBRep_ListNodeOfListOfVData::~HLRTopoBRep_ListNodeOfListOfVData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_ListNodeOfListOfVData {
-	~HLRTopoBRep_ListNodeOfListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListNodeOfListOfVData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -497,10 +605,18 @@ class HLRTopoBRep_FaceIsoLiner {
 		void MakeIsoLine(const TopoDS_Face &F, const Handle_Geom2d_Line &Iso, TopoDS_Vertex & V1, TopoDS_Vertex & V2, const Standard_Real U1, const Standard_Real U2, const Standard_Real Tol, HLRTopoBRep_Data & DS);
 
 };
+%feature("shadow") HLRTopoBRep_FaceIsoLiner::~HLRTopoBRep_FaceIsoLiner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_FaceIsoLiner {
-	~HLRTopoBRep_FaceIsoLiner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_FaceIsoLiner\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -522,10 +638,18 @@ class HLRTopoBRep_ListIteratorOfListOfVData {
 		HLRTopoBRep_VData & Value() const;
 
 };
+%feature("shadow") HLRTopoBRep_ListIteratorOfListOfVData::~HLRTopoBRep_ListIteratorOfListOfVData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_ListIteratorOfListOfVData {
-	~HLRTopoBRep_ListIteratorOfListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListIteratorOfListOfVData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -565,10 +689,18 @@ class HLRTopoBRep_OutLiner : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRTopoBRep_OutLiner::~HLRTopoBRep_OutLiner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_OutLiner {
-	~HLRTopoBRep_OutLiner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_OutLiner\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -602,10 +734,18 @@ class HLRTopoBRep_DataMapOfShapeFaceData : public TCollection_BasicMap {
 		HLRTopoBRep_FaceData & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") HLRTopoBRep_DataMapOfShapeFaceData::~HLRTopoBRep_DataMapOfShapeFaceData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_DataMapOfShapeFaceData {
-	~HLRTopoBRep_DataMapOfShapeFaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapOfShapeFaceData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -633,10 +773,18 @@ class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData::~HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
-	~HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -650,9 +798,17 @@ class HLRTopoBRep_DSFiller {
 		void Insert(const TopoDS_Shape &S, Contap_Contour & FO, HLRTopoBRep_Data & DS, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso);
 
 };
+%feature("shadow") HLRTopoBRep_DSFiller::~HLRTopoBRep_DSFiller %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRTopoBRep_DSFiller {
-	~HLRTopoBRep_DSFiller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DSFiller\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

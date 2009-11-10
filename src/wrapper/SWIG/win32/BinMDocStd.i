@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BinMDocStd_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_BinMDocStd_XLinkDriver : public Handle_BinMDF_ADriver {
 	return (BinMDocStd_XLinkDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinMDocStd_XLinkDriver::~Handle_BinMDocStd_XLinkDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinMDocStd_XLinkDriver {
-	~Handle_BinMDocStd_XLinkDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMDocStd_XLinkDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -74,10 +86,18 @@ class BinMDocStd {
 		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
 };
+%feature("shadow") BinMDocStd::~BinMDocStd %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDocStd {
-	~BinMDocStd() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDocStd\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -107,9 +127,17 @@ class BinMDocStd_XLinkDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinMDocStd_XLinkDriver::~BinMDocStd_XLinkDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDocStd_XLinkDriver {
-	~BinMDocStd_XLinkDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDocStd_XLinkDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

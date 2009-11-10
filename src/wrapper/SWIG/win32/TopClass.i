@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TopClass_dependencies.i
 
 
@@ -50,10 +54,18 @@ class TopClass_Intersection3d {
 		virtual		TopAbs_State State() const;
 
 };
+%feature("shadow") TopClass_Intersection3d::~TopClass_Intersection3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopClass_Intersection3d {
-	~TopClass_Intersection3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopClass_Intersection3d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -63,9 +75,9 @@ class TopClass_SolidExplorer {
 	public:
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Reject(const gp_Pnt &P) const;
-		%feature("autodoc","Segment(const P)->Standard_Real");
+		%feature("autodoc","Segment(const P) -> Standard_Real");
 		virtual		void Segment(const gp_Pnt &P, gp_Lin & L, Standard_Real &OutValue);
-		%feature("autodoc","OtherSegment(const P)->Standard_Real");
+		%feature("autodoc","OtherSegment(const P) -> Standard_Real");
 		virtual		void OtherSegment(const gp_Pnt &P, gp_Lin & L, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void InitShell();
@@ -87,9 +99,17 @@ class TopClass_SolidExplorer {
 		virtual		Standard_Boolean RejectFace(const gp_Lin &L, const Standard_Real Par) const;
 
 };
+%feature("shadow") TopClass_SolidExplorer::~TopClass_SolidExplorer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopClass_SolidExplorer {
-	~TopClass_SolidExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopClass_SolidExplorer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

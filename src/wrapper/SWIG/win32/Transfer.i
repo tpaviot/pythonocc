@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Transfer_dependencies.i
 
 
@@ -78,10 +82,18 @@ class Handle_Transfer_HSequenceOfFinder : public Handle_MMgt_TShared {
 	return (Transfer_HSequenceOfFinder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_HSequenceOfFinder::~Handle_Transfer_HSequenceOfFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_HSequenceOfFinder {
-	~Handle_Transfer_HSequenceOfFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_HSequenceOfFinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -108,10 +120,18 @@ class Handle_Transfer_SequenceNodeOfSequenceOfBinder : public Handle_TCollection
 	return (Transfer_SequenceNodeOfSequenceOfBinder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_SequenceNodeOfSequenceOfBinder::~Handle_Transfer_SequenceNodeOfSequenceOfBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_SequenceNodeOfSequenceOfBinder {
-	~Handle_Transfer_SequenceNodeOfSequenceOfBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfBinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -138,10 +158,18 @@ class Handle_Transfer_Binder : public Handle_MMgt_TShared {
 	return (Transfer_Binder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_Binder::~Handle_Transfer_Binder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_Binder {
-	~Handle_Transfer_Binder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_Binder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -168,10 +196,18 @@ class Handle_Transfer_VoidBinder : public Handle_Transfer_Binder {
 	return (Transfer_VoidBinder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_VoidBinder::~Handle_Transfer_VoidBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_VoidBinder {
-	~Handle_Transfer_VoidBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_VoidBinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -198,10 +234,18 @@ class Handle_Transfer_Finder : public Handle_MMgt_TShared {
 	return (Transfer_Finder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_Finder::~Handle_Transfer_Finder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_Finder {
-	~Handle_Transfer_Finder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_Finder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -228,10 +272,18 @@ class Handle_Transfer_ResultFromTransient : public Handle_MMgt_TShared {
 	return (Transfer_ResultFromTransient*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_ResultFromTransient::~Handle_Transfer_ResultFromTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_ResultFromTransient {
-	~Handle_Transfer_ResultFromTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ResultFromTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -258,10 +310,18 @@ class Handle_Transfer_ProcessForFinder : public Handle_MMgt_TShared {
 	return (Transfer_ProcessForFinder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_ProcessForFinder::~Handle_Transfer_ProcessForFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_ProcessForFinder {
-	~Handle_Transfer_ProcessForFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ProcessForFinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -288,10 +348,18 @@ class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public
 	return (Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder::~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
-	~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -318,10 +386,18 @@ class Handle_Transfer_ActorOfProcessForFinder : public Handle_MMgt_TShared {
 	return (Transfer_ActorOfProcessForFinder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_ActorOfProcessForFinder::~Handle_Transfer_ActorOfProcessForFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_ActorOfProcessForFinder {
-	~Handle_Transfer_ActorOfProcessForFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorOfProcessForFinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -348,10 +424,18 @@ class Handle_Transfer_TransientMapper : public Handle_Transfer_Finder {
 	return (Transfer_TransientMapper*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_TransientMapper::~Handle_Transfer_TransientMapper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_TransientMapper {
-	~Handle_Transfer_TransientMapper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransientMapper\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -378,10 +462,18 @@ class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : pub
 	return (Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient::~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
-	~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -408,10 +500,18 @@ class Handle_Transfer_SimpleBinderOfTransient : public Handle_Transfer_Binder {
 	return (Transfer_SimpleBinderOfTransient*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_SimpleBinderOfTransient::~Handle_Transfer_SimpleBinderOfTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_SimpleBinderOfTransient {
-	~Handle_Transfer_SimpleBinderOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SimpleBinderOfTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -438,10 +538,18 @@ class Handle_Transfer_TransferFailure : public Handle_Interface_InterfaceError {
 	return (Transfer_TransferFailure*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_TransferFailure::~Handle_Transfer_TransferFailure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_TransferFailure {
-	~Handle_Transfer_TransferFailure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransferFailure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -468,10 +576,18 @@ class Handle_Transfer_ProcessForTransient : public Handle_MMgt_TShared {
 	return (Transfer_ProcessForTransient*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_ProcessForTransient::~Handle_Transfer_ProcessForTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_ProcessForTransient {
-	~Handle_Transfer_ProcessForTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ProcessForTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -498,10 +614,18 @@ class Handle_Transfer_TransientProcess : public Handle_Transfer_ProcessForTransi
 	return (Transfer_TransientProcess*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_TransientProcess::~Handle_Transfer_TransientProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_TransientProcess {
-	~Handle_Transfer_TransientProcess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransientProcess\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -528,10 +652,18 @@ class Handle_Transfer_SequenceNodeOfSequenceOfFinder : public Handle_TCollection
 	return (Transfer_SequenceNodeOfSequenceOfFinder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_SequenceNodeOfSequenceOfFinder::~Handle_Transfer_SequenceNodeOfSequenceOfFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_SequenceNodeOfSequenceOfFinder {
-	~Handle_Transfer_SequenceNodeOfSequenceOfFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfFinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -558,10 +690,18 @@ class Handle_Transfer_ActorOfProcessForTransient : public Handle_MMgt_TShared {
 	return (Transfer_ActorOfProcessForTransient*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_ActorOfProcessForTransient::~Handle_Transfer_ActorOfProcessForTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_ActorOfProcessForTransient {
-	~Handle_Transfer_ActorOfProcessForTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorOfProcessForTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -588,10 +728,18 @@ class Handle_Transfer_ActorOfTransientProcess : public Handle_Transfer_ActorOfPr
 	return (Transfer_ActorOfTransientProcess*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_ActorOfTransientProcess::~Handle_Transfer_ActorOfTransientProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_ActorOfTransientProcess {
-	~Handle_Transfer_ActorOfTransientProcess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorOfTransientProcess\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -618,10 +766,18 @@ class Handle_Transfer_BinderOfTransientInteger : public Handle_Transfer_SimpleBi
 	return (Transfer_BinderOfTransientInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_BinderOfTransientInteger::~Handle_Transfer_BinderOfTransientInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_BinderOfTransientInteger {
-	~Handle_Transfer_BinderOfTransientInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_BinderOfTransientInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -648,10 +804,18 @@ class Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient : public Handle_T
 	return (Transfer_DataMapNodeOfDataMapOfTransientTransient*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient::~Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient {
-	~Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -678,10 +842,18 @@ class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProce
 	return (Transfer_ActorOfFinderProcess*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_ActorOfFinderProcess::~Handle_Transfer_ActorOfFinderProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_ActorOfFinderProcess {
-	~Handle_Transfer_ActorOfFinderProcess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorOfFinderProcess\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -708,10 +880,18 @@ class Handle_Transfer_ActorDispatch : public Handle_Transfer_ActorOfTransientPro
 	return (Transfer_ActorDispatch*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_ActorDispatch::~Handle_Transfer_ActorDispatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_ActorDispatch {
-	~Handle_Transfer_ActorDispatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorDispatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -738,10 +918,18 @@ class Handle_Transfer_DispatchControl : public Handle_Interface_CopyControl {
 	return (Transfer_DispatchControl*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_DispatchControl::~Handle_Transfer_DispatchControl %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_DispatchControl {
-	~Handle_Transfer_DispatchControl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_DispatchControl\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -768,10 +956,18 @@ class Handle_Transfer_FinderProcess : public Handle_Transfer_ProcessForFinder {
 	return (Transfer_FinderProcess*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_FinderProcess::~Handle_Transfer_FinderProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_FinderProcess {
-	~Handle_Transfer_FinderProcess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_FinderProcess\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -798,10 +994,18 @@ class Handle_Transfer_HSequenceOfBinder : public Handle_MMgt_TShared {
 	return (Transfer_HSequenceOfBinder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_HSequenceOfBinder::~Handle_Transfer_HSequenceOfBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_HSequenceOfBinder {
-	~Handle_Transfer_HSequenceOfBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_HSequenceOfBinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -828,10 +1032,18 @@ class Handle_Transfer_MultipleBinder : public Handle_Transfer_Binder {
 	return (Transfer_MultipleBinder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_MultipleBinder::~Handle_Transfer_MultipleBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_MultipleBinder {
-	~Handle_Transfer_MultipleBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_MultipleBinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -858,10 +1070,18 @@ class Handle_Transfer_ResultFromModel : public Handle_MMgt_TShared {
 	return (Transfer_ResultFromModel*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_ResultFromModel::~Handle_Transfer_ResultFromModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_ResultFromModel {
-	~Handle_Transfer_ResultFromModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ResultFromModel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -888,10 +1108,18 @@ class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
 	return (Transfer_MapContainer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_MapContainer::~Handle_Transfer_MapContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_MapContainer {
-	~Handle_Transfer_MapContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_MapContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -918,10 +1146,18 @@ class Handle_Transfer_TransientListBinder : public Handle_Transfer_Binder {
 	return (Transfer_TransientListBinder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_TransientListBinder::~Handle_Transfer_TransientListBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_TransientListBinder {
-	~Handle_Transfer_TransientListBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransientListBinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -948,10 +1184,18 @@ class Handle_Transfer_TransferDeadLoop : public Handle_Transfer_TransferFailure 
 	return (Transfer_TransferDeadLoop*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Transfer_TransferDeadLoop::~Handle_Transfer_TransferDeadLoop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Transfer_TransferDeadLoop {
-	~Handle_Transfer_TransferDeadLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransferDeadLoop\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -995,10 +1239,18 @@ class Transfer_TransferMapOfProcessForTransient : public TCollection_BasicMap {
 		Handle_Transfer_Binder & ChangeFromKey(const Handle_Standard_Transient &K);
 
 };
+%feature("shadow") Transfer_TransferMapOfProcessForTransient::~Transfer_TransferMapOfProcessForTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_TransferMapOfProcessForTransient {
-	~Transfer_TransferMapOfProcessForTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_TransferMapOfProcessForTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1020,10 +1272,18 @@ class Transfer_TransferInput {
 		void FillModel(const Handle_Transfer_FinderProcess &proc, const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &proto, const Standard_Boolean roots=1) const;
 
 };
+%feature("shadow") Transfer_TransferInput::~Transfer_TransferInput %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_TransferInput {
-	~Transfer_TransferInput() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_TransferInput\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1057,10 +1317,18 @@ class Transfer_DispatchControl : public Interface_CopyControl {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_DispatchControl::~Transfer_DispatchControl %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_DispatchControl {
-	~Transfer_DispatchControl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_DispatchControl\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1116,10 +1384,18 @@ class Transfer_ResultFromTransient : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_ResultFromTransient::~Transfer_ResultFromTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_ResultFromTransient {
-	~Transfer_ResultFromTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ResultFromTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1153,10 +1429,18 @@ class Transfer_DataMapOfTransientTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K);
 
 };
+%feature("shadow") Transfer_DataMapOfTransientTransient::~Transfer_DataMapOfTransientTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_DataMapOfTransientTransient {
-	~Transfer_DataMapOfTransientTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_DataMapOfTransientTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1210,10 +1494,18 @@ class Transfer_SequenceOfFinder : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Transfer_SequenceOfFinder::~Transfer_SequenceOfFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_SequenceOfFinder {
-	~Transfer_SequenceOfFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_SequenceOfFinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1233,10 +1525,18 @@ class Transfer_TransferDispatch : public Interface_CopyTool {
 		virtual		Standard_Boolean Copy(const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto, const Standard_Boolean mapped, const Standard_Boolean errstat);
 
 };
+%feature("shadow") Transfer_TransferDispatch::~Transfer_TransferDispatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_TransferDispatch {
-	~Transfer_TransferDispatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_TransferDispatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1286,10 +1586,18 @@ class Transfer_TransferIterator {
 		Handle_Interface_Check const Check() const;
 
 };
+%feature("shadow") Transfer_TransferIterator::~Transfer_TransferIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_TransferIterator {
-	~Transfer_TransferIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_TransferIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1304,7 +1612,7 @@ class Transfer_Finder : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Type ValueType() const;
 		%feature("autodoc", "1");
-		virtual		Standard_CString ValueTypeName() const;
+		virtual		char * ValueTypeName() const;
 		%feature("autodoc", "1");
 		void SetAttribute(const char * name, const Handle_Standard_Transient &val);
 		%feature("autodoc", "1");
@@ -1317,13 +1625,13 @@ class Transfer_Finder : public MMgt_TShared {
 		Interface_ParamType AttributeType(const char * name) const;
 		%feature("autodoc", "1");
 		void SetIntegerAttribute(const char * name, const Standard_Integer val);
-		%feature("autodoc","GetIntegerAttribute(Standard_CString name)->Standard_Integer");
+		%feature("autodoc","GetIntegerAttribute(Standard_CString name) -> Standard_Integer");
 		Standard_Boolean GetIntegerAttribute(const char * name, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer IntegerAttribute(const char * name) const;
 		%feature("autodoc", "1");
 		void SetRealAttribute(const char * name, const Standard_Real val);
-		%feature("autodoc","GetRealAttribute(Standard_CString name)->Standard_Real");
+		%feature("autodoc","GetRealAttribute(Standard_CString name) -> Standard_Real");
 		Standard_Boolean GetRealAttribute(const char * name, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real RealAttribute(const char * name) const;
@@ -1351,10 +1659,18 @@ class Transfer_Finder : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_Finder::~Transfer_Finder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_Finder {
-	~Transfer_Finder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_Finder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1378,10 +1694,18 @@ class Transfer_TransientMapper : public Transfer_Finder {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_TransientMapper::~Transfer_TransientMapper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_TransientMapper {
-	~Transfer_TransientMapper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_TransientMapper\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1421,10 +1745,18 @@ class Transfer_ActorOfProcessForFinder : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_ActorOfProcessForFinder::~Transfer_ActorOfProcessForFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_ActorOfProcessForFinder {
-	~Transfer_ActorOfProcessForFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfProcessForFinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1492,10 +1824,18 @@ class Transfer_HSequenceOfFinder : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_HSequenceOfFinder::~Transfer_HSequenceOfFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_HSequenceOfFinder {
-	~Transfer_HSequenceOfFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_HSequenceOfFinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1647,10 +1987,18 @@ class Transfer_ProcessForFinder : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_ProcessForFinder::~Transfer_ProcessForFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_ProcessForFinder {
-	~Transfer_ProcessForFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ProcessForFinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1682,10 +2030,18 @@ class Transfer_FinderProcess : public Transfer_ProcessForFinder {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_FinderProcess::~Transfer_FinderProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_FinderProcess {
-	~Transfer_FinderProcess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_FinderProcess\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1701,10 +2057,18 @@ class Transfer_FindHasher {
 		Standard_Boolean IsEqual(const Handle_Transfer_Finder &K1, const Handle_Transfer_Finder &K2);
 
 };
+%feature("shadow") Transfer_FindHasher::~Transfer_FindHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_FindHasher {
-	~Transfer_FindHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_FindHasher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1744,10 +2108,18 @@ class Transfer_ActorOfProcessForTransient : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_ActorOfProcessForTransient::~Transfer_ActorOfProcessForTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_ActorOfProcessForTransient {
-	~Transfer_ActorOfProcessForTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfProcessForTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1773,10 +2145,18 @@ class Transfer_ActorOfTransientProcess : public Transfer_ActorOfProcessForTransi
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_ActorOfTransientProcess::~Transfer_ActorOfTransientProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_ActorOfTransientProcess {
-	~Transfer_ActorOfTransientProcess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfTransientProcess\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1806,10 +2186,18 @@ class Transfer_ActorDispatch : public Transfer_ActorOfTransientProcess {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_ActorDispatch::~Transfer_ActorDispatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_ActorDispatch {
-	~Transfer_ActorDispatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ActorDispatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1841,10 +2229,18 @@ class Transfer_TransferFailure : public Interface_InterfaceError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_TransferFailure::~Transfer_TransferFailure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_TransferFailure {
-	~Transfer_TransferFailure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_TransferFailure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1870,10 +2266,18 @@ class Transfer_TransferDeadLoop : public Transfer_TransferFailure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_TransferDeadLoop::~Transfer_TransferDeadLoop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_TransferDeadLoop {
-	~Transfer_TransferDeadLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_TransferDeadLoop\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2025,10 +2429,18 @@ class Transfer_ProcessForTransient : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_ProcessForTransient::~Transfer_ProcessForTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_ProcessForTransient {
-	~Transfer_ProcessForTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ProcessForTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2043,7 +2455,7 @@ class Transfer_Binder : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Type ResultType() const;
 		%feature("autodoc", "1");
-		virtual		Standard_CString ResultTypeName() const;
+		virtual		char * ResultTypeName() const;
 		%feature("autodoc", "1");
 		void AddResult(const Handle_Transfer_Binder &next);
 		%feature("autodoc", "1");
@@ -2080,10 +2492,18 @@ class Transfer_Binder : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_Binder::~Transfer_Binder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_Binder {
-	~Transfer_Binder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_Binder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2105,10 +2525,18 @@ class Transfer_VoidBinder : public Transfer_Binder {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_VoidBinder::~Transfer_VoidBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_VoidBinder {
-	~Transfer_VoidBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_VoidBinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2120,8 +2548,18 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public TColle
 		Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder(const Handle_Transfer_Finder &K1, const Standard_Integer K2, const Handle_Transfer_Binder &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		Handle_Transfer_Finder & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -2140,10 +2578,18 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public TColle
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder::~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
-	~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2160,7 +2606,7 @@ class Transfer_ResultFromModel : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Interface_InterfaceModel Model() const;
 		%feature("autodoc", "1");
-		Standard_CString FileName() const;
+		char * FileName() const;
 		%feature("autodoc", "1");
 		Standard_Boolean Fill(const Handle_Transfer_TransientProcess &TP, const Handle_Standard_Transient &ent);
 		%feature("autodoc", "1");
@@ -2174,7 +2620,7 @@ class Transfer_ResultFromModel : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetMainResult(const Handle_Transfer_ResultFromTransient &amain);
 		%feature("autodoc", "1");
-		Standard_CString MainLabel() const;
+		char * MainLabel() const;
 		%feature("autodoc", "1");
 		Standard_Integer MainNumber() const;
 		%feature("autodoc", "1");
@@ -2205,10 +2651,18 @@ class Transfer_ResultFromModel : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_ResultFromModel::~Transfer_ResultFromModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_ResultFromModel {
-	~Transfer_ResultFromModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ResultFromModel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2236,10 +2690,18 @@ class Transfer_DataMapNodeOfDataMapOfTransientTransient : public TCollection_Map
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_DataMapNodeOfDataMapOfTransientTransient::~Transfer_DataMapNodeOfDataMapOfTransientTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_DataMapNodeOfDataMapOfTransientTransient {
-	~Transfer_DataMapNodeOfDataMapOfTransientTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_DataMapNodeOfDataMapOfTransientTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2261,10 +2723,18 @@ class Transfer_IteratorOfProcessForFinder : public Transfer_TransferIterator {
 		const Handle_Transfer_Finder & Starting() const;
 
 };
+%feature("shadow") Transfer_IteratorOfProcessForFinder::~Transfer_IteratorOfProcessForFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_IteratorOfProcessForFinder {
-	~Transfer_IteratorOfProcessForFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_IteratorOfProcessForFinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2277,7 +2747,7 @@ class Transfer_SimpleBinderOfTransient : public Transfer_Binder {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Type ResultType() const;
 		%feature("autodoc", "1");
-		virtual		Standard_CString ResultTypeName() const;
+		virtual		char * ResultTypeName() const;
 		%feature("autodoc", "1");
 		void SetResult(const Handle_Standard_Transient &res);
 		%feature("autodoc", "1");
@@ -2298,10 +2768,18 @@ class Transfer_SimpleBinderOfTransient : public Transfer_Binder {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_SimpleBinderOfTransient::~Transfer_SimpleBinderOfTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_SimpleBinderOfTransient {
-	~Transfer_SimpleBinderOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_SimpleBinderOfTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2311,8 +2789,18 @@ class Transfer_ActorOfFinderProcess : public Transfer_ActorOfProcessForFinder {
 	public:
 		%feature("autodoc", "1");
 		Transfer_ActorOfFinderProcess();
-		%feature("autodoc", "1");
-		Standard_Integer & ModeTrans();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetModeTrans() {
+				return (Standard_Integer) $self->ModeTrans();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModeTrans(Standard_Integer value ) {
+				$self->ModeTrans()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		Handle_Transfer_Binder Transferring(const Handle_Transfer_Finder &start, const Handle_Transfer_ProcessForFinder &TP);
 		%feature("autodoc", "1");
@@ -2333,10 +2821,18 @@ class Transfer_ActorOfFinderProcess : public Transfer_ActorOfProcessForFinder {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_ActorOfFinderProcess::~Transfer_ActorOfFinderProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_ActorOfFinderProcess {
-	~Transfer_ActorOfFinderProcess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfFinderProcess\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2390,10 +2886,18 @@ class Transfer_SequenceOfBinder : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Transfer_SequenceOfBinder::~Transfer_SequenceOfBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_SequenceOfBinder {
-	~Transfer_SequenceOfBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_SequenceOfBinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2408,7 +2912,7 @@ class Transfer_MultipleBinder : public Transfer_Binder {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Type ResultType() const;
 		%feature("autodoc", "1");
-		virtual		Standard_CString ResultTypeName() const;
+		virtual		char * ResultTypeName() const;
 		%feature("autodoc", "1");
 		void AddResult(const Handle_Standard_Transient &res);
 		%feature("autodoc", "1");
@@ -2433,10 +2937,18 @@ class Transfer_MultipleBinder : public Transfer_Binder {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_MultipleBinder::~Transfer_MultipleBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_MultipleBinder {
-	~Transfer_MultipleBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_MultipleBinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2462,10 +2974,18 @@ class Transfer_SequenceNodeOfSequenceOfFinder : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_SequenceNodeOfSequenceOfFinder::~Transfer_SequenceNodeOfSequenceOfFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_SequenceNodeOfSequenceOfFinder {
-	~Transfer_SequenceNodeOfSequenceOfFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_SequenceNodeOfSequenceOfFinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2495,10 +3015,18 @@ class Transfer_TransferOutput {
 		Handle_Interface_InterfaceModel ModelForStatus(const Handle_Interface_Protocol &protocol, const Standard_Boolean normal, const Standard_Boolean roots=1) const;
 
 };
+%feature("shadow") Transfer_TransferOutput::~Transfer_TransferOutput %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_TransferOutput {
-	~Transfer_TransferOutput() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_TransferOutput\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2515,7 +3043,7 @@ class Transfer_TransientListBinder : public Transfer_Binder {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Type ResultType() const;
 		%feature("autodoc", "1");
-		virtual		Standard_CString ResultTypeName() const;
+		virtual		char * ResultTypeName() const;
 		%feature("autodoc", "1");
 		void AddResult(const Handle_Standard_Transient &res);
 		%feature("autodoc", "1");
@@ -2540,10 +3068,18 @@ class Transfer_TransientListBinder : public Transfer_Binder {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_TransientListBinder::~Transfer_TransientListBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_TransientListBinder {
-	~Transfer_TransientListBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_TransientListBinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2571,10 +3107,18 @@ class Transfer_BinderOfTransientInteger : public Transfer_SimpleBinderOfTransien
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_BinderOfTransientInteger::~Transfer_BinderOfTransientInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_BinderOfTransientInteger {
-	~Transfer_BinderOfTransientInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_BinderOfTransientInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2642,10 +3186,18 @@ class Transfer_HSequenceOfBinder : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_HSequenceOfBinder::~Transfer_HSequenceOfBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_HSequenceOfBinder {
-	~Transfer_HSequenceOfBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_HSequenceOfBinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2661,10 +3213,18 @@ class Transfer_DataInfo {
 		char * TypeName(const Handle_Standard_Transient &ent);
 
 };
+%feature("shadow") Transfer_DataInfo::~Transfer_DataInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_DataInfo {
-	~Transfer_DataInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_DataInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2676,8 +3236,18 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public TCo
 		Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient(const Handle_Standard_Transient &K1, const Standard_Integer K2, const Handle_Transfer_Binder &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -2696,10 +3266,18 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public TCo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient::~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
-	~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2743,10 +3321,18 @@ class Transfer_TransferMapOfProcessForFinder : public TCollection_BasicMap {
 		Handle_Transfer_Binder & ChangeFromKey(const Handle_Transfer_Finder &K);
 
 };
+%feature("shadow") Transfer_TransferMapOfProcessForFinder::~Transfer_TransferMapOfProcessForFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_TransferMapOfProcessForFinder {
-	~Transfer_TransferMapOfProcessForFinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_TransferMapOfProcessForFinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2766,10 +3352,18 @@ class Transfer_DataMapIteratorOfDataMapOfTransientTransient : public TCollection
 		const Handle_Standard_Transient & Value() const;
 
 };
+%feature("shadow") Transfer_DataMapIteratorOfDataMapOfTransientTransient::~Transfer_DataMapIteratorOfDataMapOfTransientTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_DataMapIteratorOfDataMapOfTransientTransient {
-	~Transfer_DataMapIteratorOfDataMapOfTransientTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_DataMapIteratorOfDataMapOfTransientTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2825,10 +3419,18 @@ class Transfer_TransientProcess : public Transfer_ProcessForTransient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_TransientProcess::~Transfer_TransientProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_TransientProcess {
-	~Transfer_TransientProcess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_TransientProcess\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2856,10 +3458,18 @@ class Transfer_MapContainer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_MapContainer::~Transfer_MapContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_MapContainer {
-	~Transfer_MapContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_MapContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2881,10 +3491,18 @@ class Transfer_IteratorOfProcessForTransient : public Transfer_TransferIterator 
 		const Handle_Standard_Transient & Starting() const;
 
 };
+%feature("shadow") Transfer_IteratorOfProcessForTransient::~Transfer_IteratorOfProcessForTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_IteratorOfProcessForTransient {
-	~Transfer_IteratorOfProcessForTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_IteratorOfProcessForTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2910,9 +3528,17 @@ class Transfer_SequenceNodeOfSequenceOfBinder : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Transfer_SequenceNodeOfSequenceOfBinder::~Transfer_SequenceNodeOfSequenceOfBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Transfer_SequenceNodeOfSequenceOfBinder {
-	~Transfer_SequenceNodeOfSequenceOfBinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Transfer_SequenceNodeOfSequenceOfBinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

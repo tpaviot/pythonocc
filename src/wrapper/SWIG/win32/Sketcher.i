@@ -27,34 +27,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Sketcher_dependencies.i
 
 
 %include Sketcher_headers.i
 
-
-
-
-%nodefaultctor Sketcher_Profile;
-class Sketcher_Profile {
-	public:
-		%feature("autodoc", "1");
-		Sketcher_Profile();
-		%feature("autodoc", "1");
-		Sketcher_Profile(const char *aCmd);
-		%feature("autodoc", "1");
-		gp_Pnt GetLastPoint();
-		%feature("autodoc", "1");
-		gp_Dir GetLastDir();
-		%feature("autodoc", "1");
-		const TopoDS_Shape & GetShape();
-		%feature("autodoc", "1");
-		bool IsDone();
-
-};
-%extend Sketcher_Profile {
-	~Sketcher_Profile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Sketcher_Profile\n");}
-	}
-};

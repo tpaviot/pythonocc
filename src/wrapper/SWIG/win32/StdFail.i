@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StdFail_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_StdFail_UndefinedValue : public Handle_Standard_DomainError {
 	return (StdFail_UndefinedValue*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdFail_UndefinedValue::~Handle_StdFail_UndefinedValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdFail_UndefinedValue {
-	~Handle_StdFail_UndefinedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdFail_UndefinedValue\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_StdFail_NotDone : public Handle_Standard_Failure {
 	return (StdFail_NotDone*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdFail_NotDone::~Handle_StdFail_NotDone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdFail_NotDone {
-	~Handle_StdFail_NotDone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdFail_NotDone\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_StdFail_InfiniteSolutions : public Handle_Standard_Failure {
 	return (StdFail_InfiniteSolutions*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdFail_InfiniteSolutions::~Handle_StdFail_InfiniteSolutions %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdFail_InfiniteSolutions {
-	~Handle_StdFail_InfiniteSolutions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdFail_InfiniteSolutions\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_StdFail_Undefined : public Handle_Standard_Failure {
 	return (StdFail_Undefined*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdFail_Undefined::~Handle_StdFail_Undefined %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdFail_Undefined {
-	~Handle_StdFail_Undefined() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdFail_Undefined\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_StdFail_UndefinedDerivative : public Handle_Standard_DomainError {
 	return (StdFail_UndefinedDerivative*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdFail_UndefinedDerivative::~Handle_StdFail_UndefinedDerivative %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdFail_UndefinedDerivative {
-	~Handle_StdFail_UndefinedDerivative() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdFail_UndefinedDerivative\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -212,10 +256,18 @@ class StdFail_Undefined : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdFail_Undefined::~StdFail_Undefined %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdFail_Undefined {
-	~StdFail_Undefined() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdFail_Undefined\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -247,10 +299,18 @@ class StdFail_UndefinedDerivative : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdFail_UndefinedDerivative::~StdFail_UndefinedDerivative %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdFail_UndefinedDerivative {
-	~StdFail_UndefinedDerivative() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdFail_UndefinedDerivative\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -282,10 +342,18 @@ class StdFail_InfiniteSolutions : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdFail_InfiniteSolutions::~StdFail_InfiniteSolutions %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdFail_InfiniteSolutions {
-	~StdFail_InfiniteSolutions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdFail_InfiniteSolutions\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -317,10 +385,18 @@ class StdFail_NotDone : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdFail_NotDone::~StdFail_NotDone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdFail_NotDone {
-	~StdFail_NotDone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdFail_NotDone\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -352,9 +428,17 @@ class StdFail_UndefinedValue : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdFail_UndefinedValue::~StdFail_UndefinedValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdFail_UndefinedValue {
-	~StdFail_UndefinedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdFail_UndefinedValue\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

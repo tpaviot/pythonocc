@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ShapeAlgo_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
 	return (ShapeAlgo_ToolContainer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeAlgo_ToolContainer::~Handle_ShapeAlgo_ToolContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeAlgo_ToolContainer {
-	~Handle_ShapeAlgo_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAlgo_ToolContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 	return (ShapeAlgo_AlgoContainer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeAlgo_AlgoContainer::~Handle_ShapeAlgo_AlgoContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeAlgo_AlgoContainer {
-	~Handle_ShapeAlgo_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAlgo_AlgoContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -118,10 +138,18 @@ class ShapeAlgo_ToolContainer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeAlgo_ToolContainer::~ShapeAlgo_ToolContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeAlgo_ToolContainer {
-	~ShapeAlgo_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeAlgo_ToolContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -135,7 +163,7 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 		void SetToolContainer(const Handle_ShapeAlgo_ToolContainer &TC);
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_ToolContainer ToolContainer() const;
-		%feature("autodoc","ConnectNextWire(const saw, const nextsewd, Standard_Real maxtol)->Standard_Real");
+		%feature("autodoc","ConnectNextWire(const saw, const nextsewd, Standard_Real maxtol) -> Standard_Real");
 		virtual		Standard_Boolean ConnectNextWire(const Handle_ShapeAnalysis_Wire &saw, const Handle_ShapeExtend_WireData &nextsewd, const Standard_Real maxtol, Standard_Real &OutValue, Standard_Boolean & revsewd, Standard_Boolean & revnextsewd) const;
 		%feature("autodoc", "1");
 		virtual		void ApproxBSplineCurve(const Handle_Geom_BSplineCurve &bspline, TColGeom_SequenceOfCurve & seq) const;
@@ -155,7 +183,7 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 		virtual		TopoDS_Wire OuterWire(const TopoDS_Face &face) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Surface ConvertToPeriodic(const Handle_Geom_Surface &surf) const;
-		%feature("autodoc","GetFaceUVBounds(const F)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","GetFaceUVBounds(const F) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		virtual		void GetFaceUVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineCurve ConvertCurveToBSpline(const Handle_Geom_Curve &C3D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree) const;
@@ -173,9 +201,17 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeAlgo_AlgoContainer::~ShapeAlgo_AlgoContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeAlgo_AlgoContainer {
-	~ShapeAlgo_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeAlgo_AlgoContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

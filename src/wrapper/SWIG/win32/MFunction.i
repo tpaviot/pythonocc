@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MFunction_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_MFunction_FunctionRetrievalDriver : public Handle_MDF_ARDriver {
 	return (MFunction_FunctionRetrievalDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MFunction_FunctionRetrievalDriver::~Handle_MFunction_FunctionRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MFunction_FunctionRetrievalDriver {
-	~Handle_MFunction_FunctionRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MFunction_FunctionRetrievalDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_MFunction_FunctionStorageDriver : public Handle_MDF_ASDriver {
 	return (MFunction_FunctionStorageDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MFunction_FunctionStorageDriver::~Handle_MFunction_FunctionStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MFunction_FunctionStorageDriver {
-	~Handle_MFunction_FunctionStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MFunction_FunctionStorageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -122,10 +142,18 @@ class MFunction_FunctionStorageDriver : public MDF_ASDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MFunction_FunctionStorageDriver::~MFunction_FunctionStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFunction_FunctionStorageDriver {
-	~MFunction_FunctionStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFunction_FunctionStorageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -157,10 +185,18 @@ class MFunction_FunctionRetrievalDriver : public MDF_ARDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MFunction_FunctionRetrievalDriver::~MFunction_FunctionRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFunction_FunctionRetrievalDriver {
-	~MFunction_FunctionRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFunction_FunctionRetrievalDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -176,9 +212,17 @@ class MFunction {
 		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
 
 };
+%feature("shadow") MFunction::~MFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFunction {
-	~MFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFunction\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

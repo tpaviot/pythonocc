@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PBRep_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_PBRep_TFace1 : public Handle_PTopoDS_TFace1 {
 	return (PBRep_TFace1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_TFace1::~Handle_PBRep_TFace1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_TFace1 {
-	~Handle_PBRep_TFace1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TFace1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_PBRep_PointRepresentation : public Handle_Standard_Persistent {
 	return (PBRep_PointRepresentation*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_PointRepresentation::~Handle_PBRep_PointRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_PointRepresentation {
-	~Handle_PBRep_PointRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointRepresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_PBRep_TVertex1 : public Handle_PTopoDS_TVertex1 {
 	return (PBRep_TVertex1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_TVertex1::~Handle_PBRep_TVertex1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_TVertex1 {
-	~Handle_PBRep_TVertex1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TVertex1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_PBRep_CurveRepresentation : public Handle_Standard_Persistent {
 	return (PBRep_CurveRepresentation*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_CurveRepresentation::~Handle_PBRep_CurveRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_CurveRepresentation {
-	~Handle_PBRep_CurveRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveRepresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_PBRep_GCurve : public Handle_PBRep_CurveRepresentation {
 	return (PBRep_GCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_GCurve::~Handle_PBRep_GCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_GCurve {
-	~Handle_PBRep_GCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_GCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_PBRep_CurveOnSurface : public Handle_PBRep_GCurve {
 	return (PBRep_CurveOnSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_CurveOnSurface::~Handle_PBRep_CurveOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_CurveOnSurface {
-	~Handle_PBRep_CurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveOnSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_PBRep_TFace : public Handle_PTopoDS_TFace {
 	return (PBRep_TFace*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_TFace::~Handle_PBRep_TFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_TFace {
-	~Handle_PBRep_TFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_PBRep_PolygonOnTriangulation : public Handle_PBRep_CurveRepresentat
 	return (PBRep_PolygonOnTriangulation*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_PolygonOnTriangulation::~Handle_PBRep_PolygonOnTriangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_PolygonOnTriangulation {
-	~Handle_PBRep_PolygonOnTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnTriangulation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_PBRep_PointsOnSurface : public Handle_PBRep_PointRepresentation {
 	return (PBRep_PointsOnSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_PointsOnSurface::~Handle_PBRep_PointsOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_PointsOnSurface {
-	~Handle_PBRep_PointsOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointsOnSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_PBRep_CurveOn2Surfaces : public Handle_PBRep_CurveRepresentation {
 	return (PBRep_CurveOn2Surfaces*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_CurveOn2Surfaces::~Handle_PBRep_CurveOn2Surfaces %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_CurveOn2Surfaces {
-	~Handle_PBRep_CurveOn2Surfaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveOn2Surfaces\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_PBRep_TEdge1 : public Handle_PTopoDS_TEdge1 {
 	return (PBRep_TEdge1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_TEdge1::~Handle_PBRep_TEdge1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_TEdge1 {
-	~Handle_PBRep_TEdge1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TEdge1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_PBRep_PolygonOnSurface : public Handle_PBRep_CurveRepresentation {
 	return (PBRep_PolygonOnSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_PolygonOnSurface::~Handle_PBRep_PolygonOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_PolygonOnSurface {
-	~Handle_PBRep_PolygonOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_PBRep_PolygonOnClosedSurface : public Handle_PBRep_PolygonOnSurface
 	return (PBRep_PolygonOnClosedSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_PolygonOnClosedSurface::~Handle_PBRep_PolygonOnClosedSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_PolygonOnClosedSurface {
-	~Handle_PBRep_PolygonOnClosedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnClosedSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +555,18 @@ class Handle_PBRep_Polygon3D : public Handle_PBRep_CurveRepresentation {
 	return (PBRep_Polygon3D*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_Polygon3D::~Handle_PBRep_Polygon3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_Polygon3D {
-	~Handle_PBRep_Polygon3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_Polygon3D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +593,18 @@ class Handle_PBRep_Curve3D : public Handle_PBRep_GCurve {
 	return (PBRep_Curve3D*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_Curve3D::~Handle_PBRep_Curve3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_Curve3D {
-	~Handle_PBRep_Curve3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_Curve3D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +631,18 @@ class Handle_PBRep_PointOnSurface : public Handle_PBRep_PointsOnSurface {
 	return (PBRep_PointOnSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_PointOnSurface::~Handle_PBRep_PointOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_PointOnSurface {
-	~Handle_PBRep_PointOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointOnSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +669,18 @@ class Handle_PBRep_TEdge : public Handle_PTopoDS_TEdge {
 	return (PBRep_TEdge*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_TEdge::~Handle_PBRep_TEdge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_TEdge {
-	~Handle_PBRep_TEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TEdge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +707,18 @@ class Handle_PBRep_CurveOnClosedSurface : public Handle_PBRep_CurveOnSurface {
 	return (PBRep_CurveOnClosedSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_CurveOnClosedSurface::~Handle_PBRep_CurveOnClosedSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_CurveOnClosedSurface {
-	~Handle_PBRep_CurveOnClosedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveOnClosedSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +745,18 @@ class Handle_PBRep_PolygonOnClosedTriangulation : public Handle_PBRep_PolygonOnT
 	return (PBRep_PolygonOnClosedTriangulation*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_PolygonOnClosedTriangulation::~Handle_PBRep_PolygonOnClosedTriangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_PolygonOnClosedTriangulation {
-	~Handle_PBRep_PolygonOnClosedTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnClosedTriangulation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +783,18 @@ class Handle_PBRep_TVertex : public Handle_PTopoDS_TVertex {
 	return (PBRep_TVertex*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_TVertex::~Handle_PBRep_TVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_TVertex {
-	~Handle_PBRep_TVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TVertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -657,10 +821,18 @@ class Handle_PBRep_PointOnCurve : public Handle_PBRep_PointRepresentation {
 	return (PBRep_PointOnCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_PointOnCurve::~Handle_PBRep_PointOnCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_PointOnCurve {
-	~Handle_PBRep_PointOnCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointOnCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -687,10 +859,18 @@ class Handle_PBRep_PointOnCurveOnSurface : public Handle_PBRep_PointsOnSurface {
 	return (PBRep_PointOnCurveOnSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PBRep_PointOnCurveOnSurface::~Handle_PBRep_PointOnCurveOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PBRep_PointOnCurveOnSurface {
-	~Handle_PBRep_PointOnCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointOnCurveOnSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -748,10 +928,18 @@ class PBRep_CurveRepresentation : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_CurveRepresentation::~PBRep_CurveRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_CurveRepresentation {
-	~PBRep_CurveRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_CurveRepresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -789,10 +977,18 @@ class PBRep_PolygonOnTriangulation : public PBRep_CurveRepresentation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_PolygonOnTriangulation::~PBRep_PolygonOnTriangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_PolygonOnTriangulation {
-	~PBRep_PolygonOnTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_PolygonOnTriangulation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -824,10 +1020,18 @@ class PBRep_PolygonOnClosedTriangulation : public PBRep_PolygonOnTriangulation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_PolygonOnClosedTriangulation::~PBRep_PolygonOnClosedTriangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_PolygonOnClosedTriangulation {
-	~PBRep_PolygonOnClosedTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_PolygonOnClosedTriangulation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -875,10 +1079,18 @@ class PBRep_TVertex1 : public PTopoDS_TVertex1 {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_TVertex1::~PBRep_TVertex1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_TVertex1 {
-	~PBRep_TVertex1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_TVertex1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -936,10 +1148,18 @@ class PBRep_TEdge1 : public PTopoDS_TEdge1 {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_TEdge1::~PBRep_TEdge1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_TEdge1 {
-	~PBRep_TEdge1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_TEdge1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -983,10 +1203,18 @@ class PBRep_GCurve : public PBRep_CurveRepresentation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_GCurve::~PBRep_GCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_GCurve {
-	~PBRep_GCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_GCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1036,10 +1264,18 @@ class PBRep_CurveOnSurface : public PBRep_GCurve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_CurveOnSurface::~PBRep_CurveOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_CurveOnSurface {
-	~PBRep_CurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_CurveOnSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1097,10 +1333,18 @@ class PBRep_TEdge : public PTopoDS_TEdge {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_TEdge::~PBRep_TEdge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_TEdge {
-	~PBRep_TEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_TEdge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1152,10 +1396,18 @@ class PBRep_PointRepresentation : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_PointRepresentation::~PBRep_PointRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_PointRepresentation {
-	~PBRep_PointRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_PointRepresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1185,10 +1437,18 @@ class PBRep_PointsOnSurface : public PBRep_PointRepresentation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_PointsOnSurface::~PBRep_PointsOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_PointsOnSurface {
-	~PBRep_PointsOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_PointsOnSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1240,10 +1500,18 @@ class PBRep_CurveOn2Surfaces : public PBRep_CurveRepresentation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_CurveOn2Surfaces::~PBRep_CurveOn2Surfaces %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_CurveOn2Surfaces {
-	~PBRep_CurveOn2Surfaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_CurveOn2Surfaces\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1279,10 +1547,18 @@ class PBRep_Curve3D : public PBRep_GCurve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_Curve3D::~PBRep_Curve3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_Curve3D {
-	~PBRep_Curve3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_Curve3D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1318,10 +1594,18 @@ class PBRep_PointOnCurveOnSurface : public PBRep_PointsOnSurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_PointOnCurveOnSurface::~PBRep_PointOnCurveOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_PointOnCurveOnSurface {
-	~PBRep_PointOnCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_PointOnCurveOnSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1369,10 +1653,18 @@ class PBRep_TVertex : public PTopoDS_TVertex {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_TVertex::~PBRep_TVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_TVertex {
-	~PBRep_TVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_TVertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1414,10 +1706,18 @@ class PBRep_PolygonOnSurface : public PBRep_CurveRepresentation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_PolygonOnSurface::~PBRep_PolygonOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_PolygonOnSurface {
-	~PBRep_PolygonOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_PolygonOnSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1451,10 +1751,18 @@ class PBRep_PolygonOnClosedSurface : public PBRep_PolygonOnSurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_PolygonOnClosedSurface::~PBRep_PolygonOnClosedSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_PolygonOnClosedSurface {
-	~PBRep_PolygonOnClosedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_PolygonOnClosedSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1490,10 +1798,18 @@ class PBRep_Polygon3D : public PBRep_CurveRepresentation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_Polygon3D::~PBRep_Polygon3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_Polygon3D {
-	~PBRep_Polygon3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_Polygon3D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1529,10 +1845,18 @@ class PBRep_PointOnSurface : public PBRep_PointsOnSurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_PointOnSurface::~PBRep_PointOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_PointOnSurface {
-	~PBRep_PointOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_PointOnSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1586,10 +1910,18 @@ class PBRep_CurveOnClosedSurface : public PBRep_CurveOnSurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_CurveOnClosedSurface::~PBRep_CurveOnClosedSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_CurveOnClosedSurface {
-	~PBRep_CurveOnClosedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_CurveOnClosedSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1653,10 +1985,18 @@ class PBRep_TFace1 : public PTopoDS_TFace1 {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_TFace1::~PBRep_TFace1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_TFace1 {
-	~PBRep_TFace1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_TFace1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1720,10 +2060,18 @@ class PBRep_TFace : public PTopoDS_TFace {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_TFace::~PBRep_TFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_TFace {
-	~PBRep_TFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_TFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1759,9 +2107,17 @@ class PBRep_PointOnCurve : public PBRep_PointRepresentation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PBRep_PointOnCurve::~PBRep_PointOnCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PBRep_PointOnCurve {
-	~PBRep_PointOnCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PBRep_PointOnCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

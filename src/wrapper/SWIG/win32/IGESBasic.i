@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IGESBasic_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_IGESBasic_Group : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_Group*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_Group::~Handle_IGESBasic_Group %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_Group {
-	~Handle_IGESBasic_Group() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_Group\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_IGESBasic_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	return (IGESBasic_ReadWriteModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_ReadWriteModule::~Handle_IGESBasic_ReadWriteModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_ReadWriteModule {
-	~Handle_IGESBasic_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ReadWriteModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_IGESBasic_SingleParent : public Handle_IGESData_SingleParentEntity 
 	return (IGESBasic_SingleParent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_SingleParent::~Handle_IGESBasic_SingleParent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_SingleParent {
-	~Handle_IGESBasic_SingleParent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_SingleParent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_IGESBasic_ExternalRefLibName : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_ExternalRefLibName*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_ExternalRefLibName::~Handle_IGESBasic_ExternalRefLibName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_ExternalRefLibName {
-	~Handle_IGESBasic_ExternalRefLibName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefLibName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_IGESBasic_Name : public Handle_IGESData_NameEntity {
 	return (IGESBasic_Name*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_Name::~Handle_IGESBasic_Name %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_Name {
-	~Handle_IGESBasic_Name() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_Name\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_IGESBasic_HArray1OfHArray1OfIGESEntity : public Handle_MMgt_TShared
 	return (IGESBasic_HArray1OfHArray1OfIGESEntity*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_HArray1OfHArray1OfIGESEntity::~Handle_IGESBasic_HArray1OfHArray1OfIGESEntity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_HArray1OfHArray1OfIGESEntity {
-	~Handle_IGESBasic_HArray1OfHArray1OfIGESEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfIGESEntity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_IGESBasic_HArray1OfHArray1OfXY : public Handle_MMgt_TShared {
 	return (IGESBasic_HArray1OfHArray1OfXY*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_HArray1OfHArray1OfXY::~Handle_IGESBasic_HArray1OfHArray1OfXY %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_HArray1OfHArray1OfXY {
-	~Handle_IGESBasic_HArray1OfHArray1OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfXY\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_IGESBasic_Protocol : public Handle_IGESData_Protocol {
 	return (IGESBasic_Protocol*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_Protocol::~Handle_IGESBasic_Protocol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_Protocol {
-	~Handle_IGESBasic_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_Protocol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_IGESBasic_Hierarchy : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_Hierarchy*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_Hierarchy::~Handle_IGESBasic_Hierarchy %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_Hierarchy {
-	~Handle_IGESBasic_Hierarchy() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_Hierarchy\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_IGESBasic_HArray1OfHArray1OfInteger : public Handle_MMgt_TShared {
 	return (IGESBasic_HArray1OfHArray1OfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_HArray1OfHArray1OfInteger::~Handle_IGESBasic_HArray1OfHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_HArray1OfHArray1OfInteger {
-	~Handle_IGESBasic_HArray1OfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_IGESBasic_SingularSubfigure : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_SingularSubfigure*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_SingularSubfigure::~Handle_IGESBasic_SingularSubfigure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_SingularSubfigure {
-	~Handle_IGESBasic_SingularSubfigure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_SingularSubfigure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_IGESBasic_HArray1OfLineFontEntity : public Handle_MMgt_TShared {
 	return (IGESBasic_HArray1OfLineFontEntity*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_HArray1OfLineFontEntity::~Handle_IGESBasic_HArray1OfLineFontEntity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_HArray1OfLineFontEntity {
-	~Handle_IGESBasic_HArray1OfLineFontEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfLineFontEntity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_IGESBasic_ExternalRefFileName : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_ExternalRefFileName*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_ExternalRefFileName::~Handle_IGESBasic_ExternalRefFileName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_ExternalRefFileName {
-	~Handle_IGESBasic_ExternalRefFileName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefFileName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +555,18 @@ class Handle_IGESBasic_HArray2OfHArray1OfReal : public Handle_MMgt_TShared {
 	return (IGESBasic_HArray2OfHArray1OfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_HArray2OfHArray1OfReal::~Handle_IGESBasic_HArray2OfHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_HArray2OfHArray1OfReal {
-	~Handle_IGESBasic_HArray2OfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray2OfHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +593,18 @@ class Handle_IGESBasic_GeneralModule : public Handle_IGESData_GeneralModule {
 	return (IGESBasic_GeneralModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_GeneralModule::~Handle_IGESBasic_GeneralModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_GeneralModule {
-	~Handle_IGESBasic_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_GeneralModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +631,18 @@ class Handle_IGESBasic_GroupWithoutBackP : public Handle_IGESBasic_Group {
 	return (IGESBasic_GroupWithoutBackP*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_GroupWithoutBackP::~Handle_IGESBasic_GroupWithoutBackP %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_GroupWithoutBackP {
-	~Handle_IGESBasic_GroupWithoutBackP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_GroupWithoutBackP\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +669,18 @@ class Handle_IGESBasic_AssocGroupType : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_AssocGroupType*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_AssocGroupType::~Handle_IGESBasic_AssocGroupType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_AssocGroupType {
-	~Handle_IGESBasic_AssocGroupType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_AssocGroupType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +707,18 @@ class Handle_IGESBasic_HArray1OfHArray1OfXYZ : public Handle_MMgt_TShared {
 	return (IGESBasic_HArray1OfHArray1OfXYZ*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_HArray1OfHArray1OfXYZ::~Handle_IGESBasic_HArray1OfHArray1OfXYZ %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_HArray1OfHArray1OfXYZ {
-	~Handle_IGESBasic_HArray1OfHArray1OfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfXYZ\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +745,18 @@ class Handle_IGESBasic_OrderedGroup : public Handle_IGESBasic_Group {
 	return (IGESBasic_OrderedGroup*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_OrderedGroup::~Handle_IGESBasic_OrderedGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_OrderedGroup {
-	~Handle_IGESBasic_OrderedGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_OrderedGroup\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +783,18 @@ class Handle_IGESBasic_ExternalRefName : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_ExternalRefName*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_ExternalRefName::~Handle_IGESBasic_ExternalRefName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_ExternalRefName {
-	~Handle_IGESBasic_ExternalRefName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -657,10 +821,18 @@ class Handle_IGESBasic_OrderedGroupWithoutBackP : public Handle_IGESBasic_Group 
 	return (IGESBasic_OrderedGroupWithoutBackP*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_OrderedGroupWithoutBackP::~Handle_IGESBasic_OrderedGroupWithoutBackP %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_OrderedGroupWithoutBackP {
-	~Handle_IGESBasic_OrderedGroupWithoutBackP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_OrderedGroupWithoutBackP\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -687,10 +859,18 @@ class Handle_IGESBasic_SubfigureDef : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_SubfigureDef*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_SubfigureDef::~Handle_IGESBasic_SubfigureDef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_SubfigureDef {
-	~Handle_IGESBasic_SubfigureDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_SubfigureDef\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -717,10 +897,18 @@ class Handle_IGESBasic_ExternalReferenceFile : public Handle_IGESData_IGESEntity
 	return (IGESBasic_ExternalReferenceFile*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_ExternalReferenceFile::~Handle_IGESBasic_ExternalReferenceFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_ExternalReferenceFile {
-	~Handle_IGESBasic_ExternalReferenceFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalReferenceFile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -747,10 +935,18 @@ class Handle_IGESBasic_HArray1OfHArray1OfReal : public Handle_MMgt_TShared {
 	return (IGESBasic_HArray1OfHArray1OfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_HArray1OfHArray1OfReal::~Handle_IGESBasic_HArray1OfHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_HArray1OfHArray1OfReal {
-	~Handle_IGESBasic_HArray1OfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -777,10 +973,18 @@ class Handle_IGESBasic_SpecificModule : public Handle_IGESData_SpecificModule {
 	return (IGESBasic_SpecificModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_SpecificModule::~Handle_IGESBasic_SpecificModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_SpecificModule {
-	~Handle_IGESBasic_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_SpecificModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -807,10 +1011,18 @@ class Handle_IGESBasic_ExternalRefFileIndex : public Handle_IGESData_IGESEntity 
 	return (IGESBasic_ExternalRefFileIndex*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_ExternalRefFileIndex::~Handle_IGESBasic_ExternalRefFileIndex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_ExternalRefFileIndex {
-	~Handle_IGESBasic_ExternalRefFileIndex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefFileIndex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -837,10 +1049,18 @@ class Handle_IGESBasic_ExternalRefFile : public Handle_IGESData_IGESEntity {
 	return (IGESBasic_ExternalRefFile*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESBasic_ExternalRefFile::~Handle_IGESBasic_ExternalRefFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESBasic_ExternalRefFile {
-	~Handle_IGESBasic_ExternalRefFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefFile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -868,10 +1088,18 @@ class IGESBasic_ToolAssocGroupType {
 		void OwnDump(const Handle_IGESBasic_AssocGroupType &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolAssocGroupType::~IGESBasic_ToolAssocGroupType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolAssocGroupType {
-	~IGESBasic_ToolAssocGroupType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolAssocGroupType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -899,10 +1127,18 @@ class IGESBasic_ExternalRefName : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_ExternalRefName::~IGESBasic_ExternalRefName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ExternalRefName {
-	~IGESBasic_ExternalRefName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -946,10 +1182,18 @@ class IGESBasic_Array2OfHArray1OfReal {
 		Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%feature("shadow") IGESBasic_Array2OfHArray1OfReal::~IGESBasic_Array2OfHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_Array2OfHArray1OfReal {
-	~IGESBasic_Array2OfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_Array2OfHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -983,10 +1227,18 @@ class IGESBasic_HArray1OfHArray1OfReal : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_HArray1OfHArray1OfReal::~IGESBasic_HArray1OfHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_HArray1OfHArray1OfReal {
-	~IGESBasic_HArray1OfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1034,10 +1286,18 @@ class IGESBasic_Group : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_Group::~IGESBasic_Group %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_Group {
-	~IGESBasic_Group() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_Group\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1059,10 +1319,18 @@ class IGESBasic_GroupWithoutBackP : public IGESBasic_Group {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_GroupWithoutBackP::~IGESBasic_GroupWithoutBackP %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_GroupWithoutBackP {
-	~IGESBasic_GroupWithoutBackP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_GroupWithoutBackP\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1090,10 +1358,18 @@ class IGESBasic_SpecificModule : public IGESData_SpecificModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_SpecificModule::~IGESBasic_SpecificModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_SpecificModule {
-	~IGESBasic_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_SpecificModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1119,10 +1395,18 @@ class IGESBasic_ToolSingularSubfigure {
 		void OwnDump(const Handle_IGESBasic_SingularSubfigure &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolSingularSubfigure::~IGESBasic_ToolSingularSubfigure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolSingularSubfigure {
-	~IGESBasic_ToolSingularSubfigure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolSingularSubfigure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1156,10 +1440,18 @@ class IGESBasic_HArray1OfHArray1OfXYZ : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_HArray1OfHArray1OfXYZ::~IGESBasic_HArray1OfHArray1OfXYZ %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_HArray1OfHArray1OfXYZ {
-	~IGESBasic_HArray1OfHArray1OfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfXYZ\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1193,10 +1485,18 @@ class IGESBasic_HArray1OfHArray1OfIGESEntity : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_HArray1OfHArray1OfIGESEntity::~IGESBasic_HArray1OfHArray1OfIGESEntity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_HArray1OfHArray1OfIGESEntity {
-	~IGESBasic_HArray1OfHArray1OfIGESEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfIGESEntity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1232,10 +1532,18 @@ class IGESBasic_GeneralModule : public IGESData_GeneralModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_GeneralModule::~IGESBasic_GeneralModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_GeneralModule {
-	~IGESBasic_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_GeneralModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1259,10 +1567,18 @@ class IGESBasic_OrderedGroup : public IGESBasic_Group {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_OrderedGroup::~IGESBasic_OrderedGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_OrderedGroup {
-	~IGESBasic_OrderedGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_OrderedGroup\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1294,10 +1610,18 @@ class IGESBasic_AssocGroupType : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_AssocGroupType::~IGESBasic_AssocGroupType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_AssocGroupType {
-	~IGESBasic_AssocGroupType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_AssocGroupType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1327,10 +1651,18 @@ class IGESBasic_Name : public IGESData_NameEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_Name::~IGESBasic_Name %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_Name {
-	~IGESBasic_Name() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_Name\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1366,10 +1698,18 @@ class IGESBasic_SubfigureDef : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_SubfigureDef::~IGESBasic_SubfigureDef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_SubfigureDef {
-	~IGESBasic_SubfigureDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_SubfigureDef\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1395,10 +1735,18 @@ class IGESBasic_ToolExternalRefName {
 		void OwnDump(const Handle_IGESBasic_ExternalRefName &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolExternalRefName::~IGESBasic_ToolExternalRefName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolExternalRefName {
-	~IGESBasic_ToolExternalRefName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1426,10 +1774,18 @@ class IGESBasic_ToolGroupWithoutBackP {
 		void OwnDump(const Handle_IGESBasic_GroupWithoutBackP &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolGroupWithoutBackP::~IGESBasic_ToolGroupWithoutBackP %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolGroupWithoutBackP {
-	~IGESBasic_ToolGroupWithoutBackP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolGroupWithoutBackP\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1455,10 +1811,18 @@ class IGESBasic_ToolSubfigureDef {
 		void OwnDump(const Handle_IGESBasic_SubfigureDef &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolSubfigureDef::~IGESBasic_ToolSubfigureDef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolSubfigureDef {
-	~IGESBasic_ToolSubfigureDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolSubfigureDef\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1486,10 +1850,18 @@ class IGESBasic_ToolOrderedGroup {
 		void OwnDump(const Handle_IGESBasic_OrderedGroup &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolOrderedGroup::~IGESBasic_ToolOrderedGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolOrderedGroup {
-	~IGESBasic_ToolOrderedGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolOrderedGroup\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1523,10 +1895,18 @@ class IGESBasic_HArray1OfHArray1OfInteger : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_HArray1OfHArray1OfInteger::~IGESBasic_HArray1OfHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_HArray1OfHArray1OfInteger {
-	~IGESBasic_HArray1OfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1554,10 +1934,18 @@ class IGESBasic_ToolOrderedGroupWithoutBackP {
 		void OwnDump(const Handle_IGESBasic_OrderedGroupWithoutBackP &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolOrderedGroupWithoutBackP::~IGESBasic_ToolOrderedGroupWithoutBackP %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolOrderedGroupWithoutBackP {
-	~IGESBasic_ToolOrderedGroupWithoutBackP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolOrderedGroupWithoutBackP\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1585,10 +1973,18 @@ class IGESBasic_ToolGroup {
 		void OwnDump(const Handle_IGESBasic_Group &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolGroup::~IGESBasic_ToolGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolGroup {
-	~IGESBasic_ToolGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolGroup\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1616,10 +2012,18 @@ class IGESBasic_ToolHierarchy {
 		void OwnDump(const Handle_IGESBasic_Hierarchy &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolHierarchy::~IGESBasic_ToolHierarchy %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolHierarchy {
-	~IGESBasic_ToolHierarchy() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolHierarchy\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1655,10 +2059,18 @@ class IGESBasic_SingularSubfigure : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_SingularSubfigure::~IGESBasic_SingularSubfigure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_SingularSubfigure {
-	~IGESBasic_SingularSubfigure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_SingularSubfigure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1698,10 +2110,18 @@ class IGESBasic_Array1OfLineFontEntity {
 		Handle_IGESData_LineFontEntity & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") IGESBasic_Array1OfLineFontEntity::~IGESBasic_Array1OfLineFontEntity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_Array1OfLineFontEntity {
-	~IGESBasic_Array1OfLineFontEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_Array1OfLineFontEntity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1727,10 +2147,18 @@ class IGESBasic_ToolExternalRefLibName {
 		void OwnDump(const Handle_IGESBasic_ExternalRefLibName &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolExternalRefLibName::~IGESBasic_ToolExternalRefLibName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolExternalRefLibName {
-	~IGESBasic_ToolExternalRefLibName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefLibName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1774,10 +2202,18 @@ class IGESBasic_HArray1OfLineFontEntity : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_HArray1OfLineFontEntity::~IGESBasic_HArray1OfLineFontEntity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_HArray1OfLineFontEntity {
-	~IGESBasic_HArray1OfLineFontEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfLineFontEntity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1807,10 +2243,18 @@ class IGESBasic_ReadWriteModule : public IGESData_ReadWriteModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_ReadWriteModule::~IGESBasic_ReadWriteModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ReadWriteModule {
-	~IGESBasic_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ReadWriteModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1842,10 +2286,18 @@ class IGESBasic_ExternalRefFileName : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_ExternalRefFileName::~IGESBasic_ExternalRefFileName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ExternalRefFileName {
-	~IGESBasic_ExternalRefFileName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefFileName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1873,10 +2325,18 @@ class IGESBasic_ExternalRefFile : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_ExternalRefFile::~IGESBasic_ExternalRefFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ExternalRefFile {
-	~IGESBasic_ExternalRefFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefFile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1916,10 +2376,18 @@ class IGESBasic_Hierarchy : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_Hierarchy::~IGESBasic_Hierarchy %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_Hierarchy {
-	~IGESBasic_Hierarchy() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_Hierarchy\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1945,10 +2413,18 @@ class IGESBasic_ToolExternalRefFileIndex {
 		void OwnDump(const Handle_IGESBasic_ExternalRefFileIndex &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolExternalRefFileIndex::~IGESBasic_ToolExternalRefFileIndex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolExternalRefFileIndex {
-	~IGESBasic_ToolExternalRefFileIndex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefFileIndex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1978,10 +2454,18 @@ class IGESBasic_ExternalReferenceFile : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_ExternalReferenceFile::~IGESBasic_ExternalReferenceFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ExternalReferenceFile {
-	~IGESBasic_ExternalReferenceFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalReferenceFile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1997,10 +2481,18 @@ class IGESBasic {
 		Handle_IGESBasic_Protocol Protocol();
 
 };
+%feature("shadow") IGESBasic::~IGESBasic %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic {
-	~IGESBasic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2032,10 +2524,18 @@ class IGESBasic_ExternalRefFileIndex : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_ExternalRefFileIndex::~IGESBasic_ExternalRefFileIndex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ExternalRefFileIndex {
-	~IGESBasic_ExternalRefFileIndex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefFileIndex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2069,10 +2569,18 @@ class IGESBasic_SingleParent : public IGESData_SingleParentEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_SingleParent::~IGESBasic_SingleParent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_SingleParent {
-	~IGESBasic_SingleParent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_SingleParent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2098,10 +2606,18 @@ class IGESBasic_ToolExternalRefFile {
 		void OwnDump(const Handle_IGESBasic_ExternalRefFile &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolExternalRefFile::~IGESBasic_ToolExternalRefFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolExternalRefFile {
-	~IGESBasic_ToolExternalRefFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefFile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2127,10 +2643,18 @@ class IGESBasic_ToolExternalRefFileName {
 		void OwnDump(const Handle_IGESBasic_ExternalRefFileName &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolExternalRefFileName::~IGESBasic_ToolExternalRefFileName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolExternalRefFileName {
-	~IGESBasic_ToolExternalRefFileName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefFileName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2180,10 +2704,18 @@ class IGESBasic_HArray2OfHArray1OfReal : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_HArray2OfHArray1OfReal::~IGESBasic_HArray2OfHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_HArray2OfHArray1OfReal {
-	~IGESBasic_HArray2OfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray2OfHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2207,10 +2739,18 @@ class IGESBasic_OrderedGroupWithoutBackP : public IGESBasic_Group {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_OrderedGroupWithoutBackP::~IGESBasic_OrderedGroupWithoutBackP %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_OrderedGroupWithoutBackP {
-	~IGESBasic_OrderedGroupWithoutBackP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_OrderedGroupWithoutBackP\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2244,10 +2784,18 @@ class IGESBasic_HArray1OfHArray1OfXY : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_HArray1OfHArray1OfXY::~IGESBasic_HArray1OfHArray1OfXY %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_HArray1OfHArray1OfXY {
-	~IGESBasic_HArray1OfHArray1OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfXY\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2275,10 +2823,18 @@ class IGESBasic_ToolSingleParent {
 		void OwnDump(const Handle_IGESBasic_SingleParent &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolSingleParent::~IGESBasic_ToolSingleParent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolSingleParent {
-	~IGESBasic_ToolSingleParent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolSingleParent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2308,10 +2864,18 @@ class IGESBasic_ExternalRefLibName : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESBasic_ExternalRefLibName::~IGESBasic_ExternalRefLibName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ExternalRefLibName {
-	~IGESBasic_ExternalRefLibName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefLibName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2337,10 +2901,18 @@ class IGESBasic_ToolExternalReferenceFile {
 		void OwnDump(const Handle_IGESBasic_ExternalReferenceFile &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolExternalReferenceFile::~IGESBasic_ToolExternalReferenceFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolExternalReferenceFile {
-	~IGESBasic_ToolExternalReferenceFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalReferenceFile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2368,9 +2940,17 @@ class IGESBasic_ToolName {
 		void OwnDump(const Handle_IGESBasic_Name &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESBasic_ToolName::~IGESBasic_ToolName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESBasic_ToolName {
-	~IGESBasic_ToolName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

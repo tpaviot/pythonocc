@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ChFi2d_dependencies.i
 
 
@@ -58,10 +62,18 @@ class ChFi2d {
 		ChFi2d();
 
 };
+%feature("shadow") ChFi2d::~ChFi2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ChFi2d {
-	~ChFi2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFi2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -115,9 +127,17 @@ class ChFi2d_Builder {
 		ChFi2d_ConstructionError Status() const;
 
 };
+%feature("shadow") ChFi2d_Builder::~ChFi2d_Builder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ChFi2d_Builder {
-	~ChFi2d_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ChFi2d_Builder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

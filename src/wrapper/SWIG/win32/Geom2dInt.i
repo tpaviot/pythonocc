@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Geom2dInt_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurO
 	return (Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter::~Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
-	~Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -70,18 +82,26 @@ class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public 
 	public:
 		%feature("autodoc", "1");
 		Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter(const IntCurve_IConicTool &IT, const Adaptor2d_Curve2d &PC);
-		%feature("autodoc","Value(Standard_Real Param)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real Param) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real Param)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real Param) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real Param)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real Param) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%feature("shadow") Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter::~Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter {
-	~Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -97,11 +117,11 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		void Initialize(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt2d &P);
-		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -115,10 +135,18 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter::~Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
-	~Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -128,22 +156,30 @@ class Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
 	public:
 		%feature("autodoc", "1");
 		Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Tol);
-		%feature("autodoc","Perform(const Poly1, const Poly2)->[Standard_Integer, Standard_IntegerStandard_RealStandard_Real]");
+		%feature("autodoc","Perform(const Poly1, const Poly2) -> [Standard_Integer, Standard_IntegerStandard_RealStandard_Real]");
 		void Perform(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Poly1, const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Poly2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real Uo, const Standard_Real Vo, const Standard_Real UInf, const Standard_Real VInf, const Standard_Real USup, const Standard_Real VSup);
 		%feature("autodoc", "1");
 		Standard_Integer NbRoots() const;
-		%feature("autodoc","Roots()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Roots() -> [Standard_Real, Standard_Real]");
 		void Roots(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean AnErrorOccurred() const;
 
 };
+%feature("shadow") Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter::~Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
-	~Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -175,10 +211,18 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 		void Perform(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 
 };
+%feature("shadow") Geom2dInt_IntConicCurveOfGInter::~Geom2dInt_IntConicCurveOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_IntConicCurveOfGInter {
-	~Geom2dInt_IntConicCurveOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_IntConicCurveOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -190,10 +234,18 @@ class Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
 		Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter();
 
 };
+%feature("shadow") Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter::~Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
-	~Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
 		void Dump() const;
 
 };
+%feature("shadow") Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter::~Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
-	~Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -262,10 +322,18 @@ class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 
 };
+%feature("shadow") Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter::~Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter {
-	~Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -281,10 +349,18 @@ class Geom2dInt_TheProjPCurOfGInter {
 		Standard_Real FindParameter(const Adaptor2d_Curve2d &C, const gp_Pnt2d &Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
 
 };
+%feature("shadow") Geom2dInt_TheProjPCurOfGInter::~Geom2dInt_TheProjPCurOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_TheProjPCurOfGInter {
-	~Geom2dInt_TheProjPCurOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheProjPCurOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -312,10 +388,18 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 		Extrema_POnCurv2d Point() const;
 
 };
+%feature("shadow") Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter::~Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
-	~Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -359,14 +443,22 @@ class Geom2dInt_Geom2dCurveTool {
 		Standard_Integer NbIntervals(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
 		void Intervals(const Adaptor2d_Curve2d &C, TColStd_Array1OfReal & Tab);
-		%feature("autodoc","GetInterval(const arg0, Standard_Integer i, const Tab)->[Standard_RealStandard_Real]");
+		%feature("autodoc","GetInterval(const arg0, Standard_Integer i, const Tab) -> [Standard_RealStandard_Real]");
 		void GetInterval(const Adaptor2d_Curve2d &arg0, const Standard_Integer i, const TColStd_Array1OfReal &Tab, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%feature("shadow") Geom2dInt_Geom2dCurveTool::~Geom2dInt_Geom2dCurveTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_Geom2dCurveTool {
-	~Geom2dInt_Geom2dCurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_Geom2dCurveTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -392,10 +484,18 @@ class Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter::~Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
-	~Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter : public Intf_Int
 		gp_Pnt2d Pnt2dValue(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter::~Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter {
-	~Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -458,10 +566,18 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 		IntRes2d_Domain ComputeDomain(const Adaptor2d_Curve2d &C1, const Standard_Real TolDomain) const;
 
 };
+%feature("shadow") Geom2dInt_GInter::~Geom2dInt_GInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_GInter {
-	~Geom2dInt_GInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_GInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -515,10 +631,18 @@ class Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public TCol
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter::~Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
-	~Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -550,10 +674,18 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 		void Perform(const gp_Hypr2d &H, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &PCurve, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
 
 };
+%feature("shadow") Geom2dInt_TheIntConicCurveOfGInter::~Geom2dInt_TheIntConicCurveOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_TheIntConicCurveOfGInter {
-	~Geom2dInt_TheIntConicCurveOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheIntConicCurveOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -569,10 +701,18 @@ class Geom2dInt_TheIntPCurvePCurveOfGInter : public IntRes2d_Intersection {
 		void Perform(const Adaptor2d_Curve2d &Curve1, const IntRes2d_Domain &Domain1, const Standard_Real TolConf, const Standard_Real Tol);
 
 };
+%feature("shadow") Geom2dInt_TheIntPCurvePCurveOfGInter::~Geom2dInt_TheIntPCurvePCurveOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_TheIntPCurvePCurveOfGInter {
-	~Geom2dInt_TheIntPCurvePCurveOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheIntPCurvePCurveOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -596,10 +736,18 @@ class Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
 		const gp_Pnt2d & EndOfSeg(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon, const Standard_Integer Index);
 
 };
+%feature("shadow") Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::~Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
-	~Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -617,13 +765,21 @@ class Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter : public IntRes2d_Inter
 		Standard_Real FindU(const Standard_Real parameter, gp_Pnt2d & point, const Adaptor2d_Curve2d &TheParCurev, const IntCurve_IConicTool &IntCurve_IConicTool) const;
 		%feature("autodoc", "1");
 		Standard_Real FindV(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_IConicTool &IntCurve_IConicTool, const Adaptor2d_Curve2d &ParCurve, const IntRes2d_Domain &TheParCurveDomain, const Standard_Real V0, const Standard_Real V1, const Standard_Real Tolerance) const;
-		%feature("autodoc","And_Domaine_Objet1_Intersections(const IntCurve_IConicTool, const TheParCurve, const TheImpCurveDomain, const TheParCurveDomain, Standard_Real EpsNul)->Standard_Integer");
+		%feature("autodoc","And_Domaine_Objet1_Intersections(const IntCurve_IConicTool, const TheParCurve, const TheImpCurveDomain, const TheParCurveDomain, Standard_Real EpsNul) -> Standard_Integer");
 		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool &IntCurve_IConicTool, const Adaptor2d_Curve2d &TheParCurve, const IntRes2d_Domain &TheImpCurveDomain, const IntRes2d_Domain &TheParCurveDomain, Standard_Integer &OutValue, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul) const;
 
 };
+%feature("shadow") Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter::~Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter {
-	~Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

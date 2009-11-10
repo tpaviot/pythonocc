@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PTColStd_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_PTColStd_DataMapNodeOfTransientPersistentMap : public Handle_TColle
 	return (PTColStd_DataMapNodeOfTransientPersistentMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTColStd_DataMapNodeOfTransientPersistentMap::~Handle_PTColStd_DataMapNodeOfTransientPersistentMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTColStd_DataMapNodeOfTransientPersistentMap {
-	~Handle_PTColStd_DataMapNodeOfTransientPersistentMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTColStd_DataMapNodeOfTransientPersistentMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_PTColStd_DataMapNodeOfPersistentTransientMap : public Handle_TColle
 	return (PTColStd_DataMapNodeOfPersistentTransientMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTColStd_DataMapNodeOfPersistentTransientMap::~Handle_PTColStd_DataMapNodeOfPersistentTransientMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTColStd_DataMapNodeOfPersistentTransientMap {
-	~Handle_PTColStd_DataMapNodeOfPersistentTransientMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTColStd_DataMapNodeOfPersistentTransientMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public Han
 	return (PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent::~Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
-	~Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -140,10 +168,18 @@ class PTColStd_DataMapIteratorOfPersistentTransientMap : public TCollection_Basi
 		const Handle_Standard_Transient & Value() const;
 
 };
+%feature("shadow") PTColStd_DataMapIteratorOfPersistentTransientMap::~PTColStd_DataMapIteratorOfPersistentTransientMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTColStd_DataMapIteratorOfPersistentTransientMap {
-	~PTColStd_DataMapIteratorOfPersistentTransientMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapIteratorOfPersistentTransientMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -171,10 +207,18 @@ class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTColStd_DataMapNodeOfPersistentTransientMap::~PTColStd_DataMapNodeOfPersistentTransientMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTColStd_DataMapNodeOfPersistentTransientMap {
-	~PTColStd_DataMapNodeOfPersistentTransientMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapNodeOfPersistentTransientMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -190,10 +234,18 @@ class PTColStd_MapPersistentHasher {
 		Standard_Boolean IsEqual(const Handle_Standard_Persistent &K1, const Handle_Standard_Persistent &K2);
 
 };
+%feature("shadow") PTColStd_MapPersistentHasher::~PTColStd_MapPersistentHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTColStd_MapPersistentHasher {
-	~PTColStd_MapPersistentHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTColStd_MapPersistentHasher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -213,10 +265,18 @@ class PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent : public TColle
 		const Handle_Standard_Persistent & Key2() const;
 
 };
+%feature("shadow") PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent::~PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent {
-	~PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -250,10 +310,18 @@ class PTColStd_TransientPersistentMap : public TCollection_BasicMap {
 		Handle_Standard_Persistent & operator()(const Handle_Standard_Transient &K);
 
 };
+%feature("shadow") PTColStd_TransientPersistentMap::~PTColStd_TransientPersistentMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTColStd_TransientPersistentMap {
-	~PTColStd_TransientPersistentMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTColStd_TransientPersistentMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -287,10 +355,18 @@ class PTColStd_PersistentTransientMap : public TCollection_BasicMap {
 		Handle_Standard_Transient & operator()(const Handle_Standard_Persistent &K);
 
 };
+%feature("shadow") PTColStd_PersistentTransientMap::~PTColStd_PersistentTransientMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTColStd_PersistentTransientMap {
-	~PTColStd_PersistentTransientMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTColStd_PersistentTransientMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -320,10 +396,18 @@ class PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public TCollectio
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent::~PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
-	~PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -343,10 +427,18 @@ class PTColStd_DataMapIteratorOfTransientPersistentMap : public TCollection_Basi
 		const Handle_Standard_Persistent & Value() const;
 
 };
+%feature("shadow") PTColStd_DataMapIteratorOfTransientPersistentMap::~PTColStd_DataMapIteratorOfTransientPersistentMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTColStd_DataMapIteratorOfTransientPersistentMap {
-	~PTColStd_DataMapIteratorOfTransientPersistentMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapIteratorOfTransientPersistentMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -374,10 +466,18 @@ class PTColStd_DataMapNodeOfTransientPersistentMap : public TCollection_MapNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTColStd_DataMapNodeOfTransientPersistentMap::~PTColStd_DataMapNodeOfTransientPersistentMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTColStd_DataMapNodeOfTransientPersistentMap {
-	~PTColStd_DataMapNodeOfTransientPersistentMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapNodeOfTransientPersistentMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -413,9 +513,17 @@ class PTColStd_DoubleMapOfTransientPersistent : public TCollection_BasicMap {
 		Standard_Boolean UnBind2(const Handle_Standard_Persistent &K);
 
 };
+%feature("shadow") PTColStd_DoubleMapOfTransientPersistent::~PTColStd_DoubleMapOfTransientPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTColStd_DoubleMapOfTransientPersistent {
-	~PTColStd_DoubleMapOfTransientPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTColStd_DoubleMapOfTransientPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

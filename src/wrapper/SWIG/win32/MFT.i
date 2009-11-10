@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MFT_dependencies.i
 
 
@@ -95,10 +99,18 @@ class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNod
 	return (MFT_SequenceNodeOfListOfFontName*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MFT_SequenceNodeOfListOfFontName::~Handle_MFT_SequenceNodeOfListOfFontName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MFT_SequenceNodeOfListOfFontName {
-	~Handle_MFT_SequenceNodeOfListOfFontName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -125,10 +137,18 @@ class Handle_MFT_TextManager : public Handle_MMgt_TShared {
 	return (MFT_TextManager*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MFT_TextManager::~Handle_MFT_TextManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MFT_TextManager {
-	~Handle_MFT_TextManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MFT_TextManager\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -155,10 +175,18 @@ class Handle_MFT_FontManager : public Handle_MMgt_TShared {
 	return (MFT_FontManager*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MFT_FontManager::~Handle_MFT_FontManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MFT_FontManager {
-	~Handle_MFT_FontManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MFT_FontManager\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -185,10 +213,18 @@ class Handle_MFT_FontManagerError : public Handle_Standard_TypeMismatch {
 	return (MFT_FontManagerError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MFT_FontManagerError::~Handle_MFT_FontManagerError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MFT_FontManagerError {
-	~Handle_MFT_FontManagerError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MFT_FontManagerError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -215,10 +251,18 @@ class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqN
 	return (MFT_SequenceNodeOfListOfFontHandle*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MFT_SequenceNodeOfListOfFontHandle::~Handle_MFT_SequenceNodeOfListOfFontHandle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MFT_SequenceNodeOfListOfFontHandle {
-	~Handle_MFT_SequenceNodeOfListOfFontHandle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontHandle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -245,10 +289,18 @@ class Handle_MFT_SequenceNodeOfListOfFontReference : public Handle_TCollection_S
 	return (MFT_SequenceNodeOfListOfFontReference*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MFT_SequenceNodeOfListOfFontReference::~Handle_MFT_SequenceNodeOfListOfFontReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MFT_SequenceNodeOfListOfFontReference {
-	~Handle_MFT_SequenceNodeOfListOfFontReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -275,10 +327,18 @@ class Handle_MFT_FontManagerDefinitionError : public Handle_Standard_NoSuchObjec
 	return (MFT_FontManagerDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MFT_FontManagerDefinitionError::~Handle_MFT_FontManagerDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MFT_FontManagerDefinitionError {
-	~Handle_MFT_FontManagerDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MFT_FontManagerDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -288,8 +348,18 @@ class MFT_SequenceNodeOfListOfFontReference : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
 		MFT_SequenceNodeOfListOfFontReference(const Standard_Integer &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -304,10 +374,18 @@ class MFT_SequenceNodeOfListOfFontReference : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MFT_SequenceNodeOfListOfFontReference::~MFT_SequenceNodeOfListOfFontReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFT_SequenceNodeOfListOfFontReference {
-	~MFT_SequenceNodeOfListOfFontReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFT_SequenceNodeOfListOfFontReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -361,10 +439,18 @@ class MFT_ListOfFontHandle : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") MFT_ListOfFontHandle::~MFT_ListOfFontHandle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFT_ListOfFontHandle {
-	~MFT_ListOfFontHandle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFT_ListOfFontHandle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -418,10 +504,18 @@ class MFT_ListOfFontName : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") MFT_ListOfFontName::~MFT_ListOfFontName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFT_ListOfFontName {
-	~MFT_ListOfFontName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFT_ListOfFontName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -465,8 +559,18 @@ class MFT_ListOfFontReference : public TCollection_BaseSequence {
 		const Standard_Integer & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -475,10 +579,18 @@ class MFT_ListOfFontReference : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") MFT_ListOfFontReference::~MFT_ListOfFontReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFT_ListOfFontReference {
-	~MFT_ListOfFontReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFT_ListOfFontReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -504,10 +616,18 @@ class MFT_SequenceNodeOfListOfFontName : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MFT_SequenceNodeOfListOfFontName::~MFT_SequenceNodeOfListOfFontName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFT_SequenceNodeOfListOfFontName {
-	~MFT_SequenceNodeOfListOfFontName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFT_SequenceNodeOfListOfFontName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -533,10 +653,18 @@ class MFT_SequenceNodeOfListOfFontHandle : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MFT_SequenceNodeOfListOfFontHandle::~MFT_SequenceNodeOfListOfFontHandle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFT_SequenceNodeOfListOfFontHandle {
-	~MFT_SequenceNodeOfListOfFontHandle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFT_SequenceNodeOfListOfFontHandle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -580,10 +708,18 @@ class MFT_TextManager : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MFT_TextManager::~MFT_TextManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFT_TextManager {
-	~MFT_TextManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFT_TextManager\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -615,10 +751,18 @@ class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MFT_FontManagerDefinitionError::~MFT_FontManagerDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFT_FontManagerDefinitionError {
-	~MFT_FontManagerDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFT_FontManagerDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -650,10 +794,18 @@ class MFT_FontManagerError : public Standard_TypeMismatch {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MFT_FontManagerError::~MFT_FontManagerError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFT_FontManagerError {
-	~MFT_FontManagerError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFT_FontManagerError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -707,9 +859,9 @@ class MFT_FontManager : public MMgt_TShared {
 		void DrawText(const Handle_MFT_TextManager &aTextManager, const char * aString, const Quantity_Length anX, const Quantity_Length anY, const Quantity_PlaneAngle anOrientation=0.0);
 		%feature("autodoc", "1");
 		void DrawText(const Handle_MFT_TextManager &aTextManager, const Standard_ExtString aString, const Quantity_Length anX, const Quantity_Length anY, const Quantity_PlaneAngle anOrientation=0.0);
-		%feature("autodoc","BoundingBox()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","BoundingBox() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		void BoundingBox(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","CharBoundingBox(Standard_Integer aPosition)->[Standard_Integer, Standard_Integer, Standard_IntegerStandard_Integer]");
+		%feature("autodoc","CharBoundingBox(Standard_Integer aPosition) -> [Standard_Integer, Standard_Integer, Standard_IntegerStandard_Integer]");
 		void CharBoundingBox(const Standard_Integer aPosition, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer PaintType() const;
@@ -717,15 +869,15 @@ class MFT_FontManager : public MMgt_TShared {
 		Standard_Boolean FixedPitch() const;
 		%feature("autodoc", "1");
 		Quantity_PlaneAngle ItalicAngle() const;
-		%feature("autodoc","FontAttribs()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","FontAttribs() -> [Standard_Real, Standard_Real, Standard_Real]");
 		char * FontAttribs(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Quantity_PlaneAngle & aSlant, Quantity_Factor & aPrecision, Standard_Boolean & aCapsHeight);
-		%feature("autodoc","TextSize(Standard_CString aString)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","TextSize(Standard_CString aString) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void TextSize(const char * aString, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","TextSize(Standard_ExtString aString)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","TextSize(Standard_ExtString aString) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void TextSize(const Standard_ExtString aString, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","CharSize(Standard_Character aChar)->[Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","CharSize(Standard_Character aChar) -> [Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		Standard_Boolean CharSize(const Standard_Character aChar, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","CharSize(Standard_ExtCharacter aChar)->[Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","CharSize(Standard_ExtCharacter aChar) -> [Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		Standard_Boolean CharSize(const Standard_ExtCharacter aChar, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Aspect_FontStyle Font() const;
@@ -771,10 +923,18 @@ class MFT_FontManager : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MFT_FontManager::~MFT_FontManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFT_FontManager {
-	~MFT_FontManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFT_FontManager\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -786,9 +946,17 @@ class MFT {
 		MFT();
 
 };
+%feature("shadow") MFT::~MFT %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MFT {
-	~MFT() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MFT\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

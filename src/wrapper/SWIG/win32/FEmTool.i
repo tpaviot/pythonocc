@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include FEmTool_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_FEmTool_SparseMatrix : public Handle_MMgt_TShared {
 	return (FEmTool_SparseMatrix*)$self->Access();
 	}
 };
+%feature("shadow") Handle_FEmTool_SparseMatrix::~Handle_FEmTool_SparseMatrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_FEmTool_SparseMatrix {
-	~Handle_FEmTool_SparseMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_SparseMatrix\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_FEmTool_ProfileMatrix : public Handle_FEmTool_SparseMatrix {
 	return (FEmTool_ProfileMatrix*)$self->Access();
 	}
 };
+%feature("shadow") Handle_FEmTool_ProfileMatrix::~Handle_FEmTool_ProfileMatrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_FEmTool_ProfileMatrix {
-	~Handle_FEmTool_ProfileMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_ProfileMatrix\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_FEmTool_ElementaryCriterion : public Handle_MMgt_TShared {
 	return (FEmTool_ElementaryCriterion*)$self->Access();
 	}
 };
+%feature("shadow") Handle_FEmTool_ElementaryCriterion::~Handle_FEmTool_ElementaryCriterion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_FEmTool_ElementaryCriterion {
-	~Handle_FEmTool_ElementaryCriterion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_ElementaryCriterion\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_FEmTool_LinearTension : public Handle_FEmTool_ElementaryCriterion {
 	return (FEmTool_LinearTension*)$self->Access();
 	}
 };
+%feature("shadow") Handle_FEmTool_LinearTension::~Handle_FEmTool_LinearTension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_FEmTool_LinearTension {
-	~Handle_FEmTool_LinearTension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearTension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_FEmTool_LinearJerk : public Handle_FEmTool_ElementaryCriterion {
 	return (FEmTool_LinearJerk*)$self->Access();
 	}
 };
+%feature("shadow") Handle_FEmTool_LinearJerk::~Handle_FEmTool_LinearJerk %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_FEmTool_LinearJerk {
-	~Handle_FEmTool_LinearJerk() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearJerk\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_FEmTool_SequenceNodeOfSeqOfLinConstr : public Handle_TCollection_Se
 	return (FEmTool_SequenceNodeOfSeqOfLinConstr*)$self->Access();
 	}
 };
+%feature("shadow") Handle_FEmTool_SequenceNodeOfSeqOfLinConstr::~Handle_FEmTool_SequenceNodeOfSeqOfLinConstr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_FEmTool_SequenceNodeOfSeqOfLinConstr {
-	~Handle_FEmTool_SequenceNodeOfSeqOfLinConstr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_SequenceNodeOfSeqOfLinConstr\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_FEmTool_Curve : public Handle_MMgt_TShared {
 	return (FEmTool_Curve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_FEmTool_Curve::~Handle_FEmTool_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_FEmTool_Curve {
-	~Handle_FEmTool_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_Curve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_FEmTool_LinearFlexion : public Handle_FEmTool_ElementaryCriterion {
 	return (FEmTool_LinearFlexion*)$self->Access();
 	}
 };
+%feature("shadow") Handle_FEmTool_LinearFlexion::~Handle_FEmTool_LinearFlexion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_FEmTool_LinearFlexion {
-	~Handle_FEmTool_LinearFlexion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearFlexion\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_FEmTool_HAssemblyTable : public Handle_MMgt_TShared {
 	return (FEmTool_HAssemblyTable*)$self->Access();
 	}
 };
+%feature("shadow") Handle_FEmTool_HAssemblyTable::~Handle_FEmTool_HAssemblyTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_FEmTool_HAssemblyTable {
-	~Handle_FEmTool_HAssemblyTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_HAssemblyTable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_FEmTool_ListNodeOfListOfVectors : public Handle_TCollection_MapNode
 	return (FEmTool_ListNodeOfListOfVectors*)$self->Access();
 	}
 };
+%feature("shadow") Handle_FEmTool_ListNodeOfListOfVectors::~Handle_FEmTool_ListNodeOfListOfVectors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_FEmTool_ListNodeOfListOfVectors {
-	~Handle_FEmTool_ListNodeOfListOfVectors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_ListNodeOfListOfVectors\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -356,10 +440,18 @@ class FEmTool_ListNodeOfListOfVectors : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") FEmTool_ListNodeOfListOfVectors::~FEmTool_ListNodeOfListOfVectors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_ListNodeOfListOfVectors {
-	~FEmTool_ListNodeOfListOfVectors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_ListNodeOfListOfVectors\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -393,10 +485,18 @@ class FEmTool_ElementaryCriterion : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") FEmTool_ElementaryCriterion::~FEmTool_ElementaryCriterion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_ElementaryCriterion {
-	~FEmTool_ElementaryCriterion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_ElementaryCriterion\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -428,10 +528,18 @@ class FEmTool_LinearFlexion : public FEmTool_ElementaryCriterion {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") FEmTool_LinearFlexion::~FEmTool_LinearFlexion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_LinearFlexion {
-	~FEmTool_LinearFlexion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearFlexion\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -463,10 +571,18 @@ class FEmTool_LinearJerk : public FEmTool_ElementaryCriterion {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") FEmTool_LinearJerk::~FEmTool_LinearJerk %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_LinearJerk {
-	~FEmTool_LinearJerk() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearJerk\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -510,10 +626,18 @@ class FEmTool_AssemblyTable {
 		Handle_TColStd_HArray1OfInteger & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%feature("shadow") FEmTool_AssemblyTable::~FEmTool_AssemblyTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_AssemblyTable {
-	~FEmTool_AssemblyTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_AssemblyTable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -547,10 +671,18 @@ class FEmTool_Assembly {
 		void GetAssemblyTable(Handle_FEmTool_HAssemblyTable & AssTable) const;
 
 };
+%feature("shadow") FEmTool_Assembly::~FEmTool_Assembly %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_Assembly {
-	~FEmTool_Assembly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_Assembly\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -582,10 +714,18 @@ class FEmTool_LinearTension : public FEmTool_ElementaryCriterion {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") FEmTool_LinearTension::~FEmTool_LinearTension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_LinearTension {
-	~FEmTool_LinearTension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearTension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -607,10 +747,18 @@ class FEmTool_ListIteratorOfListOfVectors {
 		Handle_TColStd_HArray1OfReal & Value() const;
 
 };
+%feature("shadow") FEmTool_ListIteratorOfListOfVectors::~FEmTool_ListIteratorOfListOfVectors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_ListIteratorOfListOfVectors {
-	~FEmTool_ListIteratorOfListOfVectors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_ListIteratorOfListOfVectors\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -630,7 +778,7 @@ class FEmTool_Curve : public MMgt_TShared {
 		void D1(const Standard_Real U, TColStd_Array1OfReal & Vec);
 		%feature("autodoc", "1");
 		void D2(const Standard_Real U, TColStd_Array1OfReal & Vec);
-		%feature("autodoc","Length(Standard_Real FirstU, Standard_Real LastU)->Standard_Real");
+		%feature("autodoc","Length(Standard_Real FirstU, Standard_Real LastU) -> Standard_Real");
 		void Length(const Standard_Real FirstU, const Standard_Real LastU, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void GetElement(const Standard_Integer IndexOfElement, TColStd_Array2OfReal & Coeffs);
@@ -646,7 +794,7 @@ class FEmTool_Curve : public MMgt_TShared {
 		Standard_Integer Degree(const Standard_Integer IndexOfElement) const;
 		%feature("autodoc", "1");
 		void SetDegree(const Standard_Integer IndexOfElement, const Standard_Integer Degree);
-		%feature("autodoc","ReduceDegree(Standard_Integer IndexOfElement, Standard_Real Tol)->[Standard_IntegerStandard_Real]");
+		%feature("autodoc","ReduceDegree(Standard_Integer IndexOfElement, Standard_Real Tol) -> [Standard_IntegerStandard_Real]");
 		void ReduceDegree(const Standard_Integer IndexOfElement, const Standard_Real Tol, Standard_Integer &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -662,10 +810,18 @@ class FEmTool_Curve : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") FEmTool_Curve::~FEmTool_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_Curve {
-	~FEmTool_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_Curve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -675,8 +831,18 @@ class FEmTool_SparseMatrix : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
 		virtual		void Init(const Standard_Real Value);
-		%feature("autodoc", "1");
-		virtual		Standard_Real & ChangeValue(const Standard_Integer I, const Standard_Integer J);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer I, const Standard_Integer J) {
+				return (Standard_Real) $self->ChangeValue(I,J);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer I, const Standard_Integer J) {
+				$self->ChangeValue(I,J)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Decompose();
 		%feature("autodoc", "1");
@@ -705,10 +871,18 @@ class FEmTool_SparseMatrix : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") FEmTool_SparseMatrix::~FEmTool_SparseMatrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_SparseMatrix {
-	~FEmTool_SparseMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_SparseMatrix\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -718,6 +892,18 @@ class FEmTool_ProfileMatrix : public FEmTool_SparseMatrix {
 	public:
 		%feature("autodoc", "1");
 		FEmTool_ProfileMatrix(const TColStd_Array1OfInteger &FirstIndexes);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer I, const Standard_Integer J) {
+				return (Standard_Real) $self->ChangeValue(I,J);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer I, const Standard_Integer J) {
+				$self->ChangeValue(I,J)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean IsInProfile(const Standard_Integer i, const Standard_Integer j) const;
 		%feature("autodoc", "1");
@@ -736,10 +922,18 @@ class FEmTool_ProfileMatrix : public FEmTool_SparseMatrix {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") FEmTool_ProfileMatrix::~FEmTool_ProfileMatrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_ProfileMatrix {
-	~FEmTool_ProfileMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_ProfileMatrix\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -789,10 +983,18 @@ class FEmTool_ListOfVectors {
 		void InsertAfter(FEmTool_ListOfVectors & Other, FEmTool_ListIteratorOfListOfVectors & It);
 
 };
+%feature("shadow") FEmTool_ListOfVectors::~FEmTool_ListOfVectors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_ListOfVectors {
-	~FEmTool_ListOfVectors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_ListOfVectors\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -842,10 +1044,18 @@ class FEmTool_HAssemblyTable : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") FEmTool_HAssemblyTable::~FEmTool_HAssemblyTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_HAssemblyTable {
-	~FEmTool_HAssemblyTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_HAssemblyTable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -863,10 +1073,18 @@ class FEmTool_ElementsOfRefMatrix : public math_FunctionSet {
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
 
 };
+%feature("shadow") FEmTool_ElementsOfRefMatrix::~FEmTool_ElementsOfRefMatrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_ElementsOfRefMatrix {
-	~FEmTool_ElementsOfRefMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_ElementsOfRefMatrix\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -920,10 +1138,18 @@ class FEmTool_SeqOfLinConstr : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") FEmTool_SeqOfLinConstr::~FEmTool_SeqOfLinConstr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_SeqOfLinConstr {
-	~FEmTool_SeqOfLinConstr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_SeqOfLinConstr\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -949,9 +1175,17 @@ class FEmTool_SequenceNodeOfSeqOfLinConstr : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") FEmTool_SequenceNodeOfSeqOfLinConstr::~FEmTool_SequenceNodeOfSeqOfLinConstr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FEmTool_SequenceNodeOfSeqOfLinConstr {
-	~FEmTool_SequenceNodeOfSeqOfLinConstr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FEmTool_SequenceNodeOfSeqOfLinConstr\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

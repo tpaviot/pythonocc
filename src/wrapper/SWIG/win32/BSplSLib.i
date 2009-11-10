@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BSplSLib_dependencies.i
 
 
@@ -40,7 +44,7 @@ class BSplSLib {
 	public:
 		%feature("autodoc", "1");
 		BSplSLib();
-		%feature("autodoc","RationalDerivative(Standard_Integer UDeg, Standard_Integer VDeg, Standard_Integer N, Standard_Integer M, Standard_Boolean All=1)->[Standard_RealStandard_Real]");
+		%feature("autodoc","RationalDerivative(Standard_Integer UDeg, Standard_Integer VDeg, Standard_Integer N, Standard_Integer M, Standard_Boolean All=1) -> [Standard_RealStandard_Real]");
 		void RationalDerivative(const Standard_Integer UDeg, const Standard_Integer VDeg, const Standard_Integer N, const Standard_Integer M, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean All=1);
 		%feature("autodoc", "1");
 		void D0(const Standard_Real U, const Standard_Real V, const Standard_Integer UIndex, const Standard_Integer VIndex, const TColgp_Array2OfPnt &Poles, const TColStd_Array2OfReal &Weights, const TColStd_Array1OfReal &UKnots, const TColStd_Array1OfReal &VKnots, const TColStd_Array1OfInteger &UMults, const TColStd_Array1OfInteger &VMults, const Standard_Integer UDegree, const Standard_Integer VDegree, const Standard_Boolean URat, const Standard_Boolean VRat, const Standard_Boolean UPer, const Standard_Boolean VPer, gp_Pnt & P);
@@ -56,9 +60,9 @@ class BSplSLib {
 		void Iso(const Standard_Real Param, const Standard_Boolean IsU, const TColgp_Array2OfPnt &Poles, const TColStd_Array2OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer Degree, const Standard_Boolean Periodic, TColgp_Array1OfPnt & CPoles, TColStd_Array1OfReal & CWeights);
 		%feature("autodoc", "1");
 		void Reverse(TColgp_Array2OfPnt & Poles, const Standard_Integer Last, const Standard_Boolean UDirection);
-		%feature("autodoc","HomogeneousD0(Standard_Real U, Standard_Real V, Standard_Integer UIndex, Standard_Integer VIndex, const Poles, const Weights, const UKnots, const VKnots, const UMults, const VMults, Standard_Integer UDegree, Standard_Integer VDegree, Standard_Boolean URat, Standard_Boolean VRat, Standard_Boolean UPer, Standard_Boolean VPer)->Standard_Real");
+		%feature("autodoc","HomogeneousD0(Standard_Real U, Standard_Real V, Standard_Integer UIndex, Standard_Integer VIndex, const Poles, const Weights, const UKnots, const VKnots, const UMults, const VMults, Standard_Integer UDegree, Standard_Integer VDegree, Standard_Boolean URat, Standard_Boolean VRat, Standard_Boolean UPer, Standard_Boolean VPer) -> Standard_Real");
 		void HomogeneousD0(const Standard_Real U, const Standard_Real V, const Standard_Integer UIndex, const Standard_Integer VIndex, const TColgp_Array2OfPnt &Poles, const TColStd_Array2OfReal &Weights, const TColStd_Array1OfReal &UKnots, const TColStd_Array1OfReal &VKnots, const TColStd_Array1OfInteger &UMults, const TColStd_Array1OfInteger &VMults, const Standard_Integer UDegree, const Standard_Integer VDegree, const Standard_Boolean URat, const Standard_Boolean VRat, const Standard_Boolean UPer, const Standard_Boolean VPer, Standard_Real &OutValue, gp_Pnt & P);
-		%feature("autodoc","HomogeneousD1(Standard_Real U, Standard_Real V, Standard_Integer UIndex, Standard_Integer VIndex, const Poles, const Weights, const UKnots, const VKnots, const UMults, const VMults, Standard_Integer UDegree, Standard_Integer VDegree, Standard_Boolean URat, Standard_Boolean VRat, Standard_Boolean UPer, Standard_Boolean VPer)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","HomogeneousD1(Standard_Real U, Standard_Real V, Standard_Integer UIndex, Standard_Integer VIndex, const Poles, const Weights, const UKnots, const VKnots, const UMults, const VMults, Standard_Integer UDegree, Standard_Integer VDegree, Standard_Boolean URat, Standard_Boolean VRat, Standard_Boolean UPer, Standard_Boolean VPer) -> [Standard_RealStandard_RealStandard_Real]");
 		void HomogeneousD1(const Standard_Real U, const Standard_Real V, const Standard_Integer UIndex, const Standard_Integer VIndex, const TColgp_Array2OfPnt &Poles, const TColStd_Array2OfReal &Weights, const TColStd_Array1OfReal &UKnots, const TColStd_Array1OfReal &VKnots, const TColStd_Array1OfInteger &UMults, const TColStd_Array1OfInteger &VMults, const Standard_Integer UDegree, const Standard_Integer VDegree, const Standard_Boolean URat, const Standard_Boolean VRat, const Standard_Boolean UPer, const Standard_Boolean VPer, gp_Pnt & N, gp_Vec & Nu, gp_Vec & Nv, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void Reverse(TColStd_Array2OfReal & Weights, const Standard_Integer Last, const Standard_Boolean UDirection);
@@ -72,7 +76,7 @@ class BSplSLib {
 		void GetPoles(const TColStd_Array1OfReal &FP, TColgp_Array2OfPnt & Poles, const Standard_Boolean UDirection);
 		%feature("autodoc", "1");
 		void GetPoles(const TColStd_Array1OfReal &FP, TColgp_Array2OfPnt & Poles, TColStd_Array2OfReal & Weights, const Standard_Boolean UDirection);
-		%feature("autodoc","MovePoint(Standard_Real U, Standard_Real V, const Displ, Standard_Integer UIndex1, Standard_Integer UIndex2, Standard_Integer VIndex1, Standard_Integer VIndex2, Standard_Integer UDegree, Standard_Integer VDegree, Standard_Boolean Rational, const Poles, const Weights, const UFlatKnots, const VFlatKnots)->[Standard_IntegerStandard_IntegerStandard_IntegerStandard_Integer]");
+		%feature("autodoc","MovePoint(Standard_Real U, Standard_Real V, const Displ, Standard_Integer UIndex1, Standard_Integer UIndex2, Standard_Integer VIndex1, Standard_Integer VIndex2, Standard_Integer UDegree, Standard_Integer VDegree, Standard_Boolean Rational, const Poles, const Weights, const UFlatKnots, const VFlatKnots) -> [Standard_IntegerStandard_IntegerStandard_IntegerStandard_Integer]");
 		void MovePoint(const Standard_Real U, const Standard_Real V, const gp_Vec &Displ, const Standard_Integer UIndex1, const Standard_Integer UIndex2, const Standard_Integer VIndex1, const Standard_Integer VIndex2, const Standard_Integer UDegree, const Standard_Integer VDegree, const Standard_Boolean Rational, const TColgp_Array2OfPnt &Poles, const TColStd_Array2OfReal &Weights, const TColStd_Array1OfReal &UFlatKnots, const TColStd_Array1OfReal &VFlatKnots, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, TColgp_Array2OfPnt & NewPoles);
 		%feature("autodoc", "1");
 		void InsertKnots(const Standard_Boolean UDirection, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array2OfPnt &Poles, const TColStd_Array2OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const TColStd_Array1OfReal &AddKnots, const TColStd_Array1OfInteger &AddMults, TColgp_Array2OfPnt & NewPoles, TColStd_Array2OfReal & NewWeights, TColStd_Array1OfReal & NewKnots, TColStd_Array1OfInteger & NewMults, const Standard_Real Epsilon, const Standard_Boolean Add=1);
@@ -102,17 +106,25 @@ class BSplSLib {
 		void PolesCoefficients(const TColgp_Array2OfPnt &Poles, TColgp_Array2OfPnt & CachePoles);
 		%feature("autodoc", "1");
 		void PolesCoefficients(const TColgp_Array2OfPnt &Poles, const TColStd_Array2OfReal &Weights, TColgp_Array2OfPnt & CachePoles, TColStd_Array2OfReal & CacheWeights);
-		%feature("autodoc","Resolution(const Poles, const Weights, const UKnots, const VKnots, const UMults, const VMults, Standard_Integer UDegree, Standard_Integer VDegree, Standard_Boolean URat, Standard_Boolean VRat, Standard_Boolean UPer, Standard_Boolean VPer, Standard_Real Tolerance3D)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(const Poles, const Weights, const UKnots, const VKnots, const UMults, const VMults, Standard_Integer UDegree, Standard_Integer VDegree, Standard_Boolean URat, Standard_Boolean VRat, Standard_Boolean UPer, Standard_Boolean VPer, Standard_Real Tolerance3D) -> [Standard_RealStandard_Real]");
 		void Resolution(const TColgp_Array2OfPnt &Poles, const TColStd_Array2OfReal &Weights, const TColStd_Array1OfReal &UKnots, const TColStd_Array1OfReal &VKnots, const TColStd_Array1OfInteger &UMults, const TColStd_Array1OfInteger &VMults, const Standard_Integer UDegree, const Standard_Integer VDegree, const Standard_Boolean URat, const Standard_Boolean VRat, const Standard_Boolean UPer, const Standard_Boolean VPer, const Standard_Real Tolerance3D, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","Interpolate(Standard_Integer UDegree, Standard_Integer VDegree, const UFlatKnots, const VFlatKnots, const UParameters, const VParameters)->Standard_Integer");
+		%feature("autodoc","Interpolate(Standard_Integer UDegree, Standard_Integer VDegree, const UFlatKnots, const VFlatKnots, const UParameters, const VParameters) -> Standard_Integer");
 		void Interpolate(const Standard_Integer UDegree, const Standard_Integer VDegree, const TColStd_Array1OfReal &UFlatKnots, const TColStd_Array1OfReal &VFlatKnots, const TColStd_Array1OfReal &UParameters, const TColStd_Array1OfReal &VParameters, TColgp_Array2OfPnt & Poles, TColStd_Array2OfReal & Weights, Standard_Integer &OutValue);
-		%feature("autodoc","Interpolate(Standard_Integer UDegree, Standard_Integer VDegree, const UFlatKnots, const VFlatKnots, const UParameters, const VParameters)->Standard_Integer");
+		%feature("autodoc","Interpolate(Standard_Integer UDegree, Standard_Integer VDegree, const UFlatKnots, const VFlatKnots, const UParameters, const VParameters) -> Standard_Integer");
 		void Interpolate(const Standard_Integer UDegree, const Standard_Integer VDegree, const TColStd_Array1OfReal &UFlatKnots, const TColStd_Array1OfReal &VFlatKnots, const TColStd_Array1OfReal &UParameters, const TColStd_Array1OfReal &VParameters, TColgp_Array2OfPnt & Poles, Standard_Integer &OutValue);
 
 };
+%feature("shadow") BSplSLib::~BSplSLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BSplSLib {
-	~BSplSLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BSplSLib\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

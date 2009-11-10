@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Intrv_dependencies.i
 
 
@@ -73,10 +77,18 @@ class Handle_Intrv_SequenceNodeOfSequenceOfInterval : public Handle_TCollection_
 	return (Intrv_SequenceNodeOfSequenceOfInterval*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Intrv_SequenceNodeOfSequenceOfInterval::~Handle_Intrv_SequenceNodeOfSequenceOfInterval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Intrv_SequenceNodeOfSequenceOfInterval {
-	~Handle_Intrv_SequenceNodeOfSequenceOfInterval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Intrv_SequenceNodeOfSequenceOfInterval\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -112,10 +124,18 @@ class Intrv_Intervals {
 		const Intrv_Interval & Value(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Intrv_Intervals::~Intrv_Intervals %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intrv_Intervals {
-	~Intrv_Intervals() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intrv_Intervals\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -137,7 +157,7 @@ class Intrv_Interval {
 		Standard_ShortReal TolStart() const;
 		%feature("autodoc", "1");
 		Standard_ShortReal TolEnd() const;
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
 		void Bounds(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
 		%feature("autodoc", "1");
 		void SetStart(const Standard_Real Start, const Standard_ShortReal TolStart);
@@ -183,10 +203,18 @@ class Intrv_Interval {
 		Standard_Boolean IsSimilar(const Intrv_Interval &Other) const;
 
 };
+%feature("shadow") Intrv_Interval::~Intrv_Interval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intrv_Interval {
-	~Intrv_Interval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intrv_Interval\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -240,10 +268,18 @@ class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Intrv_SequenceOfInterval::~Intrv_SequenceOfInterval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intrv_SequenceOfInterval {
-	~Intrv_SequenceOfInterval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intrv_SequenceOfInterval\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -269,9 +305,17 @@ class Intrv_SequenceNodeOfSequenceOfInterval : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Intrv_SequenceNodeOfSequenceOfInterval::~Intrv_SequenceNodeOfSequenceOfInterval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intrv_SequenceNodeOfSequenceOfInterval {
-	~Intrv_SequenceNodeOfSequenceOfInterval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intrv_SequenceNodeOfSequenceOfInterval\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

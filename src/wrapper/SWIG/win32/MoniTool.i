@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MoniTool_dependencies.i
 
 
@@ -71,10 +75,18 @@ class Handle_MoniTool_SignText : public Handle_MMgt_TShared {
 	return (MoniTool_SignText*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_SignText::~Handle_MoniTool_SignText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_SignText {
-	~Handle_MoniTool_SignText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_SignText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -101,10 +113,18 @@ class Handle_MoniTool_CaseData : public Handle_MMgt_TShared {
 	return (MoniTool_CaseData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_CaseData::~Handle_MoniTool_CaseData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_CaseData {
-	~Handle_MoniTool_CaseData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_CaseData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -131,10 +151,18 @@ class Handle_MoniTool_DataMapNodeOfDataMapOfTimer : public Handle_TCollection_Ma
 	return (MoniTool_DataMapNodeOfDataMapOfTimer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_DataMapNodeOfDataMapOfTimer::~Handle_MoniTool_DataMapNodeOfDataMapOfTimer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_DataMapNodeOfDataMapOfTimer {
-	~Handle_MoniTool_DataMapNodeOfDataMapOfTimer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_DataMapNodeOfDataMapOfTimer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -161,10 +189,18 @@ class Handle_MoniTool_IntVal : public Handle_MMgt_TShared {
 	return (MoniTool_IntVal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_IntVal::~Handle_MoniTool_IntVal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_IntVal {
-	~Handle_MoniTool_IntVal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_IntVal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -191,10 +227,18 @@ class Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient : public Handle_TColl
 	return (MoniTool_DataMapNodeOfDataMapOfShapeTransient*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient::~Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient {
-	~Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -221,10 +265,18 @@ class Handle_MoniTool_RealVal : public Handle_MMgt_TShared {
 	return (MoniTool_RealVal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_RealVal::~Handle_MoniTool_RealVal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_RealVal {
-	~Handle_MoniTool_RealVal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_RealVal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -251,10 +303,18 @@ class Handle_MoniTool_Element : public Handle_MMgt_TShared {
 	return (MoniTool_Element*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_Element::~Handle_MoniTool_Element %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_Element {
-	~Handle_MoniTool_Element() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_Element\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -281,10 +341,18 @@ class Handle_MoniTool_TransientElem : public Handle_MoniTool_Element {
 	return (MoniTool_TransientElem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_TransientElem::~Handle_MoniTool_TransientElem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_TransientElem {
-	~Handle_MoniTool_TransientElem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_TransientElem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -311,10 +379,18 @@ class Handle_MoniTool_Profile : public Handle_MMgt_TShared {
 	return (MoniTool_Profile*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_Profile::~Handle_MoniTool_Profile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_Profile {
-	~Handle_MoniTool_Profile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_Profile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -341,10 +417,18 @@ class Handle_MoniTool_SequenceNodeOfSequenceOfElement : public Handle_TCollectio
 	return (MoniTool_SequenceNodeOfSequenceOfElement*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_SequenceNodeOfSequenceOfElement::~Handle_MoniTool_SequenceNodeOfSequenceOfElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_SequenceNodeOfSequenceOfElement {
-	~Handle_MoniTool_SequenceNodeOfSequenceOfElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_SequenceNodeOfSequenceOfElement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -371,10 +455,18 @@ class Handle_MoniTool_Timer : public Handle_MMgt_TShared {
 	return (MoniTool_Timer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_Timer::~Handle_MoniTool_Timer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_Timer {
-	~Handle_MoniTool_Timer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_Timer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -401,10 +493,18 @@ class Handle_MoniTool_TypedValue : public Handle_MMgt_TShared {
 	return (MoniTool_TypedValue*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_TypedValue::~Handle_MoniTool_TypedValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_TypedValue {
-	~Handle_MoniTool_TypedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_TypedValue\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -431,10 +531,18 @@ class Handle_MoniTool_Option : public Handle_MMgt_TShared {
 	return (MoniTool_Option*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_Option::~Handle_MoniTool_Option %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_Option {
-	~Handle_MoniTool_Option() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_Option\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -461,10 +569,18 @@ class Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : publi
 	return (MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient::~Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
-	~Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -491,10 +607,18 @@ class Handle_MoniTool_SignShape : public Handle_MoniTool_SignText {
 	return (MoniTool_SignShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_SignShape::~Handle_MoniTool_SignShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_SignShape {
-	~Handle_MoniTool_SignShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_SignShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -521,10 +645,18 @@ class Handle_MoniTool_HSequenceOfElement : public Handle_MMgt_TShared {
 	return (MoniTool_HSequenceOfElement*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MoniTool_HSequenceOfElement::~Handle_MoniTool_HSequenceOfElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MoniTool_HSequenceOfElement {
-	~Handle_MoniTool_HSequenceOfElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_HSequenceOfElement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -552,10 +684,18 @@ class MoniTool_DataMapNodeOfDataMapOfShapeTransient : public TCollection_MapNode
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_DataMapNodeOfDataMapOfShapeTransient::~MoniTool_DataMapNodeOfDataMapOfShapeTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
-	~MoniTool_DataMapNodeOfDataMapOfShapeTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapNodeOfDataMapOfShapeTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -623,10 +763,18 @@ class MoniTool_HSequenceOfElement : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_HSequenceOfElement::~MoniTool_HSequenceOfElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_HSequenceOfElement {
-	~MoniTool_HSequenceOfElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_HSequenceOfElement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -642,10 +790,18 @@ class MoniTool_ElemHasher {
 		Standard_Boolean IsEqual(const Handle_MoniTool_Element &K1, const Handle_MoniTool_Element &K2);
 
 };
+%feature("shadow") MoniTool_ElemHasher::~MoniTool_ElemHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_ElemHasher {
-	~MoniTool_ElemHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_ElemHasher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -701,7 +857,7 @@ class MoniTool_Timer : public MMgt_TShared {
 		};
 		%feature("autodoc", "1");
 		void ComputeAmendments();
-		%feature("autodoc","GetAmendments()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","GetAmendments() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void GetAmendments(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -717,10 +873,18 @@ class MoniTool_Timer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_Timer::~MoniTool_Timer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_Timer {
-	~MoniTool_Timer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_Timer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -746,10 +910,18 @@ class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_SequenceNodeOfSequenceOfElement::~MoniTool_SequenceNodeOfSequenceOfElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_SequenceNodeOfSequenceOfElement {
-	~MoniTool_SequenceNodeOfSequenceOfElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_SequenceNodeOfSequenceOfElement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -821,10 +993,18 @@ class MoniTool_Profile : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_Profile::~MoniTool_Profile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_Profile {
-	~MoniTool_Profile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_Profile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -858,10 +1038,18 @@ class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") MoniTool_DataMapOfShapeTransient::~MoniTool_DataMapOfShapeTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_DataMapOfShapeTransient {
-	~MoniTool_DataMapOfShapeTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapOfShapeTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -881,10 +1069,18 @@ class MoniTool_TimerSentry {
 		void Stop();
 
 };
+%feature("shadow") MoniTool_TimerSentry::~MoniTool_TimerSentry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_TimerSentry {
-	~MoniTool_TimerSentry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_TimerSentry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -896,8 +1092,18 @@ class MoniTool_IntVal : public MMgt_TShared {
 		MoniTool_IntVal(const Standard_Integer val=0);
 		%feature("autodoc", "1");
 		Standard_Integer Value() const;
-		%feature("autodoc", "1");
-		Standard_Integer & CValue();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetCValue() {
+				return (Standard_Integer) $self->CValue();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetCValue(Standard_Integer value ) {
+				$self->CValue()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -912,10 +1118,18 @@ class MoniTool_IntVal : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_IntVal::~MoniTool_IntVal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_IntVal {
-	~MoniTool_IntVal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_IntVal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -927,8 +1141,18 @@ class MoniTool_RealVal : public MMgt_TShared {
 		MoniTool_RealVal(const Standard_Real val=0.0);
 		%feature("autodoc", "1");
 		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		Standard_Real & CValue();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetCValue() {
+				return (Standard_Real) $self->CValue();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetCValue(Standard_Real value ) {
+				$self->CValue()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -943,10 +1167,18 @@ class MoniTool_RealVal : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_RealVal::~MoniTool_RealVal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_RealVal {
-	~MoniTool_RealVal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_RealVal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -966,10 +1198,18 @@ class MoniTool_DataMapIteratorOfDataMapOfShapeTransient : public TCollection_Bas
 		const Handle_Standard_Transient & Value() const;
 
 };
+%feature("shadow") MoniTool_DataMapIteratorOfDataMapOfShapeTransient::~MoniTool_DataMapIteratorOfDataMapOfShapeTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_DataMapIteratorOfDataMapOfShapeTransient {
-	~MoniTool_DataMapIteratorOfDataMapOfShapeTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapIteratorOfDataMapOfShapeTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -984,7 +1224,7 @@ class MoniTool_Element : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Type ValueType() const;
 		%feature("autodoc", "1");
-		virtual		Standard_CString ValueTypeName() const;
+		virtual		char * ValueTypeName() const;
 		%feature("autodoc", "1");
 		const MoniTool_AttrList & ListAttr() const;
 		%feature("autodoc", "1");
@@ -1003,10 +1243,18 @@ class MoniTool_Element : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_Element::~MoniTool_Element %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_Element {
-	~MoniTool_Element() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_Element\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1018,8 +1266,18 @@ class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TColl
 		MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient(const TopoDS_Shape &K1, const Standard_Integer K2, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -1038,10 +1296,18 @@ class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TColl
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient::~MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
-	~MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1056,9 +1322,9 @@ class MoniTool_CaseData : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetName(const char * name);
 		%feature("autodoc", "1");
-		Standard_CString CaseId() const;
+		char * CaseId() const;
 		%feature("autodoc", "1");
-		Standard_CString Name() const;
+		char * Name() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsCheck() const;
 		%feature("autodoc", "1");
@@ -1125,11 +1391,11 @@ class MoniTool_CaseData : public MMgt_TShared {
 		Standard_Boolean XYZ(const Standard_Integer nd, gp_XYZ & val) const;
 		%feature("autodoc", "1");
 		Standard_Boolean XY(const Standard_Integer nd, gp_XY & val) const;
-		%feature("autodoc","Reals(Standard_Integer nd)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Reals(Standard_Integer nd) -> [Standard_RealStandard_Real]");
 		Standard_Boolean Reals(const Standard_Integer nd, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Real(Standard_Integer nd)->Standard_Real");
+		%feature("autodoc","Real(Standard_Integer nd) -> Standard_Real");
 		Standard_Boolean Real(const Standard_Integer nd, Standard_Real &OutValue) const;
-		%feature("autodoc","Integer(Standard_Integer nd)->Standard_Integer");
+		%feature("autodoc","Integer(Standard_Integer nd) -> Standard_Integer");
 		Standard_Boolean Integer(const Standard_Integer nd, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetDefWarning(const char * acode);
@@ -1155,10 +1421,18 @@ class MoniTool_CaseData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_CaseData::~MoniTool_CaseData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_CaseData {
-	~MoniTool_CaseData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_CaseData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1174,10 +1448,18 @@ class MoniTool_DataInfo {
 		char * TypeName(const Handle_Standard_Transient &ent);
 
 };
+%feature("shadow") MoniTool_DataInfo::~MoniTool_DataInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_DataInfo {
-	~MoniTool_DataInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_DataInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1193,10 +1475,18 @@ class MoniTool_MTHasher {
 		Standard_Boolean IsEqual(const char * Str1, const char * Str2);
 
 };
+%feature("shadow") MoniTool_MTHasher::~MoniTool_MTHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_MTHasher {
-	~MoniTool_MTHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_MTHasher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1213,7 +1503,7 @@ class MoniTool_TransientElem : public MoniTool_Element {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Type ValueType() const;
 		%feature("autodoc", "1");
-		virtual		Standard_CString ValueTypeName() const;
+		virtual		char * ValueTypeName() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1228,10 +1518,18 @@ class MoniTool_TransientElem : public MoniTool_Element {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_TransientElem::~MoniTool_TransientElem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_TransientElem {
-	~MoniTool_TransientElem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_TransientElem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1244,7 +1542,7 @@ class MoniTool_TypedValue : public MMgt_TShared {
 		%feature("autodoc", "1");
 		MoniTool_TypedValue(const Handle_MoniTool_TypedValue &other);
 		%feature("autodoc", "1");
-		Standard_CString Name() const;
+		char * Name() const;
 		%feature("autodoc", "1");
 		MoniTool_ValueType ValueType() const;
 		%feature("autodoc", "1");
@@ -1260,30 +1558,30 @@ class MoniTool_TypedValue : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetLabel(const char * label);
 		%feature("autodoc", "1");
-		Standard_CString Label() const;
+		char * Label() const;
 		%feature("autodoc", "1");
 		void SetMaxLength(const Standard_Integer max);
 		%feature("autodoc", "1");
 		Standard_Integer MaxLength() const;
 		%feature("autodoc", "1");
 		void SetIntegerLimit(const Standard_Boolean max, const Standard_Integer val);
-		%feature("autodoc","IntegerLimit(Standard_Boolean max)->Standard_Integer");
+		%feature("autodoc","IntegerLimit(Standard_Boolean max) -> Standard_Integer");
 		Standard_Boolean IntegerLimit(const Standard_Boolean max, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetRealLimit(const Standard_Boolean max, const Standard_Real val);
-		%feature("autodoc","RealLimit(Standard_Boolean max)->Standard_Real");
+		%feature("autodoc","RealLimit(Standard_Boolean max) -> Standard_Real");
 		Standard_Boolean RealLimit(const Standard_Boolean max, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetUnitDef(const char * def);
 		%feature("autodoc", "1");
-		Standard_CString UnitDef() const;
+		char * UnitDef() const;
 		%feature("autodoc", "1");
 		void StartEnum(const Standard_Integer start=0, const Standard_Boolean match=1);
 		%feature("autodoc", "1");
 		void AddEnum(const char * v1="", const char * v2="", const char * v3="", const char * v4="", const char * v5="", const char * v6="", const char * v7="", const char * v8="", const char * v9="", const char * v10="");
 		%feature("autodoc", "1");
 		void AddEnumValue(const char * val, const Standard_Integer num);
-		%feature("autodoc","EnumDef()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","EnumDef() -> [Standard_Integer, Standard_Integer]");
 		Standard_Boolean EnumDef(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & match) const;
 		%feature("autodoc", "1");
 		char * EnumVal(const Standard_Integer num) const;
@@ -1296,11 +1594,11 @@ class MoniTool_TypedValue : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasInterpret() const;
 		%feature("autodoc", "1");
-		Standard_CString SatisfiesName() const;
+		char * SatisfiesName() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsSetValue() const;
 		%feature("autodoc", "1");
-		Standard_CString CStringValue() const;
+		char * CStringValue() const;
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString HStringValue() const;
 		%feature("autodoc", "1");
@@ -1328,7 +1626,7 @@ class MoniTool_TypedValue : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean SetObjectValue(const Handle_Standard_Transient &obj);
 		%feature("autodoc", "1");
-		Standard_CString ObjectTypeName() const;
+		char * ObjectTypeName() const;
 		%feature("autodoc", "1");
 		Standard_Boolean AddLib(const Handle_MoniTool_TypedValue &tv, const char * def="");
 		%feature("autodoc", "1");
@@ -1353,10 +1651,18 @@ class MoniTool_TypedValue : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_TypedValue::~MoniTool_TypedValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_TypedValue {
-	~MoniTool_TypedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_TypedValue\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1365,7 +1671,7 @@ class MoniTool_TypedValue : public MMgt_TShared {
 class MoniTool_SignText : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_CString Name() const;
+		virtual		char * Name() const;
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString TextAlone(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
@@ -1384,10 +1690,18 @@ class MoniTool_SignText : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_SignText::~MoniTool_SignText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_SignText {
-	~MoniTool_SignText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_SignText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1409,10 +1723,18 @@ class MoniTool_SignShape : public MoniTool_SignText {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_SignShape::~MoniTool_SignShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_SignShape {
-	~MoniTool_SignShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_SignShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1423,7 +1745,7 @@ class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
 		%feature("autodoc", "1");
 		MoniTool_DataMapNodeOfDataMapOfTimer(const char * &K, const Handle_MoniTool_Timer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		Standard_CString & Key() const;
+		char * & Key() const;
 		%feature("autodoc", "1");
 		Handle_MoniTool_Timer & Value() const;
 		%feature("autodoc", "1");
@@ -1440,10 +1762,18 @@ class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_DataMapNodeOfDataMapOfTimer::~MoniTool_DataMapNodeOfDataMapOfTimer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_DataMapNodeOfDataMapOfTimer {
-	~MoniTool_DataMapNodeOfDataMapOfTimer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapNodeOfDataMapOfTimer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1469,10 +1799,18 @@ class MoniTool_OptValue {
 		virtual		void Delete();
 
 };
+%feature("shadow") MoniTool_OptValue::~MoniTool_OptValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_OptValue {
-	~MoniTool_OptValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_OptValue\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1504,10 +1842,18 @@ class MoniTool_Stat {
 		Standard_Real Percent(const Standard_Integer fromlev=0) const;
 
 };
+%feature("shadow") MoniTool_Stat::~MoniTool_Stat %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_Stat {
-	~MoniTool_Stat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_Stat\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1551,10 +1897,18 @@ class MoniTool_IndexedDataMapOfShapeTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%feature("shadow") MoniTool_IndexedDataMapOfShapeTransient::~MoniTool_IndexedDataMapOfShapeTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_IndexedDataMapOfShapeTransient {
-	~MoniTool_IndexedDataMapOfShapeTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_IndexedDataMapOfShapeTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1578,13 +1932,13 @@ class MoniTool_AttrList {
 		MoniTool_ValueType AttributeType(const char * name) const;
 		%feature("autodoc", "1");
 		void SetIntegerAttribute(const char * name, const Standard_Integer val);
-		%feature("autodoc","GetIntegerAttribute(Standard_CString name)->Standard_Integer");
+		%feature("autodoc","GetIntegerAttribute(Standard_CString name) -> Standard_Integer");
 		Standard_Boolean GetIntegerAttribute(const char * name, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer IntegerAttribute(const char * name) const;
 		%feature("autodoc", "1");
 		void SetRealAttribute(const char * name, const Standard_Real val);
-		%feature("autodoc","GetRealAttribute(Standard_CString name)->Standard_Real");
+		%feature("autodoc","GetRealAttribute(Standard_CString name) -> Standard_Real");
 		Standard_Boolean GetRealAttribute(const char * name, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real RealAttribute(const char * name) const;
@@ -1600,10 +1954,18 @@ class MoniTool_AttrList {
 		void GetAttributes(const MoniTool_AttrList &other, const char * fromname="", const Standard_Boolean copied=1);
 
 };
+%feature("shadow") MoniTool_AttrList::~MoniTool_AttrList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_AttrList {
-	~MoniTool_AttrList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_AttrList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1657,10 +2019,18 @@ class MoniTool_SequenceOfElement : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") MoniTool_SequenceOfElement::~MoniTool_SequenceOfElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_SequenceOfElement {
-	~MoniTool_SequenceOfElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_SequenceOfElement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1694,10 +2064,18 @@ class MoniTool_DataMapOfTimer : public TCollection_BasicMap {
 		Handle_MoniTool_Timer & operator()(const char * &K);
 
 };
+%feature("shadow") MoniTool_DataMapOfTimer::~MoniTool_DataMapOfTimer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_DataMapOfTimer {
-	~MoniTool_DataMapOfTimer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapOfTimer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1751,10 +2129,18 @@ class MoniTool_Option : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MoniTool_Option::~MoniTool_Option %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_Option {
-	~MoniTool_Option() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_Option\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1769,14 +2155,22 @@ class MoniTool_DataMapIteratorOfDataMapOfTimer : public TCollection_BasicMapIter
 		%feature("autodoc", "1");
 		void Initialize(const MoniTool_DataMapOfTimer &aMap);
 		%feature("autodoc", "1");
-		const Standard_CString & Key() const;
+		const char * & Key() const;
 		%feature("autodoc", "1");
 		const Handle_MoniTool_Timer & Value() const;
 
 };
+%feature("shadow") MoniTool_DataMapIteratorOfDataMapOfTimer::~MoniTool_DataMapIteratorOfDataMapOfTimer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MoniTool_DataMapIteratorOfDataMapOfTimer {
-	~MoniTool_DataMapIteratorOfDataMapOfTimer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapIteratorOfDataMapOfTimer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

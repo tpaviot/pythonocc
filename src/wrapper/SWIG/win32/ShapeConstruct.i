@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ShapeConstruct_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_ShapeConstruct_ProjectCurveOnSurface : public Handle_MMgt_TShared {
 	return (ShapeConstruct_ProjectCurveOnSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeConstruct_ProjectCurveOnSurface::~Handle_ShapeConstruct_ProjectCurveOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeConstruct_ProjectCurveOnSurface {
-	~Handle_ShapeConstruct_ProjectCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeConstruct_ProjectCurveOnSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -78,16 +90,24 @@ class ShapeConstruct {
 		Handle_Geom_BSplineSurface ConvertSurfaceToBSpline(const Handle_Geom_Surface &surf, const Standard_Real UF, const Standard_Real UL, const Standard_Real VF, const Standard_Real VL, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
 		%feature("autodoc", "1");
 		Standard_Boolean JoinPCurves(const Handle_TopTools_HSequenceOfShape &theEdges, const TopoDS_Face &theFace, TopoDS_Edge & theEdge);
-		%feature("autodoc","JoinCurves(const c3d1, const ac3d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2)->[Standard_RealStandard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","JoinCurves(const c3d1, const ac3d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2) -> [Standard_RealStandard_RealStandard_RealStandard_Real]");
 		Standard_Boolean JoinCurves(const Handle_Geom_Curve &c3d1, const Handle_Geom_Curve &ac3d2, const TopAbs_Orientation Orient1, const TopAbs_Orientation Orient2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Handle_Geom_Curve & c3dOut, Standard_Boolean & isRev1, Standard_Boolean & isRev2);
-		%feature("autodoc","JoinCurves(const c2d1, const ac2d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2, Standard_Boolean isError=0)->[Standard_RealStandard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","JoinCurves(const c2d1, const ac2d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2, Standard_Boolean isError=0) -> [Standard_RealStandard_RealStandard_RealStandard_Real]");
 		Standard_Boolean JoinCurves(const Handle_Geom2d_Curve &c2d1, const Handle_Geom2d_Curve &ac2d2, const TopAbs_Orientation Orient1, const TopAbs_Orientation Orient2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Handle_Geom2d_Curve & c2dOut, Standard_Boolean & isRev1, Standard_Boolean & isRev2, const Standard_Boolean isError=0);
 
 };
+%feature("shadow") ShapeConstruct::~ShapeConstruct %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeConstruct {
-	~ShapeConstruct() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeConstruct\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -109,8 +129,18 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 		void SetPrecision(const Standard_Real preci);
 		%feature("autodoc", "1");
 		Standard_Boolean & BuildCurveMode();
-		%feature("autodoc", "1");
-		Standard_Integer & AdjustOverDegenMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetAdjustOverDegenMode() {
+				return (Standard_Integer) $self->AdjustOverDegenMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetAdjustOverDegenMode(Standard_Integer value ) {
+				$self->AdjustOverDegenMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status Status) const;
 		%feature("autodoc", "1");
@@ -133,10 +163,18 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeConstruct_ProjectCurveOnSurface::~ShapeConstruct_ProjectCurveOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeConstruct_ProjectCurveOnSurface {
-	~ShapeConstruct_ProjectCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_ProjectCurveOnSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -162,10 +200,18 @@ class ShapeConstruct_CompBezierCurvesToBSplineCurve {
 		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
 
 };
+%feature("shadow") ShapeConstruct_CompBezierCurvesToBSplineCurve::~ShapeConstruct_CompBezierCurvesToBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeConstruct_CompBezierCurvesToBSplineCurve {
-	~ShapeConstruct_CompBezierCurvesToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_CompBezierCurvesToBSplineCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -191,10 +237,18 @@ class ShapeConstruct_Curve {
 		Standard_Boolean FixKnots(TColStd_Array1OfReal & knots);
 
 };
+%feature("shadow") ShapeConstruct_Curve::~ShapeConstruct_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeConstruct_Curve {
-	~ShapeConstruct_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_Curve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -212,10 +266,18 @@ class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
 		virtual		Standard_Boolean IsDone() const;
 
 };
+%feature("shadow") ShapeConstruct_MakeTriangulation::~ShapeConstruct_MakeTriangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeConstruct_MakeTriangulation {
-	~ShapeConstruct_MakeTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_MakeTriangulation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -241,9 +303,17 @@ class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
 		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
 
 };
+%feature("shadow") ShapeConstruct_CompBezierCurves2dToBSplineCurve2d::~ShapeConstruct_CompBezierCurves2dToBSplineCurve2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
-	~ShapeConstruct_CompBezierCurves2dToBSplineCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_CompBezierCurves2dToBSplineCurve2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

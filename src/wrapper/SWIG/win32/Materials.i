@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Materials_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
 	return (Materials_FuzzyInstance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Materials_FuzzyInstance::~Handle_Materials_FuzzyInstance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Materials_FuzzyInstance {
-	~Handle_Materials_FuzzyInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Materials_FuzzyInstance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_Materials_Material : public Handle_Materials_FuzzyInstance {
 	return (Materials_Material*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Materials_Material::~Handle_Materials_Material %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Materials_Material {
-	~Handle_Materials_Material() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Materials_Material\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_Materials_SequenceNodeOfMtsSequence : public Handle_TCollection_Seq
 	return (Materials_SequenceNodeOfMtsSequence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Materials_SequenceNodeOfMtsSequence::~Handle_Materials_SequenceNodeOfMtsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Materials_SequenceNodeOfMtsSequence {
-	~Handle_Materials_SequenceNodeOfMtsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Materials_SequenceNodeOfMtsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_Materials_MaterialsSequence : public Handle_MMgt_TShared {
 	return (Materials_MaterialsSequence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Materials_MaterialsSequence::~Handle_Materials_MaterialsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Materials_MaterialsSequence {
-	~Handle_Materials_MaterialsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Materials_MaterialsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_Materials_Color : public Handle_Standard_Transient {
 	return (Materials_Color*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Materials_Color::~Handle_Materials_Color %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Materials_Color {
-	~Handle_Materials_Color() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Materials_Color\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitio
 	return (Materials_MaterialDefinition*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Materials_MaterialDefinition::~Handle_Materials_MaterialDefinition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Materials_MaterialDefinition {
-	~Handle_Materials_MaterialDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Materials_MaterialDefinition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_Materials_MaterialsDictionary : public Handle_Standard_Transient {
 	return (Materials_MaterialsDictionary*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Materials_MaterialsDictionary::~Handle_Materials_MaterialsDictionary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Materials_MaterialsDictionary {
-	~Handle_Materials_MaterialsDictionary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Materials_MaterialsDictionary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -282,10 +342,18 @@ class Materials_MaterialsDictionary : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Materials_MaterialsDictionary::~Materials_MaterialsDictionary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Materials_MaterialsDictionary {
-	~Materials_MaterialsDictionary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials_MaterialsDictionary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -311,10 +379,18 @@ class Materials_SequenceNodeOfMtsSequence : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Materials_SequenceNodeOfMtsSequence::~Materials_SequenceNodeOfMtsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Materials_SequenceNodeOfMtsSequence {
-	~Materials_SequenceNodeOfMtsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials_SequenceNodeOfMtsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -329,7 +405,7 @@ class Materials {
 		%feature("autodoc", "1");
 		void MaterialsFile(const char * afile);
 		%feature("autodoc", "1");
-		Standard_CString MaterialsFile();
+		char * MaterialsFile();
 		%feature("autodoc", "1");
 		Handle_Materials_MaterialsDictionary DictionaryOfMaterials();
 		%feature("autodoc", "1");
@@ -342,10 +418,18 @@ class Materials {
 		Handle_Materials_Material Material(const Standard_Integer anindex);
 
 };
+%feature("shadow") Materials::~Materials %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Materials {
-	~Materials() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -373,9 +457,9 @@ class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 		virtual		void Parameter(const char * aparameter, const Handle_Standard_Transient &anobject);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const char * aparameter, Standard_Boolean & avalue) const;
-		%feature("autodoc","Value(Standard_CString aparameter)->Standard_Integer");
+		%feature("autodoc","Value(Standard_CString aparameter) -> Standard_Integer");
 		virtual		Standard_Boolean Value(const char * aparameter, Standard_Integer &OutValue) const;
-		%feature("autodoc","Value(Standard_CString aparameter)->Standard_Real");
+		%feature("autodoc","Value(Standard_CString aparameter) -> Standard_Real");
 		virtual		Standard_Boolean Value(const char * aparameter, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const char * aparameter, TCollection_AsciiString & avalue) const;
@@ -403,10 +487,18 @@ class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Materials_FuzzyInstance::~Materials_FuzzyInstance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Materials_FuzzyInstance {
-	~Materials_FuzzyInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials_FuzzyInstance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -432,10 +524,18 @@ class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Materials_MaterialDefinition::~Materials_MaterialDefinition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Materials_MaterialDefinition {
-	~Materials_MaterialDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials_MaterialDefinition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -469,10 +569,18 @@ class Materials_Material : public Materials_FuzzyInstance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Materials_Material::~Materials_Material %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Materials_Material {
-	~Materials_Material() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials_Material\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -526,10 +634,18 @@ class Materials_MtsSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Materials_MtsSequence::~Materials_MtsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Materials_MtsSequence {
-	~Materials_MtsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials_MtsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +713,18 @@ class Materials_MaterialsSequence : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Materials_MaterialsSequence::~Materials_MaterialsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Materials_MaterialsSequence {
-	~Materials_MaterialsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials_MaterialsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -616,9 +740,9 @@ class Materials_Color : public Standard_Transient {
 		void Color(const Quantity_Color &acolor);
 		%feature("autodoc", "1");
 		Quantity_Color Color() const;
-		%feature("autodoc","Color(Quantity_TypeOfColor aTypeOfColor)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","Color(Quantity_TypeOfColor aTypeOfColor) -> [Standard_Real, Standard_RealStandard_Real]");
 		void Color(const Quantity_TypeOfColor aTypeOfColor, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Color255(Quantity_TypeOfColor aTypeOfColor)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","Color255(Quantity_TypeOfColor aTypeOfColor) -> [Standard_Real, Standard_RealStandard_Real]");
 		void Color255(const Quantity_TypeOfColor aTypeOfColor, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetColor(const Quantity_TypeOfColor aTypeOfColor, const Standard_Real Reel1, const Standard_Real Reel2, const Standard_Real Reel3);
@@ -638,9 +762,17 @@ class Materials_Color : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Materials_Color::~Materials_Color %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Materials_Color {
-	~Materials_Color() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Materials_Color\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

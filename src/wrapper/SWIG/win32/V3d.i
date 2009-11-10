@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include V3d_dependencies.i
 
 
@@ -176,10 +180,18 @@ class Handle_V3d_UnMapped : public Handle_Standard_DomainError {
 	return (V3d_UnMapped*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_UnMapped::~Handle_V3d_UnMapped %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_UnMapped {
-	~Handle_V3d_UnMapped() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_UnMapped\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -206,10 +218,18 @@ class Handle_V3d_Plane : public Handle_MMgt_TShared {
 	return (V3d_Plane*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_Plane::~Handle_V3d_Plane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_Plane {
-	~Handle_V3d_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_Plane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -236,10 +256,18 @@ class Handle_V3d_View : public Handle_Viewer_View {
 	return (V3d_View*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_View::~Handle_V3d_View %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_View {
-	~Handle_V3d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_View\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -266,10 +294,18 @@ class Handle_V3d_PerspectiveView : public Handle_V3d_View {
 	return (V3d_PerspectiveView*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_PerspectiveView::~Handle_V3d_PerspectiveView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_PerspectiveView {
-	~Handle_V3d_PerspectiveView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_PerspectiveView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -296,10 +332,18 @@ class Handle_V3d_Light : public Handle_MMgt_TShared {
 	return (V3d_Light*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_Light::~Handle_V3d_Light %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_Light {
-	~Handle_V3d_Light() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_Light\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -326,10 +370,18 @@ class Handle_V3d_AmbientLight : public Handle_V3d_Light {
 	return (V3d_AmbientLight*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_AmbientLight::~Handle_V3d_AmbientLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_AmbientLight {
-	~Handle_V3d_AmbientLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_AmbientLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -356,10 +408,18 @@ class Handle_V3d_Camera : public Handle_MMgt_TShared {
 	return (V3d_Camera*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_Camera::~Handle_V3d_Camera %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_Camera {
-	~Handle_V3d_Camera() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_Camera\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -386,10 +446,18 @@ class Handle_V3d_LayerMgr : public Handle_MMgt_TShared {
 	return (V3d_LayerMgr*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_LayerMgr::~Handle_V3d_LayerMgr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_LayerMgr {
-	~Handle_V3d_LayerMgr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_LayerMgr\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -416,10 +484,18 @@ class Handle_V3d_CircularGrid : public Handle_Aspect_CircularGrid {
 	return (V3d_CircularGrid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_CircularGrid::~Handle_V3d_CircularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_CircularGrid {
-	~Handle_V3d_CircularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_CircularGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -446,10 +522,18 @@ class Handle_V3d_ColorScale : public Handle_Aspect_ColorScale {
 	return (V3d_ColorScale*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_ColorScale::~Handle_V3d_ColorScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_ColorScale {
-	~Handle_V3d_ColorScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_ColorScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -476,10 +560,18 @@ class Handle_V3d_OrthographicView : public Handle_V3d_View {
 	return (V3d_OrthographicView*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_OrthographicView::~Handle_V3d_OrthographicView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_OrthographicView {
-	~Handle_V3d_OrthographicView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_OrthographicView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -506,10 +598,18 @@ class Handle_V3d_PositionLight : public Handle_V3d_Light {
 	return (V3d_PositionLight*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_PositionLight::~Handle_V3d_PositionLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_PositionLight {
-	~Handle_V3d_PositionLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_PositionLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -536,10 +636,18 @@ class Handle_V3d_SpotLight : public Handle_V3d_PositionLight {
 	return (V3d_SpotLight*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_SpotLight::~Handle_V3d_SpotLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_SpotLight {
-	~Handle_V3d_SpotLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_SpotLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -566,10 +674,18 @@ class Handle_V3d_Viewer : public Handle_Viewer_Viewer {
 	return (V3d_Viewer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_Viewer::~Handle_V3d_Viewer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_Viewer {
-	~Handle_V3d_Viewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_Viewer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -596,10 +712,18 @@ class Handle_V3d_DirectionalLight : public Handle_V3d_PositionLight {
 	return (V3d_DirectionalLight*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_DirectionalLight::~Handle_V3d_DirectionalLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_DirectionalLight {
-	~Handle_V3d_DirectionalLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_DirectionalLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -626,10 +750,18 @@ class Handle_V3d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 	return (V3d_RectangularGrid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_RectangularGrid::~Handle_V3d_RectangularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_RectangularGrid {
-	~Handle_V3d_RectangularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_RectangularGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -656,10 +788,18 @@ class Handle_V3d_PositionalLight : public Handle_V3d_PositionLight {
 	return (V3d_PositionalLight*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V3d_PositionalLight::~Handle_V3d_PositionalLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V3d_PositionalLight {
-	~Handle_V3d_PositionalLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V3d_PositionalLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -697,9 +837,9 @@ class V3d_Camera : public MMgt_TShared {
 		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
 		%feature("autodoc", "1");
 		void Erase();
-		%feature("autodoc","Position()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Target()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Target() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Target(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_PlaneAngle Angle() const;
@@ -725,10 +865,18 @@ class V3d_Camera : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_Camera::~V3d_Camera %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_Camera {
-	~V3d_Camera() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_Camera\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -742,7 +890,7 @@ class V3d_Light : public MMgt_TShared {
 		void SetColor(const Quantity_NameOfColor Name);
 		%feature("autodoc", "1");
 		void SetColor(const Quantity_Color &Name);
-		%feature("autodoc","Color(Quantity_TypeOfColor Type)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","Color(Quantity_TypeOfColor Type) -> [Standard_Real, Standard_RealStandard_Real]");
 		void Color(const Quantity_TypeOfColor Type, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Color(Quantity_NameOfColor & Name) const;
@@ -768,10 +916,18 @@ class V3d_Light : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_Light::~V3d_Light %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_Light {
-	~V3d_Light() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_Light\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -801,9 +957,9 @@ class V3d_PositionLight : public V3d_Light {
 		Quantity_Parameter Radius() const;
 		%feature("autodoc", "1");
 		Standard_Boolean SeeOrHide(const Handle_V3d_View &aView) const;
-		%feature("autodoc","Position()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Target()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Target() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Target(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -819,10 +975,18 @@ class V3d_PositionLight : public V3d_Light {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_PositionLight::~V3d_PositionLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_PositionLight {
-	~V3d_PositionLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_PositionLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -846,10 +1010,18 @@ class V3d_AmbientLight : public V3d_Light {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_AmbientLight::~V3d_AmbientLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_AmbientLight {
-	~V3d_AmbientLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_AmbientLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -867,7 +1039,7 @@ class V3d_RectangularGrid : public Aspect_RectangularGrid {
 		virtual		void Erase() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDisplayed() const;
-		%feature("autodoc","GraphicValues()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","GraphicValues() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void GraphicValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetGraphicValues(const Standard_Real XSize, const Standard_Real YSize, const Standard_Real OffSet);
@@ -885,10 +1057,18 @@ class V3d_RectangularGrid : public Aspect_RectangularGrid {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_RectangularGrid::~V3d_RectangularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_RectangularGrid {
-	~V3d_RectangularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_RectangularGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -914,9 +1094,9 @@ class V3d_SpotLight : public V3d_PositionLight {
 		void SetAngle(const Quantity_PlaneAngle Angle);
 		%feature("autodoc", "1");
 		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
-		%feature("autodoc","Direction()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Direction() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Position()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Attenuation(Quantity_Coefficient & A1, Quantity_Coefficient & A2) const;
@@ -938,10 +1118,18 @@ class V3d_SpotLight : public V3d_PositionLight {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_SpotLight::~V3d_SpotLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_SpotLight {
-	~V3d_SpotLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_SpotLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -957,10 +1145,18 @@ class V3d_ListOfTransient : public TColStd_ListOfTransient {
 		void Remove(const Handle_Standard_Transient &aTransient);
 
 };
+%feature("shadow") V3d_ListOfTransient::~V3d_ListOfTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_ListOfTransient {
-	~V3d_ListOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_ListOfTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -986,10 +1182,18 @@ class V3d {
 		void SetPlane(const Handle_V3d_Viewer &aViewer, const Quantity_Length x1, const Quantity_Length y1, const Quantity_Length z1, const Quantity_Length x2, const Quantity_Length y2, const Quantity_Length z2);
 
 };
+%feature("shadow") V3d::~V3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d {
-	~V3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1071,7 +1275,7 @@ class V3d_Viewer : public Viewer_Viewer {
 		void SetCurrentSelectedLight(const Handle_V3d_Light &TheLight);
 		%feature("autodoc", "1");
 		void ClearCurrentSelectedLight();
-		%feature("autodoc","DefaultBackgroundColor(Quantity_TypeOfColor Type)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","DefaultBackgroundColor(Quantity_TypeOfColor Type) -> [Standard_Real, Standard_RealStandard_Real]");
 		void DefaultBackgroundColor(const Quantity_TypeOfColor Type, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Color DefaultBackgroundColor() const;
@@ -1161,19 +1365,19 @@ class V3d_Viewer : public Viewer_Viewer {
 		Aspect_GridType GridType() const;
 		%feature("autodoc", "1");
 		Aspect_GridDrawMode GridDrawMode() const;
-		%feature("autodoc","RectangularGridValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","RectangularGridValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void RectangularGridValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Quantity_PlaneAngle & RotationAngle) const;
 		%feature("autodoc", "1");
 		void SetRectangularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length XStep, const Quantity_Length YStep, const Quantity_PlaneAngle RotationAngle);
-		%feature("autodoc","CircularGridValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Integer]");
+		%feature("autodoc","CircularGridValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Integer]");
 		void CircularGridValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Quantity_PlaneAngle & RotationAngle) const;
 		%feature("autodoc", "1");
 		void SetCircularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length RadiusStep, const Standard_Integer DivisionNumber, const Quantity_PlaneAngle RotationAngle);
-		%feature("autodoc","CircularGridGraphicValues()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","CircularGridGraphicValues() -> [Standard_Real, Standard_Real]");
 		void CircularGridGraphicValues(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetCircularGridGraphicValues(const Quantity_Length Radius, const Quantity_Length OffSet);
-		%feature("autodoc","RectangularGridGraphicValues()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","RectangularGridGraphicValues() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void RectangularGridGraphicValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetRectangularGridGraphicValues(const Quantity_Length XSize, const Quantity_Length YSize, const Quantity_Length OffSet);
@@ -1195,10 +1399,18 @@ class V3d_Viewer : public Viewer_Viewer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_Viewer::~V3d_Viewer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_Viewer {
-	~V3d_Viewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_Viewer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1216,7 +1428,7 @@ class V3d_CircularGrid : public Aspect_CircularGrid {
 		virtual		void Erase() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDisplayed() const;
-		%feature("autodoc","GraphicValues()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GraphicValues() -> [Standard_Real, Standard_Real]");
 		void GraphicValues(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetGraphicValues(const Standard_Real Radius, const Standard_Real OffSet);
@@ -1234,10 +1446,18 @@ class V3d_CircularGrid : public Aspect_CircularGrid {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_CircularGrid::~V3d_CircularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_CircularGrid {
-	~V3d_CircularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_CircularGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1435,51 +1655,51 @@ class V3d_View : public Viewer_View {
 		void Reset(const Standard_Boolean update=1);
 		%feature("autodoc", "1");
 		Quantity_Length Convert(const Standard_Integer Vp) const;
-		%feature("autodoc","Convert(Standard_Integer Xp, Standard_Integer Yp)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Convert(Standard_Integer Xp, Standard_Integer Yp) -> [Standard_RealStandard_Real]");
 		void Convert(const Standard_Integer Xp, const Standard_Integer Yp, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Convert(const Quantity_Length Vv) const;
-		%feature("autodoc","Convert(V3d_Coordinate Xv, V3d_Coordinate Yv)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","Convert(V3d_Coordinate Xv, V3d_Coordinate Yv) -> [Standard_IntegerStandard_Integer]");
 		void Convert(const V3d_Coordinate Xv, const V3d_Coordinate Yv, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","Convert(Standard_Integer Xp, Standard_Integer Yp)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","Convert(Standard_Integer Xp, Standard_Integer Yp) -> [Standard_RealStandard_RealStandard_Real]");
 		void Convert(const Standard_Integer Xp, const Standard_Integer Yp, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ConvertWithProj(Standard_Integer Xp, Standard_Integer Yp)->[Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","ConvertWithProj(Standard_Integer Xp, Standard_Integer Yp) -> [Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_RealStandard_Real]");
 		void ConvertWithProj(const Standard_Integer Xp, const Standard_Integer Yp, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ConvertToGrid(Standard_Integer Xp, Standard_Integer Yp)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","ConvertToGrid(Standard_Integer Xp, Standard_Integer Yp) -> [Standard_RealStandard_RealStandard_Real]");
 		void ConvertToGrid(const Standard_Integer Xp, const Standard_Integer Yp, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ConvertToGrid(V3d_Coordinate X, V3d_Coordinate Y, V3d_Coordinate Z)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","ConvertToGrid(V3d_Coordinate X, V3d_Coordinate Y, V3d_Coordinate Z) -> [Standard_RealStandard_RealStandard_Real]");
 		void ConvertToGrid(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Convert(V3d_Coordinate X, V3d_Coordinate Y, V3d_Coordinate Z)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","Convert(V3d_Coordinate X, V3d_Coordinate Y, V3d_Coordinate Z) -> [Standard_IntegerStandard_Integer]");
 		void Convert(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","Project(V3d_Coordinate X, V3d_Coordinate Y, V3d_Coordinate Z)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Project(V3d_Coordinate X, V3d_Coordinate Y, V3d_Coordinate Z) -> [Standard_RealStandard_Real]");
 		void Project(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","BackgroundColor(Quantity_TypeOfColor Type)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","BackgroundColor(Quantity_TypeOfColor Type) -> [Standard_Real, Standard_RealStandard_Real]");
 		void BackgroundColor(const Quantity_TypeOfColor Type, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Color BackgroundColor() const;
 		%feature("autodoc", "1");
 		Quantity_Factor Scale() const;
-		%feature("autodoc","AxialScale()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","AxialScale() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void AxialScale(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Center()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Center() -> [Standard_Real, Standard_Real]");
 		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Size()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Size() -> [Standard_Real, Standard_Real]");
 		void Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real ZSize() const;
-		%feature("autodoc","Eye()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Eye() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Eye(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","FocalReferencePoint()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","FocalReferencePoint() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void FocalReferencePoint(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ProjReferenceAxe(Standard_Integer Xpix, Standard_Integer Ypix)->[Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","ProjReferenceAxe(Standard_Integer Xpix, Standard_Integer Ypix) -> [Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_RealStandard_Real]");
 		void ProjReferenceAxe(const Standard_Integer Xpix, const Standard_Integer Ypix, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Depth() const;
-		%feature("autodoc","Proj()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Proj() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Proj(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","At()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","At() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void At(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Up()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Up() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Up(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_PlaneAngle Twist() const;
@@ -1495,9 +1715,9 @@ class V3d_View : public Viewer_View {
 		V3d_TypeOfVisualization Visualization() const;
 		%feature("autodoc", "1");
 		Standard_Boolean Antialiasing() const;
-		%feature("autodoc","ZCueing()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","ZCueing() -> [Standard_Real, Standard_Real]");
 		Standard_Boolean ZCueing(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ZClipping()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","ZClipping() -> [Standard_Real, Standard_Real]");
 		V3d_TypeOfZclipping ZClipping(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IfMoreLights() const;
@@ -1629,10 +1849,18 @@ class V3d_View : public Viewer_View {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_View::~V3d_View %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_View {
-	~V3d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_View\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1660,10 +1888,18 @@ class V3d_OrthographicView : public V3d_View {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_OrthographicView::~V3d_OrthographicView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_OrthographicView {
-	~V3d_OrthographicView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_OrthographicView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1695,10 +1931,18 @@ class V3d_UnMapped : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_UnMapped::~V3d_UnMapped %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_UnMapped {
-	~V3d_UnMapped() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_UnMapped\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1714,7 +1958,7 @@ class V3d_Plane : public MMgt_TShared {
 		virtual		void Display(const Handle_V3d_View &aView, const Quantity_Color &aColor=Quantity_NOC_GRAY);
 		%feature("autodoc", "1");
 		void Erase();
-		%feature("autodoc","Plane()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Plane() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Plane(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDisplayed() const;
@@ -1732,10 +1976,18 @@ class V3d_Plane : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_Plane::~V3d_Plane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_Plane {
-	~V3d_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_Plane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1753,7 +2005,7 @@ class V3d_PositionalLight : public V3d_PositionLight {
 		void SetAttenuation(const Quantity_Coefficient A1, const Quantity_Coefficient A2);
 		%feature("autodoc", "1");
 		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
-		%feature("autodoc","Position()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Attenuation(Quantity_Coefficient & A1, Quantity_Coefficient & A2) const;
@@ -1771,10 +2023,18 @@ class V3d_PositionalLight : public V3d_PositionLight {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_PositionalLight::~V3d_PositionalLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_PositionalLight {
-	~V3d_PositionalLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_PositionalLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1798,7 +2058,7 @@ class V3d_ColorScale : public Aspect_ColorScale {
 		virtual		Standard_Integer TextWidth(const TCollection_ExtendedString &aText) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer TextHeight(const TCollection_ExtendedString &aText) const;
-		%feature("autodoc","TextSize(const AText, Standard_Integer AHeight)->[Standard_IntegerStandard_IntegerStandard_Integer]");
+		%feature("autodoc","TextSize(const AText, Standard_Integer AHeight) -> [Standard_IntegerStandard_IntegerStandard_Integer]");
 		void TextSize(const TCollection_ExtendedString &AText, const Standard_Integer AHeight, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void DrawScale();
@@ -1816,10 +2076,18 @@ class V3d_ColorScale : public Aspect_ColorScale {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_ColorScale::~V3d_ColorScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_ColorScale {
-	~V3d_ColorScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_ColorScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1855,10 +2123,18 @@ class V3d_PerspectiveView : public V3d_View {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_PerspectiveView::~V3d_PerspectiveView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_PerspectiveView {
-	~V3d_PerspectiveView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_PerspectiveView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1898,10 +2174,18 @@ class V3d_LayerMgr : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_LayerMgr::~V3d_LayerMgr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_LayerMgr {
-	~V3d_LayerMgr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_LayerMgr\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1923,11 +2207,11 @@ class V3d_DirectionalLight : public V3d_PositionLight {
 		virtual		void SetPosition(const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp);
 		%feature("autodoc", "1");
 		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
-		%feature("autodoc","Position()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","DisplayPosition()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","DisplayPosition() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void DisplayPosition(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Direction()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Direction() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1943,9 +2227,17 @@ class V3d_DirectionalLight : public V3d_PositionLight {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V3d_DirectionalLight::~V3d_DirectionalLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V3d_DirectionalLight {
-	~V3d_DirectionalLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V3d_DirectionalLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

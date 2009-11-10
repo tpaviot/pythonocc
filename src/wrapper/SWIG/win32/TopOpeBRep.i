@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TopOpeBRep_dependencies.i
 
 
@@ -84,10 +88,18 @@ class Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d : public Handle_TCollect
 	return (TopOpeBRep_SequenceNodeOfSequenceOfPoint2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d::~Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d {
-	~Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -114,10 +126,18 @@ class Handle_TopOpeBRep_FFDumper : public Handle_MMgt_TShared {
 	return (TopOpeBRep_FFDumper*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRep_FFDumper::~Handle_TopOpeBRep_FFDumper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRep_FFDumper {
-	~Handle_TopOpeBRep_FFDumper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_FFDumper\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -144,10 +164,18 @@ class Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool : public Handle_TCollect
 	return (TopOpeBRep_DataMapNodeOfDataMapOfTopolTool*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool::~Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool {
-	~Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -174,10 +202,18 @@ class Handle_TopOpeBRep_Hctxff2d : public Handle_MMgt_TShared {
 	return (TopOpeBRep_Hctxff2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRep_Hctxff2d::~Handle_TopOpeBRep_Hctxff2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRep_Hctxff2d {
-	~Handle_TopOpeBRep_Hctxff2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_Hctxff2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -204,10 +240,18 @@ class Handle_TopOpeBRep_HArray1OfLineInter : public Handle_MMgt_TShared {
 	return (TopOpeBRep_HArray1OfLineInter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRep_HArray1OfLineInter::~Handle_TopOpeBRep_HArray1OfLineInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRep_HArray1OfLineInter {
-	~Handle_TopOpeBRep_HArray1OfLineInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_HArray1OfLineInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -234,10 +278,18 @@ class Handle_TopOpeBRep_Hctxee2d : public Handle_MMgt_TShared {
 	return (TopOpeBRep_Hctxee2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRep_Hctxee2d::~Handle_TopOpeBRep_Hctxee2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRep_Hctxee2d {
-	~Handle_TopOpeBRep_Hctxee2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_Hctxee2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -264,10 +316,18 @@ class Handle_TopOpeBRep_ListNodeOfListOfBipoint : public Handle_TCollection_MapN
 	return (TopOpeBRep_ListNodeOfListOfBipoint*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRep_ListNodeOfListOfBipoint::~Handle_TopOpeBRep_ListNodeOfListOfBipoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRep_ListNodeOfListOfBipoint {
-	~Handle_TopOpeBRep_ListNodeOfListOfBipoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_ListNodeOfListOfBipoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -294,10 +354,18 @@ class Handle_TopOpeBRep_HArray1OfVPointInter : public Handle_MMgt_TShared {
 	return (TopOpeBRep_HArray1OfVPointInter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRep_HArray1OfVPointInter::~Handle_TopOpeBRep_HArray1OfVPointInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRep_HArray1OfVPointInter {
-	~Handle_TopOpeBRep_HArray1OfVPointInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_HArray1OfVPointInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -324,10 +392,18 @@ class Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger : public Handle_TColl
 	return (TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger::~Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger {
-	~Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -355,16 +431,34 @@ class TopOpeBRep_DataMapOfShapeInteger : public TCollection_BasicMap {
 		const Standard_Integer & Find(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const TopoDS_Shape &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const TopoDS_Shape &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") TopOpeBRep_DataMapOfShapeInteger::~TopOpeBRep_DataMapOfShapeInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_DataMapOfShapeInteger {
-	~TopOpeBRep_DataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapOfShapeInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -390,10 +484,18 @@ class TopOpeBRep_SequenceNodeOfSequenceOfPoint2d : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRep_SequenceNodeOfSequenceOfPoint2d::~TopOpeBRep_SequenceNodeOfSequenceOfPoint2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_SequenceNodeOfSequenceOfPoint2d {
-	~TopOpeBRep_SequenceNodeOfSequenceOfPoint2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_SequenceNodeOfSequenceOfPoint2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -437,10 +539,18 @@ class TopOpeBRep_HArray1OfLineInter : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRep_HArray1OfLineInter::~TopOpeBRep_HArray1OfLineInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_HArray1OfLineInter {
-	~TopOpeBRep_HArray1OfLineInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_HArray1OfLineInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -460,10 +570,18 @@ class TopOpeBRep_GeomTool {
 		Handle_Geom2d_Curve MakeBSpline1fromWALKING2d(const TopOpeBRep_LineInter &L, const Standard_Integer SI);
 
 };
+%feature("shadow") TopOpeBRep_GeomTool::~TopOpeBRep_GeomTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_GeomTool {
-	~TopOpeBRep_GeomTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_GeomTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -519,10 +637,18 @@ class TopOpeBRep_DSFiller {
 		void CompleteDS2d(const Handle_TopOpeBRepDS_HDataStructure &HDS) const;
 
 };
+%feature("shadow") TopOpeBRep_DSFiller::~TopOpeBRep_DSFiller %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_DSFiller {
-	~TopOpeBRep_DSFiller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DSFiller\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -562,10 +688,18 @@ class TopOpeBRep_ShapeScanner {
 		};
 
 };
+%feature("shadow") TopOpeBRep_ShapeScanner::~TopOpeBRep_ShapeScanner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_ShapeScanner {
-	~TopOpeBRep_ShapeScanner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ShapeScanner\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -587,10 +721,18 @@ class TopOpeBRep_FFTransitionTool {
 		TopOpeBRepDS_Transition ProcessEdgeONTransition(const TopOpeBRep_VPointInter &VP, const Standard_Integer Index, const TopoDS_Shape &R, const TopoDS_Shape &E, const TopoDS_Shape &F);
 
 };
+%feature("shadow") TopOpeBRep_FFTransitionTool::~TopOpeBRep_FFTransitionTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_FFTransitionTool {
-	~TopOpeBRep_FFTransitionTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FFTransitionTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -610,10 +752,18 @@ class TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_Bas
 		const Standard_Integer & Value() const;
 
 };
+%feature("shadow") TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger::~TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger {
-	~TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -629,7 +779,7 @@ class TopOpeBRep_Hctxff2d : public MMgt_TShared {
 		void SetHSurfaces(const Handle_BRepAdaptor_HSurface &S1, const Handle_BRepAdaptor_HSurface &S2);
 		%feature("autodoc", "1");
 		void SetTolerances(const Standard_Real Tol1, const Standard_Real Tol2);
-		%feature("autodoc","GetTolerances()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetTolerances() -> [Standard_Real, Standard_Real]");
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real GetMaxTolerance() const;
@@ -657,10 +807,18 @@ class TopOpeBRep_Hctxff2d : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRep_Hctxff2d::~TopOpeBRep_Hctxff2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_Hctxff2d {
-	~TopOpeBRep_Hctxff2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Hctxff2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -690,10 +848,18 @@ class TopOpeBRep_VPointInterIterator {
 		TopOpeBRep_PLineInter PLineInterDummy() const;
 
 };
+%feature("shadow") TopOpeBRep_VPointInterIterator::~TopOpeBRep_VPointInterIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_VPointInterIterator {
-	~TopOpeBRep_VPointInterIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_VPointInterIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -711,10 +877,18 @@ class TopOpeBRep_VPointInterClassifier {
 		Standard_Real EdgeParameter() const;
 
 };
+%feature("shadow") TopOpeBRep_VPointInterClassifier::~TopOpeBRep_VPointInterClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_VPointInterClassifier {
-	~TopOpeBRep_VPointInterClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_VPointInterClassifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -736,10 +910,18 @@ class TopOpeBRep_PointGeomTool {
 		Standard_Boolean IsEqual(const TopOpeBRepDS_Point &DSP1, const TopOpeBRepDS_Point &DSP2);
 
 };
+%feature("shadow") TopOpeBRep_PointGeomTool::~TopOpeBRep_PointGeomTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_PointGeomTool {
-	~TopOpeBRep_PointGeomTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_PointGeomTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -757,10 +939,18 @@ class TopOpeBRep_EdgesFiller {
 		const TopoDS_Shape & Face(const Standard_Integer I) const;
 
 };
+%feature("shadow") TopOpeBRep_EdgesFiller::~TopOpeBRep_EdgesFiller %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_EdgesFiller {
-	~TopOpeBRep_EdgesFiller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_EdgesFiller\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -774,10 +964,18 @@ class TopOpeBRep_FaceEdgeFiller {
 		void Insert(const TopoDS_Shape &F, const TopoDS_Shape &E, TopOpeBRep_FaceEdgeIntersector & FEINT, const Handle_TopOpeBRepDS_HDataStructure &HDS);
 
 };
+%feature("shadow") TopOpeBRep_FaceEdgeFiller::~TopOpeBRep_FaceEdgeFiller %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_FaceEdgeFiller {
-	~TopOpeBRep_FaceEdgeFiller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FaceEdgeFiller\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -805,10 +1003,18 @@ class TopOpeBRep_DataMapNodeOfDataMapOfTopolTool : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRep_DataMapNodeOfDataMapOfTopolTool::~TopOpeBRep_DataMapNodeOfDataMapOfTopolTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_DataMapNodeOfDataMapOfTopolTool {
-	~TopOpeBRep_DataMapNodeOfDataMapOfTopolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapNodeOfDataMapOfTopolTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -836,7 +1042,7 @@ class TopOpeBRep_ShapeIntersector {
 		TopOpeBRep_FaceEdgeIntersector & ChangeFaceEdgeIntersector();
 		%feature("autodoc", "1");
 		const TopoDS_Shape & CurrentGeomShape(const Standard_Integer Index) const;
-		%feature("autodoc","GetTolerances()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetTolerances() -> [Standard_Real, Standard_Real]");
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void DumpCurrent(const Standard_Integer K) const;
@@ -846,10 +1052,18 @@ class TopOpeBRep_ShapeIntersector {
 		void RejectedFaces(const TopoDS_Shape &anObj, const TopoDS_Shape &aReference, TopTools_ListOfShape & aListOfShape);
 
 };
+%feature("shadow") TopOpeBRep_ShapeIntersector::~TopOpeBRep_ShapeIntersector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_ShapeIntersector {
-	~TopOpeBRep_ShapeIntersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ShapeIntersector\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -889,10 +1103,18 @@ class TopOpeBRep_Array1OfVPointInter {
 		TopOpeBRep_VPointInter & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") TopOpeBRep_Array1OfVPointInter::~TopOpeBRep_Array1OfVPointInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_Array1OfVPointInter {
-	~TopOpeBRep_Array1OfVPointInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Array1OfVPointInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -948,21 +1170,21 @@ class TopOpeBRep_FacesFiller {
 		void ProcessVPonR(const TopOpeBRep_VPointInter &VP, const TopOpeBRepDS_Transition &trans1, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex);
 		%feature("autodoc", "1");
 		void ProcessVPonclosingR(const TopOpeBRep_VPointInter &VP, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex, const TopOpeBRepDS_Transition &transEdge, const TopOpeBRepDS_Kind PVKind, const Standard_Integer PVIndex, const Standard_Boolean EPIfound, const Handle_TopOpeBRepDS_Interference &IEPI);
-		%feature("autodoc","ProcessVPondgE(const VP, Standard_Integer ShapeIndex)->Standard_Integer");
+		%feature("autodoc","ProcessVPondgE(const VP, Standard_Integer ShapeIndex) -> Standard_Integer");
 		Standard_Boolean ProcessVPondgE(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & PVKind, Standard_Integer &OutValue, Standard_Boolean & EPIfound, Handle_TopOpeBRepDS_Interference & IEPI, Standard_Boolean & CPIfound, Handle_TopOpeBRepDS_Interference & ICPI);
 		%feature("autodoc", "1");
 		void ProcessVPInotonR(TopOpeBRep_VPointInterIterator & VPI);
 		%feature("autodoc", "1");
 		void ProcessVPnotonR(const TopOpeBRep_VPointInter &VP);
-		%feature("autodoc","GetGeometry(const VP)->Standard_Integer");
+		%feature("autodoc","GetGeometry(const VP) -> Standard_Integer");
 		Standard_Boolean GetGeometry(TopOpeBRepDS_ListIteratorOfListOfInterference & IT, const TopOpeBRep_VPointInter &VP, Standard_Integer &OutValue, TopOpeBRepDS_Kind & K);
 		%feature("autodoc", "1");
 		Standard_Integer MakeGeometry(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & K);
 		%feature("autodoc", "1");
 		void StoreCurveInterference(const Handle_TopOpeBRepDS_Interference &I);
-		%feature("autodoc","GetFFGeometry(const DSP)->Standard_Integer");
+		%feature("autodoc","GetFFGeometry(const DSP) -> Standard_Integer");
 		Standard_Boolean GetFFGeometry(const TopOpeBRepDS_Point &DSP, TopOpeBRepDS_Kind & K, Standard_Integer &OutValue) const;
-		%feature("autodoc","GetFFGeometry(const VP)->Standard_Integer");
+		%feature("autodoc","GetFFGeometry(const VP) -> Standard_Integer");
 		Standard_Boolean GetFFGeometry(const TopOpeBRep_VPointInter &VP, TopOpeBRepDS_Kind & K, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		TopOpeBRep_FacesIntersector & ChangeFacesIntersector();
@@ -984,9 +1206,9 @@ class TopOpeBRep_FacesFiller {
 		TopOpeBRep_PLineInter PLineInterDummy() const;
 		%feature("autodoc", "1");
 		void SetTraceIndex(const Standard_Integer exF1, const Standard_Integer exF2);
-		%feature("autodoc","GetTraceIndex()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","GetTraceIndex() -> [Standard_Integer, Standard_Integer]");
 		void GetTraceIndex(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","Lminmax(const L)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Lminmax(const L) -> [Standard_RealStandard_Real]");
 		void Lminmax(const TopOpeBRep_LineInter &L, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean LSameDomainERL(const TopOpeBRep_LineInter &L, const TopTools_ListOfShape &ERL);
@@ -1000,10 +1222,18 @@ class TopOpeBRep_FacesFiller {
 		Standard_Boolean EqualpPonR(const TopOpeBRep_LineInter &Lrest, const TopOpeBRep_VPointInter &VP1, const TopOpeBRep_VPointInter &VP2);
 
 };
+%feature("shadow") TopOpeBRep_FacesFiller::~TopOpeBRep_FacesFiller %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_FacesFiller {
-	~TopOpeBRep_FacesFiller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FacesFiller\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1029,10 +1259,18 @@ class TopOpeBRep_WPointInterIterator {
 		TopOpeBRep_PLineInter PLineInterDummy() const;
 
 };
+%feature("shadow") TopOpeBRep_WPointInterIterator::~TopOpeBRep_WPointInterIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_WPointInterIterator {
-	~TopOpeBRep_WPointInterIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_WPointInterIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1054,10 +1292,18 @@ class TopOpeBRep_ListIteratorOfListOfBipoint {
 		TopOpeBRep_Bipoint & Value() const;
 
 };
+%feature("shadow") TopOpeBRep_ListIteratorOfListOfBipoint::~TopOpeBRep_ListIteratorOfListOfBipoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_ListIteratorOfListOfBipoint {
-	~TopOpeBRep_ListIteratorOfListOfBipoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ListIteratorOfListOfBipoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1071,10 +1317,18 @@ class TopOpeBRep {
 		Standard_OStream & Print(const TopOpeBRep_TypeLineCurve TLC, Standard_OStream & OS);
 
 };
+%feature("shadow") TopOpeBRep::~TopOpeBRep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep {
-	~TopOpeBRep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1100,10 +1354,18 @@ class TopOpeBRep_ListNodeOfListOfBipoint : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRep_ListNodeOfListOfBipoint::~TopOpeBRep_ListNodeOfListOfBipoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_ListNodeOfListOfBipoint {
-	~TopOpeBRep_ListNodeOfListOfBipoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ListNodeOfListOfBipoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1115,11 +1377,11 @@ class TopOpeBRep_WPointInter {
 		TopOpeBRep_WPointInter();
 		%feature("autodoc", "1");
 		void Set(const IntSurf_PntOn2S &P);
-		%feature("autodoc","ParametersOnS1()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","ParametersOnS1() -> [Standard_Real, Standard_Real]");
 		void ParametersOnS1(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ParametersOnS2()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","ParametersOnS2() -> [Standard_Real, Standard_Real]");
 		void ParametersOnS2(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Parameters()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt2d ValueOnS1() const;
@@ -1131,10 +1393,18 @@ class TopOpeBRep_WPointInter {
 		TopOpeBRep_PPntOn2S PPntOn2SDummy() const;
 
 };
+%feature("shadow") TopOpeBRep_WPointInter::~TopOpeBRep_WPointInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_WPointInter {
-	~TopOpeBRep_WPointInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_WPointInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1180,10 +1450,18 @@ class TopOpeBRep_FaceEdgeIntersector {
 		Standard_Integer Index() const;
 
 };
+%feature("shadow") TopOpeBRep_FaceEdgeIntersector::~TopOpeBRep_FaceEdgeIntersector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_FaceEdgeIntersector {
-	~TopOpeBRep_FaceEdgeIntersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FaceEdgeIntersector\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1201,10 +1479,18 @@ class TopOpeBRep_Bipoint {
 		Standard_Integer I2() const;
 
 };
+%feature("shadow") TopOpeBRep_Bipoint::~TopOpeBRep_Bipoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_Bipoint {
-	~TopOpeBRep_Bipoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Bipoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1244,10 +1530,18 @@ class TopOpeBRep_Array1OfLineInter {
 		TopOpeBRep_LineInter & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") TopOpeBRep_Array1OfLineInter::~TopOpeBRep_Array1OfLineInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_Array1OfLineInter {
-	~TopOpeBRep_Array1OfLineInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Array1OfLineInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1295,14 +1589,22 @@ class TopOpeBRep_FacesIntersector {
 		TopOpeBRep_LineInter & ChangeLine(const Standard_Integer IL);
 		%feature("autodoc", "1");
 		void ForceTolerances(const Standard_Real tolarc, const Standard_Real toltang);
-		%feature("autodoc","GetTolerances()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetTolerances() -> [Standard_Real, Standard_Real]");
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%feature("shadow") TopOpeBRep_FacesIntersector::~TopOpeBRep_FacesIntersector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_FacesIntersector {
-	~TopOpeBRep_FacesIntersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FacesIntersector\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1342,10 +1644,18 @@ class TopOpeBRep_FFDumper : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRep_FFDumper::~TopOpeBRep_FFDumper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_FFDumper {
-	~TopOpeBRep_FFDumper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FFDumper\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1365,10 +1675,18 @@ class TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool : public TCollection_BasicM
 		const Handle_BRepTopAdaptor_TopolTool & Value() const;
 
 };
+%feature("shadow") TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool::~TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool {
-	~TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1418,10 +1736,18 @@ class TopOpeBRep_ListOfBipoint {
 		void InsertAfter(TopOpeBRep_ListOfBipoint & Other, TopOpeBRep_ListIteratorOfListOfBipoint & It);
 
 };
+%feature("shadow") TopOpeBRep_ListOfBipoint::~TopOpeBRep_ListOfBipoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_ListOfBipoint {
-	~TopOpeBRep_ListOfBipoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ListOfBipoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1449,10 +1775,18 @@ class TopOpeBRep_ShapeIntersector2d {
 		Standard_Integer Index(const Standard_Integer K) const;
 
 };
+%feature("shadow") TopOpeBRep_ShapeIntersector2d::~TopOpeBRep_ShapeIntersector2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_ShapeIntersector2d {
-	~TopOpeBRep_ShapeIntersector2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ShapeIntersector2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1466,7 +1800,7 @@ class TopOpeBRep_VPointInter {
 		void SetPoint(const IntPatch_ThePointOfIntersection &P);
 		%feature("autodoc", "1");
 		void SetShapes(const Standard_Integer I1, const Standard_Integer I2);
-		%feature("autodoc","GetShapes()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","GetShapes() -> [Standard_Integer, Standard_Integer]");
 		void GetShapes(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		IntSurf_Transition TransitionOnS1() const;
@@ -1480,9 +1814,9 @@ class TopOpeBRep_VPointInter {
 		Standard_Boolean IsOnDomS1() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsOnDomS2() const;
-		%feature("autodoc","ParametersOnS1()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","ParametersOnS1() -> [Standard_Real, Standard_Real]");
 		void ParametersOnS1(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ParametersOnS2()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","ParametersOnS2() -> [Standard_Real, Standard_Real]");
 		void ParametersOnS2(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Value() const;
@@ -1542,7 +1876,7 @@ class TopOpeBRep_VPointInter {
 		void ChangeKeep(const Standard_Boolean keep);
 		%feature("autodoc", "1");
 		Standard_Boolean EqualpP(const TopOpeBRep_VPointInter &VP) const;
-		%feature("autodoc","ParonE(const E)->Standard_Real");
+		%feature("autodoc","ParonE(const E) -> Standard_Real");
 		Standard_Boolean ParonE(const TopoDS_Edge &E, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Index(const Standard_Integer I);
@@ -1556,10 +1890,18 @@ class TopOpeBRep_VPointInter {
 		TopOpeBRep_PThePointOfIntersection PThePointOfIntersectionDummy() const;
 
 };
+%feature("shadow") TopOpeBRep_VPointInter::~TopOpeBRep_VPointInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_VPointInter {
-	~TopOpeBRep_VPointInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_VPointInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1579,10 +1921,18 @@ class TopOpeBRep_PointClassifier {
 		TopAbs_State State() const;
 
 };
+%feature("shadow") TopOpeBRep_PointClassifier::~TopOpeBRep_PointClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_PointClassifier {
-	~TopOpeBRep_PointClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_PointClassifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1626,7 +1976,7 @@ class TopOpeBRep_EdgesIntersector {
 		Standard_Boolean FacesSameOriented() const;
 		%feature("autodoc", "1");
 		Standard_Real ToleranceMax() const;
-		%feature("autodoc","Tolerances()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Tolerances() -> [Standard_Real, Standard_Real]");
 		void Tolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
@@ -1652,10 +2002,18 @@ class TopOpeBRep_EdgesIntersector {
 		TopOpeBRep_P2Dstatus Status1() const;
 
 };
+%feature("shadow") TopOpeBRep_EdgesIntersector::~TopOpeBRep_EdgesIntersector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_EdgesIntersector {
-	~TopOpeBRep_EdgesIntersector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_EdgesIntersector\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1689,10 +2047,18 @@ class TopOpeBRep_DataMapOfTopolTool : public TCollection_BasicMap {
 		Handle_BRepTopAdaptor_TopolTool & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") TopOpeBRep_DataMapOfTopolTool::~TopOpeBRep_DataMapOfTopolTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_DataMapOfTopolTool {
-	~TopOpeBRep_DataMapOfTopolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapOfTopolTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1724,10 +2090,18 @@ class TopOpeBRep_Hctxee2d : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRep_Hctxee2d::~TopOpeBRep_Hctxee2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_Hctxee2d {
-	~TopOpeBRep_Hctxee2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Hctxee2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1781,10 +2155,18 @@ class TopOpeBRep_SequenceOfPoint2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") TopOpeBRep_SequenceOfPoint2d::~TopOpeBRep_SequenceOfPoint2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_SequenceOfPoint2d {
-	~TopOpeBRep_SequenceOfPoint2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_SequenceOfPoint2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1826,7 +2208,7 @@ class TopOpeBRep_Point2d {
 		Standard_Boolean IsPointOfSegment() const;
 		%feature("autodoc", "1");
 		void SetSegmentAncestors(const Standard_Integer IP1, const Standard_Integer IP2);
-		%feature("autodoc","SegmentAncestors()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","SegmentAncestors() -> [Standard_Integer, Standard_Integer]");
 		Standard_Boolean SegmentAncestors(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetStatus(const TopOpeBRep_P2Dstatus I);
@@ -1866,10 +2248,18 @@ class TopOpeBRep_Point2d {
 		Handle_TopOpeBRep_Hctxee2d Hctxee2d() const;
 
 };
+%feature("shadow") TopOpeBRep_Point2d::~TopOpeBRep_Point2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_Point2d {
-	~TopOpeBRep_Point2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Point2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1881,8 +2271,18 @@ class TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode
 		TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger(const TopoDS_Shape &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1897,10 +2297,18 @@ class TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger::~TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger {
-	~TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1944,9 +2352,17 @@ class TopOpeBRep_HArray1OfVPointInter : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRep_HArray1OfVPointInter::~TopOpeBRep_HArray1OfVPointInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRep_HArray1OfVPointInter {
-	~TopOpeBRep_HArray1OfVPointInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_HArray1OfVPointInter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

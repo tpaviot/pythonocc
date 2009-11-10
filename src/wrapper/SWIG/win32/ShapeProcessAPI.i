@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ShapeProcessAPI_dependencies.i
 
 
@@ -52,9 +56,17 @@ class ShapeProcessAPI_ApplySequence {
 		void PrintPreparationResult() const;
 
 };
+%feature("shadow") ShapeProcessAPI_ApplySequence::~ShapeProcessAPI_ApplySequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeProcessAPI_ApplySequence {
-	~ShapeProcessAPI_ApplySequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeProcessAPI_ApplySequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

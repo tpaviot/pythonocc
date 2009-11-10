@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PNaming_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_PNaming_Name : public Handle_Standard_Persistent {
 	return (PNaming_Name*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PNaming_Name::~Handle_PNaming_Name %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PNaming_Name {
-	~Handle_PNaming_Name() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PNaming_Name\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public Handle_PSta
 	return (PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape::~Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
-	~Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_PNaming_HArray1OfNamedShape : public Handle_Standard_Persistent {
 	return (PNaming_HArray1OfNamedShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PNaming_HArray1OfNamedShape::~Handle_PNaming_HArray1OfNamedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PNaming_HArray1OfNamedShape {
-	~Handle_PNaming_HArray1OfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PNaming_HArray1OfNamedShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_PNaming_NamedShape : public Handle_PDF_Attribute {
 	return (PNaming_NamedShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PNaming_NamedShape::~Handle_PNaming_NamedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PNaming_NamedShape {
-	~Handle_PNaming_NamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PNaming_NamedShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_PNaming_Naming : public Handle_PDF_Attribute {
 	return (PNaming_Naming*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PNaming_Naming::~Handle_PNaming_Naming %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PNaming_Naming {
-	~Handle_PNaming_Naming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PNaming_Naming\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -210,10 +254,18 @@ class PNaming_FieldOfHArray1OfNamedShape : public DBC_BaseArray {
 		void Destroy();
 
 };
+%feature("shadow") PNaming_FieldOfHArray1OfNamedShape::~PNaming_FieldOfHArray1OfNamedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PNaming_FieldOfHArray1OfNamedShape {
-	~PNaming_FieldOfHArray1OfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PNaming_FieldOfHArray1OfNamedShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -247,10 +299,18 @@ class PNaming_Naming : public PDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PNaming_Naming::~PNaming_Naming %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PNaming_Naming {
-	~PNaming_Naming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PNaming_Naming\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -310,10 +370,18 @@ class PNaming_NamedShape : public PDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PNaming_NamedShape::~PNaming_NamedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PNaming_NamedShape {
-	~PNaming_NamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PNaming_NamedShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -331,10 +399,18 @@ class PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
 		Standard_Address Value() const;
 
 };
+%feature("shadow") PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape::~PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
-	~PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -394,10 +470,18 @@ class PNaming_HArray1OfNamedShape : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PNaming_HArray1OfNamedShape::~PNaming_HArray1OfNamedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PNaming_HArray1OfNamedShape {
-	~PNaming_HArray1OfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PNaming_HArray1OfNamedShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -463,10 +547,18 @@ class PNaming_Name : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PNaming_Name::~PNaming_Name %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PNaming_Name {
-	~PNaming_Name() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PNaming_Name\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -502,9 +594,17 @@ class PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public PStandard_ArrayNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape::~PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
-	~PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

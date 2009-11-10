@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IGESControl_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_IGESControl_AlgoContainer : public Handle_IGESToBRep_AlgoContainer 
 	return (IGESControl_AlgoContainer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESControl_AlgoContainer::~Handle_IGESControl_AlgoContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESControl_AlgoContainer {
-	~Handle_IGESControl_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_AlgoContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_IGESControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 	return (IGESControl_ActorWrite*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESControl_ActorWrite::~Handle_IGESControl_ActorWrite %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESControl_ActorWrite {
-	~Handle_IGESControl_ActorWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_ActorWrite\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_IGESControl_Controller : public Handle_XSControl_Controller {
 	return (IGESControl_Controller*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESControl_Controller::~Handle_IGESControl_Controller %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESControl_Controller {
-	~Handle_IGESControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_Controller\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
 	return (IGESControl_IGESBoundary*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESControl_IGESBoundary::~Handle_IGESControl_IGESBoundary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESControl_IGESBoundary {
-	~Handle_IGESControl_IGESBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_IGESBoundary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer 
 	return (IGESControl_ToolContainer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESControl_ToolContainer::~Handle_IGESControl_ToolContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESControl_ToolContainer {
-	~Handle_IGESControl_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_ToolContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -204,10 +248,18 @@ class IGESControl_Reader : public XSControl_Reader {
 		void PrintTransferInfo(const IFSelect_PrintFail failwarn, const IFSelect_PrintCount mode) const;
 
 };
+%feature("shadow") IGESControl_Reader::~IGESControl_Reader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESControl_Reader {
-	~IGESControl_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_Reader\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -233,10 +285,18 @@ class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESControl_ToolContainer::~IGESControl_ToolContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESControl_ToolContainer {
-	~IGESControl_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_ToolContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -270,10 +330,18 @@ class IGESControl_Controller : public XSControl_Controller {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESControl_Controller::~IGESControl_Controller %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESControl_Controller {
-	~IGESControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_Controller\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESControl_AlgoContainer::~IGESControl_AlgoContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESControl_AlgoContainer {
-	~IGESControl_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_AlgoContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -328,10 +404,18 @@ class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESControl_IGESBoundary::~IGESControl_IGESBoundary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESControl_IGESBoundary {
-	~IGESControl_IGESBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_IGESBoundary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -367,10 +451,18 @@ class IGESControl_Writer {
 		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode=0) const;
 
 };
+%feature("shadow") IGESControl_Writer::~IGESControl_Writer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESControl_Writer {
-	~IGESControl_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_Writer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -398,9 +490,17 @@ class IGESControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESControl_ActorWrite::~IGESControl_ActorWrite %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESControl_ActorWrite {
-	~IGESControl_ActorWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESControl_ActorWrite\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

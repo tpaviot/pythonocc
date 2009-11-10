@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepBuilderAPI_dependencies.i
 
 
@@ -111,10 +115,18 @@ class Handle_BRepBuilderAPI_Sewing : public Handle_MMgt_TShared {
 	return (BRepBuilderAPI_Sewing*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepBuilderAPI_Sewing::~Handle_BRepBuilderAPI_Sewing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepBuilderAPI_Sewing {
-	~Handle_BRepBuilderAPI_Sewing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepBuilderAPI_Sewing\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -130,10 +142,18 @@ class BRepBuilderAPI_Command {
 		void Check() const;
 
 };
+%feature("shadow") BRepBuilderAPI_Command::~BRepBuilderAPI_Command %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_Command {
-	~BRepBuilderAPI_Command() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Command\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -153,10 +173,18 @@ class BRepBuilderAPI_MakeShape : public BRepBuilderAPI_Command {
 		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
 
 };
+%feature("shadow") BRepBuilderAPI_MakeShape::~BRepBuilderAPI_MakeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_MakeShape {
-	~BRepBuilderAPI_MakeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -170,10 +198,18 @@ class BRepBuilderAPI_MakeVertex : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Vertex & Vertex() const;
 
 };
+%feature("shadow") BRepBuilderAPI_MakeVertex::~BRepBuilderAPI_MakeVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_MakeVertex {
-	~BRepBuilderAPI_MakeVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeVertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -187,10 +223,18 @@ class BRepBuilderAPI_ModifyShape : public BRepBuilderAPI_MakeShape {
 		virtual		const TopoDS_Shape & ModifiedShape(const TopoDS_Shape &S) const;
 
 };
+%feature("shadow") BRepBuilderAPI_ModifyShape::~BRepBuilderAPI_ModifyShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_ModifyShape {
-	~BRepBuilderAPI_ModifyShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_ModifyShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -206,10 +250,18 @@ class BRepBuilderAPI_Copy : public BRepBuilderAPI_ModifyShape {
 		void Perform(const TopoDS_Shape &S);
 
 };
+%feature("shadow") BRepBuilderAPI_Copy::~BRepBuilderAPI_Copy %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_Copy {
-	~BRepBuilderAPI_Copy() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Copy\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -233,10 +285,18 @@ class BRepBuilderAPI_MakeShell : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Shell & Shell() const;
 
 };
+%feature("shadow") BRepBuilderAPI_MakeShell::~BRepBuilderAPI_MakeShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_MakeShell {
-	~BRepBuilderAPI_MakeShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeShell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -276,10 +336,18 @@ class BRepBuilderAPI_MakeWire : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Vertex & Vertex() const;
 
 };
+%feature("shadow") BRepBuilderAPI_MakeWire::~BRepBuilderAPI_MakeWire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_MakeWire {
-	~BRepBuilderAPI_MakeWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeWire\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -393,10 +461,18 @@ class BRepBuilderAPI_MakeEdge : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Vertex & Vertex2() const;
 
 };
+%feature("shadow") BRepBuilderAPI_MakeEdge::~BRepBuilderAPI_MakeEdge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_MakeEdge {
-	~BRepBuilderAPI_MakeEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeEdge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -416,10 +492,18 @@ class BRepBuilderAPI_FindPlane {
 		Handle_Geom_Plane Plane() const;
 
 };
+%feature("shadow") BRepBuilderAPI_FindPlane::~BRepBuilderAPI_FindPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_FindPlane {
-	~BRepBuilderAPI_FindPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_FindPlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -525,10 +609,18 @@ class BRepBuilderAPI_Sewing : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepBuilderAPI_Sewing::~BRepBuilderAPI_Sewing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_Sewing {
-	~BRepBuilderAPI_Sewing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Sewing\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -616,10 +708,18 @@ class BRepBuilderAPI_MakeEdge2d : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Vertex & Vertex2() const;
 
 };
+%feature("shadow") BRepBuilderAPI_MakeEdge2d::~BRepBuilderAPI_MakeEdge2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_MakeEdge2d {
-	~BRepBuilderAPI_MakeEdge2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeEdge2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -639,10 +739,18 @@ class BRepBuilderAPI_Transform : public BRepBuilderAPI_ModifyShape {
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
 
 };
+%feature("shadow") BRepBuilderAPI_Transform::~BRepBuilderAPI_Transform %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_Transform {
-	~BRepBuilderAPI_Transform() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Transform\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -658,10 +766,18 @@ class BRepBuilderAPI_NurbsConvert : public BRepBuilderAPI_ModifyShape {
 		void Perform(const TopoDS_Shape &S, const Standard_Boolean Copy=0);
 
 };
+%feature("shadow") BRepBuilderAPI_NurbsConvert::~BRepBuilderAPI_NurbsConvert %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_NurbsConvert {
-	~BRepBuilderAPI_NurbsConvert() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_NurbsConvert\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -681,10 +797,18 @@ class BRepBuilderAPI {
 		Standard_Real Precision();
 
 };
+%feature("shadow") BRepBuilderAPI::~BRepBuilderAPI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI {
-	~BRepBuilderAPI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -704,10 +828,18 @@ class BRepBuilderAPI_GTransform : public BRepBuilderAPI_ModifyShape {
 		virtual		const TopoDS_Shape & ModifiedShape(const TopoDS_Shape &S) const;
 
 };
+%feature("shadow") BRepBuilderAPI_GTransform::~BRepBuilderAPI_GTransform %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_GTransform {
-	~BRepBuilderAPI_GTransform() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_GTransform\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -749,10 +881,18 @@ class BRepBuilderAPI_MakePolygon : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Wire & Wire() const;
 
 };
+%feature("shadow") BRepBuilderAPI_MakePolygon::~BRepBuilderAPI_MakePolygon %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_MakePolygon {
-	~BRepBuilderAPI_MakePolygon() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakePolygon\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -784,10 +924,18 @@ class BRepBuilderAPI_MakeSolid : public BRepBuilderAPI_MakeShape {
 		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &S);
 
 };
+%feature("shadow") BRepBuilderAPI_MakeSolid::~BRepBuilderAPI_MakeSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_MakeSolid {
-	~BRepBuilderAPI_MakeSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeSolid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -811,10 +959,18 @@ class BRepBuilderAPI_Collect {
 		const TopTools_DataMapOfShapeListOfShape & Generated() const;
 
 };
+%feature("shadow") BRepBuilderAPI_Collect::~BRepBuilderAPI_Collect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_Collect {
-	~BRepBuilderAPI_Collect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Collect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -882,9 +1038,17 @@ class BRepBuilderAPI_MakeFace : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Face & Face() const;
 
 };
+%feature("shadow") BRepBuilderAPI_MakeFace::~BRepBuilderAPI_MakeFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepBuilderAPI_MakeFace {
-	~BRepBuilderAPI_MakeFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

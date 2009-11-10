@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Vrml_dependencies.i
 
 
@@ -139,10 +143,18 @@ class Handle_Vrml_AsciiText : public Handle_MMgt_TShared {
 	return (Vrml_AsciiText*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Vrml_AsciiText::~Handle_Vrml_AsciiText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Vrml_AsciiText {
-	~Handle_Vrml_AsciiText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_AsciiText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -169,10 +181,18 @@ class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 	return (Vrml_LOD*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Vrml_LOD::~Handle_Vrml_LOD %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Vrml_LOD {
-	~Handle_Vrml_LOD() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_LOD\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -199,10 +219,18 @@ class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
 	return (Vrml_Coordinate3*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Vrml_Coordinate3::~Handle_Vrml_Coordinate3 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Vrml_Coordinate3 {
-	~Handle_Vrml_Coordinate3() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_Coordinate3\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -229,10 +257,18 @@ class Handle_Vrml_SFImage : public Handle_MMgt_TShared {
 	return (Vrml_SFImage*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Vrml_SFImage::~Handle_Vrml_SFImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Vrml_SFImage {
-	~Handle_Vrml_SFImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_SFImage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -259,10 +295,18 @@ class Handle_Vrml_Normal : public Handle_MMgt_TShared {
 	return (Vrml_Normal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Vrml_Normal::~Handle_Vrml_Normal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Vrml_Normal {
-	~Handle_Vrml_Normal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_Normal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -289,10 +333,18 @@ class Handle_Vrml_Material : public Handle_MMgt_TShared {
 	return (Vrml_Material*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Vrml_Material::~Handle_Vrml_Material %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Vrml_Material {
-	~Handle_Vrml_Material() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_Material\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -319,10 +371,18 @@ class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
 	return (Vrml_IndexedLineSet*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Vrml_IndexedLineSet::~Handle_Vrml_IndexedLineSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Vrml_IndexedLineSet {
-	~Handle_Vrml_IndexedLineSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_IndexedLineSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -349,10 +409,18 @@ class Handle_Vrml_IndexedFaceSet : public Handle_MMgt_TShared {
 	return (Vrml_IndexedFaceSet*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Vrml_IndexedFaceSet::~Handle_Vrml_IndexedFaceSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Vrml_IndexedFaceSet {
-	~Handle_Vrml_IndexedFaceSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_IndexedFaceSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -379,10 +447,18 @@ class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 	return (Vrml_TextureCoordinate2*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Vrml_TextureCoordinate2::~Handle_Vrml_TextureCoordinate2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Vrml_TextureCoordinate2 {
-	~Handle_Vrml_TextureCoordinate2() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_TextureCoordinate2\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -416,10 +492,18 @@ class Vrml_WWWInline {
 		};
 
 };
+%feature("shadow") Vrml_WWWInline::~Vrml_WWWInline %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_WWWInline {
-	~Vrml_WWWInline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_WWWInline\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -443,10 +527,18 @@ class Vrml_Switch {
 		};
 
 };
+%feature("shadow") Vrml_Switch::~Vrml_Switch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Switch {
-	~Vrml_Switch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Switch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -472,10 +564,18 @@ class Vrml_MaterialBinding {
 		};
 
 };
+%feature("shadow") Vrml_MaterialBinding::~Vrml_MaterialBinding %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_MaterialBinding {
-	~Vrml_MaterialBinding() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_MaterialBinding\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -495,10 +595,18 @@ class Vrml_TransformSeparator {
 		};
 
 };
+%feature("shadow") Vrml_TransformSeparator::~Vrml_TransformSeparator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_TransformSeparator {
-	~Vrml_TransformSeparator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_TransformSeparator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -530,10 +638,18 @@ class Vrml_FontStyle {
 		};
 
 };
+%feature("shadow") Vrml_FontStyle::~Vrml_FontStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_FontStyle {
-	~Vrml_FontStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_FontStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -571,10 +687,18 @@ class Vrml_PointLight {
 		};
 
 };
+%feature("shadow") Vrml_PointLight::~Vrml_PointLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_PointLight {
-	~Vrml_PointLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_PointLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -602,10 +726,18 @@ class Vrml_Instancing {
 		};
 
 };
+%feature("shadow") Vrml_Instancing::~Vrml_Instancing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Instancing {
-	~Vrml_Instancing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Instancing\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -629,10 +761,18 @@ class Vrml_Sphere {
 		};
 
 };
+%feature("shadow") Vrml_Sphere::~Vrml_Sphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Sphere {
-	~Vrml_Sphere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Sphere\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -682,10 +822,18 @@ class Vrml_SpotLight {
 		};
 
 };
+%feature("shadow") Vrml_SpotLight::~Vrml_SpotLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_SpotLight {
-	~Vrml_SpotLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_SpotLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -735,10 +883,18 @@ class Vrml_AsciiText : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Vrml_AsciiText::~Vrml_AsciiText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_AsciiText {
-	~Vrml_AsciiText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_AsciiText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -788,10 +944,18 @@ class Vrml_IndexedLineSet : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Vrml_IndexedLineSet::~Vrml_IndexedLineSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_IndexedLineSet {
-	~Vrml_IndexedLineSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_IndexedLineSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -829,10 +993,18 @@ class Vrml_Texture2 {
 		};
 
 };
+%feature("shadow") Vrml_Texture2::~Vrml_Texture2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Texture2 {
-	~Vrml_Texture2() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Texture2\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -876,10 +1048,18 @@ class Vrml_SFImage : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Vrml_SFImage::~Vrml_SFImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_SFImage {
-	~Vrml_SFImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_SFImage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -917,10 +1097,18 @@ class Vrml_PerspectiveCamera {
 		};
 
 };
+%feature("shadow") Vrml_PerspectiveCamera::~Vrml_PerspectiveCamera %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_PerspectiveCamera {
-	~Vrml_PerspectiveCamera() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_PerspectiveCamera\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -946,10 +1134,18 @@ class Vrml_Rotation {
 		};
 
 };
+%feature("shadow") Vrml_Rotation::~Vrml_Rotation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Rotation {
-	~Vrml_Rotation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Rotation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -975,10 +1171,18 @@ class Vrml_NormalBinding {
 		};
 
 };
+%feature("shadow") Vrml_NormalBinding::~Vrml_NormalBinding %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_NormalBinding {
-	~Vrml_NormalBinding() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_NormalBinding\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1016,10 +1220,18 @@ class Vrml_Normal : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Vrml_Normal::~Vrml_Normal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Normal {
-	~Vrml_Normal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Normal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1057,10 +1269,18 @@ class Vrml_Texture2Transform {
 		};
 
 };
+%feature("shadow") Vrml_Texture2Transform::~Vrml_Texture2Transform %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Texture2Transform {
-	~Vrml_Texture2Transform() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Texture2Transform\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1102,10 +1322,18 @@ class Vrml_Transform {
 		};
 
 };
+%feature("shadow") Vrml_Transform::~Vrml_Transform %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Transform {
-	~Vrml_Transform() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Transform\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1143,10 +1371,18 @@ class Vrml_Coordinate3 : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Vrml_Coordinate3::~Vrml_Coordinate3 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Coordinate3 {
-	~Vrml_Coordinate3() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Coordinate3\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1178,10 +1414,18 @@ class Vrml_Cylinder {
 		};
 
 };
+%feature("shadow") Vrml_Cylinder::~Vrml_Cylinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Cylinder {
-	~Vrml_Cylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Cylinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1219,10 +1463,18 @@ class Vrml_OrthographicCamera {
 		};
 
 };
+%feature("shadow") Vrml_OrthographicCamera::~Vrml_OrthographicCamera %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_OrthographicCamera {
-	~Vrml_OrthographicCamera() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_OrthographicCamera\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1264,10 +1516,18 @@ class Vrml_LOD : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Vrml_LOD::~Vrml_LOD %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_LOD {
-	~Vrml_LOD() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_LOD\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1299,10 +1559,18 @@ class Vrml_Cone {
 		};
 
 };
+%feature("shadow") Vrml_Cone::~Vrml_Cone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Cone {
-	~Vrml_Cone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Cone\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1324,10 +1592,18 @@ class Vrml {
 		Standard_OStream & CommentWriter(const char * aComment, Standard_OStream & anOStream);
 
 };
+%feature("shadow") Vrml::~Vrml %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml {
-	~Vrml() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1351,10 +1627,18 @@ class Vrml_Info {
 		};
 
 };
+%feature("shadow") Vrml_Info::~Vrml_Info %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Info {
-	~Vrml_Info() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Info\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1386,10 +1670,18 @@ class Vrml_Cube {
 		};
 
 };
+%feature("shadow") Vrml_Cube::~Vrml_Cube %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Cube {
-	~Vrml_Cube() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Cube\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1415,10 +1707,18 @@ class Vrml_MatrixTransform {
 		};
 
 };
+%feature("shadow") Vrml_MatrixTransform::~Vrml_MatrixTransform %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_MatrixTransform {
-	~Vrml_MatrixTransform() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_MatrixTransform\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1456,10 +1756,18 @@ class Vrml_DirectionalLight {
 		};
 
 };
+%feature("shadow") Vrml_DirectionalLight::~Vrml_DirectionalLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_DirectionalLight {
-	~Vrml_DirectionalLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_DirectionalLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1491,10 +1799,18 @@ class Vrml_WWWAnchor {
 		};
 
 };
+%feature("shadow") Vrml_WWWAnchor::~Vrml_WWWAnchor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_WWWAnchor {
-	~Vrml_WWWAnchor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_WWWAnchor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1552,10 +1868,18 @@ class Vrml_Material : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Vrml_Material::~Vrml_Material %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Material {
-	~Vrml_Material() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Material\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1591,10 +1915,18 @@ class Vrml_ShapeHints {
 		};
 
 };
+%feature("shadow") Vrml_ShapeHints::~Vrml_ShapeHints %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_ShapeHints {
-	~Vrml_ShapeHints() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_ShapeHints\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1620,10 +1952,18 @@ class Vrml_Scale {
 		};
 
 };
+%feature("shadow") Vrml_Scale::~Vrml_Scale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Scale {
-	~Vrml_Scale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Scale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1651,10 +1991,18 @@ class Vrml_PointSet {
 		};
 
 };
+%feature("shadow") Vrml_PointSet::~Vrml_PointSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_PointSet {
-	~Vrml_PointSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_PointSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1680,10 +2028,18 @@ class Vrml_Separator {
 		};
 
 };
+%feature("shadow") Vrml_Separator::~Vrml_Separator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Separator {
-	~Vrml_Separator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Separator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1709,10 +2065,18 @@ class Vrml_Translation {
 		};
 
 };
+%feature("shadow") Vrml_Translation::~Vrml_Translation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Translation {
-	~Vrml_Translation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Translation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1742,10 +2106,18 @@ class Vrml_SFRotation {
 		Standard_Real Angle() const;
 
 };
+%feature("shadow") Vrml_SFRotation::~Vrml_SFRotation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_SFRotation {
-	~Vrml_SFRotation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_SFRotation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1765,10 +2137,18 @@ class Vrml_Group {
 		};
 
 };
+%feature("shadow") Vrml_Group::~Vrml_Group %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_Group {
-	~Vrml_Group() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_Group\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1806,10 +2186,18 @@ class Vrml_TextureCoordinate2 : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Vrml_TextureCoordinate2::~Vrml_TextureCoordinate2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_TextureCoordinate2 {
-	~Vrml_TextureCoordinate2() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_TextureCoordinate2\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1859,9 +2247,17 @@ class Vrml_IndexedFaceSet : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Vrml_IndexedFaceSet::~Vrml_IndexedFaceSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Vrml_IndexedFaceSet {
-	~Vrml_IndexedFaceSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Vrml_IndexedFaceSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

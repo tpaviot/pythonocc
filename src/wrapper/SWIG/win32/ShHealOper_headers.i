@@ -29,10 +29,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<ShHealOper_RemoveFace.hxx>
 #include<ShHealOper_RemoveInternalWires.hxx>
 #include<ShHealOper_Sewing.hxx>
-#include<ShHealOper_ShapeProcess.hxx>
-#include<ShHealOper_SplitCurve2d.hxx>
-#include<ShHealOper_SplitCurve3d.hxx>
-#include<ShHealOper_Tool.hxx>
 
 // Additional headers necessary for compilation.
 

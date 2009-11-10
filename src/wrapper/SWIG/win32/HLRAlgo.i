@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include HLRAlgo_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_HLRAlgo_PolyShellData : public Handle_MMgt_TShared {
 	return (HLRAlgo_PolyShellData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRAlgo_PolyShellData::~Handle_HLRAlgo_PolyShellData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRAlgo_PolyShellData {
-	~Handle_HLRAlgo_PolyShellData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_PolyShellData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_HLRAlgo_HArray1OfPINod : public Handle_MMgt_TShared {
 	return (HLRAlgo_HArray1OfPINod*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRAlgo_HArray1OfPINod::~Handle_HLRAlgo_HArray1OfPINod %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRAlgo_HArray1OfPINod {
-	~Handle_HLRAlgo_HArray1OfPINod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPINod\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_HLRAlgo_WiresBlock : public Handle_MMgt_TShared {
 	return (HLRAlgo_WiresBlock*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRAlgo_WiresBlock::~Handle_HLRAlgo_WiresBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRAlgo_WiresBlock {
-	~Handle_HLRAlgo_WiresBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_WiresBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_HLRAlgo_HArray1OfTData : public Handle_MMgt_TShared {
 	return (HLRAlgo_HArray1OfTData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRAlgo_HArray1OfTData::~Handle_HLRAlgo_HArray1OfTData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRAlgo_HArray1OfTData {
-	~Handle_HLRAlgo_HArray1OfTData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_HArray1OfTData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_HLRAlgo_HArray1OfPISeg : public Handle_MMgt_TShared {
 	return (HLRAlgo_HArray1OfPISeg*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRAlgo_HArray1OfPISeg::~Handle_HLRAlgo_HArray1OfPISeg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRAlgo_HArray1OfPISeg {
-	~Handle_HLRAlgo_HArray1OfPISeg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPISeg\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_HLRAlgo_ListNodeOfInterferenceList : public Handle_TCollection_MapN
 	return (HLRAlgo_ListNodeOfInterferenceList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRAlgo_ListNodeOfInterferenceList::~Handle_HLRAlgo_ListNodeOfInterferenceList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRAlgo_ListNodeOfInterferenceList {
-	~Handle_HLRAlgo_ListNodeOfInterferenceList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_ListNodeOfInterferenceList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
 	return (HLRAlgo_EdgesBlock*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRAlgo_EdgesBlock::~Handle_HLRAlgo_EdgesBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRAlgo_EdgesBlock {
-	~Handle_HLRAlgo_EdgesBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_EdgesBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_HLRAlgo_PolyInternalData : public Handle_MMgt_TShared {
 	return (HLRAlgo_PolyInternalData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRAlgo_PolyInternalData::~Handle_HLRAlgo_PolyInternalData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRAlgo_PolyInternalData {
-	~Handle_HLRAlgo_PolyInternalData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_PolyInternalData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_HLRAlgo_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode 
 	return (HLRAlgo_ListNodeOfListOfBPoint*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRAlgo_ListNodeOfListOfBPoint::~Handle_HLRAlgo_ListNodeOfListOfBPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRAlgo_ListNodeOfListOfBPoint {
-	~Handle_HLRAlgo_ListNodeOfListOfBPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_ListNodeOfListOfBPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_HLRAlgo_PolyData : public Handle_MMgt_TShared {
 	return (HLRAlgo_PolyData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRAlgo_PolyData::~Handle_HLRAlgo_PolyData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRAlgo_PolyData {
-	~Handle_HLRAlgo_PolyData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_PolyData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
 	return (HLRAlgo_PolyAlgo*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRAlgo_PolyAlgo::~Handle_HLRAlgo_PolyAlgo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRAlgo_PolyAlgo {
-	~Handle_HLRAlgo_PolyAlgo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_PolyAlgo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_HLRAlgo_PolyInternalNode : public Handle_MMgt_TShared {
 	return (HLRAlgo_PolyInternalNode*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRAlgo_PolyInternalNode::~Handle_HLRAlgo_PolyInternalNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRAlgo_PolyInternalNode {
-	~Handle_HLRAlgo_PolyInternalNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_PolyInternalNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_HLRAlgo_HArray1OfPHDat : public Handle_MMgt_TShared {
 	return (HLRAlgo_HArray1OfPHDat*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HLRAlgo_HArray1OfPHDat::~Handle_HLRAlgo_HArray1OfPHDat %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HLRAlgo_HArray1OfPHDat {
-	~Handle_HLRAlgo_HArray1OfPHDat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPHDat\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -460,10 +568,18 @@ class HLRAlgo_Array1OfPHDat {
 		HLRAlgo_PolyHidingData & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") HLRAlgo_Array1OfPHDat::~HLRAlgo_Array1OfPHDat %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_Array1OfPHDat {
-	~HLRAlgo_Array1OfPHDat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Array1OfPHDat\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -485,10 +601,18 @@ class HLRAlgo_ListIteratorOfInterferenceList {
 		HLRAlgo_Interference & Value() const;
 
 };
+%feature("shadow") HLRAlgo_ListIteratorOfInterferenceList::~HLRAlgo_ListIteratorOfInterferenceList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_ListIteratorOfInterferenceList {
-	~HLRAlgo_ListIteratorOfInterferenceList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_ListIteratorOfInterferenceList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -532,10 +656,18 @@ class HLRAlgo_HArray1OfPISeg : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRAlgo_HArray1OfPISeg::~HLRAlgo_HArray1OfPISeg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_HArray1OfPISeg {
-	~HLRAlgo_HArray1OfPISeg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_HArray1OfPISeg\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -563,10 +695,18 @@ class HLRAlgo_PolyInternalNode : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRAlgo_PolyInternalNode::~HLRAlgo_PolyInternalNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_PolyInternalNode {
-	~HLRAlgo_PolyInternalNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_PolyInternalNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -606,10 +746,18 @@ class HLRAlgo_Array1OfPINod {
 		Handle_HLRAlgo_PolyInternalNode & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") HLRAlgo_Array1OfPINod::~HLRAlgo_Array1OfPINod %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_Array1OfPINod {
-	~HLRAlgo_Array1OfPINod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Array1OfPINod\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +775,18 @@ class HLRAlgo_PolyHidingData {
 		Standard_Address Plan() const;
 
 };
+%feature("shadow") HLRAlgo_PolyHidingData::~HLRAlgo_PolyHidingData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_PolyHidingData {
-	~HLRAlgo_PolyHidingData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_PolyHidingData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -670,7 +826,7 @@ class HLRAlgo_Projector {
 		void Transform(gp_Pnt & Pnt) const;
 		%feature("autodoc", "1");
 		void Project(const gp_Pnt &P, gp_Pnt2d & Pout) const;
-		%feature("autodoc","Project(const P)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","Project(const P) -> [Standard_Real, Standard_RealStandard_Real]");
 		void Project(const gp_Pnt &P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Project(const gp_Pnt &P, const gp_Vec &D1, gp_Pnt2d & Pout, gp_Vec2d & D1out) const;
@@ -678,10 +834,18 @@ class HLRAlgo_Projector {
 		gp_Lin Shoot(const Standard_Real X, const Standard_Real Y) const;
 
 };
+%feature("shadow") HLRAlgo_Projector::~HLRAlgo_Projector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_Projector {
-	~HLRAlgo_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Projector\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -697,7 +861,7 @@ class HLRAlgo_EdgeIterator {
 		Standard_Boolean MoreHidden() const;
 		%feature("autodoc", "1");
 		void NextHidden();
-		%feature("autodoc","Hidden()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Hidden() -> [Standard_Real, Standard_Real]");
 		void Hidden(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
 		%feature("autodoc", "1");
 		void InitVisible(const HLRAlgo_EdgeStatus &status);
@@ -705,14 +869,22 @@ class HLRAlgo_EdgeIterator {
 		Standard_Boolean MoreVisible() const;
 		%feature("autodoc", "1");
 		void NextVisible();
-		%feature("autodoc","Visible()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Visible() -> [Standard_Real, Standard_Real]");
 		void Visible(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
 
 };
+%feature("shadow") HLRAlgo_EdgeIterator::~HLRAlgo_EdgeIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_EdgeIterator {
-	~HLRAlgo_EdgeIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_EdgeIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -760,10 +932,18 @@ class HLRAlgo_BiPoint {
 		Standard_Address Coordinates() const;
 
 };
+%feature("shadow") HLRAlgo_BiPoint::~HLRAlgo_BiPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_BiPoint {
-	~HLRAlgo_BiPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_BiPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -777,10 +957,18 @@ class HLRAlgo_PolyInternalSegment {
 		Standard_Address Indices() const;
 
 };
+%feature("shadow") HLRAlgo_PolyInternalSegment::~HLRAlgo_PolyInternalSegment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_PolyInternalSegment {
-	~HLRAlgo_PolyInternalSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_PolyInternalSegment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -834,10 +1022,18 @@ class HLRAlgo_EdgesBlock : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRAlgo_EdgesBlock::~HLRAlgo_EdgesBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_EdgesBlock {
-	~HLRAlgo_EdgesBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_EdgesBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -863,10 +1059,18 @@ class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRAlgo_ListNodeOfListOfBPoint::~HLRAlgo_ListNodeOfListOfBPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_ListNodeOfListOfBPoint {
-	~HLRAlgo_ListNodeOfListOfBPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_ListNodeOfListOfBPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -906,10 +1110,18 @@ class HLRAlgo_Array1OfTData {
 		HLRAlgo_TriangleData & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") HLRAlgo_Array1OfTData::~HLRAlgo_Array1OfTData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_Array1OfTData {
-	~HLRAlgo_Array1OfTData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Array1OfTData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -935,10 +1147,18 @@ class HLRAlgo_ListNodeOfInterferenceList : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRAlgo_ListNodeOfInterferenceList::~HLRAlgo_ListNodeOfInterferenceList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_ListNodeOfInterferenceList {
-	~HLRAlgo_ListNodeOfInterferenceList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_ListNodeOfInterferenceList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -972,10 +1192,18 @@ class HLRAlgo_WiresBlock : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRAlgo_WiresBlock::~HLRAlgo_WiresBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_WiresBlock {
-	~HLRAlgo_WiresBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_WiresBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -999,7 +1227,7 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 		Standard_Boolean MoreHide() const;
 		%feature("autodoc", "1");
 		void NextHide();
-		%feature("autodoc","Hide()->Standard_Integer");
+		%feature("autodoc","Hide() -> Standard_Integer");
 		void Hide(Standard_Address & Coordinates, HLRAlgo_EdgeStatus & status, Standard_Integer &OutValue, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
 		%feature("autodoc", "1");
 		void InitShow();
@@ -1007,7 +1235,7 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 		Standard_Boolean MoreShow() const;
 		%feature("autodoc", "1");
 		void NextShow();
-		%feature("autodoc","Show()->Standard_Integer");
+		%feature("autodoc","Show() -> Standard_Integer");
 		void Show(Standard_Address & Coordinates, Standard_Integer &OutValue, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1023,10 +1251,18 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRAlgo_PolyAlgo::~HLRAlgo_PolyAlgo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_PolyAlgo {
-	~HLRAlgo_PolyAlgo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_PolyAlgo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1064,10 +1300,18 @@ class HLRAlgo_PolyShellData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRAlgo_PolyShellData::~HLRAlgo_PolyShellData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_PolyShellData {
-	~HLRAlgo_PolyShellData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_PolyShellData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1107,10 +1351,18 @@ class HLRAlgo_Array1OfPISeg {
 		HLRAlgo_PolyInternalSegment & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") HLRAlgo_Array1OfPISeg::~HLRAlgo_Array1OfPISeg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_Array1OfPISeg {
-	~HLRAlgo_Array1OfPISeg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Array1OfPISeg\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1158,10 +1410,18 @@ class HLRAlgo_PolyData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRAlgo_PolyData::~HLRAlgo_PolyData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_PolyData {
-	~HLRAlgo_PolyData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_PolyData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1183,10 +1443,18 @@ class HLRAlgo_ListIteratorOfListOfBPoint {
 		HLRAlgo_BiPoint & Value() const;
 
 };
+%feature("shadow") HLRAlgo_ListIteratorOfListOfBPoint::~HLRAlgo_ListIteratorOfListOfBPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_ListIteratorOfListOfBPoint {
-	~HLRAlgo_ListIteratorOfListOfBPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_ListIteratorOfListOfBPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1224,10 +1492,18 @@ class HLRAlgo_Interference {
 		TopAbs_Orientation BoundaryTransition() const;
 
 };
+%feature("shadow") HLRAlgo_Interference::~HLRAlgo_Interference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_Interference {
-	~HLRAlgo_Interference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Interference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1271,10 +1547,18 @@ class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRAlgo_HArray1OfPHDat::~HLRAlgo_HArray1OfPHDat %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_HArray1OfPHDat {
-	~HLRAlgo_HArray1OfPHDat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_HArray1OfPHDat\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1324,10 +1608,18 @@ class HLRAlgo_ListOfBPoint {
 		void InsertAfter(HLRAlgo_ListOfBPoint & Other, HLRAlgo_ListIteratorOfListOfBPoint & It);
 
 };
+%feature("shadow") HLRAlgo_ListOfBPoint::~HLRAlgo_ListOfBPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_ListOfBPoint {
-	~HLRAlgo_ListOfBPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_ListOfBPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1371,10 +1663,18 @@ class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRAlgo_HArray1OfPINod::~HLRAlgo_HArray1OfPINod %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_HArray1OfPINod {
-	~HLRAlgo_HArray1OfPINod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_HArray1OfPINod\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1416,10 +1716,18 @@ class HLRAlgo_Intersection {
 		TopAbs_State State() const;
 
 };
+%feature("shadow") HLRAlgo_Intersection::~HLRAlgo_Intersection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_Intersection {
-	~HLRAlgo_Intersection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Intersection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1483,10 +1791,18 @@ class HLRAlgo_PolyInternalData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRAlgo_PolyInternalData::~HLRAlgo_PolyInternalData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_PolyInternalData {
-	~HLRAlgo_PolyInternalData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_PolyInternalData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1500,10 +1816,18 @@ class HLRAlgo_TriangleData {
 		Standard_Address Indices() const;
 
 };
+%feature("shadow") HLRAlgo_TriangleData::~HLRAlgo_TriangleData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_TriangleData {
-	~HLRAlgo_TriangleData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_TriangleData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1531,10 +1855,18 @@ class HLRAlgo {
 		void AddMinMax(const Standard_Address IMin, const Standard_Address IMax, const Standard_Address OMin, const Standard_Address OMax);
 
 };
+%feature("shadow") HLRAlgo::~HLRAlgo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo {
-	~HLRAlgo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1578,10 +1910,18 @@ class HLRAlgo_HArray1OfTData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HLRAlgo_HArray1OfTData::~HLRAlgo_HArray1OfTData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_HArray1OfTData {
-	~HLRAlgo_HArray1OfTData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_HArray1OfTData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1595,11 +1935,11 @@ class HLRAlgo_EdgeStatus {
 		HLRAlgo_EdgeStatus(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
 		%feature("autodoc", "1");
 		void Initialize(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
 		void Bounds(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbVisiblePart() const;
-		%feature("autodoc","VisiblePart(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","VisiblePart(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void VisiblePart(const Standard_Integer Index, Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
 		%feature("autodoc", "1");
 		void Hide(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd, const Standard_Boolean OnFace, const Standard_Boolean OnBoundary);
@@ -1617,10 +1957,18 @@ class HLRAlgo_EdgeStatus {
 		void AllVisible(const Standard_Boolean B);
 
 };
+%feature("shadow") HLRAlgo_EdgeStatus::~HLRAlgo_EdgeStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_EdgeStatus {
-	~HLRAlgo_EdgeStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_EdgeStatus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1634,16 +1982,24 @@ class HLRAlgo_Coincidence {
 		void Set2D(const Standard_Integer FE, const Standard_Real Param);
 		%feature("autodoc", "1");
 		void SetState3D(const TopAbs_State stbef, const TopAbs_State staft);
-		%feature("autodoc","Value2D()->[Standard_Integer, Standard_Real]");
+		%feature("autodoc","Value2D() -> [Standard_Integer, Standard_Real]");
 		void Value2D(Standard_Integer &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void State3D(TopAbs_State & stbef, TopAbs_State & staft) const;
 
 };
+%feature("shadow") HLRAlgo_Coincidence::~HLRAlgo_Coincidence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_Coincidence {
-	~HLRAlgo_Coincidence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Coincidence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1693,9 +2049,17 @@ class HLRAlgo_InterferenceList {
 		void InsertAfter(HLRAlgo_InterferenceList & Other, HLRAlgo_ListIteratorOfInterferenceList & It);
 
 };
+%feature("shadow") HLRAlgo_InterferenceList::~HLRAlgo_InterferenceList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HLRAlgo_InterferenceList {
-	~HLRAlgo_InterferenceList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HLRAlgo_InterferenceList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

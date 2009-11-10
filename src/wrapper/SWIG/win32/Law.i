@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Law_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_Law_Function : public Handle_MMgt_TShared {
 	return (Law_Function*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Law_Function::~Handle_Law_Function %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Law_Function {
-	~Handle_Law_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Function\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_Law_Linear : public Handle_Law_Function {
 	return (Law_Linear*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Law_Linear::~Handle_Law_Linear %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Law_Linear {
-	~Handle_Law_Linear() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Linear\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_Law_Constant : public Handle_Law_Function {
 	return (Law_Constant*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Law_Constant::~Handle_Law_Constant %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Law_Constant {
-	~Handle_Law_Constant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Constant\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 	return (Law_ListNodeOfLaws*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Law_ListNodeOfLaws::~Handle_Law_ListNodeOfLaws %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Law_ListNodeOfLaws {
-	~Handle_Law_ListNodeOfLaws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_ListNodeOfLaws\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_Law_BSpFunc : public Handle_Law_Function {
 	return (Law_BSpFunc*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Law_BSpFunc::~Handle_Law_BSpFunc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Law_BSpFunc {
-	~Handle_Law_BSpFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_BSpFunc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_Law_Composite : public Handle_Law_Function {
 	return (Law_Composite*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Law_Composite::~Handle_Law_Composite %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Law_Composite {
-	~Handle_Law_Composite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Composite\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_Law_Interpol : public Handle_Law_BSpFunc {
 	return (Law_Interpol*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Law_Interpol::~Handle_Law_Interpol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Law_Interpol {
-	~Handle_Law_Interpol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_Interpol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_Law_BSpline : public Handle_MMgt_TShared {
 	return (Law_BSpline*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Law_BSpline::~Handle_Law_BSpline %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Law_BSpline {
-	~Handle_Law_BSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_BSpline\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_Law_S : public Handle_Law_BSpFunc {
 	return (Law_S*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Law_S::~Handle_Law_S %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Law_S {
-	~Handle_Law_S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Law_S\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -316,13 +392,13 @@ class Law_Function : public MMgt_TShared {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Value(const Standard_Real X);
-		%feature("autodoc","D1(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","D1(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","D2(Standard_Real X) -> [Standard_Real, Standard_RealStandard_Real]");
 		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -338,10 +414,18 @@ class Law_Function : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Law_Function::~Law_Function %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law_Function {
-	~Law_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Function\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -369,10 +453,18 @@ class Law_BSpFunc : public Law_Function {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Law_BSpFunc::~Law_BSpFunc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law_BSpFunc {
-	~Law_BSpFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_BSpFunc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -398,10 +490,18 @@ class Law_ListNodeOfLaws : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Law_ListNodeOfLaws::~Law_ListNodeOfLaws %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law_ListNodeOfLaws {
-	~Law_ListNodeOfLaws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_ListNodeOfLaws\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -421,13 +521,13 @@ class Law_Constant : public Law_Function {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Value(const Standard_Real X);
-		%feature("autodoc","D1(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","D1(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","D2(Standard_Real X) -> [Standard_Real, Standard_RealStandard_Real]");
 		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -443,10 +543,18 @@ class Law_Constant : public Law_Function {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Law_Constant::~Law_Constant %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law_Constant {
-	~Law_Constant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Constant\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -478,10 +586,18 @@ class Law_Interpol : public Law_BSpFunc {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Law_Interpol::~Law_Interpol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law_Interpol {
-	~Law_Interpol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Interpol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -503,10 +619,18 @@ class Law_ListIteratorOfLaws {
 		Handle_Law_Function & Value() const;
 
 };
+%feature("shadow") Law_ListIteratorOfLaws::~Law_ListIteratorOfLaws %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law_ListIteratorOfLaws {
-	~Law_ListIteratorOfLaws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_ListIteratorOfLaws\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -556,10 +680,18 @@ class Law_Laws {
 		void InsertAfter(Law_Laws & Other, Law_ListIteratorOfLaws & It);
 
 };
+%feature("shadow") Law_Laws::~Law_Laws %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law_Laws {
-	~Law_Laws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Laws\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -579,13 +711,13 @@ class Law_Composite : public Law_Function {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Value(const Standard_Real X);
-		%feature("autodoc","D1(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","D1(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","D2(Standard_Real X) -> [Standard_Real, Standard_RealStandard_Real]");
 		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Handle_Law_Function & ChangeElementaryLaw(const Standard_Real W);
@@ -609,10 +741,18 @@ class Law_Composite : public Law_Function {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Law_Composite::~Law_Composite %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law_Composite {
-	~Law_Composite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Composite\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -630,10 +770,18 @@ class Law_BSplineKnotSplitting {
 		Standard_Integer SplitValue(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Law_BSplineKnotSplitting::~Law_BSplineKnotSplitting %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law_BSplineKnotSplitting {
-	~Law_BSplineKnotSplitting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_BSplineKnotSplitting\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -661,10 +809,18 @@ class Law_S : public Law_BSpFunc {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Law_S::~Law_S %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law_S {
-	~Law_S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_S\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -688,10 +844,18 @@ class Law {
 		Handle_Law_BSpline ScaleCub(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
 
 };
+%feature("shadow") Law::~Law %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law {
-	~Law() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -711,13 +875,13 @@ class Law_Linear : public Law_Function {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Value(const Standard_Real X);
-		%feature("autodoc","D1(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","D1(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","D2(Standard_Real X)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","D2(Standard_Real X) -> [Standard_Real, Standard_RealStandard_Real]");
 		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -733,10 +897,18 @@ class Law_Linear : public Law_Function {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Law_Linear::~Law_Linear %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law_Linear {
-	~Law_Linear() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Linear\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -760,10 +932,18 @@ class Law_Interpolate {
 		Standard_Boolean IsDone() const;
 
 };
+%feature("shadow") Law_Interpolate::~Law_Interpolate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law_Interpolate {
-	~Law_Interpolate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_Interpolate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -801,7 +981,7 @@ class Law_BSpline : public MMgt_TShared {
 		void SetKnots(const TColStd_Array1OfReal &K);
 		%feature("autodoc", "1");
 		void SetKnot(const Standard_Integer Index, const Standard_Real K, const Standard_Integer M);
-		%feature("autodoc","PeriodicNormalization()->Standard_Real");
+		%feature("autodoc","PeriodicNormalization() -> Standard_Real");
 		void PeriodicNormalization(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetPeriodic();
@@ -829,25 +1009,25 @@ class Law_BSpline : public MMgt_TShared {
 		Standard_Integer Degree() const;
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Real U) const;
-		%feature("autodoc","D0(Standard_Real U)->Standard_Real");
+		%feature("autodoc","D0(Standard_Real U) -> Standard_Real");
 		void D0(const Standard_Real U, Standard_Real &OutValue) const;
-		%feature("autodoc","D1(Standard_Real U)->[Standard_RealStandard_Real]");
+		%feature("autodoc","D1(Standard_Real U) -> [Standard_RealStandard_Real]");
 		void D1(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","D2(Standard_Real U)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","D2(Standard_Real U) -> [Standard_Real, Standard_RealStandard_Real]");
 		void D2(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","D3(Standard_Real U)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","D3(Standard_Real U) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void D3(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real DN(const Standard_Real U, const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Standard_Real LocalValue(const Standard_Real U, const Standard_Integer FromK1, const Standard_Integer ToK2) const;
-		%feature("autodoc","LocalD0(Standard_Real U, Standard_Integer FromK1, Standard_Integer ToK2)->Standard_Real");
+		%feature("autodoc","LocalD0(Standard_Real U, Standard_Integer FromK1, Standard_Integer ToK2) -> Standard_Real");
 		void LocalD0(const Standard_Real U, const Standard_Integer FromK1, const Standard_Integer ToK2, Standard_Real &OutValue) const;
-		%feature("autodoc","LocalD1(Standard_Real U, Standard_Integer FromK1, Standard_Integer ToK2)->[Standard_RealStandard_Real]");
+		%feature("autodoc","LocalD1(Standard_Real U, Standard_Integer FromK1, Standard_Integer ToK2) -> [Standard_RealStandard_Real]");
 		void LocalD1(const Standard_Real U, const Standard_Integer FromK1, const Standard_Integer ToK2, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","LocalD2(Standard_Real U, Standard_Integer FromK1, Standard_Integer ToK2)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","LocalD2(Standard_Real U, Standard_Integer FromK1, Standard_Integer ToK2) -> [Standard_RealStandard_RealStandard_Real]");
 		void LocalD2(const Standard_Real U, const Standard_Integer FromK1, const Standard_Integer ToK2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","LocalD3(Standard_Real U, Standard_Integer FromK1, Standard_Integer ToK2)->[Standard_RealStandard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","LocalD3(Standard_Real U, Standard_Integer FromK1, Standard_Integer ToK2) -> [Standard_RealStandard_RealStandard_RealStandard_Real]");
 		void LocalD3(const Standard_Real U, const Standard_Integer FromK1, const Standard_Integer ToK2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real LocalDN(const Standard_Real U, const Standard_Integer FromK1, const Standard_Integer ToK2, const Standard_Integer N) const;
@@ -869,7 +1049,7 @@ class Law_BSpline : public MMgt_TShared {
 		Standard_Integer LastUKnotIndex() const;
 		%feature("autodoc", "1");
 		Standard_Real LastParameter() const;
-		%feature("autodoc","LocateU(Standard_Real U, Standard_Real ParametricTolerance, Standard_Boolean WithKnotRepetition=0)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","LocateU(Standard_Real U, Standard_Real ParametricTolerance, Standard_Boolean WithKnotRepetition=0) -> [Standard_IntegerStandard_Integer]");
 		void LocateU(const Standard_Real U, const Standard_Real ParametricTolerance, Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Boolean WithKnotRepetition=0) const;
 		%feature("autodoc", "1");
 		Standard_Integer Multiplicity(const Standard_Integer Index) const;
@@ -891,9 +1071,9 @@ class Law_BSpline : public MMgt_TShared {
 		void Weights(TColStd_Array1OfReal & W) const;
 		%feature("autodoc", "1");
 		Standard_Integer MaxDegree();
-		%feature("autodoc","MovePointAndTangent(Standard_Real U, Standard_Real NewValue, Standard_Real Derivative, Standard_Real Tolerance, Standard_Integer StartingCondition, Standard_Integer EndingCondition)->Standard_Integer");
+		%feature("autodoc","MovePointAndTangent(Standard_Real U, Standard_Real NewValue, Standard_Real Derivative, Standard_Real Tolerance, Standard_Integer StartingCondition, Standard_Integer EndingCondition) -> Standard_Integer");
 		void MovePointAndTangent(const Standard_Real U, const Standard_Real NewValue, const Standard_Real Derivative, const Standard_Real Tolerance, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, Standard_Integer &OutValue);
-		%feature("autodoc","Resolution(Standard_Real Tolerance3D)->Standard_Real");
+		%feature("autodoc","Resolution(Standard_Real Tolerance3D) -> Standard_Real");
 		void Resolution(const Standard_Real Tolerance3D, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Law_BSpline Copy() const;
@@ -911,9 +1091,17 @@ class Law_BSpline : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Law_BSpline::~Law_BSpline %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Law_BSpline {
-	~Law_BSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Law_BSpline\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

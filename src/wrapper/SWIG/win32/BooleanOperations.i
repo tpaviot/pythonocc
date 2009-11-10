@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BooleanOperations_dependencies.i
 
 
@@ -84,10 +88,18 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger 
 	return (BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger::~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger {
-	~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -114,10 +126,18 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestor
 	return (BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors::~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {
-	~Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +167,18 @@ class BooleanOperations_Explorer {
 		};
 
 };
+%feature("shadow") BooleanOperations_Explorer::~BooleanOperations_Explorer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BooleanOperations_Explorer {
-	~BooleanOperations_Explorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_Explorer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -182,22 +210,50 @@ class BooleanOperations_IndexedDataMapOfShapeInteger : public TCollection_BasicM
 		const Standard_Integer & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromIndex(const Standard_Integer I) {
+				return (Standard_Integer) $self->ChangeFromIndex(I);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromIndex(Standard_Integer value ,const Standard_Integer I) {
+				$self->ChangeFromIndex(I)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & FindFromKey(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFromKey(const TopoDS_Shape &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromKey(const TopoDS_Shape &K) {
+				return (Standard_Integer) $self->ChangeFromKey(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromKey(Standard_Integer value ,const TopoDS_Shape &K) {
+				$self->ChangeFromKey(K)=value;
+				}
+		};
 
 };
+%feature("shadow") BooleanOperations_IndexedDataMapOfShapeInteger::~BooleanOperations_IndexedDataMapOfShapeInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BooleanOperations_IndexedDataMapOfShapeInteger {
-	~BooleanOperations_IndexedDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_IndexedDataMapOfShapeInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -225,20 +281,28 @@ class BooleanOperations_ShapeAndInterferences {
 		Standard_Integer GetAncestor(const Standard_Integer index) const;
 		%feature("autodoc", "1");
 		Standard_Integer GetSuccessor(const Standard_Integer index) const;
-		%feature("autodoc","GetAncestors()->Standard_Integer");
+		%feature("autodoc","GetAncestors() -> Standard_Integer");
 		void GetAncestors(Standard_Address & theArrayOfAncestors, Standard_Integer &OutValue) const;
-		%feature("autodoc","GetSuccessors()->Standard_Integer");
+		%feature("autodoc","GetSuccessors() -> Standard_Integer");
 		void GetSuccessors(Standard_Address & theArrayOfSuccessors, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		TopAbs_Orientation GetOrientation(const Standard_Integer index) const;
-		%feature("autodoc","GetOrientations()->Standard_Integer");
+		%feature("autodoc","GetOrientations() -> Standard_Integer");
 		void GetOrientations(Standard_Address & theArrayOfOrientations, Standard_Integer &OutValue) const;
 
 };
+%feature("shadow") BooleanOperations_ShapeAndInterferences::~BooleanOperations_ShapeAndInterferences %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BooleanOperations_ShapeAndInterferences {
-	~BooleanOperations_ShapeAndInterferences() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_ShapeAndInterferences\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -266,10 +330,18 @@ class BooleanOperations_OnceExplorer : public BooleanOperations_Explorer {
 		};
 
 };
+%feature("shadow") BooleanOperations_OnceExplorer::~BooleanOperations_OnceExplorer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BooleanOperations_OnceExplorer {
-	~BooleanOperations_OnceExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_OnceExplorer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -313,10 +385,18 @@ class BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors : public TColle
 		BooleanOperations_AncestorsSeqAndSuccessorsSeq & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%feature("shadow") BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors::~BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors {
-	~BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -332,7 +412,7 @@ class BooleanOperations_ShapesDataStructure {
 		void InsertShapeAndAncestorsSuccessors(const TopoDS_Shape &S, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &AncSuc, const Standard_Integer shift=0);
 		%feature("autodoc", "1");
 		void FillIndexedMapOfShapesAncestorsAndSuccessors(const TopoDS_Shape &Sha, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & IndDatMap) const;
-		%feature("autodoc","FindSubshapes(const Sha)->Standard_Integer");
+		%feature("autodoc","FindSubshapes(const Sha) -> Standard_Integer");
 		void FindSubshapes(const TopoDS_Shape &Sha, Standard_Integer &OutValue, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & IndDatMap) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
@@ -366,9 +446,9 @@ class BooleanOperations_ShapesDataStructure {
 		Standard_Integer GetAncestor(const Standard_Integer index, const Standard_Integer ancestorNumber) const;
 		%feature("autodoc", "1");
 		Standard_Integer GetSuccessor(const Standard_Integer index, const Standard_Integer successorNumber) const;
-		%feature("autodoc","GetAncestors(Standard_Integer index)->Standard_Integer");
+		%feature("autodoc","GetAncestors(Standard_Integer index) -> Standard_Integer");
 		void GetAncestors(const Standard_Integer index, Standard_Address & theArrayOfAncestors, Standard_Integer &OutValue) const;
-		%feature("autodoc","GetSuccessors(Standard_Integer index)->Standard_Integer");
+		%feature("autodoc","GetSuccessors(Standard_Integer index) -> Standard_Integer");
 		void GetSuccessors(const Standard_Integer index, Standard_Address & theArrayOfSuccessors, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfAncestors(const Standard_Integer index) const;
@@ -396,9 +476,9 @@ class BooleanOperations_ShapesDataStructure {
 		const TopoDS_Shape & Object() const;
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Tool() const;
-		%feature("autodoc","ObjectRange()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","ObjectRange() -> [Standard_Integer, Standard_Integer]");
 		void ObjectRange(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","ToolRange()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","ToolRange() -> [Standard_Integer, Standard_Integer]");
 		void ToolRange(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Rank(const Standard_Integer anIndex) const;
@@ -408,14 +488,22 @@ class BooleanOperations_ShapesDataStructure {
 		Standard_Integer NbEdges() const;
 		%feature("autodoc", "1");
 		TopAbs_Orientation GetOrientation(const Standard_Integer index, const Standard_Integer successorNumber) const;
-		%feature("autodoc","GetOrientations(Standard_Integer index)->Standard_Integer");
+		%feature("autodoc","GetOrientations(Standard_Integer index) -> Standard_Integer");
 		void GetOrientations(const Standard_Integer index, Standard_Address & theArrayOfOrientations, Standard_Integer &OutValue) const;
 
 };
+%feature("shadow") BooleanOperations_ShapesDataStructure::~BooleanOperations_ShapesDataStructure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BooleanOperations_ShapesDataStructure {
-	~BooleanOperations_ShapesDataStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_ShapesDataStructure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -445,10 +533,18 @@ class BooleanOperations_AncestorsSeqAndSuccessorsSeq {
 		void SetNewOrientation(const TopAbs_Orientation OrientationNumber);
 
 };
+%feature("shadow") BooleanOperations_AncestorsSeqAndSuccessorsSeq::~BooleanOperations_AncestorsSeqAndSuccessorsSeq %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BooleanOperations_AncestorsSeqAndSuccessorsSeq {
-	~BooleanOperations_AncestorsSeqAndSuccessorsSeq() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_AncestorsSeqAndSuccessorsSeq\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -468,19 +564,19 @@ class BooleanOperations_AncestorsAndSuccessors {
 		Standard_Integer GetAncestor(const Standard_Integer AncestorIndex) const;
 		%feature("autodoc", "1");
 		void SetAncestor(const Standard_Integer AncestorIndex, const Standard_Integer AncestorNumber);
-		%feature("autodoc","GetAncestors()->Standard_Integer");
+		%feature("autodoc","GetAncestors() -> Standard_Integer");
 		void GetAncestors(Standard_Address & theArrayOfAncestors, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer GetSuccessor(const Standard_Integer SuccessorIndex) const;
 		%feature("autodoc", "1");
 		void SetSuccessor(const Standard_Integer SuccessorIndex, const Standard_Integer SuccessorNumber);
-		%feature("autodoc","GetSuccessors()->Standard_Integer");
+		%feature("autodoc","GetSuccessors() -> Standard_Integer");
 		void GetSuccessors(Standard_Address & theArrayOfSuccessors, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		TopAbs_Orientation GetOrientation(const Standard_Integer OrientationIndex) const;
 		%feature("autodoc", "1");
 		void SetOrientation(const Standard_Integer OrientationIndex, const TopAbs_Orientation OrientationNumber);
-		%feature("autodoc","GetOrientations()->Standard_Integer");
+		%feature("autodoc","GetOrientations() -> Standard_Integer");
 		void GetOrientations(Standard_Address & theArrayOfOrientations, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfAncestors() const;
@@ -488,10 +584,18 @@ class BooleanOperations_AncestorsAndSuccessors {
 		Standard_Integer NumberOfSuccessors() const;
 
 };
+%feature("shadow") BooleanOperations_AncestorsAndSuccessors::~BooleanOperations_AncestorsAndSuccessors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BooleanOperations_AncestorsAndSuccessors {
-	~BooleanOperations_AncestorsAndSuccessors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_AncestorsAndSuccessors\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -503,8 +607,18 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSucces
 		BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors(const TopoDS_Shape &K1, const Standard_Integer K2, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -523,10 +637,18 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSucces
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors::~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {
-	~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -538,12 +660,32 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger : publi
 		BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger(const TopoDS_Shape &K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -558,9 +700,17 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger : publi
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger::~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger {
-	~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepFill_dependencies.i
 
 
@@ -63,10 +67,18 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public Ha
 	return (BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape::~Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
-	~Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -93,10 +105,18 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfSection : public Handle_TCollectio
 	return (BRepFill_SequenceNodeOfSequenceOfSection*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_SequenceNodeOfSequenceOfSection::~Handle_BRepFill_SequenceNodeOfSequenceOfSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_SequenceNodeOfSequenceOfSection {
-	~Handle_BRepFill_SequenceNodeOfSequenceOfSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_SequenceNodeOfSequenceOfSection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -123,10 +143,18 @@ class Handle_BRepFill_LocationLaw : public Handle_MMgt_TShared {
 	return (BRepFill_LocationLaw*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_LocationLaw::~Handle_BRepFill_LocationLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_LocationLaw {
-	~Handle_BRepFill_LocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_LocationLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -153,10 +181,18 @@ class Handle_BRepFill_Edge3DLaw : public Handle_BRepFill_LocationLaw {
 	return (BRepFill_Edge3DLaw*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_Edge3DLaw::~Handle_BRepFill_Edge3DLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_Edge3DLaw {
-	~Handle_BRepFill_Edge3DLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_Edge3DLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -183,10 +219,18 @@ class Handle_BRepFill_CurveConstraint : public Handle_GeomPlate_CurveConstraint 
 	return (BRepFill_CurveConstraint*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_CurveConstraint::~Handle_BRepFill_CurveConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_CurveConstraint {
-	~Handle_BRepFill_CurveConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_CurveConstraint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -213,10 +257,18 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public Han
 	return (BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape::~Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
-	~Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -243,10 +295,18 @@ class Handle_BRepFill_PipeShell : public Handle_MMgt_TShared {
 	return (BRepFill_PipeShell*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_PipeShell::~Handle_BRepFill_PipeShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_PipeShell {
-	~Handle_BRepFill_PipeShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_PipeShell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -273,10 +333,18 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public Handle_
 	return (BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal::~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
-	~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -303,10 +371,18 @@ class Handle_BRepFill_ACRLaw : public Handle_BRepFill_LocationLaw {
 	return (BRepFill_ACRLaw*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_ACRLaw::~Handle_BRepFill_ACRLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_ACRLaw {
-	~Handle_BRepFill_ACRLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_ACRLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -333,10 +409,18 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public Handle_T
 	return (BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt::~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
-	~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -363,10 +447,18 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : pub
 	return (BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape::~Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
-	~Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -393,10 +485,18 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public Handle_T
 	return (BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder::~Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
-	~Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -423,10 +523,18 @@ class Handle_BRepFill_SectionLaw : public Handle_MMgt_TShared {
 	return (BRepFill_SectionLaw*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_SectionLaw::~Handle_BRepFill_SectionLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_SectionLaw {
-	~Handle_BRepFill_SectionLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_SectionLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -453,10 +561,18 @@ class Handle_BRepFill_ShapeLaw : public Handle_BRepFill_SectionLaw {
 	return (BRepFill_ShapeLaw*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_ShapeLaw::~Handle_BRepFill_ShapeLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_ShapeLaw {
-	~Handle_BRepFill_ShapeLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_ShapeLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -483,10 +599,18 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape : public Handle
 	return (BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape::~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape {
-	~Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -513,10 +637,18 @@ class Handle_BRepFill_DraftLaw : public Handle_BRepFill_Edge3DLaw {
 	return (BRepFill_DraftLaw*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_DraftLaw::~Handle_BRepFill_DraftLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_DraftLaw {
-	~Handle_BRepFill_DraftLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DraftLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -543,10 +675,18 @@ class Handle_BRepFill_ListNodeOfListOfOffsetWire : public Handle_TCollection_Map
 	return (BRepFill_ListNodeOfListOfOffsetWire*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_ListNodeOfListOfOffsetWire::~Handle_BRepFill_ListNodeOfListOfOffsetWire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_ListNodeOfListOfOffsetWire {
-	~Handle_BRepFill_ListNodeOfListOfOffsetWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_ListNodeOfListOfOffsetWire\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -573,10 +713,18 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape : public Handle_TCollectio
 	return (BRepFill_DataMapNodeOfDataMapOfNodeShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape::~Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape {
-	~Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -603,10 +751,18 @@ class Handle_BRepFill_NSections : public Handle_BRepFill_SectionLaw {
 	return (BRepFill_NSections*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_NSections::~Handle_BRepFill_NSections %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_NSections {
-	~Handle_BRepFill_NSections() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_NSections\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -633,10 +789,18 @@ class Handle_BRepFill_EdgeOnSurfLaw : public Handle_BRepFill_LocationLaw {
 	return (BRepFill_EdgeOnSurfLaw*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_EdgeOnSurfLaw::~Handle_BRepFill_EdgeOnSurfLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_EdgeOnSurfLaw {
-	~Handle_BRepFill_EdgeOnSurfLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_EdgeOnSurfLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -663,10 +827,18 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public Handle_TColl
 	return (BRepFill_SequenceNodeOfSequenceOfFaceAndOrder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder::~Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder {
-	~Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -686,10 +858,18 @@ class BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape : public
 		const TopTools_DataMapOfShapeListOfShape & Value() const;
 
 };
+%feature("shadow") BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape::~BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape {
-	~BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -715,10 +895,18 @@ class BRepFill_CurveConstraint : public GeomPlate_CurveConstraint {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_CurveConstraint::~BRepFill_CurveConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_CurveConstraint {
-	~BRepFill_CurveConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_CurveConstraint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -752,10 +940,18 @@ class BRepFill_DataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMap {
 		TopTools_DataMapOfShapeShape & operator()(const Handle_MAT_Node &K);
 
 };
+%feature("shadow") BRepFill_DataMapOfNodeDataMapOfShapeShape::~BRepFill_DataMapOfNodeDataMapOfShapeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapOfNodeDataMapOfShapeShape {
-	~BRepFill_DataMapOfNodeDataMapOfShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapOfNodeDataMapOfShapeShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -775,10 +971,18 @@ class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal : public TCollectio
 		const TColStd_SequenceOfReal & Value() const;
 
 };
+%feature("shadow") BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal::~BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal {
-	~BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -798,10 +1002,18 @@ class BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape : public TColl
 		const TopTools_ListOfShape & Value() const;
 
 };
+%feature("shadow") BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape::~BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape {
-	~BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -835,10 +1047,18 @@ class BRepFill_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap {
 		TopTools_SequenceOfShape & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") BRepFill_DataMapOfShapeSequenceOfShape::~BRepFill_DataMapOfShapeSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapOfShapeSequenceOfShape {
-	~BRepFill_DataMapOfShapeSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapOfShapeSequenceOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -858,10 +1078,18 @@ class BRepFill_TrimEdgeTool {
 		Standard_Boolean IsInside(const gp_Pnt2d &P) const;
 
 };
+%feature("shadow") BRepFill_TrimEdgeTool::~BRepFill_TrimEdgeTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_TrimEdgeTool {
-	~BRepFill_TrimEdgeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_TrimEdgeTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -891,10 +1119,18 @@ class BRepFill_OffsetWire {
 		GeomAbs_JoinType JoinType() const;
 
 };
+%feature("shadow") BRepFill_OffsetWire::~BRepFill_OffsetWire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_OffsetWire {
-	~BRepFill_OffsetWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_OffsetWire\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -942,10 +1178,18 @@ class BRepFill_SectionLaw : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_SectionLaw::~BRepFill_SectionLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_SectionLaw {
-	~BRepFill_SectionLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_SectionLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -971,10 +1215,18 @@ class BRepFill_NSections : public BRepFill_SectionLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_NSections::~BRepFill_NSections %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_NSections {
-	~BRepFill_NSections() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_NSections\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1006,10 +1258,18 @@ class BRepFill_Sweep {
 		Handle_TopTools_HArray2OfShape Sections() const;
 
 };
+%feature("shadow") BRepFill_Sweep::~BRepFill_Sweep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_Sweep {
-	~BRepFill_Sweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_Sweep\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1057,10 +1317,18 @@ class BRepFill_Filling {
 		Standard_Real G2Error(const Standard_Integer Index);
 
 };
+%feature("shadow") BRepFill_Filling::~BRepFill_Filling %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_Filling {
-	~BRepFill_Filling() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_Filling\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1086,10 +1354,18 @@ class BRepFill_Section {
 		Standard_Boolean WithCorrection() const;
 
 };
+%feature("shadow") BRepFill_Section::~BRepFill_Section %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_Section {
-	~BRepFill_Section() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_Section\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1115,10 +1391,18 @@ class BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public TCollection_SeqNode
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_SequenceNodeOfSequenceOfFaceAndOrder::~BRepFill_SequenceNodeOfSequenceOfFaceAndOrder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_SequenceNodeOfSequenceOfFaceAndOrder {
-	~BRepFill_SequenceNodeOfSequenceOfFaceAndOrder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_SequenceNodeOfSequenceOfFaceAndOrder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1138,10 +1422,18 @@ class BRepFill_DataMapIteratorOfDataMapOfNodeShape : public TCollection_BasicMap
 		const TopoDS_Shape & Value() const;
 
 };
+%feature("shadow") BRepFill_DataMapIteratorOfDataMapOfNodeShape::~BRepFill_DataMapIteratorOfDataMapOfNodeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapIteratorOfDataMapOfNodeShape {
-	~BRepFill_DataMapIteratorOfDataMapOfNodeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfNodeShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1169,10 +1461,18 @@ class BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public TCollecti
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape::~BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
-	~BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1194,10 +1494,18 @@ class BRepFill_OffsetAncestors {
 		const TopoDS_Shape & Ancestor(const TopoDS_Edge &S1) const;
 
 };
+%feature("shadow") BRepFill_OffsetAncestors::~BRepFill_OffsetAncestors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_OffsetAncestors {
-	~BRepFill_OffsetAncestors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_OffsetAncestors\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1231,10 +1539,18 @@ class BRepFill_DataMapOfShapeDataMapOfShapeListOfShape : public TCollection_Basi
 		TopTools_DataMapOfShapeListOfShape & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") BRepFill_DataMapOfShapeDataMapOfShapeListOfShape::~BRepFill_DataMapOfShapeDataMapOfShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapOfShapeDataMapOfShapeListOfShape {
-	~BRepFill_DataMapOfShapeDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapOfShapeDataMapOfShapeListOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1262,10 +1578,18 @@ class BRepFill_TrimShellCorner {
 		void Modified(const TopoDS_Shape &S, TopTools_ListOfShape & theModified);
 
 };
+%feature("shadow") BRepFill_TrimShellCorner::~BRepFill_TrimShellCorner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_TrimShellCorner {
-	~BRepFill_TrimShellCorner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_TrimShellCorner\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1285,10 +1609,18 @@ class BRepFill_TrimSurfaceTool {
 		void Project(const Standard_Real U1, const Standard_Real U2, Handle_Geom_Curve & Curve, Handle_Geom2d_Curve & PCurve1, Handle_Geom2d_Curve & PCurve2, GeomAbs_Shape & myCont) const;
 
 };
+%feature("shadow") BRepFill_TrimSurfaceTool::~BRepFill_TrimSurfaceTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_TrimSurfaceTool {
-	~BRepFill_TrimSurfaceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_TrimSurfaceTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1322,10 +1654,18 @@ class BRepFill_DataMapOfShapeSequenceOfReal : public TCollection_BasicMap {
 		TColStd_SequenceOfReal & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") BRepFill_DataMapOfShapeSequenceOfReal::~BRepFill_DataMapOfShapeSequenceOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapOfShapeSequenceOfReal {
-	~BRepFill_DataMapOfShapeSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapOfShapeSequenceOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1353,10 +1693,18 @@ class BRepFill_CompatibleWires {
 		const TopTools_DataMapOfShapeListOfShape & Generated() const;
 
 };
+%feature("shadow") BRepFill_CompatibleWires::~BRepFill_CompatibleWires %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_CompatibleWires {
-	~BRepFill_CompatibleWires() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_CompatibleWires\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1390,7 +1738,7 @@ class BRepFill_LocationLaw : public MMgt_TShared {
 		TopoDS_Vertex Vertex(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void PerformVertex(const Standard_Integer Index, const TopoDS_Vertex &InputVertex, const Standard_Real TolMin, TopoDS_Vertex & OutputVertex, const Standard_Integer Location=0) const;
-		%feature("autodoc","CurvilinearBounds(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","CurvilinearBounds(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void CurvilinearBounds(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsClosed() const;
@@ -1398,7 +1746,7 @@ class BRepFill_LocationLaw : public MMgt_TShared {
 		Standard_Integer IsG1(const Standard_Integer Index, const Standard_Real SpatialTolerance=9.99999999999999954748111825886258685613938723691e-8, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4) const;
 		%feature("autodoc", "1");
 		void D0(const Standard_Real Abscissa, TopoDS_Shape & Section);
-		%feature("autodoc","Parameter(Standard_Real Abscissa)->[Standard_IntegerStandard_Real]");
+		%feature("autodoc","Parameter(Standard_Real Abscissa) -> [Standard_IntegerStandard_Real]");
 		void Parameter(const Standard_Real Abscissa, Standard_Integer &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real Abscissa(const Standard_Integer Index, const Standard_Real Param);
@@ -1416,10 +1764,18 @@ class BRepFill_LocationLaw : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_LocationLaw::~BRepFill_LocationLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_LocationLaw {
-	~BRepFill_LocationLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_LocationLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1441,10 +1797,18 @@ class BRepFill_Edge3DLaw : public BRepFill_LocationLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_Edge3DLaw::~BRepFill_Edge3DLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_Edge3DLaw {
-	~BRepFill_Edge3DLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_Edge3DLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1468,10 +1832,18 @@ class BRepFill_DraftLaw : public BRepFill_Edge3DLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_DraftLaw::~BRepFill_DraftLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DraftLaw {
-	~BRepFill_DraftLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DraftLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1525,10 +1897,18 @@ class BRepFill_SequenceOfFaceAndOrder : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") BRepFill_SequenceOfFaceAndOrder::~BRepFill_SequenceOfFaceAndOrder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_SequenceOfFaceAndOrder {
-	~BRepFill_SequenceOfFaceAndOrder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_SequenceOfFaceAndOrder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1582,10 +1962,18 @@ class BRepFill_SequenceOfSection : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") BRepFill_SequenceOfSection::~BRepFill_SequenceOfSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_SequenceOfSection {
-	~BRepFill_SequenceOfSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_SequenceOfSection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1619,10 +2007,18 @@ class BRepFill_Pipe {
 		TopoDS_Wire PipeLine(const gp_Pnt &Point) const;
 
 };
+%feature("shadow") BRepFill_Pipe::~BRepFill_Pipe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_Pipe {
-	~BRepFill_Pipe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_Pipe\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1644,10 +2040,18 @@ class BRepFill_ListIteratorOfListOfOffsetWire {
 		BRepFill_OffsetWire & Value() const;
 
 };
+%feature("shadow") BRepFill_ListIteratorOfListOfOffsetWire::~BRepFill_ListIteratorOfListOfOffsetWire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_ListIteratorOfListOfOffsetWire {
-	~BRepFill_ListIteratorOfListOfOffsetWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_ListIteratorOfListOfOffsetWire\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1673,10 +2077,18 @@ class BRepFill_ListNodeOfListOfOffsetWire : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_ListNodeOfListOfOffsetWire::~BRepFill_ListNodeOfListOfOffsetWire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_ListNodeOfListOfOffsetWire {
-	~BRepFill_ListNodeOfListOfOffsetWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_ListNodeOfListOfOffsetWire\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1696,10 +2108,18 @@ class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt : public TCollection
 		const TColgp_SequenceOfPnt & Value() const;
 
 };
+%feature("shadow") BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt::~BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt {
-	~BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1713,10 +2133,18 @@ class BRepFill_EdgeFaceAndOrder {
 		BRepFill_EdgeFaceAndOrder(const TopoDS_Edge &anEdge, const TopoDS_Face &aFace, const GeomAbs_Shape anOrder);
 
 };
+%feature("shadow") BRepFill_EdgeFaceAndOrder::~BRepFill_EdgeFaceAndOrder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_EdgeFaceAndOrder {
-	~BRepFill_EdgeFaceAndOrder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_EdgeFaceAndOrder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1740,10 +2168,18 @@ class BRepFill_ACRLaw : public BRepFill_LocationLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_ACRLaw::~BRepFill_ACRLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_ACRLaw {
-	~BRepFill_ACRLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_ACRLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1769,10 +2205,18 @@ class BRepFill_EdgeOnSurfLaw : public BRepFill_LocationLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_EdgeOnSurfLaw::~BRepFill_EdgeOnSurfLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_EdgeOnSurfLaw {
-	~BRepFill_EdgeOnSurfLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_EdgeOnSurfLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1800,10 +2244,18 @@ class BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public TCollectio
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape::~BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
-	~BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1869,10 +2321,18 @@ class BRepFill_PipeShell : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_PipeShell::~BRepFill_PipeShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_PipeShell {
-	~BRepFill_PipeShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_PipeShell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1894,10 +2354,18 @@ class BRepFill_Generator {
 		const TopTools_ListOfShape & GeneratedShapes(const TopoDS_Shape &SSection) const;
 
 };
+%feature("shadow") BRepFill_Generator::~BRepFill_Generator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_Generator {
-	~BRepFill_Generator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_Generator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1941,10 +2409,18 @@ class BRepFill_ShapeLaw : public BRepFill_SectionLaw {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_ShapeLaw::~BRepFill_ShapeLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_ShapeLaw {
-	~BRepFill_ShapeLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_ShapeLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1978,10 +2454,18 @@ class BRepFill_DataMapOfNodeShape : public TCollection_BasicMap {
 		TopoDS_Shape & operator()(const Handle_MAT_Node &K);
 
 };
+%feature("shadow") BRepFill_DataMapOfNodeShape::~BRepFill_DataMapOfNodeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapOfNodeShape {
-	~BRepFill_DataMapOfNodeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapOfNodeShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1999,10 +2483,18 @@ class BRepFill_SectionPlacement {
 		Standard_Real AbscissaOnPath();
 
 };
+%feature("shadow") BRepFill_SectionPlacement::~BRepFill_SectionPlacement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_SectionPlacement {
-	~BRepFill_SectionPlacement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_SectionPlacement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2032,10 +2524,18 @@ class BRepFill_Draft {
 		TopoDS_Shape Shape() const;
 
 };
+%feature("shadow") BRepFill_Draft::~BRepFill_Draft %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_Draft {
-	~BRepFill_Draft() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_Draft\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2063,10 +2563,18 @@ class BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public TCo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape::~BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
-	~BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2098,10 +2606,18 @@ class BRepFill_Evolved {
 		const TopoDS_Shape & Bottom() const;
 
 };
+%feature("shadow") BRepFill_Evolved::~BRepFill_Evolved %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_Evolved {
-	~BRepFill_Evolved() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_Evolved\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2133,10 +2649,18 @@ class BRepFill_MultiLine {
 		void Value3dOnF1OnF2(const Standard_Real U, gp_Pnt & P3d, gp_Pnt2d & PF1, gp_Pnt2d & PF2) const;
 
 };
+%feature("shadow") BRepFill_MultiLine::~BRepFill_MultiLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_MultiLine {
-	~BRepFill_MultiLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_MultiLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2170,10 +2694,18 @@ class BRepFill_DataMapOfOrientedShapeListOfShape : public TCollection_BasicMap {
 		TopTools_ListOfShape & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") BRepFill_DataMapOfOrientedShapeListOfShape::~BRepFill_DataMapOfOrientedShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapOfOrientedShapeListOfShape {
-	~BRepFill_DataMapOfOrientedShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapOfOrientedShapeListOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2201,10 +2733,18 @@ class BRepFill_DataMapNodeOfDataMapOfNodeShape : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_DataMapNodeOfDataMapOfNodeShape::~BRepFill_DataMapNodeOfDataMapOfNodeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapNodeOfDataMapOfNodeShape {
-	~BRepFill_DataMapNodeOfDataMapOfNodeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfNodeShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2258,10 +2798,18 @@ class BRepFill_SequenceOfEdgeFaceAndOrder : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") BRepFill_SequenceOfEdgeFaceAndOrder::~BRepFill_SequenceOfEdgeFaceAndOrder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_SequenceOfEdgeFaceAndOrder {
-	~BRepFill_SequenceOfEdgeFaceAndOrder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_SequenceOfEdgeFaceAndOrder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2275,14 +2823,22 @@ class BRepFill_MyLeastSquareOfComputeCLine {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		const AppParCurves_MultiCurve & Value();
-		%feature("autodoc","Error()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%feature("shadow") BRepFill_MyLeastSquareOfComputeCLine::~BRepFill_MyLeastSquareOfComputeCLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_MyLeastSquareOfComputeCLine {
-	~BRepFill_MyLeastSquareOfComputeCLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_MyLeastSquareOfComputeCLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2310,10 +2866,18 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollection_M
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape::~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape {
-	~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2341,10 +2905,18 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public TCollection_Map
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt::~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
-	~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2366,10 +2938,18 @@ class BRepFill {
 		TopoDS_Wire InsertACR(const TopoDS_Wire &wire, const TColStd_Array1OfReal &ACRcuts, const Standard_Real prec);
 
 };
+%feature("shadow") BRepFill::~BRepFill %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill {
-	~BRepFill() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2383,10 +2963,18 @@ class BRepFill_FaceAndOrder {
 		BRepFill_FaceAndOrder(const TopoDS_Face &aFace, const GeomAbs_Shape anOrder);
 
 };
+%feature("shadow") BRepFill_FaceAndOrder::~BRepFill_FaceAndOrder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_FaceAndOrder {
-	~BRepFill_FaceAndOrder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_FaceAndOrder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2418,10 +3006,18 @@ class BRepFill_MultiLineTool {
 		Standard_Boolean D1(const BRepFill_MultiLine &ML, const Standard_Real U, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
 
 };
+%feature("shadow") BRepFill_MultiLineTool::~BRepFill_MultiLineTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_MultiLineTool {
-	~BRepFill_MultiLineTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_MultiLineTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2445,10 +3041,18 @@ class BRepFill_ApproxSeewing {
 		const Handle_Geom2d_Curve & CurveOnF2() const;
 
 };
+%feature("shadow") BRepFill_ApproxSeewing::~BRepFill_ApproxSeewing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_ApproxSeewing {
-	~BRepFill_ApproxSeewing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_ApproxSeewing\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2474,10 +3078,18 @@ class BRepFill_SequenceNodeOfSequenceOfSection : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_SequenceNodeOfSequenceOfSection::~BRepFill_SequenceNodeOfSequenceOfSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_SequenceNodeOfSequenceOfSection {
-	~BRepFill_SequenceNodeOfSequenceOfSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_SequenceNodeOfSequenceOfSection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2527,10 +3139,18 @@ class BRepFill_ListOfOffsetWire {
 		void InsertAfter(BRepFill_ListOfOffsetWire & Other, BRepFill_ListIteratorOfListOfOffsetWire & It);
 
 };
+%feature("shadow") BRepFill_ListOfOffsetWire::~BRepFill_ListOfOffsetWire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_ListOfOffsetWire {
-	~BRepFill_ListOfOffsetWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_ListOfOffsetWire\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2558,10 +3178,18 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public TCollection_Ma
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal::~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
-	~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2581,10 +3209,18 @@ class BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape : public TColle
 		const TopTools_DataMapOfShapeShape & Value() const;
 
 };
+%feature("shadow") BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape::~BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape {
-	~BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2608,20 +3244,28 @@ class BRepFill_ComputeCLine {
 		Standard_Boolean IsAllApproximated() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc","Error(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbMultiCurves() const;
 		%feature("autodoc", "1");
 		AppParCurves_MultiCurve Value(const Standard_Integer Index=1) const;
-		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%feature("shadow") BRepFill_ComputeCLine::~BRepFill_ComputeCLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_ComputeCLine {
-	~BRepFill_ComputeCLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_ComputeCLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2655,10 +3299,18 @@ class BRepFill_DataMapOfShapeSequenceOfPnt : public TCollection_BasicMap {
 		TColgp_SequenceOfPnt & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") BRepFill_DataMapOfShapeSequenceOfPnt::~BRepFill_DataMapOfShapeSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapOfShapeSequenceOfPnt {
-	~BRepFill_DataMapOfShapeSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapOfShapeSequenceOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2684,10 +3336,18 @@ class BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public TCollection_Seq
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder::~BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
-	~BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2707,9 +3367,17 @@ class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape : public TCollecti
 		const TopTools_SequenceOfShape & Value() const;
 
 };
+%feature("shadow") BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape::~BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape {
-	~BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

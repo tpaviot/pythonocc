@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GeomLProp_dependencies.i
 
 
@@ -88,10 +92,18 @@ class GeomLProp_SLProps {
 		Standard_Real GaussianCurvature();
 
 };
+%feature("shadow") GeomLProp_SLProps::~GeomLProp_SLProps %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomLProp_SLProps {
-	~GeomLProp_SLProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLProp_SLProps\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -129,10 +141,18 @@ class GeomLProp_CLProps {
 		void CentreOfCurvature(gp_Pnt & P);
 
 };
+%feature("shadow") GeomLProp_CLProps::~GeomLProp_CLProps %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomLProp_CLProps {
-	~GeomLProp_CLProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLProp_CLProps\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -148,10 +168,18 @@ class GeomLProp {
 		GeomAbs_Shape Continuity(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2, const Standard_Real u1, const Standard_Real u2, const Standard_Boolean r1, const Standard_Boolean r2);
 
 };
+%feature("shadow") GeomLProp::~GeomLProp %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomLProp {
-	~GeomLProp() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLProp\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -171,14 +199,22 @@ class GeomLProp_SurfaceTool {
 		gp_Vec DN(const Handle_Geom_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
 		%feature("autodoc", "1");
 		Standard_Integer Continuity(const Handle_Geom_Surface &S);
-		%feature("autodoc","Bounds(const S)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","Bounds(const S) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void Bounds(const Handle_Geom_Surface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%feature("shadow") GeomLProp_SurfaceTool::~GeomLProp_SurfaceTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomLProp_SurfaceTool {
-	~GeomLProp_SurfaceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLProp_SurfaceTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -204,9 +240,17 @@ class GeomLProp_CurveTool {
 		Standard_Real LastParameter(const Handle_Geom_Curve &C);
 
 };
+%feature("shadow") GeomLProp_CurveTool::~GeomLProp_CurveTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GeomLProp_CurveTool {
-	~GeomLProp_CurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GeomLProp_CurveTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

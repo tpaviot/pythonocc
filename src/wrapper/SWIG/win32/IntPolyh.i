@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntPolyh_dependencies.i
 
 
@@ -58,10 +62,18 @@ class Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints : public Handle_TCollection
 	return (IntPolyh_SequenceNodeOfSeqOfStartPoints*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints::~Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints {
-	~Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -103,7 +115,7 @@ class IntPolyh_StartPoint {
 		Standard_Real GetAngle() const;
 		%feature("autodoc", "1");
 		Standard_Integer ChainList() const;
-		%feature("autodoc","GetEdgePoints(const Triangle)->[Standard_Integer, Standard_IntegerStandard_Integer]");
+		%feature("autodoc","GetEdgePoints(const Triangle) -> [Standard_Integer, Standard_IntegerStandard_Integer]");
 		Standard_Integer GetEdgePoints(const IntPolyh_Triangle &Triangle, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Equal(const IntPolyh_StartPoint &StPt);
@@ -137,10 +149,18 @@ class IntPolyh_StartPoint {
 		void Dump(const Standard_Integer i) const;
 
 };
+%feature("shadow") IntPolyh_StartPoint::~IntPolyh_StartPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_StartPoint {
-	~IntPolyh_StartPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_StartPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -176,10 +196,18 @@ class IntPolyh_Edge {
 		void Dump(const Standard_Integer v) const;
 
 };
+%feature("shadow") IntPolyh_Edge::~IntPolyh_Edge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_Edge {
-	~IntPolyh_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_Edge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -213,10 +241,18 @@ class IntPolyh_ArrayOfCouples {
 		void Dump() const;
 
 };
+%feature("shadow") IntPolyh_ArrayOfCouples::~IntPolyh_ArrayOfCouples %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_ArrayOfCouples {
-	~IntPolyh_ArrayOfCouples() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfCouples\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -242,10 +278,18 @@ class IntPolyh_SequenceNodeOfSeqOfStartPoints : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IntPolyh_SequenceNodeOfSeqOfStartPoints::~IntPolyh_SequenceNodeOfSeqOfStartPoints %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
-	~IntPolyh_SequenceNodeOfSeqOfStartPoints() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_SequenceNodeOfSeqOfStartPoints\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -283,10 +327,18 @@ class IntPolyh_ArrayOfSectionLines {
 		void Dump() const;
 
 };
+%feature("shadow") IntPolyh_ArrayOfSectionLines::~IntPolyh_ArrayOfSectionLines %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_ArrayOfSectionLines {
-	~IntPolyh_ArrayOfSectionLines() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfSectionLines\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -326,10 +378,18 @@ class IntPolyh_SectionLine {
 		void Prepend(const IntPolyh_StartPoint &SP);
 
 };
+%feature("shadow") IntPolyh_SectionLine::~IntPolyh_SectionLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_SectionLine {
-	~IntPolyh_SectionLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_SectionLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -359,10 +419,18 @@ class IntPolyh_Couple {
 		void Dump(const Standard_Integer v) const;
 
 };
+%feature("shadow") IntPolyh_Couple::~IntPolyh_Couple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_Couple {
-	~IntPolyh_Couple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_Couple\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -402,10 +470,18 @@ class IntPolyh_ArrayOfEdges {
 		void Dump() const;
 
 };
+%feature("shadow") IntPolyh_ArrayOfEdges::~IntPolyh_ArrayOfEdges %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_ArrayOfEdges {
-	~IntPolyh_ArrayOfEdges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfEdges\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -443,10 +519,18 @@ class IntPolyh_ArrayOfTangentZones {
 		void Dump() const;
 
 };
+%feature("shadow") IntPolyh_ArrayOfTangentZones::~IntPolyh_ArrayOfTangentZones %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_ArrayOfTangentZones {
-	~IntPolyh_ArrayOfTangentZones() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfTangentZones\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -520,10 +604,18 @@ class IntPolyh_Point {
 		void Dump(const Standard_Integer i) const;
 
 };
+%feature("shadow") IntPolyh_Point::~IntPolyh_Point %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_Point {
-	~IntPolyh_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_Point\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -557,10 +649,18 @@ class IntPolyh_ArrayOfStartPoints {
 		void Dump() const;
 
 };
+%feature("shadow") IntPolyh_ArrayOfStartPoints::~IntPolyh_ArrayOfStartPoints %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_ArrayOfStartPoints {
-	~IntPolyh_ArrayOfStartPoints() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfStartPoints\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -584,20 +684,28 @@ class IntPolyh_Intersection {
 		Standard_Integer NbSectionLines() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPointsInLine(const Standard_Integer IndexLine) const;
-		%feature("autodoc","GetLinePoint(Standard_Integer IndexLine, Standard_Integer IndexPoint)->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","GetLinePoint(Standard_Integer IndexLine, Standard_Integer IndexPoint) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_RealStandard_Real]");
 		void GetLinePoint(const Standard_Integer IndexLine, const Standard_Integer IndexPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbTangentZones() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPointsInTangentZone(const Standard_Integer IndexLine) const;
-		%feature("autodoc","GetTangentZonePoint(Standard_Integer IndexLine, Standard_Integer IndexPoint)->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","GetTangentZonePoint(Standard_Integer IndexLine, Standard_Integer IndexPoint) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_RealStandard_Real]");
 		void GetTangentZonePoint(const Standard_Integer IndexLine, const Standard_Integer IndexPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%feature("shadow") IntPolyh_Intersection::~IntPolyh_Intersection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_Intersection {
-	~IntPolyh_Intersection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_Intersection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -651,10 +759,18 @@ class IntPolyh_SeqOfStartPoints : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") IntPolyh_SeqOfStartPoints::~IntPolyh_SeqOfStartPoints %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_SeqOfStartPoints {
-	~IntPolyh_SeqOfStartPoints() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_SeqOfStartPoints\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -694,10 +810,18 @@ class IntPolyh_ArrayOfPoints {
 		void Dump() const;
 
 };
+%feature("shadow") IntPolyh_ArrayOfPoints::~IntPolyh_ArrayOfPoints %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_ArrayOfPoints {
-	~IntPolyh_ArrayOfPoints() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfPoints\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -739,9 +863,17 @@ class IntPolyh_ArrayOfTriangles {
 		void DumpFleches() const;
 
 };
+%feature("shadow") IntPolyh_ArrayOfTriangles::~IntPolyh_ArrayOfTriangles %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntPolyh_ArrayOfTriangles {
-	~IntPolyh_ArrayOfTriangles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfTriangles\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

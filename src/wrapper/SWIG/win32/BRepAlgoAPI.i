@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepAlgoAPI_dependencies.i
 
 
@@ -76,12 +80,18 @@ class BRepAlgoAPI_BooleanOperation : public BRepBuilderAPI_MakeShape {
 		const TopTools_ListOfShape & SectionEdges();
 
 };
-%extend BRepAlgoAPI_BooleanOperation {
-	~BRepAlgoAPI_BooleanOperation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_BooleanOperation\n");}
-	$self->Destroy();
+%feature("shadow") BRepAlgoAPI_BooleanOperation::~BRepAlgoAPI_BooleanOperation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
 
+%extend BRepAlgoAPI_BooleanOperation {
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -95,10 +105,18 @@ class BRepAlgoAPI_Fuse : public BRepAlgoAPI_BooleanOperation {
 		BRepAlgoAPI_Fuse(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const BOPTools_DSFiller &aDSF);
 
 };
+%feature("shadow") BRepAlgoAPI_Fuse::~BRepAlgoAPI_Fuse %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAlgoAPI_Fuse {
-	~BRepAlgoAPI_Fuse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Fuse\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -148,10 +166,18 @@ class BRepAlgoAPI_Section : public BRepAlgoAPI_BooleanOperation {
 		Handle_Geom2d_Curve PCurveOn2(const TopoDS_Shape &E) const;
 
 };
+%feature("shadow") BRepAlgoAPI_Section::~BRepAlgoAPI_Section %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAlgoAPI_Section {
-	~BRepAlgoAPI_Section() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Section\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -165,10 +191,18 @@ class BRepAlgoAPI_Cut : public BRepAlgoAPI_BooleanOperation {
 		BRepAlgoAPI_Cut(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const BOPTools_DSFiller &aDSF, const Standard_Boolean bFWD=1);
 
 };
+%feature("shadow") BRepAlgoAPI_Cut::~BRepAlgoAPI_Cut %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAlgoAPI_Cut {
-	~BRepAlgoAPI_Cut() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Cut\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -182,9 +216,17 @@ class BRepAlgoAPI_Common : public BRepAlgoAPI_BooleanOperation {
 		BRepAlgoAPI_Common(const TopoDS_Shape &S1, const TopoDS_Shape &S2, const BOPTools_DSFiller &aDSF);
 
 };
+%feature("shadow") BRepAlgoAPI_Common::~BRepAlgoAPI_Common %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAlgoAPI_Common {
-	~BRepAlgoAPI_Common() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Common\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

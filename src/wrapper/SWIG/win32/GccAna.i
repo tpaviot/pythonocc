@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GccAna_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_GccAna_NoSolution : public Handle_Standard_Failure {
 	return (GccAna_NoSolution*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GccAna_NoSolution::~Handle_GccAna_NoSolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GccAna_NoSolution {
-	~Handle_GccAna_NoSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GccAna_NoSolution\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -80,16 +92,24 @@ class GccAna_Lin2dTanObl {
 		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Intersection2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Intersection2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
+%feature("shadow") GccAna_Lin2dTanObl::~GccAna_Lin2dTanObl %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_Lin2dTanObl {
-	~GccAna_Lin2dTanObl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanObl\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -105,16 +125,24 @@ class GccAna_Lin2dBisec {
 		Standard_Integer NbSolutions() const;
 		%feature("autodoc", "1");
 		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
-		%feature("autodoc","Intersection1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Intersection1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Intersection1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Intersection2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Intersection2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
+%feature("shadow") GccAna_Lin2dBisec::~GccAna_Lin2dBisec %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_Lin2dBisec {
-	~GccAna_Lin2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dBisec\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -132,10 +160,18 @@ class GccAna_Pnt2dBisec {
 		gp_Lin2d ThisSolution() const;
 
 };
+%feature("shadow") GccAna_Pnt2dBisec::~GccAna_Pnt2dBisec %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_Pnt2dBisec {
-	~GccAna_Pnt2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Pnt2dBisec\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -163,18 +199,26 @@ class GccAna_Circ2dTanOnRad {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","CenterOn3(Standard_Integer Index)->Standard_Real");
+		%feature("autodoc","CenterOn3(Standard_Integer Index) -> Standard_Real");
 		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
 };
+%feature("shadow") GccAna_Circ2dTanOnRad::~GccAna_Circ2dTanOnRad %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_Circ2dTanOnRad {
-	~GccAna_Circ2dTanOnRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dTanOnRad\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -196,16 +240,24 @@ class GccAna_Circ2dTanCen {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
 };
+%feature("shadow") GccAna_Circ2dTanCen::~GccAna_Circ2dTanCen %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_Circ2dTanCen {
-	~GccAna_Circ2dTanCen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dTanCen\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -229,16 +281,24 @@ class GccAna_Lin2dTanPer {
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
 		%feature("autodoc", "1");
 		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & Pnt) const;
-		%feature("autodoc","Intersection2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Intersection2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
+%feature("shadow") GccAna_Lin2dTanPer::~GccAna_Lin2dTanPer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_Lin2dTanPer {
-	~GccAna_Lin2dTanPer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanPer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -254,10 +314,18 @@ class GccAna_LinPnt2dBisec {
 		Handle_GccInt_Bisec ThisSolution() const;
 
 };
+%feature("shadow") GccAna_LinPnt2dBisec::~GccAna_LinPnt2dBisec %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_LinPnt2dBisec {
-	~GccAna_LinPnt2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_LinPnt2dBisec\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -289,10 +357,18 @@ class GccAna_NoSolution : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GccAna_NoSolution::~GccAna_NoSolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_NoSolution {
-	~GccAna_NoSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_NoSolution\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -320,9 +396,9 @@ class GccAna_Circ2d2TanRad {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
@@ -330,10 +406,18 @@ class GccAna_Circ2d2TanRad {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
+%feature("shadow") GccAna_Circ2d2TanRad::~GccAna_Circ2d2TanRad %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_Circ2d2TanRad {
-	~GccAna_Circ2d2TanRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d2TanRad\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -369,11 +453,11 @@ class GccAna_Circ2d3Tan {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2, GccEnt_Position & Qualif3) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency3(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency3(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency3(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
@@ -383,10 +467,18 @@ class GccAna_Circ2d3Tan {
 		Standard_Boolean IsTheSame3(const Standard_Integer Index) const;
 
 };
+%feature("shadow") GccAna_Circ2d3Tan::~GccAna_Circ2d3Tan %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_Circ2d3Tan {
-	~GccAna_Circ2d3Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d3Tan\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -404,10 +496,18 @@ class GccAna_CircLin2dBisec {
 		Handle_GccInt_Bisec ThisSolution(const Standard_Integer Index) const;
 
 };
+%feature("shadow") GccAna_CircLin2dBisec::~GccAna_CircLin2dBisec %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_CircLin2dBisec {
-	~GccAna_CircLin2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_CircLin2dBisec\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -427,14 +527,22 @@ class GccAna_Lin2dTanPar {
 		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & Pnt) const;
 
 };
+%feature("shadow") GccAna_Lin2dTanPar::~GccAna_Lin2dTanPar %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_Lin2dTanPar {
-	~GccAna_Lin2dTanPar() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanPar\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -452,10 +560,18 @@ class GccAna_CircPnt2dBisec {
 		Handle_GccInt_Bisec ThisSolution(const Standard_Integer Index) const;
 
 };
+%feature("shadow") GccAna_CircPnt2dBisec::~GccAna_CircPnt2dBisec %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_CircPnt2dBisec {
-	~GccAna_CircPnt2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_CircPnt2dBisec\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -473,10 +589,18 @@ class GccAna_Circ2dBisec {
 		Handle_GccInt_Bisec ThisSolution(const Standard_Integer Index) const;
 
 };
+%feature("shadow") GccAna_Circ2dBisec::~GccAna_Circ2dBisec %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_Circ2dBisec {
-	~GccAna_Circ2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dBisec\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -516,11 +640,11 @@ class GccAna_Circ2d2TanOn {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","CenterOn3(Standard_Integer Index)->Standard_Real");
+		%feature("autodoc","CenterOn3(Standard_Integer Index) -> Standard_Real");
 		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntArg) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
@@ -528,10 +652,18 @@ class GccAna_Circ2d2TanOn {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
+%feature("shadow") GccAna_Circ2d2TanOn::~GccAna_Circ2d2TanOn %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_Circ2d2TanOn {
-	~GccAna_Circ2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d2TanOn\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -553,15 +685,23 @@ class GccAna_Lin2d2Tan {
 		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
+%feature("shadow") GccAna_Lin2d2Tan::~GccAna_Lin2d2Tan %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GccAna_Lin2d2Tan {
-	~GccAna_Lin2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2d2Tan\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

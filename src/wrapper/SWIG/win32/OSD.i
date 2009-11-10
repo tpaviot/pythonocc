@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include OSD_dependencies.i
 
 
@@ -177,10 +181,18 @@ class Handle_OSD_Exception : public Handle_Standard_Failure {
 	return (OSD_Exception*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception::~Handle_OSD_Exception %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception {
-	~Handle_OSD_Exception() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +219,18 @@ class Handle_OSD_Exception_STACK_OVERFLOW : public Handle_OSD_Exception {
 	return (OSD_Exception_STACK_OVERFLOW*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_STACK_OVERFLOW::~Handle_OSD_Exception_STACK_OVERFLOW %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_STACK_OVERFLOW {
-	~Handle_OSD_Exception_STACK_OVERFLOW() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_STACK_OVERFLOW\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +257,18 @@ class Handle_OSD_Signal : public Handle_Standard_Failure {
 	return (OSD_Signal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Signal::~Handle_OSD_Signal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Signal {
-	~Handle_OSD_Signal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Signal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +295,18 @@ class Handle_OSD_SIGILL : public Handle_OSD_Signal {
 	return (OSD_SIGILL*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_SIGILL::~Handle_OSD_SIGILL %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_SIGILL {
-	~Handle_OSD_SIGILL() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGILL\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +333,18 @@ class Handle_OSD_SIGHUP : public Handle_OSD_Signal {
 	return (OSD_SIGHUP*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_SIGHUP::~Handle_OSD_SIGHUP %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_SIGHUP {
-	~Handle_OSD_SIGHUP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGHUP\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +371,18 @@ class Handle_OSD_Exception_ILLEGAL_INSTRUCTION : public Handle_OSD_Exception {
 	return (OSD_Exception_ILLEGAL_INSTRUCTION*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_ILLEGAL_INSTRUCTION::~Handle_OSD_Exception_ILLEGAL_INSTRUCTION %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_ILLEGAL_INSTRUCTION {
-	~Handle_OSD_Exception_ILLEGAL_INSTRUCTION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_ILLEGAL_INSTRUCTION\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +409,18 @@ class Handle_OSD_OSDError : public Handle_Standard_Failure {
 	return (OSD_OSDError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_OSDError::~Handle_OSD_OSDError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_OSDError {
-	~Handle_OSD_OSDError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_OSDError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +447,18 @@ class Handle_OSD_Exception_CTRL_BREAK : public Handle_OSD_Exception {
 	return (OSD_Exception_CTRL_BREAK*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_CTRL_BREAK::~Handle_OSD_Exception_CTRL_BREAK %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_CTRL_BREAK {
-	~Handle_OSD_Exception_CTRL_BREAK() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_CTRL_BREAK\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +485,18 @@ class Handle_OSD_SIGINT : public Handle_OSD_Signal {
 	return (OSD_SIGINT*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_SIGINT::~Handle_OSD_SIGINT %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_SIGINT {
-	~Handle_OSD_SIGINT() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGINT\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +523,18 @@ class Handle_OSD_Exception_PRIV_INSTRUCTION : public Handle_OSD_Exception {
 	return (OSD_Exception_PRIV_INSTRUCTION*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_PRIV_INSTRUCTION::~Handle_OSD_Exception_PRIV_INSTRUCTION %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_PRIV_INSTRUCTION {
-	~Handle_OSD_Exception_PRIV_INSTRUCTION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_PRIV_INSTRUCTION\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +561,18 @@ class Handle_OSD_SIGKILL : public Handle_OSD_Signal {
 	return (OSD_SIGKILL*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_SIGKILL::~Handle_OSD_SIGKILL %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_SIGKILL {
-	~Handle_OSD_SIGKILL() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGKILL\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +599,18 @@ class Handle_OSD_Exception_ACCESS_VIOLATION : public Handle_OSD_Exception {
 	return (OSD_Exception_ACCESS_VIOLATION*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_ACCESS_VIOLATION::~Handle_OSD_Exception_ACCESS_VIOLATION %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_ACCESS_VIOLATION {
-	~Handle_OSD_Exception_ACCESS_VIOLATION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_ACCESS_VIOLATION\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +637,18 @@ class Handle_OSD_SIGQUIT : public Handle_OSD_Signal {
 	return (OSD_SIGQUIT*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_SIGQUIT::~Handle_OSD_SIGQUIT %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_SIGQUIT {
-	~Handle_OSD_SIGQUIT() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGQUIT\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +675,18 @@ class Handle_OSD_Exception_INVALID_DISPOSITION : public Handle_OSD_Exception {
 	return (OSD_Exception_INVALID_DISPOSITION*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_INVALID_DISPOSITION::~Handle_OSD_Exception_INVALID_DISPOSITION %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_INVALID_DISPOSITION {
-	~Handle_OSD_Exception_INVALID_DISPOSITION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_INVALID_DISPOSITION\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +713,18 @@ class Handle_OSD_Exception_INT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 	return (OSD_Exception_INT_DIVIDE_BY_ZERO*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_INT_DIVIDE_BY_ZERO::~Handle_OSD_Exception_INT_DIVIDE_BY_ZERO %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_INT_DIVIDE_BY_ZERO {
-	~Handle_OSD_Exception_INT_DIVIDE_BY_ZERO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_INT_DIVIDE_BY_ZERO\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +751,18 @@ class Handle_OSD_Exception_INT_OVERFLOW : public Handle_OSD_Exception {
 	return (OSD_Exception_INT_OVERFLOW*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_INT_OVERFLOW::~Handle_OSD_Exception_INT_OVERFLOW %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_INT_OVERFLOW {
-	~Handle_OSD_Exception_INT_OVERFLOW() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_INT_OVERFLOW\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -657,10 +789,18 @@ class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_STACK_CHECK*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_FLT_STACK_CHECK::~Handle_OSD_Exception_FLT_STACK_CHECK %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_FLT_STACK_CHECK {
-	~Handle_OSD_Exception_FLT_STACK_CHECK() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_STACK_CHECK\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -687,10 +827,18 @@ class Handle_OSD_Exception_STATUS_NO_MEMORY : public Handle_OSD_Exception {
 	return (OSD_Exception_STATUS_NO_MEMORY*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_STATUS_NO_MEMORY::~Handle_OSD_Exception_STATUS_NO_MEMORY %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_STATUS_NO_MEMORY {
-	~Handle_OSD_Exception_STATUS_NO_MEMORY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_STATUS_NO_MEMORY\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -717,10 +865,18 @@ class Handle_OSD_Exception_FLT_INVALID_OPERATION : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_INVALID_OPERATION*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_FLT_INVALID_OPERATION::~Handle_OSD_Exception_FLT_INVALID_OPERATION %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_FLT_INVALID_OPERATION {
-	~Handle_OSD_Exception_FLT_INVALID_OPERATION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_INVALID_OPERATION\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -747,10 +903,18 @@ class Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION : public Handle_OSD_Exceptio
 	return (OSD_Exception_NONCONTINUABLE_EXCEPTION*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION::~Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION {
-	~Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -777,10 +941,18 @@ class Handle_OSD_Exception_FLT_OVERFLOW : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_OVERFLOW*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_FLT_OVERFLOW::~Handle_OSD_Exception_FLT_OVERFLOW %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_FLT_OVERFLOW {
-	~Handle_OSD_Exception_FLT_OVERFLOW() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_OVERFLOW\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -807,10 +979,18 @@ class Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public Handle_OSD_Exception {
 	return (OSD_Exception_ARRAY_BOUNDS_EXCEEDED*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED::~Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
-	~Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -837,10 +1017,18 @@ class Handle_OSD_SIGBUS : public Handle_OSD_Signal {
 	return (OSD_SIGBUS*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_SIGBUS::~Handle_OSD_SIGBUS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_SIGBUS {
-	~Handle_OSD_SIGBUS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGBUS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -867,10 +1055,18 @@ class Handle_OSD_Exception_FLT_INEXACT_RESULT : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_INEXACT_RESULT*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_FLT_INEXACT_RESULT::~Handle_OSD_Exception_FLT_INEXACT_RESULT %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_FLT_INEXACT_RESULT {
-	~Handle_OSD_Exception_FLT_INEXACT_RESULT() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_INEXACT_RESULT\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -897,10 +1093,18 @@ class Handle_OSD_Exception_FLT_DENORMAL_OPERAND : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_DENORMAL_OPERAND*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_FLT_DENORMAL_OPERAND::~Handle_OSD_Exception_FLT_DENORMAL_OPERAND %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_FLT_DENORMAL_OPERAND {
-	~Handle_OSD_Exception_FLT_DENORMAL_OPERAND() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_DENORMAL_OPERAND\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -927,10 +1131,18 @@ class Handle_OSD_SIGSEGV : public Handle_OSD_Signal {
 	return (OSD_SIGSEGV*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_SIGSEGV::~Handle_OSD_SIGSEGV %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_SIGSEGV {
-	~Handle_OSD_SIGSEGV() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGSEGV\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -957,10 +1169,18 @@ class Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_DIVIDE_BY_ZERO*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO::~Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO {
-	~Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -987,10 +1207,18 @@ class Handle_OSD_SIGSYS : public Handle_OSD_Signal {
 	return (OSD_SIGSYS*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_SIGSYS::~Handle_OSD_SIGSYS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_SIGSYS {
-	~Handle_OSD_SIGSYS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGSYS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1017,10 +1245,18 @@ class Handle_OSD_Exception_FLT_UNDERFLOW : public Handle_OSD_Exception {
 	return (OSD_Exception_FLT_UNDERFLOW*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_FLT_UNDERFLOW::~Handle_OSD_Exception_FLT_UNDERFLOW %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_FLT_UNDERFLOW {
-	~Handle_OSD_Exception_FLT_UNDERFLOW() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_UNDERFLOW\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1047,10 +1283,18 @@ class Handle_OSD_Exception_IN_PAGE_ERROR : public Handle_OSD_Exception {
 	return (OSD_Exception_IN_PAGE_ERROR*)$self->Access();
 	}
 };
+%feature("shadow") Handle_OSD_Exception_IN_PAGE_ERROR::~Handle_OSD_Exception_IN_PAGE_ERROR %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_OSD_Exception_IN_PAGE_ERROR {
-	~Handle_OSD_Exception_IN_PAGE_ERROR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_IN_PAGE_ERROR\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1082,10 +1326,18 @@ class OSD_FileIterator {
 		Standard_Integer Error() const;
 
 };
+%feature("shadow") OSD_FileIterator::~OSD_FileIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_FileIterator {
-	~OSD_FileIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_FileIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1117,10 +1369,18 @@ class OSD_DirectoryIterator {
 		Standard_Integer Error() const;
 
 };
+%feature("shadow") OSD_DirectoryIterator::~OSD_DirectoryIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_DirectoryIterator {
-	~OSD_DirectoryIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_DirectoryIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1152,10 +1412,18 @@ class OSD_Exception : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception::~OSD_Exception %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception {
-	~OSD_Exception() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1181,10 +1449,18 @@ class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_CTRL_BREAK::~OSD_Exception_CTRL_BREAK %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_CTRL_BREAK {
-	~OSD_Exception_CTRL_BREAK() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_CTRL_BREAK\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1196,14 +1472,22 @@ class OSD_Real2String {
 		OSD_Real2String();
 		%feature("autodoc", "1");
 		Standard_Boolean RealToCString(const Standard_Real aReal, Standard_PCharacter & aString) const;
-		%feature("autodoc","CStringToReal(Standard_CString aString)->Standard_Real");
+		%feature("autodoc","CStringToReal(Standard_CString aString) -> Standard_Real");
 		Standard_Boolean CStringToReal(const char * aString, Standard_Real &OutValue);
 
 };
+%feature("shadow") OSD_Real2String::~OSD_Real2String %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Real2String {
-	~OSD_Real2String() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Real2String\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1235,10 +1519,18 @@ class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_INVALID_DISPOSITION::~OSD_Exception_INVALID_DISPOSITION %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_INVALID_DISPOSITION {
-	~OSD_Exception_INVALID_DISPOSITION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_INVALID_DISPOSITION\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1270,10 +1562,18 @@ class OSD_Signal : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Signal::~OSD_Signal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Signal {
-	~OSD_Signal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Signal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1299,10 +1599,18 @@ class OSD_SIGKILL : public OSD_Signal {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_SIGKILL::~OSD_SIGKILL %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_SIGKILL {
-	~OSD_SIGKILL() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SIGKILL\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1336,10 +1644,18 @@ class OSD_Host {
 		Standard_Integer Error() const;
 
 };
+%feature("shadow") OSD_Host::~OSD_Host %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Host {
-	~OSD_Host() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Host\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1371,10 +1687,18 @@ class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_FLT_INEXACT_RESULT::~OSD_Exception_FLT_INEXACT_RESULT %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_FLT_INEXACT_RESULT {
-	~OSD_Exception_FLT_INEXACT_RESULT() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_INEXACT_RESULT\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1406,10 +1730,18 @@ class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_INT_DIVIDE_BY_ZERO::~OSD_Exception_INT_DIVIDE_BY_ZERO %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_INT_DIVIDE_BY_ZERO {
-	~OSD_Exception_INT_DIVIDE_BY_ZERO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_INT_DIVIDE_BY_ZERO\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1441,10 +1773,18 @@ class OSD_Exception_FLT_STACK_CHECK : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_FLT_STACK_CHECK::~OSD_Exception_FLT_STACK_CHECK %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_FLT_STACK_CHECK {
-	~OSD_Exception_FLT_STACK_CHECK() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_STACK_CHECK\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1468,10 +1808,18 @@ class OSD_Printer {
 		Standard_Integer Error() const;
 
 };
+%feature("shadow") OSD_Printer::~OSD_Printer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Printer {
-	~OSD_Printer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Printer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1499,10 +1847,18 @@ class OSD_EnvironmentIterator {
 		Standard_Integer Error() const;
 
 };
+%feature("shadow") OSD_EnvironmentIterator::~OSD_EnvironmentIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_EnvironmentIterator {
-	~OSD_EnvironmentIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_EnvironmentIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1534,10 +1890,18 @@ class OSD_SIGSYS : public OSD_Signal {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_SIGSYS::~OSD_SIGSYS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_SIGSYS {
-	~OSD_SIGSYS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SIGSYS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1569,10 +1933,18 @@ class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_FLT_UNDERFLOW::~OSD_Exception_FLT_UNDERFLOW %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_FLT_UNDERFLOW {
-	~OSD_Exception_FLT_UNDERFLOW() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_UNDERFLOW\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1604,10 +1976,18 @@ class OSD_Exception_IN_PAGE_ERROR : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_IN_PAGE_ERROR::~OSD_Exception_IN_PAGE_ERROR %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_IN_PAGE_ERROR {
-	~OSD_Exception_IN_PAGE_ERROR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_IN_PAGE_ERROR\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1639,10 +2019,18 @@ class OSD_OSDError : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_OSDError::~OSD_OSDError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_OSDError {
-	~OSD_OSDError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_OSDError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1682,10 +2070,18 @@ class OSD_Disk {
 		Standard_Integer Error() const;
 
 };
+%feature("shadow") OSD_Disk::~OSD_Disk %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Disk {
-	~OSD_Disk() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Disk\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1707,10 +2103,18 @@ class OSD_Error {
 		void Reset();
 
 };
+%feature("shadow") OSD_Error::~OSD_Error %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Error {
-	~OSD_Error() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Error\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1740,10 +2144,18 @@ class OSD_SharedMemory {
 		Standard_Integer Error() const;
 
 };
+%feature("shadow") OSD_SharedMemory::~OSD_SharedMemory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_SharedMemory {
-	~OSD_SharedMemory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SharedMemory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1775,10 +2187,18 @@ class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_ARRAY_BOUNDS_EXCEEDED::~OSD_Exception_ARRAY_BOUNDS_EXCEEDED %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
-	~OSD_Exception_ARRAY_BOUNDS_EXCEEDED() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_ARRAY_BOUNDS_EXCEEDED\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1814,10 +2234,18 @@ class OSD_Thread {
 		Standard_ThreadId Current();
 
 };
+%feature("shadow") OSD_Thread::~OSD_Thread %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Thread {
-	~OSD_Thread() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Thread\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1849,10 +2277,18 @@ class OSD_SIGQUIT : public OSD_Signal {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_SIGQUIT::~OSD_SIGQUIT %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_SIGQUIT {
-	~OSD_SIGQUIT() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SIGQUIT\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1884,10 +2320,18 @@ class OSD_SIGBUS : public OSD_Signal {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_SIGBUS::~OSD_SIGBUS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_SIGBUS {
-	~OSD_SIGBUS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SIGBUS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1929,10 +2373,18 @@ class OSD_FileNode {
 		Standard_Integer Error() const;
 
 };
+%feature("shadow") OSD_FileNode::~OSD_FileNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_FileNode {
-	~OSD_FileNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_FileNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1952,9 +2404,9 @@ class OSD_File : public OSD_FileNode {
 		void Append(const OSD_OpenMode Mode, const OSD_Protection &Protect);
 		%feature("autodoc", "1");
 		void Read(TCollection_AsciiString & Buffer, const Standard_Integer Nbyte);
-		%feature("autodoc","ReadLine(Standard_Integer NByte)->Standard_Integer");
+		%feature("autodoc","ReadLine(Standard_Integer NByte) -> Standard_Integer");
 		void ReadLine(TCollection_AsciiString & Buffer, const Standard_Integer NByte, Standard_Integer &OutValue);
-		%feature("autodoc","Read(Standard_Integer Nbyte)->Standard_Integer");
+		%feature("autodoc","Read(Standard_Integer Nbyte) -> Standard_Integer");
 		void Read(Standard_Address & Buffer, const Standard_Integer Nbyte, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void Write(const TCollection_AsciiString &Buffer, const Standard_Integer Nbyte);
@@ -1996,10 +2448,18 @@ class OSD_File : public OSD_FileNode {
 		Standard_Boolean Edit();
 
 };
+%feature("shadow") OSD_File::~OSD_File %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_File {
-	~OSD_File() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_File\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2031,10 +2491,18 @@ class OSD_SIGSEGV : public OSD_Signal {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_SIGSEGV::~OSD_SIGSEGV %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_SIGSEGV {
-	~OSD_SIGSEGV() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SIGSEGV\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2066,10 +2534,18 @@ class OSD_Exception_PRIV_INSTRUCTION : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_PRIV_INSTRUCTION::~OSD_Exception_PRIV_INSTRUCTION %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_PRIV_INSTRUCTION {
-	~OSD_Exception_PRIV_INSTRUCTION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_PRIV_INSTRUCTION\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2087,10 +2563,18 @@ class OSD_Directory : public OSD_FileNode {
 		OSD_Directory BuildTemporary();
 
 };
+%feature("shadow") OSD_Directory::~OSD_Directory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Directory {
-	~OSD_Directory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Directory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2126,10 +2610,18 @@ class OSD_Environment {
 		Standard_Integer Error() const;
 
 };
+%feature("shadow") OSD_Environment::~OSD_Environment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Environment {
-	~OSD_Environment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Environment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2161,10 +2653,18 @@ class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_ACCESS_VIOLATION::~OSD_Exception_ACCESS_VIOLATION %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_ACCESS_VIOLATION {
-	~OSD_Exception_ACCESS_VIOLATION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_ACCESS_VIOLATION\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2186,7 +2686,7 @@ class OSD {
 		void MilliSecSleep(const Standard_Integer aDelay);
 		%feature("autodoc", "1");
 		Standard_Boolean RealToCString(const Standard_Real aReal, Standard_PCharacter & aString);
-		%feature("autodoc","CStringToReal(Standard_CString aString)->Standard_Real");
+		%feature("autodoc","CStringToReal(Standard_CString aString) -> Standard_Real");
 		Standard_Boolean CStringToReal(const char * aString, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDivisible(const Standard_Real aDividend, const Standard_Real aDivisor);
@@ -2200,10 +2700,18 @@ class OSD {
 		Standard_Boolean UseSETranslator();
 
 };
+%feature("shadow") OSD::~OSD %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD {
-	~OSD() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2235,10 +2743,18 @@ class OSD_Exception_ILLEGAL_INSTRUCTION : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_ILLEGAL_INSTRUCTION::~OSD_Exception_ILLEGAL_INSTRUCTION %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_ILLEGAL_INSTRUCTION {
-	~OSD_Exception_ILLEGAL_INSTRUCTION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_ILLEGAL_INSTRUCTION\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2270,10 +2786,18 @@ class OSD_Exception_FLT_INVALID_OPERATION : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_FLT_INVALID_OPERATION::~OSD_Exception_FLT_INVALID_OPERATION %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_FLT_INVALID_OPERATION {
-	~OSD_Exception_FLT_INVALID_OPERATION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_INVALID_OPERATION\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2305,10 +2829,18 @@ class OSD_SIGINT : public OSD_Signal {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_SIGINT::~OSD_SIGINT %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_SIGINT {
-	~OSD_SIGINT() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SIGINT\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2340,10 +2872,18 @@ class OSD_Exception_STACK_OVERFLOW : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_STACK_OVERFLOW::~OSD_Exception_STACK_OVERFLOW %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_STACK_OVERFLOW {
-	~OSD_Exception_STACK_OVERFLOW() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_STACK_OVERFLOW\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2371,16 +2911,24 @@ class OSD_Chronometer {
 			self->Show(s);
 			return s.str();}
 		};
-		%feature("autodoc","Show()->Standard_Real");
+		%feature("autodoc","Show() -> Standard_Real");
 		void Show(Standard_Real &OutValue);
-		%feature("autodoc","Show()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Show() -> [Standard_Real, Standard_Real]");
 		void Show(Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%feature("shadow") OSD_Chronometer::~OSD_Chronometer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Chronometer {
-	~OSD_Chronometer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Chronometer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2412,10 +2960,18 @@ class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_INT_OVERFLOW::~OSD_Exception_INT_OVERFLOW %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_INT_OVERFLOW {
-	~OSD_Exception_INT_OVERFLOW() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_INT_OVERFLOW\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2487,10 +3043,18 @@ class OSD_Path {
 		TCollection_AsciiString AbsolutePath(const TCollection_AsciiString &DirPath, const TCollection_AsciiString &RelFilePath);
 
 };
+%feature("shadow") OSD_Path::~OSD_Path %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Path {
-	~OSD_Path() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Path\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2522,10 +3086,18 @@ class OSD_SIGHUP : public OSD_Signal {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_SIGHUP::~OSD_SIGHUP %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_SIGHUP {
-	~OSD_SIGHUP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SIGHUP\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2549,7 +3121,7 @@ class OSD_Timer : public OSD_Chronometer {
 			self->Show(s);
 			return s.str();}
 		};
-		%feature("autodoc","Show()->[Standard_Real, Standard_Integer, Standard_Integer, Standard_Real]");
+		%feature("autodoc","Show() -> [Standard_Real, Standard_Integer, Standard_Integer, Standard_Real]");
 		void Show(Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Stop();
@@ -2557,10 +3129,18 @@ class OSD_Timer : public OSD_Chronometer {
 		virtual		void Start();
 
 };
+%feature("shadow") OSD_Timer::~OSD_Timer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Timer {
-	~OSD_Timer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Timer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2592,10 +3172,18 @@ class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_STATUS_NO_MEMORY::~OSD_Exception_STATUS_NO_MEMORY %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_STATUS_NO_MEMORY {
-	~OSD_Exception_STATUS_NO_MEMORY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_STATUS_NO_MEMORY\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2633,10 +3221,18 @@ class OSD_Protection {
 		void Sub(OSD_SingleProtection & aProt, const OSD_SingleProtection aRight);
 
 };
+%feature("shadow") OSD_Protection::~OSD_Protection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Protection {
-	~OSD_Protection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Protection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2668,10 +3264,18 @@ class OSD_SIGILL : public OSD_Signal {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_SIGILL::~OSD_SIGILL %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_SIGILL {
-	~OSD_SIGILL() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SIGILL\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2686,21 +3290,29 @@ class OSD_SharedLibrary {
 		%feature("autodoc", "1");
 		void SetName(const char * aName);
 		%feature("autodoc", "1");
-		Standard_CString Name() const;
+		char * Name() const;
 		%feature("autodoc", "1");
 		Standard_Boolean DlOpen(const OSD_LoadMode Mode);
 		%feature("autodoc", "1");
 		void DlClose() const;
 		%feature("autodoc", "1");
-		Standard_CString DlError() const;
+		char * DlError() const;
 		%feature("autodoc", "1");
 		void Destroy();
 
 };
+%feature("shadow") OSD_SharedLibrary::~OSD_SharedLibrary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_SharedLibrary {
-	~OSD_SharedLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_SharedLibrary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2732,10 +3344,18 @@ class OSD_Exception_FLT_DENORMAL_OPERAND : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_FLT_DENORMAL_OPERAND::~OSD_Exception_FLT_DENORMAL_OPERAND %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_FLT_DENORMAL_OPERAND {
-	~OSD_Exception_FLT_DENORMAL_OPERAND() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_DENORMAL_OPERAND\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2767,10 +3387,18 @@ class OSD_Exception_FLT_OVERFLOW : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_FLT_OVERFLOW::~OSD_Exception_FLT_OVERFLOW %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_FLT_OVERFLOW {
-	~OSD_Exception_FLT_OVERFLOW() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_OVERFLOW\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2802,10 +3430,18 @@ class OSD_Exception_FLT_DIVIDE_BY_ZERO : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_FLT_DIVIDE_BY_ZERO::~OSD_Exception_FLT_DIVIDE_BY_ZERO %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_FLT_DIVIDE_BY_ZERO {
-	~OSD_Exception_FLT_DIVIDE_BY_ZERO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_DIVIDE_BY_ZERO\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2837,9 +3473,17 @@ class OSD_Exception_NONCONTINUABLE_EXCEPTION : public OSD_Exception {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") OSD_Exception_NONCONTINUABLE_EXCEPTION::~OSD_Exception_NONCONTINUABLE_EXCEPTION %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend OSD_Exception_NONCONTINUABLE_EXCEPTION {
-	~OSD_Exception_NONCONTINUABLE_EXCEPTION() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of OSD_Exception_NONCONTINUABLE_EXCEPTION\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

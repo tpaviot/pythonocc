@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Extrema_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public
 	return (Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC::~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
-	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public Handle_TColle
 	return (Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC::~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
-	~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_Extrema_HArray1OfPOnSurf : public Handle_MMgt_TShared {
 	return (Extrema_HArray1OfPOnSurf*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_HArray1OfPOnSurf::~Handle_Extrema_HArray1OfPOnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_HArray1OfPOnSurf {
-	~Handle_Extrema_HArray1OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnSurf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : pu
 	return (Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d::~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
-	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public
 	return (Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d::~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
-	~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public Handle_TCol
 	return (Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC::~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
-	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public
 	return (Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d::~Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
-	~Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public H
 	return (Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC::~Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
-	~Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_Extrema_HArray2OfPOnCurv : public Handle_MMgt_TShared {
 	return (Extrema_HArray2OfPOnCurv*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_HArray2OfPOnCurv::~Handle_Extrema_HArray2OfPOnCurv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_HArray2OfPOnCurv {
-	~Handle_Extrema_HArray2OfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray2OfPOnCurv\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_Extrema_HArray2OfPOnSurf : public Handle_MMgt_TShared {
 	return (Extrema_HArray2OfPOnSurf*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_HArray2OfPOnSurf::~Handle_Extrema_HArray2OfPOnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_HArray2OfPOnSurf {
-	~Handle_Extrema_HArray2OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray2OfPOnSurf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv : public Handle_TCollection
 	return (Extrema_SequenceNodeOfSequenceOfPOnCurv*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv::~Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv {
-	~Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_Extrema_HArray1OfPOnCurv2d : public Handle_MMgt_TShared {
 	return (Extrema_HArray1OfPOnCurv2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_HArray1OfPOnCurv2d::~Handle_Extrema_HArray1OfPOnCurv2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_HArray1OfPOnCurv2d {
-	~Handle_Extrema_HArray1OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnCurv2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public 
 	return (Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d::~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
-	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +555,18 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public H
 	return (Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC::~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
-	~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +593,18 @@ class Handle_Extrema_HArray1OfPOnCurv : public Handle_MMgt_TShared {
 	return (Extrema_HArray1OfPOnCurv*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_HArray1OfPOnCurv::~Handle_Extrema_HArray1OfPOnCurv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_HArray1OfPOnCurv {
-	~Handle_Extrema_HArray1OfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnCurv\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +631,18 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public Handle_TCollecti
 	return (Extrema_SequenceNodeOfSequenceOfPOnCurv2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d::~Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
-	~Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +669,18 @@ class Handle_Extrema_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection
 	return (Extrema_SequenceNodeOfSequenceOfBoolean*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSequenceOfBoolean::~Handle_Extrema_SequenceNodeOfSequenceOfBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSequenceOfBoolean {
-	~Handle_Extrema_SequenceNodeOfSequenceOfBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfBoolean\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +707,18 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCol
 	return (Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d::~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
-	~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +745,18 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public Hand
 	return (Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC::~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
-	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +783,18 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public Handle_
 	return (Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d::~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
-	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -657,10 +821,18 @@ class Handle_Extrema_HArray2OfPOnCurv2d : public Handle_MMgt_TShared {
 	return (Extrema_HArray2OfPOnCurv2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_HArray2OfPOnCurv2d::~Handle_Extrema_HArray2OfPOnCurv2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_HArray2OfPOnCurv2d {
-	~Handle_Extrema_HArray2OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray2OfPOnCurv2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -687,10 +859,18 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf : public Handle_TCollection
 	return (Extrema_SequenceNodeOfSequenceOfPOnSurf*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf::~Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf {
-	~Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -716,10 +896,18 @@ class Extrema_POnCurv2d {
 		const gp_Pnt2d & _CSFDB_GetExtrema_POnCurv2dmyP() const;
 
 };
+%feature("shadow") Extrema_POnCurv2d::~Extrema_POnCurv2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_POnCurv2d {
-	~Extrema_POnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_POnCurv2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -773,10 +961,18 @@ class Extrema_SequenceOfBoolean : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SequenceOfBoolean::~Extrema_SequenceOfBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceOfBoolean {
-	~Extrema_SequenceOfBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfBoolean\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -802,10 +998,18 @@ class Extrema_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSequenceOfBoolean::~Extrema_SequenceNodeOfSequenceOfBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSequenceOfBoolean {
-	~Extrema_SequenceNodeOfSequenceOfBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfBoolean\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -823,10 +1027,18 @@ class Extrema_LocECC2dOfLocateExtCC2d {
 		void Point(Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
 };
+%feature("shadow") Extrema_LocECC2dOfLocateExtCC2d::~Extrema_LocECC2dOfLocateExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_LocECC2dOfLocateExtCC2d {
-	~Extrema_LocECC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_LocECC2dOfLocateExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -880,10 +1092,18 @@ class Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection_BaseSequence 
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC::~Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC {
-	~Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -911,14 +1131,22 @@ class Extrema_ExtPC {
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
 
 };
+%feature("shadow") Extrema_ExtPC::~Extrema_ExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtPC {
-	~Extrema_ExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -944,14 +1172,22 @@ class Extrema_ExtPS {
 		Standard_Real Value(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnSurf Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & PUfVf, gp_Pnt & PUfVl, gp_Pnt & PUlVf, gp_Pnt & PUlVl) const;
 
 };
+%feature("shadow") Extrema_ExtPS::~Extrema_ExtPS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtPS {
-	~Extrema_ExtPS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1005,10 +1241,18 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_BaseSequ
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d::~Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
-	~Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1038,10 +1282,18 @@ class Extrema_ExtSS {
 		void Points(const Standard_Integer N, Extrema_POnSurf & P1, Extrema_POnSurf & P2) const;
 
 };
+%feature("shadow") Extrema_ExtSS::~Extrema_ExtSS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtSS {
-	~Extrema_ExtSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtSS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1071,10 +1323,18 @@ class Extrema_CCFOfELCCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
 };
+%feature("shadow") Extrema_CCFOfELCCOfLocateExtCC::~Extrema_CCFOfELCCOfLocateExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_CCFOfELCCOfLocateExtCC {
-	~Extrema_CCFOfELCCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfELCCOfLocateExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1098,10 +1358,18 @@ class Extrema_ECC2dOfExtCC2d {
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
 };
+%feature("shadow") Extrema_ECC2dOfExtCC2d::~Extrema_ECC2dOfExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ECC2dOfExtCC2d {
-	~Extrema_ECC2dOfExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ECC2dOfExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1129,14 +1397,22 @@ class Extrema_ExtCC2d {
 		Standard_Real Value(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P11, gp_Pnt2d & P12, gp_Pnt2d & P21, gp_Pnt2d & P22) const;
 
 };
+%feature("shadow") Extrema_ExtCC2d::~Extrema_ExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtCC2d {
-	~Extrema_ExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1194,10 +1470,18 @@ class Extrema_CurveTool {
 		Handle_Geom_BSplineCurve BSpline(const Adaptor3d_Curve &C);
 
 };
+%feature("shadow") Extrema_CurveTool::~Extrema_CurveTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_CurveTool {
-	~Extrema_CurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_CurveTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1237,10 +1521,18 @@ class Extrema_Array1OfPOnSurf {
 		Extrema_POnSurf & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Extrema_Array1OfPOnSurf::~Extrema_Array1OfPOnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_Array1OfPOnSurf {
-	~Extrema_Array1OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_Array1OfPOnSurf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1294,10 +1586,18 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequ
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d::~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
-	~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1363,10 +1663,18 @@ class Extrema_ExtElCS {
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnSurf & P2) const;
 
 };
+%feature("shadow") Extrema_ExtElCS::~Extrema_ExtElCS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtElCS {
-	~Extrema_ExtElCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtElCS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1402,10 +1710,18 @@ class Extrema_EPCOfELPCOfLocateExtPC {
 		Extrema_POnCurv Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_EPCOfELPCOfLocateExtPC::~Extrema_EPCOfELPCOfLocateExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_EPCOfELPCOfLocateExtPC {
-	~Extrema_EPCOfELPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfELPCOfLocateExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1429,10 +1745,18 @@ class Extrema_GenLocateExtSS {
 		const Extrema_POnSurf & PointOnS2() const;
 
 };
+%feature("shadow") Extrema_GenLocateExtSS::~Extrema_GenLocateExtSS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_GenLocateExtSS {
-	~Extrema_GenLocateExtSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtSS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1448,11 +1772,11 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC : public math_FunctionWithDerivative {
 		void Initialize(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt &P);
-		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -1466,10 +1790,18 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC : public math_FunctionWithDerivative {
 		Extrema_POnCurv Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_PCFOfEPCOfELPCOfLocateExtPC::~Extrema_PCFOfEPCOfELPCOfLocateExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_PCFOfEPCOfELPCOfLocateExtPC {
-	~Extrema_PCFOfEPCOfELPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfELPCOfLocateExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1519,10 +1851,18 @@ class Extrema_HArray2OfPOnCurv2d : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_HArray2OfPOnCurv2d::~Extrema_HArray2OfPOnCurv2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_HArray2OfPOnCurv2d {
-	~Extrema_HArray2OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_HArray2OfPOnCurv2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1566,10 +1906,18 @@ class Extrema_HArray1OfPOnSurf : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_HArray1OfPOnSurf::~Extrema_HArray1OfPOnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_HArray1OfPOnSurf {
-	~Extrema_HArray1OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_HArray1OfPOnSurf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1587,10 +1935,18 @@ class Extrema_LocateExtCC {
 		void Point(Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
 };
+%feature("shadow") Extrema_LocateExtCC::~Extrema_LocateExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_LocateExtCC {
-	~Extrema_LocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1636,10 +1992,18 @@ class Extrema_ExtElSS {
 		void Points(const Standard_Integer N, Extrema_POnSurf & P1, Extrema_POnSurf & P2) const;
 
 };
+%feature("shadow") Extrema_ExtElSS::~Extrema_ExtElSS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtElSS {
-	~Extrema_ExtElSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtElSS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1691,10 +2055,18 @@ class Extrema_ExtElC2d {
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
 };
+%feature("shadow") Extrema_ExtElC2d::~Extrema_ExtElC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtElC2d {
-	~Extrema_ExtElC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtElC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1738,10 +2110,18 @@ class Extrema_HArray1OfPOnCurv : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_HArray1OfPOnCurv::~Extrema_HArray1OfPOnCurv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_HArray1OfPOnCurv {
-	~Extrema_HArray1OfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_HArray1OfPOnCurv\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1767,10 +2147,18 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public TCollection_SeqNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC::~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
-	~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1796,10 +2184,18 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TColle
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d::~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
-	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1815,11 +2211,11 @@ class Extrema_PCFOfEPCOfExtPC2d : public math_FunctionWithDerivative {
 		void Initialize(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt2d &P);
-		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -1833,10 +2229,18 @@ class Extrema_PCFOfEPCOfExtPC2d : public math_FunctionWithDerivative {
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_PCFOfEPCOfExtPC2d::~Extrema_PCFOfEPCOfExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_PCFOfEPCOfExtPC2d {
-	~Extrema_PCFOfEPCOfExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1862,10 +2266,18 @@ class Extrema_SequenceNodeOfSequenceOfPOnCurv : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSequenceOfPOnCurv::~Extrema_SequenceNodeOfSequenceOfPOnCurv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
-	~Extrema_SequenceNodeOfSequenceOfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnCurv\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1909,10 +2321,18 @@ class Extrema_Array2OfPOnCurv {
 		Extrema_POnCurv & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%feature("shadow") Extrema_Array2OfPOnCurv::~Extrema_Array2OfPOnCurv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_Array2OfPOnCurv {
-	~Extrema_Array2OfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnCurv\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1928,11 +2348,11 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
 		void Initialize(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt &P);
-		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -1946,10 +2366,18 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
 		Extrema_POnCurv Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_PCLocFOfLocEPCOfLocateExtPC::~Extrema_PCLocFOfLocEPCOfLocateExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_PCLocFOfLocEPCOfLocateExtPC {
-	~Extrema_PCLocFOfLocEPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_PCLocFOfLocEPCOfLocateExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2003,10 +2431,18 @@ class Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollection_BaseSeque
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d::~Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
-	~Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2060,10 +2496,18 @@ class Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_BaseSequ
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC::~Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
-	~Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2079,11 +2523,11 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative
 		void Initialize(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt2d &P);
-		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -2097,10 +2541,18 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_PCLocFOfLocEPCOfLocateExtPC2d::~Extrema_PCLocFOfLocEPCOfLocateExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_PCLocFOfLocEPCOfLocateExtPC2d {
-	~Extrema_PCLocFOfLocEPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_PCLocFOfLocEPCOfLocateExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2136,10 +2588,18 @@ class Extrema_FuncExtSS : public math_FunctionSetWithDerivatives {
 		Extrema_POnSurf PointOnS2(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_FuncExtSS::~Extrema_FuncExtSS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_FuncExtSS {
-	~Extrema_FuncExtSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtSS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2189,10 +2649,18 @@ class Extrema_HArray2OfPOnSurf : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_HArray2OfPOnSurf::~Extrema_HArray2OfPOnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_HArray2OfPOnSurf {
-	~Extrema_HArray2OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_HArray2OfPOnSurf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2216,10 +2684,18 @@ class Extrema_ELCC2dOfLocateExtCC2d {
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
 };
+%feature("shadow") Extrema_ELCC2dOfLocateExtCC2d::~Extrema_ELCC2dOfLocateExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ELCC2dOfLocateExtCC2d {
-	~Extrema_ELCC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ELCC2dOfLocateExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2259,10 +2735,18 @@ class Extrema_Array1OfPOnCurv {
 		Extrema_POnCurv & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Extrema_Array1OfPOnCurv::~Extrema_Array1OfPOnCurv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_Array1OfPOnCurv {
-	~Extrema_Array1OfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_Array1OfPOnCurv\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2278,11 +2762,11 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC2d : public math_FunctionWithDerivative
 		void Initialize(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt2d &P);
-		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -2296,10 +2780,18 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC2d : public math_FunctionWithDerivative
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_PCFOfEPCOfELPCOfLocateExtPC2d::~Extrema_PCFOfEPCOfELPCOfLocateExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_PCFOfEPCOfELPCOfLocateExtPC2d {
-	~Extrema_PCFOfEPCOfELPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfELPCOfLocateExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2353,10 +2845,18 @@ class Extrema_SequenceOfPOnSurf : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SequenceOfPOnSurf::~Extrema_SequenceOfPOnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceOfPOnSurf {
-	~Extrema_SequenceOfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfPOnSurf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2384,10 +2884,18 @@ class Extrema_LocateExtPC2d {
 		Extrema_POnCurv2d Point() const;
 
 };
+%feature("shadow") Extrema_LocateExtPC2d::~Extrema_LocateExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_LocateExtPC2d {
-	~Extrema_LocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2413,10 +2921,18 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TColle
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC::~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
-	~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2444,10 +2960,18 @@ class Extrema_LocateExtPC {
 		Extrema_POnCurv Point() const;
 
 };
+%feature("shadow") Extrema_LocateExtPC::~Extrema_LocateExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_LocateExtPC {
-	~Extrema_LocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2471,10 +2995,18 @@ class Extrema_GenLocateExtCS {
 		const Extrema_POnSurf & PointOnSurface() const;
 
 };
+%feature("shadow") Extrema_GenLocateExtCS::~Extrema_GenLocateExtCS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_GenLocateExtCS {
-	~Extrema_GenLocateExtCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtCS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2528,10 +3060,18 @@ class Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d::~Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d {
-	~Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2559,14 +3099,22 @@ class Extrema_ExtCC {
 		Standard_Real Value(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P11, gp_Pnt & P12, gp_Pnt & P21, gp_Pnt & P22) const;
 
 };
+%feature("shadow") Extrema_ExtCC::~Extrema_ExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtCC {
-	~Extrema_ExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2592,10 +3140,18 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_Se
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d::~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
-	~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2623,10 +3179,18 @@ class Extrema_LocEPCOfLocateExtPC2d {
 		Extrema_POnCurv2d Point() const;
 
 };
+%feature("shadow") Extrema_LocEPCOfLocateExtPC2d::~Extrema_LocEPCOfLocateExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_LocEPCOfLocateExtPC2d {
-	~Extrema_LocEPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2668,10 +3232,18 @@ class Extrema_ExtPElC {
 		Extrema_POnCurv Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_ExtPElC::~Extrema_ExtPElC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtPElC {
-	~Extrema_ExtPElC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPElC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2711,10 +3283,18 @@ class Extrema_ExtPElS {
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_ExtPElS::~Extrema_ExtPElS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtPElS {
-	~Extrema_ExtPElS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPElS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2740,10 +3320,18 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollec
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d::~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
-	~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2795,10 +3383,18 @@ class Extrema_ExtElC {
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
 };
+%feature("shadow") Extrema_ExtElC::~Extrema_ExtElC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtElC {
-	~Extrema_ExtElC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtElC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2852,10 +3448,18 @@ class Extrema_SeqPOnCOfCCFOfECCOfExtCC : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SeqPOnCOfCCFOfECCOfExtCC::~Extrema_SeqPOnCOfCCFOfECCOfExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SeqPOnCOfCCFOfECCOfExtCC {
-	~Extrema_SeqPOnCOfCCFOfECCOfExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfECCOfExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2885,10 +3489,18 @@ class Extrema_CCFOfECC2dOfExtCC2d : public math_FunctionSetWithDerivatives {
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
 };
+%feature("shadow") Extrema_CCFOfECC2dOfExtCC2d::~Extrema_CCFOfECC2dOfExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_CCFOfECC2dOfExtCC2d {
-	~Extrema_CCFOfECC2dOfExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfECC2dOfExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2942,10 +3554,18 @@ class Extrema_SequenceOfPOnCurv2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SequenceOfPOnCurv2d::~Extrema_SequenceOfPOnCurv2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceOfPOnCurv2d {
-	~Extrema_SequenceOfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfPOnCurv2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2995,10 +3615,18 @@ class Extrema_HArray2OfPOnCurv : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_HArray2OfPOnCurv::~Extrema_HArray2OfPOnCurv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_HArray2OfPOnCurv {
-	~Extrema_HArray2OfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_HArray2OfPOnCurv\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3014,11 +3642,11 @@ class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 		void Initialize(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt &P);
-		%feature("autodoc","Value(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -3032,10 +3660,18 @@ class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 		Extrema_POnCurv Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_PCFOfEPCOfExtPC::~Extrema_PCFOfEPCOfExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_PCFOfEPCOfExtPC {
-	~Extrema_PCFOfEPCOfExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3049,7 +3685,7 @@ class Extrema_POnSurf {
 		Extrema_POnSurf(const Standard_Real U, const Standard_Real V, const gp_Pnt &P);
 		%feature("autodoc", "1");
 		const gp_Pnt & Value() const;
-		%feature("autodoc","Parameter()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Parameter() -> [Standard_Real, Standard_Real]");
 		void Parameter(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real _CSFDB_GetExtrema_POnSurfmyU() const;
@@ -3063,10 +3699,18 @@ class Extrema_POnSurf {
 		const gp_Pnt & _CSFDB_GetExtrema_POnSurfmyP() const;
 
 };
+%feature("shadow") Extrema_POnSurf::~Extrema_POnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_POnSurf {
-	~Extrema_POnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_POnSurf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3092,10 +3736,18 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TColle
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d::~Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
-	~Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3115,10 +3767,18 @@ class Extrema_GenLocateExtPS {
 		Extrema_POnSurf Point() const;
 
 };
+%feature("shadow") Extrema_GenLocateExtPS::~Extrema_GenLocateExtPS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_GenLocateExtPS {
-	~Extrema_GenLocateExtPS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtPS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3148,10 +3808,18 @@ class Extrema_CCFOfELCC2dOfLocateExtCC2d : public math_FunctionSetWithDerivative
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
 };
+%feature("shadow") Extrema_CCFOfELCC2dOfLocateExtCC2d::~Extrema_CCFOfELCC2dOfLocateExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_CCFOfELCC2dOfLocateExtCC2d {
-	~Extrema_CCFOfELCC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfELCC2dOfLocateExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3181,10 +3849,18 @@ class Extrema_CCLocFOfLocECCOfLocateExtCC : public math_FunctionSetWithDerivativ
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
 };
+%feature("shadow") Extrema_CCLocFOfLocECCOfLocateExtCC::~Extrema_CCLocFOfLocECCOfLocateExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_CCLocFOfLocECCOfLocateExtCC {
-	~Extrema_CCLocFOfLocECCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_CCLocFOfLocECCOfLocateExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3224,10 +3900,18 @@ class Extrema_Array1OfPOnCurv2d {
 		Extrema_POnCurv2d & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Extrema_Array1OfPOnCurv2d::~Extrema_Array1OfPOnCurv2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_Array1OfPOnCurv2d {
-	~Extrema_Array1OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_Array1OfPOnCurv2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3263,10 +3947,18 @@ class Extrema_EPCOfExtPC {
 		Extrema_POnCurv Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_EPCOfExtPC::~Extrema_EPCOfExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_EPCOfExtPC {
-	~Extrema_EPCOfExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3300,10 +3992,18 @@ class Extrema_GenExtCS {
 		const Extrema_POnSurf & PointOnSurface(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_GenExtCS::~Extrema_GenExtCS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_GenExtCS {
-	~Extrema_GenExtCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_GenExtCS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3331,10 +4031,18 @@ class Extrema_LocEPCOfLocateExtPC {
 		Extrema_POnCurv Point() const;
 
 };
+%feature("shadow") Extrema_LocEPCOfLocateExtPC::~Extrema_LocEPCOfLocateExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_LocEPCOfLocateExtPC {
-	~Extrema_LocEPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3378,10 +4086,18 @@ class Extrema_Array2OfPOnSurf {
 		Extrema_POnSurf & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%feature("shadow") Extrema_Array2OfPOnSurf::~Extrema_Array2OfPOnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_Array2OfPOnSurf {
-	~Extrema_Array2OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnSurf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3409,14 +4125,22 @@ class Extrema_ExtPC2d {
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
 
 };
+%feature("shadow") Extrema_ExtPC2d::~Extrema_ExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtPC2d {
-	~Extrema_ExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3444,10 +4168,18 @@ class Extrema_ExtPExtS {
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_ExtPExtS::~Extrema_ExtPExtS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtPExtS {
-	~Extrema_ExtPExtS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPExtS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3475,10 +4207,18 @@ class Extrema_ExtPRevS {
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_ExtPRevS::~Extrema_ExtPRevS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtPRevS {
-	~Extrema_ExtPRevS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPRevS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3508,10 +4248,18 @@ class Extrema_GenExtPS {
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_GenExtPS::~Extrema_GenExtPS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_GenExtPS {
-	~Extrema_GenExtPS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_GenExtPS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3541,10 +4289,18 @@ class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDeriv
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
 };
+%feature("shadow") Extrema_CCLocFOfLocECC2dOfLocateExtCC2d::~Extrema_CCLocFOfLocECC2dOfLocateExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_CCLocFOfLocECC2dOfLocateExtCC2d {
-	~Extrema_CCLocFOfLocECC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_CCLocFOfLocECC2dOfLocateExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3562,10 +4318,18 @@ class Extrema_LocateExtCC2d {
 		void Point(Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 
 };
+%feature("shadow") Extrema_LocateExtCC2d::~Extrema_LocateExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_LocateExtCC2d {
-	~Extrema_LocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3599,10 +4363,18 @@ class Extrema_GenExtSS {
 		Extrema_POnSurf PointOnS2(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_GenExtSS::~Extrema_GenExtSS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_GenExtSS {
-	~Extrema_GenExtSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_GenExtSS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3668,10 +4440,18 @@ class Extrema_Curve2dTool {
 		Handle_Geom2d_BSplineCurve BSpline(const Adaptor2d_Curve2d &C);
 
 };
+%feature("shadow") Extrema_Curve2dTool::~Extrema_Curve2dTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_Curve2dTool {
-	~Extrema_Curve2dTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_Curve2dTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3695,10 +4475,18 @@ class Extrema_ECCOfExtCC {
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
 };
+%feature("shadow") Extrema_ECCOfExtCC::~Extrema_ECCOfExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ECCOfExtCC {
-	~Extrema_ECCOfExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ECCOfExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3734,10 +4522,18 @@ class Extrema_EPCOfExtPC2d {
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_EPCOfExtPC2d::~Extrema_EPCOfExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_EPCOfExtPC2d {
-	~Extrema_EPCOfExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3781,10 +4577,18 @@ class Extrema_HArray1OfPOnCurv2d : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_HArray1OfPOnCurv2d::~Extrema_HArray1OfPOnCurv2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_HArray1OfPOnCurv2d {
-	~Extrema_HArray1OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_HArray1OfPOnCurv2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3802,10 +4606,18 @@ class Extrema_LocECCOfLocateExtCC {
 		void Point(Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
 };
+%feature("shadow") Extrema_LocECCOfLocateExtCC::~Extrema_LocECCOfLocateExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_LocECCOfLocateExtCC {
-	~Extrema_LocECCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_LocECCOfLocateExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3831,10 +4643,18 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TC
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d::~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
-	~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3888,10 +4708,18 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollection_BaseSequen
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC::~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC {
-	~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3945,10 +4773,18 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollection_BaseSequen
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC::~Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
-	~Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4002,10 +4838,18 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SeqPCOfPCFOfEPCOfExtPC::~Extrema_SeqPCOfPCFOfEPCOfExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SeqPCOfPCFOfEPCOfExtPC {
-	~Extrema_SeqPCOfPCFOfEPCOfExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4033,14 +4877,22 @@ class Extrema_ELPCOfLocateExtPC {
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
 
 };
+%feature("shadow") Extrema_ELPCOfLocateExtPC::~Extrema_ELPCOfLocateExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ELPCOfLocateExtPC {
-	~Extrema_ELPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ELPCOfLocateExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4066,10 +4918,18 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC::~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
-	~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4093,10 +4953,18 @@ class Extrema_ELCCOfLocateExtCC {
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
 };
+%feature("shadow") Extrema_ELCCOfLocateExtCC::~Extrema_ELCCOfLocateExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ELCCOfLocateExtCC {
-	~Extrema_ELCCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ELCCOfLocateExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4150,10 +5018,18 @@ class Extrema_SequenceOfPOnCurv : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SequenceOfPOnCurv::~Extrema_SequenceOfPOnCurv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceOfPOnCurv {
-	~Extrema_SequenceOfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfPOnCurv\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4181,14 +5057,22 @@ class Extrema_ELPCOfLocateExtPC2d {
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
 
 };
+%feature("shadow") Extrema_ELPCOfLocateExtPC2d::~Extrema_ELPCOfLocateExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ELPCOfLocateExtPC2d {
-	~Extrema_ELPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ELPCOfLocateExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4214,10 +5098,18 @@ class Extrema_POnCurv {
 		const gp_Pnt & _CSFDB_GetExtrema_POnCurvmyP() const;
 
 };
+%feature("shadow") Extrema_POnCurv::~Extrema_POnCurv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_POnCurv {
-	~Extrema_POnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_POnCurv\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4243,10 +5135,18 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public TCollection_SeqNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC::~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
-	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4272,10 +5172,18 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollect
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC::~Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
-	~Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4301,10 +5209,18 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollect
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC::~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
-	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4334,10 +5250,18 @@ class Extrema_ExtCS {
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnSurf & P2) const;
 
 };
+%feature("shadow") Extrema_ExtCS::~Extrema_ExtCS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtCS {
-	~Extrema_ExtCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtCS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4379,10 +5303,18 @@ class Extrema_ExtPElC2d {
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_ExtPElC2d::~Extrema_ExtPElC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_ExtPElC2d {
-	~Extrema_ExtPElC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPElC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4418,10 +5350,18 @@ class Extrema_EPCOfELPCOfLocateExtPC2d {
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_EPCOfELPCOfLocateExtPC2d::~Extrema_EPCOfELPCOfLocateExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_EPCOfELPCOfLocateExtPC2d {
-	~Extrema_EPCOfELPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfELPCOfLocateExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4447,10 +5387,18 @@ class Extrema_SequenceNodeOfSequenceOfPOnSurf : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSequenceOfPOnSurf::~Extrema_SequenceNodeOfSequenceOfPOnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSequenceOfPOnSurf {
-	~Extrema_SequenceNodeOfSequenceOfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnSurf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4488,10 +5436,18 @@ class Extrema_FuncExtPS : public math_FunctionSetWithDerivatives {
 		Standard_Boolean HasDegIso() const;
 
 };
+%feature("shadow") Extrema_FuncExtPS::~Extrema_FuncExtPS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_FuncExtPS {
-	~Extrema_FuncExtPS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtPS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4517,10 +5473,18 @@ class Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSequenceOfPOnCurv2d::~Extrema_SequenceNodeOfSequenceOfPOnCurv2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
-	~Extrema_SequenceNodeOfSequenceOfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnCurv2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4574,10 +5538,18 @@ class Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TCollection_Base
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d::~Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
-	~Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4603,10 +5575,18 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public TCollection_SeqNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d::~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
-	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4660,10 +5640,18 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Extrema_SeqPCOfPCFOfEPCOfExtPC2d::~Extrema_SeqPCOfPCFOfEPCOfExtPC2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_SeqPCOfPCFOfEPCOfExtPC2d {
-	~Extrema_SeqPCOfPCFOfEPCOfExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfExtPC2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4699,10 +5687,18 @@ class Extrema_FuncExtCS : public math_FunctionSetWithDerivatives {
 		const Extrema_POnSurf & PointOnSurface(const Standard_Integer N) const;
 
 };
+%feature("shadow") Extrema_FuncExtCS::~Extrema_FuncExtCS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_FuncExtCS {
-	~Extrema_FuncExtCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtCS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4746,10 +5742,18 @@ class Extrema_Array2OfPOnCurv2d {
 		Extrema_POnCurv2d & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%feature("shadow") Extrema_Array2OfPOnCurv2d::~Extrema_Array2OfPOnCurv2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_Array2OfPOnCurv2d {
-	~Extrema_Array2OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnCurv2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4779,9 +5783,17 @@ class Extrema_CCFOfECCOfExtCC : public math_FunctionSetWithDerivatives {
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 
 };
+%feature("shadow") Extrema_CCFOfECCOfExtCC::~Extrema_CCFOfECCOfExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Extrema_CCFOfECCOfExtCC {
-	~Extrema_CCFOfECCOfExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfECCOfExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

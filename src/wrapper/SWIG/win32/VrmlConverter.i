@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include VrmlConverter_dependencies.i
 
 
@@ -70,10 +74,18 @@ class Handle_VrmlConverter_PointAspect : public Handle_MMgt_TShared {
 	return (VrmlConverter_PointAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_VrmlConverter_PointAspect::~Handle_VrmlConverter_PointAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_VrmlConverter_PointAspect {
-	~Handle_VrmlConverter_PointAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_PointAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -100,10 +112,18 @@ class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
 	return (VrmlConverter_Drawer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_VrmlConverter_Drawer::~Handle_VrmlConverter_Drawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_VrmlConverter_Drawer {
-	~Handle_VrmlConverter_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_Drawer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -130,10 +150,18 @@ class Handle_VrmlConverter_ShadingAspect : public Handle_MMgt_TShared {
 	return (VrmlConverter_ShadingAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_VrmlConverter_ShadingAspect::~Handle_VrmlConverter_ShadingAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_VrmlConverter_ShadingAspect {
-	~Handle_VrmlConverter_ShadingAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_ShadingAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -160,10 +188,18 @@ class Handle_VrmlConverter_LineAspect : public Handle_MMgt_TShared {
 	return (VrmlConverter_LineAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_VrmlConverter_LineAspect::~Handle_VrmlConverter_LineAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_VrmlConverter_LineAspect {
-	~Handle_VrmlConverter_LineAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_LineAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -190,10 +226,18 @@ class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
 	return (VrmlConverter_Projector*)$self->Access();
 	}
 };
+%feature("shadow") Handle_VrmlConverter_Projector::~Handle_VrmlConverter_Projector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_VrmlConverter_Projector {
-	~Handle_VrmlConverter_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_Projector\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -220,10 +264,18 @@ class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
 	return (VrmlConverter_IsoAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_VrmlConverter_IsoAspect::~Handle_VrmlConverter_IsoAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_VrmlConverter_IsoAspect {
-	~Handle_VrmlConverter_IsoAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_IsoAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class VrmlConverter_WFDeflectionShape {
 		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
 
 };
+%feature("shadow") VrmlConverter_WFDeflectionShape::~VrmlConverter_WFDeflectionShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_WFDeflectionShape {
-	~VrmlConverter_WFDeflectionShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFDeflectionShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -260,10 +320,18 @@ class VrmlConverter_WFDeflectionRestrictedFace {
 		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Quantity_Length Deflection, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_VrmlConverter_Drawer &aDrawer);
 
 };
+%feature("shadow") VrmlConverter_WFDeflectionRestrictedFace::~VrmlConverter_WFDeflectionRestrictedFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_WFDeflectionRestrictedFace {
-	~VrmlConverter_WFDeflectionRestrictedFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFDeflectionRestrictedFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -283,10 +351,18 @@ class VrmlConverter_WFRestrictedFace {
 		void Add(Standard_OStream & anOStream, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_VrmlConverter_Drawer &aDrawer);
 
 };
+%feature("shadow") VrmlConverter_WFRestrictedFace::~VrmlConverter_WFRestrictedFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_WFRestrictedFace {
-	~VrmlConverter_WFRestrictedFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFRestrictedFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -302,10 +378,18 @@ class VrmlConverter_ShadedShape {
 		void ComputeNormal(const TopoDS_Face &aFace, Poly_Connect & pc, TColgp_Array1OfDir & Nor);
 
 };
+%feature("shadow") VrmlConverter_ShadedShape::~VrmlConverter_ShadedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_ShadedShape {
-	~VrmlConverter_ShadedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_ShadedShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -411,10 +495,18 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") VrmlConverter_Drawer::~VrmlConverter_Drawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_Drawer {
-	~VrmlConverter_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_Drawer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -436,10 +528,18 @@ class VrmlConverter_DeflectionCurve {
 		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const Standard_Real aDeflection);
 
 };
+%feature("shadow") VrmlConverter_DeflectionCurve::~VrmlConverter_DeflectionCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_DeflectionCurve {
-	~VrmlConverter_DeflectionCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_DeflectionCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -479,10 +579,18 @@ class VrmlConverter_ShadingAspect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") VrmlConverter_ShadingAspect::~VrmlConverter_ShadingAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_ShadingAspect {
-	~VrmlConverter_ShadingAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_ShadingAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -524,10 +632,18 @@ class VrmlConverter_Projector : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") VrmlConverter_Projector::~VrmlConverter_Projector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_Projector {
-	~VrmlConverter_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_Projector\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -545,10 +661,18 @@ class VrmlConverter_Curve {
 		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, Standard_OStream & anOStream, const Standard_Integer aNbPoints);
 
 };
+%feature("shadow") VrmlConverter_Curve::~VrmlConverter_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_Curve {
-	~VrmlConverter_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_Curve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -562,10 +686,18 @@ class VrmlConverter_HLRShape {
 		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer, const Handle_VrmlConverter_Projector &aProjector);
 
 };
+%feature("shadow") VrmlConverter_HLRShape::~VrmlConverter_HLRShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_HLRShape {
-	~VrmlConverter_HLRShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_HLRShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -599,10 +731,18 @@ class VrmlConverter_LineAspect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") VrmlConverter_LineAspect::~VrmlConverter_LineAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_LineAspect {
-	~VrmlConverter_LineAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_LineAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -630,10 +770,18 @@ class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") VrmlConverter_IsoAspect::~VrmlConverter_IsoAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_IsoAspect {
-	~VrmlConverter_IsoAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_IsoAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -667,10 +815,18 @@ class VrmlConverter_PointAspect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") VrmlConverter_PointAspect::~VrmlConverter_PointAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_PointAspect {
-	~VrmlConverter_PointAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_PointAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -684,9 +840,17 @@ class VrmlConverter_WFShape {
 		void Add(Standard_OStream & anOStream, const TopoDS_Shape &aShape, const Handle_VrmlConverter_Drawer &aDrawer);
 
 };
+%feature("shadow") VrmlConverter_WFShape::~VrmlConverter_WFShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlConverter_WFShape {
-	~VrmlConverter_WFShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include SelectBasics_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollect
 	return (SelectBasics_SequenceNodeOfSequenceOfOwner*)$self->Access();
 	}
 };
+%feature("shadow") Handle_SelectBasics_SequenceNodeOfSequenceOfOwner::~Handle_SelectBasics_SequenceNodeOfSequenceOfOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
-	~Handle_SelectBasics_SequenceNodeOfSequenceOfOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_SequenceNodeOfSequenceOfOwner\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapN
 	return (SelectBasics_ListNodeOfListOfBox2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_SelectBasics_ListNodeOfListOfBox2d::~Handle_SelectBasics_ListNodeOfListOfBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_SelectBasics_ListNodeOfListOfBox2d {
-	~Handle_SelectBasics_ListNodeOfListOfBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_ListNodeOfListOfBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfAddress : public Handle_TColle
 	return (SelectBasics_SequenceNodeOfSequenceOfAddress*)$self->Access();
 	}
 };
+%feature("shadow") Handle_SelectBasics_SequenceNodeOfSequenceOfAddress::~Handle_SelectBasics_SequenceNodeOfSequenceOfAddress %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_SelectBasics_SequenceNodeOfSequenceOfAddress {
-	~Handle_SelectBasics_SequenceNodeOfSequenceOfAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_SequenceNodeOfSequenceOfAddress\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
 	return (SelectBasics_SensitiveEntity*)$self->Access();
 	}
 };
+%feature("shadow") Handle_SelectBasics_SensitiveEntity::~Handle_SelectBasics_SensitiveEntity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_SelectBasics_SensitiveEntity {
-	~Handle_SelectBasics_SensitiveEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_SensitiveEntity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_SelectBasics_ListNodeOfListOfSensitive : public Handle_TCollection_
 	return (SelectBasics_ListNodeOfListOfSensitive*)$self->Access();
 	}
 };
+%feature("shadow") Handle_SelectBasics_ListNodeOfListOfSensitive::~Handle_SelectBasics_ListNodeOfListOfSensitive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_SelectBasics_ListNodeOfListOfSensitive {
-	~Handle_SelectBasics_ListNodeOfListOfSensitive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_ListNodeOfListOfSensitive\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 	return (SelectBasics_EntityOwner*)$self->Access();
 	}
 };
+%feature("shadow") Handle_SelectBasics_EntityOwner::~Handle_SelectBasics_EntityOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_SelectBasics_EntityOwner {
-	~Handle_SelectBasics_EntityOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_EntityOwner\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -236,10 +288,18 @@ class SelectBasics_SortAlgo {
 		Standard_Integer Value() const;
 
 };
+%feature("shadow") SelectBasics_SortAlgo::~SelectBasics_SortAlgo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_SortAlgo {
-	~SelectBasics_SortAlgo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_SortAlgo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -261,10 +321,18 @@ class SelectBasics_ListIteratorOfListOfBox2d {
 		Bnd_Box2d & Value() const;
 
 };
+%feature("shadow") SelectBasics_ListIteratorOfListOfBox2d::~SelectBasics_ListIteratorOfListOfBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_ListIteratorOfListOfBox2d {
-	~SelectBasics_ListIteratorOfListOfBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListIteratorOfListOfBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -298,10 +366,18 @@ class SelectBasics_EntityOwner : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") SelectBasics_EntityOwner::~SelectBasics_EntityOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_EntityOwner {
-	~SelectBasics_EntityOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_EntityOwner\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class SelectBasics_ListNodeOfListOfBox2d : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") SelectBasics_ListNodeOfListOfBox2d::~SelectBasics_ListNodeOfListOfBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_ListNodeOfListOfBox2d {
-	~SelectBasics_ListNodeOfListOfBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListNodeOfListOfBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -356,10 +440,18 @@ class SelectBasics_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") SelectBasics_SequenceNodeOfSequenceOfAddress::~SelectBasics_SequenceNodeOfSequenceOfAddress %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_SequenceNodeOfSequenceOfAddress {
-	~SelectBasics_SequenceNodeOfSequenceOfAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceNodeOfSequenceOfAddress\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -409,10 +501,18 @@ class SelectBasics_ListOfSensitive {
 		void InsertAfter(SelectBasics_ListOfSensitive & Other, SelectBasics_ListIteratorOfListOfSensitive & It);
 
 };
+%feature("shadow") SelectBasics_ListOfSensitive::~SelectBasics_ListOfSensitive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_ListOfSensitive {
-	~SelectBasics_ListOfSensitive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListOfSensitive\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -434,10 +534,18 @@ class SelectBasics_ListIteratorOfListOfSensitive {
 		Handle_SelectBasics_SensitiveEntity & Value() const;
 
 };
+%feature("shadow") SelectBasics_ListIteratorOfListOfSensitive::~SelectBasics_ListIteratorOfListOfSensitive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_ListIteratorOfListOfSensitive {
-	~SelectBasics_ListIteratorOfListOfSensitive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListIteratorOfListOfSensitive\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -451,14 +559,22 @@ class SelectBasics_BasicTool {
 		Standard_Boolean MatchSegments(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const gp_Pnt2d &P3, const gp_Pnt2d &P4);
 		%feature("autodoc", "1");
 		Standard_Boolean AutoInter(const TColgp_Array1OfPnt2d &aPolyg2d);
-		%feature("autodoc","MatchPolyg2d(const tabpoint, Standard_Real X, Standard_Real Y, Standard_Real aTol)->[Standard_RealStandard_Integer]");
+		%feature("autodoc","MatchPolyg2d(const tabpoint, Standard_Real X, Standard_Real Y, Standard_Real aTol) -> [Standard_RealStandard_Integer]");
 		Standard_Boolean MatchPolyg2d(const TColgp_Array1OfPnt2d &tabpoint, const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue, Standard_Integer &OutValue);
 
 };
+%feature("shadow") SelectBasics_BasicTool::~SelectBasics_BasicTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_BasicTool {
-	~SelectBasics_BasicTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_BasicTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -474,10 +590,18 @@ class SelectBasics {
 		Standard_Integer MinOwnerPriority();
 
 };
+%feature("shadow") SelectBasics::~SelectBasics %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics {
-	~SelectBasics() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -503,10 +627,18 @@ class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") SelectBasics_SequenceNodeOfSequenceOfOwner::~SelectBasics_SequenceNodeOfSequenceOfOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_SequenceNodeOfSequenceOfOwner {
-	~SelectBasics_SequenceNodeOfSequenceOfOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceNodeOfSequenceOfOwner\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -560,10 +692,18 @@ class SelectBasics_SequenceOfAddress : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") SelectBasics_SequenceOfAddress::~SelectBasics_SequenceOfAddress %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_SequenceOfAddress {
-	~SelectBasics_SequenceOfAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceOfAddress\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -613,10 +753,18 @@ class SelectBasics_ListOfBox2d {
 		void InsertAfter(SelectBasics_ListOfBox2d & Other, SelectBasics_ListIteratorOfListOfBox2d & It);
 
 };
+%feature("shadow") SelectBasics_ListOfBox2d::~SelectBasics_ListOfBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_ListOfBox2d {
-	~SelectBasics_ListOfBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListOfBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -630,7 +778,7 @@ class SelectBasics_SensitiveEntity : public MMgt_TShared {
 		const Handle_SelectBasics_EntityOwner & OwnerId() const;
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresult);
-		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -662,10 +810,18 @@ class SelectBasics_SensitiveEntity : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") SelectBasics_SensitiveEntity::~SelectBasics_SensitiveEntity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_SensitiveEntity {
-	~SelectBasics_SensitiveEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_SensitiveEntity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -719,10 +875,18 @@ class SelectBasics_SequenceOfOwner : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") SelectBasics_SequenceOfOwner::~SelectBasics_SequenceOfOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_SequenceOfOwner {
-	~SelectBasics_SequenceOfOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceOfOwner\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -748,9 +912,17 @@ class SelectBasics_ListNodeOfListOfSensitive : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") SelectBasics_ListNodeOfListOfSensitive::~SelectBasics_ListNodeOfListOfSensitive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SelectBasics_ListNodeOfListOfSensitive {
-	~SelectBasics_ListNodeOfListOfSensitive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListNodeOfListOfSensitive\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include SMESH_dependencies.i
 
 
@@ -80,10 +84,18 @@ class Handle_SMESH_MeshVSLink : public Handle_MeshVS_DataSource3D {
 	return (SMESH_MeshVSLink*)$self->Access();
 	}
 };
+%feature("shadow") Handle_SMESH_MeshVSLink::~Handle_SMESH_MeshVSLink %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_SMESH_MeshVSLink {
-	~Handle_SMESH_MeshVSLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_SMESH_MeshVSLink\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -103,10 +115,18 @@ class SMESH_ComputeError {
 		std::string CommonName() const;
 
 };
+%feature("shadow") SMESH_ComputeError::~SMESH_ComputeError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_ComputeError {
-	~SMESH_ComputeError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_ComputeError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -118,10 +138,18 @@ class SMESH_HypoPredicate {
 		virtual		bool IsOk(const SMESH_Hypothesis *aHyp, const TopoDS_Shape &aShape) const;
 
 };
+%feature("shadow") SMESH_HypoPredicate::~SMESH_HypoPredicate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_HypoPredicate {
-	~SMESH_HypoPredicate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_HypoPredicate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -179,10 +207,18 @@ class SMESH_HypoFilter : public SMESH_HypoPredicate {
 		bool IsAny() const;
 
 };
+%feature("shadow") SMESH_HypoFilter::~SMESH_HypoFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_HypoFilter {
-	~SMESH_HypoFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_HypoFilter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -277,10 +313,18 @@ class SMESH_MesherHelper {
 		SMESH_MesherHelper::MType IsQuadraticMesh();
 
 };
+%feature("shadow") SMESH_MesherHelper::~SMESH_MesherHelper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_MesherHelper {
-	~SMESH_MesherHelper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_MesherHelper\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -298,10 +342,18 @@ class SMESH_Group {
 		SMESHDS_GroupBase * GetGroupDS();
 
 };
+%feature("shadow") SMESH_Group::~SMESH_Group %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_Group {
-	~SMESH_Group() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_Group\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -317,10 +369,18 @@ class SMESH_subMeshEventListenerData {
 		SMESH_subMeshEventListenerData * MakeData(SMESH_subMesh* dependentSM, const int type=0);
 
 };
+%feature("shadow") SMESH_subMeshEventListenerData::~SMESH_subMeshEventListenerData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_subMeshEventListenerData {
-	~SMESH_subMeshEventListenerData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_subMeshEventListenerData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -330,21 +390,21 @@ class SMESH_MeshVSLink : public MeshVS_DataSource3D {
 	public:
 		%feature("autodoc", "1");
 		SMESH_MeshVSLink(const SMESH_Mesh *aMesh);
-		%feature("autodoc","GetGeom(Standard_Integer ID, Standard_Boolean IsElement)->Standard_Integer");
+		%feature("autodoc","GetGeom(Standard_Integer ID, Standard_Boolean IsElement) -> Standard_Integer");
 		virtual		Standard_Boolean GetGeom(const Standard_Integer ID, const Standard_Boolean IsElement, TColStd_Array1OfReal & Coords, Standard_Integer &OutValue, MeshVS_EntityType & Type) const;
-		%feature("autodoc","Get3DGeom(Standard_Integer ID)->Standard_Integer");
+		%feature("autodoc","Get3DGeom(Standard_Integer ID) -> Standard_Integer");
 		virtual		Standard_Boolean Get3DGeom(const Standard_Integer ID, Standard_Integer &OutValue, Handle_MeshVS_HArray1OfSequenceOfInteger & Data) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean GetGeomType(const Standard_Integer ID, const Standard_Boolean IsElement, MeshVS_EntityType & Type) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Address GetAddr(const Standard_Integer ID, const Standard_Boolean IsElement) const;
-		%feature("autodoc","GetNodesByElement(Standard_Integer ID)->Standard_Integer");
+		%feature("autodoc","GetNodesByElement(Standard_Integer ID) -> Standard_Integer");
 		virtual		Standard_Boolean GetNodesByElement(const Standard_Integer ID, TColStd_Array1OfInteger & NodeIDs, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const TColStd_PackedMapOfInteger & GetAllNodes() const;
 		%feature("autodoc", "1");
 		virtual		const TColStd_PackedMapOfInteger & GetAllElements() const;
-		%feature("autodoc","GetNormal(Standard_Integer Id, Standard_Integer Max)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","GetNormal(Standard_Integer Id, Standard_Integer Max) -> [Standard_RealStandard_RealStandard_Real]");
 		virtual		Standard_Boolean GetNormal(const Standard_Integer Id, const Standard_Integer Max, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void GetAllGroups(TColStd_PackedMapOfInteger & Ids) const;
@@ -362,10 +422,18 @@ class SMESH_MeshVSLink : public MeshVS_DataSource3D {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") SMESH_MeshVSLink::~SMESH_MeshVSLink %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_MeshVSLink {
-	~SMESH_MeshVSLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_MeshVSLink\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -479,10 +547,18 @@ class SMESH_Block : public math_FunctionSetWithDerivatives {
 		virtual		Standard_Integer GetStateNumber();
 
 };
+%feature("shadow") SMESH_Block::~SMESH_Block %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_Block {
-	~SMESH_Block() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_Block\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -498,10 +574,18 @@ class SMESH_subMeshEventListener {
 		virtual		void ProcessEvent(const int event, const int eventType, SMESH_subMesh* subMesh, SMESH_subMeshEventListenerData* data, const SMESH_Hypothesis *hyp=0);
 
 };
+%feature("shadow") SMESH_subMeshEventListener::~SMESH_subMeshEventListener %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_subMeshEventListener {
-	~SMESH_subMeshEventListener() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_subMeshEventListener\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -515,10 +599,18 @@ class SMESH_TLink : public pair<SMDS_MeshNode const*, SMDS_MeshNode const*> {
 		SMESH_TLink(const NLink &link);
 
 };
+%feature("shadow") SMESH_TLink::~SMESH_TLink %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_TLink {
-	~SMESH_TLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_TLink\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -534,10 +626,18 @@ class SMESH_Exception : public exception {
 		virtual		const char * what() const;
 
 };
+%feature("shadow") SMESH_Exception::~SMESH_Exception %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_Exception {
-	~SMESH_Exception() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_Exception\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -593,10 +693,18 @@ class SMESH_Hypothesis : public SMESHDS_Hypothesis {
 		virtual		bool IsAuxiliary() const;
 
 };
+%feature("shadow") SMESH_Hypothesis::~SMESH_Hypothesis %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_Hypothesis {
-	~SMESH_Hypothesis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_Hypothesis\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -655,10 +763,18 @@ class SMESH_Algo : public SMESH_Hypothesis {
 		const SMDS_MeshNode * VertexNode(const TopoDS_Vertex &V, const SMESHDS_Mesh *meshDS);
 
 };
+%feature("shadow") SMESH_Algo::~SMESH_Algo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_Algo {
-	~SMESH_Algo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_Algo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -788,10 +904,18 @@ class SMESH_Mesh {
 		std::ostream & Dump(std::ostream & save);
 
 };
+%feature("shadow") SMESH_Mesh::~SMESH_Mesh %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_Mesh {
-	~SMESH_Mesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_Mesh\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -892,10 +1016,18 @@ class SMESH_subMesh {
 		bool IsAlwaysComputed();
 
 };
+%feature("shadow") SMESH_subMesh::~SMESH_subMesh %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_subMesh {
-	~SMESH_subMesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_subMesh\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -935,10 +1067,18 @@ class SMESH_Gen {
 		int GetANewId();
 
 };
+%feature("shadow") SMESH_Gen::~SMESH_Gen %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_Gen {
-	~SMESH_Gen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_Gen\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -950,10 +1090,18 @@ class SMESH_NodeSearcher {
 		virtual		const SMDS_MeshNode * FindClosestTo(const gp_Pnt &pnt);
 
 };
+%feature("shadow") SMESH_NodeSearcher::~SMESH_NodeSearcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_NodeSearcher {
-	~SMESH_NodeSearcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_NodeSearcher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1020,9 +1168,17 @@ class SMESH_Pattern {
 		TopoDS_Shape GetSubShape(const int i) const;
 
 };
+%feature("shadow") SMESH_Pattern::~SMESH_Pattern %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESH_Pattern {
-	~SMESH_Pattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESH_Pattern\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

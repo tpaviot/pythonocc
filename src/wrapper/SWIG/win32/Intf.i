@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Intf_dependencies.i
 
 
@@ -64,10 +68,18 @@ class Handle_Intf_SequenceNodeOfSeqOfTangentZone : public Handle_TCollection_Seq
 	return (Intf_SequenceNodeOfSeqOfTangentZone*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Intf_SequenceNodeOfSeqOfTangentZone::~Handle_Intf_SequenceNodeOfSeqOfTangentZone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Intf_SequenceNodeOfSeqOfTangentZone {
-	~Handle_Intf_SequenceNodeOfSeqOfTangentZone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Intf_SequenceNodeOfSeqOfTangentZone\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -94,10 +106,18 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionLine : public Handle_TCollection_Seq
 	return (Intf_SequenceNodeOfSeqOfSectionLine*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Intf_SequenceNodeOfSeqOfSectionLine::~Handle_Intf_SequenceNodeOfSeqOfSectionLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Intf_SequenceNodeOfSeqOfSectionLine {
-	~Handle_Intf_SequenceNodeOfSeqOfSectionLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Intf_SequenceNodeOfSeqOfSectionLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -124,10 +144,18 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionPoint : public Handle_TCollection_Se
 	return (Intf_SequenceNodeOfSeqOfSectionPoint*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Intf_SequenceNodeOfSeqOfSectionPoint::~Handle_Intf_SequenceNodeOfSeqOfSectionPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Intf_SequenceNodeOfSeqOfSectionPoint {
-	~Handle_Intf_SequenceNodeOfSeqOfSectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Intf_SequenceNodeOfSeqOfSectionPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -153,10 +181,18 @@ class Intf_SequenceNodeOfSeqOfSectionPoint : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Intf_SequenceNodeOfSeqOfSectionPoint::~Intf_SequenceNodeOfSeqOfSectionPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intf_SequenceNodeOfSeqOfSectionPoint {
-	~Intf_SequenceNodeOfSeqOfSectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_SequenceNodeOfSeqOfSectionPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -182,10 +218,18 @@ class Intf_SequenceNodeOfSeqOfSectionLine : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Intf_SequenceNodeOfSeqOfSectionLine::~Intf_SequenceNodeOfSeqOfSectionLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intf_SequenceNodeOfSeqOfSectionLine {
-	~Intf_SequenceNodeOfSeqOfSectionLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_SequenceNodeOfSeqOfSectionLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -203,13 +247,13 @@ class Intf_SectionPoint {
 		Intf_PIType TypeOnFirst() const;
 		%feature("autodoc", "1");
 		Intf_PIType TypeOnSecond() const;
-		%feature("autodoc","InfoFirst()->[Standard_Integer, Standard_Integer, Standard_Real]");
+		%feature("autodoc","InfoFirst() -> [Standard_Integer, Standard_Integer, Standard_Real]");
 		void InfoFirst(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoFirst()->[Standard_Integer, Standard_Real]");
+		%feature("autodoc","InfoFirst() -> [Standard_Integer, Standard_Real]");
 		void InfoFirst(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoSecond()->[Standard_Integer, Standard_Integer, Standard_Real]");
+		%feature("autodoc","InfoSecond() -> [Standard_Integer, Standard_Integer, Standard_Real]");
 		void InfoSecond(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoSecond()->[Standard_Integer, Standard_Real]");
+		%feature("autodoc","InfoSecond() -> [Standard_Integer, Standard_Real]");
 		void InfoSecond(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real Incidence() const;
@@ -231,10 +275,18 @@ class Intf_SectionPoint {
 		void Dump(const Standard_Integer Indent) const;
 
 };
+%feature("shadow") Intf_SectionPoint::~Intf_SectionPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intf_SectionPoint {
-	~Intf_SectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_SectionPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -288,10 +340,18 @@ class Intf_SeqOfTangentZone : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Intf_SeqOfTangentZone::~Intf_SeqOfTangentZone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intf_SeqOfTangentZone {
-	~Intf_SeqOfTangentZone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_SeqOfTangentZone\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -345,10 +405,18 @@ class Intf_SeqOfSectionLine : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Intf_SeqOfSectionLine::~Intf_SeqOfSectionLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intf_SeqOfSectionLine {
-	~Intf_SeqOfSectionLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_SeqOfSectionLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -380,10 +448,18 @@ class Intf_Interference {
 		void Dump() const;
 
 };
+%feature("shadow") Intf_Interference::~Intf_Interference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intf_Interference {
-	~Intf_Interference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_Interference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -409,10 +485,18 @@ class Intf_SequenceNodeOfSeqOfTangentZone : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Intf_SequenceNodeOfSeqOfTangentZone::~Intf_SequenceNodeOfSeqOfTangentZone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intf_SequenceNodeOfSeqOfTangentZone {
-	~Intf_SequenceNodeOfSeqOfTangentZone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_SequenceNodeOfSeqOfTangentZone\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -466,10 +550,18 @@ class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Intf_SeqOfSectionPoint::~Intf_SeqOfSectionPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intf_SeqOfSectionPoint {
-	~Intf_SeqOfSectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_SeqOfSectionPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -509,10 +601,18 @@ class Intf_Array1OfLin {
 		gp_Lin & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Intf_Array1OfLin::~Intf_Array1OfLin %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intf_Array1OfLin {
-	~Intf_Array1OfLin() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_Array1OfLin\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -530,13 +630,13 @@ class Intf_TangentZone {
 		Standard_Boolean operator==(const Intf_TangentZone &Other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Intf_SectionPoint &ThePI) const;
-		%feature("autodoc","ParamOnFirst()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","ParamOnFirst() -> [Standard_Real, Standard_Real]");
 		void ParamOnFirst(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ParamOnSecond()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","ParamOnSecond() -> [Standard_Real, Standard_Real]");
 		void ParamOnSecond(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoFirst()->[Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
+		%feature("autodoc","InfoFirst() -> [Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
 		void InfoFirst(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoSecond()->[Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
+		%feature("autodoc","InfoSecond() -> [Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
 		void InfoSecond(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean RangeContains(const Intf_SectionPoint &ThePI) const;
@@ -562,10 +662,18 @@ class Intf_TangentZone {
 		void Dump(const Standard_Integer Indent) const;
 
 };
+%feature("shadow") Intf_TangentZone::~Intf_TangentZone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intf_TangentZone {
-	~Intf_TangentZone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_TangentZone\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -607,10 +715,18 @@ class Intf_SectionLine {
 		void Dump(const Standard_Integer Indent) const;
 
 };
+%feature("shadow") Intf_SectionLine::~Intf_SectionLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intf_SectionLine {
-	~Intf_SectionLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_SectionLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -640,10 +756,18 @@ class Intf_Tool {
 		Standard_Real EndParam(const Standard_Integer SegmentNum) const;
 
 };
+%feature("shadow") Intf_Tool::~Intf_Tool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intf_Tool {
-	~Intf_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf_Tool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -653,15 +777,23 @@ class Intf {
 	public:
 		%feature("autodoc", "1");
 		Intf();
-		%feature("autodoc","PlaneEquation(const P1, const P2, const P3)->Standard_Real");
+		%feature("autodoc","PlaneEquation(const P1, const P2, const P3) -> Standard_Real");
 		void PlaneEquation(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, gp_XYZ & NormalVector, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean Contain(const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const gp_Pnt &ThePnt);
 
 };
+%feature("shadow") Intf::~Intf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Intf {
-	~Intf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Intf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

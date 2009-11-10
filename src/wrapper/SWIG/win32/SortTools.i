@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include SortTools_dependencies.i
 
 
@@ -44,10 +48,18 @@ class SortTools_QuickSortOfReal {
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
+%feature("shadow") SortTools_QuickSortOfReal::~SortTools_QuickSortOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SortTools_QuickSortOfReal {
-	~SortTools_QuickSortOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SortTools_QuickSortOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -61,10 +73,18 @@ class SortTools_HeapSortOfInteger {
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
 };
+%feature("shadow") SortTools_HeapSortOfInteger::~SortTools_HeapSortOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SortTools_HeapSortOfInteger {
-	~SortTools_HeapSortOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SortTools_HeapSortOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -78,10 +98,18 @@ class SortTools_StraightInsertionSortOfInteger {
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
 };
+%feature("shadow") SortTools_StraightInsertionSortOfInteger::~SortTools_StraightInsertionSortOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SortTools_StraightInsertionSortOfInteger {
-	~SortTools_StraightInsertionSortOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SortTools_StraightInsertionSortOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -95,10 +123,18 @@ class SortTools_HeapSortOfReal {
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
+%feature("shadow") SortTools_HeapSortOfReal::~SortTools_HeapSortOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SortTools_HeapSortOfReal {
-	~SortTools_HeapSortOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SortTools_HeapSortOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -112,10 +148,18 @@ class SortTools_StraightInsertionSortOfReal {
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
+%feature("shadow") SortTools_StraightInsertionSortOfReal::~SortTools_StraightInsertionSortOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SortTools_StraightInsertionSortOfReal {
-	~SortTools_StraightInsertionSortOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SortTools_StraightInsertionSortOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -129,10 +173,18 @@ class SortTools_QuickSortOfInteger {
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
 };
+%feature("shadow") SortTools_QuickSortOfInteger::~SortTools_QuickSortOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SortTools_QuickSortOfInteger {
-	~SortTools_QuickSortOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SortTools_QuickSortOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -146,10 +198,18 @@ class SortTools_ShellSortOfReal {
 		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
 
 };
+%feature("shadow") SortTools_ShellSortOfReal::~SortTools_ShellSortOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SortTools_ShellSortOfReal {
-	~SortTools_ShellSortOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SortTools_ShellSortOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -163,9 +223,17 @@ class SortTools_ShellSortOfInteger {
 		void Sort(TColStd_Array1OfInteger & TheArray, const TCollection_CompareOfInteger &Comp);
 
 };
+%feature("shadow") SortTools_ShellSortOfInteger::~SortTools_ShellSortOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SortTools_ShellSortOfInteger {
-	~SortTools_ShellSortOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SortTools_ShellSortOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Convert_dependencies.i
 
 
@@ -68,10 +72,18 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles : public Handle_TColl
 	return (Convert_SequenceNodeOfSequenceOfArray1OfPoles*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles::~Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles {
-	~Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -98,10 +110,18 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public Handle_TCo
 	return (Convert_SequenceNodeOfSequenceOfArray1OfPoles2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d::~Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
-	~Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -131,10 +151,18 @@ class Convert_CompPolynomialToPoles {
 		Standard_Boolean IsDone() const;
 
 };
+%feature("shadow") Convert_CompPolynomialToPoles::~Convert_CompPolynomialToPoles %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_CompPolynomialToPoles {
-	~Convert_CompPolynomialToPoles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_CompPolynomialToPoles\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -158,16 +186,24 @@ class Convert_ConicToBSplineCurve {
 		Standard_Real Knot(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Integer Multiplicity(const Standard_Integer Index) const;
-		%feature("autodoc","BuildCosAndSin(Convert_ParameterisationType Parametrisation)->Standard_Integer");
+		%feature("autodoc","BuildCosAndSin(Convert_ParameterisationType Parametrisation) -> Standard_Integer");
 		void BuildCosAndSin(const Convert_ParameterisationType Parametrisation, Handle_TColStd_HArray1OfReal & CosNumerator, Handle_TColStd_HArray1OfReal & SinNumerator, Handle_TColStd_HArray1OfReal & Denominator, Standard_Integer &OutValue, Handle_TColStd_HArray1OfReal & Knots, Handle_TColStd_HArray1OfInteger & Mults) const;
-		%feature("autodoc","BuildCosAndSin(Convert_ParameterisationType Parametrisation, Standard_Real UFirst, Standard_Real ULast)->Standard_Integer");
+		%feature("autodoc","BuildCosAndSin(Convert_ParameterisationType Parametrisation, Standard_Real UFirst, Standard_Real ULast) -> Standard_Integer");
 		void BuildCosAndSin(const Convert_ParameterisationType Parametrisation, const Standard_Real UFirst, const Standard_Real ULast, Handle_TColStd_HArray1OfReal & CosNumerator, Handle_TColStd_HArray1OfReal & SinNumerator, Handle_TColStd_HArray1OfReal & Denominator, Standard_Integer &OutValue, Handle_TColStd_HArray1OfReal & Knots, Handle_TColStd_HArray1OfInteger & Mults) const;
 
 };
+%feature("shadow") Convert_ConicToBSplineCurve::~Convert_ConicToBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_ConicToBSplineCurve {
-	~Convert_ConicToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_ConicToBSplineCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -205,10 +241,18 @@ class Convert_ElementarySurfaceToBSplineSurface {
 		Standard_Integer VMultiplicity(const Standard_Integer VIndex) const;
 
 };
+%feature("shadow") Convert_ElementarySurfaceToBSplineSurface::~Convert_ElementarySurfaceToBSplineSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_ElementarySurfaceToBSplineSurface {
-	~Convert_ElementarySurfaceToBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_ElementarySurfaceToBSplineSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -222,10 +266,18 @@ class Convert_ConeToBSplineSurface : public Convert_ElementarySurfaceToBSplineSu
 		Convert_ConeToBSplineSurface(const gp_Cone &C, const Standard_Real V1, const Standard_Real V2);
 
 };
+%feature("shadow") Convert_ConeToBSplineSurface::~Convert_ConeToBSplineSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_ConeToBSplineSurface {
-	~Convert_ConeToBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_ConeToBSplineSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Convert_ParabolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 		Convert_ParabolaToBSplineCurve(const gp_Parab2d &Prb, const Standard_Real U1, const Standard_Real U2);
 
 };
+%feature("shadow") Convert_ParabolaToBSplineCurve::~Convert_ParabolaToBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_ParabolaToBSplineCurve {
-	~Convert_ParabolaToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_ParabolaToBSplineCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -256,10 +316,18 @@ class Convert_TorusToBSplineSurface : public Convert_ElementarySurfaceToBSplineS
 		Convert_TorusToBSplineSurface(const gp_Torus &T);
 
 };
+%feature("shadow") Convert_TorusToBSplineSurface::~Convert_TorusToBSplineSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_TorusToBSplineSurface {
-	~Convert_TorusToBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_TorusToBSplineSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -273,10 +341,18 @@ class Convert_CircleToBSplineCurve : public Convert_ConicToBSplineCurve {
 		Convert_CircleToBSplineCurve(const gp_Circ2d &C, const Standard_Real U1, const Standard_Real U2, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
 
 };
+%feature("shadow") Convert_CircleToBSplineCurve::~Convert_CircleToBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_CircleToBSplineCurve {
-	~Convert_CircleToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_CircleToBSplineCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -288,10 +364,18 @@ class Convert_HyperbolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 		Convert_HyperbolaToBSplineCurve(const gp_Hypr2d &H, const Standard_Real U1, const Standard_Real U2);
 
 };
+%feature("shadow") Convert_HyperbolaToBSplineCurve::~Convert_HyperbolaToBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_HyperbolaToBSplineCurve {
-	~Convert_HyperbolaToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_HyperbolaToBSplineCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -331,10 +415,18 @@ class Convert_GridPolynomialToPoles {
 		Standard_Boolean IsDone() const;
 
 };
+%feature("shadow") Convert_GridPolynomialToPoles::~Convert_GridPolynomialToPoles %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_GridPolynomialToPoles {
-	~Convert_GridPolynomialToPoles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_GridPolynomialToPoles\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -388,10 +480,18 @@ class Convert_SequenceOfArray1OfPoles2d : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Convert_SequenceOfArray1OfPoles2d::~Convert_SequenceOfArray1OfPoles2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_SequenceOfArray1OfPoles2d {
-	~Convert_SequenceOfArray1OfPoles2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_SequenceOfArray1OfPoles2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -407,10 +507,18 @@ class Convert_SphereToBSplineSurface : public Convert_ElementarySurfaceToBSpline
 		Convert_SphereToBSplineSurface(const gp_Sphere &Sph);
 
 };
+%feature("shadow") Convert_SphereToBSplineSurface::~Convert_SphereToBSplineSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_SphereToBSplineSurface {
-	~Convert_SphereToBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_SphereToBSplineSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -436,10 +544,18 @@ class Convert_CompBezierCurvesToBSplineCurve {
 		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
 
 };
+%feature("shadow") Convert_CompBezierCurvesToBSplineCurve::~Convert_CompBezierCurvesToBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_CompBezierCurvesToBSplineCurve {
-	~Convert_CompBezierCurvesToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_CompBezierCurvesToBSplineCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -493,10 +609,18 @@ class Convert_SequenceOfArray1OfPoles : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Convert_SequenceOfArray1OfPoles::~Convert_SequenceOfArray1OfPoles %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_SequenceOfArray1OfPoles {
-	~Convert_SequenceOfArray1OfPoles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_SequenceOfArray1OfPoles\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -510,10 +634,18 @@ class Convert_CylinderToBSplineSurface : public Convert_ElementarySurfaceToBSpli
 		Convert_CylinderToBSplineSurface(const gp_Cylinder &Cyl, const Standard_Real V1, const Standard_Real V2);
 
 };
+%feature("shadow") Convert_CylinderToBSplineSurface::~Convert_CylinderToBSplineSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_CylinderToBSplineSurface {
-	~Convert_CylinderToBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_CylinderToBSplineSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -539,10 +671,18 @@ class Convert_SequenceNodeOfSequenceOfArray1OfPoles : public TCollection_SeqNode
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Convert_SequenceNodeOfSequenceOfArray1OfPoles::~Convert_SequenceNodeOfSequenceOfArray1OfPoles %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_SequenceNodeOfSequenceOfArray1OfPoles {
-	~Convert_SequenceNodeOfSequenceOfArray1OfPoles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_SequenceNodeOfSequenceOfArray1OfPoles\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -556,10 +696,18 @@ class Convert_EllipseToBSplineCurve : public Convert_ConicToBSplineCurve {
 		Convert_EllipseToBSplineCurve(const gp_Elips2d &E, const Standard_Real U1, const Standard_Real U2, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
 
 };
+%feature("shadow") Convert_EllipseToBSplineCurve::~Convert_EllipseToBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_EllipseToBSplineCurve {
-	~Convert_EllipseToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_EllipseToBSplineCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -585,10 +733,18 @@ class Convert_CompBezierCurves2dToBSplineCurve2d {
 		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
 
 };
+%feature("shadow") Convert_CompBezierCurves2dToBSplineCurve2d::~Convert_CompBezierCurves2dToBSplineCurve2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_CompBezierCurves2dToBSplineCurve2d {
-	~Convert_CompBezierCurves2dToBSplineCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_CompBezierCurves2dToBSplineCurve2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -614,9 +770,17 @@ class Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public TCollection_SeqNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Convert_SequenceNodeOfSequenceOfArray1OfPoles2d::~Convert_SequenceNodeOfSequenceOfArray1OfPoles2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
-	~Convert_SequenceNodeOfSequenceOfArray1OfPoles2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Convert_SequenceNodeOfSequenceOfArray1OfPoles2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

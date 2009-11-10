@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include gp_dependencies.i
 
 
@@ -69,10 +73,18 @@ class Handle_gp_VectorWithNullMagnitude : public Handle_Standard_DomainError {
 	return (gp_VectorWithNullMagnitude*)$self->Access();
 	}
 };
+%feature("shadow") Handle_gp_VectorWithNullMagnitude::~Handle_gp_VectorWithNullMagnitude %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_gp_VectorWithNullMagnitude {
-	~Handle_gp_VectorWithNullMagnitude() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_gp_VectorWithNullMagnitude\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -104,7 +116,7 @@ class gp_Cone {
 		Standard_Boolean Direct() const;
 		%feature("autodoc", "1");
 		const gp_Ax1 & Axis() const;
-		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Location() const;
@@ -162,10 +174,18 @@ class gp_Cone {
 		void _CSFDB_Setgp_ConesemiAngle(const Standard_Real p);
 
 };
+%feature("shadow") gp_Cone::~gp_Cone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Cone {
-	~gp_Cone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Cone\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -195,7 +215,7 @@ class gp_Hypr2d {
 		gp_Ax2d Asymptote1() const;
 		%feature("autodoc", "1");
 		gp_Ax2d Asymptote2() const;
-		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Hypr2d ConjugateBranch1() const;
@@ -275,10 +295,18 @@ class gp_Hypr2d {
 		void _CSFDB_Setgp_Hypr2dminorRadius(const Standard_Real p);
 
 };
+%feature("shadow") gp_Hypr2d::~gp_Hypr2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Hypr2d {
-	~gp_Hypr2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Hypr2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -306,7 +334,7 @@ class gp_Dir2d {
 		void SetXY(const gp_XY &XY);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer Index) const;
-		%feature("autodoc","Coord()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -358,10 +386,18 @@ class gp_Dir2d {
 		const gp_XY & _CSFDB_Getgp_Dir2dcoord() const;
 
 };
+%feature("shadow") gp_Dir2d::~gp_Dir2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Dir2d {
-	~gp_Dir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Dir2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,7 +423,7 @@ class gp_Parab2d {
 		void SetMirrorAxis(const gp_Ax2d &A);
 		%feature("autodoc", "1");
 		void SetAxis(const gp_Ax22d &A);
-		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Ax2d Directrix() const;
@@ -445,10 +481,18 @@ class gp_Parab2d {
 		void _CSFDB_Setgp_Parab2dfocalLength(const Standard_Real p);
 
 };
+%feature("shadow") gp_Parab2d::~gp_Parab2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Parab2d {
-	~gp_Parab2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Parab2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -490,8 +534,18 @@ class gp_Mat2d {
 		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
 		const Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer Row, const Standard_Integer Col) {
+				return (Standard_Real) $self->ChangeValue(Row,Col);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer Row, const Standard_Integer Col) {
+				$self->ChangeValue(Row,Col)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col);
 		%feature("autodoc", "1");
@@ -548,14 +602,32 @@ class gp_Mat2d {
 		void Transpose();
 		%feature("autodoc", "1");
 		gp_Mat2d Transposed() const;
-		%feature("autodoc", "1");
-		Standard_Real & _CSFDB_Getgp_Mat2dmatrix(const Standard_Integer i1, const Standard_Integer i2);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real Get_CSFDB_Getgp_Mat2dmatrix(const Standard_Integer i1, const Standard_Integer i2) {
+				return (Standard_Real) $self->_CSFDB_Getgp_Mat2dmatrix(i1,i2);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void Set_CSFDB_Getgp_Mat2dmatrix(Standard_Real value ,const Standard_Integer i1, const Standard_Integer i2) {
+				$self->_CSFDB_Getgp_Mat2dmatrix(i1,i2)=value;
+				}
+		};
 
 };
+%feature("shadow") gp_Mat2d::~gp_Mat2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Mat2d {
-	~gp_Mat2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Mat2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -587,10 +659,18 @@ class gp_VectorWithNullMagnitude : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") gp_VectorWithNullMagnitude::~gp_VectorWithNullMagnitude %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_VectorWithNullMagnitude {
-	~gp_VectorWithNullMagnitude() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_VectorWithNullMagnitude\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -664,10 +744,18 @@ class gp_Ax22d {
 		const gp_Dir2d & _CSFDB_Getgp_Ax22dvxdir() const;
 
 };
+%feature("shadow") gp_Ax22d::~gp_Ax22d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Ax22d {
-	~gp_Ax22d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Ax22d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -733,7 +821,7 @@ class gp_Trsf2d {
 		void Power(const Standard_Integer N);
 		%feature("autodoc", "1");
 		gp_Trsf2d Powered(const Standard_Integer N);
-		%feature("autodoc","Transforms()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Transforms() -> [Standard_Real, Standard_Real]");
 		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Transforms(gp_XY & Coord) const;
@@ -751,10 +839,18 @@ class gp_Trsf2d {
 		const gp_XY & _CSFDB_Getgp_Trsf2dloc() const;
 
 };
+%feature("shadow") gp_Trsf2d::~gp_Trsf2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Trsf2d {
-	~gp_Trsf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Trsf2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -782,7 +878,7 @@ class gp_Pnt {
 		void SetXYZ(const gp_XYZ &Coordinates);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer Index) const;
-		%feature("autodoc","Coord()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -840,10 +936,18 @@ class gp_Pnt {
 		const gp_XYZ & _CSFDB_Getgp_Pntcoord() const;
 
 };
+%feature("shadow") gp_Pnt::~gp_Pnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Pnt {
-	~gp_Pnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Pnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -875,7 +979,7 @@ class gp_Vec {
 		void SetXYZ(const gp_XYZ &Coord);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer Index) const;
-		%feature("autodoc","Coord()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -1005,10 +1109,18 @@ class gp_Vec {
 		const gp_XYZ & _CSFDB_Getgp_Veccoord() const;
 
 };
+%feature("shadow") gp_Vec::~gp_Vec %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Vec {
-	~gp_Vec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Vec\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1054,7 +1166,7 @@ class gp_Trsf {
 		Standard_Real ScaleFactor() const;
 		%feature("autodoc", "1");
 		const gp_XYZ & TranslationPart() const;
-		%feature("autodoc","GetRotation()->Standard_Real");
+		%feature("autodoc","GetRotation() -> Standard_Real");
 		Standard_Boolean GetRotation(gp_XYZ & theAxis, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Mat VectorialPart() const;
@@ -1080,7 +1192,7 @@ class gp_Trsf {
 		void Power(const Standard_Integer N);
 		%feature("autodoc", "1");
 		gp_Trsf Powered(const Standard_Integer N);
-		%feature("autodoc","Transforms()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Transforms() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Transforms(gp_XYZ & Coord) const;
@@ -1098,10 +1210,18 @@ class gp_Trsf {
 		const gp_XYZ & _CSFDB_Getgp_Trsfloc() const;
 
 };
+%feature("shadow") gp_Trsf::~gp_Trsf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Trsf {
-	~gp_Trsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Trsf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1129,7 +1249,7 @@ class gp_Cylinder {
 		Standard_Boolean Direct() const;
 		%feature("autodoc", "1");
 		const gp_Ax1 & Axis() const;
-		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Location() const;
@@ -1181,10 +1301,18 @@ class gp_Cylinder {
 		void _CSFDB_Setgp_Cylinderradius(const Standard_Real p);
 
 };
+%feature("shadow") gp_Cylinder::~gp_Cylinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Cylinder {
-	~gp_Cylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Cylinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1276,10 +1404,18 @@ class gp_Torus {
 		void _CSFDB_Setgp_TorusminorRadius(const Standard_Real p);
 
 };
+%feature("shadow") gp_Torus::~gp_Torus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Torus {
-	~gp_Torus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Torus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1309,7 +1445,7 @@ class gp_Dir {
 		void SetXYZ(const gp_XYZ &XYZ);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer Index) const;
-		%feature("autodoc","Coord()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -1379,10 +1515,18 @@ class gp_Dir {
 		const gp_XYZ & _CSFDB_Getgp_Dircoord() const;
 
 };
+%feature("shadow") gp_Dir::~gp_Dir %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Dir {
-	~gp_Dir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Dir\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1408,7 +1552,7 @@ class gp_Circ2d {
 		void SetRadius(const Standard_Real Radius);
 		%feature("autodoc", "1");
 		Standard_Real Area() const;
-		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const gp_Pnt2d &P, const Standard_Real LinearTolerance) const;
@@ -1472,10 +1616,18 @@ class gp_Circ2d {
 		void _CSFDB_Setgp_Circ2dradius(const Standard_Real p);
 
 };
+%feature("shadow") gp_Circ2d::~gp_Circ2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Circ2d {
-	~gp_Circ2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Circ2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1497,7 +1649,7 @@ class gp_XY {
 		void SetY(const Standard_Real Y);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer i) const;
-		%feature("autodoc","Coord()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -1595,10 +1747,18 @@ class gp_XY {
 		void _CSFDB_Setgp_XYy(const Standard_Real p);
 
 };
+%feature("shadow") gp_XY::~gp_XY %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_XY {
-	~gp_XY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_XY\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1624,7 +1784,7 @@ class gp_Lin2d {
 		void SetLocation(const gp_Pnt2d &P);
 		%feature("autodoc", "1");
 		void SetPosition(const gp_Ax2d &A);
-		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const gp_Dir2d & Direction() const;
@@ -1678,10 +1838,18 @@ class gp_Lin2d {
 		const gp_Ax2d & _CSFDB_Getgp_Lin2dpos() const;
 
 };
+%feature("shadow") gp_Lin2d::~gp_Lin2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Lin2d {
-	~gp_Lin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Lin2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1709,7 +1877,7 @@ class gp_Elips2d {
 		void SetYAxis(const gp_Ax2d &A);
 		%feature("autodoc", "1");
 		Standard_Real Area() const;
-		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Ax2d Directrix1() const;
@@ -1783,10 +1951,18 @@ class gp_Elips2d {
 		void _CSFDB_Setgp_Elips2dminorRadius(const Standard_Real p);
 
 };
+%feature("shadow") gp_Elips2d::~gp_Elips2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Elips2d {
-	~gp_Elips2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Elips2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1816,7 +1992,7 @@ class gp_Vec2d {
 		void SetXY(const gp_XY &Coord);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer Index) const;
-		%feature("autodoc","Coord()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -1924,10 +2100,18 @@ class gp_Vec2d {
 		const gp_XY & _CSFDB_Getgp_Vec2dcoord() const;
 
 };
+%feature("shadow") gp_Vec2d::~gp_Vec2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Vec2d {
-	~gp_Vec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Vec2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1953,7 +2137,7 @@ class gp_Pnt2d {
 		void SetXY(const gp_XY &Coordinates);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer Index) const;
-		%feature("autodoc","Coord()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -2003,10 +2187,18 @@ class gp_Pnt2d {
 		const gp_XY & _CSFDB_Getgp_Pnt2dcoord() const;
 
 };
+%feature("shadow") gp_Pnt2d::~gp_Pnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Pnt2d {
-	~gp_Pnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Pnt2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2086,10 +2278,18 @@ class gp_Parab {
 		void _CSFDB_Setgp_ParabfocalLength(const Standard_Real p);
 
 };
+%feature("shadow") gp_Parab::~gp_Parab %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Parab {
-	~gp_Parab() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Parab\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2169,10 +2369,18 @@ class gp_Lin {
 		const gp_Ax1 & _CSFDB_Getgp_Linpos() const;
 
 };
+%feature("shadow") gp_Lin::~gp_Lin %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Lin {
-	~gp_Lin() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Lin\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2244,10 +2452,18 @@ class gp_Ax1 {
 		const gp_Dir & _CSFDB_Getgp_Ax1vdir() const;
 
 };
+%feature("shadow") gp_Ax1::~gp_Ax1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Ax1 {
-	~gp_Ax1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Ax1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2327,10 +2543,18 @@ class gp_Ax2 {
 		const gp_Dir & _CSFDB_Getgp_Ax2vxdir() const;
 
 };
+%feature("shadow") gp_Ax2::~gp_Ax2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Ax2 {
-	~gp_Ax2() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Ax2\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2422,10 +2646,18 @@ class gp_Ax3 {
 		const gp_Dir & _CSFDB_Getgp_Ax3vxdir() const;
 
 };
+%feature("shadow") gp_Ax3::~gp_Ax3 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Ax3 {
-	~gp_Ax3() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Ax3\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2445,7 +2677,7 @@ class gp_Sphere {
 		void SetRadius(const Standard_Real R);
 		%feature("autodoc", "1");
 		Standard_Real Area() const;
-		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void UReverse();
@@ -2505,10 +2737,18 @@ class gp_Sphere {
 		void _CSFDB_Setgp_Sphereradius(const Standard_Real p);
 
 };
+%feature("shadow") gp_Sphere::~gp_Sphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Sphere {
-	~gp_Sphere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Sphere\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2566,7 +2806,7 @@ class gp_GTrsf {
 		gp_GTrsf Powered(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		void Transforms(gp_XYZ & Coord) const;
-		%feature("autodoc","Transforms()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Transforms() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Trsf Trsf() const;
@@ -2584,10 +2824,18 @@ class gp_GTrsf {
 		void _CSFDB_Setgp_GTrsfscale(const Standard_Real p);
 
 };
+%feature("shadow") gp_GTrsf::~gp_GTrsf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_GTrsf {
-	~gp_GTrsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_GTrsf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2603,7 +2851,7 @@ class gp_Pln {
 		gp_Pln(const gp_Pnt &P, const gp_Dir &V);
 		%feature("autodoc", "1");
 		gp_Pln(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
-		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetAxis(const gp_Ax1 &A1);
@@ -2679,10 +2927,18 @@ class gp_Pln {
 		const gp_Ax3 & _CSFDB_Getgp_Plnpos() const;
 
 };
+%feature("shadow") gp_Pln::~gp_Pln %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Pln {
-	~gp_Pln() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Pln\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2786,10 +3042,18 @@ class gp_Hypr {
 		void _CSFDB_Setgp_HyprminorRadius(const Standard_Real p);
 
 };
+%feature("shadow") gp_Hypr::~gp_Hypr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Hypr {
-	~gp_Hypr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Hypr\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2871,10 +3135,18 @@ class gp_Circ {
 		void _CSFDB_Setgp_Circradius(const Standard_Real p);
 
 };
+%feature("shadow") gp_Circ::~gp_Circ %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Circ {
-	~gp_Circ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Circ\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2898,7 +3170,7 @@ class gp_XYZ {
 		void SetZ(const Standard_Real Z);
 		%feature("autodoc", "1");
 		Standard_Real Coord(const Standard_Integer i) const;
-		%feature("autodoc","Coord()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -3014,10 +3286,18 @@ class gp_XYZ {
 		void _CSFDB_Setgp_XYZz(const Standard_Real p);
 
 };
+%feature("shadow") gp_XYZ::~gp_XYZ %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_XYZ {
-	~gp_XYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_XYZ\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3065,8 +3345,18 @@ class gp_Mat {
 		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
 		const Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer Row, const Standard_Integer Col) {
+				return (Standard_Real) $self->ChangeValue(Row,Col);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer Row, const Standard_Integer Col) {
+				$self->ChangeValue(Row,Col)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col);
 		%feature("autodoc", "1");
@@ -3125,14 +3415,32 @@ class gp_Mat {
 		void Transpose();
 		%feature("autodoc", "1");
 		gp_Mat Transposed() const;
-		%feature("autodoc", "1");
-		Standard_Real & _CSFDB_Getgp_Matmatrix(const Standard_Integer i1, const Standard_Integer i2);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real Get_CSFDB_Getgp_Matmatrix(const Standard_Integer i1, const Standard_Integer i2) {
+				return (Standard_Real) $self->_CSFDB_Getgp_Matmatrix(i1,i2);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void Set_CSFDB_Getgp_Matmatrix(Standard_Real value ,const Standard_Integer i1, const Standard_Integer i2) {
+				$self->_CSFDB_Getgp_Matmatrix(i1,i2)=value;
+				}
+		};
 
 };
+%feature("shadow") gp_Mat::~gp_Mat %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Mat {
-	~gp_Mat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Mat\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3228,10 +3536,18 @@ class gp_Elips {
 		void _CSFDB_Setgp_ElipsminorRadius(const Standard_Real p);
 
 };
+%feature("shadow") gp_Elips::~gp_Elips %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Elips {
-	~gp_Elips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Elips\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3299,10 +3615,18 @@ class gp_Ax2d {
 		const gp_Dir2d & _CSFDB_Getgp_Ax2dvdir() const;
 
 };
+%feature("shadow") gp_Ax2d::~gp_Ax2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_Ax2d {
-	~gp_Ax2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_Ax2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3362,7 +3686,7 @@ class gp_GTrsf2d {
 		void Transforms(gp_XY & Coord) const;
 		%feature("autodoc", "1");
 		gp_XY Transformed(const gp_XY &Coord) const;
-		%feature("autodoc","Transforms()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Transforms() -> [Standard_Real, Standard_Real]");
 		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Trsf2d Trsf2d() const;
@@ -3380,10 +3704,18 @@ class gp_GTrsf2d {
 		void _CSFDB_Setgp_GTrsf2dscale(const Standard_Real p);
 
 };
+%feature("shadow") gp_GTrsf2d::~gp_GTrsf2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp_GTrsf2d {
-	~gp_GTrsf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp_GTrsf2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3427,9 +3759,17 @@ class gp {
 		const gp_Ax2d & OY2d();
 
 };
+%feature("shadow") gp::~gp %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gp {
-	~gp() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gp\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntAna_dependencies.i
 
 
@@ -70,10 +74,18 @@ class Handle_IntAna_ListNodeOfListOfCurve : public Handle_TCollection_MapNode {
 	return (IntAna_ListNodeOfListOfCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IntAna_ListNodeOfListOfCurve::~Handle_IntAna_ListNodeOfListOfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IntAna_ListNodeOfListOfCurve {
-	~Handle_IntAna_ListNodeOfListOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntAna_ListNodeOfListOfCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -99,16 +111,24 @@ class IntAna_Quadric {
 		void SetQuadric(const gp_Cone &Con);
 		%feature("autodoc", "1");
 		void SetQuadric(const gp_Cylinder &Cyl);
-		%feature("autodoc","Coefficients()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","NewCoefficients(const Axis)->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","NewCoefficients(const Axis) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax3 &Axis) const;
 
 };
+%feature("shadow") IntAna_Quadric::~IntAna_Quadric %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntAna_Quadric {
-	~IntAna_Quadric() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_Quadric\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -182,10 +202,18 @@ class IntAna_QuadQuadGeo {
 		const gp_Pnt & PChar() const;
 
 };
+%feature("shadow") IntAna_QuadQuadGeo::~IntAna_QuadQuadGeo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntAna_QuadQuadGeo {
-	~IntAna_QuadQuadGeo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_QuadQuadGeo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -211,10 +239,18 @@ class IntAna_ListNodeOfListOfCurve : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IntAna_ListNodeOfListOfCurve::~IntAna_ListNodeOfListOfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntAna_ListNodeOfListOfCurve {
-	~IntAna_ListNodeOfListOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_ListNodeOfListOfCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -244,7 +280,7 @@ class IntAna_IntQuadQuad {
 		Standard_Integer NbPnt() const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Point(const Standard_Integer N) const;
-		%feature("autodoc","Parameters(Standard_Integer N)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Parameters(Standard_Integer N) -> [Standard_RealStandard_Real]");
 		void Parameters(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasNextCurve(const Standard_Integer I) const;
@@ -256,10 +292,18 @@ class IntAna_IntQuadQuad {
 		Standard_Integer PreviousCurve(const Standard_Integer I, Standard_Boolean & Opposite) const;
 
 };
+%feature("shadow") IntAna_IntQuadQuad::~IntAna_IntQuadQuad %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntAna_IntQuadQuad {
-	~IntAna_IntQuadQuad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_IntQuadQuad\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -323,10 +367,18 @@ class IntAna_IntConicQuad {
 		Standard_Real ParamOnConic(const Standard_Integer i) const;
 
 };
+%feature("shadow") IntAna_IntConicQuad::~IntAna_IntConicQuad %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntAna_IntConicQuad {
-	~IntAna_IntConicQuad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_IntConicQuad\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -376,10 +428,18 @@ class IntAna_ListOfCurve {
 		void InsertAfter(IntAna_ListOfCurve & Other, IntAna_ListIteratorOfListOfCurve & It);
 
 };
+%feature("shadow") IntAna_ListOfCurve::~IntAna_ListOfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntAna_ListOfCurve {
-	~IntAna_ListOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_ListOfCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -401,10 +461,18 @@ class IntAna_ListIteratorOfListOfCurve {
 		IntAna_Curve & Value() const;
 
 };
+%feature("shadow") IntAna_ListIteratorOfListOfCurve::~IntAna_ListIteratorOfListOfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntAna_ListIteratorOfListOfCurve {
-	~IntAna_ListIteratorOfListOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_ListIteratorOfListOfCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -426,10 +494,18 @@ class IntAna_Int3Pln {
 		const gp_Pnt & Value() const;
 
 };
+%feature("shadow") IntAna_Int3Pln::~IntAna_Int3Pln %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntAna_Int3Pln {
-	~IntAna_Int3Pln() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_Int3Pln\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -445,7 +521,7 @@ class IntAna_Curve {
 		void SetConeQuadValues(const gp_Cone &Cone, const Standard_Real Qxx, const Standard_Real Qyy, const Standard_Real Qzz, const Standard_Real Qxy, const Standard_Real Qxz, const Standard_Real Qyz, const Standard_Real Qx, const Standard_Real Qy, const Standard_Real Qz, const Standard_Real Q1, const Standard_Real Tol, const Standard_Real DomInf, const Standard_Real DomSup, const Standard_Boolean TwoZForATheta, const Standard_Boolean ZIsPositive);
 		%feature("autodoc", "1");
 		Standard_Boolean IsOpen() const;
-		%feature("autodoc","Domain()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Domain() -> [Standard_Real, Standard_Real]");
 		void Domain(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsConstant() const;
@@ -457,22 +533,30 @@ class IntAna_Curve {
 		gp_Pnt Value(const Standard_Real Theta);
 		%feature("autodoc", "1");
 		Standard_Boolean D1u(const Standard_Real Theta, gp_Pnt & P, gp_Vec & V);
-		%feature("autodoc","FindParameter(const P)->Standard_Real");
+		%feature("autodoc","FindParameter(const P) -> Standard_Real");
 		Standard_Boolean FindParameter(const gp_Pnt &P, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetIsFirstOpen(const Standard_Boolean Flag);
 		%feature("autodoc", "1");
 		void SetIsLastOpen(const Standard_Boolean Flag);
-		%feature("autodoc","InternalUVValue(Standard_Real Param)->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","InternalUVValue(Standard_Real Param) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void InternalUVValue(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetDomain(const Standard_Real Theta1, const Standard_Real Theta2);
 
 };
+%feature("shadow") IntAna_Curve::~IntAna_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntAna_Curve {
-	~IntAna_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_Curve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -494,13 +578,21 @@ class IntAna_IntLinTorus {
 		const gp_Pnt & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Real ParamOnLine(const Standard_Integer Index) const;
-		%feature("autodoc","ParamOnTorus(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ParamOnTorus(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void ParamOnTorus(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%feature("shadow") IntAna_IntLinTorus::~IntAna_IntLinTorus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntAna_IntLinTorus {
-	~IntAna_IntLinTorus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntAna_IntLinTorus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

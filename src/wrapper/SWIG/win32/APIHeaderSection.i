@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include APIHeaderSection_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_APIHeaderSection_EditHeader : public Handle_IFSelect_Editor {
 	return (APIHeaderSection_EditHeader*)$self->Access();
 	}
 };
+%feature("shadow") Handle_APIHeaderSection_EditHeader::~Handle_APIHeaderSection_EditHeader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_APIHeaderSection_EditHeader {
-	~Handle_APIHeaderSection_EditHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_APIHeaderSection_EditHeader\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -94,10 +106,18 @@ class APIHeaderSection_EditHeader : public IFSelect_Editor {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") APIHeaderSection_EditHeader::~APIHeaderSection_EditHeader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend APIHeaderSection_EditHeader {
-	~APIHeaderSection_EditHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of APIHeaderSection_EditHeader\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -197,9 +217,17 @@ class APIHeaderSection_MakeHeader {
 		Handle_TCollection_HAsciiString ImplementationLevel() const;
 
 };
+%feature("shadow") APIHeaderSection_MakeHeader::~APIHeaderSection_MakeHeader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend APIHeaderSection_MakeHeader {
-	~APIHeaderSection_MakeHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of APIHeaderSection_MakeHeader\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

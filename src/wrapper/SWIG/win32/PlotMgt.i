@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PlotMgt_dependencies.i
 
 
@@ -113,10 +117,18 @@ class Handle_PlotMgt_PlotterParameter : public Handle_MMgt_TShared {
 	return (PlotMgt_PlotterParameter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PlotMgt_PlotterParameter::~Handle_PlotMgt_PlotterParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PlotMgt_PlotterParameter {
-	~Handle_PlotMgt_PlotterParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_PlotterParameter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -143,10 +155,18 @@ class Handle_PlotMgt_PlotterDefinitionError : public Handle_Standard_OutOfRange 
 	return (PlotMgt_PlotterDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PlotMgt_PlotterDefinitionError::~Handle_PlotMgt_PlotterDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PlotMgt_PlotterDefinitionError {
-	~Handle_PlotMgt_PlotterDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_PlotterDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -173,10 +193,18 @@ class Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter : public Handle_TColle
 	return (PlotMgt_SequenceNodeOfListOfPlotterParameter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter::~Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter {
-	~Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -203,10 +231,18 @@ class Handle_PlotMgt_HListOfMFTFonts : public Handle_MMgt_TShared {
 	return (PlotMgt_HListOfMFTFonts*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PlotMgt_HListOfMFTFonts::~Handle_PlotMgt_HListOfMFTFonts %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PlotMgt_HListOfMFTFonts {
-	~Handle_PlotMgt_HListOfMFTFonts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_HListOfMFTFonts\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -233,10 +269,18 @@ class Handle_PlotMgt_HListOfPlotterParameter : public Handle_MMgt_TShared {
 	return (PlotMgt_HListOfPlotterParameter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PlotMgt_HListOfPlotterParameter::~Handle_PlotMgt_HListOfPlotterParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PlotMgt_HListOfPlotterParameter {
-	~Handle_PlotMgt_HListOfPlotterParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_HListOfPlotterParameter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -263,10 +307,18 @@ class Handle_PlotMgt_Plotter : public Handle_MMgt_TShared {
 	return (PlotMgt_Plotter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PlotMgt_Plotter::~Handle_PlotMgt_Plotter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PlotMgt_Plotter {
-	~Handle_PlotMgt_Plotter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_Plotter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -293,10 +345,18 @@ class Handle_PlotMgt_TextManager : public Handle_MFT_TextManager {
 	return (PlotMgt_TextManager*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PlotMgt_TextManager::~Handle_PlotMgt_TextManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PlotMgt_TextManager {
-	~Handle_PlotMgt_TextManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_TextManager\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -323,10 +383,18 @@ class Handle_PlotMgt_PlotterAccessError : public Handle_Standard_OutOfRange {
 	return (PlotMgt_PlotterAccessError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PlotMgt_PlotterAccessError::~Handle_PlotMgt_PlotterAccessError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PlotMgt_PlotterAccessError {
-	~Handle_PlotMgt_PlotterAccessError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_PlotterAccessError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -353,10 +421,18 @@ class Handle_PlotMgt_HListOfMFTSizes : public Handle_MMgt_TShared {
 	return (PlotMgt_HListOfMFTSizes*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PlotMgt_HListOfMFTSizes::~Handle_PlotMgt_HListOfMFTSizes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PlotMgt_HListOfMFTSizes {
-	~Handle_PlotMgt_HListOfMFTSizes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_HListOfMFTSizes\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -383,10 +459,18 @@ class Handle_PlotMgt_PlotterDriver : public Handle_Aspect_Driver {
 	return (PlotMgt_PlotterDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PlotMgt_PlotterDriver::~Handle_PlotMgt_PlotterDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PlotMgt_PlotterDriver {
-	~Handle_PlotMgt_PlotterDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_PlotterDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -413,10 +497,18 @@ class Handle_PlotMgt_ImageDriver : public Handle_PlotMgt_PlotterDriver {
 	return (PlotMgt_ImageDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PlotMgt_ImageDriver::~Handle_PlotMgt_ImageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PlotMgt_ImageDriver {
-	~Handle_PlotMgt_ImageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_ImageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -448,10 +540,18 @@ class PlotMgt_PlotterDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PlotMgt_PlotterDefinitionError::~PlotMgt_PlotterDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_PlotterDefinitionError {
-	~PlotMgt_PlotterDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -495,10 +595,18 @@ class PlotMgt_TextManager : public MFT_TextManager {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PlotMgt_TextManager::~PlotMgt_TextManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_TextManager {
-	~PlotMgt_TextManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_TextManager\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -542,7 +650,7 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 		virtual		void ClosePrimitive();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsKnownImage(const Handle_Standard_Transient &anImage);
-		%feature("autodoc","SizeOfImageFile(Standard_CString anImageFile)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","SizeOfImageFile(Standard_CString anImageFile) -> [Standard_IntegerStandard_Integer]");
 		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void ClearImage(const Handle_Standard_Transient &anImageId);
@@ -588,19 +696,19 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 		TCollection_AsciiString DrawingName() const;
 		%feature("autodoc", "1");
 		TCollection_AsciiString SpoolDirectory() const;
-		%feature("autodoc","WorkSpace()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","WorkSpace() -> [Standard_Real, Standard_Real]");
 		virtual		void WorkSpace(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Length Convert(const Standard_Integer PV) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Convert(const Quantity_Length DV) const;
-		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY) -> [Standard_RealStandard_Real]");
 		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Convert(Quantity_Length DX, Quantity_Length DY)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","Convert(Quantity_Length DX, Quantity_Length DY) -> [Standard_IntegerStandard_Integer]");
 		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","LineAttrib()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","LineAttrib() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		void LineAttrib(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","PolyAttrib()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","PolyAttrib() -> [Standard_Integer, Standard_Integer]");
 		void PolyAttrib(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & EdgeFlag) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -616,10 +724,18 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PlotMgt_PlotterDriver::~PlotMgt_PlotterDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_PlotterDriver {
-	~PlotMgt_PlotterDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -645,10 +761,18 @@ class PlotMgt_SequenceNodeOfListOfPlotterParameter : public TCollection_SeqNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PlotMgt_SequenceNodeOfListOfPlotterParameter::~PlotMgt_SequenceNodeOfListOfPlotterParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
-	~PlotMgt_SequenceNodeOfListOfPlotterParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_SequenceNodeOfListOfPlotterParameter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -702,10 +826,18 @@ class PlotMgt_ListOfPlotterParameter : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") PlotMgt_ListOfPlotterParameter::~PlotMgt_ListOfPlotterParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_ListOfPlotterParameter {
-	~PlotMgt_ListOfPlotterParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_ListOfPlotterParameter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -773,10 +905,18 @@ class PlotMgt_HListOfPlotterParameter : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PlotMgt_HListOfPlotterParameter::~PlotMgt_HListOfPlotterParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_HListOfPlotterParameter {
-	~PlotMgt_HListOfPlotterParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_HListOfPlotterParameter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -816,10 +956,18 @@ class PlotMgt_ListOfMFTFonts {
 		Handle_MFT_FontManager & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") PlotMgt_ListOfMFTFonts::~PlotMgt_ListOfMFTFonts %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_ListOfMFTFonts {
-	~PlotMgt_ListOfMFTFonts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_ListOfMFTFonts\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -939,13 +1087,13 @@ class PlotMgt_Plotter : public MMgt_TShared {
 		Standard_Real PaperWidth();
 		%feature("autodoc", "1");
 		Standard_Real PaperLength();
-		%feature("autodoc","PaperSize()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","PaperSize() -> [Standard_Real, Standard_Real]");
 		void PaperSize(Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","HardMargins()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","HardMargins() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void HardMargins(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","Margins()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Margins() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Margins(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","HardMappings()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","HardMappings() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void HardMappings(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real SpaceDrawing();
@@ -1169,10 +1317,18 @@ class PlotMgt_Plotter : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PlotMgt_Plotter::~PlotMgt_Plotter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_Plotter {
-	~PlotMgt_Plotter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_Plotter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1216,10 +1372,18 @@ class PlotMgt_HListOfMFTSizes : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PlotMgt_HListOfMFTSizes::~PlotMgt_HListOfMFTSizes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_HListOfMFTSizes {
-	~PlotMgt_HListOfMFTSizes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_HListOfMFTSizes\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1249,10 +1413,18 @@ class PlotMgt_ImageDriver : public PlotMgt_PlotterDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PlotMgt_ImageDriver::~PlotMgt_ImageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_ImageDriver {
-	~PlotMgt_ImageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_ImageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1288,14 +1460,22 @@ class PlotMgt {
 		PlotMgt_PaperFormat PaperFormatFromString(TCollection_AsciiString & aPaperFormatString);
 		%feature("autodoc", "1");
 		TCollection_AsciiString StringFromPaperFormat(const PlotMgt_PaperFormat aPaperFormat);
-		%feature("autodoc","PaperSize()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","PaperSize() -> [Standard_Real, Standard_Real]");
 		void PaperSize(TCollection_AsciiString & aFormat, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%feature("shadow") PlotMgt::~PlotMgt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt {
-	~PlotMgt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1327,10 +1507,18 @@ class PlotMgt_PlotterAccessError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PlotMgt_PlotterAccessError::~PlotMgt_PlotterAccessError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_PlotterAccessError {
-	~PlotMgt_PlotterAccessError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterAccessError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1392,10 +1580,18 @@ class PlotMgt_PlotterParameter : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PlotMgt_PlotterParameter::~PlotMgt_PlotterParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_PlotterParameter {
-	~PlotMgt_PlotterParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterParameter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1439,10 +1635,18 @@ class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PlotMgt_HListOfMFTFonts::~PlotMgt_HListOfMFTFonts %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_HListOfMFTFonts {
-	~PlotMgt_HListOfMFTFonts() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_HListOfMFTFonts\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1482,9 +1686,17 @@ class PlotMgt_ListOfMFTSizes {
 		Standard_ShortReal & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") PlotMgt_ListOfMFTSizes::~PlotMgt_ListOfMFTSizes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PlotMgt_ListOfMFTSizes {
-	~PlotMgt_ListOfMFTSizes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PlotMgt_ListOfMFTSizes\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

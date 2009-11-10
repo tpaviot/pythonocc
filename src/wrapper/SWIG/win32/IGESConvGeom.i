@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IGESConvGeom_dependencies.i
 
 
@@ -52,10 +56,18 @@ class IGESConvGeom {
 		Standard_Integer IncreaseSurfaceContinuity(const Handle_Geom_BSplineSurface &surface, const Standard_Real epsgeom, const Standard_Integer continuity=2);
 
 };
+%feature("shadow") IGESConvGeom::~IGESConvGeom %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESConvGeom {
-	~IGESConvGeom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESConvGeom\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -99,15 +111,23 @@ class IGESConvGeom_GeomBuilder {
 		Standard_Boolean IsTranslation() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsZOnly() const;
-		%feature("autodoc","EvalXYZ(const val)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","EvalXYZ(const val) -> [Standard_Real, Standard_RealStandard_Real]");
 		void EvalXYZ(const gp_XYZ &val, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_IGESGeom_TransformationMatrix MakeTransformation(const Standard_Real unit=1) const;
 
 };
+%feature("shadow") IGESConvGeom_GeomBuilder::~IGESConvGeom_GeomBuilder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESConvGeom_GeomBuilder {
-	~IGESConvGeom_GeomBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESConvGeom_GeomBuilder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TopOpeBRepTool_dependencies.i
 
 
@@ -66,10 +70,18 @@ class Handle_TopOpeBRepTool_HBoxTool : public Handle_MMgt_TShared {
 	return (TopOpeBRepTool_HBoxTool*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRepTool_HBoxTool::~Handle_TopOpeBRepTool_HBoxTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRepTool_HBoxTool {
-	~Handle_TopOpeBRepTool_HBoxTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_HBoxTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -96,10 +108,18 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity :
 	return (TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity::~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity {
-	~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -126,10 +146,18 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : p
 	return (TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress::~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
-	~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -156,10 +184,18 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF : public Handl
 	return (TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF::~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF {
-	~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -186,10 +222,18 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public Handle_TCol
 	return (TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal::~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal {
-	~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -216,10 +260,18 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF : public Han
 	return (TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF::~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF {
-	~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -246,10 +298,18 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public Handle_TCol
 	return (TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface::~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface {
-	~Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -276,10 +336,18 @@ class Handle_TopOpeBRepTool_ListNodeOfListOfC2DF : public Handle_TCollection_Map
 	return (TopOpeBRepTool_ListNodeOfListOfC2DF*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRepTool_ListNodeOfListOfC2DF::~Handle_TopOpeBRepTool_ListNodeOfListOfC2DF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRepTool_ListNodeOfListOfC2DF {
-	~Handle_TopOpeBRepTool_ListNodeOfListOfC2DF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_ListNodeOfListOfC2DF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -306,10 +374,18 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier 
 	return (TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier::~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
-	~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -336,10 +412,18 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : pub
 	return (TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d::~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d {
-	~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -366,10 +450,18 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : publi
 	return (TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
-	~Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -413,10 +505,18 @@ class TopOpeBRepTool_IndexedDataMapOfShapeBox2d : public TCollection_BasicMap {
 		Bnd_Box2d & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%feature("shadow") TopOpeBRepTool_IndexedDataMapOfShapeBox2d::~TopOpeBRepTool_IndexedDataMapOfShapeBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_IndexedDataMapOfShapeBox2d {
-	~TopOpeBRepTool_IndexedDataMapOfShapeBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapOfShapeBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -460,10 +560,18 @@ class TopOpeBRepTool_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 		Bnd_Box & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%feature("shadow") TopOpeBRepTool_IndexedDataMapOfShapeBox::~TopOpeBRepTool_IndexedDataMapOfShapeBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_IndexedDataMapOfShapeBox {
-	~TopOpeBRepTool_IndexedDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapOfShapeBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -475,8 +583,18 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : public TCo
 		TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d(const TopoDS_Shape &K1, const Standard_Integer K2, const Bnd_Box2d &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -495,10 +613,18 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : public TCo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d::~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d {
-	~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -510,8 +636,18 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public T
 		TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress(const TopoDS_Shape &K1, const Standard_Integer K2, const Standard_Address &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -530,10 +666,18 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public T
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress::~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
-	~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -553,10 +697,18 @@ class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF : public TCollect
 		const TopOpeBRepTool_ListOfC2DF & Value() const;
 
 };
+%feature("shadow") TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF::~TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF {
-	~TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -598,10 +750,18 @@ class TopOpeBRepTool_BoxSort {
 		void Destroy();
 
 };
+%feature("shadow") TopOpeBRepTool_BoxSort::~TopOpeBRepTool_BoxSort %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_BoxSort {
-	~TopOpeBRepTool_BoxSort() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_BoxSort\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +787,18 @@ class TopOpeBRepTool_ListNodeOfListOfC2DF : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRepTool_ListNodeOfListOfC2DF::~TopOpeBRepTool_ListNodeOfListOfC2DF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_ListNodeOfListOfC2DF {
-	~TopOpeBRepTool_ListNodeOfListOfC2DF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_ListNodeOfListOfC2DF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -654,10 +822,18 @@ class TopOpeBRepTool_face {
 		TopoDS_Face RealF() const;
 
 };
+%feature("shadow") TopOpeBRepTool_face::~TopOpeBRepTool_face %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_face {
-	~TopOpeBRepTool_face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_face\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -703,10 +879,18 @@ class TopOpeBRepTool_ShapeClassifier {
 		const gp_Pnt & P3D() const;
 
 };
+%feature("shadow") TopOpeBRepTool_ShapeClassifier::~TopOpeBRepTool_ShapeClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_ShapeClassifier {
-	~TopOpeBRepTool_ShapeClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_ShapeClassifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -718,8 +902,18 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity : public
 		TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity(const TopoDS_Shape &K1, const Standard_Integer K2, const TopOpeBRepTool_connexity &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -738,10 +932,18 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity : public
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity::~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity {
-	~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -763,11 +965,11 @@ class TopOpeBRepTool_GeomTool {
 		void DefinePCurves2(const Standard_Boolean CompPC2);
 		%feature("autodoc", "1");
 		void Define(const TopOpeBRepTool_GeomTool &GT);
-		%feature("autodoc","GetTolerances()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetTolerances() -> [Standard_Real, Standard_Real]");
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetTolerances(const Standard_Real tol3d, const Standard_Real tol2d);
-		%feature("autodoc","GetTolerances()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetTolerances() -> [Standard_Real, Standard_Real]");
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & relative) const;
 		%feature("autodoc", "1");
 		void SetTolerances(const Standard_Real tol3d, const Standard_Real tol2d, const Standard_Boolean relative);
@@ -785,10 +987,18 @@ class TopOpeBRepTool_GeomTool {
 		Standard_Boolean CompPC2() const;
 
 };
+%feature("shadow") TopOpeBRepTool_GeomTool::~TopOpeBRepTool_GeomTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_GeomTool {
-	~TopOpeBRepTool_GeomTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_GeomTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -828,10 +1038,18 @@ class TopOpeBRepTool_REGUS {
 		Standard_Boolean NearestF(const TopoDS_Edge &e, const TopTools_ListOfShape &lof, TopoDS_Face & ffound) const;
 
 };
+%feature("shadow") TopOpeBRepTool_REGUS::~TopOpeBRepTool_REGUS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_REGUS {
-	~TopOpeBRepTool_REGUS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_REGUS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -883,10 +1101,18 @@ class TopOpeBRepTool_REGUW {
 		Standard_Boolean UpdateMultiple(const TopoDS_Vertex &v);
 
 };
+%feature("shadow") TopOpeBRepTool_REGUW::~TopOpeBRepTool_REGUW %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_REGUW {
-	~TopOpeBRepTool_REGUW() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_REGUW\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -912,10 +1138,18 @@ class TopOpeBRepTool_SolidClassifier {
 		TopAbs_State State() const;
 
 };
+%feature("shadow") TopOpeBRepTool_SolidClassifier::~TopOpeBRepTool_SolidClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_SolidClassifier {
-	~TopOpeBRepTool_SolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_SolidClassifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -949,10 +1183,18 @@ class TopOpeBRepTool_ShapeExplorer {
 		};
 
 };
+%feature("shadow") TopOpeBRepTool_ShapeExplorer::~TopOpeBRepTool_ShapeExplorer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_ShapeExplorer {
-	~TopOpeBRepTool_ShapeExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_ShapeExplorer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -996,10 +1238,18 @@ class TopOpeBRepTool_IndexedDataMapOfShapeAddress : public TCollection_BasicMap 
 		Standard_Address & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%feature("shadow") TopOpeBRepTool_IndexedDataMapOfShapeAddress::~TopOpeBRepTool_IndexedDataMapOfShapeAddress %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_IndexedDataMapOfShapeAddress {
-	~TopOpeBRepTool_IndexedDataMapOfShapeAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapOfShapeAddress\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1019,10 +1269,18 @@ class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal : public TCollection_Ba
 		const Standard_Real & Value() const;
 
 };
+%feature("shadow") TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal::~TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal {
-	~TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1034,8 +1292,18 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNod
 		TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		Standard_Real & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1050,10 +1318,18 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal::~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal {
-	~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1073,10 +1349,18 @@ class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface : public TCollection_Ba
 		const TopOpeBRepTool_face & Value() const;
 
 };
+%feature("shadow") TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface::~TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface {
-	~TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1092,7 +1376,7 @@ class TopOpeBRepTool_CORRISO {
 		const TopoDS_Face & Fref() const;
 		%feature("autodoc", "1");
 		const GeomAdaptor_Surface & GASref() const;
-		%feature("autodoc","Refclosed(Standard_Integer x)->Standard_Real");
+		%feature("autodoc","Refclosed(Standard_Integer x) -> Standard_Real");
 		Standard_Boolean Refclosed(const Standard_Integer x, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Init(const TopoDS_Shape &S);
@@ -1106,15 +1390,15 @@ class TopOpeBRepTool_CORRISO {
 		Standard_Real Tol(const Standard_Integer I, const Standard_Real tol3d) const;
 		%feature("autodoc", "1");
 		Standard_Boolean PurgeFyClosingE(const TopTools_ListOfShape &ClEds, TopTools_ListOfShape & fyClEds) const;
-		%feature("autodoc","EdgeOUTofBoundsUV(const E, Standard_Boolean onU, Standard_Real tolx)->Standard_Real");
+		%feature("autodoc","EdgeOUTofBoundsUV(const E, Standard_Boolean onU, Standard_Real tolx) -> Standard_Real");
 		Standard_Integer EdgeOUTofBoundsUV(const TopoDS_Edge &E, const Standard_Boolean onU, const Standard_Real tolx, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean EdgesOUTofBoundsUV(const TopTools_ListOfShape &EdsToCheck, const Standard_Boolean onU, const Standard_Real tolx, TopTools_DataMapOfOrientedShapeInteger & FyEds) const;
-		%feature("autodoc","EdgeWithFaultyUV(const E)->Standard_Integer");
+		%feature("autodoc","EdgeWithFaultyUV(const E) -> Standard_Integer");
 		Standard_Boolean EdgeWithFaultyUV(const TopoDS_Edge &E, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean EdgesWithFaultyUV(const TopTools_ListOfShape &EdsToCheck, const Standard_Integer nfybounds, TopTools_DataMapOfOrientedShapeInteger & FyEds, const Standard_Boolean stopatfirst=0) const;
-		%feature("autodoc","EdgeWithFaultyUV(const EdsToCheck, Standard_Integer nfybounds)->Standard_Integer");
+		%feature("autodoc","EdgeWithFaultyUV(const EdsToCheck, Standard_Integer nfybounds) -> Standard_Integer");
 		Standard_Boolean EdgeWithFaultyUV(const TopTools_ListOfShape &EdsToCheck, const Standard_Integer nfybounds, TopoDS_Shape & fyE, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean TrslUV(const Standard_Boolean onU, const TopTools_DataMapOfOrientedShapeInteger &FyEds);
@@ -1134,10 +1418,18 @@ class TopOpeBRepTool_CORRISO {
 		Standard_Boolean RemoveOldConnexity(const TopoDS_Vertex &V, const TopoDS_Edge &E);
 
 };
+%feature("shadow") TopOpeBRepTool_CORRISO::~TopOpeBRepTool_CORRISO %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_CORRISO {
-	~TopOpeBRepTool_CORRISO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_CORRISO\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1165,10 +1457,18 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public TCollection_MapNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface::~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface {
-	~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1196,16 +1496,34 @@ class TopOpeBRepTool_DataMapOfShapeReal : public TCollection_BasicMap {
 		const Standard_Real & Find(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
 		const Standard_Real & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeFind(const TopoDS_Shape &K) {
+				return (Standard_Real) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Real value ,const TopoDS_Shape &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") TopOpeBRepTool_DataMapOfShapeReal::~TopOpeBRepTool_DataMapOfShapeReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_DataMapOfShapeReal {
-	~TopOpeBRepTool_DataMapOfShapeReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapOfShapeReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1225,10 +1543,18 @@ class TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF : public TColle
 		const TopOpeBRepTool_C2DF & Value() const;
 
 };
+%feature("shadow") TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF::~TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF {
-	~TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1256,10 +1582,18 @@ class TopOpeBRepTool_CLASSI {
 		Standard_Boolean Classilist(const TopTools_ListOfShape &lS, TopTools_DataMapOfShapeListOfShape & mapgreasma);
 
 };
+%feature("shadow") TopOpeBRepTool_CLASSI::~TopOpeBRepTool_CLASSI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_CLASSI {
-	~TopOpeBRepTool_CLASSI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_CLASSI\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1311,10 +1645,18 @@ class TopOpeBRepTool_HBoxTool : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRepTool_HBoxTool::~TopOpeBRepTool_HBoxTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_HBoxTool {
-	~TopOpeBRepTool_HBoxTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_HBoxTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1348,10 +1690,18 @@ class TopOpeBRepTool_DataMapOfShapeface : public TCollection_BasicMap {
 		TopOpeBRepTool_face & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") TopOpeBRepTool_DataMapOfShapeface::~TopOpeBRepTool_DataMapOfShapeface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_DataMapOfShapeface {
-	~TopOpeBRepTool_DataMapOfShapeface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapOfShapeface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1385,10 +1735,18 @@ class TopOpeBRepTool_DataMapOfShapeListOfC2DF : public TCollection_BasicMap {
 		TopOpeBRepTool_ListOfC2DF & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") TopOpeBRepTool_DataMapOfShapeListOfC2DF::~TopOpeBRepTool_DataMapOfShapeListOfC2DF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_DataMapOfShapeListOfC2DF {
-	~TopOpeBRepTool_DataMapOfShapeListOfC2DF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapOfShapeListOfC2DF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1404,7 +1762,7 @@ class TopOpeBRepTool_C2DF {
 		void SetPC(const Handle_Geom2d_Curve &PC, const Standard_Real f2d, const Standard_Real l2d, const Standard_Real tol);
 		%feature("autodoc", "1");
 		void SetFace(const TopoDS_Face &F);
-		%feature("autodoc","PC()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","PC() -> [Standard_Real, Standard_Real, Standard_Real]");
 		const Handle_Geom2d_Curve & PC(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const TopoDS_Face & Face() const;
@@ -1414,10 +1772,18 @@ class TopOpeBRepTool_C2DF {
 		Standard_Boolean IsFace(const TopoDS_Face &F) const;
 
 };
+%feature("shadow") TopOpeBRepTool_C2DF::~TopOpeBRepTool_C2DF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_C2DF {
-	~TopOpeBRepTool_C2DF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_C2DF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1437,7 +1803,7 @@ class TopOpeBRepTool_CurveTool {
 		const TopOpeBRepTool_GeomTool & GetGeomTool() const;
 		%feature("autodoc", "1");
 		void SetGeomTool(const TopOpeBRepTool_GeomTool &GT);
-		%feature("autodoc","MakeCurves(Standard_Real min, Standard_Real max, const C3D, const PC1, const PC2, const S1, const S2)->[Standard_RealStandard_Real]");
+		%feature("autodoc","MakeCurves(Standard_Real min, Standard_Real max, const C3D, const PC1, const PC2, const S1, const S2) -> [Standard_RealStandard_Real]");
 		Standard_Boolean MakeCurves(const Standard_Real min, const Standard_Real max, const Handle_Geom_Curve &C3D, const Handle_Geom2d_Curve &PC1, const Handle_Geom2d_Curve &PC2, const TopoDS_Shape &S1, const TopoDS_Shape &S2, Handle_Geom_Curve & C3DN, Handle_Geom2d_Curve & PC1N, Handle_Geom2d_Curve & PC2N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Geom_Curve MakeBSpline1fromPnt(const TColgp_Array1OfPnt &P);
@@ -1445,14 +1811,22 @@ class TopOpeBRepTool_CurveTool {
 		Handle_Geom2d_Curve MakeBSpline1fromPnt2d(const TColgp_Array1OfPnt2d &P);
 		%feature("autodoc", "1");
 		Standard_Boolean IsProjectable(const TopoDS_Shape &S, const Handle_Geom_Curve &C);
-		%feature("autodoc","MakePCurveOnFace(const S, const C, Standard_Real first=0.0, Standard_Real last=0.0)->Standard_Real");
+		%feature("autodoc","MakePCurveOnFace(const S, const C, Standard_Real first=0.0, Standard_Real last=0.0) -> Standard_Real");
 		Handle_Geom2d_Curve MakePCurveOnFace(const TopoDS_Shape &S, const Handle_Geom_Curve &C, Standard_Real &OutValue, const Standard_Real first=0.0, const Standard_Real last=0.0);
 
 };
+%feature("shadow") TopOpeBRepTool_CurveTool::~TopOpeBRepTool_CurveTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_CurveTool {
-	~TopOpeBRepTool_CurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_CurveTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1484,9 +1858,9 @@ class TopOpeBRepTool_TOOL {
 		Standard_Integer OnBoundary(const Standard_Real par, const TopoDS_Edge &E);
 		%feature("autodoc", "1");
 		gp_Pnt2d UVF(const Standard_Real par, const TopOpeBRepTool_C2DF &C2DF);
-		%feature("autodoc","ParISO(const p2d, const e, const f)->Standard_Real");
+		%feature("autodoc","ParISO(const p2d, const e, const f) -> Standard_Real");
 		Standard_Boolean ParISO(const gp_Pnt2d &p2d, const TopoDS_Edge &e, const TopoDS_Face &f, Standard_Real &OutValue);
-		%feature("autodoc","ParE2d(const p2d, const e, const f)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ParE2d(const p2d, const e, const f) -> [Standard_RealStandard_Real]");
 		Standard_Boolean ParE2d(const gp_Pnt2d &p2d, const TopoDS_Edge &e, const TopoDS_Face &f, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean Getduv(const TopoDS_Face &f, const gp_Pnt2d &uv, const gp_Vec &dir, const Standard_Real factor, gp_Dir2d & duv);
@@ -1500,13 +1874,13 @@ class TopOpeBRepTool_TOOL {
 		Standard_Real minDUV(const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		Standard_Boolean outUVbounds(const gp_Pnt2d &uv, const TopoDS_Face &F);
-		%feature("autodoc","stuvF(const uv, const F)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","stuvF(const uv, const F) -> [Standard_IntegerStandard_Integer]");
 		void stuvF(const gp_Pnt2d &uv, const TopoDS_Face &F, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean TggeomE(const Standard_Real par, const BRepAdaptor_Curve &BC, gp_Vec & Tg);
 		%feature("autodoc", "1");
 		Standard_Boolean TggeomE(const Standard_Real par, const TopoDS_Edge &E, gp_Vec & Tg);
-		%feature("autodoc","TgINSIDE(const v, const E)->Standard_Integer");
+		%feature("autodoc","TgINSIDE(const v, const E) -> Standard_Integer");
 		Standard_Boolean TgINSIDE(const TopoDS_Vertex &v, const TopoDS_Edge &E, gp_Vec & Tg, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		gp_Vec2d Tg2d(const Standard_Integer iv, const TopoDS_Edge &E, const TopOpeBRepTool_C2DF &C2DF);
@@ -1530,9 +1904,9 @@ class TopOpeBRepTool_TOOL {
 		Standard_Boolean IsQuad(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
 		Standard_Boolean IsQuad(const TopoDS_Face &F);
-		%feature("autodoc","CurvE(const E, Standard_Real par, const tg0)->Standard_Real");
+		%feature("autodoc","CurvE(const E, Standard_Real par, const tg0) -> Standard_Real");
 		Standard_Boolean CurvE(const TopoDS_Edge &E, const Standard_Real par, const gp_Dir &tg0, Standard_Real &OutValue);
-		%feature("autodoc","CurvF(const F, const uv, const tg0)->Standard_Real");
+		%feature("autodoc","CurvF(const F, const uv, const tg0) -> Standard_Real");
 		Standard_Boolean CurvF(const TopoDS_Face &F, const gp_Pnt2d &uv, const gp_Dir &tg0, Standard_Real &OutValue, Standard_Boolean & direct);
 		%feature("autodoc", "1");
 		Standard_Boolean UVISO(const Handle_Geom2d_Curve &PC, Standard_Boolean & isou, Standard_Boolean & isov, gp_Dir2d & d2d, gp_Pnt2d & o2d);
@@ -1552,11 +1926,11 @@ class TopOpeBRepTool_TOOL {
 		Standard_Real Matter(const gp_Vec &d1, const gp_Vec &d2, const gp_Vec &ref);
 		%feature("autodoc", "1");
 		Standard_Real Matter(const gp_Vec2d &d1, const gp_Vec2d &d2);
-		%feature("autodoc","Matter(const xx1, const nt1, const xx2, const nt2, Standard_Real tola)->Standard_Real");
+		%feature("autodoc","Matter(const xx1, const nt1, const xx2, const nt2, Standard_Real tola) -> Standard_Real");
 		Standard_Boolean Matter(const gp_Dir &xx1, const gp_Dir &nt1, const gp_Dir &xx2, const gp_Dir &nt2, const Standard_Real tola, Standard_Real &OutValue);
-		%feature("autodoc","Matter(const f1, const f2, const e, Standard_Real pare, Standard_Real tola)->Standard_Real");
+		%feature("autodoc","Matter(const f1, const f2, const e, Standard_Real pare, Standard_Real tola) -> Standard_Real");
 		Standard_Boolean Matter(const TopoDS_Face &f1, const TopoDS_Face &f2, const TopoDS_Edge &e, const Standard_Real pare, const Standard_Real tola, Standard_Real &OutValue);
-		%feature("autodoc","MatterKPtg(const f1, const f2, const e)->Standard_Real");
+		%feature("autodoc","MatterKPtg(const f1, const f2, const e) -> Standard_Real");
 		Standard_Boolean MatterKPtg(const TopoDS_Face &f1, const TopoDS_Face &f2, const TopoDS_Edge &e, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean Getstp3dF(const gp_Pnt &p, const TopoDS_Face &f, gp_Pnt2d & uv, TopAbs_State & st);
@@ -1572,10 +1946,18 @@ class TopOpeBRepTool_TOOL {
 		Standard_Boolean EdgeONFace(const Standard_Real par, const TopoDS_Edge &ed, const gp_Pnt2d &uv, const TopoDS_Face &fa, Standard_Boolean & isonfa);
 
 };
+%feature("shadow") TopOpeBRepTool_TOOL::~TopOpeBRepTool_TOOL %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_TOOL {
-	~TopOpeBRepTool_TOOL() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_TOOL\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1597,11 +1979,11 @@ class TopOpeBRepTool_ShapeTool {
 		Handle_Geom_Surface BASISSURFACE(const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
 		Handle_Geom_Surface BASISSURFACE(const TopoDS_Face &F);
-		%feature("autodoc","UVBOUNDS(const S)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","UVBOUNDS(const S) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void UVBOUNDS(const Handle_Geom_Surface &S, Standard_Boolean & UPeri, Standard_Boolean & VPeri, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","UVBOUNDS(const F)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","UVBOUNDS(const F) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void UVBOUNDS(const TopoDS_Face &F, Standard_Boolean & UPeri, Standard_Boolean & VPeri, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","AdjustOnPeriodic(const S)->[Standard_RealStandard_Real]");
+		%feature("autodoc","AdjustOnPeriodic(const S) -> [Standard_RealStandard_Real]");
 		void AdjustOnPeriodic(const TopoDS_Shape &S, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean Closed(const TopoDS_Shape &S1, const TopoDS_Shape &S2);
@@ -1617,9 +1999,9 @@ class TopOpeBRepTool_ShapeTool {
 		Standard_Boolean CurvesSameOriented(const BRepAdaptor_Curve &C1, const BRepAdaptor_Curve &C2);
 		%feature("autodoc", "1");
 		Standard_Boolean EdgesSameOriented(const TopoDS_Shape &E1, const TopoDS_Shape &E2);
-		%feature("autodoc","EdgeData(const BRAC, Standard_Real P)->Standard_Real");
+		%feature("autodoc","EdgeData(const BRAC, Standard_Real P) -> Standard_Real");
 		Standard_Real EdgeData(const BRepAdaptor_Curve &BRAC, const Standard_Real P, gp_Dir & T, gp_Dir & N, Standard_Real &OutValue);
-		%feature("autodoc","EdgeData(const E, Standard_Real P)->Standard_Real");
+		%feature("autodoc","EdgeData(const E, Standard_Real P) -> Standard_Real");
 		Standard_Real EdgeData(const TopoDS_Shape &E, const Standard_Real P, gp_Dir & T, gp_Dir & N, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real Resolution3dU(const Handle_Geom_Surface &SU, const Standard_Real Tol2d);
@@ -1631,10 +2013,18 @@ class TopOpeBRepTool_ShapeTool {
 		Standard_Real Resolution3d(const TopoDS_Face &F, const Standard_Real Tol2d);
 
 };
+%feature("shadow") TopOpeBRepTool_ShapeTool::~TopOpeBRepTool_ShapeTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_ShapeTool {
-	~TopOpeBRepTool_ShapeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_ShapeTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1648,10 +2038,18 @@ class TopOpeBRepTool_AncestorsTool {
 		void MakeAncestors(const TopoDS_Shape &S, const TopAbs_ShapeEnum TS, const TopAbs_ShapeEnum TA, TopTools_IndexedDataMapOfShapeListOfShape & M);
 
 };
+%feature("shadow") TopOpeBRepTool_AncestorsTool::~TopOpeBRepTool_AncestorsTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_AncestorsTool {
-	~TopOpeBRepTool_AncestorsTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_AncestorsTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1695,10 +2093,18 @@ class TopOpeBRepTool_IndexedDataMapOfSolidClassifier : public TCollection_BasicM
 		BRepClass3d_SolidClassifier & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%feature("shadow") TopOpeBRepTool_IndexedDataMapOfSolidClassifier::~TopOpeBRepTool_IndexedDataMapOfSolidClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_IndexedDataMapOfSolidClassifier {
-	~TopOpeBRepTool_IndexedDataMapOfSolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapOfSolidClassifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1730,10 +2136,18 @@ class TopOpeBRepTool_makeTransition {
 		Standard_Boolean MkTonE(TopAbs_State & stb, TopAbs_State & sta);
 
 };
+%feature("shadow") TopOpeBRepTool_makeTransition::~TopOpeBRepTool_makeTransition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_makeTransition {
-	~TopOpeBRepTool_makeTransition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_makeTransition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1783,10 +2197,18 @@ class TopOpeBRepTool_ListOfC2DF {
 		void InsertAfter(TopOpeBRepTool_ListOfC2DF & Other, TopOpeBRepTool_ListIteratorOfListOfC2DF & It);
 
 };
+%feature("shadow") TopOpeBRepTool_ListOfC2DF::~TopOpeBRepTool_ListOfC2DF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_ListOfC2DF {
-	~TopOpeBRepTool_ListOfC2DF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_ListOfC2DF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1808,10 +2230,18 @@ class TopOpeBRepTool_PurgeInternalEdges {
 		void Perform();
 
 };
+%feature("shadow") TopOpeBRepTool_PurgeInternalEdges::~TopOpeBRepTool_PurgeInternalEdges %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_PurgeInternalEdges {
-	~TopOpeBRepTool_PurgeInternalEdges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_PurgeInternalEdges\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1823,8 +2253,18 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TColl
 		TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const TopoDS_Shape &K1, const Standard_Integer K2, const Bnd_Box &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -1843,10 +2283,18 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TColl
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
-	~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1868,10 +2316,18 @@ class TopOpeBRepTool_ListIteratorOfListOfC2DF {
 		TopOpeBRepTool_C2DF & Value() const;
 
 };
+%feature("shadow") TopOpeBRepTool_ListIteratorOfListOfC2DF::~TopOpeBRepTool_ListIteratorOfListOfC2DF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_ListIteratorOfListOfC2DF {
-	~TopOpeBRepTool_ListIteratorOfListOfC2DF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_ListIteratorOfListOfC2DF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1897,10 +2353,18 @@ class TopOpeBRepTool_FuseEdges {
 		void Perform();
 
 };
+%feature("shadow") TopOpeBRepTool_FuseEdges::~TopOpeBRepTool_FuseEdges %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_FuseEdges {
-	~TopOpeBRepTool_FuseEdges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_FuseEdges\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1944,10 +2408,18 @@ class TopOpeBRepTool_IndexedDataMapOfShapeconnexity : public TCollection_BasicMa
 		TopOpeBRepTool_connexity & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%feature("shadow") TopOpeBRepTool_IndexedDataMapOfShapeconnexity::~TopOpeBRepTool_IndexedDataMapOfShapeconnexity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_IndexedDataMapOfShapeconnexity {
-	~TopOpeBRepTool_IndexedDataMapOfShapeconnexity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapOfShapeconnexity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1985,10 +2457,18 @@ class TopOpeBRepTool_connexity {
 		Standard_Integer IsInternal(TopTools_ListOfShape & Item) const;
 
 };
+%feature("shadow") TopOpeBRepTool_connexity::~TopOpeBRepTool_connexity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_connexity {
-	~TopOpeBRepTool_connexity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_connexity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2000,8 +2480,18 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : publi
 		TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier(const TopoDS_Shape &K1, const Standard_Integer K2, const BRepClass3d_SolidClassifier &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -2020,10 +2510,18 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : publi
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier::~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
-	~TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2051,10 +2549,18 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF : public TCollection_
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF::~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF {
-	~TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2088,10 +2594,18 @@ class TopOpeBRepTool_DataMapOfOrientedShapeC2DF : public TCollection_BasicMap {
 		TopOpeBRepTool_C2DF & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") TopOpeBRepTool_DataMapOfOrientedShapeC2DF::~TopOpeBRepTool_DataMapOfOrientedShapeC2DF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_DataMapOfOrientedShapeC2DF {
-	~TopOpeBRepTool_DataMapOfOrientedShapeC2DF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapOfOrientedShapeC2DF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2121,10 +2635,18 @@ class TopOpeBRepTool {
 		Standard_OStream & Print(const TopOpeBRepTool_OutCurveType OCT, Standard_OStream & S);
 
 };
+%feature("shadow") TopOpeBRepTool::~TopOpeBRepTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool {
-	~TopOpeBRepTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2152,9 +2674,17 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF : public TCollectio
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF::~TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF {
-	~TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

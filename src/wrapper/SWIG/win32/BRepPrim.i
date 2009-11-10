@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepPrim_dependencies.i
 
 
@@ -142,10 +146,18 @@ class BRepPrim_OneAxis {
 		const TopoDS_Vertex & BottomEndVertex();
 
 };
+%feature("shadow") BRepPrim_OneAxis::~BRepPrim_OneAxis %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepPrim_OneAxis {
-	~BRepPrim_OneAxis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrim_OneAxis\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -157,10 +169,18 @@ class BRepPrim_Revolution : public BRepPrim_OneAxis {
 		BRepPrim_Revolution(const gp_Ax2 &A, const Standard_Real VMin, const Standard_Real VMax, const Handle_Geom_Curve &M, const Handle_Geom2d_Curve &PM);
 
 };
+%feature("shadow") BRepPrim_Revolution::~BRepPrim_Revolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepPrim_Revolution {
-	~BRepPrim_Revolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrim_Revolution\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -176,10 +196,18 @@ class BRepPrim_Sphere : public BRepPrim_Revolution {
 		BRepPrim_Sphere(const gp_Ax2 &Axes, const Standard_Real Radius);
 
 };
+%feature("shadow") BRepPrim_Sphere::~BRepPrim_Sphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepPrim_Sphere {
-	~BRepPrim_Sphere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrim_Sphere\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -205,10 +233,18 @@ class BRepPrim_FaceBuilder {
 		const TopoDS_Vertex & Vertex(const Standard_Integer I) const;
 
 };
+%feature("shadow") BRepPrim_FaceBuilder::~BRepPrim_FaceBuilder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepPrim_FaceBuilder {
-	~BRepPrim_FaceBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrim_FaceBuilder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -276,10 +312,18 @@ class BRepPrim_GWedge {
 		gp_Pnt Point(const Primitives_Direction d1, const Primitives_Direction d2, const Primitives_Direction d3);
 
 };
+%feature("shadow") BRepPrim_GWedge::~BRepPrim_GWedge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepPrim_GWedge {
-	~BRepPrim_GWedge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrim_GWedge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -295,10 +339,18 @@ class BRepPrim_Wedge : public BRepPrim_GWedge {
 		BRepPrim_Wedge(const gp_Ax2 &Axes, const Standard_Real xmin, const Standard_Real ymin, const Standard_Real zmin, const Standard_Real z2min, const Standard_Real x2min, const Standard_Real xmax, const Standard_Real ymax, const Standard_Real zmax, const Standard_Real z2max, const Standard_Real x2max);
 
 };
+%feature("shadow") BRepPrim_Wedge::~BRepPrim_Wedge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepPrim_Wedge {
-	~BRepPrim_Wedge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrim_Wedge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -356,10 +408,18 @@ class BRepPrim_Builder {
 		void CompleteShell(TopoDS_Shell & S) const;
 
 };
+%feature("shadow") BRepPrim_Builder::~BRepPrim_Builder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepPrim_Builder {
-	~BRepPrim_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrim_Builder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -385,10 +445,18 @@ class BRepPrim_Cone : public BRepPrim_Revolution {
 		virtual		TopoDS_Face MakeEmptyLateralFace() const;
 
 };
+%feature("shadow") BRepPrim_Cone::~BRepPrim_Cone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepPrim_Cone {
-	~BRepPrim_Cone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrim_Cone\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -412,10 +480,18 @@ class BRepPrim_Cylinder : public BRepPrim_Revolution {
 		virtual		TopoDS_Face MakeEmptyLateralFace() const;
 
 };
+%feature("shadow") BRepPrim_Cylinder::~BRepPrim_Cylinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepPrim_Cylinder {
-	~BRepPrim_Cylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrim_Cylinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -433,9 +509,17 @@ class BRepPrim_Torus : public BRepPrim_Revolution {
 		virtual		TopoDS_Face MakeEmptyLateralFace() const;
 
 };
+%feature("shadow") BRepPrim_Torus::~BRepPrim_Torus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepPrim_Torus {
-	~BRepPrim_Torus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepPrim_Torus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

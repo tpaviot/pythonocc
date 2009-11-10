@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Draft_dependencies.i
 
 
@@ -64,10 +68,18 @@ class Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public Handle_TCollectio
 	return (Draft_DataMapNodeOfDataMapOfFaceFaceInfo*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo::~Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
-	~Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -94,10 +106,18 @@ class Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public Handle_TCollectio
 	return (Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo::~Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
-	~Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -124,10 +144,18 @@ class Handle_Draft_Modification : public Handle_BRepTools_Modification {
 	return (Draft_Modification*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Draft_Modification::~Handle_Draft_Modification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Draft_Modification {
-	~Handle_Draft_Modification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Draft_Modification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -154,10 +182,18 @@ class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TColle
 	return (Draft_DataMapNodeOfDataMapOfVertexVertexInfo*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo::~Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
-	~Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -191,10 +227,18 @@ class Draft_FaceInfo {
 		const Handle_Geom_Curve & Curve() const;
 
 };
+%feature("shadow") Draft_FaceInfo::~Draft_FaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft_FaceInfo {
-	~Draft_FaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft_FaceInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -242,10 +286,18 @@ class Draft_EdgeInfo {
 		Standard_Real Tolerance() const;
 
 };
+%feature("shadow") Draft_EdgeInfo::~Draft_EdgeInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft_EdgeInfo {
-	~Draft_EdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft_EdgeInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -279,10 +331,18 @@ class Draft_DataMapOfEdgeEdgeInfo : public TCollection_BasicMap {
 		Draft_EdgeInfo & operator()(const TopoDS_Edge &K);
 
 };
+%feature("shadow") Draft_DataMapOfEdgeEdgeInfo::~Draft_DataMapOfEdgeEdgeInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft_DataMapOfEdgeEdgeInfo {
-	~Draft_DataMapOfEdgeEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft_DataMapOfEdgeEdgeInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -302,10 +362,18 @@ class Draft_DataMapIteratorOfDataMapOfFaceFaceInfo : public TCollection_BasicMap
 		const Draft_FaceInfo & Value() const;
 
 };
+%feature("shadow") Draft_DataMapIteratorOfDataMapOfFaceFaceInfo::~Draft_DataMapIteratorOfDataMapOfFaceFaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft_DataMapIteratorOfDataMapOfFaceFaceInfo {
-	~Draft_DataMapIteratorOfDataMapOfFaceFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfFaceFaceInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -335,15 +403,15 @@ class Draft_Modification : public BRepTools_Modification {
 		const TopTools_ListOfShape & ConnectedFaces(const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & ModifiedFaces();
-		%feature("autodoc","NewSurface(const F)->Standard_Real");
+		%feature("autodoc","NewSurface(const F) -> Standard_Real");
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc","NewCurve(const E)->Standard_Real");
+		%feature("autodoc","NewCurve(const E) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc","NewPoint(const V)->Standard_Real");
+		%feature("autodoc","NewPoint(const V) -> Standard_Real");
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF)->Standard_Real");
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc","NewParameter(const V, const E)->[Standard_RealStandard_Real]");
+		%feature("autodoc","NewParameter(const V, const E) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
@@ -361,10 +429,18 @@ class Draft_Modification : public BRepTools_Modification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Draft_Modification::~Draft_Modification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft_Modification {
-	~Draft_Modification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft_Modification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -392,10 +468,18 @@ class Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public TCollection_MapNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Draft_DataMapNodeOfDataMapOfVertexVertexInfo::~Draft_DataMapNodeOfDataMapOfVertexVertexInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
-	~Draft_DataMapNodeOfDataMapOfVertexVertexInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfVertexVertexInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -415,10 +499,18 @@ class Draft_DataMapIteratorOfDataMapOfVertexVertexInfo : public TCollection_Basi
 		const Draft_VertexInfo & Value() const;
 
 };
+%feature("shadow") Draft_DataMapIteratorOfDataMapOfVertexVertexInfo::~Draft_DataMapIteratorOfDataMapOfVertexVertexInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft_DataMapIteratorOfDataMapOfVertexVertexInfo {
-	~Draft_DataMapIteratorOfDataMapOfVertexVertexInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfVertexVertexInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -438,10 +530,18 @@ class Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo : public TCollection_BasicMap
 		const Draft_EdgeInfo & Value() const;
 
 };
+%feature("shadow") Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo::~Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo {
-	~Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -469,10 +569,18 @@ class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo::~Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
-	~Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -498,14 +606,32 @@ class Draft_VertexInfo {
 		Standard_Boolean MoreEdge() const;
 		%feature("autodoc", "1");
 		gp_Pnt & ChangeGeometry();
-		%feature("autodoc", "1");
-		Standard_Real & ChangeParameter(const TopoDS_Edge &E);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeParameter(const TopoDS_Edge &E) {
+				return (Standard_Real) $self->ChangeParameter(E);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeParameter(Standard_Real value ,const TopoDS_Edge &E) {
+				$self->ChangeParameter(E)=value;
+				}
+		};
 
 };
+%feature("shadow") Draft_VertexInfo::~Draft_VertexInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft_VertexInfo {
-	~Draft_VertexInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft_VertexInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -539,10 +665,18 @@ class Draft_DataMapOfFaceFaceInfo : public TCollection_BasicMap {
 		Draft_FaceInfo & operator()(const TopoDS_Face &K);
 
 };
+%feature("shadow") Draft_DataMapOfFaceFaceInfo::~Draft_DataMapOfFaceFaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft_DataMapOfFaceFaceInfo {
-	~Draft_DataMapOfFaceFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft_DataMapOfFaceFaceInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -570,10 +704,18 @@ class Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Draft_DataMapNodeOfDataMapOfFaceFaceInfo::~Draft_DataMapNodeOfDataMapOfFaceFaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
-	~Draft_DataMapNodeOfDataMapOfFaceFaceInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfFaceFaceInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -607,10 +749,18 @@ class Draft_DataMapOfVertexVertexInfo : public TCollection_BasicMap {
 		Draft_VertexInfo & operator()(const TopoDS_Vertex &K);
 
 };
+%feature("shadow") Draft_DataMapOfVertexVertexInfo::~Draft_DataMapOfVertexVertexInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft_DataMapOfVertexVertexInfo {
-	~Draft_DataMapOfVertexVertexInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft_DataMapOfVertexVertexInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -624,9 +774,17 @@ class Draft {
 		Standard_Real Angle(const TopoDS_Face &F, const gp_Dir &Direction);
 
 };
+%feature("shadow") Draft::~Draft %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Draft {
-	~Draft() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Draft\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

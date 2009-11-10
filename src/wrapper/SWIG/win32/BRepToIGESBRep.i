@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepToIGESBRep_dependencies.i
 
 
@@ -74,9 +78,17 @@ class BRepToIGESBRep_Entity : public BRepToIGES_BREntity {
 		Handle_IGESData_IGESEntity TransferCompound(const TopoDS_Compound &start);
 
 };
+%feature("shadow") BRepToIGESBRep_Entity::~BRepToIGESBRep_Entity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepToIGESBRep_Entity {
-	~BRepToIGESBRep_Entity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepToIGESBRep_Entity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

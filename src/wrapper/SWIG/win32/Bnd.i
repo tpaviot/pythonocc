@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Bnd_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_Bnd_SequenceNodeOfSeqOfBox : public Handle_TCollection_SeqNode {
 	return (Bnd_SequenceNodeOfSeqOfBox*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Bnd_SequenceNodeOfSeqOfBox::~Handle_Bnd_SequenceNodeOfSeqOfBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Bnd_SequenceNodeOfSeqOfBox {
-	~Handle_Bnd_SequenceNodeOfSeqOfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Bnd_SequenceNodeOfSeqOfBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 	return (Bnd_HArray1OfBox2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Bnd_HArray1OfBox2d::~Handle_Bnd_HArray1OfBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Bnd_HArray1OfBox2d {
-	~Handle_Bnd_HArray1OfBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Bnd_HArray1OfBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 	return (Bnd_HArray1OfBox*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Bnd_HArray1OfBox::~Handle_Bnd_HArray1OfBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Bnd_HArray1OfBox {
-	~Handle_Bnd_HArray1OfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Bnd_HArray1OfBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -176,10 +204,18 @@ class Bnd_B2d {
 		void SetHSize(const gp_XY &theHSize);
 
 };
+%feature("shadow") Bnd_B2d::~Bnd_B2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_B2d {
-	~Bnd_B2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_B2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -235,10 +271,18 @@ class Bnd_B2f {
 		void SetHSize(const gp_XY &theHSize);
 
 };
+%feature("shadow") Bnd_B2f::~Bnd_B2f %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_B2f {
-	~Bnd_B2f() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_B2f\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -264,10 +308,18 @@ class Bnd_SequenceNodeOfSeqOfBox : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Bnd_SequenceNodeOfSeqOfBox::~Bnd_SequenceNodeOfSeqOfBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_SequenceNodeOfSeqOfBox {
-	~Bnd_SequenceNodeOfSeqOfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_SequenceNodeOfSeqOfBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -321,10 +373,18 @@ class Bnd_SeqOfBox : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Bnd_SeqOfBox::~Bnd_SeqOfBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_SeqOfBox {
-	~Bnd_SeqOfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_SeqOfBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -352,7 +412,7 @@ class Bnd_Box {
 		void SetGap(const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void Enlarge(const Standard_Real Tol);
-		%feature("autodoc","Get()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Get() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Get(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void OpenXmin();
@@ -422,10 +482,18 @@ class Bnd_Box {
 		Standard_Real SquareExtent() const;
 
 };
+%feature("shadow") Bnd_Box::~Bnd_Box %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_Box {
-	~Bnd_Box() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_Box\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -449,10 +517,18 @@ class Bnd_BoundSortBox2d {
 		void Dump() const;
 
 };
+%feature("shadow") Bnd_BoundSortBox2d::~Bnd_BoundSortBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_BoundSortBox2d {
-	~Bnd_BoundSortBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_BoundSortBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -508,10 +584,18 @@ class Bnd_B3d {
 		void SetHSize(const gp_XYZ &theHSize);
 
 };
+%feature("shadow") Bnd_B3d::~Bnd_B3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_B3d {
-	~Bnd_B3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_B3d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +651,18 @@ class Bnd_B3f {
 		void SetHSize(const gp_XYZ &theHSize);
 
 };
+%feature("shadow") Bnd_B3f::~Bnd_B3f %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_B3f {
-	~Bnd_B3f() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_B3f\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -614,10 +706,18 @@ class Bnd_HArray1OfBox2d : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Bnd_HArray1OfBox2d::~Bnd_HArray1OfBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_HArray1OfBox2d {
-	~Bnd_HArray1OfBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_HArray1OfBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -661,10 +761,18 @@ class Bnd_HArray1OfBox : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Bnd_HArray1OfBox::~Bnd_HArray1OfBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_HArray1OfBox {
-	~Bnd_HArray1OfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_HArray1OfBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -692,10 +800,18 @@ class Bnd_BoundSortBox {
 		void Destroy();
 
 };
+%feature("shadow") Bnd_BoundSortBox::~Bnd_BoundSortBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_BoundSortBox {
-	~Bnd_BoundSortBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_BoundSortBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -723,7 +839,7 @@ class Bnd_Box2d {
 		void SetGap(const Standard_Real Tol);
 		%feature("autodoc", "1");
 		void Enlarge(const Standard_Real Tol);
-		%feature("autodoc","Get()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Get() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Get(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void OpenXmin();
@@ -767,10 +883,18 @@ class Bnd_Box2d {
 		void Dump() const;
 
 };
+%feature("shadow") Bnd_Box2d::~Bnd_Box2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_Box2d {
-	~Bnd_Box2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_Box2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -810,10 +934,18 @@ class Bnd_Array1OfBox2d {
 		Bnd_Box2d & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Bnd_Array1OfBox2d::~Bnd_Array1OfBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_Array1OfBox2d {
-	~Bnd_Array1OfBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_Array1OfBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -853,9 +985,17 @@ class Bnd_Array1OfBox {
 		Bnd_Box & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Bnd_Array1OfBox::~Bnd_Array1OfBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Bnd_Array1OfBox {
-	~Bnd_Array1OfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Bnd_Array1OfBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

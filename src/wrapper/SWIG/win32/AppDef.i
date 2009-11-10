@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include AppDef_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_AppDef_MyCriterionOfTheVariational : public Handle_AppParCurves_Smo
 	return (AppDef_MyCriterionOfTheVariational*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AppDef_MyCriterionOfTheVariational::~Handle_AppDef_MyCriterionOfTheVariational %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AppDef_MyCriterionOfTheVariational {
-	~Handle_AppDef_MyCriterionOfTheVariational() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AppDef_MyCriterionOfTheVariational\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 	return (AppDef_HArray1OfMultiPointConstraint*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AppDef_HArray1OfMultiPointConstraint::~Handle_AppDef_HArray1OfMultiPointConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AppDef_HArray1OfMultiPointConstraint {
-	~Handle_AppDef_HArray1OfMultiPointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AppDef_HArray1OfMultiPointConstraint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -132,10 +152,18 @@ class AppDef_MyLineTool {
 		AppDef_MultiLine & MakeMLBetween(const AppDef_MultiLine &ML, const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer NbPMin);
 
 };
+%feature("shadow") AppDef_MyLineTool::~AppDef_MyLineTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_MyLineTool {
-	~AppDef_MyLineTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_MyLineTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,11 +175,11 @@ class AppDef_ParFunctionOfTheGradient : public math_MultipleVarFunctionWithGradi
 		AppDef_ParFunctionOfTheGradient(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc","Value(const X)->Standard_Real");
+		%feature("autodoc","Value(const X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
-		%feature("autodoc","Values(const X)->Standard_Real");
+		%feature("autodoc","Values(const X) -> Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -169,10 +197,18 @@ class AppDef_ParFunctionOfTheGradient : public math_MultipleVarFunctionWithGradi
 		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
 
 };
+%feature("shadow") AppDef_ParFunctionOfTheGradient::~AppDef_ParFunctionOfTheGradient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_ParFunctionOfTheGradient {
-	~AppDef_ParFunctionOfTheGradient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_ParFunctionOfTheGradient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -232,10 +268,18 @@ class AppDef_MultiPointConstraint : public AppParCurves_MultiPoint {
 		};
 
 };
+%feature("shadow") AppDef_MultiPointConstraint::~AppDef_MultiPointConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_MultiPointConstraint {
-	~AppDef_MultiPointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_MultiPointConstraint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -271,10 +315,18 @@ class AppDef_MultiLine {
 		};
 
 };
+%feature("shadow") AppDef_MultiLine::~AppDef_MultiLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_MultiLine {
-	~AppDef_MultiLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_MultiLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -300,10 +352,18 @@ class AppDef_MyBSplGradientOfBSplineCompute {
 		Standard_Real AverageError() const;
 
 };
+%feature("shadow") AppDef_MyBSplGradientOfBSplineCompute::~AppDef_MyBSplGradientOfBSplineCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_MyBSplGradientOfBSplineCompute {
-	~AppDef_MyBSplGradientOfBSplineCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_MyBSplGradientOfBSplineCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -347,10 +407,18 @@ class AppDef_HArray1OfMultiPointConstraint : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AppDef_HArray1OfMultiPointConstraint::~AppDef_HArray1OfMultiPointConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_HArray1OfMultiPointConstraint {
-	~AppDef_HArray1OfMultiPointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_HArray1OfMultiPointConstraint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -362,11 +430,11 @@ class AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute : public math_Multip
 		AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Integer NbPol);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc","Value(const X)->Standard_Real");
+		%feature("autodoc","Value(const X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
-		%feature("autodoc","Values(const X)->Standard_Real");
+		%feature("autodoc","Values(const X) -> Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -394,10 +462,18 @@ class AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute : public math_Multip
 		void SetLastLambda(const Standard_Real l2);
 
 };
+%feature("shadow") AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute::~AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute {
-	~AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -411,10 +487,18 @@ class AppDef_Gradient_BFGSOfMyGradientOfCompute : public math_BFGS {
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
 
 };
+%feature("shadow") AppDef_Gradient_BFGSOfMyGradientOfCompute::~AppDef_Gradient_BFGSOfMyGradientOfCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_Gradient_BFGSOfMyGradientOfCompute {
-	~AppDef_Gradient_BFGSOfMyGradientOfCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_Gradient_BFGSOfMyGradientOfCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -448,11 +532,11 @@ class AppDef_TheLeastSquares {
 		const math_Matrix & FunctionMatrix() const;
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
-		%feature("autodoc","ErrorGradient()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
-		%feature("autodoc","Error()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -466,10 +550,18 @@ class AppDef_TheLeastSquares {
 		const math_IntegerVector & KIndex() const;
 
 };
+%feature("shadow") AppDef_TheLeastSquares::~AppDef_TheLeastSquares %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_TheLeastSquares {
-	~AppDef_TheLeastSquares() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_TheLeastSquares\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -483,10 +575,18 @@ class AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute : public math_BFGS
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
 
 };
+%feature("shadow") AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute::~AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute {
-	~AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -500,10 +600,18 @@ class AppDef_Gradient_BFGSOfTheGradient : public math_BFGS {
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
 
 };
+%feature("shadow") AppDef_Gradient_BFGSOfTheGradient::~AppDef_Gradient_BFGSOfTheGradient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_Gradient_BFGSOfTheGradient {
-	~AppDef_Gradient_BFGSOfTheGradient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_Gradient_BFGSOfTheGradient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,9 +645,9 @@ class AppDef_TheVariational {
 		const Handle_TColStd_HArray1OfReal & Parameters() const;
 		%feature("autodoc", "1");
 		const Handle_TColStd_HArray1OfReal & Knots() const;
-		%feature("autodoc","Criterium()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Criterium() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Criterium(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","CriteriumWeight()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","CriteriumWeight() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void CriteriumWeight(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer MaxDegree() const;
@@ -589,10 +697,18 @@ class AppDef_TheVariational {
 		void SetNbIterations(const Standard_Integer Iter);
 
 };
+%feature("shadow") AppDef_TheVariational::~AppDef_TheVariational %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_TheVariational {
-	~AppDef_TheVariational() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_TheVariational\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -622,7 +738,7 @@ class AppDef_Compute {
 		Standard_Boolean IsAllApproximated() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc","Error(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbMultiCurves() const;
@@ -638,10 +754,18 @@ class AppDef_Compute {
 		const TColStd_Array1OfReal & Parameters(const Standard_Integer Index=1) const;
 
 };
+%feature("shadow") AppDef_Compute::~AppDef_Compute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_Compute {
-	~AppDef_Compute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_Compute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -653,11 +777,11 @@ class AppDef_ParFunctionOfMyGradientbisOfBSplineCompute : public math_MultipleVa
 		AppDef_ParFunctionOfMyGradientbisOfBSplineCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc","Value(const X)->Standard_Real");
+		%feature("autodoc","Value(const X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
-		%feature("autodoc","Values(const X)->Standard_Real");
+		%feature("autodoc","Values(const X) -> Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -675,10 +799,18 @@ class AppDef_ParFunctionOfMyGradientbisOfBSplineCompute : public math_MultipleVa
 		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
 
 };
+%feature("shadow") AppDef_ParFunctionOfMyGradientbisOfBSplineCompute::~AppDef_ParFunctionOfMyGradientbisOfBSplineCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_ParFunctionOfMyGradientbisOfBSplineCompute {
-	~AppDef_ParFunctionOfMyGradientbisOfBSplineCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_ParFunctionOfMyGradientbisOfBSplineCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -702,10 +834,18 @@ class AppDef_TheGradient {
 		Standard_Real AverageError() const;
 
 };
+%feature("shadow") AppDef_TheGradient::~AppDef_TheGradient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_TheGradient {
-	~AppDef_TheGradient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_TheGradient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -739,11 +879,11 @@ class AppDef_ParLeastSquareOfTheGradient {
 		const math_Matrix & FunctionMatrix() const;
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
-		%feature("autodoc","ErrorGradient()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
-		%feature("autodoc","Error()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -757,10 +897,18 @@ class AppDef_ParLeastSquareOfTheGradient {
 		const math_IntegerVector & KIndex() const;
 
 };
+%feature("shadow") AppDef_ParLeastSquareOfTheGradient::~AppDef_ParLeastSquareOfTheGradient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_ParLeastSquareOfTheGradient {
-	~AppDef_ParLeastSquareOfTheGradient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_ParLeastSquareOfTheGradient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -778,17 +926,27 @@ class AppDef_MyCriterionOfTheVariational : public AppParCurves_SmoothCriterion {
 		virtual		void GetCurve(Handle_FEmTool_Curve & C) const;
 		%feature("autodoc", "1");
 		virtual		void SetEstimation(const Standard_Real E1, const Standard_Real E2, const Standard_Real E3);
-		%feature("autodoc", "1");
-		virtual		Standard_Real & EstLength();
-		%feature("autodoc","GetEstimation()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetEstLength() {
+				return (Standard_Real) $self->EstLength();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetEstLength(Standard_Real value ) {
+				$self->EstLength()=value;
+				}
+		};
+		%feature("autodoc","GetEstimation() -> [Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void GetEstimation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_FEmTool_HAssemblyTable AssemblyTable() const;
 		%feature("autodoc", "1");
 		virtual		Handle_TColStd_HArray2OfInteger DependenceTable() const;
-		%feature("autodoc","QualityValues(Standard_Real J1min, Standard_Real J2min, Standard_Real J3min)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","QualityValues(Standard_Real J1min, Standard_Real J2min, Standard_Real J3min) -> [Standard_RealStandard_RealStandard_Real]");
 		virtual		Standard_Integer QualityValues(const Standard_Real J1min, const Standard_Real J2min, const Standard_Real J3min, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","ErrorValues()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","ErrorValues() -> [Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void ErrorValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Hessian(const Standard_Integer Element, const Standard_Integer Dimension1, const Standard_Integer Dimension2, math_Matrix & H);
@@ -798,7 +956,7 @@ class AppDef_MyCriterionOfTheVariational : public AppParCurves_SmoothCriterion {
 		virtual		void InputVector(const math_Vector &X, const Handle_FEmTool_HAssemblyTable &AssTable);
 		%feature("autodoc", "1");
 		virtual		void SetWeight(const Standard_Real QuadraticWeight, const Standard_Real QualityWeight, const Standard_Real percentJ1, const Standard_Real percentJ2, const Standard_Real percentJ3);
-		%feature("autodoc","GetWeight()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetWeight() -> [Standard_Real, Standard_Real]");
 		virtual		void GetWeight(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void SetWeight(const TColStd_Array1OfReal &Weight);
@@ -816,10 +974,18 @@ class AppDef_MyCriterionOfTheVariational : public AppParCurves_SmoothCriterion {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AppDef_MyCriterionOfTheVariational::~AppDef_MyCriterionOfTheVariational %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_MyCriterionOfTheVariational {
-	~AppDef_MyCriterionOfTheVariational() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_MyCriterionOfTheVariational\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -853,11 +1019,11 @@ class AppDef_ParLeastSquareOfMyGradientOfCompute {
 		const math_Matrix & FunctionMatrix() const;
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
-		%feature("autodoc","ErrorGradient()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
-		%feature("autodoc","Error()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -871,10 +1037,18 @@ class AppDef_ParLeastSquareOfMyGradientOfCompute {
 		const math_IntegerVector & KIndex() const;
 
 };
+%feature("shadow") AppDef_ParLeastSquareOfMyGradientOfCompute::~AppDef_ParLeastSquareOfMyGradientOfCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_ParLeastSquareOfMyGradientOfCompute {
-	~AppDef_ParLeastSquareOfMyGradientOfCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_ParLeastSquareOfMyGradientOfCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -896,10 +1070,18 @@ class AppDef_ResConstraintOfTheGradient {
 		const math_Matrix & InverseMatrix() const;
 
 };
+%feature("shadow") AppDef_ResConstraintOfTheGradient::~AppDef_ResConstraintOfTheGradient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_ResConstraintOfTheGradient {
-	~AppDef_ResConstraintOfTheGradient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_ResConstraintOfTheGradient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -911,11 +1093,11 @@ class AppDef_TheFunction : public math_MultipleVarFunctionWithGradient {
 		AppDef_TheFunction(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc","Value(const X)->Standard_Real");
+		%feature("autodoc","Value(const X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
-		%feature("autodoc","Values(const X)->Standard_Real");
+		%feature("autodoc","Values(const X) -> Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -933,10 +1115,18 @@ class AppDef_TheFunction : public math_MultipleVarFunctionWithGradient {
 		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
 
 };
+%feature("shadow") AppDef_TheFunction::~AppDef_TheFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_TheFunction {
-	~AppDef_TheFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_TheFunction\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -960,10 +1150,18 @@ class AppDef_MyGradientOfCompute {
 		Standard_Real AverageError() const;
 
 };
+%feature("shadow") AppDef_MyGradientOfCompute::~AppDef_MyGradientOfCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_MyGradientOfCompute {
-	~AppDef_MyGradientOfCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_MyGradientOfCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -997,11 +1195,11 @@ class AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
 		const math_Matrix & FunctionMatrix() const;
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
-		%feature("autodoc","ErrorGradient()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
-		%feature("autodoc","Error()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -1015,10 +1213,18 @@ class AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
 		const math_IntegerVector & KIndex() const;
 
 };
+%feature("shadow") AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute::~AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
-	~AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1042,10 +1248,18 @@ class AppDef_MyGradientbisOfBSplineCompute {
 		Standard_Real AverageError() const;
 
 };
+%feature("shadow") AppDef_MyGradientbisOfBSplineCompute::~AppDef_MyGradientbisOfBSplineCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_MyGradientbisOfBSplineCompute {
-	~AppDef_MyGradientbisOfBSplineCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_MyGradientbisOfBSplineCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1085,7 +1299,7 @@ class AppDef_BSplineCompute {
 		Standard_Boolean IsAllApproximated() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc","Error()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Error() -> [Standard_Real, Standard_Real]");
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const AppParCurves_MultiBSpCurve & Value() const;
@@ -1095,10 +1309,18 @@ class AppDef_BSplineCompute {
 		const TColStd_Array1OfReal & Parameters() const;
 
 };
+%feature("shadow") AppDef_BSplineCompute::~AppDef_BSplineCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_BSplineCompute {
-	~AppDef_BSplineCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_BSplineCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1132,11 +1354,11 @@ class AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
 		const math_Matrix & FunctionMatrix() const;
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
-		%feature("autodoc","ErrorGradient()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
-		%feature("autodoc","Error()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -1150,10 +1372,18 @@ class AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
 		const math_IntegerVector & KIndex() const;
 
 };
+%feature("shadow") AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute::~AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
-	~AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1175,10 +1405,18 @@ class AppDef_ResConstraintOfMyGradientOfCompute {
 		const math_Matrix & InverseMatrix() const;
 
 };
+%feature("shadow") AppDef_ResConstraintOfMyGradientOfCompute::~AppDef_ResConstraintOfMyGradientOfCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_ResConstraintOfMyGradientOfCompute {
-	~AppDef_ResConstraintOfMyGradientOfCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_ResConstraintOfMyGradientOfCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1192,10 +1430,18 @@ class AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute : public math_BFGS {
 		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
 
 };
+%feature("shadow") AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute::~AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute {
-	~AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1235,10 +1481,18 @@ class AppDef_Array1OfMultiPointConstraint {
 		AppDef_MultiPointConstraint & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") AppDef_Array1OfMultiPointConstraint::~AppDef_Array1OfMultiPointConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_Array1OfMultiPointConstraint {
-	~AppDef_Array1OfMultiPointConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_Array1OfMultiPointConstraint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1260,10 +1514,18 @@ class AppDef_TheResol {
 		const math_Matrix & InverseMatrix() const;
 
 };
+%feature("shadow") AppDef_TheResol::~AppDef_TheResol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_TheResol {
-	~AppDef_TheResol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_TheResol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1285,10 +1547,18 @@ class AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
 		const math_Matrix & InverseMatrix() const;
 
 };
+%feature("shadow") AppDef_ResConstraintOfMyGradientbisOfBSplineCompute::~AppDef_ResConstraintOfMyGradientbisOfBSplineCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
-	~AppDef_ResConstraintOfMyGradientbisOfBSplineCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_ResConstraintOfMyGradientbisOfBSplineCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1300,11 +1570,11 @@ class AppDef_ParFunctionOfMyGradientOfCompute : public math_MultipleVarFunctionW
 		AppDef_ParFunctionOfMyGradientOfCompute(const AppDef_MultiLine &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc","Value(const X)->Standard_Real");
+		%feature("autodoc","Value(const X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
-		%feature("autodoc","Values(const X)->Standard_Real");
+		%feature("autodoc","Values(const X) -> Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -1322,9 +1592,17 @@ class AppDef_ParFunctionOfMyGradientOfCompute : public math_MultipleVarFunctionW
 		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
 
 };
+%feature("shadow") AppDef_ParFunctionOfMyGradientOfCompute::~AppDef_ParFunctionOfMyGradientOfCompute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppDef_ParFunctionOfMyGradientOfCompute {
-	~AppDef_ParFunctionOfMyGradientOfCompute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppDef_ParFunctionOfMyGradientOfCompute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

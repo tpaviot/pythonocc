@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepFeat_dependencies.i
 
 
@@ -91,10 +95,18 @@ class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &F);
 
 };
+%feature("shadow") BRepFeat_Builder::~BRepFeat_Builder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat_Builder {
-	~BRepFeat_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_Builder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -138,10 +150,18 @@ class BRepFeat_Form : public BRepBuilderAPI_MakeShape {
 		BRepFeat_StatusError CurrentStatusError() const;
 
 };
+%feature("shadow") BRepFeat_Form::~BRepFeat_Form %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat_Form {
-	~BRepFeat_Form() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_Form\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -157,7 +177,7 @@ class BRepFeat {
 		void Barycenter(const TopoDS_Shape &S, gp_Pnt & Pt);
 		%feature("autodoc", "1");
 		Standard_Real ParametricBarycenter(const TopoDS_Shape &S, const Handle_Geom_Curve &C);
-		%feature("autodoc","ParametricMinMax(const S, const C, Standard_Boolean Ori=0)->[Standard_RealStandard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","ParametricMinMax(const S, const C, Standard_Boolean Ori=0) -> [Standard_RealStandard_RealStandard_RealStandard_Real]");
 		void ParametricMinMax(const TopoDS_Shape &S, const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & flag, const Standard_Boolean Ori=0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsInside(const TopoDS_Face &F1, const TopoDS_Face &F2);
@@ -169,10 +189,18 @@ class BRepFeat {
 		Standard_OStream & Print(const BRepFeat_StatusError SE, Standard_OStream & S);
 
 };
+%feature("shadow") BRepFeat::~BRepFeat %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat {
-	~BRepFeat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -200,10 +228,18 @@ class BRepFeat_MakePipe : public BRepFeat_Form {
 		virtual		Handle_Geom_Curve BarycCurve();
 
 };
+%feature("shadow") BRepFeat_MakePipe::~BRepFeat_MakePipe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat_MakePipe {
-	~BRepFeat_MakePipe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakePipe\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -239,10 +275,18 @@ class BRepFeat_MakePrism : public BRepFeat_Form {
 		virtual		Handle_Geom_Curve BarycCurve();
 
 };
+%feature("shadow") BRepFeat_MakePrism::~BRepFeat_MakePrism %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat_MakePrism {
-	~BRepFeat_MakePrism() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakePrism\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -284,10 +328,18 @@ class BRepFeat_MakeDPrism : public BRepFeat_Form {
 		const TopTools_ListOfShape & LatEdges();
 
 };
+%feature("shadow") BRepFeat_MakeDPrism::~BRepFeat_MakeDPrism %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat_MakeDPrism {
-	~BRepFeat_MakeDPrism() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeDPrism\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -317,10 +369,18 @@ class BRepFeat_LocalOperation : public BRepFeat_Builder {
 		virtual		void Build();
 
 };
+%feature("shadow") BRepFeat_LocalOperation::~BRepFeat_LocalOperation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat_LocalOperation {
-	~BRepFeat_LocalOperation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_LocalOperation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -352,10 +412,18 @@ class BRepFeat_Gluer : public BRepBuilderAPI_MakeShape {
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &F);
 
 };
+%feature("shadow") BRepFeat_Gluer::~BRepFeat_Gluer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat_Gluer {
-	~BRepFeat_Gluer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_Gluer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +455,18 @@ class BRepFeat_SplitShape : public BRepBuilderAPI_MakeShape {
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &F);
 
 };
+%feature("shadow") BRepFeat_SplitShape::~BRepFeat_SplitShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat_SplitShape {
-	~BRepFeat_SplitShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_SplitShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -422,10 +498,18 @@ class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
 		BRepFeat_StatusError CurrentStatusError() const;
 
 };
+%feature("shadow") BRepFeat_RibSlot::~BRepFeat_RibSlot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat_RibSlot {
-	~BRepFeat_RibSlot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_RibSlot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +531,18 @@ class BRepFeat_MakeLinearForm : public BRepFeat_RibSlot {
 		Standard_Boolean Propagate(TopTools_ListOfShape & L, const TopoDS_Face &F, const gp_Pnt &FPoint, const gp_Pnt &LPoint, Standard_Boolean & falseside);
 
 };
+%feature("shadow") BRepFeat_MakeLinearForm::~BRepFeat_MakeLinearForm %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat_MakeLinearForm {
-	~BRepFeat_MakeLinearForm() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeLinearForm\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -472,10 +564,18 @@ class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
 		Standard_Boolean Propagate(TopTools_ListOfShape & L, const TopoDS_Face &F, const gp_Pnt &FPoint, const gp_Pnt &LPoint, Standard_Boolean & falseside);
 
 };
+%feature("shadow") BRepFeat_MakeRevolutionForm::~BRepFeat_MakeRevolutionForm %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat_MakeRevolutionForm {
-	~BRepFeat_MakeRevolutionForm() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeRevolutionForm\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -509,10 +609,18 @@ class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
 		virtual		void Build();
 
 };
+%feature("shadow") BRepFeat_MakeCylindricalHole::~BRepFeat_MakeCylindricalHole %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat_MakeCylindricalHole {
-	~BRepFeat_MakeCylindricalHole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeCylindricalHole\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -544,9 +652,17 @@ class BRepFeat_MakeRevol : public BRepFeat_Form {
 		virtual		Handle_Geom_Curve BarycCurve();
 
 };
+%feature("shadow") BRepFeat_MakeRevol::~BRepFeat_MakeRevol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFeat_MakeRevol {
-	~BRepFeat_MakeRevol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeRevol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

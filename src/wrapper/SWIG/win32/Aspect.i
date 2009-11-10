@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Aspect_dependencies.i
 
 
@@ -385,10 +389,18 @@ class Handle_Aspect_ColorScale : public Handle_MMgt_TShared {
 	return (Aspect_ColorScale*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_ColorScale::~Handle_Aspect_ColorScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_ColorScale {
-	~Handle_Aspect_ColorScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_ColorScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -415,10 +427,18 @@ class Handle_Aspect_Grid : public Handle_MMgt_TShared {
 	return (Aspect_Grid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_Grid::~Handle_Aspect_Grid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_Grid {
-	~Handle_Aspect_Grid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_Grid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -445,10 +465,18 @@ class Handle_Aspect_RectangularGrid : public Handle_Aspect_Grid {
 	return (Aspect_RectangularGrid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_RectangularGrid::~Handle_Aspect_RectangularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_RectangularGrid {
-	~Handle_Aspect_RectangularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_RectangularGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -475,10 +503,18 @@ class Handle_Aspect_WindowError : public Handle_Standard_OutOfRange {
 	return (Aspect_WindowError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_WindowError::~Handle_Aspect_WindowError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_WindowError {
-	~Handle_Aspect_WindowError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_WindowError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -505,10 +541,18 @@ class Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public Handle_TColle
 	return (Aspect_SequenceNodeOfSequenceOfWidthMapEntry*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry::~Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry {
-	~Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -535,10 +579,18 @@ class Handle_Aspect_WindowDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_WindowDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_WindowDefinitionError::~Handle_Aspect_WindowDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_WindowDefinitionError {
-	~Handle_Aspect_WindowDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_WindowDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -565,10 +617,18 @@ class Handle_Aspect_MarkerStyleDefinitionError : public Handle_Standard_OutOfRan
 	return (Aspect_MarkerStyleDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_MarkerStyleDefinitionError::~Handle_Aspect_MarkerStyleDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_MarkerStyleDefinitionError {
-	~Handle_Aspect_MarkerStyleDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_MarkerStyleDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -595,10 +655,18 @@ class Handle_Aspect_AspectMarkerDefinitionError : public Handle_Standard_OutOfRa
 	return (Aspect_AspectMarkerDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_AspectMarkerDefinitionError::~Handle_Aspect_AspectMarkerDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_AspectMarkerDefinitionError {
-	~Handle_Aspect_AspectMarkerDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectMarkerDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -625,10 +693,18 @@ class Handle_Aspect_WidthMap : public Handle_MMgt_TShared {
 	return (Aspect_WidthMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_WidthMap::~Handle_Aspect_WidthMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_WidthMap {
-	~Handle_Aspect_WidthMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_WidthMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -655,10 +731,18 @@ class Handle_Aspect_PixMap : public Handle_MMgt_TShared {
 	return (Aspect_PixMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_PixMap::~Handle_Aspect_PixMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_PixMap {
-	~Handle_Aspect_PixMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_PixMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -685,10 +769,18 @@ class Handle_Aspect_GraphicDeviceDefinitionError : public Handle_Standard_OutOfR
 	return (Aspect_GraphicDeviceDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_GraphicDeviceDefinitionError::~Handle_Aspect_GraphicDeviceDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_GraphicDeviceDefinitionError {
-	~Handle_Aspect_GraphicDeviceDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_GraphicDeviceDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -715,10 +807,18 @@ class Handle_Aspect_MarkMap : public Handle_MMgt_TShared {
 	return (Aspect_MarkMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_MarkMap::~Handle_Aspect_MarkMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_MarkMap {
-	~Handle_Aspect_MarkMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_MarkMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -745,10 +845,18 @@ class Handle_Aspect_WidthMapDefinitionError : public Handle_Standard_OutOfRange 
 	return (Aspect_WidthMapDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_WidthMapDefinitionError::~Handle_Aspect_WidthMapDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_WidthMapDefinitionError {
-	~Handle_Aspect_WidthMapDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_WidthMapDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -775,10 +883,18 @@ class Handle_Aspect_AspectLineDefinitionError : public Handle_Standard_OutOfRang
 	return (Aspect_AspectLineDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_AspectLineDefinitionError::~Handle_Aspect_AspectLineDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_AspectLineDefinitionError {
-	~Handle_Aspect_AspectLineDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectLineDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -805,10 +921,18 @@ class Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public Handle_TCollec
 	return (Aspect_SequenceNodeOfSequenceOfMarkMapEntry*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry::~Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry {
-	~Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -835,10 +959,18 @@ class Handle_Aspect_PixmapError : public Handle_Standard_OutOfRange {
 	return (Aspect_PixmapError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_PixmapError::~Handle_Aspect_PixmapError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_PixmapError {
-	~Handle_Aspect_PixmapError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_PixmapError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -865,10 +997,18 @@ class Handle_Aspect_Driver : public Handle_MMgt_TShared {
 	return (Aspect_Driver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_Driver::~Handle_Aspect_Driver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_Driver {
-	~Handle_Aspect_Driver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_Driver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -895,10 +1035,18 @@ class Handle_Aspect_ColorMapDefinitionError : public Handle_Standard_OutOfRange 
 	return (Aspect_ColorMapDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_ColorMapDefinitionError::~Handle_Aspect_ColorMapDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_ColorMapDefinitionError {
-	~Handle_Aspect_ColorMapDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_ColorMapDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -925,10 +1073,18 @@ class Handle_Aspect_TypeMap : public Handle_MMgt_TShared {
 	return (Aspect_TypeMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_TypeMap::~Handle_Aspect_TypeMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_TypeMap {
-	~Handle_Aspect_TypeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_TypeMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -955,10 +1111,18 @@ class Handle_Aspect_AspectFillArea : public Handle_MMgt_TShared {
 	return (Aspect_AspectFillArea*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_AspectFillArea::~Handle_Aspect_AspectFillArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_AspectFillArea {
-	~Handle_Aspect_AspectFillArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectFillArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -985,10 +1149,18 @@ class Handle_Aspect_IdentDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_IdentDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_IdentDefinitionError::~Handle_Aspect_IdentDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_IdentDefinitionError {
-	~Handle_Aspect_IdentDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_IdentDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1015,10 +1187,18 @@ class Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public Handle_TCollec
 	return (Aspect_SequenceNodeOfSequenceOfTypeMapEntry*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry::~Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry {
-	~Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1045,10 +1225,18 @@ class Handle_Aspect_ColorMap : public Handle_MMgt_TShared {
 	return (Aspect_ColorMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_ColorMap::~Handle_Aspect_ColorMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_ColorMap {
-	~Handle_Aspect_ColorMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_ColorMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1075,10 +1263,18 @@ class Handle_Aspect_FontStyleDefinitionError : public Handle_Standard_OutOfRange
 	return (Aspect_FontStyleDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_FontStyleDefinitionError::~Handle_Aspect_FontStyleDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_FontStyleDefinitionError {
-	~Handle_Aspect_FontStyleDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_FontStyleDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1105,10 +1301,18 @@ class Handle_Aspect_AspectMarker : public Handle_MMgt_TShared {
 	return (Aspect_AspectMarker*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_AspectMarker::~Handle_Aspect_AspectMarker %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_AspectMarker {
-	~Handle_Aspect_AspectMarker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectMarker\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1135,10 +1339,18 @@ class Handle_Aspect_LineStyleDefinitionError : public Handle_Standard_OutOfRange
 	return (Aspect_LineStyleDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_LineStyleDefinitionError::~Handle_Aspect_LineStyleDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_LineStyleDefinitionError {
-	~Handle_Aspect_LineStyleDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_LineStyleDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1165,10 +1377,18 @@ class Handle_Aspect_GenericColorMap : public Handle_Aspect_ColorMap {
 	return (Aspect_GenericColorMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_GenericColorMap::~Handle_Aspect_GenericColorMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_GenericColorMap {
-	~Handle_Aspect_GenericColorMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_GenericColorMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1195,10 +1415,18 @@ class Handle_Aspect_PixmapDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_PixmapDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_PixmapDefinitionError::~Handle_Aspect_PixmapDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_PixmapDefinitionError {
-	~Handle_Aspect_PixmapDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_PixmapDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1225,10 +1453,18 @@ class Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry : public Handle_TCollec
 	return (Aspect_SequenceNodeOfSequenceOfFontMapEntry*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry::~Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry {
-	~Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1255,10 +1491,18 @@ class Handle_Aspect_TypeMapDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_TypeMapDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_TypeMapDefinitionError::~Handle_Aspect_TypeMapDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_TypeMapDefinitionError {
-	~Handle_Aspect_TypeMapDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_TypeMapDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1285,10 +1529,18 @@ class Handle_Aspect_ColorRampColorMap : public Handle_Aspect_ColorMap {
 	return (Aspect_ColorRampColorMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_ColorRampColorMap::~Handle_Aspect_ColorRampColorMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_ColorRampColorMap {
-	~Handle_Aspect_ColorRampColorMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_ColorRampColorMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1315,10 +1567,18 @@ class Handle_Aspect_Window : public Handle_MMgt_TShared {
 	return (Aspect_Window*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_Window::~Handle_Aspect_Window %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_Window {
-	~Handle_Aspect_Window() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_Window\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1345,10 +1605,18 @@ class Handle_Aspect_BadAccess : public Handle_Standard_DomainError {
 	return (Aspect_BadAccess*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_BadAccess::~Handle_Aspect_BadAccess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_BadAccess {
-	~Handle_Aspect_BadAccess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_BadAccess\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1375,10 +1643,18 @@ class Handle_Aspect_FontMap : public Handle_MMgt_TShared {
 	return (Aspect_FontMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_FontMap::~Handle_Aspect_FontMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_FontMap {
-	~Handle_Aspect_FontMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_FontMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1405,10 +1681,18 @@ class Handle_Aspect_LineWidthDefinitionError : public Handle_Standard_OutOfRange
 	return (Aspect_LineWidthDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_LineWidthDefinitionError::~Handle_Aspect_LineWidthDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_LineWidthDefinitionError {
-	~Handle_Aspect_LineWidthDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_LineWidthDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1435,10 +1719,18 @@ class Handle_Aspect_FontMapDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_FontMapDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_FontMapDefinitionError::~Handle_Aspect_FontMapDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_FontMapDefinitionError {
-	~Handle_Aspect_FontMapDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_FontMapDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1465,10 +1757,18 @@ class Handle_Aspect_AspectLine : public Handle_MMgt_TShared {
 	return (Aspect_AspectLine*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_AspectLine::~Handle_Aspect_AspectLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_AspectLine {
-	~Handle_Aspect_AspectLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1495,10 +1795,18 @@ class Handle_Aspect_DriverError : public Handle_Standard_OutOfRange {
 	return (Aspect_DriverError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_DriverError::~Handle_Aspect_DriverError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_DriverError {
-	~Handle_Aspect_DriverError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_DriverError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1525,10 +1833,18 @@ class Handle_Aspect_ColorCubeColorMap : public Handle_Aspect_ColorMap {
 	return (Aspect_ColorCubeColorMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_ColorCubeColorMap::~Handle_Aspect_ColorCubeColorMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_ColorCubeColorMap {
-	~Handle_Aspect_ColorCubeColorMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_ColorCubeColorMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1555,10 +1871,18 @@ class Handle_Aspect_WindowDriver : public Handle_Aspect_Driver {
 	return (Aspect_WindowDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_WindowDriver::~Handle_Aspect_WindowDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_WindowDriver {
-	~Handle_Aspect_WindowDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_WindowDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1585,10 +1909,18 @@ class Handle_Aspect_MarkMapDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_MarkMapDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_MarkMapDefinitionError::~Handle_Aspect_MarkMapDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_MarkMapDefinitionError {
-	~Handle_Aspect_MarkMapDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_MarkMapDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1615,10 +1947,18 @@ class Handle_Aspect_GraphicDriver : public Handle_MMgt_TShared {
 	return (Aspect_GraphicDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_GraphicDriver::~Handle_Aspect_GraphicDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_GraphicDriver {
-	~Handle_Aspect_GraphicDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_GraphicDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1645,10 +1985,18 @@ class Handle_Aspect_SequenceNodeOfSequenceOfColor : public Handle_TCollection_Se
 	return (Aspect_SequenceNodeOfSequenceOfColor*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_SequenceNodeOfSequenceOfColor::~Handle_Aspect_SequenceNodeOfSequenceOfColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_SequenceNodeOfSequenceOfColor {
-	~Handle_Aspect_SequenceNodeOfSequenceOfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfColor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1675,10 +2023,18 @@ class Handle_Aspect_GraphicDevice : public Handle_MMgt_TShared {
 	return (Aspect_GraphicDevice*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_GraphicDevice::~Handle_Aspect_GraphicDevice %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_GraphicDevice {
-	~Handle_Aspect_GraphicDevice() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_GraphicDevice\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1705,10 +2061,18 @@ class Handle_Aspect_CircularGrid : public Handle_Aspect_Grid {
 	return (Aspect_CircularGrid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_CircularGrid::~Handle_Aspect_CircularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_CircularGrid {
-	~Handle_Aspect_CircularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_CircularGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1735,10 +2099,18 @@ class Handle_Aspect_UndefinedMap : public Handle_Standard_OutOfRange {
 	return (Aspect_UndefinedMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_UndefinedMap::~Handle_Aspect_UndefinedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_UndefinedMap {
-	~Handle_Aspect_UndefinedMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_UndefinedMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1765,10 +2137,18 @@ class Handle_Aspect_AspectFillAreaDefinitionError : public Handle_Standard_OutOf
 	return (Aspect_AspectFillAreaDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_AspectFillAreaDefinitionError::~Handle_Aspect_AspectFillAreaDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_AspectFillAreaDefinitionError {
-	~Handle_Aspect_AspectFillAreaDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectFillAreaDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1795,10 +2175,18 @@ class Handle_Aspect_DriverDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_DriverDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_DriverDefinitionError::~Handle_Aspect_DriverDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_DriverDefinitionError {
-	~Handle_Aspect_DriverDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_DriverDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1825,10 +2213,18 @@ class Handle_Aspect_PolyStyleDefinitionError : public Handle_Standard_OutOfRange
 	return (Aspect_PolyStyleDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_PolyStyleDefinitionError::~Handle_Aspect_PolyStyleDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_PolyStyleDefinitionError {
-	~Handle_Aspect_PolyStyleDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_PolyStyleDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1855,10 +2251,18 @@ class Handle_Aspect_EdgeDefinitionError : public Handle_Standard_OutOfRange {
 	return (Aspect_EdgeDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_EdgeDefinitionError::~Handle_Aspect_EdgeDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_EdgeDefinitionError {
-	~Handle_Aspect_EdgeDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_EdgeDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1885,10 +2289,18 @@ class Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry : public Handle_TColle
 	return (Aspect_SequenceNodeOfSequenceOfColorMapEntry*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry::~Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry {
-	~Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1914,10 +2326,18 @@ class Aspect_SequenceNodeOfSequenceOfFontMapEntry : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_SequenceNodeOfSequenceOfFontMapEntry::~Aspect_SequenceNodeOfSequenceOfFontMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_SequenceNodeOfSequenceOfFontMapEntry {
-	~Aspect_SequenceNodeOfSequenceOfFontMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfFontMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1949,10 +2369,18 @@ class Aspect_MarkMapDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_MarkMapDefinitionError::~Aspect_MarkMapDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_MarkMapDefinitionError {
-	~Aspect_MarkMapDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_MarkMapDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1988,10 +2416,18 @@ class Aspect_TypeMap : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_TypeMap::~Aspect_TypeMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_TypeMap {
-	~Aspect_TypeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_TypeMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2003,10 +2439,18 @@ class Aspect_GraphicCallbackStruct {
 		Aspect_GraphicCallbackStruct();
 
 };
+%feature("shadow") Aspect_GraphicCallbackStruct::~Aspect_GraphicCallbackStruct %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_GraphicCallbackStruct {
-	~Aspect_GraphicCallbackStruct() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_GraphicCallbackStruct\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2038,10 +2482,18 @@ class Aspect_AspectFillAreaDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_AspectFillAreaDefinitionError::~Aspect_AspectFillAreaDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_AspectFillAreaDefinitionError {
-	~Aspect_AspectFillAreaDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_AspectFillAreaDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2059,10 +2511,18 @@ class Aspect_Pixel {
 		};
 
 };
+%feature("shadow") Aspect_Pixel::~Aspect_Pixel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_Pixel {
-	~Aspect_Pixel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_Pixel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2105,10 +2565,18 @@ class Aspect_ColorPixel : public Aspect_Pixel {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_ColorPixel::~Aspect_ColorPixel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_ColorPixel {
-	~Aspect_ColorPixel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_ColorPixel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2128,9 +2596,9 @@ class Aspect_Grid : public MMgt_TShared {
 		void Translate(const Quantity_Length aDx, const Quantity_Length aDy);
 		%feature("autodoc", "1");
 		virtual		void SetColors(const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
-		%feature("autodoc","Hit(Quantity_Length X, Quantity_Length Y)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Hit(Quantity_Length X, Quantity_Length Y) -> [Standard_RealStandard_Real]");
 		void Hit(const Quantity_Length X, const Quantity_Length Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Compute(Quantity_Length X, Quantity_Length Y)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Compute(Quantity_Length X, Quantity_Length Y) -> [Standard_RealStandard_Real]");
 		virtual		void Compute(const Quantity_Length X, const Quantity_Length Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Activate();
@@ -2172,10 +2640,18 @@ class Aspect_Grid : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_Grid::~Aspect_Grid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_Grid {
-	~Aspect_Grid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_Grid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2207,10 +2683,18 @@ class Aspect_CircularGrid : public Aspect_Grid {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_CircularGrid::~Aspect_CircularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_CircularGrid {
-	~Aspect_CircularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_CircularGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2242,10 +2726,18 @@ class Aspect_ColorMapDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_ColorMapDefinitionError::~Aspect_ColorMapDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_ColorMapDefinitionError {
-	~Aspect_ColorMapDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_ColorMapDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2259,7 +2751,7 @@ class Aspect_PixMap : public MMgt_TShared {
 		virtual		Standard_Boolean Dump(const char * aFilename, const Standard_Real aGammaValue=1.0e+0) const;
 		%feature("autodoc", "1");
 		virtual		Aspect_Handle PixmapID() const;
-		%feature("autodoc","Size()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Size() -> [Standard_Integer, Standard_Integer]");
 		void Size(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Depth() const;
@@ -2277,10 +2769,18 @@ class Aspect_PixMap : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_PixMap::~Aspect_PixMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_PixMap {
-	~Aspect_PixMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_PixMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2294,7 +2794,7 @@ class Aspect_AspectMarker : public MMgt_TShared {
 		void SetScale(const Standard_Real AScale);
 		%feature("autodoc", "1");
 		void SetType(const Aspect_TypeOfMarker AType);
-		%feature("autodoc","Values()->Standard_Real");
+		%feature("autodoc","Values() -> Standard_Real");
 		void Values(Quantity_Color & AColor, Aspect_TypeOfMarker & AType, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -2310,10 +2810,18 @@ class Aspect_AspectMarker : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_AspectMarker::~Aspect_AspectMarker %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_AspectMarker {
-	~Aspect_AspectMarker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_AspectMarker\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2355,10 +2863,18 @@ class Aspect_ColorMap : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_ColorMap::~Aspect_ColorMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_ColorMap {
-	~Aspect_ColorMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_ColorMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2368,7 +2884,7 @@ class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
 	public:
 		%feature("autodoc", "1");
 		Aspect_ColorCubeColorMap(const Standard_Integer base_pixel, const Standard_Integer redmax, const Standard_Integer redmult, const Standard_Integer greenmax, const Standard_Integer greenmult, const Standard_Integer bluemax, const Standard_Integer bluemult);
-		%feature("autodoc","ColorCubeDefinition()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","ColorCubeDefinition() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		void ColorCubeDefinition(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 
 };
@@ -2382,10 +2898,18 @@ class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_ColorCubeColorMap::~Aspect_ColorCubeColorMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_ColorCubeColorMap {
-	~Aspect_ColorCubeColorMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_ColorCubeColorMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2430,10 +2954,18 @@ class Aspect_IndexPixel : public Aspect_Pixel {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_IndexPixel::~Aspect_IndexPixel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_IndexPixel {
-	~Aspect_IndexPixel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_IndexPixel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2445,10 +2977,18 @@ class Aspect_RGBPixel {
 		Aspect_RGBPixel();
 
 };
+%feature("shadow") Aspect_RGBPixel::~Aspect_RGBPixel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_RGBPixel {
-	~Aspect_RGBPixel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_RGBPixel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2502,10 +3042,18 @@ class Aspect_SequenceOfMarkMapEntry : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Aspect_SequenceOfMarkMapEntry::~Aspect_SequenceOfMarkMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_SequenceOfMarkMapEntry {
-	~Aspect_SequenceOfMarkMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceOfMarkMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2545,10 +3093,18 @@ class Aspect_Array1OfEdge {
 		Aspect_Edge & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Aspect_Array1OfEdge::~Aspect_Array1OfEdge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_Array1OfEdge {
-	~Aspect_Array1OfEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_Array1OfEdge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2580,10 +3136,18 @@ class Aspect_PixmapError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_PixmapError::~Aspect_PixmapError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_PixmapError {
-	~Aspect_PixmapError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_PixmapError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2637,10 +3201,18 @@ class Aspect_SequenceOfTypeMapEntry : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Aspect_SequenceOfTypeMapEntry::~Aspect_SequenceOfTypeMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_SequenceOfTypeMapEntry {
-	~Aspect_SequenceOfTypeMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceOfTypeMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2672,10 +3244,18 @@ class Aspect_PixmapDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_PixmapDefinitionError::~Aspect_PixmapDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_PixmapDefinitionError {
-	~Aspect_PixmapDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_PixmapDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2707,7 +3287,7 @@ class Aspect_Driver : public MMgt_TShared {
 		virtual		void SetMarkerAttrib(const Standard_Integer ColorIndex, const Standard_Integer WidthIndex, const Standard_Boolean FillMarker=0);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsKnownImage(const Handle_Standard_Transient &anImage);
-		%feature("autodoc","SizeOfImageFile(Standard_CString anImageFile)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","SizeOfImageFile(Standard_CString anImageFile) -> [Standard_IntegerStandard_Integer]");
 		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void ClearImage(const Handle_Standard_Transient &anImageId);
@@ -2765,15 +3345,15 @@ class Aspect_Driver : public MMgt_TShared {
 		Handle_Aspect_FontMap FontMap() const;
 		%feature("autodoc", "1");
 		Handle_Aspect_MarkMap MarkMap() const;
-		%feature("autodoc","WorkSpace()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","WorkSpace() -> [Standard_Real, Standard_Real]");
 		virtual		void WorkSpace(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Length Convert(const Standard_Integer PV) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Convert(const Quantity_Length DV) const;
-		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY) -> [Standard_RealStandard_Real]");
 		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Convert(Quantity_Length DX, Quantity_Length DY)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","Convert(Quantity_Length DX, Quantity_Length DY) -> [Standard_IntegerStandard_Integer]");
 		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UseMFT() const;
@@ -2791,10 +3371,18 @@ class Aspect_Driver : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_Driver::~Aspect_Driver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_Driver {
-	~Aspect_Driver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_Driver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2806,7 +3394,7 @@ class Aspect_ColorRampColorMap : public Aspect_ColorMap {
 		Aspect_ColorRampColorMap(const Standard_Integer basepixel, const Standard_Integer dimension, const Quantity_Color &color);
 		%feature("autodoc", "1");
 		Aspect_ColorRampColorMap(const Standard_Integer basepixel, const Standard_Integer dimension, const Quantity_NameOfColor colorName);
-		%feature("autodoc","ColorRampDefinition()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","ColorRampDefinition() -> [Standard_Integer, Standard_Integer]");
 		void ColorRampDefinition(Standard_Integer &OutValue, Standard_Integer &OutValue, Quantity_Color & color) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer FindColorMapIndex(const Standard_Integer ColorMapEntryIndex) const;
@@ -2832,10 +3420,18 @@ class Aspect_ColorRampColorMap : public Aspect_ColorMap {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_ColorRampColorMap::~Aspect_ColorRampColorMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_ColorRampColorMap {
-	~Aspect_ColorRampColorMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_ColorRampColorMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2873,10 +3469,18 @@ class Aspect_GenericColorMap : public Aspect_ColorMap {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_GenericColorMap::~Aspect_GenericColorMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_GenericColorMap {
-	~Aspect_GenericColorMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_GenericColorMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2902,10 +3506,18 @@ class Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_SequenceNodeOfSequenceOfMarkMapEntry::~Aspect_SequenceNodeOfSequenceOfMarkMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_SequenceNodeOfSequenceOfMarkMapEntry {
-	~Aspect_SequenceNodeOfSequenceOfMarkMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfMarkMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2941,10 +3553,18 @@ class Aspect_MarkMap : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_MarkMap::~Aspect_MarkMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_MarkMap {
-	~Aspect_MarkMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_MarkMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2976,10 +3596,18 @@ class Aspect_DriverDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_DriverDefinitionError::~Aspect_DriverDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_DriverDefinitionError {
-	~Aspect_DriverDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_DriverDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3015,10 +3643,18 @@ class Aspect_FontMapEntry {
 		void Dump() const;
 
 };
+%feature("shadow") Aspect_FontMapEntry::~Aspect_FontMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_FontMapEntry {
-	~Aspect_FontMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_FontMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3044,10 +3680,18 @@ class Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_SequenceNodeOfSequenceOfTypeMapEntry::~Aspect_SequenceNodeOfSequenceOfTypeMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_SequenceNodeOfSequenceOfTypeMapEntry {
-	~Aspect_SequenceNodeOfSequenceOfTypeMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfTypeMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3101,10 +3745,18 @@ class Aspect_SequenceOfColor : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Aspect_SequenceOfColor::~Aspect_SequenceOfColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_SequenceOfColor {
-	~Aspect_SequenceOfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceOfColor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3142,10 +3794,18 @@ class Aspect_WidthMap : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_WidthMap::~Aspect_WidthMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_WidthMap {
-	~Aspect_WidthMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_WidthMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3177,10 +3837,18 @@ class Aspect_UndefinedMap : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_UndefinedMap::~Aspect_UndefinedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_UndefinedMap {
-	~Aspect_UndefinedMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_UndefinedMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3212,10 +3880,18 @@ class Aspect_EdgeDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_EdgeDefinitionError::~Aspect_EdgeDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_EdgeDefinitionError {
-	~Aspect_EdgeDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_EdgeDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3247,10 +3923,18 @@ class Aspect_LineWidthDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_LineWidthDefinitionError::~Aspect_LineWidthDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_LineWidthDefinitionError {
-	~Aspect_LineWidthDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_LineWidthDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3274,9 +3958,9 @@ class Aspect_AspectFillArea : public MMgt_TShared {
 		void SetInteriorStyle(const Aspect_InteriorStyle AStyle);
 		%feature("autodoc", "1");
 		Aspect_HatchStyle HatchStyle() const;
-		%feature("autodoc","Values()->Standard_Real");
+		%feature("autodoc","Values() -> Standard_Real");
 		void Values(Aspect_InteriorStyle & AStyle, Quantity_Color & AIntColor, Quantity_Color & AEdgeColor, Aspect_TypeOfLine & AType, Standard_Real &OutValue) const;
-		%feature("autodoc","Values()->Standard_Real");
+		%feature("autodoc","Values() -> Standard_Real");
 		void Values(Aspect_InteriorStyle & AStyle, Quantity_Color & AIntColor, Quantity_Color & BackIntColor, Quantity_Color & AEdgeColor, Aspect_TypeOfLine & AType, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -3292,10 +3976,18 @@ class Aspect_AspectFillArea : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_AspectFillArea::~Aspect_AspectFillArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_AspectFillArea {
-	~Aspect_AspectFillArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_AspectFillArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3327,10 +4019,18 @@ class Aspect_FontStyleDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_FontStyleDefinitionError::~Aspect_FontStyleDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_FontStyleDefinitionError {
-	~Aspect_FontStyleDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_FontStyleDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3369,7 +4069,7 @@ class Aspect_FontStyle {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_CString Value() const;
+		char * Value() const;
 		%feature("autodoc", "1");
 		Quantity_Length Size() const;
 		%feature("autodoc", "1");
@@ -3377,37 +4077,37 @@ class Aspect_FontStyle {
 		%feature("autodoc", "1");
 		Standard_Boolean CapsHeight() const;
 		%feature("autodoc", "1");
-		Standard_CString AliasName() const;
+		char * AliasName() const;
 		%feature("autodoc", "1");
-		Standard_CString FullName() const;
+		char * FullName() const;
 		%feature("autodoc", "1");
-		Standard_CString Foundry() const;
+		char * Foundry() const;
 		%feature("autodoc", "1");
-		Standard_CString Family() const;
+		char * Family() const;
 		%feature("autodoc", "1");
-		Standard_CString Weight() const;
+		char * Weight() const;
 		%feature("autodoc", "1");
-		Standard_CString Registry() const;
+		char * Registry() const;
 		%feature("autodoc", "1");
-		Standard_CString Encoding() const;
+		char * Encoding() const;
 		%feature("autodoc", "1");
-		Standard_CString SSlant() const;
+		char * SSlant() const;
 		%feature("autodoc", "1");
-		Standard_CString SWidth() const;
+		char * SWidth() const;
 		%feature("autodoc", "1");
-		Standard_CString SStyle() const;
+		char * SStyle() const;
 		%feature("autodoc", "1");
-		Standard_CString SPixelSize() const;
+		char * SPixelSize() const;
 		%feature("autodoc", "1");
-		Standard_CString SPointSize() const;
+		char * SPointSize() const;
 		%feature("autodoc", "1");
-		Standard_CString SResolutionX() const;
+		char * SResolutionX() const;
 		%feature("autodoc", "1");
-		Standard_CString SResolutionY() const;
+		char * SResolutionY() const;
 		%feature("autodoc", "1");
-		Standard_CString SSpacing() const;
+		char * SSpacing() const;
 		%feature("autodoc", "1");
-		Standard_CString SAverageWidth() const;
+		char * SAverageWidth() const;
 		%feature("autodoc", "1");
 		void Dump() const;
 		%feature("autodoc", "1");
@@ -3420,10 +4120,18 @@ class Aspect_FontStyle {
 		Standard_Boolean operator!=(const Aspect_FontStyle &Other) const;
 
 };
+%feature("shadow") Aspect_FontStyle::~Aspect_FontStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_FontStyle {
-	~Aspect_FontStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_FontStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3459,10 +4167,18 @@ class Aspect_MarkMapEntry {
 		void Dump() const;
 
 };
+%feature("shadow") Aspect_MarkMapEntry::~Aspect_MarkMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_MarkMapEntry {
-	~Aspect_MarkMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_MarkMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3494,10 +4210,18 @@ class Aspect_TypeMapDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_TypeMapDefinitionError::~Aspect_TypeMapDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_TypeMapDefinitionError {
-	~Aspect_TypeMapDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_TypeMapDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3548,7 +4272,7 @@ class Aspect_Window : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Aspect_Background Background() const;
 		%feature("autodoc", "1");
-		Standard_CString BackgroundImage() const;
+		char * BackgroundImage() const;
 		%feature("autodoc", "1");
 		Aspect_FillMethod BackgroundFillMethod() const;
 		%feature("autodoc", "1");
@@ -3559,23 +4283,23 @@ class Aspect_Window : public MMgt_TShared {
 		virtual		Standard_Boolean IsMapped() const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Ratio Ratio() const;
-		%feature("autodoc","Position()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Position()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Position() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		virtual		void Position(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","Size()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Size() -> [Standard_Real, Standard_Real]");
 		virtual		void Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Size()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Size() -> [Standard_Integer, Standard_Integer]");
 		virtual		void Size(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","MMSize()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","MMSize() -> [Standard_Real, Standard_Real]");
 		virtual		void MMSize(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Parameter Convert(const Standard_Integer PV) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Convert(const Quantity_Parameter DV) const;
-		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY) -> [Standard_RealStandard_Real]");
 		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Convert(Quantity_Parameter DX, Quantity_Parameter DY)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","Convert(Quantity_Parameter DX, Quantity_Parameter DY) -> [Standard_IntegerStandard_Integer]");
 		virtual		void Convert(const Quantity_Parameter DX, const Quantity_Parameter DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean BackingStore() const;
@@ -3595,10 +4319,18 @@ class Aspect_Window : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_Window::~Aspect_Window %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_Window {
-	~Aspect_Window() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_Window\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3624,10 +4356,18 @@ class Aspect_GenId {
 		Standard_Integer Upper() const;
 
 };
+%feature("shadow") Aspect_GenId::~Aspect_GenId %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_GenId {
-	~Aspect_GenId() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_GenId\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3659,10 +4399,18 @@ class Aspect_PolyStyleDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_PolyStyleDefinitionError::~Aspect_PolyStyleDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_PolyStyleDefinitionError {
-	~Aspect_PolyStyleDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_PolyStyleDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3672,7 +4420,7 @@ class Aspect {
 	public:
 		%feature("autodoc", "1");
 		Aspect();
-		%feature("autodoc","ValuesOfFOSP(Aspect_FormatOfSheetPaper aFOSP)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ValuesOfFOSP(Aspect_FormatOfSheetPaper aFOSP) -> [Standard_RealStandard_Real]");
 		char * ValuesOfFOSP(const Aspect_FormatOfSheetPaper aFOSP, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		char * ToCString(const TCollection_ExtendedString &aString);
@@ -3680,10 +4428,18 @@ class Aspect {
 		Standard_Boolean Inverse(const TColStd_Array2OfReal &aMat, TColStd_Array2OfReal & Inv);
 
 };
+%feature("shadow") Aspect::~Aspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect {
-	~Aspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3715,10 +4471,18 @@ class Aspect_MarkerStyleDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_MarkerStyleDefinitionError::~Aspect_MarkerStyleDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_MarkerStyleDefinitionError {
-	~Aspect_MarkerStyleDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_MarkerStyleDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3750,10 +4514,18 @@ class Aspect_GraphicDeviceDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_GraphicDeviceDefinitionError::~Aspect_GraphicDeviceDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_GraphicDeviceDefinitionError {
-	~Aspect_GraphicDeviceDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_GraphicDeviceDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3785,10 +4557,18 @@ class Aspect_DriverError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_DriverError::~Aspect_DriverError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_DriverError {
-	~Aspect_DriverError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_DriverError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3806,7 +4586,7 @@ class Aspect_RectangularGrid : public Aspect_Grid {
 		void SetAngle(const Quantity_PlaneAngle anAngle1, const Quantity_PlaneAngle anAngle2);
 		%feature("autodoc", "1");
 		void SetGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length XStep, const Quantity_Length YStep, const Quantity_PlaneAngle RotationAngle);
-		%feature("autodoc","Compute(Quantity_Length X, Quantity_Length Y)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Compute(Quantity_Length X, Quantity_Length Y) -> [Standard_RealStandard_Real]");
 		virtual		void Compute(const Quantity_Length X, const Quantity_Length Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length XStep() const;
@@ -3832,10 +4612,18 @@ class Aspect_RectangularGrid : public Aspect_Grid {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_RectangularGrid::~Aspect_RectangularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_RectangularGrid {
-	~Aspect_RectangularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_RectangularGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3885,23 +4673,23 @@ class Aspect_WindowDriver : public Aspect_Driver {
 		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, Standard_ShortReal & anXoffset, Standard_ShortReal & anYoffset, const Standard_Integer aFontIndex=-0x000000001) const;
 		%feature("autodoc", "1");
 		virtual		char * FontSize(Quantity_PlaneAngle & aSlant, Standard_ShortReal & aSize, Standard_ShortReal & aBheight, const Standard_Integer aFontIndex=-0x000000001) const;
-		%feature("autodoc","ColorBoundIndexs()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","ColorBoundIndexs() -> [Standard_Integer, Standard_Integer]");
 		virtual		void ColorBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalColorIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc","FontBoundIndexs()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","FontBoundIndexs() -> [Standard_Integer, Standard_Integer]");
 		virtual		void FontBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalFontIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc","TypeBoundIndexs()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","TypeBoundIndexs() -> [Standard_Integer, Standard_Integer]");
 		virtual		void TypeBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalTypeIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc","WidthBoundIndexs()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","WidthBoundIndexs() -> [Standard_Integer, Standard_Integer]");
 		virtual		void WidthBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalWidthIndex(const Standard_Integer anIndex) const;
-		%feature("autodoc","MarkBoundIndexs()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","MarkBoundIndexs() -> [Standard_Integer, Standard_Integer]");
 		virtual		void MarkBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalMarkIndex(const Standard_Integer anIndex) const;
@@ -3919,10 +4707,18 @@ class Aspect_WindowDriver : public Aspect_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_WindowDriver::~Aspect_WindowDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_WindowDriver {
-	~Aspect_WindowDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_WindowDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3954,10 +4750,18 @@ class Aspect_AspectMarkerDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_AspectMarkerDefinitionError::~Aspect_AspectMarkerDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_AspectMarkerDefinitionError {
-	~Aspect_AspectMarkerDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_AspectMarkerDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3983,10 +4787,18 @@ class Aspect_SequenceNodeOfSequenceOfColorMapEntry : public TCollection_SeqNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_SequenceNodeOfSequenceOfColorMapEntry::~Aspect_SequenceNodeOfSequenceOfColorMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_SequenceNodeOfSequenceOfColorMapEntry {
-	~Aspect_SequenceNodeOfSequenceOfColorMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfColorMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4040,10 +4852,18 @@ class Aspect_ColorMapEntry {
 		void _CSFDB_SetAspect_ColorMapEntrymyIndexIsDef(const Standard_Boolean p);
 
 };
+%feature("shadow") Aspect_ColorMapEntry::~Aspect_ColorMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_ColorMapEntry {
-	~Aspect_ColorMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_ColorMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4057,7 +4877,7 @@ class Aspect_AspectLine : public MMgt_TShared {
 		void SetType(const Aspect_TypeOfLine AType);
 		%feature("autodoc", "1");
 		void SetWidth(const Standard_Real AWidth);
-		%feature("autodoc","Values()->Standard_Real");
+		%feature("autodoc","Values() -> Standard_Real");
 		void Values(Quantity_Color & AColor, Aspect_TypeOfLine & AType, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -4073,10 +4893,18 @@ class Aspect_AspectLine : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_AspectLine::~Aspect_AspectLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_AspectLine {
-	~Aspect_AspectLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_AspectLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4108,10 +4936,18 @@ class Aspect_BadAccess : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_BadAccess::~Aspect_BadAccess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_BadAccess {
-	~Aspect_BadAccess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_BadAccess\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4143,10 +4979,18 @@ class Aspect_AspectLineDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_AspectLineDefinitionError::~Aspect_AspectLineDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_AspectLineDefinitionError {
-	~Aspect_AspectLineDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_AspectLineDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4200,10 +5044,18 @@ class Aspect_SequenceOfColorMapEntry : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Aspect_SequenceOfColorMapEntry::~Aspect_SequenceOfColorMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_SequenceOfColorMapEntry {
-	~Aspect_SequenceOfColorMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceOfColorMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4239,10 +5091,18 @@ class Aspect_FontMap : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_FontMap::~Aspect_FontMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_FontMap {
-	~Aspect_FontMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_FontMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4280,10 +5140,18 @@ class Aspect_LineStyle {
 		Standard_Boolean operator!=(const Aspect_LineStyle &Other) const;
 
 };
+%feature("shadow") Aspect_LineStyle::~Aspect_LineStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_LineStyle {
-	~Aspect_LineStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_LineStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4307,7 +5175,7 @@ class Aspect_MarkerStyle {
 		Aspect_TypeOfMarker Type() const;
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
-		%feature("autodoc","Values(Standard_Integer aRank)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Integer aRank) -> [Standard_RealStandard_Real]");
 		Standard_Boolean Values(const Standard_Integer aRank, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const TShort_Array1OfShortReal & XValues() const;
@@ -4325,10 +5193,18 @@ class Aspect_MarkerStyle {
 		Standard_Boolean operator!=(const Aspect_MarkerStyle &Other) const;
 
 };
+%feature("shadow") Aspect_MarkerStyle::~Aspect_MarkerStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_MarkerStyle {
-	~Aspect_MarkerStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_MarkerStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4360,10 +5236,18 @@ class Aspect_LineStyleDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_LineStyleDefinitionError::~Aspect_LineStyleDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_LineStyleDefinitionError {
-	~Aspect_LineStyleDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_LineStyleDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4395,10 +5279,18 @@ class Aspect_IdentDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_IdentDefinitionError::~Aspect_IdentDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_IdentDefinitionError {
-	~Aspect_IdentDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_IdentDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4416,10 +5308,18 @@ class Aspect_Background {
 		Quantity_Color Color() const;
 
 };
+%feature("shadow") Aspect_Background::~Aspect_Background %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_Background {
-	~Aspect_Background() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_Background\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4463,10 +5363,18 @@ class Aspect_WidthMapEntry {
 		void Dump() const;
 
 };
+%feature("shadow") Aspect_WidthMapEntry::~Aspect_WidthMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_WidthMapEntry {
-	~Aspect_WidthMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_WidthMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4492,10 +5400,18 @@ class Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public TCollection_SeqNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_SequenceNodeOfSequenceOfWidthMapEntry::~Aspect_SequenceNodeOfSequenceOfWidthMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_SequenceNodeOfSequenceOfWidthMapEntry {
-	~Aspect_SequenceNodeOfSequenceOfWidthMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfWidthMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4509,7 +5425,7 @@ class Aspect_Edge {
 		Aspect_Edge(const Standard_Integer AIndex1, const Standard_Integer AIndex2, const Aspect_TypeOfEdge AType);
 		%feature("autodoc", "1");
 		void SetValues(const Standard_Integer AIndex1, const Standard_Integer AIndex2, const Aspect_TypeOfEdge AType);
-		%feature("autodoc","Values()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Values() -> [Standard_Integer, Standard_Integer]");
 		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue, Aspect_TypeOfEdge & AType) const;
 		%feature("autodoc", "1");
 		Standard_Integer FirstIndex() const;
@@ -4519,10 +5435,18 @@ class Aspect_Edge {
 		Aspect_TypeOfEdge Type() const;
 
 };
+%feature("shadow") Aspect_Edge::~Aspect_Edge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_Edge {
-	~Aspect_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_Edge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4554,10 +5478,18 @@ class Aspect_WindowDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_WindowDefinitionError::~Aspect_WindowDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_WindowDefinitionError {
-	~Aspect_WindowDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_WindowDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4593,10 +5525,18 @@ class Aspect_TypeMapEntry {
 		void Dump() const;
 
 };
+%feature("shadow") Aspect_TypeMapEntry::~Aspect_TypeMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_TypeMapEntry {
-	~Aspect_TypeMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_TypeMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4650,10 +5590,18 @@ class Aspect_SequenceOfFontMapEntry : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Aspect_SequenceOfFontMapEntry::~Aspect_SequenceOfFontMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_SequenceOfFontMapEntry {
-	~Aspect_SequenceOfFontMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceOfFontMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4707,10 +5655,18 @@ class Aspect_SequenceOfWidthMapEntry : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Aspect_SequenceOfWidthMapEntry::~Aspect_SequenceOfWidthMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_SequenceOfWidthMapEntry {
-	~Aspect_SequenceOfWidthMapEntry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceOfWidthMapEntry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4732,10 +5688,18 @@ class Aspect_GraphicDriver : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_GraphicDriver::~Aspect_GraphicDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_GraphicDriver {
-	~Aspect_GraphicDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_GraphicDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4767,10 +5731,18 @@ class Aspect_WidthMapDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_WidthMapDefinitionError::~Aspect_WidthMapDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_WidthMapDefinitionError {
-	~Aspect_WidthMapDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_WidthMapDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4786,7 +5758,7 @@ class Aspect_ColorScale : public MMgt_TShared {
 		Standard_Real GetMin() const;
 		%feature("autodoc", "1");
 		Standard_Real GetMax() const;
-		%feature("autodoc","GetRange()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetRange() -> [Standard_Real, Standard_Real]");
 		void GetRange(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Aspect_TypeOfColorScaleData GetLabelType() const;
@@ -4848,7 +5820,7 @@ class Aspect_ColorScale : public MMgt_TShared {
 		void SetReversed(const Standard_Boolean aReverse);
 		%feature("autodoc", "1");
 		void SetLabelAtBorder(const Standard_Boolean anOn);
-		%feature("autodoc","GetSize()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetSize() -> [Standard_Real, Standard_Real]");
 		void GetSize(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real GetWidth() const;
@@ -4860,7 +5832,7 @@ class Aspect_ColorScale : public MMgt_TShared {
 		void SetWidth(const Standard_Real aWidth);
 		%feature("autodoc", "1");
 		void SetHeight(const Standard_Real aHeight);
-		%feature("autodoc","GetPosition()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetPosition() -> [Standard_Real, Standard_Real]");
 		void GetPosition(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real GetXPosition() const;
@@ -4898,10 +5870,18 @@ class Aspect_ColorScale : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_ColorScale::~Aspect_ColorScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_ColorScale {
-	~Aspect_ColorScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_ColorScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4925,10 +5905,18 @@ class Aspect_GraphicDevice : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_GraphicDevice::~Aspect_GraphicDevice %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_GraphicDevice {
-	~Aspect_GraphicDevice() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_GraphicDevice\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4960,10 +5948,18 @@ class Aspect_WindowError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_WindowError::~Aspect_WindowError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_WindowError {
-	~Aspect_WindowError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_WindowError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4995,10 +5991,18 @@ class Aspect_FontMapDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_FontMapDefinitionError::~Aspect_FontMapDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_FontMapDefinitionError {
-	~Aspect_FontMapDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_FontMapDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5024,9 +6028,17 @@ class Aspect_SequenceNodeOfSequenceOfColor : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Aspect_SequenceNodeOfSequenceOfColor::~Aspect_SequenceNodeOfSequenceOfColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Aspect_SequenceNodeOfSequenceOfColor {
-	~Aspect_SequenceNodeOfSequenceOfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfColor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

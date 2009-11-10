@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ProjLib_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_ProjLib_HProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	return (ProjLib_HProjectedCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ProjLib_HProjectedCurve::~Handle_ProjLib_HProjectedCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ProjLib_HProjectedCurve {
-	~Handle_ProjLib_HProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HProjectedCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCol
 	return (ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt::~Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
-	~Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_ProjLib_HCompProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	return (ProjLib_HCompProjectedCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ProjLib_HCompProjectedCurve::~Handle_ProjLib_HCompProjectedCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ProjLib_HCompProjectedCurve {
-	~Handle_ProjLib_HCompProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HCompProjectedCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_ProjLib_HSequenceOfHSequenceOfPnt : public Handle_MMgt_TShared {
 	return (ProjLib_HSequenceOfHSequenceOfPnt*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ProjLib_HSequenceOfHSequenceOfPnt::~Handle_ProjLib_HSequenceOfHSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ProjLib_HSequenceOfHSequenceOfPnt {
-	~Handle_ProjLib_HSequenceOfHSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HSequenceOfHSequenceOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -204,10 +240,18 @@ class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") ProjLib_SequenceOfHSequenceOfPnt::~ProjLib_SequenceOfHSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_SequenceOfHSequenceOfPnt {
-	~ProjLib_SequenceOfHSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_SequenceOfHSequenceOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -231,17 +275,17 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		const Handle_Adaptor3d_HSurface & GetSurface() const;
 		%feature("autodoc", "1");
 		const Handle_Adaptor3d_HCurve & GetCurve() const;
-		%feature("autodoc","GetTolerance()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetTolerance() -> [Standard_Real, Standard_Real]");
 		void GetTolerance(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbCurves() const;
-		%feature("autodoc","Bounds(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Bounds(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Bounds(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsSinglePnt(const Standard_Integer Index, gp_Pnt2d & P) const;
-		%feature("autodoc","IsUIso(Standard_Integer Index)->Standard_Real");
+		%feature("autodoc","IsUIso(Standard_Integer Index) -> Standard_Real");
 		Standard_Boolean IsUIso(const Standard_Integer Index, Standard_Real &OutValue) const;
-		%feature("autodoc","IsVIso(Standard_Integer Index)->Standard_Real");
+		%feature("autodoc","IsVIso(Standard_Integer Index) -> Standard_Real");
 		Standard_Boolean IsVIso(const Standard_Integer Index, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d Value(const Standard_Real U) const;
@@ -271,10 +315,18 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		virtual		GeomAbs_CurveType GetType() const;
 
 };
+%feature("shadow") ProjLib_CompProjectedCurve::~ProjLib_CompProjectedCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_CompProjectedCurve {
-	~ProjLib_CompProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_CompProjectedCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -354,10 +406,18 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 		virtual		Handle_Geom2d_BSplineCurve BSpline() const;
 
 };
+%feature("shadow") ProjLib_ProjectedCurve::~ProjLib_ProjectedCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_ProjectedCurve {
-	~ProjLib_ProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_ProjectedCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -415,10 +475,18 @@ class ProjLib_Projector {
 		void VFrame(const Standard_Real CFirst, const Standard_Real CLast, const Standard_Real VFirst, const Standard_Real Period);
 
 };
+%feature("shadow") ProjLib_Projector::~ProjLib_Projector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_Projector {
-	~ProjLib_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_Projector\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -440,10 +508,18 @@ class ProjLib_Cylinder : public ProjLib_Projector {
 		void Init(const gp_Cylinder &Cyl);
 
 };
+%feature("shadow") ProjLib_Cylinder::~ProjLib_Cylinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_Cylinder {
-	~ProjLib_Cylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_Cylinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -473,10 +549,18 @@ class ProjLib_Sphere : public ProjLib_Projector {
 		void SetInBounds(const Standard_Real U);
 
 };
+%feature("shadow") ProjLib_Sphere::~ProjLib_Sphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_Sphere {
-	~ProjLib_Sphere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_Sphere\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -544,10 +628,18 @@ class ProjLib_HSequenceOfHSequenceOfPnt : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ProjLib_HSequenceOfHSequenceOfPnt::~ProjLib_HSequenceOfHSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_HSequenceOfHSequenceOfPnt {
-	~ProjLib_HSequenceOfHSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_HSequenceOfHSequenceOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -579,10 +671,18 @@ class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ProjLib_HProjectedCurve::~ProjLib_HProjectedCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_HProjectedCurve {
-	~ProjLib_HProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_HProjectedCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -610,10 +710,18 @@ class ProjLib_Torus : public ProjLib_Projector {
 		virtual		void Project(const gp_Hypr &H);
 
 };
+%feature("shadow") ProjLib_Torus::~ProjLib_Torus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_Torus {
-	~ProjLib_Torus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_Torus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -639,10 +747,18 @@ class ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public TCollection_SeqNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt::~ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
-	~ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -686,10 +802,18 @@ class ProjLib {
 		gp_Lin2d Project(const gp_Torus &To, const gp_Circ &Ci);
 
 };
+%feature("shadow") ProjLib::~ProjLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib {
-	~ProjLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -709,10 +833,18 @@ class ProjLib_ProjectOnSurface {
 		Handle_Geom_BSplineCurve BSpline() const;
 
 };
+%feature("shadow") ProjLib_ProjectOnSurface::~ProjLib_ProjectOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_ProjectOnSurface {
-	~ProjLib_ProjectOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_ProjectOnSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -742,10 +874,18 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		Standard_Boolean IsDone() const;
 
 };
+%feature("shadow") ProjLib_ComputeApproxOnPolarSurface::~ProjLib_ComputeApproxOnPolarSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_ComputeApproxOnPolarSurface {
-	~ProjLib_ComputeApproxOnPolarSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_ComputeApproxOnPolarSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -763,10 +903,18 @@ class ProjLib_PrjResolve {
 		gp_Pnt2d Solution() const;
 
 };
+%feature("shadow") ProjLib_PrjResolve::~ProjLib_PrjResolve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_PrjResolve {
-	~ProjLib_PrjResolve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_PrjResolve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -846,10 +994,18 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
 
 };
+%feature("shadow") ProjLib_ProjectOnPlane::~ProjLib_ProjectOnPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_ProjectOnPlane {
-	~ProjLib_ProjectOnPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_ProjectOnPlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -885,10 +1041,18 @@ class ProjLib_Plane : public ProjLib_Projector {
 		virtual		void Project(const gp_Hypr &H);
 
 };
+%feature("shadow") ProjLib_Plane::~ProjLib_Plane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_Plane {
-	~ProjLib_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_Plane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -920,10 +1084,18 @@ class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ProjLib_HCompProjectedCurve::~ProjLib_HCompProjectedCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_HCompProjectedCurve {
-	~ProjLib_HCompProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_HCompProjectedCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -947,10 +1119,18 @@ class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 		gp_Pnt2d Solution() const;
 
 };
+%feature("shadow") ProjLib_PrjFunc::~ProjLib_PrjFunc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_PrjFunc {
-	~ProjLib_PrjFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_PrjFunc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -980,10 +1160,18 @@ class ProjLib_Cone : public ProjLib_Projector {
 		virtual		void Project(const gp_Hypr &H);
 
 };
+%feature("shadow") ProjLib_Cone::~ProjLib_Cone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_Cone {
-	~ProjLib_Cone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_Cone\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1001,9 +1189,17 @@ class ProjLib_ComputeApprox {
 		Standard_Real Tolerance() const;
 
 };
+%feature("shadow") ProjLib_ComputeApprox::~ProjLib_ComputeApprox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ProjLib_ComputeApprox {
-	~ProjLib_ComputeApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ProjLib_ComputeApprox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

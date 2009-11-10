@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Geom2dLProp_dependencies.i
 
 
@@ -50,10 +54,18 @@ class Geom2dLProp_CurAndInf2d : public LProp_CurAndInf {
 		Standard_Boolean IsDone() const;
 
 };
+%feature("shadow") Geom2dLProp_CurAndInf2d::~Geom2dLProp_CurAndInf2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dLProp_CurAndInf2d {
-	~Geom2dLProp_CurAndInf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dLProp_CurAndInf2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -63,20 +75,28 @@ class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative 
 	public:
 		%feature("autodoc", "1");
 		Geom2dLProp_FCurExtOfNumericCurInf2d(const Handle_Geom2d_Curve &C, const Standard_Real Tol);
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsMinKC(const Standard_Real Param) const;
 
 };
+%feature("shadow") Geom2dLProp_FCurExtOfNumericCurInf2d::~Geom2dLProp_FCurExtOfNumericCurInf2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dLProp_FCurExtOfNumericCurInf2d {
-	~Geom2dLProp_FCurExtOfNumericCurInf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dLProp_FCurExtOfNumericCurInf2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -102,10 +122,18 @@ class Geom2dLProp_Curve2dTool {
 		Standard_Real LastParameter(const Handle_Geom2d_Curve &C);
 
 };
+%feature("shadow") Geom2dLProp_Curve2dTool::~Geom2dLProp_Curve2dTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dLProp_Curve2dTool {
-	~Geom2dLProp_Curve2dTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dLProp_Curve2dTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -143,10 +171,18 @@ class Geom2dLProp_CLProps2d {
 		void CentreOfCurvature(gp_Pnt2d & P);
 
 };
+%feature("shadow") Geom2dLProp_CLProps2d::~Geom2dLProp_CLProps2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dLProp_CLProps2d {
-	~Geom2dLProp_CLProps2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dLProp_CLProps2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -156,18 +192,26 @@ class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative 
 	public:
 		%feature("autodoc", "1");
 		Geom2dLProp_FCurNulOfNumericCurInf2d(const Handle_Geom2d_Curve &C);
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%feature("shadow") Geom2dLProp_FCurNulOfNumericCurInf2d::~Geom2dLProp_FCurNulOfNumericCurInf2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dLProp_FCurNulOfNumericCurInf2d {
-	~Geom2dLProp_FCurNulOfNumericCurInf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dLProp_FCurNulOfNumericCurInf2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -189,9 +233,17 @@ class Geom2dLProp_NumericCurInf2d {
 		Standard_Boolean IsDone() const;
 
 };
+%feature("shadow") Geom2dLProp_NumericCurInf2d::~Geom2dLProp_NumericCurInf2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dLProp_NumericCurInf2d {
-	~Geom2dLProp_NumericCurInf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dLProp_NumericCurInf2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

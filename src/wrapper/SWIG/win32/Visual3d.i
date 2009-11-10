@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Visual3d_dependencies.i
 
 
@@ -106,10 +110,18 @@ class Handle_Visual3d_SequenceNodeOfSequenceOfPickPath : public Handle_TCollecti
 	return (Visual3d_SequenceNodeOfSequenceOfPickPath*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_SequenceNodeOfSequenceOfPickPath::~Handle_Visual3d_SequenceNodeOfSequenceOfPickPath %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_SequenceNodeOfSequenceOfPickPath {
-	~Handle_Visual3d_SequenceNodeOfSequenceOfPickPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_SequenceNodeOfSequenceOfPickPath\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -136,10 +148,18 @@ class Handle_Visual3d_PickError : public Handle_Standard_OutOfRange {
 	return (Visual3d_PickError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_PickError::~Handle_Visual3d_PickError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_PickError {
-	~Handle_Visual3d_PickError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_PickError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -166,10 +186,18 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane : public Handle_TCollect
 	return (Visual3d_ListNodeOfSetListOfSetOfClipPlane*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane::~Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane {
-	~Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -196,10 +224,18 @@ class Handle_Visual3d_ZClippingDefinitionError : public Handle_Standard_OutOfRan
 	return (Visual3d_ZClippingDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_ZClippingDefinitionError::~Handle_Visual3d_ZClippingDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_ZClippingDefinitionError {
-	~Handle_Visual3d_ZClippingDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ZClippingDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -226,10 +262,18 @@ class Handle_Visual3d_TransformError : public Handle_Standard_OutOfRange {
 	return (Visual3d_TransformError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_TransformError::~Handle_Visual3d_TransformError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_TransformError {
-	~Handle_Visual3d_TransformError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_TransformError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -256,10 +300,18 @@ class Handle_Visual3d_LightDefinitionError : public Handle_Standard_OutOfRange {
 	return (Visual3d_LightDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_LightDefinitionError::~Handle_Visual3d_LightDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_LightDefinitionError {
-	~Handle_Visual3d_LightDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_LightDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -286,10 +338,18 @@ class Handle_Visual3d_TransientManager : public Handle_MMgt_TShared {
 	return (Visual3d_TransientManager*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_TransientManager::~Handle_Visual3d_TransientManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_TransientManager {
-	~Handle_Visual3d_TransientManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_TransientManager\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -316,10 +376,18 @@ class Handle_Visual3d_View : public Handle_Graphic3d_DataStructureManager {
 	return (Visual3d_View*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_View::~Handle_Visual3d_View %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_View {
-	~Handle_Visual3d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_View\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -346,10 +414,18 @@ class Handle_Visual3d_ViewManager : public Handle_Graphic3d_StructureManager {
 	return (Visual3d_ViewManager*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_ViewManager::~Handle_Visual3d_ViewManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_ViewManager {
-	~Handle_Visual3d_ViewManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ViewManager\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -376,10 +452,18 @@ class Handle_Visual3d_LayerDefinitionError : public Handle_Standard_OutOfRange {
 	return (Visual3d_LayerDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_LayerDefinitionError::~Handle_Visual3d_LayerDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_LayerDefinitionError {
-	~Handle_Visual3d_LayerDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_LayerDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -406,10 +490,18 @@ class Handle_Visual3d_HSetOfClipPlane : public Handle_MMgt_TShared {
 	return (Visual3d_HSetOfClipPlane*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_HSetOfClipPlane::~Handle_Visual3d_HSetOfClipPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_HSetOfClipPlane {
-	~Handle_Visual3d_HSetOfClipPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_HSetOfClipPlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -436,10 +528,18 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfLight : public Handle_TCollection_
 	return (Visual3d_ListNodeOfSetListOfSetOfLight*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_ListNodeOfSetListOfSetOfLight::~Handle_Visual3d_ListNodeOfSetListOfSetOfLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_ListNodeOfSetListOfSetOfLight {
-	~Handle_Visual3d_ListNodeOfSetListOfSetOfLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ListNodeOfSetListOfSetOfLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -466,10 +566,18 @@ class Handle_Visual3d_Light : public Handle_MMgt_TShared {
 	return (Visual3d_Light*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_Light::~Handle_Visual3d_Light %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_Light {
-	~Handle_Visual3d_Light() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_Light\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -496,10 +604,18 @@ class Handle_Visual3d_Layer : public Handle_MMgt_TShared {
 	return (Visual3d_Layer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_Layer::~Handle_Visual3d_Layer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_Layer {
-	~Handle_Visual3d_Layer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_Layer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -526,10 +642,18 @@ class Handle_Visual3d_ClipDefinitionError : public Handle_Standard_OutOfRange {
 	return (Visual3d_ClipDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_ClipDefinitionError::~Handle_Visual3d_ClipDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_ClipDefinitionError {
-	~Handle_Visual3d_ClipDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ClipDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -556,10 +680,18 @@ class Handle_Visual3d_HSetOfLight : public Handle_MMgt_TShared {
 	return (Visual3d_HSetOfLight*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_HSetOfLight::~Handle_Visual3d_HSetOfLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_HSetOfLight {
-	~Handle_Visual3d_HSetOfLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_HSetOfLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -586,10 +718,18 @@ class Handle_Visual3d_DepthCueingDefinitionError : public Handle_Standard_OutOfR
 	return (Visual3d_DepthCueingDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_DepthCueingDefinitionError::~Handle_Visual3d_DepthCueingDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_DepthCueingDefinitionError {
-	~Handle_Visual3d_DepthCueingDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_DepthCueingDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -616,10 +756,18 @@ class Handle_Visual3d_ClipPlane : public Handle_MMgt_TShared {
 	return (Visual3d_ClipPlane*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_ClipPlane::~Handle_Visual3d_ClipPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_ClipPlane {
-	~Handle_Visual3d_ClipPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ClipPlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -646,10 +794,18 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfView : public Handle_TCollection_M
 	return (Visual3d_ListNodeOfSetListOfSetOfView*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_ListNodeOfSetListOfSetOfView::~Handle_Visual3d_ListNodeOfSetListOfSetOfView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_ListNodeOfSetListOfSetOfView {
-	~Handle_Visual3d_ListNodeOfSetListOfSetOfView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ListNodeOfSetListOfSetOfView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -676,10 +832,18 @@ class Handle_Visual3d_ViewManagerDefinitionError : public Handle_Standard_OutOfR
 	return (Visual3d_ViewManagerDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_ViewManagerDefinitionError::~Handle_Visual3d_ViewManagerDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_ViewManagerDefinitionError {
-	~Handle_Visual3d_ViewManagerDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ViewManagerDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -706,10 +870,18 @@ class Handle_Visual3d_HSetOfView : public Handle_MMgt_TShared {
 	return (Visual3d_HSetOfView*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_HSetOfView::~Handle_Visual3d_HSetOfView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_HSetOfView {
-	~Handle_Visual3d_HSetOfView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_HSetOfView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -736,10 +908,18 @@ class Handle_Visual3d_ViewMappingDefinitionError : public Handle_Standard_OutOfR
 	return (Visual3d_ViewMappingDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_ViewMappingDefinitionError::~Handle_Visual3d_ViewMappingDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_ViewMappingDefinitionError {
-	~Handle_Visual3d_ViewMappingDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ViewMappingDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -766,10 +946,18 @@ class Handle_Visual3d_TransientDefinitionError : public Handle_Standard_OutOfRan
 	return (Visual3d_TransientDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_TransientDefinitionError::~Handle_Visual3d_TransientDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_TransientDefinitionError {
-	~Handle_Visual3d_TransientDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_TransientDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -796,10 +984,18 @@ class Handle_Visual3d_HSequenceOfPickPath : public Handle_MMgt_TShared {
 	return (Visual3d_HSequenceOfPickPath*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_HSequenceOfPickPath::~Handle_Visual3d_HSequenceOfPickPath %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_HSequenceOfPickPath {
-	~Handle_Visual3d_HSequenceOfPickPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_HSequenceOfPickPath\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -826,10 +1022,18 @@ class Handle_Visual3d_ViewOrientationDefinitionError : public Handle_Standard_Ou
 	return (Visual3d_ViewOrientationDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_ViewOrientationDefinitionError::~Handle_Visual3d_ViewOrientationDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_ViewOrientationDefinitionError {
-	~Handle_Visual3d_ViewOrientationDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ViewOrientationDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -856,10 +1060,18 @@ class Handle_Visual3d_ViewDefinitionError : public Handle_Standard_OutOfRange {
 	return (Visual3d_ViewDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_ViewDefinitionError::~Handle_Visual3d_ViewDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_ViewDefinitionError {
-	~Handle_Visual3d_ViewDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ViewDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -886,10 +1098,18 @@ class Handle_Visual3d_ContextPickDefinitionError : public Handle_Standard_OutOfR
 	return (Visual3d_ContextPickDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Visual3d_ContextPickDefinitionError::~Handle_Visual3d_ContextPickDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Visual3d_ContextPickDefinitionError {
-	~Handle_Visual3d_ContextPickDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ContextPickDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -911,10 +1131,18 @@ class Visual3d_SetIteratorOfSetOfLight {
 		const Handle_Visual3d_Light & Value() const;
 
 };
+%feature("shadow") Visual3d_SetIteratorOfSetOfLight::~Visual3d_SetIteratorOfSetOfLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_SetIteratorOfSetOfLight {
-	~Visual3d_SetIteratorOfSetOfLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SetIteratorOfSetOfLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -940,10 +1168,18 @@ class Visual3d_ContextPick {
 		Visual3d_TypeOfOrder Order() const;
 
 };
+%feature("shadow") Visual3d_ContextPick::~Visual3d_ContextPick %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ContextPick {
-	~Visual3d_ContextPick() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ContextPick\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -993,10 +1229,18 @@ class Visual3d_SetListOfSetOfView {
 		void InsertAfter(Visual3d_SetListOfSetOfView & Other, Visual3d_ListIteratorOfSetListOfSetOfView & It);
 
 };
+%feature("shadow") Visual3d_SetListOfSetOfView::~Visual3d_SetListOfSetOfView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_SetListOfSetOfView {
-	~Visual3d_SetListOfSetOfView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SetListOfSetOfView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1028,10 +1272,18 @@ class Visual3d_TransformError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_TransformError::~Visual3d_TransformError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_TransformError {
-	~Visual3d_TransformError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_TransformError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1057,10 +1309,18 @@ class Visual3d_PickPath {
 		Handle_Graphic3d_Structure StructIdentifier() const;
 
 };
+%feature("shadow") Visual3d_PickPath::~Visual3d_PickPath %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_PickPath {
-	~Visual3d_PickPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_PickPath\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1092,10 +1352,18 @@ class Visual3d_LayerDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_LayerDefinitionError::~Visual3d_LayerDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_LayerDefinitionError {
-	~Visual3d_LayerDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_LayerDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1127,10 +1395,18 @@ class Visual3d_DepthCueingDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_DepthCueingDefinitionError::~Visual3d_DepthCueingDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_DepthCueingDefinitionError {
-	~Visual3d_DepthCueingDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_DepthCueingDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1166,16 +1442,24 @@ class Visual3d_ViewMapping {
 		Graphic3d_Vertex ProjectionReferencePoint() const;
 		%feature("autodoc", "1");
 		Standard_Real ViewPlaneDistance() const;
-		%feature("autodoc","WindowLimit()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","WindowLimit() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void WindowLimit(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsCustomMatrix() const;
 
 };
+%feature("shadow") Visual3d_ViewMapping::~Visual3d_ViewMapping %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ViewMapping {
-	~Visual3d_ViewMapping() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewMapping\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1207,10 +1491,18 @@ class Visual3d_TransientDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_TransientDefinitionError::~Visual3d_TransientDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_TransientDefinitionError {
-	~Visual3d_TransientDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_TransientDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1302,10 +1594,18 @@ class Visual3d_ContextView {
 		Handle_Graphic3d_TextureEnv TextureEnv() const;
 
 };
+%feature("shadow") Visual3d_ContextView::~Visual3d_ContextView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ContextView {
-	~Visual3d_ContextView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ContextView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1331,10 +1631,18 @@ class Visual3d_ListNodeOfSetListOfSetOfClipPlane : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_ListNodeOfSetListOfSetOfClipPlane::~Visual3d_ListNodeOfSetListOfSetOfClipPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ListNodeOfSetListOfSetOfClipPlane {
-	~Visual3d_ListNodeOfSetListOfSetOfClipPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ListNodeOfSetListOfSetOfClipPlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1356,10 +1664,18 @@ class Visual3d_ListIteratorOfSetListOfSetOfLight {
 		Handle_Visual3d_Light & Value() const;
 
 };
+%feature("shadow") Visual3d_ListIteratorOfSetListOfSetOfLight::~Visual3d_ListIteratorOfSetListOfSetOfLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ListIteratorOfSetListOfSetOfLight {
-	~Visual3d_ListIteratorOfSetListOfSetOfLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ListIteratorOfSetListOfSetOfLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1385,10 +1701,18 @@ class Visual3d_ListNodeOfSetListOfSetOfLight : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_ListNodeOfSetListOfSetOfLight::~Visual3d_ListNodeOfSetListOfSetOfLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ListNodeOfSetListOfSetOfLight {
-	~Visual3d_ListNodeOfSetListOfSetOfLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ListNodeOfSetListOfSetOfLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1420,10 +1744,18 @@ class Visual3d_ViewOrientationDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_ViewOrientationDefinitionError::~Visual3d_ViewOrientationDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ViewOrientationDefinitionError {
-	~Visual3d_ViewOrientationDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewOrientationDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1455,10 +1787,18 @@ class Visual3d_ViewManagerDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_ViewManagerDefinitionError::~Visual3d_ViewManagerDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ViewManagerDefinitionError {
-	~Visual3d_ViewManagerDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewManagerDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1508,10 +1848,18 @@ class Visual3d_SetListOfSetOfLight {
 		void InsertAfter(Visual3d_SetListOfSetOfLight & Other, Visual3d_ListIteratorOfSetListOfSetOfLight & It);
 
 };
+%feature("shadow") Visual3d_SetListOfSetOfLight::~Visual3d_SetListOfSetOfLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_SetListOfSetOfLight {
-	~Visual3d_SetListOfSetOfLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SetListOfSetOfLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1537,10 +1885,18 @@ class Visual3d_ListNodeOfSetListOfSetOfView : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_ListNodeOfSetListOfSetOfView::~Visual3d_ListNodeOfSetListOfSetOfView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ListNodeOfSetListOfSetOfView {
-	~Visual3d_ListNodeOfSetListOfSetOfView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ListNodeOfSetListOfSetOfView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1590,10 +1946,18 @@ class Visual3d_SetListOfSetOfClipPlane {
 		void InsertAfter(Visual3d_SetListOfSetOfClipPlane & Other, Visual3d_ListIteratorOfSetListOfSetOfClipPlane & It);
 
 };
+%feature("shadow") Visual3d_SetListOfSetOfClipPlane::~Visual3d_SetListOfSetOfClipPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_SetListOfSetOfClipPlane {
-	~Visual3d_SetListOfSetOfClipPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SetListOfSetOfClipPlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1645,10 +2009,18 @@ class Visual3d_HSetOfView : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_HSetOfView::~Visual3d_HSetOfView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_HSetOfView {
-	~Visual3d_HSetOfView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_HSetOfView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1670,10 +2042,18 @@ class Visual3d_SetIteratorOfSetOfClipPlane {
 		const Handle_Visual3d_ClipPlane & Value() const;
 
 };
+%feature("shadow") Visual3d_SetIteratorOfSetOfClipPlane::~Visual3d_SetIteratorOfSetOfClipPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_SetIteratorOfSetOfClipPlane {
-	~Visual3d_SetIteratorOfSetOfClipPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SetIteratorOfSetOfClipPlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1699,7 +2079,7 @@ class Visual3d_ViewManager : public Graphic3d_StructureManager {
 		virtual		void Update() const;
 		%feature("autodoc", "1");
 		Handle_Visual3d_HSetOfView ActivatedView() const;
-		%feature("autodoc","ConvertCoord(const AWindow, const AVertex)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","ConvertCoord(const AWindow, const AVertex) -> [Standard_IntegerStandard_Integer]");
 		void ConvertCoord(const Handle_Aspect_Window &AWindow, const Graphic3d_Vertex &AVertex, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Graphic3d_Vertex ConvertCoord(const Handle_Aspect_Window &AWindow, const Standard_Integer AU, const Standard_Integer AV) const;
@@ -1769,10 +2149,18 @@ class Visual3d_ViewManager : public Graphic3d_StructureManager {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_ViewManager::~Visual3d_ViewManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ViewManager {
-	~Visual3d_ViewManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewManager\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1798,10 +2186,18 @@ class Visual3d_SequenceNodeOfSequenceOfPickPath : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_SequenceNodeOfSequenceOfPickPath::~Visual3d_SequenceNodeOfSequenceOfPickPath %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_SequenceNodeOfSequenceOfPickPath {
-	~Visual3d_SequenceNodeOfSequenceOfPickPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SequenceNodeOfSequenceOfPickPath\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1815,7 +2211,7 @@ class Visual3d_ClipPlane : public MMgt_TShared {
 		void SetPlane(const Standard_Real ACoefA, const Standard_Real ACoefB, const Standard_Real ACoefC, const Standard_Real ACoefD);
 		%feature("autodoc", "1");
 		Standard_Integer Limit();
-		%feature("autodoc","Plane()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Plane() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Plane(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1831,10 +2227,18 @@ class Visual3d_ClipPlane : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_ClipPlane::~Visual3d_ClipPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ClipPlane {
-	~Visual3d_ClipPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ClipPlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1860,10 +2264,18 @@ class Visual3d_PickDescriptor {
 		Standard_Integer TopElementNumber() const;
 
 };
+%feature("shadow") Visual3d_PickDescriptor::~Visual3d_PickDescriptor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_PickDescriptor {
-	~Visual3d_PickDescriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_PickDescriptor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1895,10 +2307,18 @@ class Visual3d_ClipDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_ClipDefinitionError::~Visual3d_ClipDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ClipDefinitionError {
-	~Visual3d_ClipDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ClipDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1930,10 +2350,18 @@ class Visual3d_LightDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_LightDefinitionError::~Visual3d_LightDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_LightDefinitionError {
-	~Visual3d_LightDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_LightDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1967,10 +2395,18 @@ class Visual3d_SetOfView {
 		Standard_Boolean IsAProperSubset(const Visual3d_SetOfView &S) const;
 
 };
+%feature("shadow") Visual3d_SetOfView::~Visual3d_SetOfView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_SetOfView {
-	~Visual3d_SetOfView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SetOfView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2000,7 +2436,7 @@ class Visual3d_Layer : public MMgt_TShared {
 		void DrawRectangle(const Standard_Real X, const Standard_Real Y, const Standard_Real Width, const Standard_Real Height);
 		%feature("autodoc", "1");
 		void DrawText(const char * AText, const Standard_Real X, const Standard_Real Y, const Standard_Real AHeight);
-		%feature("autodoc","TextSize(Standard_CString AText, Standard_Real AHeight)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","TextSize(Standard_CString AText, Standard_Real AHeight) -> [Standard_RealStandard_RealStandard_Real]");
 		void TextSize(const char * AText, const Standard_Real AHeight, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetColor(const Quantity_Color &AColor);
@@ -2034,10 +2470,18 @@ class Visual3d_Layer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_Layer::~Visual3d_Layer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_Layer {
-	~Visual3d_Layer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_Layer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2069,10 +2513,18 @@ class Visual3d_ZClippingDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_ZClippingDefinitionError::~Visual3d_ZClippingDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ZClippingDefinitionError {
-	~Visual3d_ZClippingDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ZClippingDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2114,9 +2566,9 @@ class Visual3d_Light : public MMgt_TShared {
 		void Values(Quantity_Color & Color) const;
 		%feature("autodoc", "1");
 		void Values(Quantity_Color & Color, Graphic3d_Vector & Direction) const;
-		%feature("autodoc","Values()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Values() -> [Standard_Real, Standard_Real]");
 		void Values(Quantity_Color & Color, Graphic3d_Vertex & Position, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Values()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void Values(Quantity_Color & Color, Graphic3d_Vertex & Position, Graphic3d_Vector & Direction, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Limit();
@@ -2134,10 +2586,18 @@ class Visual3d_Light : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_Light::~Visual3d_Light %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_Light {
-	~Visual3d_Light() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_Light\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2159,10 +2619,18 @@ class Visual3d_ListIteratorOfSetListOfSetOfView {
 		Handle_Visual3d_View & Value() const;
 
 };
+%feature("shadow") Visual3d_ListIteratorOfSetListOfSetOfView::~Visual3d_ListIteratorOfSetListOfSetOfView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ListIteratorOfSetListOfSetOfView {
-	~Visual3d_ListIteratorOfSetListOfSetOfView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ListIteratorOfSetListOfSetOfView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2184,10 +2652,18 @@ class Visual3d_ListIteratorOfSetListOfSetOfClipPlane {
 		Handle_Visual3d_ClipPlane & Value() const;
 
 };
+%feature("shadow") Visual3d_ListIteratorOfSetListOfSetOfClipPlane::~Visual3d_ListIteratorOfSetListOfSetOfClipPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ListIteratorOfSetListOfSetOfClipPlane {
-	~Visual3d_ListIteratorOfSetListOfSetOfClipPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ListIteratorOfSetListOfSetOfClipPlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2239,10 +2715,18 @@ class Visual3d_HSetOfLight : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_HSetOfLight::~Visual3d_HSetOfLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_HSetOfLight {
-	~Visual3d_HSetOfLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_HSetOfLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2294,10 +2778,18 @@ class Visual3d_HSetOfClipPlane : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_HSetOfClipPlane::~Visual3d_HSetOfClipPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_HSetOfClipPlane {
-	~Visual3d_HSetOfClipPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_HSetOfClipPlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2331,10 +2823,18 @@ class Visual3d_SetOfLight {
 		Standard_Boolean IsAProperSubset(const Visual3d_SetOfLight &S) const;
 
 };
+%feature("shadow") Visual3d_SetOfLight::~Visual3d_SetOfLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_SetOfLight {
-	~Visual3d_SetOfLight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SetOfLight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2356,10 +2856,18 @@ class Visual3d_SetIteratorOfSetOfView {
 		const Handle_Visual3d_View & Value() const;
 
 };
+%feature("shadow") Visual3d_SetIteratorOfSetOfView::~Visual3d_SetIteratorOfSetOfView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_SetIteratorOfSetOfView {
-	~Visual3d_SetIteratorOfSetOfView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SetIteratorOfSetOfView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2457,17 +2965,17 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 		Standard_Boolean IsDefined() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDeleted() const;
-		%feature("autodoc","MinMaxValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","MinMaxValues(const ASet)->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","MinMaxValues(const ASet) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void MinMaxValues(const Graphic3d_MapOfStructure &ASet, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","MinMaxValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","MinMaxValues(const ASet)->[Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","MinMaxValues(const ASet) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
 		void MinMaxValues(const Graphic3d_MapOfStructure &ASet, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfDisplayedStructures() const;
-		%feature("autodoc","Projects(Standard_Real AX, Standard_Real AY, Standard_Real AZ)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","Projects(Standard_Real AX, Standard_Real AY, Standard_Real AZ) -> [Standard_RealStandard_RealStandard_Real]");
 		void Projects(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const TColStd_Array2OfReal & Transform() const;
@@ -2543,10 +3051,18 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_View::~Visual3d_View %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_View {
-	~Visual3d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_View\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2578,10 +3094,18 @@ class Visual3d_ViewDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_ViewDefinitionError::~Visual3d_ViewDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ViewDefinitionError {
-	~Visual3d_ViewDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2633,9 +3157,9 @@ class Visual3d_TransientManager : public MMgt_TShared {
 		void SetPrimitivesAspect(const Handle_Graphic3d_AspectText3d &CTX);
 		%feature("autodoc", "1");
 		void SetPrimitivesAspect(const Handle_Graphic3d_AspectMarker3d &CTX);
-		%feature("autodoc","MinMaxValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","MinMaxValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void SetTransform(const TColStd_Array2OfReal &AMatrix, const Graphic3d_TypeOfComposition AType=Graphic3d_TOC_REPLACE);
@@ -2653,10 +3177,18 @@ class Visual3d_TransientManager : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_TransientManager::~Visual3d_TransientManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_TransientManager {
-	~Visual3d_TransientManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_TransientManager\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2688,10 +3220,18 @@ class Visual3d_PickError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_PickError::~Visual3d_PickError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_PickError {
-	~Visual3d_PickError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_PickError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2745,10 +3285,18 @@ class Visual3d_SequenceOfPickPath : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Visual3d_SequenceOfPickPath::~Visual3d_SequenceOfPickPath %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_SequenceOfPickPath {
-	~Visual3d_SequenceOfPickPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SequenceOfPickPath\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2780,10 +3328,18 @@ class Visual3d_ViewMappingDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_ViewMappingDefinitionError::~Visual3d_ViewMappingDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ViewMappingDefinitionError {
-	~Visual3d_ViewMappingDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewMappingDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2817,10 +3373,18 @@ class Visual3d_SetOfClipPlane {
 		Standard_Boolean IsAProperSubset(const Visual3d_SetOfClipPlane &S) const;
 
 };
+%feature("shadow") Visual3d_SetOfClipPlane::~Visual3d_SetOfClipPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_SetOfClipPlane {
-	~Visual3d_SetOfClipPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_SetOfClipPlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2852,10 +3416,18 @@ class Visual3d_ContextPickDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_ContextPickDefinitionError::~Visual3d_ContextPickDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ContextPickDefinitionError {
-	~Visual3d_ContextPickDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ContextPickDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2923,10 +3495,18 @@ class Visual3d_HSequenceOfPickPath : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Visual3d_HSequenceOfPickPath::~Visual3d_HSequenceOfPickPath %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_HSequenceOfPickPath {
-	~Visual3d_HSequenceOfPickPath() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_HSequenceOfPickPath\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2960,15 +3540,23 @@ class Visual3d_ViewOrientation {
 		Graphic3d_Vertex ViewReferencePoint() const;
 		%feature("autodoc", "1");
 		Graphic3d_Vector ViewReferenceUp() const;
-		%feature("autodoc","AxialScale()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","AxialScale() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void AxialScale(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsCustomMatrix() const;
 
 };
+%feature("shadow") Visual3d_ViewOrientation::~Visual3d_ViewOrientation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Visual3d_ViewOrientation {
-	~Visual3d_ViewOrientation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewOrientation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

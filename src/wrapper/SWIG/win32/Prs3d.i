@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Prs3d_dependencies.i
 
 
@@ -65,10 +69,18 @@ class Handle_Prs3d_Drawer : public Handle_MMgt_TShared {
 	return (Prs3d_Drawer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_Drawer::~Handle_Prs3d_Drawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_Drawer {
-	~Handle_Prs3d_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_Drawer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -95,10 +107,18 @@ class Handle_Prs3d_BasicAspect : public Handle_MMgt_TShared {
 	return (Prs3d_BasicAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_BasicAspect::~Handle_Prs3d_BasicAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_BasicAspect {
-	~Handle_Prs3d_BasicAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_BasicAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -125,10 +145,18 @@ class Handle_Prs3d_PlaneSet : public Handle_MMgt_TShared {
 	return (Prs3d_PlaneSet*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_PlaneSet::~Handle_Prs3d_PlaneSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_PlaneSet {
-	~Handle_Prs3d_PlaneSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_PlaneSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -155,10 +183,18 @@ class Handle_Prs3d_CompositeAspect : public Handle_MMgt_TShared {
 	return (Prs3d_CompositeAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_CompositeAspect::~Handle_Prs3d_CompositeAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_CompositeAspect {
-	~Handle_Prs3d_CompositeAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_CompositeAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -185,10 +221,18 @@ class Handle_Prs3d_LengthAspect : public Handle_Prs3d_CompositeAspect {
 	return (Prs3d_LengthAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_LengthAspect::~Handle_Prs3d_LengthAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_LengthAspect {
-	~Handle_Prs3d_LengthAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_LengthAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -215,10 +259,18 @@ class Handle_Prs3d_ShadingAspect : public Handle_Prs3d_BasicAspect {
 	return (Prs3d_ShadingAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_ShadingAspect::~Handle_Prs3d_ShadingAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_ShadingAspect {
-	~Handle_Prs3d_ShadingAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_ShadingAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -245,10 +297,18 @@ class Handle_Prs3d_ArrowAspect : public Handle_Prs3d_CompositeAspect {
 	return (Prs3d_ArrowAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_ArrowAspect::~Handle_Prs3d_ArrowAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_ArrowAspect {
-	~Handle_Prs3d_ArrowAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_ArrowAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -275,10 +335,18 @@ class Handle_Prs3d_Projector : public Handle_MMgt_TShared {
 	return (Prs3d_Projector*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_Projector::~Handle_Prs3d_Projector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_Projector {
-	~Handle_Prs3d_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_Projector\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -305,10 +373,18 @@ class Handle_Prs3d_AngleAspect : public Handle_Prs3d_CompositeAspect {
 	return (Prs3d_AngleAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_AngleAspect::~Handle_Prs3d_AngleAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_AngleAspect {
-	~Handle_Prs3d_AngleAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_AngleAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -335,10 +411,18 @@ class Handle_Prs3d_LineAspect : public Handle_Prs3d_BasicAspect {
 	return (Prs3d_LineAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_LineAspect::~Handle_Prs3d_LineAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_LineAspect {
-	~Handle_Prs3d_LineAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_LineAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -365,10 +449,18 @@ class Handle_Prs3d_PointAspect : public Handle_Prs3d_BasicAspect {
 	return (Prs3d_PointAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_PointAspect::~Handle_Prs3d_PointAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_PointAspect {
-	~Handle_Prs3d_PointAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_PointAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -395,10 +487,18 @@ class Handle_Prs3d_InvalidAngle : public Handle_Standard_RangeError {
 	return (Prs3d_InvalidAngle*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_InvalidAngle::~Handle_Prs3d_InvalidAngle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_InvalidAngle {
-	~Handle_Prs3d_InvalidAngle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_InvalidAngle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -425,10 +525,18 @@ class Handle_Prs3d_DatumAspect : public Handle_Prs3d_CompositeAspect {
 	return (Prs3d_DatumAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_DatumAspect::~Handle_Prs3d_DatumAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_DatumAspect {
-	~Handle_Prs3d_DatumAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_DatumAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -455,10 +563,18 @@ class Handle_Prs3d_PlaneAspect : public Handle_Prs3d_CompositeAspect {
 	return (Prs3d_PlaneAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_PlaneAspect::~Handle_Prs3d_PlaneAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_PlaneAspect {
-	~Handle_Prs3d_PlaneAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_PlaneAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -485,10 +601,18 @@ class Handle_Prs3d_RadiusAspect : public Handle_Prs3d_CompositeAspect {
 	return (Prs3d_RadiusAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_RadiusAspect::~Handle_Prs3d_RadiusAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_RadiusAspect {
-	~Handle_Prs3d_RadiusAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_RadiusAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -515,10 +639,18 @@ class Handle_Prs3d_Presentation : public Handle_Graphic3d_Structure {
 	return (Prs3d_Presentation*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_Presentation::~Handle_Prs3d_Presentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_Presentation {
-	~Handle_Prs3d_Presentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_Presentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -545,10 +677,18 @@ class Handle_Prs3d_IsoAspect : public Handle_Prs3d_LineAspect {
 	return (Prs3d_IsoAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_IsoAspect::~Handle_Prs3d_IsoAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_IsoAspect {
-	~Handle_Prs3d_IsoAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_IsoAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -575,10 +715,18 @@ class Handle_Prs3d_TextAspect : public Handle_Prs3d_BasicAspect {
 	return (Prs3d_TextAspect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs3d_TextAspect::~Handle_Prs3d_TextAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs3d_TextAspect {
-	~Handle_Prs3d_TextAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_TextAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -594,10 +742,18 @@ class Prs3d_Root {
 		Handle_Graphic3d_Group NewGroup(const Handle_Prs3d_Presentation &Prs3d);
 
 };
+%feature("shadow") Prs3d_Root::~Prs3d_Root %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_Root {
-	~Prs3d_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_Root\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -613,10 +769,18 @@ class Prs3d_Text : public Prs3d_Root {
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_TextAspect &anAspect, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint);
 
 };
+%feature("shadow") Prs3d_Text::~Prs3d_Text %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_Text {
-	~Prs3d_Text() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_Text\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -682,10 +846,18 @@ class Prs3d_Presentation : public Graphic3d_Structure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_Presentation::~Prs3d_Presentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_Presentation {
-	~Prs3d_Presentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_Presentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -699,10 +871,18 @@ class Prs3d_AnglePresentation : public Prs3d_Root {
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &AttachmentPoint3, const gp_Pnt &OffsetPoint);
 
 };
+%feature("shadow") Prs3d_AnglePresentation::~Prs3d_AnglePresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_AnglePresentation {
-	~Prs3d_AnglePresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_AnglePresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -726,10 +906,18 @@ class Prs3d_CompositeAspect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_CompositeAspect::~Prs3d_CompositeAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_CompositeAspect {
-	~Prs3d_CompositeAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_CompositeAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -751,10 +939,18 @@ class Prs3d_RadiusAspect : public Prs3d_CompositeAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_RadiusAspect::~Prs3d_RadiusAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_RadiusAspect {
-	~Prs3d_RadiusAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_RadiusAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -778,10 +974,18 @@ class Prs3d_BasicAspect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_BasicAspect::~Prs3d_BasicAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_BasicAspect {
-	~Prs3d_BasicAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_BasicAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -823,10 +1027,18 @@ class Prs3d_LineAspect : public Prs3d_BasicAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_LineAspect::~Prs3d_LineAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_LineAspect {
-	~Prs3d_LineAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_LineAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -840,10 +1052,18 @@ class Prs3d_LengthPresentation : public Prs3d_Root {
 		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt &AttachmentPoint1, const gp_Pnt &AttachmentPoint2, const gp_Pnt &OffsetPoint);
 
 };
+%feature("shadow") Prs3d_LengthPresentation::~Prs3d_LengthPresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_LengthPresentation {
-	~Prs3d_LengthPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_LengthPresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -897,10 +1117,18 @@ class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_DatumAspect::~Prs3d_DatumAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_DatumAspect {
-	~Prs3d_DatumAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_DatumAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -944,10 +1172,18 @@ class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_AngleAspect::~Prs3d_AngleAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_AngleAspect {
-	~Prs3d_AngleAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_AngleAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -957,14 +1193,22 @@ class Prs3d {
 	public:
 		%feature("autodoc", "1");
 		Prs3d();
-		%feature("autodoc","MatchSegment(Quantity_Length X, Quantity_Length Y, Quantity_Length Z, Quantity_Length aDistance, const p1, const p2)->Standard_Real");
+		%feature("autodoc","MatchSegment(Quantity_Length X, Quantity_Length Y, Quantity_Length Z, Quantity_Length aDistance, const p1, const p2) -> Standard_Real");
 		Standard_Boolean MatchSegment(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const gp_Pnt &p1, const gp_Pnt &p2, Standard_Real &OutValue);
 
 };
+%feature("shadow") Prs3d::~Prs3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d {
-	~Prs3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1008,10 +1252,18 @@ class Prs3d_ShadingAspect : public Prs3d_BasicAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_ShadingAspect::~Prs3d_ShadingAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_ShadingAspect {
-	~Prs3d_ShadingAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_ShadingAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1043,7 +1295,7 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 			self->Print(s);
 			return s.str();}
 		};
-		%feature("autodoc","GetTextureSize()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","GetTextureSize() -> [Standard_Integer, Standard_Integer]");
 		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		const Handle_Graphic3d_HArray1OfBytes & GetTexture();
@@ -1061,10 +1313,18 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_PointAspect::~Prs3d_PointAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_PointAspect {
-	~Prs3d_PointAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_PointAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1112,10 +1372,18 @@ class Prs3d_ArrowAspect : public Prs3d_CompositeAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_ArrowAspect::~Prs3d_ArrowAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_ArrowAspect {
-	~Prs3d_ArrowAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_ArrowAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1143,10 +1411,18 @@ class Prs3d_Projector : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_Projector::~Prs3d_Projector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_Projector {
-	~Prs3d_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_Projector\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1316,10 +1592,18 @@ class Prs3d_Drawer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_Drawer::~Prs3d_Drawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_Drawer {
-	~Prs3d_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_Drawer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1375,10 +1659,18 @@ class Prs3d_ShapeTool {
 		Handle_Poly_Polygon3D Polygon3D(TopLoc_Location & l) const;
 
 };
+%feature("shadow") Prs3d_ShapeTool::~Prs3d_ShapeTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_ShapeTool {
-	~Prs3d_ShapeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_ShapeTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1442,10 +1734,18 @@ class Prs3d_TextAspect : public Prs3d_BasicAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_TextAspect::~Prs3d_TextAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_TextAspect {
-	~Prs3d_TextAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_TextAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1483,10 +1783,18 @@ class Prs3d_IsoAspect : public Prs3d_LineAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_IsoAspect::~Prs3d_IsoAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_IsoAspect {
-	~Prs3d_IsoAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_IsoAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1518,10 +1826,18 @@ class Prs3d_InvalidAngle : public Standard_RangeError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_InvalidAngle::~Prs3d_InvalidAngle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_InvalidAngle {
-	~Prs3d_InvalidAngle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_InvalidAngle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1541,9 +1857,9 @@ class Prs3d_PlaneSet : public MMgt_TShared {
 		gp_Pln Plane() const;
 		%feature("autodoc", "1");
 		Quantity_Length Offset() const;
-		%feature("autodoc","Location()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Location() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Location(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Direction()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Direction() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1559,10 +1875,18 @@ class Prs3d_PlaneSet : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_PlaneSet::~Prs3d_PlaneSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_PlaneSet {
-	~Prs3d_PlaneSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_PlaneSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1578,10 +1902,18 @@ class Prs3d_Arrow : public Prs3d_Root {
 		void Fill(const Handle_Prs3d_Presentation &aPresentation, const gp_Pnt &aLocation, const gp_Dir &aDirection, const Quantity_PlaneAngle anAngle, const Quantity_Length aLength);
 
 };
+%feature("shadow") Prs3d_Arrow::~Prs3d_Arrow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_Arrow {
-	~Prs3d_Arrow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_Arrow\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1649,10 +1981,18 @@ class Prs3d_PlaneAspect : public Prs3d_CompositeAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_PlaneAspect::~Prs3d_PlaneAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_PlaneAspect {
-	~Prs3d_PlaneAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_PlaneAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1708,9 +2048,17 @@ class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs3d_LengthAspect::~Prs3d_LengthAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs3d_LengthAspect {
-	~Prs3d_LengthAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs3d_LengthAspect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

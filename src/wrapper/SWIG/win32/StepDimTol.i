@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StepDimTol_dependencies.i
 
 
@@ -63,10 +67,18 @@ class Handle_StepDimTol_DatumTarget : public Handle_StepRepr_ShapeAspect {
 	return (StepDimTol_DatumTarget*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_DatumTarget::~Handle_StepDimTol_DatumTarget %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_DatumTarget {
-	~Handle_StepDimTol_DatumTarget() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_DatumTarget\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -93,10 +105,18 @@ class Handle_StepDimTol_PlacedDatumTargetFeature : public Handle_StepDimTol_Datu
 	return (StepDimTol_PlacedDatumTargetFeature*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_PlacedDatumTargetFeature::~Handle_StepDimTol_PlacedDatumTargetFeature %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_PlacedDatumTargetFeature {
-	~Handle_StepDimTol_PlacedDatumTargetFeature() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_PlacedDatumTargetFeature\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -123,10 +143,18 @@ class Handle_StepDimTol_HArray1OfDatumReference : public Handle_MMgt_TShared {
 	return (StepDimTol_HArray1OfDatumReference*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_HArray1OfDatumReference::~Handle_StepDimTol_HArray1OfDatumReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_HArray1OfDatumReference {
-	~Handle_StepDimTol_HArray1OfDatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_HArray1OfDatumReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -153,10 +181,18 @@ class Handle_StepDimTol_GeometricTolerance : public Handle_MMgt_TShared {
 	return (StepDimTol_GeometricTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_GeometricTolerance::~Handle_StepDimTol_GeometricTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_GeometricTolerance {
-	~Handle_StepDimTol_GeometricTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_GeometricTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -183,10 +219,18 @@ class Handle_StepDimTol_GeometricToleranceWithDatumReference : public Handle_Ste
 	return (StepDimTol_GeometricToleranceWithDatumReference*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_GeometricToleranceWithDatumReference::~Handle_StepDimTol_GeometricToleranceWithDatumReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_GeometricToleranceWithDatumReference {
-	~Handle_StepDimTol_GeometricToleranceWithDatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_GeometricToleranceWithDatumReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -213,10 +257,18 @@ class Handle_StepDimTol_CoaxialityTolerance : public Handle_StepDimTol_Geometric
 	return (StepDimTol_CoaxialityTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_CoaxialityTolerance::~Handle_StepDimTol_CoaxialityTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_CoaxialityTolerance {
-	~Handle_StepDimTol_CoaxialityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_CoaxialityTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -243,10 +295,18 @@ class Handle_StepDimTol_Datum : public Handle_StepRepr_ShapeAspect {
 	return (StepDimTol_Datum*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_Datum::~Handle_StepDimTol_Datum %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_Datum {
-	~Handle_StepDimTol_Datum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_Datum\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -273,10 +333,18 @@ class Handle_StepDimTol_LineProfileTolerance : public Handle_StepDimTol_Geometri
 	return (StepDimTol_LineProfileTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_LineProfileTolerance::~Handle_StepDimTol_LineProfileTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_LineProfileTolerance {
-	~Handle_StepDimTol_LineProfileTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_LineProfileTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -303,10 +371,18 @@ class Handle_StepDimTol_AngularityTolerance : public Handle_StepDimTol_Geometric
 	return (StepDimTol_AngularityTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_AngularityTolerance::~Handle_StepDimTol_AngularityTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_AngularityTolerance {
-	~Handle_StepDimTol_AngularityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_AngularityTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -333,10 +409,18 @@ class Handle_StepDimTol_CircularRunoutTolerance : public Handle_StepDimTol_Geome
 	return (StepDimTol_CircularRunoutTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_CircularRunoutTolerance::~Handle_StepDimTol_CircularRunoutTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_CircularRunoutTolerance {
-	~Handle_StepDimTol_CircularRunoutTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_CircularRunoutTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -363,10 +447,18 @@ class Handle_StepDimTol_TotalRunoutTolerance : public Handle_StepDimTol_Geometri
 	return (StepDimTol_TotalRunoutTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_TotalRunoutTolerance::~Handle_StepDimTol_TotalRunoutTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_TotalRunoutTolerance {
-	~Handle_StepDimTol_TotalRunoutTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_TotalRunoutTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -393,10 +485,18 @@ class Handle_StepDimTol_PositionTolerance : public Handle_StepDimTol_GeometricTo
 	return (StepDimTol_PositionTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_PositionTolerance::~Handle_StepDimTol_PositionTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_PositionTolerance {
-	~Handle_StepDimTol_PositionTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_PositionTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -423,10 +523,18 @@ class Handle_StepDimTol_GeometricToleranceRelationship : public Handle_MMgt_TSha
 	return (StepDimTol_GeometricToleranceRelationship*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_GeometricToleranceRelationship::~Handle_StepDimTol_GeometricToleranceRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_GeometricToleranceRelationship {
-	~Handle_StepDimTol_GeometricToleranceRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_GeometricToleranceRelationship\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -453,10 +561,18 @@ class Handle_StepDimTol_ConcentricityTolerance : public Handle_StepDimTol_Geomet
 	return (StepDimTol_ConcentricityTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_ConcentricityTolerance::~Handle_StepDimTol_ConcentricityTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_ConcentricityTolerance {
-	~Handle_StepDimTol_ConcentricityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_ConcentricityTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -483,10 +599,18 @@ class Handle_StepDimTol_ParallelismTolerance : public Handle_StepDimTol_Geometri
 	return (StepDimTol_ParallelismTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_ParallelismTolerance::~Handle_StepDimTol_ParallelismTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_ParallelismTolerance {
-	~Handle_StepDimTol_ParallelismTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_ParallelismTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -513,10 +637,18 @@ class Handle_StepDimTol_PerpendicularityTolerance : public Handle_StepDimTol_Geo
 	return (StepDimTol_PerpendicularityTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_PerpendicularityTolerance::~Handle_StepDimTol_PerpendicularityTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_PerpendicularityTolerance {
-	~Handle_StepDimTol_PerpendicularityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_PerpendicularityTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -543,10 +675,18 @@ class Handle_StepDimTol_StraightnessTolerance : public Handle_StepDimTol_Geometr
 	return (StepDimTol_StraightnessTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_StraightnessTolerance::~Handle_StepDimTol_StraightnessTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_StraightnessTolerance {
-	~Handle_StepDimTol_StraightnessTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_StraightnessTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -573,10 +713,18 @@ class Handle_StepDimTol_FlatnessTolerance : public Handle_StepDimTol_GeometricTo
 	return (StepDimTol_FlatnessTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_FlatnessTolerance::~Handle_StepDimTol_FlatnessTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_FlatnessTolerance {
-	~Handle_StepDimTol_FlatnessTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_FlatnessTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -603,10 +751,18 @@ class Handle_StepDimTol_DatumReference : public Handle_MMgt_TShared {
 	return (StepDimTol_DatumReference*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_DatumReference::~Handle_StepDimTol_DatumReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_DatumReference {
-	~Handle_StepDimTol_DatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_DatumReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -633,10 +789,18 @@ class Handle_StepDimTol_DatumFeature : public Handle_StepRepr_ShapeAspect {
 	return (StepDimTol_DatumFeature*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_DatumFeature::~Handle_StepDimTol_DatumFeature %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_DatumFeature {
-	~Handle_StepDimTol_DatumFeature() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_DatumFeature\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -663,10 +827,18 @@ class Handle_StepDimTol_CylindricityTolerance : public Handle_StepDimTol_Geometr
 	return (StepDimTol_CylindricityTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_CylindricityTolerance::~Handle_StepDimTol_CylindricityTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_CylindricityTolerance {
-	~Handle_StepDimTol_CylindricityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_CylindricityTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -693,10 +865,18 @@ class Handle_StepDimTol_SymmetryTolerance : public Handle_StepDimTol_GeometricTo
 	return (StepDimTol_SymmetryTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_SymmetryTolerance::~Handle_StepDimTol_SymmetryTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_SymmetryTolerance {
-	~Handle_StepDimTol_SymmetryTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_SymmetryTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -723,10 +903,18 @@ class Handle_StepDimTol_SurfaceProfileTolerance : public Handle_StepDimTol_Geome
 	return (StepDimTol_SurfaceProfileTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_SurfaceProfileTolerance::~Handle_StepDimTol_SurfaceProfileTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_SurfaceProfileTolerance {
-	~Handle_StepDimTol_SurfaceProfileTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_SurfaceProfileTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -753,10 +941,18 @@ class Handle_StepDimTol_ModifiedGeometricTolerance : public Handle_StepDimTol_Ge
 	return (StepDimTol_ModifiedGeometricTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_ModifiedGeometricTolerance::~Handle_StepDimTol_ModifiedGeometricTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_ModifiedGeometricTolerance {
-	~Handle_StepDimTol_ModifiedGeometricTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_ModifiedGeometricTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -783,10 +979,18 @@ class Handle_StepDimTol_CommonDatum : public Handle_StepRepr_CompositeShapeAspec
 	return (StepDimTol_CommonDatum*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_CommonDatum::~Handle_StepDimTol_CommonDatum %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_CommonDatum {
-	~Handle_StepDimTol_CommonDatum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_CommonDatum\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -813,10 +1017,18 @@ class Handle_StepDimTol_RoundnessTolerance : public Handle_StepDimTol_GeometricT
 	return (StepDimTol_RoundnessTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_RoundnessTolerance::~Handle_StepDimTol_RoundnessTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_RoundnessTolerance {
-	~Handle_StepDimTol_RoundnessTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_RoundnessTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -843,10 +1055,18 @@ class Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public H
 	return (StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol::~Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
-	~Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -888,10 +1108,18 @@ class StepDimTol_GeometricTolerance : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_GeometricTolerance::~StepDimTol_GeometricTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_GeometricTolerance {
-	~StepDimTol_GeometricTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_GeometricTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -913,10 +1141,18 @@ class StepDimTol_StraightnessTolerance : public StepDimTol_GeometricTolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_StraightnessTolerance::~StepDimTol_StraightnessTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_StraightnessTolerance {
-	~StepDimTol_StraightnessTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_StraightnessTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -940,10 +1176,18 @@ class StepDimTol_LineProfileTolerance : public StepDimTol_GeometricTolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_LineProfileTolerance::~StepDimTol_LineProfileTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_LineProfileTolerance {
-	~StepDimTol_LineProfileTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_LineProfileTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -967,10 +1211,18 @@ class StepDimTol_SurfaceProfileTolerance : public StepDimTol_GeometricTolerance 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_SurfaceProfileTolerance::~StepDimTol_SurfaceProfileTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_SurfaceProfileTolerance {
-	~StepDimTol_SurfaceProfileTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_SurfaceProfileTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -994,10 +1246,18 @@ class StepDimTol_CylindricityTolerance : public StepDimTol_GeometricTolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_CylindricityTolerance::~StepDimTol_CylindricityTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_CylindricityTolerance {
-	~StepDimTol_CylindricityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_CylindricityTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1021,10 +1281,18 @@ class StepDimTol_RoundnessTolerance : public StepDimTol_GeometricTolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_RoundnessTolerance::~StepDimTol_RoundnessTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_RoundnessTolerance {
-	~StepDimTol_RoundnessTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_RoundnessTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1064,10 +1332,18 @@ class StepDimTol_Array1OfDatumReference {
 		Handle_StepDimTol_DatumReference & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepDimTol_Array1OfDatumReference::~StepDimTol_Array1OfDatumReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_Array1OfDatumReference {
-	~StepDimTol_Array1OfDatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_Array1OfDatumReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1097,10 +1373,18 @@ class StepDimTol_DatumTarget : public StepRepr_ShapeAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_DatumTarget::~StepDimTol_DatumTarget %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_DatumTarget {
-	~StepDimTol_DatumTarget() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_DatumTarget\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1130,10 +1414,18 @@ class StepDimTol_GeometricToleranceWithDatumReference : public StepDimTol_Geomet
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_GeometricToleranceWithDatumReference::~StepDimTol_GeometricToleranceWithDatumReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_GeometricToleranceWithDatumReference {
-	~StepDimTol_GeometricToleranceWithDatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_GeometricToleranceWithDatumReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1155,10 +1447,18 @@ class StepDimTol_AngularityTolerance : public StepDimTol_GeometricToleranceWithD
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_AngularityTolerance::~StepDimTol_AngularityTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_AngularityTolerance {
-	~StepDimTol_AngularityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_AngularityTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1182,10 +1482,18 @@ class StepDimTol_ConcentricityTolerance : public StepDimTol_GeometricToleranceWi
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_ConcentricityTolerance::~StepDimTol_ConcentricityTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_ConcentricityTolerance {
-	~StepDimTol_ConcentricityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_ConcentricityTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1209,10 +1517,18 @@ class StepDimTol_PlacedDatumTargetFeature : public StepDimTol_DatumTarget {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_PlacedDatumTargetFeature::~StepDimTol_PlacedDatumTargetFeature %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_PlacedDatumTargetFeature {
-	~StepDimTol_PlacedDatumTargetFeature() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_PlacedDatumTargetFeature\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1236,10 +1552,18 @@ class StepDimTol_TotalRunoutTolerance : public StepDimTol_GeometricToleranceWith
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_TotalRunoutTolerance::~StepDimTol_TotalRunoutTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_TotalRunoutTolerance {
-	~StepDimTol_TotalRunoutTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_TotalRunoutTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1263,10 +1587,18 @@ class StepDimTol_ParallelismTolerance : public StepDimTol_GeometricToleranceWith
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_ParallelismTolerance::~StepDimTol_ParallelismTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_ParallelismTolerance {
-	~StepDimTol_ParallelismTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_ParallelismTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1290,10 +1622,18 @@ class StepDimTol_PerpendicularityTolerance : public StepDimTol_GeometricToleranc
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_PerpendicularityTolerance::~StepDimTol_PerpendicularityTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_PerpendicularityTolerance {
-	~StepDimTol_PerpendicularityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_PerpendicularityTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1331,10 +1671,18 @@ class StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public StepDimT
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol::~StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
-	~StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1364,10 +1712,18 @@ class StepDimTol_CommonDatum : public StepRepr_CompositeShapeAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_CommonDatum::~StepDimTol_CommonDatum %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_CommonDatum {
-	~StepDimTol_CommonDatum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_CommonDatum\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1397,10 +1753,18 @@ class StepDimTol_ModifiedGeometricTolerance : public StepDimTol_GeometricToleran
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_ModifiedGeometricTolerance::~StepDimTol_ModifiedGeometricTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_ModifiedGeometricTolerance {
-	~StepDimTol_ModifiedGeometricTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_ModifiedGeometricTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1424,10 +1788,18 @@ class StepDimTol_CircularRunoutTolerance : public StepDimTol_GeometricToleranceW
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_CircularRunoutTolerance::~StepDimTol_CircularRunoutTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_CircularRunoutTolerance {
-	~StepDimTol_CircularRunoutTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_CircularRunoutTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1451,10 +1823,18 @@ class StepDimTol_CoaxialityTolerance : public StepDimTol_GeometricToleranceWithD
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_CoaxialityTolerance::~StepDimTol_CoaxialityTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_CoaxialityTolerance {
-	~StepDimTol_CoaxialityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_CoaxialityTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1478,10 +1858,18 @@ class StepDimTol_FlatnessTolerance : public StepDimTol_GeometricTolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_FlatnessTolerance::~StepDimTol_FlatnessTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_FlatnessTolerance {
-	~StepDimTol_FlatnessTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_FlatnessTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1499,10 +1887,18 @@ class StepDimTol_ShapeToleranceSelect : public StepData_SelectType {
 		Handle_StepShape_PlusMinusTolerance PlusMinusTolerance() const;
 
 };
+%feature("shadow") StepDimTol_ShapeToleranceSelect::~StepDimTol_ShapeToleranceSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_ShapeToleranceSelect {
-	~StepDimTol_ShapeToleranceSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_ShapeToleranceSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1526,10 +1922,18 @@ class StepDimTol_DatumFeature : public StepRepr_ShapeAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_DatumFeature::~StepDimTol_DatumFeature %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_DatumFeature {
-	~StepDimTol_DatumFeature() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_DatumFeature\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1553,10 +1957,18 @@ class StepDimTol_SymmetryTolerance : public StepDimTol_GeometricToleranceWithDat
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_SymmetryTolerance::~StepDimTol_SymmetryTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_SymmetryTolerance {
-	~StepDimTol_SymmetryTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_SymmetryTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1590,10 +2002,18 @@ class StepDimTol_DatumReference : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_DatumReference::~StepDimTol_DatumReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_DatumReference {
-	~StepDimTol_DatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_DatumReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1623,10 +2043,18 @@ class StepDimTol_Datum : public StepRepr_ShapeAspect {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_Datum::~StepDimTol_Datum %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_Datum {
-	~StepDimTol_Datum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_Datum\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1650,10 +2078,18 @@ class StepDimTol_PositionTolerance : public StepDimTol_GeometricTolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_PositionTolerance::~StepDimTol_PositionTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_PositionTolerance {
-	~StepDimTol_PositionTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_PositionTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1695,10 +2131,18 @@ class StepDimTol_GeometricToleranceRelationship : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_GeometricToleranceRelationship::~StepDimTol_GeometricToleranceRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_GeometricToleranceRelationship {
-	~StepDimTol_GeometricToleranceRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_GeometricToleranceRelationship\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1742,9 +2186,17 @@ class StepDimTol_HArray1OfDatumReference : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepDimTol_HArray1OfDatumReference::~StepDimTol_HArray1OfDatumReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepDimTol_HArray1OfDatumReference {
-	~StepDimTol_HArray1OfDatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepDimTol_HArray1OfDatumReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

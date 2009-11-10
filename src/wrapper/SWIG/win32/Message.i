@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Message_dependencies.i
 
 
@@ -204,10 +208,18 @@ class Handle_Message_Printer : public Handle_MMgt_TShared {
 	return (Message_Printer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Message_Printer::~Handle_Message_Printer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Message_Printer {
-	~Handle_Message_Printer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Message_Printer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -234,10 +246,18 @@ class Handle_Message_PrinterOStream : public Handle_Message_Printer {
 	return (Message_PrinterOStream*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Message_PrinterOStream::~Handle_Message_PrinterOStream %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Message_PrinterOStream {
-	~Handle_Message_PrinterOStream() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Message_PrinterOStream\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -264,10 +284,18 @@ class Handle_Message_Messenger : public Handle_MMgt_TShared {
 	return (Message_Messenger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Message_Messenger::~Handle_Message_Messenger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Message_Messenger {
-	~Handle_Message_Messenger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Message_Messenger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -294,10 +322,18 @@ class Handle_Message_SequenceNodeOfSequenceOfPrinters : public Handle_TCollectio
 	return (Message_SequenceNodeOfSequenceOfPrinters*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Message_SequenceNodeOfSequenceOfPrinters::~Handle_Message_SequenceNodeOfSequenceOfPrinters %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Message_SequenceNodeOfSequenceOfPrinters {
-	~Handle_Message_SequenceNodeOfSequenceOfPrinters() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Message_SequenceNodeOfSequenceOfPrinters\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -324,10 +360,18 @@ class Handle_Message_ListNodeOfListOfMsg : public Handle_TCollection_MapNode {
 	return (Message_ListNodeOfListOfMsg*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Message_ListNodeOfListOfMsg::~Handle_Message_ListNodeOfListOfMsg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Message_ListNodeOfListOfMsg {
-	~Handle_Message_ListNodeOfListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Message_ListNodeOfListOfMsg\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -354,10 +398,18 @@ class Handle_Message_ProgressIndicator : public Handle_MMgt_TShared {
 	return (Message_ProgressIndicator*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Message_ProgressIndicator::~Handle_Message_ProgressIndicator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Message_ProgressIndicator {
-	~Handle_Message_ProgressIndicator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Message_ProgressIndicator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -384,10 +436,18 @@ class Handle_Message_SequenceNodeOfSequenceOfProgressScale : public Handle_TColl
 	return (Message_SequenceNodeOfSequenceOfProgressScale*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Message_SequenceNodeOfSequenceOfProgressScale::~Handle_Message_SequenceNodeOfSequenceOfProgressScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Message_SequenceNodeOfSequenceOfProgressScale {
-	~Handle_Message_SequenceNodeOfSequenceOfProgressScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Message_SequenceNodeOfSequenceOfProgressScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -414,10 +474,18 @@ class Handle_Message_Algorithm : public Handle_MMgt_TShared {
 	return (Message_Algorithm*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Message_Algorithm::~Handle_Message_Algorithm %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Message_Algorithm {
-	~Handle_Message_Algorithm() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Message_Algorithm\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -441,7 +509,7 @@ class Message_ProgressIndicator : public MMgt_TShared {
 		void SetScale(const char * name, const Standard_Real min, const Standard_Real max, const Standard_Real step, const Standard_Boolean isInf=0);
 		%feature("autodoc", "1");
 		void SetScale(const Standard_Real min, const Standard_Real max, const Standard_Real step, const Standard_Boolean isInf=0);
-		%feature("autodoc","GetScale()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","GetScale() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void GetScale(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & isInf) const;
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Real val);
@@ -489,10 +557,18 @@ class Message_ProgressIndicator : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Message_ProgressIndicator::~Message_ProgressIndicator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_ProgressIndicator {
-	~Message_ProgressIndicator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_ProgressIndicator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -520,10 +596,18 @@ class Message_Printer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Message_Printer::~Message_Printer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_Printer {
-	~Message_Printer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_Printer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -549,10 +633,18 @@ class Message_SequenceNodeOfSequenceOfPrinters : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Message_SequenceNodeOfSequenceOfPrinters::~Message_SequenceNodeOfSequenceOfPrinters %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_SequenceNodeOfSequenceOfPrinters {
-	~Message_SequenceNodeOfSequenceOfPrinters() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_SequenceNodeOfSequenceOfPrinters\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -594,10 +686,18 @@ class Message_Messenger : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Message_Messenger::~Message_Messenger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_Messenger {
-	~Message_Messenger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_Messenger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -613,10 +713,18 @@ class Message {
 		TCollection_AsciiString FillTime(const Standard_Integer Hour, const Standard_Integer Minute, const Standard_Real Second);
 
 };
+%feature("shadow") Message::~Message %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message {
-	~Message() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -666,10 +774,18 @@ class Message_ListOfMsg {
 		void InsertAfter(Message_ListOfMsg & Other, Message_ListIteratorOfListOfMsg & It);
 
 };
+%feature("shadow") Message_ListOfMsg::~Message_ListOfMsg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_ListOfMsg {
-	~Message_ListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_ListOfMsg\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -723,10 +839,18 @@ class Message_SequenceOfPrinters : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Message_SequenceOfPrinters::~Message_SequenceOfPrinters %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_SequenceOfPrinters {
-	~Message_SequenceOfPrinters() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_SequenceOfPrinters\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -774,10 +898,18 @@ class Message_ProgressScale {
 		Standard_Real BaseToLocal(const Standard_Real val) const;
 
 };
+%feature("shadow") Message_ProgressScale::~Message_ProgressScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_ProgressScale {
-	~Message_ProgressScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_ProgressScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -801,10 +933,18 @@ class Message_MsgFile {
 		const TCollection_ExtendedString & Msg(const TCollection_AsciiString &key);
 
 };
+%feature("shadow") Message_MsgFile::~Message_MsgFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_MsgFile {
-	~Message_MsgFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_MsgFile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -830,10 +970,18 @@ class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Message_SequenceNodeOfSequenceOfProgressScale::~Message_SequenceNodeOfSequenceOfProgressScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_SequenceNodeOfSequenceOfProgressScale {
-	~Message_SequenceNodeOfSequenceOfProgressScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_SequenceNodeOfSequenceOfProgressScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -859,10 +1007,18 @@ class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Message_ListNodeOfListOfMsg::~Message_ListNodeOfListOfMsg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_ListNodeOfListOfMsg {
-	~Message_ListNodeOfListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_ListNodeOfListOfMsg\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -916,10 +1072,18 @@ class Message_SequenceOfProgressScale : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Message_SequenceOfProgressScale::~Message_SequenceOfProgressScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_SequenceOfProgressScale {
-	~Message_SequenceOfProgressScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_SequenceOfProgressScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -963,10 +1127,18 @@ class Message_PrinterOStream : public Message_Printer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Message_PrinterOStream::~Message_PrinterOStream %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_PrinterOStream {
-	~Message_PrinterOStream() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_PrinterOStream\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -988,10 +1160,18 @@ class Message_ListIteratorOfListOfMsg {
 		Message_Msg & Value() const;
 
 };
+%feature("shadow") Message_ListIteratorOfListOfMsg::~Message_ListIteratorOfListOfMsg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_ListIteratorOfListOfMsg {
-	~Message_ListIteratorOfListOfMsg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_ListIteratorOfListOfMsg\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1017,10 +1197,18 @@ class Message_ProgressSentry {
 		Standard_Boolean More() const;
 
 };
+%feature("shadow") Message_ProgressSentry::~Message_ProgressSentry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_ProgressSentry {
-	~Message_ProgressSentry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_ProgressSentry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1064,9 +1252,17 @@ class Message_Msg {
 		const TCollection_ExtendedString & Get();
 
 };
+%feature("shadow") Message_Msg::~Message_Msg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Message_Msg {
-	~Message_Msg() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Message_Msg\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Contap_dependencies.i
 
 
@@ -71,10 +75,18 @@ class Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : publ
 	return (Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour::~Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour {
-	~Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -101,10 +113,18 @@ class Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour : public Handle_TCo
 	return (Contap_SequenceNodeOfTheSequenceOfLineOfContour*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour::~Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour {
-	~Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -131,10 +151,18 @@ class Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour : public Handle_TC
 	return (Contap_SequenceNodeOfTheSequenceOfPointOfContour*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour::~Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour {
-	~Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -161,10 +189,18 @@ class Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : publi
 	return (Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour::~Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
-	~Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -191,10 +227,18 @@ class Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public
 	return (Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour::~Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour {
-	~Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -221,10 +265,18 @@ class Handle_Contap_TheIWLineOfTheIWalkingOfContour : public Handle_MMgt_TShared
 	return (Contap_TheIWLineOfTheIWalkingOfContour*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Contap_TheIWLineOfTheIWalkingOfContour::~Handle_Contap_TheIWLineOfTheIWalkingOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Contap_TheIWLineOfTheIWalkingOfContour {
-	~Handle_Contap_TheIWLineOfTheIWalkingOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Contap_TheIWLineOfTheIWalkingOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -251,10 +303,18 @@ class Handle_Contap_TheHSequenceOfPointOfContour : public Handle_MMgt_TShared {
 	return (Contap_TheHSequenceOfPointOfContour*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Contap_TheHSequenceOfPointOfContour::~Handle_Contap_TheHSequenceOfPointOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Contap_TheHSequenceOfPointOfContour {
-	~Handle_Contap_TheHSequenceOfPointOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Contap_TheHSequenceOfPointOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -280,10 +340,18 @@ class Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : public TCol
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour::~Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour {
-	~Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -339,10 +407,18 @@ class Contap_TheSurfFunctionOfContour : public math_FunctionSetWithDerivatives {
 		const Handle_Adaptor3d_HSurface & Surface() const;
 
 };
+%feature("shadow") Contap_TheSurfFunctionOfContour::~Contap_TheSurfFunctionOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_TheSurfFunctionOfContour {
-	~Contap_TheSurfFunctionOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_TheSurfFunctionOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -396,10 +472,18 @@ class Contap_TheSequenceOfPointOfContour : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Contap_TheSequenceOfPointOfContour::~Contap_TheSequenceOfPointOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_TheSequenceOfPointOfContour {
-	~Contap_TheSequenceOfPointOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_TheSequenceOfPointOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -489,10 +573,18 @@ class Contap_HSurfaceTool {
 		Standard_Integer NbSamplesV(const Handle_Adaptor3d_HSurface &S, const Standard_Real v1, const Standard_Real v2);
 
 };
+%feature("shadow") Contap_HSurfaceTool::~Contap_HSurfaceTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_HSurfaceTool {
-	~Contap_HSurfaceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_HSurfaceTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -546,10 +638,18 @@ class Contap_SequenceOfSegmentOfTheSearchOfContour : public TCollection_BaseSequ
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Contap_SequenceOfSegmentOfTheSearchOfContour::~Contap_SequenceOfSegmentOfTheSearchOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_SequenceOfSegmentOfTheSearchOfContour {
-	~Contap_SequenceOfSegmentOfTheSearchOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_SequenceOfSegmentOfTheSearchOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -575,10 +675,18 @@ class Contap_TheSegmentOfTheSearchOfContour {
 		const Contap_ThePathPointOfTheSearchOfContour & LastPoint() const;
 
 };
+%feature("shadow") Contap_TheSegmentOfTheSearchOfContour::~Contap_TheSegmentOfTheSearchOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_TheSegmentOfTheSearchOfContour {
-	~Contap_TheSegmentOfTheSearchOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_TheSegmentOfTheSearchOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -604,10 +712,18 @@ class Contap_TheSearchOfContour {
 		const Contap_TheSegmentOfTheSearchOfContour & Segment(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Contap_TheSearchOfContour::~Contap_TheSearchOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_TheSearchOfContour {
-	~Contap_TheSearchOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_TheSearchOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -625,10 +741,18 @@ class Contap_TheSurfPropsOfContour {
 		void NormAndDn(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & N, gp_Vec & Dnu, gp_Vec & Dnv);
 
 };
+%feature("shadow") Contap_TheSurfPropsOfContour::~Contap_TheSurfPropsOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_TheSurfPropsOfContour {
-	~Contap_TheSurfPropsOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_TheSurfPropsOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -696,10 +820,18 @@ class Contap_TheHSequenceOfPointOfContour : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Contap_TheHSequenceOfPointOfContour::~Contap_TheHSequenceOfPointOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_TheHSequenceOfPointOfContour {
-	~Contap_TheHSequenceOfPointOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_TheHSequenceOfPointOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -747,10 +879,18 @@ class Contap_Contour {
 		Contap_TheSurfFunctionOfContour & SurfaceFunction();
 
 };
+%feature("shadow") Contap_Contour::~Contap_Contour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_Contour {
-	~Contap_Contour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_Contour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -800,10 +940,18 @@ class Contap_TheLineOfContour {
 		IntSurf_TypeTrans TransitionOnS() const;
 
 };
+%feature("shadow") Contap_TheLineOfContour::~Contap_TheLineOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_TheLineOfContour {
-	~Contap_TheLineOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_TheLineOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -857,10 +1005,18 @@ class Contap_SequenceOfPathPointOfTheSearchOfContour : public TCollection_BaseSe
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Contap_SequenceOfPathPointOfTheSearchOfContour::~Contap_SequenceOfPathPointOfTheSearchOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_SequenceOfPathPointOfTheSearchOfContour {
-	~Contap_SequenceOfPathPointOfTheSearchOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_SequenceOfPathPointOfTheSearchOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -886,10 +1042,18 @@ class Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : public TColl
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour::~Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
-	~Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -915,10 +1079,18 @@ class Contap_SequenceNodeOfTheSequenceOfLineOfContour : public TCollection_SeqNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Contap_SequenceNodeOfTheSequenceOfLineOfContour::~Contap_SequenceNodeOfTheSequenceOfLineOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_SequenceNodeOfTheSequenceOfLineOfContour {
-	~Contap_SequenceNodeOfTheSequenceOfLineOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfTheSequenceOfLineOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -974,9 +1146,9 @@ class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
 		Standard_Integer LastPointIndex() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPassingPoint() const;
-		%feature("autodoc","PassingPoint(Standard_Integer Index)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","PassingPoint(Standard_Integer Index) -> [Standard_IntegerStandard_Integer]");
 		void PassingPoint(const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","TangentVector()->Standard_Integer");
+		%feature("autodoc","TangentVector() -> Standard_Integer");
 		const gp_Vec & TangentVector(Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTangentAtBegining() const;
@@ -996,10 +1168,18 @@ class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Contap_TheIWLineOfTheIWalkingOfContour::~Contap_TheIWLineOfTheIWalkingOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_TheIWLineOfTheIWalkingOfContour {
-	~Contap_TheIWLineOfTheIWalkingOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_TheIWLineOfTheIWalkingOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1039,10 +1219,18 @@ class Contap_ContAna {
 		gp_Lin Line(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Contap_ContAna::~Contap_ContAna %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_ContAna {
-	~Contap_ContAna() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_ContAna\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1058,15 +1246,15 @@ class Contap_HContTool {
 		Standard_Integer NbSamplesV(const Handle_Adaptor3d_HSurface &S, const Standard_Real v1, const Standard_Real v2);
 		%feature("autodoc", "1");
 		Standard_Integer NbSamplePoints(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc","SamplePoint(const S, Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","SamplePoint(const S, Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void SamplePoint(const Handle_Adaptor3d_HSurface &S, const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean HasBeenSeen(const Handle_Adaptor2d_HCurve2d &C);
 		%feature("autodoc", "1");
 		Standard_Integer NbSamplesOnArc(const Handle_Adaptor2d_HCurve2d &A);
-		%feature("autodoc","Bounds(const C)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Bounds(const C) -> [Standard_RealStandard_Real]");
 		void Bounds(const Handle_Adaptor2d_HCurve2d &C, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","Project(const C, const P)->Standard_Real");
+		%feature("autodoc","Project(const C, const P) -> Standard_Real");
 		Standard_Boolean Project(const Handle_Adaptor2d_HCurve2d &C, const gp_Pnt2d &P, Standard_Real &OutValue, gp_Pnt2d & Ptproj);
 		%feature("autodoc", "1");
 		Standard_Real Tolerance(const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &C);
@@ -1074,7 +1262,7 @@ class Contap_HContTool {
 		Standard_Real Parameter(const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &C);
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc","Value(const C, Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Value(const C, Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Value(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, gp_Pnt & Pt, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsVertex(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index);
@@ -1082,18 +1270,26 @@ class Contap_HContTool {
 		void Vertex(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, Handle_Adaptor3d_HVertex & V);
 		%feature("autodoc", "1");
 		Standard_Integer NbSegments(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc","HasFirstPoint(const C, Standard_Integer Index)->Standard_Integer");
+		%feature("autodoc","HasFirstPoint(const C, Standard_Integer Index) -> Standard_Integer");
 		Standard_Boolean HasFirstPoint(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, Standard_Integer &OutValue);
-		%feature("autodoc","HasLastPoint(const C, Standard_Integer Index)->Standard_Integer");
+		%feature("autodoc","HasLastPoint(const C, Standard_Integer Index) -> Standard_Integer");
 		Standard_Boolean HasLastPoint(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllSolution(const Handle_Adaptor2d_HCurve2d &C);
 
 };
+%feature("shadow") Contap_HContTool::~Contap_HContTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_HContTool {
-	~Contap_HContTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_HContTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1147,10 +1343,18 @@ class Contap_SequenceOfIWLineOfTheIWalkingOfContour : public TCollection_BaseSeq
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Contap_SequenceOfIWLineOfTheIWalkingOfContour::~Contap_SequenceOfIWLineOfTheIWalkingOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_SequenceOfIWLineOfTheIWalkingOfContour {
-	~Contap_SequenceOfIWLineOfTheIWalkingOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_SequenceOfIWLineOfTheIWalkingOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1182,10 +1386,18 @@ class Contap_ThePathPointOfTheSearchOfContour {
 		Standard_Real Parameter() const;
 
 };
+%feature("shadow") Contap_ThePathPointOfTheSearchOfContour::~Contap_ThePathPointOfTheSearchOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_ThePathPointOfTheSearchOfContour {
-	~Contap_ThePathPointOfTheSearchOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_ThePathPointOfTheSearchOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1209,10 +1421,18 @@ class Contap_TheSearchInsideOfContour {
 		const IntSurf_InteriorPoint & Value(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Contap_TheSearchInsideOfContour::~Contap_TheSearchInsideOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_TheSearchInsideOfContour {
-	~Contap_TheSearchInsideOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_TheSearchInsideOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1266,10 +1486,18 @@ class Contap_TheSequenceOfLineOfContour : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Contap_TheSequenceOfLineOfContour::~Contap_TheSequenceOfLineOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_TheSequenceOfLineOfContour {
-	~Contap_TheSequenceOfLineOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_TheSequenceOfLineOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1297,7 +1525,7 @@ class Contap_ThePointOfContour {
 		const gp_Pnt & Value() const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnLine() const;
-		%feature("autodoc","Parameters()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real]");
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsOnArc() const;
@@ -1319,10 +1547,18 @@ class Contap_ThePointOfContour {
 		Standard_Boolean IsInternal() const;
 
 };
+%feature("shadow") Contap_ThePointOfContour::~Contap_ThePointOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_ThePointOfContour {
-	~Contap_ThePointOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_ThePointOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1348,10 +1584,18 @@ class Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public TColle
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour::~Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour {
-	~Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1377,10 +1621,18 @@ class Contap_SequenceNodeOfTheSequenceOfPointOfContour : public TCollection_SeqN
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Contap_SequenceNodeOfTheSequenceOfPointOfContour::~Contap_SequenceNodeOfTheSequenceOfPointOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_SequenceNodeOfTheSequenceOfPointOfContour {
-	~Contap_SequenceNodeOfTheSequenceOfPointOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfTheSequenceOfPointOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1402,11 +1654,11 @@ class Contap_TheArcFunctionOfContour : public math_FunctionWithDerivative {
 		void Set(const gp_Pnt &Eye, const Standard_Real Angle);
 		%feature("autodoc", "1");
 		void Set(const Handle_Adaptor2d_HCurve2d &A);
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer NbSamples() const;
@@ -1418,10 +1670,18 @@ class Contap_TheArcFunctionOfContour : public math_FunctionWithDerivative {
 		const IntSurf_Quadric & Quadric() const;
 
 };
+%feature("shadow") Contap_TheArcFunctionOfContour::~Contap_TheArcFunctionOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_TheArcFunctionOfContour {
-	~Contap_TheArcFunctionOfContour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_TheArcFunctionOfContour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1481,9 +1741,17 @@ class Contap_HCurve2dTool {
 		Standard_Integer NbSamples(const Handle_Adaptor2d_HCurve2d &C, const Standard_Real U0, const Standard_Real U1);
 
 };
+%feature("shadow") Contap_HCurve2dTool::~Contap_HCurve2dTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Contap_HCurve2dTool {
-	~Contap_HCurve2dTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Contap_HCurve2dTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

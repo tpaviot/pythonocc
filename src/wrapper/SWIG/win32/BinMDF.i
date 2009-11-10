@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BinMDF_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_BinMDF_ADriver : public Handle_MMgt_TShared {
 	return (BinMDF_ADriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinMDF_ADriver::~Handle_BinMDF_ADriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinMDF_ADriver {
-	~Handle_BinMDF_ADriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_ADriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_BinMDF_TagSourceDriver : public Handle_BinMDF_ADriver {
 	return (BinMDF_TagSourceDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinMDF_TagSourceDriver::~Handle_BinMDF_TagSourceDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinMDF_TagSourceDriver {
-	~Handle_BinMDF_TagSourceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_TagSourceDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_BinMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapN
 	return (BinMDF_DataMapNodeOfTypeADriverMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinMDF_DataMapNodeOfTypeADriverMap::~Handle_BinMDF_DataMapNodeOfTypeADriverMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinMDF_DataMapNodeOfTypeADriverMap {
-	~Handle_BinMDF_DataMapNodeOfTypeADriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_DataMapNodeOfTypeADriverMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_BinMDF_ReferenceDriver : public Handle_BinMDF_ADriver {
 	return (BinMDF_ReferenceDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinMDF_ReferenceDriver::~Handle_BinMDF_ReferenceDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinMDF_ReferenceDriver {
-	~Handle_BinMDF_ReferenceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_ReferenceDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_BinMDF_DoubleMapNodeOfTypeIdMap : public Handle_TCollection_MapNode
 	return (BinMDF_DoubleMapNodeOfTypeIdMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinMDF_DoubleMapNodeOfTypeIdMap::~Handle_BinMDF_DoubleMapNodeOfTypeIdMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinMDF_DoubleMapNodeOfTypeIdMap {
-	~Handle_BinMDF_DoubleMapNodeOfTypeIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_DoubleMapNodeOfTypeIdMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_BinMDF_DataMapNodeOfStringIdMap : public Handle_TCollection_MapNode
 	return (BinMDF_DataMapNodeOfStringIdMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinMDF_DataMapNodeOfStringIdMap::~Handle_BinMDF_DataMapNodeOfStringIdMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinMDF_DataMapNodeOfStringIdMap {
-	~Handle_BinMDF_DataMapNodeOfStringIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_DataMapNodeOfStringIdMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_BinMDF_ADriverTable : public Handle_MMgt_TShared {
 	return (BinMDF_ADriverTable*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BinMDF_ADriverTable::~Handle_BinMDF_ADriverTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BinMDF_ADriverTable {
-	~Handle_BinMDF_ADriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_ADriverTable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -274,10 +334,18 @@ class BinMDF_ADriverTable : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinMDF_ADriverTable::~BinMDF_ADriverTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF_ADriverTable {
-	~BinMDF_ADriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_ADriverTable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -311,10 +379,18 @@ class BinMDF_ADriver : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinMDF_ADriver::~BinMDF_ADriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF_ADriver {
-	~BinMDF_ADriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_ADriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -334,10 +410,18 @@ class BinMDF_DataMapIteratorOfStringIdMap : public TCollection_BasicMapIterator 
 		const Standard_Integer & Value() const;
 
 };
+%feature("shadow") BinMDF_DataMapIteratorOfStringIdMap::~BinMDF_DataMapIteratorOfStringIdMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF_DataMapIteratorOfStringIdMap {
-	~BinMDF_DataMapIteratorOfStringIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapIteratorOfStringIdMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -365,10 +449,18 @@ class BinMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinMDF_DataMapNodeOfTypeADriverMap::~BinMDF_DataMapNodeOfTypeADriverMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF_DataMapNodeOfTypeADriverMap {
-	~BinMDF_DataMapNodeOfTypeADriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapNodeOfTypeADriverMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -380,8 +472,18 @@ class BinMDF_DoubleMapNodeOfTypeIdMap : public TCollection_MapNode {
 		BinMDF_DoubleMapNodeOfTypeIdMap(const Handle_Standard_Type &K1, const Standard_Integer &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		Handle_Standard_Type & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -398,10 +500,18 @@ class BinMDF_DoubleMapNodeOfTypeIdMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinMDF_DoubleMapNodeOfTypeIdMap::~BinMDF_DoubleMapNodeOfTypeIdMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF_DoubleMapNodeOfTypeIdMap {
-	~BinMDF_DoubleMapNodeOfTypeIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_DoubleMapNodeOfTypeIdMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -413,8 +523,18 @@ class BinMDF_DataMapNodeOfStringIdMap : public TCollection_MapNode {
 		BinMDF_DataMapNodeOfStringIdMap(const TCollection_AsciiString &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -429,10 +549,18 @@ class BinMDF_DataMapNodeOfStringIdMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinMDF_DataMapNodeOfStringIdMap::~BinMDF_DataMapNodeOfStringIdMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF_DataMapNodeOfStringIdMap {
-	~BinMDF_DataMapNodeOfStringIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapNodeOfStringIdMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -462,10 +590,18 @@ class BinMDF_TagSourceDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinMDF_TagSourceDriver::~BinMDF_TagSourceDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF_TagSourceDriver {
-	~BinMDF_TagSourceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_TagSourceDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -493,16 +629,34 @@ class BinMDF_StringIdMap : public TCollection_BasicMap {
 		const Standard_Integer & Find(const TCollection_AsciiString &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const TCollection_AsciiString &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const TCollection_AsciiString &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const TCollection_AsciiString &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TCollection_AsciiString &K);
 
 };
+%feature("shadow") BinMDF_StringIdMap::~BinMDF_StringIdMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF_StringIdMap {
-	~BinMDF_StringIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_StringIdMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -522,10 +676,18 @@ class BinMDF_DoubleMapIteratorOfTypeIdMap : public TCollection_BasicMapIterator 
 		const Standard_Integer & Key2() const;
 
 };
+%feature("shadow") BinMDF_DoubleMapIteratorOfTypeIdMap::~BinMDF_DoubleMapIteratorOfTypeIdMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF_DoubleMapIteratorOfTypeIdMap {
-	~BinMDF_DoubleMapIteratorOfTypeIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_DoubleMapIteratorOfTypeIdMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -555,10 +717,18 @@ class BinMDF_ReferenceDriver : public BinMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BinMDF_ReferenceDriver::~BinMDF_ReferenceDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF_ReferenceDriver {
-	~BinMDF_ReferenceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_ReferenceDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -592,10 +762,18 @@ class BinMDF_TypeADriverMap : public TCollection_BasicMap {
 		Handle_BinMDF_ADriver & operator()(const Handle_Standard_Type &K);
 
 };
+%feature("shadow") BinMDF_TypeADriverMap::~BinMDF_TypeADriverMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF_TypeADriverMap {
-	~BinMDF_TypeADriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_TypeADriverMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -615,10 +793,18 @@ class BinMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterat
 		const Handle_BinMDF_ADriver & Value() const;
 
 };
+%feature("shadow") BinMDF_DataMapIteratorOfTypeADriverMap::~BinMDF_DataMapIteratorOfTypeADriverMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF_DataMapIteratorOfTypeADriverMap {
-	~BinMDF_DataMapIteratorOfTypeADriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapIteratorOfTypeADriverMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -654,10 +840,18 @@ class BinMDF_TypeIdMap : public TCollection_BasicMap {
 		Standard_Boolean UnBind2(const Standard_Integer &K);
 
 };
+%feature("shadow") BinMDF_TypeIdMap::~BinMDF_TypeIdMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF_TypeIdMap {
-	~BinMDF_TypeIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF_TypeIdMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -671,9 +865,17 @@ class BinMDF {
 		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
 };
+%feature("shadow") BinMDF::~BinMDF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BinMDF {
-	~BinMDF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BinMDF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

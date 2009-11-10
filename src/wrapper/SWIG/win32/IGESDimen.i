@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IGESDimen_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_IGESDimen_DiameterDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_DiameterDimension*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_DiameterDimension::~Handle_IGESDimen_DiameterDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_DiameterDimension {
-	~Handle_IGESDimen_DiameterDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_DiameterDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_IGESDimen_DimensionDisplayData : public Handle_IGESData_IGESEntity 
 	return (IGESDimen_DimensionDisplayData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_DimensionDisplayData::~Handle_IGESDimen_DimensionDisplayData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_DimensionDisplayData {
-	~Handle_IGESDimen_DimensionDisplayData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_DimensionDisplayData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_IGESDimen_GeneralSymbol : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_GeneralSymbol*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_GeneralSymbol::~Handle_IGESDimen_GeneralSymbol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_GeneralSymbol {
-	~Handle_IGESDimen_GeneralSymbol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_GeneralSymbol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_IGESDimen_LeaderArrow : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_LeaderArrow*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_LeaderArrow::~Handle_IGESDimen_LeaderArrow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_LeaderArrow {
-	~Handle_IGESDimen_LeaderArrow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_LeaderArrow\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_IGESDimen_DimensionTolerance : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_DimensionTolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_DimensionTolerance::~Handle_IGESDimen_DimensionTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_DimensionTolerance {
-	~Handle_IGESDimen_DimensionTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_DimensionTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_IGESDimen_HArray1OfGeneralNote : public Handle_MMgt_TShared {
 	return (IGESDimen_HArray1OfGeneralNote*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_HArray1OfGeneralNote::~Handle_IGESDimen_HArray1OfGeneralNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_HArray1OfGeneralNote {
-	~Handle_IGESDimen_HArray1OfGeneralNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_HArray1OfGeneralNote\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_IGESDimen_SectionedArea : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_SectionedArea*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_SectionedArea::~Handle_IGESDimen_SectionedArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_SectionedArea {
-	~Handle_IGESDimen_SectionedArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_SectionedArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_IGESDimen_GeneralLabel : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_GeneralLabel*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_GeneralLabel::~Handle_IGESDimen_GeneralLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_GeneralLabel {
-	~Handle_IGESDimen_GeneralLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_GeneralLabel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_IGESDimen_RadiusDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_RadiusDimension*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_RadiusDimension::~Handle_IGESDimen_RadiusDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_RadiusDimension {
-	~Handle_IGESDimen_RadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_RadiusDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_IGESDimen_WitnessLine : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_WitnessLine*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_WitnessLine::~Handle_IGESDimen_WitnessLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_WitnessLine {
-	~Handle_IGESDimen_WitnessLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_WitnessLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_IGESDimen_CurveDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_CurveDimension*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_CurveDimension::~Handle_IGESDimen_CurveDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_CurveDimension {
-	~Handle_IGESDimen_CurveDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_CurveDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_IGESDimen_GeneralModule : public Handle_IGESData_GeneralModule {
 	return (IGESDimen_GeneralModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_GeneralModule::~Handle_IGESDimen_GeneralModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_GeneralModule {
-	~Handle_IGESDimen_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_GeneralModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_IGESDimen_BasicDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_BasicDimension*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_BasicDimension::~Handle_IGESDimen_BasicDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_BasicDimension {
-	~Handle_IGESDimen_BasicDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_BasicDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +555,18 @@ class Handle_IGESDimen_Section : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_Section*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_Section::~Handle_IGESDimen_Section %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_Section {
-	~Handle_IGESDimen_Section() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_Section\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +593,18 @@ class Handle_IGESDimen_OrdinateDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_OrdinateDimension*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_OrdinateDimension::~Handle_IGESDimen_OrdinateDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_OrdinateDimension {
-	~Handle_IGESDimen_OrdinateDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_OrdinateDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +631,18 @@ class Handle_IGESDimen_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	return (IGESDimen_ReadWriteModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_ReadWriteModule::~Handle_IGESDimen_ReadWriteModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_ReadWriteModule {
-	~Handle_IGESDimen_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_ReadWriteModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +669,18 @@ class Handle_IGESDimen_Protocol : public Handle_IGESData_Protocol {
 	return (IGESDimen_Protocol*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_Protocol::~Handle_IGESDimen_Protocol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_Protocol {
-	~Handle_IGESDimen_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_Protocol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +707,18 @@ class Handle_IGESDimen_FlagNote : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_FlagNote*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_FlagNote::~Handle_IGESDimen_FlagNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_FlagNote {
-	~Handle_IGESDimen_FlagNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_FlagNote\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +745,18 @@ class Handle_IGESDimen_DimensionUnits : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_DimensionUnits*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_DimensionUnits::~Handle_IGESDimen_DimensionUnits %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_DimensionUnits {
-	~Handle_IGESDimen_DimensionUnits() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_DimensionUnits\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +783,18 @@ class Handle_IGESDimen_AngularDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_AngularDimension*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_AngularDimension::~Handle_IGESDimen_AngularDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_AngularDimension {
-	~Handle_IGESDimen_AngularDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_AngularDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -657,10 +821,18 @@ class Handle_IGESDimen_NewDimensionedGeometry : public Handle_IGESData_IGESEntit
 	return (IGESDimen_NewDimensionedGeometry*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_NewDimensionedGeometry::~Handle_IGESDimen_NewDimensionedGeometry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_NewDimensionedGeometry {
-	~Handle_IGESDimen_NewDimensionedGeometry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_NewDimensionedGeometry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -687,10 +859,18 @@ class Handle_IGESDimen_HArray1OfLeaderArrow : public Handle_MMgt_TShared {
 	return (IGESDimen_HArray1OfLeaderArrow*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_HArray1OfLeaderArrow::~Handle_IGESDimen_HArray1OfLeaderArrow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_HArray1OfLeaderArrow {
-	~Handle_IGESDimen_HArray1OfLeaderArrow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_HArray1OfLeaderArrow\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -717,10 +897,18 @@ class Handle_IGESDimen_DimensionedGeometry : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_DimensionedGeometry*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_DimensionedGeometry::~Handle_IGESDimen_DimensionedGeometry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_DimensionedGeometry {
-	~Handle_IGESDimen_DimensionedGeometry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_DimensionedGeometry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -747,10 +935,18 @@ class Handle_IGESDimen_PointDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_PointDimension*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_PointDimension::~Handle_IGESDimen_PointDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_PointDimension {
-	~Handle_IGESDimen_PointDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_PointDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -777,10 +973,18 @@ class Handle_IGESDimen_NewGeneralNote : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_NewGeneralNote*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_NewGeneralNote::~Handle_IGESDimen_NewGeneralNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_NewGeneralNote {
-	~Handle_IGESDimen_NewGeneralNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_NewGeneralNote\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -807,10 +1011,18 @@ class Handle_IGESDimen_GeneralNote : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_GeneralNote*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_GeneralNote::~Handle_IGESDimen_GeneralNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_GeneralNote {
-	~Handle_IGESDimen_GeneralNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_GeneralNote\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -837,10 +1049,18 @@ class Handle_IGESDimen_LinearDimension : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_LinearDimension*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_LinearDimension::~Handle_IGESDimen_LinearDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_LinearDimension {
-	~Handle_IGESDimen_LinearDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_LinearDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -867,10 +1087,18 @@ class Handle_IGESDimen_SpecificModule : public Handle_IGESData_SpecificModule {
 	return (IGESDimen_SpecificModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_SpecificModule::~Handle_IGESDimen_SpecificModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_SpecificModule {
-	~Handle_IGESDimen_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_SpecificModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -897,10 +1125,18 @@ class Handle_IGESDimen_CenterLine : public Handle_IGESData_IGESEntity {
 	return (IGESDimen_CenterLine*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESDimen_CenterLine::~Handle_IGESDimen_CenterLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESDimen_CenterLine {
-	~Handle_IGESDimen_CenterLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_CenterLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -940,10 +1176,18 @@ class IGESDimen_CenterLine : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_CenterLine::~IGESDimen_CenterLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_CenterLine {
-	~IGESDimen_CenterLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_CenterLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -971,10 +1215,18 @@ class IGESDimen_ToolDimensionTolerance {
 		void OwnDump(const Handle_IGESDimen_DimensionTolerance &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolDimensionTolerance::~IGESDimen_ToolDimensionTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolDimensionTolerance {
-	~IGESDimen_ToolDimensionTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolDimensionTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1018,10 +1270,18 @@ class IGESDimen_HArray1OfLeaderArrow : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_HArray1OfLeaderArrow::~IGESDimen_HArray1OfLeaderArrow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_HArray1OfLeaderArrow {
-	~IGESDimen_HArray1OfLeaderArrow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_HArray1OfLeaderArrow\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1065,10 +1325,18 @@ class IGESDimen_LeaderArrow : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_LeaderArrow::~IGESDimen_LeaderArrow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_LeaderArrow {
-	~IGESDimen_LeaderArrow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_LeaderArrow\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1098,10 +1366,18 @@ class IGESDimen_ReadWriteModule : public IGESData_ReadWriteModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_ReadWriteModule::~IGESDimen_ReadWriteModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ReadWriteModule {
-	~IGESDimen_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ReadWriteModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1141,10 +1417,18 @@ class IGESDimen_GeneralSymbol : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_GeneralSymbol::~IGESDimen_GeneralSymbol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_GeneralSymbol {
-	~IGESDimen_GeneralSymbol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_GeneralSymbol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1178,10 +1462,18 @@ class IGESDimen_DimensionedGeometry : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_DimensionedGeometry::~IGESDimen_DimensionedGeometry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_DimensionedGeometry {
-	~IGESDimen_DimensionedGeometry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_DimensionedGeometry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1209,10 +1501,18 @@ class IGESDimen_ToolSection {
 		void OwnDump(const Handle_IGESDimen_Section &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolSection::~IGESDimen_ToolSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolSection {
-	~IGESDimen_ToolSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolSection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1248,10 +1548,18 @@ class IGESDimen_WitnessLine : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_WitnessLine::~IGESDimen_WitnessLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_WitnessLine {
-	~IGESDimen_WitnessLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_WitnessLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1289,10 +1597,18 @@ class IGESDimen_PointDimension : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_PointDimension::~IGESDimen_PointDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_PointDimension {
-	~IGESDimen_PointDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_PointDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1318,10 +1634,18 @@ class IGESDimen_ToolGeneralNote {
 		void OwnDump(const Handle_IGESDimen_GeneralNote &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolGeneralNote::~IGESDimen_ToolGeneralNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolGeneralNote {
-	~IGESDimen_ToolGeneralNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolGeneralNote\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1379,10 +1703,18 @@ class IGESDimen_DimensionDisplayData : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_DimensionDisplayData::~IGESDimen_DimensionDisplayData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_DimensionDisplayData {
-	~IGESDimen_DimensionDisplayData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_DimensionDisplayData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1418,10 +1750,18 @@ class IGESDimen_GeneralModule : public IGESData_GeneralModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_GeneralModule::~IGESDimen_GeneralModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_GeneralModule {
-	~IGESDimen_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_GeneralModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1519,10 +1859,18 @@ class IGESDimen_NewGeneralNote : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_NewGeneralNote::~IGESDimen_NewGeneralNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_NewGeneralNote {
-	~IGESDimen_NewGeneralNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_NewGeneralNote\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1548,10 +1896,18 @@ class IGESDimen_ToolRadiusDimension {
 		void OwnDump(const Handle_IGESDimen_RadiusDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolRadiusDimension::~IGESDimen_ToolRadiusDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolRadiusDimension {
-	~IGESDimen_ToolRadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolRadiusDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1579,10 +1935,18 @@ class IGESDimen_SpecificModule : public IGESData_SpecificModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_SpecificModule::~IGESDimen_SpecificModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_SpecificModule {
-	~IGESDimen_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_SpecificModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1610,10 +1974,18 @@ class IGESDimen_ToolBasicDimension {
 		void OwnDump(const Handle_IGESDimen_BasicDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolBasicDimension::~IGESDimen_ToolBasicDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolBasicDimension {
-	~IGESDimen_ToolBasicDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolBasicDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1639,10 +2011,18 @@ class IGESDimen_ToolCurveDimension {
 		void OwnDump(const Handle_IGESDimen_CurveDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolCurveDimension::~IGESDimen_ToolCurveDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolCurveDimension {
-	~IGESDimen_ToolCurveDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolCurveDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1690,10 +2070,18 @@ class IGESDimen_SectionedArea : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_SectionedArea::~IGESDimen_SectionedArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_SectionedArea {
-	~IGESDimen_SectionedArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_SectionedArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1719,10 +2107,18 @@ class IGESDimen_ToolGeneralLabel {
 		void OwnDump(const Handle_IGESDimen_GeneralLabel &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolGeneralLabel::~IGESDimen_ToolGeneralLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolGeneralLabel {
-	~IGESDimen_ToolGeneralLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolGeneralLabel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1770,10 +2166,18 @@ class IGESDimen_FlagNote : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_FlagNote::~IGESDimen_FlagNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_FlagNote {
-	~IGESDimen_FlagNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_FlagNote\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1811,10 +2215,18 @@ class IGESDimen_DiameterDimension : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_DiameterDimension::~IGESDimen_DiameterDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_DiameterDimension {
-	~IGESDimen_DiameterDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_DiameterDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1842,10 +2254,18 @@ class IGESDimen_ToolWitnessLine {
 		void OwnDump(const Handle_IGESDimen_WitnessLine &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolWitnessLine::~IGESDimen_ToolWitnessLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolWitnessLine {
-	~IGESDimen_ToolWitnessLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolWitnessLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1885,10 +2305,18 @@ class IGESDimen_Array1OfLeaderArrow {
 		Handle_IGESDimen_LeaderArrow & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") IGESDimen_Array1OfLeaderArrow::~IGESDimen_Array1OfLeaderArrow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_Array1OfLeaderArrow {
-	~IGESDimen_Array1OfLeaderArrow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_Array1OfLeaderArrow\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1926,10 +2354,18 @@ class IGESDimen_Section : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_Section::~IGESDimen_Section %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_Section {
-	~IGESDimen_Section() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_Section\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1969,10 +2405,18 @@ class IGESDimen_Array1OfGeneralNote {
 		Handle_IGESDimen_GeneralNote & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") IGESDimen_Array1OfGeneralNote::~IGESDimen_Array1OfGeneralNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_Array1OfGeneralNote {
-	~IGESDimen_Array1OfGeneralNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_Array1OfGeneralNote\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2016,10 +2460,18 @@ class IGESDimen_HArray1OfGeneralNote : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_HArray1OfGeneralNote::~IGESDimen_HArray1OfGeneralNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_HArray1OfGeneralNote {
-	~IGESDimen_HArray1OfGeneralNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_HArray1OfGeneralNote\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2045,10 +2497,18 @@ class IGESDimen_ToolDiameterDimension {
 		void OwnDump(const Handle_IGESDimen_DiameterDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolDiameterDimension::~IGESDimen_ToolDiameterDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolDiameterDimension {
-	~IGESDimen_ToolDiameterDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolDiameterDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2090,10 +2550,18 @@ class IGESDimen_LinearDimension : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_LinearDimension::~IGESDimen_LinearDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_LinearDimension {
-	~IGESDimen_LinearDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_LinearDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2151,10 +2619,18 @@ class IGESDimen_GeneralNote : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_GeneralNote::~IGESDimen_GeneralNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_GeneralNote {
-	~IGESDimen_GeneralNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_GeneralNote\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2182,10 +2658,18 @@ class IGESDimen_ToolCenterLine {
 		void OwnDump(const Handle_IGESDimen_CenterLine &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolCenterLine::~IGESDimen_ToolCenterLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolCenterLine {
-	~IGESDimen_ToolCenterLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolCenterLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2231,10 +2715,18 @@ class IGESDimen_CurveDimension : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_CurveDimension::~IGESDimen_CurveDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_CurveDimension {
-	~IGESDimen_CurveDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_CurveDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2260,10 +2752,18 @@ class IGESDimen_ToolFlagNote {
 		void OwnDump(const Handle_IGESDimen_FlagNote &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolFlagNote::~IGESDimen_ToolFlagNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolFlagNote {
-	~IGESDimen_ToolFlagNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolFlagNote\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2291,10 +2791,18 @@ class IGESDimen_ToolNewDimensionedGeometry {
 		void OwnDump(const Handle_IGESDimen_NewDimensionedGeometry &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolNewDimensionedGeometry::~IGESDimen_ToolNewDimensionedGeometry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolNewDimensionedGeometry {
-	~IGESDimen_ToolNewDimensionedGeometry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolNewDimensionedGeometry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2322,10 +2830,18 @@ class IGESDimen_ToolDimensionUnits {
 		void OwnDump(const Handle_IGESDimen_DimensionUnits &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolDimensionUnits::~IGESDimen_ToolDimensionUnits %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolDimensionUnits {
-	~IGESDimen_ToolDimensionUnits() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolDimensionUnits\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2351,10 +2867,18 @@ class IGESDimen_ToolOrdinateDimension {
 		void OwnDump(const Handle_IGESDimen_OrdinateDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolOrdinateDimension::~IGESDimen_ToolOrdinateDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolOrdinateDimension {
-	~IGESDimen_ToolOrdinateDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolOrdinateDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2382,10 +2906,18 @@ class IGESDimen_ToolDimensionedGeometry {
 		void OwnDump(const Handle_IGESDimen_DimensionedGeometry &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolDimensionedGeometry::~IGESDimen_ToolDimensionedGeometry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolDimensionedGeometry {
-	~IGESDimen_ToolDimensionedGeometry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolDimensionedGeometry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2411,10 +2943,18 @@ class IGESDimen_ToolLinearDimension {
 		void OwnDump(const Handle_IGESDimen_LinearDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolLinearDimension::~IGESDimen_ToolLinearDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolLinearDimension {
-	~IGESDimen_ToolLinearDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolLinearDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2440,10 +2980,18 @@ class IGESDimen_ToolAngularDimension {
 		void OwnDump(const Handle_IGESDimen_AngularDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolAngularDimension::~IGESDimen_ToolAngularDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolAngularDimension {
-	~IGESDimen_ToolAngularDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolAngularDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2459,10 +3007,18 @@ class IGESDimen {
 		Handle_IGESDimen_Protocol Protocol();
 
 };
+%feature("shadow") IGESDimen::~IGESDimen %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen {
-	~IGESDimen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2508,10 +3064,18 @@ class IGESDimen_AngularDimension : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_AngularDimension::~IGESDimen_AngularDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_AngularDimension {
-	~IGESDimen_AngularDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_AngularDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2547,10 +3111,18 @@ class IGESDimen_OrdinateDimension : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_OrdinateDimension::~IGESDimen_OrdinateDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_OrdinateDimension {
-	~IGESDimen_OrdinateDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_OrdinateDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2576,10 +3148,18 @@ class IGESDimen_ToolSectionedArea {
 		void OwnDump(const Handle_IGESDimen_SectionedArea &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolSectionedArea::~IGESDimen_ToolSectionedArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolSectionedArea {
-	~IGESDimen_ToolSectionedArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolSectionedArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2611,10 +3191,18 @@ class IGESDimen_GeneralLabel : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_GeneralLabel::~IGESDimen_GeneralLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_GeneralLabel {
-	~IGESDimen_GeneralLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_GeneralLabel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2650,10 +3238,18 @@ class IGESDimen_BasicDimension : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_BasicDimension::~IGESDimen_BasicDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_BasicDimension {
-	~IGESDimen_BasicDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_BasicDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2679,10 +3275,18 @@ class IGESDimen_ToolLeaderArrow {
 		void OwnDump(const Handle_IGESDimen_LeaderArrow &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolLeaderArrow::~IGESDimen_ToolLeaderArrow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolLeaderArrow {
-	~IGESDimen_ToolLeaderArrow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolLeaderArrow\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2726,10 +3330,18 @@ class IGESDimen_DimensionTolerance : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_DimensionTolerance::~IGESDimen_DimensionTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_DimensionTolerance {
-	~IGESDimen_DimensionTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_DimensionTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2755,10 +3367,18 @@ class IGESDimen_ToolGeneralSymbol {
 		void OwnDump(const Handle_IGESDimen_GeneralSymbol &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolGeneralSymbol::~IGESDimen_ToolGeneralSymbol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolGeneralSymbol {
-	~IGESDimen_ToolGeneralSymbol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolGeneralSymbol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2784,10 +3404,18 @@ class IGESDimen_ToolPointDimension {
 		void OwnDump(const Handle_IGESDimen_PointDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolPointDimension::~IGESDimen_ToolPointDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolPointDimension {
-	~IGESDimen_ToolPointDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolPointDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2813,10 +3441,18 @@ class IGESDimen_ToolNewGeneralNote {
 		void OwnDump(const Handle_IGESDimen_NewGeneralNote &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolNewGeneralNote::~IGESDimen_ToolNewGeneralNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolNewGeneralNote {
-	~IGESDimen_ToolNewGeneralNote() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolNewGeneralNote\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2856,10 +3492,18 @@ class IGESDimen_DimensionUnits : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_DimensionUnits::~IGESDimen_DimensionUnits %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_DimensionUnits {
-	~IGESDimen_DimensionUnits() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_DimensionUnits\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2887,10 +3531,18 @@ class IGESDimen_ToolDimensionDisplayData {
 		void OwnDump(const Handle_IGESDimen_DimensionDisplayData &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESDimen_ToolDimensionDisplayData::~IGESDimen_ToolDimensionDisplayData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_ToolDimensionDisplayData {
-	~IGESDimen_ToolDimensionDisplayData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolDimensionDisplayData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2930,10 +3582,18 @@ class IGESDimen_RadiusDimension : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_RadiusDimension::~IGESDimen_RadiusDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_RadiusDimension {
-	~IGESDimen_RadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_RadiusDimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2977,9 +3637,17 @@ class IGESDimen_NewDimensionedGeometry : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESDimen_NewDimensionedGeometry::~IGESDimen_NewDimensionedGeometry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESDimen_NewDimensionedGeometry {
-	~IGESDimen_NewDimensionedGeometry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESDimen_NewDimensionedGeometry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

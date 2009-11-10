@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IGESSelect_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_IGESSelect_SignLevelNumber : public Handle_IFSelect_Signature {
 	return (IGESSelect_SignLevelNumber*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SignLevelNumber::~Handle_IGESSelect_SignLevelNumber %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SignLevelNumber {
-	~Handle_IGESSelect_SignLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SignLevelNumber\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_IGESSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 	return (IGESSelect_FileModifier*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_FileModifier::~Handle_IGESSelect_FileModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_FileModifier {
-	~Handle_IGESSelect_FileModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_FileModifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_IGESSelect_FloatFormat : public Handle_IGESSelect_FileModifier {
 	return (IGESSelect_FloatFormat*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_FloatFormat::~Handle_IGESSelect_FloatFormat %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_FloatFormat {
-	~Handle_IGESSelect_FloatFormat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_FloatFormat\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_IGESSelect_SelectPCurves : public Handle_IFSelect_SelectExplore {
 	return (IGESSelect_SelectPCurves*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SelectPCurves::~Handle_IGESSelect_SelectPCurves %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SelectPCurves {
-	~Handle_IGESSelect_SelectPCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectPCurves\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_IGESSelect_ModelModifier : public Handle_IFSelect_Modifier {
 	return (IGESSelect_ModelModifier*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_ModelModifier::~Handle_IGESSelect_ModelModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_ModelModifier {
-	~Handle_IGESSelect_ModelModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ModelModifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_IGESSelect_UpdateCreationDate : public Handle_IGESSelect_ModelModif
 	return (IGESSelect_UpdateCreationDate*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_UpdateCreationDate::~Handle_IGESSelect_UpdateCreationDate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_UpdateCreationDate {
-	~Handle_IGESSelect_UpdateCreationDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_UpdateCreationDate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_IGESSelect_SelectFromSingleView : public Handle_IFSelect_SelectDedu
 	return (IGESSelect_SelectFromSingleView*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SelectFromSingleView::~Handle_IGESSelect_SelectFromSingleView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SelectFromSingleView {
-	~Handle_IGESSelect_SelectFromSingleView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectFromSingleView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_IGESSelect_RemoveCurves : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_RemoveCurves*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_RemoveCurves::~Handle_IGESSelect_RemoveCurves %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_RemoveCurves {
-	~Handle_IGESSelect_RemoveCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_RemoveCurves\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_IGESSelect_IGESTypeForm : public Handle_IFSelect_Signature {
 	return (IGESSelect_IGESTypeForm*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_IGESTypeForm::~Handle_IGESSelect_IGESTypeForm %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_IGESTypeForm {
-	~Handle_IGESSelect_IGESTypeForm() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_IGESTypeForm\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_IGESSelect_SetGlobalParameter : public Handle_IGESSelect_ModelModif
 	return (IGESSelect_SetGlobalParameter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SetGlobalParameter::~Handle_IGESSelect_SetGlobalParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SetGlobalParameter {
-	~Handle_IGESSelect_SetGlobalParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SetGlobalParameter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_IGESSelect_SelectName : public Handle_IFSelect_SelectExtract {
 	return (IGESSelect_SelectName*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SelectName::~Handle_IGESSelect_SelectName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SelectName {
-	~Handle_IGESSelect_SelectName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_IGESSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 	return (IGESSelect_WorkLibrary*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_WorkLibrary::~Handle_IGESSelect_WorkLibrary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_WorkLibrary {
-	~Handle_IGESSelect_WorkLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_WorkLibrary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_IGESSelect_RebuildGroups : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_RebuildGroups*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_RebuildGroups::~Handle_IGESSelect_RebuildGroups %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_RebuildGroups {
-	~Handle_IGESSelect_RebuildGroups() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_RebuildGroups\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +555,18 @@ class Handle_IGESSelect_DispPerDrawing : public Handle_IFSelect_Dispatch {
 	return (IGESSelect_DispPerDrawing*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_DispPerDrawing::~Handle_IGESSelect_DispPerDrawing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_DispPerDrawing {
-	~Handle_IGESSelect_DispPerDrawing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_DispPerDrawing\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +593,18 @@ class Handle_IGESSelect_SelectBypassGroup : public Handle_IFSelect_SelectExplore
 	return (IGESSelect_SelectBypassGroup*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SelectBypassGroup::~Handle_IGESSelect_SelectBypassGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SelectBypassGroup {
-	~Handle_IGESSelect_SelectBypassGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectBypassGroup\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +631,18 @@ class Handle_IGESSelect_ChangeLevelNumber : public Handle_IGESSelect_ModelModifi
 	return (IGESSelect_ChangeLevelNumber*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_ChangeLevelNumber::~Handle_IGESSelect_ChangeLevelNumber %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_ChangeLevelNumber {
-	~Handle_IGESSelect_ChangeLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ChangeLevelNumber\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +669,18 @@ class Handle_IGESSelect_SelectLevelNumber : public Handle_IFSelect_SelectExtract
 	return (IGESSelect_SelectLevelNumber*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SelectLevelNumber::~Handle_IGESSelect_SelectLevelNumber %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SelectLevelNumber {
-	~Handle_IGESSelect_SelectLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectLevelNumber\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +707,18 @@ class Handle_IGESSelect_SelectSingleViewFrom : public Handle_IFSelect_SelectDedu
 	return (IGESSelect_SelectSingleViewFrom*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SelectSingleViewFrom::~Handle_IGESSelect_SelectSingleViewFrom %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SelectSingleViewFrom {
-	~Handle_IGESSelect_SelectSingleViewFrom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectSingleViewFrom\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +745,18 @@ class Handle_IGESSelect_EditHeader : public Handle_IFSelect_Editor {
 	return (IGESSelect_EditHeader*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_EditHeader::~Handle_IGESSelect_EditHeader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_EditHeader {
-	~Handle_IGESSelect_EditHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_EditHeader\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +783,18 @@ class Handle_IGESSelect_AddFileComment : public Handle_IGESSelect_FileModifier {
 	return (IGESSelect_AddFileComment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_AddFileComment::~Handle_IGESSelect_AddFileComment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_AddFileComment {
-	~Handle_IGESSelect_AddFileComment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_AddFileComment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -657,10 +821,18 @@ class Handle_IGESSelect_SetVersion5 : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_SetVersion5*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SetVersion5::~Handle_IGESSelect_SetVersion5 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SetVersion5 {
-	~Handle_IGESSelect_SetVersion5() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SetVersion5\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -687,10 +859,18 @@ class Handle_IGESSelect_ComputeStatus : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_ComputeStatus*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_ComputeStatus::~Handle_IGESSelect_ComputeStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_ComputeStatus {
-	~Handle_IGESSelect_ComputeStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ComputeStatus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -717,10 +897,18 @@ class Handle_IGESSelect_SelectFromDrawing : public Handle_IFSelect_SelectDeduct 
 	return (IGESSelect_SelectFromDrawing*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SelectFromDrawing::~Handle_IGESSelect_SelectFromDrawing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SelectFromDrawing {
-	~Handle_IGESSelect_SelectFromDrawing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectFromDrawing\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -747,10 +935,18 @@ class Handle_IGESSelect_RebuildDrawings : public Handle_IGESSelect_ModelModifier
 	return (IGESSelect_RebuildDrawings*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_RebuildDrawings::~Handle_IGESSelect_RebuildDrawings %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_RebuildDrawings {
-	~Handle_IGESSelect_RebuildDrawings() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_RebuildDrawings\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -777,10 +973,18 @@ class Handle_IGESSelect_ChangeLevelList : public Handle_IGESSelect_ModelModifier
 	return (IGESSelect_ChangeLevelList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_ChangeLevelList::~Handle_IGESSelect_ChangeLevelList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_ChangeLevelList {
-	~Handle_IGESSelect_ChangeLevelList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ChangeLevelList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -807,10 +1011,18 @@ class Handle_IGESSelect_CounterOfLevelNumber : public Handle_IFSelect_SignCounte
 	return (IGESSelect_CounterOfLevelNumber*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_CounterOfLevelNumber::~Handle_IGESSelect_CounterOfLevelNumber %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_CounterOfLevelNumber {
-	~Handle_IGESSelect_CounterOfLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_CounterOfLevelNumber\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -837,10 +1049,18 @@ class Handle_IGESSelect_SetLabel : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_SetLabel*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SetLabel::~Handle_IGESSelect_SetLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SetLabel {
-	~Handle_IGESSelect_SetLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SetLabel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -867,10 +1087,18 @@ class Handle_IGESSelect_SplineToBSpline : public Handle_IFSelect_Transformer {
 	return (IGESSelect_SplineToBSpline*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SplineToBSpline::~Handle_IGESSelect_SplineToBSpline %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SplineToBSpline {
-	~Handle_IGESSelect_SplineToBSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SplineToBSpline\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -897,10 +1125,18 @@ class Handle_IGESSelect_IGESName : public Handle_IFSelect_Signature {
 	return (IGESSelect_IGESName*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_IGESName::~Handle_IGESSelect_IGESName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_IGESName {
-	~Handle_IGESSelect_IGESName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_IGESName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -927,10 +1163,18 @@ class Handle_IGESSelect_SelectBasicGeom : public Handle_IFSelect_SelectExplore {
 	return (IGESSelect_SelectBasicGeom*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SelectBasicGeom::~Handle_IGESSelect_SelectBasicGeom %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SelectBasicGeom {
-	~Handle_IGESSelect_SelectBasicGeom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectBasicGeom\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -957,10 +1201,18 @@ class Handle_IGESSelect_Dumper : public Handle_IFSelect_SessionDumper {
 	return (IGESSelect_Dumper*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_Dumper::~Handle_IGESSelect_Dumper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_Dumper {
-	~Handle_IGESSelect_Dumper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_Dumper\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -987,10 +1239,18 @@ class Handle_IGESSelect_ViewSorter : public Handle_MMgt_TShared {
 	return (IGESSelect_ViewSorter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_ViewSorter::~Handle_IGESSelect_ViewSorter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_ViewSorter {
-	~Handle_IGESSelect_ViewSorter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ViewSorter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1017,10 +1277,18 @@ class Handle_IGESSelect_SelectFaces : public Handle_IFSelect_SelectExplore {
 	return (IGESSelect_SelectFaces*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SelectFaces::~Handle_IGESSelect_SelectFaces %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SelectFaces {
-	~Handle_IGESSelect_SelectFaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectFaces\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1047,10 +1315,18 @@ class Handle_IGESSelect_SelectSubordinate : public Handle_IFSelect_SelectExtract
 	return (IGESSelect_SelectSubordinate*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SelectSubordinate::~Handle_IGESSelect_SelectSubordinate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SelectSubordinate {
-	~Handle_IGESSelect_SelectSubordinate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectSubordinate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1077,10 +1353,18 @@ class Handle_IGESSelect_EditDirPart : public Handle_IFSelect_Editor {
 	return (IGESSelect_EditDirPart*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_EditDirPart::~Handle_IGESSelect_EditDirPart %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_EditDirPart {
-	~Handle_IGESSelect_EditDirPart() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_EditDirPart\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1107,10 +1391,18 @@ class Handle_IGESSelect_AddGroup : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_AddGroup*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_AddGroup::~Handle_IGESSelect_AddGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_AddGroup {
-	~Handle_IGESSelect_AddGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_AddGroup\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1137,10 +1429,18 @@ class Handle_IGESSelect_DispPerSingleView : public Handle_IFSelect_Dispatch {
 	return (IGESSelect_DispPerSingleView*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_DispPerSingleView::~Handle_IGESSelect_DispPerSingleView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_DispPerSingleView {
-	~Handle_IGESSelect_DispPerSingleView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_DispPerSingleView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1167,10 +1467,18 @@ class Handle_IGESSelect_UpdateLastChange : public Handle_IGESSelect_ModelModifie
 	return (IGESSelect_UpdateLastChange*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_UpdateLastChange::~Handle_IGESSelect_UpdateLastChange %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_UpdateLastChange {
-	~Handle_IGESSelect_UpdateLastChange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_UpdateLastChange\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1197,10 +1505,18 @@ class Handle_IGESSelect_SelectBypassSubfigure : public Handle_IFSelect_SelectExp
 	return (IGESSelect_SelectBypassSubfigure*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SelectBypassSubfigure::~Handle_IGESSelect_SelectBypassSubfigure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SelectBypassSubfigure {
-	~Handle_IGESSelect_SelectBypassSubfigure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectBypassSubfigure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1227,10 +1543,18 @@ class Handle_IGESSelect_AutoCorrect : public Handle_IGESSelect_ModelModifier {
 	return (IGESSelect_AutoCorrect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_AutoCorrect::~Handle_IGESSelect_AutoCorrect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_AutoCorrect {
-	~Handle_IGESSelect_AutoCorrect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_AutoCorrect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1257,10 +1581,18 @@ class Handle_IGESSelect_SelectVisibleStatus : public Handle_IFSelect_SelectExtra
 	return (IGESSelect_SelectVisibleStatus*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SelectVisibleStatus::~Handle_IGESSelect_SelectVisibleStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SelectVisibleStatus {
-	~Handle_IGESSelect_SelectVisibleStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectVisibleStatus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1287,10 +1619,18 @@ class Handle_IGESSelect_UpdateFileName : public Handle_IGESSelect_ModelModifier 
 	return (IGESSelect_UpdateFileName*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_UpdateFileName::~Handle_IGESSelect_UpdateFileName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_UpdateFileName {
-	~Handle_IGESSelect_UpdateFileName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_UpdateFileName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1317,10 +1657,18 @@ class Handle_IGESSelect_SignColor : public Handle_IFSelect_Signature {
 	return (IGESSelect_SignColor*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SignColor::~Handle_IGESSelect_SignColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SignColor {
-	~Handle_IGESSelect_SignColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SignColor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1347,10 +1695,18 @@ class Handle_IGESSelect_SignStatus : public Handle_IFSelect_Signature {
 	return (IGESSelect_SignStatus*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SignStatus::~Handle_IGESSelect_SignStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SignStatus {
-	~Handle_IGESSelect_SignStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SignStatus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1377,10 +1733,18 @@ class Handle_IGESSelect_Activator : public Handle_IFSelect_Activator {
 	return (IGESSelect_Activator*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_Activator::~Handle_IGESSelect_Activator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_Activator {
-	~Handle_IGESSelect_Activator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_Activator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1407,10 +1771,18 @@ class Handle_IGESSelect_SelectDrawingFrom : public Handle_IFSelect_SelectDeduct 
 	return (IGESSelect_SelectDrawingFrom*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSelect_SelectDrawingFrom::~Handle_IGESSelect_SelectDrawingFrom %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSelect_SelectDrawingFrom {
-	~Handle_IGESSelect_SelectDrawingFrom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectDrawingFrom\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1438,10 +1810,18 @@ class IGESSelect_ModelModifier : public IFSelect_Modifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_ModelModifier::~IGESSelect_ModelModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_ModelModifier {
-	~IGESSelect_ModelModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_ModelModifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1465,10 +1845,18 @@ class IGESSelect_UpdateLastChange : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_UpdateLastChange::~IGESSelect_UpdateLastChange %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_UpdateLastChange {
-	~IGESSelect_UpdateLastChange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateLastChange\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1496,10 +1884,18 @@ class IGESSelect_UpdateCreationDate : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_UpdateCreationDate::~IGESSelect_UpdateCreationDate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_UpdateCreationDate {
-	~IGESSelect_UpdateCreationDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateCreationDate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1527,10 +1923,18 @@ class IGESSelect_SelectDrawingFrom : public IFSelect_SelectDeduct {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SelectDrawingFrom::~IGESSelect_SelectDrawingFrom %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SelectDrawingFrom {
-	~IGESSelect_SelectDrawingFrom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectDrawingFrom\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1562,10 +1966,18 @@ class IGESSelect_SelectName : public IFSelect_SelectExtract {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SelectName::~IGESSelect_SelectName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SelectName {
-	~IGESSelect_SelectName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1593,10 +2005,18 @@ class IGESSelect_IGESTypeForm : public IFSelect_Signature {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_IGESTypeForm::~IGESSelect_IGESTypeForm %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_IGESTypeForm {
-	~IGESSelect_IGESTypeForm() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_IGESTypeForm\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1624,10 +2044,18 @@ class IGESSelect_SignStatus : public IFSelect_Signature {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SignStatus::~IGESSelect_SignStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SignStatus {
-	~IGESSelect_SignStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SignStatus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1661,10 +2089,18 @@ class IGESSelect_SetGlobalParameter : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SetGlobalParameter::~IGESSelect_SetGlobalParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SetGlobalParameter {
-	~IGESSelect_SetGlobalParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SetGlobalParameter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1692,10 +2128,18 @@ class IGESSelect_RebuildGroups : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_RebuildGroups::~IGESSelect_RebuildGroups %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_RebuildGroups {
-	~IGESSelect_RebuildGroups() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_RebuildGroups\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1723,10 +2167,18 @@ class IGESSelect_AddGroup : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_AddGroup::~IGESSelect_AddGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_AddGroup {
-	~IGESSelect_AddGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_AddGroup\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1754,10 +2206,18 @@ class IGESSelect_SelectSingleViewFrom : public IFSelect_SelectDeduct {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SelectSingleViewFrom::~IGESSelect_SelectSingleViewFrom %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SelectSingleViewFrom {
-	~IGESSelect_SelectSingleViewFrom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectSingleViewFrom\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1785,10 +2245,18 @@ class IGESSelect_ComputeStatus : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_ComputeStatus::~IGESSelect_ComputeStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_ComputeStatus {
-	~IGESSelect_ComputeStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_ComputeStatus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1816,10 +2284,18 @@ class IGESSelect_RemoveCurves : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_RemoveCurves::~IGESSelect_RemoveCurves %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_RemoveCurves {
-	~IGESSelect_RemoveCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_RemoveCurves\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1857,10 +2333,18 @@ class IGESSelect_ChangeLevelNumber : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_ChangeLevelNumber::~IGESSelect_ChangeLevelNumber %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_ChangeLevelNumber {
-	~IGESSelect_ChangeLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_ChangeLevelNumber\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1888,10 +2372,18 @@ class IGESSelect_SelectBypassGroup : public IFSelect_SelectExplore {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SelectBypassGroup::~IGESSelect_SelectBypassGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SelectBypassGroup {
-	~IGESSelect_SelectBypassGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectBypassGroup\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1919,10 +2411,18 @@ class IGESSelect_SelectPCurves : public IFSelect_SelectExplore {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SelectPCurves::~IGESSelect_SelectPCurves %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SelectPCurves {
-	~IGESSelect_SelectPCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectPCurves\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1950,10 +2450,18 @@ class IGESSelect_SelectFromDrawing : public IFSelect_SelectDeduct {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SelectFromDrawing::~IGESSelect_SelectFromDrawing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SelectFromDrawing {
-	~IGESSelect_SelectFromDrawing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectFromDrawing\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1989,10 +2497,18 @@ class IGESSelect_EditHeader : public IFSelect_Editor {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_EditHeader::~IGESSelect_EditHeader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_EditHeader {
-	~IGESSelect_EditHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_EditHeader\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2024,10 +2540,18 @@ class IGESSelect_WorkLibrary : public IFSelect_WorkLibrary {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_WorkLibrary::~IGESSelect_WorkLibrary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_WorkLibrary {
-	~IGESSelect_WorkLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_WorkLibrary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2051,10 +2575,18 @@ class IGESSelect_FileModifier : public IFSelect_GeneralModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_FileModifier::~IGESSelect_FileModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_FileModifier {
-	~IGESSelect_FileModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_FileModifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2094,10 +2626,18 @@ class IGESSelect_CounterOfLevelNumber : public IFSelect_SignCounter {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_CounterOfLevelNumber::~IGESSelect_CounterOfLevelNumber %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_CounterOfLevelNumber {
-	~IGESSelect_CounterOfLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_CounterOfLevelNumber\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2125,10 +2665,18 @@ class IGESSelect_SelectFaces : public IFSelect_SelectExplore {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SelectFaces::~IGESSelect_SelectFaces %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SelectFaces {
-	~IGESSelect_SelectFaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectFaces\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2164,10 +2712,18 @@ class IGESSelect_EditDirPart : public IFSelect_Editor {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_EditDirPart::~IGESSelect_EditDirPart %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_EditDirPart {
-	~IGESSelect_EditDirPart() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_EditDirPart\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2197,10 +2753,18 @@ class IGESSelect_SelectSubordinate : public IFSelect_SelectExtract {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SelectSubordinate::~IGESSelect_SelectSubordinate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SelectSubordinate {
-	~IGESSelect_SelectSubordinate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectSubordinate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2226,10 +2790,18 @@ class IGESSelect_IGESName : public IFSelect_Signature {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_IGESName::~IGESSelect_IGESName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_IGESName {
-	~IGESSelect_IGESName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_IGESName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2257,10 +2829,18 @@ class IGESSelect_Dumper : public IFSelect_SessionDumper {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_Dumper::~IGESSelect_Dumper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_Dumper {
-	~IGESSelect_Dumper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_Dumper\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2272,14 +2852,22 @@ class IGESSelect {
 		IGESSelect();
 		%feature("autodoc", "1");
 		void Run();
-		%feature("autodoc","WhatIges(const ent, const G)->Standard_Integer");
+		%feature("autodoc","WhatIges(const ent, const G) -> Standard_Integer");
 		Standard_Integer WhatIges(const Handle_IGESData_IGESEntity &ent, const Interface_Graph &G, Handle_IGESData_IGESEntity & sup, Standard_Integer &OutValue);
 
 };
+%feature("shadow") IGESSelect::~IGESSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect {
-	~IGESSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2307,10 +2895,18 @@ class IGESSelect_AutoCorrect : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_AutoCorrect::~IGESSelect_AutoCorrect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_AutoCorrect {
-	~IGESSelect_AutoCorrect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_AutoCorrect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2338,10 +2934,18 @@ class IGESSelect_SelectVisibleStatus : public IFSelect_SelectExtract {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SelectVisibleStatus::~IGESSelect_SelectVisibleStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SelectVisibleStatus {
-	~IGESSelect_SelectVisibleStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectVisibleStatus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2369,10 +2973,18 @@ class IGESSelect_Activator : public IFSelect_Activator {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_Activator::~IGESSelect_Activator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_Activator {
-	~IGESSelect_Activator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_Activator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2400,10 +3012,18 @@ class IGESSelect_UpdateFileName : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_UpdateFileName::~IGESSelect_UpdateFileName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_UpdateFileName {
-	~IGESSelect_UpdateFileName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateFileName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2451,10 +3071,18 @@ class IGESSelect_ViewSorter : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_ViewSorter::~IGESSelect_ViewSorter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_ViewSorter {
-	~IGESSelect_ViewSorter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_ViewSorter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2472,7 +3100,7 @@ class IGESSelect_FloatFormat : public IGESSelect_FileModifier {
 		void SetFormat(const char * format="%E");
 		%feature("autodoc", "1");
 		void SetFormatForRange(const char * format="%f", const Standard_Real Rmin=1.00000000000000005551115123125782702118158340454e-1, const Standard_Real Rmax=1.0e+3);
-		%feature("autodoc","Format()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Format() -> [Standard_Real, Standard_Real]");
 		void Format(Standard_Boolean & zerosup, TCollection_AsciiString & mainform, Standard_Boolean & hasrange, TCollection_AsciiString & forminrange, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Perform(IFSelect_ContextWrite & ctx, IGESData_IGESWriter & writer) const;
@@ -2492,10 +3120,18 @@ class IGESSelect_FloatFormat : public IGESSelect_FileModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_FloatFormat::~IGESSelect_FloatFormat %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_FloatFormat {
-	~IGESSelect_FloatFormat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_FloatFormat\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2521,10 +3157,18 @@ class IGESSelect_SignLevelNumber : public IFSelect_Signature {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SignLevelNumber::~IGESSelect_SignLevelNumber %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SignLevelNumber {
-	~IGESSelect_SignLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SignLevelNumber\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2556,10 +3200,18 @@ class IGESSelect_DispPerSingleView : public IFSelect_Dispatch {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_DispPerSingleView::~IGESSelect_DispPerSingleView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_DispPerSingleView {
-	~IGESSelect_DispPerSingleView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_DispPerSingleView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2589,10 +3241,18 @@ class IGESSelect_SelectBasicGeom : public IFSelect_SelectExplore {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SelectBasicGeom::~IGESSelect_SelectBasicGeom %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SelectBasicGeom {
-	~IGESSelect_SelectBasicGeom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectBasicGeom\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2620,10 +3280,18 @@ class IGESSelect_SetVersion5 : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SetVersion5::~IGESSelect_SetVersion5 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SetVersion5 {
-	~IGESSelect_SetVersion5() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SetVersion5\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2651,10 +3319,18 @@ class IGESSelect_SelectBypassSubfigure : public IFSelect_SelectExplore {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SelectBypassSubfigure::~IGESSelect_SelectBypassSubfigure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SelectBypassSubfigure {
-	~IGESSelect_SelectBypassSubfigure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectBypassSubfigure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2686,10 +3362,18 @@ class IGESSelect_SplineToBSpline : public IFSelect_Transformer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SplineToBSpline::~IGESSelect_SplineToBSpline %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SplineToBSpline {
-	~IGESSelect_SplineToBSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SplineToBSpline\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2729,10 +3413,18 @@ class IGESSelect_ChangeLevelList : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_ChangeLevelList::~IGESSelect_ChangeLevelList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_ChangeLevelList {
-	~IGESSelect_ChangeLevelList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_ChangeLevelList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2760,10 +3452,18 @@ class IGESSelect_SelectFromSingleView : public IFSelect_SelectDeduct {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SelectFromSingleView::~IGESSelect_SelectFromSingleView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SelectFromSingleView {
-	~IGESSelect_SelectFromSingleView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectFromSingleView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2791,10 +3491,18 @@ class IGESSelect_RebuildDrawings : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_RebuildDrawings::~IGESSelect_RebuildDrawings %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_RebuildDrawings {
-	~IGESSelect_RebuildDrawings() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_RebuildDrawings\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2822,10 +3530,18 @@ class IGESSelect_SetLabel : public IGESSelect_ModelModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SetLabel::~IGESSelect_SetLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SetLabel {
-	~IGESSelect_SetLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SetLabel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2865,10 +3581,18 @@ class IGESSelect_AddFileComment : public IGESSelect_FileModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_AddFileComment::~IGESSelect_AddFileComment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_AddFileComment {
-	~IGESSelect_AddFileComment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_AddFileComment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2900,10 +3624,18 @@ class IGESSelect_DispPerDrawing : public IFSelect_Dispatch {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_DispPerDrawing::~IGESSelect_DispPerDrawing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_DispPerDrawing {
-	~IGESSelect_DispPerDrawing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_DispPerDrawing\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2935,10 +3667,18 @@ class IGESSelect_SelectLevelNumber : public IFSelect_SelectExtract {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SelectLevelNumber::~IGESSelect_SelectLevelNumber %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SelectLevelNumber {
-	~IGESSelect_SelectLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectLevelNumber\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2964,9 +3704,17 @@ class IGESSelect_SignColor : public IFSelect_Signature {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSelect_SignColor::~IGESSelect_SignColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSelect_SignColor {
-	~IGESSelect_SignColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSelect_SignColor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

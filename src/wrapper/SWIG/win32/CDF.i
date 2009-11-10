@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include CDF_dependencies.i
 
 
@@ -114,10 +118,18 @@ class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
 	return (CDF_MetaDataDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDF_MetaDataDriver::~Handle_CDF_MetaDataDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDF_MetaDataDriver {
-	~Handle_CDF_MetaDataDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDF_MetaDataDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -144,10 +156,18 @@ class Handle_CDF_MetaDataDriverError : public Handle_Standard_Failure {
 	return (CDF_MetaDataDriverError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDF_MetaDataDriverError::~Handle_CDF_MetaDataDriverError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDF_MetaDataDriverError {
-	~Handle_CDF_MetaDataDriverError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDF_MetaDataDriverError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -174,10 +194,18 @@ class Handle_CDF_StoreList : public Handle_Standard_Transient {
 	return (CDF_StoreList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDF_StoreList::~Handle_CDF_StoreList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDF_StoreList {
-	~Handle_CDF_StoreList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDF_StoreList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -204,10 +232,18 @@ class Handle_CDF_Directory : public Handle_Standard_Transient {
 	return (CDF_Directory*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDF_Directory::~Handle_CDF_Directory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDF_Directory {
-	~Handle_CDF_Directory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDF_Directory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -234,10 +270,18 @@ class Handle_CDF_Application : public Handle_CDM_Application {
 	return (CDF_Application*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDF_Application::~Handle_CDF_Application %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDF_Application {
-	~Handle_CDF_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDF_Application\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -264,10 +308,18 @@ class Handle_CDF_MetaDataDriverFactory : public Handle_Standard_Transient {
 	return (CDF_MetaDataDriverFactory*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDF_MetaDataDriverFactory::~Handle_CDF_MetaDataDriverFactory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDF_MetaDataDriverFactory {
-	~Handle_CDF_MetaDataDriverFactory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDF_MetaDataDriverFactory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -294,10 +346,18 @@ class Handle_CDF_Session : public Handle_Standard_Transient {
 	return (CDF_Session*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDF_Session::~Handle_CDF_Session %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDF_Session {
-	~Handle_CDF_Session() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDF_Session\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -329,10 +389,18 @@ class CDF_MetaDataDriverError : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDF_MetaDataDriverError::~CDF_MetaDataDriverError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDF_MetaDataDriverError {
-	~CDF_MetaDataDriverError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDF_MetaDataDriverError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -348,10 +416,18 @@ class CDF {
 		Standard_Boolean IsAvailable(const Standard_Integer anApplicationIdentifier);
 
 };
+%feature("shadow") CDF::~CDF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDF {
-	~CDF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -409,10 +485,18 @@ class CDF_Application : public CDM_Application {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDF_Application::~CDF_Application %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDF_Application {
-	~CDF_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDF_Application\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -430,10 +514,18 @@ class CDF_Timer {
 		Standard_Boolean MustShow();
 
 };
+%feature("shadow") CDF_Timer::~CDF_Timer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDF_Timer {
-	~CDF_Timer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDF_Timer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -469,10 +561,18 @@ class CDF_StoreList : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDF_StoreList::~CDF_StoreList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDF_StoreList {
-	~CDF_StoreList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDF_StoreList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -526,10 +626,18 @@ class CDF_MetaDataDriver : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDF_MetaDataDriver::~CDF_MetaDataDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDF_MetaDataDriver {
-	~CDF_MetaDataDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDF_MetaDataDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -553,10 +661,18 @@ class CDF_MetaDataDriverFactory : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDF_MetaDataDriverFactory::~CDF_MetaDataDriverFactory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDF_MetaDataDriverFactory {
-	~CDF_MetaDataDriverFactory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDF_MetaDataDriverFactory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -592,10 +708,18 @@ class CDF_Directory : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDF_Directory::~CDF_Directory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDF_Directory {
-	~CDF_Directory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDF_Directory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -637,10 +761,18 @@ class CDF_Session : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDF_Session::~CDF_Session %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDF_Session {
-	~CDF_Session() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDF_Session\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -660,10 +792,18 @@ class CDF_DirectoryIterator {
 		Handle_CDM_Document Document();
 
 };
+%feature("shadow") CDF_DirectoryIterator::~CDF_DirectoryIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDF_DirectoryIterator {
-	~CDF_DirectoryIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDF_DirectoryIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -743,9 +883,17 @@ class CDF_Store {
 		Standard_Boolean SetFolder(const Standard_ExtString aFolder);
 
 };
+%feature("shadow") CDF_Store::~CDF_Store %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDF_Store {
-	~CDF_Store() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDF_Store\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

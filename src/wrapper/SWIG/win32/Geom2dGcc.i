@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Geom2dGcc_dependencies.i
 
 
@@ -56,11 +60,11 @@ class Geom2dGcc_Circ2d2TanOn {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","CenterOn3(Standard_Integer Index)->Standard_Real");
+		%feature("autodoc","CenterOn3(Standard_Integer Index) -> Standard_Real");
 		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
@@ -68,10 +72,18 @@ class Geom2dGcc_Circ2d2TanOn {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Geom2dGcc_Circ2d2TanOn::~Geom2dGcc_Circ2d2TanOn %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_Circ2d2TanOn {
-	~Geom2dGcc_Circ2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2d2TanOn\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,18 +99,26 @@ class Geom2dGcc_MyL2dTanObl {
 		gp_Lin2d ThisSolution() const;
 		%feature("autodoc", "1");
 		void WhichQualifier(GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Tangency1() -> [Standard_Real, Standard_Real]");
 		void Tangency1(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Intersection2()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Intersection2() -> [Standard_Real, Standard_Real]");
 		void Intersection2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsParallel2() const;
 
 };
+%feature("shadow") Geom2dGcc_MyL2dTanObl::~Geom2dGcc_MyL2dTanObl %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_MyL2dTanObl {
-	~Geom2dGcc_MyL2dTanObl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyL2dTanObl\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -108,18 +128,26 @@ class Geom2dGcc_FuncTOblOfMyL2dTanObl : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
 		Geom2dGcc_FuncTOblOfMyL2dTanObl(const Geom2dAdaptor_Curve &Curve, const gp_Dir2d &Dir);
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%feature("shadow") Geom2dGcc_FuncTOblOfMyL2dTanObl::~Geom2dGcc_FuncTOblOfMyL2dTanObl %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_FuncTOblOfMyL2dTanObl {
-	~Geom2dGcc_FuncTOblOfMyL2dTanObl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTOblOfMyL2dTanObl\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -165,10 +193,18 @@ class Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn : public math_FunctionSetWithDerivati
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 
 };
+%feature("shadow") Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn::~Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn {
-	~Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -192,10 +228,18 @@ class Geom2dGcc_QualifiedCurve {
 		Standard_Boolean IsOutside() const;
 
 };
+%feature("shadow") Geom2dGcc_QualifiedCurve::~Geom2dGcc_QualifiedCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_QualifiedCurve {
-	~Geom2dGcc_QualifiedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_QualifiedCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -213,14 +257,22 @@ class Geom2dGcc_MyCirc2dTanCen {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
+%feature("shadow") Geom2dGcc_MyCirc2dTanCen::~Geom2dGcc_MyCirc2dTanCen %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_MyCirc2dTanCen {
-	~Geom2dGcc_MyCirc2dTanCen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2dTanCen\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -230,18 +282,26 @@ class Geom2dGcc_FuncTCirCuOfMyL2d2Tan : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
 		Geom2dGcc_FuncTCirCuOfMyL2d2Tan(const gp_Circ2d &Circ, const Geom2dAdaptor_Curve &Curv);
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%feature("shadow") Geom2dGcc_FuncTCirCuOfMyL2d2Tan::~Geom2dGcc_FuncTCirCuOfMyL2d2Tan %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_FuncTCirCuOfMyL2d2Tan {
-	~Geom2dGcc_FuncTCirCuOfMyL2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCirCuOfMyL2d2Tan\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -265,10 +325,18 @@ class Geom2dGcc_MyQCurve {
 		Standard_Boolean IsOutside() const;
 
 };
+%feature("shadow") Geom2dGcc_MyQCurve::~Geom2dGcc_MyQCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_MyQCurve {
-	~Geom2dGcc_MyQCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyQCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -294,11 +362,11 @@ class Geom2dGcc_Circ2d3Tan {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2, GccEnt_Position & Qualif3) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency3(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency3(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency3(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
@@ -308,10 +376,18 @@ class Geom2dGcc_Circ2d3Tan {
 		Standard_Boolean IsTheSame3(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Geom2dGcc_Circ2d3Tan::~Geom2dGcc_Circ2d3Tan %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_Circ2d3Tan {
-	~Geom2dGcc_Circ2d3Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2d3Tan\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -321,18 +397,26 @@ class Geom2dGcc_FuncTCuPtOfMyL2d2Tan : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
 		Geom2dGcc_FuncTCuPtOfMyL2d2Tan(const Geom2dAdaptor_Curve &C, const gp_Pnt2d &Point);
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%feature("shadow") Geom2dGcc_FuncTCuPtOfMyL2d2Tan::~Geom2dGcc_FuncTCuPtOfMyL2d2Tan %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_FuncTCuPtOfMyL2d2Tan {
-	~Geom2dGcc_FuncTCuPtOfMyL2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuPtOfMyL2d2Tan\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -372,16 +456,24 @@ class Geom2dGcc_MyCurveTool {
 		Standard_Boolean IsComposite(const Adaptor3d_OffsetCurve &C);
 		%feature("autodoc", "1");
 		Standard_Integer GetIntervals(const Adaptor3d_OffsetCurve &C);
-		%feature("autodoc","GetInterval(const C, Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","GetInterval(const C, Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void GetInterval(const Adaptor3d_OffsetCurve &C, const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void SetCurrentInterval(Adaptor3d_OffsetCurve & C, const Standard_Integer Index);
 
 };
+%feature("shadow") Geom2dGcc_MyCurveTool::~Geom2dGcc_MyCurveTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_MyCurveTool {
-	~Geom2dGcc_MyCurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCurveTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -405,16 +497,24 @@ class Geom2dGcc_Lin2d2Tan {
 		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
+%feature("shadow") Geom2dGcc_Lin2d2Tan::~Geom2dGcc_Lin2d2Tan %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_Lin2d2Tan {
-	~Geom2dGcc_Lin2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Lin2d2Tan\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -438,9 +538,9 @@ class Geom2dGcc_MyCirc2d2TanRad {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
@@ -448,10 +548,18 @@ class Geom2dGcc_MyCirc2d2TanRad {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Geom2dGcc_MyCirc2d2TanRad::~Geom2dGcc_MyCirc2d2TanRad %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_MyCirc2d2TanRad {
-	~Geom2dGcc_MyCirc2d2TanRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2d2TanRad\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -479,11 +587,11 @@ class Geom2dGcc_MyCirc2d2TanOn {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","CenterOn3(Standard_Integer Index)->Standard_Real");
+		%feature("autodoc","CenterOn3(Standard_Integer Index) -> Standard_Real");
 		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
@@ -491,10 +599,18 @@ class Geom2dGcc_MyCirc2d2TanOn {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Geom2dGcc_MyCirc2d2TanOn::~Geom2dGcc_MyCirc2d2TanOn %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_MyCirc2d2TanOn {
-	~Geom2dGcc_MyCirc2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2d2TanOn\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -512,16 +628,24 @@ class Geom2dGcc_Circ2dTanCen {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Geom2dGcc_Circ2dTanCen::~Geom2dGcc_Circ2dTanCen %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_Circ2dTanCen {
-	~Geom2dGcc_Circ2dTanCen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2dTanCen\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -547,10 +671,18 @@ class Geom2dGcc_FuncTCuCuOfMyL2d2Tan : public math_FunctionSetWithDerivatives {
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & Deriv);
 
 };
+%feature("shadow") Geom2dGcc_FuncTCuCuOfMyL2d2Tan::~Geom2dGcc_FuncTCuCuOfMyL2d2Tan %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_FuncTCuCuOfMyL2d2Tan {
-	~Geom2dGcc_FuncTCuCuOfMyL2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuCuOfMyL2d2Tan\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -584,11 +716,11 @@ class Geom2dGcc_MyC2d3Tan {
 		gp_Circ2d ThisSolution() const;
 		%feature("autodoc", "1");
 		void WhichQualifier(GccEnt_Position & Qualif1, GccEnt_Position & Qualif2, GccEnt_Position & Qualif3) const;
-		%feature("autodoc","Tangency1()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Tangency1() -> [Standard_Real, Standard_Real]");
 		void Tangency1(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Tangency2() -> [Standard_Real, Standard_Real]");
 		void Tangency2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency3()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Tangency3() -> [Standard_Real, Standard_Real]");
 		void Tangency3(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1() const;
@@ -598,10 +730,18 @@ class Geom2dGcc_MyC2d3Tan {
 		Standard_Boolean IsTheSame3() const;
 
 };
+%feature("shadow") Geom2dGcc_MyC2d3Tan::~Geom2dGcc_MyC2d3Tan %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_MyC2d3Tan {
-	~Geom2dGcc_MyC2d3Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyC2d3Tan\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -639,11 +779,11 @@ class Geom2dGcc_MyC2d2TanOn {
 		gp_Circ2d ThisSolution() const;
 		%feature("autodoc", "1");
 		void WhichQualifier(GccEnt_Position & Qualif1, GccEnt_Position & Qualif2) const;
-		%feature("autodoc","Tangency1()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Tangency1() -> [Standard_Real, Standard_Real]");
 		void Tangency1(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Tangency2() -> [Standard_Real, Standard_Real]");
 		void Tangency2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","CenterOn3()->Standard_Real");
+		%feature("autodoc","CenterOn3() -> Standard_Real");
 		void CenterOn3(Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1() const;
@@ -651,10 +791,18 @@ class Geom2dGcc_MyC2d2TanOn {
 		Standard_Boolean IsTheSame2() const;
 
 };
+%feature("shadow") Geom2dGcc_MyC2d2TanOn::~Geom2dGcc_MyC2d2TanOn %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_MyC2d2TanOn {
-	~Geom2dGcc_MyC2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyC2d2TanOn\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -674,16 +822,24 @@ class Geom2dGcc_MyL2d2Tan {
 		gp_Lin2d ThisSolution() const;
 		%feature("autodoc", "1");
 		void WhichQualifier(GccEnt_Position & Qualif1, GccEnt_Position & Qualif2) const;
-		%feature("autodoc","Tangency1()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Tangency1() -> [Standard_Real, Standard_Real]");
 		void Tangency1(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Tangency2() -> [Standard_Real, Standard_Real]");
 		void Tangency2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
+%feature("shadow") Geom2dGcc_MyL2d2Tan::~Geom2dGcc_MyL2d2Tan %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_MyL2d2Tan {
-	~Geom2dGcc_MyL2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyL2d2Tan\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -711,18 +867,26 @@ class Geom2dGcc_MyCirc2dTanOnRad {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","CenterOn3(Standard_Integer Index)->Standard_Real");
+		%feature("autodoc","CenterOn3(Standard_Integer Index) -> Standard_Real");
 		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Geom2dGcc_MyCirc2dTanOnRad::~Geom2dGcc_MyCirc2dTanOnRad %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_MyCirc2dTanOnRad {
-	~Geom2dGcc_MyCirc2dTanOnRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2dTanOnRad\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -748,9 +912,9 @@ class Geom2dGcc_Circ2d2TanRad {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1, GccEnt_Position & Qualif2) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Tangency2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
@@ -758,10 +922,18 @@ class Geom2dGcc_Circ2d2TanRad {
 		Standard_Boolean IsTheSame2(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Geom2dGcc_Circ2d2TanRad::~Geom2dGcc_Circ2d2TanRad %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_Circ2d2TanRad {
-	~Geom2dGcc_Circ2d2TanRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2d2TanRad\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -781,16 +953,24 @@ class Geom2dGcc_Lin2dTanObl {
 		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Intersection2(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Intersection2(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 
 };
+%feature("shadow") Geom2dGcc_Lin2dTanObl::~Geom2dGcc_Lin2dTanObl %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_Lin2dTanObl {
-	~Geom2dGcc_Lin2dTanObl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Lin2dTanObl\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -818,10 +998,18 @@ class Geom2dGcc_CurveTool {
 		void D3(const Geom2dAdaptor_Curve &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N, gp_Vec2d & dN);
 
 };
+%feature("shadow") Geom2dGcc_CurveTool::~Geom2dGcc_CurveTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_CurveTool {
-	~Geom2dGcc_CurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_CurveTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -845,18 +1033,26 @@ class Geom2dGcc_Circ2dTanOnRad {
 		gp_Circ2d ThisSolution(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void WhichQualifier(const Standard_Integer Index, GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Tangency1(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Tangency1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","CenterOn3(Standard_Integer Index)->Standard_Real");
+		%feature("autodoc","CenterOn3(Standard_Integer Index) -> Standard_Real");
 		void CenterOn3(const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTheSame1(const Standard_Integer Index) const;
 
 };
+%feature("shadow") Geom2dGcc_Circ2dTanOnRad::~Geom2dGcc_Circ2dTanOnRad %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc_Circ2dTanOnRad {
-	~Geom2dGcc_Circ2dTanOnRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2dTanOnRad\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -876,9 +1072,17 @@ class Geom2dGcc {
 		Geom2dGcc_QualifiedCurve Outside(const Geom2dAdaptor_Curve &Obj);
 
 };
+%feature("shadow") Geom2dGcc::~Geom2dGcc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dGcc {
-	~Geom2dGcc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dGcc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

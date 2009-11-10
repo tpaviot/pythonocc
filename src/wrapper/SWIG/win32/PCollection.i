@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PCollection_dependencies.i
 
 
@@ -67,10 +71,18 @@ class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
 	return (PCollection_HAsciiString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PCollection_HAsciiString::~Handle_PCollection_HAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PCollection_HAsciiString {
-	~Handle_PCollection_HAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_HAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -97,10 +109,18 @@ class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
 	return (PCollection_HExtendedString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PCollection_HExtendedString::~Handle_PCollection_HExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PCollection_HExtendedString {
-	~Handle_PCollection_HExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_HExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -127,10 +147,18 @@ class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
 	return (PCollection_IsNotRoot*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PCollection_IsNotRoot::~Handle_PCollection_IsNotRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PCollection_IsNotRoot {
-	~Handle_PCollection_IsNotRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_IsNotRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -157,10 +185,18 @@ class Handle_PCollection_IsContained : public Handle_Standard_Failure {
 	return (PCollection_IsContained*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PCollection_IsContained::~Handle_PCollection_IsContained %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PCollection_IsContained {
-	~Handle_PCollection_IsContained() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_IsContained\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -187,10 +223,18 @@ class Handle_PCollection_IsNullTree : public Handle_Standard_Failure {
 	return (PCollection_IsNullTree*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PCollection_IsNullTree::~Handle_PCollection_IsNullTree %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PCollection_IsNullTree {
-	~Handle_PCollection_IsNullTree() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_IsNullTree\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -222,10 +266,18 @@ class PCollection_IsNullTree : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PCollection_IsNullTree::~PCollection_IsNullTree %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PCollection_IsNullTree {
-	~PCollection_IsNullTree() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCollection_IsNullTree\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -243,10 +295,18 @@ class PCollection_PrivCompareOfInteger {
 		Standard_Boolean IsEqual(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
 };
+%feature("shadow") PCollection_PrivCompareOfInteger::~PCollection_PrivCompareOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PCollection_PrivCompareOfInteger {
-	~PCollection_PrivCompareOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCollection_PrivCompareOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -278,10 +338,18 @@ class PCollection_IsNotRoot : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PCollection_IsNotRoot::~PCollection_IsNotRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PCollection_IsNotRoot {
-	~PCollection_IsNotRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCollection_IsNotRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -313,10 +381,18 @@ class PCollection_IsContained : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PCollection_IsContained::~PCollection_IsContained %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PCollection_IsContained {
-	~PCollection_IsContained() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCollection_IsContained\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -434,10 +510,18 @@ class PCollection_HExtendedString : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PCollection_HExtendedString::~PCollection_HExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PCollection_HExtendedString {
-	~PCollection_HExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCollection_HExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -575,10 +659,18 @@ class PCollection_HAsciiString : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PCollection_HAsciiString::~PCollection_HAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PCollection_HAsciiString {
-	~PCollection_HAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCollection_HAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -594,10 +686,18 @@ class PCollection_CompareOfInteger : public PCollection_PrivCompareOfInteger {
 		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
 };
+%feature("shadow") PCollection_CompareOfInteger::~PCollection_CompareOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PCollection_CompareOfInteger {
-	~PCollection_CompareOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCollection_CompareOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -615,10 +715,18 @@ class PCollection_PrivCompareOfReal {
 		Standard_Boolean IsEqual(const Standard_Real &Left, const Standard_Real &Right) const;
 
 };
+%feature("shadow") PCollection_PrivCompareOfReal::~PCollection_PrivCompareOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PCollection_PrivCompareOfReal {
-	~PCollection_PrivCompareOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCollection_PrivCompareOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -630,9 +738,17 @@ class PCollection_CompareOfReal : public PCollection_PrivCompareOfReal {
 		PCollection_CompareOfReal();
 
 };
+%feature("shadow") PCollection_CompareOfReal::~PCollection_CompareOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PCollection_CompareOfReal {
-	~PCollection_CompareOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PCollection_CompareOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

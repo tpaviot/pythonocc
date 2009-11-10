@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepAdaptor_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_BRepAdaptor_HCompCurve : public Handle_Adaptor3d_HCurve {
 	return (BRepAdaptor_HCompCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepAdaptor_HCompCurve::~Handle_BRepAdaptor_HCompCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepAdaptor_HCompCurve {
-	~Handle_BRepAdaptor_HCompCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepAdaptor_HCompCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_BRepAdaptor_HSurface : public Handle_Adaptor3d_HSurface {
 	return (BRepAdaptor_HSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepAdaptor_HSurface::~Handle_BRepAdaptor_HSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepAdaptor_HSurface {
-	~Handle_BRepAdaptor_HSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepAdaptor_HSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_BRepAdaptor_HCurve2d : public Handle_Adaptor2d_HCurve2d {
 	return (BRepAdaptor_HCurve2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepAdaptor_HCurve2d::~Handle_BRepAdaptor_HCurve2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepAdaptor_HCurve2d {
-	~Handle_BRepAdaptor_HCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepAdaptor_HCurve2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_BRepAdaptor_HCurve : public Handle_Adaptor3d_HCurve {
 	return (BRepAdaptor_HCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepAdaptor_HCurve::~Handle_BRepAdaptor_HCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepAdaptor_HCurve {
-	~Handle_BRepAdaptor_HCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepAdaptor_HCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_BRepAdaptor_HArray1OfCurve : public Handle_MMgt_TShared {
 	return (BRepAdaptor_HArray1OfCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepAdaptor_HArray1OfCurve::~Handle_BRepAdaptor_HArray1OfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepAdaptor_HArray1OfCurve {
-	~Handle_BRepAdaptor_HArray1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepAdaptor_HArray1OfCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -224,10 +268,18 @@ class BRepAdaptor_HArray1OfCurve : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepAdaptor_HArray1OfCurve::~BRepAdaptor_HArray1OfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAdaptor_HArray1OfCurve {
-	~BRepAdaptor_HArray1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HArray1OfCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -261,10 +313,18 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepAdaptor_HCompCurve::~BRepAdaptor_HCompCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAdaptor_HCompCurve {
-	~BRepAdaptor_HCompCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HCompCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -284,10 +344,18 @@ class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
 		const TopoDS_Face & Face() const;
 
 };
+%feature("shadow") BRepAdaptor_Curve2d::~BRepAdaptor_Curve2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAdaptor_Curve2d {
-	~BRepAdaptor_Curve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Curve2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +395,18 @@ class BRepAdaptor_Array1OfCurve {
 		BRepAdaptor_Curve & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") BRepAdaptor_Array1OfCurve::~BRepAdaptor_Array1OfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAdaptor_Array1OfCurve {
-	~BRepAdaptor_Array1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Array1OfCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -450,10 +526,18 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 		virtual		Standard_Real OffsetValue() const;
 
 };
+%feature("shadow") BRepAdaptor_Surface::~BRepAdaptor_Surface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAdaptor_Surface {
-	~BRepAdaptor_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Surface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -487,10 +571,18 @@ class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepAdaptor_HCurve::~BRepAdaptor_HCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAdaptor_HCurve {
-	~BRepAdaptor_HCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -522,10 +614,18 @@ class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepAdaptor_HCurve2d::~BRepAdaptor_HCurve2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAdaptor_HCurve2d {
-	~BRepAdaptor_HCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HCurve2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -547,7 +647,7 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		void SetPeriodic(const Standard_Boolean Periodic);
 		%feature("autodoc", "1");
 		const TopoDS_Wire & Wire() const;
-		%feature("autodoc","Edge(Standard_Real U)->Standard_Real");
+		%feature("autodoc","Edge(Standard_Real U) -> Standard_Real");
 		void Edge(const Standard_Real U, TopoDS_Edge & E, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real FirstParameter() const;
@@ -607,10 +707,18 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
 
 };
+%feature("shadow") BRepAdaptor_CompCurve::~BRepAdaptor_CompCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAdaptor_CompCurve {
-	~BRepAdaptor_CompCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_CompCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -700,10 +808,18 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 		virtual		Handle_Geom_BSplineCurve BSpline() const;
 
 };
+%feature("shadow") BRepAdaptor_Curve::~BRepAdaptor_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAdaptor_Curve {
-	~BRepAdaptor_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Curve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -735,9 +851,17 @@ class BRepAdaptor_HSurface : public Adaptor3d_HSurface {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepAdaptor_HSurface::~BRepAdaptor_HSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepAdaptor_HSurface {
-	~BRepAdaptor_HSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

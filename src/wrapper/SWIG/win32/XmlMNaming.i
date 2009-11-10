@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include XmlMNaming_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_XmlMNaming_NamingDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMNaming_NamingDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlMNaming_NamingDriver::~Handle_XmlMNaming_NamingDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlMNaming_NamingDriver {
-	~Handle_XmlMNaming_NamingDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMNaming_NamingDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_XmlMNaming_NamedShapeDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMNaming_NamedShapeDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlMNaming_NamedShapeDriver::~Handle_XmlMNaming_NamedShapeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlMNaming_NamedShapeDriver {
-	~Handle_XmlMNaming_NamedShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMNaming_NamedShapeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -126,10 +146,18 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlMNaming_NamedShapeDriver::~XmlMNaming_NamedShapeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMNaming_NamedShapeDriver {
-	~XmlMNaming_NamedShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMNaming_NamedShapeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -157,10 +185,18 @@ class XmlMNaming_Array1OfShape1 {
 		XmlObjMgt_Element Value(const Standard_Integer Index) const;
 
 };
+%feature("shadow") XmlMNaming_Array1OfShape1::~XmlMNaming_Array1OfShape1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMNaming_Array1OfShape1 {
-	~XmlMNaming_Array1OfShape1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMNaming_Array1OfShape1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -206,10 +242,18 @@ class XmlMNaming_Shape1 {
 		void _CSFDB_SetXmlMNaming_Shape1myOrientation(const TopAbs_Orientation p);
 
 };
+%feature("shadow") XmlMNaming_Shape1::~XmlMNaming_Shape1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMNaming_Shape1 {
-	~XmlMNaming_Shape1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMNaming_Shape1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -239,10 +283,18 @@ class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlMNaming_NamingDriver::~XmlMNaming_NamingDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMNaming_NamingDriver {
-	~XmlMNaming_NamingDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMNaming_NamingDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -256,9 +308,17 @@ class XmlMNaming {
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMessageDriver);
 
 };
+%feature("shadow") XmlMNaming::~XmlMNaming %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMNaming {
-	~XmlMNaming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMNaming\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

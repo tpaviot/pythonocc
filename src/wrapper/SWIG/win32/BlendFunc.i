@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BlendFunc_dependencies.i
 
 
@@ -47,7 +51,7 @@ class BlendFunc {
 	public:
 		%feature("autodoc", "1");
 		BlendFunc();
-		%feature("autodoc","GetShape(BlendFunc_SectionShape SectShape, Standard_Real MaxAng)->[Standard_IntegerStandard_IntegerStandard_Integer]");
+		%feature("autodoc","GetShape(BlendFunc_SectionShape SectShape, Standard_Real MaxAng) -> [Standard_IntegerStandard_IntegerStandard_Integer]");
 		void GetShape(const BlendFunc_SectionShape SectShape, const Standard_Real MaxAng, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Convert_ParameterisationType & TypeConv);
 		%feature("autodoc", "1");
 		void GetMinimalWeights(const BlendFunc_SectionShape SectShape, const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real AngleMax, TColStd_Array1OfReal & Weigths);
@@ -55,10 +59,18 @@ class BlendFunc {
 		GeomAbs_Shape NextShape(const GeomAbs_Shape S);
 
 };
+%feature("shadow") BlendFunc::~BlendFunc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BlendFunc {
-	~BlendFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlendFunc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -74,17 +86,35 @@ class BlendFunc_Tensor {
 		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) const;
 		%feature("autodoc", "1");
 		const Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) {
+				return (Standard_Real) $self->ChangeValue(Row,Col,Mat);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) {
+				$self->ChangeValue(Row,Col,Mat)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat);
 		%feature("autodoc", "1");
 		void Multiply(const math_Vector &Right, math_Matrix & Product) const;
 
 };
+%feature("shadow") BlendFunc_Tensor::~BlendFunc_Tensor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BlendFunc_Tensor {
-	~BlendFunc_Tensor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BlendFunc_Tensor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

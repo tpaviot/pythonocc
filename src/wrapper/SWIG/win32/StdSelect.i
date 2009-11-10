@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StdSelect_dependencies.i
 
 
@@ -84,10 +88,18 @@ class Handle_StdSelect_SensitiveText2d : public Handle_Select2D_SensitiveEntity 
 	return (StdSelect_SensitiveText2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdSelect_SensitiveText2d::~Handle_StdSelect_SensitiveText2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdSelect_SensitiveText2d {
-	~Handle_StdSelect_SensitiveText2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_SensitiveText2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -114,10 +126,18 @@ class Handle_StdSelect_TextProjector2d : public Handle_Select2D_Projector {
 	return (StdSelect_TextProjector2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdSelect_TextProjector2d::~Handle_StdSelect_TextProjector2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdSelect_TextProjector2d {
-	~Handle_StdSelect_TextProjector2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_TextProjector2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -144,10 +164,18 @@ class Handle_StdSelect_EdgeFilter : public Handle_SelectMgr_Filter {
 	return (StdSelect_EdgeFilter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdSelect_EdgeFilter::~Handle_StdSelect_EdgeFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdSelect_EdgeFilter {
-	~Handle_StdSelect_EdgeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_EdgeFilter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -174,10 +202,18 @@ class Handle_StdSelect_BRepOwner : public Handle_SelectMgr_EntityOwner {
 	return (StdSelect_BRepOwner*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdSelect_BRepOwner::~Handle_StdSelect_BRepOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdSelect_BRepOwner {
-	~Handle_StdSelect_BRepOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_BRepOwner\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -204,10 +240,18 @@ class Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Han
 	return (StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs::~Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
-	~Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -234,10 +278,18 @@ class Handle_StdSelect_Shape : public Handle_PrsMgr_PresentableObject {
 	return (StdSelect_Shape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdSelect_Shape::~Handle_StdSelect_Shape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdSelect_Shape {
-	~Handle_StdSelect_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_Shape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -264,10 +316,18 @@ class Handle_StdSelect_FaceFilter : public Handle_SelectMgr_Filter {
 	return (StdSelect_FaceFilter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdSelect_FaceFilter::~Handle_StdSelect_FaceFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdSelect_FaceFilter {
-	~Handle_StdSelect_FaceFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_FaceFilter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -294,10 +354,18 @@ class Handle_StdSelect_ViewerSelector2d : public Handle_SelectMgr_ViewerSelector
 	return (StdSelect_ViewerSelector2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdSelect_ViewerSelector2d::~Handle_StdSelect_ViewerSelector2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdSelect_ViewerSelector2d {
-	~Handle_StdSelect_ViewerSelector2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_ViewerSelector2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -324,10 +392,18 @@ class Handle_StdSelect_ViewerSelector3d : public Handle_SelectMgr_ViewerSelector
 	return (StdSelect_ViewerSelector3d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdSelect_ViewerSelector3d::~Handle_StdSelect_ViewerSelector3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdSelect_ViewerSelector3d {
-	~Handle_StdSelect_ViewerSelector3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_ViewerSelector3d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -354,10 +430,18 @@ class Handle_StdSelect_ShapeTypeFilter : public Handle_SelectMgr_Filter {
 	return (StdSelect_ShapeTypeFilter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdSelect_ShapeTypeFilter::~Handle_StdSelect_ShapeTypeFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdSelect_ShapeTypeFilter {
-	~Handle_StdSelect_ShapeTypeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_ShapeTypeFilter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -384,10 +468,18 @@ class Handle_StdSelect_Prs : public Handle_Prs3d_Presentation {
 	return (StdSelect_Prs*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StdSelect_Prs::~Handle_StdSelect_Prs %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StdSelect_Prs {
-	~Handle_StdSelect_Prs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_Prs\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -431,10 +523,18 @@ class StdSelect_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 		Handle_StdSelect_Prs & ChangeFromKey(const Handle_SelectBasics_EntityOwner &K);
 
 };
+%feature("shadow") StdSelect_IndexedDataMapOfOwnerPrs::~StdSelect_IndexedDataMapOfOwnerPrs %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_IndexedDataMapOfOwnerPrs {
-	~StdSelect_IndexedDataMapOfOwnerPrs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_IndexedDataMapOfOwnerPrs\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -464,10 +564,18 @@ class StdSelect_ShapeTypeFilter : public SelectMgr_Filter {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdSelect_ShapeTypeFilter::~StdSelect_ShapeTypeFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_ShapeTypeFilter {
-	~StdSelect_ShapeTypeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_ShapeTypeFilter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -483,10 +591,18 @@ class StdSelect {
 		void SetDrawerForBRepOwner(const Handle_SelectMgr_Selection &aSelection, const Handle_Prs3d_Drawer &aDrawer);
 
 };
+%feature("shadow") StdSelect::~StdSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect {
-	~StdSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -508,10 +624,18 @@ class StdSelect_BRepSelectionTool {
 		Standard_Boolean GetSensitiveForFace(const TopoDS_Face &aFace, const Handle_StdSelect_BRepOwner &anOwner, Select3D_ListOfSensitive & OutList, const Standard_Boolean AutoTriangulation=1, const Standard_Integer NbPOnEdge=9, const Standard_Real MaxiParam=500, const Standard_Boolean InteriorFlag=1);
 
 };
+%feature("shadow") StdSelect_BRepSelectionTool::~StdSelect_BRepSelectionTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_BRepSelectionTool {
-	~StdSelect_BRepSelectionTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_BRepSelectionTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -543,10 +667,18 @@ class StdSelect_FaceFilter : public SelectMgr_Filter {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdSelect_FaceFilter::~StdSelect_FaceFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_FaceFilter {
-	~StdSelect_FaceFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_FaceFilter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -558,8 +690,18 @@ class StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollectio
 		StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs(const Handle_SelectBasics_EntityOwner &K1, const Standard_Integer K2, const Handle_StdSelect_Prs &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_EntityOwner & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -578,10 +720,18 @@ class StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollectio
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs::~StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
-	~StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,7 +747,7 @@ class StdSelect_SensitiveText2d : public Select2D_SensitiveEntity {
 		virtual		void Convert(const Handle_Select2D_Projector &aTextProj);
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresult);
-		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol)->Standard_Real");
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -617,10 +767,18 @@ class StdSelect_SensitiveText2d : public Select2D_SensitiveEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdSelect_SensitiveText2d::~StdSelect_SensitiveText2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_SensitiveText2d {
-	~StdSelect_SensitiveText2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_SensitiveText2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -648,10 +806,18 @@ class StdSelect_Shape : public PrsMgr_PresentableObject {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdSelect_Shape::~StdSelect_Shape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_Shape {
-	~StdSelect_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_Shape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -677,10 +843,18 @@ class StdSelect_Prs : public Prs3d_Presentation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdSelect_Prs::~StdSelect_Prs %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_Prs {
-	~StdSelect_Prs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_Prs\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -712,10 +886,18 @@ class StdSelect_TextProjector2d : public Select2D_Projector {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdSelect_TextProjector2d::~StdSelect_TextProjector2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_TextProjector2d {
-	~StdSelect_TextProjector2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_TextProjector2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -757,10 +939,18 @@ class StdSelect_ViewerSelector2d : public SelectMgr_ViewerSelector {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdSelect_ViewerSelector2d::~StdSelect_ViewerSelector2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_ViewerSelector2d {
-	~StdSelect_ViewerSelector2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_ViewerSelector2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -816,10 +1006,18 @@ class StdSelect_ViewerSelector3d : public SelectMgr_ViewerSelector {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdSelect_ViewerSelector3d::~StdSelect_ViewerSelector3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_ViewerSelector3d {
-	~StdSelect_ViewerSelector3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_ViewerSelector3d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -877,10 +1075,18 @@ class StdSelect_BRepOwner : public SelectMgr_EntityOwner {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdSelect_BRepOwner::~StdSelect_BRepOwner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_BRepOwner {
-	~StdSelect_BRepOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_BRepOwner\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -910,10 +1116,18 @@ class StdSelect_BRepHilighter {
 		const Handle_Prs3d_Drawer & Drawer() const;
 
 };
+%feature("shadow") StdSelect_BRepHilighter::~StdSelect_BRepHilighter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_BRepHilighter {
-	~StdSelect_BRepHilighter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_BRepHilighter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -945,9 +1159,17 @@ class StdSelect_EdgeFilter : public SelectMgr_Filter {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StdSelect_EdgeFilter::~StdSelect_EdgeFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdSelect_EdgeFilter {
-	~StdSelect_EdgeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdSelect_EdgeFilter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

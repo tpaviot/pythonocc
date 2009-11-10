@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include EDL_dependencies.i
 
 
@@ -77,10 +81,18 @@ class Handle_EDL_Interpretor : public Handle_MMgt_TShared {
 	return (EDL_Interpretor*)$self->Access();
 	}
 };
+%feature("shadow") Handle_EDL_Interpretor::~Handle_EDL_Interpretor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_EDL_Interpretor {
-	~Handle_EDL_Interpretor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_EDL_Interpretor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -107,10 +119,18 @@ class Handle_EDL_SequenceNodeOfSequenceOfVariable : public Handle_TCollection_Se
 	return (EDL_SequenceNodeOfSequenceOfVariable*)$self->Access();
 	}
 };
+%feature("shadow") Handle_EDL_SequenceNodeOfSequenceOfVariable::~Handle_EDL_SequenceNodeOfSequenceOfVariable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_EDL_SequenceNodeOfSequenceOfVariable {
-	~Handle_EDL_SequenceNodeOfSequenceOfVariable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_EDL_SequenceNodeOfSequenceOfVariable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -137,10 +157,18 @@ class Handle_EDL_DataMapNodeOfMapOfVariable : public Handle_TCollection_MapNode 
 	return (EDL_DataMapNodeOfMapOfVariable*)$self->Access();
 	}
 };
+%feature("shadow") Handle_EDL_DataMapNodeOfMapOfVariable::~Handle_EDL_DataMapNodeOfMapOfVariable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_EDL_DataMapNodeOfMapOfVariable {
-	~Handle_EDL_DataMapNodeOfMapOfVariable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_EDL_DataMapNodeOfMapOfVariable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -167,10 +195,18 @@ class Handle_EDL_DataMapNodeOfMapOfTemplate : public Handle_TCollection_MapNode 
 	return (EDL_DataMapNodeOfMapOfTemplate*)$self->Access();
 	}
 };
+%feature("shadow") Handle_EDL_DataMapNodeOfMapOfTemplate::~Handle_EDL_DataMapNodeOfMapOfTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_EDL_DataMapNodeOfMapOfTemplate {
-	~Handle_EDL_DataMapNodeOfMapOfTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_EDL_DataMapNodeOfMapOfTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -197,10 +233,18 @@ class Handle_EDL_StackNodeOfStackOfBoolean : public Handle_TCollection_MapNode {
 	return (EDL_StackNodeOfStackOfBoolean*)$self->Access();
 	}
 };
+%feature("shadow") Handle_EDL_StackNodeOfStackOfBoolean::~Handle_EDL_StackNodeOfStackOfBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_EDL_StackNodeOfStackOfBoolean {
-	~Handle_EDL_StackNodeOfStackOfBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_EDL_StackNodeOfStackOfBoolean\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -227,10 +271,18 @@ class Handle_EDL_API : public Handle_MMgt_TShared {
 	return (EDL_API*)$self->Access();
 	}
 };
+%feature("shadow") Handle_EDL_API::~Handle_EDL_API %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_EDL_API {
-	~Handle_EDL_API() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_EDL_API\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -257,10 +309,18 @@ class Handle_EDL_HSequenceOfVariable : public Handle_MMgt_TShared {
 	return (EDL_HSequenceOfVariable*)$self->Access();
 	}
 };
+%feature("shadow") Handle_EDL_HSequenceOfVariable::~Handle_EDL_HSequenceOfVariable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_EDL_HSequenceOfVariable {
-	~Handle_EDL_HSequenceOfVariable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_EDL_HSequenceOfVariable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -287,10 +347,18 @@ class Handle_EDL_DataMapNodeOfMapOfFile : public Handle_TCollection_MapNode {
 	return (EDL_DataMapNodeOfMapOfFile*)$self->Access();
 	}
 };
+%feature("shadow") Handle_EDL_DataMapNodeOfMapOfFile::~Handle_EDL_DataMapNodeOfMapOfFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_EDL_DataMapNodeOfMapOfFile {
-	~Handle_EDL_DataMapNodeOfMapOfFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_EDL_DataMapNodeOfMapOfFile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -317,10 +385,18 @@ class Handle_EDL_DataMapNodeOfMapOfLibrary : public Handle_TCollection_MapNode {
 	return (EDL_DataMapNodeOfMapOfLibrary*)$self->Access();
 	}
 };
+%feature("shadow") Handle_EDL_DataMapNodeOfMapOfLibrary::~Handle_EDL_DataMapNodeOfMapOfLibrary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_EDL_DataMapNodeOfMapOfLibrary {
-	~Handle_EDL_DataMapNodeOfMapOfLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_EDL_DataMapNodeOfMapOfLibrary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -406,10 +482,18 @@ class EDL_API : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") EDL_API::~EDL_API %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_API {
-	~EDL_API() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_API\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -437,10 +521,18 @@ class EDL_DataMapNodeOfMapOfFile : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") EDL_DataMapNodeOfMapOfFile::~EDL_DataMapNodeOfMapOfFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_DataMapNodeOfMapOfFile {
-	~EDL_DataMapNodeOfMapOfFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_DataMapNodeOfMapOfFile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -468,10 +560,18 @@ class EDL_DataMapNodeOfMapOfLibrary : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") EDL_DataMapNodeOfMapOfLibrary::~EDL_DataMapNodeOfMapOfLibrary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_DataMapNodeOfMapOfLibrary {
-	~EDL_DataMapNodeOfMapOfLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_DataMapNodeOfMapOfLibrary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -583,10 +683,18 @@ class EDL_Interpretor : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") EDL_Interpretor::~EDL_Interpretor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_Interpretor {
-	~EDL_Interpretor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_Interpretor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -612,10 +720,18 @@ class EDL_SequenceNodeOfSequenceOfVariable : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") EDL_SequenceNodeOfSequenceOfVariable::~EDL_SequenceNodeOfSequenceOfVariable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_SequenceNodeOfSequenceOfVariable {
-	~EDL_SequenceNodeOfSequenceOfVariable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_SequenceNodeOfSequenceOfVariable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -645,10 +761,18 @@ class EDL_StackOfBoolean {
 		Standard_Boolean & ChangeTop();
 
 };
+%feature("shadow") EDL_StackOfBoolean::~EDL_StackOfBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_StackOfBoolean {
-	~EDL_StackOfBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_StackOfBoolean\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -676,10 +800,18 @@ class EDL_DataMapNodeOfMapOfTemplate : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") EDL_DataMapNodeOfMapOfTemplate::~EDL_DataMapNodeOfMapOfTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_DataMapNodeOfMapOfTemplate {
-	~EDL_DataMapNodeOfMapOfTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_DataMapNodeOfMapOfTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -698,9 +830,9 @@ class EDL_Library {
 		%feature("autodoc", "1");
 		void Destroy() const;
 		%feature("autodoc", "1");
-		Standard_CString GetName() const;
+		char * GetName() const;
 		%feature("autodoc", "1");
-		Standard_CString GetStatus() const;
+		char * GetStatus() const;
 		%feature("autodoc", "1");
 		void Close() const;
 		%feature("autodoc", "1");
@@ -709,10 +841,18 @@ class EDL_Library {
 		Standard_Boolean IsEqual(const EDL_Library &alib1, const EDL_Library &alib2);
 
 };
+%feature("shadow") EDL_Library::~EDL_Library %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_Library {
-	~EDL_Library() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_Library\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -732,10 +872,18 @@ class EDL_DataMapIteratorOfMapOfLibrary : public TCollection_BasicMapIterator {
 		const EDL_Library & Value() const;
 
 };
+%feature("shadow") EDL_DataMapIteratorOfMapOfLibrary::~EDL_DataMapIteratorOfMapOfLibrary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_DataMapIteratorOfMapOfLibrary {
-	~EDL_DataMapIteratorOfMapOfLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_DataMapIteratorOfMapOfLibrary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -756,7 +904,7 @@ class EDL_Template {
 		%feature("autodoc", "1");
 		void Destroy() const;
 		%feature("autodoc", "1");
-		Standard_CString GetName() const;
+		char * GetName() const;
 		%feature("autodoc", "1");
 		char * GetLine(const Standard_Integer index) const;
 		%feature("autodoc", "1");
@@ -781,10 +929,18 @@ class EDL_Template {
 		Standard_Boolean IsEqual(const EDL_Template &aTemp1, const EDL_Template &aTemp2);
 
 };
+%feature("shadow") EDL_Template::~EDL_Template %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_Template {
-	~EDL_Template() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_Template\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -810,10 +966,18 @@ class EDL_StackNodeOfStackOfBoolean : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") EDL_StackNodeOfStackOfBoolean::~EDL_StackNodeOfStackOfBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_StackNodeOfStackOfBoolean {
-	~EDL_StackNodeOfStackOfBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_StackNodeOfStackOfBoolean\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -833,10 +997,18 @@ class EDL_DataMapIteratorOfMapOfVariable : public TCollection_BasicMapIterator {
 		const EDL_Variable & Value() const;
 
 };
+%feature("shadow") EDL_DataMapIteratorOfMapOfVariable::~EDL_DataMapIteratorOfMapOfVariable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_DataMapIteratorOfMapOfVariable {
-	~EDL_DataMapIteratorOfMapOfVariable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_DataMapIteratorOfMapOfVariable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -856,10 +1028,18 @@ class EDL_DataMapIteratorOfMapOfTemplate : public TCollection_BasicMapIterator {
 		const EDL_Template & Value() const;
 
 };
+%feature("shadow") EDL_DataMapIteratorOfMapOfTemplate::~EDL_DataMapIteratorOfMapOfTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_DataMapIteratorOfMapOfTemplate {
-	~EDL_DataMapIteratorOfMapOfTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_DataMapIteratorOfMapOfTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -873,10 +1053,18 @@ class EDL {
 		void PrintError(const EDL_Error anError, const char * anArg);
 
 };
+%feature("shadow") EDL::~EDL %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL {
-	~EDL() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -944,10 +1132,18 @@ class EDL_HSequenceOfVariable : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") EDL_HSequenceOfVariable::~EDL_HSequenceOfVariable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_HSequenceOfVariable {
-	~EDL_HSequenceOfVariable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_HSequenceOfVariable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1001,10 +1197,18 @@ class EDL_SequenceOfVariable : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") EDL_SequenceOfVariable::~EDL_SequenceOfVariable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_SequenceOfVariable {
-	~EDL_SequenceOfVariable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_SequenceOfVariable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1026,10 +1230,18 @@ class EDL_StackIteratorOfStackOfBoolean {
 		const Standard_Boolean & Value() const;
 
 };
+%feature("shadow") EDL_StackIteratorOfStackOfBoolean::~EDL_StackIteratorOfStackOfBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_StackIteratorOfStackOfBoolean {
-	~EDL_StackIteratorOfStackOfBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_StackIteratorOfStackOfBoolean\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1063,10 +1275,18 @@ class EDL_MapOfVariable : public TCollection_BasicMap {
 		EDL_Variable & operator()(const TCollection_AsciiString &K);
 
 };
+%feature("shadow") EDL_MapOfVariable::~EDL_MapOfVariable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_MapOfVariable {
-	~EDL_MapOfVariable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_MapOfVariable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1100,10 +1320,18 @@ class EDL_MapOfTemplate : public TCollection_BasicMap {
 		EDL_Template & operator()(const TCollection_AsciiString &K);
 
 };
+%feature("shadow") EDL_MapOfTemplate::~EDL_MapOfTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_MapOfTemplate {
-	~EDL_MapOfTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_MapOfTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1123,10 +1351,18 @@ class EDL_DataMapIteratorOfMapOfFile : public TCollection_BasicMapIterator {
 		const EDL_File & Value() const;
 
 };
+%feature("shadow") EDL_DataMapIteratorOfMapOfFile::~EDL_DataMapIteratorOfMapOfFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_DataMapIteratorOfMapOfFile {
-	~EDL_DataMapIteratorOfMapOfFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_DataMapIteratorOfMapOfFile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1160,10 +1396,18 @@ class EDL_MapOfFile : public TCollection_BasicMap {
 		EDL_File & operator()(const TCollection_AsciiString &K);
 
 };
+%feature("shadow") EDL_MapOfFile::~EDL_MapOfFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_MapOfFile {
-	~EDL_MapOfFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_MapOfFile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1182,23 +1426,31 @@ class EDL_File {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		Standard_CString GetName() const;
+		char * GetName() const;
 		%feature("autodoc", "1");
 		Standard_Boolean Open();
 		%feature("autodoc", "1");
 		void Write(const char * aBuffer);
 		%feature("autodoc", "1");
-		Standard_CString Read() const;
+		char * Read() const;
 		%feature("autodoc", "1");
 		void Close();
 		%feature("autodoc", "1");
 		Standard_Address GetFile() const;
 
 };
+%feature("shadow") EDL_File::~EDL_File %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_File {
-	~EDL_File() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_File\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1219,9 +1471,9 @@ class EDL_Variable {
 		%feature("autodoc", "1");
 		void Destroy() const;
 		%feature("autodoc", "1");
-		Standard_CString GetName() const;
+		char * GetName() const;
 		%feature("autodoc", "1");
-		Standard_CString GetValue() const;
+		char * GetValue() const;
 		%feature("autodoc", "1");
 		void SetValue(const char * aValue);
 		%feature("autodoc", "1");
@@ -1230,10 +1482,18 @@ class EDL_Variable {
 		Standard_Boolean IsEqual(const EDL_Variable &aVar1, const EDL_Variable &aVar2);
 
 };
+%feature("shadow") EDL_Variable::~EDL_Variable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_Variable {
-	~EDL_Variable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_Variable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1261,10 +1521,18 @@ class EDL_DataMapNodeOfMapOfVariable : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") EDL_DataMapNodeOfMapOfVariable::~EDL_DataMapNodeOfMapOfVariable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_DataMapNodeOfMapOfVariable {
-	~EDL_DataMapNodeOfMapOfVariable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_DataMapNodeOfMapOfVariable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1298,9 +1566,17 @@ class EDL_MapOfLibrary : public TCollection_BasicMap {
 		EDL_Library & operator()(const TCollection_AsciiString &K);
 
 };
+%feature("shadow") EDL_MapOfLibrary::~EDL_MapOfLibrary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend EDL_MapOfLibrary {
-	~EDL_MapOfLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of EDL_MapOfLibrary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

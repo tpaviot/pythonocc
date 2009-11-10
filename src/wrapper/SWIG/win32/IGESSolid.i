@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IGESSolid_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_IGESSolid_ManifoldSolid : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_ManifoldSolid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_ManifoldSolid::~Handle_IGESSolid_ManifoldSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_ManifoldSolid {
-	~Handle_IGESSolid_ManifoldSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ManifoldSolid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
 	return (IGESSolid_SpecificModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_SpecificModule::~Handle_IGESSolid_SpecificModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_SpecificModule {
-	~Handle_IGESSolid_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SpecificModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_IGESSolid_EdgeList : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_EdgeList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_EdgeList::~Handle_IGESSolid_EdgeList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_EdgeList {
-	~Handle_IGESSolid_EdgeList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_EdgeList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_IGESSolid_ConeFrustum : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_ConeFrustum*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_ConeFrustum::~Handle_IGESSolid_ConeFrustum %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_ConeFrustum {
-	~Handle_IGESSolid_ConeFrustum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ConeFrustum\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_IGESSolid_HArray1OfFace : public Handle_MMgt_TShared {
 	return (IGESSolid_HArray1OfFace*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_HArray1OfFace::~Handle_IGESSolid_HArray1OfFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_HArray1OfFace {
-	~Handle_IGESSolid_HArray1OfFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_HArray1OfFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_IGESSolid_RightAngularWedge : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_RightAngularWedge*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_RightAngularWedge::~Handle_IGESSolid_RightAngularWedge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_RightAngularWedge {
-	~Handle_IGESSolid_RightAngularWedge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_RightAngularWedge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_IGESSolid_CylindricalSurface : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_CylindricalSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_CylindricalSurface::~Handle_IGESSolid_CylindricalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_CylindricalSurface {
-	~Handle_IGESSolid_CylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_CylindricalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_IGESSolid_BooleanTree : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_BooleanTree*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_BooleanTree::~Handle_IGESSolid_BooleanTree %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_BooleanTree {
-	~Handle_IGESSolid_BooleanTree() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_BooleanTree\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_IGESSolid_Shell : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Shell*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_Shell::~Handle_IGESSolid_Shell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_Shell {
-	~Handle_IGESSolid_Shell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Shell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_IGESSolid_SolidInstance : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_SolidInstance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_SolidInstance::~Handle_IGESSolid_SolidInstance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_SolidInstance {
-	~Handle_IGESSolid_SolidInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidInstance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_IGESSolid_SolidOfRevolution : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_SolidOfRevolution*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_SolidOfRevolution::~Handle_IGESSolid_SolidOfRevolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_SolidOfRevolution {
-	~Handle_IGESSolid_SolidOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidOfRevolution\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_IGESSolid_ConicalSurface : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_ConicalSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_ConicalSurface::~Handle_IGESSolid_ConicalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_ConicalSurface {
-	~Handle_IGESSolid_ConicalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ConicalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_IGESSolid_Protocol : public Handle_IGESData_Protocol {
 	return (IGESSolid_Protocol*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_Protocol::~Handle_IGESSolid_Protocol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_Protocol {
-	~Handle_IGESSolid_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Protocol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +555,18 @@ class Handle_IGESSolid_VertexList : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_VertexList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_VertexList::~Handle_IGESSolid_VertexList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_VertexList {
-	~Handle_IGESSolid_VertexList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_VertexList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +593,18 @@ class Handle_IGESSolid_GeneralModule : public Handle_IGESData_GeneralModule {
 	return (IGESSolid_GeneralModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_GeneralModule::~Handle_IGESSolid_GeneralModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_GeneralModule {
-	~Handle_IGESSolid_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_GeneralModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +631,18 @@ class Handle_IGESSolid_HArray1OfLoop : public Handle_MMgt_TShared {
 	return (IGESSolid_HArray1OfLoop*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_HArray1OfLoop::~Handle_IGESSolid_HArray1OfLoop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_HArray1OfLoop {
-	~Handle_IGESSolid_HArray1OfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_HArray1OfLoop\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +669,18 @@ class Handle_IGESSolid_HArray1OfVertexList : public Handle_MMgt_TShared {
 	return (IGESSolid_HArray1OfVertexList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_HArray1OfVertexList::~Handle_IGESSolid_HArray1OfVertexList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_HArray1OfVertexList {
-	~Handle_IGESSolid_HArray1OfVertexList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_HArray1OfVertexList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +707,18 @@ class Handle_IGESSolid_SphericalSurface : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_SphericalSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_SphericalSurface::~Handle_IGESSolid_SphericalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_SphericalSurface {
-	~Handle_IGESSolid_SphericalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SphericalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +745,18 @@ class Handle_IGESSolid_Cylinder : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Cylinder*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_Cylinder::~Handle_IGESSolid_Cylinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_Cylinder {
-	~Handle_IGESSolid_Cylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Cylinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +783,18 @@ class Handle_IGESSolid_SolidAssembly : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_SolidAssembly*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_SolidAssembly::~Handle_IGESSolid_SolidAssembly %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_SolidAssembly {
-	~Handle_IGESSolid_SolidAssembly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidAssembly\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -657,10 +821,18 @@ class Handle_IGESSolid_Block : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Block*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_Block::~Handle_IGESSolid_Block %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_Block {
-	~Handle_IGESSolid_Block() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Block\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -687,10 +859,18 @@ class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Loop*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_Loop::~Handle_IGESSolid_Loop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_Loop {
-	~Handle_IGESSolid_Loop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Loop\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -717,10 +897,18 @@ class Handle_IGESSolid_Sphere : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Sphere*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_Sphere::~Handle_IGESSolid_Sphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_Sphere {
-	~Handle_IGESSolid_Sphere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Sphere\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -747,10 +935,18 @@ class Handle_IGESSolid_HArray1OfShell : public Handle_MMgt_TShared {
 	return (IGESSolid_HArray1OfShell*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_HArray1OfShell::~Handle_IGESSolid_HArray1OfShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_HArray1OfShell {
-	~Handle_IGESSolid_HArray1OfShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_HArray1OfShell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -777,10 +973,18 @@ class Handle_IGESSolid_ToroidalSurface : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_ToroidalSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_ToroidalSurface::~Handle_IGESSolid_ToroidalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_ToroidalSurface {
-	~Handle_IGESSolid_ToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ToroidalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -807,10 +1011,18 @@ class Handle_IGESSolid_Torus : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Torus*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_Torus::~Handle_IGESSolid_Torus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_Torus {
-	~Handle_IGESSolid_Torus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Torus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -837,10 +1049,18 @@ class Handle_IGESSolid_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	return (IGESSolid_ReadWriteModule*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_ReadWriteModule::~Handle_IGESSolid_ReadWriteModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_ReadWriteModule {
-	~Handle_IGESSolid_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ReadWriteModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -867,10 +1087,18 @@ class Handle_IGESSolid_Face : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Face*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_Face::~Handle_IGESSolid_Face %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_Face {
-	~Handle_IGESSolid_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Face\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -897,10 +1125,18 @@ class Handle_IGESSolid_PlaneSurface : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_PlaneSurface*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_PlaneSurface::~Handle_IGESSolid_PlaneSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_PlaneSurface {
-	~Handle_IGESSolid_PlaneSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_PlaneSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -927,10 +1163,18 @@ class Handle_IGESSolid_Ellipsoid : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_Ellipsoid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_Ellipsoid::~Handle_IGESSolid_Ellipsoid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_Ellipsoid {
-	~Handle_IGESSolid_Ellipsoid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Ellipsoid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -957,10 +1201,18 @@ class Handle_IGESSolid_SelectedComponent : public Handle_IGESData_IGESEntity {
 	return (IGESSolid_SelectedComponent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_SelectedComponent::~Handle_IGESSolid_SelectedComponent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_SelectedComponent {
-	~Handle_IGESSolid_SelectedComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SelectedComponent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -987,10 +1239,18 @@ class Handle_IGESSolid_SolidOfLinearExtrusion : public Handle_IGESData_IGESEntit
 	return (IGESSolid_SolidOfLinearExtrusion*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESSolid_SolidOfLinearExtrusion::~Handle_IGESSolid_SolidOfLinearExtrusion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESSolid_SolidOfLinearExtrusion {
-	~Handle_IGESSolid_SolidOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidOfLinearExtrusion\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1028,10 +1288,18 @@ class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_SphericalSurface::~IGESSolid_SphericalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_SphericalSurface {
-	~IGESSolid_SphericalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_SphericalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1073,10 +1341,18 @@ class IGESSolid_SolidOfRevolution : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_SolidOfRevolution::~IGESSolid_SolidOfRevolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_SolidOfRevolution {
-	~IGESSolid_SolidOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidOfRevolution\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1120,10 +1396,18 @@ class IGESSolid_HArray1OfShell : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_HArray1OfShell::~IGESSolid_HArray1OfShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_HArray1OfShell {
-	~IGESSolid_HArray1OfShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_HArray1OfShell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1149,10 +1433,18 @@ class IGESSolid_ToolToroidalSurface {
 		void OwnDump(const Handle_IGESSolid_ToroidalSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolToroidalSurface::~IGESSolid_ToolToroidalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolToroidalSurface {
-	~IGESSolid_ToolToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolToroidalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1192,10 +1484,18 @@ class IGESSolid_ConeFrustum : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_ConeFrustum::~IGESSolid_ConeFrustum %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ConeFrustum {
-	~IGESSolid_ConeFrustum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ConeFrustum\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1221,10 +1521,18 @@ class IGESSolid_ToolSolidOfRevolution {
 		void OwnDump(const Handle_IGESSolid_SolidOfRevolution &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolSolidOfRevolution::~IGESSolid_ToolSolidOfRevolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolSolidOfRevolution {
-	~IGESSolid_ToolSolidOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidOfRevolution\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1264,10 +1572,18 @@ class IGESSolid_Array1OfShell {
 		Handle_IGESSolid_Shell & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") IGESSolid_Array1OfShell::~IGESSolid_Array1OfShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_Array1OfShell {
-	~IGESSolid_Array1OfShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfShell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1303,10 +1619,18 @@ class IGESSolid_SolidAssembly : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_SolidAssembly::~IGESSolid_SolidAssembly %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_SolidAssembly {
-	~IGESSolid_SolidAssembly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidAssembly\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1342,10 +1666,18 @@ class IGESSolid_CylindricalSurface : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_CylindricalSurface::~IGESSolid_CylindricalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_CylindricalSurface {
-	~IGESSolid_CylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_CylindricalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1377,10 +1709,18 @@ class IGESSolid_SelectedComponent : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_SelectedComponent::~IGESSolid_SelectedComponent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_SelectedComponent {
-	~IGESSolid_SelectedComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_SelectedComponent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1414,10 +1754,18 @@ class IGESSolid_BooleanTree : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_BooleanTree::~IGESSolid_BooleanTree %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_BooleanTree {
-	~IGESSolid_BooleanTree() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_BooleanTree\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1443,10 +1791,18 @@ class IGESSolid_ToolTorus {
 		void OwnDump(const Handle_IGESSolid_Torus &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolTorus::~IGESSolid_ToolTorus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolTorus {
-	~IGESSolid_ToolTorus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolTorus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1472,10 +1828,18 @@ class IGESSolid_ToolConeFrustum {
 		void OwnDump(const Handle_IGESSolid_ConeFrustum &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolConeFrustum::~IGESSolid_ToolConeFrustum %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolConeFrustum {
-	~IGESSolid_ToolConeFrustum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolConeFrustum\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1519,10 +1883,18 @@ class IGESSolid_HArray1OfLoop : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_HArray1OfLoop::~IGESSolid_HArray1OfLoop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_HArray1OfLoop {
-	~IGESSolid_HArray1OfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_HArray1OfLoop\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1562,10 +1934,18 @@ class IGESSolid_Array1OfLoop {
 		Handle_IGESSolid_Loop & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") IGESSolid_Array1OfLoop::~IGESSolid_Array1OfLoop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_Array1OfLoop {
-	~IGESSolid_Array1OfLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfLoop\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1599,10 +1979,18 @@ class IGESSolid_SolidOfLinearExtrusion : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_SolidOfLinearExtrusion::~IGESSolid_SolidOfLinearExtrusion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_SolidOfLinearExtrusion {
-	~IGESSolid_SolidOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidOfLinearExtrusion\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1638,10 +2026,18 @@ class IGESSolid_Shell : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_Shell::~IGESSolid_Shell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_Shell {
-	~IGESSolid_Shell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Shell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1673,10 +2069,18 @@ class IGESSolid_SolidInstance : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_SolidInstance::~IGESSolid_SolidInstance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_SolidInstance {
-	~IGESSolid_SolidInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidInstance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1702,10 +2106,18 @@ class IGESSolid_ToolSelectedComponent {
 		void OwnDump(const Handle_IGESSolid_SelectedComponent &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolSelectedComponent::~IGESSolid_ToolSelectedComponent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolSelectedComponent {
-	~IGESSolid_ToolSelectedComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSelectedComponent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1731,10 +2143,18 @@ class IGESSolid_ToolFace {
 		void OwnDump(const Handle_IGESSolid_Face &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolFace::~IGESSolid_ToolFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolFace {
-	~IGESSolid_ToolFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1760,10 +2180,18 @@ class IGESSolid_ToolLoop {
 		void OwnDump(const Handle_IGESSolid_Loop &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolLoop::~IGESSolid_ToolLoop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolLoop {
-	~IGESSolid_ToolLoop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolLoop\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1789,10 +2217,18 @@ class IGESSolid_ToolEllipsoid {
 		void OwnDump(const Handle_IGESSolid_Ellipsoid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolEllipsoid::~IGESSolid_ToolEllipsoid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolEllipsoid {
-	~IGESSolid_ToolEllipsoid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolEllipsoid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1818,10 +2254,18 @@ class IGESSolid_ToolEdgeList {
 		void OwnDump(const Handle_IGESSolid_EdgeList &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolEdgeList::~IGESSolid_ToolEdgeList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolEdgeList {
-	~IGESSolid_ToolEdgeList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolEdgeList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1853,10 +2297,18 @@ class IGESSolid_Sphere : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_Sphere::~IGESSolid_Sphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_Sphere {
-	~IGESSolid_Sphere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Sphere\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1882,10 +2334,18 @@ class IGESSolid_ToolBlock {
 		void OwnDump(const Handle_IGESSolid_Block &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolBlock::~IGESSolid_ToolBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolBlock {
-	~IGESSolid_ToolBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1923,10 +2383,18 @@ class IGESSolid_Cylinder : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_Cylinder::~IGESSolid_Cylinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_Cylinder {
-	~IGESSolid_Cylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Cylinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1952,10 +2420,18 @@ class IGESSolid_ToolSphericalSurface {
 		void OwnDump(const Handle_IGESSolid_SphericalSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolSphericalSurface::~IGESSolid_ToolSphericalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolSphericalSurface {
-	~IGESSolid_ToolSphericalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSphericalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1981,10 +2457,18 @@ class IGESSolid_ToolBooleanTree {
 		void OwnDump(const Handle_IGESSolid_BooleanTree &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolBooleanTree::~IGESSolid_ToolBooleanTree %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolBooleanTree {
-	~IGESSolid_ToolBooleanTree() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolBooleanTree\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2010,10 +2494,18 @@ class IGESSolid_ToolVertexList {
 		void OwnDump(const Handle_IGESSolid_VertexList &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolVertexList::~IGESSolid_ToolVertexList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolVertexList {
-	~IGESSolid_ToolVertexList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolVertexList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2065,10 +2557,18 @@ class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_RightAngularWedge::~IGESSolid_RightAngularWedge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_RightAngularWedge {
-	~IGESSolid_RightAngularWedge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_RightAngularWedge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2094,10 +2594,18 @@ class IGESSolid_ToolManifoldSolid {
 		void OwnDump(const Handle_IGESSolid_ManifoldSolid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolManifoldSolid::~IGESSolid_ToolManifoldSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolManifoldSolid {
-	~IGESSolid_ToolManifoldSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolManifoldSolid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2127,10 +2635,18 @@ class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_ReadWriteModule::~IGESSolid_ReadWriteModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ReadWriteModule {
-	~IGESSolid_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ReadWriteModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2160,10 +2676,18 @@ class IGESSolid_VertexList : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_VertexList::~IGESSolid_VertexList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_VertexList {
-	~IGESSolid_VertexList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_VertexList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2189,10 +2713,18 @@ class IGESSolid_ToolConicalSurface {
 		void OwnDump(const Handle_IGESSolid_ConicalSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolConicalSurface::~IGESSolid_ToolConicalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolConicalSurface {
-	~IGESSolid_ToolConicalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolConicalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2232,10 +2764,18 @@ class IGESSolid_ToroidalSurface : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_ToroidalSurface::~IGESSolid_ToroidalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToroidalSurface {
-	~IGESSolid_ToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToroidalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2275,10 +2815,18 @@ class IGESSolid_Array1OfFace {
 		Handle_IGESSolid_Face & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") IGESSolid_Array1OfFace::~IGESSolid_Array1OfFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_Array1OfFace {
-	~IGESSolid_Array1OfFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2322,10 +2870,18 @@ class IGESSolid_HArray1OfFace : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_HArray1OfFace::~IGESSolid_HArray1OfFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_HArray1OfFace {
-	~IGESSolid_HArray1OfFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_HArray1OfFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2341,10 +2897,18 @@ class IGESSolid {
 		Handle_IGESSolid_Protocol Protocol();
 
 };
+%feature("shadow") IGESSolid::~IGESSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid {
-	~IGESSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2370,10 +2934,18 @@ class IGESSolid_ToolSphere {
 		void OwnDump(const Handle_IGESSolid_Sphere &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolSphere::~IGESSolid_ToolSphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolSphere {
-	~IGESSolid_ToolSphere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSphere\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2407,10 +2979,18 @@ class IGESSolid_PlaneSurface : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_PlaneSurface::~IGESSolid_PlaneSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_PlaneSurface {
-	~IGESSolid_PlaneSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_PlaneSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2450,10 +3030,18 @@ class IGESSolid_Array1OfVertexList {
 		Handle_IGESSolid_VertexList & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") IGESSolid_Array1OfVertexList::~IGESSolid_Array1OfVertexList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_Array1OfVertexList {
-	~IGESSolid_Array1OfVertexList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfVertexList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2503,10 +3091,18 @@ class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_Ellipsoid::~IGESSolid_Ellipsoid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_Ellipsoid {
-	~IGESSolid_Ellipsoid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Ellipsoid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2544,10 +3140,18 @@ class IGESSolid_Torus : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_Torus::~IGESSolid_Torus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_Torus {
-	~IGESSolid_Torus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Torus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2581,10 +3185,18 @@ class IGESSolid_Face : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_Face::~IGESSolid_Face %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_Face {
-	~IGESSolid_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Face\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2610,10 +3222,18 @@ class IGESSolid_ToolRightAngularWedge {
 		void OwnDump(const Handle_IGESSolid_RightAngularWedge &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolRightAngularWedge::~IGESSolid_ToolRightAngularWedge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolRightAngularWedge {
-	~IGESSolid_ToolRightAngularWedge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolRightAngularWedge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2657,10 +3277,18 @@ class IGESSolid_HArray1OfVertexList : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_HArray1OfVertexList::~IGESSolid_HArray1OfVertexList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_HArray1OfVertexList {
-	~IGESSolid_HArray1OfVertexList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_HArray1OfVertexList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2706,10 +3334,18 @@ class IGESSolid_Loop : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_Loop::~IGESSolid_Loop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_Loop {
-	~IGESSolid_Loop() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Loop\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2735,10 +3371,18 @@ class IGESSolid_ToolCylindricalSurface {
 		void OwnDump(const Handle_IGESSolid_CylindricalSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolCylindricalSurface::~IGESSolid_ToolCylindricalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolCylindricalSurface {
-	~IGESSolid_ToolCylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolCylindricalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2776,10 +3420,18 @@ class IGESSolid_ConicalSurface : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_ConicalSurface::~IGESSolid_ConicalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ConicalSurface {
-	~IGESSolid_ConicalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ConicalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2805,10 +3457,18 @@ class IGESSolid_ToolSolidInstance {
 		void OwnDump(const Handle_IGESSolid_SolidInstance &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolSolidInstance::~IGESSolid_ToolSolidInstance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolSolidInstance {
-	~IGESSolid_ToolSolidInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidInstance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2844,10 +3504,18 @@ class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_ManifoldSolid::~IGESSolid_ManifoldSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ManifoldSolid {
-	~IGESSolid_ManifoldSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ManifoldSolid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2873,10 +3541,18 @@ class IGESSolid_SpecificModule : public IGESData_SpecificModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_SpecificModule::~IGESSolid_SpecificModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_SpecificModule {
-	~IGESSolid_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_SpecificModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2902,10 +3578,18 @@ class IGESSolid_ToolPlaneSurface {
 		void OwnDump(const Handle_IGESSolid_PlaneSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolPlaneSurface::~IGESSolid_ToolPlaneSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolPlaneSurface {
-	~IGESSolid_ToolPlaneSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolPlaneSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2931,10 +3615,18 @@ class IGESSolid_ToolSolidAssembly {
 		void OwnDump(const Handle_IGESSolid_SolidAssembly &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolSolidAssembly::~IGESSolid_ToolSolidAssembly %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolSolidAssembly {
-	~IGESSolid_ToolSolidAssembly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidAssembly\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2972,10 +3664,18 @@ class IGESSolid_EdgeList : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_EdgeList::~IGESSolid_EdgeList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_EdgeList {
-	~IGESSolid_EdgeList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_EdgeList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3001,10 +3701,18 @@ class IGESSolid_ToolSolidOfLinearExtrusion {
 		void OwnDump(const Handle_IGESSolid_SolidOfLinearExtrusion &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolSolidOfLinearExtrusion::~IGESSolid_ToolSolidOfLinearExtrusion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolSolidOfLinearExtrusion {
-	~IGESSolid_ToolSolidOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidOfLinearExtrusion\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3030,10 +3738,18 @@ class IGESSolid_ToolCylinder {
 		void OwnDump(const Handle_IGESSolid_Cylinder &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolCylinder::~IGESSolid_ToolCylinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolCylinder {
-	~IGESSolid_ToolCylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolCylinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3069,10 +3785,18 @@ class IGESSolid_GeneralModule : public IGESData_GeneralModule {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_GeneralModule::~IGESSolid_GeneralModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_GeneralModule {
-	~IGESSolid_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_GeneralModule\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3122,10 +3846,18 @@ class IGESSolid_Block : public IGESData_IGESEntity {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESSolid_Block::~IGESSolid_Block %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_Block {
-	~IGESSolid_Block() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_Block\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3149,7 +3881,7 @@ class IGESSolid_TopoBuilder {
 		void AddEdge(const Handle_IGESData_IGESEntity &curve, const Standard_Integer vstart, const Standard_Integer vend);
 		%feature("autodoc", "1");
 		Standard_Integer NbEdges() const;
-		%feature("autodoc","Edge(Standard_Integer num)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","Edge(Standard_Integer num) -> [Standard_IntegerStandard_Integer]");
 		void Edge(const Standard_Integer num, Handle_IGESData_IGESEntity & curve, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_IGESSolid_EdgeList EdgeList() const;
@@ -3185,10 +3917,18 @@ class IGESSolid_TopoBuilder {
 		Handle_IGESSolid_ManifoldSolid Solid() const;
 
 };
+%feature("shadow") IGESSolid_TopoBuilder::~IGESSolid_TopoBuilder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_TopoBuilder {
-	~IGESSolid_TopoBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_TopoBuilder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3214,9 +3954,17 @@ class IGESSolid_ToolShell {
 		void OwnDump(const Handle_IGESSolid_Shell &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
+%feature("shadow") IGESSolid_ToolShell::~IGESSolid_ToolShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESSolid_ToolShell {
-	~IGESSolid_ToolShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolShell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PColStd_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_PColStd_HSingleListOfReal : public Handle_PMMgt_PManaged {
 	return (PColStd_HSingleListOfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HSingleListOfReal::~Handle_PColStd_HSingleListOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HSingleListOfReal {
-	~Handle_PColStd_HSingleListOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSingleListOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_PColStd_HArray1OfExtendedString : public Handle_Standard_Persistent
 	return (PColStd_HArray1OfExtendedString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HArray1OfExtendedString::~Handle_PColStd_HArray1OfExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HArray1OfExtendedString {
-	~Handle_PColStd_HArray1OfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray1OfExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_PColStd_HDoubleListOfInteger : public Handle_PMMgt_PManaged {
 	return (PColStd_HDoubleListOfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HDoubleListOfInteger::~Handle_PColStd_HDoubleListOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HDoubleListOfInteger {
-	~Handle_PColStd_HDoubleListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HDoubleListOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent : public Handle_PSta
 	return (PColStd_VArrayNodeOfFieldOfHArray2OfPersistent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent::~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_PColStd_HArray2OfPersistent : public Handle_Standard_Persistent {
 	return (PColStd_HArray2OfPersistent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HArray2OfPersistent::~Handle_PColStd_HArray2OfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HArray2OfPersistent {
-	~Handle_PColStd_HArray2OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray2OfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal : public Handle_PStandard_
 	return (PColStd_VArrayNodeOfFieldOfHArray1OfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal::~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_PColStd_HDoubleListOfReal : public Handle_PMMgt_PManaged {
 	return (PColStd_HDoubleListOfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HDoubleListOfReal::~Handle_PColStd_HDoubleListOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HDoubleListOfReal {
-	~Handle_PColStd_HDoubleListOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HDoubleListOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_PColStd_SeqNodeOfHSequenceOfInteger : public Handle_PMMgt_PManaged 
 	return (PColStd_SeqNodeOfHSequenceOfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfInteger::~Handle_PColStd_SeqNodeOfHSequenceOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_SeqNodeOfHSequenceOfInteger {
-	~Handle_PColStd_SeqNodeOfHSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_SeqNodeOfHSequenceOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_PColStd_HSequenceOfReal : public Handle_Standard_Persistent {
 	return (PColStd_HSequenceOfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HSequenceOfReal::~Handle_PColStd_HSequenceOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HSequenceOfReal {
-	~Handle_PColStd_HSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSequenceOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_PColStd_HSequenceOfHAsciiString : public Handle_Standard_Persistent
 	return (PColStd_HSequenceOfHAsciiString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HSequenceOfHAsciiString::~Handle_PColStd_HSequenceOfHAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HSequenceOfHAsciiString {
-	~Handle_PColStd_HSequenceOfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSequenceOfHAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_PColStd_HSequenceOfHExtendedString : public Handle_Standard_Persist
 	return (PColStd_HSequenceOfHExtendedString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HSequenceOfHExtendedString::~Handle_PColStd_HSequenceOfHExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HSequenceOfHExtendedString {
-	~Handle_PColStd_HSequenceOfHExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSequenceOfHExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_PColStd_HSequenceOfInteger : public Handle_Standard_Persistent {
 	return (PColStd_HSequenceOfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HSequenceOfInteger::~Handle_PColStd_HSequenceOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HSequenceOfInteger {
-	~Handle_PColStd_HSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSequenceOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public Handle_PSta
 	return (PColStd_VArrayNodeOfFieldOfHArray1OfPersistent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent::~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +555,18 @@ class Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString : public Handle_PMMgt_P
 	return (PColStd_SeqNodeOfHSequenceOfHExtendedString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString::~Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString {
-	~Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +593,18 @@ class Handle_PColStd_HArray1OfPersistent : public Handle_Standard_Persistent {
 	return (PColStd_HArray1OfPersistent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HArray1OfPersistent::~Handle_PColStd_HArray1OfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HArray1OfPersistent {
-	~Handle_PColStd_HArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray1OfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +631,18 @@ class Handle_PColStd_HSequenceOfPersistent : public Handle_Standard_Persistent {
 	return (PColStd_HSequenceOfPersistent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HSequenceOfPersistent::~Handle_PColStd_HSequenceOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HSequenceOfPersistent {
-	~Handle_PColStd_HSequenceOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSequenceOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +669,18 @@ class Handle_PColStd_HSingleListOfPersistent : public Handle_PMMgt_PManaged {
 	return (PColStd_HSingleListOfPersistent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HSingleListOfPersistent::~Handle_PColStd_HSingleListOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HSingleListOfPersistent {
-	~Handle_PColStd_HSingleListOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSingleListOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +707,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public Handle_PStanda
 	return (PColStd_VArrayNodeOfFieldOfHArray2OfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger::~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +745,18 @@ class Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString : public Handle_PMMgt_PMan
 	return (PColStd_SeqNodeOfHSequenceOfHAsciiString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString::~Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString {
-	~Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +783,18 @@ class Handle_PColStd_HArray1OfReal : public Handle_Standard_Persistent {
 	return (PColStd_HArray1OfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HArray1OfReal::~Handle_PColStd_HArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HArray1OfReal {
-	~Handle_PColStd_HArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -657,10 +821,18 @@ class Handle_PColStd_HDoubleListOfPersistent : public Handle_PMMgt_PManaged {
 	return (PColStd_HDoubleListOfPersistent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HDoubleListOfPersistent::~Handle_PColStd_HDoubleListOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HDoubleListOfPersistent {
-	~Handle_PColStd_HDoubleListOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HDoubleListOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -687,10 +859,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal : public Handle_PStandard_
 	return (PColStd_VArrayNodeOfFieldOfHArray2OfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal::~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -717,10 +897,18 @@ class Handle_PColStd_HArray2OfInteger : public Handle_Standard_Persistent {
 	return (PColStd_HArray2OfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HArray2OfInteger::~Handle_PColStd_HArray2OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HArray2OfInteger {
-	~Handle_PColStd_HArray2OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray2OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -747,10 +935,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public Handle_
 	return (PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString::~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -777,10 +973,18 @@ class Handle_PColStd_HArray1OfInteger : public Handle_Standard_Persistent {
 	return (PColStd_HArray1OfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HArray1OfInteger::~Handle_PColStd_HArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HArray1OfInteger {
-	~Handle_PColStd_HArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -807,10 +1011,18 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger : public Handle_PStanda
 	return (PColStd_VArrayNodeOfFieldOfHArray1OfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger::~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
-	~Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -837,10 +1049,18 @@ class Handle_PColStd_SeqNodeOfHSequenceOfPersistent : public Handle_PMMgt_PManag
 	return (PColStd_SeqNodeOfHSequenceOfPersistent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfPersistent::~Handle_PColStd_SeqNodeOfHSequenceOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_SeqNodeOfHSequenceOfPersistent {
-	~Handle_PColStd_SeqNodeOfHSequenceOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_SeqNodeOfHSequenceOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -867,10 +1087,18 @@ class Handle_PColStd_HArray2OfReal : public Handle_Standard_Persistent {
 	return (PColStd_HArray2OfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HArray2OfReal::~Handle_PColStd_HArray2OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HArray2OfReal {
-	~Handle_PColStd_HArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray2OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -897,10 +1125,18 @@ class Handle_PColStd_HSingleListOfInteger : public Handle_PMMgt_PManaged {
 	return (PColStd_HSingleListOfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_HSingleListOfInteger::~Handle_PColStd_HSingleListOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_HSingleListOfInteger {
-	~Handle_PColStd_HSingleListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSingleListOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -927,10 +1163,18 @@ class Handle_PColStd_SeqNodeOfHSequenceOfReal : public Handle_PMMgt_PManaged {
 	return (PColStd_SeqNodeOfHSequenceOfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PColStd_SeqNodeOfHSequenceOfReal::~Handle_PColStd_SeqNodeOfHSequenceOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PColStd_SeqNodeOfHSequenceOfReal {
-	~Handle_PColStd_SeqNodeOfHSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_SeqNodeOfHSequenceOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -966,10 +1210,18 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public PStandard_Arra
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString::~PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
-	~PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -987,10 +1239,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfReal {
 		Standard_Address Value() const;
 
 };
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray1OfReal::~PColStd_VArrayTNodeOfFieldOfHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayTNodeOfFieldOfHArray1OfReal {
-	~PColStd_VArrayTNodeOfFieldOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1058,10 +1318,18 @@ class PColStd_HDoubleListOfInteger : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HDoubleListOfInteger::~PColStd_HDoubleListOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HDoubleListOfInteger {
-	~PColStd_HDoubleListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HDoubleListOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1081,10 +1349,18 @@ class PColStd_SeqExplorerOfHSequenceOfInteger {
 		Standard_Integer Location(const Standard_Integer N, const Standard_Integer &T);
 
 };
+%feature("shadow") PColStd_SeqExplorerOfHSequenceOfInteger::~PColStd_SeqExplorerOfHSequenceOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_SeqExplorerOfHSequenceOfInteger {
-	~PColStd_SeqExplorerOfHSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1100,10 +1376,18 @@ class PColStd_HOfExtendedString {
 		virtual		Standard_Boolean Compare(const Handle_PCollection_HExtendedString &One, const Handle_PCollection_HExtendedString &Two) const;
 
 };
+%feature("shadow") PColStd_HOfExtendedString::~PColStd_HOfExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HOfExtendedString {
-	~PColStd_HOfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HOfExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1125,18 +1409,36 @@ class PColStd_FieldOfHArray2OfInteger : public DBC_BaseArray {
 		void operator=(const PColStd_FieldOfHArray2OfInteger &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Integer &Value);
-		%feature("autodoc", "1");
-		Standard_Integer & Value(const Standard_Integer Index) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->Value(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->Value(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
 };
+%feature("shadow") PColStd_FieldOfHArray2OfInteger::~PColStd_FieldOfHArray2OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_FieldOfHArray2OfInteger {
-	~PColStd_FieldOfHArray2OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray2OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1166,10 +1468,18 @@ class PColStd_FieldOfHArray1OfExtendedString : public DBC_BaseArray {
 		void Destroy();
 
 };
+%feature("shadow") PColStd_FieldOfHArray1OfExtendedString::~PColStd_FieldOfHArray1OfExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_FieldOfHArray1OfExtendedString {
-	~PColStd_FieldOfHArray1OfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray1OfExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1185,10 +1495,18 @@ class PColStd_HOfReal {
 		virtual		Standard_Boolean Compare(const Standard_Real &One, const Standard_Real &Two) const;
 
 };
+%feature("shadow") PColStd_HOfReal::~PColStd_HOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HOfReal {
-	~PColStd_HOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1206,10 +1524,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfInteger {
 		Standard_Address Value() const;
 
 };
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray2OfInteger::~PColStd_VArrayTNodeOfFieldOfHArray2OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayTNodeOfFieldOfHArray2OfInteger {
-	~PColStd_VArrayTNodeOfFieldOfHArray2OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray2OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1227,10 +1553,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
 		Standard_Address Value() const;
 
 };
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent::~PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
-	~PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1252,18 +1586,36 @@ class PColStd_FieldOfHArray2OfReal : public DBC_BaseArray {
 		void operator=(const PColStd_FieldOfHArray2OfReal &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Real &Value);
-		%feature("autodoc", "1");
-		Standard_Real & Value(const Standard_Integer Index) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue(const Standard_Integer Index) {
+				return (Standard_Real) $self->Value(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ,const Standard_Integer Index) {
+				$self->Value(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
 };
+%feature("shadow") PColStd_FieldOfHArray2OfReal::~PColStd_FieldOfHArray2OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_FieldOfHArray2OfReal {
-	~PColStd_FieldOfHArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray2OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1361,10 +1713,18 @@ class PColStd_HSequenceOfHAsciiString : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HSequenceOfHAsciiString::~PColStd_HSequenceOfHAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HSequenceOfHAsciiString {
-	~PColStd_HSequenceOfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSequenceOfHAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1462,10 +1822,18 @@ class PColStd_HSequenceOfReal : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HSequenceOfReal::~PColStd_HSequenceOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HSequenceOfReal {
-	~PColStd_HSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSequenceOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1521,10 +1889,18 @@ class PColStd_SeqNodeOfHSequenceOfReal : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_SeqNodeOfHSequenceOfReal::~PColStd_SeqNodeOfHSequenceOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_SeqNodeOfHSequenceOfReal {
-	~PColStd_SeqNodeOfHSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1542,10 +1918,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfInteger {
 		Standard_Address Value() const;
 
 };
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray1OfInteger::~PColStd_VArrayTNodeOfFieldOfHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayTNodeOfFieldOfHArray1OfInteger {
-	~PColStd_VArrayTNodeOfFieldOfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1581,10 +1965,18 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray2OfInteger::~PColStd_VArrayNodeOfFieldOfHArray2OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
-	~PColStd_VArrayNodeOfFieldOfHArray2OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray2OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1642,10 +2034,18 @@ class PColStd_HSingleListOfPersistent : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HSingleListOfPersistent::~PColStd_HSingleListOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HSingleListOfPersistent {
-	~PColStd_HSingleListOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSingleListOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1681,10 +2081,18 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public PStandard_ArrayNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray1OfPersistent::~PColStd_VArrayNodeOfFieldOfHArray1OfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
-	~PColStd_VArrayNodeOfFieldOfHArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1782,10 +2190,18 @@ class PColStd_HSequenceOfHExtendedString : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HSequenceOfHExtendedString::~PColStd_HSequenceOfHExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HSequenceOfHExtendedString {
-	~PColStd_HSequenceOfHExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSequenceOfHExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1803,10 +2219,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
 		Standard_Address Value() const;
 
 };
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent::~PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
-	~PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1866,10 +2290,18 @@ class PColStd_HArray1OfReal : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HArray1OfReal::~PColStd_HArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HArray1OfReal {
-	~PColStd_HArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1943,10 +2375,18 @@ class PColStd_HArray2OfPersistent : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HArray2OfPersistent::~PColStd_HArray2OfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HArray2OfPersistent {
-	~PColStd_HArray2OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray2OfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1982,10 +2422,18 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfPersistent : public PStandard_ArrayNod
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray2OfPersistent::~PColStd_VArrayNodeOfFieldOfHArray2OfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayNodeOfFieldOfHArray2OfPersistent {
-	~PColStd_VArrayNodeOfFieldOfHArray2OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray2OfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2005,10 +2453,18 @@ class PColStd_SeqExplorerOfHSequenceOfReal {
 		Standard_Integer Location(const Standard_Integer N, const Standard_Real &T);
 
 };
+%feature("shadow") PColStd_SeqExplorerOfHSequenceOfReal::~PColStd_SeqExplorerOfHSequenceOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_SeqExplorerOfHSequenceOfReal {
-	~PColStd_SeqExplorerOfHSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2026,10 +2482,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
 		Standard_Address Value() const;
 
 };
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray2OfReal::~PColStd_VArrayTNodeOfFieldOfHArray2OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
-	~PColStd_VArrayTNodeOfFieldOfHArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray2OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2049,10 +2513,18 @@ class PColStd_SeqExplorerOfHSequenceOfHExtendedString {
 		Standard_Integer Location(const Standard_Integer N, const Handle_PCollection_HExtendedString &T);
 
 };
+%feature("shadow") PColStd_SeqExplorerOfHSequenceOfHExtendedString::~PColStd_SeqExplorerOfHSequenceOfHExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_SeqExplorerOfHSequenceOfHExtendedString {
-	~PColStd_SeqExplorerOfHSequenceOfHExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfHExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2082,10 +2554,18 @@ class PColStd_FieldOfHArray2OfPersistent : public DBC_BaseArray {
 		void Destroy();
 
 };
+%feature("shadow") PColStd_FieldOfHArray2OfPersistent::~PColStd_FieldOfHArray2OfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_FieldOfHArray2OfPersistent {
-	~PColStd_FieldOfHArray2OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray2OfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2141,10 +2621,18 @@ class PColStd_SeqNodeOfHSequenceOfInteger : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_SeqNodeOfHSequenceOfInteger::~PColStd_SeqNodeOfHSequenceOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_SeqNodeOfHSequenceOfInteger {
-	~PColStd_SeqNodeOfHSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2160,10 +2648,18 @@ class PColStd_HOfInteger {
 		virtual		Standard_Boolean Compare(const Standard_Integer &One, const Standard_Integer &Two) const;
 
 };
+%feature("shadow") PColStd_HOfInteger::~PColStd_HOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HOfInteger {
-	~PColStd_HOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2219,10 +2715,18 @@ class PColStd_SeqNodeOfHSequenceOfHAsciiString : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_SeqNodeOfHSequenceOfHAsciiString::~PColStd_SeqNodeOfHSequenceOfHAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_SeqNodeOfHSequenceOfHAsciiString {
-	~PColStd_SeqNodeOfHSequenceOfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfHAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2290,10 +2794,18 @@ class PColStd_HDoubleListOfPersistent : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HDoubleListOfPersistent::~PColStd_HDoubleListOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HDoubleListOfPersistent {
-	~PColStd_HDoubleListOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HDoubleListOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2329,10 +2841,18 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfReal : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray2OfReal::~PColStd_VArrayNodeOfFieldOfHArray2OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
-	~PColStd_VArrayNodeOfFieldOfHArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray2OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2368,10 +2888,18 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfReal : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray1OfReal::~PColStd_VArrayNodeOfFieldOfHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayNodeOfFieldOfHArray1OfReal {
-	~PColStd_VArrayNodeOfFieldOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2429,10 +2957,18 @@ class PColStd_HSingleListOfReal : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HSingleListOfReal::~PColStd_HSingleListOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HSingleListOfReal {
-	~PColStd_HSingleListOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSingleListOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2452,10 +2988,18 @@ class PColStd_SeqExplorerOfHSequenceOfHAsciiString {
 		Standard_Integer Location(const Standard_Integer N, const Handle_PCollection_HAsciiString &T);
 
 };
+%feature("shadow") PColStd_SeqExplorerOfHSequenceOfHAsciiString::~PColStd_SeqExplorerOfHSequenceOfHAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_SeqExplorerOfHSequenceOfHAsciiString {
-	~PColStd_SeqExplorerOfHSequenceOfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfHAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2523,10 +3067,18 @@ class PColStd_HDoubleListOfReal : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HDoubleListOfReal::~PColStd_HDoubleListOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HDoubleListOfReal {
-	~PColStd_HDoubleListOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HDoubleListOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2624,10 +3176,18 @@ class PColStd_HSequenceOfInteger : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HSequenceOfInteger::~PColStd_HSequenceOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HSequenceOfInteger {
-	~PColStd_HSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSequenceOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2649,18 +3209,36 @@ class PColStd_FieldOfHArray1OfInteger : public DBC_BaseArray {
 		void operator=(const PColStd_FieldOfHArray1OfInteger &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Integer &Value);
-		%feature("autodoc", "1");
-		Standard_Integer & Value(const Standard_Integer Index) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->Value(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->Value(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
 };
+%feature("shadow") PColStd_FieldOfHArray1OfInteger::~PColStd_FieldOfHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_FieldOfHArray1OfInteger {
-	~PColStd_FieldOfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2680,10 +3258,18 @@ class PColStd_SeqExplorerOfHSequenceOfPersistent {
 		Standard_Integer Location(const Standard_Integer N, const Handle_Standard_Persistent &T);
 
 };
+%feature("shadow") PColStd_SeqExplorerOfHSequenceOfPersistent::~PColStd_SeqExplorerOfHSequenceOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_SeqExplorerOfHSequenceOfPersistent {
-	~PColStd_SeqExplorerOfHSequenceOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2705,18 +3291,36 @@ class PColStd_FieldOfHArray1OfReal : public DBC_BaseArray {
 		void operator=(const PColStd_FieldOfHArray1OfReal &Other);
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Real &Value);
-		%feature("autodoc", "1");
-		Standard_Real & Value(const Standard_Integer Index) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue(const Standard_Integer Index) {
+				return (Standard_Real) $self->Value(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ,const Standard_Integer Index) {
+				$self->Value(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Destroy();
 
 };
+%feature("shadow") PColStd_FieldOfHArray1OfReal::~PColStd_FieldOfHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_FieldOfHArray1OfReal {
-	~PColStd_FieldOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2776,10 +3380,18 @@ class PColStd_HArray1OfInteger : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HArray1OfInteger::~PColStd_HArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HArray1OfInteger {
-	~PColStd_HArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2877,10 +3489,18 @@ class PColStd_HSequenceOfPersistent : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HSequenceOfPersistent::~PColStd_HSequenceOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HSequenceOfPersistent {
-	~PColStd_HSequenceOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSequenceOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2898,10 +3518,18 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
 		Standard_Address Value() const;
 
 };
+%feature("shadow") PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString::~PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
-	~PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2961,10 +3589,18 @@ class PColStd_HArray1OfPersistent : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HArray1OfPersistent::~PColStd_HArray1OfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HArray1OfPersistent {
-	~PColStd_HArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray1OfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2980,10 +3616,18 @@ class PColStd_HOfAsciiString {
 		virtual		Standard_Boolean Compare(const Handle_PCollection_HAsciiString &One, const Handle_PCollection_HAsciiString &Two) const;
 
 };
+%feature("shadow") PColStd_HOfAsciiString::~PColStd_HOfAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HOfAsciiString {
-	~PColStd_HOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HOfAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2995,10 +3639,18 @@ class PColStd_HashAsciiString : public PColStd_HOfAsciiString {
 		PColStd_HashAsciiString();
 
 };
+%feature("shadow") PColStd_HashAsciiString::~PColStd_HashAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HashAsciiString {
-	~PColStd_HashAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HashAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3034,10 +3686,18 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfInteger : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray1OfInteger::~PColStd_VArrayNodeOfFieldOfHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
-	~PColStd_VArrayNodeOfFieldOfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3067,10 +3727,18 @@ class PColStd_FieldOfHArray1OfPersistent : public DBC_BaseArray {
 		void Destroy();
 
 };
+%feature("shadow") PColStd_FieldOfHArray1OfPersistent::~PColStd_FieldOfHArray1OfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_FieldOfHArray1OfPersistent {
-	~PColStd_FieldOfHArray1OfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray1OfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3128,10 +3796,18 @@ class PColStd_HSingleListOfInteger : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HSingleListOfInteger::~PColStd_HSingleListOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HSingleListOfInteger {
-	~PColStd_HSingleListOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HSingleListOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3187,10 +3863,18 @@ class PColStd_SeqNodeOfHSequenceOfHExtendedString : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_SeqNodeOfHSequenceOfHExtendedString::~PColStd_SeqNodeOfHSequenceOfHExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_SeqNodeOfHSequenceOfHExtendedString {
-	~PColStd_SeqNodeOfHSequenceOfHExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfHExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3264,10 +3948,18 @@ class PColStd_HArray2OfInteger : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HArray2OfInteger::~PColStd_HArray2OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HArray2OfInteger {
-	~PColStd_HArray2OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray2OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3341,10 +4033,18 @@ class PColStd_HArray2OfReal : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HArray2OfReal::~PColStd_HArray2OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HArray2OfReal {
-	~PColStd_HArray2OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray2OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3360,10 +4060,18 @@ class PColStd_HashExtendedString : public PColStd_HOfExtendedString {
 		virtual		Standard_Boolean Compare(const Handle_PCollection_HExtendedString &One, const Handle_PCollection_HExtendedString &Two) const;
 
 };
+%feature("shadow") PColStd_HashExtendedString::~PColStd_HashExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HashExtendedString {
-	~PColStd_HashExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HashExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3419,10 +4127,18 @@ class PColStd_SeqNodeOfHSequenceOfPersistent : public PMMgt_PManaged {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_SeqNodeOfHSequenceOfPersistent::~PColStd_SeqNodeOfHSequenceOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_SeqNodeOfHSequenceOfPersistent {
-	~PColStd_SeqNodeOfHSequenceOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3482,9 +4198,17 @@ class PColStd_HArray1OfExtendedString : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PColStd_HArray1OfExtendedString::~PColStd_HArray1OfExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PColStd_HArray1OfExtendedString {
-	~PColStd_HArray1OfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PColStd_HArray1OfExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

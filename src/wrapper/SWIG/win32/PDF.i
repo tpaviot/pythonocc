@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PDF_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_PDF_Attribute : public Handle_Standard_Persistent {
 	return (PDF_Attribute*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PDF_Attribute::~Handle_PDF_Attribute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PDF_Attribute {
-	~Handle_PDF_Attribute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PDF_Attribute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_PDF_TagSource : public Handle_PDF_Attribute {
 	return (PDF_TagSource*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PDF_TagSource::~Handle_PDF_TagSource %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PDF_TagSource {
-	~Handle_PDF_TagSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PDF_TagSource\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_PDF_Reference : public Handle_PDF_Attribute {
 	return (PDF_Reference*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PDF_Reference::~Handle_PDF_Reference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PDF_Reference {
-	~Handle_PDF_Reference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PDF_Reference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_PDF_Data : public Handle_Standard_Persistent {
 	return (PDF_Data*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PDF_Data::~Handle_PDF_Data %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PDF_Data {
-	~Handle_PDF_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PDF_Data\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 : public Handle_PStandard_A
 	return (PDF_VArrayNodeOfFieldOfHAttributeArray1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1::~Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 {
-	~Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_PDF_HAttributeArray1 : public Handle_Standard_Persistent {
 	return (PDF_HAttributeArray1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PDF_HAttributeArray1::~Handle_PDF_HAttributeArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PDF_HAttributeArray1 {
-	~Handle_PDF_HAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PDF_HAttributeArray1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -236,10 +288,18 @@ class PDF_Attribute : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PDF_Attribute::~PDF_Attribute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PDF_Attribute {
-	~PDF_Attribute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PDF_Attribute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -273,10 +333,18 @@ class PDF_TagSource : public PDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PDF_TagSource::~PDF_TagSource %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PDF_TagSource {
-	~PDF_TagSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PDF_TagSource\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -306,10 +374,18 @@ class PDF_FieldOfHAttributeArray1 : public DBC_BaseArray {
 		void Destroy();
 
 };
+%feature("shadow") PDF_FieldOfHAttributeArray1::~PDF_FieldOfHAttributeArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PDF_FieldOfHAttributeArray1 {
-	~PDF_FieldOfHAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PDF_FieldOfHAttributeArray1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -345,10 +421,18 @@ class PDF_Reference : public PDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PDF_Reference::~PDF_Reference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PDF_Reference {
-	~PDF_Reference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PDF_Reference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -384,10 +468,18 @@ class PDF_VArrayNodeOfFieldOfHAttributeArray1 : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PDF_VArrayNodeOfFieldOfHAttributeArray1::~PDF_VArrayNodeOfFieldOfHAttributeArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PDF_VArrayNodeOfFieldOfHAttributeArray1 {
-	~PDF_VArrayNodeOfFieldOfHAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PDF_VArrayNodeOfFieldOfHAttributeArray1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -437,10 +529,18 @@ class PDF_Data : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PDF_Data::~PDF_Data %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PDF_Data {
-	~PDF_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PDF_Data\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -500,10 +600,18 @@ class PDF_HAttributeArray1 : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PDF_HAttributeArray1::~PDF_HAttributeArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PDF_HAttributeArray1 {
-	~PDF_HAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PDF_HAttributeArray1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -521,9 +629,17 @@ class PDF_VArrayTNodeOfFieldOfHAttributeArray1 {
 		Standard_Address Value() const;
 
 };
+%feature("shadow") PDF_VArrayTNodeOfFieldOfHAttributeArray1::~PDF_VArrayTNodeOfFieldOfHAttributeArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PDF_VArrayTNodeOfFieldOfHAttributeArray1 {
-	~PDF_VArrayTNodeOfFieldOfHAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PDF_VArrayTNodeOfFieldOfHAttributeArray1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

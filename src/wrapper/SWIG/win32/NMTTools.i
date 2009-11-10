@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include NMTTools_dependencies.i
 
 
@@ -58,10 +62,18 @@ class Handle_NMTTools_StdMapNodeOfMapOfPaveBlock : public Handle_TCollection_Map
 	return (NMTTools_StdMapNodeOfMapOfPaveBlock*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NMTTools_StdMapNodeOfMapOfPaveBlock::~Handle_NMTTools_StdMapNodeOfMapOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NMTTools_StdMapNodeOfMapOfPaveBlock {
-	~Handle_NMTTools_StdMapNodeOfMapOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTTools_StdMapNodeOfMapOfPaveBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -88,10 +100,18 @@ class Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public Hand
 	return (NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock::~Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
-	~Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -118,10 +138,18 @@ class Handle_NMTTools_ListNodeOfListOfCoupleOfShape : public Handle_TCollection_
 	return (NMTTools_ListNodeOfListOfCoupleOfShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NMTTools_ListNodeOfListOfCoupleOfShape::~Handle_NMTTools_ListNodeOfListOfCoupleOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NMTTools_ListNodeOfListOfCoupleOfShape {
-	~Handle_NMTTools_ListNodeOfListOfCoupleOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTTools_ListNodeOfListOfCoupleOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -148,10 +176,18 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape
 	return (NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape::~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
-	~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -178,10 +214,18 @@ class Handle_NMTTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_Ma
 	return (NMTTools_ListNodeOfListOfCommonBlock*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NMTTools_ListNodeOfListOfCommonBlock::~Handle_NMTTools_ListNodeOfListOfCommonBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NMTTools_ListNodeOfListOfCommonBlock {
-	~Handle_NMTTools_ListNodeOfListOfCommonBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTTools_ListNodeOfListOfCommonBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -208,10 +252,18 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock : publi
 	return (NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock::~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock {
-	~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -238,10 +290,18 @@ class Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : 
 	return (NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger::~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
-	~Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -259,10 +319,18 @@ class NMTTools_MapIteratorOfMapOfPaveBlock : public TCollection_BasicMapIterator
 		const BOPTools_PaveBlock & Key() const;
 
 };
+%feature("shadow") NMTTools_MapIteratorOfMapOfPaveBlock::~NMTTools_MapIteratorOfMapOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_MapIteratorOfMapOfPaveBlock {
-	~NMTTools_MapIteratorOfMapOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_MapIteratorOfMapOfPaveBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -278,10 +346,18 @@ class NMTTools_DEProcessor {
 		Standard_Boolean IsDone() const;
 
 };
+%feature("shadow") NMTTools_DEProcessor::~NMTTools_DEProcessor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_DEProcessor {
-	~NMTTools_DEProcessor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_DEProcessor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -325,10 +401,18 @@ class NMTTools_IndexedDataMapOfShapeIndexedMapOfShape : public TCollection_Basic
 		TopTools_IndexedMapOfShape & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%feature("shadow") NMTTools_IndexedDataMapOfShapeIndexedMapOfShape::~NMTTools_IndexedDataMapOfShapeIndexedMapOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_IndexedDataMapOfShapeIndexedMapOfShape {
-	~NMTTools_IndexedDataMapOfShapeIndexedMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_IndexedDataMapOfShapeIndexedMapOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -372,10 +456,18 @@ class NMTTools_IndexedDataMapOfShapePaveBlock : public TCollection_BasicMap {
 		BOPTools_PaveBlock & ChangeFromKey(const TopoDS_Shape &K);
 
 };
+%feature("shadow") NMTTools_IndexedDataMapOfShapePaveBlock::~NMTTools_IndexedDataMapOfShapePaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_IndexedDataMapOfShapePaveBlock {
-	~NMTTools_IndexedDataMapOfShapePaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_IndexedDataMapOfShapePaveBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -385,10 +477,30 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : public 
 	public:
 		%feature("autodoc", "1");
 		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger(const Standard_Integer &K1, const Standard_Integer K2, const TColStd_IndexedMapOfInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Standard_Integer & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -407,10 +519,18 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : public 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
-	~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -436,10 +556,18 @@ class NMTTools_MapOfPaveBlock : public TCollection_BasicMap {
 		Standard_Boolean Remove(const BOPTools_PaveBlock &aKey);
 
 };
+%feature("shadow") NMTTools_MapOfPaveBlock::~NMTTools_MapOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_MapOfPaveBlock {
-	~NMTTools_MapOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_MapOfPaveBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -459,10 +587,18 @@ class NMTTools_CoupleOfShape {
 		const TopoDS_Shape & Shape2() const;
 
 };
+%feature("shadow") NMTTools_CoupleOfShape::~NMTTools_CoupleOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_CoupleOfShape {
-	~NMTTools_CoupleOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_CoupleOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -476,16 +612,24 @@ class NMTTools_IteratorOfCoupleOfShape : public BOPTools_IteratorOfCoupleOfShape
 		void SetDS(const NMTDS_PShapesDataStructure &pDS);
 		%feature("autodoc", "1");
 		virtual		void Initialize(const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
-		%feature("autodoc","Current()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Current() -> [Standard_Integer, Standard_Integer]");
 		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean More() const;
 
 };
+%feature("shadow") NMTTools_IteratorOfCoupleOfShape::~NMTTools_IteratorOfCoupleOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_IteratorOfCoupleOfShape {
-	~NMTTools_IteratorOfCoupleOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_IteratorOfCoupleOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -535,10 +679,18 @@ class NMTTools_ListOfCommonBlock {
 		void InsertAfter(NMTTools_ListOfCommonBlock & Other, NMTTools_ListIteratorOfListOfCommonBlock & It);
 
 };
+%feature("shadow") NMTTools_ListOfCommonBlock::~NMTTools_ListOfCommonBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_ListOfCommonBlock {
-	~NMTTools_ListOfCommonBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_ListOfCommonBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -564,10 +716,18 @@ class NMTTools_StdMapNodeOfMapOfPaveBlock : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NMTTools_StdMapNodeOfMapOfPaveBlock::~NMTTools_StdMapNodeOfMapOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_StdMapNodeOfMapOfPaveBlock {
-	~NMTTools_StdMapNodeOfMapOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_StdMapNodeOfMapOfPaveBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -589,10 +749,18 @@ class NMTTools_ListIteratorOfListOfCommonBlock {
 		NMTTools_CommonBlock & Value() const;
 
 };
+%feature("shadow") NMTTools_ListIteratorOfListOfCommonBlock::~NMTTools_ListIteratorOfListOfCommonBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_ListIteratorOfListOfCommonBlock {
-	~NMTTools_ListIteratorOfListOfCommonBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_ListIteratorOfListOfCommonBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -602,8 +770,18 @@ class NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public TCollection
 	public:
 		%feature("autodoc", "1");
 		NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock(const Standard_Integer &K, const BOPTools_ListOfPaveBlock &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		BOPTools_ListOfPaveBlock & Value() const;
 		%feature("autodoc", "1");
@@ -620,10 +798,18 @@ class NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public TCollection
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
-	~NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -661,10 +847,18 @@ class NMTTools_CommonBlockPool {
 		Standard_Integer BlockLength() const;
 
 };
+%feature("shadow") NMTTools_CommonBlockPool::~NMTTools_CommonBlockPool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_CommonBlockPool {
-	~NMTTools_CommonBlockPool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_CommonBlockPool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -690,10 +884,18 @@ class NMTTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NMTTools_ListNodeOfListOfCommonBlock::~NMTTools_ListNodeOfListOfCommonBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_ListNodeOfListOfCommonBlock {
-	~NMTTools_ListNodeOfListOfCommonBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_ListNodeOfListOfCommonBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -725,10 +927,18 @@ class NMTTools_Tools {
 		void UpdateEdge(const TopoDS_Edge &aE, const Standard_Real aTol);
 
 };
+%feature("shadow") NMTTools_Tools::~NMTTools_Tools %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_Tools {
-	~NMTTools_Tools() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_Tools\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -748,10 +958,18 @@ class NMTTools_CommonBlockAPI {
 		NMTTools_CommonBlock & CommonBlock(const BOPTools_PaveBlock &aPB) const;
 
 };
+%feature("shadow") NMTTools_CommonBlockAPI::~NMTTools_CommonBlockAPI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_CommonBlockAPI {
-	~NMTTools_CommonBlockAPI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_CommonBlockAPI\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -801,10 +1019,18 @@ class NMTTools_ListOfCoupleOfShape {
 		void InsertAfter(NMTTools_ListOfCoupleOfShape & Other, NMTTools_ListIteratorOfListOfCoupleOfShape & It);
 
 };
+%feature("shadow") NMTTools_ListOfCoupleOfShape::~NMTTools_ListOfCoupleOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_ListOfCoupleOfShape {
-	~NMTTools_ListOfCoupleOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_ListOfCoupleOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -816,8 +1042,18 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape : publ
 		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const TopoDS_Shape &K1, const Standard_Integer K2, const TopTools_IndexedMapOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -836,10 +1072,18 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape : publ
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
-	~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -875,10 +1119,18 @@ class NMTTools_CommonBlock {
 		Standard_Boolean Contains(const BOPTools_PaveBlock &aPB) const;
 
 };
+%feature("shadow") NMTTools_CommonBlock::~NMTTools_CommonBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_CommonBlock {
-	~NMTTools_CommonBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_CommonBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -912,10 +1164,18 @@ class NMTTools_DataMapOfIntegerListOfPaveBlock : public TCollection_BasicMap {
 		BOPTools_ListOfPaveBlock & operator()(const Standard_Integer &K);
 
 };
+%feature("shadow") NMTTools_DataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapOfIntegerListOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_DataMapOfIntegerListOfPaveBlock {
-	~NMTTools_DataMapOfIntegerListOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_DataMapOfIntegerListOfPaveBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -937,10 +1197,18 @@ class NMTTools_ListIteratorOfListOfCoupleOfShape {
 		NMTTools_CoupleOfShape & Value() const;
 
 };
+%feature("shadow") NMTTools_ListIteratorOfListOfCoupleOfShape::~NMTTools_ListIteratorOfListOfCoupleOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_ListIteratorOfListOfCoupleOfShape {
-	~NMTTools_ListIteratorOfListOfCoupleOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_ListIteratorOfListOfCoupleOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -984,10 +1252,18 @@ class NMTTools_IndexedDataMapOfIndexedMapOfInteger : public TCollection_BasicMap
 		TColStd_IndexedMapOfInteger & ChangeFromKey(const Standard_Integer &K);
 
 };
+%feature("shadow") NMTTools_IndexedDataMapOfIndexedMapOfInteger::~NMTTools_IndexedDataMapOfIndexedMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_IndexedDataMapOfIndexedMapOfInteger {
-	~NMTTools_IndexedDataMapOfIndexedMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_IndexedDataMapOfIndexedMapOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1061,7 +1337,7 @@ class NMTTools_PaveFiller {
 		void PrepareFace(const Standard_Integer nF, TopoDS_Face & aF);
 		%feature("autodoc", "1");
 		const BOPTools_PaveBlock & RealPaveBlock(const BOPTools_PaveBlock &aPB);
-		%feature("autodoc","RealPaveBlock(const aPB)->Standard_Integer");
+		%feature("autodoc","RealPaveBlock(const aPB) -> Standard_Integer");
 		const BOPTools_PaveBlock & RealPaveBlock(const BOPTools_PaveBlock &aPB, TColStd_ListOfInteger & aLB, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void RealSplitsFace(const Standard_Integer nF2, BOPTools_ListOfPaveBlock & aLs);
@@ -1107,10 +1383,18 @@ class NMTTools_PaveFiller {
 		void FuseVertices(const TopoDS_Shape &aC, TopTools_DataMapOfShapeShape & aDMVV) const;
 
 };
+%feature("shadow") NMTTools_PaveFiller::~NMTTools_PaveFiller %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_PaveFiller {
-	~NMTTools_PaveFiller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_PaveFiller\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1126,10 +1410,18 @@ class NMTTools_CheckerSI : public NMTTools_PaveFiller {
 		Standard_Integer StopStatus() const;
 
 };
+%feature("shadow") NMTTools_CheckerSI::~NMTTools_CheckerSI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_CheckerSI {
-	~NMTTools_CheckerSI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_CheckerSI\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1155,10 +1447,18 @@ class NMTTools_ListNodeOfListOfCoupleOfShape : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NMTTools_ListNodeOfListOfCoupleOfShape::~NMTTools_ListNodeOfListOfCoupleOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_ListNodeOfListOfCoupleOfShape {
-	~NMTTools_ListNodeOfListOfCoupleOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_ListNodeOfListOfCoupleOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1170,8 +1470,18 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock : public TColl
 		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock(const TopoDS_Shape &K1, const Standard_Integer K2, const BOPTools_PaveBlock &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -1190,10 +1500,18 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock : public TColl
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock {
-	~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1213,9 +1531,17 @@ class NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock : public TCollec
 		const BOPTools_ListOfPaveBlock & Value() const;
 
 };
+%feature("shadow") NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock {
-	~NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

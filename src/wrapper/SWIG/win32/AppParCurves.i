@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include AppParCurves_dependencies.i
 
 
@@ -64,10 +68,18 @@ class Handle_AppParCurves_HArray1OfMultiCurve : public Handle_MMgt_TShared {
 	return (AppParCurves_HArray1OfMultiCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AppParCurves_HArray1OfMultiCurve::~Handle_AppParCurves_HArray1OfMultiCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AppParCurves_HArray1OfMultiCurve {
-	~Handle_AppParCurves_HArray1OfMultiCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -94,10 +106,18 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public Handle_
 	return (AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve::~Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
-	~Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -124,10 +144,18 @@ class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
 	return (AppParCurves_HArray1OfMultiBSpCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AppParCurves_HArray1OfMultiBSpCurve::~Handle_AppParCurves_HArray1OfMultiBSpCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
-	~Handle_AppParCurves_HArray1OfMultiBSpCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiBSpCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -154,10 +182,18 @@ class Handle_AppParCurves_HArray1OfMultiPoint : public Handle_MMgt_TShared {
 	return (AppParCurves_HArray1OfMultiPoint*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AppParCurves_HArray1OfMultiPoint::~Handle_AppParCurves_HArray1OfMultiPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AppParCurves_HArray1OfMultiPoint {
-	~Handle_AppParCurves_HArray1OfMultiPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -184,10 +220,18 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public Handle_TCo
 	return (AppParCurves_SequenceNodeOfSequenceOfMultiCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve::~Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
-	~Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -214,10 +258,18 @@ class Handle_AppParCurves_HArray1OfConstraintCouple : public Handle_MMgt_TShared
 	return (AppParCurves_HArray1OfConstraintCouple*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AppParCurves_HArray1OfConstraintCouple::~Handle_AppParCurves_HArray1OfConstraintCouple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AppParCurves_HArray1OfConstraintCouple {
-	~Handle_AppParCurves_HArray1OfConstraintCouple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_HArray1OfConstraintCouple\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -244,10 +296,18 @@ class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
 	return (AppParCurves_SmoothCriterion*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AppParCurves_SmoothCriterion::~Handle_AppParCurves_SmoothCriterion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AppParCurves_SmoothCriterion {
-	~Handle_AppParCurves_SmoothCriterion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_SmoothCriterion\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -311,10 +371,18 @@ class AppParCurves_MultiCurve {
 		};
 
 };
+%feature("shadow") AppParCurves_MultiCurve::~AppParCurves_MultiCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_MultiCurve {
-	~AppParCurves_MultiCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_MultiCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -348,10 +416,18 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		};
 
 };
+%feature("shadow") AppParCurves_MultiBSpCurve::~AppParCurves_MultiBSpCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_MultiBSpCurve {
-	~AppParCurves_MultiBSpCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_MultiBSpCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -391,10 +467,18 @@ class AppParCurves_Array1OfMultiCurve {
 		AppParCurves_MultiCurve & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") AppParCurves_Array1OfMultiCurve::~AppParCurves_Array1OfMultiCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_Array1OfMultiCurve {
-	~AppParCurves_Array1OfMultiCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_Array1OfMultiCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -434,10 +518,18 @@ class AppParCurves_Array1OfMultiBSpCurve {
 		AppParCurves_MultiBSpCurve & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") AppParCurves_Array1OfMultiBSpCurve::~AppParCurves_Array1OfMultiBSpCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_Array1OfMultiBSpCurve {
-	~AppParCurves_Array1OfMultiBSpCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_Array1OfMultiBSpCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -459,10 +551,18 @@ class AppParCurves_ConstraintCouple {
 		void SetConstraint(const AppParCurves_Constraint Cons);
 
 };
+%feature("shadow") AppParCurves_ConstraintCouple::~AppParCurves_ConstraintCouple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_ConstraintCouple {
-	~AppParCurves_ConstraintCouple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_ConstraintCouple\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -488,10 +588,18 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public TCollection_SeqNo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AppParCurves_SequenceNodeOfSequenceOfMultiCurve::~AppParCurves_SequenceNodeOfSequenceOfMultiCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
-	~AppParCurves_SequenceNodeOfSequenceOfMultiCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_SequenceNodeOfSequenceOfMultiCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -535,10 +643,18 @@ class AppParCurves_HArray1OfMultiCurve : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AppParCurves_HArray1OfMultiCurve::~AppParCurves_HArray1OfMultiCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_HArray1OfMultiCurve {
-	~AppParCurves_HArray1OfMultiCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_HArray1OfMultiCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -554,17 +670,27 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 		virtual		void GetCurve(Handle_FEmTool_Curve & C) const;
 		%feature("autodoc", "1");
 		virtual		void SetEstimation(const Standard_Real E1, const Standard_Real E2, const Standard_Real E3);
-		%feature("autodoc", "1");
-		virtual		Standard_Real & EstLength();
-		%feature("autodoc","GetEstimation()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetEstLength() {
+				return (Standard_Real) $self->EstLength();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetEstLength(Standard_Real value ) {
+				$self->EstLength()=value;
+				}
+		};
+		%feature("autodoc","GetEstimation() -> [Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void GetEstimation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_FEmTool_HAssemblyTable AssemblyTable() const;
 		%feature("autodoc", "1");
 		virtual		Handle_TColStd_HArray2OfInteger DependenceTable() const;
-		%feature("autodoc","QualityValues(Standard_Real J1min, Standard_Real J2min, Standard_Real J3min)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","QualityValues(Standard_Real J1min, Standard_Real J2min, Standard_Real J3min) -> [Standard_RealStandard_RealStandard_Real]");
 		virtual		Standard_Integer QualityValues(const Standard_Real J1min, const Standard_Real J2min, const Standard_Real J3min, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","ErrorValues()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","ErrorValues() -> [Standard_Real, Standard_Real, Standard_Real]");
 		virtual		void ErrorValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Hessian(const Standard_Integer Element, const Standard_Integer Dimension1, const Standard_Integer Dimension2, math_Matrix & H);
@@ -574,7 +700,7 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 		virtual		void InputVector(const math_Vector &X, const Handle_FEmTool_HAssemblyTable &AssTable);
 		%feature("autodoc", "1");
 		virtual		void SetWeight(const Standard_Real QuadraticWeight, const Standard_Real QualityWeight, const Standard_Real percentJ1, const Standard_Real percentJ2, const Standard_Real percentJ3);
-		%feature("autodoc","GetWeight()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","GetWeight() -> [Standard_Real, Standard_Real]");
 		virtual		void GetWeight(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void SetWeight(const TColStd_Array1OfReal &Weight);
@@ -592,10 +718,18 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AppParCurves_SmoothCriterion::~AppParCurves_SmoothCriterion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_SmoothCriterion {
-	~AppParCurves_SmoothCriterion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_SmoothCriterion\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -643,10 +777,18 @@ class AppParCurves_MultiPoint {
 		};
 
 };
+%feature("shadow") AppParCurves_MultiPoint::~AppParCurves_MultiPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_MultiPoint {
-	~AppParCurves_MultiPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_MultiPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -686,10 +828,18 @@ class AppParCurves_Array1OfConstraintCouple {
 		AppParCurves_ConstraintCouple & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") AppParCurves_Array1OfConstraintCouple::~AppParCurves_Array1OfConstraintCouple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_Array1OfConstraintCouple {
-	~AppParCurves_Array1OfConstraintCouple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_Array1OfConstraintCouple\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -743,10 +893,18 @@ class AppParCurves_SequenceOfMultiBSpCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") AppParCurves_SequenceOfMultiBSpCurve::~AppParCurves_SequenceOfMultiBSpCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_SequenceOfMultiBSpCurve {
-	~AppParCurves_SequenceOfMultiBSpCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_SequenceOfMultiBSpCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -800,10 +958,18 @@ class AppParCurves_SequenceOfMultiCurve : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") AppParCurves_SequenceOfMultiCurve::~AppParCurves_SequenceOfMultiCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_SequenceOfMultiCurve {
-	~AppParCurves_SequenceOfMultiCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_SequenceOfMultiCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -829,10 +995,18 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public TCollection_Se
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve::~AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
-	~AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -872,10 +1046,18 @@ class AppParCurves_Array1OfMultiPoint {
 		AppParCurves_MultiPoint & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") AppParCurves_Array1OfMultiPoint::~AppParCurves_Array1OfMultiPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_Array1OfMultiPoint {
-	~AppParCurves_Array1OfMultiPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_Array1OfMultiPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -919,10 +1101,18 @@ class AppParCurves_HArray1OfConstraintCouple : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AppParCurves_HArray1OfConstraintCouple::~AppParCurves_HArray1OfConstraintCouple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_HArray1OfConstraintCouple {
-	~AppParCurves_HArray1OfConstraintCouple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_HArray1OfConstraintCouple\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -966,10 +1156,18 @@ class AppParCurves_HArray1OfMultiPoint : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AppParCurves_HArray1OfMultiPoint::~AppParCurves_HArray1OfMultiPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_HArray1OfMultiPoint {
-	~AppParCurves_HArray1OfMultiPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_HArray1OfMultiPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -989,10 +1187,18 @@ class AppParCurves {
 		void SplineFunction(const Standard_Integer NbPoles, const Standard_Integer Degree, const math_Vector &Parameters, const math_Vector &FlatKnots, math_Matrix & A, math_Matrix & DA, math_IntegerVector & Index);
 
 };
+%feature("shadow") AppParCurves::~AppParCurves %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves {
-	~AppParCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1036,9 +1242,17 @@ class AppParCurves_HArray1OfMultiBSpCurve : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AppParCurves_HArray1OfMultiBSpCurve::~AppParCurves_HArray1OfMultiBSpCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppParCurves_HArray1OfMultiBSpCurve {
-	~AppParCurves_HArray1OfMultiBSpCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppParCurves_HArray1OfMultiBSpCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

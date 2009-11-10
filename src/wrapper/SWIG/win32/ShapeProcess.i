@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ShapeProcess_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_T
 	return (ShapeProcess_StackItemOfDictionaryOfOperator*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeProcess_StackItemOfDictionaryOfOperator::~Handle_ShapeProcess_StackItemOfDictionaryOfOperator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeProcess_StackItemOfDictionaryOfOperator {
-	~Handle_ShapeProcess_StackItemOfDictionaryOfOperator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_StackItemOfDictionaryOfOperator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_ShapeProcess_Operator : public Handle_MMgt_TShared {
 	return (ShapeProcess_Operator*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeProcess_Operator::~Handle_ShapeProcess_Operator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeProcess_Operator {
-	~Handle_ShapeProcess_Operator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_Operator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_ShapeProcess_UOperator : public Handle_ShapeProcess_Operator {
 	return (ShapeProcess_UOperator*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeProcess_UOperator::~Handle_ShapeProcess_UOperator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeProcess_UOperator {
-	~Handle_ShapeProcess_UOperator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_UOperator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
 	return (ShapeProcess_Context*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeProcess_Context::~Handle_ShapeProcess_Context %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeProcess_Context {
-	~Handle_ShapeProcess_Context() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_Context\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_ShapeProcess_DictionaryOfOperator : public Handle_MMgt_TShared {
 	return (ShapeProcess_DictionaryOfOperator*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeProcess_DictionaryOfOperator::~Handle_ShapeProcess_DictionaryOfOperator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeProcess_DictionaryOfOperator {
-	~Handle_ShapeProcess_DictionaryOfOperator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_DictionaryOfOperator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_ShapeProcess_ShapeContext : public Handle_ShapeProcess_Context {
 	return (ShapeProcess_ShapeContext*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeProcess_ShapeContext::~Handle_ShapeProcess_ShapeContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeProcess_ShapeContext {
-	~Handle_ShapeProcess_ShapeContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_ShapeContext\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -234,10 +286,18 @@ class ShapeProcess_Operator : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeProcess_Operator::~ShapeProcess_Operator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeProcess_Operator {
-	~ShapeProcess_Operator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeProcess_Operator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -259,10 +319,18 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeProcess_UOperator::~ShapeProcess_UOperator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeProcess_UOperator {
-	~ShapeProcess_UOperator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeProcess_UOperator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -278,10 +346,18 @@ class ShapeProcess_OperLibrary {
 		TopoDS_Shape ApplyModifier(const TopoDS_Shape &S, const Handle_ShapeProcess_ShapeContext &context, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & map);
 
 };
+%feature("shadow") ShapeProcess_OperLibrary::~ShapeProcess_OperLibrary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeProcess_OperLibrary {
-	~ShapeProcess_OperLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeProcess_OperLibrary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -299,10 +375,18 @@ class ShapeProcess {
 		Standard_Boolean Perform(const Handle_ShapeProcess_Context &context, const char * seq);
 
 };
+%feature("shadow") ShapeProcess::~ShapeProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeProcess {
-	~ShapeProcess() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeProcess\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -360,10 +444,18 @@ class ShapeProcess_DictionaryOfOperator : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeProcess_DictionaryOfOperator::~ShapeProcess_DictionaryOfOperator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeProcess_DictionaryOfOperator {
-	~ShapeProcess_DictionaryOfOperator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeProcess_DictionaryOfOperator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -395,10 +487,18 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeProcess_StackItemOfDictionaryOfOperator::~ShapeProcess_StackItemOfDictionaryOfOperator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeProcess_StackItemOfDictionaryOfOperator {
-	~ShapeProcess_StackItemOfDictionaryOfOperator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeProcess_StackItemOfDictionaryOfOperator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -424,10 +524,18 @@ class ShapeProcess_IteratorOfDictionaryOfOperator {
 		TCollection_AsciiString Name() const;
 
 };
+%feature("shadow") ShapeProcess_IteratorOfDictionaryOfOperator::~ShapeProcess_IteratorOfDictionaryOfOperator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeProcess_IteratorOfDictionaryOfOperator {
-	~ShapeProcess_IteratorOfDictionaryOfOperator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeProcess_IteratorOfDictionaryOfOperator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -451,9 +559,9 @@ class ShapeProcess_Context : public MMgt_TShared {
 		void UnSetScope();
 		%feature("autodoc", "1");
 		Standard_Boolean IsParamSet(const char * param) const;
-		%feature("autodoc","GetReal(Standard_CString param)->Standard_Real");
+		%feature("autodoc","GetReal(Standard_CString param) -> Standard_Real");
 		Standard_Boolean GetReal(const char * param, Standard_Real &OutValue) const;
-		%feature("autodoc","GetInteger(Standard_CString param)->Standard_Integer");
+		%feature("autodoc","GetInteger(Standard_CString param) -> Standard_Integer");
 		Standard_Boolean GetInteger(const char * param, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean GetBoolean(const char * param, Standard_Boolean & val) const;
@@ -489,10 +597,18 @@ class ShapeProcess_Context : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeProcess_Context::~ShapeProcess_Context %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeProcess_Context {
-	~ShapeProcess_Context() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeProcess_Context\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -550,9 +666,17 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeProcess_ShapeContext::~ShapeProcess_ShapeContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeProcess_ShapeContext {
-	~ShapeProcess_ShapeContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeProcess_ShapeContext\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,8 +27,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Archimede_dependencies.i
 
 
 %include Archimede_headers.i
+
 

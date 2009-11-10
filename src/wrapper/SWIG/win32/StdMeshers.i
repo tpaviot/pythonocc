@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StdMeshers_dependencies.i
 
 
@@ -59,10 +63,18 @@ class StdMeshers_MaxElementVolume : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_MaxElementVolume::~StdMeshers_MaxElementVolume %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_MaxElementVolume {
-	~StdMeshers_MaxElementVolume() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_MaxElementVolume\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -107,10 +119,18 @@ class StdMeshers_ProjectionSource3D : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_ProjectionSource3D::~StdMeshers_ProjectionSource3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_ProjectionSource3D {
-	~StdMeshers_ProjectionSource3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_ProjectionSource3D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -169,10 +189,18 @@ class StdMeshers_NumberOfSegments : public SMESH_Hypothesis {
 		};
 
 };
+%feature("shadow") StdMeshers_NumberOfSegments::~StdMeshers_NumberOfSegments %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_NumberOfSegments {
-	~StdMeshers_NumberOfSegments() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_NumberOfSegments\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -194,10 +222,18 @@ class StdMeshers_Regular_1D : public SMESH_1D_Algo {
 		virtual		void SubmeshRestored(SMESH_subMesh* subMesh);
 
 };
+%feature("shadow") StdMeshers_Regular_1D::~StdMeshers_Regular_1D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_Regular_1D {
-	~StdMeshers_Regular_1D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_Regular_1D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -226,10 +262,18 @@ class StdMeshers_MaxElementArea : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_MaxElementArea::~StdMeshers_MaxElementArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_MaxElementArea {
-	~StdMeshers_MaxElementArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_MaxElementArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -245,10 +289,18 @@ class StdMeshers_RadialPrism_3D : public SMESH_3D_Algo {
 		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
 
 };
+%feature("shadow") StdMeshers_RadialPrism_3D::~StdMeshers_RadialPrism_3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_RadialPrism_3D {
-	~StdMeshers_RadialPrism_3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_RadialPrism_3D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -288,10 +340,18 @@ class StdMeshers_PrismAsBlock : public SMESH_Block {
 		bool GetWallFaces(SMESH_Mesh* mesh, const TopoDS_Shape &mainShape, const TopoDS_Shape &bottomFace, std::list<TopoDS_Edge>, std::list<TopoDS_Face>);
 
 };
+%feature("shadow") StdMeshers_PrismAsBlock::~StdMeshers_PrismAsBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_PrismAsBlock {
-	~StdMeshers_PrismAsBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_PrismAsBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -307,10 +367,18 @@ class StdMeshers_Hexa_3D : public SMESH_3D_Algo {
 		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
 
 };
+%feature("shadow") StdMeshers_Hexa_3D::~StdMeshers_Hexa_3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_Hexa_3D {
-	~StdMeshers_Hexa_3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_Hexa_3D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -335,10 +403,18 @@ class StdMeshers_TrianglePreference : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_TrianglePreference::~StdMeshers_TrianglePreference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_TrianglePreference {
-	~StdMeshers_TrianglePreference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_TrianglePreference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -358,10 +434,18 @@ class StdMeshers_Prism_3D : public SMESH_3D_Algo {
 		void AddPrisms(std::vector<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*,std::allocator<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*> > & nodeColumns, SMESH_MesherHelper* helper);
 
 };
+%feature("shadow") StdMeshers_Prism_3D::~StdMeshers_Prism_3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_Prism_3D {
-	~StdMeshers_Prism_3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_Prism_3D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -377,10 +461,18 @@ class StdMeshers_UseExisting_2D : public SMESH_2D_Algo {
 		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
 
 };
+%feature("shadow") StdMeshers_UseExisting_2D::~StdMeshers_UseExisting_2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_UseExisting_2D {
-	~StdMeshers_UseExisting_2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_UseExisting_2D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -398,10 +490,18 @@ class StdMeshers_QuadToTriaAdaptor {
 		std::list<const SMDS_FaceOfNodes*,std::allocator<const SMDS_FaceOfNodes*> > const * GetTriangles(const SMDS_MeshElement *aFace);
 
 };
+%feature("shadow") StdMeshers_QuadToTriaAdaptor::~StdMeshers_QuadToTriaAdaptor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_QuadToTriaAdaptor {
-	~StdMeshers_QuadToTriaAdaptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_QuadToTriaAdaptor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -419,10 +519,18 @@ class StdMeshers_Projection_1D : public SMESH_1D_Algo {
 		virtual		void SetEventListener(SMESH_subMesh* whenSetToSubMesh);
 
 };
+%feature("shadow") StdMeshers_Projection_1D::~StdMeshers_Projection_1D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_Projection_1D {
-	~StdMeshers_Projection_1D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_Projection_1D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -440,10 +548,18 @@ class StdMeshers_Projection_3D : public SMESH_3D_Algo {
 		virtual		void SetEventListener(SMESH_subMesh* whenSetToSubMesh);
 
 };
+%feature("shadow") StdMeshers_Projection_3D::~StdMeshers_Projection_3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_Projection_3D {
-	~StdMeshers_Projection_3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_Projection_3D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -472,10 +588,18 @@ class StdMeshers_LayerDistribution : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_LayerDistribution::~StdMeshers_LayerDistribution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_LayerDistribution {
-	~StdMeshers_LayerDistribution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_LayerDistribution\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -495,10 +619,18 @@ class StdMeshers_MEFISTO_2D : public SMESH_2D_Algo {
 		void StoreResult(Z , R2* uvst, Z , Z* nust, std::vector<SMDS_MeshNode const*, std::allocator<SMDS_MeshNode const*> > & mefistoToDS, double , double );
 
 };
+%feature("shadow") StdMeshers_MEFISTO_2D::~StdMeshers_MEFISTO_2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_MEFISTO_2D {
-	~StdMeshers_MEFISTO_2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_MEFISTO_2D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -545,10 +677,18 @@ class StdMeshers_ProjectionSource2D : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_ProjectionSource2D::~StdMeshers_ProjectionSource2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_ProjectionSource2D {
-	~StdMeshers_ProjectionSource2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_ProjectionSource2D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -579,10 +719,18 @@ class StdMeshers_Propagation : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_Propagation::~StdMeshers_Propagation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_Propagation {
-	~StdMeshers_Propagation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_Propagation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -611,10 +759,18 @@ class StdMeshers_Deflection1D : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_Deflection1D::~StdMeshers_Deflection1D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_Deflection1D {
-	~StdMeshers_Deflection1D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_Deflection1D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -653,10 +809,18 @@ class StdMeshers_MaxLength : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_MaxLength::~StdMeshers_MaxLength %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_MaxLength {
-	~StdMeshers_MaxLength() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_MaxLength\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -672,10 +836,18 @@ class StdMeshers_UseExisting_1D : public SMESH_1D_Algo {
 		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
 
 };
+%feature("shadow") StdMeshers_UseExisting_1D::~StdMeshers_UseExisting_1D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_UseExisting_1D {
-	~StdMeshers_UseExisting_1D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_UseExisting_1D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -704,10 +876,18 @@ class StdMeshers_Arithmetic1D : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_Arithmetic1D::~StdMeshers_Arithmetic1D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_Arithmetic1D {
-	~StdMeshers_Arithmetic1D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_Arithmetic1D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -725,10 +905,18 @@ class StdMeshers_Projection_2D : public SMESH_2D_Algo {
 		virtual		void SetEventListener(SMESH_subMesh* whenSetToSubMesh);
 
 };
+%feature("shadow") StdMeshers_Projection_2D::~StdMeshers_Projection_2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_Projection_2D {
-	~StdMeshers_Projection_2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_Projection_2D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -757,10 +945,18 @@ class StdMeshers_LengthFromEdges : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_LengthFromEdges::~StdMeshers_LengthFromEdges %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_LengthFromEdges {
-	~StdMeshers_LengthFromEdges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_LengthFromEdges\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -788,10 +984,18 @@ class StdMeshers_TNode {
 		int BaseNodeID() const;
 
 };
+%feature("shadow") StdMeshers_TNode::~StdMeshers_TNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_TNode {
-	~StdMeshers_TNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_TNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -820,10 +1024,18 @@ class StdMeshers_SegmentLengthAroundVertex : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_SegmentLengthAroundVertex::~StdMeshers_SegmentLengthAroundVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_SegmentLengthAroundVertex {
-	~StdMeshers_SegmentLengthAroundVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_SegmentLengthAroundVertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -839,10 +1051,18 @@ class StdMeshers_CompositeHexa_3D : public SMESH_3D_Algo {
 		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
 
 };
+%feature("shadow") StdMeshers_CompositeHexa_3D::~StdMeshers_CompositeHexa_3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_CompositeHexa_3D {
-	~StdMeshers_CompositeHexa_3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_CompositeHexa_3D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -889,10 +1109,18 @@ class StdMeshers_ProjectionSource1D : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_ProjectionSource1D::~StdMeshers_ProjectionSource1D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_ProjectionSource1D {
-	~StdMeshers_ProjectionSource1D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_ProjectionSource1D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -921,10 +1149,18 @@ class StdMeshers_NumberOfLayers : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_NumberOfLayers::~StdMeshers_NumberOfLayers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_NumberOfLayers {
-	~StdMeshers_NumberOfLayers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_NumberOfLayers\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -942,10 +1178,18 @@ class StdMeshers_Quadrangle_2D : public SMESH_2D_Algo {
 		FaceQuadStruct * CheckAnd2Dcompute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, const bool CreateQuadratic);
 
 };
+%feature("shadow") StdMeshers_Quadrangle_2D::~StdMeshers_Quadrangle_2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_Quadrangle_2D {
-	~StdMeshers_Quadrangle_2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_Quadrangle_2D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -969,10 +1213,18 @@ class StdMeshers_Penta_3D {
 		bool LoadIJNodes(StdMeshers_IJNodeMap & theIJNodes, const TopoDS_Face &theFace, const TopoDS_Edge &theBaseEdge, SMESHDS_Mesh* theMesh);
 
 };
+%feature("shadow") StdMeshers_Penta_3D::~StdMeshers_Penta_3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_Penta_3D {
-	~StdMeshers_Penta_3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_Penta_3D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -997,10 +1249,18 @@ class StdMeshers_QuadranglePreference : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_QuadranglePreference::~StdMeshers_QuadranglePreference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_QuadranglePreference {
-	~StdMeshers_QuadranglePreference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_QuadranglePreference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1029,10 +1289,18 @@ class StdMeshers_StartEndLength : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_StartEndLength::~StdMeshers_StartEndLength %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_StartEndLength {
-	~StdMeshers_StartEndLength() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_StartEndLength\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1065,10 +1333,18 @@ class StdMeshers_LocalLength : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_LocalLength::~StdMeshers_LocalLength %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_LocalLength {
-	~StdMeshers_LocalLength() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_LocalLength\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1101,10 +1377,18 @@ class StdMeshers_AutomaticLength : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_AutomaticLength::~StdMeshers_AutomaticLength %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_AutomaticLength {
-	~StdMeshers_AutomaticLength() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_AutomaticLength\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1142,10 +1426,18 @@ class StdMeshers_SMESHBlock {
 		SMESH_ComputeErrorPtr GetError() const;
 
 };
+%feature("shadow") StdMeshers_SMESHBlock::~StdMeshers_SMESHBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_SMESHBlock {
-	~StdMeshers_SMESHBlock() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_SMESHBlock\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1170,10 +1462,18 @@ class StdMeshers_QuadraticMesh : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_QuadraticMesh::~StdMeshers_QuadraticMesh %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_QuadraticMesh {
-	~StdMeshers_QuadraticMesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_QuadraticMesh\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1198,10 +1498,18 @@ class StdMeshers_NotConformAllowed : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
+%feature("shadow") StdMeshers_NotConformAllowed::~StdMeshers_NotConformAllowed %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_NotConformAllowed {
-	~StdMeshers_NotConformAllowed() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_NotConformAllowed\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1217,10 +1525,18 @@ class StdMeshers_SegmentAroundVertex_0D : public SMESH_0D_Algo {
 		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
 
 };
+%feature("shadow") StdMeshers_SegmentAroundVertex_0D::~StdMeshers_SegmentAroundVertex_0D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_SegmentAroundVertex_0D {
-	~StdMeshers_SegmentAroundVertex_0D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_SegmentAroundVertex_0D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1276,9 +1592,17 @@ class StdMeshers_FaceSide {
 		void dump(const char *msg=0) const;
 
 };
+%feature("shadow") StdMeshers_FaceSide::~StdMeshers_FaceSide %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StdMeshers_FaceSide {
-	~StdMeshers_FaceSide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StdMeshers_FaceSide\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StepSelect_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 	return (StepSelect_WorkLibrary*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepSelect_WorkLibrary::~Handle_StepSelect_WorkLibrary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepSelect_WorkLibrary {
-	~Handle_StepSelect_WorkLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_WorkLibrary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_StepSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 	return (StepSelect_FileModifier*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepSelect_FileModifier::~Handle_StepSelect_FileModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepSelect_FileModifier {
-	~Handle_StepSelect_FileModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_FileModifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 	return (StepSelect_Activator*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepSelect_Activator::~Handle_StepSelect_Activator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepSelect_Activator {
-	~Handle_StepSelect_Activator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_Activator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_StepSelect_ModelModifier : public Handle_IFSelect_Modifier {
 	return (StepSelect_ModelModifier*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepSelect_ModelModifier::~Handle_StepSelect_ModelModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepSelect_ModelModifier {
-	~Handle_StepSelect_ModelModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_ModelModifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_StepSelect_FloatFormat : public Handle_StepSelect_FileModifier {
 	return (StepSelect_FloatFormat*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepSelect_FloatFormat::~Handle_StepSelect_FloatFormat %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepSelect_FloatFormat {
-	~Handle_StepSelect_FloatFormat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_FloatFormat\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_StepSelect_StepType : public Handle_IFSelect_Signature {
 	return (StepSelect_StepType*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepSelect_StepType::~Handle_StepSelect_StepType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepSelect_StepType {
-	~Handle_StepSelect_StepType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_StepType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -234,10 +286,18 @@ class StepSelect_FileModifier : public IFSelect_GeneralModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepSelect_FileModifier::~StepSelect_FileModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepSelect_FileModifier {
-	~StepSelect_FileModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_FileModifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -271,10 +331,18 @@ class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepSelect_WorkLibrary::~StepSelect_WorkLibrary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepSelect_WorkLibrary {
-	~StepSelect_WorkLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_WorkLibrary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -302,10 +370,18 @@ class StepSelect_StepType : public IFSelect_Signature {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepSelect_StepType::~StepSelect_StepType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepSelect_StepType {
-	~StepSelect_StepType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_StepType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -323,7 +399,7 @@ class StepSelect_FloatFormat : public StepSelect_FileModifier {
 		void SetFormat(const char * format="%E");
 		%feature("autodoc", "1");
 		void SetFormatForRange(const char * format="%f", const Standard_Real Rmin=1.00000000000000005551115123125782702118158340454e-1, const Standard_Real Rmax=1.0e+3);
-		%feature("autodoc","Format()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Format() -> [Standard_Real, Standard_Real]");
 		void Format(Standard_Boolean & zerosup, TCollection_AsciiString & mainform, Standard_Boolean & hasrange, TCollection_AsciiString & forminrange, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Perform(IFSelect_ContextWrite & ctx, StepData_StepWriter & writer) const;
@@ -343,10 +419,18 @@ class StepSelect_FloatFormat : public StepSelect_FileModifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepSelect_FloatFormat::~StepSelect_FloatFormat %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepSelect_FloatFormat {
-	~StepSelect_FloatFormat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_FloatFormat\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -374,10 +458,18 @@ class StepSelect_ModelModifier : public IFSelect_Modifier {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepSelect_ModelModifier::~StepSelect_ModelModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepSelect_ModelModifier {
-	~StepSelect_ModelModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_ModelModifier\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -405,9 +497,17 @@ class StepSelect_Activator : public IFSelect_Activator {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepSelect_Activator::~StepSelect_Activator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepSelect_Activator {
-	~StepSelect_Activator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepSelect_Activator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include CDM_dependencies.i
 
 
@@ -66,10 +70,18 @@ class Handle_CDM_Reference : public Handle_Standard_Transient {
 	return (CDM_Reference*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_Reference::~Handle_CDM_Reference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_Reference {
-	~Handle_CDM_Reference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_Reference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -96,10 +108,18 @@ class Handle_CDM_StackNodeOfStackOfDocument : public Handle_TCollection_MapNode 
 	return (CDM_StackNodeOfStackOfDocument*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_StackNodeOfStackOfDocument::~Handle_CDM_StackNodeOfStackOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_StackNodeOfStackOfDocument {
-	~Handle_CDM_StackNodeOfStackOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_StackNodeOfStackOfDocument\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -126,10 +146,18 @@ class Handle_CDM_Application : public Handle_Standard_Transient {
 	return (CDM_Application*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_Application::~Handle_CDM_Application %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_Application {
-	~Handle_CDM_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_Application\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -156,10 +184,18 @@ class Handle_CDM_MessageDriver : public Handle_Standard_Transient {
 	return (CDM_MessageDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_MessageDriver::~Handle_CDM_MessageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_MessageDriver {
-	~Handle_CDM_MessageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_MessageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -186,10 +222,18 @@ class Handle_CDM_COutMessageDriver : public Handle_CDM_MessageDriver {
 	return (CDM_COutMessageDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_COutMessageDriver::~Handle_CDM_COutMessageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_COutMessageDriver {
-	~Handle_CDM_COutMessageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_COutMessageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -216,10 +260,18 @@ class Handle_CDM_DataMapNodeOfNamesDirectory : public Handle_TCollection_MapNode
 	return (CDM_DataMapNodeOfNamesDirectory*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_DataMapNodeOfNamesDirectory::~Handle_CDM_DataMapNodeOfNamesDirectory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_DataMapNodeOfNamesDirectory {
-	~Handle_CDM_DataMapNodeOfNamesDirectory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_DataMapNodeOfNamesDirectory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -246,10 +298,18 @@ class Handle_CDM_StdMapNodeOfMapOfDocument : public Handle_TCollection_MapNode {
 	return (CDM_StdMapNodeOfMapOfDocument*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_StdMapNodeOfMapOfDocument::~Handle_CDM_StdMapNodeOfMapOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_StdMapNodeOfMapOfDocument {
-	~Handle_CDM_StdMapNodeOfMapOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_StdMapNodeOfMapOfDocument\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -276,10 +336,18 @@ class Handle_CDM_DataMapNodeOfMetaDataLookUpTable : public Handle_TCollection_Ma
 	return (CDM_DataMapNodeOfMetaDataLookUpTable*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_DataMapNodeOfMetaDataLookUpTable::~Handle_CDM_DataMapNodeOfMetaDataLookUpTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_DataMapNodeOfMetaDataLookUpTable {
-	~Handle_CDM_DataMapNodeOfMetaDataLookUpTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_DataMapNodeOfMetaDataLookUpTable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -306,10 +374,18 @@ class Handle_CDM_Document : public Handle_Standard_Transient {
 	return (CDM_Document*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_Document::~Handle_CDM_Document %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_Document {
-	~Handle_CDM_Document() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_Document\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -336,10 +412,18 @@ class Handle_CDM_MetaData : public Handle_Standard_Transient {
 	return (CDM_MetaData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_MetaData::~Handle_CDM_MetaData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_MetaData {
-	~Handle_CDM_MetaData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_MetaData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -366,10 +450,18 @@ class Handle_CDM_NullMessageDriver : public Handle_CDM_MessageDriver {
 	return (CDM_NullMessageDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_NullMessageDriver::~Handle_CDM_NullMessageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_NullMessageDriver {
-	~Handle_CDM_NullMessageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_NullMessageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -396,10 +488,18 @@ class Handle_CDM_DataMapNodeOfPresentationDirectory : public Handle_TCollection_
 	return (CDM_DataMapNodeOfPresentationDirectory*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_DataMapNodeOfPresentationDirectory::~Handle_CDM_DataMapNodeOfPresentationDirectory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_DataMapNodeOfPresentationDirectory {
-	~Handle_CDM_DataMapNodeOfPresentationDirectory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_DataMapNodeOfPresentationDirectory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -426,10 +526,18 @@ class Handle_CDM_ListNodeOfListOfDocument : public Handle_TCollection_MapNode {
 	return (CDM_ListNodeOfListOfDocument*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_ListNodeOfListOfDocument::~Handle_CDM_ListNodeOfListOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_ListNodeOfListOfDocument {
-	~Handle_CDM_ListNodeOfListOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_ListNodeOfListOfDocument\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -456,10 +564,18 @@ class Handle_CDM_ListNodeOfListOfReferences : public Handle_TCollection_MapNode 
 	return (CDM_ListNodeOfListOfReferences*)$self->Access();
 	}
 };
+%feature("shadow") Handle_CDM_ListNodeOfListOfReferences::~Handle_CDM_ListNodeOfListOfReferences %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_CDM_ListNodeOfListOfReferences {
-	~Handle_CDM_ListNodeOfListOfReferences() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_CDM_ListNodeOfListOfReferences\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -509,10 +625,18 @@ class CDM_ListOfDocument {
 		void InsertAfter(CDM_ListOfDocument & Other, CDM_ListIteratorOfListOfDocument & It);
 
 };
+%feature("shadow") CDM_ListOfDocument::~CDM_ListOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_ListOfDocument {
-	~CDM_ListOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_ListOfDocument\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -534,10 +658,18 @@ class CDM_ListIteratorOfListOfReferences {
 		Handle_CDM_Reference & Value() const;
 
 };
+%feature("shadow") CDM_ListIteratorOfListOfReferences::~CDM_ListIteratorOfListOfReferences %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_ListIteratorOfListOfReferences {
-	~CDM_ListIteratorOfListOfReferences() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_ListIteratorOfListOfReferences\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -563,10 +695,18 @@ class CDM_ListNodeOfListOfReferences : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDM_ListNodeOfListOfReferences::~CDM_ListNodeOfListOfReferences %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_ListNodeOfListOfReferences {
-	~CDM_ListNodeOfListOfReferences() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_ListNodeOfListOfReferences\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -600,10 +740,18 @@ class CDM_PresentationDirectory : public TCollection_BasicMap {
 		Handle_CDM_Document & operator()(const TCollection_ExtendedString &K);
 
 };
+%feature("shadow") CDM_PresentationDirectory::~CDM_PresentationDirectory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_PresentationDirectory {
-	~CDM_PresentationDirectory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_PresentationDirectory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -631,10 +779,18 @@ class CDM_DataMapNodeOfPresentationDirectory : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDM_DataMapNodeOfPresentationDirectory::~CDM_DataMapNodeOfPresentationDirectory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_DataMapNodeOfPresentationDirectory {
-	~CDM_DataMapNodeOfPresentationDirectory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_DataMapNodeOfPresentationDirectory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -660,10 +816,18 @@ class CDM_StdMapNodeOfMapOfDocument : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDM_StdMapNodeOfMapOfDocument::~CDM_StdMapNodeOfMapOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_StdMapNodeOfMapOfDocument {
-	~CDM_StdMapNodeOfMapOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_StdMapNodeOfMapOfDocument\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -689,10 +853,18 @@ class CDM_MapOfDocument : public TCollection_BasicMap {
 		Standard_Boolean Remove(const Handle_CDM_Document &aKey);
 
 };
+%feature("shadow") CDM_MapOfDocument::~CDM_MapOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_MapOfDocument {
-	~CDM_MapOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_MapOfDocument\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -720,16 +892,34 @@ class CDM_NamesDirectory : public TCollection_BasicMap {
 		const Standard_Integer & Find(const TCollection_ExtendedString &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const TCollection_ExtendedString &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const TCollection_ExtendedString &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const TCollection_ExtendedString &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TCollection_ExtendedString &K);
 
 };
+%feature("shadow") CDM_NamesDirectory::~CDM_NamesDirectory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_NamesDirectory {
-	~CDM_NamesDirectory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_NamesDirectory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -755,10 +945,18 @@ class CDM_StackNodeOfStackOfDocument : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDM_StackNodeOfStackOfDocument::~CDM_StackNodeOfStackOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_StackNodeOfStackOfDocument {
-	~CDM_StackNodeOfStackOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_StackNodeOfStackOfDocument\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -782,10 +980,18 @@ class CDM_MessageDriver : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDM_MessageDriver::~CDM_MessageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_MessageDriver {
-	~CDM_MessageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_MessageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -807,10 +1013,18 @@ class CDM_NullMessageDriver : public CDM_MessageDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDM_NullMessageDriver::~CDM_NullMessageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_NullMessageDriver {
-	~CDM_NullMessageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_NullMessageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -830,10 +1044,18 @@ class CDM_DataMapIteratorOfNamesDirectory : public TCollection_BasicMapIterator 
 		const Standard_Integer & Value() const;
 
 };
+%feature("shadow") CDM_DataMapIteratorOfNamesDirectory::~CDM_DataMapIteratorOfNamesDirectory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_DataMapIteratorOfNamesDirectory {
-	~CDM_DataMapIteratorOfNamesDirectory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_DataMapIteratorOfNamesDirectory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -855,10 +1077,18 @@ class CDM_ListIteratorOfListOfDocument {
 		Handle_CDM_Document & Value() const;
 
 };
+%feature("shadow") CDM_ListIteratorOfListOfDocument::~CDM_ListIteratorOfListOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_ListIteratorOfListOfDocument {
-	~CDM_ListIteratorOfListOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_ListIteratorOfListOfDocument\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -886,10 +1116,18 @@ class CDM_DataMapNodeOfMetaDataLookUpTable : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDM_DataMapNodeOfMetaDataLookUpTable::~CDM_DataMapNodeOfMetaDataLookUpTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_DataMapNodeOfMetaDataLookUpTable {
-	~CDM_DataMapNodeOfMetaDataLookUpTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_DataMapNodeOfMetaDataLookUpTable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -921,10 +1159,18 @@ class CDM_Application : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDM_Application::~CDM_Application %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_Application {
-	~CDM_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_Application\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -958,10 +1204,18 @@ class CDM_MetaDataLookUpTable : public TCollection_BasicMap {
 		Handle_CDM_MetaData & operator()(const TCollection_ExtendedString &K);
 
 };
+%feature("shadow") CDM_MetaDataLookUpTable::~CDM_MetaDataLookUpTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_MetaDataLookUpTable {
-	~CDM_MetaDataLookUpTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_MetaDataLookUpTable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -983,10 +1237,18 @@ class CDM_StackIteratorOfStackOfDocument {
 		const Handle_CDM_Document & Value() const;
 
 };
+%feature("shadow") CDM_StackIteratorOfStackOfDocument::~CDM_StackIteratorOfStackOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_StackIteratorOfStackOfDocument {
-	~CDM_StackIteratorOfStackOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_StackIteratorOfStackOfDocument\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1012,10 +1274,18 @@ class CDM_ListNodeOfListOfDocument : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDM_ListNodeOfListOfDocument::~CDM_ListNodeOfListOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_ListNodeOfListOfDocument {
-	~CDM_ListNodeOfListOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_ListNodeOfListOfDocument\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1065,10 +1335,18 @@ class CDM_ListOfReferences {
 		void InsertAfter(CDM_ListOfReferences & Other, CDM_ListIteratorOfListOfReferences & It);
 
 };
+%feature("shadow") CDM_ListOfReferences::~CDM_ListOfReferences %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_ListOfReferences {
-	~CDM_ListOfReferences() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_ListOfReferences\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1080,8 +1358,18 @@ class CDM_DataMapNodeOfNamesDirectory : public TCollection_MapNode {
 		CDM_DataMapNodeOfNamesDirectory(const TCollection_ExtendedString &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TCollection_ExtendedString & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1096,10 +1384,18 @@ class CDM_DataMapNodeOfNamesDirectory : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDM_DataMapNodeOfNamesDirectory::~CDM_DataMapNodeOfNamesDirectory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_DataMapNodeOfNamesDirectory {
-	~CDM_DataMapNodeOfNamesDirectory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_DataMapNodeOfNamesDirectory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1119,10 +1415,18 @@ class CDM_DataMapIteratorOfPresentationDirectory : public TCollection_BasicMapIt
 		const Handle_CDM_Document & Value() const;
 
 };
+%feature("shadow") CDM_DataMapIteratorOfPresentationDirectory::~CDM_DataMapIteratorOfPresentationDirectory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_DataMapIteratorOfPresentationDirectory {
-	~CDM_DataMapIteratorOfPresentationDirectory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_DataMapIteratorOfPresentationDirectory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1142,10 +1446,18 @@ class CDM_DataMapIteratorOfMetaDataLookUpTable : public TCollection_BasicMapIter
 		const Handle_CDM_MetaData & Value() const;
 
 };
+%feature("shadow") CDM_DataMapIteratorOfMetaDataLookUpTable::~CDM_DataMapIteratorOfMetaDataLookUpTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_DataMapIteratorOfMetaDataLookUpTable {
-	~CDM_DataMapIteratorOfMetaDataLookUpTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_DataMapIteratorOfMetaDataLookUpTable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1161,10 +1473,18 @@ class CDM_DocumentHasher {
 		Standard_Boolean IsEqual(const Handle_CDM_Document &K1, const Handle_CDM_Document &K2);
 
 };
+%feature("shadow") CDM_DocumentHasher::~CDM_DocumentHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_DocumentHasher {
-	~CDM_DocumentHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_DocumentHasher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1190,10 +1510,18 @@ class CDM_COutMessageDriver : public CDM_MessageDriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDM_COutMessageDriver::~CDM_COutMessageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_COutMessageDriver {
-	~CDM_COutMessageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_COutMessageDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1211,10 +1539,18 @@ class CDM_MapIteratorOfMapOfDocument : public TCollection_BasicMapIterator {
 		const Handle_CDM_Document & Key() const;
 
 };
+%feature("shadow") CDM_MapIteratorOfMapOfDocument::~CDM_MapIteratorOfMapOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_MapIteratorOfMapOfDocument {
-	~CDM_MapIteratorOfMapOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_MapIteratorOfMapOfDocument\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1244,10 +1580,18 @@ class CDM_StackOfDocument {
 		Handle_CDM_Document & ChangeTop();
 
 };
+%feature("shadow") CDM_StackOfDocument::~CDM_StackOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_StackOfDocument {
-	~CDM_StackOfDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_StackOfDocument\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1269,10 +1613,18 @@ class CDM_ReferenceIterator {
 		Standard_Integer DocumentVersion() const;
 
 };
+%feature("shadow") CDM_ReferenceIterator::~CDM_ReferenceIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_ReferenceIterator {
-	~CDM_ReferenceIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_ReferenceIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1330,10 +1682,18 @@ class CDM_MetaData : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDM_MetaData::~CDM_MetaData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_MetaData {
-	~CDM_MetaData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_MetaData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1365,9 +1725,17 @@ class CDM_Reference : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") CDM_Reference::~CDM_Reference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend CDM_Reference {
-	~CDM_Reference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of CDM_Reference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

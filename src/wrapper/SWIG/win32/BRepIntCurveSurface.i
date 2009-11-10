@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepIntCurveSurface_dependencies.i
 
 
@@ -66,9 +70,17 @@ class BRepIntCurveSurface_Inter {
 		const TopoDS_Face & Face() const;
 
 };
+%feature("shadow") BRepIntCurveSurface_Inter::~BRepIntCurveSurface_Inter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepIntCurveSurface_Inter {
-	~BRepIntCurveSurface_Inter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepIntCurveSurface_Inter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

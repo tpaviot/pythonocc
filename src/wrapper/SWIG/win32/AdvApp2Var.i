@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include AdvApp2Var_dependencies.i
 
 
@@ -67,10 +71,18 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch : public Handle_TCollectio
 	return (AdvApp2Var_SequenceNodeOfSequenceOfPatch*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch::~Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch {
-	~Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -97,10 +109,18 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip : public Handle_TCollectio
 	return (AdvApp2Var_SequenceNodeOfSequenceOfStrip*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip::~Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip {
-	~Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -127,10 +147,18 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode : public Handle_TCollection
 	return (AdvApp2Var_SequenceNodeOfSequenceOfNode*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode::~Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode {
-	~Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -157,10 +185,18 @@ class Handle_AdvApp2Var_SequenceNodeOfStrip : public Handle_TCollection_SeqNode 
 	return (AdvApp2Var_SequenceNodeOfStrip*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AdvApp2Var_SequenceNodeOfStrip::~Handle_AdvApp2Var_SequenceNodeOfStrip %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AdvApp2Var_SequenceNodeOfStrip {
-	~Handle_AdvApp2Var_SequenceNodeOfStrip() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfStrip\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -214,10 +250,18 @@ class AdvApp2Var_SequenceOfNode : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") AdvApp2Var_SequenceOfNode::~AdvApp2Var_SequenceOfNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_SequenceOfNode {
-	~AdvApp2Var_SequenceOfNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceOfNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -229,7 +273,7 @@ class AdvApp2Var_Network {
 		AdvApp2Var_Network();
 		%feature("autodoc", "1");
 		AdvApp2Var_Network(const AdvApp2Var_SequenceOfPatch &Net, const TColStd_SequenceOfReal &TheU, const TColStd_SequenceOfReal &TheV);
-		%feature("autodoc","FirstNotApprox()->Standard_Integer");
+		%feature("autodoc","FirstNotApprox() -> Standard_Integer");
 		Standard_Boolean FirstNotApprox(Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		AdvApp2Var_Patch & ChangePatch(const Standard_Integer Index);
@@ -239,7 +283,7 @@ class AdvApp2Var_Network {
 		void UpdateInU(const Standard_Real CuttingValue);
 		%feature("autodoc", "1");
 		void UpdateInV(const Standard_Real CuttingValue);
-		%feature("autodoc","SameDegree(Standard_Integer iu, Standard_Integer iv)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","SameDegree(Standard_Integer iu, Standard_Integer iv) -> [Standard_IntegerStandard_Integer]");
 		void SameDegree(const Standard_Integer iu, const Standard_Integer iv, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer NbPatch() const;
@@ -257,10 +301,18 @@ class AdvApp2Var_Network {
 		const AdvApp2Var_Patch & operator()(const Standard_Integer UIndex, const Standard_Integer VIndex) const;
 
 };
+%feature("shadow") AdvApp2Var_Network::~AdvApp2Var_Network %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_Network {
-	~AdvApp2Var_Network() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Network\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -286,10 +338,18 @@ class AdvApp2Var_SequenceNodeOfSequenceOfNode : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfNode::~AdvApp2Var_SequenceNodeOfSequenceOfNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_SequenceNodeOfSequenceOfNode {
-	~AdvApp2Var_SequenceNodeOfSequenceOfNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceNodeOfSequenceOfNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -301,7 +361,7 @@ class AdvApp2Var_Framework {
 		AdvApp2Var_Framework();
 		%feature("autodoc", "1");
 		AdvApp2Var_Framework(const AdvApp2Var_SequenceOfNode &Frame, const AdvApp2Var_SequenceOfStrip &UFrontier, const AdvApp2Var_SequenceOfStrip &VFrontier);
-		%feature("autodoc","FirstNotApprox()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","FirstNotApprox() -> [Standard_Integer, Standard_Integer]");
 		Standard_Boolean FirstNotApprox(Standard_Integer &OutValue, Standard_Integer &OutValue, AdvApp2Var_Iso & anIso) const;
 		%feature("autodoc", "1");
 		Standard_Integer FirstNode(const GeomAbs_IsoType Type, const Standard_Integer IndexIso, const Standard_Integer IndexStrip) const;
@@ -329,10 +389,18 @@ class AdvApp2Var_Framework {
 		const Handle_TColStd_HArray1OfReal & VEquation(const Standard_Integer IndexIso, const Standard_Integer IndexStrip) const;
 
 };
+%feature("shadow") AdvApp2Var_Framework::~AdvApp2Var_Framework %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_Framework {
-	~AdvApp2Var_Framework() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Framework\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -400,10 +468,18 @@ class AdvApp2Var_Patch {
 		void SetCritValue(const Standard_Real dist);
 
 };
+%feature("shadow") AdvApp2Var_Patch::~AdvApp2Var_Patch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_Patch {
-	~AdvApp2Var_Patch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Patch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -437,10 +513,18 @@ class AdvApp2Var_Data {
 		mmapgs2_1_ & Getmmapgs2();
 
 };
+%feature("shadow") AdvApp2Var_Data::~AdvApp2Var_Data %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_Data {
-	~AdvApp2Var_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Data\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -494,10 +578,18 @@ class AdvApp2Var_Strip : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") AdvApp2Var_Strip::~AdvApp2Var_Strip %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_Strip {
-	~AdvApp2Var_Strip() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Strip\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -547,10 +639,18 @@ class AdvApp2Var_Context {
 		Handle_TColStd_HArray2OfReal CToler() const;
 
 };
+%feature("shadow") AdvApp2Var_Context::~AdvApp2Var_Context %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_Context {
-	~AdvApp2Var_Context() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Context\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -576,10 +676,18 @@ class AdvApp2Var_SequenceNodeOfStrip : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AdvApp2Var_SequenceNodeOfStrip::~AdvApp2Var_SequenceNodeOfStrip %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_SequenceNodeOfStrip {
-	~AdvApp2Var_SequenceNodeOfStrip() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceNodeOfStrip\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -633,10 +741,18 @@ class AdvApp2Var_SequenceOfPatch : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") AdvApp2Var_SequenceOfPatch::~AdvApp2Var_SequenceOfPatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_SequenceOfPatch {
-	~AdvApp2Var_SequenceOfPatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceOfPatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -662,10 +778,18 @@ class AdvApp2Var_SequenceNodeOfSequenceOfPatch : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfPatch::~AdvApp2Var_SequenceNodeOfSequenceOfPatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
-	~AdvApp2Var_SequenceNodeOfSequenceOfPatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceNodeOfSequenceOfPatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -717,10 +841,18 @@ class AdvApp2Var_ApproxAFunc2Var {
 		};
 
 };
+%feature("shadow") AdvApp2Var_ApproxAFunc2Var::~AdvApp2Var_ApproxAFunc2Var %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_ApproxAFunc2Var {
-	~AdvApp2Var_ApproxAFunc2Var() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_ApproxAFunc2Var\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -746,10 +878,18 @@ class AdvApp2Var_SequenceNodeOfSequenceOfStrip : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfStrip::~AdvApp2Var_SequenceNodeOfSequenceOfStrip %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_SequenceNodeOfSequenceOfStrip {
-	~AdvApp2Var_SequenceNodeOfSequenceOfStrip() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceNodeOfSequenceOfStrip\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -781,10 +921,18 @@ class AdvApp2Var_Node {
 		Standard_Real Error(const Standard_Integer iu, const Standard_Integer iv) const;
 
 };
+%feature("shadow") AdvApp2Var_Node::~AdvApp2Var_Node %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_Node {
-	~AdvApp2Var_Node() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Node\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -806,10 +954,18 @@ class AdvApp2Var_Criterion {
 		AdvApp2Var_CriterionRepartition Repartition() const;
 
 };
+%feature("shadow") AdvApp2Var_Criterion::~AdvApp2Var_Criterion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_Criterion {
-	~AdvApp2Var_Criterion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Criterion\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -863,9 +1019,17 @@ class AdvApp2Var_SequenceOfStrip : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") AdvApp2Var_SequenceOfStrip::~AdvApp2Var_SequenceOfStrip %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AdvApp2Var_SequenceOfStrip {
-	~AdvApp2Var_SequenceOfStrip() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceOfStrip\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

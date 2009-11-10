@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ShapeFix_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_ShapeFix_EdgeProjAux : public Handle_MMgt_TShared {
 	return (ShapeFix_EdgeProjAux*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_EdgeProjAux::~Handle_ShapeFix_EdgeProjAux %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_EdgeProjAux {
-	~Handle_ShapeFix_EdgeProjAux() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_EdgeProjAux\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_ShapeFix_Root : public Handle_MMgt_TShared {
 	return (ShapeFix_Root*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_Root::~Handle_ShapeFix_Root %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_Root {
-	~Handle_ShapeFix_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Root\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_ShapeFix_Face : public Handle_ShapeFix_Root {
 	return (ShapeFix_Face*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_Face::~Handle_ShapeFix_Face %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_Face {
-	~Handle_ShapeFix_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Face\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_ShapeFix_ComposeShell : public Handle_ShapeFix_Root {
 	return (ShapeFix_ComposeShell*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_ComposeShell::~Handle_ShapeFix_ComposeShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_ComposeShell {
-	~Handle_ShapeFix_ComposeShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_ComposeShell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_ShapeFix_SplitCommonVertex : public Handle_ShapeFix_Root {
 	return (ShapeFix_SplitCommonVertex*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_SplitCommonVertex::~Handle_ShapeFix_SplitCommonVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_SplitCommonVertex {
-	~Handle_ShapeFix_SplitCommonVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_SplitCommonVertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_ShapeFix_Edge : public Handle_MMgt_TShared {
 	return (ShapeFix_Edge*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_Edge::~Handle_ShapeFix_Edge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_Edge {
-	~Handle_ShapeFix_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Edge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_ShapeFix_Solid : public Handle_ShapeFix_Root {
 	return (ShapeFix_Solid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_Solid::~Handle_ShapeFix_Solid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_Solid {
-	~Handle_ShapeFix_Solid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Solid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public Handle_TCollecti
 	return (ShapeFix_DataMapNodeOfDataMapOfShapeBox2d*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d::~Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
-	~Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_ShapeFix_Wire : public Handle_ShapeFix_Root {
 	return (ShapeFix_Wire*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_Wire::~Handle_ShapeFix_Wire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_Wire {
-	~Handle_ShapeFix_Wire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Wire\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TColle
 	return (ShapeFix_SequenceNodeOfSequenceOfWireSegment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment::~Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment {
-	~Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_ShapeFix_Wireframe : public Handle_ShapeFix_Root {
 	return (ShapeFix_Wireframe*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_Wireframe::~Handle_ShapeFix_Wireframe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_Wireframe {
-	~Handle_ShapeFix_Wireframe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Wireframe\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_ShapeFix_Shape : public Handle_ShapeFix_Root {
 	return (ShapeFix_Shape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_Shape::~Handle_ShapeFix_Shape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_Shape {
-	~Handle_ShapeFix_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Shape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_ShapeFix_FixSmallFace : public Handle_ShapeFix_Root {
 	return (ShapeFix_FixSmallFace*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_FixSmallFace::~Handle_ShapeFix_FixSmallFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_FixSmallFace {
-	~Handle_ShapeFix_FixSmallFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_FixSmallFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +555,18 @@ class Handle_ShapeFix_Shell : public Handle_ShapeFix_Root {
 	return (ShapeFix_Shell*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeFix_Shell::~Handle_ShapeFix_Shell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeFix_Shell {
-	~Handle_ShapeFix_Shell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Shell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -510,10 +626,18 @@ class ShapeFix_Root : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_Root::~ShapeFix_Root %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_Root {
-	~ShapeFix_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Root\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -555,10 +679,18 @@ class ShapeFix_ComposeShell : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_ComposeShell::~ShapeFix_ComposeShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_ComposeShell {
-	~ShapeFix_ComposeShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_ComposeShell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -598,10 +730,18 @@ class ShapeFix_EdgeProjAux : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_EdgeProjAux::~ShapeFix_EdgeProjAux %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_EdgeProjAux {
-	~ShapeFix_EdgeProjAux() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_EdgeProjAux\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -621,10 +761,18 @@ class ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d : public TCollection_BasicMa
 		const Bnd_Box2d & Value() const;
 
 };
+%feature("shadow") ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d::~ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d {
-	~ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -646,10 +794,18 @@ class ShapeFix_FreeBounds {
 		const TopoDS_Shape & GetShape() const;
 
 };
+%feature("shadow") ShapeFix_FreeBounds::~ShapeFix_FreeBounds %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_FreeBounds {
-	~ShapeFix_FreeBounds() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_FreeBounds\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -677,22 +833,102 @@ class ShapeFix_Face : public ShapeFix_Root {
 		virtual		void SetMinTolerance(const Standard_Real mintol);
 		%feature("autodoc", "1");
 		virtual		void SetMaxTolerance(const Standard_Real maxtol);
-		%feature("autodoc", "1");
-		Standard_Integer & FixWireMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixOrientationMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixAddNaturalBoundMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixMissingSeamMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixSmallAreaWireMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixIntersectingWiresMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixLoopWiresMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixSplitFaceMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixWireMode() {
+				return (Standard_Integer) $self->FixWireMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixWireMode(Standard_Integer value ) {
+				$self->FixWireMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixOrientationMode() {
+				return (Standard_Integer) $self->FixOrientationMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixOrientationMode(Standard_Integer value ) {
+				$self->FixOrientationMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixAddNaturalBoundMode() {
+				return (Standard_Integer) $self->FixAddNaturalBoundMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixAddNaturalBoundMode(Standard_Integer value ) {
+				$self->FixAddNaturalBoundMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixMissingSeamMode() {
+				return (Standard_Integer) $self->FixMissingSeamMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixMissingSeamMode(Standard_Integer value ) {
+				$self->FixMissingSeamMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixSmallAreaWireMode() {
+				return (Standard_Integer) $self->FixSmallAreaWireMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixSmallAreaWireMode(Standard_Integer value ) {
+				$self->FixSmallAreaWireMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixIntersectingWiresMode() {
+				return (Standard_Integer) $self->FixIntersectingWiresMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixIntersectingWiresMode(Standard_Integer value ) {
+				$self->FixIntersectingWiresMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixLoopWiresMode() {
+				return (Standard_Integer) $self->FixLoopWiresMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixLoopWiresMode(Standard_Integer value ) {
+				$self->FixLoopWiresMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixSplitFaceMode() {
+				return (Standard_Integer) $self->FixSplitFaceMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixSplitFaceMode(Standard_Integer value ) {
+				$self->FixSplitFaceMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopoDS_Face Face() const;
 		%feature("autodoc", "1");
@@ -737,10 +973,18 @@ class ShapeFix_Face : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_Face::~ShapeFix_Face %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_Face {
-	~ShapeFix_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Face\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -792,58 +1036,288 @@ class ShapeFix_Wire : public ShapeFix_Root {
 		Standard_Boolean & ModifyTopologyMode();
 		%feature("autodoc", "1");
 		Standard_Boolean & ModifyGeometryMode();
-		%feature("autodoc", "1");
-		Standard_Integer & ModifyRemoveLoopMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetModifyRemoveLoopMode() {
+				return (Standard_Integer) $self->ModifyRemoveLoopMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModifyRemoveLoopMode(Standard_Integer value ) {
+				$self->ModifyRemoveLoopMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean & ClosedWireMode();
 		%feature("autodoc", "1");
 		Standard_Boolean & PreferencePCurveMode();
 		%feature("autodoc", "1");
 		Standard_Boolean & FixGapsByRangesMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixReorderMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixSmallMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixConnectedMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixEdgeCurvesMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixDegeneratedMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixSelfIntersectionMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixLackingMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixGaps3dMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixGaps2dMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixReversed2dMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixRemovePCurveMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixAddPCurveMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixRemoveCurve3dMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixAddCurve3dMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixSeamMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixShiftedMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixSameParameterMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixVertexToleranceMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixNotchedEdgesMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixSelfIntersectingEdgeMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixIntersectingEdgesMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixNonAdjacentIntersectingEdgesMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixReorderMode() {
+				return (Standard_Integer) $self->FixReorderMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixReorderMode(Standard_Integer value ) {
+				$self->FixReorderMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixSmallMode() {
+				return (Standard_Integer) $self->FixSmallMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixSmallMode(Standard_Integer value ) {
+				$self->FixSmallMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixConnectedMode() {
+				return (Standard_Integer) $self->FixConnectedMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixConnectedMode(Standard_Integer value ) {
+				$self->FixConnectedMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixEdgeCurvesMode() {
+				return (Standard_Integer) $self->FixEdgeCurvesMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixEdgeCurvesMode(Standard_Integer value ) {
+				$self->FixEdgeCurvesMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixDegeneratedMode() {
+				return (Standard_Integer) $self->FixDegeneratedMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixDegeneratedMode(Standard_Integer value ) {
+				$self->FixDegeneratedMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixSelfIntersectionMode() {
+				return (Standard_Integer) $self->FixSelfIntersectionMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixSelfIntersectionMode(Standard_Integer value ) {
+				$self->FixSelfIntersectionMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixLackingMode() {
+				return (Standard_Integer) $self->FixLackingMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixLackingMode(Standard_Integer value ) {
+				$self->FixLackingMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixGaps3dMode() {
+				return (Standard_Integer) $self->FixGaps3dMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixGaps3dMode(Standard_Integer value ) {
+				$self->FixGaps3dMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixGaps2dMode() {
+				return (Standard_Integer) $self->FixGaps2dMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixGaps2dMode(Standard_Integer value ) {
+				$self->FixGaps2dMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixReversed2dMode() {
+				return (Standard_Integer) $self->FixReversed2dMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixReversed2dMode(Standard_Integer value ) {
+				$self->FixReversed2dMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixRemovePCurveMode() {
+				return (Standard_Integer) $self->FixRemovePCurveMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixRemovePCurveMode(Standard_Integer value ) {
+				$self->FixRemovePCurveMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixAddPCurveMode() {
+				return (Standard_Integer) $self->FixAddPCurveMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixAddPCurveMode(Standard_Integer value ) {
+				$self->FixAddPCurveMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixRemoveCurve3dMode() {
+				return (Standard_Integer) $self->FixRemoveCurve3dMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixRemoveCurve3dMode(Standard_Integer value ) {
+				$self->FixRemoveCurve3dMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixAddCurve3dMode() {
+				return (Standard_Integer) $self->FixAddCurve3dMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixAddCurve3dMode(Standard_Integer value ) {
+				$self->FixAddCurve3dMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixSeamMode() {
+				return (Standard_Integer) $self->FixSeamMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixSeamMode(Standard_Integer value ) {
+				$self->FixSeamMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixShiftedMode() {
+				return (Standard_Integer) $self->FixShiftedMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixShiftedMode(Standard_Integer value ) {
+				$self->FixShiftedMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixSameParameterMode() {
+				return (Standard_Integer) $self->FixSameParameterMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixSameParameterMode(Standard_Integer value ) {
+				$self->FixSameParameterMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixVertexToleranceMode() {
+				return (Standard_Integer) $self->FixVertexToleranceMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixVertexToleranceMode(Standard_Integer value ) {
+				$self->FixVertexToleranceMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixNotchedEdgesMode() {
+				return (Standard_Integer) $self->FixNotchedEdgesMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixNotchedEdgesMode(Standard_Integer value ) {
+				$self->FixNotchedEdgesMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixSelfIntersectingEdgeMode() {
+				return (Standard_Integer) $self->FixSelfIntersectingEdgeMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixSelfIntersectingEdgeMode(Standard_Integer value ) {
+				$self->FixSelfIntersectingEdgeMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixIntersectingEdgesMode() {
+				return (Standard_Integer) $self->FixIntersectingEdgesMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixIntersectingEdgesMode(Standard_Integer value ) {
+				$self->FixIntersectingEdgesMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixNonAdjacentIntersectingEdgesMode() {
+				return (Standard_Integer) $self->FixNonAdjacentIntersectingEdgesMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixNonAdjacentIntersectingEdgesMode(Standard_Integer value ) {
+				$self->FixNonAdjacentIntersectingEdgesMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean Perform();
 		%feature("autodoc", "1");
@@ -928,10 +1402,18 @@ class ShapeFix_Wire : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_Wire::~ShapeFix_Wire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_Wire {
-	~ShapeFix_Wire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Wire\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -963,8 +1445,18 @@ class ShapeFix_Solid : public ShapeFix_Root {
 		virtual		void SetMinTolerance(const Standard_Real mintol);
 		%feature("autodoc", "1");
 		virtual		void SetMaxTolerance(const Standard_Real maxtol);
-		%feature("autodoc", "1");
-		Standard_Integer & FixShellMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixShellMode() {
+				return (Standard_Integer) $self->FixShellMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixShellMode(Standard_Integer value ) {
+				$self->FixShellMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean & CreateOpenSolidMode();
 		%feature("autodoc", "1");
@@ -983,10 +1475,18 @@ class ShapeFix_Solid : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_Solid::~ShapeFix_Solid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_Solid {
-	~ShapeFix_Solid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Solid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1012,10 +1512,18 @@ class ShapeFix_SequenceNodeOfSequenceOfWireSegment : public TCollection_SeqNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_SequenceNodeOfSequenceOfWireSegment::~ShapeFix_SequenceNodeOfSequenceOfWireSegment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_SequenceNodeOfSequenceOfWireSegment {
-	~ShapeFix_SequenceNodeOfSequenceOfWireSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_SequenceNodeOfSequenceOfWireSegment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1069,10 +1577,18 @@ class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") ShapeFix_SequenceOfWireSegment::~ShapeFix_SequenceOfWireSegment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_SequenceOfWireSegment {
-	~ShapeFix_SequenceOfWireSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_SequenceOfWireSegment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1126,10 +1642,18 @@ class ShapeFix_Edge : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_Edge::~ShapeFix_Edge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_Edge {
-	~ShapeFix_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Edge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1163,10 +1687,18 @@ class ShapeFix_DataMapOfShapeBox2d : public TCollection_BasicMap {
 		Bnd_Box2d & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") ShapeFix_DataMapOfShapeBox2d::~ShapeFix_DataMapOfShapeBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_DataMapOfShapeBox2d {
-	~ShapeFix_DataMapOfShapeBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_DataMapOfShapeBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1194,10 +1726,18 @@ class ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_DataMapNodeOfDataMapOfShapeBox2d::~ShapeFix_DataMapNodeOfDataMapOfShapeBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
-	~ShapeFix_DataMapNodeOfDataMapOfShapeBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_DataMapNodeOfDataMapOfShapeBox2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1247,10 +1787,18 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_Wireframe::~ShapeFix_Wireframe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_Wireframe {
-	~ShapeFix_Wireframe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Wireframe\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1270,10 +1818,18 @@ class ShapeFix {
 		Standard_Boolean FixVertexPosition(TopoDS_Shape & theshape, const Standard_Real theTolerance, const Handle_ShapeBuild_ReShape &thecontext);
 
 };
+%feature("shadow") ShapeFix::~ShapeFix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix {
-	~ShapeFix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1289,16 +1845,24 @@ class ShapeFix_IntersectionTool {
 		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real param, const TopoDS_Vertex &vert, const TopoDS_Face &face, TopoDS_Edge & newE1, TopoDS_Edge & newE2, const Standard_Real preci) const;
 		%feature("autodoc", "1");
 		Standard_Boolean CutEdge(const TopoDS_Edge &edge, const Standard_Real pend, const Standard_Real cut, const TopoDS_Face &face, Standard_Boolean & iscutline) const;
-		%feature("autodoc","FixSelfIntersectWire(const face)->[Standard_Integer, Standard_IntegerStandard_Integer]");
+		%feature("autodoc","FixSelfIntersectWire(const face) -> [Standard_Integer, Standard_IntegerStandard_Integer]");
 		Standard_Boolean FixSelfIntersectWire(Handle_ShapeExtend_WireData & sewd, const TopoDS_Face &face, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean FixIntersectingWires(TopoDS_Face & face) const;
 
 };
+%feature("shadow") ShapeFix_IntersectionTool::~ShapeFix_IntersectionTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_IntersectionTool {
-	~ShapeFix_IntersectionTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_IntersectionTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1318,10 +1882,18 @@ class ShapeFix_EdgeConnect {
 		void Clear();
 
 };
+%feature("shadow") ShapeFix_EdgeConnect::~ShapeFix_EdgeConnect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_EdgeConnect {
-	~ShapeFix_EdgeConnect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_EdgeConnect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1379,10 +1951,18 @@ class ShapeFix_FixSmallFace : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_FixSmallFace::~ShapeFix_FixSmallFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_FixSmallFace {
-	~ShapeFix_FixSmallFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_FixSmallFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1398,10 +1978,18 @@ class ShapeFix_ShapeTolerance {
 		void SetTolerance(const TopoDS_Shape &shape, const Standard_Real preci, const TopAbs_ShapeEnum styp=TopAbs_SHAPE) const;
 
 };
+%feature("shadow") ShapeFix_ShapeTolerance::~ShapeFix_ShapeTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_ShapeTolerance {
-	~ShapeFix_ShapeTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_ShapeTolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1417,14 +2005,22 @@ class ShapeFix_SplitTool {
 		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real param1, const Standard_Real param2, const TopoDS_Vertex &vert, const TopoDS_Face &face, TopoDS_Edge & newE1, TopoDS_Edge & newE2, const Standard_Real tol3d, const Standard_Real tol2d) const;
 		%feature("autodoc", "1");
 		Standard_Boolean CutEdge(const TopoDS_Edge &edge, const Standard_Real pend, const Standard_Real cut, const TopoDS_Face &face, Standard_Boolean & iscutline) const;
-		%feature("autodoc","SplitEdge(const edge, Standard_Real fp, const V1, Standard_Real lp, const V2, const face, const context, Standard_Real tol3d, Standard_Real tol2d)->Standard_Integer");
+		%feature("autodoc","SplitEdge(const edge, Standard_Real fp, const V1, Standard_Real lp, const V2, const face, const context, Standard_Real tol3d, Standard_Real tol2d) -> Standard_Integer");
 		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real fp, const TopoDS_Vertex &V1, const Standard_Real lp, const TopoDS_Vertex &V2, const TopoDS_Face &face, TopTools_SequenceOfShape & SeqE, Standard_Integer &OutValue, const Handle_ShapeBuild_ReShape &context, const Standard_Real tol3d, const Standard_Real tol2d) const;
 
 };
+%feature("shadow") ShapeFix_SplitTool::~ShapeFix_SplitTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_SplitTool {
-	~ShapeFix_SplitTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_SplitTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1452,10 +2048,18 @@ class ShapeFix_WireVertex {
 		Standard_Integer Fix();
 
 };
+%feature("shadow") ShapeFix_WireVertex::~ShapeFix_WireVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_WireVertex {
-	~ShapeFix_WireVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_WireVertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1493,10 +2097,30 @@ class ShapeFix_Shell : public ShapeFix_Root {
 		virtual		void SetMinTolerance(const Standard_Real mintol);
 		%feature("autodoc", "1");
 		virtual		void SetMaxTolerance(const Standard_Real maxtol);
-		%feature("autodoc", "1");
-		Standard_Integer & FixFaceMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixOrientationMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixFaceMode() {
+				return (Standard_Integer) $self->FixFaceMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixFaceMode(Standard_Integer value ) {
+				$self->FixFaceMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixOrientationMode() {
+				return (Standard_Integer) $self->FixOrientationMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixOrientationMode(Standard_Integer value ) {
+				$self->FixOrientationMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1511,10 +2135,18 @@ class ShapeFix_Shell : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_Shell::~ShapeFix_Shell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_Shell {
-	~ShapeFix_Shell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Shell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1552,18 +2184,78 @@ class ShapeFix_Shape : public ShapeFix_Root {
 		virtual		void SetMinTolerance(const Standard_Real mintol);
 		%feature("autodoc", "1");
 		virtual		void SetMaxTolerance(const Standard_Real maxtol);
-		%feature("autodoc", "1");
-		Standard_Integer & FixSolidMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixFreeShellMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixFreeFaceMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixFreeWireMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixSameParameterMode();
-		%feature("autodoc", "1");
-		Standard_Integer & FixVertexPositionMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixSolidMode() {
+				return (Standard_Integer) $self->FixSolidMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixSolidMode(Standard_Integer value ) {
+				$self->FixSolidMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixFreeShellMode() {
+				return (Standard_Integer) $self->FixFreeShellMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixFreeShellMode(Standard_Integer value ) {
+				$self->FixFreeShellMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixFreeFaceMode() {
+				return (Standard_Integer) $self->FixFreeFaceMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixFreeFaceMode(Standard_Integer value ) {
+				$self->FixFreeFaceMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixFreeWireMode() {
+				return (Standard_Integer) $self->FixFreeWireMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixFreeWireMode(Standard_Integer value ) {
+				$self->FixFreeWireMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixSameParameterMode() {
+				return (Standard_Integer) $self->FixSameParameterMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixSameParameterMode(Standard_Integer value ) {
+				$self->FixSameParameterMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetFixVertexPositionMode() {
+				return (Standard_Integer) $self->FixVertexPositionMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixVertexPositionMode(Standard_Integer value ) {
+				$self->FixVertexPositionMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1578,10 +2270,18 @@ class ShapeFix_Shape : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_Shape::~ShapeFix_Shape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_Shape {
-	~ShapeFix_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_Shape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1599,10 +2299,18 @@ class ShapeFix_FaceConnect {
 		void Clear();
 
 };
+%feature("shadow") ShapeFix_FaceConnect::~ShapeFix_FaceConnect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_FaceConnect {
-	~ShapeFix_FaceConnect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_FaceConnect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1632,9 +2340,17 @@ class ShapeFix_SplitCommonVertex : public ShapeFix_Root {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeFix_SplitCommonVertex::~ShapeFix_SplitCommonVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeFix_SplitCommonVertex {
-	~ShapeFix_SplitCommonVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeFix_SplitCommonVertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

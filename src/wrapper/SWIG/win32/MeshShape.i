@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MeshShape_dependencies.i
 
 
@@ -63,10 +67,18 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public Handl
 	return (MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient::~Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
-	~Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -93,10 +105,18 @@ class Handle_MeshShape_ListNodeOfPolygon : public Handle_TCollection_MapNode {
 	return (MeshShape_ListNodeOfPolygon*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MeshShape_ListNodeOfPolygon::~Handle_MeshShape_ListNodeOfPolygon %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MeshShape_ListNodeOfPolygon {
-	~Handle_MeshShape_ListNodeOfPolygon() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshShape_ListNodeOfPolygon\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -123,10 +143,18 @@ class Handle_MeshShape_ListNodeOfListOfSurfacePoint : public Handle_TCollection_
 	return (MeshShape_ListNodeOfListOfSurfacePoint*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MeshShape_ListNodeOfListOfSurfacePoint::~Handle_MeshShape_ListNodeOfListOfSurfacePoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MeshShape_ListNodeOfListOfSurfacePoint {
-	~Handle_MeshShape_ListNodeOfListOfSurfacePoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshShape_ListNodeOfListOfSurfacePoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -153,10 +181,18 @@ class Handle_MeshShape_StdMapNodeOfMapOfCouple : public Handle_TCollection_MapNo
 	return (MeshShape_StdMapNodeOfMapOfCouple*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MeshShape_StdMapNodeOfMapOfCouple::~Handle_MeshShape_StdMapNodeOfMapOfCouple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MeshShape_StdMapNodeOfMapOfCouple {
-	~Handle_MeshShape_StdMapNodeOfMapOfCouple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshShape_StdMapNodeOfMapOfCouple\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -183,10 +219,18 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY : public Handle_TCollecti
 	return (MeshShape_DataMapNodeOfDataMapOfIntegerXY*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY::~Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY {
-	~Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -213,10 +257,18 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public Handle_TCollect
 	return (MeshShape_DataMapNodeOfDataMapOfIntegerPnt*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt::~Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt {
-	~Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -226,8 +278,18 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		MeshShape_DataMapNodeOfDataMapOfIntegerPnt(const Standard_Integer &K, const gp_Pnt &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		gp_Pnt & Value() const;
 		%feature("autodoc", "1");
@@ -244,10 +306,18 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MeshShape_DataMapNodeOfDataMapOfIntegerPnt::~MeshShape_DataMapNodeOfDataMapOfIntegerPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_DataMapNodeOfDataMapOfIntegerPnt {
-	~MeshShape_DataMapNodeOfDataMapOfIntegerPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapNodeOfDataMapOfIntegerPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -269,10 +339,18 @@ class MeshShape_ListIteratorOfPolygon {
 		MeshShape_PolygonPoint & Value() const;
 
 };
+%feature("shadow") MeshShape_ListIteratorOfPolygon::~MeshShape_ListIteratorOfPolygon %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_ListIteratorOfPolygon {
-	~MeshShape_ListIteratorOfPolygon() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_ListIteratorOfPolygon\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -300,10 +378,18 @@ class MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public TCollection_
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient::~MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
-	~MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -328,10 +414,18 @@ class MeshShape_Couple {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MeshShape_Couple::~MeshShape_Couple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_Couple {
-	~MeshShape_Couple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_Couple\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -365,10 +459,18 @@ class MeshShape_DataMapOfIntegerPnt : public TCollection_BasicMap {
 		gp_Pnt & operator()(const Standard_Integer &K);
 
 };
+%feature("shadow") MeshShape_DataMapOfIntegerPnt::~MeshShape_DataMapOfIntegerPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_DataMapOfIntegerPnt {
-	~MeshShape_DataMapOfIntegerPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapOfIntegerPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -384,10 +486,18 @@ class MeshShape {
 		void SetTrace(const Standard_Integer val);
 
 };
+%feature("shadow") MeshShape::~MeshShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape {
-	~MeshShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -405,10 +515,18 @@ class MeshShape_PolygonPoint {
 		Standard_Integer Location3d() const;
 
 };
+%feature("shadow") MeshShape_PolygonPoint::~MeshShape_PolygonPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_PolygonPoint {
-	~MeshShape_PolygonPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_PolygonPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -428,10 +546,18 @@ class MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient : public TCollect
 		const TColStd_ListOfTransient & Value() const;
 
 };
+%feature("shadow") MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient::~MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient {
-	~MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +573,18 @@ class MeshShape_CoupleHasher {
 		Standard_Boolean IsEqual(const MeshShape_Couple &S1, const MeshShape_Couple &S2);
 
 };
+%feature("shadow") MeshShape_CoupleHasher::~MeshShape_CoupleHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_CoupleHasher {
-	~MeshShape_CoupleHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_CoupleHasher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -500,10 +634,18 @@ class MeshShape_ListOfSurfacePoint {
 		void InsertAfter(MeshShape_ListOfSurfacePoint & Other, MeshShape_ListIteratorOfListOfSurfacePoint & It);
 
 };
+%feature("shadow") MeshShape_ListOfSurfacePoint::~MeshShape_ListOfSurfacePoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_ListOfSurfacePoint {
-	~MeshShape_ListOfSurfacePoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_ListOfSurfacePoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -529,10 +671,18 @@ class MeshShape_ListNodeOfPolygon : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MeshShape_ListNodeOfPolygon::~MeshShape_ListNodeOfPolygon %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_ListNodeOfPolygon {
-	~MeshShape_ListNodeOfPolygon() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_ListNodeOfPolygon\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -552,10 +702,18 @@ class MeshShape_DataMapIteratorOfDataMapOfIntegerPnt : public TCollection_BasicM
 		const gp_Pnt & Value() const;
 
 };
+%feature("shadow") MeshShape_DataMapIteratorOfDataMapOfIntegerPnt::~MeshShape_DataMapIteratorOfDataMapOfIntegerPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_DataMapIteratorOfDataMapOfIntegerPnt {
-	~MeshShape_DataMapIteratorOfDataMapOfIntegerPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapIteratorOfDataMapOfIntegerPnt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -573,10 +731,18 @@ class MeshShape_MapIteratorOfMapOfCouple : public TCollection_BasicMapIterator {
 		const MeshShape_Couple & Key() const;
 
 };
+%feature("shadow") MeshShape_MapIteratorOfMapOfCouple::~MeshShape_MapIteratorOfMapOfCouple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_MapIteratorOfMapOfCouple {
-	~MeshShape_MapIteratorOfMapOfCouple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_MapIteratorOfMapOfCouple\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -602,10 +768,18 @@ class MeshShape_StdMapNodeOfMapOfCouple : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MeshShape_StdMapNodeOfMapOfCouple::~MeshShape_StdMapNodeOfMapOfCouple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_StdMapNodeOfMapOfCouple {
-	~MeshShape_StdMapNodeOfMapOfCouple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_StdMapNodeOfMapOfCouple\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -655,10 +829,18 @@ class MeshShape_Polygon {
 		void InsertAfter(MeshShape_Polygon & Other, MeshShape_ListIteratorOfPolygon & It);
 
 };
+%feature("shadow") MeshShape_Polygon::~MeshShape_Polygon %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_Polygon {
-	~MeshShape_Polygon() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_Polygon\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -678,10 +860,18 @@ class MeshShape_DataMapIteratorOfDataMapOfIntegerXY : public TCollection_BasicMa
 		const gp_XY & Value() const;
 
 };
+%feature("shadow") MeshShape_DataMapIteratorOfDataMapOfIntegerXY::~MeshShape_DataMapIteratorOfDataMapOfIntegerXY %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_DataMapIteratorOfDataMapOfIntegerXY {
-	~MeshShape_DataMapIteratorOfDataMapOfIntegerXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapIteratorOfDataMapOfIntegerXY\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -715,10 +905,18 @@ class MeshShape_DataMapOfIntegerXY : public TCollection_BasicMap {
 		gp_XY & operator()(const Standard_Integer &K);
 
 };
+%feature("shadow") MeshShape_DataMapOfIntegerXY::~MeshShape_DataMapOfIntegerXY %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_DataMapOfIntegerXY {
-	~MeshShape_DataMapOfIntegerXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapOfIntegerXY\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -740,10 +938,18 @@ class MeshShape_ListIteratorOfListOfSurfacePoint {
 		MeshShape_SurfacePoint & Value() const;
 
 };
+%feature("shadow") MeshShape_ListIteratorOfListOfSurfacePoint::~MeshShape_ListIteratorOfListOfSurfacePoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_ListIteratorOfListOfSurfacePoint {
-	~MeshShape_ListIteratorOfListOfSurfacePoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_ListIteratorOfListOfSurfacePoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -765,10 +971,18 @@ class MeshShape_SurfacePoint {
 		const gp_XYZ & Coord() const;
 
 };
+%feature("shadow") MeshShape_SurfacePoint::~MeshShape_SurfacePoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_SurfacePoint {
-	~MeshShape_SurfacePoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_SurfacePoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -794,10 +1008,18 @@ class MeshShape_MapOfCouple : public TCollection_BasicMap {
 		Standard_Boolean Remove(const MeshShape_Couple &aKey);
 
 };
+%feature("shadow") MeshShape_MapOfCouple::~MeshShape_MapOfCouple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_MapOfCouple {
-	~MeshShape_MapOfCouple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_MapOfCouple\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -807,8 +1029,18 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerXY : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		MeshShape_DataMapNodeOfDataMapOfIntegerXY(const Standard_Integer &K, const gp_XY &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		gp_XY & Value() const;
 		%feature("autodoc", "1");
@@ -825,10 +1057,18 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerXY : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MeshShape_DataMapNodeOfDataMapOfIntegerXY::~MeshShape_DataMapNodeOfDataMapOfIntegerXY %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_DataMapNodeOfDataMapOfIntegerXY {
-	~MeshShape_DataMapNodeOfDataMapOfIntegerXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapNodeOfDataMapOfIntegerXY\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -862,10 +1102,18 @@ class MeshShape_DataMapOfShapeListOfTransient : public TCollection_BasicMap {
 		TColStd_ListOfTransient & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") MeshShape_DataMapOfShapeListOfTransient::~MeshShape_DataMapOfShapeListOfTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_DataMapOfShapeListOfTransient {
-	~MeshShape_DataMapOfShapeListOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapOfShapeListOfTransient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -891,9 +1139,17 @@ class MeshShape_ListNodeOfListOfSurfacePoint : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MeshShape_ListNodeOfListOfSurfacePoint::~MeshShape_ListNodeOfListOfSurfacePoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshShape_ListNodeOfListOfSurfacePoint {
-	~MeshShape_ListNodeOfListOfSurfacePoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshShape_ListNodeOfListOfSurfacePoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include SMDS_dependencies.i
 
 
@@ -58,10 +62,18 @@ class SMDS_MeshObject {
 		SMDS_MeshObject();
 
 };
+%feature("shadow") SMDS_MeshObject::~SMDS_MeshObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_MeshObject {
-	~SMDS_MeshObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_MeshObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -105,10 +117,18 @@ class SMDS_MeshElement : public SMDS_MeshObject {
 		int GetNodeIndex(const SMDS_MeshNode *node) const;
 
 };
+%feature("shadow") SMDS_MeshElement::~SMDS_MeshElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_MeshElement {
-	~SMDS_MeshElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_MeshElement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -148,10 +168,18 @@ class SMDS_MeshNode : public SMDS_MeshElement {
 		virtual		const SMDS_MeshNode * GetNode(const int arg0) const;
 
 };
+%feature("shadow") SMDS_MeshNode::~SMDS_MeshNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_MeshNode {
-	~SMDS_MeshNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_MeshNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -165,10 +193,18 @@ class SMDS_MeshFace : public SMDS_MeshElement {
 		virtual		SMDSAbs_ElementType GetType() const;
 
 };
+%feature("shadow") SMDS_MeshFace::~SMDS_MeshFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_MeshFace {
-	~SMDS_MeshFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_MeshFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -192,10 +228,18 @@ class SMDS_PolygonalFaceOfNodes : public SMDS_MeshFace {
 		virtual		const SMDS_MeshNode * GetNode(const int ind) const;
 
 };
+%feature("shadow") SMDS_PolygonalFaceOfNodes::~SMDS_PolygonalFaceOfNodes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_PolygonalFaceOfNodes {
-	~SMDS_PolygonalFaceOfNodes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_PolygonalFaceOfNodes\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -215,10 +259,18 @@ class SMDS_Position {
 		int GetShapeId() const;
 
 };
+%feature("shadow") SMDS_Position::~SMDS_Position %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_Position {
-	~SMDS_Position() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_Position\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -232,10 +284,18 @@ class SMDS_SpacePosition : public SMDS_Position {
 		SMDS_PositionPtr originSpacePosition();
 
 };
+%feature("shadow") SMDS_SpacePosition::~SMDS_SpacePosition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_SpacePosition {
-	~SMDS_SpacePosition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_SpacePosition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -249,10 +309,18 @@ class SMDS_MeshVolume : public SMDS_MeshElement {
 		virtual		SMDSAbs_ElementType GetType() const;
 
 };
+%feature("shadow") SMDS_MeshVolume::~SMDS_MeshVolume %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_MeshVolume {
-	~SMDS_MeshVolume() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_MeshVolume\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -284,10 +352,18 @@ class SMDS_QuadraticVolumeOfNodes : public SMDS_MeshVolume {
 		virtual		const SMDS_MeshNode * GetNode(const int ind) const;
 
 };
+%feature("shadow") SMDS_QuadraticVolumeOfNodes::~SMDS_QuadraticVolumeOfNodes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_QuadraticVolumeOfNodes {
-	~SMDS_QuadraticVolumeOfNodes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_QuadraticVolumeOfNodes\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -377,10 +453,18 @@ class SMDS_VolumeTool {
 		int NbCornerNodes(SMDS_VolumeTool::VolumeType );
 
 };
+%feature("shadow") SMDS_VolumeTool::~SMDS_VolumeTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_VolumeTool {
-	~SMDS_VolumeTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_VolumeTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -412,10 +496,18 @@ class SMDS_QuadraticFaceOfNodes : public SMDS_MeshFace {
 		virtual		const SMDS_MeshNode * GetNode(const int ind) const;
 
 };
+%feature("shadow") SMDS_QuadraticFaceOfNodes::~SMDS_QuadraticFaceOfNodes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_QuadraticFaceOfNodes {
-	~SMDS_QuadraticFaceOfNodes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_QuadraticFaceOfNodes\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -431,10 +523,18 @@ class SMDS_Iterator<SMDS_MeshElement const*> {
 		virtual		void remove();
 
 };
+%feature("shadow") SMDS_Iterator<SMDS_MeshElement const*>::~SMDS_Iterator<SMDS_MeshElement const*> %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_Iterator<SMDS_MeshElement const*> {
-	~SMDS_Iterator<SMDS_MeshElement const*>() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_Iterator<SMDS_MeshElement const*>\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -464,10 +564,18 @@ class SMDS_VolumeOfNodes : public SMDS_MeshVolume {
 		virtual		const SMDS_MeshNode * GetNode(const int ind) const;
 
 };
+%feature("shadow") SMDS_VolumeOfNodes::~SMDS_VolumeOfNodes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_VolumeOfNodes {
-	~SMDS_VolumeOfNodes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_VolumeOfNodes\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -483,10 +591,18 @@ class SMDS_MeshIDFactory : public SMDS_MeshObject {
 		virtual		void Clear();
 
 };
+%feature("shadow") SMDS_MeshIDFactory::~SMDS_MeshIDFactory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_MeshIDFactory {
-	~SMDS_MeshIDFactory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_MeshIDFactory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -508,10 +624,18 @@ class SMDS_MeshElementIDFactory : public SMDS_MeshIDFactory {
 		SMDS_ElemIteratorPtr elementsIterator() const;
 
 };
+%feature("shadow") SMDS_MeshElementIDFactory::~SMDS_MeshElementIDFactory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_MeshElementIDFactory {
-	~SMDS_MeshElementIDFactory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_MeshElementIDFactory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +661,18 @@ class SMDS_FaceOfEdges : public SMDS_MeshFace {
 		virtual		const SMDS_MeshNode * GetNode(const int ind) const;
 
 };
+%feature("shadow") SMDS_FaceOfEdges::~SMDS_FaceOfEdges %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_FaceOfEdges {
-	~SMDS_FaceOfEdges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_FaceOfEdges\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -578,10 +710,18 @@ class SMDS_MeshInfo {
 		int NbPolyhedrons() const;
 
 };
+%feature("shadow") SMDS_MeshInfo::~SMDS_MeshInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_MeshInfo {
-	~SMDS_MeshInfo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_MeshInfo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -601,10 +741,18 @@ class SMDS_EdgePosition : public SMDS_Position {
 		double GetUParameter() const;
 
 };
+%feature("shadow") SMDS_EdgePosition::~SMDS_EdgePosition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_EdgePosition {
-	~SMDS_EdgePosition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_EdgePosition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -624,10 +772,18 @@ class SMDS_VolumeOfFaces : public SMDS_MeshVolume {
 		virtual		int NbFaces() const;
 
 };
+%feature("shadow") SMDS_VolumeOfFaces::~SMDS_VolumeOfFaces %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_VolumeOfFaces {
-	~SMDS_VolumeOfFaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_VolumeOfFaces\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -643,10 +799,18 @@ class SMDS_VertexPosition : public SMDS_Position {
 		virtual		const double * Coords() const;
 
 };
+%feature("shadow") SMDS_VertexPosition::~SMDS_VertexPosition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_VertexPosition {
-	~SMDS_VertexPosition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_VertexPosition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -670,10 +834,18 @@ class SMDS_FaceOfNodes : public SMDS_MeshFace {
 		virtual		const SMDS_MeshNode * GetNode(const int ind) const;
 
 };
+%feature("shadow") SMDS_FaceOfNodes::~SMDS_FaceOfNodes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_FaceOfNodes {
-	~SMDS_FaceOfNodes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_FaceOfNodes\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -697,10 +869,18 @@ class SMDS_MeshEdge : public SMDS_MeshElement {
 		virtual		const SMDS_MeshNode * GetNode(const int ind) const;
 
 };
+%feature("shadow") SMDS_MeshEdge::~SMDS_MeshEdge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_MeshEdge {
-	~SMDS_MeshEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_MeshEdge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -722,10 +902,18 @@ class SMDS_QuadraticEdge : public SMDS_MeshEdge {
 		SMDS_ElemIteratorPtr interlacedNodesElemIterator() const;
 
 };
+%feature("shadow") SMDS_QuadraticEdge::~SMDS_QuadraticEdge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_QuadraticEdge {
-	~SMDS_QuadraticEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_QuadraticEdge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -749,10 +937,18 @@ class SMDS_FacePosition : public SMDS_Position {
 		double GetVParameter() const;
 
 };
+%feature("shadow") SMDS_FacePosition::~SMDS_FacePosition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_FacePosition {
-	~SMDS_FacePosition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_FacePosition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -872,10 +1068,18 @@ class SMDS_Mesh : public SMDS_MeshObject {
 		bool Contains(const SMDS_MeshElement *elem) const;
 
 };
+%feature("shadow") SMDS_Mesh::~SMDS_Mesh %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_Mesh {
-	~SMDS_Mesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_Mesh\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -925,9 +1129,17 @@ class SMDS_MeshGroup : public SMDS_MeshObject {
 		const SMDS_MeshGroup * NextSubGroup() const;
 
 };
+%feature("shadow") SMDS_MeshGroup::~SMDS_MeshGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMDS_MeshGroup {
-	~SMDS_MeshGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMDS_MeshGroup\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

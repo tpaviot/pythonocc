@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GC_dependencies.i
 
 
@@ -46,10 +50,18 @@ class GC_Root {
 		gce_ErrorType Status() const;
 
 };
+%feature("shadow") GC_Root::~GC_Root %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_Root {
-	~GC_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_Root\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -69,10 +81,18 @@ class GC_MakeEllipse : public GC_Root {
 		const Handle_Geom_Ellipse & Operator() const;
 
 };
+%feature("shadow") GC_MakeEllipse::~GC_MakeEllipse %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeEllipse {
-	~GC_MakeEllipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeEllipse\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -102,10 +122,18 @@ class GC_MakeConicalSurface : public GC_Root {
 		const Handle_Geom_ConicalSurface & Operator() const;
 
 };
+%feature("shadow") GC_MakeConicalSurface::~GC_MakeConicalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeConicalSurface {
-	~GC_MakeConicalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeConicalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -129,10 +157,18 @@ class GC_MakeArcOfCircle : public GC_Root {
 		const Handle_Geom_TrimmedCurve & Operator() const;
 
 };
+%feature("shadow") GC_MakeArcOfCircle::~GC_MakeArcOfCircle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeArcOfCircle {
-	~GC_MakeArcOfCircle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfCircle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -156,10 +192,18 @@ class GC_MakeLine : public GC_Root {
 		const Handle_Geom_Line & Operator() const;
 
 };
+%feature("shadow") GC_MakeLine::~GC_MakeLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeLine {
-	~GC_MakeLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +221,18 @@ class GC_MakeTrimmedCone : public GC_Root {
 		const Handle_Geom_RectangularTrimmedSurface & Operator() const;
 
 };
+%feature("shadow") GC_MakeTrimmedCone::~GC_MakeTrimmedCone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeTrimmedCone {
-	~GC_MakeTrimmedCone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeTrimmedCone\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -196,10 +248,18 @@ class GC_MakeScale {
 		const Handle_Geom_Transformation & Operator() const;
 
 };
+%feature("shadow") GC_MakeScale::~GC_MakeScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeScale {
-	~GC_MakeScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -229,10 +289,18 @@ class GC_MakeCircle : public GC_Root {
 		const Handle_Geom_Circle & Operator() const;
 
 };
+%feature("shadow") GC_MakeCircle::~GC_MakeCircle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeCircle {
-	~GC_MakeCircle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeCircle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -252,10 +320,18 @@ class GC_MakeArcOfHyperbola : public GC_Root {
 		const Handle_Geom_TrimmedCurve & Operator() const;
 
 };
+%feature("shadow") GC_MakeArcOfHyperbola::~GC_MakeArcOfHyperbola %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeArcOfHyperbola {
-	~GC_MakeArcOfHyperbola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfHyperbola\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -281,10 +357,18 @@ class GC_MakeMirror {
 		const Handle_Geom_Transformation & Operator() const;
 
 };
+%feature("shadow") GC_MakeMirror::~GC_MakeMirror %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeMirror {
-	~GC_MakeMirror() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeMirror\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -302,10 +386,18 @@ class GC_MakeTranslation {
 		const Handle_Geom_Transformation & Operator() const;
 
 };
+%feature("shadow") GC_MakeTranslation::~GC_MakeTranslation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeTranslation {
-	~GC_MakeTranslation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeTranslation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -325,10 +417,18 @@ class GC_MakeRotation {
 		const Handle_Geom_Transformation & Operator() const;
 
 };
+%feature("shadow") GC_MakeRotation::~GC_MakeRotation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeRotation {
-	~GC_MakeRotation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeRotation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -352,10 +452,18 @@ class GC_MakeTrimmedCylinder : public GC_Root {
 		const Handle_Geom_RectangularTrimmedSurface & Operator() const;
 
 };
+%feature("shadow") GC_MakeTrimmedCylinder::~GC_MakeTrimmedCylinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeTrimmedCylinder {
-	~GC_MakeTrimmedCylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeTrimmedCylinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -383,10 +491,18 @@ class GC_MakeCylindricalSurface : public GC_Root {
 		const Handle_Geom_CylindricalSurface & Operator() const;
 
 };
+%feature("shadow") GC_MakeCylindricalSurface::~GC_MakeCylindricalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeCylindricalSurface {
-	~GC_MakeCylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeCylindricalSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -406,10 +522,18 @@ class GC_MakeArcOfParabola : public GC_Root {
 		const Handle_Geom_TrimmedCurve & Operator() const;
 
 };
+%feature("shadow") GC_MakeArcOfParabola::~GC_MakeArcOfParabola %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeArcOfParabola {
-	~GC_MakeArcOfParabola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfParabola\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -429,10 +553,18 @@ class GC_MakeArcOfEllipse : public GC_Root {
 		const Handle_Geom_TrimmedCurve & Operator() const;
 
 };
+%feature("shadow") GC_MakeArcOfEllipse::~GC_MakeArcOfEllipse %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeArcOfEllipse {
-	~GC_MakeArcOfEllipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfEllipse\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -452,10 +584,18 @@ class GC_MakeHyperbola : public GC_Root {
 		const Handle_Geom_Hyperbola & Operator() const;
 
 };
+%feature("shadow") GC_MakeHyperbola::~GC_MakeHyperbola %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeHyperbola {
-	~GC_MakeHyperbola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeHyperbola\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -485,10 +625,18 @@ class GC_MakePlane : public GC_Root {
 		const Handle_Geom_Plane & Operator() const;
 
 };
+%feature("shadow") GC_MakePlane::~GC_MakePlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakePlane {
-	~GC_MakePlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakePlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -510,9 +658,17 @@ class GC_MakeSegment : public GC_Root {
 		const Handle_Geom_TrimmedCurve & Operator() const;
 
 };
+%feature("shadow") GC_MakeSegment::~GC_MakeSegment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GC_MakeSegment {
-	~GC_MakeSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GC_MakeSegment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

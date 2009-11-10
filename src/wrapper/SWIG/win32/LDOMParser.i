@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include LDOMParser_dependencies.i
 
 
@@ -46,9 +50,17 @@ class LDOMParser {
 		const TCollection_AsciiString & GetError(TCollection_AsciiString & aData) const;
 
 };
+%feature("shadow") LDOMParser::~LDOMParser %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend LDOMParser {
-	~LDOMParser() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LDOMParser\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

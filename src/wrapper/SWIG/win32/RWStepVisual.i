@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include RWStepVisual_dependencies.i
 
 
@@ -48,10 +52,18 @@ class RWStepVisual_RWAreaInSet {
 		void Share(const Handle_StepVisual_AreaInSet &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWAreaInSet::~RWStepVisual_RWAreaInSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWAreaInSet {
-	~RWStepVisual_RWAreaInSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWAreaInSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -69,10 +81,18 @@ class RWStepVisual_RWCompositeTextWithExtent {
 		void Share(const Handle_StepVisual_CompositeTextWithExtent &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWCompositeTextWithExtent::~RWStepVisual_RWCompositeTextWithExtent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWCompositeTextWithExtent {
-	~RWStepVisual_RWCompositeTextWithExtent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCompositeTextWithExtent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -88,10 +108,18 @@ class RWStepVisual_RWCurveStyleFontPattern {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CurveStyleFontPattern &ent) const;
 
 };
+%feature("shadow") RWStepVisual_RWCurveStyleFontPattern::~RWStepVisual_RWCurveStyleFontPattern %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWCurveStyleFontPattern {
-	~RWStepVisual_RWCurveStyleFontPattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyleFontPattern\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -109,10 +137,18 @@ class RWStepVisual_RWBackgroundColour {
 		void Share(const Handle_StepVisual_BackgroundColour &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWBackgroundColour::~RWStepVisual_RWBackgroundColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWBackgroundColour {
-	~RWStepVisual_RWBackgroundColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWBackgroundColour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -130,10 +166,18 @@ class RWStepVisual_RWFillAreaStyle {
 		void Share(const Handle_StepVisual_FillAreaStyle &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWFillAreaStyle::~RWStepVisual_RWFillAreaStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWFillAreaStyle {
-	~RWStepVisual_RWFillAreaStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWFillAreaStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -151,10 +195,18 @@ class RWStepVisual_RWTemplate {
 		void Share(const Handle_StepVisual_Template &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWTemplate::~RWStepVisual_RWTemplate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWTemplate {
-	~RWStepVisual_RWTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTemplate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -172,10 +224,18 @@ class RWStepVisual_RWSurfaceStyleSilhouette {
 		void Share(const Handle_StepVisual_SurfaceStyleSilhouette &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWSurfaceStyleSilhouette::~RWStepVisual_RWSurfaceStyleSilhouette %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWSurfaceStyleSilhouette {
-	~RWStepVisual_RWSurfaceStyleSilhouette() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleSilhouette\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -193,10 +253,18 @@ class RWStepVisual_RWTextStyleWithBoxCharacteristics {
 		void Share(const Handle_StepVisual_TextStyleWithBoxCharacteristics &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWTextStyleWithBoxCharacteristics::~RWStepVisual_RWTextStyleWithBoxCharacteristics %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWTextStyleWithBoxCharacteristics {
-	~RWStepVisual_RWTextStyleWithBoxCharacteristics() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextStyleWithBoxCharacteristics\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -214,10 +282,18 @@ class RWStepVisual_RWSurfaceStyleSegmentationCurve {
 		void Share(const Handle_StepVisual_SurfaceStyleSegmentationCurve &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWSurfaceStyleSegmentationCurve::~RWStepVisual_RWSurfaceStyleSegmentationCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWSurfaceStyleSegmentationCurve {
-	~RWStepVisual_RWSurfaceStyleSegmentationCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleSegmentationCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -235,10 +311,18 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
 		void Share(const Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation::~RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
-	~RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -256,10 +340,18 @@ class RWStepVisual_RWPresentedItemRepresentation {
 		void Share(const Handle_StepVisual_PresentedItemRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWPresentedItemRepresentation::~RWStepVisual_RWPresentedItemRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPresentedItemRepresentation {
-	~RWStepVisual_RWPresentedItemRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentedItemRepresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -277,10 +369,18 @@ class RWStepVisual_RWSurfaceStyleUsage {
 		void Share(const Handle_StepVisual_SurfaceStyleUsage &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWSurfaceStyleUsage::~RWStepVisual_RWSurfaceStyleUsage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWSurfaceStyleUsage {
-	~RWStepVisual_RWSurfaceStyleUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleUsage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -296,10 +396,18 @@ class RWStepVisual_RWPreDefinedColour {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PreDefinedColour &ent) const;
 
 };
+%feature("shadow") RWStepVisual_RWPreDefinedColour::~RWStepVisual_RWPreDefinedColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPreDefinedColour {
-	~RWStepVisual_RWPreDefinedColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedColour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -317,10 +425,18 @@ class RWStepVisual_RWContextDependentInvisibility {
 		void Share(const Handle_StepVisual_ContextDependentInvisibility &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWContextDependentInvisibility::~RWStepVisual_RWContextDependentInvisibility %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWContextDependentInvisibility {
-	~RWStepVisual_RWContextDependentInvisibility() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWContextDependentInvisibility\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -336,10 +452,18 @@ class RWStepVisual_RWPreDefinedCurveFont {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PreDefinedCurveFont &ent) const;
 
 };
+%feature("shadow") RWStepVisual_RWPreDefinedCurveFont::~RWStepVisual_RWPreDefinedCurveFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPreDefinedCurveFont {
-	~RWStepVisual_RWPreDefinedCurveFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedCurveFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +481,18 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationArea {
 		void Share(const Handle_StepVisual_MechanicalDesignGeometricPresentationArea &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWMechanicalDesignGeometricPresentationArea::~RWStepVisual_RWMechanicalDesignGeometricPresentationArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWMechanicalDesignGeometricPresentationArea {
-	~RWStepVisual_RWMechanicalDesignGeometricPresentationArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWMechanicalDesignGeometricPresentationArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -378,10 +510,18 @@ class RWStepVisual_RWPresentationArea {
 		void Share(const Handle_StepVisual_PresentationArea &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWPresentationArea::~RWStepVisual_RWPresentationArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPresentationArea {
-	~RWStepVisual_RWPresentationArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -399,10 +539,18 @@ class RWStepVisual_RWPresentationView {
 		void Share(const Handle_StepVisual_PresentationView &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWPresentationView::~RWStepVisual_RWPresentationView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPresentationView {
-	~RWStepVisual_RWPresentationView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -420,10 +568,18 @@ class RWStepVisual_RWPresentationSize {
 		void Share(const Handle_StepVisual_PresentationSize &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWPresentationSize::~RWStepVisual_RWPresentationSize %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPresentationSize {
-	~RWStepVisual_RWPresentationSize() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationSize\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -441,10 +597,18 @@ class RWStepVisual_RWPresentationStyleByContext {
 		void Share(const Handle_StepVisual_PresentationStyleByContext &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWPresentationStyleByContext::~RWStepVisual_RWPresentationStyleByContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPresentationStyleByContext {
-	~RWStepVisual_RWPresentationStyleByContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationStyleByContext\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -460,10 +624,18 @@ class RWStepVisual_RWColourRgb {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_ColourRgb &ent) const;
 
 };
+%feature("shadow") RWStepVisual_RWColourRgb::~RWStepVisual_RWColourRgb %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWColourRgb {
-	~RWStepVisual_RWColourRgb() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWColourRgb\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -479,10 +651,18 @@ class RWStepVisual_RWPresentationSet {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationSet &ent) const;
 
 };
+%feature("shadow") RWStepVisual_RWPresentationSet::~RWStepVisual_RWPresentationSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPresentationSet {
-	~RWStepVisual_RWPresentationSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -500,10 +680,18 @@ class RWStepVisual_RWOverRidingStyledItem {
 		void Share(const Handle_StepVisual_OverRidingStyledItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWOverRidingStyledItem::~RWStepVisual_RWOverRidingStyledItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWOverRidingStyledItem {
-	~RWStepVisual_RWOverRidingStyledItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWOverRidingStyledItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -521,10 +709,18 @@ class RWStepVisual_RWSurfaceSideStyle {
 		void Share(const Handle_StepVisual_SurfaceSideStyle &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWSurfaceSideStyle::~RWStepVisual_RWSurfaceSideStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWSurfaceSideStyle {
-	~RWStepVisual_RWSurfaceSideStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceSideStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -542,10 +738,18 @@ class RWStepVisual_RWTextStyle {
 		void Share(const Handle_StepVisual_TextStyle &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWTextStyle::~RWStepVisual_RWTextStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWTextStyle {
-	~RWStepVisual_RWTextStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -563,10 +767,18 @@ class RWStepVisual_RWCameraImage {
 		void Share(const Handle_StepVisual_CameraImage &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWCameraImage::~RWStepVisual_RWCameraImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWCameraImage {
-	~RWStepVisual_RWCameraImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraImage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -584,10 +796,18 @@ class RWStepVisual_RWPresentationLayerAssignment {
 		void Share(const Handle_StepVisual_PresentationLayerAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWPresentationLayerAssignment::~RWStepVisual_RWPresentationLayerAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPresentationLayerAssignment {
-	~RWStepVisual_RWPresentationLayerAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationLayerAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -605,10 +825,18 @@ class RWStepVisual_RWTextLiteral {
 		void Share(const Handle_StepVisual_TextLiteral &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWTextLiteral::~RWStepVisual_RWTextLiteral %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWTextLiteral {
-	~RWStepVisual_RWTextLiteral() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextLiteral\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -624,10 +852,18 @@ class RWStepVisual_RWPlanarExtent {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PlanarExtent &ent) const;
 
 };
+%feature("shadow") RWStepVisual_RWPlanarExtent::~RWStepVisual_RWPlanarExtent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPlanarExtent {
-	~RWStepVisual_RWPlanarExtent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPlanarExtent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -645,10 +881,18 @@ class RWStepVisual_RWSurfaceStyleControlGrid {
 		void Share(const Handle_StepVisual_SurfaceStyleControlGrid &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWSurfaceStyleControlGrid::~RWStepVisual_RWSurfaceStyleControlGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWSurfaceStyleControlGrid {
-	~RWStepVisual_RWSurfaceStyleControlGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleControlGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -666,10 +910,18 @@ class RWStepVisual_RWInvisibility {
 		void Share(const Handle_StepVisual_Invisibility &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWInvisibility::~RWStepVisual_RWInvisibility %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWInvisibility {
-	~RWStepVisual_RWInvisibility() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWInvisibility\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -687,10 +939,18 @@ class RWStepVisual_RWSurfaceStyleBoundary {
 		void Share(const Handle_StepVisual_SurfaceStyleBoundary &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWSurfaceStyleBoundary::~RWStepVisual_RWSurfaceStyleBoundary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWSurfaceStyleBoundary {
-	~RWStepVisual_RWSurfaceStyleBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleBoundary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -706,10 +966,18 @@ class RWStepVisual_RWPreDefinedItem {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PreDefinedItem &ent) const;
 
 };
+%feature("shadow") RWStepVisual_RWPreDefinedItem::~RWStepVisual_RWPreDefinedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPreDefinedItem {
-	~RWStepVisual_RWPreDefinedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -725,10 +993,18 @@ class RWStepVisual_RWColourSpecification {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_ColourSpecification &ent) const;
 
 };
+%feature("shadow") RWStepVisual_RWColourSpecification::~RWStepVisual_RWColourSpecification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWColourSpecification {
-	~RWStepVisual_RWColourSpecification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWColourSpecification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -746,10 +1022,18 @@ class RWStepVisual_RWFillAreaStyleColour {
 		void Share(const Handle_StepVisual_FillAreaStyleColour &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWFillAreaStyleColour::~RWStepVisual_RWFillAreaStyleColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWFillAreaStyleColour {
-	~RWStepVisual_RWFillAreaStyleColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWFillAreaStyleColour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -767,10 +1051,18 @@ class RWStepVisual_RWTemplateInstance {
 		void Share(const Handle_StepVisual_TemplateInstance &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWTemplateInstance::~RWStepVisual_RWTemplateInstance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWTemplateInstance {
-	~RWStepVisual_RWTemplateInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTemplateInstance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -788,10 +1080,18 @@ class RWStepVisual_RWSurfaceStyleFillArea {
 		void Share(const Handle_StepVisual_SurfaceStyleFillArea &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWSurfaceStyleFillArea::~RWStepVisual_RWSurfaceStyleFillArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWSurfaceStyleFillArea {
-	~RWStepVisual_RWSurfaceStyleFillArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleFillArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -809,10 +1109,18 @@ class RWStepVisual_RWViewVolume {
 		void Share(const Handle_StepVisual_ViewVolume &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWViewVolume::~RWStepVisual_RWViewVolume %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWViewVolume {
-	~RWStepVisual_RWViewVolume() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWViewVolume\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -830,10 +1138,18 @@ class RWStepVisual_RWStyledItem {
 		void Share(const Handle_StepVisual_StyledItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWStyledItem::~RWStepVisual_RWStyledItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWStyledItem {
-	~RWStepVisual_RWStyledItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWStyledItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -851,10 +1167,18 @@ class RWStepVisual_RWCurveStyle {
 		void Share(const Handle_StepVisual_CurveStyle &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWCurveStyle::~RWStepVisual_RWCurveStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWCurveStyle {
-	~RWStepVisual_RWCurveStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -872,10 +1196,18 @@ class RWStepVisual_RWContextDependentOverRidingStyledItem {
 		void Share(const Handle_StepVisual_ContextDependentOverRidingStyledItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWContextDependentOverRidingStyledItem::~RWStepVisual_RWContextDependentOverRidingStyledItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWContextDependentOverRidingStyledItem {
-	~RWStepVisual_RWContextDependentOverRidingStyledItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWContextDependentOverRidingStyledItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -893,10 +1225,18 @@ class RWStepVisual_RWPointStyle {
 		void Share(const Handle_StepVisual_PointStyle &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWPointStyle::~RWStepVisual_RWPointStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPointStyle {
-	~RWStepVisual_RWPointStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPointStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -914,10 +1254,18 @@ class RWStepVisual_RWCompositeText {
 		void Share(const Handle_StepVisual_CompositeText &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWCompositeText::~RWStepVisual_RWCompositeText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWCompositeText {
-	~RWStepVisual_RWCompositeText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCompositeText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -935,10 +1283,18 @@ class RWStepVisual_RWDraughtingModel {
 		void Share(const Handle_StepVisual_DraughtingModel &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWDraughtingModel::~RWStepVisual_RWDraughtingModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWDraughtingModel {
-	~RWStepVisual_RWDraughtingModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingModel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -954,10 +1310,18 @@ class RWStepVisual_RWCameraModel {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CameraModel &ent) const;
 
 };
+%feature("shadow") RWStepVisual_RWCameraModel::~RWStepVisual_RWCameraModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWCameraModel {
-	~RWStepVisual_RWCameraModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraModel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -975,10 +1339,18 @@ class RWStepVisual_RWCameraUsage {
 		void Share(const Handle_StepVisual_CameraUsage &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWCameraUsage::~RWStepVisual_RWCameraUsage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWCameraUsage {
-	~RWStepVisual_RWCameraUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraUsage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -996,10 +1368,18 @@ class RWStepVisual_RWTextStyleForDefinedFont {
 		void Share(const Handle_StepVisual_TextStyleForDefinedFont &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWTextStyleForDefinedFont::~RWStepVisual_RWTextStyleForDefinedFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWTextStyleForDefinedFont {
-	~RWStepVisual_RWTextStyleForDefinedFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextStyleForDefinedFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1015,10 +1395,18 @@ class RWStepVisual_RWColour {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_Colour &ent) const;
 
 };
+%feature("shadow") RWStepVisual_RWColour::~RWStepVisual_RWColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWColour {
-	~RWStepVisual_RWColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWColour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1036,10 +1424,18 @@ class RWStepVisual_RWPresentationRepresentation {
 		void Share(const Handle_StepVisual_PresentationRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWPresentationRepresentation::~RWStepVisual_RWPresentationRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPresentationRepresentation {
-	~RWStepVisual_RWPresentationRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationRepresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1057,10 +1453,18 @@ class RWStepVisual_RWCurveStyleFont {
 		void Share(const Handle_StepVisual_CurveStyleFont &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWCurveStyleFont::~RWStepVisual_RWCurveStyleFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWCurveStyleFont {
-	~RWStepVisual_RWCurveStyleFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyleFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1078,10 +1482,18 @@ class RWStepVisual_RWPresentationLayerUsage {
 		void Share(const Handle_StepVisual_PresentationLayerUsage &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWPresentationLayerUsage::~RWStepVisual_RWPresentationLayerUsage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPresentationLayerUsage {
-	~RWStepVisual_RWPresentationLayerUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationLayerUsage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1099,10 +1511,18 @@ class RWStepVisual_RWExternallyDefinedCurveFont {
 		void Share(const Handle_StepVisual_ExternallyDefinedCurveFont &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWExternallyDefinedCurveFont::~RWStepVisual_RWExternallyDefinedCurveFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWExternallyDefinedCurveFont {
-	~RWStepVisual_RWExternallyDefinedCurveFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWExternallyDefinedCurveFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1118,10 +1538,18 @@ class RWStepVisual_RWDraughtingPreDefinedCurveFont {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_DraughtingPreDefinedCurveFont &ent) const;
 
 };
+%feature("shadow") RWStepVisual_RWDraughtingPreDefinedCurveFont::~RWStepVisual_RWDraughtingPreDefinedCurveFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWDraughtingPreDefinedCurveFont {
-	~RWStepVisual_RWDraughtingPreDefinedCurveFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingPreDefinedCurveFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1139,10 +1567,18 @@ class RWStepVisual_RWPresentationStyleAssignment {
 		void Share(const Handle_StepVisual_PresentationStyleAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWPresentationStyleAssignment::~RWStepVisual_RWPresentationStyleAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPresentationStyleAssignment {
-	~RWStepVisual_RWPresentationStyleAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationStyleAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1160,10 +1596,18 @@ class RWStepVisual_RWPlanarBox {
 		void Share(const Handle_StepVisual_PlanarBox &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWPlanarBox::~RWStepVisual_RWPlanarBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWPlanarBox {
-	~RWStepVisual_RWPlanarBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPlanarBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1181,10 +1625,18 @@ class RWStepVisual_RWCameraModelD2 {
 		void Share(const Handle_StepVisual_CameraModelD2 &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWCameraModelD2::~RWStepVisual_RWCameraModelD2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWCameraModelD2 {
-	~RWStepVisual_RWCameraModelD2() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraModelD2\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1202,10 +1654,18 @@ class RWStepVisual_RWCameraModelD3 {
 		void Share(const Handle_StepVisual_CameraModelD3 &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWCameraModelD3::~RWStepVisual_RWCameraModelD3 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWCameraModelD3 {
-	~RWStepVisual_RWCameraModelD3() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraModelD3\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1221,10 +1681,18 @@ class RWStepVisual_RWDraughtingPreDefinedColour {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_DraughtingPreDefinedColour &ent) const;
 
 };
+%feature("shadow") RWStepVisual_RWDraughtingPreDefinedColour::~RWStepVisual_RWDraughtingPreDefinedColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWDraughtingPreDefinedColour {
-	~RWStepVisual_RWDraughtingPreDefinedColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingPreDefinedColour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1242,9 +1710,17 @@ class RWStepVisual_RWSurfaceStyleParameterLine {
 		void Share(const Handle_StepVisual_SurfaceStyleParameterLine &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepVisual_RWSurfaceStyleParameterLine::~RWStepVisual_RWSurfaceStyleParameterLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepVisual_RWSurfaceStyleParameterLine {
-	~RWStepVisual_RWSurfaceStyleParameterLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleParameterLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

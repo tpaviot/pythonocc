@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TDF_dependencies.i
 
 
@@ -59,10 +63,18 @@ class Handle_TDF_DoubleMapNodeOfGUIDProgIDMap : public Handle_TCollection_MapNod
 	return (TDF_DoubleMapNodeOfGUIDProgIDMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DoubleMapNodeOfGUIDProgIDMap::~Handle_TDF_DoubleMapNodeOfGUIDProgIDMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DoubleMapNodeOfGUIDProgIDMap {
-	~Handle_TDF_DoubleMapNodeOfGUIDProgIDMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DoubleMapNodeOfGUIDProgIDMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -89,10 +101,18 @@ class Handle_TDF_AttributeDelta : public Handle_MMgt_TShared {
 	return (TDF_AttributeDelta*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_AttributeDelta::~Handle_TDF_AttributeDelta %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_AttributeDelta {
-	~Handle_TDF_AttributeDelta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_AttributeDelta\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -119,10 +139,18 @@ class Handle_TDF_DeltaOnForget : public Handle_TDF_AttributeDelta {
 	return (TDF_DeltaOnForget*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DeltaOnForget::~Handle_TDF_DeltaOnForget %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DeltaOnForget {
-	~Handle_TDF_DeltaOnForget() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DeltaOnForget\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -149,10 +177,18 @@ class Handle_TDF_StdMapNodeOfLabelMap : public Handle_TCollection_MapNode {
 	return (TDF_StdMapNodeOfLabelMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_StdMapNodeOfLabelMap::~Handle_TDF_StdMapNodeOfLabelMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_StdMapNodeOfLabelMap {
-	~Handle_TDF_StdMapNodeOfLabelMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_StdMapNodeOfLabelMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -179,10 +215,18 @@ class Handle_TDF_DeltaOnRemoval : public Handle_TDF_AttributeDelta {
 	return (TDF_DeltaOnRemoval*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DeltaOnRemoval::~Handle_TDF_DeltaOnRemoval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DeltaOnRemoval {
-	~Handle_TDF_DeltaOnRemoval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DeltaOnRemoval\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -209,10 +253,18 @@ class Handle_TDF_ListNodeOfAttributeDeltaList : public Handle_TCollection_MapNod
 	return (TDF_ListNodeOfAttributeDeltaList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_ListNodeOfAttributeDeltaList::~Handle_TDF_ListNodeOfAttributeDeltaList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_ListNodeOfAttributeDeltaList {
-	~Handle_TDF_ListNodeOfAttributeDeltaList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_ListNodeOfAttributeDeltaList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -239,10 +291,18 @@ class Handle_TDF_ListNodeOfIDList : public Handle_TCollection_MapNode {
 	return (TDF_ListNodeOfIDList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_ListNodeOfIDList::~Handle_TDF_ListNodeOfIDList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_ListNodeOfIDList {
-	~Handle_TDF_ListNodeOfIDList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_ListNodeOfIDList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -269,10 +329,18 @@ class Handle_TDF_Attribute : public Handle_MMgt_TShared {
 	return (TDF_Attribute*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_Attribute::~Handle_TDF_Attribute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_Attribute {
-	~Handle_TDF_Attribute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_Attribute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -299,10 +367,18 @@ class Handle_TDF_DataMapNodeOfLabelIntegerMap : public Handle_TCollection_MapNod
 	return (TDF_DataMapNodeOfLabelIntegerMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DataMapNodeOfLabelIntegerMap::~Handle_TDF_DataMapNodeOfLabelIntegerMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DataMapNodeOfLabelIntegerMap {
-	~Handle_TDF_DataMapNodeOfLabelIntegerMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DataMapNodeOfLabelIntegerMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -329,10 +405,18 @@ class Handle_TDF_RelocationTable : public Handle_MMgt_TShared {
 	return (TDF_RelocationTable*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_RelocationTable::~Handle_TDF_RelocationTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_RelocationTable {
-	~Handle_TDF_RelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_RelocationTable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -359,10 +443,18 @@ class Handle_TDF_Reference : public Handle_TDF_Attribute {
 	return (TDF_Reference*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_Reference::~Handle_TDF_Reference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_Reference {
-	~Handle_TDF_Reference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_Reference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -389,10 +481,18 @@ class Handle_TDF_SequenceNodeOfAttributeSequence : public Handle_TCollection_Seq
 	return (TDF_SequenceNodeOfAttributeSequence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_SequenceNodeOfAttributeSequence::~Handle_TDF_SequenceNodeOfAttributeSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_SequenceNodeOfAttributeSequence {
-	~Handle_TDF_SequenceNodeOfAttributeSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_SequenceNodeOfAttributeSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -419,10 +519,18 @@ class Handle_TDF_Data : public Handle_MMgt_TShared {
 	return (TDF_Data*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_Data::~Handle_TDF_Data %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_Data {
-	~Handle_TDF_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_Data\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -449,10 +557,18 @@ class Handle_TDF_DoubleMapNodeOfLabelDoubleMap : public Handle_TCollection_MapNo
 	return (TDF_DoubleMapNodeOfLabelDoubleMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DoubleMapNodeOfLabelDoubleMap::~Handle_TDF_DoubleMapNodeOfLabelDoubleMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DoubleMapNodeOfLabelDoubleMap {
-	~Handle_TDF_DoubleMapNodeOfLabelDoubleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DoubleMapNodeOfLabelDoubleMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -479,10 +595,18 @@ class Handle_TDF_IndexedMapNodeOfAttributeIndexedMap : public Handle_TCollection
 	return (TDF_IndexedMapNodeOfAttributeIndexedMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_IndexedMapNodeOfAttributeIndexedMap::~Handle_TDF_IndexedMapNodeOfAttributeIndexedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_IndexedMapNodeOfAttributeIndexedMap {
-	~Handle_TDF_IndexedMapNodeOfAttributeIndexedMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_IndexedMapNodeOfAttributeIndexedMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -509,10 +633,18 @@ class Handle_TDF_HAttributeArray1 : public Handle_MMgt_TShared {
 	return (TDF_HAttributeArray1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_HAttributeArray1::~Handle_TDF_HAttributeArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_HAttributeArray1 {
-	~Handle_TDF_HAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_HAttributeArray1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -539,10 +671,18 @@ class Handle_TDF_DataMapNodeOfLabelLabelMap : public Handle_TCollection_MapNode 
 	return (TDF_DataMapNodeOfLabelLabelMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DataMapNodeOfLabelLabelMap::~Handle_TDF_DataMapNodeOfLabelLabelMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DataMapNodeOfLabelLabelMap {
-	~Handle_TDF_DataMapNodeOfLabelLabelMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DataMapNodeOfLabelLabelMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -569,10 +709,18 @@ class Handle_TDF_TagSource : public Handle_TDF_Attribute {
 	return (TDF_TagSource*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_TagSource::~Handle_TDF_TagSource %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_TagSource {
-	~Handle_TDF_TagSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_TagSource\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -599,10 +747,18 @@ class Handle_TDF_ListNodeOfDeltaList : public Handle_TCollection_MapNode {
 	return (TDF_ListNodeOfDeltaList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_ListNodeOfDeltaList::~Handle_TDF_ListNodeOfDeltaList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_ListNodeOfDeltaList {
-	~Handle_TDF_ListNodeOfDeltaList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_ListNodeOfDeltaList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -629,10 +785,18 @@ class Handle_TDF_ListNodeOfAttributeList : public Handle_TCollection_MapNode {
 	return (TDF_ListNodeOfAttributeList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_ListNodeOfAttributeList::~Handle_TDF_ListNodeOfAttributeList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_ListNodeOfAttributeList {
-	~Handle_TDF_ListNodeOfAttributeList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_ListNodeOfAttributeList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -659,10 +823,18 @@ class Handle_TDF_DoubleMapNodeOfAttributeDoubleMap : public Handle_TCollection_M
 	return (TDF_DoubleMapNodeOfAttributeDoubleMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DoubleMapNodeOfAttributeDoubleMap::~Handle_TDF_DoubleMapNodeOfAttributeDoubleMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DoubleMapNodeOfAttributeDoubleMap {
-	~Handle_TDF_DoubleMapNodeOfAttributeDoubleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DoubleMapNodeOfAttributeDoubleMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -689,10 +861,18 @@ class Handle_TDF_StdMapNodeOfAttributeMap : public Handle_TCollection_MapNode {
 	return (TDF_StdMapNodeOfAttributeMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_StdMapNodeOfAttributeMap::~Handle_TDF_StdMapNodeOfAttributeMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_StdMapNodeOfAttributeMap {
-	~Handle_TDF_StdMapNodeOfAttributeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_StdMapNodeOfAttributeMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -719,10 +899,18 @@ class Handle_TDF_DeltaOnAddition : public Handle_TDF_AttributeDelta {
 	return (TDF_DeltaOnAddition*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DeltaOnAddition::~Handle_TDF_DeltaOnAddition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DeltaOnAddition {
-	~Handle_TDF_DeltaOnAddition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DeltaOnAddition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -749,10 +937,18 @@ class Handle_TDF_ListNodeOfLabelList : public Handle_TCollection_MapNode {
 	return (TDF_ListNodeOfLabelList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_ListNodeOfLabelList::~Handle_TDF_ListNodeOfLabelList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_ListNodeOfLabelList {
-	~Handle_TDF_ListNodeOfLabelList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_ListNodeOfLabelList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -779,10 +975,18 @@ class Handle_TDF_DataSet : public Handle_MMgt_TShared {
 	return (TDF_DataSet*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DataSet::~Handle_TDF_DataSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DataSet {
-	~Handle_TDF_DataSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DataSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -809,10 +1013,18 @@ class Handle_TDF_DeltaOnModification : public Handle_TDF_AttributeDelta {
 	return (TDF_DeltaOnModification*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DeltaOnModification::~Handle_TDF_DeltaOnModification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DeltaOnModification {
-	~Handle_TDF_DeltaOnModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DeltaOnModification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -839,10 +1051,18 @@ class Handle_TDF_DataMapNodeOfLabelDataMap : public Handle_TCollection_MapNode {
 	return (TDF_DataMapNodeOfLabelDataMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DataMapNodeOfLabelDataMap::~Handle_TDF_DataMapNodeOfLabelDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DataMapNodeOfLabelDataMap {
-	~Handle_TDF_DataMapNodeOfLabelDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DataMapNodeOfLabelDataMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -869,10 +1089,18 @@ class Handle_TDF_DefaultDeltaOnModification : public Handle_TDF_DeltaOnModificat
 	return (TDF_DefaultDeltaOnModification*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DefaultDeltaOnModification::~Handle_TDF_DefaultDeltaOnModification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DefaultDeltaOnModification {
-	~Handle_TDF_DefaultDeltaOnModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DefaultDeltaOnModification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -899,10 +1127,18 @@ class Handle_TDF_DefaultDeltaOnRemoval : public Handle_TDF_DeltaOnRemoval {
 	return (TDF_DefaultDeltaOnRemoval*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DefaultDeltaOnRemoval::~Handle_TDF_DefaultDeltaOnRemoval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DefaultDeltaOnRemoval {
-	~Handle_TDF_DefaultDeltaOnRemoval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DefaultDeltaOnRemoval\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -929,10 +1165,18 @@ class Handle_TDF_DataMapNodeOfAttributeDataMap : public Handle_TCollection_MapNo
 	return (TDF_DataMapNodeOfAttributeDataMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DataMapNodeOfAttributeDataMap::~Handle_TDF_DataMapNodeOfAttributeDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DataMapNodeOfAttributeDataMap {
-	~Handle_TDF_DataMapNodeOfAttributeDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DataMapNodeOfAttributeDataMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -959,10 +1203,18 @@ class Handle_TDF_DeltaOnResume : public Handle_TDF_AttributeDelta {
 	return (TDF_DeltaOnResume*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_DeltaOnResume::~Handle_TDF_DeltaOnResume %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_DeltaOnResume {
-	~Handle_TDF_DeltaOnResume() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DeltaOnResume\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -989,10 +1241,18 @@ class Handle_TDF_StdMapNodeOfIDMap : public Handle_TCollection_MapNode {
 	return (TDF_StdMapNodeOfIDMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_StdMapNodeOfIDMap::~Handle_TDF_StdMapNodeOfIDMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_StdMapNodeOfIDMap {
-	~Handle_TDF_StdMapNodeOfIDMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_StdMapNodeOfIDMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1019,10 +1279,18 @@ class Handle_TDF_IndexedMapNodeOfLabelIndexedMap : public Handle_TCollection_Map
 	return (TDF_IndexedMapNodeOfLabelIndexedMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_IndexedMapNodeOfLabelIndexedMap::~Handle_TDF_IndexedMapNodeOfLabelIndexedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_IndexedMapNodeOfLabelIndexedMap {
-	~Handle_TDF_IndexedMapNodeOfLabelIndexedMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_IndexedMapNodeOfLabelIndexedMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1049,10 +1317,18 @@ class Handle_TDF_Delta : public Handle_MMgt_TShared {
 	return (TDF_Delta*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_Delta::~Handle_TDF_Delta %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_Delta {
-	~Handle_TDF_Delta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_Delta\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1079,10 +1355,18 @@ class Handle_TDF_SequenceNodeOfLabelSequence : public Handle_TCollection_SeqNode
 	return (TDF_SequenceNodeOfLabelSequence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDF_SequenceNodeOfLabelSequence::~Handle_TDF_SequenceNodeOfLabelSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDF_SequenceNodeOfLabelSequence {
-	~Handle_TDF_SequenceNodeOfLabelSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDF_SequenceNodeOfLabelSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1118,10 +1402,18 @@ class TDF_AttributeDoubleMap : public TCollection_BasicMap {
 		Standard_Boolean UnBind2(const Handle_TDF_Attribute &K);
 
 };
+%feature("shadow") TDF_AttributeDoubleMap::~TDF_AttributeDoubleMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_AttributeDoubleMap {
-	~TDF_AttributeDoubleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_AttributeDoubleMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1141,10 +1433,18 @@ class TDF_DataMapIteratorOfLabelDataMap : public TCollection_BasicMapIterator {
 		const TDF_Label & Value() const;
 
 };
+%feature("shadow") TDF_DataMapIteratorOfLabelDataMap::~TDF_DataMapIteratorOfLabelDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DataMapIteratorOfLabelDataMap {
-	~TDF_DataMapIteratorOfLabelDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DataMapIteratorOfLabelDataMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1166,10 +1466,18 @@ class TDF_ComparisonTool {
 		Standard_Boolean IsSelfContained(const TDF_Label &aLabel, const Handle_TDF_DataSet &aDataSet);
 
 };
+%feature("shadow") TDF_ComparisonTool::~TDF_ComparisonTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ComparisonTool {
-	~TDF_ComparisonTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ComparisonTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1191,10 +1499,18 @@ class TDF_ListIteratorOfIDList {
 		Standard_GUID & Value() const;
 
 };
+%feature("shadow") TDF_ListIteratorOfIDList::~TDF_ListIteratorOfIDList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ListIteratorOfIDList {
-	~TDF_ListIteratorOfIDList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ListIteratorOfIDList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1212,10 +1528,18 @@ class TDF_ClosureTool {
 		void Closure(const TDF_Label &aLabel, TDF_LabelMap & aLabMap, TDF_AttributeMap & anAttMap, const TDF_IDFilter &aFilter, const TDF_ClosureMode &aMode);
 
 };
+%feature("shadow") TDF_ClosureTool::~TDF_ClosureTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ClosureTool {
-	~TDF_ClosureTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ClosureTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1315,10 +1639,18 @@ class TDF_Attribute : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_Attribute::~TDF_Attribute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_Attribute {
-	~TDF_Attribute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_Attribute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1334,10 +1666,18 @@ class TDF_LabelMapHasher {
 		Standard_Boolean IsEqual(const TDF_Label &aLab1, const TDF_Label &aLab2);
 
 };
+%feature("shadow") TDF_LabelMapHasher::~TDF_LabelMapHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_LabelMapHasher {
-	~TDF_LabelMapHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_LabelMapHasher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1363,10 +1703,18 @@ class TDF_ListNodeOfDeltaList : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_ListNodeOfDeltaList::~TDF_ListNodeOfDeltaList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ListNodeOfDeltaList {
-	~TDF_ListNodeOfDeltaList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ListNodeOfDeltaList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1396,10 +1744,18 @@ class TDF_DoubleMapNodeOfGUIDProgIDMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DoubleMapNodeOfGUIDProgIDMap::~TDF_DoubleMapNodeOfGUIDProgIDMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DoubleMapNodeOfGUIDProgIDMap {
-	~TDF_DoubleMapNodeOfGUIDProgIDMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapNodeOfGUIDProgIDMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1433,10 +1789,18 @@ class TDF_LabelDataMap : public TCollection_BasicMap {
 		TDF_Label & operator()(const TDF_Label &K);
 
 };
+%feature("shadow") TDF_LabelDataMap::~TDF_LabelDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_LabelDataMap {
-	~TDF_LabelDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_LabelDataMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1474,10 +1838,18 @@ class TDF_AttributeDelta : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_AttributeDelta::~TDF_AttributeDelta %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_AttributeDelta {
-	~TDF_AttributeDelta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_AttributeDelta\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1497,10 +1869,18 @@ class TDF_DeltaOnRemoval : public TDF_AttributeDelta {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DeltaOnRemoval::~TDF_DeltaOnRemoval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DeltaOnRemoval {
-	~TDF_DeltaOnRemoval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DeltaOnRemoval\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1522,10 +1902,18 @@ class TDF_DefaultDeltaOnRemoval : public TDF_DeltaOnRemoval {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DefaultDeltaOnRemoval::~TDF_DefaultDeltaOnRemoval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DefaultDeltaOnRemoval {
-	~TDF_DefaultDeltaOnRemoval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DefaultDeltaOnRemoval\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1575,10 +1963,18 @@ class TDF_AttributeList {
 		void InsertAfter(TDF_AttributeList & Other, TDF_ListIteratorOfAttributeList & It);
 
 };
+%feature("shadow") TDF_AttributeList::~TDF_AttributeList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_AttributeList {
-	~TDF_AttributeList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_AttributeList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1604,10 +2000,18 @@ class TDF_SequenceNodeOfLabelSequence : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_SequenceNodeOfLabelSequence::~TDF_SequenceNodeOfLabelSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_SequenceNodeOfLabelSequence {
-	~TDF_SequenceNodeOfLabelSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_SequenceNodeOfLabelSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1629,10 +2033,18 @@ class TDF_ListIteratorOfDeltaList {
 		Handle_TDF_Delta & Value() const;
 
 };
+%feature("shadow") TDF_ListIteratorOfDeltaList::~TDF_ListIteratorOfDeltaList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ListIteratorOfDeltaList {
-	~TDF_ListIteratorOfDeltaList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ListIteratorOfDeltaList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1658,10 +2070,18 @@ class TDF_ListNodeOfAttributeDeltaList : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_ListNodeOfAttributeDeltaList::~TDF_ListNodeOfAttributeDeltaList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ListNodeOfAttributeDeltaList {
-	~TDF_ListNodeOfAttributeDeltaList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ListNodeOfAttributeDeltaList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1681,10 +2101,18 @@ class TDF_DataMapIteratorOfAttributeDataMap : public TCollection_BasicMapIterato
 		const Handle_TDF_Attribute & Value() const;
 
 };
+%feature("shadow") TDF_DataMapIteratorOfAttributeDataMap::~TDF_DataMapIteratorOfAttributeDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DataMapIteratorOfAttributeDataMap {
-	~TDF_DataMapIteratorOfAttributeDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DataMapIteratorOfAttributeDataMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1720,10 +2148,18 @@ class TDF_LabelDoubleMap : public TCollection_BasicMap {
 		Standard_Boolean UnBind2(const TDF_Label &K);
 
 };
+%feature("shadow") TDF_LabelDoubleMap::~TDF_LabelDoubleMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_LabelDoubleMap {
-	~TDF_LabelDoubleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_LabelDoubleMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1751,10 +2187,18 @@ class TDF_DataMapNodeOfLabelDataMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DataMapNodeOfLabelDataMap::~TDF_DataMapNodeOfLabelDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DataMapNodeOfLabelDataMap {
-	~TDF_DataMapNodeOfLabelDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DataMapNodeOfLabelDataMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1766,8 +2210,18 @@ class TDF_DataMapNodeOfLabelIntegerMap : public TCollection_MapNode {
 		TDF_DataMapNodeOfLabelIntegerMap(const TDF_Label &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TDF_Label & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1782,10 +2236,18 @@ class TDF_DataMapNodeOfLabelIntegerMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DataMapNodeOfLabelIntegerMap::~TDF_DataMapNodeOfLabelIntegerMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DataMapNodeOfLabelIntegerMap {
-	~TDF_DataMapNodeOfLabelIntegerMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DataMapNodeOfLabelIntegerMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1807,10 +2269,18 @@ class TDF_ListIteratorOfAttributeDeltaList {
 		Handle_TDF_AttributeDelta & Value() const;
 
 };
+%feature("shadow") TDF_ListIteratorOfAttributeDeltaList::~TDF_ListIteratorOfAttributeDeltaList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ListIteratorOfAttributeDeltaList {
-	~TDF_ListIteratorOfAttributeDeltaList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ListIteratorOfAttributeDeltaList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1830,10 +2300,18 @@ class TDF_DoubleMapIteratorOfAttributeDoubleMap : public TCollection_BasicMapIte
 		const Handle_TDF_Attribute & Key2() const;
 
 };
+%feature("shadow") TDF_DoubleMapIteratorOfAttributeDoubleMap::~TDF_DoubleMapIteratorOfAttributeDoubleMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DoubleMapIteratorOfAttributeDoubleMap {
-	~TDF_DoubleMapIteratorOfAttributeDoubleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapIteratorOfAttributeDoubleMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1859,10 +2337,18 @@ class TDF_ListNodeOfLabelList : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_ListNodeOfLabelList::~TDF_ListNodeOfLabelList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ListNodeOfLabelList {
-	~TDF_ListNodeOfLabelList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ListNodeOfLabelList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1888,10 +2374,18 @@ class TDF_SequenceNodeOfAttributeSequence : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_SequenceNodeOfAttributeSequence::~TDF_SequenceNodeOfAttributeSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_SequenceNodeOfAttributeSequence {
-	~TDF_SequenceNodeOfAttributeSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_SequenceNodeOfAttributeSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1915,10 +2409,18 @@ class TDF_ChildIterator {
 		TDF_Label const Value() const;
 
 };
+%feature("shadow") TDF_ChildIterator::~TDF_ChildIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ChildIterator {
-	~TDF_ChildIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ChildIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1964,10 +2466,18 @@ class TDF_TagSource : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_TagSource::~TDF_TagSource %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_TagSource {
-	~TDF_TagSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_TagSource\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1993,10 +2503,18 @@ class TDF_DeltaOnForget : public TDF_AttributeDelta {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DeltaOnForget::~TDF_DeltaOnForget %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DeltaOnForget {
-	~TDF_DeltaOnForget() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DeltaOnForget\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2016,10 +2534,18 @@ class TDF_DoubleMapIteratorOfLabelDoubleMap : public TCollection_BasicMapIterato
 		const TDF_Label & Key2() const;
 
 };
+%feature("shadow") TDF_DoubleMapIteratorOfLabelDoubleMap::~TDF_DoubleMapIteratorOfLabelDoubleMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DoubleMapIteratorOfLabelDoubleMap {
-	~TDF_DoubleMapIteratorOfLabelDoubleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapIteratorOfLabelDoubleMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2069,10 +2595,18 @@ class TDF_AttributeDeltaList {
 		void InsertAfter(TDF_AttributeDeltaList & Other, TDF_ListIteratorOfAttributeDeltaList & It);
 
 };
+%feature("shadow") TDF_AttributeDeltaList::~TDF_AttributeDeltaList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_AttributeDeltaList {
-	~TDF_AttributeDeltaList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_AttributeDeltaList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2098,10 +2632,18 @@ class TDF_StdMapNodeOfAttributeMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_StdMapNodeOfAttributeMap::~TDF_StdMapNodeOfAttributeMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_StdMapNodeOfAttributeMap {
-	~TDF_StdMapNodeOfAttributeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_StdMapNodeOfAttributeMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2127,10 +2669,18 @@ class TDF_DeltaOnResume : public TDF_AttributeDelta {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DeltaOnResume::~TDF_DeltaOnResume %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DeltaOnResume {
-	~TDF_DeltaOnResume() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DeltaOnResume\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2156,10 +2706,18 @@ class TDF_StdMapNodeOfIDMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_StdMapNodeOfIDMap::~TDF_StdMapNodeOfIDMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_StdMapNodeOfIDMap {
-	~TDF_StdMapNodeOfIDMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_StdMapNodeOfIDMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2183,10 +2741,18 @@ class TDF_ChildIDIterator {
 		Handle_TDF_Attribute Value() const;
 
 };
+%feature("shadow") TDF_ChildIDIterator::~TDF_ChildIDIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ChildIDIterator {
-	~TDF_ChildIDIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ChildIDIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2210,10 +2776,18 @@ class TDF_DeltaOnModification : public TDF_AttributeDelta {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DeltaOnModification::~TDF_DeltaOnModification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DeltaOnModification {
-	~TDF_DeltaOnModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DeltaOnModification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2235,10 +2809,18 @@ class TDF_ListIteratorOfLabelList {
 		TDF_Label & Value() const;
 
 };
+%feature("shadow") TDF_ListIteratorOfLabelList::~TDF_ListIteratorOfLabelList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ListIteratorOfLabelList {
-	~TDF_ListIteratorOfLabelList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ListIteratorOfLabelList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2296,10 +2878,18 @@ class TDF_RelocationTable : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_RelocationTable::~TDF_RelocationTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_RelocationTable {
-	~TDF_RelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_RelocationTable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2319,10 +2909,18 @@ class TDF_DoubleMapIteratorOfGUIDProgIDMap : public TCollection_BasicMapIterator
 		const TCollection_ExtendedString & Key2() const;
 
 };
+%feature("shadow") TDF_DoubleMapIteratorOfGUIDProgIDMap::~TDF_DoubleMapIteratorOfGUIDProgIDMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DoubleMapIteratorOfGUIDProgIDMap {
-	~TDF_DoubleMapIteratorOfGUIDProgIDMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapIteratorOfGUIDProgIDMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2356,10 +2954,18 @@ class TDF_LabelLabelMap : public TCollection_BasicMap {
 		TDF_Label & operator()(const TDF_Label &K);
 
 };
+%feature("shadow") TDF_LabelLabelMap::~TDF_LabelLabelMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_LabelLabelMap {
-	~TDF_LabelLabelMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_LabelLabelMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2385,10 +2991,18 @@ class TDF_LabelMap : public TCollection_BasicMap {
 		Standard_Boolean Remove(const TDF_Label &aKey);
 
 };
+%feature("shadow") TDF_LabelMap::~TDF_LabelMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_LabelMap {
-	~TDF_LabelMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_LabelMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2418,10 +3032,18 @@ class TDF_Transaction {
 		Standard_Boolean IsOpen() const;
 
 };
+%feature("shadow") TDF_Transaction::~TDF_Transaction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_Transaction {
-	~TDF_Transaction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_Transaction\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2447,10 +3069,18 @@ class TDF_ListNodeOfIDList : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_ListNodeOfIDList::~TDF_ListNodeOfIDList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ListNodeOfIDList {
-	~TDF_ListNodeOfIDList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ListNodeOfIDList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2478,10 +3108,18 @@ class TDF_DataMapNodeOfAttributeDataMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DataMapNodeOfAttributeDataMap::~TDF_DataMapNodeOfAttributeDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DataMapNodeOfAttributeDataMap {
-	~TDF_DataMapNodeOfAttributeDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DataMapNodeOfAttributeDataMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2509,10 +3147,18 @@ class TDF_DataMapNodeOfLabelLabelMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DataMapNodeOfLabelLabelMap::~TDF_DataMapNodeOfLabelLabelMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DataMapNodeOfLabelLabelMap {
-	~TDF_DataMapNodeOfLabelLabelMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DataMapNodeOfLabelLabelMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2532,10 +3178,18 @@ class TDF_DataMapIteratorOfLabelLabelMap : public TCollection_BasicMapIterator {
 		const TDF_Label & Value() const;
 
 };
+%feature("shadow") TDF_DataMapIteratorOfLabelLabelMap::~TDF_DataMapIteratorOfLabelLabelMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DataMapIteratorOfLabelLabelMap {
-	~TDF_DataMapIteratorOfLabelLabelMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DataMapIteratorOfLabelLabelMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2585,10 +3239,18 @@ class TDF_IDList {
 		void InsertAfter(TDF_IDList & Other, TDF_ListIteratorOfIDList & It);
 
 };
+%feature("shadow") TDF_IDList::~TDF_IDList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_IDList {
-	~TDF_IDList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_IDList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2622,10 +3284,18 @@ class TDF_AttributeDataMap : public TCollection_BasicMap {
 		Handle_TDF_Attribute & operator()(const Handle_TDF_Attribute &K);
 
 };
+%feature("shadow") TDF_AttributeDataMap::~TDF_AttributeDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_AttributeDataMap {
-	~TDF_AttributeDataMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_AttributeDataMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2675,10 +3345,18 @@ class TDF_DeltaList {
 		void InsertAfter(TDF_DeltaList & Other, TDF_ListIteratorOfDeltaList & It);
 
 };
+%feature("shadow") TDF_DeltaList::~TDF_DeltaList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DeltaList {
-	~TDF_DeltaList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DeltaList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2728,10 +3406,18 @@ class TDF_Reference : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_Reference::~TDF_Reference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_Reference {
-	~TDF_Reference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_Reference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2785,10 +3471,18 @@ class TDF_LabelSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") TDF_LabelSequence::~TDF_LabelSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_LabelSequence {
-	~TDF_LabelSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_LabelSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2818,10 +3512,18 @@ class TDF_DoubleMapNodeOfAttributeDoubleMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DoubleMapNodeOfAttributeDoubleMap::~TDF_DoubleMapNodeOfAttributeDoubleMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DoubleMapNodeOfAttributeDoubleMap {
-	~TDF_DoubleMapNodeOfAttributeDoubleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapNodeOfAttributeDoubleMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2871,10 +3573,18 @@ class TDF_LabelList {
 		void InsertAfter(TDF_LabelList & Other, TDF_ListIteratorOfLabelList & It);
 
 };
+%feature("shadow") TDF_LabelList::~TDF_LabelList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_LabelList {
-	~TDF_LabelList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_LabelList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2918,10 +3628,18 @@ class TDF_IDFilter {
 		};
 
 };
+%feature("shadow") TDF_IDFilter::~TDF_IDFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_IDFilter {
-	~TDF_IDFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_IDFilter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2975,10 +3693,18 @@ class TDF_AttributeSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") TDF_AttributeSequence::~TDF_AttributeSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_AttributeSequence {
-	~TDF_AttributeSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_AttributeSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3004,10 +3730,18 @@ class TDF_ListNodeOfAttributeList : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_ListNodeOfAttributeList::~TDF_ListNodeOfAttributeList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ListNodeOfAttributeList {
-	~TDF_ListNodeOfAttributeList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ListNodeOfAttributeList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3025,10 +3759,18 @@ class TDF_CopyTool {
 		void Copy(const Handle_TDF_DataSet &aSourceDataSet, const Handle_TDF_RelocationTable &aRelocationTable, const TDF_IDFilter &aPrivilegeFilter, const TDF_IDFilter &aRefFilter, const Standard_Boolean setSelfContained);
 
 };
+%feature("shadow") TDF_CopyTool::~TDF_CopyTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_CopyTool {
-	~TDF_CopyTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_CopyTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3080,10 +3822,18 @@ class TDF_Data : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_Data::~TDF_Data %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_Data {
-	~TDF_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_Data\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3095,8 +3845,18 @@ class TDF_IndexedMapNodeOfAttributeIndexedMap : public TCollection_MapNode {
 		TDF_IndexedMapNodeOfAttributeIndexedMap(const Handle_TDF_Attribute &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		Handle_TDF_Attribute & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -3113,10 +3873,18 @@ class TDF_IndexedMapNodeOfAttributeIndexedMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_IndexedMapNodeOfAttributeIndexedMap::~TDF_IndexedMapNodeOfAttributeIndexedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_IndexedMapNodeOfAttributeIndexedMap {
-	~TDF_IndexedMapNodeOfAttributeIndexedMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_IndexedMapNodeOfAttributeIndexedMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3168,10 +3936,18 @@ class TDF_DataSet : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DataSet::~TDF_DataSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DataSet {
-	~TDF_DataSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DataSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3269,10 +4045,18 @@ class TDF_Label {
 		};
 
 };
+%feature("shadow") TDF_Label::~TDF_Label %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_Label {
-	~TDF_Label() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_Label\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3298,10 +4082,18 @@ class TDF_IDMap : public TCollection_BasicMap {
 		Standard_Boolean Remove(const Standard_GUID &aKey);
 
 };
+%feature("shadow") TDF_IDMap::~TDF_IDMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_IDMap {
-	~TDF_IDMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_IDMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3329,10 +4121,18 @@ class TDF_CopyLabel {
 		const Handle_TDF_RelocationTable & RelocationTable() const;
 
 };
+%feature("shadow") TDF_CopyLabel::~TDF_CopyLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_CopyLabel {
-	~TDF_CopyLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_CopyLabel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3366,10 +4166,18 @@ class TDF_AttributeIndexedMap : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const Handle_TDF_Attribute &K) const;
 
 };
+%feature("shadow") TDF_AttributeIndexedMap::~TDF_AttributeIndexedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_AttributeIndexedMap {
-	~TDF_AttributeIndexedMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_AttributeIndexedMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3391,10 +4199,18 @@ class TDF {
 		Standard_Boolean ProgIDFromGUID(const Standard_GUID &ID, TCollection_ExtendedString & ProgID);
 
 };
+%feature("shadow") TDF::~TDF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF {
-	~TDF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3420,10 +4236,18 @@ class TDF_DeltaOnAddition : public TDF_AttributeDelta {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DeltaOnAddition::~TDF_DeltaOnAddition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DeltaOnAddition {
-	~TDF_DeltaOnAddition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DeltaOnAddition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3453,10 +4277,18 @@ class TDF_DoubleMapNodeOfLabelDoubleMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DoubleMapNodeOfLabelDoubleMap::~TDF_DoubleMapNodeOfLabelDoubleMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DoubleMapNodeOfLabelDoubleMap {
-	~TDF_DoubleMapNodeOfLabelDoubleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapNodeOfLabelDoubleMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3480,10 +4312,18 @@ class TDF_AttributeIterator {
 		TDF_Attribute * Value() const;
 
 };
+%feature("shadow") TDF_AttributeIterator::~TDF_AttributeIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_AttributeIterator {
-	~TDF_AttributeIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_AttributeIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3501,10 +4341,18 @@ class TDF_MapIteratorOfAttributeMap : public TCollection_BasicMapIterator {
 		const Handle_TDF_Attribute & Key() const;
 
 };
+%feature("shadow") TDF_MapIteratorOfAttributeMap::~TDF_MapIteratorOfAttributeMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_MapIteratorOfAttributeMap {
-	~TDF_MapIteratorOfAttributeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_MapIteratorOfAttributeMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3530,10 +4378,18 @@ class TDF_AttributeMap : public TCollection_BasicMap {
 		Standard_Boolean Remove(const Handle_TDF_Attribute &aKey);
 
 };
+%feature("shadow") TDF_AttributeMap::~TDF_AttributeMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_AttributeMap {
-	~TDF_AttributeMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_AttributeMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3577,10 +4433,18 @@ class TDF_HAttributeArray1 : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_HAttributeArray1::~TDF_HAttributeArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_HAttributeArray1 {
-	~TDF_HAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_HAttributeArray1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3598,10 +4462,18 @@ class TDF_MapIteratorOfLabelMap : public TCollection_BasicMapIterator {
 		const TDF_Label & Key() const;
 
 };
+%feature("shadow") TDF_MapIteratorOfLabelMap::~TDF_MapIteratorOfLabelMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_MapIteratorOfLabelMap {
-	~TDF_MapIteratorOfLabelMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_MapIteratorOfLabelMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3627,10 +4499,18 @@ class TDF_StdMapNodeOfLabelMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_StdMapNodeOfLabelMap::~TDF_StdMapNodeOfLabelMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_StdMapNodeOfLabelMap {
-	~TDF_StdMapNodeOfLabelMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_StdMapNodeOfLabelMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3648,10 +4528,18 @@ class TDF_MapIteratorOfIDMap : public TCollection_BasicMapIterator {
 		const Standard_GUID & Key() const;
 
 };
+%feature("shadow") TDF_MapIteratorOfIDMap::~TDF_MapIteratorOfIDMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_MapIteratorOfIDMap {
-	~TDF_MapIteratorOfIDMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_MapIteratorOfIDMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3677,10 +4565,18 @@ class TDF_DefaultDeltaOnModification : public TDF_DeltaOnModification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_DefaultDeltaOnModification::~TDF_DefaultDeltaOnModification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DefaultDeltaOnModification {
-	~TDF_DefaultDeltaOnModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DefaultDeltaOnModification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3714,10 +4610,18 @@ class TDF_LabelIndexedMap : public TCollection_BasicMap {
 		Standard_Integer FindIndex(const TDF_Label &K) const;
 
 };
+%feature("shadow") TDF_LabelIndexedMap::~TDF_LabelIndexedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_LabelIndexedMap {
-	~TDF_LabelIndexedMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_LabelIndexedMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3765,10 +4669,18 @@ class TDF_Delta : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_Delta::~TDF_Delta %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_Delta {
-	~TDF_Delta() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_Delta\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3780,8 +4692,18 @@ class TDF_IndexedMapNodeOfLabelIndexedMap : public TCollection_MapNode {
 		TDF_IndexedMapNodeOfLabelIndexedMap(const TDF_Label &K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TDF_Label & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -3798,10 +4720,18 @@ class TDF_IndexedMapNodeOfLabelIndexedMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDF_IndexedMapNodeOfLabelIndexedMap::~TDF_IndexedMapNodeOfLabelIndexedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_IndexedMapNodeOfLabelIndexedMap {
-	~TDF_IndexedMapNodeOfLabelIndexedMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_IndexedMapNodeOfLabelIndexedMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3857,10 +4787,18 @@ class TDF_Tool {
 		void ExtendedDeepDump(Standard_OStream & anOS, const TDF_Label &aLabel, const TDF_IDFilter &aFilter);
 
 };
+%feature("shadow") TDF_Tool::~TDF_Tool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_Tool {
-	~TDF_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_Tool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3880,10 +4818,18 @@ class TDF_DataMapIteratorOfLabelIntegerMap : public TCollection_BasicMapIterator
 		const Standard_Integer & Value() const;
 
 };
+%feature("shadow") TDF_DataMapIteratorOfLabelIntegerMap::~TDF_DataMapIteratorOfLabelIntegerMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_DataMapIteratorOfLabelIntegerMap {
-	~TDF_DataMapIteratorOfLabelIntegerMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_DataMapIteratorOfLabelIntegerMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3919,10 +4865,18 @@ class TDF_GUIDProgIDMap : public TCollection_BasicMap {
 		Standard_Boolean UnBind2(const TCollection_ExtendedString &K);
 
 };
+%feature("shadow") TDF_GUIDProgIDMap::~TDF_GUIDProgIDMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_GUIDProgIDMap {
-	~TDF_GUIDProgIDMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_GUIDProgIDMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3942,10 +4896,18 @@ class TDF_ClosureMode {
 		Standard_Boolean References() const;
 
 };
+%feature("shadow") TDF_ClosureMode::~TDF_ClosureMode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ClosureMode {
-	~TDF_ClosureMode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ClosureMode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3967,10 +4929,18 @@ class TDF_ListIteratorOfAttributeList {
 		Handle_TDF_Attribute & Value() const;
 
 };
+%feature("shadow") TDF_ListIteratorOfAttributeList::~TDF_ListIteratorOfAttributeList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_ListIteratorOfAttributeList {
-	~TDF_ListIteratorOfAttributeList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_ListIteratorOfAttributeList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3998,16 +4968,34 @@ class TDF_LabelIntegerMap : public TCollection_BasicMap {
 		const Standard_Integer & Find(const TDF_Label &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const TDF_Label &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const TDF_Label &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const TDF_Label &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TDF_Label &K);
 
 };
+%feature("shadow") TDF_LabelIntegerMap::~TDF_LabelIntegerMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_LabelIntegerMap {
-	~TDF_LabelIntegerMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_LabelIntegerMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4047,9 +5035,17 @@ class TDF_AttributeArray1 {
 		Handle_TDF_Attribute & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") TDF_AttributeArray1::~TDF_AttributeArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDF_AttributeArray1 {
-	~TDF_AttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDF_AttributeArray1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

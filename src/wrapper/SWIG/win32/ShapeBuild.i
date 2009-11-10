@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include ShapeBuild_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_ShapeBuild_ReShape : public Handle_BRepTools_ReShape {
 	return (ShapeBuild_ReShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_ShapeBuild_ReShape::~Handle_ShapeBuild_ReShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_ShapeBuild_ReShape {
-	~Handle_ShapeBuild_ReShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_ShapeBuild_ReShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -90,7 +102,7 @@ class ShapeBuild_Edge {
 		void ReplacePCurve(const TopoDS_Edge &edge, const Handle_Geom2d_Curve &pcurve, const TopoDS_Face &face) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ReassignPCurve(const TopoDS_Edge &edge, const TopoDS_Face &old, const TopoDS_Face &sub) const;
-		%feature("autodoc","TransformPCurve(const pcurve, const trans, Standard_Real uFact)->[Standard_RealStandard_Real]");
+		%feature("autodoc","TransformPCurve(const pcurve, const trans, Standard_Real uFact) -> [Standard_RealStandard_Real]");
 		Handle_Geom2d_Curve TransformPCurve(const Handle_Geom2d_Curve &pcurve, const gp_Trsf2d &trans, const Standard_Real uFact, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void RemoveCurve3d(const TopoDS_Edge &edge) const;
@@ -110,10 +122,18 @@ class ShapeBuild_Edge {
 		void MakeEdge(TopoDS_Edge & edge, const Handle_Geom2d_Curve &pcurve, const Handle_Geom_Surface &S, const TopLoc_Location &L, const Standard_Real p1, const Standard_Real p2) const;
 
 };
+%feature("shadow") ShapeBuild_Edge::~ShapeBuild_Edge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeBuild_Edge {
-	~ShapeBuild_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeBuild_Edge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -145,10 +165,18 @@ class ShapeBuild_ReShape : public BRepTools_ReShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") ShapeBuild_ReShape::~ShapeBuild_ReShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeBuild_ReShape {
-	~ShapeBuild_ReShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeBuild_ReShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -164,10 +192,18 @@ class ShapeBuild_Vertex {
 		TopoDS_Vertex CombineVertex(const gp_Pnt &pnt1, const gp_Pnt &pnt2, const Standard_Real tol1, const Standard_Real tol2, const Standard_Real tolFactor=1.00009999999999998898658759571844711899757385254e+0) const;
 
 };
+%feature("shadow") ShapeBuild_Vertex::~ShapeBuild_Vertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeBuild_Vertex {
-	~ShapeBuild_Vertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeBuild_Vertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -181,9 +217,17 @@ class ShapeBuild {
 		Handle_Geom_Plane PlaneXOY();
 
 };
+%feature("shadow") ShapeBuild::~ShapeBuild %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend ShapeBuild {
-	~ShapeBuild() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of ShapeBuild\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

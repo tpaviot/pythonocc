@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IntStart_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_IntStart_SITopolTool : public Handle_MMgt_TShared {
 	return (IntStart_SITopolTool*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IntStart_SITopolTool::~Handle_IntStart_SITopolTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IntStart_SITopolTool {
-	~Handle_IntStart_SITopolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IntStart_SITopolTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -84,9 +96,17 @@ class IntStart_SITopolTool : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IntStart_SITopolTool::~IntStart_SITopolTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IntStart_SITopolTool {
-	~IntStart_SITopolTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IntStart_SITopolTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

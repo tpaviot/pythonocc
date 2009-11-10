@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Units_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_Units_NoSuchType : public Handle_Standard_NoSuchObject {
 	return (Units_NoSuchType*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_NoSuchType::~Handle_Units_NoSuchType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_NoSuchType {
-	~Handle_Units_NoSuchType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_NoSuchType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_Units_QuantitiesSequence : public Handle_MMgt_TShared {
 	return (Units_QuantitiesSequence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_QuantitiesSequence::~Handle_Units_QuantitiesSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_QuantitiesSequence {
-	~Handle_Units_QuantitiesSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_QuantitiesSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_Units_SequenceNodeOfTksSequence : public Handle_TCollection_SeqNode
 	return (Units_SequenceNodeOfTksSequence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_SequenceNodeOfTksSequence::~Handle_Units_SequenceNodeOfTksSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_SequenceNodeOfTksSequence {
-	~Handle_Units_SequenceNodeOfTksSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_SequenceNodeOfTksSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_Units_StringsSequence : public Handle_MMgt_TShared {
 	return (Units_StringsSequence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_StringsSequence::~Handle_Units_StringsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_StringsSequence {
-	~Handle_Units_StringsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_StringsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_Units_Lexicon : public Handle_MMgt_TShared {
 	return (Units_Lexicon*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_Lexicon::~Handle_Units_Lexicon %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_Lexicon {
-	~Handle_Units_Lexicon() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_Lexicon\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_Units_UnitsLexicon : public Handle_Units_Lexicon {
 	return (Units_UnitsLexicon*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_UnitsLexicon::~Handle_Units_UnitsLexicon %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_UnitsLexicon {
-	~Handle_Units_UnitsLexicon() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_UnitsLexicon\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_Units_UnitsDictionary : public Handle_MMgt_TShared {
 	return (Units_UnitsDictionary*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_UnitsDictionary::~Handle_Units_UnitsDictionary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_UnitsDictionary {
-	~Handle_Units_UnitsDictionary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_UnitsDictionary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_Units_Unit : public Handle_MMgt_TShared {
 	return (Units_Unit*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_Unit::~Handle_Units_Unit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_Unit {
-	~Handle_Units_Unit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_Unit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_Units_UnitsSystem : public Handle_MMgt_TShared {
 	return (Units_UnitsSystem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_UnitsSystem::~Handle_Units_UnitsSystem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_UnitsSystem {
-	~Handle_Units_UnitsSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_UnitsSystem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_Units_Token : public Handle_MMgt_TShared {
 	return (Units_Token*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_Token::~Handle_Units_Token %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_Token {
-	~Handle_Units_Token() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_Token\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_Units_ShiftedToken : public Handle_Units_Token {
 	return (Units_ShiftedToken*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_ShiftedToken::~Handle_Units_ShiftedToken %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_ShiftedToken {
-	~Handle_Units_ShiftedToken() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_ShiftedToken\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_Units_SequenceNodeOfQtsSequence : public Handle_TCollection_SeqNode
 	return (Units_SequenceNodeOfQtsSequence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_SequenceNodeOfQtsSequence::~Handle_Units_SequenceNodeOfQtsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_SequenceNodeOfQtsSequence {
-	~Handle_Units_SequenceNodeOfQtsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_SequenceNodeOfQtsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_Units_SequenceNodeOfUtsSequence : public Handle_TCollection_SeqNode
 	return (Units_SequenceNodeOfUtsSequence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_SequenceNodeOfUtsSequence::~Handle_Units_SequenceNodeOfUtsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_SequenceNodeOfUtsSequence {
-	~Handle_Units_SequenceNodeOfUtsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_SequenceNodeOfUtsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +555,18 @@ class Handle_Units_TokensSequence : public Handle_MMgt_TShared {
 	return (Units_TokensSequence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_TokensSequence::~Handle_Units_TokensSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_TokensSequence {
-	~Handle_Units_TokensSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_TokensSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +593,18 @@ class Handle_Units_UnitsSequence : public Handle_MMgt_TShared {
 	return (Units_UnitsSequence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_UnitsSequence::~Handle_Units_UnitsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_UnitsSequence {
-	~Handle_Units_UnitsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_UnitsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +631,18 @@ class Handle_Units_NoSuchUnit : public Handle_Standard_NoSuchObject {
 	return (Units_NoSuchUnit*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_NoSuchUnit::~Handle_Units_NoSuchUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_NoSuchUnit {
-	~Handle_Units_NoSuchUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_NoSuchUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +669,18 @@ class Handle_Units_ShiftedUnit : public Handle_Units_Unit {
 	return (Units_ShiftedUnit*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_ShiftedUnit::~Handle_Units_ShiftedUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_ShiftedUnit {
-	~Handle_Units_ShiftedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_ShiftedUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +707,18 @@ class Handle_Units_Dimensions : public Handle_MMgt_TShared {
 	return (Units_Dimensions*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_Dimensions::~Handle_Units_Dimensions %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_Dimensions {
-	~Handle_Units_Dimensions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_Dimensions\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +745,18 @@ class Handle_Units_SequenceNodeOfStrgSequence : public Handle_TCollection_SeqNod
 	return (Units_SequenceNodeOfStrgSequence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_SequenceNodeOfStrgSequence::~Handle_Units_SequenceNodeOfStrgSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_SequenceNodeOfStrgSequence {
-	~Handle_Units_SequenceNodeOfStrgSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_SequenceNodeOfStrgSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +783,18 @@ class Handle_Units_Quantity : public Handle_MMgt_TShared {
 	return (Units_Quantity*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Units_Quantity::~Handle_Units_Quantity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Units_Quantity {
-	~Handle_Units_Quantity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Units_Quantity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -662,10 +826,18 @@ class Units_NoSuchType : public Standard_NoSuchObject {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_NoSuchType::~Units_NoSuchType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_NoSuchType {
-	~Units_NoSuchType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_NoSuchType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -691,10 +863,18 @@ class Units_SequenceNodeOfTksSequence : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_SequenceNodeOfTksSequence::~Units_SequenceNodeOfTksSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_SequenceNodeOfTksSequence {
-	~Units_SequenceNodeOfTksSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_SequenceNodeOfTksSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -748,10 +928,18 @@ class Units_StrgSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Units_StrgSequence::~Units_StrgSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_StrgSequence {
-	~Units_StrgSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_StrgSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -775,10 +963,18 @@ class Units_Sentence {
 		void Dump() const;
 
 };
+%feature("shadow") Units_Sentence::~Units_Sentence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_Sentence {
-	~Units_Sentence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_Sentence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -790,10 +986,18 @@ class Units_MathSentence : public Units_Sentence {
 		Units_MathSentence(const char * astring);
 
 };
+%feature("shadow") Units_MathSentence::~Units_MathSentence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_MathSentence {
-	~Units_MathSentence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_MathSentence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -847,10 +1051,18 @@ class Units_TksSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Units_TksSequence::~Units_TksSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_TksSequence {
-	~Units_TksSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_TksSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -898,10 +1110,18 @@ class Units_Unit : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_Unit::~Units_Unit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_Unit {
-	~Units_Unit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_Unit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -937,10 +1157,18 @@ class Units_ShiftedUnit : public Units_Unit {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_ShiftedUnit::~Units_ShiftedUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_ShiftedUnit {
-	~Units_ShiftedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_ShiftedUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1008,10 +1236,18 @@ class Units_UnitsSequence : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_UnitsSequence::~Units_UnitsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_UnitsSequence {
-	~Units_UnitsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_UnitsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1067,10 +1303,18 @@ class Units_Measurement {
 		void Dump() const;
 
 };
+%feature("shadow") Units_Measurement::~Units_Measurement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_Measurement {
-	~Units_Measurement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_Measurement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1164,10 +1408,18 @@ class Units_Token : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_Token::~Units_Token %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_Token {
-	~Units_Token() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_Token\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1191,10 +1443,18 @@ class Units_ShiftedToken : public Units_Token {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_ShiftedToken::~Units_ShiftedToken %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_ShiftedToken {
-	~Units_ShiftedToken() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_ShiftedToken\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1230,10 +1490,18 @@ class Units_UnitsDictionary : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_UnitsDictionary::~Units_UnitsDictionary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_UnitsDictionary {
-	~Units_UnitsDictionary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_UnitsDictionary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1301,10 +1569,18 @@ class Units_QuantitiesSequence : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_QuantitiesSequence::~Units_QuantitiesSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_QuantitiesSequence {
-	~Units_QuantitiesSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_QuantitiesSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1336,10 +1612,18 @@ class Units_NoSuchUnit : public Standard_NoSuchObject {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_NoSuchUnit::~Units_NoSuchUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_NoSuchUnit {
-	~Units_NoSuchUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_NoSuchUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1375,10 +1659,18 @@ class Units_Lexicon : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_Lexicon::~Units_Lexicon %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_Lexicon {
-	~Units_Lexicon() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_Lexicon\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1428,10 +1720,18 @@ class Units_UnitsSystem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_UnitsSystem::~Units_UnitsSystem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_UnitsSystem {
-	~Units_UnitsSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_UnitsSystem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1463,10 +1763,18 @@ class Units_UnitsLexicon : public Units_Lexicon {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_UnitsLexicon::~Units_UnitsLexicon %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_UnitsLexicon {
-	~Units_UnitsLexicon() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_UnitsLexicon\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1534,10 +1842,18 @@ class Units_StringsSequence : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_StringsSequence::~Units_StringsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_StringsSequence {
-	~Units_StringsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_StringsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1591,10 +1907,18 @@ class Units_UtsSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Units_UtsSequence::~Units_UtsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_UtsSequence {
-	~Units_UtsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_UtsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1636,10 +1960,18 @@ class Units_Explorer {
 		Standard_Boolean IsActive() const;
 
 };
+%feature("shadow") Units_Explorer::~Units_Explorer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_Explorer {
-	~Units_Explorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_Explorer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1679,10 +2011,18 @@ class Units {
 		Handle_Units_Dimensions Dimensions(const char * aType);
 
 };
+%feature("shadow") Units::~Units %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units {
-	~Units() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1750,10 +2090,18 @@ class Units_TokensSequence : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_TokensSequence::~Units_TokensSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_TokensSequence {
-	~Units_TokensSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_TokensSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1771,10 +2119,18 @@ class Units_UnitSentence : public Units_Sentence {
 		void SetUnits(const Handle_Units_QuantitiesSequence &aquantitiessequence);
 
 };
+%feature("shadow") Units_UnitSentence::~Units_UnitSentence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_UnitSentence {
-	~Units_UnitSentence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_UnitSentence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1828,10 +2184,18 @@ class Units_QtsSequence : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Units_QtsSequence::~Units_QtsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_QtsSequence {
-	~Units_QtsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_QtsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1857,10 +2221,18 @@ class Units_SequenceNodeOfUtsSequence : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_SequenceNodeOfUtsSequence::~Units_SequenceNodeOfUtsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_SequenceNodeOfUtsSequence {
-	~Units_SequenceNodeOfUtsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_SequenceNodeOfUtsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1886,10 +2258,18 @@ class Units_SequenceNodeOfStrgSequence : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_SequenceNodeOfStrgSequence::~Units_SequenceNodeOfStrgSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_SequenceNodeOfStrgSequence {
-	~Units_SequenceNodeOfStrgSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_SequenceNodeOfStrgSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1915,9 +2295,17 @@ class Units_SequenceNodeOfQtsSequence : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Units_SequenceNodeOfQtsSequence::~Units_SequenceNodeOfQtsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Units_SequenceNodeOfQtsSequence {
-	~Units_SequenceNodeOfQtsSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Units_SequenceNodeOfQtsSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

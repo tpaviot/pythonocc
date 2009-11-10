@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MeshDS_dependencies.i
 
 
@@ -71,10 +75,18 @@ class Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TC
 	return (MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger::~Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
-	~Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -94,10 +106,18 @@ class MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger : public TCollection_
 		const TColStd_MapOfInteger & Value() const;
 
 };
+%feature("shadow") MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger::~MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger {
-	~MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -107,8 +127,18 @@ class MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public TCollection_MapN
 	public:
 		%feature("autodoc", "1");
 		MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger(const Standard_Integer &K, const TColStd_MapOfInteger &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TColStd_MapOfInteger & Value() const;
 		%feature("autodoc", "1");
@@ -125,10 +155,18 @@ class MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public TCollection_MapN
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger::~MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
-	~MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -162,9 +200,17 @@ class MeshDS_DataMapOfIntegerMapOfInteger : public TCollection_BasicMap {
 		TColStd_MapOfInteger & operator()(const Standard_Integer &K);
 
 };
+%feature("shadow") MeshDS_DataMapOfIntegerMapOfInteger::~MeshDS_DataMapOfIntegerMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshDS_DataMapOfIntegerMapOfInteger {
-	~MeshDS_DataMapOfIntegerMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshDS_DataMapOfIntegerMapOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

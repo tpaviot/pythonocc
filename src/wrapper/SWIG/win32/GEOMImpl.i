@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GEOMImpl_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_GEOMImpl_ConeDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_ConeDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_ConeDriver::~Handle_GEOMImpl_ConeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_ConeDriver {
-	~Handle_GEOMImpl_ConeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ConeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_GEOMImpl_CircleDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_CircleDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_CircleDriver::~Handle_GEOMImpl_CircleDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_CircleDriver {
-	~Handle_GEOMImpl_CircleDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_CircleDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_GEOMImpl_MeasureDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_MeasureDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_MeasureDriver::~Handle_GEOMImpl_MeasureDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_MeasureDriver {
-	~Handle_GEOMImpl_MeasureDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_MeasureDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_GEOMImpl_FillingDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_FillingDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_FillingDriver::~Handle_GEOMImpl_FillingDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_FillingDriver {
-	~Handle_GEOMImpl_FillingDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_FillingDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_GEOMImpl_PositionDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_PositionDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_PositionDriver::~Handle_GEOMImpl_PositionDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_PositionDriver {
-	~Handle_GEOMImpl_PositionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_PositionDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_GEOMImpl_PlaneDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_PlaneDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_PlaneDriver::~Handle_GEOMImpl_PlaneDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_PlaneDriver {
-	~Handle_GEOMImpl_PlaneDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_PlaneDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_GEOMImpl_DiskDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_DiskDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_DiskDriver::~Handle_GEOMImpl_DiskDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_DiskDriver {
-	~Handle_GEOMImpl_DiskDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_DiskDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_GEOMImpl_ThickSolidDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_ThickSolidDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_ThickSolidDriver::~Handle_GEOMImpl_ThickSolidDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_ThickSolidDriver {
-	~Handle_GEOMImpl_ThickSolidDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ThickSolidDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_GEOMImpl_ThruSectionsDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_ThruSectionsDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_ThruSectionsDriver::~Handle_GEOMImpl_ThruSectionsDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_ThruSectionsDriver {
-	~Handle_GEOMImpl_ThruSectionsDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ThruSectionsDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_GEOMImpl_DraftDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_DraftDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_DraftDriver::~Handle_GEOMImpl_DraftDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_DraftDriver {
-	~Handle_GEOMImpl_DraftDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_DraftDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_GEOMImpl_VariableFilletDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_VariableFilletDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_VariableFilletDriver::~Handle_GEOMImpl_VariableFilletDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_VariableFilletDriver {
-	~Handle_GEOMImpl_VariableFilletDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_VariableFilletDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_GEOMImpl_ImportDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_ImportDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_ImportDriver::~Handle_GEOMImpl_ImportDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_ImportDriver {
-	~Handle_GEOMImpl_ImportDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ImportDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_GEOMImpl_SphereDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_SphereDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_SphereDriver::~Handle_GEOMImpl_SphereDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_SphereDriver {
-	~Handle_GEOMImpl_SphereDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_SphereDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +555,18 @@ class Handle_GEOMImpl_MirrorDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_MirrorDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_MirrorDriver::~Handle_GEOMImpl_MirrorDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_MirrorDriver {
-	~Handle_GEOMImpl_MirrorDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_MirrorDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +593,18 @@ class Handle_GEOMImpl_EllipseDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_EllipseDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_EllipseDriver::~Handle_GEOMImpl_EllipseDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_EllipseDriver {
-	~Handle_GEOMImpl_EllipseDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_EllipseDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +631,18 @@ class Handle_GEOMImpl_PointDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_PointDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_PointDriver::~Handle_GEOMImpl_PointDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_PointDriver {
-	~Handle_GEOMImpl_PointDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_PointDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +669,18 @@ class Handle_GEOMImpl_BoxDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_BoxDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_BoxDriver::~Handle_GEOMImpl_BoxDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_BoxDriver {
-	~Handle_GEOMImpl_BoxDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_BoxDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +707,18 @@ class Handle_GEOMImpl_ChamferDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_ChamferDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_ChamferDriver::~Handle_GEOMImpl_ChamferDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_ChamferDriver {
-	~Handle_GEOMImpl_ChamferDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ChamferDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +745,18 @@ class Handle_GEOMImpl_CopyDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_CopyDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_CopyDriver::~Handle_GEOMImpl_CopyDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_CopyDriver {
-	~Handle_GEOMImpl_CopyDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_CopyDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +783,18 @@ class Handle_GEOMImpl_ArcDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_ArcDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_ArcDriver::~Handle_GEOMImpl_ArcDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_ArcDriver {
-	~Handle_GEOMImpl_ArcDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ArcDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -657,10 +821,18 @@ class Handle_GEOMImpl_MarkerDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_MarkerDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_MarkerDriver::~Handle_GEOMImpl_MarkerDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_MarkerDriver {
-	~Handle_GEOMImpl_MarkerDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_MarkerDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -687,10 +859,18 @@ class Handle_GEOMImpl_FilletDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_FilletDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_FilletDriver::~Handle_GEOMImpl_FilletDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_FilletDriver {
-	~Handle_GEOMImpl_FilletDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_FilletDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -717,10 +897,18 @@ class Handle_GEOMImpl_VectorDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_VectorDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_VectorDriver::~Handle_GEOMImpl_VectorDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_VectorDriver {
-	~Handle_GEOMImpl_VectorDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_VectorDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -747,10 +935,18 @@ class Handle_GEOMImpl_OffsetDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_OffsetDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_OffsetDriver::~Handle_GEOMImpl_OffsetDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_OffsetDriver {
-	~Handle_GEOMImpl_OffsetDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_OffsetDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -777,10 +973,18 @@ class Handle_GEOMImpl_ScaleDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_ScaleDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_ScaleDriver::~Handle_GEOMImpl_ScaleDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_ScaleDriver {
-	~Handle_GEOMImpl_ScaleDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ScaleDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -807,10 +1011,18 @@ class Handle_GEOMImpl_FaceDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_FaceDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_FaceDriver::~Handle_GEOMImpl_FaceDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_FaceDriver {
-	~Handle_GEOMImpl_FaceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_FaceDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -837,10 +1049,18 @@ class Handle_GEOMImpl_BooleanDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_BooleanDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_BooleanDriver::~Handle_GEOMImpl_BooleanDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_BooleanDriver {
-	~Handle_GEOMImpl_BooleanDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_BooleanDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -867,10 +1087,18 @@ class Handle_GEOMImpl_PartitionDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_PartitionDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_PartitionDriver::~Handle_GEOMImpl_PartitionDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_PartitionDriver {
-	~Handle_GEOMImpl_PartitionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_PartitionDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -897,10 +1125,18 @@ class Handle_GEOMImpl_CylinderDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_CylinderDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_CylinderDriver::~Handle_GEOMImpl_CylinderDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_CylinderDriver {
-	~Handle_GEOMImpl_CylinderDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_CylinderDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -927,10 +1163,18 @@ class Handle_GEOMImpl_PipeDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_PipeDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_PipeDriver::~Handle_GEOMImpl_PipeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_PipeDriver {
-	~Handle_GEOMImpl_PipeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_PipeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -957,10 +1201,18 @@ class Handle_GEOMImpl_PolylineDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_PolylineDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_PolylineDriver::~Handle_GEOMImpl_PolylineDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_PolylineDriver {
-	~Handle_GEOMImpl_PolylineDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_PolylineDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -987,10 +1239,18 @@ class Handle_GEOMImpl_PrismDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_PrismDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_PrismDriver::~Handle_GEOMImpl_PrismDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_PrismDriver {
-	~Handle_GEOMImpl_PrismDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_PrismDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1017,10 +1277,18 @@ class Handle_GEOMImpl_GlueDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_GlueDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_GlueDriver::~Handle_GEOMImpl_GlueDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_GlueDriver {
-	~Handle_GEOMImpl_GlueDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_GlueDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1047,10 +1315,18 @@ class Handle_GEOMImpl_ExportDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_ExportDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_ExportDriver::~Handle_GEOMImpl_ExportDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_ExportDriver {
-	~Handle_GEOMImpl_ExportDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ExportDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1077,10 +1353,18 @@ class Handle_GEOMImpl_RotateDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_RotateDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_RotateDriver::~Handle_GEOMImpl_RotateDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_RotateDriver {
-	~Handle_GEOMImpl_RotateDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_RotateDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1107,10 +1391,18 @@ class Handle_GEOMImpl_TorusDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_TorusDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_TorusDriver::~Handle_GEOMImpl_TorusDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_TorusDriver {
-	~Handle_GEOMImpl_TorusDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_TorusDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1137,10 +1429,18 @@ class Handle_GEOMImpl_RevolutionDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_RevolutionDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_RevolutionDriver::~Handle_GEOMImpl_RevolutionDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_RevolutionDriver {
-	~Handle_GEOMImpl_RevolutionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_RevolutionDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1167,10 +1467,18 @@ class Handle_GEOMImpl_BlockDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_BlockDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_BlockDriver::~Handle_GEOMImpl_BlockDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_BlockDriver {
-	~Handle_GEOMImpl_BlockDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_BlockDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1197,10 +1505,18 @@ class Handle_GEOMImpl_PlateDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_PlateDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_PlateDriver::~Handle_GEOMImpl_PlateDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_PlateDriver {
-	~Handle_GEOMImpl_PlateDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_PlateDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1227,10 +1543,18 @@ class Handle_GEOMImpl_3DSketcherDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_3DSketcherDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_3DSketcherDriver::~Handle_GEOMImpl_3DSketcherDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_3DSketcherDriver {
-	~Handle_GEOMImpl_3DSketcherDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_3DSketcherDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1257,10 +1581,18 @@ class Handle_GEOMImpl_ArchimedeDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_ArchimedeDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_ArchimedeDriver::~Handle_GEOMImpl_ArchimedeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_ArchimedeDriver {
-	~Handle_GEOMImpl_ArchimedeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ArchimedeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1287,10 +1619,18 @@ class Handle_GEOMImpl_LineDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_LineDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_LineDriver::~Handle_GEOMImpl_LineDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_LineDriver {
-	~Handle_GEOMImpl_LineDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_LineDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1317,10 +1657,18 @@ class Handle_GEOMImpl_SplineDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_SplineDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_SplineDriver::~Handle_GEOMImpl_SplineDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_SplineDriver {
-	~Handle_GEOMImpl_SplineDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_SplineDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1347,10 +1695,18 @@ class Handle_GEOMImpl_ShapeDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_ShapeDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_ShapeDriver::~Handle_GEOMImpl_ShapeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_ShapeDriver {
-	~Handle_GEOMImpl_ShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ShapeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1377,10 +1733,18 @@ class Handle_GEOMImpl_HealingDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_HealingDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_HealingDriver::~Handle_GEOMImpl_HealingDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_HealingDriver {
-	~Handle_GEOMImpl_HealingDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_HealingDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1407,10 +1771,18 @@ class Handle_GEOMImpl_TranslateDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_TranslateDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_TranslateDriver::~Handle_GEOMImpl_TranslateDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_TranslateDriver {
-	~Handle_GEOMImpl_TranslateDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_TranslateDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1437,10 +1809,18 @@ class Handle_GEOMImpl_SketcherDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_SketcherDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_SketcherDriver::~Handle_GEOMImpl_SketcherDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_SketcherDriver {
-	~Handle_GEOMImpl_SketcherDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_SketcherDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1467,10 +1847,18 @@ class Handle_GEOMImpl_CurveDriver : public Handle_TFunction_Driver {
 	return (GEOMImpl_CurveDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GEOMImpl_CurveDriver::~Handle_GEOMImpl_CurveDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GEOMImpl_CurveDriver {
-	~Handle_GEOMImpl_CurveDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_CurveDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1506,10 +1894,18 @@ class GEOMImpl_IShapes {
 		Standard_Real GetTolerance();
 
 };
+%feature("shadow") GEOMImpl_IShapes::~GEOMImpl_IShapes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IShapes {
-	~GEOMImpl_IShapes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IShapes\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1543,10 +1939,18 @@ class GEOMImpl_MarkerDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_MarkerDriver::~GEOMImpl_MarkerDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_MarkerDriver {
-	~GEOMImpl_MarkerDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_MarkerDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1578,10 +1982,18 @@ class GEOMImpl_IVariableFillet {
 		Handle_TColStd_HArray1OfReal GetRadiusArray();
 
 };
+%feature("shadow") GEOMImpl_IVariableFillet::~GEOMImpl_IVariableFillet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IVariableFillet {
-	~GEOMImpl_IVariableFillet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IVariableFillet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1609,10 +2021,18 @@ class GEOMImpl_IMirror {
 		Handle_GEOM_Function GetPoint();
 
 };
+%feature("shadow") GEOMImpl_IMirror::~GEOMImpl_IMirror %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IMirror {
-	~GEOMImpl_IMirror() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IMirror\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1660,10 +2080,18 @@ class GEOMImpl_IScale {
 		double GetFactorZ();
 
 };
+%feature("shadow") GEOMImpl_IScale::~GEOMImpl_IScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IScale {
-	~GEOMImpl_IScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1689,10 +2117,18 @@ class GEOMImpl_ICurve {
 		double GetPar();
 
 };
+%feature("shadow") GEOMImpl_ICurve::~GEOMImpl_ICurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ICurve {
-	~GEOMImpl_ICurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ICurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1726,10 +2162,18 @@ class GEOMImpl_ScaleDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_ScaleDriver::~GEOMImpl_ScaleDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ScaleDriver {
-	~GEOMImpl_ScaleDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ScaleDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1825,10 +2269,18 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations {
 		bool CheckTriangulation(const TopoDS_Shape &theShape);
 
 };
+%feature("shadow") GEOMImpl_IShapesOperations::~GEOMImpl_IShapesOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IShapesOperations {
-	~GEOMImpl_IShapesOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IShapesOperations\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1856,10 +2308,18 @@ class GEOMImpl_IGlue {
 		Standard_Boolean GetKeepNonSolids();
 
 };
+%feature("shadow") GEOMImpl_IGlue::~GEOMImpl_IGlue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IGlue {
-	~GEOMImpl_IGlue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IGlue\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1907,10 +2367,18 @@ class GEOMImpl_IPartition {
 		int GetKeepNonlimitShapes();
 
 };
+%feature("shadow") GEOMImpl_IPartition::~GEOMImpl_IPartition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IPartition {
-	~GEOMImpl_IPartition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPartition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1944,10 +2412,18 @@ class GEOMImpl_RevolutionDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_RevolutionDriver::~GEOMImpl_RevolutionDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_RevolutionDriver {
-	~GEOMImpl_RevolutionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_RevolutionDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1967,10 +2443,18 @@ class GEOMImpl_IPipe {
 		Handle_GEOM_Function GetPath();
 
 };
+%feature("shadow") GEOMImpl_IPipe::~GEOMImpl_IPipe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IPipe {
-	~GEOMImpl_IPipe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPipe\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1998,10 +2482,18 @@ class GEOMImpl_IPipeDiffSect : public GEOMImpl_IPipe {
 		int GetWithCorrectionMode();
 
 };
+%feature("shadow") GEOMImpl_IPipeDiffSect::~GEOMImpl_IPipeDiffSect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IPipeDiffSect {
-	~GEOMImpl_IPipeDiffSect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPipeDiffSect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2017,10 +2509,18 @@ class GEOMImpl_IPipeShellSect : public GEOMImpl_IPipeDiffSect {
 		Handle_TColStd_HSequenceOfTransient GetSubBases();
 
 };
+%feature("shadow") GEOMImpl_IPipeShellSect::~GEOMImpl_IPipeShellSect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IPipeShellSect {
-	~GEOMImpl_IPipeShellSect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPipeShellSect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2058,10 +2558,18 @@ class GEOMImpl_IHealingOperations : public GEOM_IOperations {
 		Handle_GEOM_Object ChangeOrientationCopy(Handle_GEOM_Object );
 
 };
+%feature("shadow") GEOMImpl_IHealingOperations::~GEOMImpl_IHealingOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IHealingOperations {
-	~GEOMImpl_IHealingOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IHealingOperations\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2074,17 +2582,29 @@ class GEOMImpl_IPolyline {
 		%feature("autodoc", "1");
 		void SetLength(int );
 		%feature("autodoc", "1");
+		void SetIsClosed(int );
+		%feature("autodoc", "1");
 		void SetPoint(int , Handle_GEOM_Function );
 		%feature("autodoc", "1");
 		int GetLength();
 		%feature("autodoc", "1");
+		int GetIsClosed();
+		%feature("autodoc", "1");
 		Handle_GEOM_Function GetPoint(int );
 
 };
+%feature("shadow") GEOMImpl_IPolyline::~GEOMImpl_IPolyline %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IPolyline {
-	~GEOMImpl_IPolyline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPolyline\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2118,10 +2638,18 @@ class GEOMImpl_MirrorDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_MirrorDriver::~GEOMImpl_MirrorDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_MirrorDriver {
-	~GEOMImpl_MirrorDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_MirrorDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2155,10 +2683,18 @@ class GEOMImpl_VectorDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_VectorDriver::~GEOMImpl_VectorDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_VectorDriver {
-	~GEOMImpl_VectorDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_VectorDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2192,10 +2728,18 @@ class GEOMImpl_PrismDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_PrismDriver::~GEOMImpl_PrismDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_PrismDriver {
-	~GEOMImpl_PrismDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PrismDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2211,10 +2755,18 @@ class GEOMImpl_IPipeBiNormal : public GEOMImpl_IPipe {
 		Handle_GEOM_Function GetVector();
 
 };
+%feature("shadow") GEOMImpl_IPipeBiNormal::~GEOMImpl_IPipeBiNormal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IPipeBiNormal {
-	~GEOMImpl_IPipeBiNormal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPipeBiNormal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2222,43 +2774,76 @@ class GEOMImpl_IPipeBiNormal : public GEOMImpl_IPipe {
 %nodefaultctor GEOMImpl_IMeasureOperations;
 class GEOMImpl_IMeasureOperations : public GEOM_IOperations {
 	public:
+		enum ShapeKind {
+			SK_NO_SHAPE,
+			SK_COMPOUND,
+			SK_COMPSOLID,
+			SK_SHELL,
+			SK_WIRE,
+			SK_SPHERE,
+			SK_CYLINDER,
+			SK_BOX,
+			SK_ROTATED_BOX,
+			SK_TORUS,
+			SK_CONE,
+			SK_POLYHEDRON,
+			SK_SOLID,
+			SK_SPHERE2D,
+			SK_CYLINDER2D,
+			SK_TORUS2D,
+			SK_CONE2D,
+			SK_DISK_CIRCLE,
+			SK_DISK_ELLIPSE,
+			SK_POLYGON,
+			SK_PLANE,
+			SK_PLANAR,
+			SK_FACE,
+			SK_CIRCLE,
+			SK_ARC_CIRCLE,
+			SK_ELLIPSE,
+			SK_ARC_ELLIPSE,
+			SK_LINE,
+			SK_SEGMENT,
+			SK_EDGE,
+			SK_VERTEX,
+		};
 		%feature("autodoc", "1");
 		GEOMImpl_IMeasureOperations(GEOM_Engine* theEngine, int );
 		%feature("autodoc", "1");
 		GEOMImpl_IMeasureOperations::ShapeKind KindOfShape(Handle_GEOM_Object , Handle_TColStd_HSequenceOfInteger & theIntegers, Handle_TColStd_HSequenceOfReal & theDoubles);
-		%feature("autodoc","GetPosition()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","GetPosition() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void GetPosition(Handle_GEOM_Object , Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object GetCentreOfMass(Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object GetNormal(Handle_GEOM_Object , Handle_GEOM_Object );
-		%feature("autodoc","GetBasicProperties()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","GetBasicProperties() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void GetBasicProperties(Handle_GEOM_Object , Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","GetInertia()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","GetInertia() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void GetInertia(Handle_GEOM_Object , Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","GetBoundingBox()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","GetBoundingBox() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void GetBoundingBox(Handle_GEOM_Object , Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","GetTolerance()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","GetTolerance() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void GetTolerance(Handle_GEOM_Object , Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		bool CheckShape(Handle_GEOM_Object , const Standard_Boolean theIsCheckGeom, TCollection_AsciiString & theDump);
 		%feature("autodoc", "1");
 		TCollection_AsciiString WhatIs(Handle_GEOM_Object );
-		%feature("autodoc","GetMinDistance()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","GetMinDistance() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		Standard_Real GetMinDistance(Handle_GEOM_Object , Handle_GEOM_Object , Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","PointCoordinates()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","PointCoordinates() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void PointCoordinates(Handle_GEOM_Object , Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real GetAngle(Handle_GEOM_Object , Handle_GEOM_Object );
-		%feature("autodoc","CurveCurvatureByParam()->Standard_Real");
+		%feature("autodoc","CurveCurvatureByParam() -> Standard_Real");
 		Standard_Real CurveCurvatureByParam(Handle_GEOM_Object , Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real CurveCurvatureByPoint(Handle_GEOM_Object , Handle_GEOM_Object );
-		%feature("autodoc","MaxSurfaceCurvatureByParam()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","MaxSurfaceCurvatureByParam() -> [Standard_Real, Standard_Real]");
 		Standard_Real MaxSurfaceCurvatureByParam(Handle_GEOM_Object , Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real MaxSurfaceCurvatureByPoint(Handle_GEOM_Object , Handle_GEOM_Object );
-		%feature("autodoc","MinSurfaceCurvatureByParam()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","MinSurfaceCurvatureByParam() -> [Standard_Real, Standard_Real]");
 		Standard_Real MinSurfaceCurvatureByParam(Handle_GEOM_Object , Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real MinSurfaceCurvatureByPoint(Handle_GEOM_Object , Handle_GEOM_Object );
@@ -2266,10 +2851,18 @@ class GEOMImpl_IMeasureOperations : public GEOM_IOperations {
 		gp_Ax3 GetPosition(const TopoDS_Shape &theShape);
 
 };
+%feature("shadow") GEOMImpl_IMeasureOperations::~GEOMImpl_IMeasureOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IMeasureOperations {
-	~GEOMImpl_IMeasureOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IMeasureOperations\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2309,10 +2902,18 @@ class GEOMImpl_IFilling {
 		bool GetApprox();
 
 };
+%feature("shadow") GEOMImpl_IFilling::~GEOMImpl_IFilling %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IFilling {
-	~GEOMImpl_IFilling() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IFilling\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2358,10 +2959,18 @@ class GEOMImpl_IVector {
 		double GetParameter();
 
 };
+%feature("shadow") GEOMImpl_IVector::~GEOMImpl_IVector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IVector {
-	~GEOMImpl_IVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IVector\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2377,10 +2986,18 @@ class GEOMImpl_I3DSketcher {
 		Handle_TColStd_HArray1OfReal GetCoordinates();
 
 };
+%feature("shadow") GEOMImpl_I3DSketcher::~GEOMImpl_I3DSketcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_I3DSketcher {
-	~GEOMImpl_I3DSketcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_I3DSketcher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2408,10 +3025,18 @@ class GEOMImpl_IArc {
 		bool GetSense();
 
 };
+%feature("shadow") GEOMImpl_IArc::~GEOMImpl_IArc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IArc {
-	~GEOMImpl_IArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IArc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2445,10 +3070,18 @@ class GEOMImpl_PlaneDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_PlaneDriver::~GEOMImpl_PlaneDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_PlaneDriver {
-	~GEOMImpl_PlaneDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PlaneDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2482,10 +3115,18 @@ class GEOMImpl_ThickSolidDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_ThickSolidDriver::~GEOMImpl_ThickSolidDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ThickSolidDriver {
-	~GEOMImpl_ThickSolidDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ThickSolidDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2557,10 +3198,18 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations {
 		Handle_GEOM_Object RotateThreePointsCopy(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 
 };
+%feature("shadow") GEOMImpl_ITransformOperations::~GEOMImpl_ITransformOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ITransformOperations {
-	~GEOMImpl_ITransformOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ITransformOperations\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2594,10 +3243,18 @@ class GEOMImpl_TranslateDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_TranslateDriver::~GEOMImpl_TranslateDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_TranslateDriver {
-	~GEOMImpl_TranslateDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_TranslateDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2631,10 +3288,18 @@ class GEOMImpl_CopyDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_CopyDriver::~GEOMImpl_CopyDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_CopyDriver {
-	~GEOMImpl_CopyDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_CopyDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2668,10 +3333,18 @@ class GEOMImpl_ExportDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_ExportDriver::~GEOMImpl_ExportDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ExportDriver {
-	~GEOMImpl_ExportDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ExportDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2705,10 +3378,18 @@ class GEOMImpl_BooleanDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_BooleanDriver::~GEOMImpl_BooleanDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_BooleanDriver {
-	~GEOMImpl_BooleanDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_BooleanDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2742,10 +3423,18 @@ class GEOMImpl_3DSketcherDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_3DSketcherDriver::~GEOMImpl_3DSketcherDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_3DSketcherDriver {
-	~GEOMImpl_3DSketcherDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_3DSketcherDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2801,10 +3490,18 @@ class GEOMImpl_IHealing {
 		Standard_Integer GetIndex();
 
 };
+%feature("shadow") GEOMImpl_IHealing::~GEOMImpl_IHealing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IHealing {
-	~GEOMImpl_IHealing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IHealing\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2856,10 +3553,18 @@ class GEOMImpl_IFillet {
 		double GetR2();
 
 };
+%feature("shadow") GEOMImpl_IFillet::~GEOMImpl_IFillet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IFillet {
-	~GEOMImpl_IFillet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IFillet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2893,10 +3598,18 @@ class GEOMImpl_CurveDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_CurveDriver::~GEOMImpl_CurveDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_CurveDriver {
-	~GEOMImpl_CurveDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_CurveDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2922,10 +3635,18 @@ class GEOMImpl_ISketcher {
 		Handle_GEOM_Function GetWorkingPlane();
 
 };
+%feature("shadow") GEOMImpl_ISketcher::~GEOMImpl_ISketcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ISketcher {
-	~GEOMImpl_ISketcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ISketcher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2959,10 +3680,18 @@ class GEOMImpl_TorusDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_TorusDriver::~GEOMImpl_TorusDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_TorusDriver {
-	~GEOMImpl_TorusDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_TorusDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2996,10 +3725,18 @@ class GEOMImpl_FaceDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_FaceDriver::~GEOMImpl_FaceDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_FaceDriver {
-	~GEOMImpl_FaceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_FaceDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3033,10 +3770,18 @@ class GEOMImpl_RotateDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_RotateDriver::~GEOMImpl_RotateDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_RotateDriver {
-	~GEOMImpl_RotateDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_RotateDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3070,10 +3815,18 @@ class GEOMImpl_MeasureDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_MeasureDriver::~GEOMImpl_MeasureDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_MeasureDriver {
-	~GEOMImpl_MeasureDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_MeasureDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3107,10 +3860,18 @@ class GEOMImpl_ChamferDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_ChamferDriver::~GEOMImpl_ChamferDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ChamferDriver {
-	~GEOMImpl_ChamferDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ChamferDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3158,10 +3919,18 @@ class GEOMImpl_IBlockTrsf {
 		int GetOptimumNbFaces();
 
 };
+%feature("shadow") GEOMImpl_IBlockTrsf::~GEOMImpl_IBlockTrsf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IBlockTrsf {
-	~GEOMImpl_IBlockTrsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IBlockTrsf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3195,10 +3964,18 @@ class GEOMImpl_DraftDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_DraftDriver::~GEOMImpl_DraftDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_DraftDriver {
-	~GEOMImpl_DraftDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_DraftDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3236,10 +4013,18 @@ class GEOMImpl_ICircle {
 		double GetRadius();
 
 };
+%feature("shadow") GEOMImpl_ICircle::~GEOMImpl_ICircle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ICircle {
-	~GEOMImpl_ICircle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ICircle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3271,10 +4056,18 @@ class GEOMImpl_IGroupOperations : public GEOM_IOperations {
 		Handle_TColStd_HArray1OfInteger GetObjects(Handle_GEOM_Object );
 
 };
+%feature("shadow") GEOMImpl_IGroupOperations::~GEOMImpl_IGroupOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IGroupOperations {
-	~GEOMImpl_IGroupOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IGroupOperations\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3302,10 +4095,18 @@ class GEOMImpl_IImportExport {
 		TCollection_AsciiString GetFormatName();
 
 };
+%feature("shadow") GEOMImpl_IImportExport::~GEOMImpl_IImportExport %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IImportExport {
-	~GEOMImpl_IImportExport() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IImportExport\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3343,10 +4144,18 @@ class GEOMImpl_ICylinder {
 		Handle_GEOM_Function GetVector();
 
 };
+%feature("shadow") GEOMImpl_ICylinder::~GEOMImpl_ICylinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ICylinder {
-	~GEOMImpl_ICylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ICylinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3380,10 +4189,18 @@ class GEOMImpl_DiskDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_DiskDriver::~GEOMImpl_DiskDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_DiskDriver {
-	~GEOMImpl_DiskDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_DiskDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3417,10 +4234,18 @@ class GEOMImpl_OffsetDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_OffsetDriver::~GEOMImpl_OffsetDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_OffsetDriver {
-	~GEOMImpl_OffsetDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_OffsetDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3454,10 +4279,18 @@ class GEOMImpl_ArchimedeDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_ArchimedeDriver::~GEOMImpl_ArchimedeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ArchimedeDriver {
-	~GEOMImpl_ArchimedeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ArchimedeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3491,10 +4324,18 @@ class GEOMImpl_ShapeDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_ShapeDriver::~GEOMImpl_ShapeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ShapeDriver {
-	~GEOMImpl_ShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ShapeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3528,10 +4369,18 @@ class GEOMImpl_PolylineDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_PolylineDriver::~GEOMImpl_PolylineDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_PolylineDriver {
-	~GEOMImpl_PolylineDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PolylineDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3551,10 +4400,18 @@ class GEOMImpl_IMeasure {
 		Handle_GEOM_Function GetPoint();
 
 };
+%feature("shadow") GEOMImpl_IMeasure::~GEOMImpl_IMeasure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IMeasure {
-	~GEOMImpl_IMeasure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IMeasure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3598,10 +4455,18 @@ class GEOMImpl_IEllipse {
 		Handle_GEOM_Function GetVectorMajor();
 
 };
+%feature("shadow") GEOMImpl_IEllipse::~GEOMImpl_IEllipse %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IEllipse {
-	~GEOMImpl_IEllipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IEllipse\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3635,10 +4500,18 @@ class GEOMImpl_PipeDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_PipeDriver::~GEOMImpl_PipeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_PipeDriver {
-	~GEOMImpl_PipeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PipeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3672,10 +4545,18 @@ class GEOMImpl_ThruSectionsDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_ThruSectionsDriver::~GEOMImpl_ThruSectionsDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ThruSectionsDriver {
-	~GEOMImpl_ThruSectionsDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ThruSectionsDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3713,10 +4594,18 @@ class GEOMImpl_IBox {
 		Handle_GEOM_Function GetRef2();
 
 };
+%feature("shadow") GEOMImpl_IBox::~GEOMImpl_IBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IBox {
-	~GEOMImpl_IBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3750,10 +4639,18 @@ class GEOMImpl_HealingDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_HealingDriver::~GEOMImpl_HealingDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_HealingDriver {
-	~GEOMImpl_HealingDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_HealingDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3807,10 +4704,18 @@ class GEOMImpl_IBasicOperations : public GEOM_IOperations {
 		Handle_GEOM_Object MakeFaceFourPnt(const Handle_GEOM_Object thePnt1, const Handle_GEOM_Object thePnt2, const Handle_GEOM_Object thePnt3, const Handle_GEOM_Object thePnt4);
 
 };
+%feature("shadow") GEOMImpl_IBasicOperations::~GEOMImpl_IBasicOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IBasicOperations {
-	~GEOMImpl_IBasicOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IBasicOperations\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3844,10 +4749,18 @@ class GEOMImpl_PartitionDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_PartitionDriver::~GEOMImpl_PartitionDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_PartitionDriver {
-	~GEOMImpl_PartitionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PartitionDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3858,7 +4771,7 @@ class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		GEOMImpl_ICurvesOperations(GEOM_Engine* theEngine, int );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePolyline(std::list<Handle_GEOM_Object>);
+		Handle_GEOM_Object MakePolyline(std::list<Handle_GEOM_Object>, bool =false);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeCircleThreePnt(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
@@ -3891,10 +4804,18 @@ class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
 		Handle_GEOM_Object MakeCurveSplitByCurve(Handle_GEOM_Object , Handle_GEOM_Object );
 
 };
+%feature("shadow") GEOMImpl_ICurvesOperations::~GEOMImpl_ICurvesOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ICurvesOperations {
-	~GEOMImpl_ICurvesOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ICurvesOperations\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3936,10 +4857,18 @@ class GEOMImpl_IDisk {
 		double GetOrientation();
 
 };
+%feature("shadow") GEOMImpl_IDisk::~GEOMImpl_IDisk %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IDisk {
-	~GEOMImpl_IDisk() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IDisk\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3979,10 +4908,18 @@ class GEOMImpl_ISphere {
 		Handle_GEOM_Function GetPoint();
 
 };
+%feature("shadow") GEOMImpl_ISphere::~GEOMImpl_ISphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ISphere {
-	~GEOMImpl_ISphere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ISphere\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4016,10 +4953,18 @@ class GEOMImpl_FilletDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_FilletDriver::~GEOMImpl_FilletDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_FilletDriver {
-	~GEOMImpl_FilletDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_FilletDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4081,10 +5026,18 @@ class GEOMImpl_IPoint {
 		double GetParameter2();
 
 };
+%feature("shadow") GEOMImpl_IPoint::~GEOMImpl_IPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IPoint {
-	~GEOMImpl_IPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4168,10 +5121,18 @@ class GEOMImpl_ITranslate {
 		Handle_GEOM_Function GetRailShape();
 
 };
+%feature("shadow") GEOMImpl_ITranslate::~GEOMImpl_ITranslate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ITranslate {
-	~GEOMImpl_ITranslate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ITranslate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4219,10 +5180,18 @@ class GEOMImpl_IFace {
 		double GetW();
 
 };
+%feature("shadow") GEOMImpl_IFace::~GEOMImpl_IFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IFace {
-	~GEOMImpl_IFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4278,10 +5247,18 @@ class GEOMImpl_IRotate {
 		int GetNbIter2();
 
 };
+%feature("shadow") GEOMImpl_IRotate::~GEOMImpl_IRotate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IRotate {
-	~GEOMImpl_IRotate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IRotate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4305,10 +5282,18 @@ class GEOMImpl_IThruSections {
 		double GetPrecision();
 
 };
+%feature("shadow") GEOMImpl_IThruSections::~GEOMImpl_IThruSections %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IThruSections {
-	~GEOMImpl_IThruSections() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IThruSections\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4340,10 +5325,18 @@ class GEOMImpl_IThickSolid {
 		int GetFace(int );
 
 };
+%feature("shadow") GEOMImpl_IThickSolid::~GEOMImpl_IThickSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IThickSolid {
-	~GEOMImpl_IThickSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IThickSolid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4363,10 +5356,18 @@ class GEOMImpl_ISpline {
 		Handle_GEOM_Function GetPoint(int );
 
 };
+%feature("shadow") GEOMImpl_ISpline::~GEOMImpl_ISpline %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ISpline {
-	~GEOMImpl_ISpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ISpline\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4406,10 +5407,18 @@ class GEOMImpl_GlueDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_GlueDriver::~GEOMImpl_GlueDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_GlueDriver {
-	~GEOMImpl_GlueDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_GlueDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4429,10 +5438,18 @@ class GEOMImpl_IBoolean {
 		Handle_GEOM_Function GetShape2();
 
 };
+%feature("shadow") GEOMImpl_IBoolean::~GEOMImpl_IBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IBoolean {
-	~GEOMImpl_IBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IBoolean\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4448,10 +5465,18 @@ class GEOMImpl_ICopy {
 		Handle_GEOM_Function GetOriginal();
 
 };
+%feature("shadow") GEOMImpl_ICopy::~GEOMImpl_ICopy %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ICopy {
-	~GEOMImpl_ICopy() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ICopy\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4489,10 +5514,18 @@ class GEOMImpl_IRevolution {
 		Handle_GEOM_Function GetBase();
 
 };
+%feature("shadow") GEOMImpl_IRevolution::~GEOMImpl_IRevolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IRevolution {
-	~GEOMImpl_IRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IRevolution\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4530,10 +5563,18 @@ class GEOMImpl_IDraft {
 		int GetFace(int );
 
 };
+%feature("shadow") GEOMImpl_IDraft::~GEOMImpl_IDraft %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IDraft {
-	~GEOMImpl_IDraft() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IDraft\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4561,10 +5602,18 @@ class GEOMImpl_IOffset {
 		double GetAltValue();
 
 };
+%feature("shadow") GEOMImpl_IOffset::~GEOMImpl_IOffset %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IOffset {
-	~GEOMImpl_IOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IOffset\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4598,10 +5647,18 @@ class GEOMImpl_SplineDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_SplineDriver::~GEOMImpl_SplineDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_SplineDriver {
-	~GEOMImpl_SplineDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_SplineDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4637,10 +5694,18 @@ class GEOMImpl_Gen : public GEOM_Engine {
 		GEOMImpl_IGroupOperations * GetIGroupOperations(int );
 
 };
+%feature("shadow") GEOMImpl_Gen::~GEOMImpl_Gen %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_Gen {
-	~GEOMImpl_Gen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_Gen\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4674,10 +5739,18 @@ class GEOMImpl_LineDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_LineDriver::~GEOMImpl_LineDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_LineDriver {
-	~GEOMImpl_LineDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_LineDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4711,10 +5784,18 @@ class GEOMImpl_FillingDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_FillingDriver::~GEOMImpl_FillingDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_FillingDriver {
-	~GEOMImpl_FillingDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_FillingDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4748,10 +5829,18 @@ class GEOMImpl_SphereDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_SphereDriver::~GEOMImpl_SphereDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_SphereDriver {
-	~GEOMImpl_SphereDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_SphereDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4785,10 +5874,18 @@ class GEOMImpl_VariableFilletDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_VariableFilletDriver::~GEOMImpl_VariableFilletDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_VariableFilletDriver {
-	~GEOMImpl_VariableFilletDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_VariableFilletDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4796,6 +5893,13 @@ class GEOMImpl_VariableFilletDriver : public TFunction_Driver {
 %nodefaultctor GEOMImpl_IBlocksOperations;
 class GEOMImpl_IBlocksOperations : public GEOM_IOperations {
 	public:
+		enum BCErrorType {
+			NOT_BLOCK,
+			EXTRA_EDGE,
+			INVALID_CONNECTION,
+			NOT_CONNECTED,
+			NOT_GLUED,
+		};
 		%feature("autodoc", "1");
 		GEOMImpl_IBlocksOperations(GEOM_Engine* theEngine, int );
 		%feature("autodoc", "1");
@@ -4826,7 +5930,7 @@ class GEOMImpl_IBlocksOperations : public GEOM_IOperations {
 		Handle_GEOM_Object GetFaceNearPoint(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object GetFaceByNormale(Handle_GEOM_Object , Handle_GEOM_Object );
-		%feature("autodoc","IsCompoundOfBlocks(Standard_Integer theMinNbFaces, Standard_Integer theMaxNbFaces)->Standard_Integer");
+		%feature("autodoc","IsCompoundOfBlocks(Standard_Integer theMinNbFaces, Standard_Integer theMaxNbFaces) -> Standard_Integer");
 		Standard_Boolean IsCompoundOfBlocks(Handle_GEOM_Object , const Standard_Integer theMinNbFaces, const Standard_Integer theMaxNbFaces, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean CheckCompoundOfBlocksOld(Handle_GEOM_Object , std::list<GEOMImpl_IBlocksOperations::BCError>);
@@ -4856,10 +5960,18 @@ class GEOMImpl_IBlocksOperations : public GEOM_IOperations {
 		Handle_TColStd_HSequenceOfTransient Propagate(Handle_GEOM_Object );
 
 };
+%feature("shadow") GEOMImpl_IBlocksOperations::~GEOMImpl_IBlocksOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IBlocksOperations {
-	~GEOMImpl_IBlocksOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IBlocksOperations\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4925,10 +6037,18 @@ class GEOMImpl_IMarker {
 		void GetYDir(double & theDX, double & theDY, double & theDZ);
 
 };
+%feature("shadow") GEOMImpl_IMarker::~GEOMImpl_IMarker %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IMarker {
-	~GEOMImpl_IMarker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IMarker\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4956,10 +6076,18 @@ class GEOMImpl_ILine {
 		Handle_GEOM_Function GetFace2();
 
 };
+%feature("shadow") GEOMImpl_ILine::~GEOMImpl_ILine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ILine {
-	~GEOMImpl_ILine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ILine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4993,10 +6121,18 @@ class GEOMImpl_BoxDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_BoxDriver::~GEOMImpl_BoxDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_BoxDriver {
-	~GEOMImpl_BoxDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_BoxDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5046,10 +6182,18 @@ class GEOMImpl_ITorus {
 		double GetRMinor();
 
 };
+%feature("shadow") GEOMImpl_ITorus::~GEOMImpl_ITorus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ITorus {
-	~GEOMImpl_ITorus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ITorus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5083,10 +6227,18 @@ class GEOMImpl_PositionDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_PositionDriver::~GEOMImpl_PositionDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_PositionDriver {
-	~GEOMImpl_PositionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PositionDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5120,10 +6272,18 @@ class GEOMImpl_BlockDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_BlockDriver::~GEOMImpl_BlockDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_BlockDriver {
-	~GEOMImpl_BlockDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_BlockDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5157,10 +6317,18 @@ class GEOMImpl_PointDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_PointDriver::~GEOMImpl_PointDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_PointDriver {
-	~GEOMImpl_PointDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PointDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5184,10 +6352,18 @@ class GEOMImpl_IPosition {
 		Handle_GEOM_Function GetEndLCS();
 
 };
+%feature("shadow") GEOMImpl_IPosition::~GEOMImpl_IPosition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IPosition {
-	~GEOMImpl_IPosition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPosition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5211,10 +6387,18 @@ class GEOMImpl_IInsertOperations : public GEOM_IOperations {
 		Standard_Boolean IsSupported(const Standard_Boolean isImport, const TCollection_AsciiString &theFormat, Handle_TCollection_HAsciiString & theLibName);
 
 };
+%feature("shadow") GEOMImpl_IInsertOperations::~GEOMImpl_IInsertOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IInsertOperations {
-	~GEOMImpl_IInsertOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IInsertOperations\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5248,10 +6432,18 @@ class GEOMImpl_SketcherDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_SketcherDriver::~GEOMImpl_SketcherDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_SketcherDriver {
-	~GEOMImpl_SketcherDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_SketcherDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5285,10 +6477,18 @@ class GEOMImpl_ConeDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_ConeDriver::~GEOMImpl_ConeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ConeDriver {
-	~GEOMImpl_ConeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ConeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5368,10 +6568,18 @@ class GEOMImpl_I3DPrimOperations : public GEOM_IOperations {
 		Handle_GEOM_Object MakePipeBiNormalAlongVector(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 
 };
+%feature("shadow") GEOMImpl_I3DPrimOperations::~GEOMImpl_I3DPrimOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_I3DPrimOperations {
-	~GEOMImpl_I3DPrimOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_I3DPrimOperations\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5405,10 +6613,18 @@ class GEOMImpl_CylinderDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_CylinderDriver::~GEOMImpl_CylinderDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_CylinderDriver {
-	~GEOMImpl_CylinderDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_CylinderDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5426,10 +6642,18 @@ class GEOMImpl_IBooleanOperations : public GEOM_IOperations {
 		Handle_GEOM_Object MakeHalfPartition(Handle_GEOM_Object , Handle_GEOM_Object );
 
 };
+%feature("shadow") GEOMImpl_IBooleanOperations::~GEOMImpl_IBooleanOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IBooleanOperations {
-	~GEOMImpl_IBooleanOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IBooleanOperations\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5463,10 +6687,18 @@ class GEOMImpl_IArchimede {
 		Handle_GEOM_Function GetBasicShape();
 
 };
+%feature("shadow") GEOMImpl_IArchimede::~GEOMImpl_IArchimede %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IArchimede {
-	~GEOMImpl_IArchimede() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IArchimede\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5500,10 +6732,18 @@ class GEOMImpl_ArcDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_ArcDriver::~GEOMImpl_ArcDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ArcDriver {
-	~GEOMImpl_ArcDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ArcDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5575,10 +6815,18 @@ class GEOMImpl_IPlane {
 		double GetParameterV();
 
 };
+%feature("shadow") GEOMImpl_IPlane::~GEOMImpl_IPlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IPlane {
-	~GEOMImpl_IPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPlane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5622,10 +6870,18 @@ class GEOMImpl_ICone {
 		Handle_GEOM_Function GetVector();
 
 };
+%feature("shadow") GEOMImpl_ICone::~GEOMImpl_ICone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ICone {
-	~GEOMImpl_ICone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ICone\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5649,10 +6905,18 @@ class GEOMImpl_IPlate {
 		Handle_GEOM_Function GetInitialShape();
 
 };
+%feature("shadow") GEOMImpl_IPlate::~GEOMImpl_IPlate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IPlate {
-	~GEOMImpl_IPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPlate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5668,10 +6932,18 @@ class GEOMImpl_IBlocks {
 		Handle_TColStd_HSequenceOfTransient GetShapes();
 
 };
+%feature("shadow") GEOMImpl_IBlocks::~GEOMImpl_IBlocks %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IBlocks {
-	~GEOMImpl_IBlocks() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IBlocks\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5725,10 +6997,18 @@ class GEOMImpl_ILocalOperations : public GEOM_IOperations {
 		bool GetSubShape(const TopoDS_Shape &theShape, const int theIndex, TopoDS_Shape & theSubShape);
 
 };
+%feature("shadow") GEOMImpl_ILocalOperations::~GEOMImpl_ILocalOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ILocalOperations {
-	~GEOMImpl_ILocalOperations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ILocalOperations\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5762,10 +7042,18 @@ class GEOMImpl_CircleDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_CircleDriver::~GEOMImpl_CircleDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_CircleDriver {
-	~GEOMImpl_CircleDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_CircleDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5799,10 +7087,18 @@ class GEOMImpl_EllipseDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_EllipseDriver::~GEOMImpl_EllipseDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_EllipseDriver {
-	~GEOMImpl_EllipseDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_EllipseDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5836,10 +7132,18 @@ class GEOMImpl_PlateDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_PlateDriver::~GEOMImpl_PlateDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_PlateDriver {
-	~GEOMImpl_PlateDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PlateDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5907,10 +7211,18 @@ class GEOMImpl_IChamfer {
 		int GetEdge(int );
 
 };
+%feature("shadow") GEOMImpl_IChamfer::~GEOMImpl_IChamfer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IChamfer {
-	~GEOMImpl_IChamfer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IChamfer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5944,10 +7256,18 @@ class GEOMImpl_ImportDriver : public TFunction_Driver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GEOMImpl_ImportDriver::~GEOMImpl_ImportDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_ImportDriver {
-	~GEOMImpl_ImportDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ImportDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -6005,9 +7325,17 @@ class GEOMImpl_IPrism {
 		double GetDZ();
 
 };
+%feature("shadow") GEOMImpl_IPrism::~GEOMImpl_IPrism %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GEOMImpl_IPrism {
-	~GEOMImpl_IPrism() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPrism\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

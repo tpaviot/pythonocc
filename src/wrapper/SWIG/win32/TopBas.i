@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TopBas_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_TopBas_ListNodeOfListOfTestInterference : public Handle_TCollection
 	return (TopBas_ListNodeOfListOfTestInterference*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TopBas_ListNodeOfListOfTestInterference::~Handle_TopBas_ListNodeOfListOfTestInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TopBas_ListNodeOfListOfTestInterference {
-	~Handle_TopBas_ListNodeOfListOfTestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TopBas_ListNodeOfListOfTestInterference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -110,10 +122,18 @@ class TopBas_ListOfTestInterference {
 		void InsertAfter(TopBas_ListOfTestInterference & Other, TopBas_ListIteratorOfListOfTestInterference & It);
 
 };
+%feature("shadow") TopBas_ListOfTestInterference::~TopBas_ListOfTestInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopBas_ListOfTestInterference {
-	~TopBas_ListOfTestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopBas_ListOfTestInterference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -139,10 +159,18 @@ class TopBas_ListNodeOfListOfTestInterference : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TopBas_ListNodeOfListOfTestInterference::~TopBas_ListNodeOfListOfTestInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopBas_ListNodeOfListOfTestInterference {
-	~TopBas_ListNodeOfListOfTestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopBas_ListNodeOfListOfTestInterference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -164,10 +192,18 @@ class TopBas_ListIteratorOfListOfTestInterference {
 		TopBas_TestInterference & Value() const;
 
 };
+%feature("shadow") TopBas_ListIteratorOfListOfTestInterference::~TopBas_ListIteratorOfListOfTestInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopBas_ListIteratorOfListOfTestInterference {
-	~TopBas_ListIteratorOfListOfTestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopBas_ListIteratorOfListOfTestInterference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -191,12 +227,32 @@ class TopBas_TestInterference {
 		void BoundaryTransition(const TopAbs_Orientation Or);
 		%feature("autodoc", "1");
 		const Standard_Real & Intersection() const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeIntersection();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeIntersection() {
+				return (Standard_Real) $self->ChangeIntersection();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeIntersection(Standard_Real value ) {
+				$self->ChangeIntersection()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		const Standard_Integer & Boundary() const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeBoundary();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeBoundary() {
+				return (Standard_Integer) $self->ChangeBoundary();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeBoundary(Standard_Integer value ) {
+				$self->ChangeBoundary()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopAbs_Orientation Orientation() const;
 		%feature("autodoc", "1");
@@ -205,9 +261,17 @@ class TopBas_TestInterference {
 		TopAbs_Orientation BoundaryTransition() const;
 
 };
+%feature("shadow") TopBas_TestInterference::~TopBas_TestInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TopBas_TestInterference {
-	~TopBas_TestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TopBas_TestInterference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

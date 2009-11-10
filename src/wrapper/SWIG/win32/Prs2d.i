@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Prs2d_dependencies.i
 
 
@@ -144,10 +148,18 @@ class Handle_Prs2d_Tolerance : public Handle_Graphic2d_Line {
 	return (Prs2d_Tolerance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Tolerance::~Handle_Prs2d_Tolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Tolerance {
-	~Handle_Prs2d_Tolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Tolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -174,10 +186,18 @@ class Handle_Prs2d_Flatness : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Flatness*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Flatness::~Handle_Prs2d_Flatness %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Flatness {
-	~Handle_Prs2d_Flatness() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Flatness\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -204,10 +224,18 @@ class Handle_Prs2d_SurfProfile : public Handle_Prs2d_Tolerance {
 	return (Prs2d_SurfProfile*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_SurfProfile::~Handle_Prs2d_SurfProfile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_SurfProfile {
-	~Handle_Prs2d_SurfProfile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_SurfProfile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -234,10 +262,18 @@ class Handle_Prs2d_Dimension : public Handle_Graphic2d_Line {
 	return (Prs2d_Dimension*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Dimension::~Handle_Prs2d_Dimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Dimension {
-	~Handle_Prs2d_Dimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Dimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -264,10 +300,18 @@ class Handle_Prs2d_Repere : public Handle_Prs2d_Dimension {
 	return (Prs2d_Repere*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Repere::~Handle_Prs2d_Repere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Repere {
-	~Handle_Prs2d_Repere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Repere\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -294,10 +338,18 @@ class Handle_Prs2d_Axis : public Handle_Graphic2d_Line {
 	return (Prs2d_Axis*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Axis::~Handle_Prs2d_Axis %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Axis {
-	~Handle_Prs2d_Axis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Axis\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -324,10 +376,18 @@ class Handle_Prs2d_Radius : public Handle_Prs2d_Dimension {
 	return (Prs2d_Radius*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Radius::~Handle_Prs2d_Radius %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Radius {
-	~Handle_Prs2d_Radius() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Radius\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -354,10 +414,18 @@ class Handle_Prs2d_AspectRoot : public Handle_MMgt_TShared {
 	return (Prs2d_AspectRoot*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_AspectRoot::~Handle_Prs2d_AspectRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_AspectRoot {
-	~Handle_Prs2d_AspectRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -384,10 +452,18 @@ class Handle_Prs2d_AspectFramedText : public Handle_Prs2d_AspectRoot {
 	return (Prs2d_AspectFramedText*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_AspectFramedText::~Handle_Prs2d_AspectFramedText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_AspectFramedText {
-	~Handle_Prs2d_AspectFramedText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectFramedText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -414,10 +490,18 @@ class Handle_Prs2d_DrawSymbol : public Handle_Graphic2d_Line {
 	return (Prs2d_DrawSymbol*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_DrawSymbol::~Handle_Prs2d_DrawSymbol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_DrawSymbol {
-	~Handle_Prs2d_DrawSymbol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_DrawSymbol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -444,10 +528,18 @@ class Handle_Prs2d_Cylindric : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Cylindric*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Cylindric::~Handle_Prs2d_Cylindric %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Cylindric {
-	~Handle_Prs2d_Cylindric() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Cylindric\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -474,10 +566,18 @@ class Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot : public Handle_TCollection_
 	return (Prs2d_DataMapNodeOfDataMapOfAspectRoot*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot::~Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot {
-	~Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -504,10 +604,18 @@ class Handle_Prs2d_Diameter : public Handle_Prs2d_Dimension {
 	return (Prs2d_Diameter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Diameter::~Handle_Prs2d_Diameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Diameter {
-	~Handle_Prs2d_Diameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Diameter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -534,10 +642,18 @@ class Handle_Prs2d_Drawer : public Handle_MMgt_TShared {
 	return (Prs2d_Drawer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Drawer::~Handle_Prs2d_Drawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Drawer {
-	~Handle_Prs2d_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Drawer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -564,10 +680,18 @@ class Handle_Prs2d_Length : public Handle_Prs2d_Dimension {
 	return (Prs2d_Length*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Length::~Handle_Prs2d_Length %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Length {
-	~Handle_Prs2d_Length() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Length\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -594,10 +718,18 @@ class Handle_Prs2d_Taper : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Taper*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Taper::~Handle_Prs2d_Taper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Taper {
-	~Handle_Prs2d_Taper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Taper\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -624,10 +756,18 @@ class Handle_Prs2d_Arrow : public Handle_Graphic2d_Line {
 	return (Prs2d_Arrow*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Arrow::~Handle_Prs2d_Arrow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Arrow {
-	~Handle_Prs2d_Arrow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Arrow\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -654,10 +794,18 @@ class Handle_Prs2d_ToleranceFrame : public Handle_Graphic2d_Line {
 	return (Prs2d_ToleranceFrame*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_ToleranceFrame::~Handle_Prs2d_ToleranceFrame %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_ToleranceFrame {
-	~Handle_Prs2d_ToleranceFrame() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_ToleranceFrame\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -684,10 +832,18 @@ class Handle_Prs2d_SymCircular : public Handle_Prs2d_Tolerance {
 	return (Prs2d_SymCircular*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_SymCircular::~Handle_Prs2d_SymCircular %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_SymCircular {
-	~Handle_Prs2d_SymCircular() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_SymCircular\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -714,10 +870,18 @@ class Handle_Prs2d_Position : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Position*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Position::~Handle_Prs2d_Position %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Position {
-	~Handle_Prs2d_Position() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Position\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -744,10 +908,18 @@ class Handle_Prs2d_Concentric : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Concentric*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Concentric::~Handle_Prs2d_Concentric %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Concentric {
-	~Handle_Prs2d_Concentric() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Concentric\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -774,10 +946,18 @@ class Handle_Prs2d_Perpendicular : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Perpendicular*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Perpendicular::~Handle_Prs2d_Perpendicular %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Perpendicular {
-	~Handle_Prs2d_Perpendicular() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Perpendicular\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -804,10 +984,18 @@ class Handle_Prs2d_LineProfile : public Handle_Prs2d_Tolerance {
 	return (Prs2d_LineProfile*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_LineProfile::~Handle_Prs2d_LineProfile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_LineProfile {
-	~Handle_Prs2d_LineProfile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_LineProfile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -834,10 +1022,18 @@ class Handle_Prs2d_AspectHidingText : public Handle_Prs2d_AspectRoot {
 	return (Prs2d_AspectHidingText*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_AspectHidingText::~Handle_Prs2d_AspectHidingText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_AspectHidingText {
-	~Handle_Prs2d_AspectHidingText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectHidingText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -864,10 +1060,18 @@ class Handle_Prs2d_RadiusIndep : public Handle_Graphic2d_Line {
 	return (Prs2d_RadiusIndep*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_RadiusIndep::~Handle_Prs2d_RadiusIndep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_RadiusIndep {
-	~Handle_Prs2d_RadiusIndep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_RadiusIndep\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -894,10 +1098,18 @@ class Handle_Prs2d_Angularity : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Angularity*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Angularity::~Handle_Prs2d_Angularity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Angularity {
-	~Handle_Prs2d_Angularity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Angularity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -924,10 +1136,18 @@ class Handle_Prs2d_Symmetry : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Symmetry*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Symmetry::~Handle_Prs2d_Symmetry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Symmetry {
-	~Handle_Prs2d_Symmetry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Symmetry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -954,10 +1174,18 @@ class Handle_Prs2d_Circularity : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Circularity*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Circularity::~Handle_Prs2d_Circularity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Circularity {
-	~Handle_Prs2d_Circularity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Circularity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -984,10 +1212,18 @@ class Handle_Prs2d_Straightness : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Straightness*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Straightness::~Handle_Prs2d_Straightness %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Straightness {
-	~Handle_Prs2d_Straightness() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Straightness\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1014,10 +1250,18 @@ class Handle_Prs2d_SymbolDefinitionError : public Handle_Standard_OutOfRange {
 	return (Prs2d_SymbolDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_SymbolDefinitionError::~Handle_Prs2d_SymbolDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_SymbolDefinitionError {
-	~Handle_Prs2d_SymbolDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_SymbolDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1044,10 +1288,18 @@ class Handle_Prs2d_AspectHidingPoly : public Handle_Prs2d_AspectRoot {
 	return (Prs2d_AspectHidingPoly*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_AspectHidingPoly::~Handle_Prs2d_AspectHidingPoly %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_AspectHidingPoly {
-	~Handle_Prs2d_AspectHidingPoly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectHidingPoly\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1074,10 +1326,18 @@ class Handle_Prs2d_Point : public Handle_Graphic2d_Line {
 	return (Prs2d_Point*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Point::~Handle_Prs2d_Point %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Point {
-	~Handle_Prs2d_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Point\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1104,10 +1364,18 @@ class Handle_Prs2d_AspectText : public Handle_Prs2d_AspectRoot {
 	return (Prs2d_AspectText*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_AspectText::~Handle_Prs2d_AspectText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_AspectText {
-	~Handle_Prs2d_AspectText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1134,10 +1402,18 @@ class Handle_Prs2d_Parallelism : public Handle_Prs2d_Tolerance {
 	return (Prs2d_Parallelism*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Parallelism::~Handle_Prs2d_Parallelism %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Parallelism {
-	~Handle_Prs2d_Parallelism() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Parallelism\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1164,10 +1440,18 @@ class Handle_Prs2d_SymTotal : public Handle_Prs2d_Tolerance {
 	return (Prs2d_SymTotal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_SymTotal::~Handle_Prs2d_SymTotal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_SymTotal {
-	~Handle_Prs2d_SymTotal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_SymTotal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1194,10 +1478,18 @@ class Handle_Prs2d_Angle : public Handle_Prs2d_Dimension {
 	return (Prs2d_Angle*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_Angle::~Handle_Prs2d_Angle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_Angle {
-	~Handle_Prs2d_Angle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Angle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1224,10 +1516,18 @@ class Handle_Prs2d_AspectLine : public Handle_Prs2d_AspectRoot {
 	return (Prs2d_AspectLine*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Prs2d_AspectLine::~Handle_Prs2d_AspectLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Prs2d_AspectLine {
-	~Handle_Prs2d_AspectLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1253,10 +1553,18 @@ class Prs2d_Tolerance : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Tolerance::~Prs2d_Tolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Tolerance {
-	~Prs2d_Tolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Tolerance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1280,10 +1588,18 @@ class Prs2d_LineProfile : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_LineProfile::~Prs2d_LineProfile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_LineProfile {
-	~Prs2d_LineProfile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_LineProfile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1307,10 +1623,18 @@ class Prs2d_AspectRoot : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_AspectRoot::~Prs2d_AspectRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_AspectRoot {
-	~Prs2d_AspectRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_AspectRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1352,10 +1676,18 @@ class Prs2d_AspectHidingText : public Prs2d_AspectRoot {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_AspectHidingText::~Prs2d_AspectHidingText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_AspectHidingText {
-	~Prs2d_AspectHidingText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_AspectHidingText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1389,10 +1721,18 @@ class Prs2d_DataMapOfAspectRoot : public TCollection_BasicMap {
 		Handle_Prs2d_AspectRoot & operator()(const Standard_Integer &K);
 
 };
+%feature("shadow") Prs2d_DataMapOfAspectRoot::~Prs2d_DataMapOfAspectRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_DataMapOfAspectRoot {
-	~Prs2d_DataMapOfAspectRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_DataMapOfAspectRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1412,10 +1752,18 @@ class Prs2d_DataMapIteratorOfDataMapOfAspectRoot : public TCollection_BasicMapIt
 		const Handle_Prs2d_AspectRoot & Value() const;
 
 };
+%feature("shadow") Prs2d_DataMapIteratorOfDataMapOfAspectRoot::~Prs2d_DataMapIteratorOfDataMapOfAspectRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_DataMapIteratorOfDataMapOfAspectRoot {
-	~Prs2d_DataMapIteratorOfDataMapOfAspectRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_DataMapIteratorOfDataMapOfAspectRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1499,10 +1847,18 @@ class Prs2d_Dimension : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Dimension::~Prs2d_Dimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Dimension {
-	~Prs2d_Dimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Dimension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1528,10 +1884,18 @@ class Prs2d_Radius : public Prs2d_Dimension {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Radius::~Prs2d_Radius %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Radius {
-	~Prs2d_Radius() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Radius\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1557,10 +1921,18 @@ class Prs2d_Concentric : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Concentric::~Prs2d_Concentric %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Concentric {
-	~Prs2d_Concentric() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Concentric\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1586,10 +1958,18 @@ class Prs2d_SymCircular : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_SymCircular::~Prs2d_SymCircular %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_SymCircular {
-	~Prs2d_SymCircular() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_SymCircular\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1615,10 +1995,18 @@ class Prs2d_Angularity : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Angularity::~Prs2d_Angularity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Angularity {
-	~Prs2d_Angularity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Angularity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1658,10 +2046,18 @@ class Prs2d_Axis : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Axis::~Prs2d_Axis %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Axis {
-	~Prs2d_Axis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Axis\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1697,10 +2093,18 @@ class Prs2d_Point : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Point::~Prs2d_Point %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Point {
-	~Prs2d_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Point\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1734,10 +2138,18 @@ class Prs2d_AspectHidingPoly : public Prs2d_AspectRoot {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_AspectHidingPoly::~Prs2d_AspectHidingPoly %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_AspectHidingPoly {
-	~Prs2d_AspectHidingPoly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_AspectHidingPoly\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1763,10 +2175,18 @@ class Prs2d_Cylindric : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Cylindric::~Prs2d_Cylindric %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Cylindric {
-	~Prs2d_Cylindric() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Cylindric\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1792,10 +2212,18 @@ class Prs2d_Straightness : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Straightness::~Prs2d_Straightness %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Straightness {
-	~Prs2d_Straightness() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Straightness\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1821,10 +2249,18 @@ class Prs2d_Position : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Position::~Prs2d_Position %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Position {
-	~Prs2d_Position() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Position\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1834,8 +2270,18 @@ class Prs2d_DataMapNodeOfDataMapOfAspectRoot : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		Prs2d_DataMapNodeOfDataMapOfAspectRoot(const Standard_Integer &K, const Handle_Prs2d_AspectRoot &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectRoot & Value() const;
 		%feature("autodoc", "1");
@@ -1852,10 +2298,18 @@ class Prs2d_DataMapNodeOfDataMapOfAspectRoot : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_DataMapNodeOfDataMapOfAspectRoot::~Prs2d_DataMapNodeOfDataMapOfAspectRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_DataMapNodeOfDataMapOfAspectRoot {
-	~Prs2d_DataMapNodeOfDataMapOfAspectRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_DataMapNodeOfDataMapOfAspectRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1865,7 +2319,7 @@ class Prs2d_RadiusIndep : public Graphic2d_Line {
 	public:
 		%feature("autodoc", "1");
 		Prs2d_RadiusIndep(const Handle_Graphic2d_GraphicObject &aGO, const gp_Pnt2d &anAttachPnt, const gp_Pnt2d &aCenter, const Standard_Real aRad, const TCollection_ExtendedString &aText, const Standard_Real aLength=1.0e+1, const Prs2d_TypeOfRadius aTypeRad=Prs2d_TOR_STANDARD, const Standard_Real aTxtScale=1.0e+0);
-		%feature("autodoc","Values()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Values(gp_Pnt2d & anAttPnt, gp_Pnt2d & aCenter, Standard_Real &OutValue, TCollection_ExtendedString & aText, Standard_Real &OutValue, Prs2d_TypeOfRadius & aTypeRad, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetText(const TCollection_ExtendedString &aTxt);
@@ -1903,10 +2357,18 @@ class Prs2d_RadiusIndep : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_RadiusIndep::~Prs2d_RadiusIndep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_RadiusIndep {
-	~Prs2d_RadiusIndep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_RadiusIndep\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1932,10 +2394,18 @@ class Prs2d_Flatness : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Flatness::~Prs2d_Flatness %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Flatness {
-	~Prs2d_Flatness() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Flatness\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1961,10 +2431,18 @@ class Prs2d_Circularity : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Circularity::~Prs2d_Circularity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Circularity {
-	~Prs2d_Circularity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Circularity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1990,10 +2468,18 @@ class Prs2d_Parallelism : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Parallelism::~Prs2d_Parallelism %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Parallelism {
-	~Prs2d_Parallelism() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Parallelism\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2019,10 +2505,18 @@ class Prs2d_DrawSymbol : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_DrawSymbol::~Prs2d_DrawSymbol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_DrawSymbol {
-	~Prs2d_DrawSymbol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_DrawSymbol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2074,10 +2568,18 @@ class Prs2d_AspectText : public Prs2d_AspectRoot {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_AspectText::~Prs2d_AspectText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_AspectText {
-	~Prs2d_AspectText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_AspectText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2103,10 +2605,18 @@ class Prs2d_Symmetry : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Symmetry::~Prs2d_Symmetry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Symmetry {
-	~Prs2d_Symmetry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Symmetry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2140,7 +2650,7 @@ class Prs2d_AspectLine : public Prs2d_AspectRoot {
 		void SetDrawEdge(const Standard_Boolean aDrawEdge);
 		%feature("autodoc", "1");
 		void ValuesOfLine(Quantity_Color & aColor, Aspect_TypeOfLine & aType, Aspect_WidthOfLine & aWidth) const;
-		%feature("autodoc","ValuesOfPoly()->Standard_Integer");
+		%feature("autodoc","ValuesOfPoly() -> Standard_Integer");
 		void ValuesOfPoly(Quantity_Color & aColor, Graphic2d_TypeOfPolygonFilling & aTypeFill, Standard_Integer &OutValue, Standard_Boolean & aDrawEdge) const;
 		%feature("autodoc", "1");
 		Standard_Integer ColorIndex() const;
@@ -2172,10 +2682,18 @@ class Prs2d_AspectLine : public Prs2d_AspectRoot {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_AspectLine::~Prs2d_AspectLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_AspectLine {
-	~Prs2d_AspectLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_AspectLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2185,7 +2703,7 @@ class Prs2d_Angle : public Prs2d_Dimension {
 	public:
 		%feature("autodoc", "1");
 		Prs2d_Angle(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Pnt2d &anAttachPnt1, const gp_Pnt2d &anAttachPnt2, const gp_Pnt2d &anAttachPnt3, const Quantity_Length aRadius, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=3.0e+0, const Standard_Real anArrAngle=1.5e+1, const Standard_Real anArrLength=1.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
-		%feature("autodoc","Values()->Standard_Real");
+		%feature("autodoc","Values() -> Standard_Real");
 		void Values(gp_Pnt2d & aPnt1, gp_Pnt2d & aPnt2, gp_Pnt2d & aPnt3, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
@@ -2203,10 +2721,18 @@ class Prs2d_Angle : public Prs2d_Dimension {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Angle::~Prs2d_Angle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Angle {
-	~Prs2d_Angle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Angle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2232,10 +2758,18 @@ class Prs2d_Repere : public Prs2d_Dimension {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Repere::~Prs2d_Repere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Repere {
-	~Prs2d_Repere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Repere\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2281,10 +2815,18 @@ class Prs2d_ToleranceFrame : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_ToleranceFrame::~Prs2d_ToleranceFrame %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_ToleranceFrame {
-	~Prs2d_ToleranceFrame() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_ToleranceFrame\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2314,10 +2856,18 @@ class Prs2d_Arrow : public Graphic2d_Line {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Arrow::~Prs2d_Arrow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Arrow {
-	~Prs2d_Arrow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Arrow\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2343,10 +2893,18 @@ class Prs2d_Taper : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Taper::~Prs2d_Taper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Taper {
-	~Prs2d_Taper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Taper\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2378,10 +2936,18 @@ class Prs2d_Drawer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Drawer::~Prs2d_Drawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Drawer {
-	~Prs2d_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Drawer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2423,10 +2989,18 @@ class Prs2d_AspectFramedText : public Prs2d_AspectRoot {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_AspectFramedText::~Prs2d_AspectFramedText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_AspectFramedText {
-	~Prs2d_AspectFramedText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_AspectFramedText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2452,10 +3026,18 @@ class Prs2d_SurfProfile : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_SurfProfile::~Prs2d_SurfProfile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_SurfProfile {
-	~Prs2d_SurfProfile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_SurfProfile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2481,10 +3063,18 @@ class Prs2d_SymTotal : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_SymTotal::~Prs2d_SymTotal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_SymTotal {
-	~Prs2d_SymTotal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_SymTotal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2522,10 +3112,18 @@ class Prs2d_Length : public Prs2d_Dimension {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Length::~Prs2d_Length %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Length {
-	~Prs2d_Length() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Length\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2557,10 +3155,18 @@ class Prs2d_SymbolDefinitionError : public Standard_OutOfRange {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_SymbolDefinitionError::~Prs2d_SymbolDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_SymbolDefinitionError {
-	~Prs2d_SymbolDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_SymbolDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2586,10 +3192,18 @@ class Prs2d_Perpendicular : public Prs2d_Tolerance {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Perpendicular::~Prs2d_Perpendicular %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Perpendicular {
-	~Prs2d_Perpendicular() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Perpendicular\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2617,9 +3231,17 @@ class Prs2d_Diameter : public Prs2d_Dimension {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Prs2d_Diameter::~Prs2d_Diameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Prs2d_Diameter {
-	~Prs2d_Diameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Prs2d_Diameter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

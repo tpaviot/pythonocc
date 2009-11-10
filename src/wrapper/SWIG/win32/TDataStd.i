@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TDataStd_dependencies.i
 
 
@@ -104,10 +108,18 @@ class Handle_TDataStd_ReferenceArray : public Handle_TDF_Attribute {
 	return (TDataStd_ReferenceArray*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_ReferenceArray::~Handle_TDataStd_ReferenceArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_ReferenceArray {
-	~Handle_TDataStd_ReferenceArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ReferenceArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -134,10 +146,18 @@ class Handle_TDataStd_TreeNode : public Handle_TDF_Attribute {
 	return (TDataStd_TreeNode*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_TreeNode::~Handle_TDataStd_TreeNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_TreeNode {
-	~Handle_TDataStd_TreeNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_TreeNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -164,10 +184,18 @@ class Handle_TDataStd_DeltaOnModificationOfRealArray : public Handle_TDF_DeltaOn
 	return (TDataStd_DeltaOnModificationOfRealArray*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_DeltaOnModificationOfRealArray::~Handle_TDataStd_DeltaOnModificationOfRealArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_DeltaOnModificationOfRealArray {
-	~Handle_TDataStd_DeltaOnModificationOfRealArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfRealArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -194,10 +222,18 @@ class Handle_TDataStd_Pattern : public Handle_TDF_Attribute {
 	return (TDataStd_Pattern*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Pattern::~Handle_TDataStd_Pattern %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Pattern {
-	~Handle_TDataStd_Pattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Pattern\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -224,10 +260,18 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public Hand
 	return (TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger::~Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
-	~Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -254,10 +298,18 @@ class Handle_TDataStd_Placement : public Handle_TDF_Attribute {
 	return (TDataStd_Placement*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Placement::~Handle_TDataStd_Placement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Placement {
-	~Handle_TDataStd_Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Placement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -284,10 +336,18 @@ class Handle_TDataStd_Constraint : public Handle_TDF_Attribute {
 	return (TDataStd_Constraint*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Constraint::~Handle_TDataStd_Constraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Constraint {
-	~Handle_TDataStd_Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Constraint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -314,10 +374,18 @@ class Handle_TDataStd_IntegerList : public Handle_TDF_Attribute {
 	return (TDataStd_IntegerList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_IntegerList::~Handle_TDataStd_IntegerList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_IntegerList {
-	~Handle_TDataStd_IntegerList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_IntegerList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -344,10 +412,18 @@ class Handle_TDataStd_DeltaOnModificationOfIntPackedMap : public Handle_TDF_Delt
 	return (TDataStd_DeltaOnModificationOfIntPackedMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_DeltaOnModificationOfIntPackedMap::~Handle_TDataStd_DeltaOnModificationOfIntPackedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_DeltaOnModificationOfIntPackedMap {
-	~Handle_TDataStd_DeltaOnModificationOfIntPackedMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfIntPackedMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -374,10 +450,18 @@ class Handle_TDataStd_Shape : public Handle_TDF_Attribute {
 	return (TDataStd_Shape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Shape::~Handle_TDataStd_Shape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Shape {
-	~Handle_TDataStd_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Shape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -404,10 +488,18 @@ class Handle_TDataStd_RealArray : public Handle_TDF_Attribute {
 	return (TDataStd_RealArray*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_RealArray::~Handle_TDataStd_RealArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_RealArray {
-	~Handle_TDataStd_RealArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_RealArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -434,10 +526,18 @@ class Handle_TDataStd_NoteBook : public Handle_TDF_Attribute {
 	return (TDataStd_NoteBook*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_NoteBook::~Handle_TDataStd_NoteBook %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_NoteBook {
-	~Handle_TDataStd_NoteBook() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_NoteBook\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -464,10 +564,18 @@ class Handle_TDataStd_Variable : public Handle_TDF_Attribute {
 	return (TDataStd_Variable*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Variable::~Handle_TDataStd_Variable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Variable {
-	~Handle_TDataStd_Variable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Variable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -494,10 +602,18 @@ class Handle_TDataStd_Relation : public Handle_TDF_Attribute {
 	return (TDataStd_Relation*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Relation::~Handle_TDataStd_Relation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Relation {
-	~Handle_TDataStd_Relation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Relation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -524,10 +640,18 @@ class Handle_TDataStd_Geometry : public Handle_TDF_Attribute {
 	return (TDataStd_Geometry*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Geometry::~Handle_TDataStd_Geometry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Geometry {
-	~Handle_TDataStd_Geometry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Geometry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -554,10 +678,18 @@ class Handle_TDataStd_AsciiString : public Handle_TDF_Attribute {
 	return (TDataStd_AsciiString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_AsciiString::~Handle_TDataStd_AsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_AsciiString {
-	~Handle_TDataStd_AsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_AsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -584,10 +716,18 @@ class Handle_TDataStd_IntegerArray : public Handle_TDF_Attribute {
 	return (TDataStd_IntegerArray*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_IntegerArray::~Handle_TDataStd_IntegerArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_IntegerArray {
-	~Handle_TDataStd_IntegerArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_IntegerArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -614,10 +754,18 @@ class Handle_TDataStd_DeltaOnModificationOfByteArray : public Handle_TDF_DeltaOn
 	return (TDataStd_DeltaOnModificationOfByteArray*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_DeltaOnModificationOfByteArray::~Handle_TDataStd_DeltaOnModificationOfByteArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_DeltaOnModificationOfByteArray {
-	~Handle_TDataStd_DeltaOnModificationOfByteArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfByteArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -644,10 +792,18 @@ class Handle_TDataStd_ExtStringArray : public Handle_TDF_Attribute {
 	return (TDataStd_ExtStringArray*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_ExtStringArray::~Handle_TDataStd_ExtStringArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_ExtStringArray {
-	~Handle_TDataStd_ExtStringArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ExtStringArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -674,10 +830,18 @@ class Handle_TDataStd_Plane : public Handle_TDF_Attribute {
 	return (TDataStd_Plane*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Plane::~Handle_TDataStd_Plane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Plane {
-	~Handle_TDataStd_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Plane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -704,10 +868,18 @@ class Handle_TDataStd_ReferenceList : public Handle_TDF_Attribute {
 	return (TDataStd_ReferenceList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_ReferenceList::~Handle_TDataStd_ReferenceList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_ReferenceList {
-	~Handle_TDataStd_ReferenceList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ReferenceList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -734,10 +906,18 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringString : public Handle_TCollec
 	return (TDataStd_DataMapNodeOfDataMapOfStringString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringString::~Handle_TDataStd_DataMapNodeOfDataMapOfStringString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringString {
-	~Handle_TDataStd_DataMapNodeOfDataMapOfStringString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -764,10 +944,18 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfInteger : public Handle_MMgt_TSha
 	return (TDataStd_HDataMapOfStringHArray1OfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_HDataMapOfStringHArray1OfInteger::~Handle_TDataStd_HDataMapOfStringHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_HDataMapOfStringHArray1OfInteger {
-	~Handle_TDataStd_HDataMapOfStringHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringHArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -794,10 +982,18 @@ class Handle_TDataStd_BooleanArray : public Handle_TDF_Attribute {
 	return (TDataStd_BooleanArray*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_BooleanArray::~Handle_TDataStd_BooleanArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_BooleanArray {
-	~Handle_TDataStd_BooleanArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_BooleanArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -824,10 +1020,18 @@ class Handle_TDataStd_PatternStd : public Handle_TDataStd_Pattern {
 	return (TDataStd_PatternStd*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_PatternStd::~Handle_TDataStd_PatternStd %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_PatternStd {
-	~Handle_TDataStd_PatternStd() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_PatternStd\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -854,10 +1058,18 @@ class Handle_TDataStd_DeltaOnModificationOfExtStringArray : public Handle_TDF_De
 	return (TDataStd_DeltaOnModificationOfExtStringArray*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_DeltaOnModificationOfExtStringArray::~Handle_TDataStd_DeltaOnModificationOfExtStringArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_DeltaOnModificationOfExtStringArray {
-	~Handle_TDataStd_DeltaOnModificationOfExtStringArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfExtStringArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -884,10 +1096,18 @@ class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
 	return (TDataStd_Expression*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Expression::~Handle_TDataStd_Expression %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Expression {
-	~Handle_TDataStd_Expression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Expression\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -914,10 +1134,18 @@ class Handle_TDataStd_Integer : public Handle_TDF_Attribute {
 	return (TDataStd_Integer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Integer::~Handle_TDataStd_Integer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Integer {
-	~Handle_TDataStd_Integer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Integer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -944,10 +1172,18 @@ class Handle_TDataStd_ByteArray : public Handle_TDF_Attribute {
 	return (TDataStd_ByteArray*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_ByteArray::~Handle_TDataStd_ByteArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_ByteArray {
-	~Handle_TDataStd_ByteArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ByteArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -974,10 +1210,18 @@ class Handle_TDataStd_Real : public Handle_TDF_Attribute {
 	return (TDataStd_Real*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Real::~Handle_TDataStd_Real %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Real {
-	~Handle_TDataStd_Real() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Real\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1004,10 +1248,18 @@ class Handle_TDataStd_HDataMapOfStringByte : public Handle_MMgt_TShared {
 	return (TDataStd_HDataMapOfStringByte*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_HDataMapOfStringByte::~Handle_TDataStd_HDataMapOfStringByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_HDataMapOfStringByte {
-	~Handle_TDataStd_HDataMapOfStringByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringByte\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1034,10 +1286,18 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringByte : public Handle_TCollecti
 	return (TDataStd_DataMapNodeOfDataMapOfStringByte*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringByte::~Handle_TDataStd_DataMapNodeOfDataMapOfStringByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringByte {
-	~Handle_TDataStd_DataMapNodeOfDataMapOfStringByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringByte\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1064,10 +1324,18 @@ class Handle_TDataStd_BooleanList : public Handle_TDF_Attribute {
 	return (TDataStd_BooleanList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_BooleanList::~Handle_TDataStd_BooleanList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_BooleanList {
-	~Handle_TDataStd_BooleanList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_BooleanList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1094,10 +1362,18 @@ class Handle_TDataStd_UAttribute : public Handle_TDF_Attribute {
 	return (TDataStd_UAttribute*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_UAttribute::~Handle_TDataStd_UAttribute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_UAttribute {
-	~Handle_TDataStd_UAttribute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_UAttribute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1124,10 +1400,18 @@ class Handle_TDataStd_HDataMapOfStringReal : public Handle_MMgt_TShared {
 	return (TDataStd_HDataMapOfStringReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_HDataMapOfStringReal::~Handle_TDataStd_HDataMapOfStringReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_HDataMapOfStringReal {
-	~Handle_TDataStd_HDataMapOfStringReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1154,10 +1438,18 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringReal : public Handle_TCollecti
 	return (TDataStd_DataMapNodeOfDataMapOfStringReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringReal::~Handle_TDataStd_DataMapNodeOfDataMapOfStringReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringReal {
-	~Handle_TDataStd_DataMapNodeOfDataMapOfStringReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1184,10 +1476,18 @@ class Handle_TDataStd_ListNodeOfListOfExtendedString : public Handle_TCollection
 	return (TDataStd_ListNodeOfListOfExtendedString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_ListNodeOfListOfExtendedString::~Handle_TDataStd_ListNodeOfListOfExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_ListNodeOfListOfExtendedString {
-	~Handle_TDataStd_ListNodeOfListOfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ListNodeOfListOfExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1214,10 +1514,18 @@ class Handle_TDataStd_HDataMapOfStringString : public Handle_MMgt_TShared {
 	return (TDataStd_HDataMapOfStringString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_HDataMapOfStringString::~Handle_TDataStd_HDataMapOfStringString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_HDataMapOfStringString {
-	~Handle_TDataStd_HDataMapOfStringString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1244,10 +1552,18 @@ class Handle_TDataStd_Point : public Handle_TDF_Attribute {
 	return (TDataStd_Point*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Point::~Handle_TDataStd_Point %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Point {
-	~Handle_TDataStd_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Point\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1274,10 +1590,18 @@ class Handle_TDataStd_HLabelArray1 : public Handle_MMgt_TShared {
 	return (TDataStd_HLabelArray1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_HLabelArray1::~Handle_TDataStd_HLabelArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_HLabelArray1 {
-	~Handle_TDataStd_HLabelArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HLabelArray1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1304,10 +1628,18 @@ class Handle_TDataStd_Position : public Handle_TDF_Attribute {
 	return (TDataStd_Position*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Position::~Handle_TDataStd_Position %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Position {
-	~Handle_TDataStd_Position() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Position\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1334,10 +1666,18 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfReal : public Handle_MMgt_TShared
 	return (TDataStd_HDataMapOfStringHArray1OfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_HDataMapOfStringHArray1OfReal::~Handle_TDataStd_HDataMapOfStringHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_HDataMapOfStringHArray1OfReal {
-	~Handle_TDataStd_HDataMapOfStringHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1364,10 +1704,18 @@ class Handle_TDataStd_Directory : public Handle_TDF_Attribute {
 	return (TDataStd_Directory*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Directory::~Handle_TDataStd_Directory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Directory {
-	~Handle_TDataStd_Directory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Directory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1394,10 +1742,18 @@ class Handle_TDataStd_Comment : public Handle_TDF_Attribute {
 	return (TDataStd_Comment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Comment::~Handle_TDataStd_Comment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Comment {
-	~Handle_TDataStd_Comment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Comment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1424,10 +1780,18 @@ class Handle_TDataStd_Current : public Handle_TDF_Attribute {
 	return (TDataStd_Current*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Current::~Handle_TDataStd_Current %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Current {
-	~Handle_TDataStd_Current() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Current\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1454,10 +1818,18 @@ class Handle_TDataStd_Axis : public Handle_TDF_Attribute {
 	return (TDataStd_Axis*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Axis::~Handle_TDataStd_Axis %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Axis {
-	~Handle_TDataStd_Axis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Axis\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1484,10 +1856,18 @@ class Handle_TDataStd_HArray1OfByte : public Handle_MMgt_TShared {
 	return (TDataStd_HArray1OfByte*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_HArray1OfByte::~Handle_TDataStd_HArray1OfByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_HArray1OfByte {
-	~Handle_TDataStd_HArray1OfByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HArray1OfByte\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1514,10 +1894,18 @@ class Handle_TDataStd_NamedData : public Handle_TDF_Attribute {
 	return (TDataStd_NamedData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_NamedData::~Handle_TDataStd_NamedData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_NamedData {
-	~Handle_TDataStd_NamedData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_NamedData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1544,10 +1932,18 @@ class Handle_TDataStd_DeltaOnModificationOfIntArray : public Handle_TDF_DeltaOnM
 	return (TDataStd_DeltaOnModificationOfIntArray*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_DeltaOnModificationOfIntArray::~Handle_TDataStd_DeltaOnModificationOfIntArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_DeltaOnModificationOfIntArray {
-	~Handle_TDataStd_DeltaOnModificationOfIntArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfIntArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1574,10 +1970,18 @@ class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
 	return (TDataStd_IntPackedMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_IntPackedMap::~Handle_TDataStd_IntPackedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_IntPackedMap {
-	~Handle_TDataStd_IntPackedMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_IntPackedMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1604,10 +2008,18 @@ class Handle_TDataStd_HDataMapOfStringInteger : public Handle_MMgt_TShared {
 	return (TDataStd_HDataMapOfStringInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_HDataMapOfStringInteger::~Handle_TDataStd_HDataMapOfStringInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_HDataMapOfStringInteger {
-	~Handle_TDataStd_HDataMapOfStringInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1634,10 +2046,18 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger : public Handle_TColle
 	return (TDataStd_DataMapNodeOfDataMapOfStringInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger::~Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger {
-	~Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1664,10 +2084,18 @@ class Handle_TDataStd_Name : public Handle_TDF_Attribute {
 	return (TDataStd_Name*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Name::~Handle_TDataStd_Name %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Name {
-	~Handle_TDataStd_Name() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Name\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1694,10 +2122,18 @@ class Handle_TDataStd_ExtStringList : public Handle_TDF_Attribute {
 	return (TDataStd_ExtStringList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_ExtStringList::~Handle_TDataStd_ExtStringList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_ExtStringList {
-	~Handle_TDataStd_ExtStringList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ExtStringList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1724,10 +2160,18 @@ class Handle_TDataStd_ListNodeOfListOfByte : public Handle_TCollection_MapNode {
 	return (TDataStd_ListNodeOfListOfByte*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_ListNodeOfListOfByte::~Handle_TDataStd_ListNodeOfListOfByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_ListNodeOfListOfByte {
-	~Handle_TDataStd_ListNodeOfListOfByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ListNodeOfListOfByte\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1754,10 +2198,18 @@ class Handle_TDataStd_Tick : public Handle_TDF_Attribute {
 	return (TDataStd_Tick*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_Tick::~Handle_TDataStd_Tick %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_Tick {
-	~Handle_TDataStd_Tick() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Tick\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1784,10 +2236,18 @@ class Handle_TDataStd_HArray1OfTrsf : public Handle_MMgt_TShared {
 	return (TDataStd_HArray1OfTrsf*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_HArray1OfTrsf::~Handle_TDataStd_HArray1OfTrsf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_HArray1OfTrsf {
-	~Handle_TDataStd_HArray1OfTrsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HArray1OfTrsf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1814,10 +2274,18 @@ class Handle_TDataStd_RealList : public Handle_TDF_Attribute {
 	return (TDataStd_RealList*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_RealList::~Handle_TDataStd_RealList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_RealList {
-	~Handle_TDataStd_RealList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_RealList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1844,10 +2312,18 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public Handle_
 	return (TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal::~Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
-	~Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1915,10 +2391,18 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_ReferenceList::~TDataStd_ReferenceList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_ReferenceList {
-	~TDataStd_ReferenceList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ReferenceList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1946,10 +2430,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public TCollection
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger::~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
-	~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1999,10 +2491,18 @@ class TDataStd_ListOfExtendedString {
 		void InsertAfter(TDataStd_ListOfExtendedString & Other, TDataStd_ListIteratorOfListOfExtendedString & It);
 
 };
+%feature("shadow") TDataStd_ListOfExtendedString::~TDataStd_ListOfExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_ListOfExtendedString {
-	~TDataStd_ListOfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ListOfExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2062,10 +2562,18 @@ class TDataStd_BooleanList : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_BooleanList::~TDataStd_BooleanList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_BooleanList {
-	~TDataStd_BooleanList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_BooleanList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2091,10 +2599,18 @@ class TDataStd_ListNodeOfListOfExtendedString : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_ListNodeOfListOfExtendedString::~TDataStd_ListNodeOfListOfExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_ListNodeOfListOfExtendedString {
-	~TDataStd_ListNodeOfListOfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ListNodeOfListOfExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2124,10 +2640,18 @@ class TDataStd_HDataMapOfStringByte : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_HDataMapOfStringByte::~TDataStd_HDataMapOfStringByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_HDataMapOfStringByte {
-	~TDataStd_HDataMapOfStringByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringByte\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2171,10 +2695,18 @@ class TDataStd_Position : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Position::~TDataStd_Position %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Position {
-	~TDataStd_Position() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Position\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2214,10 +2746,18 @@ class TDataStd_Array1OfTrsf {
 		gp_Trsf & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") TDataStd_Array1OfTrsf::~TDataStd_Array1OfTrsf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Array1OfTrsf {
-	~TDataStd_Array1OfTrsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Array1OfTrsf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2285,10 +2825,18 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_ExtStringArray::~TDataStd_ExtStringArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_ExtStringArray {
-	~TDataStd_ExtStringArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ExtStringArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2328,10 +2876,18 @@ class TDataStd_LabelArray1 {
 		TDF_Label & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") TDataStd_LabelArray1::~TDataStd_LabelArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_LabelArray1 {
-	~TDataStd_LabelArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_LabelArray1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2381,10 +2937,18 @@ class TDataStd_NoteBook : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_NoteBook::~TDataStd_NoteBook %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_NoteBook {
-	~TDataStd_NoteBook() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_NoteBook\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2414,10 +2978,18 @@ class TDataStd_HDataMapOfStringReal : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_HDataMapOfStringReal::~TDataStd_HDataMapOfStringReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_HDataMapOfStringReal {
-	~TDataStd_HDataMapOfStringReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2443,10 +3015,18 @@ class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_DeltaOnModificationOfIntArray::~TDataStd_DeltaOnModificationOfIntArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DeltaOnModificationOfIntArray {
-	~TDataStd_DeltaOnModificationOfIntArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfIntArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2478,10 +3058,18 @@ class TDataStd_Pattern : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Pattern::~TDataStd_Pattern %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Pattern {
-	~TDataStd_Pattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Pattern\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2525,10 +3113,18 @@ class TDataStd_HLabelArray1 : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_HLabelArray1::~TDataStd_HLabelArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_HLabelArray1 {
-	~TDataStd_HLabelArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_HLabelArray1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2548,10 +3144,18 @@ class TDataStd {
 		Standard_OStream & Print(const TDataStd_ConstraintEnum CTR, Standard_OStream & S);
 
 };
+%feature("shadow") TDataStd::~TDataStd %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd {
-	~TDataStd() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2603,10 +3207,18 @@ class TDataStd_Directory : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Directory::~TDataStd_Directory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Directory {
-	~TDataStd_Directory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Directory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2632,10 +3244,18 @@ class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_DeltaOnModificationOfRealArray::~TDataStd_DeltaOnModificationOfRealArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DeltaOnModificationOfRealArray {
-	~TDataStd_DeltaOnModificationOfRealArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfRealArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2701,10 +3321,18 @@ class TDataStd_RealList : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_RealList::~TDataStd_RealList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_RealList {
-	~TDataStd_RealList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_RealList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2732,16 +3360,34 @@ class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
 		const Standard_Real & Find(const TCollection_ExtendedString &K) const;
 		%feature("autodoc", "1");
 		const Standard_Real & operator()(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		Standard_Real & ChangeFind(const TCollection_ExtendedString &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeFind(const TCollection_ExtendedString &K) {
+				return (Standard_Real) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Real value ,const TCollection_ExtendedString &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const TCollection_ExtendedString &K);
 
 };
+%feature("shadow") TDataStd_DataMapOfStringReal::~TDataStd_DataMapOfStringReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapOfStringReal {
-	~TDataStd_DataMapOfStringReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2857,10 +3503,18 @@ class TDataStd_TreeNode : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_TreeNode::~TDataStd_TreeNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_TreeNode {
-	~TDataStd_TreeNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_TreeNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2890,10 +3544,18 @@ class TDataStd_HDataMapOfStringHArray1OfInteger : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_HDataMapOfStringHArray1OfInteger::~TDataStd_HDataMapOfStringHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_HDataMapOfStringHArray1OfInteger {
-	~TDataStd_HDataMapOfStringHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringHArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3009,10 +3671,18 @@ class TDataStd_NamedData : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_NamedData::~TDataStd_NamedData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_NamedData {
-	~TDataStd_NamedData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_NamedData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3102,10 +3772,18 @@ class TDataStd_PatternStd : public TDataStd_Pattern {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_PatternStd::~TDataStd_PatternStd %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_PatternStd {
-	~TDataStd_PatternStd() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_PatternStd\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3157,10 +3835,18 @@ class TDataStd_Expression : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Expression::~TDataStd_Expression %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Expression {
-	~TDataStd_Expression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Expression\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3186,10 +3872,18 @@ class TDataStd_DeltaOnModificationOfExtStringArray : public TDF_DeltaOnModificat
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_DeltaOnModificationOfExtStringArray::~TDataStd_DeltaOnModificationOfExtStringArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DeltaOnModificationOfExtStringArray {
-	~TDataStd_DeltaOnModificationOfExtStringArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfExtStringArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3257,10 +3951,18 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_IntPackedMap::~TDataStd_IntPackedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_IntPackedMap {
-	~TDataStd_IntPackedMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_IntPackedMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3280,10 +3982,18 @@ class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal : public TCollectio
 		const Handle_TColStd_HArray1OfReal & Value() const;
 
 };
+%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal::~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal {
-	~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3317,10 +4027,18 @@ class TDataStd_DataMapOfStringHArray1OfInteger : public TCollection_BasicMap {
 		Handle_TColStd_HArray1OfInteger & operator()(const TCollection_ExtendedString &K);
 
 };
+%feature("shadow") TDataStd_DataMapOfStringHArray1OfInteger::~TDataStd_DataMapOfStringHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapOfStringHArray1OfInteger {
-	~TDataStd_DataMapOfStringHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringHArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3348,10 +4066,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringByte : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringByte::~TDataStd_DataMapNodeOfDataMapOfStringByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapNodeOfDataMapOfStringByte {
-	~TDataStd_DataMapNodeOfDataMapOfStringByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringByte\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3379,10 +4105,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public TCollection_Ma
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal::~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
-	~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3416,10 +4150,18 @@ class TDataStd_DataMapOfStringString : public TCollection_BasicMap {
 		TCollection_ExtendedString & operator()(const TCollection_ExtendedString &K);
 
 };
+%feature("shadow") TDataStd_DataMapOfStringString::~TDataStd_DataMapOfStringString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapOfStringString {
-	~TDataStd_DataMapOfStringString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3469,10 +4211,18 @@ class TDataStd_Integer : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Integer::~TDataStd_Integer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Integer {
-	~TDataStd_Integer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Integer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3498,10 +4248,18 @@ class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModificatio
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_DeltaOnModificationOfIntPackedMap::~TDataStd_DeltaOnModificationOfIntPackedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DeltaOnModificationOfIntPackedMap {
-	~TDataStd_DeltaOnModificationOfIntPackedMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfIntPackedMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3513,8 +4271,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringReal : public TCollection_MapNode {
 		TDataStd_DataMapNodeOfDataMapOfStringReal(const TCollection_ExtendedString &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TCollection_ExtendedString & Key() const;
-		%feature("autodoc", "1");
-		Standard_Real & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3529,10 +4297,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringReal : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringReal::~TDataStd_DataMapNodeOfDataMapOfStringReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapNodeOfDataMapOfStringReal {
-	~TDataStd_DataMapNodeOfDataMapOfStringReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3578,10 +4354,18 @@ class TDataStd_UAttribute : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_UAttribute::~TDataStd_UAttribute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_UAttribute {
-	~TDataStd_UAttribute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_UAttribute\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3645,10 +4429,18 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_ReferenceArray::~TDataStd_ReferenceArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_ReferenceArray {
-	~TDataStd_ReferenceArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ReferenceArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3694,10 +4486,18 @@ class TDataStd_Point : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Point::~TDataStd_Point %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Point {
-	~TDataStd_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Point\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3751,10 +4551,18 @@ class TDataStd_Real : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Real::~TDataStd_Real %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Real {
-	~TDataStd_Real() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Real\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3778,10 +4586,18 @@ class TDataStd_ChildNodeIterator {
 		Handle_TDataStd_TreeNode Value() const;
 
 };
+%feature("shadow") TDataStd_ChildNodeIterator::~TDataStd_ChildNodeIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_ChildNodeIterator {
-	~TDataStd_ChildNodeIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ChildNodeIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3833,10 +4649,18 @@ class TDataStd_Relation : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Relation::~TDataStd_Relation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Relation {
-	~TDataStd_Relation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Relation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3880,10 +4704,18 @@ class TDataStd_HArray1OfByte : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_HArray1OfByte::~TDataStd_HArray1OfByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_HArray1OfByte {
-	~TDataStd_HArray1OfByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_HArray1OfByte\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3963,10 +4795,18 @@ class TDataStd_Geometry : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Geometry::~TDataStd_Geometry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Geometry {
-	~TDataStd_Geometry() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Geometry\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3992,10 +4832,18 @@ class TDataStd_ListNodeOfListOfByte : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_ListNodeOfListOfByte::~TDataStd_ListNodeOfListOfByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_ListNodeOfListOfByte {
-	~TDataStd_ListNodeOfListOfByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ListNodeOfListOfByte\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4039,10 +4887,18 @@ class TDataStd_Placement : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Placement::~TDataStd_Placement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Placement {
-	~TDataStd_Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Placement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4054,8 +4910,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringInteger : public TCollection_MapNode 
 		TDataStd_DataMapNodeOfDataMapOfStringInteger(const TCollection_ExtendedString &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TCollection_ExtendedString & Key() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4070,10 +4936,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringInteger : public TCollection_MapNode 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringInteger::~TDataStd_DataMapNodeOfDataMapOfStringInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapNodeOfDataMapOfStringInteger {
-	~TDataStd_DataMapNodeOfDataMapOfStringInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4101,10 +4975,18 @@ class TDataStd_DataMapNodeOfDataMapOfStringString : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringString::~TDataStd_DataMapNodeOfDataMapOfStringString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapNodeOfDataMapOfStringString {
-	~TDataStd_DataMapNodeOfDataMapOfStringString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4138,10 +5020,18 @@ class TDataStd_DataMapOfStringByte : public TCollection_BasicMap {
 		Standard_Byte & operator()(const TCollection_ExtendedString &K);
 
 };
+%feature("shadow") TDataStd_DataMapOfStringByte::~TDataStd_DataMapOfStringByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapOfStringByte {
-	~TDataStd_DataMapOfStringByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringByte\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4207,10 +5097,18 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_ExtStringList::~TDataStd_ExtStringList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_ExtStringList {
-	~TDataStd_ExtStringList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ExtStringList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4238,16 +5136,34 @@ class TDataStd_DataMapOfStringInteger : public TCollection_BasicMap {
 		const Standard_Integer & Find(const TCollection_ExtendedString &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFind(const TCollection_ExtendedString &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const TCollection_ExtendedString &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const TCollection_ExtendedString &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TCollection_ExtendedString &K);
 
 };
+%feature("shadow") TDataStd_DataMapOfStringInteger::~TDataStd_DataMapOfStringInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapOfStringInteger {
-	~TDataStd_DataMapOfStringInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4291,10 +5207,18 @@ class TDataStd_HArray1OfTrsf : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_HArray1OfTrsf::~TDataStd_HArray1OfTrsf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_HArray1OfTrsf {
-	~TDataStd_HArray1OfTrsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_HArray1OfTrsf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4370,10 +5294,18 @@ class TDataStd_Variable : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Variable::~TDataStd_Variable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Variable {
-	~TDataStd_Variable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Variable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4425,10 +5357,18 @@ class TDataStd_Comment : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Comment::~TDataStd_Comment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Comment {
-	~TDataStd_Comment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Comment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4480,10 +5420,18 @@ class TDataStd_Current : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Current::~TDataStd_Current %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Current {
-	~TDataStd_Current() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Current\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4535,10 +5483,18 @@ class TDataStd_Shape : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Shape::~TDataStd_Shape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Shape {
-	~TDataStd_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Shape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4606,10 +5562,18 @@ class TDataStd_RealArray : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_RealArray::~TDataStd_RealArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_RealArray {
-	~TDataStd_RealArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_RealArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4655,10 +5619,18 @@ class TDataStd_Axis : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Axis::~TDataStd_Axis %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Axis {
-	~TDataStd_Axis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Axis\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4678,10 +5650,18 @@ class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMa
 		const Standard_Byte & Value() const;
 
 };
+%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringByte::~TDataStd_DataMapIteratorOfDataMapOfStringByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapIteratorOfDataMapOfStringByte {
-	~TDataStd_DataMapIteratorOfDataMapOfStringByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringByte\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4715,10 +5695,18 @@ class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
 		Handle_TColStd_HArray1OfReal & operator()(const TCollection_ExtendedString &K);
 
 };
+%feature("shadow") TDataStd_DataMapOfStringHArray1OfReal::~TDataStd_DataMapOfStringHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapOfStringHArray1OfReal {
-	~TDataStd_DataMapOfStringHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4740,10 +5728,18 @@ class TDataStd_ListIteratorOfListOfExtendedString {
 		TCollection_ExtendedString & Value() const;
 
 };
+%feature("shadow") TDataStd_ListIteratorOfListOfExtendedString::~TDataStd_ListIteratorOfListOfExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_ListIteratorOfListOfExtendedString {
-	~TDataStd_ListIteratorOfListOfExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ListIteratorOfListOfExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4763,10 +5759,18 @@ class TDataStd_DataMapIteratorOfDataMapOfStringReal : public TCollection_BasicMa
 		const Standard_Real & Value() const;
 
 };
+%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringReal::~TDataStd_DataMapIteratorOfDataMapOfStringReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapIteratorOfDataMapOfStringReal {
-	~TDataStd_DataMapIteratorOfDataMapOfStringReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4816,10 +5820,18 @@ class TDataStd_AsciiString : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_AsciiString::~TDataStd_AsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_AsciiString {
-	~TDataStd_AsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_AsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4887,10 +5899,18 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_IntegerArray::~TDataStd_IntegerArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_IntegerArray {
-	~TDataStd_IntegerArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_IntegerArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4910,10 +5930,18 @@ class TDataStd_DataMapIteratorOfDataMapOfStringString : public TCollection_Basic
 		const TCollection_ExtendedString & Value() const;
 
 };
+%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringString::~TDataStd_DataMapIteratorOfDataMapOfStringString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapIteratorOfDataMapOfStringString {
-	~TDataStd_DataMapIteratorOfDataMapOfStringString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4963,10 +5991,18 @@ class TDataStd_ListOfByte {
 		void InsertAfter(TDataStd_ListOfByte & Other, TDataStd_ListIteratorOfListOfByte & It);
 
 };
+%feature("shadow") TDataStd_ListOfByte::~TDataStd_ListOfByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_ListOfByte {
-	~TDataStd_ListOfByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ListOfByte\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5014,10 +6050,18 @@ class TDataStd_Name : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Name::~TDataStd_Name %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Name {
-	~TDataStd_Name() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Name\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5043,10 +6087,18 @@ class TDataStd_DeltaOnModificationOfByteArray : public TDF_DeltaOnModification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_DeltaOnModificationOfByteArray::~TDataStd_DeltaOnModificationOfByteArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DeltaOnModificationOfByteArray {
-	~TDataStd_DeltaOnModificationOfByteArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfByteArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5076,10 +6128,18 @@ class TDataStd_HDataMapOfStringString : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_HDataMapOfStringString::~TDataStd_HDataMapOfStringString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_HDataMapOfStringString {
-	~TDataStd_HDataMapOfStringString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5099,10 +6159,18 @@ class TDataStd_DataMapIteratorOfDataMapOfStringInteger : public TCollection_Basi
 		const Standard_Integer & Value() const;
 
 };
+%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringInteger::~TDataStd_DataMapIteratorOfDataMapOfStringInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapIteratorOfDataMapOfStringInteger {
-	~TDataStd_DataMapIteratorOfDataMapOfStringInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5146,10 +6214,18 @@ class TDataStd_Tick : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Tick::~TDataStd_Tick %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Tick {
-	~TDataStd_Tick() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Tick\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5211,10 +6287,18 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_BooleanArray::~TDataStd_BooleanArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_BooleanArray {
-	~TDataStd_BooleanArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_BooleanArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5244,10 +6328,18 @@ class TDataStd_HDataMapOfStringInteger : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_HDataMapOfStringInteger::~TDataStd_HDataMapOfStringInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_HDataMapOfStringInteger {
-	~TDataStd_HDataMapOfStringInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5315,10 +6407,18 @@ class TDataStd_ByteArray : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_ByteArray::~TDataStd_ByteArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_ByteArray {
-	~TDataStd_ByteArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ByteArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5410,10 +6510,18 @@ class TDataStd_Constraint : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Constraint::~TDataStd_Constraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Constraint {
-	~TDataStd_Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Constraint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5433,10 +6541,18 @@ class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger : public TCollec
 		const Handle_TColStd_HArray1OfInteger & Value() const;
 
 };
+%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger::~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger {
-	~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5482,10 +6598,18 @@ class TDataStd_Plane : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_Plane::~TDataStd_Plane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Plane {
-	~TDataStd_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Plane\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5525,10 +6649,18 @@ class TDataStd_Array1OfByte {
 		Standard_Byte & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") TDataStd_Array1OfByte::~TDataStd_Array1OfByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_Array1OfByte {
-	~TDataStd_Array1OfByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_Array1OfByte\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5550,10 +6682,18 @@ class TDataStd_ListIteratorOfListOfByte {
 		Standard_Byte & Value() const;
 
 };
+%feature("shadow") TDataStd_ListIteratorOfListOfByte::~TDataStd_ListIteratorOfListOfByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_ListIteratorOfListOfByte {
-	~TDataStd_ListIteratorOfListOfByte() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_ListIteratorOfListOfByte\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5583,10 +6723,18 @@ class TDataStd_HDataMapOfStringHArray1OfReal : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_HDataMapOfStringHArray1OfReal::~TDataStd_HDataMapOfStringHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_HDataMapOfStringHArray1OfReal {
-	~TDataStd_HDataMapOfStringHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringHArray1OfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5652,9 +6800,17 @@ class TDataStd_IntegerList : public TDF_Attribute {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TDataStd_IntegerList::~TDataStd_IntegerList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TDataStd_IntegerList {
-	~TDataStd_IntegerList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TDataStd_IntegerList\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

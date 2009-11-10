@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Geom2dAPI_dependencies.i
 
 
@@ -62,10 +66,18 @@ class Geom2dAPI_InterCurveCurve {
 		const Geom2dInt_GInter & Intersector() const;
 
 };
+%feature("shadow") Geom2dAPI_InterCurveCurve::~Geom2dAPI_InterCurveCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dAPI_InterCurveCurve {
-	~Geom2dAPI_InterCurveCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_InterCurveCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Geom2dAPI_PointsToBSpline {
 		const Handle_Geom2d_BSplineCurve & Curve() const;
 
 };
+%feature("shadow") Geom2dAPI_PointsToBSpline::~Geom2dAPI_PointsToBSpline %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dAPI_PointsToBSpline {
-	~Geom2dAPI_PointsToBSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_PointsToBSpline\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -114,10 +134,18 @@ class Geom2dAPI_Interpolate {
 		Standard_Boolean IsDone() const;
 
 };
+%feature("shadow") Geom2dAPI_Interpolate::~Geom2dAPI_Interpolate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dAPI_Interpolate {
-	~Geom2dAPI_Interpolate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_Interpolate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -141,7 +169,7 @@ class Geom2dAPI_ProjectPointOnCurve {
 		gp_Pnt2d Point(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Quantity_Parameter Parameter(const Standard_Integer Index) const;
-		%feature("autodoc","Parameter(Standard_Integer Index)->Standard_Real");
+		%feature("autodoc","Parameter(Standard_Integer Index) -> Standard_Real");
 		void Parameter(const Standard_Integer Index, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Distance(const Standard_Integer Index) const;
@@ -155,10 +183,18 @@ class Geom2dAPI_ProjectPointOnCurve {
 		const Extrema_ExtPC2d & Extrema() const;
 
 };
+%feature("shadow") Geom2dAPI_ProjectPointOnCurve::~Geom2dAPI_ProjectPointOnCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dAPI_ProjectPointOnCurve {
-	~Geom2dAPI_ProjectPointOnCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_ProjectPointOnCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -172,13 +208,13 @@ class Geom2dAPI_ExtremaCurveCurve {
 		Standard_Integer NbExtrema() const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer Index, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
-		%feature("autodoc","Parameters(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Distance(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void NearestPoints(gp_Pnt2d & P1, gp_Pnt2d & P2) const;
-		%feature("autodoc","LowerDistanceParameters()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","LowerDistanceParameters() -> [Standard_Real, Standard_Real]");
 		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length LowerDistance() const;
@@ -186,9 +222,17 @@ class Geom2dAPI_ExtremaCurveCurve {
 		const Extrema_ExtCC2d & Extrema() const;
 
 };
+%feature("shadow") Geom2dAPI_ExtremaCurveCurve::~Geom2dAPI_ExtremaCurveCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Geom2dAPI_ExtremaCurveCurve {
-	~Geom2dAPI_ExtremaCurveCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Geom2dAPI_ExtremaCurveCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

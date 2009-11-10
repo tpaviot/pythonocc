@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PTopoDS_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_PTopoDS_TShape : public Handle_Standard_Persistent {
 	return (PTopoDS_TShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TShape::~Handle_PTopoDS_TShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TShape {
-	~Handle_PTopoDS_TShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_PTopoDS_TShell : public Handle_PTopoDS_TShape {
 	return (PTopoDS_TShell*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TShell::~Handle_PTopoDS_TShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TShell {
-	~Handle_PTopoDS_TShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TShell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_PTopoDS_TCompound : public Handle_PTopoDS_TShape {
 	return (PTopoDS_TCompound*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TCompound::~Handle_PTopoDS_TCompound %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TCompound {
-	~Handle_PTopoDS_TCompound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TCompound\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public Handle_PStandar
 	return (PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape::~Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape {
-	~Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_PTopoDS_TShape1 : public Handle_Standard_Persistent {
 	return (PTopoDS_TShape1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TShape1::~Handle_PTopoDS_TShape1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TShape1 {
-	~Handle_PTopoDS_TShape1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TShape1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_PTopoDS_TShell1 : public Handle_PTopoDS_TShape1 {
 	return (PTopoDS_TShell1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TShell1::~Handle_PTopoDS_TShell1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TShell1 {
-	~Handle_PTopoDS_TShell1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TShell1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_PTopoDS_TEdge1 : public Handle_PTopoDS_TShape1 {
 	return (PTopoDS_TEdge1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TEdge1::~Handle_PTopoDS_TEdge1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TEdge1 {
-	~Handle_PTopoDS_TEdge1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TEdge1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public Handle_PStandar
 	return (PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1::~Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
-	~Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_PTopoDS_TCompSolid1 : public Handle_PTopoDS_TShape1 {
 	return (PTopoDS_TCompSolid1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TCompSolid1::~Handle_PTopoDS_TCompSolid1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TCompSolid1 {
-	~Handle_PTopoDS_TCompSolid1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TCompSolid1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_PTopoDS_TSolid1 : public Handle_PTopoDS_TShape1 {
 	return (PTopoDS_TSolid1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TSolid1::~Handle_PTopoDS_TSolid1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TSolid1 {
-	~Handle_PTopoDS_TSolid1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TSolid1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_PTopoDS_TEdge : public Handle_PTopoDS_TShape {
 	return (PTopoDS_TEdge*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TEdge::~Handle_PTopoDS_TEdge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TEdge {
-	~Handle_PTopoDS_TEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TEdge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_PTopoDS_HShape : public Handle_ObjMgt_ExternShareable {
 	return (PTopoDS_HShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_HShape::~Handle_PTopoDS_HShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_HShape {
-	~Handle_PTopoDS_HShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_HShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_PTopoDS_Face : public Handle_PTopoDS_HShape {
 	return (PTopoDS_Face*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_Face::~Handle_PTopoDS_Face %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_Face {
-	~Handle_PTopoDS_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Face\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +555,18 @@ class Handle_PTopoDS_TWire : public Handle_PTopoDS_TShape {
 	return (PTopoDS_TWire*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TWire::~Handle_PTopoDS_TWire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TWire {
-	~Handle_PTopoDS_TWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TWire\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +593,18 @@ class Handle_PTopoDS_Shell : public Handle_PTopoDS_HShape {
 	return (PTopoDS_Shell*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_Shell::~Handle_PTopoDS_Shell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_Shell {
-	~Handle_PTopoDS_Shell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Shell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +631,18 @@ class Handle_PTopoDS_TVertex : public Handle_PTopoDS_TShape {
 	return (PTopoDS_TVertex*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TVertex::~Handle_PTopoDS_TVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TVertex {
-	~Handle_PTopoDS_TVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TVertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +669,18 @@ class Handle_PTopoDS_TCompound1 : public Handle_PTopoDS_TShape1 {
 	return (PTopoDS_TCompound1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TCompound1::~Handle_PTopoDS_TCompound1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TCompound1 {
-	~Handle_PTopoDS_TCompound1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TCompound1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +707,18 @@ class Handle_PTopoDS_Vertex : public Handle_PTopoDS_HShape {
 	return (PTopoDS_Vertex*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_Vertex::~Handle_PTopoDS_Vertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_Vertex {
-	~Handle_PTopoDS_Vertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Vertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +745,18 @@ class Handle_PTopoDS_Edge : public Handle_PTopoDS_HShape {
 	return (PTopoDS_Edge*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_Edge::~Handle_PTopoDS_Edge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_Edge {
-	~Handle_PTopoDS_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Edge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +783,18 @@ class Handle_PTopoDS_Wire : public Handle_PTopoDS_HShape {
 	return (PTopoDS_Wire*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_Wire::~Handle_PTopoDS_Wire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_Wire {
-	~Handle_PTopoDS_Wire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Wire\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -657,10 +821,18 @@ class Handle_PTopoDS_HArray1OfHShape : public Handle_Standard_Persistent {
 	return (PTopoDS_HArray1OfHShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_HArray1OfHShape::~Handle_PTopoDS_HArray1OfHShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_HArray1OfHShape {
-	~Handle_PTopoDS_HArray1OfHShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_HArray1OfHShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -687,10 +859,18 @@ class Handle_PTopoDS_TSolid : public Handle_PTopoDS_TShape {
 	return (PTopoDS_TSolid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TSolid::~Handle_PTopoDS_TSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TSolid {
-	~Handle_PTopoDS_TSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TSolid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -717,10 +897,18 @@ class Handle_PTopoDS_TCompSolid : public Handle_PTopoDS_TShape {
 	return (PTopoDS_TCompSolid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TCompSolid::~Handle_PTopoDS_TCompSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TCompSolid {
-	~Handle_PTopoDS_TCompSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TCompSolid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -747,10 +935,18 @@ class Handle_PTopoDS_TVertex1 : public Handle_PTopoDS_TShape1 {
 	return (PTopoDS_TVertex1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TVertex1::~Handle_PTopoDS_TVertex1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TVertex1 {
-	~Handle_PTopoDS_TVertex1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TVertex1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -777,10 +973,18 @@ class Handle_PTopoDS_Compound : public Handle_PTopoDS_HShape {
 	return (PTopoDS_Compound*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_Compound::~Handle_PTopoDS_Compound %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_Compound {
-	~Handle_PTopoDS_Compound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Compound\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -807,10 +1011,18 @@ class Handle_PTopoDS_HArray1OfShape1 : public Handle_Standard_Persistent {
 	return (PTopoDS_HArray1OfShape1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_HArray1OfShape1::~Handle_PTopoDS_HArray1OfShape1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_HArray1OfShape1 {
-	~Handle_PTopoDS_HArray1OfShape1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_HArray1OfShape1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -837,10 +1049,18 @@ class Handle_PTopoDS_Solid : public Handle_PTopoDS_HShape {
 	return (PTopoDS_Solid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_Solid::~Handle_PTopoDS_Solid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_Solid {
-	~Handle_PTopoDS_Solid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Solid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -867,10 +1087,18 @@ class Handle_PTopoDS_CompSolid : public Handle_PTopoDS_HShape {
 	return (PTopoDS_CompSolid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_CompSolid::~Handle_PTopoDS_CompSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_CompSolid {
-	~Handle_PTopoDS_CompSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_CompSolid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -897,10 +1125,18 @@ class Handle_PTopoDS_TWire1 : public Handle_PTopoDS_TShape1 {
 	return (PTopoDS_TWire1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TWire1::~Handle_PTopoDS_TWire1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TWire1 {
-	~Handle_PTopoDS_TWire1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TWire1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -927,10 +1163,18 @@ class Handle_PTopoDS_TFace1 : public Handle_PTopoDS_TShape1 {
 	return (PTopoDS_TFace1*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TFace1::~Handle_PTopoDS_TFace1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TFace1 {
-	~Handle_PTopoDS_TFace1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TFace1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -957,10 +1201,18 @@ class Handle_PTopoDS_TFace : public Handle_PTopoDS_TShape {
 	return (PTopoDS_TFace*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PTopoDS_TFace::~Handle_PTopoDS_TFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PTopoDS_TFace {
-	~Handle_PTopoDS_TFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -996,10 +1248,18 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape::~PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape {
-	~PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1027,10 +1287,18 @@ class PTopoDS_TWire : public PTopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TWire::~PTopoDS_TWire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TWire {
-	~PTopoDS_TWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TWire\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1058,10 +1326,18 @@ class PTopoDS_TShell : public PTopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TShell::~PTopoDS_TShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TShell {
-	~PTopoDS_TShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TShell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1109,10 +1385,18 @@ class PTopoDS_HShape : public ObjMgt_ExternShareable {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_HShape::~PTopoDS_HShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_HShape {
-	~PTopoDS_HShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_HShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1136,10 +1420,18 @@ class PTopoDS_Shell : public PTopoDS_HShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_Shell::~PTopoDS_Shell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_Shell {
-	~PTopoDS_Shell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_Shell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1167,10 +1459,18 @@ class PTopoDS_TEdge1 : public PTopoDS_TShape1 {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TEdge1::~PTopoDS_TEdge1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TEdge1 {
-	~PTopoDS_TEdge1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TEdge1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1204,10 +1504,18 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1::~PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
-	~PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1233,10 +1541,18 @@ class PTopoDS_Wire : public PTopoDS_HShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_Wire::~PTopoDS_Wire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_Wire {
-	~PTopoDS_Wire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_Wire\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1264,10 +1580,18 @@ class PTopoDS_TEdge : public PTopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TEdge::~PTopoDS_TEdge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TEdge {
-	~PTopoDS_TEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TEdge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1327,10 +1651,18 @@ class PTopoDS_HArray1OfShape1 : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_HArray1OfShape1::~PTopoDS_HArray1OfShape1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_HArray1OfShape1 {
-	~PTopoDS_HArray1OfShape1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_HArray1OfShape1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1358,10 +1690,18 @@ class PTopoDS_TShell1 : public PTopoDS_TShape1 {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TShell1::~PTopoDS_TShell1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TShell1 {
-	~PTopoDS_TShell1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TShell1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1387,10 +1727,18 @@ class PTopoDS_Compound : public PTopoDS_HShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_Compound::~PTopoDS_Compound %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_Compound {
-	~PTopoDS_Compound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_Compound\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1416,10 +1764,18 @@ class PTopoDS_Edge : public PTopoDS_HShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_Edge::~PTopoDS_Edge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_Edge {
-	~PTopoDS_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_Edge\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1447,10 +1803,18 @@ class PTopoDS_TSolid : public PTopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TSolid::~PTopoDS_TSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TSolid {
-	~PTopoDS_TSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TSolid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1478,10 +1842,18 @@ class PTopoDS_TCompSolid : public PTopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TCompSolid::~PTopoDS_TCompSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TCompSolid {
-	~PTopoDS_TCompSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TCompSolid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1509,10 +1881,18 @@ class PTopoDS_TCompound : public PTopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TCompound::~PTopoDS_TCompound %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TCompound {
-	~PTopoDS_TCompound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TCompound\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1540,10 +1920,18 @@ class PTopoDS_TSolid1 : public PTopoDS_TShape1 {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TSolid1::~PTopoDS_TSolid1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TSolid1 {
-	~PTopoDS_TSolid1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TSolid1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1571,10 +1959,18 @@ class PTopoDS_TVertex1 : public PTopoDS_TShape1 {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TVertex1::~PTopoDS_TVertex1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TVertex1 {
-	~PTopoDS_TVertex1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TVertex1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1592,10 +1988,18 @@ class PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape {
 		Standard_Address Value() const;
 
 };
+%feature("shadow") PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape::~PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape {
-	~PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1621,10 +2025,18 @@ class PTopoDS_Solid : public PTopoDS_HShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_Solid::~PTopoDS_Solid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_Solid {
-	~PTopoDS_Solid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_Solid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1654,10 +2066,18 @@ class PTopoDS_FieldOfHArray1OfHShape : public DBC_BaseArray {
 		void Destroy();
 
 };
+%feature("shadow") PTopoDS_FieldOfHArray1OfHShape::~PTopoDS_FieldOfHArray1OfHShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_FieldOfHArray1OfHShape {
-	~PTopoDS_FieldOfHArray1OfHShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_FieldOfHArray1OfHShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1683,10 +2103,18 @@ class PTopoDS_Vertex : public PTopoDS_HShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_Vertex::~PTopoDS_Vertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_Vertex {
-	~PTopoDS_Vertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_Vertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1704,10 +2132,18 @@ class PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 {
 		Standard_Address Value() const;
 
 };
+%feature("shadow") PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1::~PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 {
-	~PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1733,10 +2169,18 @@ class PTopoDS_Face : public PTopoDS_HShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_Face::~PTopoDS_Face %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_Face {
-	~PTopoDS_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_Face\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1796,10 +2240,18 @@ class PTopoDS_HArray1OfHShape : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_HArray1OfHShape::~PTopoDS_HArray1OfHShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_HArray1OfHShape {
-	~PTopoDS_HArray1OfHShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_HArray1OfHShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1827,10 +2279,18 @@ class PTopoDS_TWire1 : public PTopoDS_TShape1 {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TWire1::~PTopoDS_TWire1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TWire1 {
-	~PTopoDS_TWire1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TWire1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1858,10 +2318,18 @@ class PTopoDS_TCompound1 : public PTopoDS_TShape1 {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TCompound1::~PTopoDS_TCompound1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TCompound1 {
-	~PTopoDS_TCompound1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TCompound1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1889,10 +2357,18 @@ class PTopoDS_TVertex : public PTopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TVertex::~PTopoDS_TVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TVertex {
-	~PTopoDS_TVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TVertex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1922,10 +2398,18 @@ class PTopoDS_FieldOfHArray1OfShape1 : public DBC_BaseArray {
 		void Destroy();
 
 };
+%feature("shadow") PTopoDS_FieldOfHArray1OfShape1::~PTopoDS_FieldOfHArray1OfShape1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_FieldOfHArray1OfShape1 {
-	~PTopoDS_FieldOfHArray1OfShape1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_FieldOfHArray1OfShape1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1951,10 +2435,18 @@ class PTopoDS_CompSolid : public PTopoDS_HShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_CompSolid::~PTopoDS_CompSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_CompSolid {
-	~PTopoDS_CompSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_CompSolid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1982,10 +2474,18 @@ class PTopoDS_TFace : public PTopoDS_TShape {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TFace::~PTopoDS_TFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TFace {
-	~PTopoDS_TFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TFace\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2013,10 +2513,18 @@ class PTopoDS_TCompSolid1 : public PTopoDS_TShape1 {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TCompSolid1::~PTopoDS_TCompSolid1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TCompSolid1 {
-	~PTopoDS_TCompSolid1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TCompSolid1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2052,10 +2560,18 @@ class PTopoDS_Shape1 {
 		void _CSFDB_SetPTopoDS_Shape1myOrient(const TopAbs_Orientation p);
 
 };
+%feature("shadow") PTopoDS_Shape1::~PTopoDS_Shape1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_Shape1 {
-	~PTopoDS_Shape1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_Shape1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2083,9 +2599,17 @@ class PTopoDS_TFace1 : public PTopoDS_TShape1 {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PTopoDS_TFace1::~PTopoDS_TFace1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PTopoDS_TFace1 {
-	~PTopoDS_TFace1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PTopoDS_TFace1\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

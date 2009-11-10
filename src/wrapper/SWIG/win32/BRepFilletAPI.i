@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepFilletAPI_dependencies.i
 
 
@@ -76,10 +80,18 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 		virtual		Handle_ChFiDS_SecHArray1 Sect(const Standard_Integer IC, const Standard_Integer IS) const;
 
 };
+%feature("shadow") BRepFilletAPI_LocalOperation::~BRepFilletAPI_LocalOperation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFilletAPI_LocalOperation {
-	~BRepFilletAPI_LocalOperation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_LocalOperation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -93,19 +105,19 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		void Add(const Standard_Real Dis, const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		void SetDist(const Standard_Real Dis, const Standard_Integer IC, const TopoDS_Face &F);
-		%feature("autodoc","GetDist(Standard_Integer IC)->Standard_Real");
+		%feature("autodoc","GetDist(Standard_Integer IC) -> Standard_Real");
 		void GetDist(const Standard_Integer IC, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Add(const Standard_Real Dis1, const Standard_Real Dis2, const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		void SetDists(const Standard_Real Dis1, const Standard_Real Dis2, const Standard_Integer IC, const TopoDS_Face &F);
-		%feature("autodoc","Dists(Standard_Integer IC)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Dists(Standard_Integer IC) -> [Standard_RealStandard_Real]");
 		void Dists(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void AddDA(const Standard_Real Dis, const Standard_Real Angle, const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		void SetDistAngle(const Standard_Real Dis, const Standard_Real Angle, const Standard_Integer IC, const TopoDS_Face &F);
-		%feature("autodoc","GetDistAngle(Standard_Integer IC)->[Standard_RealStandard_Real]");
+		%feature("autodoc","GetDistAngle(Standard_Integer IC) -> [Standard_RealStandard_Real]");
 		void GetDistAngle(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & DisOnFace1) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsSymetric(const Standard_Integer IC) const;
@@ -125,10 +137,18 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape &F);
 
 };
+%feature("shadow") BRepFilletAPI_MakeChamfer::~BRepFilletAPI_MakeChamfer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFilletAPI_MakeChamfer {
-	~BRepFilletAPI_MakeChamfer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_MakeChamfer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -188,10 +208,18 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 		virtual		void Build();
 
 };
+%feature("shadow") BRepFilletAPI_MakeFillet2d::~BRepFilletAPI_MakeFillet2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFilletAPI_MakeFillet2d {
-	~BRepFilletAPI_MakeFillet2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_MakeFillet2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,7 +265,7 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Edge &E);
 		%feature("autodoc", "1");
 		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Vertex &V);
-		%feature("autodoc","GetBounds(Standard_Integer IC, const E)->[Standard_RealStandard_Real]");
+		%feature("autodoc","GetBounds(Standard_Integer IC, const E) -> [Standard_RealStandard_Real]");
 		Standard_Boolean GetBounds(const Standard_Integer IC, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Handle_Law_Function GetLaw(const Standard_Integer IC, const TopoDS_Edge &E);
@@ -313,9 +341,17 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 		ChFiDS_ErrorStatus StripeStatus(const Standard_Integer IC) const;
 
 };
+%feature("shadow") BRepFilletAPI_MakeFillet::~BRepFilletAPI_MakeFillet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepFilletAPI_MakeFillet {
-	~BRepFilletAPI_MakeFillet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_MakeFillet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

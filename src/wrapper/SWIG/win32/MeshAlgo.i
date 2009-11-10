@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include MeshAlgo_dependencies.i
 
 
@@ -58,10 +62,18 @@ class Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public Handle_TCollect
 	return (MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc*)$self->Access();
 	}
 };
+%feature("shadow") Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc::~Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc {
-	~Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -77,10 +89,18 @@ class MeshAlgo {
 		void SetTrace(const Standard_Integer val);
 
 };
+%feature("shadow") MeshAlgo::~MeshAlgo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshAlgo {
-	~MeshAlgo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshAlgo\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -114,10 +134,18 @@ class MeshAlgo_DataMapOfIntegerCirc : public TCollection_BasicMap {
 		MeshAlgo_Circ & operator()(const Standard_Integer &K);
 
 };
+%feature("shadow") MeshAlgo_DataMapOfIntegerCirc::~MeshAlgo_DataMapOfIntegerCirc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshAlgo_DataMapOfIntegerCirc {
-	~MeshAlgo_DataMapOfIntegerCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshAlgo_DataMapOfIntegerCirc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,14 +175,32 @@ class MeshAlgo_CircleTool {
 		void Delete(const Standard_Integer theIndex);
 		%feature("autodoc", "1");
 		TColStd_ListOfInteger & Select(const gp_XY &thePnt);
-		%feature("autodoc", "1");
-		Standard_Integer & GetNbPoints();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetGetNbPoints() {
+				return (Standard_Integer) $self->GetNbPoints();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetGetNbPoints(Standard_Integer value ) {
+				$self->GetNbPoints()=value;
+				}
+		};
 
 };
+%feature("shadow") MeshAlgo_CircleTool::~MeshAlgo_CircleTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshAlgo_CircleTool {
-	~MeshAlgo_CircleTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshAlgo_CircleTool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -174,10 +220,18 @@ class MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc : public TCollection_BasicM
 		const MeshAlgo_Circ & Value() const;
 
 };
+%feature("shadow") MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc::~MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc {
-	~MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -199,10 +253,18 @@ class MeshAlgo_Circ {
 		const Standard_Real & Radius() const;
 
 };
+%feature("shadow") MeshAlgo_Circ::~MeshAlgo_Circ %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshAlgo_Circ {
-	~MeshAlgo_Circ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshAlgo_Circ\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -212,8 +274,18 @@ class MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc(const Standard_Integer &K, const MeshAlgo_Circ &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Integer & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		MeshAlgo_Circ & Value() const;
 		%feature("autodoc", "1");
@@ -230,9 +302,17 @@ class MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc::~MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc {
-	~MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

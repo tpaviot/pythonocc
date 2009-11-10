@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepOffsetAPI_dependencies.i
 
 
@@ -58,10 +62,18 @@ class Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public H
 	return (BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape::~Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
-	~Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -88,10 +100,18 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public Handl
 	return (BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal::~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
-	~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -118,10 +138,18 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public Hand
 	return (BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape::~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
-	~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -145,10 +173,18 @@ class BRepOffsetAPI_MakeOffsetShape : public BRepBuilderAPI_MakeShape {
 		GeomAbs_JoinType GetJoinType() const;
 
 };
+%feature("shadow") BRepOffsetAPI_MakeOffsetShape::~BRepOffsetAPI_MakeOffsetShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_MakeOffsetShape {
-	~BRepOffsetAPI_MakeOffsetShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeOffsetShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -194,10 +230,18 @@ class BRepOffsetAPI_MakeFilling : public BRepBuilderAPI_MakeShape {
 		Standard_Real G2Error(const Standard_Integer Index);
 
 };
+%feature("shadow") BRepOffsetAPI_MakeFilling::~BRepOffsetAPI_MakeFilling %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_MakeFilling {
-	~BRepOffsetAPI_MakeFilling() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeFilling\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +281,18 @@ class BRepOffsetAPI_DraftAngle : public BRepBuilderAPI_ModifyShape {
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
 
 };
+%feature("shadow") BRepOffsetAPI_DraftAngle::~BRepOffsetAPI_DraftAngle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_DraftAngle {
-	~BRepOffsetAPI_DraftAngle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_DraftAngle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -266,10 +318,18 @@ class BRepOffsetAPI_MakeEvolved : public BRepBuilderAPI_MakeShape {
 		const TopoDS_Shape & Bottom() const;
 
 };
+%feature("shadow") BRepOffsetAPI_MakeEvolved::~BRepOffsetAPI_MakeEvolved %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_MakeEvolved {
-	~BRepOffsetAPI_MakeEvolved() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeEvolved\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -295,10 +355,18 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public TCollection
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape::~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
-	~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -352,10 +420,18 @@ class BRepOffsetAPI_SequenceOfSequenceOfReal : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") BRepOffsetAPI_SequenceOfSequenceOfReal::~BRepOffsetAPI_SequenceOfSequenceOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_SequenceOfSequenceOfReal {
-	~BRepOffsetAPI_SequenceOfSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_SequenceOfSequenceOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -383,10 +459,18 @@ class BRepOffsetAPI_ThruSections : public BRepBuilderAPI_MakeShape {
 		TopoDS_Shape GeneratedFace(const TopoDS_Shape &Edge) const;
 
 };
+%feature("shadow") BRepOffsetAPI_ThruSections::~BRepOffsetAPI_ThruSections %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_ThruSections {
-	~BRepOffsetAPI_ThruSections() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_ThruSections\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -412,10 +496,18 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public TCollection_
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal::~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
-	~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -469,10 +561,18 @@ class BRepOffsetAPI_SequenceOfSequenceOfShape : public TCollection_BaseSequence 
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") BRepOffsetAPI_SequenceOfSequenceOfShape::~BRepOffsetAPI_SequenceOfSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_SequenceOfSequenceOfShape {
-	~BRepOffsetAPI_SequenceOfSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_SequenceOfSequenceOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -506,10 +606,18 @@ class BRepOffsetAPI_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap 
 		TopTools_SequenceOfShape & operator()(const TopoDS_Shape &K);
 
 };
+%feature("shadow") BRepOffsetAPI_DataMapOfShapeSequenceOfShape::~BRepOffsetAPI_DataMapOfShapeSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_DataMapOfShapeSequenceOfShape {
-	~BRepOffsetAPI_DataMapOfShapeSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_DataMapOfShapeSequenceOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -527,10 +635,18 @@ class BRepOffsetAPI_MakeThickSolid : public BRepOffsetAPI_MakeOffsetShape {
 		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape &S);
 
 };
+%feature("shadow") BRepOffsetAPI_MakeThickSolid::~BRepOffsetAPI_MakeThickSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_MakeThickSolid {
-	~BRepOffsetAPI_MakeThickSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeThickSolid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -558,10 +674,18 @@ class BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollect
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape::~BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
-	~BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -581,10 +705,18 @@ class BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape : public TCol
 		const TopTools_SequenceOfShape & Value() const;
 
 };
+%feature("shadow") BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape::~BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape {
-	~BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -636,10 +768,18 @@ class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
 		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
 
 };
+%feature("shadow") BRepOffsetAPI_MakePipeShell::~BRepOffsetAPI_MakePipeShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_MakePipeShell {
-	~BRepOffsetAPI_MakePipeShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakePipeShell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -667,10 +807,18 @@ class BRepOffsetAPI_MakeOffset : public BRepBuilderAPI_MakeShape {
 		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
 
 };
+%feature("shadow") BRepOffsetAPI_MakeOffset::~BRepOffsetAPI_MakeOffset %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_MakeOffset {
-	~BRepOffsetAPI_MakeOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeOffset\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -696,10 +844,18 @@ class BRepOffsetAPI_MakeDraft : public BRepBuilderAPI_MakeShape {
 		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape &S);
 
 };
+%feature("shadow") BRepOffsetAPI_MakeDraft::~BRepOffsetAPI_MakeDraft %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_MakeDraft {
-	~BRepOffsetAPI_MakeDraft() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeDraft\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -739,10 +895,18 @@ class BRepOffsetAPI_NormalProjection : public BRepBuilderAPI_MakeShape {
 		Standard_Boolean BuildWire(TopTools_ListOfShape & Liste) const;
 
 };
+%feature("shadow") BRepOffsetAPI_NormalProjection::~BRepOffsetAPI_NormalProjection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_NormalProjection {
-	~BRepOffsetAPI_NormalProjection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_NormalProjection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -764,9 +928,17 @@ class BRepOffsetAPI_MakePipe : public BRepPrimAPI_MakeSweep {
 		TopoDS_Shape Generated(const TopoDS_Shape &SSpine, const TopoDS_Shape &SProfile);
 
 };
+%feature("shadow") BRepOffsetAPI_MakePipe::~BRepOffsetAPI_MakePipe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepOffsetAPI_MakePipe {
-	~BRepOffsetAPI_MakePipe() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakePipe\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GraphDS_dependencies.i
 
 
@@ -69,10 +73,18 @@ class Handle_GraphDS_DataMapNodeOfEntityRoleMap : public Handle_TCollection_MapN
 	return (GraphDS_DataMapNodeOfEntityRoleMap*)$self->Access();
 	}
 };
+%feature("shadow") Handle_GraphDS_DataMapNodeOfEntityRoleMap::~Handle_GraphDS_DataMapNodeOfEntityRoleMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_GraphDS_DataMapNodeOfEntityRoleMap {
-	~Handle_GraphDS_DataMapNodeOfEntityRoleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_GraphDS_DataMapNodeOfEntityRoleMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -106,10 +118,18 @@ class GraphDS_EntityRoleMap : public TCollection_BasicMap {
 		GraphDS_EntityRole & operator()(const Handle_Standard_Transient &K);
 
 };
+%feature("shadow") GraphDS_EntityRoleMap::~GraphDS_EntityRoleMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GraphDS_EntityRoleMap {
-	~GraphDS_EntityRoleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphDS_EntityRoleMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -137,10 +157,18 @@ class GraphDS_DataMapNodeOfEntityRoleMap : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") GraphDS_DataMapNodeOfEntityRoleMap::~GraphDS_DataMapNodeOfEntityRoleMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GraphDS_DataMapNodeOfEntityRoleMap {
-	~GraphDS_DataMapNodeOfEntityRoleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphDS_DataMapNodeOfEntityRoleMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -160,9 +188,17 @@ class GraphDS_DataMapIteratorOfEntityRoleMap : public TCollection_BasicMapIterat
 		const GraphDS_EntityRole & Value() const;
 
 };
+%feature("shadow") GraphDS_DataMapIteratorOfEntityRoleMap::~GraphDS_DataMapIteratorOfEntityRoleMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GraphDS_DataMapIteratorOfEntityRoleMap {
-	~GraphDS_DataMapIteratorOfEntityRoleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GraphDS_DataMapIteratorOfEntityRoleMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

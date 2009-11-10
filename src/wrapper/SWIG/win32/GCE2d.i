@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include GCE2d_dependencies.i
 
 
@@ -46,10 +50,18 @@ class GCE2d_Root {
 		gce_ErrorType Status() const;
 
 };
+%feature("shadow") GCE2d_Root::~GCE2d_Root %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_Root {
-	~GCE2d_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_Root\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -75,10 +87,18 @@ class GCE2d_MakeLine : public GCE2d_Root {
 		const Handle_Geom2d_Line & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeLine::~GCE2d_MakeLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeLine {
-	~GCE2d_MakeLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -100,10 +120,18 @@ class GCE2d_MakeMirror {
 		const Handle_Geom2d_Transformation & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeMirror::~GCE2d_MakeMirror %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeMirror {
-	~GCE2d_MakeMirror() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeMirror\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -127,10 +155,18 @@ class GCE2d_MakeArcOfCircle : public GCE2d_Root {
 		const Handle_Geom2d_TrimmedCurve & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeArcOfCircle::~GCE2d_MakeArcOfCircle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeArcOfCircle {
-	~GCE2d_MakeArcOfCircle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfCircle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -156,10 +192,18 @@ class GCE2d_MakeParabola : public GCE2d_Root {
 		const Handle_Geom2d_Parabola & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeParabola::~GCE2d_MakeParabola %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeParabola {
-	~GCE2d_MakeParabola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeParabola\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -175,10 +219,18 @@ class GCE2d_MakeScale {
 		const Handle_Geom2d_Transformation & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeScale::~GCE2d_MakeScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeScale {
-	~GCE2d_MakeScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -200,10 +252,18 @@ class GCE2d_MakeHyperbola : public GCE2d_Root {
 		const Handle_Geom2d_Hyperbola & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeHyperbola::~GCE2d_MakeHyperbola %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeHyperbola {
-	~GCE2d_MakeHyperbola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeHyperbola\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -223,10 +283,18 @@ class GCE2d_MakeArcOfHyperbola : public GCE2d_Root {
 		const Handle_Geom2d_TrimmedCurve & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeArcOfHyperbola::~GCE2d_MakeArcOfHyperbola %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeArcOfHyperbola {
-	~GCE2d_MakeArcOfHyperbola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfHyperbola\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -250,10 +318,18 @@ class GCE2d_MakeSegment : public GCE2d_Root {
 		const Handle_Geom2d_TrimmedCurve & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeSegment::~GCE2d_MakeSegment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeSegment {
-	~GCE2d_MakeSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeSegment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -275,10 +351,18 @@ class GCE2d_MakeEllipse : public GCE2d_Root {
 		const Handle_Geom2d_Ellipse & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeEllipse::~GCE2d_MakeEllipse %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeEllipse {
-	~GCE2d_MakeEllipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeEllipse\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -298,10 +382,18 @@ class GCE2d_MakeArcOfParabola : public GCE2d_Root {
 		const Handle_Geom2d_TrimmedCurve & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeArcOfParabola::~GCE2d_MakeArcOfParabola %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeArcOfParabola {
-	~GCE2d_MakeArcOfParabola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfParabola\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -331,10 +423,18 @@ class GCE2d_MakeCircle : public GCE2d_Root {
 		const Handle_Geom2d_Circle & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeCircle::~GCE2d_MakeCircle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeCircle {
-	~GCE2d_MakeCircle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeCircle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -350,10 +450,18 @@ class GCE2d_MakeRotation {
 		const Handle_Geom2d_Transformation & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeRotation::~GCE2d_MakeRotation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeRotation {
-	~GCE2d_MakeRotation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeRotation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -373,10 +481,18 @@ class GCE2d_MakeArcOfEllipse : public GCE2d_Root {
 		const Handle_Geom2d_TrimmedCurve & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeArcOfEllipse::~GCE2d_MakeArcOfEllipse %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeArcOfEllipse {
-	~GCE2d_MakeArcOfEllipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfEllipse\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -394,9 +510,17 @@ class GCE2d_MakeTranslation {
 		const Handle_Geom2d_Transformation & Operator() const;
 
 };
+%feature("shadow") GCE2d_MakeTranslation::~GCE2d_MakeTranslation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend GCE2d_MakeTranslation {
-	~GCE2d_MakeTranslation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of GCE2d_MakeTranslation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

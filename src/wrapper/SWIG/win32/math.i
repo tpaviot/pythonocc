@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include math_dependencies.i
 
 
@@ -65,10 +69,18 @@ class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 	return (math_NotSquare*)$self->Access();
 	}
 };
+%feature("shadow") Handle_math_NotSquare::~Handle_math_NotSquare %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_math_NotSquare {
-	~Handle_math_NotSquare() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_math_NotSquare\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -95,10 +107,18 @@ class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 	return (math_SingularMatrix*)$self->Access();
 	}
 };
+%feature("shadow") Handle_math_SingularMatrix::~Handle_math_SingularMatrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_math_SingularMatrix {
-	~Handle_math_SingularMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_math_SingularMatrix\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -122,10 +142,18 @@ class math_GaussLeastSquare {
 		};
 
 };
+%feature("shadow") math_GaussLeastSquare::~math_GaussLeastSquare %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_GaussLeastSquare {
-	~math_GaussLeastSquare() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_GaussLeastSquare\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,18 +175,36 @@ class math_DoubleTabOfReal {
 		void SetLowerRow(const Standard_Integer LowerRow);
 		%feature("autodoc", "1");
 		void SetLowerCol(const Standard_Integer LowerCol);
-		%feature("autodoc", "1");
-		Standard_Real & Value(const Standard_Integer RowIndex, const Standard_Integer ColIndex) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue(const Standard_Integer RowIndex, const Standard_Integer ColIndex) {
+				return (Standard_Real) $self->Value(RowIndex,ColIndex);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ,const Standard_Integer RowIndex, const Standard_Integer ColIndex) {
+				$self->Value(RowIndex,ColIndex)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer RowIndex, const Standard_Integer ColIndex) const;
 		%feature("autodoc", "1");
 		void Free();
 
 };
+%feature("shadow") math_DoubleTabOfReal::~math_DoubleTabOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_DoubleTabOfReal {
-	~math_DoubleTabOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_DoubleTabOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -190,10 +236,18 @@ class math_SingularMatrix : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") math_SingularMatrix::~math_SingularMatrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_SingularMatrix {
-	~math_SingularMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_SingularMatrix\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -225,10 +279,18 @@ class math_TrigonometricFunctionRoots {
 		};
 
 };
+%feature("shadow") math_TrigonometricFunctionRoots::~math_TrigonometricFunctionRoots %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_TrigonometricFunctionRoots {
-	~math_TrigonometricFunctionRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_TrigonometricFunctionRoots\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -258,10 +320,18 @@ class math_BissecNewton {
 		};
 
 };
+%feature("shadow") math_BissecNewton::~math_BissecNewton %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_BissecNewton {
-	~math_BissecNewton() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_BissecNewton\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -271,16 +341,24 @@ class math_MultipleVarFunction {
 	public:
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc","Value(const X)->Standard_Real");
+		%feature("autodoc","Value(const X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
 
 };
+%feature("shadow") math_MultipleVarFunction::~math_MultipleVarFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_MultipleVarFunction {
-	~math_MultipleVarFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunction\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -292,14 +370,22 @@ class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
 		virtual		void Delete();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
-		%feature("autodoc","Values(const X)->Standard_Real");
+		%feature("autodoc","Values(const X) -> Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 
 };
+%feature("shadow") math_MultipleVarFunctionWithGradient::~math_MultipleVarFunctionWithGradient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_MultipleVarFunctionWithGradient {
-	~math_MultipleVarFunctionWithGradient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunctionWithGradient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -307,14 +393,22 @@ class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
 %nodefaultctor math_MultipleVarFunctionWithHessian;
 class math_MultipleVarFunctionWithHessian : public math_MultipleVarFunctionWithGradient {
 	public:
-		%feature("autodoc","Values(const X)->Standard_Real");
+		%feature("autodoc","Values(const X) -> Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G, math_Matrix & H);
 
 };
+%feature("shadow") math_MultipleVarFunctionWithHessian::~math_MultipleVarFunctionWithHessian %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_MultipleVarFunctionWithHessian {
-	~math_MultipleVarFunctionWithHessian() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunctionWithHessian\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -356,10 +450,18 @@ class math_BFGS {
 		};
 
 };
+%feature("shadow") math_BFGS::~math_BFGS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_BFGS {
-	~math_BFGS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_BFGS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -393,10 +495,18 @@ class math_DirectPolynomialRoots {
 		};
 
 };
+%feature("shadow") math_DirectPolynomialRoots::~math_DirectPolynomialRoots %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_DirectPolynomialRoots {
-	~math_DirectPolynomialRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_DirectPolynomialRoots\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -412,10 +522,18 @@ class math_IntegerRandom {
 		Standard_Integer Next();
 
 };
+%feature("shadow") math_IntegerRandom::~math_IntegerRandom %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_IntegerRandom {
-	~math_IntegerRandom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_IntegerRandom\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -445,10 +563,18 @@ class math_Jacobi {
 		};
 
 };
+%feature("shadow") math_Jacobi::~math_Jacobi %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_Jacobi {
-	~math_Jacobi() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_Jacobi\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -472,10 +598,18 @@ class math {
 		Standard_Boolean KronrodPointsAndWeights(const Standard_Integer Index, math_Vector & Points, math_Vector & Weights);
 
 };
+%feature("shadow") math::~math %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math {
-	~math() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -513,10 +647,18 @@ class math_Powell {
 		};
 
 };
+%feature("shadow") math_Powell::~math_Powell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_Powell {
-	~math_Powell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_Powell\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -548,10 +690,18 @@ class math_FunctionRoot {
 		};
 
 };
+%feature("shadow") math_FunctionRoot::~math_FunctionRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_FunctionRoot {
-	~math_FunctionRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_FunctionRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -591,10 +741,18 @@ class math_Array1OfValueAndWeight {
 		math_ValueAndWeight & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") math_Array1OfValueAndWeight::~math_Array1OfValueAndWeight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_Array1OfValueAndWeight {
-	~math_Array1OfValueAndWeight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_Array1OfValueAndWeight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -624,10 +782,18 @@ class math_Householder {
 		};
 
 };
+%feature("shadow") math_Householder::~math_Householder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_Householder {
-	~math_Householder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_Householder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -641,9 +807,9 @@ class math_FunctionAllRoots {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIntervals() const;
-		%feature("autodoc","GetInterval(Standard_Integer Index)->[Standard_RealStandard_Real]");
+		%feature("autodoc","GetInterval(Standard_Integer Index) -> [Standard_RealStandard_Real]");
 		void GetInterval(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","GetIntervalState(Standard_Integer Index)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","GetIntervalState(Standard_Integer Index) -> [Standard_IntegerStandard_Integer]");
 		void GetIntervalState(const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
@@ -661,10 +827,18 @@ class math_FunctionAllRoots {
 		};
 
 };
+%feature("shadow") math_FunctionAllRoots::~math_FunctionAllRoots %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_FunctionAllRoots {
-	~math_FunctionAllRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_FunctionAllRoots\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -684,10 +858,18 @@ class math_EigenValuesSearcher {
 		math_Vector EigenVector(const Standard_Integer Index) const;
 
 };
+%feature("shadow") math_EigenValuesSearcher::~math_EigenValuesSearcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_EigenValuesSearcher {
-	~math_EigenValuesSearcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_EigenValuesSearcher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -701,10 +883,18 @@ class math_QuickSortOfValueAndWeight {
 		void Sort(math_Array1OfValueAndWeight & TheArray, const math_CompareOfValueAndWeight &Comp);
 
 };
+%feature("shadow") math_QuickSortOfValueAndWeight::~math_QuickSortOfValueAndWeight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_QuickSortOfValueAndWeight {
-	~math_QuickSortOfValueAndWeight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_QuickSortOfValueAndWeight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -722,10 +912,18 @@ class math_ComputeGaussPointsAndWeights {
 		math_Vector Weights() const;
 
 };
+%feature("shadow") math_ComputeGaussPointsAndWeights::~math_ComputeGaussPointsAndWeights %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_ComputeGaussPointsAndWeights {
-	~math_ComputeGaussPointsAndWeights() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_ComputeGaussPointsAndWeights\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -745,10 +943,18 @@ class math_FunctionSet {
 		virtual		Standard_Integer GetStateNumber();
 
 };
+%feature("shadow") math_FunctionSet::~math_FunctionSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_FunctionSet {
-	~math_FunctionSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_FunctionSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -762,10 +968,18 @@ class math_FunctionSetWithDerivatives : public math_FunctionSet {
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 
 };
+%feature("shadow") math_FunctionSetWithDerivatives::~math_FunctionSetWithDerivatives %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_FunctionSetWithDerivatives {
-	~math_FunctionSetWithDerivatives() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_FunctionSetWithDerivatives\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -793,10 +1007,18 @@ class math_GaussSingleIntegration {
 		};
 
 };
+%feature("shadow") math_GaussSingleIntegration::~math_GaussSingleIntegration %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_GaussSingleIntegration {
-	~math_GaussSingleIntegration() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_GaussSingleIntegration\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -898,8 +1120,18 @@ class math_Matrix {
 		void TMultiply(const math_Matrix &TLeft, const math_Matrix &Right);
 		%feature("autodoc", "1");
 		void Subtract(const math_Matrix &Left, const math_Matrix &Right);
-		%feature("autodoc", "1");
-		Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue(const Standard_Integer Row, const Standard_Integer Col) {
+				return (Standard_Real) $self->Value(Row,Col);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ,const Standard_Integer Row, const Standard_Integer Col) {
+				$self->Value(Row,Col)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
@@ -932,10 +1164,18 @@ class math_Matrix {
 		};
 
 };
+%feature("shadow") math_Matrix::~math_Matrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_Matrix {
-	~math_Matrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_Matrix\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -965,10 +1205,18 @@ class math_Gauss {
 		};
 
 };
+%feature("shadow") math_Gauss::~math_Gauss %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_Gauss {
-	~math_Gauss() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_Gauss\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -976,16 +1224,24 @@ class math_Gauss {
 %nodefaultctor math_Function;
 class math_Function {
 	public:
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
 
 };
+%feature("shadow") math_Function::~math_Function %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_Function {
-	~math_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_Function\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1009,10 +1265,18 @@ class math_GaussSetIntegration {
 		};
 
 };
+%feature("shadow") math_GaussSetIntegration::~math_GaussSetIntegration %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_GaussSetIntegration {
-	~math_GaussSetIntegration() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_GaussSetIntegration\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1094,8 +1358,18 @@ class math_Vector {
 		void Add(const math_Vector &Left, const math_Vector &Right);
 		%feature("autodoc", "1");
 		void Subtract(const math_Vector &Left, const math_Vector &Right);
-		%feature("autodoc", "1");
-		Standard_Real & Value(const Standard_Integer Num) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue(const Standard_Integer Num) {
+				return (Standard_Real) $self->Value(Num);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ,const Standard_Integer Num) {
+				$self->Value(Num)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Num) const;
 		%feature("autodoc", "1");
@@ -1134,10 +1408,18 @@ class math_Vector {
 		};
 
 };
+%feature("shadow") math_Vector::~math_Vector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_Vector {
-	~math_Vector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_Vector\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1167,10 +1449,18 @@ class math_Crout {
 		};
 
 };
+%feature("shadow") math_Crout::~math_Crout %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_Crout {
-	~math_Crout() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_Crout\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1196,10 +1486,18 @@ class math_SVD {
 		};
 
 };
+%feature("shadow") math_SVD::~math_SVD %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_SVD {
-	~math_SVD() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_SVD\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1227,10 +1525,18 @@ class math_BracketedRoot {
 		};
 
 };
+%feature("shadow") math_BracketedRoot::~math_BracketedRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_BracketedRoot {
-	~math_BracketedRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_BracketedRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1254,10 +1560,18 @@ class math_GaussMultipleIntegration {
 		};
 
 };
+%feature("shadow") math_GaussMultipleIntegration::~math_GaussMultipleIntegration %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_GaussMultipleIntegration {
-	~math_GaussMultipleIntegration() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_GaussMultipleIntegration\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1289,10 +1603,18 @@ class math_NotSquare : public Standard_DimensionError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") math_NotSquare::~math_NotSquare %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_NotSquare {
-	~math_NotSquare() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_NotSquare\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1310,10 +1632,18 @@ class math_ComputeKronrodPointsAndWeights {
 		math_Vector Weights() const;
 
 };
+%feature("shadow") math_ComputeKronrodPointsAndWeights::~math_ComputeKronrodPointsAndWeights %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_ComputeKronrodPointsAndWeights {
-	~math_ComputeKronrodPointsAndWeights() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_ComputeKronrodPointsAndWeights\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1349,10 +1679,18 @@ class math_BrentMinimum {
 		};
 
 };
+%feature("shadow") math_BrentMinimum::~math_BrentMinimum %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_BrentMinimum {
-	~math_BrentMinimum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_BrentMinimum\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1404,10 +1742,18 @@ class math_FunctionSetRoot {
 		};
 
 };
+%feature("shadow") math_FunctionSetRoot::~math_FunctionSetRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_FunctionSetRoot {
-	~math_FunctionSetRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_FunctionSetRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1469,8 +1815,18 @@ class math_IntegerVector {
 		void Add(const math_IntegerVector &Left, const math_IntegerVector &Right);
 		%feature("autodoc", "1");
 		void Subtract(const math_IntegerVector &Left, const math_IntegerVector &Right);
-		%feature("autodoc", "1");
-		Standard_Integer & Value(const Standard_Integer Num) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue(const Standard_Integer Num) {
+				return (Standard_Integer) $self->Value(Num);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ,const Standard_Integer Num) {
+				$self->Value(Num)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Num) const;
 		%feature("autodoc", "1");
@@ -1505,10 +1861,18 @@ class math_IntegerVector {
 		};
 
 };
+%feature("shadow") math_IntegerVector::~math_IntegerVector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_IntegerVector {
-	~math_IntegerVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_IntegerVector\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1524,9 +1888,9 @@ class math_BracketMinimum {
 		math_BracketMinimum(math_Function & F, const Standard_Real A, const Standard_Real B, const Standard_Real FA, const Standard_Real FB);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
-		%feature("autodoc","Values()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void Values(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","FunctionValues()->[Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","FunctionValues() -> [Standard_Real, Standard_Real, Standard_Real]");
 		void FunctionValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
@@ -1538,10 +1902,18 @@ class math_BracketMinimum {
 		};
 
 };
+%feature("shadow") math_BracketMinimum::~math_BracketMinimum %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_BracketMinimum {
-	~math_BracketMinimum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_BracketMinimum\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1561,18 +1933,36 @@ class math_SingleTabOfReal {
 		void Copy(math_SingleTabOfReal & Other) const;
 		%feature("autodoc", "1");
 		void SetLower(const Standard_Integer LowerIndex);
-		%feature("autodoc", "1");
-		Standard_Real & Value(const Standard_Integer Index) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue(const Standard_Integer Index) {
+				return (Standard_Real) $self->Value(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ,const Standard_Integer Index) {
+				$self->Value(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Free();
 
 };
+%feature("shadow") math_SingleTabOfReal::~math_SingleTabOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_SingleTabOfReal {
-	~math_SingleTabOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_SingleTabOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1590,10 +1980,18 @@ class math_ValueAndWeight {
 		Standard_Real Weight() const;
 
 };
+%feature("shadow") math_ValueAndWeight::~math_ValueAndWeight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_ValueAndWeight {
-	~math_ValueAndWeight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_ValueAndWeight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1611,10 +2009,18 @@ class math_CompareOfValueAndWeight {
 		Standard_Boolean IsEqual(const math_ValueAndWeight &Left, const math_ValueAndWeight &Right) const;
 
 };
+%feature("shadow") math_CompareOfValueAndWeight::~math_CompareOfValueAndWeight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_CompareOfValueAndWeight {
-	~math_CompareOfValueAndWeight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_CompareOfValueAndWeight\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1624,18 +2030,26 @@ class math_FunctionWithDerivative : public math_Function {
 	public:
 		%feature("autodoc", "1");
 		virtual		void Delete();
-		%feature("autodoc","Value(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X)->Standard_Real");
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%feature("shadow") math_FunctionWithDerivative::~math_FunctionWithDerivative %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_FunctionWithDerivative {
-	~math_FunctionWithDerivative() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_FunctionWithDerivative\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1665,10 +2079,18 @@ class math_FunctionRoots {
 		};
 
 };
+%feature("shadow") math_FunctionRoots::~math_FunctionRoots %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_FunctionRoots {
-	~math_FunctionRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_FunctionRoots\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1698,14 +2120,22 @@ class math_KronrodSingleIntegration {
 		Standard_Integer OrderReached() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIterReached() const;
-		%feature("autodoc","GKRule(Standard_Real theLower, Standard_Real theUpper, const theGaussP, const theGaussW, const theKronrodP, const theKronrodW)->[Standard_RealStandard_Real]");
+		%feature("autodoc","GKRule(Standard_Real theLower, Standard_Real theUpper, const theGaussP, const theGaussW, const theKronrodP, const theKronrodW) -> [Standard_RealStandard_Real]");
 		Standard_Boolean GKRule(math_Function & theFunction, const Standard_Real theLower, const Standard_Real theUpper, const math_Vector &theGaussP, const math_Vector &theGaussW, const math_Vector &theKronrodP, const math_Vector &theKronrodW, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
+%feature("shadow") math_KronrodSingleIntegration::~math_KronrodSingleIntegration %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_KronrodSingleIntegration {
-	~math_KronrodSingleIntegration() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_KronrodSingleIntegration\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1741,10 +2171,18 @@ class math_Uzawa {
 		};
 
 };
+%feature("shadow") math_Uzawa::~math_Uzawa %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_Uzawa {
-	~math_Uzawa() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_Uzawa\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1786,10 +2224,18 @@ class math_FRPR {
 		};
 
 };
+%feature("shadow") math_FRPR::~math_FRPR %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_FRPR {
-	~math_FRPR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_FRPR\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1799,7 +2245,7 @@ class math_FunctionSample {
 	public:
 		%feature("autodoc", "1");
 		math_FunctionSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
-		%feature("autodoc","Bounds()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
@@ -1807,10 +2253,18 @@ class math_FunctionSample {
 		virtual		Standard_Real GetParameter(const Standard_Integer Index) const;
 
 };
+%feature("shadow") math_FunctionSample::~math_FunctionSample %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_FunctionSample {
-	~math_FunctionSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_FunctionSample\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1846,10 +2300,18 @@ class math_NewtonFunctionRoot {
 		};
 
 };
+%feature("shadow") math_NewtonFunctionRoot::~math_NewtonFunctionRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_NewtonFunctionRoot {
-	~math_NewtonFunctionRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_NewtonFunctionRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1865,10 +2327,18 @@ class math_RealRandom {
 		Standard_Real Next();
 
 };
+%feature("shadow") math_RealRandom::~math_RealRandom %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_RealRandom {
-	~math_RealRandom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_RealRandom\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1888,17 +2358,35 @@ class math_SingleTabOfInteger {
 		void Copy(math_SingleTabOfInteger & Other) const;
 		%feature("autodoc", "1");
 		void SetLower(const Standard_Integer LowerIndex);
-		%feature("autodoc", "1");
-		Standard_Integer & Value(const Standard_Integer Index) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->Value(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->Value(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void Free();
 
 };
+%feature("shadow") math_SingleTabOfInteger::~math_SingleTabOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend math_SingleTabOfInteger {
-	~math_SingleTabOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of math_SingleTabOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

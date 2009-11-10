@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include STEPControl_dependencies.i
 
 
@@ -68,10 +72,18 @@ class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProc
 	return (STEPControl_ActorRead*)$self->Access();
 	}
 };
+%feature("shadow") Handle_STEPControl_ActorRead::~Handle_STEPControl_ActorRead %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_STEPControl_ActorRead {
-	~Handle_STEPControl_ActorRead() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPControl_ActorRead\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -98,10 +110,18 @@ class Handle_STEPControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 	return (STEPControl_ActorWrite*)$self->Access();
 	}
 };
+%feature("shadow") Handle_STEPControl_ActorWrite::~Handle_STEPControl_ActorWrite %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_STEPControl_ActorWrite {
-	~Handle_STEPControl_ActorWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPControl_ActorWrite\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -128,10 +148,18 @@ class Handle_STEPControl_Controller : public Handle_XSControl_Controller {
 	return (STEPControl_Controller*)$self->Access();
 	}
 };
+%feature("shadow") Handle_STEPControl_Controller::~Handle_STEPControl_Controller %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_STEPControl_Controller {
-	~Handle_STEPControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_STEPControl_Controller\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -151,10 +179,18 @@ class STEPControl_Reader : public XSControl_Reader {
 		virtual		Standard_Integer NbRootsForTransfer();
 
 };
+%feature("shadow") STEPControl_Reader::~STEPControl_Reader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend STEPControl_Reader {
-	~STEPControl_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPControl_Reader\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -192,10 +228,18 @@ class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") STEPControl_ActorRead::~STEPControl_ActorRead %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend STEPControl_ActorRead {
-	~STEPControl_ActorRead() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPControl_ActorRead\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -241,10 +285,18 @@ class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") STEPControl_ActorWrite::~STEPControl_ActorWrite %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend STEPControl_ActorWrite {
-	~STEPControl_ActorWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPControl_ActorWrite\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -278,10 +330,18 @@ class STEPControl_Controller : public XSControl_Controller {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") STEPControl_Controller::~STEPControl_Controller %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend STEPControl_Controller {
-	~STEPControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPControl_Controller\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -311,9 +371,17 @@ class STEPControl_Writer {
 		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode=0) const;
 
 };
+%feature("shadow") STEPControl_Writer::~STEPControl_Writer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend STEPControl_Writer {
-	~STEPControl_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of STEPControl_Writer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

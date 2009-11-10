@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include PPoly_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_PPoly_Polygon2D : public Handle_Standard_Persistent {
 	return (PPoly_Polygon2D*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PPoly_Polygon2D::~Handle_PPoly_Polygon2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PPoly_Polygon2D {
-	~Handle_PPoly_Polygon2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_Polygon2D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_PPoly_HArray1OfTriangle : public Handle_Standard_Persistent {
 	return (PPoly_HArray1OfTriangle*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PPoly_HArray1OfTriangle::~Handle_PPoly_HArray1OfTriangle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PPoly_HArray1OfTriangle {
-	~Handle_PPoly_HArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_HArray1OfTriangle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
 	return (PPoly_Polygon3D*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PPoly_Polygon3D::~Handle_PPoly_Polygon3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PPoly_Polygon3D {
-	~Handle_PPoly_Polygon3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_Polygon3D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_PPoly_Triangulation : public Handle_Standard_Persistent {
 	return (PPoly_Triangulation*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PPoly_Triangulation::~Handle_PPoly_Triangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PPoly_Triangulation {
-	~Handle_PPoly_Triangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_Triangulation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public Handle_PStandar
 	return (PPoly_VArrayNodeOfFieldOfHArray1OfTriangle*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle::~Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
-	~Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 	return (PPoly_PolygonOnTriangulation*)$self->Access();
 	}
 };
+%feature("shadow") Handle_PPoly_PolygonOnTriangulation::~Handle_PPoly_PolygonOnTriangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_PPoly_PolygonOnTriangulation {
-	~Handle_PPoly_PolygonOnTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_PolygonOnTriangulation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -228,10 +280,18 @@ class PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
 		Standard_Address Value() const;
 
 };
+%feature("shadow") PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle::~PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
-	~PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -289,10 +349,18 @@ class PPoly_PolygonOnTriangulation : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PPoly_PolygonOnTriangulation::~PPoly_PolygonOnTriangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PPoly_PolygonOnTriangulation {
-	~PPoly_PolygonOnTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_PolygonOnTriangulation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -352,10 +420,18 @@ class PPoly_HArray1OfTriangle : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PPoly_HArray1OfTriangle::~PPoly_HArray1OfTriangle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PPoly_HArray1OfTriangle {
-	~PPoly_HArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_HArray1OfTriangle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +493,18 @@ class PPoly_Triangulation : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PPoly_Triangulation::~PPoly_Triangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PPoly_Triangulation {
-	~PPoly_Triangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_Triangulation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -466,10 +550,18 @@ class PPoly_Polygon2D : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PPoly_Polygon2D::~PPoly_Polygon2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PPoly_Polygon2D {
-	~PPoly_Polygon2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_Polygon2D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -527,10 +619,18 @@ class PPoly_Polygon3D : public Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PPoly_Polygon3D::~PPoly_Polygon3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PPoly_Polygon3D {
-	~PPoly_Polygon3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_Polygon3D\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -560,10 +660,18 @@ class PPoly_FieldOfHArray1OfTriangle : public DBC_BaseArray {
 		void Destroy();
 
 };
+%feature("shadow") PPoly_FieldOfHArray1OfTriangle::~PPoly_FieldOfHArray1OfTriangle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PPoly_FieldOfHArray1OfTriangle {
-	~PPoly_FieldOfHArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_FieldOfHArray1OfTriangle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +705,18 @@ class PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public PStandard_ArrayNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") PPoly_VArrayNodeOfFieldOfHArray1OfTriangle::~PPoly_VArrayNodeOfFieldOfHArray1OfTriangle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
-	~PPoly_VArrayNodeOfFieldOfHArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_VArrayNodeOfFieldOfHArray1OfTriangle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -612,17 +728,35 @@ class PPoly_Triangle {
 		PPoly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
-		%feature("autodoc","Get()->[Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Get() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 		void Get(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		PPoly_Triangle();
-		%feature("autodoc", "1");
-		Standard_Integer & _CSFDB_GetPPoly_TrianglemyNodes(const Standard_Integer i1);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer Get_CSFDB_GetPPoly_TrianglemyNodes(const Standard_Integer i1) {
+				return (Standard_Integer) $self->_CSFDB_GetPPoly_TrianglemyNodes(i1);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void Set_CSFDB_GetPPoly_TrianglemyNodes(Standard_Integer value ,const Standard_Integer i1) {
+				$self->_CSFDB_GetPPoly_TrianglemyNodes(i1)=value;
+				}
+		};
 
 };
+%feature("shadow") PPoly_Triangle::~PPoly_Triangle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend PPoly_Triangle {
-	~PPoly_Triangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of PPoly_Triangle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

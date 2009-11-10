@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepSweep_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : p
 	return (BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep::~Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
-	~Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -122,10 +134,18 @@ class BRepSweep_NumLinearRegularSweep {
 		Standard_Boolean Closed() const;
 
 };
+%feature("shadow") BRepSweep_NumLinearRegularSweep::~BRepSweep_NumLinearRegularSweep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepSweep_NumLinearRegularSweep {
-	~BRepSweep_NumLinearRegularSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_NumLinearRegularSweep\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -141,10 +161,18 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 		virtual		Standard_Boolean IsInvariant(const TopoDS_Shape &aGenS) const;
 
 };
+%feature("shadow") BRepSweep_Trsf::~BRepSweep_Trsf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepSweep_Trsf {
-	~BRepSweep_Trsf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Trsf\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -158,10 +186,18 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 		gp_Vec Vec() const;
 
 };
+%feature("shadow") BRepSweep_Translation::~BRepSweep_Translation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepSweep_Translation {
-	~BRepSweep_Translation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Translation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -183,10 +219,18 @@ class BRepSweep_Iterator {
 		TopAbs_Orientation Orientation() const;
 
 };
+%feature("shadow") BRepSweep_Iterator::~BRepSweep_Iterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepSweep_Iterator {
-	~BRepSweep_Iterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Iterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -240,10 +284,18 @@ class BRepSweep_SequenceOfShapesOfNumLinearRegularSweep : public TCollection_Bas
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") BRepSweep_SequenceOfShapesOfNumLinearRegularSweep::~BRepSweep_SequenceOfShapesOfNumLinearRegularSweep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepSweep_SequenceOfShapesOfNumLinearRegularSweep {
-	~BRepSweep_SequenceOfShapesOfNumLinearRegularSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_SequenceOfShapesOfNumLinearRegularSweep\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -287,10 +339,18 @@ class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 		TopoDS_Shape & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%feature("shadow") BRepSweep_Array2OfShapesOfNumLinearRegularSweep::~BRepSweep_Array2OfShapesOfNumLinearRegularSweep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
-	~BRepSweep_Array2OfShapesOfNumLinearRegularSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Array2OfShapesOfNumLinearRegularSweep\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -320,10 +380,18 @@ class BRepSweep_Revol {
 		Quantity_PlaneAngle Angle() const;
 
 };
+%feature("shadow") BRepSweep_Revol::~BRepSweep_Revol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepSweep_Revol {
-	~BRepSweep_Revol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Revol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -351,10 +419,18 @@ class BRepSweep_Builder {
 		void Add(TopoDS_Shape & aShape1, const TopoDS_Shape &aShape2) const;
 
 };
+%feature("shadow") BRepSweep_Builder::~BRepSweep_Builder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepSweep_Builder {
-	~BRepSweep_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Builder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -380,10 +456,18 @@ class BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : public T
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep::~BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
-	~BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -433,10 +517,18 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 		Quantity_PlaneAngle Angle() const;
 
 };
+%feature("shadow") BRepSweep_Rotation::~BRepSweep_Rotation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepSweep_Rotation {
-	~BRepSweep_Rotation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Rotation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -460,10 +552,18 @@ class BRepSweep_Tool {
 		void SetOrientation(TopoDS_Shape & aShape, const TopAbs_Orientation Or) const;
 
 };
+%feature("shadow") BRepSweep_Tool::~BRepSweep_Tool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepSweep_Tool {
-	~BRepSweep_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Tool\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -491,9 +591,17 @@ class BRepSweep_Prism {
 		gp_Vec Vec() const;
 
 };
+%feature("shadow") BRepSweep_Prism::~BRepSweep_Prism %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepSweep_Prism {
-	~BRepSweep_Prism() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepSweep_Prism\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

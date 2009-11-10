@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include FairCurve_dependencies.i
 
 
@@ -53,10 +57,18 @@ class FairCurve_DistributionOfEnergy : public math_FunctionSet {
 		void SetDerivativeOrder(const Standard_Integer DerivativeOrder);
 
 };
+%feature("shadow") FairCurve_DistributionOfEnergy::~FairCurve_DistributionOfEnergy %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FairCurve_DistributionOfEnergy {
-	~FairCurve_DistributionOfEnergy() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfEnergy\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -70,10 +82,18 @@ class FairCurve_DistributionOfSagging : public FairCurve_DistributionOfEnergy {
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
 
 };
+%feature("shadow") FairCurve_DistributionOfSagging::~FairCurve_DistributionOfSagging %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FairCurve_DistributionOfSagging {
-	~FairCurve_DistributionOfSagging() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfSagging\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -89,10 +109,18 @@ class FairCurve_Newton : public math_NewtonMinimum {
 		virtual		Standard_Boolean IsConverged() const;
 
 };
+%feature("shadow") FairCurve_Newton::~FairCurve_Newton %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FairCurve_Newton {
-	~FairCurve_Newton() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_Newton\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -124,7 +152,7 @@ class FairCurve_Batten {
 		void SetSlope(const Standard_Real Slope);
 		%feature("autodoc", "1");
 		void SetSlidingFactor(const Standard_Real SlidingFactor);
-		%feature("autodoc","Compute(Standard_Integer NbIterations=50, Standard_Real Tolerance=1.000000)->FairCurve_AnalysisCode");
+		%feature("autodoc","Compute(Standard_Integer NbIterations=50, Standard_Real Tolerance=1.000000) -> FairCurve_AnalysisCode");
 		virtual		Standard_Boolean Compute(FairCurve_AnalysisCode &OutValue, const Standard_Integer NbIterations=50, const Standard_Real Tolerance=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
 		Standard_Real SlidingOfReference() const;
@@ -160,10 +188,18 @@ class FairCurve_Batten {
 		};
 
 };
+%feature("shadow") FairCurve_Batten::~FairCurve_Batten %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FairCurve_Batten {
-	~FairCurve_Batten() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_Batten\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -179,14 +215,22 @@ class FairCurve_BattenLaw : public math_Function {
 		void SetHeigth(const Standard_Real Heigth);
 		%feature("autodoc", "1");
 		void SetSlope(const Standard_Real Slope);
-		%feature("autodoc","Value(Standard_Real T)->Standard_Real");
+		%feature("autodoc","Value(Standard_Real T) -> Standard_Real");
 		virtual		Standard_Boolean Value(const Standard_Real T, Standard_Real &OutValue);
 
 };
+%feature("shadow") FairCurve_BattenLaw::~FairCurve_BattenLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FairCurve_BattenLaw {
-	~FairCurve_BattenLaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_BattenLaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -200,10 +244,18 @@ class FairCurve_DistributionOfJerk : public FairCurve_DistributionOfEnergy {
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
 
 };
+%feature("shadow") FairCurve_DistributionOfJerk::~FairCurve_DistributionOfJerk %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FairCurve_DistributionOfJerk {
-	~FairCurve_DistributionOfJerk() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfJerk\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -219,7 +271,7 @@ class FairCurve_MinimalVariation : public FairCurve_Batten {
 		void SetCurvature2(const Standard_Real Curvature);
 		%feature("autodoc", "1");
 		void SetPhysicalRatio(const Standard_Real Ratio);
-		%feature("autodoc","Compute(Standard_Integer NbIterations=50, Standard_Real Tolerance=1.000000)->FairCurve_AnalysisCode");
+		%feature("autodoc","Compute(Standard_Integer NbIterations=50, Standard_Real Tolerance=1.000000) -> FairCurve_AnalysisCode");
 		virtual		Standard_Boolean Compute(FairCurve_AnalysisCode &OutValue, const Standard_Integer NbIterations=50, const Standard_Real Tolerance=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
 		Standard_Real GetCurvature1() const;
@@ -237,10 +289,18 @@ class FairCurve_MinimalVariation : public FairCurve_Batten {
 		};
 
 };
+%feature("shadow") FairCurve_MinimalVariation::~FairCurve_MinimalVariation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FairCurve_MinimalVariation {
-	~FairCurve_MinimalVariation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_MinimalVariation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -250,13 +310,13 @@ class FairCurve_Energy : public math_MultipleVarFunctionWithHessian {
 	public:
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc","Value(const X)->Standard_Real");
+		%feature("autodoc","Value(const X) -> Standard_Real");
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
-		%feature("autodoc","Values(const X)->Standard_Real");
+		%feature("autodoc","Values(const X) -> Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
-		%feature("autodoc","Values(const X)->Standard_Real");
+		%feature("autodoc","Values(const X) -> Standard_Real");
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G, math_Matrix & H);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Variable(math_Vector & X) const;
@@ -264,10 +324,18 @@ class FairCurve_Energy : public math_MultipleVarFunctionWithHessian {
 		const Handle_TColgp_HArray1OfPnt2d & Poles() const;
 
 };
+%feature("shadow") FairCurve_Energy::~FairCurve_Energy %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FairCurve_Energy {
-	~FairCurve_Energy() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_Energy\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -283,10 +351,18 @@ class FairCurve_EnergyOfMVC : public FairCurve_Energy {
 		FairCurve_AnalysisCode Status() const;
 
 };
+%feature("shadow") FairCurve_EnergyOfMVC::~FairCurve_EnergyOfMVC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FairCurve_EnergyOfMVC {
-	~FairCurve_EnergyOfMVC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_EnergyOfMVC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -302,10 +378,18 @@ class FairCurve_DistributionOfTension : public FairCurve_DistributionOfEnergy {
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
 
 };
+%feature("shadow") FairCurve_DistributionOfTension::~FairCurve_DistributionOfTension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FairCurve_DistributionOfTension {
-	~FairCurve_DistributionOfTension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfTension\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -323,9 +407,17 @@ class FairCurve_EnergyOfBatten : public FairCurve_Energy {
 		virtual		Standard_Boolean Variable(math_Vector & X) const;
 
 };
+%feature("shadow") FairCurve_EnergyOfBatten::~FairCurve_EnergyOfBatten %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend FairCurve_EnergyOfBatten {
-	~FairCurve_EnergyOfBatten() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of FairCurve_EnergyOfBatten\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

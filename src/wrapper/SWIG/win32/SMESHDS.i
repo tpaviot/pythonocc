@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include SMESHDS_dependencies.i
 
 
@@ -100,10 +104,18 @@ class SMESHDS_GroupBase {
 		int GetColorGroup() const;
 
 };
+%feature("shadow") SMESHDS_GroupBase::~SMESHDS_GroupBase %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESHDS_GroupBase {
-	~SMESHDS_GroupBase() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESHDS_GroupBase\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +159,18 @@ class SMESHDS_SubMesh {
 		void Clear();
 
 };
+%feature("shadow") SMESHDS_SubMesh::~SMESHDS_SubMesh %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESHDS_SubMesh {
-	~SMESHDS_SubMesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESHDS_SubMesh\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -210,10 +230,18 @@ class SMESHDS_Command {
 		std::list<double, std::allocator<double> > const & GetCoords();
 
 };
+%feature("shadow") SMESHDS_Command::~SMESHDS_Command %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESHDS_Command {
-	~SMESHDS_Command() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESHDS_Command\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -253,10 +281,18 @@ class SMESHDS_Document {
 		bool MoreHypothesis();
 
 };
+%feature("shadow") SMESHDS_Document::~SMESHDS_Document %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESHDS_Document {
-	~SMESHDS_Document() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESHDS_Document\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -318,10 +354,18 @@ class SMESHDS_Script {
 		std::list<SMESHDS_Command*, std::allocator<SMESHDS_Command*> > const & GetCommands();
 
 };
+%feature("shadow") SMESHDS_Script::~SMESHDS_Script %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESHDS_Script {
-	~SMESHDS_Script() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESHDS_Script\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -353,10 +397,18 @@ class SMESHDS_Hypothesis {
 		};
 
 };
+%feature("shadow") SMESHDS_Hypothesis::~SMESHDS_Hypothesis %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESHDS_Hypothesis {
-	~SMESHDS_Hypothesis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESHDS_Hypothesis\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -542,10 +594,18 @@ class SMESHDS_Mesh : public SMDS_Mesh {
 		bool IsGroupOfSubShapes(const TopoDS_Shape &aSubShape) const;
 
 };
+%feature("shadow") SMESHDS_Mesh::~SMESHDS_Mesh %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESHDS_Mesh {
-	~SMESHDS_Mesh() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESHDS_Mesh\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +627,18 @@ class SMESHDS_GroupOnGeom : public SMESHDS_GroupBase {
 		virtual		SMDS_ElemIteratorPtr GetElements();
 
 };
+%feature("shadow") SMESHDS_GroupOnGeom::~SMESHDS_GroupOnGeom %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESHDS_GroupOnGeom {
-	~SMESHDS_GroupOnGeom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESHDS_GroupOnGeom\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -602,9 +670,17 @@ class SMESHDS_Group : public SMESHDS_GroupBase {
 		SMDS_MeshGroup & SMDSGroup();
 
 };
+%feature("shadow") SMESHDS_Group::~SMESHDS_Group %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend SMESHDS_Group {
-	~SMESHDS_Group() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of SMESHDS_Group\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

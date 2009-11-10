@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include LocalAnalysis_dependencies.i
 
 
@@ -94,10 +98,18 @@ class LocalAnalysis_SurfaceContinuity {
 		Standard_Boolean IsG2() const;
 
 };
+%feature("shadow") LocalAnalysis_SurfaceContinuity::~LocalAnalysis_SurfaceContinuity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend LocalAnalysis_SurfaceContinuity {
-	~LocalAnalysis_SurfaceContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocalAnalysis_SurfaceContinuity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -113,10 +125,18 @@ class LocalAnalysis {
 		void Dump(const LocalAnalysis_CurveContinuity &curvconti, Standard_OStream & o);
 
 };
+%feature("shadow") LocalAnalysis::~LocalAnalysis %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend LocalAnalysis {
-	~LocalAnalysis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocalAnalysis\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -160,9 +180,17 @@ class LocalAnalysis_CurveContinuity {
 		Standard_Boolean IsG2() const;
 
 };
+%feature("shadow") LocalAnalysis_CurveContinuity::~LocalAnalysis_CurveContinuity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend LocalAnalysis_CurveContinuity {
-	~LocalAnalysis_CurveContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of LocalAnalysis_CurveContinuity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

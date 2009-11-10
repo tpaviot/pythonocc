@@ -1,1 +1,19 @@
-/* Feature currently unavailable */
+%rename(SMDSGeom_POINT) SMDSGeom_POINT;
+%rename(ORDER_QUADRATIC) ORDER_QUADRATIC;
+%rename(SMDSGeom_POLYHEDRA) SMDSGeom_POLYHEDRA;
+%rename(SMDSAbs_Volume) SMDSAbs_Volume;
+%rename(SMDSGeom_PENTA) SMDSGeom_PENTA;
+%rename(SMDSAbs_Edge) SMDSAbs_Edge;
+%rename(SMDSGeom_POLYGON) SMDSGeom_POLYGON;
+%rename(SMDSAbs_NbElementTypes) SMDSAbs_NbElementTypes;
+%rename(ORDER_LINEAR) ORDER_LINEAR;
+%rename(SMDSGeom_QUADRANGLE) SMDSGeom_QUADRANGLE;
+%rename(SMDSGeom_PYRAMID) SMDSGeom_PYRAMID;
+%rename(SMDSGeom_EDGE) SMDSGeom_EDGE;
+%rename(SMDSAbs_Face) SMDSAbs_Face;
+%rename(ORDER_ANY) ORDER_ANY;
+%rename(SMDSGeom_HEXA) SMDSGeom_HEXA;
+%rename(SMDSAbs_Node) SMDSAbs_Node;
+%rename(SMDSAbs_All) SMDSAbs_All;
+%rename(SMDSGeom_TRIANGLE) SMDSGeom_TRIANGLE;
+%rename(SMDSGeom_TETRA) SMDSGeom_TETRA;

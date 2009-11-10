@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include VrmlAPI_dependencies.i
 
 
@@ -50,10 +54,18 @@ class VrmlAPI {
 		void Write(const TopoDS_Shape &aShape, const char * aFileName);
 
 };
+%feature("shadow") VrmlAPI::~VrmlAPI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlAPI {
-	~VrmlAPI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlAPI\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -105,9 +117,17 @@ class VrmlAPI_Writer {
 		void Write(const TopoDS_Shape &aShape, const char * aFile) const;
 
 };
+%feature("shadow") VrmlAPI_Writer::~VrmlAPI_Writer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend VrmlAPI_Writer {
-	~VrmlAPI_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of VrmlAPI_Writer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

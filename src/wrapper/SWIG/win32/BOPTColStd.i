@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BOPTColStd_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfI
 	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger::~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
-	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : pub
 	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger::~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
-	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public 
 	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger::~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
-	~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_
 	return (BOPTColStd_ListNodeOfListOfListOfShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BOPTColStd_ListNodeOfListOfListOfShape::~Handle_BOPTColStd_ListNodeOfListOfListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BOPTColStd_ListNodeOfListOfListOfShape {
-	~Handle_BOPTColStd_ListNodeOfListOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_ListNodeOfListOfListOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -182,22 +218,50 @@ class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
 		const Standard_Integer & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromIndex(const Standard_Integer I) {
+				return (Standard_Integer) $self->ChangeFromIndex(I);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromIndex(Standard_Integer value ,const Standard_Integer I) {
+				$self->ChangeFromIndex(I)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & FindFromKey(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFromKey(const Standard_Integer &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromKey(const Standard_Integer &K) {
+				return (Standard_Integer) $self->ChangeFromKey(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromKey(Standard_Integer value ,const Standard_Integer &K) {
+				$self->ChangeFromKey(K)=value;
+				}
+		};
 
 };
+%feature("shadow") BOPTColStd_IndexedDataMapOfIntegerInteger::~BOPTColStd_IndexedDataMapOfIntegerInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_IndexedDataMapOfIntegerInteger {
-	~BOPTColStd_IndexedDataMapOfIntegerInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapOfIntegerInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -235,10 +299,18 @@ class BOPTColStd_CArray1OfShape {
 		Standard_Integer BlockLength() const;
 
 };
+%feature("shadow") BOPTColStd_CArray1OfShape::~BOPTColStd_CArray1OfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_CArray1OfShape {
-	~BOPTColStd_CArray1OfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_CArray1OfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -282,10 +354,18 @@ class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection
 		TColStd_IndexedMapOfInteger & ChangeFromKey(const Standard_Integer &K);
 
 };
+%feature("shadow") BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger::~BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger {
-	~BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -295,14 +375,44 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public TCo
 	public:
 		%feature("autodoc", "1");
 		BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger(const Standard_Integer &K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Standard_Integer & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -317,10 +427,18 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public TCo
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
-	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -332,12 +450,32 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public TCollec
 		BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger(const BOPTColStd_ShapeWithRank &K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		BOPTColStd_ShapeWithRank & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -352,10 +490,18 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public TCollec
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
-	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -393,10 +539,18 @@ class BOPTColStd_CArray1OfPnt2d {
 		Standard_Integer BlockLength() const;
 
 };
+%feature("shadow") BOPTColStd_CArray1OfPnt2d::~BOPTColStd_CArray1OfPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_CArray1OfPnt2d {
-	~BOPTColStd_CArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_CArray1OfPnt2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -428,22 +582,50 @@ class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
 		const Standard_Integer & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromIndex(const Standard_Integer I) {
+				return (Standard_Integer) $self->ChangeFromIndex(I);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromIndex(Standard_Integer value ,const Standard_Integer I) {
+				$self->ChangeFromIndex(I)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const BOPTColStd_ShapeWithRank &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & FindFromKey(const BOPTColStd_ShapeWithRank &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFromKey(const BOPTColStd_ShapeWithRank &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromKey(const BOPTColStd_ShapeWithRank &K) {
+				return (Standard_Integer) $self->ChangeFromKey(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromKey(Standard_Integer value ,const BOPTColStd_ShapeWithRank &K) {
+				$self->ChangeFromKey(K)=value;
+				}
+		};
 
 };
+%feature("shadow") BOPTColStd_IndexedDataMapOfSWRInteger::~BOPTColStd_IndexedDataMapOfSWRInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_IndexedDataMapOfSWRInteger {
-	~BOPTColStd_IndexedDataMapOfSWRInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapOfSWRInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -465,10 +647,18 @@ class BOPTColStd_ListIteratorOfListOfListOfShape {
 		TopTools_ListOfShape & Value() const;
 
 };
+%feature("shadow") BOPTColStd_ListIteratorOfListOfListOfShape::~BOPTColStd_ListIteratorOfListOfListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_ListIteratorOfListOfListOfShape {
-	~BOPTColStd_ListIteratorOfListOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ListIteratorOfListOfListOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -518,10 +708,18 @@ class BOPTColStd_ListOfListOfShape {
 		void InsertAfter(BOPTColStd_ListOfListOfShape & Other, BOPTColStd_ListIteratorOfListOfListOfShape & It);
 
 };
+%feature("shadow") BOPTColStd_ListOfListOfShape::~BOPTColStd_ListOfListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_ListOfListOfShape {
-	~BOPTColStd_ListOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ListOfListOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -549,8 +747,18 @@ class BOPTColStd_CArray1OfInteger {
 		const Standard_Integer & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -559,10 +767,18 @@ class BOPTColStd_CArray1OfInteger {
 		Standard_Integer BlockLength() const;
 
 };
+%feature("shadow") BOPTColStd_CArray1OfInteger::~BOPTColStd_CArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_CArray1OfInteger {
-	~BOPTColStd_CArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_CArray1OfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -588,10 +804,18 @@ class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BOPTColStd_ListNodeOfListOfListOfShape::~BOPTColStd_ListNodeOfListOfListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_ListNodeOfListOfListOfShape {
-	~BOPTColStd_ListNodeOfListOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ListNodeOfListOfListOfShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -602,13 +826,21 @@ class BOPTColStd_Failure {
 		%feature("autodoc", "1");
 		BOPTColStd_Failure(const char * aMessage);
 		%feature("autodoc", "1");
-		Standard_CString Message() const;
+		char * Message() const;
 
 };
+%feature("shadow") BOPTColStd_Failure::~BOPTColStd_Failure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_Failure {
-	~BOPTColStd_Failure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_Failure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -618,10 +850,30 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger 
 	public:
 		%feature("autodoc", "1");
 		BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const Standard_Integer &K1, const Standard_Integer K2, const TColStd_IndexedMapOfInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Standard_Integer & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
@@ -640,10 +892,18 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
-	~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -672,10 +932,18 @@ class BOPTColStd_ShapeWithRank {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BOPTColStd_ShapeWithRank::~BOPTColStd_ShapeWithRank %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_ShapeWithRank {
-	~BOPTColStd_ShapeWithRank() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ShapeWithRank\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -691,10 +959,18 @@ class BOPTColStd_ShapeWithRankHasher {
 		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &SR1, const BOPTColStd_ShapeWithRank &SR2);
 
 };
+%feature("shadow") BOPTColStd_ShapeWithRankHasher::~BOPTColStd_ShapeWithRankHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_ShapeWithRankHasher {
-	~BOPTColStd_ShapeWithRankHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ShapeWithRankHasher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -710,9 +986,17 @@ class BOPTColStd_Dump {
 		void PrintMessage(const char * aMessage);
 
 };
+%feature("shadow") BOPTColStd_Dump::~BOPTColStd_Dump %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BOPTColStd_Dump {
-	~BOPTColStd_Dump() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BOPTColStd_Dump\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include gce_dependencies.i
 
 
@@ -63,10 +67,18 @@ class gce_Root {
 		gce_ErrorType Status() const;
 
 };
+%feature("shadow") gce_Root::~gce_Root %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_Root {
-	~gce_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_Root\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -90,10 +102,18 @@ class gce_MakeParab2d : public gce_Root {
 		const gp_Parab2d & Operator() const;
 
 };
+%feature("shadow") gce_MakeParab2d::~gce_MakeParab2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeParab2d {
-	~gce_MakeParab2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeParab2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -119,10 +139,18 @@ class gce_MakeLin2d : public gce_Root {
 		gp_Lin2d Operator() const;
 
 };
+%feature("shadow") gce_MakeLin2d::~gce_MakeLin2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeLin2d {
-	~gce_MakeLin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeLin2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -144,10 +172,18 @@ class gce_MakeMirror2d {
 		const gp_Trsf2d & Operator() const;
 
 };
+%feature("shadow") gce_MakeMirror2d::~gce_MakeMirror2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeMirror2d {
-	~gce_MakeMirror2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeMirror2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -167,10 +203,18 @@ class gce_MakeRotation {
 		const gp_Trsf & Operator() const;
 
 };
+%feature("shadow") gce_MakeRotation::~gce_MakeRotation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeRotation {
-	~gce_MakeRotation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeRotation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -198,10 +242,18 @@ class gce_MakeCirc2d : public gce_Root {
 		const gp_Circ2d & Operator() const;
 
 };
+%feature("shadow") gce_MakeCirc2d::~gce_MakeCirc2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeCirc2d {
-	~gce_MakeCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeCirc2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -221,10 +273,18 @@ class gce_MakeHypr2d : public gce_Root {
 		const gp_Hypr2d & Operator() const;
 
 };
+%feature("shadow") gce_MakeHypr2d::~gce_MakeHypr2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeHypr2d {
-	~gce_MakeHypr2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeHypr2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -242,10 +302,18 @@ class gce_MakeParab : public gce_Root {
 		const gp_Parab & Operator() const;
 
 };
+%feature("shadow") gce_MakeParab::~gce_MakeParab %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeParab {
-	~gce_MakeParab() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeParab\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -271,10 +339,18 @@ class gce_MakeCylinder : public gce_Root {
 		const gp_Cylinder & Operator() const;
 
 };
+%feature("shadow") gce_MakeCylinder::~gce_MakeCylinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeCylinder {
-	~gce_MakeCylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeCylinder\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -294,10 +370,18 @@ class gce_MakeElips2d : public gce_Root {
 		const gp_Elips2d & Operator() const;
 
 };
+%feature("shadow") gce_MakeElips2d::~gce_MakeElips2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeElips2d {
-	~gce_MakeElips2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeElips2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +411,18 @@ class gce_MakeCirc : public gce_Root {
 		const gp_Circ & Operator() const;
 
 };
+%feature("shadow") gce_MakeCirc::~gce_MakeCirc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeCirc {
-	~gce_MakeCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeCirc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -348,10 +440,18 @@ class gce_MakeHypr : public gce_Root {
 		const gp_Hypr & Operator() const;
 
 };
+%feature("shadow") gce_MakeHypr::~gce_MakeHypr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeHypr {
-	~gce_MakeHypr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeHypr\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -367,10 +467,18 @@ class gce_MakeScale {
 		const gp_Trsf & Operator() const;
 
 };
+%feature("shadow") gce_MakeScale::~gce_MakeScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeScale {
-	~gce_MakeScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -388,10 +496,18 @@ class gce_MakeElips : public gce_Root {
 		const gp_Elips & Operator() const;
 
 };
+%feature("shadow") gce_MakeElips::~gce_MakeElips %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeElips {
-	~gce_MakeElips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeElips\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -413,10 +529,18 @@ class gce_MakeDir : public gce_Root {
 		const gp_Dir & Operator() const;
 
 };
+%feature("shadow") gce_MakeDir::~gce_MakeDir %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeDir {
-	~gce_MakeDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeDir\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -432,10 +556,18 @@ class gce_MakeRotation2d {
 		const gp_Trsf2d & Operator() const;
 
 };
+%feature("shadow") gce_MakeRotation2d::~gce_MakeRotation2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeRotation2d {
-	~gce_MakeRotation2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeRotation2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -453,10 +585,18 @@ class gce_MakeTranslation2d {
 		const gp_Trsf2d & Operator() const;
 
 };
+%feature("shadow") gce_MakeTranslation2d::~gce_MakeTranslation2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeTranslation2d {
-	~gce_MakeTranslation2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeTranslation2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -478,10 +618,18 @@ class gce_MakeDir2d : public gce_Root {
 		const gp_Dir2d & Operator() const;
 
 };
+%feature("shadow") gce_MakeDir2d::~gce_MakeDir2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeDir2d {
-	~gce_MakeDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeDir2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -499,10 +647,18 @@ class gce_MakeTranslation {
 		const gp_Trsf & Operator() const;
 
 };
+%feature("shadow") gce_MakeTranslation::~gce_MakeTranslation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeTranslation {
-	~gce_MakeTranslation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeTranslation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -518,10 +674,18 @@ class gce_MakeScale2d {
 		const gp_Trsf2d & Operator() const;
 
 };
+%feature("shadow") gce_MakeScale2d::~gce_MakeScale2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeScale2d {
-	~gce_MakeScale2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeScale2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -547,10 +711,18 @@ class gce_MakeMirror {
 		const gp_Trsf & Operator() const;
 
 };
+%feature("shadow") gce_MakeMirror::~gce_MakeMirror %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeMirror {
-	~gce_MakeMirror() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeMirror\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -580,10 +752,18 @@ class gce_MakePln : public gce_Root {
 		const gp_Pln & Operator() const;
 
 };
+%feature("shadow") gce_MakePln::~gce_MakePln %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakePln {
-	~gce_MakePln() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakePln\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -605,10 +785,18 @@ class gce_MakeLin : public gce_Root {
 		const gp_Lin & Operator() const;
 
 };
+%feature("shadow") gce_MakeLin::~gce_MakeLin %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeLin {
-	~gce_MakeLin() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeLin\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -636,9 +824,17 @@ class gce_MakeCone : public gce_Root {
 		const gp_Cone & Operator() const;
 
 };
+%feature("shadow") gce_MakeCone::~gce_MakeCone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend gce_MakeCone {
-	~gce_MakeCone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of gce_MakeCone\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

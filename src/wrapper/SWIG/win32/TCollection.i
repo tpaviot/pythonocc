@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include TCollection_dependencies.i
 
 
@@ -65,10 +69,18 @@ class Handle_TCollection_SeqNode : public Handle_MMgt_TShared {
 	return (TCollection_SeqNode*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TCollection_SeqNode::~Handle_TCollection_SeqNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TCollection_SeqNode {
-	~Handle_TCollection_SeqNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TCollection_SeqNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -95,10 +107,18 @@ class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 	return (TCollection_HExtendedString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TCollection_HExtendedString::~Handle_TCollection_HExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TCollection_HExtendedString {
-	~Handle_TCollection_HExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TCollection_HExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -125,10 +145,18 @@ class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 	return (TCollection_AVLBaseNode*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TCollection_AVLBaseNode::~Handle_TCollection_AVLBaseNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TCollection_AVLBaseNode {
-	~Handle_TCollection_AVLBaseNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TCollection_AVLBaseNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -155,10 +183,18 @@ class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
 	return (TCollection_HAsciiString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TCollection_HAsciiString::~Handle_TCollection_HAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TCollection_HAsciiString {
-	~Handle_TCollection_HAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TCollection_HAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -185,10 +221,18 @@ class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
 	return (TCollection_MapNode*)$self->Access();
 	}
 };
+%feature("shadow") Handle_TCollection_MapNode::~Handle_TCollection_MapNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_TCollection_MapNode {
-	~Handle_TCollection_MapNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_TCollection_MapNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -394,7 +438,7 @@ class TCollection_AsciiString {
 		%feature("autodoc", "1");
 		TCollection_AsciiString SubString(const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
 		%feature("autodoc", "1");
-		Standard_CString ToCString() const;
+		char * ToCString() const;
 		%feature("autodoc", "1");
 		TCollection_AsciiString Token(const char * separators=" \011", const Standard_Integer whichone=1) const;
 		%feature("autodoc", "1");
@@ -417,10 +461,18 @@ class TCollection_AsciiString {
 		Standard_Boolean ISSIMILAR(const TCollection_AsciiString &string1, const TCollection_AsciiString &string2);
 
 };
+%feature("shadow") TCollection_AsciiString::~TCollection_AsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_AsciiString {
-	~TCollection_AsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_AsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -434,10 +486,18 @@ class TCollection {
 		Standard_Integer NextPrimeForMap(const Standard_Integer I);
 
 };
+%feature("shadow") TCollection::~TCollection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection {
-	~TCollection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -463,10 +523,18 @@ class TCollection_MapNode : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TCollection_MapNode::~TCollection_MapNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_MapNode {
-	~TCollection_MapNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_MapNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -484,10 +552,18 @@ class TCollection_PrivCompareOfInteger {
 		virtual		Standard_Boolean IsEqual(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
 };
+%feature("shadow") TCollection_PrivCompareOfInteger::~TCollection_PrivCompareOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_PrivCompareOfInteger {
-	~TCollection_PrivCompareOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_PrivCompareOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -509,8 +585,18 @@ class TCollection_AVLBaseNode : public MMgt_TShared {
 		TCollection_AVLBaseNodePtr & Right() const;
 		%feature("autodoc", "1");
 		TCollection_AVLBaseNodePtr & Left() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Count() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetCount() {
+				return (Standard_Integer) $self->Count();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetCount(Standard_Integer value ) {
+				$self->Count()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -525,10 +611,18 @@ class TCollection_AVLBaseNode : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TCollection_AVLBaseNode::~TCollection_AVLBaseNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_AVLBaseNode {
-	~TCollection_AVLBaseNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_AVLBaseNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -544,10 +638,18 @@ class TCollection_BasicMapIterator {
 		void Next();
 
 };
+%feature("shadow") TCollection_BasicMapIterator::~TCollection_BasicMapIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_BasicMapIterator {
-	~TCollection_BasicMapIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_BasicMapIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -565,10 +667,18 @@ class TCollection_PrivCompareOfReal {
 		virtual		Standard_Boolean IsEqual(const Standard_Real &Left, const Standard_Real &Right) const;
 
 };
+%feature("shadow") TCollection_PrivCompareOfReal::~TCollection_PrivCompareOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_PrivCompareOfReal {
-	~TCollection_PrivCompareOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_PrivCompareOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -580,10 +690,18 @@ class TCollection_CompareOfReal : public TCollection_PrivCompareOfReal {
 		TCollection_CompareOfReal();
 
 };
+%feature("shadow") TCollection_CompareOfReal::~TCollection_CompareOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_CompareOfReal {
-	~TCollection_CompareOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_CompareOfReal\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -709,10 +827,18 @@ class TCollection_ExtendedString {
 		Standard_Integer LengthOfCString() const;
 
 };
+%feature("shadow") TCollection_ExtendedString::~TCollection_ExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_ExtendedString {
-	~TCollection_ExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_ExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -732,10 +858,18 @@ class TCollection_Array2Descriptor {
 		Standard_Address Address() const;
 
 };
+%feature("shadow") TCollection_Array2Descriptor::~TCollection_Array2Descriptor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_Array2Descriptor {
-	~TCollection_Array2Descriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_Array2Descriptor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -839,10 +973,18 @@ class TCollection_HExtendedString : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TCollection_HExtendedString::~TCollection_HExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_HExtendedString {
-	~TCollection_HExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_HExtendedString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -860,10 +1002,18 @@ class TCollection_BaseSequence {
 		void Exchange(const Standard_Integer I, const Standard_Integer J);
 
 };
+%feature("shadow") TCollection_BaseSequence::~TCollection_BaseSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_BaseSequence {
-	~TCollection_BaseSequence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_BaseSequence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -891,10 +1041,18 @@ class TCollection_SeqNode : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TCollection_SeqNode::~TCollection_SeqNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_SeqNode {
-	~TCollection_SeqNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_SeqNode\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -910,10 +1068,18 @@ class TCollection_CompareOfInteger : public TCollection_PrivCompareOfInteger {
 		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
 
 };
+%feature("shadow") TCollection_CompareOfInteger::~TCollection_CompareOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_CompareOfInteger {
-	~TCollection_CompareOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_CompareOfInteger\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -929,10 +1095,18 @@ class TCollection_Array1Descriptor {
 		Standard_Address Address() const;
 
 };
+%feature("shadow") TCollection_Array1Descriptor::~TCollection_Array1Descriptor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_Array1Descriptor {
-	~TCollection_Array1Descriptor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_Array1Descriptor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -956,10 +1130,18 @@ class TCollection_BasicMap {
 		};
 
 };
+%feature("shadow") TCollection_BasicMap::~TCollection_BasicMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_BasicMap {
-	~TCollection_BasicMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_BasicMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1088,7 +1270,7 @@ class TCollection_HAsciiString : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString SubString(const Standard_Integer FromIndex, const Standard_Integer ToIndex) const;
 		%feature("autodoc", "1");
-		Standard_CString ToCString() const;
+		char * ToCString() const;
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Token(const char * separators=" \011", const Standard_Integer whichone=1) const;
 		%feature("autodoc", "1");
@@ -1127,9 +1309,17 @@ class TCollection_HAsciiString : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") TCollection_HAsciiString::~TCollection_HAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend TCollection_HAsciiString {
-	~TCollection_HAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of TCollection_HAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

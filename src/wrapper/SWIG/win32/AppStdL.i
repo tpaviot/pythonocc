@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include AppStdL_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_AppStdL_Application : public Handle_TDocStd_Application {
 	return (AppStdL_Application*)$self->Access();
 	}
 };
+%feature("shadow") Handle_AppStdL_Application::~Handle_AppStdL_Application %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_AppStdL_Application {
-	~Handle_AppStdL_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_AppStdL_Application\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -75,7 +87,7 @@ class AppStdL_Application : public TDocStd_Application {
 		%feature("autodoc", "1");
 		virtual		void Formats(TColStd_SequenceOfExtendedString & theFormats);
 		%feature("autodoc", "1");
-		virtual		Standard_CString ResourcesName();
+		virtual		char * ResourcesName();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -90,9 +102,17 @@ class AppStdL_Application : public TDocStd_Application {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") AppStdL_Application::~AppStdL_Application %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend AppStdL_Application {
-	~AppStdL_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of AppStdL_Application\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

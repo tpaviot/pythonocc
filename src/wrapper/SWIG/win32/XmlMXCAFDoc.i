@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include XmlMXCAFDoc_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_XmlMXCAFDoc_LocationDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_LocationDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlMXCAFDoc_LocationDriver::~Handle_XmlMXCAFDoc_LocationDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlMXCAFDoc_LocationDriver {
-	~Handle_XmlMXCAFDoc_LocationDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_LocationDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_XmlMXCAFDoc_GraphNodeDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_GraphNodeDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlMXCAFDoc_GraphNodeDriver::~Handle_XmlMXCAFDoc_GraphNodeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlMXCAFDoc_GraphNodeDriver {
-	~Handle_XmlMXCAFDoc_GraphNodeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_GraphNodeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_XmlMXCAFDoc_VolumeDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_VolumeDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlMXCAFDoc_VolumeDriver::~Handle_XmlMXCAFDoc_VolumeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlMXCAFDoc_VolumeDriver {
-	~Handle_XmlMXCAFDoc_VolumeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_VolumeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_XmlMXCAFDoc_DocumentToolDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_DocumentToolDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlMXCAFDoc_DocumentToolDriver::~Handle_XmlMXCAFDoc_DocumentToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlMXCAFDoc_DocumentToolDriver {
-	~Handle_XmlMXCAFDoc_DocumentToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_DocumentToolDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_XmlMXCAFDoc_ColorDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_ColorDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlMXCAFDoc_ColorDriver::~Handle_XmlMXCAFDoc_ColorDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlMXCAFDoc_ColorDriver {
-	~Handle_XmlMXCAFDoc_ColorDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_ColorDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_XmlMXCAFDoc_LayerToolDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_LayerToolDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlMXCAFDoc_LayerToolDriver::~Handle_XmlMXCAFDoc_LayerToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlMXCAFDoc_LayerToolDriver {
-	~Handle_XmlMXCAFDoc_LayerToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_LayerToolDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_XmlMXCAFDoc_AreaDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_AreaDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlMXCAFDoc_AreaDriver::~Handle_XmlMXCAFDoc_AreaDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlMXCAFDoc_AreaDriver {
-	~Handle_XmlMXCAFDoc_AreaDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_AreaDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_XmlMXCAFDoc_CentroidDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_CentroidDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlMXCAFDoc_CentroidDriver::~Handle_XmlMXCAFDoc_CentroidDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlMXCAFDoc_CentroidDriver {
-	~Handle_XmlMXCAFDoc_CentroidDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_CentroidDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_XmlMXCAFDoc_ColorToolDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_ColorToolDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlMXCAFDoc_ColorToolDriver::~Handle_XmlMXCAFDoc_ColorToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlMXCAFDoc_ColorToolDriver {
-	~Handle_XmlMXCAFDoc_ColorToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_ColorToolDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_XmlMXCAFDoc_ShapeToolDriver : public Handle_XmlMDF_ADriver {
 	return (XmlMXCAFDoc_ShapeToolDriver*)$self->Access();
 	}
 };
+%feature("shadow") Handle_XmlMXCAFDoc_ShapeToolDriver::~Handle_XmlMXCAFDoc_ShapeToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_XmlMXCAFDoc_ShapeToolDriver {
-	~Handle_XmlMXCAFDoc_ShapeToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_ShapeToolDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -360,10 +444,18 @@ class XmlMXCAFDoc_DocumentToolDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlMXCAFDoc_DocumentToolDriver::~XmlMXCAFDoc_DocumentToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMXCAFDoc_DocumentToolDriver {
-	~XmlMXCAFDoc_DocumentToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_DocumentToolDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -397,10 +489,18 @@ class XmlMXCAFDoc_LocationDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlMXCAFDoc_LocationDriver::~XmlMXCAFDoc_LocationDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMXCAFDoc_LocationDriver {
-	~XmlMXCAFDoc_LocationDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_LocationDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -430,10 +530,18 @@ class XmlMXCAFDoc_ColorDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlMXCAFDoc_ColorDriver::~XmlMXCAFDoc_ColorDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMXCAFDoc_ColorDriver {
-	~XmlMXCAFDoc_ColorDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_ColorDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -463,10 +571,18 @@ class XmlMXCAFDoc_GraphNodeDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlMXCAFDoc_GraphNodeDriver::~XmlMXCAFDoc_GraphNodeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMXCAFDoc_GraphNodeDriver {
-	~XmlMXCAFDoc_GraphNodeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_GraphNodeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -480,10 +596,18 @@ class XmlMXCAFDoc {
 		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &anMsgDrv);
 
 };
+%feature("shadow") XmlMXCAFDoc::~XmlMXCAFDoc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMXCAFDoc {
-	~XmlMXCAFDoc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -513,10 +637,18 @@ class XmlMXCAFDoc_VolumeDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlMXCAFDoc_VolumeDriver::~XmlMXCAFDoc_VolumeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMXCAFDoc_VolumeDriver {
-	~XmlMXCAFDoc_VolumeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_VolumeDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -546,10 +678,18 @@ class XmlMXCAFDoc_ColorToolDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlMXCAFDoc_ColorToolDriver::~XmlMXCAFDoc_ColorToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMXCAFDoc_ColorToolDriver {
-	~XmlMXCAFDoc_ColorToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_ColorToolDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -579,10 +719,18 @@ class XmlMXCAFDoc_LayerToolDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlMXCAFDoc_LayerToolDriver::~XmlMXCAFDoc_LayerToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMXCAFDoc_LayerToolDriver {
-	~XmlMXCAFDoc_LayerToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_LayerToolDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -612,10 +760,18 @@ class XmlMXCAFDoc_ShapeToolDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlMXCAFDoc_ShapeToolDriver::~XmlMXCAFDoc_ShapeToolDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMXCAFDoc_ShapeToolDriver {
-	~XmlMXCAFDoc_ShapeToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_ShapeToolDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -645,10 +801,18 @@ class XmlMXCAFDoc_AreaDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlMXCAFDoc_AreaDriver::~XmlMXCAFDoc_AreaDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMXCAFDoc_AreaDriver {
-	~XmlMXCAFDoc_AreaDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_AreaDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -678,9 +842,17 @@ class XmlMXCAFDoc_CentroidDriver : public XmlMDF_ADriver {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") XmlMXCAFDoc_CentroidDriver::~XmlMXCAFDoc_CentroidDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XmlMXCAFDoc_CentroidDriver {
-	~XmlMXCAFDoc_CentroidDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_CentroidDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

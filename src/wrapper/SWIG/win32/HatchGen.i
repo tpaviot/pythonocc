@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include HatchGen_dependencies.i
 
 
@@ -72,10 +76,18 @@ class Handle_HatchGen_SequenceNodeOfDomains : public Handle_TCollection_SeqNode 
 	return (HatchGen_SequenceNodeOfDomains*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HatchGen_SequenceNodeOfDomains::~Handle_HatchGen_SequenceNodeOfDomains %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HatchGen_SequenceNodeOfDomains {
-	~Handle_HatchGen_SequenceNodeOfDomains() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfDomains\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -102,10 +114,18 @@ class Handle_HatchGen_SequenceNodeOfPointsOnElement : public Handle_TCollection_
 	return (HatchGen_SequenceNodeOfPointsOnElement*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HatchGen_SequenceNodeOfPointsOnElement::~Handle_HatchGen_SequenceNodeOfPointsOnElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HatchGen_SequenceNodeOfPointsOnElement {
-	~Handle_HatchGen_SequenceNodeOfPointsOnElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfPointsOnElement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -132,10 +152,18 @@ class Handle_HatchGen_SequenceNodeOfPointsOnHatching : public Handle_TCollection
 	return (HatchGen_SequenceNodeOfPointsOnHatching*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HatchGen_SequenceNodeOfPointsOnHatching::~Handle_HatchGen_SequenceNodeOfPointsOnHatching %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HatchGen_SequenceNodeOfPointsOnHatching {
-	~Handle_HatchGen_SequenceNodeOfPointsOnHatching() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfPointsOnHatching\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -189,10 +217,18 @@ class HatchGen_PointsOnHatching : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") HatchGen_PointsOnHatching::~HatchGen_PointsOnHatching %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HatchGen_PointsOnHatching {
-	~HatchGen_PointsOnHatching() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_PointsOnHatching\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -246,10 +282,18 @@ class HatchGen_Domains : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") HatchGen_Domains::~HatchGen_Domains %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HatchGen_Domains {
-	~HatchGen_Domains() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_Domains\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -289,10 +333,18 @@ class HatchGen_IntersectionPoint {
 		virtual		void Dump(const Standard_Integer Index=0) const;
 
 };
+%feature("shadow") HatchGen_IntersectionPoint::~HatchGen_IntersectionPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HatchGen_IntersectionPoint {
-	~HatchGen_IntersectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_IntersectionPoint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -326,10 +378,18 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		Standard_Boolean IsGreater(const HatchGen_PointOnHatching &Point, const Standard_Real Confusion) const;
 
 };
+%feature("shadow") HatchGen_PointOnHatching::~HatchGen_PointOnHatching %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HatchGen_PointOnHatching {
-	~HatchGen_PointOnHatching() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_PointOnHatching\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -355,10 +415,18 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 		virtual		void Dump(const Standard_Integer Index=0) const;
 
 };
+%feature("shadow") HatchGen_PointOnElement::~HatchGen_PointOnElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HatchGen_PointOnElement {
-	~HatchGen_PointOnElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_PointOnElement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -384,10 +452,18 @@ class HatchGen_SequenceNodeOfPointsOnElement : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HatchGen_SequenceNodeOfPointsOnElement::~HatchGen_SequenceNodeOfPointsOnElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HatchGen_SequenceNodeOfPointsOnElement {
-	~HatchGen_SequenceNodeOfPointsOnElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_SequenceNodeOfPointsOnElement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -441,10 +517,18 @@ class HatchGen_PointsOnElement : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") HatchGen_PointsOnElement::~HatchGen_PointsOnElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HatchGen_PointsOnElement {
-	~HatchGen_PointsOnElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_PointsOnElement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -470,10 +554,18 @@ class HatchGen_SequenceNodeOfDomains : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HatchGen_SequenceNodeOfDomains::~HatchGen_SequenceNodeOfDomains %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HatchGen_SequenceNodeOfDomains {
-	~HatchGen_SequenceNodeOfDomains() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_SequenceNodeOfDomains\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -511,10 +603,18 @@ class HatchGen_Domain {
 		void Dump(const Standard_Integer Index=0) const;
 
 };
+%feature("shadow") HatchGen_Domain::~HatchGen_Domain %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HatchGen_Domain {
-	~HatchGen_Domain() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_Domain\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -540,9 +640,17 @@ class HatchGen_SequenceNodeOfPointsOnHatching : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HatchGen_SequenceNodeOfPointsOnHatching::~HatchGen_SequenceNodeOfPointsOnHatching %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HatchGen_SequenceNodeOfPointsOnHatching {
-	~HatchGen_SequenceNodeOfPointsOnHatching() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HatchGen_SequenceNodeOfPointsOnHatching\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

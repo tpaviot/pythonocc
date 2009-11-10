@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include IGESToBRep_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_IGESToBRep_Actor : public Handle_Transfer_ActorOfTransientProcess {
 	return (IGESToBRep_Actor*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESToBRep_Actor::~Handle_IGESToBRep_Actor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESToBRep_Actor {
-	~Handle_IGESToBRep_Actor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_Actor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
 	return (IGESToBRep_AlgoContainer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESToBRep_AlgoContainer::~Handle_IGESToBRep_AlgoContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESToBRep_AlgoContainer {
-	~Handle_IGESToBRep_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_AlgoContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_IGESToBRep_IGESBoundary : public Handle_MMgt_TShared {
 	return (IGESToBRep_IGESBoundary*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESToBRep_IGESBoundary::~Handle_IGESToBRep_IGESBoundary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESToBRep_IGESBoundary {
-	~Handle_IGESToBRep_IGESBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_IGESBoundary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_IGESToBRep_ToolContainer : public Handle_MMgt_TShared {
 	return (IGESToBRep_ToolContainer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_IGESToBRep_ToolContainer::~Handle_IGESToBRep_ToolContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_IGESToBRep_ToolContainer {
-	~Handle_IGESToBRep_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_ToolContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -248,10 +284,18 @@ class IGESToBRep_CurveAndSurface {
 		Standard_Real GetUVResolution();
 
 };
+%feature("shadow") IGESToBRep_CurveAndSurface::~IGESToBRep_CurveAndSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESToBRep_CurveAndSurface {
-	~IGESToBRep_CurveAndSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESToBRep_CurveAndSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -313,10 +357,18 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 		Standard_Boolean BadCase() const;
 
 };
+%feature("shadow") IGESToBRep_TopoCurve::~IGESToBRep_TopoCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESToBRep_TopoCurve {
-	~IGESToBRep_TopoCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESToBRep_TopoCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -342,10 +394,18 @@ class IGESToBRep_ToolContainer : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESToBRep_ToolContainer::~IGESToBRep_ToolContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESToBRep_ToolContainer {
-	~IGESToBRep_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESToBRep_ToolContainer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -381,10 +441,18 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESToBRep_Actor::~IGESToBRep_Actor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESToBRep_Actor {
-	~IGESToBRep_Actor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESToBRep_Actor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -420,10 +488,18 @@ class IGESToBRep {
 		Standard_Boolean TransferPCurve(const TopoDS_Edge &fromedge, const TopoDS_Edge &toedge, const TopoDS_Face &face);
 
 };
+%feature("shadow") IGESToBRep::~IGESToBRep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESToBRep {
-	~IGESToBRep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESToBRep\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -465,10 +541,18 @@ class IGESToBRep_Reader {
 		TopoDS_Shape OneShape() const;
 
 };
+%feature("shadow") IGESToBRep_Reader::~IGESToBRep_Reader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESToBRep_Reader {
-	~IGESToBRep_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESToBRep_Reader\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -508,10 +592,18 @@ class IGESToBRep_IGESBoundary : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") IGESToBRep_IGESBoundary::~IGESToBRep_IGESBoundary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESToBRep_IGESBoundary {
-	~IGESToBRep_IGESBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESToBRep_IGESBoundary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -541,10 +633,18 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 		TopoDS_Shape TransferManifoldSolid(const Handle_IGESSolid_ManifoldSolid &start);
 
 };
+%feature("shadow") IGESToBRep_BRepEntity::~IGESToBRep_BRepEntity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESToBRep_BRepEntity {
-	~IGESToBRep_BRepEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESToBRep_BRepEntity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -590,10 +690,18 @@ class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
 		Handle_Geom_Transformation TransferTransformation(const Handle_IGESGeom_TransformationMatrix &start);
 
 };
+%feature("shadow") IGESToBRep_BasicCurve::~IGESToBRep_BasicCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESToBRep_BasicCurve {
-	~IGESToBRep_BasicCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESToBRep_BasicCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -625,10 +733,18 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 		Handle_Geom_BSplineSurface TransferBSplineSurface(const Handle_IGESGeom_BSplineSurface &start);
 
 };
+%feature("shadow") IGESToBRep_BasicSurface::~IGESToBRep_BasicSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESToBRep_BasicSurface {
-	~IGESToBRep_BasicSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESToBRep_BasicSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -662,13 +778,21 @@ class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 		TopoDS_Shape TransferPlane(const Handle_IGESGeom_Plane &start);
 		%feature("autodoc", "1");
 		TopoDS_Shape TransferPerforate(const Handle_IGESBasic_SingleParent &start);
-		%feature("autodoc","ParamSurface(const start)->Standard_Real");
+		%feature("autodoc","ParamSurface(const start) -> Standard_Real");
 		TopoDS_Shape ParamSurface(const Handle_IGESData_IGESEntity &start, gp_Trsf2d & trans, Standard_Real &OutValue);
 
 };
+%feature("shadow") IGESToBRep_TopoSurface::~IGESToBRep_TopoSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend IGESToBRep_TopoSurface {
-	~IGESToBRep_TopoSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of IGESToBRep_TopoSurface\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

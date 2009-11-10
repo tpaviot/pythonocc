@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include HeaderSection_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_HeaderSection_HeaderRecognizer : public Handle_StepData_FileRecogni
 	return (HeaderSection_HeaderRecognizer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HeaderSection_HeaderRecognizer::~Handle_HeaderSection_HeaderRecognizer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HeaderSection_HeaderRecognizer {
-	~Handle_HeaderSection_HeaderRecognizer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HeaderSection_HeaderRecognizer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_HeaderSection_FileName : public Handle_MMgt_TShared {
 	return (HeaderSection_FileName*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HeaderSection_FileName::~Handle_HeaderSection_FileName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HeaderSection_FileName {
-	~Handle_HeaderSection_FileName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HeaderSection_FileName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_HeaderSection_Protocol : public Handle_StepData_Protocol {
 	return (HeaderSection_Protocol*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HeaderSection_Protocol::~Handle_HeaderSection_Protocol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HeaderSection_Protocol {
-	~Handle_HeaderSection_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HeaderSection_Protocol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_HeaderSection_FileDescription : public Handle_MMgt_TShared {
 	return (HeaderSection_FileDescription*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HeaderSection_FileDescription::~Handle_HeaderSection_FileDescription %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HeaderSection_FileDescription {
-	~Handle_HeaderSection_FileDescription() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HeaderSection_FileDescription\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_HeaderSection_FileSchema : public Handle_MMgt_TShared {
 	return (HeaderSection_FileSchema*)$self->Access();
 	}
 };
+%feature("shadow") Handle_HeaderSection_FileSchema::~Handle_HeaderSection_FileSchema %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_HeaderSection_FileSchema {
-	~Handle_HeaderSection_FileSchema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_HeaderSection_FileSchema\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -218,10 +262,18 @@ class HeaderSection_FileDescription : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HeaderSection_FileDescription::~HeaderSection_FileDescription %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HeaderSection_FileDescription {
-	~HeaderSection_FileDescription() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HeaderSection_FileDescription\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -255,10 +307,18 @@ class HeaderSection_FileSchema : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HeaderSection_FileSchema::~HeaderSection_FileSchema %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HeaderSection_FileSchema {
-	~HeaderSection_FileSchema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HeaderSection_FileSchema\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -320,10 +380,18 @@ class HeaderSection_FileName : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HeaderSection_FileName::~HeaderSection_FileName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HeaderSection_FileName {
-	~HeaderSection_FileName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HeaderSection_FileName\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -337,10 +405,18 @@ class HeaderSection {
 		Handle_HeaderSection_Protocol Protocol();
 
 };
+%feature("shadow") HeaderSection::~HeaderSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HeaderSection {
-	~HeaderSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HeaderSection\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -364,9 +440,17 @@ class HeaderSection_HeaderRecognizer : public StepData_FileRecognizer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") HeaderSection_HeaderRecognizer::~HeaderSection_HeaderRecognizer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend HeaderSection_HeaderRecognizer {
-	~HeaderSection_HeaderRecognizer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of HeaderSection_HeaderRecognizer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

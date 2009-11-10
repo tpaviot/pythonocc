@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Standard_dependencies.i
 
 
@@ -139,10 +143,18 @@ class Handle_Standard_Transient {
 	return (Standard_Transient*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_Transient::~Handle_Standard_Transient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_Transient {
-	~Handle_Standard_Transient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_Transient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -169,10 +181,18 @@ class Handle_Standard_Failure : public Handle_Standard_Transient {
 	return (Standard_Failure*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_Failure::~Handle_Standard_Failure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_Failure {
-	~Handle_Standard_Failure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_Failure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -199,10 +219,18 @@ class Handle_Standard_DomainError : public Handle_Standard_Failure {
 	return (Standard_DomainError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_DomainError::~Handle_Standard_DomainError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_DomainError {
-	~Handle_Standard_DomainError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_DomainError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -229,10 +257,18 @@ class Handle_Standard_RangeError : public Handle_Standard_DomainError {
 	return (Standard_RangeError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_RangeError::~Handle_Standard_RangeError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_RangeError {
-	~Handle_Standard_RangeError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_RangeError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -259,10 +295,18 @@ class Handle_Standard_OutOfRange : public Handle_Standard_RangeError {
 	return (Standard_OutOfRange*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_OutOfRange::~Handle_Standard_OutOfRange %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_OutOfRange {
-	~Handle_Standard_OutOfRange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_OutOfRange\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -289,10 +333,18 @@ class Handle_Standard_NoMoreObject : public Handle_Standard_DomainError {
 	return (Standard_NoMoreObject*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_NoMoreObject::~Handle_Standard_NoMoreObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_NoMoreObject {
-	~Handle_Standard_NoMoreObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_NoMoreObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -319,10 +371,18 @@ class Handle_Standard_DimensionError : public Handle_Standard_DomainError {
 	return (Standard_DimensionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_DimensionError::~Handle_Standard_DimensionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_DimensionError {
-	~Handle_Standard_DimensionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_DimensionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -349,10 +409,18 @@ class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
 	return (Standard_TypeMismatch*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_TypeMismatch::~Handle_Standard_TypeMismatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_TypeMismatch {
-	~Handle_Standard_TypeMismatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_TypeMismatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -379,10 +447,18 @@ class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 	return (Standard_NullValue*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_NullValue::~Handle_Standard_NullValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_NullValue {
-	~Handle_Standard_NullValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_NullValue\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -409,10 +485,18 @@ class Handle_Standard_ProgramError : public Handle_Standard_Failure {
 	return (Standard_ProgramError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_ProgramError::~Handle_Standard_ProgramError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_ProgramError {
-	~Handle_Standard_ProgramError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_ProgramError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -439,10 +523,18 @@ class Handle_Standard_OutOfMemory : public Handle_Standard_ProgramError {
 	return (Standard_OutOfMemory*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_OutOfMemory::~Handle_Standard_OutOfMemory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_OutOfMemory {
-	~Handle_Standard_OutOfMemory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_OutOfMemory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -469,10 +561,18 @@ class Handle_Standard_NumericError : public Handle_Standard_Failure {
 	return (Standard_NumericError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_NumericError::~Handle_Standard_NumericError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_NumericError {
-	~Handle_Standard_NumericError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_NumericError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -499,10 +599,18 @@ class Handle_Standard_DivideByZero : public Handle_Standard_NumericError {
 	return (Standard_DivideByZero*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_DivideByZero::~Handle_Standard_DivideByZero %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_DivideByZero {
-	~Handle_Standard_DivideByZero() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_DivideByZero\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -529,10 +637,18 @@ class Handle_Standard_LicenseError : public Handle_Standard_Failure {
 	return (Standard_LicenseError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_LicenseError::~Handle_Standard_LicenseError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_LicenseError {
-	~Handle_Standard_LicenseError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_LicenseError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -559,10 +675,18 @@ class Handle_Standard_TooManyUsers : public Handle_Standard_LicenseError {
 	return (Standard_TooManyUsers*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_TooManyUsers::~Handle_Standard_TooManyUsers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_TooManyUsers {
-	~Handle_Standard_TooManyUsers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_TooManyUsers\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -589,10 +713,18 @@ class Handle_Standard_NegativeValue : public Handle_Standard_RangeError {
 	return (Standard_NegativeValue*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_NegativeValue::~Handle_Standard_NegativeValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_NegativeValue {
-	~Handle_Standard_NegativeValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_NegativeValue\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -619,10 +751,18 @@ class Handle_Standard_Underflow : public Handle_Standard_NumericError {
 	return (Standard_Underflow*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_Underflow::~Handle_Standard_Underflow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_Underflow {
-	~Handle_Standard_Underflow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_Underflow\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -649,10 +789,18 @@ class Handle_Standard_MultiplyDefined : public Handle_Standard_DomainError {
 	return (Standard_MultiplyDefined*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_MultiplyDefined::~Handle_Standard_MultiplyDefined %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_MultiplyDefined {
-	~Handle_Standard_MultiplyDefined() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_MultiplyDefined\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -679,10 +827,18 @@ class Handle_Standard_NotImplemented : public Handle_Standard_ProgramError {
 	return (Standard_NotImplemented*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_NotImplemented::~Handle_Standard_NotImplemented %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_NotImplemented {
-	~Handle_Standard_NotImplemented() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_NotImplemented\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -709,10 +865,18 @@ class Handle_Standard_NullObject : public Handle_Standard_DomainError {
 	return (Standard_NullObject*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_NullObject::~Handle_Standard_NullObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_NullObject {
-	~Handle_Standard_NullObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_NullObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -761,10 +925,18 @@ class Handle_Standard_Persistent {
 	return (Standard_Persistent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_Persistent::~Handle_Standard_Persistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_Persistent {
-	~Handle_Standard_Persistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_Persistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -791,10 +963,18 @@ class Handle_Standard_AbortiveTransaction : public Handle_Standard_Failure {
 	return (Standard_AbortiveTransaction*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_AbortiveTransaction::~Handle_Standard_AbortiveTransaction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_AbortiveTransaction {
-	~Handle_Standard_AbortiveTransaction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_AbortiveTransaction\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -821,10 +1001,18 @@ class Handle_Standard_ConstructionError : public Handle_Standard_DomainError {
 	return (Standard_ConstructionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_ConstructionError::~Handle_Standard_ConstructionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_ConstructionError {
-	~Handle_Standard_ConstructionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_ConstructionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -851,10 +1039,18 @@ class Handle_Standard_Overflow : public Handle_Standard_NumericError {
 	return (Standard_Overflow*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_Overflow::~Handle_Standard_Overflow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_Overflow {
-	~Handle_Standard_Overflow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_Overflow\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -881,10 +1077,18 @@ class Handle_Standard_DimensionMismatch : public Handle_Standard_DimensionError 
 	return (Standard_DimensionMismatch*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_DimensionMismatch::~Handle_Standard_DimensionMismatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_DimensionMismatch {
-	~Handle_Standard_DimensionMismatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_DimensionMismatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -911,10 +1115,18 @@ class Handle_Standard_LicenseNotFound : public Handle_Standard_LicenseError {
 	return (Standard_LicenseNotFound*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_LicenseNotFound::~Handle_Standard_LicenseNotFound %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_LicenseNotFound {
-	~Handle_Standard_LicenseNotFound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_LicenseNotFound\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -941,10 +1153,18 @@ class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
 	return (Standard_NoSuchObject*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_NoSuchObject::~Handle_Standard_NoSuchObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_NoSuchObject {
-	~Handle_Standard_NoSuchObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_NoSuchObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -971,10 +1191,18 @@ class Handle_Standard_ImmutableObject : public Handle_Standard_DomainError {
 	return (Standard_ImmutableObject*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_ImmutableObject::~Handle_Standard_ImmutableObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_ImmutableObject {
-	~Handle_Standard_ImmutableObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_ImmutableObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1001,10 +1229,18 @@ class Handle_Standard_Type : public Handle_Standard_Transient {
 	return (Standard_Type*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Standard_Type::~Handle_Standard_Type %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Standard_Type {
-	~Handle_Standard_Type() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Standard_Type\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1024,10 +1260,18 @@ class Standard_MMgrRoot {
 		virtual		void SetReentrant(Standard_Boolean );
 
 };
+%feature("shadow") Standard_MMgrRoot::~Standard_MMgrRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_MMgrRoot {
-	~Standard_MMgrRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_MMgrRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1045,10 +1289,18 @@ class Standard_MMgrOpt : public Standard_MMgrRoot {
 		virtual		Standard_Integer Purge(Standard_Boolean );
 
 };
+%feature("shadow") Standard_MMgrOpt::~Standard_MMgrOpt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_MMgrOpt {
-	~Standard_MMgrOpt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_MMgrOpt\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1096,10 +1348,18 @@ class Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_Transient::~Standard_Transient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_Transient {
-	~Standard_Transient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_Transient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1124,7 +1384,7 @@ class Standard_Failure : public Standard_Transient {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
-		Standard_CString GetMessageString() const;
+		char * GetMessageString() const;
 		%feature("autodoc", "1");
 		void SetMessageString(const char * aMessage);
 		%feature("autodoc", "1");
@@ -1153,10 +1413,18 @@ class Standard_Failure : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_Failure::~Standard_Failure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_Failure {
-	~Standard_Failure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_Failure\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1182,10 +1450,18 @@ class Standard_NumericError : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_NumericError::~Standard_NumericError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_NumericError {
-	~Standard_NumericError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_NumericError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1211,10 +1487,18 @@ class Standard_DivideByZero : public Standard_NumericError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_DivideByZero::~Standard_DivideByZero %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_DivideByZero {
-	~Standard_DivideByZero() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_DivideByZero\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1246,10 +1530,18 @@ class Standard_ProgramError : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_ProgramError::~Standard_ProgramError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_ProgramError {
-	~Standard_ProgramError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_ProgramError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1273,10 +1565,18 @@ class Standard {
 		void SetReentrant(const Standard_Boolean isReentrant);
 
 };
+%feature("shadow") Standard::~Standard %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard {
-	~Standard() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1308,10 +1608,18 @@ class Standard_DomainError : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_DomainError::~Standard_DomainError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_DomainError {
-	~Standard_DomainError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_DomainError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1337,10 +1645,18 @@ class Standard_NoSuchObject : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_NoSuchObject::~Standard_NoSuchObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_NoSuchObject {
-	~Standard_NoSuchObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_NoSuchObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1372,10 +1688,18 @@ class Standard_RangeError : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_RangeError::~Standard_RangeError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_RangeError {
-	~Standard_RangeError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_RangeError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1407,10 +1731,18 @@ class Standard_NotImplemented : public Standard_ProgramError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_NotImplemented::~Standard_NotImplemented %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_NotImplemented {
-	~Standard_NotImplemented() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_NotImplemented\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1442,10 +1774,18 @@ class Standard_AbortiveTransaction : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_AbortiveTransaction::~Standard_AbortiveTransaction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_AbortiveTransaction {
-	~Standard_AbortiveTransaction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_AbortiveTransaction\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1461,10 +1801,18 @@ class Standard_ErrorHandlerCallback {
 		virtual		void DestroyCallback();
 
 };
+%feature("shadow") Standard_ErrorHandlerCallback::~Standard_ErrorHandlerCallback %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_ErrorHandlerCallback {
-	~Standard_ErrorHandlerCallback() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_ErrorHandlerCallback\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1490,10 +1838,18 @@ class Standard_AncestorIterator {
 		Handle_Standard_Type Value() const;
 
 };
+%feature("shadow") Standard_AncestorIterator::~Standard_AncestorIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_AncestorIterator {
-	~Standard_AncestorIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_AncestorIterator\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1525,10 +1881,18 @@ class Standard_MultiplyDefined : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_MultiplyDefined::~Standard_MultiplyDefined %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_MultiplyDefined {
-	~Standard_MultiplyDefined() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_MultiplyDefined\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1560,10 +1924,18 @@ class Standard_Overflow : public Standard_NumericError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_Overflow::~Standard_Overflow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_Overflow {
-	~Standard_Overflow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_Overflow\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1607,10 +1979,18 @@ class Standard_Persistent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_Persistent::~Standard_Persistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_Persistent {
-	~Standard_Persistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_Persistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1642,10 +2022,18 @@ class Standard_NullValue : public Standard_RangeError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_NullValue::~Standard_NullValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_NullValue {
-	~Standard_NullValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_NullValue\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1677,10 +2065,18 @@ class Standard_NoMoreObject : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_NoMoreObject::~Standard_NoMoreObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_NoMoreObject {
-	~Standard_NoMoreObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_NoMoreObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1712,10 +2108,18 @@ class Standard_DimensionError : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_DimensionError::~Standard_DimensionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_DimensionError {
-	~Standard_DimensionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_DimensionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1741,10 +2145,18 @@ class Standard_DimensionMismatch : public Standard_DimensionError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_DimensionMismatch::~Standard_DimensionMismatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_DimensionMismatch {
-	~Standard_DimensionMismatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_DimensionMismatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1776,10 +2188,18 @@ class Standard_TypeMismatch : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_TypeMismatch::~Standard_TypeMismatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_TypeMismatch {
-	~Standard_TypeMismatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_TypeMismatch\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1811,10 +2231,18 @@ class Standard_LicenseError : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_LicenseError::~Standard_LicenseError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_LicenseError {
-	~Standard_LicenseError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_LicenseError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1840,10 +2268,18 @@ class Standard_LicenseNotFound : public Standard_LicenseError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_LicenseNotFound::~Standard_LicenseNotFound %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_LicenseNotFound {
-	~Standard_LicenseNotFound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_LicenseNotFound\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1878,10 +2314,18 @@ class Standard_Storable {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_Storable::~Standard_Storable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_Storable {
-	~Standard_Storable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_Storable\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1913,10 +2357,18 @@ class Standard_ImmutableObject : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_ImmutableObject::~Standard_ImmutableObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_ImmutableObject {
-	~Standard_ImmutableObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_ImmutableObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2016,10 +2468,18 @@ class Standard_GUID {
 		void _CSFDB_SetStandard_GUIDmy8b6(const Standard_Byte p);
 
 };
+%feature("shadow") Standard_GUID::~Standard_GUID %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_GUID {
-	~Standard_GUID() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_GUID\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 %extend Standard_GUID {
@@ -2052,10 +2512,18 @@ class Standard_ErrorHandler {
 		Standard_Boolean IsInTryBlock();
 
 };
+%feature("shadow") Standard_ErrorHandler::~Standard_ErrorHandler %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_ErrorHandler {
-	~Standard_ErrorHandler() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_ErrorHandler\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2073,10 +2541,18 @@ class Standard_Mutex : public Standard_ErrorHandlerCallback {
 		void Unlock();
 
 };
+%feature("shadow") Standard_Mutex::~Standard_Mutex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_Mutex {
-	~Standard_Mutex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_Mutex\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2108,10 +2584,18 @@ class Standard_TooManyUsers : public Standard_LicenseError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_TooManyUsers::~Standard_TooManyUsers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_TooManyUsers {
-	~Standard_TooManyUsers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_TooManyUsers\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2143,10 +2627,18 @@ class Standard_NegativeValue : public Standard_RangeError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_NegativeValue::~Standard_NegativeValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_NegativeValue {
-	~Standard_NegativeValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_NegativeValue\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2178,10 +2670,18 @@ class Standard_NullObject : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_NullObject::~Standard_NullObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_NullObject {
-	~Standard_NullObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_NullObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2190,7 +2690,7 @@ class Standard_NullObject : public Standard_DomainError {
 class Standard_Type : public Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		Standard_CString Name() const;
+		char * Name() const;
 		%feature("autodoc", "1");
 		Standard_Integer Size() const;
 		%feature("autodoc", "1");
@@ -2249,10 +2749,18 @@ class Standard_Type : public Standard_Transient {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_Type::~Standard_Type %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_Type {
-	~Standard_Type() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_Type\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2284,10 +2792,18 @@ class Standard_ConstructionError : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_ConstructionError::~Standard_ConstructionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_ConstructionError {
-	~Standard_ConstructionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_ConstructionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2319,10 +2835,18 @@ class Standard_OutOfRange : public Standard_RangeError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_OutOfRange::~Standard_OutOfRange %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_OutOfRange {
-	~Standard_OutOfRange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_OutOfRange\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2340,10 +2864,18 @@ class Standard_MMgrRaw : public Standard_MMgrRoot {
 		virtual		void Free(Standard_Address & arg0);
 
 };
+%feature("shadow") Standard_MMgrRaw::~Standard_MMgrRaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_MMgrRaw {
-	~Standard_MMgrRaw() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_MMgrRaw\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2375,10 +2907,18 @@ class Standard_OutOfMemory : public Standard_ProgramError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_OutOfMemory::~Standard_OutOfMemory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_OutOfMemory {
-	~Standard_OutOfMemory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_OutOfMemory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2410,9 +2950,17 @@ class Standard_Underflow : public Standard_NumericError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Standard_Underflow::~Standard_Underflow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Standard_Underflow {
-	~Standard_Underflow() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Standard_Underflow\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

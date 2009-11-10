@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Quantity_dependencies.i
 
 
@@ -732,10 +736,18 @@ class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError 
 	return (Quantity_ColorDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Quantity_ColorDefinitionError::~Handle_Quantity_ColorDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Quantity_ColorDefinitionError {
-	~Handle_Quantity_ColorDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Quantity_ColorDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -762,10 +774,18 @@ class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError
 	return (Quantity_PeriodDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Quantity_PeriodDefinitionError::~Handle_Quantity_PeriodDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Quantity_PeriodDefinitionError {
-	~Handle_Quantity_PeriodDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Quantity_PeriodDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -792,10 +812,18 @@ class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 	return (Quantity_HArray1OfColor*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Quantity_HArray1OfColor::~Handle_Quantity_HArray1OfColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Quantity_HArray1OfColor {
-	~Handle_Quantity_HArray1OfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Quantity_HArray1OfColor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -822,10 +850,18 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 	return (Quantity_DateDefinitionError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Quantity_DateDefinitionError::~Handle_Quantity_DateDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Quantity_DateDefinitionError {
-	~Handle_Quantity_DateDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Quantity_DateDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -869,10 +905,18 @@ class Quantity_Array2OfColor {
 		Quantity_Color & operator()(const Standard_Integer Row, const Standard_Integer Col);
 
 };
+%feature("shadow") Quantity_Array2OfColor::~Quantity_Array2OfColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Quantity_Array2OfColor {
-	~Quantity_Array2OfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Array2OfColor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -912,10 +956,18 @@ class Quantity_Array1OfCoefficient {
 		Quantity_Coefficient & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Quantity_Array1OfCoefficient::~Quantity_Array1OfCoefficient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Quantity_Array1OfCoefficient {
-	~Quantity_Array1OfCoefficient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Array1OfCoefficient\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -927,9 +979,9 @@ class Quantity_Period {
 		Quantity_Period(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
 		%feature("autodoc", "1");
 		Quantity_Period(const Standard_Integer ss, const Standard_Integer mics=0);
-		%feature("autodoc","Values()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Values() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","Values()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Values() -> [Standard_Integer, Standard_Integer]");
 		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetValues(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
@@ -971,10 +1023,18 @@ class Quantity_Period {
 		void _CSFDB_SetQuantity_PeriodmyUSec(const Standard_Integer p);
 
 };
+%feature("shadow") Quantity_Period::~Quantity_Period %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Quantity_Period {
-	~Quantity_Period() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Period\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1006,10 +1066,18 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Quantity_ColorDefinitionError::~Quantity_ColorDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Quantity_ColorDefinitionError {
-	~Quantity_ColorDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_ColorDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1041,10 +1109,18 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Quantity_PeriodDefinitionError::~Quantity_PeriodDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Quantity_PeriodDefinitionError {
-	~Quantity_PeriodDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_PeriodDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1084,10 +1160,18 @@ class Quantity_Array1OfColor {
 		Quantity_Color & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Quantity_Array1OfColor::~Quantity_Array1OfColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Quantity_Array1OfColor {
-	~Quantity_Array1OfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Array1OfColor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1113,7 +1197,7 @@ class Quantity_Color {
 		void SetValues(const Quantity_NameOfColor AName);
 		%feature("autodoc", "1");
 		void SetValues(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
-		%feature("autodoc","Delta(const AColor)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Delta(const AColor) -> [Standard_RealStandard_Real]");
 		void Delta(const Quantity_Color &AColor, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real Distance(const Quantity_Color &AColor) const;
@@ -1141,7 +1225,7 @@ class Quantity_Color {
 		Quantity_Parameter Red() const;
 		%feature("autodoc", "1");
 		Quantity_Parameter Saturation() const;
-		%feature("autodoc","Values(Quantity_TypeOfColor AType)->[Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Quantity_TypeOfColor AType) -> [Standard_Real, Standard_RealStandard_Real]");
 		void Values(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Quantity_TypeOfColor AType) const;
 		%feature("autodoc", "1");
 		void SetEpsilon(const Quantity_Parameter AnEpsilon);
@@ -1151,9 +1235,9 @@ class Quantity_Color {
 		Quantity_NameOfColor Name(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B);
 		%feature("autodoc", "1");
 		char * StringName(const Quantity_NameOfColor AColor);
-		%feature("autodoc","HlsRgb(Quantity_Parameter H, Quantity_Parameter L, Quantity_Parameter S)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","HlsRgb(Quantity_Parameter H, Quantity_Parameter L, Quantity_Parameter S) -> [Standard_RealStandard_RealStandard_Real]");
 		void HlsRgb(const Quantity_Parameter H, const Quantity_Parameter L, const Quantity_Parameter S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","RgbHls(Quantity_Parameter R, Quantity_Parameter G, Quantity_Parameter B)->[Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","RgbHls(Quantity_Parameter R, Quantity_Parameter G, Quantity_Parameter B) -> [Standard_RealStandard_RealStandard_Real]");
 		void RgbHls(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void Test();
@@ -1171,10 +1255,18 @@ class Quantity_Color {
 		void _CSFDB_SetQuantity_ColorMyBlue(const Standard_ShortReal p);
 
 };
+%feature("shadow") Quantity_Color::~Quantity_Color %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Quantity_Color {
-	~Quantity_Color() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Color\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1186,7 +1278,7 @@ class Quantity_Date {
 		Quantity_Date();
 		%feature("autodoc", "1");
 		Quantity_Date(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yyyy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
-		%feature("autodoc","Values()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Values() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetValues(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
@@ -1242,10 +1334,18 @@ class Quantity_Date {
 		void _CSFDB_SetQuantity_DatemyUSec(const Standard_Integer p);
 
 };
+%feature("shadow") Quantity_Date::~Quantity_Date %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Quantity_Date {
-	~Quantity_Date() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Date\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1277,10 +1377,18 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Quantity_DateDefinitionError::~Quantity_DateDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Quantity_DateDefinitionError {
-	~Quantity_DateDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_DateDefinitionError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1324,10 +1432,18 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Quantity_HArray1OfColor::~Quantity_HArray1OfColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Quantity_HArray1OfColor {
-	~Quantity_HArray1OfColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_HArray1OfColor\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1347,9 +1463,17 @@ class Quantity_Convert {
 		Standard_Boolean IsPhysicalQuantity(const TCollection_AsciiString &aTypeName, TCollection_AsciiString & anEnum);
 
 };
+%feature("shadow") Quantity_Convert::~Quantity_Convert %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Quantity_Convert {
-	~Quantity_Convert() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Quantity_Convert\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

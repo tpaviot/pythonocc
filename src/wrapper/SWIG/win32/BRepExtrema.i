@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include BRepExtrema_dependencies.i
 
 
@@ -63,10 +67,18 @@ class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection
 	return (BRepExtrema_SequenceNodeOfSeqOfSolution*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepExtrema_SequenceNodeOfSeqOfSolution::~Handle_BRepExtrema_SequenceNodeOfSeqOfSolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {
-	~Handle_BRepExtrema_SequenceNodeOfSeqOfSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepExtrema_SequenceNodeOfSeqOfSolution\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -93,10 +105,18 @@ class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError 
 	return (BRepExtrema_UnCompatibleShape*)$self->Access();
 	}
 };
+%feature("shadow") Handle_BRepExtrema_UnCompatibleShape::~Handle_BRepExtrema_UnCompatibleShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_BRepExtrema_UnCompatibleShape {
-	~Handle_BRepExtrema_UnCompatibleShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_BRepExtrema_UnCompatibleShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -150,10 +170,18 @@ class BRepExtrema_SeqOfSolution : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") BRepExtrema_SeqOfSolution::~BRepExtrema_SeqOfSolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepExtrema_SeqOfSolution {
-	~BRepExtrema_SeqOfSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepExtrema_SeqOfSolution\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -163,14 +191,22 @@ class BRepExtrema_Poly {
 	public:
 		%feature("autodoc", "1");
 		BRepExtrema_Poly();
-		%feature("autodoc","Distance(const S1, const S2)->Standard_Real");
+		%feature("autodoc","Distance(const S1, const S2) -> Standard_Real");
 		Standard_Boolean Distance(const TopoDS_Shape &S1, const TopoDS_Shape &S2, gp_Pnt & P1, gp_Pnt & P2, Standard_Real &OutValue);
 
 };
+%feature("shadow") BRepExtrema_Poly::~BRepExtrema_Poly %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepExtrema_Poly {
-	~BRepExtrema_Poly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepExtrema_Poly\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -192,16 +228,24 @@ class BRepExtrema_ExtPF {
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc","Parameter(Standard_Integer N)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Parameter(Standard_Integer N) -> [Standard_RealStandard_Real]");
 		void Parameter(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt Point(const Standard_Integer N) const;
 
 };
+%feature("shadow") BRepExtrema_ExtPF::~BRepExtrema_ExtPF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepExtrema_ExtPF {
-	~BRepExtrema_ExtPF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtPF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -223,10 +267,18 @@ class BRepExtrema_DistanceSS {
 		const BRepExtrema_SeqOfSolution & Seq2Value() const;
 
 };
+%feature("shadow") BRepExtrema_DistanceSS::~BRepExtrema_DistanceSS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepExtrema_DistanceSS {
-	~BRepExtrema_DistanceSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepExtrema_DistanceSS\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -258,14 +310,22 @@ class BRepExtrema_ExtCC {
 		Standard_Real ParameterOnE2(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		gp_Pnt PointOnE2(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P11, gp_Pnt & P12, gp_Pnt & P21, gp_Pnt & P22) const;
 
 };
+%feature("shadow") BRepExtrema_ExtCC::~BRepExtrema_ExtCC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepExtrema_ExtCC {
-	~BRepExtrema_ExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtCC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -291,10 +351,18 @@ class BRepExtrema_SequenceNodeOfSeqOfSolution : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepExtrema_SequenceNodeOfSeqOfSolution::~BRepExtrema_SequenceNodeOfSeqOfSolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepExtrema_SequenceNodeOfSeqOfSolution {
-	~BRepExtrema_SequenceNodeOfSeqOfSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepExtrema_SequenceNodeOfSeqOfSolution\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -320,7 +388,7 @@ class BRepExtrema_ExtCF {
 		Standard_Boolean IsParallel() const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnEdge(const Standard_Integer N) const;
-		%feature("autodoc","ParameterOnFace(Standard_Integer N)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ParameterOnFace(Standard_Integer N) -> [Standard_RealStandard_Real]");
 		void ParameterOnFace(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt PointOnEdge(const Standard_Integer N) const;
@@ -328,10 +396,18 @@ class BRepExtrema_ExtCF {
 		gp_Pnt PointOnFace(const Standard_Integer N) const;
 
 };
+%feature("shadow") BRepExtrema_ExtCF::~BRepExtrema_ExtCF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepExtrema_ExtCF {
-	~BRepExtrema_ExtCF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtCF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -355,9 +431,9 @@ class BRepExtrema_ExtFF {
 		Standard_Integer NbExt() const;
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Integer N) const;
-		%feature("autodoc","ParameterOnFace1(Standard_Integer N)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ParameterOnFace1(Standard_Integer N) -> [Standard_RealStandard_Real]");
 		void ParameterOnFace1(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ParameterOnFace2(Standard_Integer N)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ParameterOnFace2(Standard_Integer N) -> [Standard_RealStandard_Real]");
 		void ParameterOnFace2(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt PointOnFace1(const Standard_Integer N) const;
@@ -365,10 +441,18 @@ class BRepExtrema_ExtFF {
 		gp_Pnt PointOnFace2(const Standard_Integer N) const;
 
 };
+%feature("shadow") BRepExtrema_ExtFF::~BRepExtrema_ExtFF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepExtrema_ExtFF {
-	~BRepExtrema_ExtFF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtFF\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -396,14 +480,22 @@ class BRepExtrema_ExtPC {
 		Standard_Real Parameter(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		gp_Pnt Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedDistances()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & pnt1, gp_Pnt & pnt2) const;
 
 };
+%feature("shadow") BRepExtrema_ExtPC::~BRepExtrema_ExtPC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepExtrema_ExtPC {
-	~BRepExtrema_ExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtPC\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -435,10 +527,18 @@ class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") BRepExtrema_UnCompatibleShape::~BRepExtrema_UnCompatibleShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepExtrema_UnCompatibleShape {
-	~BRepExtrema_UnCompatibleShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepExtrema_UnCompatibleShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -480,13 +580,13 @@ class BRepExtrema_DistShapeShape {
 		TopoDS_Shape SupportOnShape1(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		TopoDS_Shape SupportOnShape2(const Standard_Integer N) const;
-		%feature("autodoc","ParOnEdgeS1(Standard_Integer N)->Standard_Real");
+		%feature("autodoc","ParOnEdgeS1(Standard_Integer N) -> Standard_Real");
 		void ParOnEdgeS1(const Standard_Integer N, Standard_Real &OutValue) const;
-		%feature("autodoc","ParOnEdgeS2(Standard_Integer N)->Standard_Real");
+		%feature("autodoc","ParOnEdgeS2(Standard_Integer N) -> Standard_Real");
 		void ParOnEdgeS2(const Standard_Integer N, Standard_Real &OutValue) const;
-		%feature("autodoc","ParOnFaceS1(Standard_Integer N)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ParOnFaceS1(Standard_Integer N) -> [Standard_RealStandard_Real]");
 		void ParOnFaceS1(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ParOnFaceS2(Standard_Integer N)->[Standard_RealStandard_Real]");
+		%feature("autodoc","ParOnFaceS2(Standard_Integer N) -> [Standard_RealStandard_Real]");
 		void ParOnFaceS2(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
@@ -498,10 +598,18 @@ class BRepExtrema_DistShapeShape {
 		};
 
 };
+%feature("shadow") BRepExtrema_DistShapeShape::~BRepExtrema_DistShapeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepExtrema_DistShapeShape {
-	~BRepExtrema_DistShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepExtrema_DistShapeShape\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -529,15 +637,23 @@ class BRepExtrema_SolutionElem {
 		TopoDS_Edge Edge() const;
 		%feature("autodoc", "1");
 		TopoDS_Face Face() const;
-		%feature("autodoc","EdgeParameter()->Standard_Real");
+		%feature("autodoc","EdgeParameter() -> Standard_Real");
 		void EdgeParameter(Standard_Real &OutValue) const;
-		%feature("autodoc","FaceParameter()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","FaceParameter() -> [Standard_Real, Standard_Real]");
 		void FaceParameter(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
+%feature("shadow") BRepExtrema_SolutionElem::~BRepExtrema_SolutionElem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend BRepExtrema_SolutionElem {
-	~BRepExtrema_SolutionElem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of BRepExtrema_SolutionElem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

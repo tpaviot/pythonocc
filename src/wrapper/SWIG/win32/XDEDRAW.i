@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include XDEDRAW_dependencies.i
 
 
@@ -44,10 +48,18 @@ class XDEDRAW_Common {
 		void InitCommands(Draw_Interpretor & theCommands);
 
 };
+%feature("shadow") XDEDRAW_Common::~XDEDRAW_Common %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XDEDRAW_Common {
-	~XDEDRAW_Common() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XDEDRAW_Common\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -61,10 +73,18 @@ class XDEDRAW_Layers {
 		void InitCommands(Draw_Interpretor & theCommands);
 
 };
+%feature("shadow") XDEDRAW_Layers::~XDEDRAW_Layers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XDEDRAW_Layers {
-	~XDEDRAW_Layers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XDEDRAW_Layers\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -80,10 +100,18 @@ class XDEDRAW {
 		void Factory(Draw_Interpretor & theDI);
 
 };
+%feature("shadow") XDEDRAW::~XDEDRAW %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XDEDRAW {
-	~XDEDRAW() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XDEDRAW\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -97,10 +125,18 @@ class XDEDRAW_Colors {
 		void InitCommands(Draw_Interpretor & theCommands);
 
 };
+%feature("shadow") XDEDRAW_Colors::~XDEDRAW_Colors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XDEDRAW_Colors {
-	~XDEDRAW_Colors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XDEDRAW_Colors\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -114,10 +150,18 @@ class XDEDRAW_Shapes {
 		void InitCommands(Draw_Interpretor & theCommands);
 
 };
+%feature("shadow") XDEDRAW_Shapes::~XDEDRAW_Shapes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XDEDRAW_Shapes {
-	~XDEDRAW_Shapes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XDEDRAW_Shapes\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -131,9 +175,17 @@ class XDEDRAW_Props {
 		void InitCommands(Draw_Interpretor & theCommands);
 
 };
+%feature("shadow") XDEDRAW_Props::~XDEDRAW_Props %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend XDEDRAW_Props {
-	~XDEDRAW_Props() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of XDEDRAW_Props\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include V2d_dependencies.i
 
 
@@ -63,10 +67,18 @@ class Handle_V2d_BackgroundGraphicObject : public Handle_Graphic2d_GraphicObject
 	return (V2d_BackgroundGraphicObject*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V2d_BackgroundGraphicObject::~Handle_V2d_BackgroundGraphicObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V2d_BackgroundGraphicObject {
-	~Handle_V2d_BackgroundGraphicObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_BackgroundGraphicObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -93,10 +105,18 @@ class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 	return (V2d_RectangularGraphicGrid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V2d_RectangularGraphicGrid::~Handle_V2d_RectangularGraphicGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V2d_RectangularGraphicGrid {
-	~Handle_V2d_RectangularGraphicGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_RectangularGraphicGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -123,10 +143,18 @@ class Handle_V2d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 	return (V2d_RectangularGrid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V2d_RectangularGrid::~Handle_V2d_RectangularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V2d_RectangularGrid {
-	~Handle_V2d_RectangularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_RectangularGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -153,10 +181,18 @@ class Handle_V2d_CircularGraphicGrid : public Handle_Graphic2d_Primitive {
 	return (V2d_CircularGraphicGrid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V2d_CircularGraphicGrid::~Handle_V2d_CircularGraphicGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V2d_CircularGraphicGrid {
-	~Handle_V2d_CircularGraphicGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_CircularGraphicGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -183,10 +219,18 @@ class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
 	return (V2d_CircularGrid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V2d_CircularGrid::~Handle_V2d_CircularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V2d_CircularGrid {
-	~Handle_V2d_CircularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_CircularGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -213,10 +257,18 @@ class Handle_V2d_View : public Handle_Viewer_View {
 	return (V2d_View*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V2d_View::~Handle_V2d_View %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V2d_View {
-	~Handle_V2d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_View\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -243,10 +295,18 @@ class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
 	return (V2d_Viewer*)$self->Access();
 	}
 };
+%feature("shadow") Handle_V2d_Viewer::~Handle_V2d_Viewer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_V2d_Viewer {
-	~Handle_V2d_Viewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_V2d_Viewer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -278,10 +338,18 @@ class V2d_RectangularGrid : public Aspect_RectangularGrid {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V2d_RectangularGrid::~V2d_RectangularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V2d_RectangularGrid {
-	~V2d_RectangularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_RectangularGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -295,10 +363,18 @@ class V2d {
 		void Draw(const Handle_V2d_Viewer &aViewer);
 
 };
+%feature("shadow") V2d::~V2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V2d {
-	~V2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -330,10 +406,18 @@ class V2d_CircularGrid : public Aspect_CircularGrid {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V2d_CircularGrid::~V2d_CircularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V2d_CircularGrid {
-	~V2d_CircularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_CircularGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -361,10 +445,18 @@ class V2d_RectangularGraphicGrid : public Graphic2d_Primitive {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V2d_RectangularGraphicGrid::~V2d_RectangularGraphicGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V2d_RectangularGraphicGrid {
-	~V2d_RectangularGraphicGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_RectangularGraphicGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -392,10 +484,18 @@ class V2d_CircularGraphicGrid : public Graphic2d_Primitive {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V2d_CircularGraphicGrid::~V2d_CircularGraphicGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V2d_CircularGraphicGrid {
-	~V2d_CircularGraphicGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_CircularGraphicGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -421,10 +521,18 @@ class V2d_BackgroundGraphicObject : public Graphic2d_GraphicObject {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V2d_BackgroundGraphicObject::~V2d_BackgroundGraphicObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V2d_BackgroundGraphicObject {
-	~V2d_BackgroundGraphicObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_BackgroundGraphicObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -462,9 +570,9 @@ class V2d_View : public Viewer_View {
 		void Pan(const Standard_Integer dx, const Standard_Integer dy);
 		%feature("autodoc", "1");
 		Quantity_Length Convert(const Standard_Integer V) const;
-		%feature("autodoc","Convert(Standard_Integer X, Standard_Integer Y)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Convert(Standard_Integer X, Standard_Integer Y) -> [Standard_RealStandard_Real]");
 		void Convert(const Standard_Integer X, const Standard_Integer Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Convert(Quantity_Length ViewX, Quantity_Length ViewY)->[Standard_IntegerStandard_Integer]");
+		%feature("autodoc","Convert(Quantity_Length ViewX, Quantity_Length ViewY) -> [Standard_IntegerStandard_Integer]");
 		void Convert(const Quantity_Length ViewX, const Quantity_Length ViewY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Convert(const Quantity_Length aDriverSize) const;
@@ -512,7 +620,7 @@ class V2d_View : public Viewer_View {
 		void PostScriptOutput(const char * aFile, const Quantity_Length aWidth, const Quantity_Length aHeight, const Quantity_Length aXCenter, const Quantity_Length aYCenter, const Quantity_Factor aScale, const Aspect_TypeOfColorSpace aTypeOfColorSpace) const;
 		%feature("autodoc", "1");
 		void ScreenPostScriptOutput(const char * aFile, const Quantity_Length aWidth, const Quantity_Length aHeight, const Aspect_TypeOfColorSpace aTypeOfColorSpace) const;
-		%feature("autodoc","Hit(Standard_Integer X, Standard_Integer Y)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Hit(Standard_Integer X, Standard_Integer Y) -> [Standard_RealStandard_Real]");
 		void Hit(const Standard_Integer X, const Standard_Integer Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void ShowHit(const Standard_Integer X, const Standard_Integer Y);
@@ -532,7 +640,7 @@ class V2d_View : public Viewer_View {
 		Handle_Aspect_WindowDriver Driver() const;
 		%feature("autodoc", "1");
 		Quantity_Factor Zoom() const;
-		%feature("autodoc","Center()->[Standard_Real, Standard_Real]");
+		%feature("autodoc","Center() -> [Standard_Real, Standard_Real]");
 		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Size() const;
@@ -540,7 +648,7 @@ class V2d_View : public Viewer_View {
 		Quantity_NameOfColor Color() const;
 		%feature("autodoc", "1");
 		void Color(Quantity_Color & color) const;
-		%feature("autodoc","Scroll()->[Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+		%feature("autodoc","Scroll() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 		void Scroll(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer DefaultHighlightColor() const;
@@ -566,10 +674,18 @@ class V2d_View : public Viewer_View {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V2d_View::~V2d_View %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V2d_View {
-	~V2d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_View\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -591,10 +707,18 @@ class V2d_DefaultMap {
 		Handle_Aspect_MarkMap MarkMap();
 
 };
+%feature("shadow") V2d_DefaultMap::~V2d_DefaultMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V2d_DefaultMap {
-	~V2d_DefaultMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_DefaultMap\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -652,7 +776,7 @@ class V2d_Viewer : public Viewer_Viewer {
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		Aspect_GridType GridType() const;
-		%feature("autodoc","Hit(Quantity_Length X, Quantity_Length Y)->[Standard_RealStandard_Real]");
+		%feature("autodoc","Hit(Quantity_Length X, Quantity_Length Y) -> [Standard_RealStandard_Real]");
 		void Hit(const Quantity_Length X, const Quantity_Length Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void ActivateGrid(const Aspect_GridType aGridType, const Aspect_GridDrawMode aGridDrawMode);
@@ -660,11 +784,11 @@ class V2d_Viewer : public Viewer_Viewer {
 		void DeactivateGrid();
 		%feature("autodoc", "1");
 		Standard_Boolean IsActive() const;
-		%feature("autodoc","RectangularGridValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","RectangularGridValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 		void RectangularGridValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Quantity_PlaneAngle & RotationAngle) const;
 		%feature("autodoc", "1");
 		void SetRectangularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length XStep, const Quantity_Length YStep, const Quantity_PlaneAngle RotationAngle);
-		%feature("autodoc","CircularGridValues()->[Standard_Real, Standard_Real, Standard_Real, Standard_Integer]");
+		%feature("autodoc","CircularGridValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Integer]");
 		void CircularGridValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Quantity_PlaneAngle & RotationAngle) const;
 		%feature("autodoc", "1");
 		void SetCircularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length RadiusStep, const Standard_Integer DivisionNumber, const Quantity_PlaneAngle RotationAngle);
@@ -684,9 +808,17 @@ class V2d_Viewer : public Viewer_Viewer {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") V2d_Viewer::~V2d_Viewer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend V2d_Viewer {
-	~V2d_Viewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of V2d_Viewer\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include Storage_dependencies.i
 
 
@@ -89,10 +93,18 @@ class Handle_Storage_StreamReadError : public Handle_Standard_Failure {
 	return (Storage_StreamReadError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_StreamReadError::~Handle_Storage_StreamReadError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_StreamReadError {
-	~Handle_Storage_StreamReadError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamReadError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -119,10 +131,18 @@ class Handle_Storage_StreamExtCharParityError : public Handle_Storage_StreamRead
 	return (Storage_StreamExtCharParityError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_StreamExtCharParityError::~Handle_Storage_StreamExtCharParityError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_StreamExtCharParityError {
-	~Handle_Storage_StreamExtCharParityError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamExtCharParityError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -149,10 +169,18 @@ class Handle_Storage_StreamTypeMismatchError : public Handle_Storage_StreamReadE
 	return (Storage_StreamTypeMismatchError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_StreamTypeMismatchError::~Handle_Storage_StreamTypeMismatchError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_StreamTypeMismatchError {
-	~Handle_Storage_StreamTypeMismatchError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamTypeMismatchError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -179,10 +207,18 @@ class Handle_Storage_HArrayOfCallBack : public Handle_MMgt_TShared {
 	return (Storage_HArrayOfCallBack*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_HArrayOfCallBack::~Handle_Storage_HArrayOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_HArrayOfCallBack {
-	~Handle_Storage_HArrayOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HArrayOfCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -209,10 +245,18 @@ class Handle_Storage_InternalData : public Handle_MMgt_TShared {
 	return (Storage_InternalData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_InternalData::~Handle_Storage_InternalData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_InternalData {
-	~Handle_Storage_InternalData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_InternalData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -239,10 +283,18 @@ class Handle_Storage_StreamWriteError : public Handle_Standard_Failure {
 	return (Storage_StreamWriteError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_StreamWriteError::~Handle_Storage_StreamWriteError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_StreamWriteError {
-	~Handle_Storage_StreamWriteError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamWriteError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -269,10 +321,18 @@ class Handle_Storage_DataMapNodeOfMapOfPers : public Handle_TCollection_MapNode 
 	return (Storage_DataMapNodeOfMapOfPers*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_DataMapNodeOfMapOfPers::~Handle_Storage_DataMapNodeOfMapOfPers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_DataMapNodeOfMapOfPers {
-	~Handle_Storage_DataMapNodeOfMapOfPers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_DataMapNodeOfMapOfPers\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -299,10 +359,18 @@ class Handle_Storage_SequenceNodeOfSeqOfPersistent : public Handle_TCollection_S
 	return (Storage_SequenceNodeOfSeqOfPersistent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_SequenceNodeOfSeqOfPersistent::~Handle_Storage_SequenceNodeOfSeqOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_SequenceNodeOfSeqOfPersistent {
-	~Handle_Storage_SequenceNodeOfSeqOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -329,10 +397,18 @@ class Handle_Storage_StreamModeError : public Handle_Standard_Failure {
 	return (Storage_StreamModeError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_StreamModeError::~Handle_Storage_StreamModeError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_StreamModeError {
-	~Handle_Storage_StreamModeError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamModeError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -359,10 +435,18 @@ class Handle_Storage_HSeqOfPersistent : public Handle_MMgt_TShared {
 	return (Storage_HSeqOfPersistent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_HSeqOfPersistent::~Handle_Storage_HSeqOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_HSeqOfPersistent {
-	~Handle_Storage_HSeqOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HSeqOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -389,10 +473,18 @@ class Handle_Storage_HPArray : public Handle_MMgt_TShared {
 	return (Storage_HPArray*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_HPArray::~Handle_Storage_HPArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_HPArray {
-	~Handle_Storage_HPArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HPArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -419,10 +511,18 @@ class Handle_Storage_StreamFormatError : public Handle_Standard_Failure {
 	return (Storage_StreamFormatError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_StreamFormatError::~Handle_Storage_StreamFormatError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_StreamFormatError {
-	~Handle_Storage_StreamFormatError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamFormatError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -449,10 +549,18 @@ class Handle_Storage_TypedCallBack : public Handle_MMgt_TShared {
 	return (Storage_TypedCallBack*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_TypedCallBack::~Handle_Storage_TypedCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_TypedCallBack {
-	~Handle_Storage_TypedCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_TypedCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -479,10 +587,18 @@ class Handle_Storage_SequenceNodeOfSeqOfCallBack : public Handle_TCollection_Seq
 	return (Storage_SequenceNodeOfSeqOfCallBack*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_SequenceNodeOfSeqOfCallBack::~Handle_Storage_SequenceNodeOfSeqOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
-	~Handle_Storage_SequenceNodeOfSeqOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -509,10 +625,18 @@ class Handle_Storage_Root : public Handle_MMgt_TShared {
 	return (Storage_Root*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_Root::~Handle_Storage_Root %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_Root {
-	~Handle_Storage_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_Root\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -539,10 +663,18 @@ class Handle_Storage_HSeqOfCallBack : public Handle_MMgt_TShared {
 	return (Storage_HSeqOfCallBack*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_HSeqOfCallBack::~Handle_Storage_HSeqOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_HSeqOfCallBack {
-	~Handle_Storage_HSeqOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HSeqOfCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -569,10 +701,18 @@ class Handle_Storage_Schema : public Handle_MMgt_TShared {
 	return (Storage_Schema*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_Schema::~Handle_Storage_Schema %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_Schema {
-	~Handle_Storage_Schema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_Schema\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -599,10 +739,18 @@ class Handle_Storage_Data : public Handle_MMgt_TShared {
 	return (Storage_Data*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_Data::~Handle_Storage_Data %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_Data {
-	~Handle_Storage_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_Data\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -629,10 +777,18 @@ class Handle_Storage_HArrayOfSchema : public Handle_MMgt_TShared {
 	return (Storage_HArrayOfSchema*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_HArrayOfSchema::~Handle_Storage_HArrayOfSchema %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_HArrayOfSchema {
-	~Handle_Storage_HArrayOfSchema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HArrayOfSchema\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -659,10 +815,18 @@ class Handle_Storage_DataMapNodeOfMapOfCallBack : public Handle_TCollection_MapN
 	return (Storage_DataMapNodeOfMapOfCallBack*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_DataMapNodeOfMapOfCallBack::~Handle_Storage_DataMapNodeOfMapOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_DataMapNodeOfMapOfCallBack {
-	~Handle_Storage_DataMapNodeOfMapOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_DataMapNodeOfMapOfCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -689,10 +853,18 @@ class Handle_Storage_RootData : public Handle_MMgt_TShared {
 	return (Storage_RootData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_RootData::~Handle_Storage_RootData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_RootData {
-	~Handle_Storage_RootData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_RootData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -719,10 +891,18 @@ class Handle_Storage_IndexedDataMapNodeOfPType : public Handle_TCollection_MapNo
 	return (Storage_IndexedDataMapNodeOfPType*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_IndexedDataMapNodeOfPType::~Handle_Storage_IndexedDataMapNodeOfPType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_IndexedDataMapNodeOfPType {
-	~Handle_Storage_IndexedDataMapNodeOfPType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_IndexedDataMapNodeOfPType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -749,10 +929,18 @@ class Handle_Storage_SequenceNodeOfSeqOfRoot : public Handle_TCollection_SeqNode
 	return (Storage_SequenceNodeOfSeqOfRoot*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_SequenceNodeOfSeqOfRoot::~Handle_Storage_SequenceNodeOfSeqOfRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_SequenceNodeOfSeqOfRoot {
-	~Handle_Storage_SequenceNodeOfSeqOfRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -779,10 +967,18 @@ class Handle_Storage_TypeData : public Handle_MMgt_TShared {
 	return (Storage_TypeData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_TypeData::~Handle_Storage_TypeData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_TypeData {
-	~Handle_Storage_TypeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_TypeData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -809,10 +1005,18 @@ class Handle_Storage_StdMapNodeOfMapOfAsciiString : public Handle_TCollection_Ma
 	return (Storage_StdMapNodeOfMapOfAsciiString*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_StdMapNodeOfMapOfAsciiString::~Handle_Storage_StdMapNodeOfMapOfAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_StdMapNodeOfMapOfAsciiString {
-	~Handle_Storage_StdMapNodeOfMapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StdMapNodeOfMapOfAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -839,10 +1043,18 @@ class Handle_Storage_HeaderData : public Handle_MMgt_TShared {
 	return (Storage_HeaderData*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_HeaderData::~Handle_Storage_HeaderData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_HeaderData {
-	~Handle_Storage_HeaderData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HeaderData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -869,10 +1081,18 @@ class Handle_Storage_CallBack : public Handle_MMgt_TShared {
 	return (Storage_CallBack*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_CallBack::~Handle_Storage_CallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_CallBack {
-	~Handle_Storage_CallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_CallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -899,10 +1119,18 @@ class Handle_Storage_DefaultCallBack : public Handle_Storage_CallBack {
 	return (Storage_DefaultCallBack*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_DefaultCallBack::~Handle_Storage_DefaultCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_DefaultCallBack {
-	~Handle_Storage_DefaultCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_DefaultCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -929,10 +1157,18 @@ class Handle_Storage_StreamUnknownTypeError : public Handle_Storage_StreamReadEr
 	return (Storage_StreamUnknownTypeError*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_StreamUnknownTypeError::~Handle_Storage_StreamUnknownTypeError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_StreamUnknownTypeError {
-	~Handle_Storage_StreamUnknownTypeError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamUnknownTypeError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -959,10 +1195,18 @@ class Handle_Storage_HSeqOfRoot : public Handle_MMgt_TShared {
 	return (Storage_HSeqOfRoot*)$self->Access();
 	}
 };
+%feature("shadow") Handle_Storage_HSeqOfRoot::~Handle_Storage_HSeqOfRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_Storage_HSeqOfRoot {
-	~Handle_Storage_HSeqOfRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HSeqOfRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -980,10 +1224,18 @@ class Storage_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterato
 		const TCollection_AsciiString & Key() const;
 
 };
+%feature("shadow") Storage_MapIteratorOfMapOfAsciiString::~Storage_MapIteratorOfMapOfAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_MapIteratorOfMapOfAsciiString {
-	~Storage_MapIteratorOfMapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_MapIteratorOfMapOfAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1019,10 +1271,18 @@ class Storage_Root : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_Root::~Storage_Root %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_Root {
-	~Storage_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_Root\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1066,10 +1326,18 @@ class Storage_HArrayOfCallBack : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_HArrayOfCallBack::~Storage_HArrayOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_HArrayOfCallBack {
-	~Storage_HArrayOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_HArrayOfCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1083,10 +1351,18 @@ class Storage {
 		TCollection_AsciiString Version();
 
 };
+%feature("shadow") Storage::~Storage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage {
-	~Storage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1126,10 +1402,18 @@ class Storage_ArrayOfCallBack {
 		Handle_Storage_CallBack & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Storage_ArrayOfCallBack::~Storage_ArrayOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_ArrayOfCallBack {
-	~Storage_ArrayOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_ArrayOfCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1171,10 +1455,18 @@ class Storage_RootData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_RootData::~Storage_RootData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_RootData {
-	~Storage_RootData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_RootData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1242,10 +1534,18 @@ class Storage_HSeqOfCallBack : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_HSeqOfCallBack::~Storage_HSeqOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_HSeqOfCallBack {
-	~Storage_HSeqOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1279,10 +1579,18 @@ class Storage_MapOfCallBack : public TCollection_BasicMap {
 		Handle_Storage_TypedCallBack & operator()(const TCollection_AsciiString &K);
 
 };
+%feature("shadow") Storage_MapOfCallBack::~Storage_MapOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_MapOfCallBack {
-	~Storage_MapOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_MapOfCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1308,10 +1616,18 @@ class Storage_InternalData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_InternalData::~Storage_InternalData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_InternalData {
-	~Storage_InternalData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_InternalData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1391,10 +1707,18 @@ class Storage_Data : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_Data::~Storage_Data %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_Data {
-	~Storage_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_Data\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1426,10 +1750,18 @@ class Storage_StreamReadError : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_StreamReadError::~Storage_StreamReadError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_StreamReadError {
-	~Storage_StreamReadError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_StreamReadError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1459,10 +1791,18 @@ class Storage_CallBack : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_CallBack::~Storage_CallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_CallBack {
-	~Storage_CallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_CallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1484,10 +1824,18 @@ class Storage_DefaultCallBack : public Storage_CallBack {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_DefaultCallBack::~Storage_DefaultCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_DefaultCallBack {
-	~Storage_DefaultCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_DefaultCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1531,10 +1879,18 @@ class Storage_HArrayOfSchema : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_HArrayOfSchema::~Storage_HArrayOfSchema %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_HArrayOfSchema {
-	~Storage_HArrayOfSchema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_HArrayOfSchema\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1588,10 +1944,18 @@ class Storage_SeqOfCallBack : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Storage_SeqOfCallBack::~Storage_SeqOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_SeqOfCallBack {
-	~Storage_SeqOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_SeqOfCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1619,10 +1983,18 @@ class Storage_DataMapNodeOfMapOfPers : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_DataMapNodeOfMapOfPers::~Storage_DataMapNodeOfMapOfPers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_DataMapNodeOfMapOfPers {
-	~Storage_DataMapNodeOfMapOfPers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_DataMapNodeOfMapOfPers\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1660,10 +2032,18 @@ class Storage_TypedCallBack : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_TypedCallBack::~Storage_TypedCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_TypedCallBack {
-	~Storage_TypedCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_TypedCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1695,10 +2075,18 @@ class Storage_StreamExtCharParityError : public Storage_StreamReadError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_StreamExtCharParityError::~Storage_StreamExtCharParityError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_StreamExtCharParityError {
-	~Storage_StreamExtCharParityError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_StreamExtCharParityError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1710,12 +2098,32 @@ class Storage_IndexedDataMapNodeOfPType : public TCollection_MapNode {
 		Storage_IndexedDataMapNodeOfPType(const TCollection_AsciiString &K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
 		TCollection_AsciiString & Key1() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Key2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		Standard_Integer & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1730,10 +2138,18 @@ class Storage_IndexedDataMapNodeOfPType : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_IndexedDataMapNodeOfPType::~Storage_IndexedDataMapNodeOfPType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_IndexedDataMapNodeOfPType {
-	~Storage_IndexedDataMapNodeOfPType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_IndexedDataMapNodeOfPType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1759,10 +2175,18 @@ class Storage_MapOfAsciiString : public TCollection_BasicMap {
 		Standard_Boolean Remove(const TCollection_AsciiString &aKey);
 
 };
+%feature("shadow") Storage_MapOfAsciiString::~Storage_MapOfAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_MapOfAsciiString {
-	~Storage_MapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_MapOfAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1806,10 +2230,18 @@ class Storage_HPArray : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_HPArray::~Storage_HPArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_HPArray {
-	~Storage_HPArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_HPArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1829,10 +2261,18 @@ class Storage_DataMapIteratorOfMapOfCallBack : public TCollection_BasicMapIterat
 		const Handle_Storage_TypedCallBack & Value() const;
 
 };
+%feature("shadow") Storage_DataMapIteratorOfMapOfCallBack::~Storage_DataMapIteratorOfMapOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_DataMapIteratorOfMapOfCallBack {
-	~Storage_DataMapIteratorOfMapOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_DataMapIteratorOfMapOfCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1866,10 +2306,18 @@ class Storage_MapOfPers : public TCollection_BasicMap {
 		Handle_Storage_Root & operator()(const TCollection_AsciiString &K);
 
 };
+%feature("shadow") Storage_MapOfPers::~Storage_MapOfPers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_MapOfPers {
-	~Storage_MapOfPers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_MapOfPers\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1961,10 +2409,18 @@ class Storage_Schema : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_Schema::~Storage_Schema %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_Schema {
-	~Storage_Schema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_Schema\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1976,10 +2432,18 @@ class Storage_stCONSTclCOM {
 		Storage_stCONSTclCOM();
 
 };
+%feature("shadow") Storage_stCONSTclCOM::~Storage_stCONSTclCOM %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_stCONSTclCOM {
-	~Storage_stCONSTclCOM() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_stCONSTclCOM\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2011,10 +2475,18 @@ class Storage_StreamWriteError : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_StreamWriteError::~Storage_StreamWriteError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_StreamWriteError {
-	~Storage_StreamWriteError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_StreamWriteError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2054,10 +2526,18 @@ class Storage_ArrayOfSchema {
 		Handle_Storage_Schema & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Storage_ArrayOfSchema::~Storage_ArrayOfSchema %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_ArrayOfSchema {
-	~Storage_ArrayOfSchema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_ArrayOfSchema\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2111,10 +2591,18 @@ class Storage_SeqOfRoot : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Storage_SeqOfRoot::~Storage_SeqOfRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_SeqOfRoot {
-	~Storage_SeqOfRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_SeqOfRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2134,10 +2622,18 @@ class Storage_DataMapIteratorOfMapOfPers : public TCollection_BasicMapIterator {
 		const Handle_Storage_Root & Value() const;
 
 };
+%feature("shadow") Storage_DataMapIteratorOfMapOfPers::~Storage_DataMapIteratorOfMapOfPers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_DataMapIteratorOfMapOfPers {
-	~Storage_DataMapIteratorOfMapOfPers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_DataMapIteratorOfMapOfPers\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2165,10 +2661,18 @@ class Storage_DataMapNodeOfMapOfCallBack : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_DataMapNodeOfMapOfCallBack::~Storage_DataMapNodeOfMapOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_DataMapNodeOfMapOfCallBack {
-	~Storage_DataMapNodeOfMapOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_DataMapNodeOfMapOfCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2200,10 +2704,18 @@ class Storage_StreamTypeMismatchError : public Storage_StreamReadError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_StreamTypeMismatchError::~Storage_StreamTypeMismatchError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_StreamTypeMismatchError {
-	~Storage_StreamTypeMismatchError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_StreamTypeMismatchError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2219,10 +2731,18 @@ class Storage_MapPSDHasher {
 		Standard_Boolean IsEqual(const Handle_Standard_Persistent &K1, const Handle_Standard_Persistent &K2);
 
 };
+%feature("shadow") Storage_MapPSDHasher::~Storage_MapPSDHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_MapPSDHasher {
-	~Storage_MapPSDHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_MapPSDHasher\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2254,10 +2774,18 @@ class Storage_StreamUnknownTypeError : public Storage_StreamReadError {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_StreamUnknownTypeError::~Storage_StreamUnknownTypeError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_StreamUnknownTypeError {
-	~Storage_StreamUnknownTypeError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_StreamUnknownTypeError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2325,10 +2853,18 @@ class Storage_HSeqOfPersistent : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_HSeqOfPersistent::~Storage_HSeqOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_HSeqOfPersistent {
-	~Storage_HSeqOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2356,7 +2892,7 @@ class Storage_BaseDriver {
 		virtual		Storage_Error EndWriteInfoSection();
 		%feature("autodoc", "1");
 		virtual		Storage_Error BeginReadInfoSection();
-		%feature("autodoc","ReadInfo()->Standard_Integer");
+		%feature("autodoc","ReadInfo() -> Standard_Integer");
 		virtual		void ReadInfo(Standard_Integer &OutValue, TCollection_AsciiString & dbVersion, TCollection_AsciiString & date, TCollection_AsciiString & schemaName, TCollection_AsciiString & schemaVersion, TCollection_ExtendedString & appName, TCollection_AsciiString & appVersion, TCollection_ExtendedString & objectType, TColStd_SequenceOfAsciiString & userInfo);
 		%feature("autodoc", "1");
 		virtual		Storage_Error EndReadInfoSection();
@@ -2384,7 +2920,7 @@ class Storage_BaseDriver {
 		virtual		Storage_Error BeginReadTypeSection();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer TypeSectionSize();
-		%feature("autodoc","ReadTypeInformations()->Standard_Integer");
+		%feature("autodoc","ReadTypeInformations() -> Standard_Integer");
 		virtual		void ReadTypeInformations(Standard_Integer &OutValue, TCollection_AsciiString & typeName);
 		%feature("autodoc", "1");
 		virtual		Storage_Error EndReadTypeSection();
@@ -2400,7 +2936,7 @@ class Storage_BaseDriver {
 		virtual		Storage_Error BeginReadRootSection();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer RootSectionSize();
-		%feature("autodoc","ReadRoot()->Standard_Integer");
+		%feature("autodoc","ReadRoot() -> Standard_Integer");
 		virtual		void ReadRoot(TCollection_AsciiString & rootName, Standard_Integer &OutValue, TCollection_AsciiString & aType);
 		%feature("autodoc", "1");
 		virtual		Storage_Error EndReadRootSection();
@@ -2416,7 +2952,7 @@ class Storage_BaseDriver {
 		virtual		Storage_Error BeginReadRefSection();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer RefSectionSize();
-		%feature("autodoc","ReadReferenceType()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","ReadReferenceType() -> [Standard_Integer, Standard_Integer]");
 		virtual		void ReadReferenceType(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Storage_Error EndReadRefSection();
@@ -2436,7 +2972,7 @@ class Storage_BaseDriver {
 		virtual		Storage_Error EndWriteDataSection();
 		%feature("autodoc", "1");
 		virtual		Storage_Error BeginReadDataSection();
-		%feature("autodoc","ReadPersistentObjectHeader()->[Standard_Integer, Standard_Integer]");
+		%feature("autodoc","ReadPersistentObjectHeader() -> [Standard_Integer, Standard_Integer]");
 		virtual		void ReadPersistentObjectHeader(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void BeginReadPersistentObjectData();
@@ -2464,17 +3000,17 @@ class Storage_BaseDriver {
 		virtual		Storage_BaseDriver & PutReal(const Standard_Real aValue);
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & PutShortReal(const Standard_ShortReal aValue);
-		%feature("autodoc","GetReference()->Standard_Integer");
+		%feature("autodoc","GetReference() -> Standard_Integer");
 		virtual		Storage_BaseDriver & GetReference(Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & GetCharacter(Standard_Character & aValue);
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & GetExtCharacter(Standard_ExtCharacter & aValue);
-		%feature("autodoc","GetInteger()->Standard_Integer");
+		%feature("autodoc","GetInteger() -> Standard_Integer");
 		virtual		Storage_BaseDriver & GetInteger(Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & GetBoolean(Standard_Boolean & aValue);
-		%feature("autodoc","GetReal()->Standard_Real");
+		%feature("autodoc","GetReal() -> Standard_Real");
 		virtual		Storage_BaseDriver & GetReal(Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & GetShortReal(Standard_ShortReal & aValue);
@@ -2482,10 +3018,18 @@ class Storage_BaseDriver {
 		virtual		Storage_Error Close();
 
 };
+%feature("shadow") Storage_BaseDriver::~Storage_BaseDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_BaseDriver {
-	~Storage_BaseDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_BaseDriver\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2511,10 +3055,18 @@ class Storage_SequenceNodeOfSeqOfCallBack : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_SequenceNodeOfSeqOfCallBack::~Storage_SequenceNodeOfSeqOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_SequenceNodeOfSeqOfCallBack {
-	~Storage_SequenceNodeOfSeqOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfCallBack\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2582,10 +3134,18 @@ class Storage_HSeqOfRoot : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_HSeqOfRoot::~Storage_HSeqOfRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_HSeqOfRoot {
-	~Storage_HSeqOfRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2611,10 +3171,18 @@ class Storage_SequenceNodeOfSeqOfRoot : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_SequenceNodeOfSeqOfRoot::~Storage_SequenceNodeOfSeqOfRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_SequenceNodeOfSeqOfRoot {
-	~Storage_SequenceNodeOfSeqOfRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfRoot\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2668,10 +3236,18 @@ class Storage_SeqOfPersistent : public TCollection_BaseSequence {
 		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
+%feature("shadow") Storage_SeqOfPersistent::~Storage_SeqOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_SeqOfPersistent {
-	~Storage_SeqOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_SeqOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2711,10 +3287,18 @@ class Storage_PArray {
 		Handle_Standard_Persistent & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") Storage_PArray::~Storage_PArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_PArray {
-	~Storage_PArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_PArray\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2746,10 +3330,18 @@ class Storage_StreamModeError : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_StreamModeError::~Storage_StreamModeError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_StreamModeError {
-	~Storage_StreamModeError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_StreamModeError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2775,10 +3367,18 @@ class Storage_SequenceNodeOfSeqOfPersistent : public TCollection_SeqNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_SequenceNodeOfSeqOfPersistent::~Storage_SequenceNodeOfSeqOfPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_SequenceNodeOfSeqOfPersistent {
-	~Storage_SequenceNodeOfSeqOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfPersistent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2816,10 +3416,18 @@ class Storage_TypeData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_TypeData::~Storage_TypeData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_TypeData {
-	~Storage_TypeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_TypeData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2851,22 +3459,50 @@ class Storage_PType : public TCollection_BasicMap {
 		const Standard_Integer & FindFromIndex(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromIndex(const Standard_Integer I) {
+				return (Standard_Integer) $self->ChangeFromIndex(I);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromIndex(Standard_Integer value ,const Standard_Integer I) {
+				$self->ChangeFromIndex(I)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer I);
 		%feature("autodoc", "1");
 		Standard_Integer FindIndex(const TCollection_AsciiString &K) const;
 		%feature("autodoc", "1");
 		const Standard_Integer & FindFromKey(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		Standard_Integer & ChangeFromKey(const TCollection_AsciiString &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromKey(const TCollection_AsciiString &K) {
+				return (Standard_Integer) $self->ChangeFromKey(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromKey(Standard_Integer value ,const TCollection_AsciiString &K) {
+				$self->ChangeFromKey(K)=value;
+				}
+		};
 
 };
+%feature("shadow") Storage_PType::~Storage_PType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_PType {
-	~Storage_PType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_PType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2926,10 +3562,18 @@ class Storage_HeaderData : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_HeaderData::~Storage_HeaderData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_HeaderData {
-	~Storage_HeaderData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_HeaderData\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2961,10 +3605,18 @@ class Storage_StreamFormatError : public Standard_Failure {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_StreamFormatError::~Storage_StreamFormatError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_StreamFormatError {
-	~Storage_StreamFormatError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_StreamFormatError\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2990,9 +3642,17 @@ class Storage_StdMapNodeOfMapOfAsciiString : public TCollection_MapNode {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") Storage_StdMapNodeOfMapOfAsciiString::~Storage_StdMapNodeOfMapOfAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Storage_StdMapNodeOfMapOfAsciiString {
-	~Storage_StdMapNodeOfMapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Storage_StdMapNodeOfMapOfAsciiString\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
