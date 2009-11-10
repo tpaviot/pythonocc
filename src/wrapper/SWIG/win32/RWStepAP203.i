@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include RWStepAP203_dependencies.i
 
 
@@ -48,10 +52,18 @@ class RWStepAP203_RWChangeRequest {
 		void Share(const Handle_StepAP203_ChangeRequest &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepAP203_RWChangeRequest::~RWStepAP203_RWChangeRequest %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepAP203_RWChangeRequest {
-	~RWStepAP203_RWChangeRequest() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWChangeRequest\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -69,10 +81,18 @@ class RWStepAP203_RWCcDesignSecurityClassification {
 		void Share(const Handle_StepAP203_CcDesignSecurityClassification &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepAP203_RWCcDesignSecurityClassification::~RWStepAP203_RWCcDesignSecurityClassification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepAP203_RWCcDesignSecurityClassification {
-	~RWStepAP203_RWCcDesignSecurityClassification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignSecurityClassification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -90,10 +110,18 @@ class RWStepAP203_RWStartRequest {
 		void Share(const Handle_StepAP203_StartRequest &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepAP203_RWStartRequest::~RWStepAP203_RWStartRequest %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepAP203_RWStartRequest {
-	~RWStepAP203_RWStartRequest() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWStartRequest\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -111,10 +139,18 @@ class RWStepAP203_RWStartWork {
 		void Share(const Handle_StepAP203_StartWork &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepAP203_RWStartWork::~RWStepAP203_RWStartWork %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepAP203_RWStartWork {
-	~RWStepAP203_RWStartWork() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWStartWork\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -132,10 +168,18 @@ class RWStepAP203_RWCcDesignDateAndTimeAssignment {
 		void Share(const Handle_StepAP203_CcDesignDateAndTimeAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepAP203_RWCcDesignDateAndTimeAssignment::~RWStepAP203_RWCcDesignDateAndTimeAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepAP203_RWCcDesignDateAndTimeAssignment {
-	~RWStepAP203_RWCcDesignDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignDateAndTimeAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -153,10 +197,18 @@ class RWStepAP203_RWChange {
 		void Share(const Handle_StepAP203_Change &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepAP203_RWChange::~RWStepAP203_RWChange %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepAP203_RWChange {
-	~RWStepAP203_RWChange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWChange\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -174,10 +226,18 @@ class RWStepAP203_RWCcDesignCertification {
 		void Share(const Handle_StepAP203_CcDesignCertification &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepAP203_RWCcDesignCertification::~RWStepAP203_RWCcDesignCertification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepAP203_RWCcDesignCertification {
-	~RWStepAP203_RWCcDesignCertification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignCertification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -195,10 +255,18 @@ class RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
 		void Share(const Handle_StepAP203_CcDesignPersonAndOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepAP203_RWCcDesignPersonAndOrganizationAssignment::~RWStepAP203_RWCcDesignPersonAndOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
-	~RWStepAP203_RWCcDesignPersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignPersonAndOrganizationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -216,10 +284,18 @@ class RWStepAP203_RWCcDesignApproval {
 		void Share(const Handle_StepAP203_CcDesignApproval &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepAP203_RWCcDesignApproval::~RWStepAP203_RWCcDesignApproval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepAP203_RWCcDesignApproval {
-	~RWStepAP203_RWCcDesignApproval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignApproval\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +313,18 @@ class RWStepAP203_RWCcDesignSpecificationReference {
 		void Share(const Handle_StepAP203_CcDesignSpecificationReference &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepAP203_RWCcDesignSpecificationReference::~RWStepAP203_RWCcDesignSpecificationReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepAP203_RWCcDesignSpecificationReference {
-	~RWStepAP203_RWCcDesignSpecificationReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignSpecificationReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -258,9 +342,17 @@ class RWStepAP203_RWCcDesignContract {
 		void Share(const Handle_StepAP203_CcDesignContract &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepAP203_RWCcDesignContract::~RWStepAP203_RWCcDesignContract %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepAP203_RWCcDesignContract {
-	~RWStepAP203_RWCcDesignContract() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignContract\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

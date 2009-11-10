@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StepAP214_dependencies.i
 
 
@@ -57,10 +61,18 @@ class Handle_StepAP214_Class : public Handle_StepBasic_Group {
 	return (StepAP214_Class*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_Class::~Handle_StepAP214_Class %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_Class {
-	~Handle_StepAP214_Class() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_Class\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -87,10 +99,18 @@ class Handle_StepAP214_ExternallyDefinedGeneralProperty : public Handle_StepBasi
 	return (StepAP214_ExternallyDefinedGeneralProperty*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_ExternallyDefinedGeneralProperty::~Handle_StepAP214_ExternallyDefinedGeneralProperty %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_ExternallyDefinedGeneralProperty {
-	~Handle_StepAP214_ExternallyDefinedGeneralProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_ExternallyDefinedGeneralProperty\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -117,10 +137,18 @@ class Handle_StepAP214_AppliedSecurityClassificationAssignment : public Handle_S
 	return (StepAP214_AppliedSecurityClassificationAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AppliedSecurityClassificationAssignment::~Handle_StepAP214_AppliedSecurityClassificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AppliedSecurityClassificationAssignment {
-	~Handle_StepAP214_AppliedSecurityClassificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedSecurityClassificationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -147,10 +175,18 @@ class Handle_StepAP214_AutoDesignActualDateAssignment : public Handle_StepBasic_
 	return (StepAP214_AutoDesignActualDateAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AutoDesignActualDateAssignment::~Handle_StepAP214_AutoDesignActualDateAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AutoDesignActualDateAssignment {
-	~Handle_StepAP214_AutoDesignActualDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignActualDateAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -177,10 +213,18 @@ class Handle_StepAP214_AutoDesignPresentedItem : public Handle_StepVisual_Presen
 	return (StepAP214_AutoDesignPresentedItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AutoDesignPresentedItem::~Handle_StepAP214_AutoDesignPresentedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AutoDesignPresentedItem {
-	~Handle_StepAP214_AutoDesignPresentedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignPresentedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -207,10 +251,18 @@ class Handle_StepAP214_HArray1OfGroupItem : public Handle_MMgt_TShared {
 	return (StepAP214_HArray1OfGroupItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfGroupItem::~Handle_StepAP214_HArray1OfGroupItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfGroupItem {
-	~Handle_StepAP214_HArray1OfGroupItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfGroupItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -237,10 +289,18 @@ class Handle_StepAP214_HArray1OfApprovalItem : public Handle_MMgt_TShared {
 	return (StepAP214_HArray1OfApprovalItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfApprovalItem::~Handle_StepAP214_HArray1OfApprovalItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfApprovalItem {
-	~Handle_StepAP214_HArray1OfApprovalItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfApprovalItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -267,10 +327,18 @@ class Handle_StepAP214_HArray1OfSecurityClassificationItem : public Handle_MMgt_
 	return (StepAP214_HArray1OfSecurityClassificationItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfSecurityClassificationItem::~Handle_StepAP214_HArray1OfSecurityClassificationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfSecurityClassificationItem {
-	~Handle_StepAP214_HArray1OfSecurityClassificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfSecurityClassificationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -297,10 +365,18 @@ class Handle_StepAP214_AppliedPersonAndOrganizationAssignment : public Handle_St
 	return (StepAP214_AppliedPersonAndOrganizationAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AppliedPersonAndOrganizationAssignment::~Handle_StepAP214_AppliedPersonAndOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AppliedPersonAndOrganizationAssignment {
-	~Handle_StepAP214_AppliedPersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedPersonAndOrganizationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -327,10 +403,18 @@ class Handle_StepAP214_AppliedGroupAssignment : public Handle_StepBasic_GroupAss
 	return (StepAP214_AppliedGroupAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AppliedGroupAssignment::~Handle_StepAP214_AppliedGroupAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AppliedGroupAssignment {
-	~Handle_StepAP214_AppliedGroupAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedGroupAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -357,10 +441,18 @@ class Handle_StepAP214_AutoDesignNominalDateAssignment : public Handle_StepBasic
 	return (StepAP214_AutoDesignNominalDateAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AutoDesignNominalDateAssignment::~Handle_StepAP214_AutoDesignNominalDateAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AutoDesignNominalDateAssignment {
-	~Handle_StepAP214_AutoDesignNominalDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignNominalDateAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -387,10 +479,18 @@ class Handle_StepAP214_HArray1OfDateAndTimeItem : public Handle_MMgt_TShared {
 	return (StepAP214_HArray1OfDateAndTimeItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfDateAndTimeItem::~Handle_StepAP214_HArray1OfDateAndTimeItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfDateAndTimeItem {
-	~Handle_StepAP214_HArray1OfDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfDateAndTimeItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -417,10 +517,18 @@ class Handle_StepAP214_AppliedDateAndTimeAssignment : public Handle_StepBasic_Da
 	return (StepAP214_AppliedDateAndTimeAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AppliedDateAndTimeAssignment::~Handle_StepAP214_AppliedDateAndTimeAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AppliedDateAndTimeAssignment {
-	~Handle_StepAP214_AppliedDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedDateAndTimeAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -447,10 +555,18 @@ class Handle_StepAP214_RepItemGroup : public Handle_StepBasic_Group {
 	return (StepAP214_RepItemGroup*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_RepItemGroup::~Handle_StepAP214_RepItemGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_RepItemGroup {
-	~Handle_StepAP214_RepItemGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_RepItemGroup\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -477,10 +593,18 @@ class Handle_StepAP214_HArray1OfDocumentReferenceItem : public Handle_MMgt_TShar
 	return (StepAP214_HArray1OfDocumentReferenceItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfDocumentReferenceItem::~Handle_StepAP214_HArray1OfDocumentReferenceItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfDocumentReferenceItem {
-	~Handle_StepAP214_HArray1OfDocumentReferenceItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfDocumentReferenceItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -507,10 +631,18 @@ class Handle_StepAP214_HArray1OfPresentedItemSelect : public Handle_MMgt_TShared
 	return (StepAP214_HArray1OfPresentedItemSelect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfPresentedItemSelect::~Handle_StepAP214_HArray1OfPresentedItemSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfPresentedItemSelect {
-	~Handle_StepAP214_HArray1OfPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfPresentedItemSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -537,10 +669,18 @@ class Handle_StepAP214_AppliedDocumentReference : public Handle_StepBasic_Docume
 	return (StepAP214_AppliedDocumentReference*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AppliedDocumentReference::~Handle_StepAP214_AppliedDocumentReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AppliedDocumentReference {
-	~Handle_StepAP214_AppliedDocumentReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedDocumentReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -567,10 +707,18 @@ class Handle_StepAP214_AppliedDateAssignment : public Handle_StepBasic_DateAssig
 	return (StepAP214_AppliedDateAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AppliedDateAssignment::~Handle_StepAP214_AppliedDateAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AppliedDateAssignment {
-	~Handle_StepAP214_AppliedDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedDateAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -597,10 +745,18 @@ class Handle_StepAP214_HArray1OfOrganizationItem : public Handle_MMgt_TShared {
 	return (StepAP214_HArray1OfOrganizationItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfOrganizationItem::~Handle_StepAP214_HArray1OfOrganizationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfOrganizationItem {
-	~Handle_StepAP214_HArray1OfOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfOrganizationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -627,10 +783,18 @@ class Handle_StepAP214_HArray1OfAutoDesignReferencingItem : public Handle_MMgt_T
 	return (StepAP214_HArray1OfAutoDesignReferencingItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignReferencingItem::~Handle_StepAP214_HArray1OfAutoDesignReferencingItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfAutoDesignReferencingItem {
-	~Handle_StepAP214_HArray1OfAutoDesignReferencingItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignReferencingItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -657,10 +821,18 @@ class Handle_StepAP214_AutoDesignOrganizationAssignment : public Handle_StepBasi
 	return (StepAP214_AutoDesignOrganizationAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AutoDesignOrganizationAssignment::~Handle_StepAP214_AutoDesignOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AutoDesignOrganizationAssignment {
-	~Handle_StepAP214_AutoDesignOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignOrganizationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -687,10 +859,18 @@ class Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment : public Handle_St
 	return (StepAP214_AutoDesignNominalDateAndTimeAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment::~Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment {
-	~Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -717,10 +897,18 @@ class Handle_StepAP214_HArray1OfDateItem : public Handle_MMgt_TShared {
 	return (StepAP214_HArray1OfDateItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfDateItem::~Handle_StepAP214_HArray1OfDateItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfDateItem {
-	~Handle_StepAP214_HArray1OfDateItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfDateItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -747,10 +935,18 @@ class Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem : public Handle_MMgt_TS
 	return (StepAP214_HArray1OfAutoDesignGeneralOrgItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem::~Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem {
-	~Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -777,10 +973,18 @@ class Handle_StepAP214_AutoDesignApprovalAssignment : public Handle_StepBasic_Ap
 	return (StepAP214_AutoDesignApprovalAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AutoDesignApprovalAssignment::~Handle_StepAP214_AutoDesignApprovalAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AutoDesignApprovalAssignment {
-	~Handle_StepAP214_AutoDesignApprovalAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignApprovalAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -807,10 +1011,18 @@ class Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment : public Handle
 	return (StepAP214_AutoDesignPersonAndOrganizationAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment::~Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment {
-	~Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -837,10 +1049,18 @@ class Handle_StepAP214_HArray1OfAutoDesignDatedItem : public Handle_MMgt_TShared
 	return (StepAP214_HArray1OfAutoDesignDatedItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignDatedItem::~Handle_StepAP214_HArray1OfAutoDesignDatedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfAutoDesignDatedItem {
-	~Handle_StepAP214_HArray1OfAutoDesignDatedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDatedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -867,10 +1087,18 @@ class Handle_StepAP214_ExternallyDefinedClass : public Handle_StepAP214_Class {
 	return (StepAP214_ExternallyDefinedClass*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_ExternallyDefinedClass::~Handle_StepAP214_ExternallyDefinedClass %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_ExternallyDefinedClass {
-	~Handle_StepAP214_ExternallyDefinedClass() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_ExternallyDefinedClass\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -897,10 +1125,18 @@ class Handle_StepAP214_AutoDesignSecurityClassificationAssignment : public Handl
 	return (StepAP214_AutoDesignSecurityClassificationAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AutoDesignSecurityClassificationAssignment::~Handle_StepAP214_AutoDesignSecurityClassificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AutoDesignSecurityClassificationAssignment {
-	~Handle_StepAP214_AutoDesignSecurityClassificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignSecurityClassificationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -927,10 +1163,18 @@ class Handle_StepAP214_AutoDesignDateAndPersonAssignment : public Handle_StepBas
 	return (StepAP214_AutoDesignDateAndPersonAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AutoDesignDateAndPersonAssignment::~Handle_StepAP214_AutoDesignDateAndPersonAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AutoDesignDateAndPersonAssignment {
-	~Handle_StepAP214_AutoDesignDateAndPersonAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignDateAndPersonAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -957,10 +1201,18 @@ class Handle_StepAP214_AutoDesignDocumentReference : public Handle_StepBasic_Doc
 	return (StepAP214_AutoDesignDocumentReference*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AutoDesignDocumentReference::~Handle_StepAP214_AutoDesignDocumentReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AutoDesignDocumentReference {
-	~Handle_StepAP214_AutoDesignDocumentReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignDocumentReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -987,10 +1239,18 @@ class Handle_StepAP214_AutoDesignActualDateAndTimeAssignment : public Handle_Ste
 	return (StepAP214_AutoDesignActualDateAndTimeAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AutoDesignActualDateAndTimeAssignment::~Handle_StepAP214_AutoDesignActualDateAndTimeAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AutoDesignActualDateAndTimeAssignment {
-	~Handle_StepAP214_AutoDesignActualDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignActualDateAndTimeAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1017,10 +1277,18 @@ class Handle_StepAP214_HArray1OfAutoDesignGroupedItem : public Handle_MMgt_TShar
 	return (StepAP214_HArray1OfAutoDesignGroupedItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignGroupedItem::~Handle_StepAP214_HArray1OfAutoDesignGroupedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfAutoDesignGroupedItem {
-	~Handle_StepAP214_HArray1OfAutoDesignGroupedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignGroupedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1047,10 +1315,18 @@ class Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem : public Handle_MMgt
 	return (StepAP214_HArray1OfAutoDesignDateAndPersonItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem::~Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem {
-	~Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1077,10 +1353,18 @@ class Handle_StepAP214_AutoDesignGroupAssignment : public Handle_StepBasic_Group
 	return (StepAP214_AutoDesignGroupAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AutoDesignGroupAssignment::~Handle_StepAP214_AutoDesignGroupAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AutoDesignGroupAssignment {
-	~Handle_StepAP214_AutoDesignGroupAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignGroupAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1107,10 +1391,18 @@ class Handle_StepAP214_HArray1OfExternalIdentificationItem : public Handle_MMgt_
 	return (StepAP214_HArray1OfExternalIdentificationItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfExternalIdentificationItem::~Handle_StepAP214_HArray1OfExternalIdentificationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfExternalIdentificationItem {
-	~Handle_StepAP214_HArray1OfExternalIdentificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfExternalIdentificationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1137,10 +1429,18 @@ class Handle_StepAP214_HArray1OfPersonAndOrganizationItem : public Handle_MMgt_T
 	return (StepAP214_HArray1OfPersonAndOrganizationItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfPersonAndOrganizationItem::~Handle_StepAP214_HArray1OfPersonAndOrganizationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfPersonAndOrganizationItem {
-	~Handle_StepAP214_HArray1OfPersonAndOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfPersonAndOrganizationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1167,10 +1467,18 @@ class Handle_StepAP214_AppliedPresentedItem : public Handle_StepVisual_Presented
 	return (StepAP214_AppliedPresentedItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AppliedPresentedItem::~Handle_StepAP214_AppliedPresentedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AppliedPresentedItem {
-	~Handle_StepAP214_AppliedPresentedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedPresentedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1197,10 +1505,18 @@ class Handle_StepAP214_AppliedApprovalAssignment : public Handle_StepBasic_Appro
 	return (StepAP214_AppliedApprovalAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AppliedApprovalAssignment::~Handle_StepAP214_AppliedApprovalAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AppliedApprovalAssignment {
-	~Handle_StepAP214_AppliedApprovalAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedApprovalAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1227,10 +1543,18 @@ class Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem : public Handle_MMgt_T
 	return (StepAP214_HArray1OfAutoDesignDateAndTimeItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem::~Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem {
-	~Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1257,10 +1581,18 @@ class Handle_StepAP214_AppliedExternalIdentificationAssignment : public Handle_S
 	return (StepAP214_AppliedExternalIdentificationAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AppliedExternalIdentificationAssignment::~Handle_StepAP214_AppliedExternalIdentificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AppliedExternalIdentificationAssignment {
-	~Handle_StepAP214_AppliedExternalIdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedExternalIdentificationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1287,10 +1619,18 @@ class Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect : public Handle_MM
 	return (StepAP214_HArray1OfAutoDesignPresentedItemSelect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect::~Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect {
-	~Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1317,10 +1657,18 @@ class Handle_StepAP214_AppliedOrganizationAssignment : public Handle_StepBasic_O
 	return (StepAP214_AppliedOrganizationAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_AppliedOrganizationAssignment::~Handle_StepAP214_AppliedOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_AppliedOrganizationAssignment {
-	~Handle_StepAP214_AppliedOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedOrganizationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1347,10 +1695,18 @@ class Handle_StepAP214_Protocol : public Handle_StepData_Protocol {
 	return (StepAP214_Protocol*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepAP214_Protocol::~Handle_StepAP214_Protocol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepAP214_Protocol {
-	~Handle_StepAP214_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_Protocol\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1386,10 +1742,18 @@ class StepAP214_AppliedOrganizationAssignment : public StepBasic_OrganizationAss
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AppliedOrganizationAssignment::~StepAP214_AppliedOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AppliedOrganizationAssignment {
-	~StepAP214_AppliedOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedOrganizationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1413,10 +1777,18 @@ class StepAP214_Class : public StepBasic_Group {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_Class::~StepAP214_Class %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Class {
-	~StepAP214_Class() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Class\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1444,10 +1816,18 @@ class StepAP214_ExternallyDefinedClass : public StepAP214_Class {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_ExternallyDefinedClass::~StepAP214_ExternallyDefinedClass %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_ExternallyDefinedClass {
-	~StepAP214_ExternallyDefinedClass() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_ExternallyDefinedClass\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1485,10 +1865,18 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 		virtual		Handle_StepBasic_SecurityClassification SecurityClassification() const;
 
 };
+%feature("shadow") StepAP214_ApprovalItem::~StepAP214_ApprovalItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_ApprovalItem {
-	~StepAP214_ApprovalItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_ApprovalItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1528,10 +1916,18 @@ class StepAP214_Array1OfAutoDesignPresentedItemSelect {
 		StepAP214_AutoDesignPresentedItemSelect & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfAutoDesignPresentedItemSelect::~StepAP214_Array1OfAutoDesignPresentedItemSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfAutoDesignPresentedItemSelect {
-	~StepAP214_Array1OfAutoDesignPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignPresentedItemSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1547,10 +1943,18 @@ class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
 		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
 
 };
+%feature("shadow") StepAP214_PersonAndOrganizationItem::~StepAP214_PersonAndOrganizationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_PersonAndOrganizationItem {
-	~StepAP214_PersonAndOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_PersonAndOrganizationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1580,10 +1984,18 @@ class StepAP214_ExternallyDefinedGeneralProperty : public StepBasic_GeneralPrope
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_ExternallyDefinedGeneralProperty::~StepAP214_ExternallyDefinedGeneralProperty %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_ExternallyDefinedGeneralProperty {
-	~StepAP214_ExternallyDefinedGeneralProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_ExternallyDefinedGeneralProperty\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1627,10 +2039,18 @@ class StepAP214_HArray1OfExternalIdentificationItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfExternalIdentificationItem::~StepAP214_HArray1OfExternalIdentificationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfExternalIdentificationItem {
-	~StepAP214_HArray1OfExternalIdentificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfExternalIdentificationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1670,10 +2090,18 @@ class StepAP214_Array1OfPresentedItemSelect {
 		StepAP214_PresentedItemSelect & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfPresentedItemSelect::~StepAP214_Array1OfPresentedItemSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfPresentedItemSelect {
-	~StepAP214_Array1OfPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfPresentedItemSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1713,10 +2141,18 @@ class StepAP214_Array1OfAutoDesignGroupedItem {
 		StepAP214_AutoDesignGroupedItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfAutoDesignGroupedItem::~StepAP214_Array1OfAutoDesignGroupedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfAutoDesignGroupedItem {
-	~StepAP214_Array1OfAutoDesignGroupedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignGroupedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1746,10 +2182,18 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 		Handle_StepAP214_AutoDesignDocumentReference AutoDesignDocumentReference() const;
 
 };
+%feature("shadow") StepAP214_AutoDesignGeneralOrgItem::~StepAP214_AutoDesignGeneralOrgItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignGeneralOrgItem {
-	~StepAP214_AutoDesignGeneralOrgItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignGeneralOrgItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1789,10 +2233,18 @@ class StepAP214_Array1OfDateItem {
 		StepAP214_DateItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfDateItem::~StepAP214_Array1OfDateItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfDateItem {
-	~StepAP214_Array1OfDateItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfDateItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1824,10 +2276,18 @@ class StepAP214_AutoDesignDateAndPersonItem : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinitionWithAssociatedDocuments ProductDefinitionWithAssociatedDocuments() const;
 
 };
+%feature("shadow") StepAP214_AutoDesignDateAndPersonItem::~StepAP214_AutoDesignDateAndPersonItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignDateAndPersonItem {
-	~StepAP214_AutoDesignDateAndPersonItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDateAndPersonItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1863,10 +2323,18 @@ class StepAP214_AutoDesignNominalDateAndTimeAssignment : public StepBasic_DateAn
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AutoDesignNominalDateAndTimeAssignment::~StepAP214_AutoDesignNominalDateAndTimeAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignNominalDateAndTimeAssignment {
-	~StepAP214_AutoDesignNominalDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignNominalDateAndTimeAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1910,10 +2378,18 @@ class StepAP214_HArray1OfGroupItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfGroupItem::~StepAP214_HArray1OfGroupItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfGroupItem {
-	~StepAP214_HArray1OfGroupItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfGroupItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1957,10 +2433,18 @@ class StepAP214_HArray1OfApprovalItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfApprovalItem::~StepAP214_HArray1OfApprovalItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfApprovalItem {
-	~StepAP214_HArray1OfApprovalItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfApprovalItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1996,10 +2480,18 @@ class StepAP214_AutoDesignGroupAssignment : public StepBasic_GroupAssignment {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AutoDesignGroupAssignment::~StepAP214_AutoDesignGroupAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignGroupAssignment {
-	~StepAP214_AutoDesignGroupAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignGroupAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2035,10 +2527,18 @@ class StepAP214_AutoDesignDateAndPersonAssignment : public StepBasic_PersonAndOr
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AutoDesignDateAndPersonAssignment::~StepAP214_AutoDesignDateAndPersonAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignDateAndPersonAssignment {
-	~StepAP214_AutoDesignDateAndPersonAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDateAndPersonAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2074,10 +2574,18 @@ class StepAP214_AppliedApprovalAssignment : public StepBasic_ApprovalAssignment 
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AppliedApprovalAssignment::~StepAP214_AppliedApprovalAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AppliedApprovalAssignment {
-	~StepAP214_AppliedApprovalAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedApprovalAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2113,10 +2621,18 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 		Handle_StepVisual_TemplateInstance TemplateInstance() const;
 
 };
+%feature("shadow") StepAP214_AutoDesignGroupedItem::~StepAP214_AutoDesignGroupedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignGroupedItem {
-	~StepAP214_AutoDesignGroupedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignGroupedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2160,10 +2676,18 @@ class StepAP214_HArray1OfDocumentReferenceItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfDocumentReferenceItem::~StepAP214_HArray1OfDocumentReferenceItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfDocumentReferenceItem {
-	~StepAP214_HArray1OfDocumentReferenceItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfDocumentReferenceItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2185,10 +2709,18 @@ class StepAP214_DateItem : public StepAP214_ApprovalItem {
 		Handle_StepBasic_Effectivity Effectivity() const;
 
 };
+%feature("shadow") StepAP214_DateItem::~StepAP214_DateItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_DateItem {
-	~StepAP214_DateItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_DateItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2200,10 +2732,18 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 		StepAP214_SecurityClassificationItem();
 
 };
+%feature("shadow") StepAP214_SecurityClassificationItem::~StepAP214_SecurityClassificationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_SecurityClassificationItem {
-	~StepAP214_SecurityClassificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_SecurityClassificationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2247,10 +2787,18 @@ class StepAP214_HArray1OfAutoDesignReferencingItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfAutoDesignReferencingItem::~StepAP214_HArray1OfAutoDesignReferencingItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfAutoDesignReferencingItem {
-	~StepAP214_HArray1OfAutoDesignReferencingItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignReferencingItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2284,10 +2832,18 @@ class StepAP214_AppliedDocumentReference : public StepBasic_DocumentReference {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AppliedDocumentReference::~StepAP214_AppliedDocumentReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AppliedDocumentReference {
-	~StepAP214_AppliedDocumentReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedDocumentReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2331,10 +2887,18 @@ class StepAP214_HArray1OfAutoDesignDateAndPersonItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfAutoDesignDateAndPersonItem::~StepAP214_HArray1OfAutoDesignDateAndPersonItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
-	~StepAP214_HArray1OfAutoDesignDateAndPersonItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDateAndPersonItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2378,10 +2942,18 @@ class StepAP214_HArray1OfDateItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfDateItem::~StepAP214_HArray1OfDateItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfDateItem {
-	~StepAP214_HArray1OfDateItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfDateItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2395,10 +2967,18 @@ class StepAP214 {
 		Handle_StepAP214_Protocol Protocol();
 
 };
+%feature("shadow") StepAP214::~StepAP214 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214 {
-	~StepAP214() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2442,10 +3022,18 @@ class StepAP214_HArray1OfSecurityClassificationItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfSecurityClassificationItem::~StepAP214_HArray1OfSecurityClassificationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfSecurityClassificationItem {
-	~StepAP214_HArray1OfSecurityClassificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfSecurityClassificationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2485,10 +3073,18 @@ class StepAP214_Array1OfDateAndTimeItem {
 		StepAP214_DateAndTimeItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfDateAndTimeItem::~StepAP214_Array1OfDateAndTimeItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfDateAndTimeItem {
-	~StepAP214_Array1OfDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfDateAndTimeItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2522,10 +3118,18 @@ class StepAP214_AutoDesignDocumentReference : public StepBasic_DocumentReference
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AutoDesignDocumentReference::~StepAP214_AutoDesignDocumentReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignDocumentReference {
-	~StepAP214_AutoDesignDocumentReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDocumentReference\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2565,10 +3169,18 @@ class StepAP214_Array1OfAutoDesignDateAndPersonItem {
 		StepAP214_AutoDesignDateAndPersonItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfAutoDesignDateAndPersonItem::~StepAP214_Array1OfAutoDesignDateAndPersonItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfAutoDesignDateAndPersonItem {
-	~StepAP214_Array1OfAutoDesignDateAndPersonItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignDateAndPersonItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2612,10 +3224,18 @@ class StepAP214_HArray1OfAutoDesignDatedItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfAutoDesignDatedItem::~StepAP214_HArray1OfAutoDesignDatedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfAutoDesignDatedItem {
-	~StepAP214_HArray1OfAutoDesignDatedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDatedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2651,10 +3271,18 @@ class StepAP214_AutoDesignSecurityClassificationAssignment : public StepBasic_Se
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AutoDesignSecurityClassificationAssignment::~StepAP214_AutoDesignSecurityClassificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignSecurityClassificationAssignment {
-	~StepAP214_AutoDesignSecurityClassificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignSecurityClassificationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2694,10 +3322,18 @@ class StepAP214_Array1OfApprovalItem {
 		StepAP214_ApprovalItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfApprovalItem::~StepAP214_Array1OfApprovalItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfApprovalItem {
-	~StepAP214_Array1OfApprovalItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfApprovalItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2737,10 +3373,18 @@ class StepAP214_Array1OfOrganizationItem {
 		StepAP214_OrganizationItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfOrganizationItem::~StepAP214_Array1OfOrganizationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfOrganizationItem {
-	~StepAP214_Array1OfOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfOrganizationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2782,10 +3426,18 @@ class StepAP214_AutoDesignReferencingItem : public StepData_SelectType {
 		Handle_StepRepr_ShapeAspect ShapeAspect() const;
 
 };
+%feature("shadow") StepAP214_AutoDesignReferencingItem::~StepAP214_AutoDesignReferencingItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignReferencingItem {
-	~StepAP214_AutoDesignReferencingItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignReferencingItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2821,10 +3473,18 @@ class StepAP214_AppliedDateAndTimeAssignment : public StepBasic_DateAndTimeAssig
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AppliedDateAndTimeAssignment::~StepAP214_AppliedDateAndTimeAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AppliedDateAndTimeAssignment {
-	~StepAP214_AppliedDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedDateAndTimeAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2856,10 +3516,18 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 		Handle_StepRepr_ShapeAspectRelationship ShapeAspectRelationship() const;
 
 };
+%feature("shadow") StepAP214_DocumentReferenceItem::~StepAP214_DocumentReferenceItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_DocumentReferenceItem {
-	~StepAP214_DocumentReferenceItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_DocumentReferenceItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2885,10 +3553,18 @@ class StepAP214_AutoDesignPresentedItemSelect : public StepData_SelectType {
 		Handle_StepBasic_DocumentRelationship DocumentRelationship() const;
 
 };
+%feature("shadow") StepAP214_AutoDesignPresentedItemSelect::~StepAP214_AutoDesignPresentedItemSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignPresentedItemSelect {
-	~StepAP214_AutoDesignPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignPresentedItemSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2904,10 +3580,18 @@ class StepAP214_GroupItem : public StepData_SelectType {
 		virtual		Handle_StepGeom_GeometricRepresentationItem GeometricRepresentationItem() const;
 
 };
+%feature("shadow") StepAP214_GroupItem::~StepAP214_GroupItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_GroupItem {
-	~StepAP214_GroupItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_GroupItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2943,10 +3627,18 @@ class StepAP214_AppliedSecurityClassificationAssignment : public StepBasic_Secur
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AppliedSecurityClassificationAssignment::~StepAP214_AppliedSecurityClassificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AppliedSecurityClassificationAssignment {
-	~StepAP214_AppliedSecurityClassificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedSecurityClassificationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2990,10 +3682,18 @@ class StepAP214_HArray1OfPersonAndOrganizationItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfPersonAndOrganizationItem::~StepAP214_HArray1OfPersonAndOrganizationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfPersonAndOrganizationItem {
-	~StepAP214_HArray1OfPersonAndOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfPersonAndOrganizationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3037,10 +3737,18 @@ class StepAP214_HArray1OfPresentedItemSelect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfPresentedItemSelect::~StepAP214_HArray1OfPresentedItemSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfPresentedItemSelect {
-	~StepAP214_HArray1OfPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfPresentedItemSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3076,10 +3784,18 @@ class StepAP214_AutoDesignPersonAndOrganizationAssignment : public StepBasic_Per
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AutoDesignPersonAndOrganizationAssignment::~StepAP214_AutoDesignPersonAndOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignPersonAndOrganizationAssignment {
-	~StepAP214_AutoDesignPersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignPersonAndOrganizationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3119,10 +3835,18 @@ class StepAP214_Array1OfGroupItem {
 		StepAP214_GroupItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfGroupItem::~StepAP214_Array1OfGroupItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfGroupItem {
-	~StepAP214_Array1OfGroupItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfGroupItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3166,10 +3890,18 @@ class StepAP214_HArray1OfAutoDesignGroupedItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfAutoDesignGroupedItem::~StepAP214_HArray1OfAutoDesignGroupedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfAutoDesignGroupedItem {
-	~StepAP214_HArray1OfAutoDesignGroupedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignGroupedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3187,10 +3919,18 @@ class StepAP214_AutoDesignOrganizationItem : public StepAP214_AutoDesignGeneralO
 		Handle_StepBasic_PhysicallyModeledProductDefinition PhysicallyModeledProductDefinition() const;
 
 };
+%feature("shadow") StepAP214_AutoDesignOrganizationItem::~StepAP214_AutoDesignOrganizationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignOrganizationItem {
-	~StepAP214_AutoDesignOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignOrganizationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3226,10 +3966,18 @@ class StepAP214_AutoDesignApprovalAssignment : public StepBasic_ApprovalAssignme
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AutoDesignApprovalAssignment::~StepAP214_AutoDesignApprovalAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignApprovalAssignment {
-	~StepAP214_AutoDesignApprovalAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignApprovalAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3251,10 +3999,18 @@ class StepAP214_DateAndTimeItem : public StepAP214_ApprovalItem {
 		Handle_StepBasic_Effectivity Effectivity() const;
 
 };
+%feature("shadow") StepAP214_DateAndTimeItem::~StepAP214_DateAndTimeItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_DateAndTimeItem {
-	~StepAP214_DateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_DateAndTimeItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3294,10 +4050,18 @@ class StepAP214_Array1OfExternalIdentificationItem {
 		StepAP214_ExternalIdentificationItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfExternalIdentificationItem::~StepAP214_Array1OfExternalIdentificationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfExternalIdentificationItem {
-	~StepAP214_Array1OfExternalIdentificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfExternalIdentificationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3331,10 +4095,18 @@ class StepAP214_AppliedPresentedItem : public StepVisual_PresentedItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AppliedPresentedItem::~StepAP214_AppliedPresentedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AppliedPresentedItem {
-	~StepAP214_AppliedPresentedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedPresentedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3370,10 +4142,18 @@ class StepAP214_AutoDesignOrganizationAssignment : public StepBasic_Organization
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AutoDesignOrganizationAssignment::~StepAP214_AutoDesignOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignOrganizationAssignment {
-	~StepAP214_AutoDesignOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignOrganizationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3417,10 +4197,18 @@ class StepAP214_HArray1OfAutoDesignDateAndTimeItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfAutoDesignDateAndTimeItem::~StepAP214_HArray1OfAutoDesignDateAndTimeItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
-	~StepAP214_HArray1OfAutoDesignDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDateAndTimeItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3460,10 +4248,18 @@ class StepAP214_Array1OfAutoDesignReferencingItem {
 		StepAP214_AutoDesignReferencingItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfAutoDesignReferencingItem::~StepAP214_Array1OfAutoDesignReferencingItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfAutoDesignReferencingItem {
-	~StepAP214_Array1OfAutoDesignReferencingItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignReferencingItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3493,10 +4289,18 @@ class StepAP214_AppliedExternalIdentificationAssignment : public StepBasic_Exter
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AppliedExternalIdentificationAssignment::~StepAP214_AppliedExternalIdentificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AppliedExternalIdentificationAssignment {
-	~StepAP214_AppliedExternalIdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedExternalIdentificationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3532,10 +4336,18 @@ class StepAP214_AutoDesignNominalDateAssignment : public StepBasic_DateAssignmen
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AutoDesignNominalDateAssignment::~StepAP214_AutoDesignNominalDateAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignNominalDateAssignment {
-	~StepAP214_AutoDesignNominalDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignNominalDateAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3565,10 +4377,18 @@ class StepAP214_AppliedGroupAssignment : public StepBasic_GroupAssignment {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AppliedGroupAssignment::~StepAP214_AppliedGroupAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AppliedGroupAssignment {
-	~StepAP214_AppliedGroupAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedGroupAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3598,10 +4418,18 @@ class StepAP214_RepItemGroup : public StepBasic_Group {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_RepItemGroup::~StepAP214_RepItemGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_RepItemGroup {
-	~StepAP214_RepItemGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_RepItemGroup\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3645,10 +4473,18 @@ class StepAP214_HArray1OfDateAndTimeItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfDateAndTimeItem::~StepAP214_HArray1OfDateAndTimeItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfDateAndTimeItem {
-	~StepAP214_HArray1OfDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfDateAndTimeItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3668,10 +4504,18 @@ class StepAP214_AutoDesignDateAndTimeItem : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinitionEffectivity ProductDefinitionEffectivity() const;
 
 };
+%feature("shadow") StepAP214_AutoDesignDateAndTimeItem::~StepAP214_AutoDesignDateAndTimeItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignDateAndTimeItem {
-	~StepAP214_AutoDesignDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDateAndTimeItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3711,10 +4555,18 @@ class StepAP214_Array1OfDocumentReferenceItem {
 		StepAP214_DocumentReferenceItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfDocumentReferenceItem::~StepAP214_Array1OfDocumentReferenceItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfDocumentReferenceItem {
-	~StepAP214_Array1OfDocumentReferenceItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfDocumentReferenceItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3758,10 +4610,18 @@ class StepAP214_HArray1OfAutoDesignGeneralOrgItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfAutoDesignGeneralOrgItem::~StepAP214_HArray1OfAutoDesignGeneralOrgItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfAutoDesignGeneralOrgItem {
-	~StepAP214_HArray1OfAutoDesignGeneralOrgItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignGeneralOrgItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3781,10 +4641,18 @@ class StepAP214_AutoDesignDatedItem : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinitionEffectivity ProductDefinitionEffectivity() const;
 
 };
+%feature("shadow") StepAP214_AutoDesignDatedItem::~StepAP214_AutoDesignDatedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignDatedItem {
-	~StepAP214_AutoDesignDatedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDatedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3824,10 +4692,18 @@ class StepAP214_Array1OfAutoDesignGeneralOrgItem {
 		StepAP214_AutoDesignGeneralOrgItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfAutoDesignGeneralOrgItem::~StepAP214_Array1OfAutoDesignGeneralOrgItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfAutoDesignGeneralOrgItem {
-	~StepAP214_Array1OfAutoDesignGeneralOrgItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignGeneralOrgItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3871,10 +4747,18 @@ class StepAP214_HArray1OfAutoDesignPresentedItemSelect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfAutoDesignPresentedItemSelect::~StepAP214_HArray1OfAutoDesignPresentedItemSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfAutoDesignPresentedItemSelect {
-	~StepAP214_HArray1OfAutoDesignPresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignPresentedItemSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3914,10 +4798,18 @@ class StepAP214_Array1OfAutoDesignDatedItem {
 		StepAP214_AutoDesignDatedItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfAutoDesignDatedItem::~StepAP214_Array1OfAutoDesignDatedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfAutoDesignDatedItem {
-	~StepAP214_Array1OfAutoDesignDatedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignDatedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3939,10 +4831,18 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinition ProductDefinition() const;
 
 };
+%feature("shadow") StepAP214_ExternalIdentificationItem::~StepAP214_ExternalIdentificationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_ExternalIdentificationItem {
-	~StepAP214_ExternalIdentificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_ExternalIdentificationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3978,10 +4878,18 @@ class StepAP214_AppliedDateAssignment : public StepBasic_DateAssignment {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AppliedDateAssignment::~StepAP214_AppliedDateAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AppliedDateAssignment {
-	~StepAP214_AppliedDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedDateAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4017,10 +4925,18 @@ class StepAP214_AppliedPersonAndOrganizationAssignment : public StepBasic_Person
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AppliedPersonAndOrganizationAssignment::~StepAP214_AppliedPersonAndOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AppliedPersonAndOrganizationAssignment {
-	~StepAP214_AppliedPersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedPersonAndOrganizationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4038,10 +4954,18 @@ class StepAP214_PresentedItemSelect : public StepData_SelectType {
 		Handle_StepBasic_ProductDefinition ProductDefinition() const;
 
 };
+%feature("shadow") StepAP214_PresentedItemSelect::~StepAP214_PresentedItemSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_PresentedItemSelect {
-	~StepAP214_PresentedItemSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_PresentedItemSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4077,10 +5001,18 @@ class StepAP214_AutoDesignActualDateAndTimeAssignment : public StepBasic_DateAnd
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AutoDesignActualDateAndTimeAssignment::~StepAP214_AutoDesignActualDateAndTimeAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignActualDateAndTimeAssignment {
-	~StepAP214_AutoDesignActualDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignActualDateAndTimeAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4116,10 +5048,18 @@ class StepAP214_AutoDesignActualDateAssignment : public StepBasic_DateAssignment
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AutoDesignActualDateAssignment::~StepAP214_AutoDesignActualDateAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignActualDateAssignment {
-	~StepAP214_AutoDesignActualDateAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignActualDateAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4159,10 +5099,18 @@ class StepAP214_Array1OfPersonAndOrganizationItem {
 		StepAP214_PersonAndOrganizationItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfPersonAndOrganizationItem::~StepAP214_Array1OfPersonAndOrganizationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfPersonAndOrganizationItem {
-	~StepAP214_Array1OfPersonAndOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfPersonAndOrganizationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4180,10 +5128,18 @@ class StepAP214_OrganizationItem : public StepAP214_ApprovalItem {
 		Handle_StepBasic_Approval Approval() const;
 
 };
+%feature("shadow") StepAP214_OrganizationItem::~StepAP214_OrganizationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_OrganizationItem {
-	~StepAP214_OrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_OrganizationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4227,10 +5183,18 @@ class StepAP214_HArray1OfOrganizationItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_HArray1OfOrganizationItem::~StepAP214_HArray1OfOrganizationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_HArray1OfOrganizationItem {
-	~StepAP214_HArray1OfOrganizationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfOrganizationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4264,10 +5228,18 @@ class StepAP214_AutoDesignPresentedItem : public StepVisual_PresentedItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepAP214_AutoDesignPresentedItem::~StepAP214_AutoDesignPresentedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_AutoDesignPresentedItem {
-	~StepAP214_AutoDesignPresentedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignPresentedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4307,10 +5279,18 @@ class StepAP214_Array1OfSecurityClassificationItem {
 		StepAP214_SecurityClassificationItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfSecurityClassificationItem::~StepAP214_Array1OfSecurityClassificationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfSecurityClassificationItem {
-	~StepAP214_Array1OfSecurityClassificationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfSecurityClassificationItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4350,9 +5330,17 @@ class StepAP214_Array1OfAutoDesignDateAndTimeItem {
 		StepAP214_AutoDesignDateAndTimeItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepAP214_Array1OfAutoDesignDateAndTimeItem::~StepAP214_Array1OfAutoDesignDateAndTimeItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepAP214_Array1OfAutoDesignDateAndTimeItem {
-	~StepAP214_Array1OfAutoDesignDateAndTimeItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignDateAndTimeItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

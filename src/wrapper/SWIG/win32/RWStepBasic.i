@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include RWStepBasic_dependencies.i
 
 
@@ -48,10 +52,18 @@ class RWStepBasic_RWActionAssignment {
 		void Share(const Handle_StepBasic_ActionAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWActionAssignment::~RWStepBasic_RWActionAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWActionAssignment {
-	~RWStepBasic_RWActionAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWActionAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -69,10 +81,18 @@ class RWStepBasic_RWMassMeasureWithUnit {
 		void Share(const Handle_StepBasic_MassMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWMassMeasureWithUnit::~RWStepBasic_RWMassMeasureWithUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWMassMeasureWithUnit {
-	~RWStepBasic_RWMassMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMassMeasureWithUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -90,10 +110,18 @@ class RWStepBasic_RWEffectivityAssignment {
 		void Share(const Handle_StepBasic_EffectivityAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWEffectivityAssignment::~RWStepBasic_RWEffectivityAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWEffectivityAssignment {
-	~RWStepBasic_RWEffectivityAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWEffectivityAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -111,10 +139,18 @@ class RWStepBasic_RWPlaneAngleMeasureWithUnit {
 		void Share(const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWPlaneAngleMeasureWithUnit::~RWStepBasic_RWPlaneAngleMeasureWithUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWPlaneAngleMeasureWithUnit {
-	~RWStepBasic_RWPlaneAngleMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPlaneAngleMeasureWithUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -132,10 +168,18 @@ class RWStepBasic_RWConversionBasedUnitAndLengthUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndLengthUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWConversionBasedUnitAndLengthUnit::~RWStepBasic_RWConversionBasedUnitAndLengthUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWConversionBasedUnitAndLengthUnit {
-	~RWStepBasic_RWConversionBasedUnitAndLengthUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndLengthUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -151,10 +195,18 @@ class RWStepBasic_RWSecurityClassificationLevel {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SecurityClassificationLevel &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWSecurityClassificationLevel::~RWStepBasic_RWSecurityClassificationLevel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSecurityClassificationLevel {
-	~RWStepBasic_RWSecurityClassificationLevel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSecurityClassificationLevel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -172,10 +224,18 @@ class RWStepBasic_RWThermodynamicTemperatureUnit {
 		void Share(const Handle_StepBasic_ThermodynamicTemperatureUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWThermodynamicTemperatureUnit::~RWStepBasic_RWThermodynamicTemperatureUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWThermodynamicTemperatureUnit {
-	~RWStepBasic_RWThermodynamicTemperatureUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWThermodynamicTemperatureUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -193,10 +253,18 @@ class RWStepBasic_RWDerivedUnitElement {
 		void Share(const Handle_StepBasic_DerivedUnitElement &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWDerivedUnitElement::~RWStepBasic_RWDerivedUnitElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDerivedUnitElement {
-	~RWStepBasic_RWDerivedUnitElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDerivedUnitElement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -214,10 +282,18 @@ class RWStepBasic_RWExternalSource {
 		void Share(const Handle_StepBasic_ExternalSource &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWExternalSource::~RWStepBasic_RWExternalSource %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWExternalSource {
-	~RWStepBasic_RWExternalSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWExternalSource\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -241,10 +317,18 @@ class RWStepBasic_RWSiUnit {
 		TCollection_AsciiString EncodeName(const StepBasic_SiUnitName aName) const;
 
 };
+%feature("shadow") RWStepBasic_RWSiUnit::~RWStepBasic_RWSiUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSiUnit {
-	~RWStepBasic_RWSiUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -262,10 +346,18 @@ class RWStepBasic_RWProductDefinitionContext {
 		void Share(const Handle_StepBasic_ProductDefinitionContext &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductDefinitionContext::~RWStepBasic_RWProductDefinitionContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductDefinitionContext {
-	~RWStepBasic_RWProductDefinitionContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionContext\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -283,10 +375,18 @@ class RWStepBasic_RWLengthUnit {
 		void Share(const Handle_StepBasic_LengthUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWLengthUnit::~RWStepBasic_RWLengthUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWLengthUnit {
-	~RWStepBasic_RWLengthUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLengthUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -304,10 +404,18 @@ class RWStepBasic_RWObjectRole {
 		void Share(const Handle_StepBasic_ObjectRole &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWObjectRole::~RWStepBasic_RWObjectRole %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWObjectRole {
-	~RWStepBasic_RWObjectRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWObjectRole\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -325,10 +433,18 @@ class RWStepBasic_RWApprovalRelationship {
 		void Share(const Handle_StepBasic_ApprovalRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWApprovalRelationship::~RWStepBasic_RWApprovalRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWApprovalRelationship {
-	~RWStepBasic_RWApprovalRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalRelationship\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -346,10 +462,18 @@ class RWStepBasic_RWProductDefinition {
 		void Share(const Handle_StepBasic_ProductDefinition &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductDefinition::~RWStepBasic_RWProductDefinition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductDefinition {
-	~RWStepBasic_RWProductDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -367,10 +491,18 @@ class RWStepBasic_RWRoleAssociation {
 		void Share(const Handle_StepBasic_RoleAssociation &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWRoleAssociation::~RWStepBasic_RWRoleAssociation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWRoleAssociation {
-	~RWStepBasic_RWRoleAssociation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWRoleAssociation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -388,10 +520,18 @@ class RWStepBasic_RWDocumentRepresentationType {
 		void Share(const Handle_StepBasic_DocumentRepresentationType &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWDocumentRepresentationType::~RWStepBasic_RWDocumentRepresentationType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDocumentRepresentationType {
-	~RWStepBasic_RWDocumentRepresentationType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentRepresentationType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -409,10 +549,18 @@ class RWStepBasic_RWDocumentProductAssociation {
 		void Share(const Handle_StepBasic_DocumentProductAssociation &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWDocumentProductAssociation::~RWStepBasic_RWDocumentProductAssociation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDocumentProductAssociation {
-	~RWStepBasic_RWDocumentProductAssociation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentProductAssociation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -428,10 +576,18 @@ class RWStepBasic_RWCalendarDate {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_CalendarDate &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWCalendarDate::~RWStepBasic_RWCalendarDate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWCalendarDate {
-	~RWStepBasic_RWCalendarDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCalendarDate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -449,10 +605,18 @@ class RWStepBasic_RWVersionedActionRequest {
 		void Share(const Handle_StepBasic_VersionedActionRequest &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWVersionedActionRequest::~RWStepBasic_RWVersionedActionRequest %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWVersionedActionRequest {
-	~RWStepBasic_RWVersionedActionRequest() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWVersionedActionRequest\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -470,10 +634,18 @@ class RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
 		void Share(const Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource::~RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
-	~RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -491,10 +663,18 @@ class RWStepBasic_RWSolidAngleUnit {
 		void Share(const Handle_StepBasic_SolidAngleUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWSolidAngleUnit::~RWStepBasic_RWSolidAngleUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSolidAngleUnit {
-	~RWStepBasic_RWSolidAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSolidAngleUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -512,10 +692,18 @@ class RWStepBasic_RWContractAssignment {
 		void Share(const Handle_StepBasic_ContractAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWContractAssignment::~RWStepBasic_RWContractAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWContractAssignment {
-	~RWStepBasic_RWContractAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContractAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -533,10 +721,18 @@ class RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit::~RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit {
-	~RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -554,10 +750,18 @@ class RWStepBasic_RWConversionBasedUnitAndVolumeUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndVolumeUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWConversionBasedUnitAndVolumeUnit::~RWStepBasic_RWConversionBasedUnitAndVolumeUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWConversionBasedUnitAndVolumeUnit {
-	~RWStepBasic_RWConversionBasedUnitAndVolumeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndVolumeUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -575,10 +779,18 @@ class RWStepBasic_RWPersonAndOrganization {
 		void Share(const Handle_StepBasic_PersonAndOrganization &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWPersonAndOrganization::~RWStepBasic_RWPersonAndOrganization %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWPersonAndOrganization {
-	~RWStepBasic_RWPersonAndOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPersonAndOrganization\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -594,10 +806,18 @@ class RWStepBasic_RWOrganizationRole {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_OrganizationRole &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWOrganizationRole::~RWStepBasic_RWOrganizationRole %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWOrganizationRole {
-	~RWStepBasic_RWOrganizationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrganizationRole\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -615,10 +835,18 @@ class RWStepBasic_RWSolidAngleMeasureWithUnit {
 		void Share(const Handle_StepBasic_SolidAngleMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWSolidAngleMeasureWithUnit::~RWStepBasic_RWSolidAngleMeasureWithUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSolidAngleMeasureWithUnit {
-	~RWStepBasic_RWSolidAngleMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSolidAngleMeasureWithUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -634,10 +862,18 @@ class RWStepBasic_RWSiUnitAndRatioUnit {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndRatioUnit &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWSiUnitAndRatioUnit::~RWStepBasic_RWSiUnitAndRatioUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSiUnitAndRatioUnit {
-	~RWStepBasic_RWSiUnitAndRatioUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndRatioUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -655,10 +891,18 @@ class RWStepBasic_RWConversionBasedUnitAndMassUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndMassUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWConversionBasedUnitAndMassUnit::~RWStepBasic_RWConversionBasedUnitAndMassUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWConversionBasedUnitAndMassUnit {
-	~RWStepBasic_RWConversionBasedUnitAndMassUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndMassUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -676,10 +920,18 @@ class RWStepBasic_RWEffectivity {
 		void Share(const Handle_StepBasic_Effectivity &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWEffectivity::~RWStepBasic_RWEffectivity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWEffectivity {
-	~RWStepBasic_RWEffectivity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWEffectivity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -697,10 +949,18 @@ class RWStepBasic_RWNamedUnit {
 		void Share(const Handle_StepBasic_NamedUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWNamedUnit::~RWStepBasic_RWNamedUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWNamedUnit {
-	~RWStepBasic_RWNamedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWNamedUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -716,10 +976,18 @@ class RWStepBasic_RWApplicationContext {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApplicationContext &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWApplicationContext::~RWStepBasic_RWApplicationContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWApplicationContext {
-	~RWStepBasic_RWApplicationContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApplicationContext\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -737,10 +1005,18 @@ class RWStepBasic_RWActionMethod {
 		void Share(const Handle_StepBasic_ActionMethod &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWActionMethod::~RWStepBasic_RWActionMethod %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWActionMethod {
-	~RWStepBasic_RWActionMethod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWActionMethod\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -758,10 +1034,18 @@ class RWStepBasic_RWLocalTime {
 		void Share(const Handle_StepBasic_LocalTime &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWLocalTime::~RWStepBasic_RWLocalTime %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWLocalTime {
-	~RWStepBasic_RWLocalTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLocalTime\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -779,10 +1063,18 @@ class RWStepBasic_RWActionRequestAssignment {
 		void Share(const Handle_StepBasic_ActionRequestAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWActionRequestAssignment::~RWStepBasic_RWActionRequestAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWActionRequestAssignment {
-	~RWStepBasic_RWActionRequestAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWActionRequestAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -800,10 +1092,18 @@ class RWStepBasic_RWConversionBasedUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWConversionBasedUnit::~RWStepBasic_RWConversionBasedUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWConversionBasedUnit {
-	~RWStepBasic_RWConversionBasedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -821,10 +1121,18 @@ class RWStepBasic_RWOrganizationalAddress {
 		void Share(const Handle_StepBasic_OrganizationalAddress &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWOrganizationalAddress::~RWStepBasic_RWOrganizationalAddress %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWOrganizationalAddress {
-	~RWStepBasic_RWOrganizationalAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrganizationalAddress\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -842,10 +1150,18 @@ class RWStepBasic_RWProductDefinitionFormationRelationship {
 		void Share(const Handle_StepBasic_ProductDefinitionFormationRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductDefinitionFormationRelationship::~RWStepBasic_RWProductDefinitionFormationRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductDefinitionFormationRelationship {
-	~RWStepBasic_RWProductDefinitionFormationRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormationRelationship\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -863,10 +1179,18 @@ class RWStepBasic_RWIdentificationAssignment {
 		void Share(const Handle_StepBasic_IdentificationAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWIdentificationAssignment::~RWStepBasic_RWIdentificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWIdentificationAssignment {
-	~RWStepBasic_RWIdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWIdentificationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -884,10 +1208,18 @@ class RWStepBasic_RWConversionBasedUnitAndTimeUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndTimeUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWConversionBasedUnitAndTimeUnit::~RWStepBasic_RWConversionBasedUnitAndTimeUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWConversionBasedUnitAndTimeUnit {
-	~RWStepBasic_RWConversionBasedUnitAndTimeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndTimeUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -905,10 +1237,18 @@ class RWStepBasic_RWConversionBasedUnitAndRatioUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndRatioUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWConversionBasedUnitAndRatioUnit::~RWStepBasic_RWConversionBasedUnitAndRatioUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWConversionBasedUnitAndRatioUnit {
-	~RWStepBasic_RWConversionBasedUnitAndRatioUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndRatioUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -926,10 +1266,18 @@ class RWStepBasic_RWGroup {
 		void Share(const Handle_StepBasic_Group &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWGroup::~RWStepBasic_RWGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWGroup {
-	~RWStepBasic_RWGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGroup\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -947,10 +1295,18 @@ class RWStepBasic_RWDocumentRelationship {
 		void Share(const Handle_StepBasic_DocumentRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWDocumentRelationship::~RWStepBasic_RWDocumentRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDocumentRelationship {
-	~RWStepBasic_RWDocumentRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentRelationship\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -966,10 +1322,18 @@ class RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit::~RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
-	~RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -987,10 +1351,18 @@ class RWStepBasic_RWDocumentFile {
 		void Share(const Handle_StepBasic_DocumentFile &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWDocumentFile::~RWStepBasic_RWDocumentFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDocumentFile {
-	~RWStepBasic_RWDocumentFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentFile\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1006,10 +1378,18 @@ class RWStepBasic_RWDateRole {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateRole &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWDateRole::~RWStepBasic_RWDateRole %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDateRole {
-	~RWStepBasic_RWDateRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateRole\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1027,10 +1407,18 @@ class RWStepBasic_RWProductDefinitionFormation {
 		void Share(const Handle_StepBasic_ProductDefinitionFormation &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductDefinitionFormation::~RWStepBasic_RWProductDefinitionFormation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductDefinitionFormation {
-	~RWStepBasic_RWProductDefinitionFormation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1048,10 +1436,18 @@ class RWStepBasic_RWDerivedUnit {
 		void Share(const Handle_StepBasic_DerivedUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWDerivedUnit::~RWStepBasic_RWDerivedUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDerivedUnit {
-	~RWStepBasic_RWDerivedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDerivedUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1067,10 +1463,18 @@ class RWStepBasic_RWSiUnitAndAreaUnit {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndAreaUnit &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWSiUnitAndAreaUnit::~RWStepBasic_RWSiUnitAndAreaUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSiUnitAndAreaUnit {
-	~RWStepBasic_RWSiUnitAndAreaUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndAreaUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1088,10 +1492,18 @@ class RWStepBasic_RWAction {
 		void Share(const Handle_StepBasic_Action &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWAction::~RWStepBasic_RWAction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWAction {
-	~RWStepBasic_RWAction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWAction\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1107,10 +1519,18 @@ class RWStepBasic_RWAddress {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Address &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWAddress::~RWStepBasic_RWAddress %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWAddress {
-	~RWStepBasic_RWAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWAddress\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1128,10 +1548,18 @@ class RWStepBasic_RWExternallyDefinedItem {
 		void Share(const Handle_StepBasic_ExternallyDefinedItem &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWExternallyDefinedItem::~RWStepBasic_RWExternallyDefinedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWExternallyDefinedItem {
-	~RWStepBasic_RWExternallyDefinedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWExternallyDefinedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1149,10 +1577,18 @@ class RWStepBasic_RWIdentificationRole {
 		void Share(const Handle_StepBasic_IdentificationRole &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWIdentificationRole::~RWStepBasic_RWIdentificationRole %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWIdentificationRole {
-	~RWStepBasic_RWIdentificationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWIdentificationRole\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1168,10 +1604,18 @@ class RWStepBasic_RWSiUnitAndPlaneAngleUnit {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndPlaneAngleUnit &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWSiUnitAndPlaneAngleUnit::~RWStepBasic_RWSiUnitAndPlaneAngleUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSiUnitAndPlaneAngleUnit {
-	~RWStepBasic_RWSiUnitAndPlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndPlaneAngleUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1189,10 +1633,18 @@ class RWStepBasic_RWExternalIdentificationAssignment {
 		void Share(const Handle_StepBasic_ExternalIdentificationAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWExternalIdentificationAssignment::~RWStepBasic_RWExternalIdentificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWExternalIdentificationAssignment {
-	~RWStepBasic_RWExternalIdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWExternalIdentificationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1210,10 +1662,18 @@ class RWStepBasic_RWDateAndTime {
 		void Share(const Handle_StepBasic_DateAndTime &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWDateAndTime::~RWStepBasic_RWDateAndTime %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDateAndTime {
-	~RWStepBasic_RWDateAndTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateAndTime\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1229,10 +1689,18 @@ class RWStepBasic_RWSiUnitAndLengthUnit {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndLengthUnit &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWSiUnitAndLengthUnit::~RWStepBasic_RWSiUnitAndLengthUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSiUnitAndLengthUnit {
-	~RWStepBasic_RWSiUnitAndLengthUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndLengthUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1250,10 +1718,18 @@ class RWStepBasic_RWLengthMeasureWithUnit {
 		void Share(const Handle_StepBasic_LengthMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWLengthMeasureWithUnit::~RWStepBasic_RWLengthMeasureWithUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWLengthMeasureWithUnit {
-	~RWStepBasic_RWLengthMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLengthMeasureWithUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1269,10 +1745,18 @@ class RWStepBasic_RWSiUnitAndVolumeUnit {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndVolumeUnit &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWSiUnitAndVolumeUnit::~RWStepBasic_RWSiUnitAndVolumeUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSiUnitAndVolumeUnit {
-	~RWStepBasic_RWSiUnitAndVolumeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndVolumeUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1290,10 +1774,18 @@ class RWStepBasic_RWCertification {
 		void Share(const Handle_StepBasic_Certification &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWCertification::~RWStepBasic_RWCertification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWCertification {
-	~RWStepBasic_RWCertification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCertification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1311,10 +1803,18 @@ class RWStepBasic_RWContractType {
 		void Share(const Handle_StepBasic_ContractType &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWContractType::~RWStepBasic_RWContractType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWContractType {
-	~RWStepBasic_RWContractType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContractType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1332,10 +1832,18 @@ class RWStepBasic_RWPlaneAngleUnit {
 		void Share(const Handle_StepBasic_PlaneAngleUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWPlaneAngleUnit::~RWStepBasic_RWPlaneAngleUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWPlaneAngleUnit {
-	~RWStepBasic_RWPlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPlaneAngleUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1353,10 +1861,18 @@ class RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit::~RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
-	~RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1374,10 +1890,18 @@ class RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
 		void Share(const Handle_StepBasic_ProductDefinitionWithAssociatedDocuments &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductDefinitionWithAssociatedDocuments::~RWStepBasic_RWProductDefinitionWithAssociatedDocuments %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
-	~RWStepBasic_RWProductDefinitionWithAssociatedDocuments() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionWithAssociatedDocuments\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1395,10 +1919,18 @@ class RWStepBasic_RWApprovalPersonOrganization {
 		void Share(const Handle_StepBasic_ApprovalPersonOrganization &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWApprovalPersonOrganization::~RWStepBasic_RWApprovalPersonOrganization %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWApprovalPersonOrganization {
-	~RWStepBasic_RWApprovalPersonOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalPersonOrganization\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1414,10 +1946,18 @@ class RWStepBasic_RWApprovalRole {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApprovalRole &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWApprovalRole::~RWStepBasic_RWApprovalRole %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWApprovalRole {
-	~RWStepBasic_RWApprovalRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalRole\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1433,10 +1973,18 @@ class RWStepBasic_RWCoordinatedUniversalTimeOffset {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_CoordinatedUniversalTimeOffset &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWCoordinatedUniversalTimeOffset::~RWStepBasic_RWCoordinatedUniversalTimeOffset %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWCoordinatedUniversalTimeOffset {
-	~RWStepBasic_RWCoordinatedUniversalTimeOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCoordinatedUniversalTimeOffset\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1452,10 +2000,18 @@ class RWStepBasic_RWApprovalStatus {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApprovalStatus &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWApprovalStatus::~RWStepBasic_RWApprovalStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWApprovalStatus {
-	~RWStepBasic_RWApprovalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalStatus\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1473,10 +2029,18 @@ class RWStepBasic_RWDocumentProductEquivalence {
 		void Share(const Handle_StepBasic_DocumentProductEquivalence &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWDocumentProductEquivalence::~RWStepBasic_RWDocumentProductEquivalence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDocumentProductEquivalence {
-	~RWStepBasic_RWDocumentProductEquivalence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentProductEquivalence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1494,10 +2058,18 @@ class RWStepBasic_RWCharacterizedObject {
 		void Share(const Handle_StepBasic_CharacterizedObject &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWCharacterizedObject::~RWStepBasic_RWCharacterizedObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWCharacterizedObject {
-	~RWStepBasic_RWCharacterizedObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCharacterizedObject\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1515,10 +2087,18 @@ class RWStepBasic_RWGroupRelationship {
 		void Share(const Handle_StepBasic_GroupRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWGroupRelationship::~RWStepBasic_RWGroupRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWGroupRelationship {
-	~RWStepBasic_RWGroupRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGroupRelationship\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1536,10 +2116,18 @@ class RWStepBasic_RWProductContext {
 		void Share(const Handle_StepBasic_ProductContext &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductContext::~RWStepBasic_RWProductContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductContext {
-	~RWStepBasic_RWProductContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductContext\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1555,10 +2143,18 @@ class RWStepBasic_RWOrdinalDate {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_OrdinalDate &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWOrdinalDate::~RWStepBasic_RWOrdinalDate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWOrdinalDate {
-	~RWStepBasic_RWOrdinalDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrdinalDate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1576,10 +2172,18 @@ class RWStepBasic_RWPersonalAddress {
 		void Share(const Handle_StepBasic_PersonalAddress &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWPersonalAddress::~RWStepBasic_RWPersonalAddress %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWPersonalAddress {
-	~RWStepBasic_RWPersonalAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPersonalAddress\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1597,10 +2201,18 @@ class RWStepBasic_RWMechanicalContext {
 		void Share(const Handle_StepBasic_MechanicalContext &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWMechanicalContext::~RWStepBasic_RWMechanicalContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWMechanicalContext {
-	~RWStepBasic_RWMechanicalContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMechanicalContext\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1618,10 +2230,18 @@ class RWStepBasic_RWApproval {
 		void Share(const Handle_StepBasic_Approval &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWApproval::~RWStepBasic_RWApproval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWApproval {
-	~RWStepBasic_RWApproval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApproval\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1639,10 +2259,18 @@ class RWStepBasic_RWProduct {
 		void Share(const Handle_StepBasic_Product &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProduct::~RWStepBasic_RWProduct %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProduct {
-	~RWStepBasic_RWProduct() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProduct\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1658,10 +2286,18 @@ class RWStepBasic_RWDimensionalExponents {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DimensionalExponents &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWDimensionalExponents::~RWStepBasic_RWDimensionalExponents %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDimensionalExponents {
-	~RWStepBasic_RWDimensionalExponents() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDimensionalExponents\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1679,10 +2315,18 @@ class RWStepBasic_RWRatioMeasureWithUnit {
 		void Share(const Handle_StepBasic_RatioMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWRatioMeasureWithUnit::~RWStepBasic_RWRatioMeasureWithUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWRatioMeasureWithUnit {
-	~RWStepBasic_RWRatioMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWRatioMeasureWithUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1700,10 +2344,18 @@ class RWStepBasic_RWNameAssignment {
 		void Share(const Handle_StepBasic_NameAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWNameAssignment::~RWStepBasic_RWNameAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWNameAssignment {
-	~RWStepBasic_RWNameAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWNameAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1721,10 +2373,18 @@ class RWStepBasic_RWUncertaintyMeasureWithUnit {
 		void Share(const Handle_StepBasic_UncertaintyMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWUncertaintyMeasureWithUnit::~RWStepBasic_RWUncertaintyMeasureWithUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWUncertaintyMeasureWithUnit {
-	~RWStepBasic_RWUncertaintyMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWUncertaintyMeasureWithUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1742,10 +2402,18 @@ class RWStepBasic_RWDocumentType {
 		void Share(const Handle_StepBasic_DocumentType &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWDocumentType::~RWStepBasic_RWDocumentType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDocumentType {
-	~RWStepBasic_RWDocumentType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1761,10 +2429,18 @@ class RWStepBasic_RWOrganization {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Organization &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWOrganization::~RWStepBasic_RWOrganization %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWOrganization {
-	~RWStepBasic_RWOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrganization\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1782,10 +2458,18 @@ class RWStepBasic_RWSecurityClassification {
 		void Share(const Handle_StepBasic_SecurityClassification &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWSecurityClassification::~RWStepBasic_RWSecurityClassification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSecurityClassification {
-	~RWStepBasic_RWSecurityClassification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSecurityClassification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1803,10 +2487,18 @@ class RWStepBasic_RWProductConceptContext {
 		void Share(const Handle_StepBasic_ProductConceptContext &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductConceptContext::~RWStepBasic_RWProductConceptContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductConceptContext {
-	~RWStepBasic_RWProductConceptContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductConceptContext\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1824,10 +2516,18 @@ class RWStepBasic_RWProductDefinitionRelationship {
 		void Share(const Handle_StepBasic_ProductDefinitionRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductDefinitionRelationship::~RWStepBasic_RWProductDefinitionRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductDefinitionRelationship {
-	~RWStepBasic_RWProductDefinitionRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionRelationship\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1845,10 +2545,18 @@ class RWStepBasic_RWMeasureWithUnit {
 		void Share(const Handle_StepBasic_MeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWMeasureWithUnit::~RWStepBasic_RWMeasureWithUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWMeasureWithUnit {
-	~RWStepBasic_RWMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMeasureWithUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1866,10 +2574,18 @@ class RWStepBasic_RWConversionBasedUnitAndAreaUnit {
 		void Share(const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWConversionBasedUnitAndAreaUnit::~RWStepBasic_RWConversionBasedUnitAndAreaUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWConversionBasedUnitAndAreaUnit {
-	~RWStepBasic_RWConversionBasedUnitAndAreaUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndAreaUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1885,10 +2601,18 @@ class RWStepBasic_RWPersonAndOrganizationRole {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PersonAndOrganizationRole &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWPersonAndOrganizationRole::~RWStepBasic_RWPersonAndOrganizationRole %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWPersonAndOrganizationRole {
-	~RWStepBasic_RWPersonAndOrganizationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPersonAndOrganizationRole\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1904,10 +2628,18 @@ class RWStepBasic_RWDateTimeRole {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateTimeRole &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWDateTimeRole::~RWStepBasic_RWDateTimeRole %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDateTimeRole {
-	~RWStepBasic_RWDateTimeRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateTimeRole\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1925,10 +2657,18 @@ class RWStepBasic_RWProductType {
 		void Share(const Handle_StepBasic_ProductType &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductType::~RWStepBasic_RWProductType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductType {
-	~RWStepBasic_RWProductType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1944,10 +2684,18 @@ class RWStepBasic_RWWeekOfYearAndDayDate {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_WeekOfYearAndDayDate &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWWeekOfYearAndDayDate::~RWStepBasic_RWWeekOfYearAndDayDate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWWeekOfYearAndDayDate {
-	~RWStepBasic_RWWeekOfYearAndDayDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWWeekOfYearAndDayDate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1963,10 +2711,18 @@ class RWStepBasic_RWPerson {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Person &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWPerson::~RWStepBasic_RWPerson %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWPerson {
-	~RWStepBasic_RWPerson() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPerson\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1984,10 +2740,18 @@ class RWStepBasic_RWApplicationProtocolDefinition {
 		void Share(const Handle_StepBasic_ApplicationProtocolDefinition &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWApplicationProtocolDefinition::~RWStepBasic_RWApplicationProtocolDefinition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWApplicationProtocolDefinition {
-	~RWStepBasic_RWApplicationProtocolDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApplicationProtocolDefinition\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2005,10 +2769,18 @@ class RWStepBasic_RWProductDefinitionEffectivity {
 		void Share(const Handle_StepBasic_ProductDefinitionEffectivity &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductDefinitionEffectivity::~RWStepBasic_RWProductDefinitionEffectivity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductDefinitionEffectivity {
-	~RWStepBasic_RWProductDefinitionEffectivity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionEffectivity\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2024,10 +2796,18 @@ class RWStepBasic_RWDate {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Date &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWDate::~RWStepBasic_RWDate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDate {
-	~RWStepBasic_RWDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDate\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2045,10 +2825,18 @@ class RWStepBasic_RWCertificationAssignment {
 		void Share(const Handle_StepBasic_CertificationAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWCertificationAssignment::~RWStepBasic_RWCertificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWCertificationAssignment {
-	~RWStepBasic_RWCertificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCertificationAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2066,10 +2854,18 @@ class RWStepBasic_RWContract {
 		void Share(const Handle_StepBasic_Contract &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWContract::~RWStepBasic_RWContract %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWContract {
-	~RWStepBasic_RWContract() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContract\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2087,10 +2883,18 @@ class RWStepBasic_RWApprovalDateTime {
 		void Share(const Handle_StepBasic_ApprovalDateTime &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWApprovalDateTime::~RWStepBasic_RWApprovalDateTime %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWApprovalDateTime {
-	~RWStepBasic_RWApprovalDateTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalDateTime\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2106,10 +2910,18 @@ class RWStepBasic_RWSiUnitAndSolidAngleUnit {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndSolidAngleUnit &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWSiUnitAndSolidAngleUnit::~RWStepBasic_RWSiUnitAndSolidAngleUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSiUnitAndSolidAngleUnit {
-	~RWStepBasic_RWSiUnitAndSolidAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndSolidAngleUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2127,10 +2939,18 @@ class RWStepBasic_RWProductRelatedProductCategory {
 		void Share(const Handle_StepBasic_ProductRelatedProductCategory &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductRelatedProductCategory::~RWStepBasic_RWProductRelatedProductCategory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductRelatedProductCategory {
-	~RWStepBasic_RWProductRelatedProductCategory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductRelatedProductCategory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2146,10 +2966,18 @@ class RWStepBasic_RWSiUnitAndMassUnit {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndMassUnit &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWSiUnitAndMassUnit::~RWStepBasic_RWSiUnitAndMassUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSiUnitAndMassUnit {
-	~RWStepBasic_RWSiUnitAndMassUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndMassUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2167,10 +2995,18 @@ class RWStepBasic_RWCertificationType {
 		void Share(const Handle_StepBasic_CertificationType &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWCertificationType::~RWStepBasic_RWCertificationType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWCertificationType {
-	~RWStepBasic_RWCertificationType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCertificationType\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2188,10 +3024,18 @@ class RWStepBasic_RWDocument {
 		void Share(const Handle_StepBasic_Document &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWDocument::~RWStepBasic_RWDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDocument {
-	~RWStepBasic_RWDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocument\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2209,10 +3053,18 @@ class RWStepBasic_RWEulerAngles {
 		void Share(const Handle_StepBasic_EulerAngles &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWEulerAngles::~RWStepBasic_RWEulerAngles %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWEulerAngles {
-	~RWStepBasic_RWEulerAngles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWEulerAngles\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2230,10 +3082,18 @@ class RWStepBasic_RWMassUnit {
 		void Share(const Handle_StepBasic_MassUnit &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWMassUnit::~RWStepBasic_RWMassUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWMassUnit {
-	~RWStepBasic_RWMassUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMassUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2251,10 +3111,18 @@ class RWStepBasic_RWGeneralProperty {
 		void Share(const Handle_StepBasic_GeneralProperty &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWGeneralProperty::~RWStepBasic_RWGeneralProperty %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWGeneralProperty {
-	~RWStepBasic_RWGeneralProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGeneralProperty\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2272,10 +3140,18 @@ class RWStepBasic_RWApplicationContextElement {
 		void Share(const Handle_StepBasic_ApplicationContextElement &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWApplicationContextElement::~RWStepBasic_RWApplicationContextElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWApplicationContextElement {
-	~RWStepBasic_RWApplicationContextElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApplicationContextElement\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2291,10 +3167,18 @@ class RWStepBasic_RWSiUnitAndTimeUnit {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndTimeUnit &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWSiUnitAndTimeUnit::~RWStepBasic_RWSiUnitAndTimeUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWSiUnitAndTimeUnit {
-	~RWStepBasic_RWSiUnitAndTimeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndTimeUnit\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2310,10 +3194,18 @@ class RWStepBasic_RWProductCategory {
 		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductCategory &ent) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductCategory::~RWStepBasic_RWProductCategory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductCategory {
-	~RWStepBasic_RWProductCategory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductCategory\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2331,10 +3223,18 @@ class RWStepBasic_RWProductCategoryRelationship {
 		void Share(const Handle_StepBasic_ProductCategoryRelationship &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWProductCategoryRelationship::~RWStepBasic_RWProductCategoryRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWProductCategoryRelationship {
-	~RWStepBasic_RWProductCategoryRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductCategoryRelationship\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2352,10 +3252,18 @@ class RWStepBasic_RWGroupAssignment {
 		void Share(const Handle_StepBasic_GroupAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWGroupAssignment::~RWStepBasic_RWGroupAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWGroupAssignment {
-	~RWStepBasic_RWGroupAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGroupAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2373,10 +3281,18 @@ class RWStepBasic_RWActionRequestSolution {
 		void Share(const Handle_StepBasic_ActionRequestSolution &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWActionRequestSolution::~RWStepBasic_RWActionRequestSolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWActionRequestSolution {
-	~RWStepBasic_RWActionRequestSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWActionRequestSolution\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2394,9 +3310,17 @@ class RWStepBasic_RWDocumentUsageConstraint {
 		void Share(const Handle_StepBasic_DocumentUsageConstraint &ent, Interface_EntityIterator & iter) const;
 
 };
+%feature("shadow") RWStepBasic_RWDocumentUsageConstraint::~RWStepBasic_RWDocumentUsageConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend RWStepBasic_RWDocumentUsageConstraint {
-	~RWStepBasic_RWDocumentUsageConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentUsageConstraint\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };

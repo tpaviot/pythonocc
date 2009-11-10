@@ -27,6 +27,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
+%pythoncode {
+import GarbageCollector
+};
+
 %include StepVisual_dependencies.i
 
 
@@ -85,10 +89,18 @@ class Handle_StepVisual_PresentationRepresentation : public Handle_StepRepr_Repr
 	return (StepVisual_PresentationRepresentation*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PresentationRepresentation::~Handle_StepVisual_PresentationRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PresentationRepresentation {
-	~Handle_StepVisual_PresentationRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationRepresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -115,10 +127,18 @@ class Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation : pu
 	return (StepVisual_MechanicalDesignGeometricPresentationRepresentation*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation::~Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation {
-	~Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -145,10 +165,18 @@ class Handle_StepVisual_CompositeText : public Handle_StepGeom_GeometricRepresen
 	return (StepVisual_CompositeText*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_CompositeText::~Handle_StepVisual_CompositeText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_CompositeText {
-	~Handle_StepVisual_CompositeText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CompositeText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -175,10 +203,18 @@ class Handle_StepVisual_Invisibility : public Handle_MMgt_TShared {
 	return (StepVisual_Invisibility*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_Invisibility::~Handle_StepVisual_Invisibility %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_Invisibility {
-	~Handle_StepVisual_Invisibility() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_Invisibility\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -205,10 +241,18 @@ class Handle_StepVisual_CameraModel : public Handle_StepGeom_GeometricRepresenta
 	return (StepVisual_CameraModel*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_CameraModel::~Handle_StepVisual_CameraModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_CameraModel {
-	~Handle_StepVisual_CameraModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CameraModel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -235,10 +279,18 @@ class Handle_StepVisual_SurfaceStyleSegmentationCurve : public Handle_MMgt_TShar
 	return (StepVisual_SurfaceStyleSegmentationCurve*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_SurfaceStyleSegmentationCurve::~Handle_StepVisual_SurfaceStyleSegmentationCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_SurfaceStyleSegmentationCurve {
-	~Handle_StepVisual_SurfaceStyleSegmentationCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleSegmentationCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -265,10 +317,18 @@ class Handle_StepVisual_Colour : public Handle_MMgt_TShared {
 	return (StepVisual_Colour*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_Colour::~Handle_StepVisual_Colour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_Colour {
-	~Handle_StepVisual_Colour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_Colour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -295,10 +355,18 @@ class Handle_StepVisual_PreDefinedColour : public Handle_StepVisual_Colour {
 	return (StepVisual_PreDefinedColour*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PreDefinedColour::~Handle_StepVisual_PreDefinedColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PreDefinedColour {
-	~Handle_StepVisual_PreDefinedColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PreDefinedColour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -325,10 +393,18 @@ class Handle_StepVisual_CameraUsage : public Handle_StepRepr_RepresentationMap {
 	return (StepVisual_CameraUsage*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_CameraUsage::~Handle_StepVisual_CameraUsage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_CameraUsage {
-	~Handle_StepVisual_CameraUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CameraUsage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -355,10 +431,18 @@ class Handle_StepVisual_AnnotationText : public Handle_StepRepr_MappedItem {
 	return (StepVisual_AnnotationText*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_AnnotationText::~Handle_StepVisual_AnnotationText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_AnnotationText {
-	~Handle_StepVisual_AnnotationText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_AnnotationText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -385,10 +469,18 @@ class Handle_StepVisual_ContextDependentInvisibility : public Handle_StepVisual_
 	return (StepVisual_ContextDependentInvisibility*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_ContextDependentInvisibility::~Handle_StepVisual_ContextDependentInvisibility %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_ContextDependentInvisibility {
-	~Handle_StepVisual_ContextDependentInvisibility() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ContextDependentInvisibility\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -415,10 +507,18 @@ class Handle_StepVisual_ExternallyDefinedCurveFont : public Handle_StepBasic_Ext
 	return (StepVisual_ExternallyDefinedCurveFont*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_ExternallyDefinedCurveFont::~Handle_StepVisual_ExternallyDefinedCurveFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_ExternallyDefinedCurveFont {
-	~Handle_StepVisual_ExternallyDefinedCurveFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ExternallyDefinedCurveFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -445,10 +545,18 @@ class Handle_StepVisual_MarkerMember : public Handle_StepData_SelectInt {
 	return (StepVisual_MarkerMember*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_MarkerMember::~Handle_StepVisual_MarkerMember %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_MarkerMember {
-	~Handle_StepVisual_MarkerMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_MarkerMember\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -475,10 +583,18 @@ class Handle_StepVisual_PresentationView : public Handle_StepVisual_Presentation
 	return (StepVisual_PresentationView*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PresentationView::~Handle_StepVisual_PresentationView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PresentationView {
-	~Handle_StepVisual_PresentationView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -505,10 +621,18 @@ class Handle_StepVisual_StyledItem : public Handle_StepRepr_RepresentationItem {
 	return (StepVisual_StyledItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_StyledItem::~Handle_StepVisual_StyledItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_StyledItem {
-	~Handle_StepVisual_StyledItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_StyledItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -535,10 +659,18 @@ class Handle_StepVisual_OverRidingStyledItem : public Handle_StepVisual_StyledIt
 	return (StepVisual_OverRidingStyledItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_OverRidingStyledItem::~Handle_StepVisual_OverRidingStyledItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_OverRidingStyledItem {
-	~Handle_StepVisual_OverRidingStyledItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_OverRidingStyledItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -565,10 +697,18 @@ class Handle_StepVisual_ContextDependentOverRidingStyledItem : public Handle_Ste
 	return (StepVisual_ContextDependentOverRidingStyledItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_ContextDependentOverRidingStyledItem::~Handle_StepVisual_ContextDependentOverRidingStyledItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_ContextDependentOverRidingStyledItem {
-	~Handle_StepVisual_ContextDependentOverRidingStyledItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ContextDependentOverRidingStyledItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -595,10 +735,18 @@ class Handle_StepVisual_PresentationSize : public Handle_MMgt_TShared {
 	return (StepVisual_PresentationSize*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PresentationSize::~Handle_StepVisual_PresentationSize %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PresentationSize {
-	~Handle_StepVisual_PresentationSize() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationSize\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -625,10 +773,18 @@ class Handle_StepVisual_DraughtingPreDefinedColour : public Handle_StepVisual_Pr
 	return (StepVisual_DraughtingPreDefinedColour*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_DraughtingPreDefinedColour::~Handle_StepVisual_DraughtingPreDefinedColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_DraughtingPreDefinedColour {
-	~Handle_StepVisual_DraughtingPreDefinedColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_DraughtingPreDefinedColour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -655,10 +811,18 @@ class Handle_StepVisual_HArray1OfTextOrCharacter : public Handle_MMgt_TShared {
 	return (StepVisual_HArray1OfTextOrCharacter*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_HArray1OfTextOrCharacter::~Handle_StepVisual_HArray1OfTextOrCharacter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_HArray1OfTextOrCharacter {
-	~Handle_StepVisual_HArray1OfTextOrCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfTextOrCharacter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -685,10 +849,18 @@ class Handle_StepVisual_CameraModelD2 : public Handle_StepVisual_CameraModel {
 	return (StepVisual_CameraModelD2*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_CameraModelD2::~Handle_StepVisual_CameraModelD2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_CameraModelD2 {
-	~Handle_StepVisual_CameraModelD2() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CameraModelD2\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -715,10 +887,18 @@ class Handle_StepVisual_CameraModelD3 : public Handle_StepVisual_CameraModel {
 	return (StepVisual_CameraModelD3*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_CameraModelD3::~Handle_StepVisual_CameraModelD3 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_CameraModelD3 {
-	~Handle_StepVisual_CameraModelD3() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CameraModelD3\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -745,10 +925,18 @@ class Handle_StepVisual_CameraImage : public Handle_StepRepr_MappedItem {
 	return (StepVisual_CameraImage*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_CameraImage::~Handle_StepVisual_CameraImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_CameraImage {
-	~Handle_StepVisual_CameraImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CameraImage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -775,10 +963,18 @@ class Handle_StepVisual_SurfaceStyleParameterLine : public Handle_MMgt_TShared {
 	return (StepVisual_SurfaceStyleParameterLine*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_SurfaceStyleParameterLine::~Handle_StepVisual_SurfaceStyleParameterLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_SurfaceStyleParameterLine {
-	~Handle_StepVisual_SurfaceStyleParameterLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleParameterLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -805,10 +1001,18 @@ class Handle_StepVisual_AnnotationOccurrence : public Handle_StepVisual_StyledIt
 	return (StepVisual_AnnotationOccurrence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_AnnotationOccurrence::~Handle_StepVisual_AnnotationOccurrence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_AnnotationOccurrence {
-	~Handle_StepVisual_AnnotationOccurrence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_AnnotationOccurrence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -835,10 +1039,18 @@ class Handle_StepVisual_CameraImage2dWithScale : public Handle_StepVisual_Camera
 	return (StepVisual_CameraImage2dWithScale*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_CameraImage2dWithScale::~Handle_StepVisual_CameraImage2dWithScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_CameraImage2dWithScale {
-	~Handle_StepVisual_CameraImage2dWithScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CameraImage2dWithScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -865,10 +1077,18 @@ class Handle_StepVisual_HArray1OfPresentationStyleAssignment : public Handle_MMg
 	return (StepVisual_HArray1OfPresentationStyleAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_HArray1OfPresentationStyleAssignment::~Handle_StepVisual_HArray1OfPresentationStyleAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_HArray1OfPresentationStyleAssignment {
-	~Handle_StepVisual_HArray1OfPresentationStyleAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfPresentationStyleAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -895,10 +1115,18 @@ class Handle_StepVisual_PresentationLayerAssignment : public Handle_MMgt_TShared
 	return (StepVisual_PresentationLayerAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PresentationLayerAssignment::~Handle_StepVisual_PresentationLayerAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PresentationLayerAssignment {
-	~Handle_StepVisual_PresentationLayerAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationLayerAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -925,10 +1153,18 @@ class Handle_StepVisual_PresentationArea : public Handle_StepVisual_Presentation
 	return (StepVisual_PresentationArea*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PresentationArea::~Handle_StepVisual_PresentationArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PresentationArea {
-	~Handle_StepVisual_PresentationArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -955,10 +1191,18 @@ class Handle_StepVisual_MechanicalDesignGeometricPresentationArea : public Handl
 	return (StepVisual_MechanicalDesignGeometricPresentationArea*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_MechanicalDesignGeometricPresentationArea::~Handle_StepVisual_MechanicalDesignGeometricPresentationArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_MechanicalDesignGeometricPresentationArea {
-	~Handle_StepVisual_MechanicalDesignGeometricPresentationArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_MechanicalDesignGeometricPresentationArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -985,10 +1229,18 @@ class Handle_StepVisual_PresentationStyleAssignment : public Handle_MMgt_TShared
 	return (StepVisual_PresentationStyleAssignment*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PresentationStyleAssignment::~Handle_StepVisual_PresentationStyleAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PresentationStyleAssignment {
-	~Handle_StepVisual_PresentationStyleAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationStyleAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1015,10 +1267,18 @@ class Handle_StepVisual_PresentationStyleByContext : public Handle_StepVisual_Pr
 	return (StepVisual_PresentationStyleByContext*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PresentationStyleByContext::~Handle_StepVisual_PresentationStyleByContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PresentationStyleByContext {
-	~Handle_StepVisual_PresentationStyleByContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationStyleByContext\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1045,10 +1305,18 @@ class Handle_StepVisual_ViewVolume : public Handle_MMgt_TShared {
 	return (StepVisual_ViewVolume*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_ViewVolume::~Handle_StepVisual_ViewVolume %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_ViewVolume {
-	~Handle_StepVisual_ViewVolume() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ViewVolume\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1075,10 +1343,18 @@ class Handle_StepVisual_TextStyle : public Handle_MMgt_TShared {
 	return (StepVisual_TextStyle*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_TextStyle::~Handle_StepVisual_TextStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_TextStyle {
-	~Handle_StepVisual_TextStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_TextStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1105,10 +1381,18 @@ class Handle_StepVisual_TextStyleWithBoxCharacteristics : public Handle_StepVisu
 	return (StepVisual_TextStyleWithBoxCharacteristics*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_TextStyleWithBoxCharacteristics::~Handle_StepVisual_TextStyleWithBoxCharacteristics %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_TextStyleWithBoxCharacteristics {
-	~Handle_StepVisual_TextStyleWithBoxCharacteristics() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_TextStyleWithBoxCharacteristics\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1135,10 +1419,18 @@ class Handle_StepVisual_SurfaceSideStyle : public Handle_MMgt_TShared {
 	return (StepVisual_SurfaceSideStyle*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_SurfaceSideStyle::~Handle_StepVisual_SurfaceSideStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_SurfaceSideStyle {
-	~Handle_StepVisual_SurfaceSideStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceSideStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1165,10 +1457,18 @@ class Handle_StepVisual_PointStyle : public Handle_MMgt_TShared {
 	return (StepVisual_PointStyle*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PointStyle::~Handle_StepVisual_PointStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PointStyle {
-	~Handle_StepVisual_PointStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PointStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1195,10 +1495,18 @@ class Handle_StepVisual_HArray1OfDirectionCountSelect : public Handle_MMgt_TShar
 	return (StepVisual_HArray1OfDirectionCountSelect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_HArray1OfDirectionCountSelect::~Handle_StepVisual_HArray1OfDirectionCountSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_HArray1OfDirectionCountSelect {
-	~Handle_StepVisual_HArray1OfDirectionCountSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfDirectionCountSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1225,10 +1533,18 @@ class Handle_StepVisual_FillAreaStyle : public Handle_MMgt_TShared {
 	return (StepVisual_FillAreaStyle*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_FillAreaStyle::~Handle_StepVisual_FillAreaStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_FillAreaStyle {
-	~Handle_StepVisual_FillAreaStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_FillAreaStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1255,10 +1571,18 @@ class Handle_StepVisual_ColourSpecification : public Handle_StepVisual_Colour {
 	return (StepVisual_ColourSpecification*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_ColourSpecification::~Handle_StepVisual_ColourSpecification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_ColourSpecification {
-	~Handle_StepVisual_ColourSpecification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ColourSpecification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1285,10 +1609,18 @@ class Handle_StepVisual_ColourRgb : public Handle_StepVisual_ColourSpecification
 	return (StepVisual_ColourRgb*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_ColourRgb::~Handle_StepVisual_ColourRgb %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_ColourRgb {
-	~Handle_StepVisual_ColourRgb() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ColourRgb\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1315,10 +1647,18 @@ class Handle_StepVisual_PresentationSet : public Handle_MMgt_TShared {
 	return (StepVisual_PresentationSet*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PresentationSet::~Handle_StepVisual_PresentationSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PresentationSet {
-	~Handle_StepVisual_PresentationSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1345,10 +1685,18 @@ class Handle_StepVisual_CurveStyle : public Handle_MMgt_TShared {
 	return (StepVisual_CurveStyle*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_CurveStyle::~Handle_StepVisual_CurveStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_CurveStyle {
-	~Handle_StepVisual_CurveStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CurveStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1375,10 +1723,18 @@ class Handle_StepVisual_ExternallyDefinedTextFont : public Handle_StepBasic_Exte
 	return (StepVisual_ExternallyDefinedTextFont*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_ExternallyDefinedTextFont::~Handle_StepVisual_ExternallyDefinedTextFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_ExternallyDefinedTextFont {
-	~Handle_StepVisual_ExternallyDefinedTextFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ExternallyDefinedTextFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1405,10 +1761,18 @@ class Handle_StepVisual_TemplateInstance : public Handle_StepRepr_MappedItem {
 	return (StepVisual_TemplateInstance*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_TemplateInstance::~Handle_StepVisual_TemplateInstance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_TemplateInstance {
-	~Handle_StepVisual_TemplateInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_TemplateInstance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1435,10 +1799,18 @@ class Handle_StepVisual_HArray1OfFillStyleSelect : public Handle_MMgt_TShared {
 	return (StepVisual_HArray1OfFillStyleSelect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_HArray1OfFillStyleSelect::~Handle_StepVisual_HArray1OfFillStyleSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_HArray1OfFillStyleSelect {
-	~Handle_StepVisual_HArray1OfFillStyleSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfFillStyleSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1465,10 +1837,18 @@ class Handle_StepVisual_FillAreaStyleColour : public Handle_MMgt_TShared {
 	return (StepVisual_FillAreaStyleColour*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_FillAreaStyleColour::~Handle_StepVisual_FillAreaStyleColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_FillAreaStyleColour {
-	~Handle_StepVisual_FillAreaStyleColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_FillAreaStyleColour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1495,10 +1875,18 @@ class Handle_StepVisual_HArray1OfSurfaceStyleElementSelect : public Handle_MMgt_
 	return (StepVisual_HArray1OfSurfaceStyleElementSelect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_HArray1OfSurfaceStyleElementSelect::~Handle_StepVisual_HArray1OfSurfaceStyleElementSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_HArray1OfSurfaceStyleElementSelect {
-	~Handle_StepVisual_HArray1OfSurfaceStyleElementSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfSurfaceStyleElementSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1525,10 +1913,18 @@ class Handle_StepVisual_SurfaceStyleFillArea : public Handle_MMgt_TShared {
 	return (StepVisual_SurfaceStyleFillArea*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_SurfaceStyleFillArea::~Handle_StepVisual_SurfaceStyleFillArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_SurfaceStyleFillArea {
-	~Handle_StepVisual_SurfaceStyleFillArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleFillArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1555,10 +1951,18 @@ class Handle_StepVisual_PresentedItem : public Handle_MMgt_TShared {
 	return (StepVisual_PresentedItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PresentedItem::~Handle_StepVisual_PresentedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PresentedItem {
-	~Handle_StepVisual_PresentedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1585,10 +1989,18 @@ class Handle_StepVisual_Template : public Handle_StepRepr_Representation {
 	return (StepVisual_Template*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_Template::~Handle_StepVisual_Template %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_Template {
-	~Handle_StepVisual_Template() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_Template\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1615,10 +2027,18 @@ class Handle_StepVisual_AreaInSet : public Handle_MMgt_TShared {
 	return (StepVisual_AreaInSet*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_AreaInSet::~Handle_StepVisual_AreaInSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_AreaInSet {
-	~Handle_StepVisual_AreaInSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_AreaInSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1645,10 +2065,18 @@ class Handle_StepVisual_TextStyleForDefinedFont : public Handle_MMgt_TShared {
 	return (StepVisual_TextStyleForDefinedFont*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_TextStyleForDefinedFont::~Handle_StepVisual_TextStyleForDefinedFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_TextStyleForDefinedFont {
-	~Handle_StepVisual_TextStyleForDefinedFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_TextStyleForDefinedFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1675,10 +2103,18 @@ class Handle_StepVisual_PreDefinedItem : public Handle_MMgt_TShared {
 	return (StepVisual_PreDefinedItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PreDefinedItem::~Handle_StepVisual_PreDefinedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PreDefinedItem {
-	~Handle_StepVisual_PreDefinedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PreDefinedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1705,10 +2141,18 @@ class Handle_StepVisual_PreDefinedCurveFont : public Handle_StepVisual_PreDefine
 	return (StepVisual_PreDefinedCurveFont*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PreDefinedCurveFont::~Handle_StepVisual_PreDefinedCurveFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PreDefinedCurveFont {
-	~Handle_StepVisual_PreDefinedCurveFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PreDefinedCurveFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1735,10 +2179,18 @@ class Handle_StepVisual_HArray1OfBoxCharacteristicSelect : public Handle_MMgt_TS
 	return (StepVisual_HArray1OfBoxCharacteristicSelect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_HArray1OfBoxCharacteristicSelect::~Handle_StepVisual_HArray1OfBoxCharacteristicSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_HArray1OfBoxCharacteristicSelect {
-	~Handle_StepVisual_HArray1OfBoxCharacteristicSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfBoxCharacteristicSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1765,10 +2217,18 @@ class Handle_StepVisual_PreDefinedTextFont : public Handle_StepVisual_PreDefined
 	return (StepVisual_PreDefinedTextFont*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PreDefinedTextFont::~Handle_StepVisual_PreDefinedTextFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PreDefinedTextFont {
-	~Handle_StepVisual_PreDefinedTextFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PreDefinedTextFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1795,10 +2255,18 @@ class Handle_StepVisual_CurveStyleFontPattern : public Handle_MMgt_TShared {
 	return (StepVisual_CurveStyleFontPattern*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_CurveStyleFontPattern::~Handle_StepVisual_CurveStyleFontPattern %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_CurveStyleFontPattern {
-	~Handle_StepVisual_CurveStyleFontPattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CurveStyleFontPattern\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1825,10 +2293,18 @@ class Handle_StepVisual_SurfaceStyleUsage : public Handle_MMgt_TShared {
 	return (StepVisual_SurfaceStyleUsage*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_SurfaceStyleUsage::~Handle_StepVisual_SurfaceStyleUsage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_SurfaceStyleUsage {
-	~Handle_StepVisual_SurfaceStyleUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleUsage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1855,10 +2331,18 @@ class Handle_StepVisual_PlanarExtent : public Handle_StepGeom_GeometricRepresent
 	return (StepVisual_PlanarExtent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PlanarExtent::~Handle_StepVisual_PlanarExtent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PlanarExtent {
-	~Handle_StepVisual_PlanarExtent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PlanarExtent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1885,10 +2369,18 @@ class Handle_StepVisual_PlanarBox : public Handle_StepVisual_PlanarExtent {
 	return (StepVisual_PlanarBox*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PlanarBox::~Handle_StepVisual_PlanarBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PlanarBox {
-	~Handle_StepVisual_PlanarBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PlanarBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1915,10 +2407,18 @@ class Handle_StepVisual_DraughtingAnnotationOccurrence : public Handle_StepVisua
 	return (StepVisual_DraughtingAnnotationOccurrence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_DraughtingAnnotationOccurrence::~Handle_StepVisual_DraughtingAnnotationOccurrence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_DraughtingAnnotationOccurrence {
-	~Handle_StepVisual_DraughtingAnnotationOccurrence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_DraughtingAnnotationOccurrence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1945,10 +2445,18 @@ class Handle_StepVisual_HArray1OfCurveStyleFontPattern : public Handle_MMgt_TSha
 	return (StepVisual_HArray1OfCurveStyleFontPattern*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_HArray1OfCurveStyleFontPattern::~Handle_StepVisual_HArray1OfCurveStyleFontPattern %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_HArray1OfCurveStyleFontPattern {
-	~Handle_StepVisual_HArray1OfCurveStyleFontPattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfCurveStyleFontPattern\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -1975,10 +2483,18 @@ class Handle_StepVisual_HArray1OfPresentationStyleSelect : public Handle_MMgt_TS
 	return (StepVisual_HArray1OfPresentationStyleSelect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_HArray1OfPresentationStyleSelect::~Handle_StepVisual_HArray1OfPresentationStyleSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_HArray1OfPresentationStyleSelect {
-	~Handle_StepVisual_HArray1OfPresentationStyleSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfPresentationStyleSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2005,10 +2521,18 @@ class Handle_StepVisual_AnnotationTextOccurrence : public Handle_StepVisual_Anno
 	return (StepVisual_AnnotationTextOccurrence*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_AnnotationTextOccurrence::~Handle_StepVisual_AnnotationTextOccurrence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_AnnotationTextOccurrence {
-	~Handle_StepVisual_AnnotationTextOccurrence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_AnnotationTextOccurrence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2035,10 +2559,18 @@ class Handle_StepVisual_DraughtingPreDefinedCurveFont : public Handle_StepVisual
 	return (StepVisual_DraughtingPreDefinedCurveFont*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_DraughtingPreDefinedCurveFont::~Handle_StepVisual_DraughtingPreDefinedCurveFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_DraughtingPreDefinedCurveFont {
-	~Handle_StepVisual_DraughtingPreDefinedCurveFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_DraughtingPreDefinedCurveFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2065,10 +2597,18 @@ class Handle_StepVisual_TextLiteral : public Handle_StepGeom_GeometricRepresenta
 	return (StepVisual_TextLiteral*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_TextLiteral::~Handle_StepVisual_TextLiteral %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_TextLiteral {
-	~Handle_StepVisual_TextLiteral() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_TextLiteral\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2095,10 +2635,18 @@ class Handle_StepVisual_CompositeTextWithExtent : public Handle_StepVisual_Compo
 	return (StepVisual_CompositeTextWithExtent*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_CompositeTextWithExtent::~Handle_StepVisual_CompositeTextWithExtent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_CompositeTextWithExtent {
-	~Handle_StepVisual_CompositeTextWithExtent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CompositeTextWithExtent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2125,10 +2673,18 @@ class Handle_StepVisual_DraughtingModel : public Handle_StepRepr_Representation 
 	return (StepVisual_DraughtingModel*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_DraughtingModel::~Handle_StepVisual_DraughtingModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_DraughtingModel {
-	~Handle_StepVisual_DraughtingModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_DraughtingModel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2155,10 +2711,18 @@ class Handle_StepVisual_SurfaceStyleBoundary : public Handle_MMgt_TShared {
 	return (StepVisual_SurfaceStyleBoundary*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_SurfaceStyleBoundary::~Handle_StepVisual_SurfaceStyleBoundary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_SurfaceStyleBoundary {
-	~Handle_StepVisual_SurfaceStyleBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleBoundary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2185,10 +2749,18 @@ class Handle_StepVisual_HArray1OfLayeredItem : public Handle_MMgt_TShared {
 	return (StepVisual_HArray1OfLayeredItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_HArray1OfLayeredItem::~Handle_StepVisual_HArray1OfLayeredItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_HArray1OfLayeredItem {
-	~Handle_StepVisual_HArray1OfLayeredItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfLayeredItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2215,10 +2787,18 @@ class Handle_StepVisual_PresentationLayerUsage : public Handle_MMgt_TShared {
 	return (StepVisual_PresentationLayerUsage*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PresentationLayerUsage::~Handle_StepVisual_PresentationLayerUsage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PresentationLayerUsage {
-	~Handle_StepVisual_PresentationLayerUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationLayerUsage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2245,10 +2825,18 @@ class Handle_StepVisual_HArray1OfStyleContextSelect : public Handle_MMgt_TShared
 	return (StepVisual_HArray1OfStyleContextSelect*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_HArray1OfStyleContextSelect::~Handle_StepVisual_HArray1OfStyleContextSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_HArray1OfStyleContextSelect {
-	~Handle_StepVisual_HArray1OfStyleContextSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfStyleContextSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2275,10 +2863,18 @@ class Handle_StepVisual_PresentedItemRepresentation : public Handle_MMgt_TShared
 	return (StepVisual_PresentedItemRepresentation*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_PresentedItemRepresentation::~Handle_StepVisual_PresentedItemRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_PresentedItemRepresentation {
-	~Handle_StepVisual_PresentedItemRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentedItemRepresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2305,10 +2901,18 @@ class Handle_StepVisual_HArray1OfInvisibleItem : public Handle_MMgt_TShared {
 	return (StepVisual_HArray1OfInvisibleItem*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_HArray1OfInvisibleItem::~Handle_StepVisual_HArray1OfInvisibleItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_HArray1OfInvisibleItem {
-	~Handle_StepVisual_HArray1OfInvisibleItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfInvisibleItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2335,10 +2939,18 @@ class Handle_StepVisual_SurfaceStyleSilhouette : public Handle_MMgt_TShared {
 	return (StepVisual_SurfaceStyleSilhouette*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_SurfaceStyleSilhouette::~Handle_StepVisual_SurfaceStyleSilhouette %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_SurfaceStyleSilhouette {
-	~Handle_StepVisual_SurfaceStyleSilhouette() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleSilhouette\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2365,10 +2977,18 @@ class Handle_StepVisual_BackgroundColour : public Handle_StepVisual_Colour {
 	return (StepVisual_BackgroundColour*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_BackgroundColour::~Handle_StepVisual_BackgroundColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_BackgroundColour {
-	~Handle_StepVisual_BackgroundColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_BackgroundColour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2395,10 +3015,18 @@ class Handle_StepVisual_CameraImage3dWithScale : public Handle_StepVisual_Camera
 	return (StepVisual_CameraImage3dWithScale*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_CameraImage3dWithScale::~Handle_StepVisual_CameraImage3dWithScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_CameraImage3dWithScale {
-	~Handle_StepVisual_CameraImage3dWithScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CameraImage3dWithScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2425,10 +3053,18 @@ class Handle_StepVisual_CurveStyleFont : public Handle_MMgt_TShared {
 	return (StepVisual_CurveStyleFont*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_CurveStyleFont::~Handle_StepVisual_CurveStyleFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_CurveStyleFont {
-	~Handle_StepVisual_CurveStyleFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CurveStyleFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2455,10 +3091,18 @@ class Handle_StepVisual_SurfaceStyleControlGrid : public Handle_MMgt_TShared {
 	return (StepVisual_SurfaceStyleControlGrid*)$self->Access();
 	}
 };
+%feature("shadow") Handle_StepVisual_SurfaceStyleControlGrid::~Handle_StepVisual_SurfaceStyleControlGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend Handle_StepVisual_SurfaceStyleControlGrid {
-	~Handle_StepVisual_SurfaceStyleControlGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleControlGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2492,10 +3136,18 @@ class StepVisual_CurveStyleFontPattern : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_CurveStyleFontPattern::~StepVisual_CurveStyleFontPattern %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_CurveStyleFontPattern {
-	~StepVisual_CurveStyleFontPattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CurveStyleFontPattern\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2529,10 +3181,18 @@ class StepVisual_Invisibility : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_Invisibility::~StepVisual_Invisibility %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Invisibility {
-	~StepVisual_Invisibility() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Invisibility\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2560,10 +3220,18 @@ class StepVisual_ContextDependentInvisibility : public StepVisual_Invisibility {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_ContextDependentInvisibility::~StepVisual_ContextDependentInvisibility %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_ContextDependentInvisibility {
-	~StepVisual_ContextDependentInvisibility() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_ContextDependentInvisibility\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2583,10 +3251,18 @@ class StepVisual_SurfaceStyleElementSelect : public StepData_SelectType {
 		Handle_StepVisual_SurfaceStyleParameterLine SurfaceStyleParameterLine() const;
 
 };
+%feature("shadow") StepVisual_SurfaceStyleElementSelect::~StepVisual_SurfaceStyleElementSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_SurfaceStyleElementSelect {
-	~StepVisual_SurfaceStyleElementSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleElementSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2610,10 +3286,18 @@ class StepVisual_CameraUsage : public StepRepr_RepresentationMap {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_CameraUsage::~StepVisual_CameraUsage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_CameraUsage {
-	~StepVisual_CameraUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CameraUsage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2657,10 +3341,18 @@ class StepVisual_HArray1OfDirectionCountSelect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_HArray1OfDirectionCountSelect::~StepVisual_HArray1OfDirectionCountSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_HArray1OfDirectionCountSelect {
-	~StepVisual_HArray1OfDirectionCountSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfDirectionCountSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2700,10 +3392,18 @@ class StepVisual_Array1OfCurveStyleFontPattern {
 		Handle_StepVisual_CurveStyleFontPattern & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepVisual_Array1OfCurveStyleFontPattern::~StepVisual_Array1OfCurveStyleFontPattern %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Array1OfCurveStyleFontPattern {
-	~StepVisual_Array1OfCurveStyleFontPattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfCurveStyleFontPattern\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2743,10 +3443,18 @@ class StepVisual_Array1OfStyleContextSelect {
 		StepVisual_StyleContextSelect & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepVisual_Array1OfStyleContextSelect::~StepVisual_Array1OfStyleContextSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Array1OfStyleContextSelect {
-	~StepVisual_Array1OfStyleContextSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfStyleContextSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2790,10 +3498,18 @@ class StepVisual_HArray1OfCurveStyleFontPattern : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_HArray1OfCurveStyleFontPattern::~StepVisual_HArray1OfCurveStyleFontPattern %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_HArray1OfCurveStyleFontPattern {
-	~StepVisual_HArray1OfCurveStyleFontPattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfCurveStyleFontPattern\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2827,10 +3543,18 @@ class StepVisual_PresentedItemRepresentation : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PresentedItemRepresentation::~StepVisual_PresentedItemRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentedItemRepresentation {
-	~StepVisual_PresentedItemRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentedItemRepresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2848,10 +3572,18 @@ class StepVisual_PresentationRepresentationSelect : public StepData_SelectType {
 		Handle_StepVisual_PresentationSet PresentationSet() const;
 
 };
+%feature("shadow") StepVisual_PresentationRepresentationSelect::~StepVisual_PresentationRepresentationSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentationRepresentationSelect {
-	~StepVisual_PresentationRepresentationSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationRepresentationSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2895,10 +3627,18 @@ class StepVisual_HArray1OfStyleContextSelect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_HArray1OfStyleContextSelect::~StepVisual_HArray1OfStyleContextSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_HArray1OfStyleContextSelect {
-	~StepVisual_HArray1OfStyleContextSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfStyleContextSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2918,10 +3658,18 @@ class StepVisual_BoxCharacteristicSelect {
 		void SetRealValue(const Standard_Real aValue);
 
 };
+%feature("shadow") StepVisual_BoxCharacteristicSelect::~StepVisual_BoxCharacteristicSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_BoxCharacteristicSelect {
-	~StepVisual_BoxCharacteristicSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_BoxCharacteristicSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -2965,10 +3713,18 @@ class StepVisual_HArray1OfPresentationStyleSelect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_HArray1OfPresentationStyleSelect::~StepVisual_HArray1OfPresentationStyleSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_HArray1OfPresentationStyleSelect {
-	~StepVisual_HArray1OfPresentationStyleSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfPresentationStyleSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3002,10 +3758,18 @@ class StepVisual_PresentationStyleAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PresentationStyleAssignment::~StepVisual_PresentationStyleAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentationStyleAssignment {
-	~StepVisual_PresentationStyleAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationStyleAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3033,10 +3797,18 @@ class StepVisual_PresentationStyleByContext : public StepVisual_PresentationStyl
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PresentationStyleByContext::~StepVisual_PresentationStyleByContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentationStyleByContext {
-	~StepVisual_PresentationStyleByContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationStyleByContext\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3078,10 +3850,18 @@ class StepVisual_CurveStyle : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_CurveStyle::~StepVisual_CurveStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_CurveStyle {
-	~StepVisual_CurveStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CurveStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3111,10 +3891,18 @@ class StepVisual_SurfaceStyleSilhouette : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_SurfaceStyleSilhouette::~StepVisual_SurfaceStyleSilhouette %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_SurfaceStyleSilhouette {
-	~StepVisual_SurfaceStyleSilhouette() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleSilhouette\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3138,10 +3926,18 @@ class StepVisual_Colour : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_Colour::~StepVisual_Colour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Colour {
-	~StepVisual_Colour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Colour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3169,10 +3965,18 @@ class StepVisual_BackgroundColour : public StepVisual_Colour {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_BackgroundColour::~StepVisual_BackgroundColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_BackgroundColour {
-	~StepVisual_BackgroundColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_BackgroundColour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3202,10 +4006,18 @@ class StepVisual_PreDefinedItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PreDefinedItem::~StepVisual_PreDefinedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PreDefinedItem {
-	~StepVisual_PreDefinedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PreDefinedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3227,10 +4039,18 @@ class StepVisual_PreDefinedCurveFont : public StepVisual_PreDefinedItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PreDefinedCurveFont::~StepVisual_PreDefinedCurveFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PreDefinedCurveFont {
-	~StepVisual_PreDefinedCurveFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PreDefinedCurveFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3252,10 +4072,18 @@ class StepVisual_DraughtingPreDefinedCurveFont : public StepVisual_PreDefinedCur
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_DraughtingPreDefinedCurveFont::~StepVisual_DraughtingPreDefinedCurveFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_DraughtingPreDefinedCurveFont {
-	~StepVisual_DraughtingPreDefinedCurveFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_DraughtingPreDefinedCurveFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3317,10 +4145,18 @@ class StepVisual_ViewVolume : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_ViewVolume::~StepVisual_ViewVolume %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_ViewVolume {
-	~StepVisual_ViewVolume() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_ViewVolume\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3348,10 +4184,18 @@ class StepVisual_PreDefinedColour : public StepVisual_Colour {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PreDefinedColour::~StepVisual_PreDefinedColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PreDefinedColour {
-	~StepVisual_PreDefinedColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PreDefinedColour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3391,10 +4235,18 @@ class StepVisual_StyledItem : public StepRepr_RepresentationItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_StyledItem::~StepVisual_StyledItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_StyledItem {
-	~StepVisual_StyledItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_StyledItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3430,10 +4282,18 @@ class StepVisual_PlanarExtent : public StepGeom_GeometricRepresentationItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PlanarExtent::~StepVisual_PlanarExtent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PlanarExtent {
-	~StepVisual_PlanarExtent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PlanarExtent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3461,10 +4321,18 @@ class StepVisual_PlanarBox : public StepVisual_PlanarExtent {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PlanarBox::~StepVisual_PlanarBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PlanarBox {
-	~StepVisual_PlanarBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PlanarBox\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3496,10 +4364,18 @@ class StepVisual_OverRidingStyledItem : public StepVisual_StyledItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_OverRidingStyledItem::~StepVisual_OverRidingStyledItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_OverRidingStyledItem {
-	~StepVisual_OverRidingStyledItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_OverRidingStyledItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3531,10 +4407,18 @@ class StepVisual_ContextDependentOverRidingStyledItem : public StepVisual_OverRi
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_ContextDependentOverRidingStyledItem::~StepVisual_ContextDependentOverRidingStyledItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_ContextDependentOverRidingStyledItem {
-	~StepVisual_ContextDependentOverRidingStyledItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_ContextDependentOverRidingStyledItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3558,10 +4442,18 @@ class StepVisual_PresentationRepresentation : public StepRepr_Representation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PresentationRepresentation::~StepVisual_PresentationRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentationRepresentation {
-	~StepVisual_PresentationRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationRepresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3583,10 +4475,18 @@ class StepVisual_PresentationArea : public StepVisual_PresentationRepresentation
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PresentationArea::~StepVisual_PresentationArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentationArea {
-	~StepVisual_PresentationArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3608,10 +4508,18 @@ class StepVisual_MechanicalDesignGeometricPresentationArea : public StepVisual_P
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_MechanicalDesignGeometricPresentationArea::~StepVisual_MechanicalDesignGeometricPresentationArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_MechanicalDesignGeometricPresentationArea {
-	~StepVisual_MechanicalDesignGeometricPresentationArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_MechanicalDesignGeometricPresentationArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3631,10 +4539,18 @@ class StepVisual_PresentationSizeAssignmentSelect : public StepData_SelectType {
 		Handle_StepVisual_AreaInSet AreaInSet() const;
 
 };
+%feature("shadow") StepVisual_PresentationSizeAssignmentSelect::~StepVisual_PresentationSizeAssignmentSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentationSizeAssignmentSelect {
-	~StepVisual_PresentationSizeAssignmentSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationSizeAssignmentSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3676,10 +4592,18 @@ class StepVisual_PointStyle : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PointStyle::~StepVisual_PointStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PointStyle {
-	~StepVisual_PointStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PointStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3692,11 +4616,11 @@ class StepVisual_MarkerMember : public StepData_SelectInt {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasName() const;
 		%feature("autodoc", "1");
-		virtual		Standard_CString Name() const;
+		virtual		char * Name() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean SetName(const char * name);
 		%feature("autodoc", "1");
-		virtual		Standard_CString EnumText() const;
+		virtual		char * EnumText() const;
 		%feature("autodoc", "1");
 		virtual		void SetEnumText(const Standard_Integer val, const char * text);
 		%feature("autodoc", "1");
@@ -3717,10 +4641,18 @@ class StepVisual_MarkerMember : public StepData_SelectInt {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_MarkerMember::~StepVisual_MarkerMember %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_MarkerMember {
-	~StepVisual_MarkerMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_MarkerMember\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3754,10 +4686,18 @@ class StepVisual_TextStyle : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_TextStyle::~StepVisual_TextStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_TextStyle {
-	~StepVisual_TextStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_TextStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3789,10 +4729,18 @@ class StepVisual_TextStyleWithBoxCharacteristics : public StepVisual_TextStyle {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_TextStyleWithBoxCharacteristics::~StepVisual_TextStyleWithBoxCharacteristics %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_TextStyleWithBoxCharacteristics {
-	~StepVisual_TextStyleWithBoxCharacteristics() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_TextStyleWithBoxCharacteristics\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3812,10 +4760,18 @@ class StepVisual_MarkerSelect : public StepData_SelectType {
 		Handle_StepVisual_MarkerMember MarkerMember() const;
 
 };
+%feature("shadow") StepVisual_MarkerSelect::~StepVisual_MarkerSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_MarkerSelect {
-	~StepVisual_MarkerSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_MarkerSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3853,10 +4809,18 @@ class StepVisual_SurfaceStyleParameterLine : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_SurfaceStyleParameterLine::~StepVisual_SurfaceStyleParameterLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_SurfaceStyleParameterLine {
-	~StepVisual_SurfaceStyleParameterLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleParameterLine\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3880,10 +4844,18 @@ class StepVisual_CameraImage : public StepRepr_MappedItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_CameraImage::~StepVisual_CameraImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_CameraImage {
-	~StepVisual_CameraImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CameraImage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3905,10 +4877,18 @@ class StepVisual_CameraImage3dWithScale : public StepVisual_CameraImage {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_CameraImage3dWithScale::~StepVisual_CameraImage3dWithScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_CameraImage3dWithScale {
-	~StepVisual_CameraImage3dWithScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CameraImage3dWithScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3944,10 +4924,18 @@ class StepVisual_CompositeText : public StepGeom_GeometricRepresentationItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_CompositeText::~StepVisual_CompositeText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_CompositeText {
-	~StepVisual_CompositeText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CompositeText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3967,10 +4955,18 @@ class StepVisual_PresentationStyleSelect : public StepData_SelectType {
 		Handle_StepVisual_SurfaceStyleUsage SurfaceStyleUsage() const;
 
 };
+%feature("shadow") StepVisual_PresentationStyleSelect::~StepVisual_PresentationStyleSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentationStyleSelect {
-	~StepVisual_PresentationStyleSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationStyleSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -3994,10 +4990,18 @@ class StepVisual_ExternallyDefinedCurveFont : public StepBasic_ExternallyDefined
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_ExternallyDefinedCurveFont::~StepVisual_ExternallyDefinedCurveFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_ExternallyDefinedCurveFont {
-	~StepVisual_ExternallyDefinedCurveFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_ExternallyDefinedCurveFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4041,10 +5045,18 @@ class StepVisual_HArray1OfLayeredItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_HArray1OfLayeredItem::~StepVisual_HArray1OfLayeredItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_HArray1OfLayeredItem {
-	~StepVisual_HArray1OfLayeredItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfLayeredItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4074,10 +5086,18 @@ class StepVisual_ColourSpecification : public StepVisual_Colour {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_ColourSpecification::~StepVisual_ColourSpecification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_ColourSpecification {
-	~StepVisual_ColourSpecification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_ColourSpecification\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4113,10 +5133,18 @@ class StepVisual_ColourRgb : public StepVisual_ColourSpecification {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_ColourRgb::~StepVisual_ColourRgb %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_ColourRgb {
-	~StepVisual_ColourRgb() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_ColourRgb\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4156,10 +5184,18 @@ class StepVisual_Array1OfTextOrCharacter {
 		StepVisual_TextOrCharacter & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepVisual_Array1OfTextOrCharacter::~StepVisual_Array1OfTextOrCharacter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Array1OfTextOrCharacter {
-	~StepVisual_Array1OfTextOrCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfTextOrCharacter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4201,10 +5237,18 @@ class StepVisual_PresentationLayerAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PresentationLayerAssignment::~StepVisual_PresentationLayerAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentationLayerAssignment {
-	~StepVisual_PresentationLayerAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationLayerAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4238,10 +5282,18 @@ class StepVisual_FillAreaStyleColour : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_FillAreaStyleColour::~StepVisual_FillAreaStyleColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_FillAreaStyleColour {
-	~StepVisual_FillAreaStyleColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_FillAreaStyleColour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4261,10 +5313,18 @@ class StepVisual_InvisibleItem : public StepData_SelectType {
 		Handle_StepVisual_PresentationRepresentation PresentationRepresentation() const;
 
 };
+%feature("shadow") StepVisual_InvisibleItem::~StepVisual_InvisibleItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_InvisibleItem {
-	~StepVisual_InvisibleItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_InvisibleItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4288,10 +5348,18 @@ class StepVisual_PresentationView : public StepVisual_PresentationRepresentation
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PresentationView::~StepVisual_PresentationView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentationView {
-	~StepVisual_PresentationView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4325,10 +5393,18 @@ class StepVisual_PresentationLayerUsage : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PresentationLayerUsage::~StepVisual_PresentationLayerUsage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentationLayerUsage {
-	~StepVisual_PresentationLayerUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationLayerUsage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4376,10 +5452,18 @@ class StepVisual_TextLiteral : public StepGeom_GeometricRepresentationItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_TextLiteral::~StepVisual_TextLiteral %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_TextLiteral {
-	~StepVisual_TextLiteral() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_TextLiteral\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4413,10 +5497,18 @@ class StepVisual_PresentationSize : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PresentationSize::~StepVisual_PresentationSize %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentationSize {
-	~StepVisual_PresentationSize() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationSize\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4456,10 +5548,18 @@ class StepVisual_Array1OfFillStyleSelect {
 		StepVisual_FillStyleSelect & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepVisual_Array1OfFillStyleSelect::~StepVisual_Array1OfFillStyleSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Array1OfFillStyleSelect {
-	~StepVisual_Array1OfFillStyleSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfFillStyleSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4489,10 +5589,18 @@ class StepVisual_TextStyleForDefinedFont : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_TextStyleForDefinedFont::~StepVisual_TextStyleForDefinedFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_TextStyleForDefinedFont {
-	~StepVisual_TextStyleForDefinedFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_TextStyleForDefinedFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4516,10 +5624,18 @@ class StepVisual_CameraModel : public StepGeom_GeometricRepresentationItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_CameraModel::~StepVisual_CameraModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_CameraModel {
-	~StepVisual_CameraModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CameraModel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4553,10 +5669,18 @@ class StepVisual_CameraModelD2 : public StepVisual_CameraModel {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_CameraModelD2::~StepVisual_CameraModelD2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_CameraModelD2 {
-	~StepVisual_CameraModelD2() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CameraModelD2\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4594,10 +5718,18 @@ class StepVisual_CurveStyleFont : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_CurveStyleFont::~StepVisual_CurveStyleFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_CurveStyleFont {
-	~StepVisual_CurveStyleFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CurveStyleFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4627,10 +5759,18 @@ class StepVisual_SurfaceStyleFillArea : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_SurfaceStyleFillArea::~StepVisual_SurfaceStyleFillArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_SurfaceStyleFillArea {
-	~StepVisual_SurfaceStyleFillArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleFillArea\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4654,10 +5794,18 @@ class StepVisual_PresentationSet : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PresentationSet::~StepVisual_PresentationSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentationSet {
-	~StepVisual_PresentationSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4681,10 +5829,18 @@ class StepVisual_ExternallyDefinedTextFont : public StepBasic_ExternallyDefinedI
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_ExternallyDefinedTextFont::~StepVisual_ExternallyDefinedTextFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_ExternallyDefinedTextFont {
-	~StepVisual_ExternallyDefinedTextFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_ExternallyDefinedTextFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4722,10 +5878,18 @@ class StepVisual_SurfaceSideStyle : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_SurfaceSideStyle::~StepVisual_SurfaceSideStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_SurfaceSideStyle {
-	~StepVisual_SurfaceSideStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceSideStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4759,10 +5923,18 @@ class StepVisual_SurfaceStyleUsage : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_SurfaceStyleUsage::~StepVisual_SurfaceStyleUsage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_SurfaceStyleUsage {
-	~StepVisual_SurfaceStyleUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleUsage\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4786,10 +5958,18 @@ class StepVisual_AnnotationText : public StepRepr_MappedItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_AnnotationText::~StepVisual_AnnotationText %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_AnnotationText {
-	~StepVisual_AnnotationText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_AnnotationText\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4833,10 +6013,18 @@ class StepVisual_HArray1OfSurfaceStyleElementSelect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_HArray1OfSurfaceStyleElementSelect::~StepVisual_HArray1OfSurfaceStyleElementSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_HArray1OfSurfaceStyleElementSelect {
-	~StepVisual_HArray1OfSurfaceStyleElementSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfSurfaceStyleElementSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4876,10 +6064,18 @@ class StepVisual_Array1OfBoxCharacteristicSelect {
 		StepVisual_BoxCharacteristicSelect & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepVisual_Array1OfBoxCharacteristicSelect::~StepVisual_Array1OfBoxCharacteristicSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Array1OfBoxCharacteristicSelect {
-	~StepVisual_Array1OfBoxCharacteristicSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfBoxCharacteristicSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4899,10 +6095,18 @@ class StepVisual_StyleContextSelect : public StepData_SelectType {
 		Handle_StepVisual_PresentationSet PresentationSet() const;
 
 };
+%feature("shadow") StepVisual_StyleContextSelect::~StepVisual_StyleContextSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_StyleContextSelect {
-	~StepVisual_StyleContextSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_StyleContextSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4936,10 +6140,18 @@ class StepVisual_AreaInSet : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_AreaInSet::~StepVisual_AreaInSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_AreaInSet {
-	~StepVisual_AreaInSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_AreaInSet\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4963,10 +6175,18 @@ class StepVisual_CameraImage2dWithScale : public StepVisual_CameraImage {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_CameraImage2dWithScale::~StepVisual_CameraImage2dWithScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_CameraImage2dWithScale {
-	~StepVisual_CameraImage2dWithScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CameraImage2dWithScale\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -4986,10 +6206,18 @@ class StepVisual_CurveStyleFontSelect : public StepData_SelectType {
 		Handle_StepVisual_ExternallyDefinedCurveFont ExternallyDefinedCurveFont() const;
 
 };
+%feature("shadow") StepVisual_CurveStyleFontSelect::~StepVisual_CurveStyleFontSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_CurveStyleFontSelect {
-	~StepVisual_CurveStyleFontSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CurveStyleFontSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5013,10 +6241,18 @@ class StepVisual_Template : public StepRepr_Representation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_Template::~StepVisual_Template %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Template {
-	~StepVisual_Template() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Template\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5056,10 +6292,18 @@ class StepVisual_Array1OfPresentationStyleAssignment {
 		Handle_StepVisual_PresentationStyleAssignment & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepVisual_Array1OfPresentationStyleAssignment::~StepVisual_Array1OfPresentationStyleAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Array1OfPresentationStyleAssignment {
-	~StepVisual_Array1OfPresentationStyleAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfPresentationStyleAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5077,10 +6321,18 @@ class StepVisual_LayeredItem : public StepData_SelectType {
 		Handle_StepRepr_RepresentationItem RepresentationItem() const;
 
 };
+%feature("shadow") StepVisual_LayeredItem::~StepVisual_LayeredItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_LayeredItem {
-	~StepVisual_LayeredItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_LayeredItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5118,10 +6370,18 @@ class StepVisual_FillAreaStyle : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_FillAreaStyle::~StepVisual_FillAreaStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_FillAreaStyle {
-	~StepVisual_FillAreaStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_FillAreaStyle\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5145,10 +6405,18 @@ class StepVisual_AnnotationOccurrence : public StepVisual_StyledItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_AnnotationOccurrence::~StepVisual_AnnotationOccurrence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_AnnotationOccurrence {
-	~StepVisual_AnnotationOccurrence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_AnnotationOccurrence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5180,10 +6448,18 @@ class StepVisual_CompositeTextWithExtent : public StepVisual_CompositeText {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_CompositeTextWithExtent::~StepVisual_CompositeTextWithExtent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_CompositeTextWithExtent {
-	~StepVisual_CompositeTextWithExtent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CompositeTextWithExtent\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5213,10 +6489,18 @@ class StepVisual_SurfaceStyleBoundary : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_SurfaceStyleBoundary::~StepVisual_SurfaceStyleBoundary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_SurfaceStyleBoundary {
-	~StepVisual_SurfaceStyleBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleBoundary\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5256,10 +6540,18 @@ class StepVisual_Array1OfLayeredItem {
 		StepVisual_LayeredItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepVisual_Array1OfLayeredItem::~StepVisual_Array1OfLayeredItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Array1OfLayeredItem {
-	~StepVisual_Array1OfLayeredItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfLayeredItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5283,10 +6575,18 @@ class StepVisual_MechanicalDesignGeometricPresentationRepresentation : public St
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_MechanicalDesignGeometricPresentationRepresentation::~StepVisual_MechanicalDesignGeometricPresentationRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_MechanicalDesignGeometricPresentationRepresentation {
-	~StepVisual_MechanicalDesignGeometricPresentationRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_MechanicalDesignGeometricPresentationRepresentation\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5310,10 +6610,18 @@ class StepVisual_DraughtingPreDefinedColour : public StepVisual_PreDefinedColour
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_DraughtingPreDefinedColour::~StepVisual_DraughtingPreDefinedColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_DraughtingPreDefinedColour {
-	~StepVisual_DraughtingPreDefinedColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_DraughtingPreDefinedColour\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5337,10 +6645,18 @@ class StepVisual_DirectionCountSelect {
 		void SetVDirectionCount(const Standard_Integer aUDirectionCount);
 
 };
+%feature("shadow") StepVisual_DirectionCountSelect::~StepVisual_DirectionCountSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_DirectionCountSelect {
-	~StepVisual_DirectionCountSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_DirectionCountSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5364,10 +6680,18 @@ class StepVisual_TemplateInstance : public StepRepr_MappedItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_TemplateInstance::~StepVisual_TemplateInstance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_TemplateInstance {
-	~StepVisual_TemplateInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_TemplateInstance\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5411,10 +6735,18 @@ class StepVisual_HArray1OfTextOrCharacter : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_HArray1OfTextOrCharacter::~StepVisual_HArray1OfTextOrCharacter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_HArray1OfTextOrCharacter {
-	~StepVisual_HArray1OfTextOrCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfTextOrCharacter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5444,10 +6776,18 @@ class StepVisual_SurfaceStyleSegmentationCurve : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_SurfaceStyleSegmentationCurve::~StepVisual_SurfaceStyleSegmentationCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_SurfaceStyleSegmentationCurve {
-	~StepVisual_SurfaceStyleSegmentationCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleSegmentationCurve\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5465,10 +6805,18 @@ class StepVisual_FontSelect : public StepData_SelectType {
 		Handle_StepVisual_ExternallyDefinedTextFont ExternallyDefinedTextFont() const;
 
 };
+%feature("shadow") StepVisual_FontSelect::~StepVisual_FontSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_FontSelect {
-	~StepVisual_FontSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_FontSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5508,10 +6856,18 @@ class StepVisual_Array1OfPresentationStyleSelect {
 		StepVisual_PresentationStyleSelect & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepVisual_Array1OfPresentationStyleSelect::~StepVisual_Array1OfPresentationStyleSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Array1OfPresentationStyleSelect {
-	~StepVisual_Array1OfPresentationStyleSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfPresentationStyleSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5555,10 +6911,18 @@ class StepVisual_HArray1OfInvisibleItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_HArray1OfInvisibleItem::~StepVisual_HArray1OfInvisibleItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_HArray1OfInvisibleItem {
-	~StepVisual_HArray1OfInvisibleItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfInvisibleItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5582,10 +6946,18 @@ class StepVisual_PresentedItem : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PresentedItem::~StepVisual_PresentedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PresentedItem {
-	~StepVisual_PresentedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentedItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5625,10 +6997,18 @@ class StepVisual_Array1OfDirectionCountSelect {
 		StepVisual_DirectionCountSelect & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepVisual_Array1OfDirectionCountSelect::~StepVisual_Array1OfDirectionCountSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Array1OfDirectionCountSelect {
-	~StepVisual_Array1OfDirectionCountSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfDirectionCountSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5668,10 +7048,18 @@ class StepVisual_Array1OfInvisibleItem {
 		StepVisual_InvisibleItem & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepVisual_Array1OfInvisibleItem::~StepVisual_Array1OfInvisibleItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Array1OfInvisibleItem {
-	~StepVisual_Array1OfInvisibleItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfInvisibleItem\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5695,10 +7083,18 @@ class StepVisual_AnnotationTextOccurrence : public StepVisual_AnnotationOccurren
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_AnnotationTextOccurrence::~StepVisual_AnnotationTextOccurrence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_AnnotationTextOccurrence {
-	~StepVisual_AnnotationTextOccurrence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_AnnotationTextOccurrence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5722,10 +7118,18 @@ class StepVisual_PreDefinedTextFont : public StepVisual_PreDefinedItem {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_PreDefinedTextFont::~StepVisual_PreDefinedTextFont %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_PreDefinedTextFont {
-	~StepVisual_PreDefinedTextFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_PreDefinedTextFont\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5761,10 +7165,18 @@ class StepVisual_CameraModelD3 : public StepVisual_CameraModel {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_CameraModelD3::~StepVisual_CameraModelD3 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_CameraModelD3 {
-	~StepVisual_CameraModelD3() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_CameraModelD3\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5804,10 +7216,18 @@ class StepVisual_Array1OfSurfaceStyleElementSelect {
 		StepVisual_SurfaceStyleElementSelect & operator()(const Standard_Integer Index);
 
 };
+%feature("shadow") StepVisual_Array1OfSurfaceStyleElementSelect::~StepVisual_Array1OfSurfaceStyleElementSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_Array1OfSurfaceStyleElementSelect {
-	~StepVisual_Array1OfSurfaceStyleElementSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfSurfaceStyleElementSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5837,10 +7257,18 @@ class StepVisual_SurfaceStyleControlGrid : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_SurfaceStyleControlGrid::~StepVisual_SurfaceStyleControlGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_SurfaceStyleControlGrid {
-	~StepVisual_SurfaceStyleControlGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleControlGrid\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5884,10 +7312,18 @@ class StepVisual_HArray1OfFillStyleSelect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_HArray1OfFillStyleSelect::~StepVisual_HArray1OfFillStyleSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_HArray1OfFillStyleSelect {
-	~StepVisual_HArray1OfFillStyleSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfFillStyleSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5931,10 +7367,18 @@ class StepVisual_HArray1OfPresentationStyleAssignment : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_HArray1OfPresentationStyleAssignment::~StepVisual_HArray1OfPresentationStyleAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_HArray1OfPresentationStyleAssignment {
-	~StepVisual_HArray1OfPresentationStyleAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfPresentationStyleAssignment\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5950,10 +7394,18 @@ class StepVisual_FillStyleSelect : public StepData_SelectType {
 		Handle_StepVisual_FillAreaStyleColour FillAreaStyleColour() const;
 
 };
+%feature("shadow") StepVisual_FillStyleSelect::~StepVisual_FillStyleSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_FillStyleSelect {
-	~StepVisual_FillStyleSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_FillStyleSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5977,10 +7429,18 @@ class StepVisual_DraughtingModel : public StepRepr_Representation {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_DraughtingModel::~StepVisual_DraughtingModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_DraughtingModel {
-	~StepVisual_DraughtingModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_DraughtingModel\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -5998,10 +7458,18 @@ class StepVisual_AreaOrView : public StepData_SelectType {
 		Handle_StepVisual_PresentationView PresentationView() const;
 
 };
+%feature("shadow") StepVisual_AreaOrView::~StepVisual_AreaOrView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_AreaOrView {
-	~StepVisual_AreaOrView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_AreaOrView\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -6025,10 +7493,18 @@ class StepVisual_DraughtingAnnotationOccurrence : public StepVisual_AnnotationOc
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_DraughtingAnnotationOccurrence::~StepVisual_DraughtingAnnotationOccurrence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_DraughtingAnnotationOccurrence {
-	~StepVisual_DraughtingAnnotationOccurrence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_DraughtingAnnotationOccurrence\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -6046,10 +7522,18 @@ class StepVisual_InvisibilityContext : public StepData_SelectType {
 		Handle_StepVisual_PresentationSet PresentationSet() const;
 
 };
+%feature("shadow") StepVisual_InvisibilityContext::~StepVisual_InvisibilityContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_InvisibilityContext {
-	~StepVisual_InvisibilityContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_InvisibilityContext\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -6069,10 +7553,18 @@ class StepVisual_TextOrCharacter : public StepData_SelectType {
 		Handle_StepVisual_TextLiteral TextLiteral() const;
 
 };
+%feature("shadow") StepVisual_TextOrCharacter::~StepVisual_TextOrCharacter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_TextOrCharacter {
-	~StepVisual_TextOrCharacter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_TextOrCharacter\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
 
@@ -6116,9 +7608,17 @@ class StepVisual_HArray1OfBoxCharacteristicSelect : public MMgt_TShared {
 	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
+%feature("shadow") StepVisual_HArray1OfBoxCharacteristicSelect::~StepVisual_HArray1OfBoxCharacteristicSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
 %extend StepVisual_HArray1OfBoxCharacteristicSelect {
-	~StepVisual_HArray1OfBoxCharacteristicSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of StepVisual_HArray1OfBoxCharacteristicSelect\n");}
+	void _kill_pointed() {
+		delete $self;
 	}
 };
