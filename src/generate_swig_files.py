@@ -94,7 +94,7 @@ def generate_swig_multiprocess():
     P = processing.Pool(nprocs)
     P.map(generate_SWIG_file_for_module,Modules.ALL_MODULES)
     final_time = time.time()
-    print "%i exported classes"%SWIG_generator.nb_exported_classes
+    #print "%i exported classes"%SWIG_generator.nb_exported_classes
     print final_time-init_time
 
 def generate_swig_single_process():
