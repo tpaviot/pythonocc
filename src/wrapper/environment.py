@@ -27,7 +27,6 @@ import platform
 from distutils import sysconfig
 import subprocess
 
-
 #===============================================================================
 # VARIABLES
 #===============================================================================
@@ -98,6 +97,7 @@ bits = get_32_or_64_bits_platform()
 #===============================================================================
 # Define paths
 #===============================================================================
+
 try:
     OCC_ROOT = os.environ['CASROOT']
     OCC_INC = os.path.join(OCC_ROOT,'inc')
@@ -106,6 +106,7 @@ try:
     else:
         OCC_LIB = os.path.join(OCC_ROOT,'lib')
 except:
+    #raise NameError('OpenCASCADE 6.3.0 is not installed. Please check that the CASROOT variable is set.')
     OCC_ROOT = None
     OCC_INC = '/your_path'
     OCC_LIB = '/your_lib'
@@ -115,13 +116,16 @@ except:
 #
 HASHCODE_MAXINT = pow(2,31)-1
 
+# Define path for SWIG outdir
+SWIG_OUT_DIR = os.path.join(os.getcwd(),'build','swig_output_%s'%sys.platform)
+        
 if sys.platform=='win32':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','win32')
     # Try to find OCC paths from environment analysis
-    BOOST_INC = 'C:\Developpement\Libraries\Boost1.39.0'
-    SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','bin','SalomeGeometry','win32','lib')
+    BOOST_INC = 'Z:\Devel\\boost_1_40_0'
+    SALOME_GEOM_LIB = os.path.join('Z:\Devel\\Salome\\salomegeometry\\trunk\\win32\\lib')
     SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','SalomeMesh','win32','lib')
-    GCC_XML_PATH = os.path.join(os.getcwd(),'contrib','pygccxml','gccxml_bin','v09','win32','bin')
+    GCC_XML_PATH = os.path.join(os.getcwd(),'..','..','pygccxml','gccxml_bin','v09','win32','bin')
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = [('WNT', None),('WIN32',None),\
                      ('_WINDOWS',None),('CSFDB',None),\
@@ -130,7 +134,7 @@ if sys.platform=='win32':
         DEFINE_MACROS += [('HAVE_ACOSH',None),('HAVE_ASINH',None),('HAVE_ATANH',None)]
     ECA = ['/EHsc','/GL','/link']
     SWIG_OPTS = ['-O','-c++','-DWNT',\
-                 '-w302,401,314,509,512','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+                 '-w302,401,314,509,512','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%SWIG_OUT_DIR]#os.path.join(os.getcwd(),'OCC')]
     ELA = ['/LTCG']
     EXTRA_LIBS = []
     
@@ -154,7 +158,7 @@ elif sys.platform=='linux2':
                      ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]      
     SWIG_OPTS = ['-python','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
-                 '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+                 '-outdir','%s'%SWIG_OUT_DIR]#os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
     if bits==64:
         DEFINE_MACROS.append(('_OCC64',None))
@@ -172,7 +176,7 @@ elif sys.platform=='darwin':
     #bits = get_32_or_64_bits_platform()
     SWIG_OPTS = ['-python','-small','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                   '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
-                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+                  '-outdir','%s'%SWIG_OUT_DIR]#os.path.join(os.getcwd(),'OCC')]
     if bits==64:
         SWIG_OPTS.append('-D_OCC64')
     os.environ['CC'] = 'g++'
