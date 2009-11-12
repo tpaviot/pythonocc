@@ -34,7 +34,7 @@ import Modules
 from environment import VERSION
 import environment
 from environment import OCC_INC,OCC_LIB, VERSION,\
-ECA, ELA, PYGCCXML_DEFINES, SWIG_OPTS, DEFINE_MACROS, SWIG_FILES_PATH_MODULAR
+ECA, ELA, PYGCCXML_DEFINES, SWIG_OPTS, DEFINE_MACROS, SWIG_FILES_PATH_MODULAR, SWIG_OUT_DIR
 #print "Building pythonOCC-%s for %s"%(VERSION,sys.platform)
 # Try to import multiprocessing(python2.6 or higher) or processing(python2.5) packages
 try:
@@ -239,8 +239,13 @@ class build_ext(_build_ext):
         else:
             customize_build.build_extension(ext)
 
+# Create paths for compilation process
 if not (os.path.isdir(os.path.join(os.getcwd(),'OCC'))):
-        os.mkdir(os.path.join(os.getcwd(),'OCC'))                      
+        os.mkdir(os.path.join(os.getcwd(),'OCC'))
+#if not (os.path.isdir(os.path.join(os.getcwd(),'build'))):
+#        os.mkdir(os.path.join(os.getcwd(),'build'))
+if not (os.path.isdir(SWIG_OUT_DIR)):
+        os.mkdir(SWIG_OUT_DIR)                 
 #
 # Package Name
 #
@@ -252,7 +257,7 @@ def Create__init__():
     just create domething like: __all__ = ['gp,'gce']
     """
     print "Creating __init__.py script."
-    init_directory = os.path.join(os.getcwd(),'OCC')
+    init_directory = SWIG_OUT_DIR#os.path.join(os.getcwd(),'OCC')
     if not os.path.isdir(init_directory):
         os.mkdir(init_directory)
     init_fp = open(os.path.join(init_directory,'__init__.py'),'w')
@@ -274,7 +279,17 @@ def Create__init__():
     init_fp.write("'Visualization',\n'Misc'\n")
     init_fp.write(']\n')
     init_fp.close()
-    print "__init__.py script created."      
+    print "__init__.py script created."
+
+def install_file(full_filename):
+    ''' Copy the file full_filename to the install dir. This Step is required because of the
+    bad behaviour of distutils onlinux2 platforms
+    '''
+    install_dir = os.path.join(sysconfig.get_python_lib(),'OCC')
+    filename = os.path.basename(full_filename)
+    shutil.copy(full_filename, os.path.join(install_dir,filename))
+    print 'Copyed %s->%s'%(full_filename,install_dir)
+    
 #
 # OpenCascade libs
 #
@@ -399,15 +414,15 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
     
     NB_EXT = len(extension)
     
-    install_dir = os.path.join(sysconfig.get_python_lib(),'OCC')
-    bg_image_install_dir = os.path.join(sysconfig.get_python_lib(),'OCC','Display')
-    data = [(install_dir,\
-            [os.path.join(os.getcwd(),'..','AUTHORS'),
-             os.path.join(os.getcwd(),'..','LICENSE'),
-             os.path.join(os.getcwd(),'wrapper','GarbageCollector.py')]),
-            (bg_image_install_dir,\
-            [os.path.join(os.getcwd(),'addons','Display','default_background.bmp')]),
-            ]
+#    
+#    bg_image_install_dir = os.path.join(sysconfig.get_python_lib(),'OCC','Display')
+#    data = [(install_dir,\
+#            [os.path.join(os.getcwd(),'..','AUTHORS'),
+#             os.path.join(os.getcwd(),'..','LICENSE'),
+#             os.path.join(os.getcwd(),'wrapper','GarbageCollector.py')]),
+#            (bg_image_install_dir,\
+#            [os.path.join(os.getcwd(),'addons','Display','default_background.bmp')]),
+#            ]
         
     KARGS = {"ext_modules":extension}
     #
@@ -418,6 +433,7 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
     else:
         package_name = "pythonOCC"
     
+
     #
     # Create __init__ script
     #
@@ -443,13 +459,41 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
                          'OCC.Toolkits.ModelingData':os.path.join(os.getcwd(),'wrapper','Toolkits','ModelingData'),
                          'OCC.PAF':os.path.join(os.getcwd(),'addons','PAF'),
                          'OCC.KBE':os.path.join(os.getcwd(),'addons','KBE')},
-          packages = ['OCC','OCC.Display','OCC.Utils','OCC.Utils.DataExchange','OCC.PAF','OCC.Toolkits',\
+          packages = ['OCC.Display','OCC.Utils','OCC.Utils.DataExchange','OCC.PAF','OCC.Toolkits',\
                       'OCC.KBE',\
                       'OCC.Toolkits.FoundationClasses',\
                       'OCC.Toolkits.ModelingData'],
-          data_files = data,
+          #py_modules = ['OCC.Standard'],
+          #data_files = data,
           **KARGS
           )
+    #
+    # Copy all the python modules to the root package dir
+    #
+    if 'install' in sys.argv:#we run install mode
+        modules_to_install = glob.glob(os.path.join(SWIG_OUT_DIR,'*.py'))
+        for module_to_install in modules_to_install:
+            install_file(module_to_install)
+        # install AUTHORS and LICENSE files
+        authors_file = os.path.join(os.getcwd(),'..','AUTHORS')
+        install_file(authors_file)
+        license_file =  os.path.join(os.getcwd(),'..','LICENSE')
+        install_file(license_file)
+        # install GarbageCollector
+        garbage_file = os.path.join(os.getcwd(),'wrapper','GarbageCollector.py')
+        install_file(garbage_file)
+        # install background image
+        image_file = os.path.join(os.getcwd(),'addons','Display','default_background.bmp')
+        bg_image_dest = os.path.join(sysconfig.get_python_lib(),'OCC','Display','default_background.bmp')
+        shutil.copy(image_file, bg_image_dest)
+        
     
+    
+#    data = [(install_dir,\
+#            [os.path.join(os.getcwd(),'..','AUTHORS'),
+#             os.path.join(os.getcwd(),'..','LICENSE'),
+#             os.path.join(os.getcwd(),'wrapper','GarbageCollector.py')]),
+#            (bg_image_install_dir,\
+#            [os.path.
     final_time = time.time()
     print 'Compilation processed in %fs'%(final_time-init_time)
