@@ -1,6 +1,7 @@
 from OCC.PAF.Context import ParametricModelingContext
 from OCC.PAF.Parametric import Parameters
 from OCC.SGEOM import *
+from OCC.TCollection import *
 
 import time
 
@@ -65,7 +66,7 @@ def main():
     # Create Sketcher
     #===============================================================================
     Cmd = "Sketch:F 0 0:TT 0 100:C 100 180:WW"
-    import ipdb; ipdb.set_trace()
+    #import ipdb; ipdb.set_trace()
     
     
     ## Return list of variables value from salome notebook
@@ -105,7 +106,7 @@ def main():
     cmd, params = ParseSketcherCommand(Cmd)
     theWorkingPlane = [0,0,0, 0,0,1, 1,0,0]
     
-    from OCC.TCollection import *
+
     cmd = TCollection_AsciiString(cmd)
     
     # theWorkingPlane should be a GEOM_Parameter nested in a std::list
