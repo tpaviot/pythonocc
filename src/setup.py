@@ -242,8 +242,8 @@ class build_ext(_build_ext):
 # Create paths for compilation process
 if not (os.path.isdir(os.path.join(os.getcwd(),'OCC'))):
         os.mkdir(os.path.join(os.getcwd(),'OCC'))
-#if not (os.path.isdir(os.path.join(os.getcwd(),'build'))):
-#        os.mkdir(os.path.join(os.getcwd(),'build'))
+if not (os.path.isdir(os.path.join(os.getcwd(),'build'))):
+        os.mkdir(os.path.join(os.getcwd(),'build'))
 if not (os.path.isdir(SWIG_OUT_DIR)):
         os.mkdir(SWIG_OUT_DIR)                 
 #
