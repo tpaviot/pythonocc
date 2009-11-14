@@ -216,6 +216,7 @@ import customize_build
 #        build_temp=build_ext_instance.build_temp,
 #        target_lang=language)
 #
+
 def get_build_ext_instance():
     return build_ext_instance
 
@@ -230,6 +231,8 @@ class build_ext(_build_ext):
     def build_extension(self,ext):
         ''' This method take the extensions, append them to a list, and pass it to a multiprocessing.Pool
         '''
+        global build_lib
+        build_lib = self.build_lib #stores the build_lib path in order to copy data files
         if MULTI_PROCESS_COMPILATION:
             self._extensions.append(ext)
             # Create Pool
@@ -285,10 +288,10 @@ def install_file(full_filename):
     ''' Copy the file full_filename to the install dir. This Step is required because of the
     bad behaviour of distutils onlinux2 platforms
     '''
-    install_dir = os.path.join(sysconfig.get_python_lib(),'OCC')
+    install_dir = os.path.join(os.getcwd(),build_lib,'OCC')
     filename = os.path.basename(full_filename)
     shutil.copy(full_filename, os.path.join(install_dir,filename))
-    print 'Copyed %s->%s'%(full_filename,install_dir)
+    print 'Copying %s->%s'%(full_filename,install_dir)
     
 #
 # OpenCascade libs
@@ -469,8 +472,8 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
           )
     #
     # Copy all the python modules to the root package dir
-    #
-    if 'install' in sys.argv:#we run install mode
+    # It's done only when 'build' or 'install' is in sys.argv
+    if ('install' in sys.argv) or ('build' in sys.argv):#we run install mode
         modules_to_install = glob.glob(os.path.join(SWIG_OUT_DIR,'*.py'))
         for module_to_install in modules_to_install:
             install_file(module_to_install)
@@ -484,7 +487,7 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
         install_file(garbage_file)
         # install background image
         image_file = os.path.join(os.getcwd(),'addons','Display','default_background.bmp')
-        bg_image_dest = os.path.join(sysconfig.get_python_lib(),'OCC','Display','default_background.bmp')
+        bg_image_dest = os.path.join(os.getcwd(),build_lib,'OCC','Display','default_background.bmp')
         shutil.copy(image_file, bg_image_dest)
         
     
