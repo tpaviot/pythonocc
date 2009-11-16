@@ -109,7 +109,23 @@ def generate_swig_single_process():
 
 if __name__ == '__main__':
     check_paths()
-    if MULTI_PROCESS_GENERATION:
-        generate_swig_multiprocess()
+    # Check if a module name is passed to the command line
+    if len(sys.argv)>1:
+        module_name_to_wrap = sys.argv[1]
+        print module_name_to_wrap
+        module_to_wrap = None
+        # Try to find the module with the name provided
+        for module in Modules.MODULES:
+            if module[0] == module_name_to_wrap:
+                module_to_wrap = module
+                break
+        if module_to_wrap != None:
+            generate_SWIG_file_for_module(module)
+        else:
+            print 'Module %s not found.'%module_name_to_wrap
     else:
-        generate_swig_single_process()
+        raw_input('You''re about to generate pythonOCC SWIG files. Hit a key to continue')
+        if MULTI_PROCESS_GENERATION:
+            generate_swig_multiprocess()
+        else:
+            generate_swig_single_process()
