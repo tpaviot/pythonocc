@@ -19,8 +19,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module StdSelect
-
-%include StdSelect_renames.i
 %include ../CommonIncludes.i
 %include ../StandardDefines.i
 %include ../ExceptionCatcher.i

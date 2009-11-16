@@ -19,8 +19,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module APIHeaderSection
-
-%include APIHeaderSection_renames.i
 %include ../CommonIncludes.i
 %include ../StandardDefines.i
 %include ../ExceptionCatcher.i

@@ -19,8 +19,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %module Precision
-
-%include Precision_renames.i
 %include ../CommonIncludes.i
 %include ../StandardDefines.i
 %include ../ExceptionCatcher.i
@@ -36,3 +34,59 @@ import GarbageCollector
 
 %include Precision_headers.i
 
+
+
+
+%nodefaultctor Precision;
+class Precision {
+	public:
+		%feature("autodoc", "1");
+		Precision();
+		%feature("autodoc", "1");
+		Standard_Real Angular();
+		%feature("autodoc", "1");
+		Standard_Real Confusion();
+		%feature("autodoc", "1");
+		Standard_Real Intersection();
+		%feature("autodoc", "1");
+		Standard_Real Approximation();
+		%feature("autodoc", "1");
+		Standard_Real Parametric(const Standard_Real P, const Standard_Real T);
+		%feature("autodoc", "1");
+		Standard_Real PConfusion(const Standard_Real T);
+		%feature("autodoc", "1");
+		Standard_Real PIntersection(const Standard_Real T);
+		%feature("autodoc", "1");
+		Standard_Real PApproximation(const Standard_Real T);
+		%feature("autodoc", "1");
+		Standard_Real Parametric(const Standard_Real P);
+		%feature("autodoc", "1");
+		Standard_Real PConfusion();
+		%feature("autodoc", "1");
+		Standard_Real PIntersection();
+		%feature("autodoc", "1");
+		Standard_Real PApproximation();
+		%feature("autodoc", "1");
+		Standard_Boolean IsInfinite(const Standard_Real R);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPositiveInfinite(const Standard_Real R);
+		%feature("autodoc", "1");
+		Standard_Boolean IsNegativeInfinite(const Standard_Real R);
+		%feature("autodoc", "1");
+		Standard_Real Infinite();
+
+};
+%feature("shadow") Precision::~Precision %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Precision {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
