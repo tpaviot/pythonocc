@@ -100,9 +100,6 @@ enum GEOMAlgo_KindOfName {
 
 
 %nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape;
-
-
-%nodefaultdtor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape;
 class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
@@ -141,9 +138,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
-
-
-%nodefaultdtor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
 class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
@@ -182,9 +176,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo;
-
-
-%nodefaultdtor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo;
 class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
@@ -223,9 +214,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_HAlgo;
-
-
-%nodefaultdtor Handle_GEOMAlgo_HAlgo;
 class Handle_GEOMAlgo_HAlgo : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
@@ -264,9 +252,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_Clsf;
-
-
-%nodefaultdtor Handle_GEOMAlgo_Clsf;
 class Handle_GEOMAlgo_Clsf : public Handle_GEOMAlgo_HAlgo {
 	public:
 		%feature("autodoc", "1");
@@ -305,9 +290,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_ClsfBox;
-
-
-%nodefaultdtor Handle_GEOMAlgo_ClsfBox;
 class Handle_GEOMAlgo_ClsfBox : public Handle_GEOMAlgo_Clsf {
 	public:
 		%feature("autodoc", "1");
@@ -346,9 +328,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal;
-
-
-%nodefaultdtor Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal;
 class Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
@@ -387,9 +366,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape;
-
-
-%nodefaultdtor Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape;
 class Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
@@ -428,9 +404,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape;
-
-
-%nodefaultdtor Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape;
 class Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
@@ -469,9 +442,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet;
-
-
-%nodefaultdtor Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet;
 class Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
@@ -510,9 +480,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape;
-
-
-%nodefaultdtor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape;
 class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
@@ -551,9 +518,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger;
-
-
-%nodefaultdtor Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger;
 class Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
@@ -592,9 +556,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_ClsfSurf;
-
-
-%nodefaultdtor Handle_GEOMAlgo_ClsfSurf;
 class Handle_GEOMAlgo_ClsfSurf : public Handle_GEOMAlgo_Clsf {
 	public:
 		%feature("autodoc", "1");
@@ -633,9 +594,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState;
-
-
-%nodefaultdtor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState;
 class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
@@ -674,9 +632,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape;
-
-
-%nodefaultdtor Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape;
 class Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
@@ -715,9 +670,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_ListNodeOfListOfCoupleOfShapes;
-
-
-%nodefaultdtor Handle_GEOMAlgo_ListNodeOfListOfCoupleOfShapes;
 class Handle_GEOMAlgo_ListNodeOfListOfCoupleOfShapes : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
@@ -756,9 +708,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_ClsfSolid;
-
-
-%nodefaultdtor Handle_GEOMAlgo_ClsfSolid;
 class Handle_GEOMAlgo_ClsfSolid : public Handle_GEOMAlgo_Clsf {
 	public:
 		%feature("autodoc", "1");
@@ -797,9 +746,6 @@ def __del__(self):
 
 
 %nodefaultctor Handle_GEOMAlgo_ListNodeOfListOfPnt;
-
-
-%nodefaultdtor Handle_GEOMAlgo_ListNodeOfListOfPnt;
 class Handle_GEOMAlgo_ListNodeOfListOfPnt : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");

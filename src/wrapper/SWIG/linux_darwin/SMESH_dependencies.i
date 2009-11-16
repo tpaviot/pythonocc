@@ -86,9 +86,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import MeshVS.i
+%import SMDSAbs.i
+%import TopAbs.i
 %import Standard.i
 %import math.i
 %import SMESHDS.i
 %import GeomAbs.i
-%import TopAbs.i
-%import SMDSAbs.i
