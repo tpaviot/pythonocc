@@ -1,5 +1,0 @@
-%rename(XmlDrivers_DocumentRetrievalDriver) XmlDrivers_DocumentRetrievalDriver;
-%rename(XmlDrivers) XmlDrivers;
-%rename(Handle_XmlDrivers_DocumentStorageDriver) Handle_XmlDrivers_DocumentStorageDriver;
-%rename(XmlDrivers_DocumentStorageDriver) XmlDrivers_DocumentStorageDriver;
-%rename(Handle_XmlDrivers_DocumentRetrievalDriver) Handle_XmlDrivers_DocumentRetrievalDriver;

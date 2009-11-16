@@ -1,3 +1,0 @@
-%rename(APIHeaderSection_EditHeader) APIHeaderSection_EditHeader;
-%rename(Handle_APIHeaderSection_EditHeader) Handle_APIHeaderSection_EditHeader;
-%rename(APIHeaderSection_MakeHeader) APIHeaderSection_MakeHeader;

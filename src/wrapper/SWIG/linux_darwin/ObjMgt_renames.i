@@ -1,9 +1,0 @@
-%rename(ObjMgt_ExternShareable) ObjMgt_ExternShareable;
-%rename(Handle_ObjMgt_SeqNodeOfPSeqOfExtRef) Handle_ObjMgt_SeqNodeOfPSeqOfExtRef;
-%rename(ObjMgt_ExternRef) ObjMgt_ExternRef;
-%rename(Handle_ObjMgt_ExternShareable) Handle_ObjMgt_ExternShareable;
-%rename(ObjMgt_PSeqOfExtRef) ObjMgt_PSeqOfExtRef;
-%rename(ObjMgt_SeqExplorerOfPSeqOfExtRef) ObjMgt_SeqExplorerOfPSeqOfExtRef;
-%rename(Handle_ObjMgt_ExternRef) Handle_ObjMgt_ExternRef;
-%rename(ObjMgt_SeqNodeOfPSeqOfExtRef) ObjMgt_SeqNodeOfPSeqOfExtRef;
-%rename(Handle_ObjMgt_PSeqOfExtRef) Handle_ObjMgt_PSeqOfExtRef;

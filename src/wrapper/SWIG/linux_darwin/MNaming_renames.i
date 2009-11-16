@@ -1,9 +1,0 @@
-%rename(MNaming_NamedShapeRetrievalDriver) MNaming_NamedShapeRetrievalDriver;
-%rename(MNaming_NamedShapeStorageDriver) MNaming_NamedShapeStorageDriver;
-%rename(MNaming) MNaming;
-%rename(Handle_MNaming_NamingStorageDriver) Handle_MNaming_NamingStorageDriver;
-%rename(MNaming_NamingRetrievalDriver) MNaming_NamingRetrievalDriver;
-%rename(Handle_MNaming_NamingRetrievalDriver) Handle_MNaming_NamingRetrievalDriver;
-%rename(Handle_MNaming_NamedShapeRetrievalDriver) Handle_MNaming_NamedShapeRetrievalDriver;
-%rename(Handle_MNaming_NamedShapeStorageDriver) Handle_MNaming_NamedShapeStorageDriver;
-%rename(MNaming_NamingStorageDriver) MNaming_NamingStorageDriver;
