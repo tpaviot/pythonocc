@@ -473,7 +473,7 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
     #
     # Copy all the python modules to the root package dir
     # It's done only when 'build' or 'install' is in sys.argv
-    if ('install' in sys.argv) or ('build' in sys.argv):#we run install mode
+    if 'build' in sys.argv:
         modules_to_install = glob.glob(os.path.join(SWIG_OUT_DIR,'*.py'))
         for module_to_install in modules_to_install:
             install_file(module_to_install)
