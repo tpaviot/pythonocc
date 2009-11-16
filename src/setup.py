@@ -325,8 +325,10 @@ GEOM_LIBS = ['Sketcher','ShHealOper','Partition','NMTTools',\
 # Salome SMESH libs
 #
 SMESH_LIBS = ['Driver','DriverDAT','DriverSTL','DriverUNV',\
-                        'MEFISTO2','SMDS','SMESH',
-                        'SMESHDS','StdMeshers']
+                        'SMDS','SMESH',
+                        'SMESHDS','StdMeshers',
+                        #'MEFISTO2',
+                        ]
 
 if __name__=='__main__': #hack to enable multiprocessing under Windows
     extension = []
@@ -401,8 +403,7 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
             if not (os.path.isfile(SWIG_source_file)):
                 raise NameError('Missins swig file:%s'%SWIG_source_file)
             INCLUDE_DIRS = [OCC_INC,environment.SALOME_SMESH_INC,SWIG_FILES_PATH_MODULAR] #for TopOpeBRep_tools.hxx
-            if sys.platform=='win32':
-                INCLUDE_DIRS.append(environment.BOOST_INC)
+            INCLUDE_DIRS.append(environment.BOOST_INC)
             module_extension = Extension("OCC._%s"%module[0],
                         sources = [SWIG_source_file],
                         include_dirs=INCLUDE_DIRS,
