@@ -28,7 +28,9 @@
 // to the system. (PAL16631)
 //
 #ifndef WIN32
+#if !(defined(__MACH__) && defined(__APPLE__))
 #include <sys/sysinfo.h>
+#endif
 #endif
 
 #ifdef _DEBUG_
@@ -37,6 +39,9 @@
 
 int main (int argc, char ** argv)
 {
+#if (defined(__MACH__) && defined(__APPLE__))
+	//do nothing
+#else
   // To better understand what is going on here, consult bug [SALOME platform 0019911]
 #ifndef WIN32
   struct sysinfo si;
@@ -65,7 +70,7 @@ int main (int argc, char ** argv)
 //   std::cout << freeRamKb / 1024 << std::endl;
 // #endif
   return freeRamKb / 1024;
-
+#endif
 #endif
 
   return -1;

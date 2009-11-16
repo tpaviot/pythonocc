@@ -43,7 +43,9 @@
 using namespace std;
 
 #ifndef WIN32
+#if !(defined(__MACH__) && defined(__APPLE__))
 #include <sys/sysinfo.h>
+#endif
 #endif
 
 // number of added entitis to check memory after
@@ -59,6 +61,9 @@ using namespace std;
 
 int SMDS_Mesh::CheckMemory(const bool doNotRaise) throw (std::bad_alloc)
 {
+#if (defined(__MACH__) && defined(__APPLE__))
+	return 1000;
+#else	
 #ifndef WIN32
   struct sysinfo si;
   int err = sysinfo( &si );
@@ -97,6 +102,7 @@ int SMDS_Mesh::CheckMemory(const bool doNotRaise) throw (std::bad_alloc)
   throw std::bad_alloc();
 #else
   return -1;
+#endif
 #endif
 }
 
