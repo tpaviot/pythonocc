@@ -75,7 +75,7 @@ def check_paths():
     #
     if not os.path.isdir(environment.SWIG_FILES_PATH_MODULAR):
         os.mkdir(environment.SWIG_FILES_PATH_MODULAR)
-        
+
 def generate_SWIG_file_for_module(module):
     ''' For each module, create the siwg .i file to be processed
     '''
@@ -115,7 +115,7 @@ if __name__ == '__main__':
         print module_name_to_wrap
         module_to_wrap = None
         # Try to find the module with the name provided
-        for module in Modules.MODULES:
+        for module in Modules.ALL_MODULES:
             if module[0] == module_name_to_wrap:
                 module_to_wrap = module
                 break
