@@ -954,8 +954,6 @@ class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
 		%feature("autodoc", "1");
 		MoniTool_DataMapNodeOfDataMapOfTimer(const char * &K, const Handle_MoniTool_Timer &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		char * & Key() const;
-		%feature("autodoc", "1");
 		Handle_MoniTool_Timer & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1759,8 +1757,6 @@ class MoniTool_DataMapIteratorOfDataMapOfTimer : public TCollection_BasicMapIter
 		MoniTool_DataMapIteratorOfDataMapOfTimer(const MoniTool_DataMapOfTimer &aMap);
 		%feature("autodoc", "1");
 		void Initialize(const MoniTool_DataMapOfTimer &aMap);
-		%feature("autodoc", "1");
-		const char * & Key() const;
 		%feature("autodoc", "1");
 		const Handle_MoniTool_Timer & Value() const;
 
