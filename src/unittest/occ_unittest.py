@@ -141,6 +141,16 @@ class Test(unittest.TestCase):
         sfs.SetFixShellMode(5)
         self.assertEqual(sfs.GetFixShellMode(),5)
         
+    def testDumpToString(self):
+        '''
+        Checks if the pickle python module works for TopoDS_Shapes
+        '''
+        print 'Test: pickling of TopoDS_Shapes'
+        from OCC.BRepPrimAPI import BRepPrimAPI_MakeBox
+        import pickle
+        # Create the shape
+        box_shape = BRepPrimAPI_MakeBox(100,200,300).Shape()
+        pickle.dumps(box_shape)
 
 if __name__ == "__main__":
     unittest.main()
