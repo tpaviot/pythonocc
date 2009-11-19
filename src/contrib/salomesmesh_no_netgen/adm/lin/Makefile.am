@@ -14,7 +14,7 @@ AM_CPPFLAGS = -I$(CASROOT)/inc -I$(srcdir)/$(smeshdir)inc/
 #propably here we need some fortran compiler initializations... not so sure...
 
 # set library names
-lib_LTLIBRARIES = libMEFISTO2.la libSMDS.la libDriver.la libDriverSTL.la libDriverDAT.la libDriverUNV.la libSMESHDS.la libSMESH.la libStdMeshers.la
+lib_LTLIBRARIES = libSMDS.la libDriver.la libDriverSTL.la libDriverDAT.la libDriverUNV.la libSMESHDS.la libSMESH.la libStdMeshers.la
 
 # set global linker flags
 AM_LDFLAGS = -version-info 1:0:0
@@ -33,11 +33,6 @@ install-exec-local:
 	@echo "else LD_LIBRARY_PATH="$(libdir)":\$$LD_LIBRARY_PATH;" 	>> $(DESTDIR)$(prefix)/env_smesh.sh 
 	@echo "fi" 														>> $(DESTDIR)$(prefix)/env_smesh.sh 
 	chmod a+x $(DESTDIR)$(prefix)/env_smesh.sh
-
-# set MEFISTO2 sources (areteideale can be safelly excluded ?)
-libMEFISTO2_la_SOURCES = $(srcdir)/$(smeshdir)src/MEFISTO2/aptrte.cpp \
-$(srcdir)/$(smeshdir)src/MEFISTO2/trte.for \
-$(srcdir)/$(smeshdir)src/MEFISTO2/areteideale.for
 
 # set SMDS sources
 libSMDS_la_SOURCES = $(srcdir)/$(smeshdir)src/SMDS/SMDS_EdgePosition.cpp \
@@ -171,9 +166,12 @@ $(srcdir)/$(smeshdir)src/StdMeshers/StdMeshers_TrianglePreference.cpp \
 $(srcdir)/$(smeshdir)src/StdMeshers/StdMeshers_UseExisting_1D2D.cpp \
 $(srcdir)/$(smeshdir)src/StdMeshers/StdMeshers_CompositeHexa_3D.cpp \
 $(srcdir)/$(smeshdir)src/StdMeshers/StdMeshers_MaxLength.cpp \
-$(srcdir)/$(smeshdir)src/StdMeshers/StdMeshers_StartEndLength.cpp
+$(srcdir)/$(smeshdir)src/StdMeshers/StdMeshers_StartEndLength.cpp \
+$(srcdir)/$(smeshdir)src/MEFISTO2/aptrte.cpp \
+$(srcdir)/$(smeshdir)src/MEFISTO2/trte.f \
+$(srcdir)/$(smeshdir)src/MEFISTO2/areteideale.f
 
-libMEFISTO2_la_LDFLAGS = $(FCLIBS)
+libStdMeshers_la_LIBADD = $(FCLIBS)
 
 # include files to be copied to installdir/inc
 include_HEADERS = $(srcdir)/$(smeshdir)inc/aptrte.h \

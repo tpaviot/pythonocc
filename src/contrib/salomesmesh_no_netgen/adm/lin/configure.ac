@@ -15,8 +15,8 @@ AM_INIT_AUTOMAKE([-Wall -Werror foreign tar-ustar])
 AC_PROG_CXX 
 
 # check for fortran (f77) compiler
-AC_PROG_F77([f77 fort77 gfortran])
-AC_FC_SRCEXT(for)
+AC_PROG_F77()
+#AC_FC_SRCEXT(for)
 AC_FC_LIBRARY_LDFLAGS
 AC_FC_WRAPPERS
 
