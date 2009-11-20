@@ -282,6 +282,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def DisplayShape(self, shapes, material=None, texture=None, update=True):
         '''
         '''
+        
         if issubclass(shapes.__class__, TopoDS_Shape):
             shapes = [shapes]
             SOLO = True
@@ -307,8 +308,12 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             else:
                 shape_to_display = OCC.AIS.AIS_Shape(shape)
                 ais_shapes.append(shape_to_display.GetHandle())
-            self.Context.Display(shape_to_display.GetHandle())
-            self.FitAll()
+            if update:
+                self.Context.Display(shape_to_display.GetHandle(), True)
+                self.FitAll()
+            else:
+                self.Context.Display(shape_to_display.GetHandle(), False)
+            
         if SOLO:
             return  ais_shapes[0]
         else:
