@@ -8,6 +8,7 @@ from OCC.TopoDS import *
 from OCC.SMESH import *
 from OCC.StdMeshers import *
 from OCC.MeshVS import *
+from OCC.Display.SimpleGui import display, start_display
 
 #Create the shape to mesh
 aShape = BRepPrimAPI_MakeSphere(40).Shape()
@@ -56,8 +57,7 @@ aPrsBuilder = MeshVS_MeshPrsBuilder(aMeshVS.GetHandle(),DMF,aDS.GetHandle(),0,Me
 aMeshVS.SetDataSource(aDS.GetHandle())
 aMeshVS.AddBuilder(aPrsBuilder.GetHandle(),True)
 
-#Create the graphic window and display the mesh
-from OCC.Display.wxSamplesGui import display, start_display
+
 context = display.Context
 context.Display(aMeshVS.GetHandle())
 context.Deactivate(aMeshVS.GetHandle())

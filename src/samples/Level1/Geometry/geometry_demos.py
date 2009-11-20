@@ -70,7 +70,7 @@ from OCC.Prs3d import *
 from OCC.TColgp import * 
 from OCC.GeomFill import *
 
-from OCC.Display.wxSamplesGui import display
+from OCC.Display.SimpleGui import display
 
 import time, sys
 
@@ -1069,20 +1069,7 @@ def distances(event=None):
     array3.SetValue(5,4,gp_Pnt (4,2,6))
     array3.SetValue(5,5,gp_Pnt (4,5,5))
     
-    
-    # Clearly this function is broken, cant see why?
-    #def _Tcol_dim_2(li, _type):
-    #    '''function factory for 2-dimensional TCol* types'''
-    #    length, length_nested = len(li), len(li[0])
-    #    pts = _type(1, length, 1, length_nested)
-    #    pts.thisown = False
-    #    return pts
-    #    for n1,i in enumerate(li):
-    #        for n2,j in enumerate(i):
-    #            pts.SetValue(n1+1,n2+1,j)
-    #    return pts
-    
-    #yyy = _Tcol_dim_2(array3, TColgp_Array2OfPnt)
+
     aSurf2 = GeomAPI_PointsToBSplineSurface(array3).Surface()
     
     ESS = GeomAPI_ExtremaSurfaceSurface(aSurf1,aSurf2)

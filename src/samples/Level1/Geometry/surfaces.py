@@ -36,17 +36,11 @@ def rndPts(npts, upper_bound, lower_bound):
     return points
 
 
+
 def get_simple_bound(rndPts0):    
-    _spl1 = GeomAPI_PointsToBSpline(rndPts0)
-    _spl1.thisown = False
-    spl1  = _spl1.Curve()
-    
-    spl1_adap = GeomAdaptor_HCurve(spl1)
-    spl1_adap.thisown = False
-    spl1_adap_h = spl1_adap.GetHandle()
-    bound1 = GeomFill_SimpleBound(spl1_adap_h, 0.001, 0.001)
-    bound1.thisown = False
-    bound1_h = bound1.GetHandle()
+    spl1 = GeomAPI_PointsToBSpline(rndPts0).Curve()
+    spl1_adap_h = GeomAdaptor_HCurve(spl1).GetHandle()
+    bound1 = GeomFill_SimpleBound(spl1_adap_h, 0.001, 0.001).GetHandle()
     return spl1, bound1_h
 
 def constrained_filling(event=None):

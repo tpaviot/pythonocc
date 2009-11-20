@@ -24,6 +24,7 @@ from OCC.TopoDS import *
 from OCC.SMESH import *
 from OCC.StdMeshers import *
 from OCC.MeshVS import *
+from OCC.Display.SimpleGui import display, start_display
 
 # First create a 'complex' shape (actually a boolean op between a box and a cylinder)
 box = BRepPrimAPI_MakeBox(200,30,30).Shape()
@@ -76,9 +77,6 @@ MeshVS_BP_Mesh       =  5 # To wrap!
 aPrsBuilder = MeshVS_MeshPrsBuilder(aMeshVS.GetHandle(),DMF,aDS.GetHandle(),0,MeshVS_BP_Mesh)
 aMeshVS.SetDataSource(aDS.GetHandle())
 aMeshVS.AddBuilder(aPrsBuilder.GetHandle(),True)
-
-#Create the graphic window and display the mesh
-from OCC.Display.wxSamplesGui import display, start_display
 context = display.Context
 context.Display(aMeshVS.GetHandle())
 context.Deactivate(aMeshVS.GetHandle())

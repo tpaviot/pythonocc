@@ -3,7 +3,7 @@ from OCC.TopoDS import *
 from OCC.AIS import *
 from OCC.TCollection import TCollection_ExtendedString
 
-from OCC.Display.wxSamplesGui import *
+from OCC.Display.SimpleGui import *
 from OCC.BRepBuilderAPI import *
 
 def make_edge(*args):
