@@ -31,7 +31,7 @@ import subprocess
 # VARIABLES
 #===============================================================================
 
-VERSION = 'path_to_0.4'         # Define pythonOCC version
+VERSION = 'rev722'         # Define pythonOCC version
 
 #===============================================================================
 # UTILITIES
@@ -139,6 +139,7 @@ if sys.platform=='win32':
     EXTRA_LIBS = []
     
 elif sys.platform=='linux2':
+    BOOST_INC = None
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
@@ -184,9 +185,10 @@ elif sys.platform=='darwin':
     OCC_LIB = '/Library/OpenCASCADE/6.3.0/lib'
     OCC_INC = '/Library/OpenCASCADE/6.3.0/inc'
     SALOME_GEOM_LIB = '/Library/salomegeometry/lib'
-    SALOME_GEOM_INC = '/Library/salomegeometry/include'
-    SALOME_SMESH_LIB = '/opt/salomesmesh/lib'
+    #SALOME_GEOM_INC = '/Library/salomegeometry/include'
+    SALOME_SMESH_LIB = '/Library/salomesmesh/lib'
     GCC_XML_PATH = which('gccxml')
+    BOOST_INC = os.path.join(os.getcwd(),'..','..','boost_1_40_0')
     if GCC_XML_PATH == '':
         print 'gccxml was not found'
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
@@ -197,7 +199,7 @@ elif sys.platform=='darwin':
     if bits==64:
         DEFINE_MACROS.append(('_OCC64',None))
         ECA.append('-I/usr/include/c++/4.2.1/x86_64-apple-darwin10') # Snow Leopard
-    ELA = []
+    ELA = ['-lf2c']
     EXTRA_LIBS = ['-framework Python']
 
 else:
