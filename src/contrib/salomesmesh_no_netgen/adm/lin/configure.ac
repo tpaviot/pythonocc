@@ -32,9 +32,11 @@ AC_TRY_COMPILE( [],
  [AC_MSG_RESULT([no])] )
 
 AC_CONFIG_HEADERS([config.h]) 
+
 AC_LANG_PUSH([C++]) 
 # when using limits without .h CHAR_BIT is not found
 AC_CHECK_HEADERS([limits.h iostream fstream iomanip]) 
+AC_CHECK_HEADERS([boost/shared_ptr.hpp])
 AC_LANG_POP 
 
 # set the output files
