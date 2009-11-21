@@ -37,6 +37,12 @@ def customize_compiler(compiler):
             compiler_so.remove('-g')
         if '-O2' in compiler_so:
             compiler_so.remove('-O2')
+    elif sys.platform == 'win32':
+        compile_options = compiler.compile_options
+        if '/Ox' in compile_options:
+            compile_options.remove('/Ox')
+            compile_options.append('/O1') #produces smaller files
+        compiler.compile_options = compile_options
     elif sys.platform =='darwin':
         compiler_so = ['g++','-O0','-fPIC','-dynamic','-pipe']
         # And modify linker_so
