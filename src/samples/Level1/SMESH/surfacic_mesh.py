@@ -61,7 +61,7 @@ def rndPts(npts, upper_bound, lower_bound):
 def get_simple_bound(rndPts0):    
     spl1 = GeomAPI_PointsToBSpline(rndPts0).Curve()
     spl1_adap_h = GeomAdaptor_HCurve(spl1).GetHandle()
-    bound1 = GeomFill_SimpleBound(spl1_adap_h, 0.001, 0.001).GetHandle()
+    bound1_h = GeomFill_SimpleBound(spl1_adap_h, 0.001, 0.001).GetHandle()
     return spl1, bound1_h
 
 def constrained_filling(event=None):
