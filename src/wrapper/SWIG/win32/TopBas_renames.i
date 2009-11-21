@@ -1,5 +1,0 @@
-%rename(Handle_TopBas_ListNodeOfListOfTestInterference) Handle_TopBas_ListNodeOfListOfTestInterference;
-%rename(TopBas_TestInterference) TopBas_TestInterference;
-%rename(TopBas_ListIteratorOfListOfTestInterference) TopBas_ListIteratorOfListOfTestInterference;
-%rename(TopBas_ListOfTestInterference) TopBas_ListOfTestInterference;
-%rename(TopBas_ListNodeOfListOfTestInterference) TopBas_ListNodeOfListOfTestInterference;

@@ -1,5 +1,0 @@
-%rename(Handle_MFunction_FunctionRetrievalDriver) Handle_MFunction_FunctionRetrievalDriver;
-%rename(MFunction) MFunction;
-%rename(Handle_MFunction_FunctionStorageDriver) Handle_MFunction_FunctionStorageDriver;
-%rename(MFunction_FunctionStorageDriver) MFunction_FunctionStorageDriver;
-%rename(MFunction_FunctionRetrievalDriver) MFunction_FunctionRetrievalDriver;

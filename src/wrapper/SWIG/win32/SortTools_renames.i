@@ -1,8 +1,0 @@
-%rename(SortTools_StraightInsertionSortOfInteger) SortTools_StraightInsertionSortOfInteger;
-%rename(SortTools_HeapSortOfReal) SortTools_HeapSortOfReal;
-%rename(SortTools_StraightInsertionSortOfReal) SortTools_StraightInsertionSortOfReal;
-%rename(SortTools_HeapSortOfInteger) SortTools_HeapSortOfInteger;
-%rename(SortTools_QuickSortOfInteger) SortTools_QuickSortOfInteger;
-%rename(SortTools_ShellSortOfReal) SortTools_ShellSortOfReal;
-%rename(SortTools_ShellSortOfInteger) SortTools_ShellSortOfInteger;
-%rename(SortTools_QuickSortOfReal) SortTools_QuickSortOfReal;

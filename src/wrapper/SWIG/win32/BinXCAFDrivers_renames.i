@@ -1,5 +1,0 @@
-%rename(BinXCAFDrivers) BinXCAFDrivers;
-%rename(Handle_BinXCAFDrivers_DocumentStorageDriver) Handle_BinXCAFDrivers_DocumentStorageDriver;
-%rename(BinXCAFDrivers_DocumentStorageDriver) BinXCAFDrivers_DocumentStorageDriver;
-%rename(Handle_BinXCAFDrivers_DocumentRetrievalDriver) Handle_BinXCAFDrivers_DocumentRetrievalDriver;
-%rename(BinXCAFDrivers_DocumentRetrievalDriver) BinXCAFDrivers_DocumentRetrievalDriver;

@@ -1,8 +1,0 @@
-%rename(BinLDrivers_ENDLABEL) BinLDrivers_ENDLABEL;
-%rename(BinLDrivers_DocumentRetrievalDriver) BinLDrivers_DocumentRetrievalDriver;
-%rename(BinLDrivers_DocumentStorageDriver) BinLDrivers_DocumentStorageDriver;
-%rename(Handle_BinLDrivers_DocumentStorageDriver) Handle_BinLDrivers_DocumentStorageDriver;
-%rename(BinLDrivers_ENDATTRLIST) BinLDrivers_ENDATTRLIST;
-%rename(BinLDrivers_DocumentSection) BinLDrivers_DocumentSection;
-%rename(Handle_BinLDrivers_DocumentRetrievalDriver) Handle_BinLDrivers_DocumentRetrievalDriver;
-%rename(BinLDrivers) BinLDrivers;
