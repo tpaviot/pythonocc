@@ -211,7 +211,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         else:
             self.View.SetBackgroundImage(Filename, OCC.Aspect.Aspect_FM_NONE, True )
             
-    def DisplayMessage(self,point,text_to_write):
+    def DisplayMessage(self,point,text_to_write, update=True):
         """
         point: a gp_Pnt instance
         text_to_write: a string
@@ -274,6 +274,8 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                                    point)
         aPresentation.Display()
         # it would be more coherent if a AIS_InteractiveObject would be returned
+        if update:
+            self.Repaint()
         return aPresentation
 #        self.Context.Display(anAIS.GetHandle())
 
