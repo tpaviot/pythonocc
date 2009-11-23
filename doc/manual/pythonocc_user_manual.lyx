@@ -131,15 +131,15 @@
 \begin_body
 
 \begin_layout Title
-pythonOCC User Manual
+pythonOCC 0.4 User Manual
 \end_layout
 
 \begin_layout Author
-Thomas Paviot
+Thomas Paviot (tpaviot@gmail.com)
 \end_layout
 
 \begin_layout Date
-2009 November, 23th
+November 23, 2009
 \end_layout
 
 \begin_layout Standard
@@ -147,6 +147,7 @@ Thomas Paviot
 status open
 
 \begin_layout Plain Layout
+
 
 \backslash
 tableofcontents
@@ -157,12 +158,290 @@ tableofcontents
 
 \end_layout
 
+\begin_layout Chapter*
+About this document
+\end_layout
+
+\begin_layout Standard
+This document is a manual for pythonOCC.
+\end_layout
+
+\begin_layout Standard
+Conventions.
+\end_layout
+
+\begin_layout Standard
+Legal aspects, trademarks and copyrights.
+\end_layout
+
 \begin_layout Chapter
-The Philosophy of LyX
+About the pythonOCC project
+\end_layout
+
+\begin_layout Standard
+pythonOCC is a project.
 \end_layout
 
 \begin_layout Section
-What is LyX?
+Overview
+\end_layout
+
+\begin_layout Standard
+Targets, features etc.
+\end_layout
+
+\begin_layout Section
+History
+\end_layout
+
+\begin_layout Standard
+Where does this project come from?
+\end_layout
+
+\begin_layout Section
+Project management
+\end_layout
+
+\begin_layout Subsection
+Who are we?
+\end_layout
+
+\begin_layout Standard
+because a lot of people wonder who we are :-)
+\end_layout
+
+\begin_layout Subsection
+Project organization
+\end_layout
+
+\begin_layout Standard
+release policy, tools (Svn, etc.), how we are doing etc.
+\end_layout
+
+\begin_layout Subsection
+Roadmap
+\end_layout
+
+\begin_layout Standard
+What we expect in a short/mid/long term
+\end_layout
+
+\begin_layout Subsection
+You want to help the project?
+\end_layout
+
+\begin_layout Standard
+How can people do do join the project and contribute.
+\end_layout
+
+\begin_layout Chapter
+Download / Install
+\end_layout
+
+\begin_layout Section
+Getting the sotware
+\end_layout
+
+\begin_layout Standard
+http://www.pythonocc.org
+\end_layout
+
+\begin_layout Section
+Build
+\end_layout
+
+\begin_layout Standard
+Just a brief word about the following items.
+\end_layout
+
+\begin_layout Subsection
+Windows
+\end_layout
+
+\begin_layout Standard
+For Windows
+\end_layout
+
+\begin_layout Subsection
+Linux
+\end_layout
+
+\begin_layout Standard
+Linux
+\end_layout
+
+\begin_layout Subsection
+MacOSX
+\end_layout
+
+\begin_layout Standard
+MacOSX stuff.
+ Talke about Tiger, SL, 32/64 bit.
+\end_layout
+
+\begin_layout Section
+Check Installation
+\end_layout
+
+\begin_layout Standard
+unittests, from OCC import * etc.
+\end_layout
+
+\begin_layout Chapter
+Getting started with pythonOCC
+\end_layout
+
+\begin_layout Section
+Geometry sample
+\end_layout
+
+\begin_layout Standard
+Creating a box or a sphere.
+\end_layout
+
+\begin_layout Section
+Data exchange sample
+\end_layout
+
+\begin_layout Standard
+creating a geometry and export it to STEP.
+\end_layout
+
+\begin_layout Section
+Simple Interactive 3D view
+\end_layout
+
+\begin_layout Standard
+how do display/handle a geometry
+\end_layout
+
+\begin_layout Chapter
+pythonOCC internals
+\end_layout
+
+\begin_layout Section
+The 2-levels API
+\end_layout
+
+\begin_layout Standard
+pythonOCC consists of 2 layers
+\end_layout
+
+\begin_layout Subsection
+Overview
+\end_layout
+
+\begin_layout Standard
+Copy/Paste from PDE2009 slideshow.
+\end_layout
+
+\begin_layout Subsection
+Level-1 API: the python wrapper
+\end_layout
+
+\begin_layout Standard
+level1
+\end_layout
+
+\begin_layout Subsection
+Level-2 API: a business oriented level
+\end_layout
+
+\begin_layout Standard
+details about the high level API (topology, network, PAF) etc.
+\end_layout
+
+\begin_layout Chapter
+Avanced use of pythonOCC
+\end_layout
+
+\begin_layout Section
+Details about the data model
+\end_layout
+
+\begin_layout Standard
+Talk about the TopoDS_Shape*
+\end_layout
+
+\begin_layout Section
+Memory management
+\end_layout
+
+\begin_layout Standard
+handle*, garbage collector
+\end_layout
+
+\begin_layout Section
+The Parametric Application FrameWork
+\end_layout
+
+\begin_layout Standard
+Talk about the PAF, the PAF tutorial from the Wiki
+\end_layout
+
+\begin_layout Section
+Meshing features
+\end_layout
+
+\begin_layout Standard
+SMESH integration.
+\end_layout
+
+\begin_layout Chapter
+Licensing
+\end_layout
+
+\begin_layout Section
+This document
+\end_layout
+
+\begin_layout Standard
+lkj
+\end_layout
+
+\begin_layout Section
+The pythonOCC library license
+\end_layout
+
+\begin_layout Standard
+GPL V3.
+ Complete text.
+\end_layout
+
+\begin_layout Section
+Third-part program licenses
+\end_layout
+
+\begin_layout Standard
+License for *all* programs used by pythonOCC
+\end_layout
+
+\begin_layout Subsection
+wxPython license
+\end_layout
+
+\begin_layout Subsection
+Qt license
+\end_layout
+
+\begin_layout Subsection
+python-xlib license
+\end_layout
+
+\begin_layout Subsection
+Traits license
+\end_layout
+
+\begin_layout Subsection
+OpenCASCADE 6.3 license
+\end_layout
+
+\begin_layout Chapter
+Chapter example
+\end_layout
+
+\begin_layout Section
+Section example?
 \end_layout
 
 \begin_layout Standard
@@ -470,7 +749,7 @@ want to specify exactly where everything goes, because there are no functional
 \end_layout
 
 \begin_layout Section
-Differences between LyX and Other Word Processors
+Section another example
 \begin_inset OptArg
 status collapsed
 
