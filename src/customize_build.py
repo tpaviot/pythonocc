@@ -46,7 +46,7 @@ def customize_compiler(compiler):
             compile_options.append('/O1') #produces smaller files
         compiler.compile_options = compile_options
     elif sys.platform =='darwin':
-        compiler_so = ['g++','-O0','-fPIC','-dynamic','-pipe']
+        compiler_so = ['g++','-O2','-fPIC','-dynamic','-pipe']
         # And modify linker_so
         linker_so = [compiler.linker_so[0],'-F.', '--no_undefined','-bundle','-dynamic_lookup']
         #g++-4.2 -Wl,-F. -bundle -undefined dynamic_lookup -arch i386 -arch ppc -arch x86_64 build/temp.macosx-10.6-universal-2.6/Users/thomas/Devel/pythonocc/src/wra
