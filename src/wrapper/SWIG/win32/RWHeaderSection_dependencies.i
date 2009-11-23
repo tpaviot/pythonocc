@@ -131,7 +131,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <Standard_ProgramError.hxx>
 #include <Standard_RangeError.hxx>
 #include <Standard_Real.hxx>
-#include <Standard_Real_Original.hxx>
 #include <Standard_SStream.hxx>
 #include <Standard_ShortReal.hxx>
 #include <Standard_Size.hxx>

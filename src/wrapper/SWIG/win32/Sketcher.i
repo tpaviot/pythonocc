@@ -34,3 +34,37 @@ import GarbageCollector
 
 %include Sketcher_headers.i
 
+
+
+
+%nodefaultctor Sketcher_Profile;
+class Sketcher_Profile {
+	public:
+		%feature("autodoc", "1");
+		Sketcher_Profile();
+		%feature("autodoc", "1");
+		Sketcher_Profile(const char *aCmd);
+		%feature("autodoc", "1");
+		gp_Pnt GetLastPoint();
+		%feature("autodoc", "1");
+		gp_Dir GetLastDir();
+		%feature("autodoc", "1");
+		const TopoDS_Shape & GetShape();
+		%feature("autodoc", "1");
+		bool IsDone();
+
+};
+%feature("shadow") Sketcher_Profile::~Sketcher_Profile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Sketcher_Profile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};

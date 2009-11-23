@@ -43,6 +43,82 @@ enum ShHealOper_Error {
 
 
 
+%nodefaultctor Handle_ShHealOper_SplitCurve2d;
+class Handle_ShHealOper_SplitCurve2d : public Handle_ShapeUpgrade_SplitCurve2d {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShHealOper_SplitCurve2d();
+		%feature("autodoc", "1");
+		Handle_ShHealOper_SplitCurve2d(const Handle_ShHealOper_SplitCurve2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShHealOper_SplitCurve2d(const ShHealOper_SplitCurve2d *anItem);
+		%feature("autodoc", "1");
+		Handle_ShHealOper_SplitCurve2d & operator=(const Handle_ShHealOper_SplitCurve2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShHealOper_SplitCurve2d & operator=(const ShHealOper_SplitCurve2d *anItem);
+		%feature("autodoc", "1");
+		Handle_ShHealOper_SplitCurve2d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShHealOper_SplitCurve2d {
+	ShHealOper_SplitCurve2d* GetObject() {
+	return (ShHealOper_SplitCurve2d*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShHealOper_SplitCurve2d::~Handle_ShHealOper_SplitCurve2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShHealOper_SplitCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShHealOper_SplitCurve3d;
+class Handle_ShHealOper_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve3d {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShHealOper_SplitCurve3d();
+		%feature("autodoc", "1");
+		Handle_ShHealOper_SplitCurve3d(const Handle_ShHealOper_SplitCurve3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShHealOper_SplitCurve3d(const ShHealOper_SplitCurve3d *anItem);
+		%feature("autodoc", "1");
+		Handle_ShHealOper_SplitCurve3d & operator=(const Handle_ShHealOper_SplitCurve3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShHealOper_SplitCurve3d & operator=(const ShHealOper_SplitCurve3d *anItem);
+		%feature("autodoc", "1");
+		Handle_ShHealOper_SplitCurve3d const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShHealOper_SplitCurve3d {
+	ShHealOper_SplitCurve3d* GetObject() {
+	return (ShHealOper_SplitCurve3d*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShHealOper_SplitCurve3d::~Handle_ShHealOper_SplitCurve3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShHealOper_SplitCurve3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ShHealOper_Tool;
 class ShHealOper_Tool {
 	public:
@@ -162,6 +238,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor ShHealOper_ShapeProcess;
+class ShHealOper_ShapeProcess {
+	public:
+		%feature("autodoc", "1");
+		ShHealOper_ShapeProcess();
+		%feature("autodoc", "1");
+		ShHealOper_ShapeProcess(const TCollection_AsciiString &theNameResource, const TCollection_AsciiString &thePrefix="ShapeProcess");
+		%feature("autodoc", "1");
+		void Perform(const TopoDS_Shape &theOldShape, TopoDS_Shape & theNewShape);
+		%feature("autodoc", "1");
+		void SetOperators(const TColStd_SequenceOfAsciiString &theSeqOperators);
+		%feature("autodoc", "1");
+		Standard_Boolean GetOperators(TColStd_SequenceOfAsciiString & theSeqOperators);
+		%feature("autodoc", "1");
+		void SetParameter(const TCollection_AsciiString &theNameParam, const TCollection_AsciiString &theVal);
+		%feature("autodoc", "1");
+		Standard_Boolean GetParameter(const TCollection_AsciiString &theNameParam, TCollection_AsciiString & theVal);
+		%feature("autodoc", "1");
+		void SetSaveHistoryMode(const Standard_Boolean theSaveHistory, TopAbs_ShapeEnum =TopAbs_FACE);
+		%feature("autodoc", "1");
+		Standard_Boolean GetSaveHistoryMode();
+		%feature("autodoc", "1");
+		Standard_Boolean GetModifiedShape(const TopoDS_Shape &theOldShape, TopoDS_Shape & theNewShape);
+		%feature("autodoc", "1");
+		Standard_Boolean isDone();
+
+};
+%feature("shadow") ShHealOper_ShapeProcess::~ShHealOper_ShapeProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShHealOper_ShapeProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ShHealOper_RemoveFace;
 class ShHealOper_RemoveFace : public ShHealOper_Tool {
 	public:
@@ -236,6 +355,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor ShHealOper_SplitCurve3d;
+class ShHealOper_SplitCurve3d : public ShapeUpgrade_SplitCurve3d {
+	public:
+		%feature("autodoc", "1");
+		ShHealOper_SplitCurve3d();
+		%feature("autodoc", "1");
+		virtual		void Compute();
+		%feature("autodoc", "1");
+		void SetValues(const Handle_TColStd_HSequenceOfReal &theValues);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShHealOper_SplitCurve3d {
+	Handle_ShHealOper_SplitCurve3d GetHandle() {
+	return *(Handle_ShHealOper_SplitCurve3d*) &$self;
+	}
+};
+%extend ShHealOper_SplitCurve3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") ShHealOper_SplitCurve3d::~ShHealOper_SplitCurve3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShHealOper_SplitCurve3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ShHealOper_FillHoles;
 class ShHealOper_FillHoles : public ShHealOper_Tool {
 	public:
@@ -292,6 +450,45 @@ def __del__(self):
 %}
 
 %extend ShHealOper_ChangeOrientation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShHealOper_SplitCurve2d;
+class ShHealOper_SplitCurve2d : public ShapeUpgrade_SplitCurve2d {
+	public:
+		%feature("autodoc", "1");
+		ShHealOper_SplitCurve2d();
+		%feature("autodoc", "1");
+		virtual		void Compute();
+		%feature("autodoc", "1");
+		void SetValues(const Handle_TColStd_HSequenceOfReal &theValues);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShHealOper_SplitCurve2d {
+	Handle_ShHealOper_SplitCurve2d GetHandle() {
+	return *(Handle_ShHealOper_SplitCurve2d*) &$self;
+	}
+};
+%extend ShHealOper_SplitCurve2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%feature("shadow") ShHealOper_SplitCurve2d::~ShHealOper_SplitCurve2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShHealOper_SplitCurve2d {
 	void _kill_pointed() {
 		delete $self;
 	}

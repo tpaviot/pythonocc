@@ -22,6 +22,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Headers necessary to define wrapped classes.
 
+#include<Sketcher_Profile.hxx>
 
 // Additional headers necessary for compilation.
 
