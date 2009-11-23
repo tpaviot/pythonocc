@@ -333,8 +333,7 @@ GEOM_LIBS = ['Sketcher','ShHealOper','Partition','NMTTools',\
 #
 SMESH_LIBS = ['Driver','DriverDAT','DriverSTL','DriverUNV',\
                         'SMDS','SMESH',
-                        'SMESHDS','StdMeshers',
-                        #'MEFISTO2',
+                        'SMESHDS','StdMeshers'
                         ]
 
 if __name__=='__main__': #hack to enable multiprocessing under Windows
