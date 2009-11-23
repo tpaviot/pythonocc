@@ -38,6 +38,8 @@ def customize_compiler(compiler):
         if '-O2' in compiler_so:
             compiler_so.remove('-O2')
     elif sys.platform == 'win32':
+        if not compiler.initialized:
+            compiler.initialize()
         compile_options = compiler.compile_options
         if '/Ox' in compile_options:
             compile_options.remove('/Ox')
