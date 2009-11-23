@@ -1,0 +1,710 @@
+#LyX 1.6.4.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrbook
+\begin_preamble
+\setkomafont{sectioning}{\bfseries}
+\usepackage[komastyle]{scrpage2}
+% Kolumnentitel und Paginierung:
+\setkomafont{pagehead}{\normalfont\rmfamily\itshape}
+\setkomafont{pagenumber}{\normalfont\rmfamily}
+\setkomafont{dictumtext}{\normalfont\small}
+\setkomafont{dictumauthor}{\itshape}
+\renewcommand{\dictumwidth}{0.5\textwidth}
+
+\usepackage{soul}
+% Skalierung der Versalien
+\usepackage{scalefnt}
+
+% Versalien (etwas kleiner setzen und ein wenig sperren):
+\makeatletter
+% aus example.cfg (soul.sty, "narrowcaps")
+\capsdef{/ptm///}{\upshape}%
+{.05em\@plus.01em\@minus.02em}%
+{.3em\@plus.08em\@minus.06em}%
+{.3em\@plus.111em\@minus.04em}
+\DeclareRobustCommand*\versal[1]{%
+\MakeUppercase{\scalefont{.92}\caps{#1}}%
+}
+\DeclareRobustCommand*\versalomat[1]{%
+\MakeUppercase{\scalefont{.92}#1}%
+}
+\makeatother
+
+% Pseudo-Characterstyles über Textfarbe
+\makeatletter
+
+\usepackage{ifthen}
+\renewcommand{\textcolor}[2]{%
+\ifthenelse{\equal{#1}{blue}}{{\versal{#2}}}{}% Versalien
+\ifthenelse{\equal{#1}{cyan}}{{\versalomat{#2}}}{}%   Weitere
+%\ifthenelse{\equal{#1}{magenta}\or\equal{#1}{blue}}{}{#2}%     fallthrough
+}
+
+% Abstand Text--Fußnoten vergrößern
+\makeatletter
+\renewcommand\footnoterule{%
+% Abstand zwischen Text und Fußnotenstrich (1 Zeile)
+  %\vspace{1em}%
+  \kern-3\p@\hrule\@width1.5cm%
+  \kern2.6\p@%
+% Abstand zwischen Fußnotenstrich und Fußnoten (0.2em)
+  \vspace{0.2em}}%
+\makeatother
+
+% Fußnoten trotz \raggedbottom am Seitenfuß
+\usepackage[bottom,hang]{footmisc}
+
+% Fußnotenzeichen nicht hochstellen
+\makeatletter
+\newlength{\footnumwidth}
+% Anzahl der Ziffern an die größte Fußnotennummer anpassen (footnotesize)
+\settowidth{\footnumwidth}{{\normalfont\footnotesize9\space\space}}
+\deffootnote[\footnumwidth]{\footnumwidth}{1em}{\thefootnotemark\space\space}
+\makeatother
+
+% ldots zentriert
+\let\olddots\ldots
+\renewcommand*{\ldots}{\olddots\unkern}
+
+% Vermeiden von Schusterjungen
+% Keine überhängenden Zeilen
+\tolerance 1414
+\hbadness 1414
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\widowpenalty = 10000
+\vfuzz \hfuzz
+\raggedbottom
+
+\usepackage{microtype}
+\end_preamble
+\options smallheadings
+\use_default_options false
+\language english
+\inputencoding default
+\font_roman palatino
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\bullet 0 0 0 -1
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+pythonOCC User Manual
+\end_layout
+
+\begin_layout Author
+Thomas Paviot
+\end_layout
+
+\begin_layout Date
+2009 November, 23th
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+tableofcontents
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+The Philosophy of LyX
+\end_layout
+
+\begin_layout Section
+What is LyX?
+\end_layout
+
+\begin_layout Standard
+LyX is a document preparation system.
+ It excels at letting you create complex technical and scientific articles
+ with mathematics, cross-references, bibliographies, indices, etc.
+ It is very good at documents of any length in which the usual processing
+ abilities are required: automatic sectioning and pagination, spellchecking,
+ and so forth.
+ It can also be used to write a letter to your mom, though granted, there
+ are probably simpler programs available for that.
+ It is definitely not the best tool for creating banners, flyers, or advertiseme
+nts (we'll explain why later), though with some effort all these can be
+ done, too.
+ Some examples of what it is used for: memos, letters, dissertations and
+ theses, lecture notes, seminar notebooks, conference proceedings, software
+ documentation, books (on PostgreSQL, remote sensing, cryptology, fictional
+ novels, poetry, and even a children's book or two), articles in refereed
+ scientific journals, scripts for plays and movies, business proposals \SpecialChar \ldots{}
+
+ you get the idea.
+\end_layout
+
+\begin_layout Standard
+LyX is a program that provides a modern approach to writing documents with
+ a computer by using a markup language paradigm, an approach that breaks
+ with the obsolete tradition of the 
+\begin_inset Quotes eld
+\end_inset
+
+typewriter concept.
+\begin_inset Quotes erd
+\end_inset
+
+ It is designed for authors who want professional output quickly with a
+ minimum of effort without becoming specialists in typesetting.
+ The job of typesetting is done mostly by the computer, not the author;
+ with LyX, the author can concentrate on the contents of her writing.
+\end_layout
+
+\begin_layout Standard
+Part of the initial challenge of using LyX comes from the change in thinking
+ that you, the user, must make.
+ At one time, all we had for creating documents were typewriters, so we
+ all learned certain tricks to get around their limitations.
+ Underlining, which is little more than overstriking with the 
+\begin_inset Quotes eld
+\end_inset
+
+_
+\begin_inset Quotes erd
+\end_inset
+
+ character, became a way to emphasize text.
+ You were forced to figure out column sizes and tab stops, and set them,
+ before creating a table.
+ The same applied for letters and other right justified text.
+ Hyphenation at the end of a line required a careful eye and a lot of foresight.
+\end_layout
+
+\begin_layout Standard
+In other words, we've all been trained to worry about the little details
+ of which character goes where.
+ Consequently, almost all word processors have this mentality.
+ They still use tab stops for adding whitespace.
+ You still need to worry about exactly where on the page something will
+ appear.
+ Emphasizing text means changing a font, similar to changing the typewriter
+ wheel.
+ This is the underlying philosophy of a
+\color none
+ 
+\color blue
+WYSIWYG
+\color none
+ 
+\color inherit
+word processor: 
+\begin_inset Quotes eld
+\end_inset
+
+What You See Is What You Get
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Unfortunately, that paradigm often results in 
+\begin_inset Quotes eld
+\end_inset
+
+What You See Is All You Get
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This is where LyX differs from an ordinary word processor.
+ You don't concern yourself with what character goes where.
+ You tell LyX 
+\emph on
+what you're doing
+\emph default
+ and LyX takes care of the rest, following a set of rules called a 
+\emph on
+style.
+\emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+To be fair, most recent versions of the most popular office suites now have
+ some sort of style sheets which follow a similar markup method.
+ However, our experience is that they are still rarely used in practice.
+\end_layout
+
+\end_inset
+
+ Let's look at a little example:
+\end_layout
+
+\begin_layout Standard
+Suppose you are writing a report.
+ To begin your report, you want a section called 
+\begin_inset Quotes eld
+\end_inset
+
+Introduction\SpecialChar \@.
+
+\begin_inset Quotes erd
+\end_inset
+
+ So, you go into whatever menu it is in your word processor that changes
+ font sizes and decide on a new font size.
+ Then you turn on bold face.
+ Then you type, 
+\begin_inset Quotes eld
+\end_inset
+
+1.
+\begin_inset space ~
+\end_inset
+
+Introduction
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Of course, if you later decide that this section belongs someplace else
+ in the document, or if you insert a new section before it, you need to
+ change the numbering for this and all following sections, as well as any
+ entry in the table of contents.
+ 
+\end_layout
+
+\begin_layout Standard
+In LyX, you go to the pull-down on the far left of the button bar and select
+ 
+\emph on
+Section
+\emph default
+, and type 
+\begin_inset Quotes eld
+\end_inset
+
+Introduction\SpecialChar \@.
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Yes, that's all.
+ If you cut and paste the section, it will automatically be renumbered---everywh
+ere.
+ And if you enter references to that section correctly (by inserting cross-refer
+ence tags), LyX will automatically update them all throughout the file so
+ that you never, ever type a section number.
+\end_layout
+
+\begin_layout Standard
+Now let's look at the problem of consistency.
+ Five days later, you reopen your report and start Section
+\begin_inset space ~
+\end_inset
+
+4.
+ However, you forget that you were using 18
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+,
+\end_layout
+
+\end_inset
+
+pt bold instead of 16
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+,
+\end_layout
+
+\end_inset
+
+pt, so you type in the heading for Section
+\begin_inset space ~
+\end_inset
+
+4 in a different font that what you used for Section
+\begin_inset space ~
+\end_inset
+
+1.
+ That problem doesn't even exist in LyX.
+ The computer takes care of all that silly bookkeeping about which thing
+ has what size font, not you.
+ After all, that's what a computer is good at.
+\end_layout
+
+\begin_layout Standard
+Here's another example.
+ Suppose you're making a list.
+ In other word processors, a list is just a bunch of tab stops and newlines.
+ You need to figure out where to put the label for each list item, what
+ that label should be, how many blank lines to put between each item, and
+ so on.
+ Under LyX, you have only two concerns: what kind of list is this, and what
+ do I want to put in it.
+ That's it.
+\end_layout
+
+\begin_layout Standard
+So, the basic idea behind LyX is: specify 
+\emph on
+what
+\emph default
+ you're doing, not 
+\emph on
+how
+\emph default
+ to do it.
+ Instead of 
+\begin_inset Quotes eld
+\end_inset
+
+What You See Is What You Get,
+\begin_inset Quotes erd
+\end_inset
+
+ the LyX model is 
+\begin_inset Quotes eld
+\end_inset
+
+What You See Is What You 
+\emph on
+Mean
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+
+\color blue
+WYSIWYM
+\color inherit
+.
+\begin_inset Quotes erd
+\end_inset
+
+ It's a powerful idea that greatly simplifies the mechanics of writing documents.
+ This is also why LyX isn't so good for creating posters and flyers---in
+ this case, you
+\color none
+ 
+\emph on
+\color inherit
+do
+\emph default
+\color none
+ 
+\color inherit
+want to specify exactly where everything goes, because there are no functional
+ units like paragraphs, sections, etc.
+ This doesn't mean LyX is missing some cool function.
+ It simply means that it isn't the right tool for the job---you don't use
+ a screwdriver to drive in nails (unless your screwdriver comes with a lifetime
+ warranty).
+\end_layout
+
+\begin_layout Section
+Differences between LyX and Other Word Processors
+\begin_inset OptArg
+status collapsed
+
+\begin_layout Plain Layout
+LyX and Other Word Processors
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+No, we're not trying to start (or win) a word processor holy war here.
+ But we do think it's important to describe LyX's features.
+ And one of LyX's main features,
+\color none
+ 
+\color blue
+WYSIWYM
+\color inherit
+, is a fundamentally different concept than the one that most of people
+ have about word processing.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here's a list of things you won't find in LyX:
+\end_layout
+
+\begin_layout Itemize
+The document ruler
+\end_layout
+
+\begin_layout Itemize
+Tab stops
+\end_layout
+
+\begin_layout Itemize
+Extra whitespace (i.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+,
+\end_layout
+
+\end_inset
+
+e.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+hitting 
+\emph on
+Enter
+\emph default
+ or 
+\emph on
+Space
+\emph default
+ two or more times)
+\end_layout
+
+\begin_layout Standard
+Tab stops, along with a ruler showing you the position of things on the
+ page, are useless in LyX.
+ The program worries about where things go on the page, not you.
+ Extra white\SpecialChar \-
+space is similar; LyX adds them where necessary, depending on
+ context.
+ Not being able to type two blank lines in a row will be annoying at first,
+ but it makes more sense once you're thinking in
+\color none
+ 
+\color blue
+WYSIWYM
+\color none
+ 
+\color inherit
+terms.
+\end_layout
+
+\begin_layout Standard
+Here are some things that exist in LyX, but aren't used as you might think:
+\end_layout
+
+\begin_layout Itemize
+Indenting controls
+\end_layout
+
+\begin_layout Itemize
+Page breaks
+\end_layout
+
+\begin_layout Itemize
+Line spacing (i.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+,
+\end_layout
+
+\end_inset
+
+e.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+single spaced, double spaced, etc.)
+\end_layout
+
+\begin_layout Itemize
+Whitespace, horizontal and vertical
+\end_layout
+
+\begin_layout Itemize
+Fonts and font sizes
+\end_layout
+
+\begin_layout Itemize
+Typefaces (bold, italic, underline, etc.)
+\end_layout
+
+\begin_layout Standard
+Although they exist in LyX, you generally don't need them.
+ LyX will take care of these things for you, depending on what you're doing.
+ Different parts of the document are automatically set in a different typeface
+ and font size.
+ Paragraph indenting is context dependent; different types of paragraphs
+ get indented differently.
+ Page breaks get handled automatically, as well.
+ In general, the space between lines, between words, and between paragraphs
+ is variable, set by LyX.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+There are ways to adjust all of these (only some of which require knowledge
+ of LaTeX), either for a whole document or for a specific location in a
+ document.
+ See the 
+\emph on
+User's Guide
+\emph default
+ and/or the 
+\emph on
+Extended Features
+\emph default
+ manual for details.
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Lastly, there are a few areas where we believe LyX (and LaTeX) surpasses
+ many word processors:
+\end_layout
+
+\begin_layout Itemize
+Hyphenation
+\end_layout
+
+\begin_layout Itemize
+Lists of any type
+\end_layout
+
+\begin_layout Itemize
+Mathematics
+\end_layout
+
+\begin_layout Itemize
+Tables
+\end_layout
+
+\begin_layout Itemize
+Cross-referencing
+\end_layout
+
+\begin_layout Standard
+Granted, many modern word processors can handle mathematical symbols, tables,
+ and hyphenation, and many have moved towards style definitions and the
+\color none
+ 
+\color blue
+WYSIWYM
+\color none
+ 
+\color inherit
+concept.
+ However, they've only recently been able to do so, whereas LyX is built
+ upon the LaTeX document preparation system.
+ LaTeX has been around for over 15 years, and
+\color none
+ 
+\emph on
+\color inherit
+works
+\emph default
+.
+\end_layout
+
+\end_body
+\end_document
