@@ -140,18 +140,8 @@ Thomas Paviot (tpaviot@gmail.com)
 
 \begin_layout Date
 November 23, 2009
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-tableofcontents
-\end_layout
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
 
 \end_inset
 
@@ -168,6 +158,7 @@ This document is
 status open
 
 \begin_layout Plain Layout
+
 
 \backslash
 copyright
@@ -301,7 +292,7 @@ Targets, detailed features, mutiplatform etc.
 \end_layout
 
 \begin_layout Standard
-This is an example of volumic mesh of a simple geometry
+This is an example of volumic mesh of a simple geometry (cf 
 \end_layout
 
 \begin_layout Standard
@@ -313,7 +304,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/voluimc_mesh_SL64.png
+	filename img/volumic_mesh_SL64.png
 	width 8cm
 
 \end_inset
