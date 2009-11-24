@@ -28,7 +28,7 @@ except:
 import OCCViewer
 
 class XOCCWindow:
-        def __init__(self, display):
+        def __init__(self, display,title='pythonOCC Xlib'):
             self.d = display
             self.objects = []
             self.viewer_inited = False
@@ -52,7 +52,7 @@ class XOCCWindow:
             self.WM_DELETE_WINDOW = self.d.intern_atom('WM_DELETE_WINDOW')
             self.WM_PROTOCOLS = self.d.intern_atom('WM_PROTOCOLS')
     
-            self.window.set_wm_name('pythonOCC Xlib')
+            self.window.set_wm_name(title)
             #self.window.set_wm_icon_name('pythonOCC Xlib')
             self.InitDriver()
             self.window.map()

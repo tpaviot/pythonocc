@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-##Copyright 2009 Jelle Feringa (jelleferinga@gmail.com)
+##Copyright 2009 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -17,8 +17,10 @@
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+import sys
+import os, os.path
+from OCC import VERSION
 # First check which GUI library to use
-
 # Check wxPython
 try:
     import wx
@@ -33,102 +35,147 @@ except:
     HAVE_QT = False
 # Check python-xlib
 try:
-    from Xlib import display as display_xlib
-    from Xlib import X
+    from Xlib import display as display_xlib, X
     HAVE_XLIB = True
 except:
     HAVE_XLIB = False
-import sys
-import os, os.path
+# Then define the default backend
+if HAVE_WX:
+    DEFAULT_BACKEND = 'wx'
+elif HAVE_QT:
+    DEFAULT_BACKEND = 'qt'
+elif HAVE_XLIB:
+    DEFAULT_BACKEND = 'X'
+else:
+    raise NameError('No backend.')
+# By default, used backend is the default_backend
+USED_BACKEND = DEFAULT_BACKEND
 
-from OCC import VERSION
+def set_backend(str_backend):
+    ''' Overload the default used backend
+    '''
+    global USED_BACKEND
+    if str_backend not in ['wx','qt','X']:
+        raise NameError('Backend must either be "wx", "qt" or "X"')
+    elif str_backend == 'qt' and not HAVE_QT:
+        raise NameError('PyQt library not installed or not found.')
+    elif str_backend == 'wx' and not HAVE_WX:
+        raise NameError('wxPython library not installed or not found.')
+    elif str_backend == 'X' and not HAVE_XLIB:
+        raise NameError('python-xlib library not installed or not found.')
+    else:
+        USED_BACKEND = str_backend
 
 def get_bg_abs_filename():
     ''' Returns the absolute file name for the file default_background.bmp
     '''
-    this_module = sys.modules['OCC.Display.SimpleGui']
-    this_module_abs_path = os.path.split(this_module.__file__)[0]
-    bg_abs_filename = os.path.join(this_module_abs_path,'default_background.bmp')
+    occ_package = sys.modules['OCC']
+    bg_abs_filename = os.path.join(occ_package.__path__[0],'Display','default_background.bmp')
     if not os.path.isfile(bg_abs_filename):
-        return ""
+        raise NameError('Not image background file found.')
     else:
         return bg_abs_filename
 
-# wxPython based simple GUI
-if HAVE_WX:
-    from wxDisplay import wxViewer3d
-    class AppFrame(wx.Frame):
-        def __init__(self, parent):
-            wx.Frame.__init__(self, parent, -1, "pythonOCC-%s 3d viewer"%VERSION, style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
-            self.canva = wxViewer3d(self)      
-            self.menuBar = wx.MenuBar()
-            self._menus = {}
-            self._menu_methods = {}
-            
-        def add_menu(self, menu_name):
-            _menu = wx.Menu()
-            self.menuBar.Append(_menu, "&"+menu_name)
-            self.SetMenuBar(self.menuBar)
-            self._menus[menu_name]=_menu
-    
-        def add_function_to_menu(self, menu_name, _callable):
-            # point on curve
-            _id = wx.NewId()
-            assert callable(_callable), 'the function supplied isnt callable'
-            try:
-                self._menus[menu_name].Append(_id, _callable.__name__.replace('_', ' ').lower())
-            except KeyError:
-                raise ValueError, 'the menu item %s doesnt exist' % (menu_name) 
-            self.Bind(wx.EVT_MENU, _callable, id=_id)
-    app = wx.PySimpleApp()
-    wx.InitAllImageHandlers()
-    frame = AppFrame(None)
-    frame.Show(True)
-    wx.SafeYield()
-    frame.canva.InitDriver()
-    app.SetTopWindow(frame)
-    display = frame.canva._display
-    display.SetBackgroundImage(get_bg_abs_filename())
-    def add_menu(*args, **kwargs):
-        frame.add_menu(*args, **kwargs)
-    def add_function_to_menu(*args, **kwargs):
-        frame.add_function_to_menu(*args, **kwargs)
-    def start_display():
-        global app
-        app.MainLoop()
-    
-# PyQt based simple GUI
-elif HAVE_QT:
-    print "Qt based"
-# python-xlib based simple GUI
-elif HAVE_XLIB:
-    from XDisplay import XOCCWindow
-    w = XOCCWindow(display_xlib.Display())
-    display = w.occviewer
-    # set background image
-    display.SetBackgroundImage(get_bg_abs_filename())
-    def add_menu(*args, **kwargs):
-        print args#pass#frame.add_menu(*args, **kwargs)
-    def add_function_to_menu(menu_title, function):
-        #print args
-        w.register_function(function)#functions.append(args[1])#pass#frame.add_function_to_menu(*args, **kwargs)
-    def start_display():        
-        w.MainLoop()
-else:
-    print "No compliant GUI library found. You must have either wxPython, PyQt or python-xlib installed."
-    sys.exit(0)
+display = None
+add_menu = None
+add_function_to_menu = None
+start_display = None
+
+def init_display():
+    global display, add_menu, add_function_to_menu, start_display, app, win
+    # wxPython based simple GUI
+    if USED_BACKEND == 'wx':
+        from wxDisplay import wxViewer3d
+        
+        class AppFrame(wx.Frame):
+            def __init__(self, parent):
+                wx.Frame.__init__(self, parent, -1, "pythonOCC-%s 3d viewer ('wx' backend)"%VERSION, style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
+                self.canva = wxViewer3d(self)      
+                self.menuBar = wx.MenuBar()
+                self._menus = {}
+                self._menu_methods = {}                
+            def add_menu(self, menu_name):
+                _menu = wx.Menu()
+                self.menuBar.Append(_menu, "&"+menu_name)
+                self.SetMenuBar(self.menuBar)
+                self._menus[menu_name]=_menu        
+            def add_function_to_menu(self, menu_name, _callable):
+                # point on curve
+                _id = wx.NewId()
+                assert callable(_callable), 'the function supplied isnt callable'
+                try:
+                    self._menus[menu_name].Append(_id, _callable.__name__.replace('_', ' ').lower())
+                except KeyError:
+                    raise ValueError, 'the menu item %s doesnt exist' % (menu_name) 
+                self.Bind(wx.EVT_MENU, _callable, id=_id)
+        app = wx.PySimpleApp()
+        wx.InitAllImageHandlers()
+        win = AppFrame(None)
+        win.Show(True)
+        wx.SafeYield()
+        win.canva.InitDriver()
+        app.SetTopWindow(win)
+        display = win.canva._display
+        display.SetBackgroundImage(get_bg_abs_filename())
+        def add_menu(*args, **kwargs):
+            win.add_menu(*args, **kwargs)
+        def add_function_to_menu(*args, **kwargs):
+            win.add_function_to_menu(*args, **kwargs)
+        def start_display():
+            app.MainLoop()
+        
+    # PyQt based simple GUI
+    elif USED_BACKEND == 'qt':
+        from qtDisplay import qtViewer3d
+        class MainWindow(QtGui.QMainWindow):
+            def __init__(self, *args):
+                apply(QtGui.QMainWindow.__init__,(self,)+args)
+                self.canva = qtViewer3d(self)
+                self.setWindowTitle("pythonOCC-%s 3d viewer ('qt' backend)"%VERSION)
+                self.resize(640,480)
+                self.canva = qtViewer3d(self)
+                self.setCentralWidget(self.canva)
+        app = QtGui.QApplication(sys.argv)
+        win = MainWindow()
+        win.show()
+        win.canva.InitDriver()
+        display = win.canva._display
+        display.SetBackgroundImage(get_bg_abs_filename())        
+        def add_menu(*args, **kwargs):
+            pass#win.add_menu(*args, **kwargs)
+        def add_function_to_menu(*args, **kwargs):
+            pass#win.add_function_to_menu(*args, **kwargs)
+        def start_display():
+            app.exec_()
+        #app.exec_()
+    # python-xlib based simple GUI
+    elif USED_BACKEND == 'X':
+        from XDisplay import XOCCWindow
+        win = XOCCWindow(display_xlib.Display(),"pythonOCC-%s 3d viewer ('python-xlib' backend)"%VERSION)
+        display = win.occviewer
+        # set background image
+        display.SetBackgroundImage(get_bg_abs_filename())
+        def add_menu(*args, **kwargs):
+            print args#pass#frame.add_menu(*args, **kwargs)
+        def add_function_to_menu(menu_title, function):
+            #print args
+            win.register_function(function)#functions.append(args[1])#pass#frame.add_function_to_menu(*args, **kwargs)
+        def start_display():        
+            win.MainLoop()
+    else:
+        print "No compliant GUI library found. You must have either wxPython, PyQt or python-xlib installed."
+        sys.exit(0)
     
 if __name__ == '__main__':
+    set_backend('X')
+    init_display()
     from OCC.BRepPrimAPI import *
     def sphere(event=None):
-        display.DisplayShape(BRepPrimAPI_MakeSphere(1).Shape())
-        
+        display.DisplayShape(BRepPrimAPI_MakeSphere(1).Shape())        
     def cube(event=None):
-        display.DisplayShape(BRepPrimAPI_MakeBox(1,1,1).Shape())
-        
+        display.DisplayShape(BRepPrimAPI_MakeBox(1,1,1).Shape())        
     def exit(event=None):
-        sys.exit()
-    
+        sys.exit()    
     add_menu('primitives')
     add_function_to_menu('primitives',  sphere)
     add_function_to_menu('primitives',  cube)
