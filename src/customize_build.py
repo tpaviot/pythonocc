@@ -35,8 +35,8 @@ def customize_compiler(compiler):
         compiler_so = compiler.compiler_so
         if '-g' in compiler_so:
             compiler_so.remove('-g')
-        if '-O2' in compiler_so:
-            compiler_so.remove('-O2')
+        #if '-O2' in compiler_so:
+        #    compiler_so.remove('-O2')
     elif sys.platform == 'win32':
         if not compiler.initialized:
             compiler.initialize()
