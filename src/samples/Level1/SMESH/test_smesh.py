@@ -18,8 +18,8 @@ aMeshGen = SMESH_Gen()
 aMesh = aMeshGen.CreateMesh(0,True)
 
 an1DHypothesis = StdMeshers_Arithmetic1D(0,0,aMeshGen)
-an1DHypothesis.SetLength(10.,False)
-an1DHypothesis.SetLength(50.,True)
+an1DHypothesis.SetLength(1.,False)
+an1DHypothesis.SetLength(5.,True)
 an1DAlgo = StdMeshers_Regular_1D(1,0,aMeshGen)
 
 a2dHypothseis = StdMeshers_QuadranglePreference(2,0,aMeshGen)
