@@ -11,7 +11,7 @@ from OCC.GeomFill import *
 from OCC.GeomAdaptor import *
 from OCC.TColgp import *
 
-from OCC.Display.wxSamplesGui import display
+from OCC.Display.SimpleGui import add_menu, add_function_to_menu, start_display
 
 def point_list_to_TColgp_Array1OfPnt(li):
     pts = TColgp_Array1OfPnt(0, len(li)-1)
@@ -115,7 +115,6 @@ def constrained_filling(event=None):
     display.DisplayShape(shp)
     
 if __name__ == '__main__':
-    from OCC.Display.wxSamplesGui import start_display, add_function_to_menu, add_menu
     add_menu('surfaces')
     add_function_to_menu('surfaces', constrained_filling)
     start_display()

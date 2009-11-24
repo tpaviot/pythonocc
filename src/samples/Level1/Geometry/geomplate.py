@@ -28,7 +28,7 @@ from OCC.BRepFill import *
 from OCC.BRep import *
 from OCC.ShapeAnalysis import *
 from OCC.GeomLProp import *
-
+from OCC.Display.SimpleGui import add_menu, add_function_to_menu, start_display
 import types, sys
 
 #===============================================================================
@@ -36,7 +36,6 @@ import types, sys
 #===============================================================================
 
 def geom_plate(event=None):
-    from OCC.Display.wxSamplesGui import display
     display.EraseAll()
     p1,p2,p3,p4,p5 = gp_Pnt(0,0,0),gp_Pnt(0,10,0),gp_Pnt(0,10,10),gp_Pnt(0,0,10),gp_Pnt(5,5,5)
     poly = BRepBuilderAPI_MakePolygon() 
@@ -191,7 +190,6 @@ def solve_radius(event=None):
     import time
     from OCC.BRepBuilderAPI import BRepBuilderAPI_MakePolygon
     
-    from OCC.Display.wxSamplesGui import display
     display.EraseAll()
     
     p1,p2,p3,p4,p5 = gp_Pnt(0,0,0),gp_Pnt(0,10,0),gp_Pnt(0,10,10),gp_Pnt(0,0,10),gp_Pnt(5,5,5)
@@ -208,7 +206,6 @@ def solve_radius(event=None):
 def exit(event=None):
     sys.exit()
 
-from OCC.Display.wxSamplesGui import add_menu, add_function_to_menu, start_display
 add_menu('geom plate')
 add_function_to_menu('geom plate', geom_plate)
 add_function_to_menu('geom plate', solve_radius)

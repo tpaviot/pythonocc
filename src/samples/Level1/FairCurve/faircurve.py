@@ -4,7 +4,7 @@ from OCC.Geom import *
 from OCC.FairCurve import *
 
 from OCC.Utils.Construct import *
-from OCC.Display.wxSamplesGui import *
+from OCC.Display.SimpleGui import *
 from OCC.Utils.Construct import *
 
 import math, time

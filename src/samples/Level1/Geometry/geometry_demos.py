@@ -70,7 +70,7 @@ from OCC.Prs3d import *
 from OCC.TColgp import * 
 from OCC.GeomFill import *
 
-from OCC.Display.SimpleGui import display
+from OCC.Display.SimpleGui import *
 
 import time, sys
 
@@ -1103,7 +1103,6 @@ def exit(event=None):
     sys.exit() 
 
 if __name__ == '__main__':
-        from OCC.Display.wxSamplesGui import add_function_to_menu, add_menu, start_display
         add_menu('geometry')
         for f in [point_from_curve,
                   project_point_on_curve,
