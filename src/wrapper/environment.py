@@ -122,9 +122,9 @@ SWIG_OUT_DIR = os.path.join(os.getcwd(),'build','swig_output_%s'%sys.platform)
 if sys.platform=='win32':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','win32')
     # Try to find OCC paths from environment analysis
-    BOOST_INC = 'Z:\Devel\\boost_1_40_0'
-    SALOME_GEOM_LIB = os.path.join('Z:\Devel\\Salome\\salomegeometry\\trunk\\win32\\lib')
-    SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','SalomeMesh','win32','lib')
+    BOOST_INC = 'Z:\\boost_1_40_0'
+    SALOME_GEOM_LIB = os.path.join('Z:\\Salome\\salomegeometry\\trunk\\win32\\lib')
+    SALOME_SMESH_LIB = os.path.join(os.getcwd(),'contrib','salomesmesh_no_netgen','win32','lib')
     GCC_XML_PATH = os.path.join(os.getcwd(),'..','..','pygccxml','gccxml_bin','v09','win32','bin')
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = [('WNT', None),('WIN32',None),\
@@ -157,10 +157,10 @@ elif sys.platform=='linux2':
                      ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
                      ('LIN',None),('LININTEL',None),('_GNU_SOURCE','1'),\
                      ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]      
-    SWIG_OPTS = ['-python','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+    SWIG_OPTS = ['-python','-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%SWIG_OUT_DIR]#os.path.join(os.getcwd(),'OCC')]
-    ECA = ['-O0']
+    ECA = []#'-O0']
     if bits==64:
         DEFINE_MACROS.append(('_OCC64',None))
         SWIG_OPTS.append('-D_OCC64')
@@ -175,7 +175,7 @@ elif sys.platform=='linux2':
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
     #bits = get_32_or_64_bits_platform()
-    SWIG_OPTS = ['-python','-small','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+    SWIG_OPTS = ['-python','-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                   '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
                   '-outdir','%s'%SWIG_OUT_DIR]#os.path.join(os.getcwd(),'OCC')]
     if bits==64:
