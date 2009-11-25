@@ -31,11 +31,8 @@ from distutils.command.build_ext import build_ext as _build_ext
 
 sys.path.append(os.path.join(os.getcwd(),'wrapper'))
 import Modules
-from environment import VERSION
+#from environment import VERSION
 import environment
-from environment import OCC_INC,OCC_LIB, VERSION,\
-ECA, ELA, PYGCCXML_DEFINES, SWIG_OPTS, DEFINE_MACROS, SWIG_FILES_PATH_MODULAR, SWIG_OUT_DIR
-#print "Building pythonOCC-%s for %s"%(VERSION,sys.platform)
 # Try to import multiprocessing(python2.6 or higher) or processing(python2.5) packages
 try:
     import multiprocessing as processing
@@ -90,18 +87,125 @@ for elem in sys.argv:
         sys.argv.remove(elem)
         break
 
+#Check whether the --with-boost-include option is passed
+for elem in sys.argv:
+    if elem.startswith('--with-boost-include='):
+        environment.BOOST_INC = elem.split('--with-boost-include=')[1]
+        sys.argv.remove(elem)
+        break
+    
+#Check whether the --with-occ-include option is passed
+for elem in sys.argv:
+    if elem.startswith('--with-occ-include='):
+        environment.OCC_INC = elem.split('--with-occ-include=')[1]
+        sys.argv.remove(elem)
+        break
+
+#Check whether the --with-occ-include option is passed
+for elem in sys.argv:
+    if elem.startswith('--with-occ-lib='):
+        environment.OCC_LIB = elem.split('--with-occ-lib=')[1]
+        sys.argv.remove(elem)
+        break
+
+def check_occ_lib(library):
+    ''' Find OCC shared library
+    '''
+    print 'Checking OCC %s library ...'%library,
+    found = glob.glob(os.path.join(environment.OCC_LIB,'*%s*'%library))
+    if len(found)>0:
+        print 'yes'
+        return True
+    else:
+        print 'no'
+        return False
+
+def check_salomegeom_lib(library):
+    ''' Find salomegeometry shared library
+    '''
+    print 'Checking salomegeometry %s library ...'%library,
+    found = glob.glob(os.path.join(environment.SALOME_GEOM_LIB,'*%s*'%library))
+    if len(found)>0:
+        print 'yes'
+        return True
+    else:
+        print 'no'
+        return False
+
+def check_salomesmesh_lib(library):
+    ''' Find salomesmesh shared library
+    '''
+    print 'Checking salomesmesh %s library ...'%library,
+    found = glob.glob(os.path.join(environment.SALOME_SMESH_LIB,'*%s*'%library))
+    if len(found)>0:
+        print 'yes'
+        return True
+    else:
+        print 'no'
+        return False
+    
+def check_file(file,message):
+    ''' Function used to find headers, lib etc. necessary for compilation
+    '''
+    print 'Checking %s ...'%message,
+    if os.path.isfile(file):
+        print 'yes'
+        return True
+    else:
+        print 'no'
+        return False
+
+def check_config():
+    ''' Checks all
+    '''
+    print "Building pythonOCC-%s for %s"%(environment.VERSION,sys.platform)
+    # OCC includes and lib
+    h = standard_transient_header = os.path.join(environment.OCC_INC,'Standard_Transient.hxx')
+    check_file(standard_transient_header,'OCC Standard_Transient.hxx header')
+    l = check_occ_lib('TKernel')
+    if not (h and l):
+        print 'Error. pythonOCC compilation aborted'
+        sys.exit(0)
+    # salomegeometry
+    if WRAP_SALOME_GEOM:
+        geom_object_header = os.path.join(environment.SALOME_GEOM_INC,'GEOMAlgo_Algo.hxx')
+        h = check_file(geom_object_header,'salomegeometry GEOMAlgo_Algo.hxx header')
+        l = check_salomegeom_lib('Sketcher')
+        if not (h and l):
+            print 'Error. pythonOCC compilation aborted'
+            sys.exit(0)
+    # salomesmesh
+    if WRAP_SALOME_SMESH:
+        smesh_mesh_header = os.path.join(environment.SALOME_SMESH_INC,'SMESH_Mesh.hxx')
+        h = check_file(smesh_mesh_header,'salomesmesh SMESH_Mesh.hxx header')
+        l = check_salomesmesh_lib('Driver')
+        # BOOST
+        shared_ptr_header = os.path.join(environment.BOOST_INC,'boost','shared_ptr.hpp')
+        b = check_file(shared_ptr_header,'boost/shared_ptr.hpp header')
+        if not (h and l and b):
+            print 'Error. pythonOCC compilation aborted'
+            sys.exit(0)
+
+check_config()
+
 #Check whether the -j nprocs is passed
 if ('-help' in sys.argv) or ('-h' in sys.argv):
     help_str="""pythonOCC setup - (c) Thomas Paviot, 2008-2009.
 Usage: python setup.py build [options]
 With [options]:
-    --enable_geom: tells setup.py to wrap Salome_GEOM library.
-    --enable_smesh: tells setup.py to wrap Salome_SMESH library.
+    --enable_geom: tells setup.py to wrap Salome_GEOM library
+    --enable_smesh: tells setup.py to wrap Salome_SMESH library
+    -jNPROCS: number of processes to use
+    --with-occ-include: location of opencascade includes
+    --with-occ-lib: location of opencascade libs
+    --with-salomegeom: location of salomegeom libs
+    --with-salomesmesh: location of salomesmesh libs
+    --with-boost-include: boost include directory location
     -ccompiler: compiler can be either 'gcc', 'mingw32' or 'msvc'
 Examples:
-    - under Windows: python setup.py build -cmsvc install
-    - under Windows, without the GEOM module: python setup.py build -cmsvc -NO_GEOM install
-    - under Linux: python setup.py build install
+    - under Windows: python setup.py build --enable_geom -j2 -cmsvc install
+    - under Windows, without the GEOM module: python setup.py build -cmsvc install
+    - under Linux: python setup.py build --enable_geom --enable_smesh -j2
     """
     print help_str
     sys.exit(0)
@@ -119,110 +223,7 @@ else:
     MULTI_PROCESS_COMPILATION = False
 
 import customize_build
-#def customize_compiler(compiler):
-#    '''Updates compiler settings for pythonOCC performances under Linux and MacOSX.
-#    Objective is to reducd wrapper size (by removing the -g and -O2 default flags) and
-#    tune the 32/64 bit architecture.
-#    '''
-#    if sys.platform == 'linux2':
-#        #just remove the -g and -O2 flags that make the binding bigger
-#        compiler_so = compiler.compiler_so
-#        if '-g' in compiler_so:
-#            compiler_so.remove('-g')
-#        if '-O2' in compiler_so:
-#            compiler_so.remove('-O2')
-#    elif sys.platform =='darwin':
-#        compiler_so = ['g++','-O0','-fPIC','-dynamic','-pipe']
-#        # And modify linker_so
-#        linker_so = [compiler.linker_so[0],'-F.', '--no_undefined','-bundle','-dynamic_lookup']
-#        #g++-4.2 -Wl,-F. -bundle -undefined dynamic_lookup -arch i386 -arch ppc -arch x86_64 build/temp.macosx-10.6-universal-2.6/Users/thomas/Devel/pythonocc/src/wra
-#        if environment.get_32_or_64_bits_platform()==64:
-#            compiler_so.extend(['-arch','x86_64','-m64'])
-#            linker_so.extend(['-arch','x86_64','-m64'])
-#        else:
-#            compiler_so.extend(['-arch','i386','-m32'])
-#            linker_so.extend(['-arch','i386','-m32'])
-#        linker_so.append('-L.')
-#        linker_so.append('-lm')
-#        linker_so.append('-lstdc++')
-#        # Add the python library
-#        python_version = sys.version
-#        if python_version[0]=='2':
-#            linker_so.append('-lpython2.%s'%python_version[2])
-#        compiler.compiler_so = compiler_so
-#        compiler.linker_so = linker_so
-#    return compiler
-#
-##
-## Function that builds an extension (setuptools). Necessary for multiprocess compilation
-##
-#def set_build_ext_instance():
-#    global build_ext_instance
-#    build_ext_instance = None
-#
-#def build_extension(ext):
-#    sources = ext.sources
-#    if sources is None or type(sources) not in (ListType, TupleType):
-#        raise DistutilsSetupError, \
-#              ("in 'ext_modules' option (extension '%s'), " +
-#               "'sources' must be present and must be " +
-#               "a list of source filenames") % ext.name
-#    sources = list(sources)
-#
-#    fullname = build_ext_instance.get_ext_fullname(ext.name)
-#    if build_ext_instance.inplace:
-#        # ignore build-lib -- put the compiled extension into
-#        # the source tree along with pure Python modules
-#
-#        modpath = string.split(fullname, '.')
-#        package = string.join(modpath[0:-1], '.')
-#        base = modpath[-1]
-#
-#        build_py = build_ext_instance.get_finalized_command('build_py')
-#        package_dir = build_py.get_package_dir(package)
-#        ext_filename = os.path.join(package_dir,
-#                                    build_ext_instance.get_ext_filename(base))
-#    else:
-#        ext_filename = os.path.join(build_ext_instance.build_lib,
-#                                    build_ext_instance.get_ext_filename(fullname))            
-#    depends = sources + ext.depends
-#    if not (build_ext_instance.force or newer_group(depends, ext_filename, 'newer')):
-#        log.debug("skipping '%s' extension (up-to-date)", ext.name)
-#        return
-#    else:
-#        log.info("building '%s' extension", ext.name)
-#    sources = build_ext_instance.swig_sources(sources, ext)
-#    extra_args = ext.extra_compile_args or []
-#    macros = ext.define_macros[:]
-#    for undef in ext.undef_macros:
-#        macros.append((undef,))
-#    # Here are modified the compiler settings
-#    build_ext_instance.compiler = customize_compiler(build_ext_instance.compiler)
-#    objects = build_ext_instance.compiler.compile(sources,
-#                                    output_dir=build_ext_instance.build_temp,
-#                                    macros=macros,
-#                                    include_dirs=ext.include_dirs,
-#                                    debug=build_ext_instance.debug,
-#                                    extra_postargs=extra_args,
-#                                    depends=ext.depends)
-#    build_ext_instance._built_objects = objects[:]
-#    if ext.extra_objects:
-#        objects.extend(ext.extra_objects)
-#    extra_args = ext.extra_link_args or []
-#
-#    language = ext.language or build_ext_instance.compiler.detect_language(sources)
-#
-#    build_ext_instance.compiler.link_shared_object(
-#        objects, ext_filename,
-#        libraries=build_ext_instance.get_libraries(ext),
-#        library_dirs=ext.library_dirs,
-#        runtime_library_dirs=ext.runtime_library_dirs,
-#        extra_postargs=extra_args,
-#        export_symbols=build_ext_instance.get_export_symbols(ext),
-#        debug=build_ext_instance.debug,
-#        build_temp=build_ext_instance.build_temp,
-#        target_lang=language)
-#
+
 
 def get_build_ext_instance():
     return build_ext_instance
@@ -254,8 +255,8 @@ if not (os.path.isdir(os.path.join(os.getcwd(),'OCC'))):
         os.mkdir(os.path.join(os.getcwd(),'OCC'))
 if not (os.path.isdir(os.path.join(os.getcwd(),'build'))):
         os.mkdir(os.path.join(os.getcwd(),'build'))
-if not (os.path.isdir(SWIG_OUT_DIR)):
-        os.mkdir(SWIG_OUT_DIR)                 
+if not (os.path.isdir(environment.SWIG_OUT_DIR)):
+        os.mkdir(environment.SWIG_OUT_DIR)                 
 #
 # Package Name
 #
@@ -267,7 +268,7 @@ def Create__init__():
     just create domething like: __all__ = ['gp,'gce']
     """
     print "Creating __init__.py script."
-    init_directory = SWIG_OUT_DIR#os.path.join(os.getcwd(),'OCC')
+    init_directory = environment.SWIG_OUT_DIR#os.path.join(os.getcwd(),'OCC')
     if not os.path.isdir(init_directory):
         os.mkdir(init_directory)
     init_fp = open(os.path.join(init_directory,'__init__.py'),'w')
@@ -281,7 +282,7 @@ def Create__init__():
     #
     # Include Version number
     #
-    init_fp.write("VERSION='%s'\n"%VERSION)
+    init_fp.write("VERSION='%s'\n"%environment.VERSION)
     init_fp.write('__all__=[')
     for module_tuple in Modules.MODULES:
         module_name = module_tuple[0]
@@ -319,8 +320,7 @@ libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 
 # Find the lib in OCC_LIB path and add it to the LIBS list
 LIBS = []
 for library in libraries:
-    found = glob.glob(os.path.join(OCC_LIB,'*%s*'%library))
-    if len(found)>0:
+    if check_occ_lib(library):
         LIBS.append(library)
 #
 # Salome Geom libs
@@ -328,6 +328,11 @@ for library in libraries:
 GEOM_LIBS = ['Sketcher','ShHealOper','Partition','NMTTools',\
                         'NMTDS','GEOM','GEOMImpl',
                         'GEOMAlgo','Archimede']
+if WRAP_SALOME_GEOM:
+    for library in GEOM_LIBS:
+        if not check_salomegeom_lib(library):
+            print 'Error. pythonOCC compilation aborted'
+            sys.exit(0)
 #
 # Salome SMESH libs
 #
@@ -335,6 +340,11 @@ SMESH_LIBS = ['Driver','DriverDAT','DriverSTL','DriverUNV',\
                         'SMDS','SMESH',
                         'SMESHDS','StdMeshers'
                         ]
+if WRAP_SALOME_SMESH:
+    for library in SMESH_LIBS:
+        if not check_salomesmesh_lib(library):
+            print 'Error. pythonOCC compilation aborted'
+            sys.exit(0)
 
 if __name__=='__main__': #hack to enable multiprocessing under Windows
     extension = []
@@ -345,13 +355,13 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
                 raise NameError('Missins swig file:%s'%SWIG_source_file)
             module_extension = Extension("OCC._%s"%module[0],
                             sources = [SWIG_source_file],
-                            include_dirs=[OCC_INC,SWIG_FILES_PATH_MODULAR], #for TopOpeBRep_tools.hxx
-                            library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
-                            define_macros= DEFINE_MACROS,
-                            swig_opts = SWIG_OPTS,
+                            include_dirs=[environment.OCC_INC,environment.SWIG_FILES_PATH_MODULAR], #for TopOpeBRep_tools.hxx
+                            library_dirs=[environment.OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
+                            define_macros= environment.DEFINE_MACROS,
+                            swig_opts = environment.SWIG_OPTS,
                             libraries = LIBS,
-                            extra_compile_args = ECA,
-                            extra_link_args = ELA,
+                            extra_compile_args = environment.ECA,
+                            extra_link_args = environment.ELA,
                             )
             extension.append(module_extension)
         # Add Visualization
@@ -361,24 +371,24 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
                                        os.path.join(os.getcwd(),'wrapper','Visualization','Display2d.cpp'),
                                        os.path.join(os.getcwd(),'wrapper','Visualization','NISDisplay3d.cpp'),
                                        ],
-                            include_dirs=[OCC_INC,os.path.join(os.getcwd(),'wrapper','Visualization')],
-                            library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
-                            define_macros= DEFINE_MACROS,
-                            swig_opts = SWIG_OPTS,
+                            include_dirs=[environment.OCC_INC,os.path.join(os.getcwd(),'wrapper','Visualization')],
+                            library_dirs=[environment.OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
+                            define_macros= environment.DEFINE_MACROS,
+                            swig_opts = environment.SWIG_OPTS,
                             libraries = LIBS,
-                            extra_compile_args = ECA,
-                            extra_link_args = ELA,
+                            extra_compile_args = environment.ECA,
+                            extra_link_args = environment.ELA,
                             ))
         # Add Misc
         extension.append(Extension("OCC._Misc",
                             sources = [os.path.join(os.getcwd(),'wrapper','Misc','Misc.i')],
-                            include_dirs=[OCC_INC],
-                            library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
-                            define_macros= DEFINE_MACROS,
-                            swig_opts = SWIG_OPTS,
+                            include_dirs=[environment.OCC_INC],
+                            library_dirs=[environment.OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
+                            define_macros= environment.DEFINE_MACROS,
+                            swig_opts = environment.SWIG_OPTS,
                             libraries = LIBS,
-                            extra_compile_args = ECA,
-                            extra_link_args = ELA,
+                            extra_compile_args = environment.ECA,
+                            extra_link_args = environment.ELA,
                             ))
         #
         # Salome Geom extensions
@@ -390,13 +400,13 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
                 raise NameError('Missins swig file:%s'%SWIG_source_file)
             module_extension = Extension("OCC._%s"%module[0],
                         sources = [SWIG_source_file],
-                        include_dirs=[OCC_INC,environment.SALOME_GEOM_INC,SWIG_FILES_PATH_MODULAR],
-                        library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
-                        define_macros= DEFINE_MACROS,
-                        swig_opts = SWIG_OPTS,
+                        include_dirs=[environment.OCC_INC,environment.SALOME_GEOM_INC,environment.SWIG_FILES_PATH_MODULAR],
+                        library_dirs=[environment.OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
+                        define_macros= environment.DEFINE_MACROS,
+                        swig_opts = environment.SWIG_OPTS,
                         libraries = LIBS + GEOM_LIBS,
-                        extra_compile_args = ECA,
-                        extra_link_args = ELA,
+                        extra_compile_args = environment.ECA,
+                        extra_link_args = environment.ELA,
                         )
             extension.append(module_extension)
     
@@ -409,32 +419,22 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
             #if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
             if not (os.path.isfile(SWIG_source_file)):
                 raise NameError('Missins swig file:%s'%SWIG_source_file)
-            INCLUDE_DIRS = [OCC_INC,environment.SALOME_SMESH_INC,SWIG_FILES_PATH_MODULAR] #for TopOpeBRep_tools.hxx
+            INCLUDE_DIRS = [environment.OCC_INC,environment.SALOME_SMESH_INC,environment.SWIG_FILES_PATH_MODULAR] #for TopOpeBRep_tools.hxx
             INCLUDE_DIRS.append(environment.BOOST_INC)
             module_extension = Extension("OCC._%s"%module[0],
                         sources = [SWIG_source_file],
                         include_dirs=INCLUDE_DIRS,
-                        library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
-                        define_macros= DEFINE_MACROS,
-                        swig_opts = SWIG_OPTS,
+                        library_dirs=[environment.OCC_LIB,environment.SALOME_GEOM_LIB,environment.SALOME_SMESH_LIB],
+                        define_macros= environment.DEFINE_MACROS,
+                        swig_opts = environment.SWIG_OPTS,
                         libraries = LIBS + SMESH_LIBS,
-                        extra_compile_args = ECA,
-                        extra_link_args = ELA,
+                        extra_compile_args = environment.ECA,
+                        extra_link_args = environment.ELA,
                         )
             extension.append(module_extension)
     
     NB_EXT = len(extension)
     
-#    
-#    bg_image_install_dir = os.path.join(sysconfig.get_python_lib(),'OCC','Display')
-#    data = [(install_dir,\
-#            [os.path.join(os.getcwd(),'..','AUTHORS'),
-#             os.path.join(os.getcwd(),'..','LICENSE'),
-#             os.path.join(os.getcwd(),'wrapper','GarbageCollector.py')]),
-#            (bg_image_install_dir,\
-#            [os.path.join(os.getcwd(),'addons','Display','default_background.bmp')]),
-#            ]
-        
     KARGS = {"ext_modules":extension}
     #
     # SETUP
@@ -443,8 +443,6 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
         package_name = "pythonOCC-all_in_one"
     else:
         package_name = "pythonOCC"
-    
-
     #
     # Create __init__ script
     #
@@ -457,7 +455,7 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
           author = "Thomas Paviot",
           author_email = "tpaviot@gmail.com",
           description = "A CAD/PLM development library for the python programming language",
-          version=VERSION,
+          version=environment.VERSION,
           long_description = """PythonOCC is a Python wrapper module for the
     OpenCascade library. It contains python functions and classes
     that will allow you to fully utilitize the OpenCascade library.
@@ -482,7 +480,7 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
     # Copy all the python modules to the root package dir
     # It's done only when 'build' or 'install' is in sys.argv
     if 'build' in sys.argv:
-        modules_to_install = glob.glob(os.path.join(SWIG_OUT_DIR,'*.py'))
+        modules_to_install = glob.glob(os.path.join(environment.SWIG_OUT_DIR,'*.py'))
         for module_to_install in modules_to_install:
             install_file(module_to_install)
         # install AUTHORS and LICENSE files
@@ -498,13 +496,5 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
         bg_image_dest = os.path.join(os.getcwd(),build_lib,'OCC','Display','default_background.bmp')
         shutil.copy(image_file, bg_image_dest)
         
-    
-    
-#    data = [(install_dir,\
-#            [os.path.join(os.getcwd(),'..','AUTHORS'),
-#             os.path.join(os.getcwd(),'..','LICENSE'),
-#             os.path.join(os.getcwd(),'wrapper','GarbageCollector.py')]),
-#            (bg_image_install_dir,\
-#            [os.path.
     final_time = time.time()
     print 'Compilation processed in %fs'%(final_time-init_time)

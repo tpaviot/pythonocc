@@ -149,8 +149,16 @@ elif sys.platform=='linux2':
     else:
         OCC_INC = '/opt/OpenCASCADE6.3.0/inc'
         OCC_LIB = '/opt/OpenCASCADE6.3.0/lib' # Ubuntu 8.04 Hardy default installation path for libraries
-    SALOME_GEOM_LIB = '/opt/SalomeGeometry/lib'
-    SALOME_SMESH_LIB = '/opt/salomesmesh/lib'
+    try:
+        GEOM_ROOT = os.environ['GEOMROOT']
+        SALOME_GEOM_LIB = os.path.join(GEOM_ROOT,'lib')
+    except:
+        SALOME_GEOM_LIB = '/opt/SalomeGeometry/lib'
+    try:
+        SMESH_ROOT = os.environ['SMESHROOT']
+        SALOME_SMESH_LIB = os.path.join(SMESH_ROOT,'lib')
+    except:
+        SALOME_SMESH_LIB = '/opt/salomesmesh/lib'
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
@@ -174,7 +182,6 @@ elif sys.platform=='linux2':
     
 elif sys.platform=='darwin':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
-    #bits = get_32_or_64_bits_platform()
     SWIG_OPTS = ['-python','-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                   '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
                   '-outdir','%s'%SWIG_OUT_DIR]#os.path.join(os.getcwd(),'OCC')]
@@ -182,11 +189,22 @@ elif sys.platform=='darwin':
         SWIG_OPTS.append('-D_OCC64')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
-    OCC_LIB = '/Library/OpenCASCADE/6.3.0/lib'
-    OCC_INC = '/Library/OpenCASCADE/6.3.0/inc'
-    SALOME_GEOM_LIB = '/Library/salomegeometry/lib'
-    #SALOME_GEOM_INC = '/Library/salomegeometry/include'
-    SALOME_SMESH_LIB = '/Library/salomesmesh/lib'
+    if OCC_ROOT!=None:
+        OCC_INC = os.path.join(OCC_ROOT,'inc')
+        OCC_LIB = os.path.join(OCC_ROOT,'lib')
+    else:
+      OCC_LIB = '/Library/OpenCASCADE/6.3.0/lib'
+      OCC_INC = '/Library/OpenCASCADE/6.3.0/inc'
+    try:
+        GEOM_ROOT = os.environ['GEOMROOT']
+        SALOME_GEOM_LIB = os.path.join(GEOM_ROOT,'lib')
+    except:
+        SALOME_GEOM_LIB = '/Library/salomegeometry/lib'
+    try:
+        SMESH_ROOT = os.environ['SMESHROOT']
+        SALOME_SMESH_LIB = os.path.join(SMESH_ROOT,'lib')
+    except:
+        SALOME_SMESH_LIB = '/Library/salomesmesh/lib'        
     GCC_XML_PATH = which('gccxml')
     BOOST_INC = os.path.join(os.getcwd(),'..','..','boost_1_40_0')
     if GCC_XML_PATH == '':
@@ -203,7 +221,7 @@ elif sys.platform=='darwin':
     EXTRA_LIBS = ['-framework Python']
 
 else:
-    raise "Unsupported platform\nCurrently win32 / linux / osx are supported"
+    raise "Unsupported platform\nCurrently win32 / linux / osx are supported."
 
 #===============================================================================
 # Common paths
@@ -215,6 +233,3 @@ MISC_PATH = os.path.join(os.getcwd(),'Misc')
 CONFIG_H_PATH = OCC_ROOT
 SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','SalomeGeometry','inc_pythonocc')
 SALOME_SMESH_INC = os.path.join(os.getcwd(),'contrib','salomesmesh_no_netgen','inc')
-
-if __name__=='__main__':
-    print GetOCCPaths()
