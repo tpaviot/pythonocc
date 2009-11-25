@@ -31,7 +31,7 @@ import subprocess
 # VARIABLES
 #===============================================================================
 
-VERSION = 'rev722'         # Define pythonOCC version
+VERSION = '0.4'         # Define pythonOCC version
 
 #===============================================================================
 # UTILITIES
@@ -160,7 +160,7 @@ elif sys.platform=='linux2':
     SWIG_OPTS = ['-python','-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%SWIG_OUT_DIR]#os.path.join(os.getcwd(),'OCC')]
-    ECA = []#'-O0']
+    ECA = []
     if bits==64:
         DEFINE_MACROS.append(('_OCC64',None))
         SWIG_OPTS.append('-D_OCC64')
