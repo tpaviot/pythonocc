@@ -75,12 +75,7 @@ def get_bg_abs_filename():
         raise NameError('Not image background file found.')
     else:
         return bg_abs_filename
-
-display = None
-add_menu = None
-add_function_to_menu = None
-start_display = None
-
+    
 def init_display():
     global display, add_menu, add_function_to_menu, start_display, app, win
     # wxPython based simple GUI
@@ -165,6 +160,7 @@ def init_display():
     else:
         print "No compliant GUI library found. You must have either wxPython, PyQt or python-xlib installed."
         sys.exit(0)
+    return display, start_display, add_menu, add_function_to_menu
     
 if __name__ == '__main__':
     set_backend('X')

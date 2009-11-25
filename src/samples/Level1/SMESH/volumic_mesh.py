@@ -24,7 +24,9 @@ from OCC.TopoDS import *
 from OCC.SMESH import *
 from OCC.StdMeshers import *
 from OCC.MeshVS import *
-from OCC.Display.SimpleGui import display, start_display
+
+from OCC.Display.SimpleGui import 
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 # First create a 'complex' shape (actually a boolean op between a box and a cylinder)
 box = BRepPrimAPI_MakeBox(200,30,30).Shape()
