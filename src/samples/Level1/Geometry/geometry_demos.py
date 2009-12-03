@@ -71,7 +71,7 @@ from OCC.TColgp import *
 from OCC.GeomFill import *
 
 from OCC.Display.SimpleGui import *
-
+display, start_display, add_menu, add_function_to_menu = init_display()
 import time, sys
 
 

@@ -8,8 +8,9 @@ from OCC.TopoDS import *
 from OCC.SMESH import *
 from OCC.StdMeshers import *
 from OCC.MeshVS import *
-from OCC.Display.SimpleGui import display, start_display
 
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
 #Create the shape to mesh
 aShape = BRepPrimAPI_MakeSphere(40).Shape()
 #aShape = BRepPrimAPI_MakeTorus(400,40).Shape()

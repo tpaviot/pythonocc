@@ -33,7 +33,9 @@ from OCC.GeomAPI import *
 from OCC.GeomFill import *
 from OCC.GeomAdaptor import *
 from OCC.TColgp import *
-from OCC.Display.SimpleGui import display,start_display, add_function_to_menu, add_menu
+
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 def point_list_to_TColgp_Array1OfPnt(li):
     pts = TColgp_Array1OfPnt(0, len(li)-1)
