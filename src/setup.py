@@ -161,7 +161,10 @@ def check_config():
     print "Building pythonOCC-%s for %s"%(environment.VERSION,sys.platform)
     # OCC includes and lib
     h = standard_transient_header = os.path.join(environment.OCC_INC,'Standard_Transient.hxx')
-    check_file(standard_transient_header,'OCC Standard_Transient.hxx header')
+    if not check_file(standard_transient_header,'OCC Standard_Transient.hxx header'):
+        print 'Error: the include path provided (%s) does not seem to contain all OCC headers. Please check that all OCC headers are located in this directory.'%environment.OCC_INC
+        print 'pythonOCC compilation failed.'
+        sys.exit(0) #exits, since compilation will fail
     l = check_occ_lib('TKernel')
     if not (h and l):
         print 'Error. pythonOCC compilation aborted'
