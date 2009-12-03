@@ -291,8 +291,8 @@ class ParametricModelingContext(object):
 
         if does_commit:
             self.doc.NewCommand()
-        
-        self.engine.SetInterpreterConstant(self.docId, TCollection_AsciiString(name), value)
+        # "" and True, here after are maybe to change
+        self.engine.SetInterpreterConstant(self.docId, TCollection_AsciiString(name), value,TCollection_AsciiString(""),True)
 
         #update registered solvers
         for solver in self.solvers:

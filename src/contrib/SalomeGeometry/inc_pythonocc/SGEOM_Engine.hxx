@@ -152,13 +152,13 @@ class GEOM_Engine
   Standard_EXPORT bool GetInterpreterEquationValue(int theDocID, const TCollection_AsciiString& theEquation, double& theRefValue);
 
   //!Sets to the engine a new variable
-  Standard_EXPORT void SetInterpreterConstant(int theDocID, const TCollection_AsciiString& theConstant, double theValue);
+  Standard_EXPORT void SetInterpreterConstant(int theDocID, const TCollection_AsciiString& theConstant, double theValue, const TCollection_AsciiString& theDescription, bool isUpdateDescription = true);
 
   //!Gets an array with all the variables in use in a document
-  Standard_EXPORT Handle(TColStd_HArray1OfTransient) GetInterpreterConstantArray(int theDocID);
+  Standard_EXPORT void GetInterpreterConstantArray(int theDocID, Handle(TColStd_HArray1OfTransient)& theArray, Handle(TColStd_HArray1OfAsciiString)& theDescriptions);
 
   //!Sets an array with all the variables to be used in a document
-  Standard_EXPORT void SetInterpreterConstantArray(int theDocID, Handle(TColStd_HArray1OfTransient) theArray, bool forgetPrevious);
+  Standard_EXPORT void SetInterpreterConstantArray(int theDocID, Handle(TColStd_HArray1OfTransient) theArray, Handle(TColStd_HArray1OfAsciiString) theDescriptions, bool forgetPrevious);
 
   //!Returns a label which could be used to store user data on documents
   Standard_EXPORT TDF_Label GetUserDataLabel(int theDocID);

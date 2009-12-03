@@ -460,11 +460,11 @@ class GEOM_Engine {
 		%feature("autodoc", "1");
 		bool GetInterpreterEquationValue(int , const TCollection_AsciiString &theEquation, double & theRefValue);
 		%feature("autodoc", "1");
-		void SetInterpreterConstant(int , const TCollection_AsciiString &theConstant, double );
+		void SetInterpreterConstant(int , const TCollection_AsciiString &theConstant, double , const TCollection_AsciiString &theDescription, bool =true);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfTransient GetInterpreterConstantArray(int );
+		void GetInterpreterConstantArray(int , Handle_TColStd_HArray1OfTransient & theArray, Handle_TColStd_HArray1OfAsciiString & theDescriptions);
 		%feature("autodoc", "1");
-		void SetInterpreterConstantArray(int , Handle_TColStd_HArray1OfTransient , bool );
+		void SetInterpreterConstantArray(int , Handle_TColStd_HArray1OfTransient , Handle_TColStd_HArray1OfAsciiString , bool );
 		%feature("autodoc", "1");
 		TDF_Label GetUserDataLabel(int );
 
@@ -836,7 +836,9 @@ class GEOM_IOperations {
 		%feature("autodoc", "1");
 		void StartOperation();
 		%feature("autodoc", "1");
-		void FinishOperation();
+		void OpenOperation();
+		%feature("autodoc", "1");
+		bool FinishOperation();
 		%feature("autodoc", "1");
 		void AbortOperation();
 		%feature("autodoc", "1");

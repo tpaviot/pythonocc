@@ -46,9 +46,12 @@ class GEOM_IOperations
 
   //!Starts a new operation (opens a tansaction)
   Standard_EXPORT void StartOperation();
+
+  //!Opens a new operation (opens a tansaction) (with support for nested operations)
+  Standard_EXPORT void OpenOperation();
  
   //!Finishes the previously started operation (closes the transaction)
-  Standard_EXPORT void FinishOperation();
+  Standard_EXPORT bool FinishOperation();
 
   //!Aborts the operation
   Standard_EXPORT void AbortOperation();
