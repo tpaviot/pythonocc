@@ -102,7 +102,7 @@ def constrained_filling(event=None):
     pts4 = point_list_to_TColgp_Array1OfPnt(
             (gp_Pnt(4, 0, 0),
             gp_Pnt(4, 1, 0),
-            gp_Pnt(4, 2, 0.3),
+            gp_Pnt(4, 2, 2),
             gp_Pnt(4, 3, -0.15),
             gp_Pnt(4, 4, 1),
            )
@@ -191,7 +191,7 @@ def triangle_mesh(event=None):
     aMesh = aMeshGen.CreateMesh(0,True)
     # 1D
     an1DHypothesis = StdMeshers_Arithmetic1D(0,0,aMeshGen)#discretization of the wire
-    an1DHypothesis.SetLength(0.1,False) #the smallest distance between 2 points
+    an1DHypothesis.SetLength(0.05,False) #the smallest distance between 2 points
     an1DHypothesis.SetLength(0.2,True) # the longest distance between 2 points
     an1DAlgo = StdMeshers_Regular_1D(1,0,aMeshGen) # interpolation
     # 2D
@@ -216,7 +216,7 @@ def MEFISTO2D_mesh(event=None):
     aMesh = aMeshGen.CreateMesh(0,True)
     # 1D
     an1DHypothesis = StdMeshers_Arithmetic1D(0,0,aMeshGen)#discretization of the wire
-    an1DHypothesis.SetLength(0.1,False) #the smallest distance between 2 points
+    an1DHypothesis.SetLength(0.05,False) #the smallest distance between 2 points
     an1DHypothesis.SetLength(0.2,True) # the longest distance between 2 points
     an1DAlgo = StdMeshers_Regular_1D(1,0,aMeshGen) # interpolation
     # 2D
