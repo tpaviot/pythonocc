@@ -185,8 +185,9 @@ def solve_radius(event=None):
         import scipy
         from scipy.optimize import fsolve
     except ImportError:
-        print 'scipy not installed, cannot continue the solve_radius example'
-        pass
+        print 'Error: scipy not installed, please check http://www.scipy.org'
+        print 'geomplate/solve_radius sample aborted.'
+        sys.exit(0)
     import time
     from OCC.BRepBuilderAPI import BRepBuilderAPI_MakePolygon
     
