@@ -209,6 +209,31 @@ def triangle_mesh(event=None):
     # Display the data
     display_mesh(aMesh)
  
+def MEFISTO2D_mesh(event=None):
+    aShape = constrained_filling()
+    # Create the Mesh
+    aMeshGen = SMESH_Gen()
+    aMesh = aMeshGen.CreateMesh(0,True)
+    # 1D
+    an1DHypothesis = StdMeshers_Arithmetic1D(0,0,aMeshGen)#discretization of the wire
+    an1DHypothesis.SetLength(0.1,False) #the smallest distance between 2 points
+    an1DHypothesis.SetLength(0.2,True) # the longest distance between 2 points
+    an1DAlgo = StdMeshers_Regular_1D(1,0,aMeshGen) # interpolation
+    # 2D
+    a2dHypothseis = StdMeshers_TrianglePreference(2,0,aMeshGen) #define the boundary
+    a2dAlgo = StdMeshers_MEFISTO_2D(3,0,aMeshGen) 
+    #Calculate mesh
+    aMesh.ShapeToMesh(aShape)
+    #Assign hyptothesis to mesh
+    aMesh.AddHypothesis(aShape,0)
+    aMesh.AddHypothesis(aShape,1)
+    aMesh.AddHypothesis(aShape,2)
+    aMesh.AddHypothesis(aShape,3)
+    #Compute the data
+    aMeshGen.Compute(aMesh,aMesh.GetShapeToMesh())
+    # Display the data
+    display_mesh(aMesh)
+    
 def display_mesh(the_mesh):
     # First, erase all
     display.EraseAll()
@@ -231,6 +256,7 @@ if __name__=='__main__':
     add_menu('surfacic mesh')
     add_function_to_menu('surfacic mesh', quadrangle_mesh)
     add_function_to_menu('surfacic mesh', triangle_mesh)
+    add_function_to_menu('surfacic mesh', MEFISTO2D_mesh)
     add_function_to_menu('surfacic mesh', exit)
     start_display()
 
