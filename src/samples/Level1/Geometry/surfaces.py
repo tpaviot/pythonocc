@@ -11,7 +11,8 @@ from OCC.GeomFill import *
 from OCC.GeomAdaptor import *
 from OCC.TColgp import *
 
-from OCC.Display.SimpleGui import add_menu, add_function_to_menu, start_display
+from OCC.Display.SimpleGui import init_display
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 def point_list_to_TColgp_Array1OfPnt(li):
     pts = TColgp_Array1OfPnt(0, len(li)-1)

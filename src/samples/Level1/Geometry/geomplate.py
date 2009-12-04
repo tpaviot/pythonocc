@@ -28,8 +28,11 @@ from OCC.BRepFill import *
 from OCC.BRep import *
 from OCC.ShapeAnalysis import *
 from OCC.GeomLProp import *
-from OCC.Display.SimpleGui import add_menu, add_function_to_menu, start_display
+
 import types, sys
+
+from OCC.Display.SimpleGui import init_display
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 #===============================================================================
 # Basic API usage
