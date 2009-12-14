@@ -101,10 +101,17 @@ for elem in sys.argv:
         sys.argv.remove(elem)
         break
 
-#Check whether the --with-occ-include option is passed
+#Check whether the --with-occ-lib option is passed
 for elem in sys.argv:
     if elem.startswith('--with-occ-lib='):
         environment.OCC_LIB = elem.split('--with-occ-lib=')[1]
+        sys.argv.remove(elem)
+        break
+    
+#Check whether the --with-smesh-lib option is passed
+for elem in sys.argv:
+    if elem.startswith('--with-smesh-lib='):
+        environment.SALOME_SMESH_LIB = elem.split('--with-smesh-lib=')[1]
         sys.argv.remove(elem)
         break
 
