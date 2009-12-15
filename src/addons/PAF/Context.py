@@ -229,7 +229,9 @@ class ParametricModelingContext(object):
     
     def init_display(self):
         #from OCC.Display.wxSamplesGui import start_display, display
-        from OCC.Display.SimpleGui import start_display, display
+        #from OCC.Display.SimpleGui import start_display, display
+        from OCC.Display.SimpleGui import init_display
+        display, start_display, add_menu, add_function_to_menu = init_display()
         self.display = display
         self._start_display = start_display
         

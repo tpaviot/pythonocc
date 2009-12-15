@@ -25,7 +25,8 @@ from OCC.LocOpe import *
 from OCC.TColgp import *
 
 import sys, time
-from OCC.Display.SimpleGui import display, start_display, add_function_to_menu, add_menu
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
     
 def extrusion(event=None):
     #

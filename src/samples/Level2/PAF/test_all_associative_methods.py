@@ -113,7 +113,7 @@ def main():
     # ---BUG--- NO CONVERTER FOR STD::LIST
 
     
-    Sketcher = my_context.curve_operations.MakeSketcher(cmd, theWorkingPlane) #(string)->GEOM_Shape_ptr
+    sketcher = my_context.curve_operations.MakeSketcher(cmd, theWorkingPlane) #(string)->GEOM_Shape_ptr
     
     
     

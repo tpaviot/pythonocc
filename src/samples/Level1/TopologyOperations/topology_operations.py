@@ -28,7 +28,8 @@ from OCC.TopAbs import *
 from OCC.TColgp import *
 
 import time, math, sys
-from OCC.Display.SimpleGui import display, start_display, add_function_to_menu, add_menu
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
     
 def common(event=None):
     # Create Box
