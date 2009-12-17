@@ -23,7 +23,8 @@ from OCC import BRepPrimAPI, BRepFilletAPI, TNaming,\
 
 from OCC.Utils.Topology import Topo
 
-from OCC.Display.wxSamplesGui import display, start_display
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 
 app = AppStd.AppStd_Application()

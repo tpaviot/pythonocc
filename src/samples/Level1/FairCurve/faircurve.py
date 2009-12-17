@@ -5,6 +5,7 @@ from OCC.FairCurve import *
 
 from OCC.Utils.Construct import *
 from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
 from OCC.Utils.Construct import *
 
 import math, time

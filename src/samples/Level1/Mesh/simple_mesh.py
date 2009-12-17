@@ -27,7 +27,8 @@ from OCC.TopLoc import *
 from OCC.Poly import *
 from OCC.TColgp import *
 from OCC.gp import *
-from OCC.Display.SimpleGui import display
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 
 def simple_mesh(event=None):    
@@ -74,7 +75,6 @@ def simple_mesh(event=None):
     display.DisplayShape(Comp)
     
 if __name__ == '__main__':
-    from OCC.Display.SimpleGui import start_display, add_function_to_menu, add_menu, display
     add_menu('mesh')
     add_function_to_menu('mesh', simple_mesh)
     start_display()

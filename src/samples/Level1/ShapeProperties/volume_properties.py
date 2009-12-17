@@ -20,7 +20,10 @@
 from OCC.BRepPrimAPI import *
 from OCC.GProp import *
 from OCC.BRepGProp import *
-from OCC.Display.wxSamplesGui import display
+
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
+
 from OCC.gp import *
 
 def cube_inertia_properties(event=None):
@@ -41,7 +44,6 @@ def cube_inertia_properties(event=None):
     
     
 if __name__ == '__main__':
-    from OCC.Display.wxSamplesGui import start_display, add_function_to_menu, add_menu
     add_menu('properties')
     add_function_to_menu('properties', cube_inertia_properties)
     start_display()

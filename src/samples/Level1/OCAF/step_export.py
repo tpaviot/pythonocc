@@ -7,8 +7,8 @@ from OCC.TDF import *
 from OCC.TopoDS import *
 
 from OCC import XCAFApp, TDocStd, TCollection, XCAFDoc, BRepPrimAPI, Quantity, TopLoc, gp, TPrsStd, XCAFPrs
-
-from OCC.Display.wxSamplesGui import *
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
 from OCC.STEPCAFControl import *
 from OCC.XSControl import *
 from OCC.STEPControl import *
@@ -87,7 +87,7 @@ def step_export_layers_and_colors(event=None):
     WS = XSControl_WorkSession()
     writer = STEPCAFControl_Writer( WS.GetHandle(), False )
     writer.Transfer(h_doc, STEPControl_AsIs)
-    pth = '/Users/jelleferinga/SVN/voronoi_table/polys2rings_app'
+    pth = '.'
     print 'writing STEP file'
     status = writer.Write(os.path.join(pth, 'step_layers_colors.step'))
     print 'status:', status
@@ -96,7 +96,6 @@ def exit(event=None):
     sys.exit()
 
 if __name__ == '__main__':
-    from OCC.Display.wxSamplesGui import start_display, add_function_to_menu, add_menu 
     add_menu('step ocaf export')
     add_function_to_menu('step ocaf export', step_export_layers_and_colors)
     add_function_to_menu('step ocaf export', exit)

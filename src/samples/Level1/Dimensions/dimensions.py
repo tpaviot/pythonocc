@@ -4,6 +4,8 @@ from OCC.AIS import *
 from OCC.TCollection import TCollection_ExtendedString
 
 from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
+
 from OCC.BRepBuilderAPI import *
 
 def make_edge(*args):
