@@ -20,6 +20,7 @@ from OCC.SGEOM import *
 from OCC.TDF import *
 from OCC.TPrsStd import *
 from OCC.TNaming import *
+from OCC.AIS import *
 try:
     from wx import SafeYield
 except:
@@ -149,7 +150,9 @@ class ParametricModelingContext(object):
 
         self.solvers        = []                # stores the solvers before the new operations classes are generated
         self._old_ops_news_ops = {}             # hashes the old self.myEngine.*Operations class, to the one wrapped by ._initialize operation
-        self.callbacks      = []    # callbacks, such as used for updating Rules and Relations
+        #self.callbacks      = []    # callbacks, such as used for updating Rules and Relations
+        self.pre_solver_callbacks = [] #callbacks called *before* the solver is updated (e.g. Relations, Rules)
+        self.post_solver_callbacks = [] #callbacks called *after* the solver is updated
         self.object_names   = []                # set of all named parametric objects
         self.pres           = {}                # hash Geom_object instance to its presentation
         
@@ -256,22 +259,43 @@ class ParametricModelingContext(object):
                 print 'no solver found for class:', _operation.__class__
                 raise
     
-    def register_callbacks(self, *calls):
+#    def register_callbacks(self, *calls):
+#        """ Defines a callback for the parameter
+#        """
+#        for call in calls:
+#            if callable(call):
+#                self.callbacks.append(call)
+#            else:
+#                raise TypeError('%s is not a callable object' % ( call.__class__ ) )
+#            print "Callback added"
+
+    def register_pre_solver_callback(self, *calls):
         """ Defines a callback for the parameter
         """
         for call in calls:
             if callable(call):
-                self.callbacks.append(call)
+                self.pre_solver_callbacks.append(call)
             else:
                 raise TypeError('%s is not a callable object' % ( call.__class__ ) )
-            print "Callback added"
+            print "Pre-Solver callback added"
+
+    def register_post_solver_callback(self, *calls):
+        """ Defines a callback for the parameter
+        """
+        for call in calls:
+            if callable(call):
+                self.post_solver_callbacks.append(call)
+            else:
+                raise TypeError('%s is not a callable object' % ( call.__class__ ) )
+            print "Post-Solver callback added"
     
     def register_relations(self, *relations):
         """ Adds a relation to this set of parameters
         """
         for relation in relations:
             if isinstance(relation,Relation):
-                self.register_callbacks(relation.eval)
+                #self.register_callbacks(relation.eval)
+                self.register_pre_solver_callback(relation.eval)
             else:
                 raise TypeError('%s is not a Relation object' % ( relation.__class__ ) )
         
@@ -281,15 +305,19 @@ class ParametricModelingContext(object):
         then the rule is checked"""
         if isinstance(rules,Rule):
             # the Rule callback has to be prepended to the callbacks list.
-            self.callbacks = [rules.eval]+self.callbacks
+            #self.callbacks = [rules.eval]+self.callbacks
+            self.pre_solver_callbacks = [rules.eval]+self.pre_solver_callbacks
         else:
             raise TypeError('%s is not a Rule object' % ( rules.__class__ ) )
         
     def set_parameter(self, name, value, does_commit):
         # call registered callbacks. Rules/Relations have to be updated before the geometry is modified. 
-        for callback in self.callbacks:
-            #print 'calling callback:', callback
-            callback()
+        # Be careful: just rules and Callbacks have to be called before the geometry is modified
+        #for callback in self.callbacks:
+        #    #print 'calling callback:', callback
+        #    callback()
+        for pre_solver_callback in self.pre_solver_callbacks:
+            pre_solver_callback()
 
         if does_commit:
             self.doc.NewCommand()
@@ -304,6 +332,24 @@ class ParametricModelingContext(object):
         if does_commit:
             self.doc.CommitCommand()            
         self._update()
+        
+        #Call post_solver callbacks
+        for post_solver_callback in self.post_solver_callbacks:
+            post_solver_callback()
+    
+    def get_shapes(self):
+        ''' returns a lits of TopoDS_Shapes
+        '''
+        shapes = []
+        for prs_value in self.pres.values():
+            h1 = ais_interactiveobject = prs_value.GetAIS()
+            # Dowwcast it to an AIS_Shape
+            h2 = Handle_AIS_Shape()
+            h2 = h2.DownCast(h1)
+            #print h2.IsNull()
+            shape = h2.GetObject().Shape()#h_ais_shape
+            shapes.append(shape)
+        return shapes
 
     def get_presentation(self, geom_obj):
         if hasattr(geom_obj, 'GetObject'):
