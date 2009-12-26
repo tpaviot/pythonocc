@@ -462,8 +462,8 @@ if __name__=='__main__': #hack to enable multiprocessing under Windows
           name = package_name,
           license = "GNU General Public License v3",
           url = "http://www.pythonocc.org",
-          author = "Thomas Paviot",
-          author_email = "tpaviot@gmail.com",
+          author = "Thomas Paviot, Jelle Feringa",
+          author_email = "tpaviot@gmail.com, jelleferinga@gmail.com",
           description = "A CAD/PLM development library for the python programming language",
           version=environment.VERSION,
           long_description = """PythonOCC is a Python wrapper module for the
