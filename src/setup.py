@@ -44,16 +44,16 @@ except:
 
 init_time = time.time()
 
-if '--enable_geom' in sys.argv:
+if '--enable-geom' in sys.argv:
     WRAP_SALOME_GEOM = True #overload default behaviour
-    sys.argv.remove('--enable_geom')
+    sys.argv.remove('--enable-geom')
 else:
     WRAP_SALOME_GEOM = False
 
 # Check whether Salome GEOM package must be wrapped. True by default.
-if '--enable_smesh' in sys.argv:
+if '--enable-smesh' in sys.argv:
     WRAP_SALOME_SMESH = True #overload default behaviour
-    sys.argv.remove('--enable_smesh')
+    sys.argv.remove('--enable-smesh')
 else:
     WRAP_SALOME_SMESH = False
 
