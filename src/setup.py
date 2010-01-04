@@ -114,6 +114,13 @@ for elem in sys.argv:
         environment.SALOME_SMESH_LIB = elem.split('--with-smesh-lib=')[1]
         sys.argv.remove(elem)
         break
+    
+#Check whether the --with-geom-lib option is passed
+for elem in sys.argv:
+    if elem.startswith('--with-geom-lib='):
+        environment.SALOME_GEOM_LIB = elem.split('--with-geom-lib=')[1]
+        sys.argv.remove(elem)
+        break
 
 def check_occ_lib(library):
     ''' Find OCC shared library
@@ -201,15 +208,15 @@ check_config()
 #Check whether the -j nprocs is passed
 if ('-help' in sys.argv) or ('-h' in sys.argv):
     help_str="""pythonOCC setup - (c) Thomas Paviot, 2008-2009.
-Usage: python setup.py build [options]
+Usage: python setup.py build install[options]
 With [options]:
-    --enable_geom: tells setup.py to wrap Salome_GEOM library
-    --enable_smesh: tells setup.py to wrap Salome_SMESH library
+    --enable-geom: tells setup.py to wrap Salome_GEOM library
+    --enable-smesh: tells setup.py to wrap Salome_SMESH library
     -jNPROCS: number of processes to use
     --with-occ-include: location of opencascade includes
     --with-occ-lib: location of opencascade libs
     --with-salomegeom: location of salomegeom libs
-    --with-salomesmesh: location of salomesmesh libs
+    --with-smesh-lib: location of salomesmesh libs
     --with-boost-include: boost include directory location
     -ccompiler: compiler can be either 'gcc', 'mingw32' or 'msvc'
 Examples:
