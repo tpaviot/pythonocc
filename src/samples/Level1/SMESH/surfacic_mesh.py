@@ -34,6 +34,15 @@ from OCC.GeomFill import *
 from OCC.GeomAdaptor import *
 from OCC.TColgp import *
 
+# Necessary for basic OCC mesh
+from OCC.BRep import *
+from OCC.BRepMesh import *
+from OCC.TopExp import *
+from OCC.TopoDS import *
+from OCC.TopAbs import *
+from OCC.TopLoc import *
+from OCC.Poly import *
+
 from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 
@@ -141,50 +150,46 @@ aShape = constrained_filling()
 #display.DisplayShape(aShape)
 display.DisplayShape(aShape)
 
-def quadrangle_mesh(event=None):
-    # Create the Mesh
-    aMeshGen = SMESH_Gen()
-    aMesh = aMeshGen.CreateMesh(0,True)
-
-    # 1D
-    an1DHypothesis = StdMeshers_Arithmetic1D(0,0,aMeshGen)#discretization of the wire
-    an1DHypothesis.SetLength(0.1,False) #the smallest distance between 2 points
-    an1DHypothesis.SetLength(0.2,True) # the longest distance between 2 points
-    an1DAlgo = StdMeshers_Regular_1D(1,0,aMeshGen) # interpolation
-
-    # 2D
-    #a2dAlgo = StdMeshers_MEFISTO_2D(3,0,aMeshGen)
-    a2dHypothseis = StdMeshers_QuadranglePreference(2,0,aMeshGen) #define the boundary
-    #a2dAlgo = StdMeshers_MEFISTO_2D(3,0,aMeshGen)
-    a2dAlgo = StdMeshers_Quadrangle_2D(3,0,aMeshGen) # the 2D mesh
-
-    # 3D: Just uncomment the line to use the volumic mesher you want
-    #a3dHypothesis = StdMeshers_Prism_3D(4,0,aMeshGen) #OK
-    #a3dHypothesis = StdMeshers_Hexa_3D(4,0,aMeshGen) #OK
-    #a3dHypothesis = StdMeshers_CompositeHexa_3D(4,0,aMeshGen) #Ok
-    #a3dHypothesis = StdMeshers_RadialPrism_3D(4,0,aMeshGen) # Don't work?
-
-    #Calculate mesh
-    aMesh.ShapeToMesh(aShape)
-
-    #Assign hyptothesis to mesh
-    aMesh.AddHypothesis(aShape,0)
-    aMesh.AddHypothesis(aShape,1)
-    aMesh.AddHypothesis(aShape,2)
-    aMesh.AddHypothesis(aShape,3)
-    #aMesh.AddHypothesis(aShape,4)
-
-    #Compute the data
-    aMeshGen.Compute(aMesh,aMesh.GetShapeToMesh())
-
-    # Display the data
-    display_mesh(aMesh)
-    
 def exit(event=None):
     import sys
     sys.exit(0)
 
-def triangle_mesh(event=None):
+def occ_triangle_mesh(event = None):
+    shape = constrained_filling()
+    #
+    # Mesh the shape
+    #
+    BRepMesh().Mesh(shape,0.1)
+    builder = BRep_Builder()
+    Comp = TopoDS_Compound()
+    builder.MakeCompound(Comp)
+    
+    ex = TopExp_Explorer(shape,TopAbs_FACE)
+    while ex.More():
+        F = TopoDS().Face(ex.Current())
+        L = TopLoc_Location()       
+        facing = (BRep_Tool().Triangulation(F,L)).GetObject()
+        tab = facing.Nodes()
+        tri = facing.Triangles()
+        for i in range(1,facing.NbTriangles()+1):
+            trian = tri.Value(i)
+            #print trian
+            index1, index2, index3 = trian.Get()
+            for j in range(1,4):
+                if j==1:    
+                    M = index1
+                    N = index2
+                elif j==2:    
+                    N = index3
+                elif j==3:
+                    M = index2  
+                ME = BRepBuilderAPI_MakeEdge(tab.Value(M),tab.Value(N))
+                if ME.IsDone():
+                    builder.Add(Comp,ME.Edge())
+        ex.Next()
+    display.DisplayShape(Comp)
+        
+def smesh_triangle_mesh(event=None):
     aShape = constrained_filling()
     # Create the Mesh
     aMeshGen = SMESH_Gen()
@@ -209,7 +214,7 @@ def triangle_mesh(event=None):
     # Display the data
     display_mesh(aMesh)
  
-def MEFISTO2D_mesh(event=None):
+def smesh_MEFISTO2D(event=None):
     aShape = constrained_filling()
     # Create the Mesh
     aMeshGen = SMESH_Gen()
@@ -254,9 +259,9 @@ def display_mesh(the_mesh):
 
 if __name__=='__main__':
     add_menu('surfacic mesh')
-    add_function_to_menu('surfacic mesh', quadrangle_mesh)
-    add_function_to_menu('surfacic mesh', triangle_mesh)
-    add_function_to_menu('surfacic mesh', MEFISTO2D_mesh)
+    add_function_to_menu('surfacic mesh', occ_triangle_mesh)
+    add_function_to_menu('surfacic mesh', smesh_triangle_mesh)
+    add_function_to_menu('surfacic mesh', smesh_MEFISTO2D)
     add_function_to_menu('surfacic mesh', exit)
     start_display()
 
