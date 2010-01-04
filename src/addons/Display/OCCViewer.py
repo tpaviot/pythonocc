@@ -205,11 +205,13 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def ExportToImage(self,Filename):
         self.View.Dump(Filename)
 
-    def SetBackgroundImage(self, Filename, Stretch = True):
+    def SetBackgroundImage(self, filename, Stretch = True):
+        if not os.path.isfile(filename):
+            raise FileError
         if (Stretch):
-            self.View.SetBackgroundImage(Filename, OCC.Aspect.Aspect_FM_STRETCH, True)
+            self.View.SetBackgroundImage(filename, OCC.Aspect.Aspect_FM_STRETCH, True)
         else:
-            self.View.SetBackgroundImage(Filename, OCC.Aspect.Aspect_FM_NONE, True )
+            self.View.SetBackgroundImage(filename, OCC.Aspect.Aspect_FM_NONE, True )
             
     def DisplayMessage(self,point,text_to_write, update=True):
         """
