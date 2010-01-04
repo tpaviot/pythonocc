@@ -165,7 +165,7 @@ elif sys.platform=='linux2':
                      ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
                      ('LIN',None),('LININTEL',None),('_GNU_SOURCE','1'),\
                      ('__PYTHONOCC_MAXINT__',HASHCODE_MAXINT)]      
-    SWIG_OPTS = ['-python','-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+    SWIG_OPTS = ['-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%SWIG_OUT_DIR]#os.path.join(os.getcwd(),'OCC')]
     ECA = []
