@@ -355,9 +355,9 @@ GEOM_LIBS = ['Sketcher','ShHealOper','Partition','NMTTools',\
                         'NMTDS','GEOM','GEOMImpl',
                         'GEOMAlgo','Archimede']
 if WRAP_SALOME_GEOM:
-    for library in GEOM_LIBS:
-        if not check_salomegeom_lib(library):
-            print 'Error. pythonOCC compilation aborted'
+    for geom_library in GEOM_LIBS:
+        if not check_salomegeom_lib(geom_library):
+            print 'lib%s not found (part of salomegeom). pythonOCC compilation aborted'%geom_library
             sys.exit(0)
 #
 # Salome SMESH libs
@@ -367,9 +367,9 @@ SMESH_LIBS = ['Driver','DriverDAT','DriverSTL','DriverUNV',\
                         'SMESHDS','StdMeshers'
                         ]
 if WRAP_SALOME_SMESH:
-    for library in SMESH_LIBS:
-        if not check_salomesmesh_lib(library):
-            print 'Error. pythonOCC compilation aborted'
+    for smesh_library in SMESH_LIBS:
+        if not check_salomesmesh_lib(smesh_library):
+            print 'lib%s not found (part of salomesmesh). pythonOCC compilation aborted'%smesh_library
             sys.exit(0)
 
 if __name__=='__main__': #hack to enable multiprocessing under Windows
