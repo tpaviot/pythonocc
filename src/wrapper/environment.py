@@ -117,7 +117,7 @@ except:
 HASHCODE_MAXINT = pow(2,31)-1
 
 # Define path for SWIG outdir
-SWIG_OUT_DIR = os.path.join(os.getcwd(),'build','swig_output_%s'%sys.platform)
+SWIG_OUT_DIR = os.path.join(os.getcwd(),'build','swig_output_%s_py%s%s'%(sys.platform,sys.version_info[0],sys.version_info[1]))
         
 if sys.platform=='win32':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','win32')
