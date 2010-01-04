@@ -31,8 +31,7 @@ from OCC.TCollection import TCollection_AsciiString
 import time
 
 class operation(object):
-    '''
-    raises an assertion error when IsDone() returns false, with the error specified in error_statement
+    ''' Raises an assertion error when IsDone() returns false, with the error specified in error_statement
     '''
     def __init__(self, operation):
         self.operation = operation
@@ -180,8 +179,7 @@ class ParametricModelingContext(object):
             print "ParametricModelingContext initialized"
     
     def _initialize_operation(self):
-        '''
-        get all the solvers for all operations
+        ''' Get all the solvers for all operations
         add them to self.solvers for future reference or when updating objects
         we wont be able to access these objects when they are overwritten by the newly generated classes ( wrapping with operation )
         '''
@@ -231,8 +229,6 @@ class ParametricModelingContext(object):
                 self._old_ops_news_ops[klass_instance] = old_operation
     
     def init_display(self):
-        #from OCC.Display.wxSamplesGui import start_display, display
-        #from OCC.Display.SimpleGui import start_display, display
         from OCC.Display.SimpleGui import init_display
         display, start_display, add_menu, add_function_to_menu = init_display()
         self.display = display
@@ -258,20 +254,10 @@ class ParametricModelingContext(object):
             except KeyError:
                 print 'no solver found for class:', _operation.__class__
                 raise
-    
-#    def register_callbacks(self, *calls):
-#        """ Defines a callback for the parameter
-#        """
-#        for call in calls:
-#            if callable(call):
-#                self.callbacks.append(call)
-#            else:
-#                raise TypeError('%s is not a callable object' % ( call.__class__ ) )
-#            print "Callback added"
 
     def register_pre_solver_callback(self, *calls):
-        """ Defines a callback for the parameter
-        """
+        ''' Defines a callback for the parameter
+        '''
         for call in calls:
             if callable(call):
                 self.pre_solver_callbacks.append(call)
@@ -280,8 +266,8 @@ class ParametricModelingContext(object):
             print "Pre-Solver callback added"
 
     def register_post_solver_callback(self, *calls):
-        """ Defines a callback for the parameter
-        """
+        ''' Defines a callback for the parameter
+        '''
         for call in calls:
             if callable(call):
                 self.post_solver_callbacks.append(call)
@@ -290,8 +276,8 @@ class ParametricModelingContext(object):
             print "Post-Solver callback added"
     
     def register_relations(self, *relations):
-        """ Adds a relation to this set of parameters
-        """
+        ''' Adds a relation to this set of parameters
+        '''
         for relation in relations:
             if isinstance(relation,Relation):
                 #self.register_callbacks(relation.eval)
@@ -300,15 +286,22 @@ class ParametricModelingContext(object):
                 raise TypeError('%s is not a Relation object' % ( relation.__class__ ) )
         
     def register_rules(self, rules):
-        """
-        Adds a rule to this parameter. Each time the parameter is updated,
-        then the rule is checked"""
+        ''' Adds a rule to this parameter. Each time the parameter is updated,
+        then the rule is checked
+        '''
         if isinstance(rules,Rule):
             # the Rule callback has to be prepended to the callbacks list.
             #self.callbacks = [rules.eval]+self.callbacks
             self.pre_solver_callbacks = [rules.eval]+self.pre_solver_callbacks
         else:
             raise TypeError('%s is not a Rule object' % ( rules.__class__ ) )
+    
+    def solve(self):
+        ''' Update registered solvers
+        '''
+        for solver in self.solvers:
+            seq = TDF_LabelSequence() 
+            solver.Update(self.docId, seq)    
         
     def set_parameter(self, name, value, does_commit):
         # call registered callbacks. Rules/Relations have to be updated before the geometry is modified. 
@@ -325,13 +318,12 @@ class ParametricModelingContext(object):
         self.engine.SetInterpreterConstant(self.docId, TCollection_AsciiString(name), value,TCollection_AsciiString(""),True)
 
         #update registered solvers
-        for solver in self.solvers:
-            seq = TDF_LabelSequence() 
-            solver.Update(self.docId, seq)        
+        self.solve()       
         
         if does_commit:
             self.doc.CommitCommand()            
-        self._update()
+        
+        self.update_display()
         
         #Call post_solver callbacks
         for post_solver_callback in self.post_solver_callbacks:
@@ -344,10 +336,8 @@ class ParametricModelingContext(object):
         for prs_value in self.pres.values():
             h1 = ais_interactiveobject = prs_value.GetAIS()
             # Dowwcast it to an AIS_Shape
-            h2 = Handle_AIS_Shape()
-            h2 = h2.DownCast(h1)
-            #print h2.IsNull()
-            shape = h2.GetObject().Shape()#h_ais_shape
+            h2 = Handle_AIS_Shape().DownCast(h1)
+            shape = h2.GetObject().Shape()
             shapes.append(shape)
         return shapes
 
@@ -377,21 +367,14 @@ class ParametricModelingContext(object):
             self.display.FitAll()
         return prs
 
-#    def update(self, geom_obj):
-#        for slv in self.solvers:
-#            seq = TDF_LabelSequence()
-##            slv.Update(self.docId, seq)
-##            slv.UpdateObject(geom_obj, seq)
-#            slv.ComputeObject(geom_obj)
-#        self._update()
-
-    def _update(self):
+    def update_display(self):
+        ''' Update each viewer
+        '''
         if self.DISPLAY_INITED:
             for prs in self.pres.itervalues():
                 prs.Update()
                 self.viewer.Update()
-                #self.display.FitAll()
-                #SafeYield() #to prevent window freeze 
+            self.display.FitAll()
 
 if __name__=='__main__':
     import doctest, sys
