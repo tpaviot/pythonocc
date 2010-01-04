@@ -1,4 +1,3 @@
-from __future__ import with_statement
 ##Copyright 2009 Thomas Paviot & Jelle Feringa (tpaviot@gmail.com / jelleferinga@gmail.com)
 ##This file is part of pythonOCC.
 ##
@@ -15,16 +14,13 @@ from __future__ import with_statement
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+from __future__ import with_statement
 from OCC.GEOMImpl import GEOMImpl_Gen
 from OCC.SGEOM import *
 from OCC.TDF import *
 from OCC.TPrsStd import *
 from OCC.TNaming import *
 from OCC.AIS import *
-try:
-    from wx import SafeYield
-except:
-    pass
 
 from OCC.PAF.Parametric import Relation, Rule, Parameters
 from OCC.TCollection import TCollection_AsciiString
@@ -146,6 +142,7 @@ class ParametricModelingContext(object):
         # display stuff
         self.viewer = None #Set up when init_display is called
         self.DISPLAY_INITED = False
+        self.AUTOMATIC_UPDATE = True #whenever a parameter is modified, solvers and display are updated
 
         self.solvers        = []                # stores the solvers before the new operations classes are generated
         self._old_ops_news_ops = {}             # hashes the old self.myEngine.*Operations class, to the one wrapped by ._initialize operation
@@ -244,6 +241,12 @@ class ParametricModelingContext(object):
         else:
             print "You have to init_display first"    
     
+    def set_automatic_update(self, boolean_value):
+        ''' Sets the AUTOMATIC_DISPLAY variable. Default is True. If set to False, the .solve() and
+        .update_display() methods will have to be explicitely called.
+        '''
+        self.AUTOMATIC_UPDATE = boolean_value
+        
     def register_operations(self, *_operations):
         for _operation in _operations:
             try:
@@ -306,9 +309,6 @@ class ParametricModelingContext(object):
     def set_parameter(self, name, value, does_commit):
         # call registered callbacks. Rules/Relations have to be updated before the geometry is modified. 
         # Be careful: just rules and Callbacks have to be called before the geometry is modified
-        #for callback in self.callbacks:
-        #    #print 'calling callback:', callback
-        #    callback()
         for pre_solver_callback in self.pre_solver_callbacks:
             pre_solver_callback()
 
@@ -318,12 +318,13 @@ class ParametricModelingContext(object):
         self.engine.SetInterpreterConstant(self.docId, TCollection_AsciiString(name), value,TCollection_AsciiString(""),True)
 
         #update registered solvers
-        self.solve()       
-        
-        if does_commit:
-            self.doc.CommitCommand()            
-        
-        self.update_display()
+        if self.AUTOMATIC_UPDATE:
+            self.solve()       
+            
+            if does_commit:
+                self.doc.CommitCommand()            
+            
+            self.update_display()
         
         #Call post_solver callbacks
         for post_solver_callback in self.post_solver_callbacks:
