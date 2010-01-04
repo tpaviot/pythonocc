@@ -180,27 +180,36 @@ def check_config():
         print 'pythonOCC compilation failed.'
         sys.exit(0) #exits, since compilation will fail
     l = check_occ_lib('TKernel')
-    if not (h and l):
-        print 'Error. pythonOCC compilation aborted'
+    if not l:
+        print 'libTKernel not found (part of OpenCASCADE). pythonOCC compilation aborted'
         sys.exit(0)
     # salomegeometry
     if WRAP_SALOME_GEOM:
         geom_object_header = os.path.join(environment.SALOME_GEOM_INC,'GEOMAlgo_Algo.hxx')
         h = check_file(geom_object_header,'salomegeometry GEOMAlgo_Algo.hxx header')
+        if not h:
+            print 'GEOMAlgo_Algo.hxx header file not found. pythonOCC compilation aborted'
+            sys.exit(0)
         l = check_salomegeom_lib('Sketcher')
-        if not (h and l):
-            print 'Error. pythonOCC compilation aborted'
+        if not l:
+            print 'libSketcher not found (part of salomegeometry). pythonOCC compilation aborted'
             sys.exit(0)
     # salomesmesh
     if WRAP_SALOME_SMESH:
         smesh_mesh_header = os.path.join(environment.SALOME_SMESH_INC,'SMESH_Mesh.hxx')
         h = check_file(smesh_mesh_header,'salomesmesh SMESH_Mesh.hxx header')
+        if not h:
+            print 'SMESH_Mesh.hxx header file not found. pythonOCC compilation aborted'
+            sys.exit(0)
         l = check_salomesmesh_lib('Driver')
+        if not l:
+            print 'libDriver not found (part of salomesmesh). pythonOCC compilation aborted'
+            sys.exit(0)
         # BOOST
         shared_ptr_header = os.path.join(environment.BOOST_INC,'boost','shared_ptr.hpp')
         b = check_file(shared_ptr_header,'boost/shared_ptr.hpp header')
-        if not (h and l and b):
-            print 'Error. pythonOCC compilation aborted'
+        if not b:
+            print 'boost/shared_ptr.hpp header not found. pythonOCC compilation aborted'
             sys.exit(0)
 
 check_config()
