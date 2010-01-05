@@ -301,7 +301,7 @@ def Create__init__():
     #
     # if it is 'all_in_one' build, then the __init__.py script sets the env CSF_GraphicShr:
     #
-    if ALL_IN_ONE and sys.platform=='win32':
+    if sys.platform=='win32' and sys.version_info[0]==2 and sys.version_info[1]>=6: #python>=2.6
         init_fp.write('import os\n')
         init_fp.write('import sys\n')
         init_fp.write("os.environ['CSF_GraphicShr'] = os.path.join(__path__[0],'TKOpenGl.dll')\n")
@@ -348,6 +348,7 @@ LIBS = []
 for library in libraries:
     if check_occ_lib(library):
         LIBS.append(library)
+    
 #
 # Salome Geom libs
 #
