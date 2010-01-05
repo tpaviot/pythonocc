@@ -1,10 +1,9 @@
-Lead Developer
+The python wrapper has been developed by:
 
-Thomas Paviot - thomas.paviot@free.fr: original code
+Thomas Paviot - tpaviot@gmail.com
+Jelle Feringa - jelleferinga@gmail.com
 
-Other Contributors
-
-Andy Haywood : Interactive console, Display3D methods,
-wxDisplay.py improvements
-
-Jelle Feringa: Utils framework, sample scripts
+The samples directory is distributed as a separated package. Contributors to these files are:
+Andy Haywood : InteractiveViewer application
+Bryan Cole: OCAF stuff
+Thomas Paviot and Jelle Feringa developed other scripts.
