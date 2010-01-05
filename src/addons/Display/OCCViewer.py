@@ -207,7 +207,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
     def SetBackgroundImage(self, filename, Stretch = True):
         if not os.path.isfile(filename):
-            raise FileError
+            raise IOError, "image file %s not found."%filename
         if (Stretch):
             self.View.SetBackgroundImage(filename, OCC.Aspect.Aspect_FM_STRETCH, True)
         else:
