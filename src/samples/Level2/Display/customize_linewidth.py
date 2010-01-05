@@ -17,7 +17,10 @@
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from OCC.Display.SimpleGui import display, start_display
+
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
+
 from OCC.AIS import *
 from OCC.BRepPrimAPI import *
 from OCC.Utils.Topology import Topo

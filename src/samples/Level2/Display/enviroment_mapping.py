@@ -25,7 +25,9 @@ http://www.opencascade.org/org/forum/thread_17520/
 '''
 
 from OCC.BRepPrimAPI import *
-from OCC.Display.SimpleGui import display, start_display
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
+
 from OCC.AIS import *
 from OCC.Visual3d import *
 from OCC.Graphic3d import *

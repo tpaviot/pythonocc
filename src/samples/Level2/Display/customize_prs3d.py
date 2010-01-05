@@ -21,7 +21,9 @@
 # This sample shows howto set display quality (higher or lower).
 # Be carful that improving quality results in higher memory consumption
 #
-from OCC.Display.SimpleGui import display, start_display
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
+
 from OCC.AIS import *
 from OCC.Prs3d import *
 from OCC.BRepPrimAPI import *
