@@ -130,6 +130,20 @@ def init_display():
                 self.resize(640,480)
                 self.canva = qtViewer3d(self)
                 self.setCentralWidget(self.canva)
+                self.menuBar = self.menuBar()
+                self._menus = {}
+                self._menu_methods = {}
+            def add_menu(self, menu_name):
+                _menu = self.menuBar.addMenu("&"+menu_name)
+                self._menus[menu_name]=_menu
+            def add_function_to_menu(self, menu_name, _callable):
+                assert callable(_callable), 'the function supplied is not callable'
+                try:
+                    _action = QtGui.QAction(_callable.__name__.replace('_', ' ').lower(), self)
+                    self.connect(_action, QtCore.SIGNAL("triggered()"), _callable)
+                    self._menus[menu_name].addAction(_action)
+                except KeyError:
+                    raise ValueError, 'the menu item %s doesnt exist' % (menu_name)
         app = QtGui.QApplication(sys.argv)
         win = MainWindow()
         win.show()
@@ -137,9 +151,9 @@ def init_display():
         display = win.canva._display
         display.SetBackgroundImage(get_bg_abs_filename())        
         def add_menu(*args, **kwargs):
-            pass#win.add_menu(*args, **kwargs)
+            win.add_menu(*args, **kwargs)
         def add_function_to_menu(*args, **kwargs):
-            pass#win.add_function_to_menu(*args, **kwargs)
+            win.add_function_to_menu(*args, **kwargs)
         def start_display():
             app.exec_()
         #app.exec_()
