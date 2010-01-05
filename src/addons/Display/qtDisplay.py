@@ -70,7 +70,7 @@ class qtViewer2d(qtBaseViewer):
         self._inited = True
 
     def mouseMoveEvent(self, evt):
-        print "Motion!!"
+        #print "Motion!!"
         pt = point(evt.pos())
         print pt.x, pt.y
         self._display.MoveTo(pt.x,pt.y)
@@ -153,15 +153,15 @@ class qtViewer3d(qtBaseViewer):
             self._display.Test()
     
     def focusInEvent(self, event):
-        print 'focus in!!'
+        #print 'focus in!!'
         if self._inited:
             self._display.Repaint()
 
     def focusOutEvent(self, event):
-        print 'focus out'
+        #print 'focus out'
         if self._inited:
             self._display.Repaint()
-            print 'repainted'
+            #print 'repainted'
 
     def paintEvent(self, event):
         if self._inited:
@@ -179,16 +179,16 @@ class qtViewer3d(qtBaseViewer):
         self._display.ZoomFactor(zoom_factor)
              
     def dragMoveEvent(self,event):
-        print 'dragmove event'
+        #print 'dragmove event'
         
     def mousePressEvent(self, event):
-        print 'mouse press event'
+        #print 'mouse press event'
         self.setFocus()
         self.dragStartPos = point(event.pos())
         self._display.StartRotation(self.dragStartPos.x,self.dragStartPos.y)
 
     def mouseReleaseEvent(self, event):
-        print 'mouse release event'
+        #print 'mouse release event'
         if event.button() == QtCore.Qt.LeftButton:
             pt = point(event.pos())
             if self._select_area:
