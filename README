@@ -20,6 +20,14 @@ pythonOCC needs the following libraries to be installed in order to provide full
 
 - the python programming language (http://www.python.org). Python 2.5 or higher is required,
 
+- a fortran compiler. Linux users can use any of gfortran, f77 etc.
+
+NOTE FOR MACOSX USERS: you must use f77/f2c. To install/build f77/f2c, just download and run the script
+named 'buildf2c' available from this url: http://hpc.sourceforge.net/buildf2c
+then:
+sudo buildf2c
+Now you have a working f2c/f77. 
+
 - SWIG 1.3.36 or higher,
 
 - OpenCASCADE 6.3.0 (download from http://www.opencascade.org).
