@@ -107,7 +107,7 @@ try:
         OCC_LIB = os.path.join(OCC_ROOT,'lib')
 except:
     #raise NameError('OpenCASCADE 6.3.0 is not installed. Please check that the CASROOT variable is set.')
-    OCC_ROOT = None
+    OCC_ROOT = '/occ'
     OCC_INC = '/your_path'
     OCC_LIB = '/your_lib'
     
@@ -139,7 +139,7 @@ if sys.platform=='win32':
     EXTRA_LIBS = []
     
 elif sys.platform=='linux2':
-    BOOST_INC = None
+    BOOST_INC = '/usr/include'
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG','linux_darwin')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'

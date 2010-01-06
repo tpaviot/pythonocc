@@ -20,7 +20,7 @@ pythonOCC needs the following libraries to be installed in order to provide full
 
 - the python programming language (http://www.python.org). Python 2.5 or higher is required,
 
-- a fortran compiler. Linux users can use any of gfortran, f77 etc.
+- a fortran compiler. Linux users should use gfortran.
 
 NOTE FOR MACOSX USERS: you must use f77/f2c. To install/build f77/f2c, just download and run the script
 named 'buildf2c' available from this url: http://hpc.sourceforge.net/buildf2c

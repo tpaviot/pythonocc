@@ -179,7 +179,7 @@ class qtViewer3d(qtBaseViewer):
         self._display.ZoomFactor(zoom_factor)
              
     def dragMoveEvent(self,event):
-        #print 'dragmove event'
+        pass#print 'dragmove event'
         
     def mousePressEvent(self, event):
         #print 'mouse press event'
