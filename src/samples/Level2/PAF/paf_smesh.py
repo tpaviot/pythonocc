@@ -117,10 +117,10 @@ my_context.register_post_solver_callback(mesh_and_display)
 #
 # Modify parameters
 #
-##for i in range(14,100):
-#    print 'changed parameter p.Z2 and p.Y2 from %s to %s' % ( i-1, i ) 
-#    p.Z2 = i
-#    p.R1 += 0.2
+for i in range(14,30):
+    print 'changed parameter p.Z2 and p.Y2 from %s to %s' % ( i-1, i ) 
+    p.Z2 = i
+    p.R1 += 0.2
 #print my_context.get_shapes()
 my_context.start_display()
 
