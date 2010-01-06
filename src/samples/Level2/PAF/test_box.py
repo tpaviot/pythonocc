@@ -13,7 +13,7 @@ my_pnt2 = my_context.basic_operations.MakePointXYZ(p.X2,p.Y2,p.Z2, name="Pnt2", 
 my_box = my_context.prim_operations.MakeBoxTwoPnt(my_pnt1,my_pnt2,name="Box1", show=True)            # Create the box
 
 for i in range(14,100):
-    print 'changed parameter p.Z2 and p.Y2 from %s to %s' % ( i-1, i ) 
+    print 'changed parameter p.Z2 from %s to %s' %i 
     p.Z2 = i
 
 my_context.start_display()

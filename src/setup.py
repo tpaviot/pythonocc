@@ -60,17 +60,14 @@ else:
 #Check whether build a 'all_in_one' distro (for Win32)
 if '--all_in_one' in sys.argv and sys.platform=='win32':
     ALL_IN_ONE = True #overload default behaviour
-    sys.argv.remove('-ALL_IN_ONE')
+    sys.argv.remove('--all_in_one')
 else:
     ALL_IN_ONE = False
 
 #Windows hack to enable 'multiprocess compilation'
 if '--reverse' in sys.argv and sys.platform=='win32':
-    ALL_IN_ONE = True #overload default behaviour
     sys.argv.remove('--reverse')
     Modules.MODULES.reverse()
-else:
-    ALL_IN_ONE = False
 
 #Add an option to tell setup.py to build only SMESH
 if '--smesh-only' in sys.argv:
@@ -301,7 +298,7 @@ def Create__init__():
     #
     # if it is 'all_in_one' build, then the __init__.py script sets the env CSF_GraphicShr:
     #
-    if sys.platform=='win32' and sys.version_info[0]==2 and sys.version_info[1]>=6: #python>=2.6
+    if ALL_IN_ONE and sys.platform=='win32':
         init_fp.write('import os\n')
         init_fp.write('import sys\n')
         init_fp.write("os.environ['CSF_GraphicShr'] = os.path.join(__path__[0],'TKOpenGl.dll')\n")
