@@ -107,7 +107,7 @@ try:
         OCC_LIB = os.path.join(OCC_ROOT,'lib')
 except:
     #raise NameError('OpenCASCADE 6.3.0 is not installed. Please check that the CASROOT variable is set.')
-    OCC_ROOT = '/occ'
+    OCC_ROOT = None
     OCC_INC = '/your_path'
     OCC_LIB = '/your_lib'
     
