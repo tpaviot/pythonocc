@@ -26,14 +26,22 @@ SET(BUILD_SHARED_LIBS ON)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 
 MESSAGE("Building pythonOCC 0.5")
+
+###################
+# General options #
+###################
+
+# By default, GEOM and SMESH wrappers are disbled
+OPTION(WRAP_GEOM "Wraps the salomegeometry library (enabling parametric modeling)" OFF)
+OPTION(WRAP_SMESH "Wraps the salomesmesh library (enabling advanced meshing features" OFF)
+
 ##########
 # Python #
 ##########
-
 FIND_PACKAGE(PythonLibs)
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
 
-#############
+##############################################################
 # 32/64 bit detection. To achieve that point, python is used.
 # From python, running:
 # >>import sys
@@ -42,7 +50,7 @@ INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
 # 9223372036854775807 on 64bit
 # and
 # 2147483647 on 32bit systems
-#############
+###############################################################
 MESSAGE("Check whether the system is 32 or 64 bit." )
 EXECUTE_PROCESS(COMMAND python -c "import sys;print sys.maxint" OUTPUT_VARIABLE maxint_str)
 IF (maxint_str MATCHES "2147483647")
@@ -56,23 +64,45 @@ ENDIF(maxint_str MATCHES "2147483647")
 ########
 # SWIG #
 ########
-
-# Find SWIG
 FIND_PACKAGE(SWIG)
 INCLUDE(${SWIG_USE_FILE})
 
-###############
-# OpenCASCADE #
-###############
-
+########################################
+# OpenCASCADE include and lib location #
+########################################
 # Find OpenCASCADE library, set include and lib path
-SET(OCC_LIBRARIES "-L/Library/OpenCASCADE/6.3.0/lib -lTKernel")
-SET(OCC_INCLUDE_PATH "/Library/OpenCASCADE/6.3.0/inc")
+IF(WIN32)
+    # Under Windows, check the CASROOT env variable
+    SET(OCC_INCLUDE_PATH "$ENV{CASROOT}\\inc")
+    SET(OCC_LIB_PATH "$ENV{CASROOT}\\win32\\lib")
+    # Find the Standard_Real.hxx header in this path
+ELSE(WIN32) #Unix
+    SET(OCC_INCLUDE_PATH "/Library/OpenCASCADE/6.3.0/inc")
+    SET(OCC_LIB_PATH "/Library/OpenCASCADE/6.3.0/lib")
+ENDIF(WIN32)
+
+# Check that these paths are ok
+FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx ${OCC_INCLUDE_PATH})
+FIND_LIBRARY(RESULT_LIB TKernel ${OCC_LIB_PATH})
+MESSAGE(${RESULT_PATH})
+MESSAGE(${RESULT_LIB})
+MESSAGE("-- OpenCASCADE include directory: ${OCC_INCLUDE_PATH}")
+MESSAGE("-- OpenCASCADE shared libraries directory: ${OCC_LIB_PATH}")
+# List of OpenCASCADE shared libraries to link with
+SET(OCC_LIBRARIES TKernel)
 
 # Tells CMake where are the required headers
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
 INCLUDE_DIRECTORIES(${OCC_INCLUDE_PATH})
+LINK_DIRECTORIES(${OCC_LIB_PATH})
 
+#######################################
+# salomegeom include and lib location #
+#######################################
+IF(WRAP_GEOM)
+    SET(GEOM_INCLUDE_PATH ./src/contrib/SalomeGeometry/inc_pythonocc)
+    INCLUDE_DIRECTORIES(${GEOM_INCLUDE_PATH})
+ENDIF(WRAP_GEOM)
 
 ######################################################
 # Configure Build settings according to the platform #
@@ -108,14 +138,26 @@ IF (MODE MATCHES "64bit")
     SET(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS} -D_OCC64)
 ENDIF(MODE MATCHES "64bit")
 
-################
-# Modules list #
-################
+############################
+# OpenCASCADE Modules list #
+############################
 LIST(APPEND OCC_MODULES "Standard" "MMgt")
+
+###############################
+# salomegeometry Modules list #
+###############################
+LIST(APPEND GEOM_MODULES "Archimede" "SGEOM" "GEOMAlgo" "GEOMImpl" "BlockFix" "NMTDS" "Partition" "ShHealOper" "Sketcher")
+
+###############################
+# salomesmesh Modules list #
+###############################
+LIST(APPEND SMESH_MODULES "SMDSAbs" "SMDS" "SMESHDS" "SMESH" "StdMeshers")
 
 ###################
 # Wrapper Modules #
 ###################
+
+# OpenCASCADE
 FOREACH(OCC_MODULE ${OCC_MODULES})
     SET(FILE ${SWIG_FILES_PATH}/${OCC_MODULE}.i)
 	SET_SOURCE_FILES_PROPERTIES(${FILE} PROPERTIES CPLUSPLUS ON)
@@ -123,3 +165,23 @@ FOREACH(OCC_MODULE ${OCC_MODULES})
     SWIG_LINK_LIBRARIES(${OCC_MODULE} ${PYTHON_LIBRARIES} ${OCC_LIBRARIES})
 ENDFOREACH(OCC_MODULE)
 
+# salomegeometry
+IF(WRAP_GEOM)
+    LINK_DIRECTORIES(${OCC_LIB_PATH})
+	FOREACH(GEOM_MODULE ${GEOM_MODULES})
+	    SET(FILE ${SWIG_FILES_PATH}/${GEOM_MODULE}.i)
+		SET_SOURCE_FILES_PROPERTIES(${FILE} PROPERTIES CPLUSPLUS ON)
+	    SWIG_ADD_MODULE(${GEOM_MODULE} python ${FILE})
+	    SWIG_LINK_LIBRARIES(${GEOM_MODULE} ${PYTHON_LIBRARIES} ${OCC_LIBRARIES} ${GEOM_LIBRARIES})
+	ENDFOREACH(GEOM_MODULE)
+ENDIF(WRAP_GEOM)
+
+# salomesmesh
+IF(WRAP_SMESH)
+	FOREACH(SMESH_MODULE ${SMESH_MODULES})
+	    SET(FILE ${SWIG_FILES_PATH}/${SMESH_MODULE}.i)
+		SET_SOURCE_FILES_PROPERTIES(${FILE} PROPERTIES CPLUSPLUS ON)
+	    SWIG_ADD_MODULE(${SMESH_MODULE} python ${FILE})
+	    SWIG_LINK_LIBRARIES(${SMESH_MODULE} ${PYTHON_LIBRARIES} ${OCC_LIBRARIES} ${SMESH_LIBRARIES})
+ENDFOREACH(OCC_MODULE)
+ENDIF(WRAP_SMESH)
