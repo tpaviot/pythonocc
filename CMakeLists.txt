@@ -22,6 +22,9 @@ SET(pythonOCC_VERSION_MAJOR 0)
 SET(pythonOCC_VERSION_MINOR 5)
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+
+SET(CMAKE_BUILD_TYPE "Release") #Default, build in release mode
+MESSAGE("${CMAKE_CXX_FLAGS}") 
 SET(BUILD_SHARED_LIBS ON)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -84,12 +87,25 @@ ENDIF(WIN32)
 # Check that these paths are ok
 FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx ${OCC_INCLUDE_PATH})
 FIND_LIBRARY(RESULT_LIB TKernel ${OCC_LIB_PATH})
-MESSAGE(${RESULT_PATH})
-MESSAGE(${RESULT_LIB})
+MESSAGE("${RESULT_PATH}")
+MESSAGE("${RESULT_LIB}")
 MESSAGE("-- OpenCASCADE include directory: ${OCC_INCLUDE_PATH}")
 MESSAGE("-- OpenCASCADE shared libraries directory: ${OCC_LIB_PATH}")
+
 # List of OpenCASCADE shared libraries to link with
-SET(OCC_LIBRARIES TKernel)
+SET(OCC_LIBRARIES BinLPlugin BinPlugin BinXCAFPlugin FWOSPlugin PTKernel
+                  StdLPlugin StdPlugin TKAdvTools TKBin TKBinL TKBinTObj TKBinXCAF
+                  TKBO TKBool TKBRep TKCAF TKCDF TKCDLFront TKCPPClient TKCPPExt
+                  TKCPPIntExt TKCPPJini TKCSFDBSchema TKernel
+                  TKFeat TKFillet TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKIDLFront
+                  TKIGES TKLCAF TKMath TKMesh TKMeshVS TKNIS TKOffset
+                  TKOpenGl TKPCAF TKPLCAF TKPrim TKPShape TKService TKShapeSchema
+                  TKShHealing TKStdLSchema TKStdSchema TKSTEP TKSTEP209 TKSTEPAttr
+                  TKSTEPBase TKSTL TKTCPPExt TKTObj TKTopAlgo
+                  TKV2d TKV3d TKVRML TKWOK TKWOKTcl TKXCAF TKXCAFSchema
+                  TKXDEIGES TKXDESTEP TKXMesh TKXml TKXmlL TKXmlTObj
+                  TKXmlXCAF TKXSBase XCAFPlugin
+                  XmlLPlugin XmlPlugin XmlXCAFPlugin)
 
 # Tells CMake where are the required headers
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
