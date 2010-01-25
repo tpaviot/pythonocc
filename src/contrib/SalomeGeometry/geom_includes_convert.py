@@ -32,6 +32,7 @@ for header in header_files:
         file_content = open(header,'r').read()
         # in this content, replace "GEOM_" with "SGEOM_"
         new_content = file_content.replace('"GEOM_','"SGEOM_')
+        new_content = new_content.replace('"Handle_GEOM_','"Handle_SGEOM_')
         # save this new_content to a new file:
         new_file_name = os.path.join(path,name.replace('GEOM','SGEOM'))
         fp = open(new_file_name,'w')

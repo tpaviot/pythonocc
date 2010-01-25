@@ -25,7 +25,7 @@
 #include <Standard.hxx>
 #endif
 #ifndef _Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient_HeaderFile
-#include <Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient.hxx>
+#include <Handle_SGEOM_DataMapNodeOfDataMapOfAsciiStringTransient.hxx>
 #endif
 
 #ifndef _TCollection_AsciiString_HeaderFile
@@ -109,13 +109,13 @@ Handle_Standard_Transient myValue;
 #define Hasher TCollection_AsciiString
 #define Hasher_hxx <TCollection_AsciiString.hxx>
 #define TCollection_DataMapNode GEOM_DataMapNodeOfDataMapOfAsciiStringTransient
-#define TCollection_DataMapNode_hxx <GEOM_DataMapNodeOfDataMapOfAsciiStringTransient.hxx>
+#define TCollection_DataMapNode_hxx <SGEOM_DataMapNodeOfDataMapOfAsciiStringTransient.hxx>
 #define TCollection_DataMapIterator GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient
-#define TCollection_DataMapIterator_hxx <GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient.hxx>
+#define TCollection_DataMapIterator_hxx <SGEOM_DataMapIteratorOfDataMapOfAsciiStringTransient.hxx>
 #define Handle_TCollection_DataMapNode Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient
 #define TCollection_DataMapNode_Type_() GEOM_DataMapNodeOfDataMapOfAsciiStringTransient_Type_()
 #define TCollection_DataMap GEOM_DataMapOfAsciiStringTransient
-#define TCollection_DataMap_hxx <GEOM_DataMapOfAsciiStringTransient.hxx>
+#define TCollection_DataMap_hxx <SGEOM_DataMapOfAsciiStringTransient.hxx>
 
 #include <TCollection_DataMapNode.lxx>
 

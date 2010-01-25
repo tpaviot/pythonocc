@@ -27,7 +27,7 @@
 #include <Standard.hxx>
 #endif
 #ifndef _Handle_GEOM_Application_HeaderFile
-#include <Handle_GEOM_Application.hxx>
+#include <Handle_SGEOM_Application.hxx>
 #endif
 
 #ifndef _TDocStd_Application_HeaderFile
