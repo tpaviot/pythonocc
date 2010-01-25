@@ -30,8 +30,6 @@
 #include "GEOMImpl_IPipe.hxx"
 #endif
 
-#define PIPE_ARG_BASE 1
-#define PIPE_ARG_PATH 2
 #define PIPE_ARG_VEC  3
 
 class GEOMImpl_IPipeBiNormal : public GEOMImpl_IPipe

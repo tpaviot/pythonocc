@@ -99,6 +99,8 @@
 
 #define GEOM_3DSKETCHER 49
 
+#define GEOM_FILLET_1D 50
+
 
 //GEOM_Function types
 
@@ -108,12 +110,13 @@
 #define EXPORT_SHAPE 1
 #define IMPORT_SHAPE 1
 
-#define POINT_XYZ       		 1
-#define POINT_XYZ_REF   		 2
-#define POINT_CURVE_PAR 		 3
+#define POINT_XYZ       	 1
+#define POINT_XYZ_REF   	 2
+#define POINT_CURVE_PAR 	 3
 #define POINT_LINES_INTERSECTION 4
 #define POINT_SURFACE_PAR        5
-//#define POINT_FACE_PAR 4
+#define POINT_CURVE_COORD        6
+#define POINT_SURFACE_COORD      7
 
 #define VECTOR_TWO_PNT  1
 #define VECTOR_DX_DY_DZ 2
@@ -314,6 +317,9 @@
 
 // VarFillet
 #define VARFILLET 1
+
+// 1D Fillet
+#define FILLET_1D_SHAPE_VERTEXES      1
 
 // Curve
 #define CURVE_SPLIT_BY_PAR		1

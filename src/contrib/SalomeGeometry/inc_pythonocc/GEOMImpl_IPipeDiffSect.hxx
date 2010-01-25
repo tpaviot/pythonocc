@@ -28,11 +28,10 @@
 #include "GEOMImpl_IPipe.hxx"
 #endif
 
-#define PIPEDS_LIST_BASES 1
-#define PIPEDS_LIST_LOCATIONS 3
-//#define PIPEDS_ARG_PATH 2
-#define PIPEDS_ARG_WITHCONTACT 4
-#define PIPEDS_ARG_WITHCORRECT 5
+#define PIPEDS_LIST_BASES 3
+#define PIPEDS_LIST_LOCATIONS 4
+#define PIPEDS_ARG_WITHCONTACT 5
+#define PIPEDS_ARG_WITHCORRECT 6
 
 
 class GEOMImpl_IPipeDiffSect : public GEOMImpl_IPipe

@@ -129,7 +129,8 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations {
 				const GEOM_Parameter&  theAngle,
 				const GEOM_Parameter&  theNbTimes1,
 				const GEOM_Parameter&  theStep,
-				const GEOM_Parameter&  theNbTimes2);
+				const GEOM_Parameter&  theNbTimes2,
+                const GEOM_Parameter&  theElevationStep);
 
   Standard_EXPORT Handle(GEOM_Object) RotateThreePoints (Handle(GEOM_Object) theObject,
 							 Handle(GEOM_Object) theCentPoint, 

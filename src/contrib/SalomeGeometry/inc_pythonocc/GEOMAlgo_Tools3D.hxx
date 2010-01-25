@@ -154,13 +154,13 @@ Standard_EXPORT static  TopAbs_State ComputeState(const TopoDS_Face& theFace,con
 //!          couple of faces theFace1, theFace2. <br>
 //!          The faces theFace, theFace1, theFace2  must <br>
 //!          share the edge theEdge <br>
-Standard_EXPORT static  Standard_Boolean IsInternalFace(const TopoDS_Face& theFace,const TopoDS_Edge& theEdge,const TopoDS_Face& theFace1,const TopoDS_Face& theFace2) ;
+Standard_EXPORT static  Standard_Boolean IsInternalFace(const TopoDS_Face& theFace,const TopoDS_Edge& theEdge,const TopoDS_Face& theFace1,const TopoDS_Face& theFace2,IntTools_Context& theContext) ;
 
 //! Returns True if the face theFace is inside of the <br>
 //!          appropriate couple of faces (from the set theLF)    . <br>
 //!          The faces of the set theLF and theFace  must <br>
 //!          share the edge theEdge <br>
-Standard_EXPORT static  Standard_Boolean IsInternalFace(const TopoDS_Face& theFace,const TopoDS_Edge& theEdge,const TopTools_ListOfShape& theLF) ;
+Standard_EXPORT static  Standard_Boolean IsInternalFace(const TopoDS_Face& theFace,const TopoDS_Edge& theEdge,const TopTools_ListOfShape& theLF,IntTools_Context& theContext) ;
 
 //! Returns True if the face theFace is inside the <br>
 //!          solid theSolid. <br>

@@ -22,15 +22,16 @@
 
 #include "SGEOM_Function.hxx"
 
-#define ROTATE_ANGLE    1  
-#define ROTATE_AXIS     2
-#define ROTATE_ORGN     3
-#define ROTATE_STEP1      4
-#define ROTATE_NBITER1   5
-#define ROTATE_NBITER2   6
-#define ROTATE_CENTRAL_POINT    7  
-#define ROTATE_POINT1           8
-#define ROTATE_POINT2           9
+#define ROTATE_ANGLE          1
+#define ROTATE_AXIS           2
+#define ROTATE_ORGN           3
+#define ROTATE_STEP1          4
+#define ROTATE_NBITER1        5
+#define ROTATE_NBITER2        6
+#define ROTATE_CENTRAL_POINT  7
+#define ROTATE_POINT1         8
+#define ROTATE_POINT2         9
+#define ROTATE_ELEVATIONSTEP 10
 
 class GEOMImpl_IRotate
 {
@@ -76,9 +77,13 @@ class GEOMImpl_IRotate
   void SetNbIter2(int theNbIter) { _func->SetInteger(ROTATE_NBITER2, theNbIter); }
   void SetNbIter2(const TCollection_AsciiString& theNbIter) { _func->SetInteger(ROTATE_NBITER2, theNbIter); }
 
-  int GetNbIter2() { return _func->GetInteger(ROTATE_NBITER2); } 
+  int GetNbIter2() { return _func->GetInteger(ROTATE_NBITER2); }
 
-  
+  void SetElevationStep(double theElevationStep) { _func->SetReal(ROTATE_ELEVATIONSTEP, theElevationStep); }
+  void SetElevationStep(const TCollection_AsciiString& theElevationStep) { _func->SetReal(ROTATE_ELEVATIONSTEP, theElevationStep); }
+
+  double GetElevationStep() { return _func->GetReal(ROTATE_ELEVATIONSTEP); }
+
  private:
   
   Handle(GEOM_Function) _func;  

@@ -69,7 +69,8 @@ class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
                             Handle(GEOM_Object) thePnt3);
 
   Standard_EXPORT Handle(GEOM_Object) MakeSplineBezier        (std::list<Handle(GEOM_Object)> thePoints);
-  Standard_EXPORT Handle(GEOM_Object) MakeSplineInterpolation (std::list<Handle(GEOM_Object)> thePoints);
+  Standard_EXPORT Handle(GEOM_Object) MakeSplineInterpolation (std::list<Handle(GEOM_Object)> thePoints,
+                                                               bool                      theIsClosed = false);
 
   Standard_EXPORT Handle(GEOM_Object) MakeSketcher (const TCollection_AsciiString& theCommand,
                                                     std::list<GEOM_Parameter> theWorkingPlane);

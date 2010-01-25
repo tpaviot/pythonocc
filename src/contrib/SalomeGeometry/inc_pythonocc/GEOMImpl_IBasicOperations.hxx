@@ -43,13 +43,23 @@ class GEOMImpl_IBasicOperations : public GEOM_IOperations {
 
   Standard_EXPORT Handle(GEOM_Object) MakePointOnCurve (Handle(GEOM_Object) theCurve,
 										const GEOM_Parameter& theParameter);
-  
+
+  Standard_EXPORT Handle(GEOM_Object) MakePointOnCurveByCoord (Handle(GEOM_Object) theCurve,
+                                                               const GEOM_Parameter& theXParam,
+                                                               const GEOM_Parameter& theYParam,
+                                                               const GEOM_Parameter& theZParam);
+
   Standard_EXPORT Handle(GEOM_Object) MakePointOnLinesIntersection
                                       (Handle(GEOM_Object) theLine1, Handle(GEOM_Object) theLine2);
 
   Standard_EXPORT Handle(GEOM_Object) MakePointOnSurface (Handle(GEOM_Object) theSurface,
 														  const GEOM_Parameter& theUParameter,
 														  const GEOM_Parameter& theVParameter);
+
+  Standard_EXPORT Handle(GEOM_Object) MakePointOnSurfaceByCoord (Handle(GEOM_Object) theSurface,
+                                                                 const GEOM_Parameter& theXParam,
+                                                                 const GEOM_Parameter& theYParam,
+                                                                 const GEOM_Parameter& theZParam);
 
   //! Vector
   Standard_EXPORT Handle(GEOM_Object) MakeVectorDXDYDZ (const GEOM_Parameter& theDX, const GEOM_Parameter& theDY, const GEOM_Parameter& theDZ);
@@ -109,8 +119,26 @@ class GEOMImpl_IBasicOperations : public GEOM_IOperations {
   Standard_EXPORT Handle(GEOM_Object) MakeFaceFourPnt( const Handle(GEOM_Object) thePnt1, const Handle(GEOM_Object) thePnt2, 
   								const Handle(GEOM_Object) thePnt3, const Handle(GEOM_Object) thePnt4 );
 
-/*  Standard_EXPORT Handle(GEOM_Object) MakeFaceRectangle( const Handle(GEOM_Object) thePnt1, const Handle(GEOM_Object) thePnt2, 
+/*  Standard_EXPORT Handle(GEOM_Object) MakeFaceRectangle( const Handle(GEOM_Object) thePnt1, const Handle(GEOM_Object) thePnt2,
 								 const Handle(GEOM_Object) thePnt3, const Handle(GEOM_Object) thePnt4 );*/
 
+  private:
+  // Private methods
+
+  //! Enumeration describes point position on geometric object (curve or surface)
+  //! Point location can be determined by parameter (or U, V parameters) or 3D coordinates
+  enum PointLocation
+  { 
+    PointOn_CurveByParam,
+    PointOn_CurveByCoord,
+    PointOn_SurfaceByParam,
+    PointOn_SurfaceByCoord
+  };
+
+  Handle(GEOM_Object) makePointOnGeom (Handle(GEOM_Object) theGeomObj,
+                                       const GEOM_Parameter& theParam1,
+                                       const GEOM_Parameter& theParam2,
+                                       const GEOM_Parameter& theParam3,
+                                       const PointLocation theLocation);
 };
 #endif

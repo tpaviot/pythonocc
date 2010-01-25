@@ -36,11 +36,9 @@ class GEOM_Solver
   Standard_EXPORT ~GEOM_Solver() {}
 
   //!Update the values of all GEOM_Object in the document theDocID, theSeq will contain a list of touched labels
-  //!Note: not Implemented
   Standard_EXPORT bool Update(int theDocID, TDF_LabelSequence& theSeq); 
  
   //!Updates a value of theObject, theSeq will contain a list of touched labels
-  //!Note: not implemented
   Standard_EXPORT bool UpdateObject(Handle(GEOM_Object) theObject, TDF_LabelSequence& theSeq);
 
   //!Recomputes the functions of an object

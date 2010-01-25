@@ -56,6 +56,9 @@
 #ifndef _Quantity_Color_HeaderFile
 #include <Quantity_Color.hxx>
 #endif
+#ifndef _Aspect_TypeOfMarker_HeaderFile
+#include <Aspect_TypeOfMarker.hxx>
+#endif
 
 #ifdef GetObject
 #undef GetObject
@@ -158,7 +161,7 @@ class GEOM_Object : public MMgt_TShared
 
  public:
   Standard_EXPORT GEOM_Object(TDF_Label& theEntry, int theType);
-  Standard_EXPORT ~GEOM_Object() {;}
+  Standard_EXPORT ~GEOM_Object();
 
   //!Finds a GEOM_Object on the label theLabel
   Standard_EXPORT static Handle(GEOM_Object) GetObject(TDF_Label& theLabel);
@@ -220,6 +223,24 @@ class GEOM_Object : public MMgt_TShared
 
   //!Returns a flag of auto color mode of this GEOM_Object
   Standard_EXPORT bool GetAutoColor();
+
+  //!Sets predefined point marker texture
+  Standard_EXPORT void SetMarkerStd(const Aspect_TypeOfMarker theType, double theSize);
+
+  //!Sets custom point marker texture
+  Standard_EXPORT void SetMarkerTexture(int theTextureId);
+
+  //!Gets point marker type
+  Standard_EXPORT Aspect_TypeOfMarker GetMarkerType();
+
+  //!Gets point marker scale factor / size
+  Standard_EXPORT double GetMarkerSize();
+
+  //!Gets custom marker texture ID
+  Standard_EXPORT int GetMarkerTexture();
+
+  //!Unsets point marker
+  Standard_EXPORT void UnsetMarker();
 
   //!Sets an auxiliary data
   Standard_EXPORT void SetAuxData(const char* theData);
@@ -297,6 +318,7 @@ class GEOM_Object : public MMgt_TShared
   TDF_Label                 _label;
   TCollection_AsciiString   _ior;
   TCollection_AsciiString   _parameters;
+  int                       _docID;
 };
 
 #endif

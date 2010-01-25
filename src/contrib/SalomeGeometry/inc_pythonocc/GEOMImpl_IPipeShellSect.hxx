@@ -28,7 +28,7 @@
 #include "GEOMImpl_IPipeDiffSect.hxx"
 #endif
 
-#define PIPEDS_LIST_SUBBASES 6
+#define PIPEDS_LIST_SUBBASES 7
 
 
 class GEOMImpl_IPipeShellSect : public GEOMImpl_IPipeDiffSect

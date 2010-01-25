@@ -46,6 +46,8 @@
 #include <list>
 #include <vector>
 
+class Handle_TDataStd_HArray1OfByte;
+
 struct TVariable{
   TCollection_AsciiString myVariable;
   bool isVariable;
@@ -95,7 +97,7 @@ class GEOM_Engine
   Standard_EXPORT bool IsDocumentExistant(int theDocID);
 
   //!Returns the OCAF document by its ID, if document doesn't exists it will be created
-  Standard_EXPORT Handle(TDocStd_Document) GetDocument(int theDocID);
+  Standard_EXPORT Handle(TDocStd_Document) GetDocument(int theDocID, bool force = true);
 
   //!Returns the ID of the given OCAF document
   Standard_EXPORT int GetDocID(Handle(TDocStd_Document) theDocument);
@@ -104,7 +106,7 @@ class GEOM_Engine
   Standard_EXPORT Handle(TDocStd_Application) GetApplication() { return _OCAFApp; }
 
   //!Returns a pointer to GEOM_Object defined by a document and the entry
-  Standard_EXPORT Handle(GEOM_Object) GetObject(int theDocID, const char* theEntry);
+  Standard_EXPORT Handle(GEOM_Object) GetObject(int theDocID, const char* theEntry, bool force = true);
   
   //!Adds a new object of the type theType in the OCAF document
   Standard_EXPORT Handle(GEOM_Object) AddObject(int theDocID, int theType);
@@ -149,7 +151,7 @@ class GEOM_Engine
   Standard_EXPORT Handle(TColStd_HSequenceOfAsciiString) GetAllDumpNames() const;
 
   //!Queries the engine for the value of a variable
-  Standard_EXPORT bool GetInterpreterEquationValue(int theDocID, const TCollection_AsciiString& theEquation, double& theRefValue);
+  Standard_EXPORT double GetInterpreterEquationValue(int theDocID, const TCollection_AsciiString& theEquation);
 
   //!Sets to the engine a new variable
   Standard_EXPORT void SetInterpreterConstant(int theDocID, const TCollection_AsciiString& theConstant, double theValue, const TCollection_AsciiString& theDescription, bool isUpdateDescription = true);
@@ -162,6 +164,22 @@ class GEOM_Engine
 
   //!Returns a label which could be used to store user data on documents
   Standard_EXPORT TDF_Label GetUserDataLabel(int theDocID);
+
+  //!Adds a texture to be saved in the OCAF DF
+  Standard_EXPORT int AddTexture(int theDocID, int theWidth, int theHeight,
+                                 const Handle(TDataStd_HArray1OfByte)& theTexture,
+                                 const TCollection_AsciiString& theFileName = "");
+
+  //!Gets a texture stored in the OCAF DF
+  Standard_EXPORT Handle(TDataStd_HArray1OfByte) GetTexture(int theDocID, int theTextureID,
+                                                            int& theWidth, int& theHeight,
+                                                            TCollection_AsciiString& theFileName);
+
+  //!Gets all the textures stored in the OCAF DF
+  Standard_EXPORT std::list<int> GetAllTextures(int theDocID);
+
+  //!Gets the texture storage driver GUID
+  static const Standard_GUID& GetTextureGUID();
 
  protected:
   Standard_EXPORT static void SetEngine(GEOM_Engine* theEngine);

@@ -25,7 +25,7 @@
 #include <Standard.hxx>
 #endif
 #ifndef _Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient_HeaderFile
-#include <Handle_SGEOM_DataMapNodeOfDataMapOfAsciiStringTransient.hxx>
+#include <Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient.hxx>
 #endif
 
 #ifndef _TCollection_AsciiString_HeaderFile
