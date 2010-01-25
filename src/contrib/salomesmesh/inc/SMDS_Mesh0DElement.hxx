@@ -19,39 +19,44 @@
 //
 //  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 //
-//  SMESH SMESHDS : management of mesh data and SMESH document
-//  File   : SMESHDS_Hypothesis.hxx
-//  Author : Paul RASCLE, EDF
+//  SMESH SMDS : implementaion of Salome mesh data structure
+//  File   : SMDS_Mesh0DElement.hxx
 //  Module : SMESH
-//  $Header$
-//
-#ifndef _SMESHDS_HYPOTHESIS_HXX_
-#define _SMESHDS_HYPOTHESIS_HXX_
 
-#include "SMESH_SMESHDS.hxx"
+#ifndef _SMDS_Mesh0DElement_HeaderFile
+#define _SMDS_Mesh0DElement_HeaderFile
 
-#include <string>
+#include "SMESH_SMDS.hxx"
+
+#include "SMDS_MeshElement.hxx"
+
 #include <iostream>
 
-class SMESHDS_EXPORT SMESHDS_Hypothesis
+class SMDS_EXPORT SMDS_Mesh0DElement: public SMDS_MeshElement
 {
-public:
-  SMESHDS_Hypothesis(int hypId);
-  virtual ~SMESHDS_Hypothesis();
+ public:
+  SMDS_Mesh0DElement (const SMDS_MeshNode * node);
+  bool ChangeNode (const SMDS_MeshNode * node);
+  void Print (std::ostream & OS) const;
 
-  const char* GetName() const;
-  int GetID() const;
-  int GetType() const;
+  SMDSAbs_ElementType GetType() const;
+  SMDSAbs_EntityType  GetEntityType() const {return SMDSEntity_0D;}
+  int NbNodes() const;
+  int NbEdges() const;
+  friend bool operator< (const SMDS_Mesh0DElement& e1, const SMDS_Mesh0DElement& e2);
 
-  virtual std::ostream & SaveTo(std::ostream & save)=0;
-  virtual std::istream & LoadFrom(std::istream & load)=0;
+  /*!
+   * \brief Return node by its index
+   * \param ind - node index
+   * \retval const SMDS_MeshNode* - the node
+   */
+  virtual const SMDS_MeshNode* GetNode (const int ind) const;
 
-enum hypothesis_type {PARAM_ALGO, ALGO_0D, ALGO_1D, ALGO_2D, ALGO_3D};
+ protected:
+  SMDS_ElemIteratorPtr elementsIterator (SMDSAbs_ElementType type) const;
 
-protected:
-  std::string _name;
-  int _hypId;
-  int _type;
+ protected:
+  const SMDS_MeshNode* myNode;
 };
 
 #endif

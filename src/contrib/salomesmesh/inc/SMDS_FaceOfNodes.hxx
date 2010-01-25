@@ -56,6 +56,8 @@ class SMDS_EXPORT SMDS_FaceOfNodes:public SMDS_MeshFace
    */
   virtual const SMDS_MeshNode* GetNode(const int ind) const;
 
+  virtual SMDSAbs_EntityType   GetEntityType() const;
+
   protected:
   	SMDS_ElemIteratorPtr
 		elementsIterator(SMDSAbs_ElementType type) const;

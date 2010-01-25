@@ -23,7 +23,6 @@
 //  File   : StdMeshers_LayerDistribution.hxx
 //  Author : Edward AGAPOV
 //  Module : SMESH
-//  $Header: /home/server/cvs/SMESH/SMESH_SRC/src/StdMeshers/StdMeshers_LayerDistribution.hxx,v 1.2.2.1 2008/11/27 13:03:50 abd Exp $
 //
 #ifndef _SMESH_LayerDistribution_HXX_
 #define _SMESH_LayerDistribution_HXX_
@@ -31,7 +30,7 @@
 #include "SMESH_StdMeshers.hxx"
 
 #include "SMESH_Hypothesis.hxx"
-#include "SMESH_Exception.hxx"
+#include "Utils_SALOME_Exception.hxx"
 
 #include <string>
 
@@ -60,7 +59,7 @@ public:
     * \param hyp1D - 1D hypothesis
    */
   void SetLayerDistribution(SMESH_Hypothesis* hyp1D)
-    throw ( SMESH_Exception );
+    throw ( SALOME_Exception );
 
   /*!
    * \brief Returns 1D hypothesis specifying distribution of layers
@@ -83,7 +82,7 @@ public:
    */
   virtual bool SetParametersByMesh(const SMESH_Mesh* theMesh, const TopoDS_Shape& theShape);
 
-   /*!
+  /*!
    * \brief Initialize my parameter values by default parameters.
    *  \retval bool - true if parameter values have been successfully defined
    */

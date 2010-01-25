@@ -23,7 +23,6 @@
 //  File   : StdMeshers_NotConformAllowed.hxx
 //  Author : Paul RASCLE, EDF
 //  Module : SMESH
-//  $Header: /home/server/cvs/SMESH/SMESH_SRC/src/StdMeshers/StdMeshers_NotConformAllowed.hxx,v 1.8.2.1 2008/11/27 13:03:50 abd Exp $
 //
 #ifndef _StdMeshers_NotConformAllowed_HXX_
 #define _StdMeshers_NotConformAllowed_HXX_
@@ -31,7 +30,7 @@
 #include "SMESH_StdMeshers.hxx"
 
 #include "SMESH_Hypothesis.hxx"
-#include "SMESH_Exception.hxx"
+#include "Utils_SALOME_Exception.hxx"
 
 class STDMESHERS_EXPORT StdMeshers_NotConformAllowed:
   public SMESH_Hypothesis
@@ -55,7 +54,7 @@ public:
    */
   virtual bool SetParametersByMesh(const SMESH_Mesh* theMesh, const TopoDS_Shape& theShape);
 
-   /*!
+  /*!
    * \brief Initialize my parameter values by default parameters.
    *  \retval bool - true if parameter values have been successfully defined
    */

@@ -19,21 +19,37 @@
 //
 //  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 //
-//  File   : SMESH_DriverDAT.hxx
-//  Author : Alexander A. BORODIN
+//  SMESH SMESH : idl implementation based on 'SMESH' unit's calsses
+//  File   : StdMeshers_LayerDistribution2D.hxx
+//  Author : Edward AGAPOV
 //  Module : SMESH
 //
-#ifndef _SMESH_DriverDAT_HXX_
-#define _SMESH_DriverDAT_HXX_
+#ifndef _SMESH_LayerDistribution2D_HXX_
+#define _SMESH_LayerDistribution2D_HXX_
 
-#ifdef WNT
- #if defined MESHDRIVERDAT_EXPORTS || defined MeshDriverDAT_EXPORTS
-  #define MESHDRIVERDAT_EXPORT __declspec( dllexport )
- #else
-  #define MESHDRIVERDAT_EXPORT __declspec( dllimport )
- #endif
-#else
- #define MESHDRIVERDAT_EXPORT
+#include "StdMeshers_LayerDistribution.hxx"
+
+
+// =========================================================
+// =========================================================
+/*!
+ * This hypothesis is used by "Radial quadrangle" algorithm.
+ * It specifies 1D hypothesis defining distribution of segments
+ * between the internal and the external surfaces.
+ */
+// =========================================================
+// =========================================================
+
+class STDMESHERS_EXPORT StdMeshers_LayerDistribution2D
+                        :public StdMeshers_LayerDistribution
+{
+public:
+  // Constructor
+  StdMeshers_LayerDistribution2D(int hypId, int studyId, SMESH_Gen* gen);
+  // Destructor
+  virtual ~StdMeshers_LayerDistribution2D();
+
+};
+
 #endif
 
-#endif

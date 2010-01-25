@@ -24,15 +24,14 @@
 //           Moved here from SMESH_MaxElementVolume.hxx
 //  Author : Paul RASCLE, EDF
 //  Module : SMESH
-//  $Header: /home/server/cvs/SMESH/SMESH_SRC/src/StdMeshers/StdMeshers_MaxElementVolume.hxx,v 1.8.2.1 2008/11/27 13:03:49 abd Exp $
-//
+
 #ifndef _SMESH_MAXELEMENTVOLUME_HXX_
 #define _SMESH_MAXELEMENTVOLUME_HXX_
 
 #include "SMESH_StdMeshers.hxx"
 
 #include "SMESH_Hypothesis.hxx"
-#include "SMESH_Exception.hxx"
+#include "Utils_SALOME_Exception.hxx"
 
 class STDMESHERS_EXPORT StdMeshers_MaxElementVolume:
   public SMESH_Hypothesis
@@ -42,7 +41,7 @@ public:
   virtual ~StdMeshers_MaxElementVolume();
 
   void SetMaxVolume(double maxVolume)
-    throw (SMESH_Exception);
+    throw (SALOME_Exception);
 
   double GetMaxVolume() const;
 
@@ -59,7 +58,7 @@ public:
    */
   virtual bool SetParametersByMesh(const SMESH_Mesh* theMesh, const TopoDS_Shape& theShape);
 
-   /*!
+  /*!
    * \brief Initialize my parameter values by default parameters.
    *  \retval bool - true if parameter values have been successfully defined
    */

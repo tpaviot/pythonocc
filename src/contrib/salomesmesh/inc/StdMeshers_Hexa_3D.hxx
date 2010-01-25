@@ -33,7 +33,7 @@
 #include "SMESH_3D_Algo.hxx"
 #include "SMESH_Mesh.hxx"
 #include "StdMeshers_Quadrangle_2D.hxx"
-#include "SMESH_Exception.hxx"
+#include "Utils_SALOME_Exception.hxx"
 
 #include "SMESH_MesherHelper.hxx"
 
@@ -75,7 +75,10 @@ public:
 
   virtual bool Compute(SMESH_Mesh& aMesh,
 		       const TopoDS_Shape& aShape)
-    /*throw (SMESH_Exception)*/;
+    /*throw (SALOME_Exception)*/;
+
+  virtual bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape & aShape,
+                        MapShapeNbElems& aResMap);
 
   static TopoDS_Vertex OppositeVertex(const TopoDS_Vertex& aVertex,
                                       const TopTools_IndexedMapOfShape& aQuads0Vertices,

@@ -46,6 +46,8 @@ public:
 
   virtual bool Compute(SMESH_Mesh& aMesh, const TopoDS_Shape& aShape);
   
+  virtual bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape & aShape,
+                        MapShapeNbElems& aResMap);
 };
 
 #endif

@@ -68,30 +68,40 @@ class gp_Pnt;
 namespace SMESH{
   namespace Controls{
 
-    class SMESHCONTROLS_EXPORT TSequenceOfXYZ: public std::vector<gp_XYZ>
+    class SMESHCONTROLS_EXPORT TSequenceOfXYZ
     {
+      typedef std::vector<gp_XYZ>::size_type size_type;
+
     public:
       TSequenceOfXYZ();
 
       TSequenceOfXYZ(size_type n);
 
-      TSequenceOfXYZ(size_type n, const value_type& t);
+      TSequenceOfXYZ(size_type n, const gp_XYZ& t);
 
       TSequenceOfXYZ(const TSequenceOfXYZ& theSequenceOfXYZ);
 
       template <class InputIterator>
       TSequenceOfXYZ(InputIterator theBegin, InputIterator theEnd);
 
+      ~TSequenceOfXYZ();
+
       TSequenceOfXYZ& operator=(const TSequenceOfXYZ& theSequenceOfXYZ);
 
-      reference operator()(size_type n);
+      gp_XYZ& operator()(size_type n);
 
-      const_reference operator()(size_type n) const;
+      const gp_XYZ& operator()(size_type n) const;
+
+      void clear();
+
+      void reserve(size_type n);
+
+      void push_back(const gp_XYZ& v);
+
+      size_type size() const;
 
     private:
-      reference operator[](size_type n);
-
-      const_reference operator[](size_type n) const;
+      std::vector<gp_XYZ> myArray;
     };
 
     /*
@@ -122,9 +132,9 @@ namespace SMESH{
       void  SetPrecision( const long thePrecision );
       
       bool GetPoints(const int theId,
-		     TSequenceOfXYZ& theRes) const;
+                     TSequenceOfXYZ& theRes) const;
       static bool GetPoints(const SMDS_MeshElement* theElem,
-			    TSequenceOfXYZ& theRes);
+                            TSequenceOfXYZ& theRes);
     protected:
       const SMDS_Mesh* myMesh;
       const SMDS_MeshElement* myCurrElement;
@@ -253,10 +263,10 @@ namespace SMESH{
       virtual double GetBadRate( double Value, int nbNodes ) const;
       virtual SMDSAbs_ElementType GetType() const;
       struct Value{
-	double myLength;
-	long myPntId[2];
-	Value(double theLength, long thePntId1, long thePntId2);
-	bool operator<(const Value& x) const;
+        double myLength;
+        long myPntId[2];
+        Value(double theLength, long thePntId1, long thePntId2);
+        bool operator<(const Value& x) const;
       };
       typedef std::set<Value> TValues;
       void GetValues(TValues& theValues);
@@ -286,9 +296,9 @@ namespace SMESH{
       virtual double GetBadRate( double Value, int nbNodes ) const;
       virtual SMDSAbs_ElementType GetType() const;
       struct Value{
-	long myPntId[2];
-	Value(long thePntId1, long thePntId2);
-	bool operator<(const Value& x) const;
+        long myPntId[2];
+        Value(long thePntId1, long thePntId2);
+        bool operator<(const Value& x) const;
       };
       typedef std::map<Value,int> MValues;
 
@@ -354,10 +364,10 @@ namespace SMESH{
       static bool IsFreeEdge( const SMDS_MeshNode** theNodes, const int theFaceId  );
       typedef long TElemId;
       struct Border{
-	TElemId myElemId;
-	TElemId myPntId[2];
-	Border(long theElemId, long thePntId1, long thePntId2);
-	bool operator<(const Border& x) const;
+        TElemId myElemId;
+        TElemId myPntId[2];
+        Border(long theElemId, long thePntId1, long thePntId2);
+        bool operator<(const Border& x) const;
       };
       typedef std::set<Border> TBorders;
       void GetBoreders(TBorders& theBorders);
@@ -787,13 +797,13 @@ namespace SMESH{
       virtual
       void
       GetElementsId( const SMDS_Mesh* theMesh,
-		     TIdSequence& theSequence );
+                     TIdSequence& theSequence );
 
       static
       void
       GetElementsId( const SMDS_Mesh* theMesh,
-		     PredicatePtr thePredicate,
-		     TIdSequence& theSequence );
+                     PredicatePtr thePredicate,
+                     TIdSequence& theSequence );
       
     protected:
       PredicatePtr myPredicate;

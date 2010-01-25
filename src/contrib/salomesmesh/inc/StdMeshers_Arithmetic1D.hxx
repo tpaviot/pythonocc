@@ -23,15 +23,18 @@
 //  File   : StdMeshers_Arithmetic1D.hxx
 //  Author : Damien COQUERET, OCC
 //  Module : SMESH
-//  $Header: /home/server/cvs/SMESH/SMESH_SRC/src/StdMeshers/StdMeshers_Arithmetic1D.hxx,v 1.7.2.1 2008/11/27 13:03:50 abd Exp $
 //
 #ifndef _SMESH_ARITHMETIC1D_HXX_
 #define _SMESH_ARITHMETIC1D_HXX_
 
+
+
 #include "SMESH_StdMeshers.hxx"
 
 #include "SMESH_Hypothesis.hxx"
-#include "SMESH_Exception.hxx"
+#include "Utils_SALOME_Exception.hxx"
+
+#include <vector>
 
 class STDMESHERS_EXPORT StdMeshers_Arithmetic1D:
   public SMESH_Hypothesis
@@ -40,9 +43,17 @@ public:
   StdMeshers_Arithmetic1D(int hypId, int studyId, SMESH_Gen* gen);
   virtual ~StdMeshers_Arithmetic1D();
 
-  void SetLength(double length, bool isStartLength) throw(SMESH_Exception);
+  void SetLength(double length, bool isStartLength) throw(SALOME_Exception);
 
   double GetLength(bool isStartLength) const;
+
+  void SetReversedEdges( std::vector<int>& ids);
+
+  void SetObjectEntry( const char* entry ) { _objEntry = entry; }
+
+  const char* GetObjectEntry() { return _objEntry.c_str(); }
+
+  const std::vector<int>& GetReversedEdges() const { return _edgeIDs; }
 
   virtual std::ostream & SaveTo(std::ostream & save);
   virtual std::istream & LoadFrom(std::istream & load);
@@ -57,7 +68,7 @@ public:
    */
   virtual bool SetParametersByMesh(const SMESH_Mesh* theMesh, const TopoDS_Shape& theShape);
 
-   /*!
+  /*!
    * \brief Initialize my parameter values by default parameters.
    *  \retval bool - true if parameter values have been successfully defined
    */
@@ -65,6 +76,8 @@ public:
 
 protected:
   double _begLength, _endLength;
+  std::vector<int>   _edgeIDs;
+  std::string        _objEntry;
 };
 
 #endif

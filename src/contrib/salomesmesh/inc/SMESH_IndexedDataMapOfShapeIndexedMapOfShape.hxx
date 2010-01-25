@@ -48,8 +48,6 @@ DEFINE_INDEXEDMAP (SMESH_IndexedMapOfShape, SMESH_BaseCollectionShape, TopoDS_Sh
 SMESH_DEFINE_INDEXEDMAP (SMESH_IndexedMapOfShape, SMESH_BaseCollectionShape, TopoDS_Shape)
 #endif
 
-
-
 #endif 
 
 #ifndef SMESH_IndexedDataMapOfShapeIndexedMapOfShape_HeaderFile

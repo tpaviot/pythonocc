@@ -23,15 +23,14 @@
 //  File   : StdMeshers_ProjectionSource2D.hxx
 //  Author : Edward AGAPOV
 //  Module : SMESH
-//  $Header: /home/server/cvs/SMESH/SMESH_SRC/src/StdMeshers/StdMeshers_ProjectionSource2D.hxx,v 1.2.2.1 2008/11/27 13:03:49 abd Exp $
-//
+
 #ifndef _SMESH_ProjectionSource2D_HXX_
 #define _SMESH_ProjectionSource2D_HXX_
 
 #include "SMESH_StdMeshers.hxx"
 
 #include "SMESH_Hypothesis.hxx"
-#include "SMESH_Exception.hxx"
+#include "Utils_SALOME_Exception.hxx"
 
 #include <TopoDS_Vertex.hxx>
 
@@ -57,7 +56,7 @@ public:
    * Sets a source <face> to take a mesh pattern from
    */
   void SetSourceFace(const TopoDS_Shape& face)
-    throw ( SMESH_Exception );
+    throw ( SALOME_Exception );
 
   /*!
    * Returns the source face or a group containing faces
@@ -89,21 +88,21 @@ public:
                             const TopoDS_Shape& sourceVertex2,
                             const TopoDS_Shape& targetVertex1,
                             const TopoDS_Shape& targetVertex2)
-    throw ( SMESH_Exception );
+    throw ( SALOME_Exception );
 
   /*!
    * Returns the <i>-th source vertex associated with the <i>-th target vertex.
    * Result may be nil if association not set.
    * Valid indices are 1 and 2
    */
-  TopoDS_Vertex GetSourceVertex(int i) const throw ( SMESH_Exception );
+  TopoDS_Vertex GetSourceVertex(int i) const throw ( SALOME_Exception );
 
   /*!
    * Returns the <i>-th target vertex associated with the <i>-th source vertex.
    * Result may be nil if association not set.
    * Valid indices are 1 and 2
    */
-  TopoDS_Vertex GetTargetVertex(int i) const throw ( SMESH_Exception );
+  TopoDS_Vertex GetTargetVertex(int i) const throw ( SALOME_Exception );
 
   /*!
    * \brief Test if vertex association defined

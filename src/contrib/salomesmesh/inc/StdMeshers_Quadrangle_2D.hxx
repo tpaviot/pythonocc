@@ -24,7 +24,7 @@
 //           Moved here from SMESH_Quadrangle_2D.hxx
 //  Author : Paul RASCLE, EDF
 //  Module : SMESH
-//  $Header: /home/server/cvs/SMESH/SMESH_SRC/src/StdMeshers/StdMeshers_Quadrangle_2D.hxx,v 1.12.2.4 2008/11/27 13:03:50 abd Exp $
+//  $Header$
 //
 #ifndef _SMESH_QUADRANGLE_2D_HXX_
 #define _SMESH_QUADRANGLE_2D_HXX_
@@ -32,13 +32,14 @@
 #include "SMESH_StdMeshers.hxx"
 
 #include "SMESH_2D_Algo.hxx"
-#include "SMESH_Exception.hxx"
+#include "Utils_SALOME_Exception.hxx"
 
 class SMESH_Mesh;
 class SMESH_MesherHelper;
 class StdMeshers_FaceSide;
 class SMDS_MeshNode;
 struct uvPtStruct;
+
 
 enum TSideID { BOTTOM_SIDE=0, RIGHT_SIDE, TOP_SIDE, LEFT_SIDE, NB_SIDES };
 
@@ -64,6 +65,9 @@ public:
   virtual bool Compute(SMESH_Mesh& aMesh,
 		       const TopoDS_Shape& aShape);
 
+  virtual bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape & aShape,
+                        MapShapeNbElems& aResMap);
+
   FaceQuadStruct* CheckAnd2Dcompute(SMESH_Mesh& aMesh,
 				    const TopoDS_Shape& aShape,
                                     const bool CreateQuadratic);
@@ -72,6 +76,12 @@ protected:
 
   FaceQuadStruct* CheckNbEdges(SMESH_Mesh& aMesh,
                                const TopoDS_Shape& aShape);
+
+  bool CheckNbEdgesForEvaluate(SMESH_Mesh& aMesh,
+			       const TopoDS_Shape & aShape,
+			       MapShapeNbElems& aResMap,
+			       std::vector<int>& aNbNodes,
+                               bool& IsQuadratic);
 
   bool SetNormalizedGrid(SMESH_Mesh& aMesh,
 			 const TopoDS_Shape& aShape,
@@ -91,6 +101,12 @@ protected:
                        const TopoDS_Shape& aShape,
                        FaceQuadStruct* quad);
 
+  bool EvaluateQuadPref(SMESH_Mesh& aMesh,
+			const TopoDS_Shape& aShape,
+			std::vector<int>& aNbNodes,
+			MapShapeNbElems& aResMap,
+                        bool IsQuadratic);
+
   UVPtStruct* LoadEdgePoints2(SMESH_Mesh& aMesh,
 			      const TopoDS_Face& F, const TopoDS_Edge& E,
                               bool IsReverse);
@@ -105,12 +121,14 @@ protected:
 
   // true if QuadranglePreference hypothesis is assigned that forces
   // construction of quadrangles if the number of nodes on opposite edges
-  // is not the same in the case where the global number of nodes on edges is even
+  // is not the same in the case where the global number of nodes on edges
+  // is even
   bool myQuadranglePreference;
 
   bool myTrianglePreference;
 
-  
+  int myTriaVertexID;
+
   SMESH_MesherHelper* myTool; // tool for working with quadratic elements
 };
 

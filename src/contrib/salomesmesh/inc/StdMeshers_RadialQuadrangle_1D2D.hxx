@@ -20,30 +20,30 @@
 //  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 //
 //  SMESH SMESH : implementaion of SMESH idl descriptions
-//  File   : StdMeshers_RadialPrism_3D.hxx
+//  File   : StdMeshers_RadialQuadrangle_1D2D.hxx
 //  Module : SMESH
 //
-#ifndef _SMESH_RadialPrism_3D_HXX_
-#define _SMESH_RadialPrism_3D_HXX_
+#ifndef _SMESH_RadialQuadrangle_1D2D_HXX_
+#define _SMESH_RadialQuadrangle_1D2D_HXX_
 
 #include "SMESH_StdMeshers.hxx"
 
-#include "SMESH_3D_Algo.hxx"
-#include "SMDS_MeshNode.hxx"
+#include "SMESH_2D_Algo.hxx"
+//#include "SMDS_MeshNode.hxx"
 
-#include <vector>
-#include <map>
+//#include <vector>
+//#include <map>
 
 class StdMeshers_NumberOfLayers;
 class StdMeshers_LayerDistribution;
 class SMESH_MesherHelper;
 class gp_Pnt;
 
-class STDMESHERS_EXPORT StdMeshers_RadialPrism_3D: public SMESH_3D_Algo
+class STDMESHERS_EXPORT StdMeshers_RadialQuadrangle_1D2D: public SMESH_2D_Algo
 {
 public:
-  StdMeshers_RadialPrism_3D(int hypId, int studyId, SMESH_Gen* gen);
-  virtual ~StdMeshers_RadialPrism_3D();
+  StdMeshers_RadialQuadrangle_1D2D(int hypId, int studyId, SMESH_Gen* gen);
+  virtual ~StdMeshers_RadialQuadrangle_1D2D();
 
   virtual bool CheckHypothesis(SMESH_Mesh&                          aMesh,
                                const TopoDS_Shape&                  aShape,
@@ -53,15 +53,15 @@ public:
 
   virtual bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape & aShape,
                         MapShapeNbElems& aResMap);
-
+  /*!
+   * \brief Allow algo to do something after persistent restoration
+    * \param subMesh - restored submesh
+   *
+   * This method is called only if a submesh has HYP_OK algo_state.
+   */
+  virtual void SubmeshRestored(SMESH_subMesh* subMesh);
+  
 protected:
-
-  typedef std::vector<const SMDS_MeshNode* >            TNodeColumn;
-  typedef std::map< const SMDS_MeshNode*, TNodeColumn > TNode2ColumnMap;
-
-  TNodeColumn* makeNodeColumn( TNode2ColumnMap&     n2ColMap,
-                               const SMDS_MeshNode* outNode,
-                               const SMDS_MeshNode* inNode);
 
   bool computeLayerPositions(const gp_Pnt& pIn,
                              const gp_Pnt& pOut);

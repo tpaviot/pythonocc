@@ -20,39 +20,57 @@
 //  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 //
 //  SMESH SMESH : implementaion of SMESH idl descriptions
-//  File   : StdMeshers_MaxElementArea.hxx
-//           Moved here from SMESH_MaxElementArea.hxx
-//  Author : Paul RASCLE, EDF
+//  File   : StdMeshers_FixedPoints1D.hxx
+//  Author : Damien COQUERET, OCC
 //  Module : SMESH
 //
-#ifndef _SMESH_MAXELEMENTAREA_HXX_
-#define _SMESH_MAXELEMENTAREA_HXX_
+#ifndef _SMESH_FIXEDPOINTS1D_HXX_
+#define _SMESH_FIXEDPOINTS1D_HXX_
+
+
 
 #include "SMESH_StdMeshers.hxx"
 
 #include "SMESH_Hypothesis.hxx"
 #include "Utils_SALOME_Exception.hxx"
 
-class STDMESHERS_EXPORT StdMeshers_MaxElementArea:public SMESH_Hypothesis
+#include <vector>
+
+class STDMESHERS_EXPORT StdMeshers_FixedPoints1D:
+  public SMESH_Hypothesis
 {
 public:
-  StdMeshers_MaxElementArea(int hypId, int studyId, SMESH_Gen * gen);
-  virtual ~ StdMeshers_MaxElementArea();
+  StdMeshers_FixedPoints1D(int hypId, int studyId, SMESH_Gen* gen);
+  virtual ~StdMeshers_FixedPoints1D();
 
-  void SetMaxArea(double maxArea) throw(SALOME_Exception);
+  void SetPoints(std::vector<double>& listParams)
+    throw(SALOME_Exception);
 
-  double GetMaxArea() const;
+  void SetNbSegments(std::vector<int>& listNbSeg) 
+    throw(SALOME_Exception);
+
+  const std::vector<double>& GetPoints() const { return _params; }
+
+  const std::vector<int>& GetNbSegments() const { return _nbsegs; }
+
+  void SetReversedEdges( std::vector<int>& ids);
+
+  void SetObjectEntry( const char* entry ) { _objEntry = entry; }
+
+  const char* GetObjectEntry() { return _objEntry.c_str(); }
+
+  const std::vector<int>& GetReversedEdges() const { return _edgeIDs; }
 
   virtual std::ostream & SaveTo(std::ostream & save);
   virtual std::istream & LoadFrom(std::istream & load);
-  friend std::ostream & operator <<(std::ostream & save, StdMeshers_MaxElementArea & hyp);
-  friend std::istream & operator >>(std::istream & load, StdMeshers_MaxElementArea & hyp);
+  friend std::ostream& operator << (std::ostream & save, StdMeshers_FixedPoints1D & hyp);
+  friend std::istream& operator >> (std::istream & load, StdMeshers_FixedPoints1D & hyp);
 
   /*!
-   * \brief Initialize maximal area by the mesh built on the geometry
-   * \param theMesh - the built mesh
-   * \param theShape - the geometry of interest
-   * \retval bool - true if parameter values have been successfully defined
+   * \brief Initialize start and end length by the mesh built on the geometry
+    * \param theMesh - the built mesh
+    * \param theShape - the geometry of interest
+    * \retval bool - true if parameter values have been successfully defined
    */
   virtual bool SetParametersByMesh(const SMESH_Mesh* theMesh, const TopoDS_Shape& theShape);
 
@@ -63,7 +81,10 @@ public:
   virtual bool SetParametersByDefaults(const TDefaults& dflts, const SMESH_Mesh* theMesh=0);
 
 protected:
-  double _maxArea;
+  std::vector<double> _params;
+  std::vector<int>    _nbsegs;
+  std::vector<int>    _edgeIDs;
+  std::string         _objEntry;
 };
 
 #endif

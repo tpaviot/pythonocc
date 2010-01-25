@@ -46,6 +46,8 @@ public:
 
   virtual bool Compute(SMESH_Mesh& aMesh, const TopoDS_Shape& aShape);
   
+  virtual bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape & aShape,
+                        MapShapeNbElems& aResMap);
 };
 
 class STDMESHERS_EXPORT StdMeshers_UseExisting_1D: public SMESH_1D_Algo
@@ -59,6 +61,8 @@ public:
 
   virtual bool Compute(SMESH_Mesh& aMesh, const TopoDS_Shape& aShape);
   
+  virtual bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape & aShape,
+                        MapShapeNbElems& aResMap);
 };
 
 #endif

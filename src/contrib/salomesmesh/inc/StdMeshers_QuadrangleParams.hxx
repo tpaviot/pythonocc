@@ -20,50 +20,61 @@
 //  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
 //
 //  SMESH SMESH : implementaion of SMESH idl descriptions
-//  File   : StdMeshers_MaxElementArea.hxx
-//           Moved here from SMESH_MaxElementArea.hxx
-//  Author : Paul RASCLE, EDF
+//  File   : StdMeshers_QuadrangleParams.hxx
+//  Author : Sergey KUUL, OCC
 //  Module : SMESH
 //
-#ifndef _SMESH_MAXELEMENTAREA_HXX_
-#define _SMESH_MAXELEMENTAREA_HXX_
+#ifndef _SMESH_QUADRANGLEPARAMS_HXX_
+#define _SMESH_QUADRANGLEPARAMS_HXX_
+
+
 
 #include "SMESH_StdMeshers.hxx"
 
 #include "SMESH_Hypothesis.hxx"
 #include "Utils_SALOME_Exception.hxx"
 
-class STDMESHERS_EXPORT StdMeshers_MaxElementArea:public SMESH_Hypothesis
+class STDMESHERS_EXPORT StdMeshers_QuadrangleParams:
+  public SMESH_Hypothesis
 {
 public:
-  StdMeshers_MaxElementArea(int hypId, int studyId, SMESH_Gen * gen);
-  virtual ~ StdMeshers_MaxElementArea();
+  StdMeshers_QuadrangleParams(int hypId, int studyId, SMESH_Gen* gen);
+  virtual ~StdMeshers_QuadrangleParams();
 
-  void SetMaxArea(double maxArea) throw(SALOME_Exception);
+  void SetTriaVertex(int id);
 
-  double GetMaxArea() const;
+  void SetObjectEntry( const char* entry ) { _objEntry = entry; }
+
+  const char* GetObjectEntry() { return _objEntry.c_str(); }
+
+  int GetTriaVertex() const { return _triaVertexID; }
 
   virtual std::ostream & SaveTo(std::ostream & save);
   virtual std::istream & LoadFrom(std::istream & load);
-  friend std::ostream & operator <<(std::ostream & save, StdMeshers_MaxElementArea & hyp);
-  friend std::istream & operator >>(std::istream & load, StdMeshers_MaxElementArea & hyp);
+  friend std::ostream& operator << (std::ostream & save,
+				    StdMeshers_QuadrangleParams & hyp);
+  friend std::istream& operator >> (std::istream & load,
+				    StdMeshers_QuadrangleParams & hyp);
 
   /*!
-   * \brief Initialize maximal area by the mesh built on the geometry
-   * \param theMesh - the built mesh
-   * \param theShape - the geometry of interest
-   * \retval bool - true if parameter values have been successfully defined
+   * \brief Initialize start and end length by the mesh built on the geometry
+    * \param theMesh - the built mesh
+    * \param theShape - the geometry of interest
+    * \retval bool - true if parameter values have been successfully defined
    */
-  virtual bool SetParametersByMesh(const SMESH_Mesh* theMesh, const TopoDS_Shape& theShape);
+  virtual bool SetParametersByMesh(const SMESH_Mesh* theMesh,
+				   const TopoDS_Shape& theShape);
 
   /*!
    * \brief Initialize my parameter values by default parameters.
    *  \retval bool - true if parameter values have been successfully defined
    */
-  virtual bool SetParametersByDefaults(const TDefaults& dflts, const SMESH_Mesh* theMesh=0);
+  virtual bool SetParametersByDefaults(const TDefaults& dflts,
+				       const SMESH_Mesh* theMesh=0);
 
 protected:
-  double _maxArea;
+  int         _triaVertexID;
+  std::string _objEntry;
 };
 
 #endif

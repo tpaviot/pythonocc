@@ -93,6 +93,8 @@ class SMDS_EXPORT SMDS_VolumeTool
 
   bool GetBaryCenter (double & X, double & Y, double & Z) const;
 
+  bool IsOut(double X, double Y, double Z, double tol);
+  // Classify a point
 
   // -----------------------
   // info on node connection

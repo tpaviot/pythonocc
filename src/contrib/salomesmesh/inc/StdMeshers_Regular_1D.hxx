@@ -32,6 +32,8 @@
 
 #include "SMESH_1D_Algo.hxx"
 
+#include "StdMeshers_FixedPoints1D.hxx"
+
 class Adaptor3d_Curve;
 class TopoDS_Vertex;
 class StdMeshers_SegmentLengthAroundVertex;
@@ -48,6 +50,9 @@ public:
 
   virtual bool Compute(SMESH_Mesh& aMesh,
 		       const TopoDS_Shape& aShape);
+
+  virtual bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape & aShape,
+                        MapShapeNbElems& aResMap);
 
   virtual const std::list <const SMESHDS_Hypothesis *> &
     GetUsedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape & aShape, const bool=true);
@@ -94,7 +99,7 @@ protected:
   StdMeshers_SegmentLengthAroundVertex* getVertexHyp(SMESH_Mesh &          theMesh,
                                                      const TopoDS_Vertex & theV);
 
-  enum HypothesisType { LOCAL_LENGTH, MAX_LENGTH, NB_SEGMENTS, BEG_END_LENGTH, DEFLECTION, ARITHMETIC_1D, NONE };
+  enum HypothesisType { LOCAL_LENGTH, MAX_LENGTH, NB_SEGMENTS, BEG_END_LENGTH, DEFLECTION, ARITHMETIC_1D, FIXED_POINTS_1D, NONE };
 
   enum ValueIndex {
     SCALE_FACTOR_IND = 0,
@@ -120,10 +125,13 @@ protected:
 
   HypothesisType _hypType;
 
+  const StdMeshers_FixedPoints1D* _fpHyp;
+
   double _value[2];
   int    _ivalue[3];
   std::vector<double> _vvalue[1];
   std::string         _svalue[1];
+  std::vector<int>    _revEdgesIDs;
 
   // a source of propagated hypothesis, is set by CheckHypothesis()
   // always called before Compute()
