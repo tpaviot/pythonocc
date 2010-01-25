@@ -40,6 +40,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<GEOMImpl_EllipseDriver.hxx>
 #include<GEOMImpl_ExportDriver.hxx>
 #include<GEOMImpl_FaceDriver.hxx>
+#include<GEOMImpl_Fillet1d.hxx>
+#include<GEOMImpl_Fillet1dDriver.hxx>
 #include<GEOMImpl_FilletDriver.hxx>
 #include<GEOMImpl_FillingDriver.hxx>
 #include<GEOMImpl_Gen.hxx>
@@ -68,6 +70,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<GEOMImpl_IEllipse.hxx>
 #include<GEOMImpl_IFace.hxx>
 #include<GEOMImpl_IFillet.hxx>
+#include<GEOMImpl_IFillet1d.hxx>
 #include<GEOMImpl_IFilling.hxx>
 #include<GEOMImpl_IGlue.hxx>
 #include<GEOMImpl_IGroupOperations.hxx>

@@ -30,6 +30,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<SMDS_Iterator.hxx>
 #include<SMDS_IteratorOfElements.hxx>
 #include<SMDS_Mesh.hxx>
+#include<SMDS_Mesh0DElement.hxx>
 #include<SMDS_MeshEdge.hxx>
 #include<SMDS_MeshElement.hxx>
 #include<SMDS_MeshElementIDFactory.hxx>

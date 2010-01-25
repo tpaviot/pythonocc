@@ -61,6 +61,7 @@ enum SMESHDS_CommandType {
 	SMESHDS_AddQuadPyramid,
 	SMESHDS_AddQuadPentahedron,
 	SMESHDS_AddQuadHexahedron,
+	SMESHDS_Add0DElement,
 	};
 
 
@@ -232,6 +233,8 @@ class SMESHDS_Command {
 		%feature("autodoc", "1");
 		void AddNode(int , double , double , double );
 		%feature("autodoc", "1");
+		void Add0DElement(int , int );
+		%feature("autodoc", "1");
 		void AddEdge(int , int , int );
 		%feature("autodoc", "1");
 		void AddFace(int , int , int , int );
@@ -350,6 +353,8 @@ class SMESHDS_Script {
 		%feature("autodoc", "1");
 		void AddNode(int , double , double , double );
 		%feature("autodoc", "1");
+		void Add0DElement(int , int );
+		%feature("autodoc", "1");
 		void AddEdge(int , int , int );
 		%feature("autodoc", "1");
 		void AddFace(int , int , int , int );
@@ -430,6 +435,12 @@ class SMESHDS_Mesh : public SMDS_Mesh {
 		virtual		SMDS_MeshNode * AddNodeWithID(double , double , double , int );
 		%feature("autodoc", "1");
 		virtual		SMDS_MeshNode * AddNode(double , double , double );
+		%feature("autodoc", "1");
+		virtual		SMDS_Mesh0DElement * Add0DElementWithID(int , int );
+		%feature("autodoc", "1");
+		virtual		SMDS_Mesh0DElement * Add0DElementWithID(const SMDS_MeshNode *node, int );
+		%feature("autodoc", "1");
+		virtual		SMDS_Mesh0DElement * Add0DElement(const SMDS_MeshNode *node);
 		%feature("autodoc", "1");
 		virtual		SMDS_MeshEdge * AddEdgeWithID(int , int , int );
 		%feature("autodoc", "1");

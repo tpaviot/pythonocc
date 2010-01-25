@@ -1724,9 +1724,9 @@ class GEOMAlgo_Tools3D {
 		%feature("autodoc", "1");
 		TopAbs_State ComputeState(const TopoDS_Face &theFace, const TopoDS_Solid &theSolid, const Standard_Real theTol, const TopTools_IndexedMapOfShape &theBounds, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopoDS_Face &theFace1, const TopoDS_Face &theFace2);
+		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopoDS_Face &theFace1, const TopoDS_Face &theFace2, IntTools_Context & theContext);
 		%feature("autodoc", "1");
-		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopTools_ListOfShape &theLF);
+		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Edge &theEdge, const TopTools_ListOfShape &theLF, IntTools_Context & theContext);
 		%feature("autodoc", "1");
 		Standard_Boolean IsInternalFace(const TopoDS_Face &theFace, const TopoDS_Solid &theSolid, const TopTools_IndexedDataMapOfShapeListOfShape &theMEF, const Standard_Real theTol, IntTools_Context & theContext);
 		%feature("autodoc", "1");

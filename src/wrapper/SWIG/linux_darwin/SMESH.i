@@ -140,7 +140,7 @@ class SMESH_MesherHelper {
 		%feature("autodoc", "1");
 		bool LoadNodeColumns(TParam2ColumnMap & theParam2ColumnMap, const TopoDS_Face &theFace, const TopoDS_Edge &theBaseEdge, SMESHDS_Mesh* theMesh);
 		%feature("autodoc", "1");
-		const TopoDS_Shape & GetSubShapeByNode(const SMDS_MeshNode *node, SMESHDS_Mesh* meshDS);
+		TopoDS_Shape GetSubShapeByNode(const SMDS_MeshNode *node, SMESHDS_Mesh* meshDS);
 		%feature("autodoc", "1");
 		int WrapIndex(const int ind, const int nbNodes);
 		%feature("autodoc", "1");
@@ -157,6 +157,8 @@ class SMESH_MesherHelper {
 		void SetIsQuadratic(const bool theBuildQuadratic);
 		%feature("autodoc", "1");
 		bool GetIsQuadratic() const;
+		%feature("autodoc", "1");
+		void FixQuadraticElements(bool =true);
 		%feature("autodoc", "1");
 		void SetElementsOnShape(bool );
 		%feature("autodoc", "1");
@@ -184,9 +186,13 @@ class SMESH_MesherHelper {
 		%feature("autodoc", "1");
 		SMDS_MeshVolume * AddVolume(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n3, const SMDS_MeshNode *n4, const SMDS_MeshNode *n5, const SMDS_MeshNode *n6, const SMDS_MeshNode *n7, const SMDS_MeshNode *n8, const int id=0, bool =true);
 		%feature("autodoc", "1");
-		double GetNodeU(const TopoDS_Edge &theEdge, const SMDS_MeshNode *theNode);
+		double GetNodeU(const TopoDS_Edge &theEdge, const SMDS_MeshNode *theNode, bool* check=0);
 		%feature("autodoc", "1");
-		gp_XY GetNodeUV(const TopoDS_Face &F, const SMDS_MeshNode *n, const SMDS_MeshNode *inFaceNode=0) const;
+		gp_XY GetNodeUV(const TopoDS_Face &F, const SMDS_MeshNode *n, const SMDS_MeshNode *inFaceNode=0, bool* check=0) const;
+		%feature("autodoc", "1");
+		bool CheckNodeUV(const TopoDS_Face &F, const SMDS_MeshNode *n, gp_XY & uv, const double tol) const;
+		%feature("autodoc", "1");
+		gp_XY GetMiddleUV(const Handle_Geom_Surface &surface, const gp_XY &uv1, const gp_XY &uv2);
 		%feature("autodoc", "1");
 		bool GetNodeUVneedInFaceNode(const TopoDS_Face &F=TopoDS_Face( )) const;
 		%feature("autodoc", "1");
@@ -208,11 +214,11 @@ class SMESH_MesherHelper {
 		%feature("autodoc", "1");
 		const SMDS_MeshNode * GetMediumNode(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const bool force3d);
 		%feature("autodoc", "1");
-		void AddNLinkNode(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n12);
+		void AddTLinkNode(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n12);
 		%feature("autodoc", "1");
-		void AddNLinkNodeMap(const NLinkNodeMap &aMap);
+		void AddTLinkNodeMap(const TLinkNodeMap &aMap);
 		%feature("autodoc", "1");
-		const NLinkNodeMap & GetNLinkNodeMap() const;
+		const TLinkNodeMap & GetTLinkNodeMap() const;
 		%feature("autodoc", "1");
 		SMESH_MesherHelper::MType IsQuadraticMesh();
 
@@ -380,7 +386,7 @@ class SMESH_Block : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		bool IsForwardEdge(const TopoDS_Edge &theEdge, const TopTools_IndexedMapOfOrientedShape &theShapeIDMap);
 		%feature("autodoc", "1");
-		int GetOrderedEdges(const TopoDS_Face &theFace, TopoDS_Vertex , std::list<TopoDS_Edge>, std::list<int>);
+		int GetOrderedEdges(const TopoDS_Face &theFace, TopoDS_Vertex , std::list<TopoDS_Edge>, std::list<int>, const bool theShapeAnalysisAlgo=false);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
@@ -512,11 +518,52 @@ def __del__(self):
 };
 
 
+%nodefaultctor SMESH_MeshEditor_PathPoint;
+class SMESH_MeshEditor_PathPoint {
+	public:
+		%feature("autodoc", "1");
+		SMESH_MeshEditor_PathPoint();
+		%feature("autodoc", "1");
+		void SetPnt(const gp_Pnt &aP3D);
+		%feature("autodoc", "1");
+		void SetTangent(const gp_Dir &aTgt);
+		%feature("autodoc", "1");
+		void SetAngle(const double &aBeta);
+		%feature("autodoc", "1");
+		void SetParameter(const double &aPrm);
+		%feature("autodoc", "1");
+		const gp_Pnt & Pnt() const;
+		%feature("autodoc", "1");
+		const gp_Dir & Tangent() const;
+		%feature("autodoc", "1");
+		double Angle() const;
+		%feature("autodoc", "1");
+		double Parameter() const;
+
+};
+%feature("shadow") SMESH_MeshEditor_PathPoint::~SMESH_MeshEditor_PathPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_MeshEditor_PathPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor SMESH_NodeSearcher;
 class SMESH_NodeSearcher {
 	public:
 		%feature("autodoc", "1");
 		virtual		const SMDS_MeshNode * FindClosestTo(const gp_Pnt &pnt);
+		%feature("autodoc", "1");
+		virtual		void MoveNode(const SMDS_MeshNode *node, const gp_Pnt &toPnt);
 
 };
 %feature("shadow") SMESH_NodeSearcher::~SMESH_NodeSearcher %{
@@ -544,6 +591,8 @@ class SMESH_Gen {
 		SMESH_Mesh * CreateMesh(int , bool );
 		%feature("autodoc", "1");
 		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, const bool anUpward=false, const MeshDimension aDim=MeshDim_3D, TSetOfInt* aShapesId=0);
+		%feature("autodoc", "1");
+		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap, const bool anUpward=false, TSetOfInt* aShapesId=0);
 		%feature("autodoc", "1");
 		bool CheckAlgoState(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape);
 		%feature("autodoc", "1");
@@ -736,6 +785,8 @@ class SMESH_Mesh {
 		void ExportSTL(const char *file, const bool isascii);
 		%feature("autodoc", "1");
 		int NbNodes();
+		%feature("autodoc", "1");
+		int Nb0DElements();
 		%feature("autodoc", "1");
 		int NbEdges(SMDSAbs_ElementOrder =ORDER_ANY);
 		%feature("autodoc", "1");
@@ -944,6 +995,8 @@ class SMESH_Algo : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		virtual		bool Compute(SMESH_Mesh & aMesh, SMESH_MesherHelper* aHelper);
 		%feature("autodoc", "1");
+		virtual		bool Evaluate(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, MapShapeNbElems & aResMap);
+		%feature("autodoc", "1");
 		virtual		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetUsedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, const bool ignoreAuxiliary=true);
 		%feature("autodoc", "1");
 		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetAppliedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape &aShape, const bool ignoreAuxiliary=true);
@@ -1018,6 +1071,29 @@ def __del__(self):
 %}
 
 %extend SMESH_subMeshEventListenerData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMESH_ElementSearcher;
+class SMESH_ElementSearcher {
+	public:
+		%feature("autodoc", "1");
+		virtual		void FindElementsByPoint(const gp_Pnt &point, SMDSAbs_ElementType , std::vector<SMDS_MeshElement const*, std::allocator<SMDS_MeshElement const*> > & foundElems);
+
+};
+%feature("shadow") SMESH_ElementSearcher::~SMESH_ElementSearcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_ElementSearcher {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1101,6 +1177,8 @@ class SMESH_subMesh {
 		%feature("autodoc", "1");
 		bool ComputeStateEngine(int );
 		%feature("autodoc", "1");
+		bool Evaluate(MapShapeNbElems & aResMap);
+		%feature("autodoc", "1");
 		bool IsConform(const SMESH_Algo *theAlgo);
 		%feature("autodoc", "1");
 		bool CanAddHypothesis(const SMESH_Hypothesis *theHypothesis) const;
@@ -1170,6 +1248,10 @@ class SMESH_TLink : public pair<SMDS_MeshNode const*, SMDS_MeshNode const*> {
 		SMESH_TLink(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2);
 		%feature("autodoc", "1");
 		SMESH_TLink(const NLink &link);
+		%feature("autodoc", "1");
+		const SMDS_MeshNode * node1() const;
+		%feature("autodoc", "1");
+		const SMDS_MeshNode * node2() const;
 
 };
 %feature("shadow") SMESH_TLink::~SMESH_TLink %{

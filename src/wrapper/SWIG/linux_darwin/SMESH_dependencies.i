@@ -88,7 +88,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %import MeshVS.i
 %import SMDSAbs.i
 %import TopAbs.i
+%import TLinkNodeMap.i
 %import Standard.i
 %import math.i
+%import MapShapeNbElems.i
 %import SMESHDS.i
 %import GeomAbs.i
