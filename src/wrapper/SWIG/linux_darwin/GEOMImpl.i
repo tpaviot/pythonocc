@@ -3376,12 +3376,6 @@ def __del__(self):
 %nodefaultctor GEOMImpl_IBasicOperations;
 class GEOMImpl_IBasicOperations : public GEOM_IOperations {
 	public:
-		enum PointLocation {
-			PointOn_CurveByParam,
-			PointOn_CurveByCoord,
-			PointOn_SurfaceByParam,
-			PointOn_SurfaceByCoord,
-		};
 		%feature("autodoc", "1");
 		GEOMImpl_IBasicOperations(GEOM_Engine* theEngine, int );
 		%feature("autodoc", "1");
@@ -5562,8 +5556,6 @@ class GEOMImpl_IInsertOperations : public GEOM_IOperations {
 		int AddTexture(int , int , const Handle_TDataStd_HArray1OfByte &theTexture);
 		%feature("autodoc", "1");
 		Handle_TDataStd_HArray1OfByte GetTexture(int , int & theWidth, int & theHeight);
-		%feature("autodoc", "1");
-		std::allocator<int> std::list<int, > GetAllTextures();
 
 };
 %feature("shadow") GEOMImpl_IInsertOperations::~GEOMImpl_IInsertOperations %{

@@ -195,16 +195,8 @@ elif sys.platform=='darwin':
     else:
       OCC_LIB = '/Library/OpenCASCADE/6.3.0/lib'
       OCC_INC = '/Library/OpenCASCADE/6.3.0/inc'
-    try:
-        GEOM_ROOT = os.environ['GEOMROOT']
-        SALOME_GEOM_LIB = os.path.join(GEOM_ROOT,'lib')
-    except:
-        SALOME_GEOM_LIB = '/Library/salomegeometry/lib'
-    try:
-        SMESH_ROOT = os.environ['SMESHROOT']
-        SALOME_SMESH_LIB = os.path.join(SMESH_ROOT,'lib')
-    except:
-        SALOME_SMESH_LIB = '/Library/salomesmesh/lib'        
+    SALOME_GEOM_LIB = '/usr/local/lib/GEOM-5.3.0.0'
+    SALOME_SMESH_LIB = '/usr/local/lib/SMESH-5.3.0.0/'        
     GCC_XML_PATH = which('gccxml')
     BOOST_INC = os.path.join(os.getcwd(),'..','..','boost_1_40_0')
     if GCC_XML_PATH == '':
@@ -217,7 +209,7 @@ elif sys.platform=='darwin':
     if bits==64:
         DEFINE_MACROS.append(('_OCC64',None))
         ECA.append('-I/usr/include/c++/4.2.1/x86_64-apple-darwin10') # Snow Leopard
-    ELA = ['-lf2c']
+    ELA = []#'-lf2c']
     EXTRA_LIBS = ['-framework Python']
 
 else:

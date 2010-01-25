@@ -64,5 +64,4 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %};
 
 %import SMESH.i
-%import MapShapeNbElems.i
 %import TopAbs.i

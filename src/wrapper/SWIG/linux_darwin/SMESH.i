@@ -848,18 +848,6 @@ def __del__(self):
 %nodefaultctor SMESH_HypoFilter;
 class SMESH_HypoFilter : public SMESH_HypoPredicate {
 	public:
-		enum Comparison {
-			EQUAL,
-			NOT_EQUAL,
-			MORE,
-			LESS,
-		};
-		enum Logical {
-			AND,
-			AND_NOT,
-			OR,
-			OR_NOT,
-		};
 		%feature("autodoc", "1");
 		SMESH_HypoFilter();
 		%feature("autodoc", "1");

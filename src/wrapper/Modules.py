@@ -20,6 +20,12 @@ import sys, os, os.path
 import environment
 
 #
+# OpenCASCADE Toolkits: each ToolKit is a list of modules
+#
+TOOLKITS = {'TKernel':['Dico','FSD','MMgt','Message','NCollection','OSD','Plugin','Quantity'
+                       'Resource','SortTools','Standard','StdFail','Storage','TColStd'
+                       'TCollection','TShort','Units','UnitsAPI']}
+
 # List of modules to export
 #
 # (string module_name, list additional headers, list classes_to_exclude, dict member_functions to exclude)
@@ -542,13 +548,15 @@ else:
 #
 SALOME_GEOM_MODULES = [
                        ('Archimede',[],[]),
-                       ('SGEOM',['TColStd','TDF','CDM','CDF'],[],\
+                       ('SGEOM',['TDataStd','TColStd','TDF','CDM','CDF','Quantity'],[],\
                         {'GEOM_SubShapeDriver':['GetID']}),
                        ('GEOMAlgo',['Handle_TCollection'],[]),
-                       ('GEOMImpl',['TDocStd','CDM','TDF','Handle_TCollection','CDF'],\
+                       ('GEOMImpl',['TDataStd','TDocStd','CDM','TDF','Handle_TCollection','CDF',
+                                    'Aspect','Quantity'],\
                         ['GEOMImpl_Block6Explorer','GEOMImpl_Template','Handle_GEOMImpl_Template'],\
                         {'GEOMImpl_IShapesOperations':['GetShapesOnCylinderOld','GetShapesOnSphereOld','GetShapeProperties'],\
-                         'GEOMImpl_ITransformOperations':['ScaleShapeAlongAxes'],}),
+                         'GEOMImpl_ITransformOperations':['ScaleShapeAlongAxes'],
+                         'GEOMImpl_IInsertOperations':['GetAllTextures']}),
                        ('BlockFix',['TopTools','Handle_TCollection'],[],\
                         {'BlockFix_SphereSpaceModifier':['ForRotation']}),
                         ('NMTDS',[],[]),
@@ -599,7 +607,9 @@ SALOME_SMESH_MODULES = [('SMDSAbs',[],[]),
 if sys.platform!='win32':
     SALOME_SMESH_MODULES.append(('StdMeshers',['SMDS'],[],{'StdMeshers_Hexa_3D':['OppositeVertex'],'StdMeshers_MEFISTO_2D':['LoadPoints']}),)
 else:
-    SALOME_SMESH_MODULES.append(('StdMeshers',['SMDS'],['StdMeshers_ProjectionUtils'],{'StdMeshers_Hexa_3D':['OppositeVertex'],'StdMeshers_MEFISTO_2D':['LoadPoints']}))
+    SALOME_SMESH_MODULES.append(('StdMeshers',['SMDS'],['StdMeshers_ProjectionUtils'],
+                                 {'StdMeshers_Hexa_3D':['OppositeVertex'],
+                                  'StdMeshers_MEFISTO_2D':['LoadPoints']}))
 
 ALL_MODULES = MODULES + SALOME_GEOM_MODULES + SALOME_SMESH_MODULES
 

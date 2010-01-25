@@ -211,7 +211,7 @@ class ModularBuilder(object):
                            'basic','exception','MeshDimension','TSetOfInt',\
                            'NLinkNodeMap','pair<SMDS','NLink','TIDSortedElemSet',\
                            'TElemOfElemListMap','TNodeNodeMap','EventListener',\
-                           'EventListenerData']:
+                           'EventListenerData','TLinkNodeMap','MapShapeNbElems']:
             return True
         if module_name=='GEOM':
             module_name='SGEOM'
@@ -812,7 +812,7 @@ class ModularBuilder(object):
         
         # protected_enums is a list of encountered protected defined enums.
         # TODO: find a way to find automatically whether or not the enum is protected
-        protected_enums=['HypothesisType','VValue','IValueIndex','VValueIndex','SValueIndex','ValueIndex',\
+        protected_enums=['PointLocation','Comparison','Logical','HypothesisType','VValue','IValueIndex','VValueIndex','SValueIndex','ValueIndex',\
                          'ParameterType','' #AWfull Tweak to exclude a protected enum in SMESH_Block\
                          ]
         try:

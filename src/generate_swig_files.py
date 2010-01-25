@@ -86,22 +86,22 @@ def generate_SWIG_file_for_module(module):
     else:
         SWIG_generator.ModularBuilder(module)
 
-def generate_swig_multiprocess():
+def generate_swig_multiprocess(module_list):
     ''' Generate swig files with parallel support
     '''
     #raw_input('Enter something')
     init_time = time.time()
     P = processing.Pool(nprocs)
-    P.map(generate_SWIG_file_for_module,Modules.ALL_MODULES)
+    P.map(generate_SWIG_file_for_module,module_list)
     final_time = time.time()
     #print "%i exported classes"%SWIG_generator.nb_exported_classes
     print final_time-init_time
 
-def generate_swig_single_process():
+def generate_swig_single_process(module_list):
     ''' Generate swig files in single process mode (multiprocessing not found)
     '''
     init_time = time.time()
-    for module in Modules.ALL_MODULES:
+    for module in module_list:
         generate_SWIG_file_for_module(module)
     final_time = time.time()
     print "%i exported classes"%SWIG_generator.nb_exported_classes
@@ -110,22 +110,29 @@ def generate_swig_single_process():
 if __name__ == '__main__':
     check_paths()
     # Check if a module name is passed to the command line
+    modules_to_wrap = Modules.ALL_MODULES
     if len(sys.argv)>1:
         module_name_to_wrap = sys.argv[1]
-        print module_name_to_wrap
-        module_to_wrap = None
+        if module_name_to_wrap == 'GEOM':
+            print "Generating swig files for the GEOM library"
+            modules_to_wrap = Modules.SALOME_GEOM_MODULES
+        elif module_name_to_wrap == 'SMESH':
+            print "Generating swig files for the SMESH library"
+            modules_to_wrap = Modules.SALOME_SMESH_MODULES
+        else:
+            modules_to_wrap = None
         # Try to find the module with the name provided
-        for module in Modules.ALL_MODULES:
-            if module[0] == module_name_to_wrap:
-                module_to_wrap = module
-                break
-        if module_to_wrap != None:
-            generate_SWIG_file_for_module(module)
-        else:
-            print 'Module %s not found.'%module_name_to_wrap
+            for module in Modules.ALL_MODULES:
+                if module[0] == module_name_to_wrap:
+                    modules_to_wrap = [module]
+                    break
+        #print modules_to_wrap
+        if modules_to_wrap == None:
+            raise NameError,"Unknown module"
+                
+    if MULTI_PROCESS_GENERATION:
+        raw_input('You''re about to generate pythonOCC SWIG files (MultiProcess mode). Hit a key to continue')
+        generate_swig_multiprocess(modules_to_wrap)
     else:
-        raw_input('You''re about to generate pythonOCC SWIG files. Hit a key to continue')
-        if MULTI_PROCESS_GENERATION:
-            generate_swig_multiprocess()
-        else:
-            generate_swig_single_process()
+        raw_input('You''re about to generate pythonOCC SWIG files (Single process mode). Hit a key to continue')
+        generate_swig_single_process(modules_to_wrap)
