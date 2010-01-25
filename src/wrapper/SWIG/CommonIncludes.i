@@ -28,3 +28,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include <python/std_string.i>
 %include <python/std_vector.i>
 %include <python/std_basic_string.i>
+
+// Define IntVector and DoubleVector to handle std::vector<int> and std::vector<double>
+
+namespace std {
+	%template(IntVector) vector<int>;
+	%template(DoubleVector) vector<double>;
+}
