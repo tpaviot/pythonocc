@@ -1,0 +1,1649 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{listings}
+\lstset{language={Python}}
+\usepackage{microtype}
+\end_preamble
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Parametric Application Framework (PAF) tutorial
+\end_layout
+
+\begin_layout Author
+Thomas Paviot (tpaviot@gmail.com)
+\end_layout
+
+\begin_layout Abstract
+This guide aims at introducing in a few stages the pythonOCC package intended
+ to parametric modeling.
+\end_layout
+
+\begin_layout Abstract
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+License
+\end_layout
+
+\begin_layout Standard
+This document is distributed under the terms of the Creative Common BY-NC-SA
+ 3.0 license.
+ In a few words,:
+\end_layout
+
+\begin_layout Standard
+You are free:
+\end_layout
+
+\begin_layout Itemize
+to Share
+\end_layout
+
+\begin_layout Itemize
+to copy, distribute and transmit the work to Remix
+\end_layout
+
+\begin_layout Itemize
+to adapt the work
+\end_layout
+
+\begin_layout Standard
+Under the following conditions:
+\end_layout
+
+\begin_layout Itemize
+Attribution — You must attribute the work in the manner specified by the
+ author or licensor (but not in any way that suggests that they endorse
+ you or your use of the work).
+ 
+\end_layout
+
+\begin_layout Itemize
+Noncommercial — You may not use this work for commercial purposes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Share Alike — If you alter, transform, or build upon this work, you may
+ distribute the resulting work only under the same or similar license to
+ this one.
+ 
+\end_layout
+
+\begin_layout Standard
+With the understanding that:
+\end_layout
+
+\begin_layout Itemize
+Waiver — Any of the above conditions can be waived if you get permission
+ from the copyright holder.
+ 
+\end_layout
+
+\begin_layout Itemize
+Public Domain — Where the work or any of its elements is in the public domain
+ under applicable law, that status is in no way affected by the license.
+ 
+\end_layout
+
+\begin_layout Itemize
+Other Rights — In no way are any of the following rights affected by the
+ license: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Your fair dealing or fair use rights, or other applicable copyright exceptions
+ and limitations; 
+\end_layout
+
+\begin_layout Itemize
+The author's moral rights; 
+\end_layout
+
+\begin_layout Itemize
+Rights other persons may have either in the work itself or in how the work
+ is used, such as publicity or privacy rights.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Notice — For any reuse or distribution, you must make clear to others the
+ license terms of this work.
+ The best way to do this is with a link to this
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://creativecommons.org/licenses/by-nc-sa/3.0/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ web page.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+What is PAF and Why Might I Need It?
+\end_layout
+
+\begin_layout Standard
+The Parametric Application Framework (PAF) is a parametric modeling application
+ framework based upon the OpenCASCADE 3D modeling kernel
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.opencascade.org"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ and the SalomeGEOM
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://sf.net/projects/salomegeometry"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ libraries.
+ PAF is part of the pythonOCC distribution since the release 0.3.
+ 
+\end_layout
+
+\begin_layout Section
+What is needed to run the PAF?
+\end_layout
+
+\begin_layout Standard
+In order to run PAF, you only have to: download and install pythonOCC 0.3
+ or higher.
+ be sure that the SalomeGEOM libraries are installed The PAF makes possible
+ to modify the parameters values and see the propagation of these modification
+ to the geometry 'on the fly'.
+ The best way to get all the power of PAF is certainly to use the ipython
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://ipython.scipy.org/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ console.
+ When your PAF script is ready (let's name it test_paf.py'), then just: ipython
+ -wthread test_paf.py
+\end_layout
+
+\begin_layout Section
+The pin tutorial
+\end_layout
+
+\begin_layout Standard
+You may know that a simple optimization computation (that can easily made
+ by hand) lead to the fact that given a cylindrical pin, the maximal volume/mini
+mal steel surface compromise is obtained if the diameter of the pin equals
+ its height.
+ The aim of this tutorial is then to have a 3D model of this pin compliant
+ with this knowledge rule, and get a 3D shape with 
+\begin_inset Formula $height=2*radius$
+\end_inset
+
+ whenever a change occurs in the radius parameter.
+ We'll first create 2 parameters 
+\emph on
+height
+\emph default
+ and 
+\emph on
+radius
+\emph default
+, then create the geometry associative with these parameters.
+\end_layout
+
+\begin_layout Paragraph*
+Notes about this tutorial
+\end_layout
+
+\begin_layout Itemize
+In this tutorial, the following formating convention is used: python code
+ is formatted like:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+import sys
+\end_layout
+
+\begin_layout Plain Layout
+
+print sys.path
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+parameters are 
+\emph on
+italic
+\emph default
+ formated.
+ For instance: 
+\emph on
+radius,
+\emph default
+ 
+\emph on
+height
+\emph default
+, 
+\emph on
+max_mass
+\emph default
+, etc.
+\end_layout
+
+\begin_layout Subsection
+Creation of a parameterized cylinder
+\end_layout
+
+\begin_layout Standard
+Let's get started with the most simple example we could imagine.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Step 1 : initialization of the framework.
+\end_layout
+
+\begin_layout Standard
+You have to first import the classes needed whenever you want to use the
+ PAF :
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+from OCC.PAF.Context import ParametricModelingContext
+\end_layout
+
+\begin_layout Plain Layout
+
+from OCC.PAF.Parametric import Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We'll see in details these classes in the next part of this tutorial.
+\end_layout
+
+\begin_layout Subsubsection
+Step 2: creation of a set of parameters
+\end_layout
+
+\begin_layout Standard
+Let's first create a container that handle each new parameter needed:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+p = Parameters()
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Step 3: creation of a ParametricModelingContext
+\end_layout
+
+\begin_layout Standard
+The ParametricModelingContext is the container for all the relation, rules,
+ parameters.
+ It provides a set of methods to build geometry.
+ It has to be initialized with a set of parameters:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+tutorial_context = ParametricModelingContext(p)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+let's tell the context that a graphic window has to be set up in order to
+ display the geometry:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+tutorial_context.init_display()
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Creation of the parameters
+\end_layout
+
+\begin_layout Standard
+The two parameters height and radius must be initialized with float (or
+ integer) values.
+ In this first step, we initialize parameters with arbitrary (silly) values.
+ We'll see later how to insert a relation between the parameters.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+p.height = 43.3
+\end_layout
+
+\begin_layout Plain Layout
+
+p.radius = 12.9
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Step 5: creation of the geometry
+\end_layout
+
+\begin_layout Standard
+We'll use the MakeCylinderRH method from the GEOMImpl_I3DPrimOperations
+ class.
+ Before that, let's register the prim_operations in to the context.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+tc.register_operations(tutorial_context.prim_operations)
+\end_layout
+
+\begin_layout Plain Layout
+
+my_box = tc.prim_operations.MakeCylinderRH(p.radius,
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p.height,name="cylinder1", show=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Note 1: the name must be provided to the context
+\end_layout
+
+\begin_layout Itemize
+Note 2: the show=True optional python parameter tells the context to display
+ the geometry in the graphic Window.
+\end_layout
+
+\begin_layout Standard
+Here we are.
+ You have a parameterized model of a cylinder! Let's first make a few tests
+ from this (small!) script.
+\end_layout
+
+\begin_layout Subsection
+Let's play with ipython
+\end_layout
+
+\begin_layout Standard
+We now have the following code:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+from OCC.PAF.Context import ParametricModelingContext
+\end_layout
+
+\begin_layout Plain Layout
+
+from OCC.PAF.Parametric import Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+p = Parameters()
+\end_layout
+
+\begin_layout Plain Layout
+
+tc = ParametricModelingContext(p)
+\end_layout
+
+\begin_layout Plain Layout
+
+tc.init_display()
+\end_layout
+
+\begin_layout Plain Layout
+
+p.height = 43.3
+\end_layout
+
+\begin_layout Plain Layout
+
+p.radius = 12.9
+\end_layout
+
+\begin_layout Plain Layout
+
+tc.register_operations(tutorial_context.prim_operations)
+\end_layout
+
+\begin_layout Plain Layout
+
+my_cylinder = tc.prim_operations.MakeCylinderRH(p.radius,
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p.height,name="cylinder1", show=True) 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+saved in a tutorial_paf_part1.py Let's enter an ipython session: ipython
+ -wthread tutorial_paf_part1.py You should have the following window: the
+ cylinder is displayed (cf.
+ figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:parametric-cylinder-created"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/Tutorial_paf_part1.png
+	width 12.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:parametric-cylinder-created"
+
+\end_inset
+
+parametric cylinder created from an ipython console
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now just change the value of the 
+\emph on
+radius
+\emph default
+ parameter from 12.9 to 100.
+ You'll see the modified geometry displayed in the graphic window (cf.
+ figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Impact-of-a"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/thomas/Devel/pythonocc/doc/tutorials/PAF/images/Tutorial_paf_part12.png
+	width 12.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Impact-of-a"
+
+\end_inset
+
+Impact of a parameter modification
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Creation of a relation (the Relation class)
+\end_layout
+
+\begin_layout Standard
+We aim now to have a kind of relation that constraints the height to equal
+ the diameter, that is, 
+\begin_inset Formula $height=2*diameter$
+\end_inset
+
+.
+ The PAF uses the symbolic library sympy
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://code.google.com/p/sympy/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ for the computation of relations.
+\end_layout
+
+\begin_layout Subsubsection
+Step 1 : import the Relation class
+\end_layout
+
+\begin_layout Standard
+related code
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+from OCC.PAF.Parametric import Relation
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Step 2 : cast parameters to sympy symbols
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+symbols.
+ radius = p.radius.symbol
+\end_layout
+
+\begin_layout Plain Layout
+
+height = p.height.symbol 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Step 3: write the relation
+\end_layout
+
+\begin_layout Standard
+Write here the second member of the relation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+my_relation = 2*radius 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Step 4: link the relation and the targeted parameter
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+Relation( p, "height", my_relation )
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Take care to not forget the "" for the parameter 
+\emph on
+height
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+The complete code now looks like:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+from OCC.PAF.Context import ParametricModelingContext
+\end_layout
+
+\begin_layout Plain Layout
+
+from OCC.PAF.Parametric import Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+from OCC.PAF.Parametric import Relation
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p = Parameters()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tc = ParametricModelingContext(p)
+\end_layout
+
+\begin_layout Plain Layout
+
+tc.init_display()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p.height = 43.3
+\end_layout
+
+\begin_layout Plain Layout
+
+p.radius = 12.9
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tc.register_operations(tutorial_context.prim_operations)
+\end_layout
+
+\begin_layout Plain Layout
+
+my_cylinder = tc.prim_operations.MakeCylinderRH(p.radius,
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p.height,name="cylinder1", show=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+radius = p.radius.symbol
+\end_layout
+
+\begin_layout Plain Layout
+
+height = p.height.symbol
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+my_relation = 2*radius
+\end_layout
+
+\begin_layout Plain Layout
+
+Relation(p,"height",my_relation)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From an ipython session, change the value of the 
+\emph on
+radius
+\emph default
+ parameter from 12.9 to 30:
+\end_layout
+
+\begin_layout Standard
+ipython -wthread tutorial_paf_part3.py
+\end_layout
+
+\begin_layout Standard
+>> p.radius = 30
+\end_layout
+
+\begin_layout Standard
+You'll see that the new value of the parameter 
+\emph on
+height
+\emph default
+ is 60 and have the following screen (cf.
+ figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Relation-between-the"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/Tutorial_paf_part3.png
+	width 12.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Relation-between-the"
+
+\end_inset
+
+Relation between the 
+\emph on
+radius
+\emph default
+ and 
+\emph on
+height
+\emph default
+ parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note: if you change the parameter height value from 60.0 to another value,
+ for instance 70.0, you will have no error message, but you will see that
+ the height parameter has still the value 60.0.
+ This parameter is driven by radius.
+ Each time a parameter is changes, all relations are computed again.
+\end_layout
+
+\begin_layout Subsection
+Adding a rule (the Rule class)
+\end_layout
+
+\begin_layout Standard
+From the previous sample, if you se the radius to a negative value, for
+ instance p.radius = -2 you will get the following error:
+\end_layout
+
+\begin_layout Standard
+/usr/local/lib/python2.6/dist-packages/OCC/SGEOM.pyc in Update(self, *args)
+\end_layout
+
+\begin_layout Standard
+280 def Update(self, *args): 
+\end_layout
+
+\begin_layout Standard
+281 """Update(self, int arg0, TDF_LabelSequence theSeq) -> bool""" --> 
+\end_layout
+
+\begin_layout Standard
+282 return _SGEOM.GEOM_Solver_Update(self, *args) 
+\end_layout
+
+\begin_layout Standard
+283 
+\end_layout
+
+\begin_layout Standard
+284 def UpdateObject(self, *args):
+\end_layout
+
+\begin_layout Standard
+RuntimeError: Standard_Failure
+\end_layout
+
+\begin_layout Standard
+It's because the MakeCylindreRH method can not build a cylinder with a negative
+ radius.
+ To prevent such a behaviour, let's set a rule saying that the PAF must
+ check that the radius is positive.
+\end_layout
+
+\begin_layout Standard
+A Rule is a python function/method that returns either True or False and
+ tells the user if the rule was broken or not.
+\end_layout
+
+\begin_layout Subsubsection
+Step 1 : import the Rule class
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+from OCC.PAF.Parametric import Rule 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Step 2 : define the python function
+\end_layout
+
+\begin_layout Standard
+In order to check that the 
+\emph on
+radius
+\emph default
+ is positive, the IsPositive function is defined as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+def IsPositive(x):
+\end_layout
+
+\begin_layout Plain Layout
+
+    return x>0.0
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that this basic python function can be used as usual.
+ For instance:
+\end_layout
+
+\begin_layout Standard
+print IsPositive(1) 
+\end_layout
+
+\begin_layout Standard
+>>> True
+\end_layout
+
+\begin_layout Standard
+print IsPositive(-2) 
+\end_layout
+
+\begin_layout Standard
+>>> False 
+\end_layout
+
+\begin_layout Subsubsection
+Step 3: creation of the Rule to connect a parameter to the python function
+\end_layout
+
+\begin_layout Standard
+The rule is created with the following code:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+Rule(p,"radius",IsPositive)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+NOTE: each time a parameter change, all the Relation are updated and all
+ the Rule are checked again.
+ If one rule is not checked (that is, the python function returns False),
+ then an BrokeRule python exception is raised.
+ Let's now try the complete code within a ipython session.
+\end_layout
+
+\begin_layout Standard
+The complete code now looks like:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+from OCC.PAF.Context import ParametricModelingContext
+\end_layout
+
+\begin_layout Plain Layout
+
+from OCC.PAF.Parametric import Parameters
+\end_layout
+
+\begin_layout Plain Layout
+
+from OCC.PAF.Parametric import Relation
+\end_layout
+
+\begin_layout Plain Layout
+
+from OCC.PAF.Parametric import Rule
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p = Parameters()
+\end_layout
+
+\begin_layout Plain Layout
+
+tc = ParametricModelingContext(p)
+\end_layout
+
+\begin_layout Plain Layout
+
+tc.init_display()
+\end_layout
+
+\begin_layout Plain Layout
+
+# init parameters values
+\end_layout
+
+\begin_layout Plain Layout
+
+p.height = 43.3
+\end_layout
+
+\begin_layout Plain Layout
+
+p.radius = 12.9
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# create geometry
+\end_layout
+
+\begin_layout Plain Layout
+
+tc.register_operations(tutorial_context.prim_operations)
+\end_layout
+
+\begin_layout Plain Layout
+
+my_cylinder = tc.prim_operations.MakeCylinderRH(p.radius,
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p.height,name="cylinder1", show=True)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# define a relation
+\end_layout
+
+\begin_layout Plain Layout
+
+radius = p.radius.symbol
+\end_layout
+
+\begin_layout Plain Layout
+
+height = p.height.symbol
+\end_layout
+
+\begin_layout Plain Layout
+
+my_relation = 2*radius
+\end_layout
+
+\begin_layout Plain Layout
+
+Relation(p,"height",my_relation)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# create a rule and connect it to the parameter
+\end_layout
+
+\begin_layout Plain Layout
+
+def IsPositive(x): return x>0
+\end_layout
+
+\begin_layout Plain Layout
+
+    Rule(p,"radius",IsPositive)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Laucnh your ipython session:
+\end_layout
+
+\begin_layout Standard
+ipython -wthread tutorial_paf_art4.py
+\end_layout
+
+\begin_layout Standard
+And check that changing the radius parameter still works.
+ For instance:
+\end_layout
+
+\begin_layout Standard
+p.radius = 30
+\end_layout
+
+\begin_layout Standard
+p.radius = 30
+\end_layout
+
+\begin_layout Standard
+Now, enter a negative value for radius:
+\end_layout
+
+\begin_layout Standard
+p.radius = -4
+\end_layout
+
+\begin_layout Standard
+The BrokeRule exception is raised, since radius is not positive anymore:
+ 
+\end_layout
+
+\begin_layout Standard
+BrokeRule: the rule with function: <function IsPositive at 0xb515dbc> broke
+ with argument(s):-4
+\end_layout
+
+\begin_layout Standard
+Now the geometry will not be updated anymore untill you change the radius
+ to a value compliant with the rule.
+ Get back to a positive value: p.radius = 64.8 and you'll see that it works
+ again.
+ 
+\end_layout
+
+\end_body
+\end_document
