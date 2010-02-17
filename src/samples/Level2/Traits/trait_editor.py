@@ -97,6 +97,7 @@ class ToolkitEditorFactory ( EditorFactory ):
         return OCCEditor
 
 OCCEditorFactory = ToolkitEditorFactory
+
 if __name__ == '__main__':
     class Example(HasTraits):
         shapes = List
@@ -105,8 +106,8 @@ if __name__ == '__main__':
         remove_stuff = Button
         view = View(
             Item('shapes', editor=OCCEditorFactory(selection='selection'), show_label=False),
-            Item('add_stuff', show_label=False),
-            Item('remove_stuff', show_label=False),
+            Item('add_random_cylinder', show_label=False),
+            Item('remove_cylinder', show_label=False),
             width= 0.8, 
             height=0.8, 
             resizable=True
