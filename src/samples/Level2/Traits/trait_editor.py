@@ -97,13 +97,12 @@ class ToolkitEditorFactory ( EditorFactory ):
         return OCCEditor
 
 OCCEditorFactory = ToolkitEditorFactory
-
 if __name__ == '__main__':
     class Example(HasTraits):
         shapes = List
         selection = List
-        add_stuff = Button
-        remove_stuff = Button
+        add_random_cylinder = Button
+        remove_cylinder = Button
         view = View(
             Item('shapes', editor=OCCEditorFactory(selection='selection'), show_label=False),
             Item('add_random_cylinder', show_label=False),
@@ -116,14 +115,14 @@ if __name__ == '__main__':
         def _selection_items_changed(self, name, undefined, list_change):
             print "selection trait changed", list_change.added
         
-        def _add_stuff_changed(self, old, new):
+        def _add_random_cylinder_changed(self, old, new):
             brep = BRepPrimAPI_MakeCylinder(random.random()*50, random.random()*50).Shape()
             trsf = gp_Trsf()
             trsf.SetTranslation(gp_Vec(random.random()*100, random.random()*100, random.random()*100))
             brep.Move(TopLoc_Location(trsf))
             self.shapes.append(brep)
      
-        def _remove_stuff_changed(self, old, new):
+        def _remove_cylinder_changed(self, old, new):
             for s in self.selection:
                 if s is None: 
                     continue
