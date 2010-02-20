@@ -1,1 +1,1 @@
-__all__ = ['Context','Factory','Parametric','Presentation']
+__all__ = ['Context','Parametric']
