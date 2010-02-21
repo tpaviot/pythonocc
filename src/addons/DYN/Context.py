@@ -101,7 +101,7 @@ class DynamicSimulationContext(ode.World):
         self._shapes = []
         self._DISPLAY_INITIALIZED = False
         self._COLLISION_DETECTION = False
-        self._delta_t = 0.01 #timestep default value
+        self._delta_t = 0.02 #timestep default value
         # A joint group for the contact joints that are generated whenever
         # two bodies collide
         self._contactgroup = None
@@ -122,7 +122,15 @@ class DynamicSimulationContext(ode.World):
     def set_display(self,display):
         self._display = display
         self._DISPLAY_INITIALIZED = True
-        
+    
+    def add_shape(self, topods_shape):
+        ''' Adds a TopoDS_Shape to the DYN context
+        '''
+        dynamic_shape = DynamicShape(self)
+        dynamic_shape.set_shape(topods_shape)
+        self.add_dynamic_shape(dynamic_shape)
+        return dynamic_shape
+    
     def add_dynamic_shape(self, dynamic_shape):
         self._shapes.append(dynamic_shape)
         if self._DISPLAY_INITIALIZED:
@@ -146,14 +154,14 @@ class DynamicSimulationContext(ode.World):
         world,contactgroup = args
         for c in contacts:
             c.setBounce(0.2)
-            c.setMu(4000)
+            c.setMu(8000)
             j = ode.ContactJoint(world, contactgroup, c)
             j.attach(geom1.getBody(), geom2.getBody())
 
     def start_open_loop(self):
         #delta_t = 0.01
         i = 0
-        while i<1500:
+        while i<1000:
             i = i+1
             if self._COLLISION_DETECTION: 
                 self._space.collide((self,self._contactgroup), self._collision_callback)
@@ -235,13 +243,12 @@ def rotating_box():
     from OCC.Geom import *
     dyn_context = DynamicSimulationContext()
     dyn_context.set_display(display)
+    # Create s shape and add it to the dynamic context
     s1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
-    d = DynamicShape(dyn_context)
-    d.set_shape(s1)
+    d = dyn_context.add_shape(s1)
     d.setAngularVel([-1,0,0])
-    #d.setInitialVelocity(1.23)
-    dyn_context.add_dynamic_shape(d)
     dyn_context.start_open_loop()
+
 
 def display_cog_trajectory():
     ''' Falling rotating box with display of COG
@@ -270,28 +277,25 @@ def box_plane_collision():
     dyn_context.set_display(display)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
+    # The box
     s1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
-    d = DynamicShape(dyn_context)
-    # create a geombox and add it to the dynamic shape
+    d = dyn_context.add_shape(s1)
     geom_box = ode.GeomBox(dyn_context._space, lengths=(10,20,30))
-    #geom_box.setPosition([5,10,15])
     geom_box.setBody(d)
-    d.set_shape(s1)
     d.setAngularVel([-1,-0.5,0.3]) # the box is rotating
-    dyn_context.add_dynamic_shape(d)
-    # Draw a plane (note: this plane is not a dynamic shape, it's just displayed)
+    # The plane (note: this plane is not a dynamic shape, it's just displayed)
     P1 = gp_Pnt(0,0,-100)
     V1 = gp_Vec(0,0,1)
     PL = gp_Pln(P1,gp_Dir(V1))                     
     aPlane = GC_MakePlane(PL).Value()
-    aSurface = Geom_RectangularTrimmedSurface( aPlane, - 100., 100., - 100., 100., 1, 1 )
+    aSurface = Geom_RectangularTrimmedSurface( aPlane, - 100., 100., - 60., 60., 1, 1 )
     face = BRepBuilderAPI_MakeFace(aSurface.GetHandle())
     face.Build()
-    display.DisplayColoredShape(face.Shape(),'RED')
-    display.FitAll()
     # Then create a geom for this plane
     # Create a plane geom which prevent the objects from falling forever
     floor = ode.GeomPlane(dyn_context._space, (0,0,1), -100)
+    display.DisplayColoredShape(face.Shape(),'RED')
+    display.FitAll()
     #Starts the simulation
     dyn_context.start_open_loop()
 
@@ -350,9 +354,60 @@ def two_boxes_sphere_plane_collision():
     # Create a plane geom which prevent the objects from falling forever
     floor = ode.GeomPlane(dyn_context._space, (0,0,1), -100)
     #Starts the simulation
-    raw_input('Hit a key when ready to start simulation')
+    #raw_input('Hit a key when ready to start simulation')
     dyn_context.start_open_loop()
 
+def dominos():
+    ''' The well known domino demo
+    '''
+    display.EraseAll()
+    from OCC.BRepPrimAPI import *
+    from OCC.GC import *
+    from OCC.Geom import *
+    # Create the dynamic context
+    dyn_context = DynamicSimulationContext()
+    dyn_context.set_display(display)
+    dyn_context.enable_collision_detection()
+    dyn_context.enable_gravity()
+    # Create the floor
+    floor = ode.GeomPlane(dyn_context._space, (0,0,1), 0)
+    P1 = gp_Pnt(0,0,0)
+    V1 = gp_Vec(0,0,1)
+    PL = gp_Pln(P1,gp_Dir(V1))                     
+    aPlane = GC_MakePlane(PL).Value()
+    aSurface = Geom_RectangularTrimmedSurface( aPlane, - 100., 150., - 60., 60., 1, 1 )
+    face = BRepBuilderAPI_MakeFace(aSurface.GetHandle())
+    face.Build()
+    display.DisplayColoredShape(face.Shape(),'RED')
+    #display.FitAll()
+    # Create the first domino
+    domino_shape = BRepPrimAPI_MakeBox(5,20,40).Shape()
+    dynamic_domino = dyn_context.add_shape(domino_shape)
+    domino_box = ode.GeomBox(dyn_context._space, lengths=(5,20,40))
+    domino_box.setBody(dynamic_domino)
+    # Create the others domino from a "copy/move/paste" loop
+    transform = gp_Trsf()
+    transform.SetTranslation(gp_Vec(15, 0, 0))
+    transformed_shape = domino_shape # loop initialization
+    # create a list of domino_boxes
+    domino_geoms = []
+    for i in range(5):
+        domino_geoms.append(ode.GeomBox(dyn_context._space, lengths=(5,20,40))) 
+    for domino_geom in domino_geoms:
+        #t2 = gp_Trsf()
+        #t2.SetTranslation(gp_Vec(0, 0, 250))
+        transformed_shape = BRepBuilderAPI_Transform(transformed_shape,transform).Shape()
+        dynamic_transformed = dyn_context.add_shape(transformed_shape)
+        #geom_box = ode.GeomBox(dyn_context._space, lengths=(5,20,40))
+        #geom_sphere.setBody(d3)
+        #domino_b = ode.GeomBox(dyn_context._space, lengths=(5,20,40))
+        domino_geom.setBody(dynamic_transformed)
+    # The last domino is rotating around the y-axis (he's falling)
+    dynamic_transformed.setAngularVel([0,-1,0])
+    raw_input('Hit a key when ready to start the simulation loop')
+    # Finlly, start simulation loop
+    dyn_context.start_open_loop()
+      
 if __name__=='__main__':
     from OCC.Display.SimpleGui import *
     set_backend('qt')
@@ -362,4 +417,5 @@ if __name__=='__main__':
     add_function_to_menu('rigid body simulation sample', box_plane_collision)
     add_function_to_menu('rigid body simulation sample', display_cog_trajectory)
     add_function_to_menu('rigid body simulation sample', two_boxes_sphere_plane_collision)
+    add_function_to_menu('rigid body simulation sample', dominos)
     start_display()
