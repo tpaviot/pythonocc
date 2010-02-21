@@ -67,7 +67,6 @@ class DynamicShape(ode.Body):
         # Set position of the body
         #
         self.setPosition([x_cog,y_cog,z_cog])
-        #print 'COG:',x_cog,y_cog,z_cog
         #
         # Set inertia properties of the body
         #
@@ -101,7 +100,7 @@ class DynamicSimulationContext(ode.World):
         self._shapes = []
         self._DISPLAY_INITIALIZED = False
         self._COLLISION_DETECTION = False
-        self._delta_t = 0.02 #timestep default value
+        self._delta_t = 0.01 #timestep default value
         # A joint group for the contact joints that are generated whenever
         # two bodies collide
         self._contactgroup = None
@@ -161,7 +160,7 @@ class DynamicSimulationContext(ode.World):
     def start_open_loop(self):
         #delta_t = 0.01
         i = 0
-        while i<1000:
+        while i<1500:
             i = i+1
             if self._COLLISION_DETECTION: 
                 self._space.collide((self,self._contactgroup), self._collision_callback)
@@ -176,8 +175,6 @@ class DynamicSimulationContext(ode.World):
                     x, y, z = shape.getPosition()
                     a11,a12,a13,a21,a22,a23,a31,a32,a33 = shape.getRotation()
                     #########
-                    #x,y,z=shape.getPosition()
-                    #M11,M12,M13,M21,M22,M23,M31,M32,M33=shape.getRotation()
                     xg=shape.x_g#
                     yg=shape.y_g# COG coordinated in the local referential
                     zg=shape.z_g#
@@ -196,13 +193,6 @@ class DynamicSimulationContext(ode.World):
                     display.Context.SetLocation(shape.get_ais_shape(),shape_location)
                     # Store COG position for each shape
                     shape.store_cog_position([x,y,z])
-                    # Check if the COGmust be displayed
-                    #
-                    #if shape._VIEW_COG:
-                    #    P = gp_Pnt(x,y,z)
-                    ##    vertex = BRepBuilderAPI_MakeVertex(P)
-                    #    vertex.Build()
-                    #    display.DisplayShape(vertex.Shape())
                 # Then update the viewer to show new shapes position
                 display.Context.UpdateCurrentViewer()
                 display.FitAll()
@@ -215,28 +205,16 @@ class DynamicSimulationContext(ode.World):
                     P = gp_Pnt(point[0],point[1],point[2])
                     pts.SetValue(i,P)
                     i = i + 1
-                #print pts
                 cog_curve = GeomAPI_PointsToBSpline(pts).Curve()
-                #display.DisplayShape(make_edge(SPL1))
                 spline = BRepBuilderAPI_MakeEdge(cog_curve)
                 spline.Build()
-                #return spline.Shape()
                 display.DisplayShape(spline.Shape())
                 display.FitAll()
 
-#                        array = []
-#                        array.append(P1)                                                                       
-#                        array.append(P2)                                                                      
-#                        array.append(P3)                                                                      
-#                        array.append(P4)                                                                       
-#                        array.append(P5)
-#                         
-#                        SPL1 = GeomAPI_PointsToBSpline(point_list_to_TColgp_Array1OfPnt(array)).Curve()
-#                        display.DisplayShape(make_edge(SPL1))
     def stop_loop(self):
         pass
 
-def rotating_box():
+def rotating_box(event=None):
     display.EraseAll()
     from OCC.BRepPrimAPI import *
     from OCC.GC import *
@@ -250,7 +228,7 @@ def rotating_box():
     dyn_context.start_open_loop()
 
 
-def display_cog_trajectory():
+def display_cog_trajectory(event=None):
     ''' Falling rotating box with display of COG
     '''
     display.EraseAll()
@@ -268,7 +246,7 @@ def display_cog_trajectory():
     dyn_context.add_dynamic_shape(d)
     dyn_context.start_open_loop()
         
-def box_plane_collision():
+def box_plane_collision(event=None):
     display.EraseAll()
     from OCC.BRepPrimAPI import *
     from OCC.GC import *
@@ -299,7 +277,7 @@ def box_plane_collision():
     #Starts the simulation
     dyn_context.start_open_loop()
 
-def two_boxes_sphere_plane_collision():
+def two_boxes_sphere_plane_collision(event=None):
     display.EraseAll()
     from OCC.BRepPrimAPI import *
     from OCC.GC import *
@@ -315,8 +293,7 @@ def two_boxes_sphere_plane_collision():
     geom_box.setBody(d)
     d.set_shape(s1)
     d.setAngularVel([-1,-0.5,0.3]) # the box is rotating
-    #d.setLinearVel([0.1,0,0]) # the box is moving
-    #d.enable_view_cog()
+
     dyn_context.add_dynamic_shape(d)
     # The second box
     box2 = BRepPrimAPI_MakeBox(10,20,30)
@@ -357,7 +334,7 @@ def two_boxes_sphere_plane_collision():
     #raw_input('Hit a key when ready to start simulation')
     dyn_context.start_open_loop()
 
-def dominos():
+def dominos(event=None):
     ''' The well known domino demo
     '''
     display.EraseAll()
@@ -394,23 +371,18 @@ def dominos():
     for i in range(5):
         domino_geoms.append(ode.GeomBox(dyn_context._space, lengths=(5,20,40))) 
     for domino_geom in domino_geoms:
-        #t2 = gp_Trsf()
-        #t2.SetTranslation(gp_Vec(0, 0, 250))
         transformed_shape = BRepBuilderAPI_Transform(transformed_shape,transform).Shape()
         dynamic_transformed = dyn_context.add_shape(transformed_shape)
-        #geom_box = ode.GeomBox(dyn_context._space, lengths=(5,20,40))
-        #geom_sphere.setBody(d3)
-        #domino_b = ode.GeomBox(dyn_context._space, lengths=(5,20,40))
         domino_geom.setBody(dynamic_transformed)
     # The last domino is rotating around the y-axis (he's falling)
     dynamic_transformed.setAngularVel([0,-1,0])
-    raw_input('Hit a key when ready to start the simulation loop')
     # Finlly, start simulation loop
     dyn_context.start_open_loop()
       
 if __name__=='__main__':
     from OCC.Display.SimpleGui import *
-    set_backend('qt')
+    if sys.platform!='win32':
+        set_backend('qt')
     display, start_display, add_menu, add_function_to_menu = init_display()
     add_menu('rigid body simulation sample')
     add_function_to_menu('rigid body simulation sample', rotating_box)
