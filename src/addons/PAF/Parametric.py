@@ -145,7 +145,7 @@ class Parameter(GEOM_Parameter):
         # Init parameter
         self._name = name
         GEOM_Parameter.__init__(self,TCollection_AsciiString(name))
-        print "Parameter %s created"%name
+        print "[PAF] Parameter %s created"%name
         
         self._symbol = sympy.Symbol(name)
         self._value = value
@@ -218,7 +218,7 @@ class Parameters(object):
         attr = object.__getattribute__(self, name)
         if isinstance(attr, int) or isinstance(attr, float):
             try:
-                print 'parameter: %s value: %s' % (name, attr)                     
+                print '[PAF] parameter: %s value: %s' % (name, attr)                     
                 return self._parameters[name]
             except KeyError:
                 return attr

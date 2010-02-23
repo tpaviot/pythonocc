@@ -21,6 +21,7 @@ from OCC.TDF import *
 from OCC.TPrsStd import *
 from OCC.TNaming import *
 from OCC.AIS import *
+from OCC.TopoDS import *
 
 from OCC.PAF.Parametric import Relation, Rule, Parameters
 from OCC.TCollection import TCollection_AsciiString
@@ -31,14 +32,14 @@ class operation(object):
     '''
     def __init__(self, operation):
         self.operation = operation
-        print 'initialized context with', self.operation.__class__
+        print '[PAF] initialized context with', self.operation.__class__
     
     def __enter__(self):
-        print 'start operation'
+        print '[PAF] start operation'
         self.operation.StartOperation()
     
     def __exit__(self, type, value, traceback):
-        print 'finish operation'
+        print '[PAF] finish operation'
         self.operation.FinishOperation()
         if not self.operation.IsDone():
             error_code = self.operation.GetErrorCode()
@@ -47,11 +48,11 @@ class operation(object):
 def _operation_decorator(context, function, _operations):
     def __operation_decorator(*args, **kwargs):
         
-        print 'got *args:', args
+        print '[PAF] got *args:', args
         # getting rid of self as the first argument, a Context.*_operations instance in this case 
         args = args[1:]
-        print 'modified args:', args
-        print 'got **kwargs:', kwargs
+        print '[PAF] modified args:', args
+        print '[PAF] got **kwargs:', kwargs
         
         # stuff before the real function is called
         # in this case, we'd like the function to be executed
@@ -66,12 +67,12 @@ def _operation_decorator(context, function, _operations):
         # this will make the operations associative 
         with operation(_operations):
             res = function(*args)
-            print 'result:', res
+            print '[PAF] result:', res
             
         # if 'name' in kwargs, set the name of the resulting Geom_object to 'name'
         if 'name' in kwargs:
             res.GetObject().SetName(kwargs['name'])
-            print 'set object name:', kwargs['name']
+            print '[PAF] set object name:', kwargs['name']
         
         # if show, than make a presentation for the object
         # this way it will be rendered in the viewer
@@ -88,18 +89,13 @@ def _operation_decorator(context, function, _operations):
 class ParametricModelingContext(object):
     """ Initialize a parametric context
     """
-    
-    # --- TODO get rid of commit, replace by undo ( functionality doubled )
-    
-    def __init__(self, parameters, undo=False, commit=False):
+    def __init__(self, parameters, undo=False, commit=False, register_all_operations=True):
         '''
         Initialize a ParametricModelingContext
         a ParametricModelingContext always takes a Parameters instance as argument
 
         >>> from OCC.PAF.Parametric import Parameters 
         >>> p = Parameters() 
-        >>> my_context = ParametricModelingContext(p) 
-        ParametricModelingContext initialized
         
         Initialize context, such that every operation is added to the Undo / Redo stack
         
@@ -109,29 +105,37 @@ class ParametricModelingContext(object):
         This way you have fine grained control over the Undo / Redo stack  
         
         >>> my_context = ParametricModelingContext(p, commit=True) 
-        ParametricModelingContext initialized with commit enabled
-                
-        Since the ParametricModelingContext controls how objects are rendered
-        the viewer has to be initialized by the ParametricModelingContext object
+        [PAF] all operations registered
+        [PAF] ParametricModelingContext initialized with commit enabled
         
-        >>> my_context.init_display()
-        Display initialized
-        
-        Now you see that a my_context.display attribute is in place
-        This is the same .display object you've come to learn and love
-        
-        >>> my_context.display # doctest: +ELLIPSIS
-        <OCC.Display.OCCViewer.Viewer3d; proxy of <Swig Object of type 'Display3d *' at 0xd1f9e80> >
-        
-        Now we've got a viewer up and running
-        To enter the GUI loop, just call .start_display from your ParametricModelingContext instance
-        
-        # ( cannot be run as a doctest, since it'll never return )
-        #>>> my_context.start_display()   
-        
-        '''
+        Create parameters to build a simple box
+   
+        >>> p.X1, p.Y1, p.Z1, p.X2, p.Y2, p.Z2 = 12,70,12,30,30,30
+        Parameter X1 created
+        parameter: _commit value: True
+        Parameter Y1 created
+        parameter: _commit value: True
+        Parameter Z1 created
+        parameter: _commit value: True
+        Parameter X2 created
+        parameter: _commit value: True
+        Parameter Y2 created
+        parameter: _commit value: True
+        Parameter Z2 created
+        parameter: _commit value: True
 
-        assert isinstance(parameters, Parameters), 'expected a Parameters instance, got a ' % ( parameters.__class__)
+        Create geometry
+        
+        >>> my_pnt1 = my_context.basic_operations.MakePointXYZ(p.X1,p.Y1,p.Z1, name="Pnt1", show=True)
+        >>> my_pnt2 = my_context.basic_operations.MakePointXYZ(p.X2,p.Y2,p.Z2, name="Pnt2", show=True)
+        >>> my_box = my_context.prim_operations.MakeBoxTwoPnt(my_pnt1,my_pnt2, name="Box1", show=True)
+        
+        Then display the box shape
+        
+        >>> box_shape = my_context.get_shape(my_box)
+                    
+        '''
+        assert isinstance(parameters, Parameters), '[PAF] expected a Parameters instance, got a ' % ( parameters.__class__)
 
         self.undo  = undo           # whether or not we use CommitCommand ( if used, operations can be Undo'd / Redo'd ) 
         self.docId = 100
@@ -151,7 +155,7 @@ class ParametricModelingContext(object):
         self.post_solver_callbacks = [] #callbacks called *after* the solver is updated
         self.object_names   = []                # set of all named parametric objects
         self.pres           = {}                # hash Geom_object instance to its presentation
-        
+
         # get access to operations
         self.prim_operations = self.myEngine.GetI3DPrimOperations(self.docId)
         self.basic_operations = self.myEngine.GetIBasicOperations(self.docId)
@@ -167,26 +171,41 @@ class ParametricModelingContext(object):
         self.transform_operations = self.myEngine.GetITransformOperations(self.docId)
         
         self._initialize_operation()
+        if register_all_operations:
+            self._register_all_operations()
+            
         parameters._set_context(self)
         parameters._set_commit(commit)
-        
+           
         if commit:
-            print "ParametricModelingContext initialized with commit enabled"
+            print "[PAF] ParametricModelingContext initialized with commit enabled"
         else:
-            print "ParametricModelingContext initialized"
+            print "[PAF] ParametricModelingContext initialized"
     
+    def _register_all_operations(self):
+        self.register_operations(self.prim_operations)
+        self.register_operations(self.basic_operations)# = self.myEngine.GetIBasicOperations(self.docId)
+        self.register_operations(self.block_operations)# = self.myEngine.GetIBlocksOperations(self.docId)
+        self.register_operations(self.boolean_operations)# = self.myEngine.GetIBooleanOperations(self.docId)
+        self.register_operations(self.curve_operations)# = self.myEngine.GetICurvesOperations(self.docId)
+        self.register_operations(self.group_operations)# = self.myEngine.GetIGroupOperations(self.docId)
+        self.register_operations(self.healing_operations)# = self.myEngine.GetIHealingOperations(self.docId)
+        self.register_operations(self.insert_operations)# = self.myEngine.GetIInsertOperations(self.docId)
+        self.register_operations(self.local_operations)# = self.myEngine.GetILocalOperations(self.docId)
+        self.register_operations(self.measure_operations)# = self.myEngine.GetIMeasureOperations(self.docId)
+        self.register_operations(self.shapes_operations)# = self.myEngine.GetIShapesOperations(self.docId)
+        self.register_operations(self.transform_operations)#
+        print '[PAF] all operations registered'
+        
     def _initialize_operation(self):
         ''' Get all the solvers for all operations
         add them to self.solvers for future reference or when updating objects
         we wont be able to access these objects when they are overwritten by the newly generated classes ( wrapping with operation )
         '''
-        
-        
         # these are the methods that all Operations modules share
         no_ops = ('GetEngine', 'SetErrorCode', 'StartOperation', 'GetErrorCode','GetSolver',
                    'SetNotDone', 'AbortOperation', 'FinishOperation',
                     'IsDone', 'GetDocID', 'this', 'thisown')
-        
         #===============================================================================
         # wrap all the methods in *operations such that they are executed
         # in the context of StartOperation / EndOperation
@@ -195,7 +214,6 @@ class ParametricModelingContext(object):
             if i.endswith('operations') and not i.startswith('register'):
                 old_operation = getattr(self, i)
                 op = i.split('_')[0]
-                
                 # create a new class to which the wrapped methods will be added
                 # these classes will replace the self.myEngine.GetIShapesOperations(self.docId) instance
                 # so self.myEngine.GetIShapesOperations(self.docId) -> self.shapes_ops
@@ -225,21 +243,28 @@ class ParametricModelingContext(object):
                 # instances can be registered
                 self._old_ops_news_ops[klass_instance] = old_operation
     
-    def init_display(self):
-        from OCC.Display.SimpleGui import init_display
-        display, start_display, add_menu, add_function_to_menu = init_display()
-        self.display = display
-        self._start_display = start_display
-        
-        self.viewer = TPrsStd_AISViewer().New(self.root, display.Context_handle).GetObject()
+    def set_display(self, Viewer3d_instance):
+        ''' Sets the viewer3d used to render the display
+        '''
+        # Check that the parameter is of type Viewer3d
+        if Viewer3d_instance.__class__.__name__!='Viewer3d':
+            raise NameError, 'The instance must be of type Viewer3d'
+        self.display = Viewer3d_instance
+        # init the viewer
+        self.viewer = TPrsStd_AISViewer().New(self.root, self.display.Context_handle).GetObject()
         self.DISPLAY_INITED = True
-        print 'Display initialized'
+        print '[PAF] Display properly initialized'
+    
+    def set_display_loop_function(self,display_loop):
+        ''' Sets the display loop function. Depends on which GUI is used.
+        '''
+        self._start_display = display_loop
 
     def start_display(self):
         if self.DISPLAY_INITED:
             self._start_display()
         else:
-            print "You have to init_display first"    
+            print "[PAF] You have to init_display first"    
     
     def set_automatic_update(self, boolean_value):
         ''' Sets the AUTOMATIC_DISPLAY variable. Default is True. If set to False, the .solve() and
@@ -253,9 +278,8 @@ class ParametricModelingContext(object):
                 slv = self._old_ops_news_ops[_operation]
                 if not slv in self.solvers:
                     self.solvers.append(slv.GetSolver())
-             
             except KeyError:
-                print 'no solver found for class:', _operation.__class__
+                print '[PAF] no solver found for class:', _operation.__class__
                 raise
 
     def register_pre_solver_callback(self, *calls):
@@ -265,8 +289,8 @@ class ParametricModelingContext(object):
             if callable(call):
                 self.pre_solver_callbacks.append(call)
             else:
-                raise TypeError('%s is not a callable object' % ( call.__class__ ) )
-            print "Pre-Solver callback added"
+                raise TypeError('[PAF] %s is not a callable object' % ( call.__class__ ) )
+            print "[PAF] Pre-Solver callback added"
 
     def register_post_solver_callback(self, *calls):
         ''' Defines a callback for the parameter
@@ -297,7 +321,7 @@ class ParametricModelingContext(object):
             #self.callbacks = [rules.eval]+self.callbacks
             self.pre_solver_callbacks = [rules.eval]+self.pre_solver_callbacks
         else:
-            raise TypeError('%s is not a Rule object' % ( rules.__class__ ) )
+            raise TypeError('[PAF] %s is not a Rule object' % ( rules.__class__ ) )
     
     def solve(self):
         ''' Update registered solvers
@@ -330,17 +354,11 @@ class ParametricModelingContext(object):
         for post_solver_callback in self.post_solver_callbacks:
             post_solver_callback()
     
-    def get_shapes(self):
-        ''' returns a lits of TopoDS_Shapes
+    def get_shape(self,registered_object):
+        ''' Returns the TopoDS_Shape for the registered object. This method enables interoperability
+        with the OCC kernel. For instance for topology traversing, STEP export etc.
         '''
-        shapes = []
-        for prs_value in self.pres.values():
-            h1 = ais_interactiveobject = prs_value.GetAIS()
-            # Dowwcast it to an AIS_Shape
-            h2 = Handle_AIS_Shape().DownCast(h1)
-            shape = h2.GetObject().Shape()
-            shapes.append(shape)
-        return shapes
+        return registered_object.GetObject().GetValue()
 
     def get_presentation(self, geom_obj):
         if hasattr(geom_obj, 'GetObject'):
@@ -353,11 +371,11 @@ class ParametricModelingContext(object):
         prs = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()
         return prs
 
-    def _register_object(self,obj,color=0):
+    def _register_object(self,obj_handle,color=0):
         # we'll accept both Geom_object and Handle_Geom_object
-        if isinstance(obj, Handle_GEOM_Object):
-            obj = obj.GetObject()
-                
+        if isinstance(obj_handle, Handle_GEOM_Object):
+            obj = obj_handle.GetObject()
+        # display object
         result_label = obj.GetLastFunction().GetObject().GetEntry().FindChild(2)
         prs = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()
         prs.SetColor(color)
@@ -378,6 +396,40 @@ class ParametricModelingContext(object):
             self.display.FitAll()
 
 if __name__=='__main__':
+    def test_with_viewer():
+         # init viewer
+        from OCC.Display.SimpleGui import init_display
+        display, start_display, add_menu, add_function_to_menu = init_display()
+        # create parameters
+        p = Parameters()
+        # create parametric modeling context
+        c = ParametricModelingContext(p)
+        # set graphics
+        c.set_display(display)
+        c.set_display_loop_function(start_display)
+        # create simple box
+        p.X1, p.Y1, p.Z1, p.X2, p.Y2, p.Z2, p.RADIUS = 12,70,12,30,30,30,4  
+        my_pnt1 = c.basic_operations.MakePointXYZ(p.X1,p.Y1,p.Z1, name="Pnt1", show=True)
+        my_pnt2 = c.basic_operations.MakePointXYZ(p.X2,p.Y2,p.Z2, name="Pnt2", show=True)   # Create the second point
+        my_box = c.prim_operations.MakeBoxTwoPnt(my_pnt1,my_pnt2,name="Box1", show=True)            # Create the box
+        c.start_display()
+        
+    def test_without_viewer():
+        # create parameters
+        p = Parameters()
+        # create parametric modeling context
+        c = ParametricModelingContext(p)
+   
+        p.X1, p.Y1, p.Z1, p.X2, p.Y2, p.Z2, p.RADIUS = 12,70,12,30,30,30,4  
+        my_pnt1 = c.basic_operations.MakePointXYZ(p.X1,p.Y1,p.Z1, name="Pnt1", show=True)
+        my_pnt2 = c.basic_operations.MakePointXYZ(p.X2,p.Y2,p.Z2, name="Pnt2", show=True)   # Create the second point
+        my_box = c.prim_operations.MakeBoxTwoPnt(my_pnt1,my_pnt2,name="Box1", show=True)            # Create the box
+
+        box_shape = c.get_shape(my_box)
+        print box_shape
+    
+    test_without_viewer()
+    test_with_viewer()
     import doctest, sys
     doctest.testmod(sys.modules[__name__])
         
