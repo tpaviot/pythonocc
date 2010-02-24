@@ -79,7 +79,6 @@ the command line:
 python setup.py build install --enable-geom --enable-smesh --with-geom-lib=/path_to_geom_libs 
 --with-smesh-lib=/path_to_smesh_libs
 --with-boost-include=/path_to_boost_headers --with-occ-include=/path_to_opencascade_inc
---with-occ-libs=/path_to_opencascade_libs
 --with-occ-lib=/path_to_opencascade_libs
 
 NOTE: you can speed up the compilation process with multiprocessing. If you have a dual core machine, just add the -j flag
