@@ -148,9 +148,10 @@ class ParametricModelingContext(object):
         self.DISPLAY_INITED = False
         self.AUTOMATIC_UPDATE = True #whenever a parameter is modified, solvers and display are updated
 
+        self._registered_objects = []  # all objects added to the Parametric Context
         self.solvers        = []                # stores the solvers before the new operations classes are generated
         self._old_ops_news_ops = {}             # hashes the old self.myEngine.*Operations class, to the one wrapped by ._initialize operation
-        #self.callbacks      = []    # callbacks, such as used for updating Rules and Relations
+        
         self.pre_solver_callbacks = [] #callbacks called *before* the solver is updated (e.g. Relations, Rules)
         self.post_solver_callbacks = [] #callbacks called *after* the solver is updated
         self.object_names   = []                # set of all named parametric objects
@@ -254,17 +255,10 @@ class ParametricModelingContext(object):
         self.viewer = TPrsStd_AISViewer().New(self.root, self.display.Context_handle).GetObject()
         self.DISPLAY_INITED = True
         print '[PAF] Display properly initialized'
-    
-    def set_display_loop_function(self,display_loop):
-        ''' Sets the display loop function. Depends on which GUI is used.
-        '''
-        self._start_display = display_loop
-
-    def start_display(self):
-        if self.DISPLAY_INITED:
-            self._start_display()
-        else:
-            print "[PAF] You have to init_display first"    
+        # If geom were already created before the display is initialized, create presentations
+        for obj in self._registered_objects:
+            self._create_presentation(obj)
+        self.display.FitAll()
     
     def set_automatic_update(self, boolean_value):
         ''' Sets the AUTOMATIC_DISPLAY variable. Default is True. If set to False, the .solve() and
@@ -360,32 +354,29 @@ class ParametricModelingContext(object):
         '''
         return registered_object.GetObject().GetValue()
 
-    def get_presentation(self, geom_obj):
-        if hasattr(geom_obj, 'GetObject'):
-            geom_obj = geom_obj.GetObject()
-            print 'handle'
-            
-        result_label = geom_obj.GetLastFunction().GetObject().GetEntry().FindChild(2)
-        # TPrsStd_AISPresentation().Set can create or retrieve the AIS_Presentation
-        # so, this is not re-creating the TPrsStd_AISPresentation presentation
-        prs = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()
-        return prs
-
     def _register_object(self,obj_handle,color=0):
         # we'll accept both Geom_object and Handle_Geom_object
         if isinstance(obj_handle, Handle_GEOM_Object):
             obj = obj_handle.GetObject()
-        # display object
+        # the object is stored
+        self._registered_objects.append(obj)
+        # if display inited, create presentation and update display
+        if self.DISPLAY_INITED:
+            # display object
+            self._create_presentation(obj,color)
+            #self.pres[obj]=prs
+            self.display.FitAll()
+
+    def _create_presentation(self,obj,color=0):
+        ''' Create a presentation and add it to the presentation list
+        '''
         result_label = obj.GetLastFunction().GetObject().GetEntry().FindChild(2)
         prs = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()
         prs.SetColor(color)
         prs.Display(True)
         self.pres[obj]=prs
-        
-        if self.DISPLAY_INITED:
-            self.display.FitAll()
-        return prs
-
+        #return True
+    
     def update_display(self):
         ''' Update each viewer
         '''
@@ -406,13 +397,27 @@ if __name__=='__main__':
         c = ParametricModelingContext(p)
         # set graphics
         c.set_display(display)
-        c.set_display_loop_function(start_display)
         # create simple box
         p.X1, p.Y1, p.Z1, p.X2, p.Y2, p.Z2, p.RADIUS = 12,70,12,30,30,30,4  
         my_pnt1 = c.basic_operations.MakePointXYZ(p.X1,p.Y1,p.Z1, name="Pnt1", show=True)
         my_pnt2 = c.basic_operations.MakePointXYZ(p.X2,p.Y2,p.Z2, name="Pnt2", show=True)   # Create the second point
         my_box = c.prim_operations.MakeBoxTwoPnt(my_pnt1,my_pnt2,name="Box1", show=True)            # Create the box
-        c.start_display()
+        start_display()
+    
+    def test_with_viewer_after():
+        # create parameters
+        p = Parameters()
+        c = ParametricModelingContext(p)
+        # create simple box
+        p.X1, p.Y1, p.Z1, p.X2, p.Y2, p.Z2, p.RADIUS = 12,70,12,30,30,30,4  
+        my_pnt1 = c.basic_operations.MakePointXYZ(p.X1,p.Y1,p.Z1, name="Pnt1", show=True)
+        my_pnt2 = c.basic_operations.MakePointXYZ(p.X2,p.Y2,p.Z2, name="Pnt2", show=True)   # Create the second point
+        my_box = c.prim_operations.MakeBoxTwoPnt(my_pnt1,my_pnt2,name="Box1", show=True)
+        #Init display after geometry is created
+        from OCC.Display.SimpleGui import init_display
+        display, start_display, add_menu, add_function_to_menu = init_display()
+        c.set_display(display)
+        start_display()
         
     def test_without_viewer():
         # create parameters
@@ -429,7 +434,7 @@ if __name__=='__main__':
         print box_shape
     
     test_without_viewer()
-    test_with_viewer()
+    test_with_viewer_after()
     import doctest, sys
     doctest.testmod(sys.modules[__name__])
         
