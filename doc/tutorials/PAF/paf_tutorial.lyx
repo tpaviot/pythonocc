@@ -243,8 +243,26 @@ What is PAF and Why Might I Need It?
 \end_layout
 
 \begin_layout Standard
-The Parametric Application Framework (PAF) is a parametric modeling application
- framework based upon the OpenCASCADE 3D modeling kernel
+The Parametric Application Framework (PAF) is a subpackage of the pythonOCC
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+name "http://www.pythonocc.org"
+target "http://www.pythonocc.org"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ development library.
+ parametric modeling application framework based upon the OpenCASCADE 3D
+ modeling kernel
 \begin_inset Foot
 status open
 
