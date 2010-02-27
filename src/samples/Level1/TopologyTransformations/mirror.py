@@ -19,7 +19,8 @@ from OCC.gp import *
 from OCC.BRepPrimAPI import *
 from OCC.BRepBuilderAPI import *
 
-from OCC.Display.wxSamplesGui import display
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 def mirror(event=None):
     # Build original shape
@@ -42,7 +43,6 @@ def exit(event=None):
     import sys; sys.exit()
 
 if __name__ == '__main__':
-    from OCC.Display.wxSamplesGui import start_display, add_function_to_menu, add_menu
     add_menu('topology transformations')
     add_function_to_menu('topology transformations', mirror)
     add_function_to_menu('topology transformations', exit)
