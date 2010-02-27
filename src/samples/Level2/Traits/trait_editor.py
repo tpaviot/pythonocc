@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-#!/usr/bin/env python
-
 ##Copyright 2010 Henrik Rudstrom (hrudstrom@googlemail.com)
 ##
 ##pythonOCC is free software: you can redistribute it and/or modify
@@ -17,7 +15,6 @@
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-"""PySide port of the layouts/basiclayout example from Qt v4.x"""
 from enthought.traits.has_traits import HasTraits
 
 from enthought.traits.ui.item import Item
@@ -38,12 +35,20 @@ import sys
 from PyQt4 import QtCore, QtGui, Qt
 
 class OCCTraitViewer(qtViewer3d):
-    def __init__(self, selection=None, **kwargs):
+    def __init__(self, editor=None,selection=None, **kwargs):
         super(OCCTraitViewer, self).__init__(**kwargs)
-        self.selection = selection
+        self.editor = editor
+        if selection:
+            self.selection = selection
+        elif hasattr(editor, 'selection'):
+            self.selection = editor.selection
+        else:
+            self.selection = []
         self._initialized = False
         self._shape_map = {}
         self.setSizePolicy(Qt.QSizePolicy(Qt.QSizePolicy.Expanding, Qt.QSizePolicy.Expanding));
+        self.setMinimumHeight(200)
+        self.setMinimumWidth(320)
 
     def paintEvent(self, event):
         # Display can only be initialized when window is shown.
@@ -53,18 +58,17 @@ class OCCTraitViewer(qtViewer3d):
         if not self._initialized:
             self.InitDriver()
             self._initialized = True
+            self.editor.initialized = True
 
         super(OCCTraitViewer, self).paintEvent(event)
     
     def add_shape_to_viewer(self,shape_to_display):
         ais_shape_handle = self._display.DisplayShape(shape_to_display)
         self._shape_map[shape_to_display] = ais_shape_handle
-        #print self._shape_map
         
     def erase_shape_from_viewer(self,shape):
         if shape not in self._shape_map:
              raise Exception("shape not in shapemap")
-        #print self._shape_map[shape]
         self._display.Context.Erase(self._shape_map[shape])
         del self._shape_map[shape]
 
