@@ -16,12 +16,15 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.Utils.DataExchange.STEP import STEPImporter
-from OCC.Display.wxSamplesGui import display, start_display
 
-my_step_importer = STEPImporter("result_export_multi.stp")
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
+
+my_step_importer = STEPImporter("Hayon_C3.stp")
 my_step_importer.ReadFile()
 print "Number of shapes:%i"%my_step_importer.GetNbrShapes()
 the_shapes = my_step_importer.GetShapes()
+print the_shapes
 the_compound = my_step_importer.GetCompound()
 display.DisplayShape(the_shapes)
 start_display()
