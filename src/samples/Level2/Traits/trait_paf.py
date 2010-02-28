@@ -75,9 +75,6 @@ class PAFTest(HasTraits):
     def _step_changed(self):
         self.pos += 1
         self.parameters.a = self.pos
-        self.context.solve()
-        self.context.update_display()
-
 
 # Initialization
 p = Parameters()
@@ -87,8 +84,6 @@ my_context = ParametricModelingContext( p )
 
 #create trait viewer
 paftest = PAFTest(context=my_context, parameters=p)
-
-
 my_context.register_operations(my_context.basic_operations)
 
 # Define the first gear (actually modelized by a cylinder)
