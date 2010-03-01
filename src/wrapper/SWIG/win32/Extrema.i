@@ -949,8 +949,18 @@ class Extrema_SequenceOfBoolean : public TCollection_BaseSequence {
 		const Standard_Boolean & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void SetValue(const Standard_Integer Index, const Standard_Boolean &I);
-		%feature("autodoc", "1");
-		Standard_Boolean & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Boolean) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Boolean value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -980,8 +990,18 @@ class Extrema_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
 		Extrema_SequenceNodeOfSequenceOfBoolean(const Standard_Boolean &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Standard_Boolean & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetValue() {
+				return (Standard_Boolean) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Boolean value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

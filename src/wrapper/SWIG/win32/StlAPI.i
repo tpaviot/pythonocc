@@ -73,10 +73,30 @@ class StlAPI_Writer {
 		void SetDeflection(const Standard_Real aDeflection);
 		%feature("autodoc", "1");
 		void SetCoefficient(const Standard_Real aCoefficient);
-		%feature("autodoc", "1");
-		Standard_Boolean & RelativeMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & ASCIIMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetRelativeMode() {
+				return (Standard_Boolean) $self->RelativeMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetRelativeMode(Standard_Boolean value ) {
+				$self->RelativeMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetASCIIMode() {
+				return (Standard_Boolean) $self->ASCIIMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetASCIIMode(Standard_Boolean value ) {
+				$self->ASCIIMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		void Write(const TopoDS_Shape &aShape, const char * aFileName);
 

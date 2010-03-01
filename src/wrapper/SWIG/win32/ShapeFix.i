@@ -647,8 +647,18 @@ class ShapeFix_ComposeShell : public ShapeFix_Root {
 		ShapeFix_ComposeShell();
 		%feature("autodoc", "1");
 		void Init(const Handle_ShapeExtend_CompositeSurface &Grid, const TopLoc_Location &L, const TopoDS_Face &Face, const Standard_Real Prec);
-		%feature("autodoc", "1");
-		Standard_Boolean & ClosedMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetClosedMode() {
+				return (Standard_Boolean) $self->ClosedMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetClosedMode(Standard_Boolean value ) {
+				$self->ClosedMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Perform();
 		%feature("autodoc", "1");
@@ -1030,10 +1040,30 @@ class ShapeFix_Wire : public ShapeFix_Root {
 		const Handle_ShapeExtend_WireData & WireData() const;
 		%feature("autodoc", "1");
 		const TopoDS_Face & Face() const;
-		%feature("autodoc", "1");
-		Standard_Boolean & ModifyTopologyMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & ModifyGeometryMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModifyTopologyMode() {
+				return (Standard_Boolean) $self->ModifyTopologyMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModifyTopologyMode(Standard_Boolean value ) {
+				$self->ModifyTopologyMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModifyGeometryMode() {
+				return (Standard_Boolean) $self->ModifyGeometryMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModifyGeometryMode(Standard_Boolean value ) {
+				$self->ModifyGeometryMode()=value;
+				}
+		};
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetModifyRemoveLoopMode() {
@@ -1046,12 +1076,42 @@ class ShapeFix_Wire : public ShapeFix_Root {
 				$self->ModifyRemoveLoopMode()=value;
 				}
 		};
-		%feature("autodoc", "1");
-		Standard_Boolean & ClosedWireMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & PreferencePCurveMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & FixGapsByRangesMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetClosedWireMode() {
+				return (Standard_Boolean) $self->ClosedWireMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetClosedWireMode(Standard_Boolean value ) {
+				$self->ClosedWireMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetPreferencePCurveMode() {
+				return (Standard_Boolean) $self->PreferencePCurveMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetPreferencePCurveMode(Standard_Boolean value ) {
+				$self->PreferencePCurveMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetFixGapsByRangesMode() {
+				return (Standard_Boolean) $self->FixGapsByRangesMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetFixGapsByRangesMode(Standard_Boolean value ) {
+				$self->FixGapsByRangesMode()=value;
+				}
+		};
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetFixReorderMode() {
@@ -1455,8 +1515,18 @@ class ShapeFix_Solid : public ShapeFix_Root {
 				$self->FixShellMode()=value;
 				}
 		};
-		%feature("autodoc", "1");
-		Standard_Boolean & CreateOpenSolidMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetCreateOpenSolidMode() {
+				return (Standard_Boolean) $self->CreateOpenSolidMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetCreateOpenSolidMode(Standard_Boolean value ) {
+				$self->CreateOpenSolidMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopoDS_Shape Shape();
 		%feature("autodoc", "1");
@@ -1765,8 +1835,18 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 		Standard_Boolean StatusSmallEdges(const ShapeExtend_Status status) const;
 		%feature("autodoc", "1");
 		TopoDS_Shape Shape();
-		%feature("autodoc", "1");
-		Standard_Boolean & ModeDropSmallEdges();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModeDropSmallEdges() {
+				return (Standard_Boolean) $self->ModeDropSmallEdges();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModeDropSmallEdges(Standard_Boolean value ) {
+				$self->ModeDropSmallEdges()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		void SetLimitAngle(const Standard_Real theLimitAngle);
 		%feature("autodoc", "1");

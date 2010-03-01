@@ -755,8 +755,18 @@ class EDL_StackOfBoolean {
 		void Pop();
 		%feature("autodoc", "1");
 		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean & ChangeTop();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetChangeTop() {
+				return (Standard_Boolean) $self->ChangeTop();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeTop(Standard_Boolean value ) {
+				$self->ChangeTop()=value;
+				}
+		};
 
 };
 %feature("shadow") EDL_StackOfBoolean::~EDL_StackOfBoolean %{
@@ -948,8 +958,18 @@ class EDL_StackNodeOfStackOfBoolean : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
 		EDL_StackNodeOfStackOfBoolean(const Standard_Boolean &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_Boolean & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetValue() {
+				return (Standard_Boolean) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Boolean value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

@@ -59,6 +59,31 @@ enum SMDSAbs_ElementType {
 	SMDSAbs_Edge,
 	SMDSAbs_Face,
 	SMDSAbs_Volume,
+	SMDSAbs_0DElement,
 	SMDSAbs_NbElementTypes,
+	};
+
+enum SMDSAbs_EntityType {
+	SMDSEntity_Node,
+	SMDSEntity_0D,
+	SMDSEntity_Edge,
+	SMDSEntity_Quad_Edge,
+	SMDSEntity_Triangle,
+	SMDSEntity_Quad_Triangle,
+	SMDSEntity_Quadrangle,
+	SMDSEntity_Quad_Quadrangle,
+	SMDSEntity_Polygon,
+	SMDSEntity_Quad_Polygon,
+	SMDSEntity_Tetra,
+	SMDSEntity_Quad_Tetra,
+	SMDSEntity_Pyramid,
+	SMDSEntity_Quad_Pyramid,
+	SMDSEntity_Hexa,
+	SMDSEntity_Quad_Hexa,
+	SMDSEntity_Penta,
+	SMDSEntity_Quad_Penta,
+	SMDSEntity_Polyhedra,
+	SMDSEntity_Quad_Polyhedra,
+	SMDSEntity_Last,
 	};
 

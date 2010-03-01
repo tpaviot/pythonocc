@@ -604,18 +604,78 @@ class ShapeAnalysis_ShapeContents {
 		void ClearFlags();
 		%feature("autodoc", "1");
 		void Perform(const TopoDS_Shape &shape);
-		%feature("autodoc", "1");
-		Standard_Boolean & ModifyBigSplineMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & ModifyIndirectMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & ModifyOffestSurfaceMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & ModifyTrimmed3dMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & ModifyOffsetCurveMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & ModifyTrimmed2dMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModifyBigSplineMode() {
+				return (Standard_Boolean) $self->ModifyBigSplineMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModifyBigSplineMode(Standard_Boolean value ) {
+				$self->ModifyBigSplineMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModifyIndirectMode() {
+				return (Standard_Boolean) $self->ModifyIndirectMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModifyIndirectMode(Standard_Boolean value ) {
+				$self->ModifyIndirectMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModifyOffestSurfaceMode() {
+				return (Standard_Boolean) $self->ModifyOffestSurfaceMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModifyOffestSurfaceMode(Standard_Boolean value ) {
+				$self->ModifyOffestSurfaceMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModifyTrimmed3dMode() {
+				return (Standard_Boolean) $self->ModifyTrimmed3dMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModifyTrimmed3dMode(Standard_Boolean value ) {
+				$self->ModifyTrimmed3dMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModifyOffsetCurveMode() {
+				return (Standard_Boolean) $self->ModifyOffsetCurveMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModifyOffsetCurveMode(Standard_Boolean value ) {
+				$self->ModifyOffsetCurveMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModifyTrimmed2dMode() {
+				return (Standard_Boolean) $self->ModifyTrimmed2dMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModifyTrimmed2dMode(Standard_Boolean value ) {
+				$self->ModifyTrimmed2dMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer NbSolids() const;
 		%feature("autodoc", "1");
@@ -1348,8 +1408,18 @@ class ShapeAnalysis_WireOrder {
 		void Add(const gp_XY &start2d, const gp_XY &end2d);
 		%feature("autodoc", "1");
 		Standard_Integer NbEdges() const;
-		%feature("autodoc", "1");
-		Standard_Boolean & KeepLoopsMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetKeepLoopsMode() {
+				return (Standard_Boolean) $self->KeepLoopsMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKeepLoopsMode(Standard_Boolean value ) {
+				$self->KeepLoopsMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		void Perform(const Standard_Boolean closed=1);
 		%feature("autodoc", "1");
@@ -1407,8 +1477,18 @@ class ShapeAnalysis_TransferParametersProj : public ShapeAnalysis_TransferParame
 		virtual		Handle_TColStd_HSequenceOfReal Perform(const Handle_TColStd_HSequenceOfReal &Papams, const Standard_Boolean To2d);
 		%feature("autodoc", "1");
 		virtual		Standard_Real Perform(const Standard_Real Param, const Standard_Boolean To2d);
-		%feature("autodoc", "1");
-		Standard_Boolean & ForceProjection();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetForceProjection() {
+				return (Standard_Boolean) $self->ForceProjection();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetForceProjection(Standard_Boolean value ) {
+				$self->ForceProjection()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		void TransferRange(TopoDS_Edge & newEdge, const Standard_Real prevPar, const Standard_Real currPar, const Standard_Boolean Is2d);
 		%feature("autodoc", "1");

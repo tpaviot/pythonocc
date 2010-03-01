@@ -1128,8 +1128,18 @@ class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 				$self->MinArea()=value;
 				}
 		};
-		%feature("autodoc", "1");
-		Standard_Boolean & RemoveFaceMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetRemoveFaceMode() {
+				return (Standard_Boolean) $self->RemoveFaceMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetRemoveFaceMode(Standard_Boolean value ) {
+				$self->RemoveFaceMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		const TopTools_SequenceOfShape & RemovedFaces() const;
 		%feature("autodoc", "1");

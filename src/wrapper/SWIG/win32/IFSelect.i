@@ -4748,8 +4748,18 @@ class IFSelect_SignatureList : public MMgt_TShared {
 		IFSelect_SignatureList(const Standard_Boolean withlist=0);
 		%feature("autodoc", "1");
 		void SetList(const Standard_Boolean withlist);
-		%feature("autodoc", "1");
-		Standard_Boolean & ModeSignOnly();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModeSignOnly() {
+				return (Standard_Boolean) $self->ModeSignOnly();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModeSignOnly(Standard_Boolean value ) {
+				$self->ModeSignOnly()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		void Clear();
 		%feature("autodoc", "1");
@@ -4897,8 +4907,18 @@ class IFSelect_EditForm : public MMgt_TShared {
 		IFSelect_EditForm(const Handle_IFSelect_Editor &editor, const Standard_Boolean readonly, const Standard_Boolean undoable, const char * label="");
 		%feature("autodoc", "1");
 		IFSelect_EditForm(const Handle_IFSelect_Editor &editor, const TColStd_SequenceOfInteger &nums, const Standard_Boolean readonly, const Standard_Boolean undoable, const char * label="");
-		%feature("autodoc", "1");
-		Standard_Boolean & EditKeepStatus();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetEditKeepStatus() {
+				return (Standard_Boolean) $self->EditKeepStatus();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetEditKeepStatus(Standard_Boolean value ) {
+				$self->EditKeepStatus()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		char * Label() const;
 		%feature("autodoc", "1");

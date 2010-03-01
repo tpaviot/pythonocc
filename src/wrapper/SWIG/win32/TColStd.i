@@ -3493,8 +3493,18 @@ class TColStd_Array1OfBoolean {
 		const Standard_Boolean & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		const Standard_Boolean & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Boolean) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Boolean value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean & operator()(const Standard_Integer Index);
 
@@ -3534,8 +3544,18 @@ class TColStd_HArray1OfBoolean : public MMgt_TShared {
 		void SetValue(const Standard_Integer Index, const Standard_Boolean &Value);
 		%feature("autodoc", "1");
 		const Standard_Boolean & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetChangeValue(const Standard_Integer Index) {
+				return (Standard_Boolean) $self->ChangeValue(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Boolean value ,const Standard_Integer Index) {
+				$self->ChangeValue(Index)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		const TColStd_Array1OfBoolean & Array1() const;
 		%feature("autodoc", "1");
@@ -4227,8 +4247,18 @@ class TColStd_HArray2OfBoolean : public MMgt_TShared {
 		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Boolean &Value);
 		%feature("autodoc", "1");
 		const Standard_Boolean & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Standard_Boolean & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetChangeValue(const Standard_Integer Row, const Standard_Integer Col) {
+				return (Standard_Boolean) $self->ChangeValue(Row,Col);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Boolean value ,const Standard_Integer Row, const Standard_Integer Col) {
+				$self->ChangeValue(Row,Col)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		const TColStd_Array2OfBoolean & Array2() const;
 		%feature("autodoc", "1");
@@ -5651,8 +5681,18 @@ class TColStd_Array2OfBoolean {
 		const Standard_Boolean & Value(const Standard_Integer Row, const Standard_Integer Col) const;
 		%feature("autodoc", "1");
 		const Standard_Boolean & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Standard_Boolean & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetChangeValue(const Standard_Integer Row, const Standard_Integer Col) {
+				return (Standard_Boolean) $self->ChangeValue(Row,Col);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Boolean value ,const Standard_Integer Row, const Standard_Integer Col) {
+				$self->ChangeValue(Row,Col)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean & operator()(const Standard_Integer Row, const Standard_Integer Col);
 

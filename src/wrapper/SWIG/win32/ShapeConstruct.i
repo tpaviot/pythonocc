@@ -125,8 +125,18 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 		void SetSurface(const Handle_ShapeAnalysis_Surface &surf);
 		%feature("autodoc", "1");
 		void SetPrecision(const Standard_Real preci);
-		%feature("autodoc", "1");
-		Standard_Boolean & BuildCurveMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetBuildCurveMode() {
+				return (Standard_Boolean) $self->BuildCurveMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetBuildCurveMode(Standard_Boolean value ) {
+				$self->BuildCurveMode()=value;
+				}
+		};
 		%feature("autodoc","1");
 		%extend {
 				Standard_Integer GetAdjustOverDegenMode() {

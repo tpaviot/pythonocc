@@ -605,8 +605,18 @@ class BRepAlgo_DataMapOfShapeBoolean : public TCollection_BasicMap {
 		const Standard_Boolean & Find(const TopoDS_Shape &K) const;
 		%feature("autodoc", "1");
 		const Standard_Boolean & operator()(const TopoDS_Shape &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean & ChangeFind(const TopoDS_Shape &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetChangeFind(const TopoDS_Shape &K) {
+				return (Standard_Boolean) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Boolean value ,const TopoDS_Shape &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean & operator()(const TopoDS_Shape &K);
 
@@ -799,8 +809,18 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public TCollection_MapNode {
 		BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean(const TopoDS_Shape &K, const Standard_Boolean &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TopoDS_Shape & Key() const;
-		%feature("autodoc", "1");
-		Standard_Boolean & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetValue() {
+				return (Standard_Boolean) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Boolean value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

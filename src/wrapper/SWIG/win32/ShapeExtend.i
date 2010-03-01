@@ -451,8 +451,18 @@ class ShapeExtend_WireData : public MMgt_TShared {
 		TopoDS_Edge NonmanifoldEdge(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		Handle_TopTools_HSequenceOfShape NonmanifoldEdges() const;
-		%feature("autodoc", "1");
-		Standard_Boolean & ManifoldMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetManifoldMode() {
+				return (Standard_Boolean) $self->ManifoldMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetManifoldMode(Standard_Boolean value ) {
+				$self->ManifoldMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		TopoDS_Edge Edge(const Standard_Integer num) const;
 		%feature("autodoc", "1");

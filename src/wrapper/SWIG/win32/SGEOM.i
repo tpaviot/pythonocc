@@ -319,13 +319,13 @@ class GEOM_Engine {
 		%feature("autodoc", "1");
 		bool IsDocumentExistant(int );
 		%feature("autodoc", "1");
-		Handle_TDocStd_Document GetDocument(int );
+		Handle_TDocStd_Document GetDocument(int , bool =true);
 		%feature("autodoc", "1");
 		int GetDocID(Handle_TDocStd_Document );
 		%feature("autodoc", "1");
 		Handle_TDocStd_Application GetApplication();
 		%feature("autodoc", "1");
-		Handle_GEOM_Object GetObject(int , const char *theEntry);
+		Handle_GEOM_Object GetObject(int , const char *theEntry, bool =true);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object AddObject(int , int );
 		%feature("autodoc", "1");
@@ -351,7 +351,7 @@ class GEOM_Engine {
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfAsciiString GetAllDumpNames() const;
 		%feature("autodoc", "1");
-		bool GetInterpreterEquationValue(int , const TCollection_AsciiString &theEquation, double & theRefValue);
+		double GetInterpreterEquationValue(int , const TCollection_AsciiString &theEquation);
 		%feature("autodoc", "1");
 		void SetInterpreterConstant(int , const TCollection_AsciiString &theConstant, double , const TCollection_AsciiString &theDescription, bool =true);
 		%feature("autodoc", "1");
@@ -360,6 +360,14 @@ class GEOM_Engine {
 		void SetInterpreterConstantArray(int , Handle_TColStd_HArray1OfTransient , Handle_TColStd_HArray1OfAsciiString , bool );
 		%feature("autodoc", "1");
 		TDF_Label GetUserDataLabel(int );
+		%feature("autodoc", "1");
+		int AddTexture(int , int , int , const Handle_TDataStd_HArray1OfByte &theTexture, const TCollection_AsciiString &theFileName="");
+		%feature("autodoc", "1");
+		Handle_TDataStd_HArray1OfByte GetTexture(int , int , int & theWidth, int & theHeight, TCollection_AsciiString & theFileName);
+		%feature("autodoc", "1");
+		std::list<int,std::allocator<int> > GetAllTextures(int );
+		%feature("autodoc", "1");
+		const Standard_GUID & GetTextureGUID();
 
 };
 %feature("shadow") GEOM_Engine::~GEOM_Engine %{
@@ -809,6 +817,18 @@ class GEOM_Object : public MMgt_TShared {
 		void SetAutoColor(bool );
 		%feature("autodoc", "1");
 		bool GetAutoColor();
+		%feature("autodoc", "1");
+		void SetMarkerStd(const Aspect_TypeOfMarker theType, double );
+		%feature("autodoc", "1");
+		void SetMarkerTexture(int );
+		%feature("autodoc", "1");
+		Aspect_TypeOfMarker GetMarkerType();
+		%feature("autodoc", "1");
+		double GetMarkerSize();
+		%feature("autodoc", "1");
+		int GetMarkerTexture();
+		%feature("autodoc", "1");
+		void UnsetMarker();
 		%feature("autodoc", "1");
 		void SetAuxData(const char *theData);
 		%feature("autodoc", "1");
