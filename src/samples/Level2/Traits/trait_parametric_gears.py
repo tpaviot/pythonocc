@@ -25,7 +25,7 @@ from math import pi
 from trait_editor import OCCTraitViewer
 from sympy import *
 from enthought.traits.ui.editor import Editor
-from enthought.traits.trait_types import Instance, Bool, Button, Int, Str
+from enthought.traits.trait_types import Instance, Bool, Button, Int, Str, Float
 from enthought.traits.ui.editor_factory import EditorFactory
 from enthought.traits.has_traits import HasTraits
 from enthought.traits.ui.item import Item
@@ -63,24 +63,20 @@ PAFContextEditorFactory = ToolkitEditorFactory
 class PAFTest(HasTraits):
     context = Instance(ParametricModelingContext)
     parameters = Instance(Parameters)
-    run = Button
-    step = Button
-    pause = Button
-    stop = Button
-    stepsize = Int
-    pos = Int(4)
-    view = View(Item("parameters", editor=PAFContextEditorFactory(context='context')),
-                Item("step"))
+    update = Button
+    r = Float(1.)
+    a = Float(100.)
     
-    def _step_changed(self):
-        self.pos += 1
-        self.parameters.a = self.pos
-
+    view = View(Item("parameters", editor=PAFContextEditorFactory(context='context')),
+                Item("update"),Item("a"),Item("r"))
+    
+    def _update_changed(self):
+        self.parameters.a = self.a
+        self.parameters.r = self.r
+        
 # Initialization
 p = Parameters()
 my_context = ParametricModelingContext( p )
-#my_context.set_display(display)
-#my_context.set_display_loop_function(SimpleGui.start_display)
 
 #create trait viewer
 paftest = PAFTest(context=my_context, parameters=p)
@@ -169,10 +165,4 @@ def DefineRelations():
 DefineRules()
 DefineRelations()
 
-#for i in range( 40, 120, 3 ):
-#p.a = 1
-#    print 'updated p.a from %s to %s ' % ( p.a.value, i )
-
-
 paftest.configure_traits()
-#my_context.start_display()
