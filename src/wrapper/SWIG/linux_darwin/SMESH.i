@@ -24,6 +24,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../ExceptionCatcher.i
 %include ../FunctionTransformers.i
 %include ../Operators.i
+%include ../StandardTemplateLibrary.i
 
 %pythoncode {
 import GarbageCollector

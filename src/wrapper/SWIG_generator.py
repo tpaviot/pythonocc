@@ -69,18 +69,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 """
     fp.write(header)
-    
-PYOCC_HEADER_TEMPLATE = """
-%include ../CommonIncludes.i
-%include ../StandardDefines.i
-%include ../ExceptionCatcher.i
-%include ../FunctionTransformers.i
-%include ../Operators.i
-
-%pythoncode {
-import GarbageCollector
-};
-"""
 
 nb_exported_classes = 0
 
@@ -391,6 +379,10 @@ class ModularBuilder(object):
                 argument_types[1] = tmp               
                 to_write += "%s<%s>"%(argument_types[0],argument_types[1])
                 param_list.append(["String","aString"])
+            elif argument_types[0].startswith('std::vector<int') and len(argument_types)==4:
+                to_write += 'std::vector<int> %s'%argument_name
+            elif argument_types[0].startswith('std::vector<double') and len(argument_types)==4:
+                to_write += 'std::vector<double> %s'%argument_name
             elif argument_types[1]=='*' and len(argument_types)==2:
                 #Case: GEOM_Engine* theEngine
                 to_write += "%s%s %s"%(argument_types[0],argument_types[1],argument_name)
@@ -1025,11 +1017,25 @@ class ModularBuilder(object):
         self.occ_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s.i'%self.MODULE_NAME),"w")
         WriteLicenseHeader(self.occ_fp)
         self.occ_fp.write("%module ")
-        self.occ_fp.write("%s"%self.MODULE_NAME)
+        self.occ_fp.write("%s\n"%self.MODULE_NAME)
         # Add renames
         # self.occ_fp.write("\n\n%%include %s_renames.i"%self.MODULE_NAME)        
         # Write common header
-        self.occ_fp.write(PYOCC_HEADER_TEMPLATE)        
+        self.occ_fp.write("%include ../CommonIncludes.i\n")
+        self.occ_fp.write("%include ../StandardDefines.i\n")
+        self.occ_fp.write("%include ../ExceptionCatcher.i\n")
+        self.occ_fp.write("%include ../FunctionTransformers.i\n")
+        self.occ_fp.write("%include ../Operators.i\n")
+        # For modules SMDS or StdMeshers, add the Vector.i header
+        if self.MODULE_NAME in ['SMDS','SMESH','StdMeshers']:
+            self.occ_fp.write("%include ../StandardTemplateLibrary.i\n")
+        # Garbage collector
+        GARBAGE = """
+%pythoncode {
+import GarbageCollector
+};
+"""     
+        self.occ_fp.write(GARBAGE)       
         # Add dependencies
         self.occ_fp.write("\n%%include %s_dependencies.i\n\n"%self.MODULE_NAME)
         # Add headers

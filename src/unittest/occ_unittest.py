@@ -152,6 +152,48 @@ class Test(unittest.TestCase):
         self.assertEqual(sfw.GetModifyGeometryMode(),True)
         sfw.SetModifyGeometryMode(False)
         self.assertEqual(sfw.GetModifyGeometryMode(),False)
+    
+    def testSTLVectorInt(self):
+        '''
+        Checks the IntVector and DoubleVector classes that are used in the StdMeshers
+        module
+        '''
+        from OCC.StdMeshers import IntVector, StdMeshers_FixedPoints1D
+        # The IntVector must be initialized from a list/tuple of integers
+        i_v = IntVector([1,2,3,4])
+        self.assertEqual(i_v[0],1)
+        self.assertEqual(i_v[1],2)
+        self.assertEqual(i_v[2],3)
+        self.assertEqual(i_v[3],4)
+        # If at least one item of the list is not an integer, raise an exception
+        self.assertRaises(TypeError,IntVector,[1,2,3,4.0])
+        # Test one method of StdMeshers that takes/returns such a parameter type
+        from OCC.SMESH import SMESH_Gen
+        fixed_points = StdMeshers_FixedPoints1D(1,2,SMESH_Gen())
+        fixed_points.SetReversedEdges([1,2,3])
+        self.assertEquals(fixed_points.GetReversedEdges(),(1,2,3))
+        
+    def testSTLVectorDouble(self):
+        '''
+        Checks the IntVector and DoubleVector classes that are used in the StdMeshers
+        module
+        '''
+        from OCC.StdMeshers import IntVector, StdMeshers_FixedPoints1D
+        # The IntVector must be initialized from a list/tuple of floats/integers. Integers will
+        # be converted to floats
+        d_v = DoubleVector([1.0,2,3.0,4])
+        self.assertEqual(d_v[0],1.0)
+        self.assertEqual(d_v[1],2.0)
+        self.assertEqual(d_v[2],3.0)
+        self.assertEqual(d_v[3],4.0)
+        # If at least one item of the list is not an float or an integer, raise an exception
+        self.assertRaises(TypeError,DoubleVector,[1.0,2.0,3.0,"string"])
+        # Test one method of StdMeshers that takes/returns such a parameter type
+        from OCC.SMESH import SMESH_Gen
+        fixed_points = StdMeshers_FixedPoints1D(1,2,SMESH_Gen())
+        fixed_points.SetPoints([1.0,3.0,4.0])
+        self.assertEquals(fixed_points.GetPoints(),(1.0,3.0,4.0))
+        
         
     def testDumpToString(self):
         '''
