@@ -3641,22 +3641,102 @@ class BOP_ArgumentAnalyzer {
 		const TopoDS_Shape & GetShape2() const;
 		%feature("autodoc", "1");
 		BOP_Operation & OperationType();
-		%feature("autodoc", "1");
-		Standard_Boolean & StopOnFirstFaulty();
-		%feature("autodoc", "1");
-		Standard_Boolean & ArgumentTypeMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & SelfInterMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & SmallEdgeMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & RebuildFaceMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & TangentMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & MergeVertexMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & MergeEdgeMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetStopOnFirstFaulty() {
+				return (Standard_Boolean) $self->StopOnFirstFaulty();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetStopOnFirstFaulty(Standard_Boolean value ) {
+				$self->StopOnFirstFaulty()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetArgumentTypeMode() {
+				return (Standard_Boolean) $self->ArgumentTypeMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetArgumentTypeMode(Standard_Boolean value ) {
+				$self->ArgumentTypeMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetSelfInterMode() {
+				return (Standard_Boolean) $self->SelfInterMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetSelfInterMode(Standard_Boolean value ) {
+				$self->SelfInterMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetSmallEdgeMode() {
+				return (Standard_Boolean) $self->SmallEdgeMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetSmallEdgeMode(Standard_Boolean value ) {
+				$self->SmallEdgeMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetRebuildFaceMode() {
+				return (Standard_Boolean) $self->RebuildFaceMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetRebuildFaceMode(Standard_Boolean value ) {
+				$self->RebuildFaceMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetTangentMode() {
+				return (Standard_Boolean) $self->TangentMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetTangentMode(Standard_Boolean value ) {
+				$self->TangentMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetMergeVertexMode() {
+				return (Standard_Boolean) $self->MergeVertexMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetMergeVertexMode(Standard_Boolean value ) {
+				$self->MergeVertexMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetMergeEdgeMode() {
+				return (Standard_Boolean) $self->MergeEdgeMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetMergeEdgeMode(Standard_Boolean value ) {
+				$self->MergeEdgeMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");

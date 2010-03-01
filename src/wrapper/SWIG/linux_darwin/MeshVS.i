@@ -1858,8 +1858,18 @@ class MeshVS_DataMapNodeOfDataMapOfIntegerBoolean : public TCollection_MapNode {
 				$self->Key()=value;
 				}
 		};
-		%feature("autodoc", "1");
-		Standard_Boolean & Value() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetValue() {
+				return (Standard_Boolean) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Boolean value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3186,8 +3196,18 @@ class MeshVS_DataMapOfIntegerBoolean : public TCollection_BasicMap {
 		const Standard_Boolean & Find(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		const Standard_Boolean & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetChangeFind(const Standard_Integer &K) {
+				return (Standard_Boolean) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Boolean value ,const Standard_Integer &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean & operator()(const Standard_Integer &K);
 

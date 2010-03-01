@@ -490,7 +490,7 @@ class ModularBuilder(object):
         to_write = ''#
         # Handle 'Standard_Integer &' and 'Standard_Real &' return types
         #
-        if (return_type=='Standard_Integer &' or return_type=='Standard_Real &') and not ('operator' in function_name):
+        if (return_type in ['Standard_Integer &','Standard_Real &','Standard_Boolean &']) and not ('operator' in function_name):
             # First get the string for arguments declaration
             str_args,return_list,param_list,arguments, default_value,END_WITH_CONST,param_names,FUNCTION_MODIFIED = self.write_function_arguments(mem_fun)
             # build param enum from params:

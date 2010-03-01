@@ -506,26 +506,126 @@ class ShapeCustom_RestrictionParameters : public MMgt_TShared {
 				$self->GMaxSeg()=value;
 				}
 		};
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertPlane();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertBezierSurf();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertRevolutionSurf();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertExtrusionSurf();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertOffsetSurf();
-		%feature("autodoc", "1");
-		Standard_Boolean & SegmentSurfaceMode();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertCurve3d();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertOffsetCurv3d();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertCurve2d();
-		%feature("autodoc", "1");
-		Standard_Boolean & ConvertOffsetCurv2d();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetConvertPlane() {
+				return (Standard_Boolean) $self->ConvertPlane();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetConvertPlane(Standard_Boolean value ) {
+				$self->ConvertPlane()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetConvertBezierSurf() {
+				return (Standard_Boolean) $self->ConvertBezierSurf();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetConvertBezierSurf(Standard_Boolean value ) {
+				$self->ConvertBezierSurf()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetConvertRevolutionSurf() {
+				return (Standard_Boolean) $self->ConvertRevolutionSurf();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetConvertRevolutionSurf(Standard_Boolean value ) {
+				$self->ConvertRevolutionSurf()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetConvertExtrusionSurf() {
+				return (Standard_Boolean) $self->ConvertExtrusionSurf();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetConvertExtrusionSurf(Standard_Boolean value ) {
+				$self->ConvertExtrusionSurf()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetConvertOffsetSurf() {
+				return (Standard_Boolean) $self->ConvertOffsetSurf();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetConvertOffsetSurf(Standard_Boolean value ) {
+				$self->ConvertOffsetSurf()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetSegmentSurfaceMode() {
+				return (Standard_Boolean) $self->SegmentSurfaceMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetSegmentSurfaceMode(Standard_Boolean value ) {
+				$self->SegmentSurfaceMode()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetConvertCurve3d() {
+				return (Standard_Boolean) $self->ConvertCurve3d();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetConvertCurve3d(Standard_Boolean value ) {
+				$self->ConvertCurve3d()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetConvertOffsetCurv3d() {
+				return (Standard_Boolean) $self->ConvertOffsetCurv3d();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetConvertOffsetCurv3d(Standard_Boolean value ) {
+				$self->ConvertOffsetCurv3d()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetConvertCurve2d() {
+				return (Standard_Boolean) $self->ConvertCurve2d();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetConvertCurve2d(Standard_Boolean value ) {
+				$self->ConvertCurve2d()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetConvertOffsetCurv2d() {
+				return (Standard_Boolean) $self->ConvertOffsetCurv2d();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetConvertOffsetCurv2d(Standard_Boolean value ) {
+				$self->ConvertOffsetCurv2d()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -719,12 +819,42 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 		void SetTol3d(const Standard_Real Tol3d);
 		%feature("autodoc", "1");
 		void SetTol2d(const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		Standard_Boolean & ModifyApproxSurfaceFlag();
-		%feature("autodoc", "1");
-		Standard_Boolean & ModifyApproxCurve3dFlag();
-		%feature("autodoc", "1");
-		Standard_Boolean & ModifyApproxCurve2dFlag();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModifyApproxSurfaceFlag() {
+				return (Standard_Boolean) $self->ModifyApproxSurfaceFlag();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModifyApproxSurfaceFlag(Standard_Boolean value ) {
+				$self->ModifyApproxSurfaceFlag()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModifyApproxCurve3dFlag() {
+				return (Standard_Boolean) $self->ModifyApproxCurve3dFlag();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModifyApproxCurve3dFlag(Standard_Boolean value ) {
+				$self->ModifyApproxCurve3dFlag()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModifyApproxCurve2dFlag() {
+				return (Standard_Boolean) $self->ModifyApproxCurve2dFlag();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModifyApproxCurve2dFlag(Standard_Boolean value ) {
+				$self->ModifyApproxCurve2dFlag()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		void SetContinuity3d(const GeomAbs_Shape Continuity3d);
 		%feature("autodoc", "1");

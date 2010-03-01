@@ -372,8 +372,18 @@ class TransferBRep_Reader {
 		Standard_Boolean CheckStatusModel(const Standard_Boolean withprint) const;
 		%feature("autodoc", "1");
 		Interface_CheckIterator CheckListModel() const;
-		%feature("autodoc", "1");
-		Standard_Boolean & ModeNewTransfer();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModeNewTransfer() {
+				return (Standard_Boolean) $self->ModeNewTransfer();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModeNewTransfer(Standard_Boolean value ) {
+				$self->ModeNewTransfer()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean BeginTransfer();
 		%feature("autodoc", "1");

@@ -2486,8 +2486,18 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 		void Add(const TopoDS_Shape &shape);
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Face &face);
-		%feature("autodoc", "1");
-		Standard_Boolean & InternalVerticesMode();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetInternalVerticesMode() {
+				return (Standard_Boolean) $self->InternalVerticesMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetInternalVerticesMode(Standard_Boolean value ) {
+				$self->InternalVerticesMode()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		BRepMesh_Status CurrentFaceStatus() const;
 		%feature("autodoc", "1");

@@ -25,8 +25,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include ../FunctionTransformers.i
 %include ../Operators.i
 
-%include "std_vector.i"
-
 %pythoncode {
 import GarbageCollector
 };
@@ -119,7 +117,7 @@ class StdMeshers_NumberOfSegments : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		int ConversionMode() const;
 		%feature("autodoc", "1");
-		void SetReversedEdges(std::vector<int, std::allocator<int>ids>);
+		void SetReversedEdges(std::vector<int, std::allocator<int>ids);
 		%feature("autodoc", "1");
 		void SetObjectEntry(const char *entry);
 		%feature("autodoc", "1");
@@ -673,15 +671,15 @@ class StdMeshers_FixedPoints1D : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		StdMeshers_FixedPoints1D(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		void SetPoints(std::vector<double, std::allocator<double>listParams>);
+		void SetPoints(std::vector<double, std::allocator<double>listParams);
 		%feature("autodoc", "1");
-		void SetNbSegments(std::vector<int, std::allocator<int>listNbSeg>);
+		void SetNbSegments(std::vector<int, std::allocator<int>listNbSeg);
 		%feature("autodoc", "1");
 		std::vector<double, std::allocator<double> > const & GetPoints() const;
 		%feature("autodoc", "1");
 		std::vector<int, std::allocator<int> > const & GetNbSegments() const;
 		%feature("autodoc", "1");
-		void SetReversedEdges(std::vector<int, std::allocator<int>ids>);
+		void SetReversedEdges(std::vector<int, std::allocator<int>ids);
 		%feature("autodoc", "1");
 		void SetObjectEntry(const char *entry);
 		%feature("autodoc", "1");
@@ -980,7 +978,7 @@ class StdMeshers_StartEndLength : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		double GetLength(bool ) const;
 		%feature("autodoc", "1");
-		void SetReversedEdges(std::vector<int, std::allocator<int>ids>);
+		void SetReversedEdges(std::vector<int, std::allocator<int>ids);
 		%feature("autodoc", "1");
 		std::vector<int, std::allocator<int> > const & GetReversedEdges() const;
 		%feature("autodoc", "1");
@@ -1461,7 +1459,7 @@ class StdMeshers_Arithmetic1D : public SMESH_Hypothesis {
 		%feature("autodoc", "1");
 		double GetLength(bool ) const;
 		%feature("autodoc", "1");
-		void SetReversedEdges(std::vector<int, std::allocator<int>ids>);
+		void SetReversedEdges(std::vector<int, std::allocator<int>ids);
 		%feature("autodoc", "1");
 		void SetObjectEntry(const char *entry);
 		%feature("autodoc", "1");

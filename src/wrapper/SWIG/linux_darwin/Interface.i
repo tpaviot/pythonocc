@@ -4429,8 +4429,18 @@ class Interface_InterfaceModel : public MMgt_TShared {
 		void SetGTool(const Handle_Interface_GTool &gtool);
 		%feature("autodoc", "1");
 		Handle_Interface_GTool GTool() const;
-		%feature("autodoc", "1");
-		Standard_Boolean & DispatchStatus();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetDispatchStatus() {
+				return (Standard_Boolean) $self->DispatchStatus();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetDispatchStatus(Standard_Boolean value ) {
+				$self->DispatchStatus()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		void Clear();
 		%feature("autodoc", "1");

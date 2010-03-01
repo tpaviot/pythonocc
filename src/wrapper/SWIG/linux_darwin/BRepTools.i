@@ -321,10 +321,30 @@ class BRepTools_ReShape : public MMgt_TShared {
 		virtual		TopoDS_Shape Apply(const TopoDS_Shape &shape, const TopAbs_ShapeEnum until, const Standard_Integer buildmode);
 		%feature("autodoc", "1");
 		virtual		TopoDS_Shape Apply(const TopoDS_Shape &shape, const TopAbs_ShapeEnum until=TopAbs_SHAPE);
-		%feature("autodoc", "1");
-		Standard_Boolean & ModeConsiderLocation();
-		%feature("autodoc", "1");
-		Standard_Boolean & ModeConsiderOrientation();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModeConsiderLocation() {
+				return (Standard_Boolean) $self->ModeConsiderLocation();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModeConsiderLocation(Standard_Boolean value ) {
+				$self->ModeConsiderLocation()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetModeConsiderOrientation() {
+				return (Standard_Boolean) $self->ModeConsiderOrientation();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModeConsiderOrientation(Standard_Boolean value ) {
+				$self->ModeConsiderOrientation()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

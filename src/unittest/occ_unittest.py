@@ -141,6 +141,18 @@ class Test(unittest.TestCase):
         sfs.SetFixShellMode(5)
         self.assertEqual(sfs.GetFixShellMode(),5)
         
+    def testFT3(self):
+        '''
+        Checks the Standard_Boolean & byreference return parameter
+        '''
+        print 'Test: Standard_Boolean & by reference transformator'
+        from OCC.ShapeFix import ShapeFix_Wire
+        sfw = ShapeFix_Wire()
+        sfw.SetModifyGeometryMode(True)
+        self.assertEqual(sfw.GetModifyGeometryMode(),True)
+        sfw.SetModifyGeometryMode(False)
+        self.assertEqual(sfw.GetModifyGeometryMode(),False)
+        
     def testDumpToString(self):
         '''
         Checks if the pickle python module works for TopoDS_Shapes
