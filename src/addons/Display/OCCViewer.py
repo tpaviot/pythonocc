@@ -296,10 +296,11 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         ais_shapes = []
 
         for shape in shapes:
-            if material:#careful: != operator segfaults
+            if material or texture:#careful: != operator segfaults
                 self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
                 shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
-                shape_to_display.SetMaterial(material)
+                if material:
+                    shape_to_display.SetMaterial(material)
                 if texture:
                     filename, toScaleU, toScaleV, toRepeatU, toRepeatV, originU, originV = texture.GetProperties()
                     shape_to_display.SetTextureFileName(OCC.TCollection.TCollection_AsciiString(filename))
