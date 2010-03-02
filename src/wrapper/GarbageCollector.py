@@ -19,47 +19,63 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys
+import gc
 
+# Init logging system
+import logging
+logging.basicConfig()
+logger = logging.getLogger('GarbageCollector')
+
+def set_debug():
+    logger.setLevel(logging.DEBUG)
+    
 class GarbageCollector(object):
     """ Garbage collector for OCC objects
     """
     def __init__(self):
-        self._collected_objects = []
+        #self._collected_objects = []
+        self._handles = []
+        self._transients = []
+        self._misc = []
         
     def collect_object(self, obj_deleted):
-        """ Add an object to the garbage
-        """
-        self._collected_objects.append(obj_deleted)
+        ''' This method is called whenever a pythonOCC instance is deleted.'''
+        #self._collected_objects.append(obj_deleted)
+        if hasattr(obj_deleted,'was_purged'):
+            return False
+        if obj_deleted.__class__.__name__.startswith('Handle'):
+            self._handles.append(obj_deleted)
+            logger.info('collected Handle')
+        elif hasattr(obj_deleted,"GetHandle"):
+            self._transients.append(obj_deleted)
+            logger.info('collected transient')
+        else:
+            self._misc.append(obj_deleted)
+            logger.info('collected misc')
     
-    def get_collected(self):
-        return self._collected_objects
-    
-    def __str__(self):
-        return "%i"%len(self._collected_objects)
-    
-    def purge(self):
-        """ Purge garbage, i.e. free OCC memory.
-        First pass: delete the Handle_*
-        Second pass: delete the other objects
-        """
-        # First pass
-        for elem in self._collected_objects:
-            if hasattr(elem,"DownCast"): #it's an Handle_*
-                # Delete only handles that have only 1 reference
-                if sys.getrefcount(elem)-1 == 1: #if two references, do nothing
-                    elem._kill_pointed() #This kills the Handle and decrements OCC ref. counting
-        # Second pass: the other objects
-        for elem in self._collected_objects:
-            if not hasattr(elem,"DownCast"): #it's not an handle
-                # check if there are any other reference to this object
-                if sys.getrefcount(elem)-1 == 1:
-                    # then check if the GetRefCount method is available (it inherits from Standard_Transient):
-                    if hasattr(elem,"GetRefCount"):
-                        if elem.GetRefCount() == 0: #no reference to this object, we can delete it
-                            elem._kill_pointed()
-                    else:
-                        elem._kill_pointed()
-        # Re-init the object list      
-        self._collected_objects = []
+    def smart_purge(self):
+        # TODO: need to reverse the lists first in order
+        # to start with the olders objects?
+        # Remove Handles
+        while len(self._handles)>0:
+            handle = self._handles.pop()
+            handle.Nullify()# decrement ref counting_kill_pointed()
+            # after that, the reference counting of transients objects in 
+            # the garbage should be 0
+            handle.was_purged = True
+        # Remove Transients
+        for transient in self._transients:
+            transient_must_be_purged = False
+            if transient.GetRefCount()==0:
+                transient_must_be_purged = True
+            if transient_must_be_purged:
+                transient._kill_pointed()
+                transient.was_purged = True
+                self._transients.remove(transient)
+        # Remove other objects
+        while len(self._misc)>0:
+            misc = self._misc.pop()
+            misc._kill_pointed()
+            misc.was_purged = True
 
 garbage = GarbageCollector()

@@ -27,37 +27,6 @@ from OCC.gp import *
 
 class Test(unittest.TestCase):
     
-    def testGarbageCollector(self):
-        '''
-        Test GarbageColector features
-        '''
-        print 'Test: GarbageCollector'
-        number_of_collected_objects_1 = len(GarbageCollector.garbage._collected_objects)
-        h = Standard_Transient().GetHandle()
-        # The Standard_Transient object was deleted, it should now be in the garbage
-        number_of_collected_objects_2 = len(GarbageCollector.garbage._collected_objects)
-        self.assertEqual(number_of_collected_objects_2-number_of_collected_objects_1,1)
-        self.assertEqual(h.IsNull(), False)
-        # Now free memory, i.e. kill all objects
-        GarbageCollector.garbage.purge()
-        # Now the handle should be NULL, since the Standard_Transient object was killed
-        self.assertEqual(h.IsNull(), False)
-        
-    def testHandleManagement(self):
-        '''
-        Creates a Standard_Transient and check that GetHandle increases
-        ref count.
-        '''
-        print 'Test: Handle Management'
-        s = Standard_Transient()
-        h1 = s.GetHandle()
-        h2 = s.GetHandle()
-        self.assertNotEqual(h1.IsNull(), True)
-        self.assertNotEqual(h2.IsNull(), True)
-        self.assertEqual(s.GetRefCount(),2)
-        h2.Nullify()
-        self.assertEqual(s.GetRefCount(),1)
-
     def testHash(self):
         '''
         Check whether the __hash__ function is equal to HashCode()
@@ -131,7 +100,7 @@ class Test(unittest.TestCase):
         P = gp_Pnt(1,2,3.2)
         self.assertEqual(P.Coord(),(1,2,3.2))
           
-    def testFT2(self):
+    def testStandardIntegerByRefPassedReturned(self):
         '''
         Checks the Standard_Integer & byreference return parameter
         '''
@@ -141,7 +110,7 @@ class Test(unittest.TestCase):
         sfs.SetFixShellMode(5)
         self.assertEqual(sfs.GetFixShellMode(),5)
         
-    def testFT3(self):
+    def testStandardBooleanByRefPassedReturned(self):
         '''
         Checks the Standard_Boolean & byreference return parameter
         '''
@@ -193,8 +162,7 @@ class Test(unittest.TestCase):
         fixed_points = StdMeshers_FixedPoints1D(1,2,SMESH_Gen())
         fixed_points.SetPoints([1.0,3.0,4.0])
         self.assertEquals(fixed_points.GetPoints(),(1.0,3.0,4.0))
-        
-        
+          
     def testDumpToString(self):
         '''
         Checks if the pickle python module works for TopoDS_Shapes
