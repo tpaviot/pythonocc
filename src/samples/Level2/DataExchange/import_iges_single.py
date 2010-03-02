@@ -16,9 +16,10 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.Utils.DataExchange.IGES import IGESImporter
-from OCC.Display.wxSamplesGui import display, start_display
+from OCC.Display.SimpleGui import *
+display, start_display, add_menu, add_function_to_menu = init_display()
 
-my_iges_importer = IGESImporter("aube_pleine.iges")
+my_iges_importer = IGESImporter('../../data/IGES/surf128.igs')
 my_iges_importer.ReadFile()
 the_shapes = my_iges_importer.GetShapes()
 the_compound = my_iges_importer.GetCompound()

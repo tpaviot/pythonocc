@@ -148,7 +148,7 @@ face_load, face_lock = aaa[0], aaa[3]
 
 submesh_load = aMesh.GetSubMesh(face_load.GetObject().GetValue())
 submesh_lock = aMesh.GetSubMesh(face_lock.GetObject().GetValue())
-import ipdb; ipdb.set_trace()
+#import ipdb; ipdb.set_trace()
 submesh_load.SetIsAlwaysComputed(True)
 submesh_lock.SetIsAlwaysComputed(True)
 
@@ -174,7 +174,7 @@ aMeshGen.Compute(aMesh,aMesh.GetShapeToMesh())
 from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 display_fem_mesh(aMesh)                     # show the mesh
-start_display()
+
 
 
 
@@ -185,3 +185,4 @@ aMesh.ExportMED("_TEST.med")                # write it to a file that can be sol
 #===============================================================================
 # START GUI
 #===============================================================================
+start_display()

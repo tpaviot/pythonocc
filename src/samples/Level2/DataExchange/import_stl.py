@@ -16,11 +16,14 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.Utils.DataExchange.STL import STLImporter
-from OCC.Display.wxSamplesGui import display, start_display
+from OCC.Display.SimpleGui import *
 
-my_stl_importer = STLImporter("sample.stl")
+# open/parse STL file and get the resulting TopoDS_Shape instance
+my_stl_importer = STLImporter("../../data/STL/littlestar.stl")
 my_stl_importer.ReadFile()
 the_shape = my_stl_importer.GetShape()
 
-display.DisplayShape(the_shape)
+# Then display the shape
+display, start_display, add_menu, add_function_to_menu = init_display()
+display.DisplayShape(the_shape,color='RED')
 start_display()
