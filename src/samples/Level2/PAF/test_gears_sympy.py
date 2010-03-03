@@ -20,6 +20,8 @@
 
 from OCC.PAF.Context import ParametricModelingContext
 from OCC.PAF.Parametric import Parameters, Rule, Relation, symb
+from OCC.Display.SimpleGui import init_display
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 
 from math import pi
@@ -28,7 +30,7 @@ from sympy import *
 # Initialization
 p = Parameters()
 my_context = ParametricModelingContext( p )
-my_context.init_display()
+my_context.set_display(display)
 my_context.register_operations(my_context.basic_operations)
 
 # Define the first gear (actually modelized by a cylinder)
@@ -114,9 +116,10 @@ def DefineRelations():
 DefineRules()
 DefineRelations()
 
+
 for i in range( 40, 120, 3 ):
     p.a = i
     print 'updated p.a from %s to %s ' % ( p.a.value, i )
     
+start_display()
 
-my_context.start_display()

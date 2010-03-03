@@ -9,13 +9,16 @@ from OCC.PAF.Parametric import Parameters
 from OCC.SMESH import *
 from OCC.StdMeshers import *
 from OCC.MeshVS import *
+# import display
+from OCC.Display.SimpleGui import init_display
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 #
 # Init PAF
 #
 p = Parameters()            # Create a parameters set
 my_context = ParametricModelingContext(p)     # Create and initialize a parametric context
-my_context.init_display()   # start display#
+my_context.set_display(display)   # start display#
 my_context.register_operations(my_context.basic_operations,
                                my_context.prim_operations,
                                my_context.local_operations)
@@ -68,7 +71,7 @@ def mesh_and_display():
     if old_mesh_to_erase is not None:
         display.Context.Erase(old_mesh_to_erase)
         display.Repaint()
-    aShape = my_context.get_shapes()[0]#.pop() #returns the last one, i.e. the box shape
+    aShape = my_context.get_shape(final_shape)
     aMeshGen = SMESH_Gen()
     aMesh = aMeshGen.CreateMesh(0,True)
     # 1D
@@ -122,5 +125,5 @@ for i in range(14,30):
     p.Z2 = i
     p.R1 += 0.2
 #print my_context.get_shapes()
-my_context.start_display()
+start_display()
 

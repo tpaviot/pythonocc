@@ -1,12 +1,17 @@
 from OCC.PAF.Context import ParametricModelingContext
 from OCC.PAF.Parametric import Parameters
+from OCC.Display.SimpleGui import init_display
+display, start_display, add_menu, add_function_to_menu = init_display()
 
 import time
 
 def main():
     p = Parameters()                          # Create a parameters set
-    my_context = ParametricModelingContext(p, commit=False)     # Create and initialize a parametric context
-    my_context.init_display()                 # start the graphic display
+    # Create and initialize a parametric context
+    # not committing changes ( Undo stack ), nor registering all *_operations
+    # this speeds things up considerably
+    my_context = ParametricModelingContext(p, commit=False, register_all_operations=False)
+    my_context.set_display(display)                 # start the graphic display
     
     
     # we need to register the operations that are used
@@ -34,8 +39,8 @@ def main():
     my_pnt4 = my_context.basic_operations.MakePointXYZ(p.X4,p.Y4,p.Z4, name="Pnt4")   # Create the second point box2
     
     # create boxes
-    box1 = my_context.prim_operations.MakeBoxTwoPnt(my_pnt1,my_pnt2,name="Box1", show=True)            # Create the box
-    box2 = my_context.prim_operations.MakeBoxTwoPnt(my_pnt3,my_pnt4,name="Box2", show=True)            # Create the box
+    box1 = my_context.prim_operations.MakeBoxTwoPnt(my_pnt1,my_pnt2,name="Box1", show=False)            # Create the box
+    box2 = my_context.prim_operations.MakeBoxTwoPnt(my_pnt3,my_pnt4,name="Box2", show=False)            # Create the box
     
     # boolean subtract box2 from box1 
     booled_box = my_context.boolean_operations.MakeBoolean( box1, box2, 2, name='BooleanBox', show=False)
@@ -44,10 +49,13 @@ def main():
     fillet_box = my_context.local_operations.MakeFilletAll( booled_box, p.RADIUS, name='FilletBox', show=True)
     
     # configuring presentations
-    pres1, pres2, pres_fillet = my_context.get_presentation(box1), my_context.get_presentation(box2), my_context.get_presentation(fillet_box)
-    pres1.SetTransparency(.8); pres1.SetColor(12) 
-    pres2.SetTransparency(.8); pres1.SetColor(12)
-    pres_fillet.SetColor(1)
+    #===========================================================================
+    # MISSING "get_presentation" !!!!
+    #===========================================================================
+#    pres1, pres2, pres_fillet = my_context.get_presentation(box1), my_context.get_presentation(box2), my_context.get_presentation(fillet_box)
+#    pres1.SetTransparency(.8); pres1.SetColor(12) 
+#    pres2.SetTransparency(.8); pres1.SetColor(12)
+#    pres_fillet.SetColor(1)
     
     for i in range(14,40,5):
         print 'changed parameter p.Z2 from %s to %s' % ( i-1, i )
@@ -60,7 +68,7 @@ def main():
         p.RADIUS = i/10.
         print 'updating geometry took:', time.time() - tA
     
-    my_context.start_display()
+    start_display()
 
 def profile_main():
      # This is the main function for profiling 
