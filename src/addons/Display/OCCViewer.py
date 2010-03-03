@@ -100,7 +100,16 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
     def OnResize(self):
         self.View.MustBeResized(OCC.V2d.V2d_TOWRE_ENLARGE_SPACE)
     
-    def DisplayShape(self, shapes, material=None, texture=None, ):
+    def DisplayShape(self, shapes, material=None, texture=None, angle=None ):
+        '''
+        display a TopoDS_* in the viewer
+        @param shapes:      shape or iterable of shapes 
+        ( where shape is a subclass of TopoDS_Shape ) 
+        @param material:    sets a custom material to the shape
+        @param texture:     add a texture to the shape
+        @param angle:       sets a custom deviation angle to the shape
+        '''
+        
         ais_shapes = []
         if issubclass(shapes.__class__, TopoDS_Shape):
             shapes = [shapes]
@@ -113,6 +122,8 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
                 self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
                 shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
                 shape_to_display.SetMaterial(material)
+                if angle:
+                    shape_to_display.SetAngleAndDeviation(angle)
                 if texture:
                     filename, toScaleU, toScaleV, toRepeatU, toRepeatV, originU, originV = texture.GetProperties()
                     shape_to_display.SetTextureFileName(OCC.TCollection.TCollection_AsciiString(filename))
@@ -124,6 +135,8 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
                     ais_shapes.append(shape_to_display.GetHandle())
             else:
                 shape_to_display = OCC.AIS.AIS_Shape(shape)
+                if angle:
+                    shape_to_display.SetAngleAndDeviation(angle)
                 ais_shapes.append(shape_to_display.GetHandle())
             self.Context.Display(shape_to_display.GetHandle())
             self.FitAll()

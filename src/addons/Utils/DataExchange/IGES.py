@@ -54,12 +54,13 @@ class IGESImporter(object):
     def __init__(self,filename=None):
         self._shapes = []
         self.nbs = 0
+        if not os.path.isfile(filename):
+            raise AssertionError, "IGESImporter initialization Error: file %s not found." % (filename)
         self.SetFilename(filename)
 
     def SetFilename(self, filename):
         if not os.path.isfile(filename):
-            print "IGESImporter initialization Error: file %s not found."%filename
-            self._filename = None
+            raise AssertionError, "IGESImporter initialization Error: file %s not found." % (filename)
         else:
             self._filename = filename
         

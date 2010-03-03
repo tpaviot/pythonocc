@@ -22,7 +22,7 @@ from OCC.BRepBuilderAPI import *
 from OCC.GeomPlate import *
 
 from OCC import TopoDS
-from OCC.Utils.Topology import WireExplorer
+from OCC.Utils.Topology import WireExplorer, Topo
 from OCC.BRepAdaptor import *
 from OCC.BRepFill import *
 from OCC.BRep import *
@@ -32,6 +32,13 @@ from OCC.GeomLProp import *
 import types, sys
 
 from OCC.Display.SimpleGui import init_display
+from OCC.GeomAbs import GeomAbs_G1
+from OCC.Utils.DataExchange.IGES import IGESImporter
+from OCC.BRepFill import *
+from OCC.GeomAbs import *
+from OCC.GeomPlate import *
+
+
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 #===============================================================================
@@ -207,13 +214,78 @@ def solve_radius(event=None):
         print 'Goal: %s radius: %s' % ( i, rcs.curr_radius )
         time.sleep(0.5)
 
+#===============================================================================
+# 
+#===============================================================================
+
+def build_geom_plate(edges):
+    bpSrf = GeomPlate_BuildPlateSurface(3,9,12)
+    
+    # add curve constraints
+    for edg in edges:
+        c = BRepAdaptor_HCurve()
+        print 'edge:',edg
+        c.ChangeCurve().Initialize(edg)
+        constraint = BRepFill_CurveConstraint(c.GetHandle(), 0)
+        bpSrf.Add(constraint.GetHandle())
+    
+    # add point constraint
+    try:
+        bpSrf.Perform()
+    except RuntimeError:
+        print 'failed to build the geom plate surface '
+    
+    maxSeg, maxDeg, critOrder = 9,8,0
+    tol  = 1e-4
+    dmax = max([tol,10*bpSrf.G0Error()])
+    
+    srf = bpSrf.Surface()
+#    plate = GeomPlate_MakeApprox(srf, tol, maxSeg, maxDeg, dmax, critOrder)
+    plate = GeomPlate_MakeApprox(srf, 1e-04, 100, 9, 1e-03, 0)
+    
+    uMin, uMax, vMin, vMax = srf.GetObject().Bounds()
+    
+    face = BRepBuilderAPI_MakeFace(plate.Surface(), uMin, uMax, vMin, vMax)
+    face.Build()
+    return face.Shape()
+
+
+def build_curve_network(event=None):
+    '''
+    mimic the curve network surfacing command from rhino
+    '''
+    iges = IGESImporter('../../data/curves_geom_plate.igs')
+    iges.ReadFile()
+    # GetShapes returns 36 TopoDS_Shape, while the TopoDS_Compound contains
+    # just the 6 curves I made in rhino... hmmm...
+    topo = Topo(iges.GetCompound())
+    
+#    fill = BRepFill_Filling (Degree=3, 
+#                             NbPtsOnCur=36, 
+#                             NbIter=4, 
+#                             Anisotropie=False,
+#                             Tol2d=0.01,
+#                             Tol3d=0.01,
+#                             TolAng=0.01, 
+#                             TolCurv=0.1,
+#                             MaxDeg=8,
+#                             MaxSegments=100)
+#    for edg in topo.edges():
+#        fill.Add(edg, 0, True)
+    face = build_geom_plate(list(topo.edges()))
+    display.DisplayShape(list(topo.edges()))
+    import ipdb; ipdb.set_trace()
+    #display.DisplayShape(face, angle=0.01)
+    display.DisplayShape(face)
+
 def exit(event=None):
     sys.exit()
 
-add_menu('geom plate')
-add_function_to_menu('geom plate', geom_plate)
-add_function_to_menu('geom plate', solve_radius)
-add_function_to_menu('geom plate', exit)
-
+#add_menu('geom plate')
+#add_function_to_menu('geom plate', geom_plate)
+#add_function_to_menu('geom plate', solve_radius)
+#add_function_to_menu('geom plate', build_curve_network)
+#add_function_to_menu('geom plate', exit)
+#
+build_curve_network()
 start_display()
-

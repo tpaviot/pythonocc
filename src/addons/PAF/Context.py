@@ -135,7 +135,7 @@ class ParametricModelingContext(object):
         >>> box_shape = my_context.get_shape(my_box)
                     
         '''
-        assert isinstance(parameters, Parameters), '[PAF] expected a Parameters instance, got a ' % ( parameters.__class__)
+        #assert isinstance(parameters, Parameters), '[PAF] expected a Parameters instance, got a ' % ( parameters.__class__)
 
         self.undo  = undo           # whether or not we use CommitCommand ( if used, operations can be Undo'd / Redo'd ) 
         self.docId = 100
@@ -428,7 +428,7 @@ if __name__=='__main__':
         p.X1, p.Y1, p.Z1, p.X2, p.Y2, p.Z2, p.RADIUS = 12,70,12,30,30,30,4  
         my_pnt1 = c.basic_operations.MakePointXYZ(p.X1,p.Y1,p.Z1, name="Pnt1", show=True)
         my_pnt2 = c.basic_operations.MakePointXYZ(p.X2,p.Y2,p.Z2, name="Pnt2", show=True)   # Create the second point
-        my_box = c.prim_operations.MakeBoxTwoPnt(my_pnt1,my_pnt2,name="Box1", show=True)            # Create the box
+        my_box = c.prim_operations.MakeBoxTwoPnt(my_pnt1,my_pnt2, name="Box1", show=True)            # Create the box
 
         box_shape = c.get_shape(my_box)
         print box_shape
