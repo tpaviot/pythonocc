@@ -377,6 +377,16 @@ class ParametricModelingContext(object):
         self.pres[obj]=prs
         #return True
     
+    def get_presentation(self, geom_obj):           
+        if hasattr(geom_obj, 'GetObject'):
+            geom_obj = geom_obj.GetObject()        
+            #print 'handle'
+        result_label = geom_obj.GetLastFunction().GetObject().GetEntry().FindChild(2)        
+        # TPrsStd_AISPresentation().Set can create or retrieve the AIS_Presentation        
+        # so, this is not re-creating the TPrsStd_AISPresentation presentation        
+        prs = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()        
+        return prs
+    
     def update_display(self):
         ''' Update each viewer
         '''
