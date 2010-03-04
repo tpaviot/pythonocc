@@ -356,16 +356,11 @@ class ModularBuilder(object):
             # Find argument default value
             #
             argument_default_value = "%s"%argument.default_value
-            #print argument_types, len(argument_types)
-            #print argument_default_value
-#            if argument_types[0]=='GEOM_Engine':
-#                print argument_types, argument_name
-#                sys.exit(0)
+
             if len(argument_types)==1:
                 to_write += "%s "%argument_types[0]
             elif argument_types[0].startswith('std::list'):
                 #We have something like:
-                #['std::list<Handle_GEOM_Object,std::allocator<Handle_GEOM_Object>', '>'] 2
                 #
                 #print argument_types
                 tmp = argument_types[0]
@@ -475,9 +470,6 @@ class ModularBuilder(object):
 #        #
 #        # Replace return type Standard_CString with char *
 #        #
-#        if return_type=='Standard_CString':
-#            retun_type = 'char *'
-        #print return_type
         print "\t\t %s added."%function_name
         to_write = ''#
         # Handle 'Standard_Integer &' and 'Standard_Real &' return types
@@ -519,15 +511,6 @@ class ModularBuilder(object):
             key = function_name
         else:
             key = None
-        #if self._generate_doc and not ('Handle' in class_parent_name) and key!=None:#self.MemberfunctionDocStrings.has_key(function_name):
-        #    docstring = self.MemberfunctionDocStrings.pop(key)#
-        #    to_write += '\t\t%feature("docstring") '
-        #    to_write += '%s '%function_name
-        #    try:
-        #        to_write += '"""%s""";\n'%docstring
-        #    except UnicodeDecodeError:
-        #        to_write += '"UnicodeDecodeError while parsing docstring;"\n'
-        #        print "UnicodeDecodeError"
         # Detect virtuality
         if (mem_fun.virtuality==declarations.VIRTUALITY_TYPES.PURE_VIRTUAL) or (mem_fun.virtuality==declarations.VIRTUALITY_TYPES.VIRTUAL):
             to_write+="\t\tvirtual"
@@ -548,122 +531,6 @@ class ModularBuilder(object):
             to_write += ") const;\n"
         else:
             to_write += ");\n"
-        #arguments = mem_fun.arguments
-        #print len(arguments)
-#        is_first = True
-#        for i in range(len(arguments)):
-#            argument = arguments[i]
-#            if i<len(arguments)-1:
-#                next_argument = arguments[i+1]
-#                next_argument_default_value = "%s"%next_argument.default_value
-#            else:
-#                next_argument_default_value = "PP"
-#            if not is_first:
-#                to_write += ", "
-#            argument_name = "%s"%argument.name
-#            argument_type = "%s"%argument.type
-#            argument_types=argument_type.split(" ")
-#            #
-#            # Check if the parameter is a typedef defined in another OCC package
-#            #
-#            argument_type_name = argument_types[0]
-#            #
-#            # The argument type_name may be Standard_Real, gp_Pnt etc.
-#            # The associated header must be added to the swig .if file in order to 
-#            # properly compile. This is then the strategy:
-#            # Example: V3d package is parsed
-#            #    - if the argument_type_name startswith V3d_, it's defined in this module. Pass.
-#            #    - if the argument_type_name does'nt start with V3d, (for ex gp_), then add the header
-#            #    to the list of additionnal headers.
-#            # 
-#            #
-#            t = self.CheckParameterIsTypedef(argument_type_name)
-#            if t:
-#                if (t!=self.MODULE_NAME):# and (t!='Standard'):
-#                    self.AddDependency(t)#print "Dependency with module %s"%t
-#            else:#it's not a type def
-#                if (not argument_type_name.startswith('%s_'%self.MODULE_NAME)) and \
-#                (not argument_type_name.startswith('Handle_%s_'%self.MODULE_NAME)) and\
-#                (not '::' in argument_type_name) and \
-#                (not argument_type in ['int']):#external dependency. Add header
-#                    header_to_add = '%s.hxx'%argument_type_name
-#                    if not (header_to_add in self.NEEDED_HXX):
-#                        self.NEEDED_HXX.append('%s.hxx'%argument_type_name)
-#            #
-#            # Find argument default value
-#            #
-#            argument_default_value = "%s"%argument.default_value
-#            #print argument_types, len(argument_types)
-#            #print argument_default_value
-##            if argument_types[0]=='GEOM_Engine':
-##                print argument_types, argument_name
-##                sys.exit(0)
-#            if len(argument_types)==1:
-#                to_write += "%s "%argument_types[0]
-#            elif argument_types[0].startswith('std::list'):
-#                #We have something like:
-#                #['std::list<Handle_GEOM_Object,std::allocator<Handle_GEOM_Object>', '>'] 2
-#                #
-#                #print argument_types
-#                tmp = argument_types[0]
-#                tmp = tmp.split('<')[1]
-#                tmp = tmp.split(',')[0]
-#                if tmp=='std::basic_string':
-#                    tmp='std::string'
-#                #if tmp=='std::basic_string':
-#                #    tmp='std::basic_string<char>'
-#                argument_types[0] = 'std::list'
-#                argument_types[1] = tmp               
-#                to_write += "%s<%s>"%(argument_types[0],argument_types[1])
-#                param_list.append(["String","aString"])
-#            elif argument_types[1]=='*' and len(argument_types)==2:
-#                #Case: GEOM_Engine* theEngine
-#                to_write += "%s%s %s"%(argument_types[0],argument_types[1],argument_name)
-#                param_list.append([argument_types[0],argument_name])
-#            elif len(argument_types)==3: #ex: Handle_WNT_GraphicDevice const &
-#                to_write += "%s %s %s%s"%(argument_types[1],argument_types[0],argument_types[2],argument_name)
-#                param_list.append([argument_types[1],argument_name])
-#            elif (len(argument_types)==2 and argument_types[1]!="&"):#ex: Aspect_Handle const
-#                to_write += "%s %s %s"%(argument_types[1],argument_types[0],argument_name)
-#                param_list.append([argument_types[0],argument_name])
-#            elif len(argument_types)==4:
-#                to_write += "%s %s%s"%(argument_types[0],argument_types[1],argument_name)
-#                param_list.append([argument_types[1],argument_name])
-#            else:
-#                if ('Standard_Real &' in argument_type) or\
-#                 ('Quantity_Parameter &' in argument_type) or\
-#                 ('Quantity_Length &' in argument_type) or\
-#                 ('V3d_Coordinate &' in argument_type): # byref Standard_Float parameter
-#                    to_write += 'Standard_Real &OutValue'
-#                    return_list.append(['Standard_Real',argument_name])
-#                    FUNCTION_MODIFIED = True
-#                elif 'Standard_Integer &' in argument_type:# byref Standard_Integer parameter
-#                    to_write += 'Standard_Integer &OutValue'
-#                    return_list.append(['Standard_Integer',argument_name])
-#                    FUNCTION_MODIFIED = True
-#                elif 'FairCurve_AnalysisCode &' in argument_type:
-#                    to_write += 'FairCurve_AnalysisCode &OutValue'
-#                    return_list.append(['FairCurve_AnalysisCode',argument_name])
-#                    FUNCTION_MODIFIED = True
-#                else:
-#                    to_write += "%s %s"%(argument_type,argument_name)
-#            if 'Standard_CString' in to_write:
-#                to_write = to_write.replace('Standard_CString','char *')
-#            if argument_default_value!="None" and next_argument_default_value!="None":
-#                # default value may be "1u"or "::AspectCentered" etc.
-#                if argument_default_value=="1u":
-#                    argument_default_value = "1"
-#                elif argument_default_value=="0u":
-#                    argument_default_value = "0"
-#                elif argument_default_value.startswith('::'):
-#                    argument_default_value = argument_default_value[2:]
-#                to_write += "=%s"%argument_default_value
-#                default_value[argument_name]=argument_default_value
-#            is_first = False
-#        if mem_fun.decl_string.endswith(" const"):
-#            to_write += ") const;\n"
-#        else:
-#            to_write += ");\n"
         if 'Standard_CString' in to_write:
             to_write = to_write.replace('Standard_CString','char *')
         if to_write in self._CURRENT_CLASS_EXPOSED_METHODS: #to avoid writing twice constructors
@@ -719,11 +586,11 @@ class ModularBuilder(object):
                 index_2=1
                 for rt in return_list:
                     docstring+='%s'%rt[0]
-                    if index<len(return_list):
+                    if index_2<len(return_list):
                         docstring+=", "
-                    index+=1
+                    index_2+=1
                 docstring+=']'
-            docstring+='");\n'            
+            docstring+='");\n\n'            
         else:
             # automatically generated docstring by SWUG is perfect
             docstring = '\t\t%feature("autodoc", "1");\n'
@@ -937,36 +804,6 @@ class ModularBuilder(object):
             self.fp.write('\t\tthe_shape = ss.Shape(ss.NbShapes())\n')
             self.fp.write('\t\tself.this = the_shape.this\n')
             self.fp.write('\t}\n};\n')
-        #
-        # Extra operators for GEOM_Parameter
-        #
-#        if (class_name=='GEOM_Parameter'):
-#            self.fp.write('%extend GEOM_Parameter {\n%pythoncode {\n')
-#            self.fp.write('\tdef __add__(self, value):\n')
-#            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
-#            self.fp.write('\t\t\tval = self.GetDouble() + value\n')
-#            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
-#            self.fp.write('\t\t\tval = self.GetDouble() + value.GetDouble()\n')
-#            self.fp.write('\t\treturn val\n')
-#            self.fp.write('\tdef __sub__(self, value):\n')
-#            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
-#            self.fp.write('\t\t\tval = self.GetDouble() - value\n')
-#            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
-#            self.fp.write('\t\t\tval = self.GetDouble() - value.GetDouble()\n')
-#            self.fp.write('\t\treturn val\n')
-#            self.fp.write('\tdef __mul__(self, value):\n')
-#            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
-#            self.fp.write('\t\t\tval = self.GetDouble() * value\n')
-#            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
-#            self.fp.write('\t\t\tval = self.GetDouble() * value.GetDouble()\n')
-#            self.fp.write('\t\treturn val\n')
-#            self.fp.write('\tdef __div__(self, value):\n')
-#            self.fp.write('\t\tif (isinstance(value,int) or isinstance(value,float)):\n')
-#            self.fp.write('\t\t\tval = self.GetDouble() / value\n')
-#            self.fp.write('\t\telif isinstance(value,GEOM_Parameter):\n')
-#            self.fp.write('\t\t\tval = self.GetDouble() / value.GetDouble()\n')
-#            self.fp.write('\t\treturn val\n')
-#            self.fp.write('\t}\n};\n')
         #
         # On l'ajoute a la liste des classes deja exposees
         #
