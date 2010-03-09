@@ -147,7 +147,7 @@ class Test(unittest.TestCase):
         Checks the IntVector and DoubleVector classes that are used in the StdMeshers
         module
         '''
-        from OCC.StdMeshers import IntVector, StdMeshers_FixedPoints1D
+        from OCC.StdMeshers import DoubleVector, StdMeshers_FixedPoints1D
         # The IntVector must be initialized from a list/tuple of floats/integers. Integers will
         # be converted to floats
         d_v = DoubleVector([1.0,2,3.0,4])
