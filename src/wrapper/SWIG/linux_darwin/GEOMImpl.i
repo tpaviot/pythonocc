@@ -3261,8 +3261,6 @@ class GEOMImpl_Fillet1dPoint {
 		void FilterPoints(GEOMImpl_Fillet1dPoint* arg0);
 		%feature("autodoc", "1");
 		Standard_Integer HasSolution(Standard_Real );
-		%feature("autodoc", "1");
-		void RemoveSolution(Standard_Integer );
 
 };
 %feature("shadow") GEOMImpl_Fillet1dPoint::~GEOMImpl_Fillet1dPoint %{

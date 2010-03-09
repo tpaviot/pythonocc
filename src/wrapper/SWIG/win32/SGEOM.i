@@ -366,8 +366,6 @@ class GEOM_Engine {
 		Handle_TDataStd_HArray1OfByte GetTexture(int , int , int & theWidth, int & theHeight, TCollection_AsciiString & theFileName);
 		%feature("autodoc", "1");
 		std::list<int,std::allocator<int> > GetAllTextures(int );
-		%feature("autodoc", "1");
-		const Standard_GUID & GetTextureGUID();
 
 };
 %feature("shadow") GEOM_Engine::~GEOM_Engine %{

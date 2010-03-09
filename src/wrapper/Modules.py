@@ -549,14 +549,15 @@ else:
 SALOME_GEOM_MODULES = [
                        ('Archimede',[],[]),
                        ('SGEOM',['TDataStd','TColStd','TDF','CDM','CDF','Quantity'],[],\
-                        {'GEOM_SubShapeDriver':['GetID']}),
+                        {'GEOM_SubShapeDriver':['GetID'],'GEOM_Engine':['GetTextureGUID']}),
                        ('GEOMAlgo',['Handle_TCollection'],[]),
                        ('GEOMImpl',['TDataStd','TDocStd','CDM','TDF','Handle_TCollection','CDF',
                                     'Aspect','Quantity'],\
                         ['GEOMImpl_Block6Explorer','GEOMImpl_Template','Handle_GEOMImpl_Template'],\
                         {'GEOMImpl_IShapesOperations':['GetShapesOnCylinderOld','GetShapesOnSphereOld','GetShapeProperties'],\
                          'GEOMImpl_ITransformOperations':['ScaleShapeAlongAxes'],
-                         'GEOMImpl_IInsertOperations':['GetAllTextures']}),
+                         'GEOMImpl_IInsertOperations':['GetAllTextures'],
+                         'GEOMImpl_Fillet1dPoint':['RemoveSolution']}),
                        ('BlockFix',['TopTools','Handle_TCollection'],[],\
                         {'BlockFix_SphereSpaceModifier':['ForRotation']}),
                         ('NMTDS',[],[]),
