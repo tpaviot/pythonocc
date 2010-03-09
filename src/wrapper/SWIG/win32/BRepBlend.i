@@ -393,7 +393,8 @@ class BRepBlend_ConstRad : public Blend_Function {
 		void Set(const Standard_Real Radius, const Standard_Integer Choix);
 		%feature("autodoc", "1");
 		void Set(const BlendFunc_SectionShape TypeSection);
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U1, Standard_Real V1, Standard_Real U2, Standard_Real V2) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U1, Standard_Real V1, Standard_Real U2, Standard_Real V2) -> [Standard_Real, Standard_Real]");
+
 		void Section(const Standard_Real Param, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsRational() const;
@@ -406,6 +407,7 @@ class BRepBlend_ConstRad : public Blend_Function {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -421,7 +423,8 @@ class BRepBlend_ConstRad : public Blend_Function {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		gp_Ax1 AxeRot(const Standard_Real Prm);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -453,6 +456,7 @@ class BRepBlend_AppFuncRoot : public Approx_SweepFunction {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Nb2dCurves() const;
 		%feature("autodoc","SectionShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
@@ -466,7 +470,8 @@ class BRepBlend_AppFuncRoot : public Approx_SweepFunction {
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
@@ -637,7 +642,8 @@ class BRepBlend_SurfRstConstRad : public Blend_SurfRstFunction {
 		void Set(const Standard_Real Radius, const Standard_Integer Choix);
 		%feature("autodoc", "1");
 		void Set(const BlendFunc_SectionShape TypeSection);
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V, Standard_Real W) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V, Standard_Real W) -> [Standard_Real, Standard_Real]");
+
 		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, const Standard_Real W, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsRational() const;
@@ -650,6 +656,7 @@ class BRepBlend_SurfRstConstRad : public Blend_SurfRstFunction {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -663,7 +670,8 @@ class BRepBlend_SurfRstConstRad : public Blend_SurfRstFunction {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -730,7 +738,8 @@ class BRepBlend_CSCircular : public Blend_CSFunction {
 		void Set(const Standard_Real Radius, const Standard_Integer Choix);
 		%feature("autodoc", "1");
 		void Set(const BlendFunc_SectionShape TypeSection);
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V, Standard_Real W) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V, Standard_Real W) -> [Standard_Real, Standard_Real]");
+
 		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, const Standard_Real W, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
@@ -747,6 +756,7 @@ class BRepBlend_CSCircular : public Blend_CSFunction {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -758,7 +768,8 @@ class BRepBlend_CSCircular : public Blend_CSFunction {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 		%feature("autodoc", "1");
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -837,7 +848,8 @@ class BRepBlend_RstRstEvolRad : public Blend_RstRstFunction {
 		void Set(const BlendFunc_SectionShape TypeSection);
 		%feature("autodoc", "1");
 		Standard_Boolean CenterCircleRst1Rst2(const gp_Pnt &PtRst1, const gp_Pnt &PtRst2, const gp_Vec &np, gp_Pnt & Center, gp_Vec & VdMed) const;
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V) -> [Standard_Real, Standard_Real]");
+
 		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsRational() const;
@@ -850,6 +862,7 @@ class BRepBlend_RstRstEvolRad : public Blend_RstRstFunction {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -863,7 +876,8 @@ class BRepBlend_RstRstEvolRad : public Blend_RstRstFunction {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -971,7 +985,8 @@ class BRepBlend_ChAsym : public Blend_Function {
 		virtual		Standard_Boolean TwistOnS2() const;
 		%feature("autodoc", "1");
 		virtual		void Tangent(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, gp_Vec & TgFirst, gp_Vec & TgLast, gp_Vec & NormFirst, gp_Vec & NormLast) const;
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U1, Standard_Real V1, Standard_Real U2, Standard_Real V2) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U1, Standard_Real V1, Standard_Real U2, Standard_Real V2) -> [Standard_Real, Standard_Real]");
+
 		void Section(const Standard_Real Param, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, Standard_Real &OutValue, Standard_Real &OutValue, gp_Lin & C);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsRational() const;
@@ -984,6 +999,7 @@ class BRepBlend_ChAsym : public Blend_Function {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -997,7 +1013,8 @@ class BRepBlend_ChAsym : public Blend_Function {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Set(const Standard_Real Dist1, const Standard_Real Angle, const Standard_Integer Choix);
@@ -1027,6 +1044,7 @@ class BRepBlend_AppSurface : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
 		%feature("autodoc","SurfShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
@@ -1051,6 +1069,7 @@ class BRepBlend_AppSurface : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbCurves2d() const;
 		%feature("autodoc","Curves2dShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
@@ -1063,6 +1082,7 @@ class BRepBlend_AppSurface : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		const TColStd_Array1OfInteger & Curves2dMults() const;
 		%feature("autodoc","TolReached() -> [Standard_Real, Standard_Real]");
+
 		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real Max2dError(const Standard_Integer Index) const;
@@ -1126,6 +1146,7 @@ class BRepBlend_Extremity {
 		%feature("autodoc", "1");
 		void AddArc(const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Param, const IntSurf_Transition &TLine, const IntSurf_Transition &TArc);
 		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real]");
+
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsVertex() const;
@@ -1211,6 +1232,7 @@ class BRepBlend_Chamfer : public Blend_Function {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -1218,7 +1240,8 @@ class BRepBlend_Chamfer : public Blend_Function {
 		virtual		void Knots(TColStd_Array1OfReal & TKnots);
 		%feature("autodoc", "1");
 		virtual		void Mults(TColStd_Array1OfInteger & TMults);
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U1, Standard_Real V1, Standard_Real U2, Standard_Real V2) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U1, Standard_Real V1, Standard_Real U2, Standard_Real V2) -> [Standard_Real, Standard_Real]");
+
 		void Section(const Standard_Real Param, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, Standard_Real &OutValue, Standard_Real &OutValue, gp_Lin & C);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
@@ -1226,7 +1249,8 @@ class BRepBlend_Chamfer : public Blend_Function {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 		%feature("autodoc", "1");
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -1346,7 +1370,8 @@ class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
 		void Set(const BlendFunc_SectionShape TypeSection);
 		%feature("autodoc", "1");
 		Standard_Boolean CenterCircleRst1Rst2(const gp_Pnt &PtRst1, const gp_Pnt &PtRst2, const gp_Vec &np, gp_Pnt & Center, gp_Vec & VdMed) const;
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V) -> [Standard_Real, Standard_Real]");
+
 		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsRational() const;
@@ -1359,6 +1384,7 @@ class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -1372,7 +1398,8 @@ class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -1446,6 +1473,7 @@ class BRepBlend_Ruled : public Blend_Function {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -1461,7 +1489,8 @@ class BRepBlend_Ruled : public Blend_Function {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		gp_Ax1 AxeRot(const Standard_Real Prm);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -1732,7 +1761,8 @@ class BRepBlend_CSConstRad : public Blend_CSFunction {
 		void Set(const Standard_Real Radius, const Standard_Integer Choix);
 		%feature("autodoc", "1");
 		void Set(const BlendFunc_SectionShape TypeSection);
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V, Standard_Real W) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V, Standard_Real W) -> [Standard_Real, Standard_Real]");
+
 		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, const Standard_Real W, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
@@ -1749,6 +1779,7 @@ class BRepBlend_CSConstRad : public Blend_CSFunction {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -1760,7 +1791,8 @@ class BRepBlend_CSConstRad : public Blend_CSFunction {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 		%feature("autodoc", "1");
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -2229,6 +2261,7 @@ class BRepBlend_AppSurf : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
 		%feature("autodoc","SurfShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
@@ -2251,6 +2284,7 @@ class BRepBlend_AppSurf : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbCurves2d() const;
 		%feature("autodoc","Curves2dShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
@@ -2263,6 +2297,7 @@ class BRepBlend_AppSurf : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		const TColStd_Array1OfInteger & Curves2dMults() const;
 		%feature("autodoc","TolReached() -> [Standard_Real, Standard_Real]");
+
 		virtual		void TolReached(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
@@ -2506,10 +2541,12 @@ class BRepBlend_SurfRstLineBuilder {
 		%feature("autodoc", "1");
 		void Perform(Blend_SurfRstFunction & Func, Blend_FuncInv & Finv, Blend_SurfPointFuncInv & FinvP, Blend_SurfCurvFuncInv & FinvC, const Standard_Real Pdep, const Standard_Real Pmax, const Standard_Real MaxStep, const Standard_Real TolGuide, const math_Vector &Soldep, const Standard_Real Tolesp, const Standard_Real Fleche, const Standard_Boolean Appro=0);
 		%feature("autodoc","PerformFirstSection(Standard_Real Pdep, Standard_Real Pmax, const Soldep, Standard_Real Tolesp, Standard_Real TolGuide, Standard_Boolean RecRst, Standard_Boolean RecP, Standard_Boolean RecS) -> Standard_Real");
+
 		Standard_Boolean PerformFirstSection(Blend_SurfRstFunction & Func, Blend_FuncInv & Finv, Blend_SurfPointFuncInv & FinvP, Blend_SurfCurvFuncInv & FinvC, const Standard_Real Pdep, const Standard_Real Pmax, const math_Vector &Soldep, const Standard_Real Tolesp, const Standard_Real TolGuide, const Standard_Boolean RecRst, const Standard_Boolean RecP, const Standard_Boolean RecS, Standard_Real &OutValue, math_Vector & ParSol);
 		%feature("autodoc", "1");
 		Standard_Boolean Complete(Blend_SurfRstFunction & Func, Blend_FuncInv & Finv, Blend_SurfPointFuncInv & FinvP, Blend_SurfCurvFuncInv & FinvC, const Standard_Real Pmin);
 		%feature("autodoc","ArcToRecadre(const Sol, Standard_Integer PrevIndex) -> Standard_Real");
+
 		Standard_Integer ArcToRecadre(const math_Vector &Sol, const Standard_Integer PrevIndex, gp_Pnt2d & pt2d, gp_Pnt2d & lastpt2d, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
@@ -2607,9 +2644,11 @@ class BRepBlend_BlendTool {
 	public:
 		%feature("autodoc", "1");
 		BRepBlend_BlendTool();
-		%feature("autodoc","Project(const P, const S, const C) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Project(const P, const S, const C) -> [Standard_Real, Standard_Real]");
+
 		Standard_Boolean Project(const gp_Pnt2d &P, const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor2d_HCurve2d &C, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","Inters(const P1, const P2, const S, const C) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Inters(const P1, const P2, const S, const C) -> [Standard_Real, Standard_Real]");
+
 		Standard_Boolean Inters(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor2d_HCurve2d &C, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real Parameter(const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &C);
@@ -2619,7 +2658,8 @@ class BRepBlend_BlendTool {
 		Standard_Integer NbSamplesU(const Handle_Adaptor3d_HSurface &S, const Standard_Real u1, const Standard_Real u2);
 		%feature("autodoc", "1");
 		Standard_Integer NbSamplesV(const Handle_Adaptor3d_HSurface &S, const Standard_Real v1, const Standard_Real v2);
-		%feature("autodoc","Bounds(const C) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Bounds(const C) -> [Standard_Real, Standard_Real]");
+
 		void Bounds(const Handle_Adaptor2d_HCurve2d &C, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Handle_Adaptor2d_HCurve2d CurveOnSurf(const Handle_Adaptor2d_HCurve2d &C, const Handle_Adaptor3d_HSurface &arg1);
@@ -2649,6 +2689,7 @@ class BRepBlend_RstRstLineBuilder {
 		%feature("autodoc", "1");
 		void Perform(Blend_RstRstFunction & Func, Blend_SurfCurvFuncInv & Finv1, Blend_CurvPointFuncInv & FinvP1, Blend_SurfCurvFuncInv & Finv2, Blend_CurvPointFuncInv & FinvP2, const Standard_Real Pdep, const Standard_Real Pmax, const Standard_Real MaxStep, const Standard_Real TolGuide, const math_Vector &Soldep, const Standard_Real Tolesp, const Standard_Real Fleche, const Standard_Boolean Appro=0);
 		%feature("autodoc","PerformFirstSection(Standard_Real Pdep, Standard_Real Pmax, const Soldep, Standard_Real Tolesp, Standard_Real TolGuide, Standard_Boolean RecRst1, Standard_Boolean RecP1, Standard_Boolean RecRst2, Standard_Boolean RecP2) -> Standard_Real");
+
 		Standard_Boolean PerformFirstSection(Blend_RstRstFunction & Func, Blend_SurfCurvFuncInv & Finv1, Blend_CurvPointFuncInv & FinvP1, Blend_SurfCurvFuncInv & Finv2, Blend_CurvPointFuncInv & FinvP2, const Standard_Real Pdep, const Standard_Real Pmax, const math_Vector &Soldep, const Standard_Real Tolesp, const Standard_Real TolGuide, const Standard_Boolean RecRst1, const Standard_Boolean RecP1, const Standard_Boolean RecRst2, const Standard_Boolean RecP2, Standard_Real &OutValue, math_Vector & ParSol);
 		%feature("autodoc", "1");
 		Standard_Boolean Complete(Blend_RstRstFunction & Func, Blend_SurfCurvFuncInv & Finv1, Blend_CurvPointFuncInv & FinvP1, Blend_SurfCurvFuncInv & Finv2, Blend_CurvPointFuncInv & FinvP2, const Standard_Real Pmin);
@@ -2696,6 +2737,7 @@ class BRepBlend_Walking {
 		%feature("autodoc", "1");
 		Standard_Boolean PerformFirstSection(Blend_Function & F, const Standard_Real Pdep, math_Vector & ParDep, const Standard_Real Tolesp, const Standard_Real TolGuide, TopAbs_State & Pos1, TopAbs_State & Pos2);
 		%feature("autodoc","PerformFirstSection(Standard_Real Pdep, Standard_Real Pmax, const ParDep, Standard_Real Tolesp, Standard_Real TolGuide, Standard_Boolean RecOnS1, Standard_Boolean RecOnS2) -> Standard_Real");
+
 		Standard_Boolean PerformFirstSection(Blend_Function & F, Blend_FuncInv & FInv, const Standard_Real Pdep, const Standard_Real Pmax, const math_Vector &ParDep, const Standard_Real Tolesp, const Standard_Real TolGuide, const Standard_Boolean RecOnS1, const Standard_Boolean RecOnS2, Standard_Real &OutValue, math_Vector & ParSol);
 		%feature("autodoc", "1");
 		Standard_Boolean Continu(Blend_Function & F, Blend_FuncInv & FInv, const Standard_Real P);
@@ -2786,7 +2828,8 @@ class BRepBlend_EvolRad : public Blend_Function {
 		void Set(const Standard_Integer Choix);
 		%feature("autodoc", "1");
 		void Set(const BlendFunc_SectionShape TypeSection);
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U1, Standard_Real V1, Standard_Real U2, Standard_Real V2) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U1, Standard_Real V1, Standard_Real U2, Standard_Real V2) -> [Standard_Real, Standard_Real]");
+
 		void Section(const Standard_Real Param, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsRational() const;
@@ -2799,6 +2842,7 @@ class BRepBlend_EvolRad : public Blend_Function {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -2812,7 +2856,8 @@ class BRepBlend_EvolRad : public Blend_Function {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 		%feature("autodoc", "1");
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -2887,7 +2932,8 @@ class BRepBlend_SurfRstEvolRad : public Blend_SurfRstFunction {
 		void Set(const Standard_Integer Choix);
 		%feature("autodoc", "1");
 		void Set(const BlendFunc_SectionShape TypeSection);
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V, Standard_Real W) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V, Standard_Real W) -> [Standard_Real, Standard_Real]");
+
 		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, const Standard_Real W, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsRational() const;
@@ -2900,6 +2946,7 @@ class BRepBlend_SurfRstEvolRad : public Blend_SurfRstFunction {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -2913,7 +2960,8 @@ class BRepBlend_SurfRstEvolRad : public Blend_SurfRstFunction {
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };

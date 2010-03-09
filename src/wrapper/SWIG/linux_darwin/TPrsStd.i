@@ -503,6 +503,7 @@ class TPrsStd_ConstraintTools {
 		%feature("autodoc", "1");
 		void ComputeOthers(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);
 		%feature("autodoc","ComputeTextAndValue(const aConst, Standard_Boolean anIsAngle) -> Standard_Real");
+
 		void ComputeTextAndValue(const Handle_TDataStd_Constraint &aConst, Standard_Real &OutValue, TCollection_ExtendedString & aText, const Standard_Boolean anIsAngle);
 		%feature("autodoc", "1");
 		void ComputeAngleForOneFace(const Handle_TDataStd_Constraint &aConst, Handle_AIS_InteractiveObject & anAIS);

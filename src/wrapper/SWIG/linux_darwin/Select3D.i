@@ -627,6 +627,7 @@ class Select3D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &aLocation);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -772,6 +773,7 @@ class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &aLocation);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -883,7 +885,8 @@ class Select3D_Projector {
 		virtual		void Transform(gp_Pnt & Pnt) const;
 		%feature("autodoc", "1");
 		virtual		void Project(const gp_Pnt &P, gp_Pnt2d & Pout) const;
-		%feature("autodoc","Project(const P) -> [Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","Project(const P) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Project(const gp_Pnt &P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Project(const gp_Pnt &P, const gp_Vec &D1, gp_Pnt2d & Pout, gp_Vec2d & D1out) const;
@@ -935,6 +938,7 @@ class Select3D_SensitiveSegment : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &aLocation);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -1025,6 +1029,7 @@ class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		Select3D_SensitiveTriangle(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt &P1, const gp_Pnt &P2, const gp_Pnt &P3, const Select3D_TypeOfSensitivity Sensitivity=Select3D_TOS_INTERIOR);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -1039,8 +1044,10 @@ class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		gp_XY Center2D() const;
 		%feature("autodoc","Status(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		Standard_Integer Status(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue) const;
 		%feature("autodoc","Status(const p0, const p1, const p2, const aPoint, Standard_Real aTol) -> Standard_Real");
+
 		Standard_Integer Status(const gp_XY &p0, const gp_XY &p1, const gp_XY &p2, const gp_XY &aPoint, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
@@ -1106,6 +1113,7 @@ class Select3D_SensitiveGroup : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		void ResetLocation();
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -1153,6 +1161,7 @@ class Select3D_SensitiveFace : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		Select3D_SensitiveFace(const Handle_SelectBasics_EntityOwner &OwnerId, const Handle_TColgp_HArray1OfPnt &ThePoints, const Select3D_TypeOfSensitivity Sensitivity=Select3D_TOS_INTERIOR);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -1328,6 +1337,7 @@ class Select3D_SensitiveCurve : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		Select3D_SensitiveCurve(const Handle_SelectBasics_EntityOwner &OwnerId, const TColgp_Array1OfPnt &ThePoints);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -1476,6 +1486,7 @@ class Select3D_SensitiveTriangulation : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &aLocation);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -1490,6 +1501,7 @@ class Select3D_SensitiveTriangulation : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		const gp_Pnt2d & CDG2D() const;
 		%feature("autodoc","Status(const p0, const p1, const p2, const aPoint, Standard_Real aTol) -> Standard_Real");
+
 		Standard_Integer Status(const gp_XY &p0, const gp_XY &p1, const gp_XY &p2, const gp_XY &aPoint, const Standard_Real aTol, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasInitLocation() const;
@@ -1610,6 +1622,7 @@ class Select3D_SensitiveWire : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		void ResetLocation();
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -1665,6 +1678,7 @@ class Select3D_SensitiveCircle : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		Select3D_SensitiveCircle(const Handle_SelectBasics_EntityOwner &OwnerId, const TColgp_Array1OfPnt &apolyg3d, const Standard_Boolean FilledCircle=0);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -1673,6 +1687,7 @@ class Select3D_SensitiveCircle : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
 		%feature("autodoc","ArrayBounds() -> [Standard_Integer, Standard_Integer]");
+
 		void ArrayBounds(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt GetPoint3d(const Standard_Integer rank) const;

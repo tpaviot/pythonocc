@@ -359,7 +359,8 @@ class IntPoly_ShapeSection {
 		void Section();
 		%feature("autodoc", "1");
 		void Explore();
-		%feature("autodoc","Intersect(const S1, const S2, const S3, const OS1, const VS0, const V1, const V2) -> [Standard_RealStandard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","Intersect(const S1, const S2, const S3, const OS1, const VS0, const V1, const V2) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		Standard_Boolean Intersect(const gp_Pnt &S1, const gp_Pnt &S2, const gp_Pnt &S3, const gp_Vec &OS1, const gp_Vec &VS0, const gp_Vec &V1, const gp_Vec &V2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const gp_Pnt &Pt1, const gp_Pnt &Pt2);

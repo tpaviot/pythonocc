@@ -100,7 +100,8 @@ class ShapeBuild_Edge {
 		void ReplacePCurve(const TopoDS_Edge &edge, const Handle_Geom2d_Curve &pcurve, const TopoDS_Face &face) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ReassignPCurve(const TopoDS_Edge &edge, const TopoDS_Face &old, const TopoDS_Face &sub) const;
-		%feature("autodoc","TransformPCurve(const pcurve, const trans, Standard_Real uFact) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","TransformPCurve(const pcurve, const trans, Standard_Real uFact) -> [Standard_Real, Standard_Real]");
+
 		Handle_Geom2d_Curve TransformPCurve(const Handle_Geom2d_Curve &pcurve, const gp_Trsf2d &trans, const Standard_Real uFact, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void RemoveCurve3d(const TopoDS_Edge &edge) const;

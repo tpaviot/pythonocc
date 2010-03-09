@@ -175,7 +175,8 @@ class BRepFeat {
 		void Barycenter(const TopoDS_Shape &S, gp_Pnt & Pt);
 		%feature("autodoc", "1");
 		Standard_Real ParametricBarycenter(const TopoDS_Shape &S, const Handle_Geom_Curve &C);
-		%feature("autodoc","ParametricMinMax(const S, const C, Standard_Boolean Ori=0) -> [Standard_RealStandard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","ParametricMinMax(const S, const C, Standard_Boolean Ori=0) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void ParametricMinMax(const TopoDS_Shape &S, const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & flag, const Standard_Boolean Ori=0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsInside(const TopoDS_Face &F1, const TopoDS_Face &F2);

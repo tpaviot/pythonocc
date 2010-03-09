@@ -162,6 +162,7 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_ShapeAlgo_ToolContainer ToolContainer() const;
 		%feature("autodoc","ConnectNextWire(const saw, const nextsewd, Standard_Real maxtol) -> Standard_Real");
+
 		virtual		Standard_Boolean ConnectNextWire(const Handle_ShapeAnalysis_Wire &saw, const Handle_ShapeExtend_WireData &nextsewd, const Standard_Real maxtol, Standard_Real &OutValue, Standard_Boolean & revsewd, Standard_Boolean & revnextsewd) const;
 		%feature("autodoc", "1");
 		virtual		void ApproxBSplineCurve(const Handle_Geom_BSplineCurve &bspline, TColGeom_SequenceOfCurve & seq) const;
@@ -181,7 +182,8 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 		virtual		TopoDS_Wire OuterWire(const TopoDS_Face &face) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Surface ConvertToPeriodic(const Handle_Geom_Surface &surf) const;
-		%feature("autodoc","GetFaceUVBounds(const F) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","GetFaceUVBounds(const F) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		virtual		void GetFaceUVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineCurve ConvertCurveToBSpline(const Handle_Geom_Curve &C3D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree) const;

@@ -1888,13 +1888,15 @@ class MDF_Tool {
 		MDF_Tool();
 		%feature("autodoc", "1");
 		void WriteLabels(const Handle_TDF_Data &aSource, const Handle_PDF_Data &aTarget, const MDF_TypeASDriverMap &aDriverMap, const Handle_MDF_SRelocationTable &aReloc);
-		%feature("autodoc","WriteLabels(const aSourceLab, const theLabels, const theAttributes, const aDriverMap, const aReloc) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","WriteLabels(const aSourceLab, const theLabels, const theAttributes, const aDriverMap, const aReloc) -> [Standard_Integer, Standard_Integer]");
+
 		void WriteLabels(const TDF_Label &aSourceLab, const Handle_PColStd_HArray1OfInteger &theLabels, const Handle_PDF_HAttributeArray1 &theAttributes, const MDF_TypeASDriverMap &aDriverMap, const Handle_MDF_SRelocationTable &aReloc, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void WriteAttributes(const MDF_TypeASDriverMap &aDriverMap, const Handle_MDF_SRelocationTable &aReloc);
 		%feature("autodoc", "1");
 		void ReadLabels(const Handle_PDF_Data &aSource, const Handle_TDF_Data &aTarget, const MDF_TypeARDriverMap &aDriverMap, const Handle_MDF_RRelocationTable &aReloc);
-		%feature("autodoc","ReadLabels(const theLabels, const theAttributes, const aDriverMap, const aReloc) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","ReadLabels(const theLabels, const theAttributes, const aDriverMap, const aReloc) -> [Standard_Integer, Standard_Integer]");
+
 		void ReadLabels(TDF_Label & anIns, const Handle_PColStd_HArray1OfInteger &theLabels, const Handle_PDF_HAttributeArray1 &theAttributes, const MDF_TypeARDriverMap &aDriverMap, const Handle_MDF_RRelocationTable &aReloc, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void ReadAttributes(const MDF_TypeARDriverMap &aDriverMap, const Handle_MDF_RRelocationTable &aReloc);

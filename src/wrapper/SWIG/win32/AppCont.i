@@ -47,6 +47,7 @@ class AppCont_FitFunction {
 		%feature("autodoc", "1");
 		const AppParCurves_MultiCurve & Value();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -224,6 +225,7 @@ class AppCont_FitFunction2d {
 		%feature("autodoc", "1");
 		const AppParCurves_MultiCurve & Value();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };

@@ -49,6 +49,7 @@ class IntImpParGen {
 		%feature("autodoc", "1");
 		void DeterminePosition(IntRes2d_Position & Pos1, const IntRes2d_Domain &Dom1, const gp_Pnt2d &P1, const Standard_Real Tol);
 		%feature("autodoc","NormalizeOnDomain(const Dom1) -> Standard_Real");
+
 		Standard_Real NormalizeOnDomain(Standard_Real &OutValue, const IntRes2d_Domain &Dom1);
 
 };

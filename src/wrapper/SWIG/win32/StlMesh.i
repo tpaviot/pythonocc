@@ -464,8 +464,10 @@ class StlMesh_MeshExplorer {
 		%feature("autodoc", "1");
 		void NextTriangle();
 		%feature("autodoc","TriangleVertices() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void TriangleVertices(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","TriangleOrientation() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void TriangleOrientation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -530,10 +532,12 @@ class StlMesh_MeshTriangle : public MMgt_TShared {
 		%feature("autodoc", "1");
 		StlMesh_MeshTriangle(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3, const Standard_Real Xn, const Standard_Real Yn, const Standard_Real Zn);
 		%feature("autodoc","GetVertexAndOrientation() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Real, Standard_Real, Standard_Real]");
+
 		void GetVertexAndOrientation(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetVertexAndOrientation(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3, const Standard_Real Xn, const Standard_Real Yn, const Standard_Real Zn);
 		%feature("autodoc","GetVertex() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		void GetVertex(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetVertex(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3);

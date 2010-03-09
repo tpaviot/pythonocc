@@ -1829,8 +1829,10 @@ class Dynamic_FuzzyClass : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const char * aparameter, Standard_Boolean & avalue) const;
 		%feature("autodoc","Value(Standard_CString aparameter) -> Standard_Integer");
+
 		virtual		Standard_Boolean Value(const char * aparameter, Standard_Integer &OutValue) const;
 		%feature("autodoc","Value(Standard_CString aparameter) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const char * aparameter, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const char * aparameter, TCollection_AsciiString & avalue) const;

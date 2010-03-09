@@ -1136,7 +1136,8 @@ class AlienImage {
 		Standard_Boolean CreateImage(const char * theFileName, Handle_Image_Image & theImage);
 		%feature("autodoc", "1");
 		Standard_Boolean CreateImage(OSD_File & theFile, Handle_Image_Image & theImage);
-		%feature("autodoc","LoadImageFile(Standard_CString anImageFile) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","LoadImageFile(Standard_CString anImageFile) -> [Standard_Integer, Standard_Integer]");
+
 		Standard_Boolean LoadImageFile(const char * anImageFile, Handle_Image_Image & anImage, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 };

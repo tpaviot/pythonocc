@@ -214,10 +214,12 @@ class GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox : public 
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
 		%feature("autodoc","Values(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -304,10 +306,12 @@ class GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox : public m
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
 		%feature("autodoc","Values(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -525,10 +529,12 @@ class GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox : public math
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
 		%feature("autodoc","Values(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -645,10 +651,12 @@ class GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox {
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
 		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -684,6 +692,7 @@ class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 		%feature("autodoc", "1");
 		GeomInt_ThePrmPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor3d_HSurface &Surf2);
 		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
 		%feature("autodoc", "1");
 		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);
@@ -741,10 +750,12 @@ class GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox {
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
 		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -799,7 +810,8 @@ class GeomInt_TheComputeLineBezierOfWLApprox {
 		Standard_Boolean IsAllApproximated() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
 		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbMultiCurves() const;
@@ -861,10 +873,12 @@ class GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
 		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -986,6 +1000,7 @@ class GeomInt_TheComputeLineOfWLApprox {
 		%feature("autodoc", "1");
 		Standard_Boolean IsToleranceReached() const;
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const AppParCurves_MultiBSpCurve & Value() const;
@@ -1137,7 +1152,8 @@ class GeomInt_LineConstructor {
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbParts() const;
-		%feature("autodoc","Part(Standard_Integer I) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Part(Standard_Integer I) -> [Standard_Real, Standard_Real]");
+
 		void Part(const Standard_Integer I, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -1212,6 +1228,7 @@ class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 		%feature("autodoc", "1");
 		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric &Surf1, const Handle_Adaptor3d_HSurface &Surf2);
 		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
 		%feature("autodoc", "1");
 		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);

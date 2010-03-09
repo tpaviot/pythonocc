@@ -1159,6 +1159,33 @@ def __del__(self):
 		delete $self;
 	}
 };
+%extend SMDS_Mesh {
+	const SMDS_MeshNode * nodeValue(int index) {
+		int i;
+		SMDS_NodeIteratorPtr iterator=$self->nodesIterator();
+		for (i=0; i<=index-1; i++) {
+			iterator->next();}
+		return iterator->next();
+	}
+};
+%extend SMDS_Mesh {
+	const SMDS_MeshEdge * edgeValue(int index) {
+		int i;
+		SMDS_EdgeIteratorPtr iterator=$self->edgesIterator();
+		for (i=0; i<=index-1; i++) {
+			iterator->next();}
+		return iterator->next();
+	}
+};
+%extend SMDS_Mesh {
+	const SMDS_MeshFace * faceValue(int index) {
+		int i;
+		SMDS_FaceIteratorPtr iterator=$self->facesIterator();
+		for (i=0; i<=index-1; i++) {
+			iterator->next();}
+		return iterator->next();
+	}
+};
 
 
 %nodefaultctor SMDS_MeshGroup;

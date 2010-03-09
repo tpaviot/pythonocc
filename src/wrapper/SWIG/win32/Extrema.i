@@ -1150,6 +1150,7 @@ class Extrema_ExtPC {
 		%feature("autodoc", "1");
 		Extrema_POnCurv Point(const Standard_Integer N) const;
 		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
+
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
 
 };
@@ -1191,6 +1192,7 @@ class Extrema_ExtPS {
 		%feature("autodoc", "1");
 		Extrema_POnSurf Point(const Standard_Integer N) const;
 		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & PUfVf, gp_Pnt & PUfVl, gp_Pnt & PUlVf, gp_Pnt & PUlVl) const;
 
 };
@@ -1416,6 +1418,7 @@ class Extrema_ExtCC2d {
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv2d & P1, Extrema_POnCurv2d & P2) const;
 		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P11, gp_Pnt2d & P12, gp_Pnt2d & P21, gp_Pnt2d & P22) const;
 
 };
@@ -1791,10 +1794,13 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt &P);
 		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
 		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
+
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -2230,10 +2236,13 @@ class Extrema_PCFOfEPCOfExtPC2d : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt2d &P);
 		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
 		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
+
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -2367,10 +2376,13 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt &P);
 		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
 		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
+
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -2542,10 +2554,13 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt2d &P);
 		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
 		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
+
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -2781,10 +2796,13 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC2d : public math_FunctionWithDerivative
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt2d &P);
 		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
 		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
+
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -3118,6 +3136,7 @@ class Extrema_ExtCC {
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
 		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P11, gp_Pnt & P12, gp_Pnt & P21, gp_Pnt & P22) const;
 
 };
@@ -3661,10 +3680,13 @@ class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		void SetPoint(const gp_Pnt &P);
 		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
 		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
+
 		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -3704,6 +3726,7 @@ class Extrema_POnSurf {
 		%feature("autodoc", "1");
 		const gp_Pnt & Value() const;
 		%feature("autodoc","Parameter() -> [Standard_Real, Standard_Real]");
+
 		void Parameter(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real _CSFDB_GetExtrema_POnSurfmyU() const;
@@ -4144,6 +4167,7 @@ class Extrema_ExtPC2d {
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
+
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
 
 };
@@ -4896,6 +4920,7 @@ class Extrema_ELPCOfLocateExtPC {
 		%feature("autodoc", "1");
 		Extrema_POnCurv Point(const Standard_Integer N) const;
 		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
+
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
 
 };
@@ -5076,6 +5101,7 @@ class Extrema_ELPCOfLocateExtPC2d {
 		%feature("autodoc", "1");
 		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 		%feature("autodoc","TrimmedDistances() -> [Standard_Real, Standard_Real]");
+
 		void TrimmedDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
 
 };

@@ -49,7 +49,8 @@ class BlendFunc {
 	public:
 		%feature("autodoc", "1");
 		BlendFunc();
-		%feature("autodoc","GetShape(BlendFunc_SectionShape SectShape, Standard_Real MaxAng) -> [Standard_IntegerStandard_IntegerStandard_Integer]");
+		%feature("autodoc","GetShape(BlendFunc_SectionShape SectShape, Standard_Real MaxAng) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		void GetShape(const BlendFunc_SectionShape SectShape, const Standard_Real MaxAng, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Convert_ParameterisationType & TypeConv);
 		%feature("autodoc", "1");
 		void GetMinimalWeights(const BlendFunc_SectionShape SectShape, const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real AngleMax, TColStd_Array1OfReal & Weigths);

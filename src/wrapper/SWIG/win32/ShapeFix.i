@@ -1923,7 +1923,8 @@ class ShapeFix_IntersectionTool {
 		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real param, const TopoDS_Vertex &vert, const TopoDS_Face &face, TopoDS_Edge & newE1, TopoDS_Edge & newE2, const Standard_Real preci) const;
 		%feature("autodoc", "1");
 		Standard_Boolean CutEdge(const TopoDS_Edge &edge, const Standard_Real pend, const Standard_Real cut, const TopoDS_Face &face, Standard_Boolean & iscutline) const;
-		%feature("autodoc","FixSelfIntersectWire(const face) -> [Standard_Integer, Standard_IntegerStandard_Integer]");
+		%feature("autodoc","FixSelfIntersectWire(const face) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		Standard_Boolean FixSelfIntersectWire(Handle_ShapeExtend_WireData & sewd, const TopoDS_Face &face, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean FixIntersectingWires(TopoDS_Face & face) const;
@@ -2084,6 +2085,7 @@ class ShapeFix_SplitTool {
 		%feature("autodoc", "1");
 		Standard_Boolean CutEdge(const TopoDS_Edge &edge, const Standard_Real pend, const Standard_Real cut, const TopoDS_Face &face, Standard_Boolean & iscutline) const;
 		%feature("autodoc","SplitEdge(const edge, Standard_Real fp, const V1, Standard_Real lp, const V2, const face, const context, Standard_Real tol3d, Standard_Real tol2d) -> Standard_Integer");
+
 		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real fp, const TopoDS_Vertex &V1, const Standard_Real lp, const TopoDS_Vertex &V2, const TopoDS_Face &face, TopTools_SequenceOfShape & SeqE, Standard_Integer &OutValue, const Handle_ShapeBuild_ReShape &context, const Standard_Real tol3d, const Standard_Real tol2d) const;
 
 };

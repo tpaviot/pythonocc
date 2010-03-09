@@ -239,6 +239,7 @@ class BRepGProp_UFunctionOfVinertGK : public math_Function {
 		%feature("autodoc", "1");
 		void SetVParam(const Standard_Real theVParam);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 
 };
@@ -340,6 +341,7 @@ class BRepGProp_TFunctionOfVinertGK : public math_Function {
 		%feature("autodoc", "1");
 		Standard_Real AbsolutError() const;
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer GetStateNumber();
@@ -395,6 +397,7 @@ class BRepGProp_Face {
 		%feature("autodoc", "1");
 		Standard_Integer UIntegrationOrder() const;
 		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Normal(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & VNor) const;

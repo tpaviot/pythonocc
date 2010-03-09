@@ -520,7 +520,8 @@ class XSControl_Utils {
 		void AppendTra(const Handle_TColStd_HSequenceOfTransient &seqval, const Handle_Standard_Transient &traval) const;
 		%feature("autodoc", "1");
 		char * DateString(const Standard_Integer yy, const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss) const;
-		%feature("autodoc","DateValues(Standard_CString text) -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_IntegerStandard_Integer]");
+		%feature("autodoc","DateValues(Standard_CString text) -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		void DateValues(const char * text, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		char * ToCString(const Handle_TCollection_HAsciiString &strval) const;
@@ -680,7 +681,8 @@ class XSControl_Controller : public MMgt_TShared {
 		void SetModeWrite(const Standard_Integer modemin, const Standard_Integer modemax, const Standard_Boolean shape=1);
 		%feature("autodoc", "1");
 		void SetModeWriteHelp(const Standard_Integer modetrans, const char * help, const Standard_Boolean shape=1);
-		%feature("autodoc","ModeWriteBounds(Standard_Boolean shape=1) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","ModeWriteBounds(Standard_Boolean shape=1) -> [Standard_Integer, Standard_Integer]");
+
 		Standard_Boolean ModeWriteBounds(Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Boolean shape=1) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsModeWrite(const Standard_Integer modetrans, const Standard_Boolean shape=1) const;
@@ -797,7 +799,8 @@ class XSControl_Reader {
 		void PrintCheckTransfer(const Standard_Boolean failsonly, const IFSelect_PrintCount mode) const;
 		%feature("autodoc", "1");
 		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode=0) const;
-		%feature("autodoc","GetStatsTransfer(const list) -> [Standard_Integer, Standard_IntegerStandard_Integer]");
+		%feature("autodoc","GetStatsTransfer(const list) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		void GetStatsTransfer(const Handle_TColStd_HSequenceOfTransient &list, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 
 };

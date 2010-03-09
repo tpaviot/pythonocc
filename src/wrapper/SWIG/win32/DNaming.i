@@ -85,6 +85,7 @@ class DNaming {
 		%feature("autodoc", "1");
 		void GetShape(const char * ShapeEntry, const Handle_TDF_Data &Data, TopTools_ListOfShape & Shapes);
 		%feature("autodoc","GetEntry(const Shape, const Data) -> Standard_Integer");
+
 		TCollection_AsciiString GetEntry(const TopoDS_Shape &Shape, const Handle_TDF_Data &Data, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void LoadImportedShape(const TDF_Label &theResultLabel, const TopoDS_Shape &theShape);

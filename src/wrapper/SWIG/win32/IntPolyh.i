@@ -113,7 +113,8 @@ class IntPolyh_StartPoint {
 		Standard_Real GetAngle() const;
 		%feature("autodoc", "1");
 		Standard_Integer ChainList() const;
-		%feature("autodoc","GetEdgePoints(const Triangle) -> [Standard_Integer, Standard_IntegerStandard_Integer]");
+		%feature("autodoc","GetEdgePoints(const Triangle) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		Standard_Integer GetEdgePoints(const IntPolyh_Triangle &Triangle, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Equal(const IntPolyh_StartPoint &StPt);
@@ -682,13 +683,15 @@ class IntPolyh_Intersection {
 		Standard_Integer NbSectionLines() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPointsInLine(const Standard_Integer IndexLine) const;
-		%feature("autodoc","GetLinePoint(Standard_Integer IndexLine, Standard_Integer IndexPoint) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","GetLinePoint(Standard_Integer IndexLine, Standard_Integer IndexPoint) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void GetLinePoint(const Standard_Integer IndexLine, const Standard_Integer IndexPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbTangentZones() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPointsInTangentZone(const Standard_Integer IndexLine) const;
-		%feature("autodoc","GetTangentZonePoint(Standard_Integer IndexLine, Standard_Integer IndexPoint) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","GetTangentZonePoint(Standard_Integer IndexLine, Standard_Integer IndexPoint) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void GetTangentZonePoint(const Standard_Integer IndexLine, const Standard_Integer IndexPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };

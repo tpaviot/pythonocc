@@ -1164,6 +1164,7 @@ def __del__(self):
 class Geom2d_Point : public Geom2d_Geometry {
 	public:
 		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real]");
+
 		virtual		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d Pnt2d() const;
@@ -1440,6 +1441,7 @@ class Geom2d_Transformation : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void PreMultiply(const Handle_Geom2d_Transformation &Other);
 		%feature("autodoc","Transforms() -> [Standard_Real, Standard_Real]");
+
 		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Geom2d_Transformation Copy() const;
@@ -1489,6 +1491,7 @@ class Geom2d_CartesianPoint : public Geom2d_Point {
 		%feature("autodoc", "1");
 		void SetY(const Standard_Real Y);
 		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real]");
+
 		virtual		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d Pnt2d() const;
@@ -1607,6 +1610,7 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		void SetKnot(const Standard_Integer Index, const Standard_Real K, const Standard_Integer M);
 		%feature("autodoc","PeriodicNormalization() -> Standard_Real");
+
 		void PeriodicNormalization(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetPeriodic();
@@ -1620,9 +1624,11 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 		void SetPole(const Standard_Integer Index, const gp_Pnt2d &P, const Standard_Real Weight);
 		%feature("autodoc", "1");
 		void SetWeight(const Standard_Integer Index, const Standard_Real Weight);
-		%feature("autodoc","MovePoint(Standard_Real U, const P, Standard_Integer Index1, Standard_Integer Index2) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","MovePoint(Standard_Real U, const P, Standard_Integer Index1, Standard_Integer Index2) -> [Standard_Integer, Standard_Integer]");
+
 		void MovePoint(const Standard_Real U, const gp_Pnt2d &P, const Standard_Integer Index1, const Standard_Integer Index2, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc","MovePointAndTangent(Standard_Real U, const P, const Tangent, Standard_Real Tolerance, Standard_Integer StartingCondition, Standard_Integer EndingCondition) -> Standard_Integer");
+
 		void MovePointAndTangent(const Standard_Real U, const gp_Pnt2d &P, const gp_Vec2d &Tangent, const Standard_Real Tolerance, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
@@ -1674,7 +1680,8 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 		Standard_Integer LastUKnotIndex() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real LastParameter() const;
-		%feature("autodoc","LocateU(Standard_Real U, Standard_Real ParametricTolerance, Standard_Boolean WithKnotRepetition=0) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","LocateU(Standard_Real U, Standard_Real ParametricTolerance, Standard_Boolean WithKnotRepetition=0) -> [Standard_Integer, Standard_Integer]");
+
 		void LocateU(const Standard_Real U, const Standard_Real ParametricTolerance, Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Boolean WithKnotRepetition=0) const;
 		%feature("autodoc", "1");
 		Standard_Integer Multiplicity(const Standard_Integer Index) const;
@@ -1697,6 +1704,7 @@ class Geom2d_BSplineCurve : public Geom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Standard_Integer MaxDegree();
 		%feature("autodoc","Resolution(Standard_Real ToleranceUV) -> Standard_Real");
+
 		void Resolution(const Standard_Real ToleranceUV, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;
@@ -1738,6 +1746,7 @@ class Geom2d_Vector : public Geom2d_Geometry {
 		%feature("autodoc", "1");
 		Standard_Real Angle(const Handle_Geom2d_Vector &Other) const;
 		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real]");
+
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Magnitude() const;
@@ -2039,6 +2048,7 @@ class Geom2d_BezierCurve : public Geom2d_BoundedCurve {
 		%feature("autodoc", "1");
 		Standard_Integer MaxDegree();
 		%feature("autodoc","Resolution(Standard_Real ToleranceUV) -> Standard_Real");
+
 		void Resolution(const Standard_Real ToleranceUV, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom2d_Geometry Copy() const;

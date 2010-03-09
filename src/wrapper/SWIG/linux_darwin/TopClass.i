@@ -74,8 +74,10 @@ class TopClass_SolidExplorer {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Reject(const gp_Pnt &P) const;
 		%feature("autodoc","Segment(const P) -> Standard_Real");
+
 		virtual		void Segment(const gp_Pnt &P, gp_Lin & L, Standard_Real &OutValue);
 		%feature("autodoc","OtherSegment(const P) -> Standard_Real");
+
 		virtual		void OtherSegment(const gp_Pnt &P, gp_Lin & L, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void InitShell();

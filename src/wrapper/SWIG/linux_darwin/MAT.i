@@ -1158,7 +1158,8 @@ class MAT_Graph : public MMgt_TShared {
 		Standard_Integer NumberOfBasicElts() const;
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfInfiniteNodes() const;
-		%feature("autodoc","FusionOfBasicElts(Standard_Integer IndexElt1, Standard_Integer IndexElt2) -> [Standard_Integer, Standard_IntegerStandard_IntegerStandard_Integer]");
+		%feature("autodoc","FusionOfBasicElts(Standard_Integer IndexElt1, Standard_Integer IndexElt2) -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		void FusionOfBasicElts(const Standard_Integer IndexElt1, const Standard_Integer IndexElt2, Standard_Boolean & MergeArc1, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & MergeArc2, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void CompactArcs();

@@ -88,6 +88,7 @@ class ChFi3d_Builder {
 		%feature("autodoc", "1");
 		Standard_Integer Contains(const TopoDS_Edge &E) const;
 		%feature("autodoc","Contains(const E) -> Standard_Integer");
+
 		Standard_Integer Contains(const TopoDS_Edge &E, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbElements() const;
@@ -165,10 +166,13 @@ class ChFi3d_SearchSing : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		ChFi3d_SearchSing(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -200,18 +204,21 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		%feature("autodoc", "1");
 		void SetDist(const Standard_Real Dis, const Standard_Integer IC, const TopoDS_Face &F);
 		%feature("autodoc","GetDist(Standard_Integer IC) -> Standard_Real");
+
 		void GetDist(const Standard_Integer IC, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Add(const Standard_Real Dis1, const Standard_Real Dis2, const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		void SetDists(const Standard_Real Dis1, const Standard_Real Dis2, const Standard_Integer IC, const TopoDS_Face &F);
-		%feature("autodoc","Dists(Standard_Integer IC) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Dists(Standard_Integer IC) -> [Standard_Real, Standard_Real]");
+
 		void Dists(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void AddDA(const Standard_Real Dis, const Standard_Real Angle, const TopoDS_Edge &E, const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		void SetDistAngle(const Standard_Real Dis, const Standard_Real Angle, const Standard_Integer IC, const TopoDS_Face &F);
-		%feature("autodoc","GetDistAngle(Standard_Integer IC) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","GetDistAngle(Standard_Integer IC) -> [Standard_Real, Standard_Real]");
+
 		void GetDistAngle(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & DisOnFace1) const;
 		%feature("autodoc", "1");
 		ChFiDS_ChamfMethod IsChamfer(const Standard_Integer IC) const;
@@ -223,19 +230,26 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 		Standard_Integer NbSurf(const Standard_Integer IC) const;
 		%feature("autodoc", "1");
 		Handle_ChFiDS_SecHArray1 Sect(const Standard_Integer IC, const Standard_Integer IS) const;
-		%feature("autodoc","SimulSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, const PC1, const Sref1, const PCref1, const S2, const I2, TopAbs_Orientation Or2, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecP, Standard_Boolean RecS, Standard_Boolean RecRst, const Soldep) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","SimulSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, const PC1, const Sref1, const PCref1, const S2, const I2, TopAbs_Orientation Or2, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecP, Standard_Boolean RecS, Standard_Boolean RecRst, const Soldep) -> [Standard_Real, Standard_Real]");
+
 		virtual		void SimulSurf(Handle_ChFiDS_SurfData & Data, const Handle_ChFiDS_HElSpine &Guide, const Handle_ChFiDS_Spine &Spine, const Standard_Integer Choix, const Handle_BRepAdaptor_HSurface &S1, const Handle_Adaptor3d_TopolTool &I1, const Handle_BRepAdaptor_HCurve2d &PC1, const Handle_BRepAdaptor_HSurface &Sref1, const Handle_BRepAdaptor_HCurve2d &PCref1, Standard_Boolean & Decroch1, const Handle_BRepAdaptor_HSurface &S2, const Handle_Adaptor3d_TopolTool &I2, const TopAbs_Orientation Or2, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecP, const Standard_Boolean RecS, const Standard_Boolean RecRst, const math_Vector &Soldep);
-		%feature("autodoc","SimulSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, TopAbs_Orientation Or1, const S2, const I2, const PC2, const Sref2, const PCref2, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecP, Standard_Boolean RecS, Standard_Boolean RecRst, const Soldep) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","SimulSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, TopAbs_Orientation Or1, const S2, const I2, const PC2, const Sref2, const PCref2, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecP, Standard_Boolean RecS, Standard_Boolean RecRst, const Soldep) -> [Standard_Real, Standard_Real]");
+
 		virtual		void SimulSurf(Handle_ChFiDS_SurfData & Data, const Handle_ChFiDS_HElSpine &Guide, const Handle_ChFiDS_Spine &Spine, const Standard_Integer Choix, const Handle_BRepAdaptor_HSurface &S1, const Handle_Adaptor3d_TopolTool &I1, const TopAbs_Orientation Or1, const Handle_BRepAdaptor_HSurface &S2, const Handle_Adaptor3d_TopolTool &I2, const Handle_BRepAdaptor_HCurve2d &PC2, const Handle_BRepAdaptor_HSurface &Sref2, const Handle_BRepAdaptor_HCurve2d &PCref2, Standard_Boolean & Decroch2, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecP, const Standard_Boolean RecS, const Standard_Boolean RecRst, const math_Vector &Soldep);
-		%feature("autodoc","SimulSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, const PC1, const Sref1, const PCref1, TopAbs_Orientation Or1, const S2, const I2, const PC2, const Sref2, const PCref2, TopAbs_Orientation Or2, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecP1, Standard_Boolean RecRst1, Standard_Boolean RecP2, Standard_Boolean RecRst2, const Soldep) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","SimulSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, const PC1, const Sref1, const PCref1, TopAbs_Orientation Or1, const S2, const I2, const PC2, const Sref2, const PCref2, TopAbs_Orientation Or2, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecP1, Standard_Boolean RecRst1, Standard_Boolean RecP2, Standard_Boolean RecRst2, const Soldep) -> [Standard_Real, Standard_Real]");
+
 		virtual		void SimulSurf(Handle_ChFiDS_SurfData & Data, const Handle_ChFiDS_HElSpine &Guide, const Handle_ChFiDS_Spine &Spine, const Standard_Integer Choix, const Handle_BRepAdaptor_HSurface &S1, const Handle_Adaptor3d_TopolTool &I1, const Handle_BRepAdaptor_HCurve2d &PC1, const Handle_BRepAdaptor_HSurface &Sref1, const Handle_BRepAdaptor_HCurve2d &PCref1, Standard_Boolean & Decroch1, const TopAbs_Orientation Or1, const Handle_BRepAdaptor_HSurface &S2, const Handle_Adaptor3d_TopolTool &I2, const Handle_BRepAdaptor_HCurve2d &PC2, const Handle_BRepAdaptor_HSurface &Sref2, const Handle_BRepAdaptor_HCurve2d &PCref2, Standard_Boolean & Decroch2, const TopAbs_Orientation Or2, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecP1, const Standard_Boolean RecRst1, const Standard_Boolean RecP2, const Standard_Boolean RecRst2, const math_Vector &Soldep);
-		%feature("autodoc","PerformSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, const S2, const I2, Standard_Real MaxStep, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecOnS1, Standard_Boolean RecOnS2, const Soldep) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","PerformSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, const S2, const I2, Standard_Real MaxStep, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecOnS1, Standard_Boolean RecOnS2, const Soldep) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean PerformSurf(ChFiDS_SequenceOfSurfData & Data, const Handle_ChFiDS_HElSpine &Guide, const Handle_ChFiDS_Spine &Spine, const Standard_Integer Choix, const Handle_BRepAdaptor_HSurface &S1, const Handle_Adaptor3d_TopolTool &I1, const Handle_BRepAdaptor_HSurface &S2, const Handle_Adaptor3d_TopolTool &I2, const Standard_Real MaxStep, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecOnS1, const Standard_Boolean RecOnS2, const math_Vector &Soldep, Standard_Boolean & Intf, Standard_Boolean & Intl);
-		%feature("autodoc","PerformSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, const PC1, const Sref1, const PCref1, const S2, const I2, TopAbs_Orientation Or2, Standard_Real MaxStep, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecP, Standard_Boolean RecS, Standard_Boolean RecRst, const Soldep) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","PerformSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, const PC1, const Sref1, const PCref1, const S2, const I2, TopAbs_Orientation Or2, Standard_Real MaxStep, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecP, Standard_Boolean RecS, Standard_Boolean RecRst, const Soldep) -> [Standard_Real, Standard_Real]");
+
 		virtual		void PerformSurf(ChFiDS_SequenceOfSurfData & Data, const Handle_ChFiDS_HElSpine &Guide, const Handle_ChFiDS_Spine &Spine, const Standard_Integer Choix, const Handle_BRepAdaptor_HSurface &S1, const Handle_Adaptor3d_TopolTool &I1, const Handle_BRepAdaptor_HCurve2d &PC1, const Handle_BRepAdaptor_HSurface &Sref1, const Handle_BRepAdaptor_HCurve2d &PCref1, Standard_Boolean & Decroch1, const Handle_BRepAdaptor_HSurface &S2, const Handle_Adaptor3d_TopolTool &I2, const TopAbs_Orientation Or2, const Standard_Real MaxStep, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecP, const Standard_Boolean RecS, const Standard_Boolean RecRst, const math_Vector &Soldep);
-		%feature("autodoc","PerformSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, TopAbs_Orientation Or1, const S2, const I2, const PC2, const Sref2, const PCref2, Standard_Real MaxStep, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecP, Standard_Boolean RecS, Standard_Boolean RecRst, const Soldep) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","PerformSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, TopAbs_Orientation Or1, const S2, const I2, const PC2, const Sref2, const PCref2, Standard_Real MaxStep, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecP, Standard_Boolean RecS, Standard_Boolean RecRst, const Soldep) -> [Standard_Real, Standard_Real]");
+
 		virtual		void PerformSurf(ChFiDS_SequenceOfSurfData & Data, const Handle_ChFiDS_HElSpine &Guide, const Handle_ChFiDS_Spine &Spine, const Standard_Integer Choix, const Handle_BRepAdaptor_HSurface &S1, const Handle_Adaptor3d_TopolTool &I1, const TopAbs_Orientation Or1, const Handle_BRepAdaptor_HSurface &S2, const Handle_Adaptor3d_TopolTool &I2, const Handle_BRepAdaptor_HCurve2d &PC2, const Handle_BRepAdaptor_HSurface &Sref2, const Handle_BRepAdaptor_HCurve2d &PCref2, Standard_Boolean & Decroch2, const Standard_Real MaxStep, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecP, const Standard_Boolean RecS, const Standard_Boolean RecRst, const math_Vector &Soldep);
-		%feature("autodoc","PerformSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, const PC1, const Sref1, const PCref1, TopAbs_Orientation Or1, const S2, const I2, const PC2, const Sref2, const PCref2, TopAbs_Orientation Or2, Standard_Real MaxStep, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecP1, Standard_Boolean RecRst1, Standard_Boolean RecP2, Standard_Boolean RecRst2, const Soldep) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","PerformSurf(const Guide, const Spine, Standard_Integer Choix, const S1, const I1, const PC1, const Sref1, const PCref1, TopAbs_Orientation Or1, const S2, const I2, const PC2, const Sref2, const PCref2, TopAbs_Orientation Or2, Standard_Real MaxStep, Standard_Real Fleche, Standard_Real TolGuide, Standard_Boolean Inside, Standard_Boolean Appro, Standard_Boolean Forward, Standard_Boolean RecP1, Standard_Boolean RecRst1, Standard_Boolean RecP2, Standard_Boolean RecRst2, const Soldep) -> [Standard_Real, Standard_Real]");
+
 		virtual		void PerformSurf(ChFiDS_SequenceOfSurfData & Data, const Handle_ChFiDS_HElSpine &Guide, const Handle_ChFiDS_Spine &Spine, const Standard_Integer Choix, const Handle_BRepAdaptor_HSurface &S1, const Handle_Adaptor3d_TopolTool &I1, const Handle_BRepAdaptor_HCurve2d &PC1, const Handle_BRepAdaptor_HSurface &Sref1, const Handle_BRepAdaptor_HCurve2d &PCref1, Standard_Boolean & Decroch1, const TopAbs_Orientation Or1, const Handle_BRepAdaptor_HSurface &S2, const Handle_Adaptor3d_TopolTool &I2, const Handle_BRepAdaptor_HCurve2d &PC2, const Handle_BRepAdaptor_HSurface &Sref2, const Handle_BRepAdaptor_HCurve2d &PCref2, Standard_Boolean & Decroch2, const TopAbs_Orientation Or2, const Standard_Real MaxStep, const Standard_Real Fleche, const Standard_Real TolGuide, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Boolean Inside, const Standard_Boolean Appro, const Standard_Boolean Forward, const Standard_Boolean RecP1, const Standard_Boolean RecRst1, const Standard_Boolean RecP2, const Standard_Boolean RecRst2, const math_Vector &Soldep);
 		%feature("autodoc", "1");
 		Standard_Integer FindChoiceDistAngle(const Standard_Integer Choice, const Standard_Boolean DisOnF1) const;
@@ -292,7 +306,8 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 		Standard_Boolean IsConstant(const Standard_Integer IC, const TopoDS_Edge &E);
 		%feature("autodoc", "1");
 		Standard_Real Radius(const Standard_Integer IC, const TopoDS_Edge &E);
-		%feature("autodoc","GetBounds(Standard_Integer IC, const E) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","GetBounds(Standard_Integer IC, const E) -> [Standard_Real, Standard_Real]");
+
 		Standard_Boolean GetBounds(const Standard_Integer IC, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Handle_Law_Function GetLaw(const Standard_Integer IC, const TopoDS_Edge &E);

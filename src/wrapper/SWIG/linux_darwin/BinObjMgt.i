@@ -168,10 +168,12 @@ class BinObjMgt_Persistent {
 		%feature("autodoc", "1");
 		const BinObjMgt_Persistent & GetExtCharacter(Standard_ExtCharacter & theValue) const;
 		%feature("autodoc","GetInteger() -> Standard_Integer");
+
 		const BinObjMgt_Persistent & GetInteger(Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		const BinObjMgt_Persistent & GetBoolean(Standard_Boolean & theValue) const;
 		%feature("autodoc","GetReal() -> Standard_Real");
+
 		const BinObjMgt_Persistent & GetReal(Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const BinObjMgt_Persistent & GetShortReal(Standard_ShortReal & theValue) const;

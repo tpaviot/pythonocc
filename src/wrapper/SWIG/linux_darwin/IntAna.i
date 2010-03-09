@@ -362,7 +362,8 @@ class IntAna_IntQuadQuad {
 		Standard_Integer NbPnt() const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Point(const Standard_Integer N) const;
-		%feature("autodoc","Parameters(Standard_Integer N) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Parameters(Standard_Integer N) -> [Standard_Real, Standard_Real]");
+
 		void Parameters(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasNextCurve(const Standard_Integer I) const;
@@ -402,6 +403,7 @@ class IntAna_Curve {
 		%feature("autodoc", "1");
 		Standard_Boolean IsOpen() const;
 		%feature("autodoc","Domain() -> [Standard_Real, Standard_Real]");
+
 		void Domain(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsConstant() const;
@@ -414,12 +416,14 @@ class IntAna_Curve {
 		%feature("autodoc", "1");
 		Standard_Boolean D1u(const Standard_Real Theta, gp_Pnt & P, gp_Vec & V);
 		%feature("autodoc","FindParameter(const P) -> Standard_Real");
+
 		Standard_Boolean FindParameter(const gp_Pnt &P, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetIsFirstOpen(const Standard_Boolean Flag);
 		%feature("autodoc", "1");
 		void SetIsLastOpen(const Standard_Boolean Flag);
-		%feature("autodoc","InternalUVValue(Standard_Real Param) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","InternalUVValue(Standard_Real Param) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void InternalUVValue(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetDomain(const Standard_Real Theta1, const Standard_Real Theta2);
@@ -538,8 +542,10 @@ class IntAna_Quadric {
 		%feature("autodoc", "1");
 		void SetQuadric(const gp_Cylinder &Cyl);
 		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","NewCoefficients(const Axis) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","NewCoefficients(const Axis) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax3 &Axis) const;
 
 };
@@ -576,7 +582,8 @@ class IntAna_IntLinTorus {
 		const gp_Pnt & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Real ParamOnLine(const Standard_Integer Index) const;
-		%feature("autodoc","ParamOnTorus(Standard_Integer Index) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","ParamOnTorus(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
 		void ParamOnTorus(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };

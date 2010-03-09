@@ -88,9 +88,11 @@ class ShapeConstruct {
 		Handle_Geom_BSplineSurface ConvertSurfaceToBSpline(const Handle_Geom_Surface &surf, const Standard_Real UF, const Standard_Real UL, const Standard_Real VF, const Standard_Real VL, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
 		%feature("autodoc", "1");
 		Standard_Boolean JoinPCurves(const Handle_TopTools_HSequenceOfShape &theEdges, const TopoDS_Face &theFace, TopoDS_Edge & theEdge);
-		%feature("autodoc","JoinCurves(const c3d1, const ac3d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2) -> [Standard_RealStandard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","JoinCurves(const c3d1, const ac3d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		Standard_Boolean JoinCurves(const Handle_Geom_Curve &c3d1, const Handle_Geom_Curve &ac3d2, const TopAbs_Orientation Orient1, const TopAbs_Orientation Orient2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Handle_Geom_Curve & c3dOut, Standard_Boolean & isRev1, Standard_Boolean & isRev2);
-		%feature("autodoc","JoinCurves(const c2d1, const ac2d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2, Standard_Boolean isError=0) -> [Standard_RealStandard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","JoinCurves(const c2d1, const ac2d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2, Standard_Boolean isError=0) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		Standard_Boolean JoinCurves(const Handle_Geom2d_Curve &c2d1, const Handle_Geom2d_Curve &ac2d2, const TopAbs_Orientation Orient1, const TopAbs_Orientation Orient2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Handle_Geom2d_Curve & c2dOut, Standard_Boolean & isRev1, Standard_Boolean & isRev2, const Standard_Boolean isError=0);
 
 };

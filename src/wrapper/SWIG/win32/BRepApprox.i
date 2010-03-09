@@ -105,10 +105,12 @@ class BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox {
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
 		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -352,10 +354,12 @@ class BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox : public mat
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
 		%feature("autodoc","Values(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -466,10 +470,12 @@ class BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox {
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
 		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -529,10 +535,12 @@ class BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox {
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
 		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -631,6 +639,7 @@ class BRepApprox_TheComputeLineOfApprox {
 		%feature("autodoc", "1");
 		Standard_Boolean IsToleranceReached() const;
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const AppParCurves_MultiBSpCurve & Value() const;
@@ -664,10 +673,12 @@ class BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox : public
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
 		%feature("autodoc","Values(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -717,6 +728,7 @@ class BRepApprox_ThePrmPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 		%feature("autodoc", "1");
 		BRepApprox_ThePrmPrmSvSurfacesOfApprox(const BRepAdaptor_Surface &Surf1, const BRepAdaptor_Surface &Surf2);
 		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
 		%feature("autodoc", "1");
 		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);
@@ -752,10 +764,12 @@ class BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox : public 
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
 		%feature("autodoc","Values(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -814,7 +828,8 @@ class BRepApprox_TheComputeLineBezierOfApprox {
 		Standard_Boolean IsAllApproximated() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
 		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbMultiCurves() const;
@@ -1135,6 +1150,7 @@ class BRepApprox_TheImpPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 		%feature("autodoc", "1");
 		BRepApprox_TheImpPrmSvSurfacesOfApprox(const IntSurf_Quadric &Surf1, const BRepAdaptor_Surface &Surf2);
 		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
 		%feature("autodoc", "1");
 		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);

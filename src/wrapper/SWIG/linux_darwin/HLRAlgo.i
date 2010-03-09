@@ -824,7 +824,8 @@ class HLRAlgo_Projector {
 		void Transform(gp_Pnt & Pnt) const;
 		%feature("autodoc", "1");
 		void Project(const gp_Pnt &P, gp_Pnt2d & Pout) const;
-		%feature("autodoc","Project(const P) -> [Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","Project(const P) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Project(const gp_Pnt &P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Project(const gp_Pnt &P, const gp_Vec &D1, gp_Pnt2d & Pout, gp_Vec2d & D1out) const;
@@ -860,6 +861,7 @@ class HLRAlgo_EdgeIterator {
 		%feature("autodoc", "1");
 		void NextHidden();
 		%feature("autodoc","Hidden() -> [Standard_Real, Standard_Real]");
+
 		void Hidden(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
 		%feature("autodoc", "1");
 		void InitVisible(const HLRAlgo_EdgeStatus &status);
@@ -868,6 +870,7 @@ class HLRAlgo_EdgeIterator {
 		%feature("autodoc", "1");
 		void NextVisible();
 		%feature("autodoc","Visible() -> [Standard_Real, Standard_Real]");
+
 		void Visible(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd);
 
 };
@@ -1226,6 +1229,7 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void NextHide();
 		%feature("autodoc","Hide() -> Standard_Integer");
+
 		void Hide(Standard_Address & Coordinates, HLRAlgo_EdgeStatus & status, Standard_Integer &OutValue, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
 		%feature("autodoc", "1");
 		void InitShow();
@@ -1234,6 +1238,7 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void NextShow();
 		%feature("autodoc","Show() -> Standard_Integer");
+
 		void Show(Standard_Address & Coordinates, Standard_Integer &OutValue, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1934,10 +1939,12 @@ class HLRAlgo_EdgeStatus {
 		%feature("autodoc", "1");
 		void Initialize(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd);
 		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
+
 		void Bounds(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbVisiblePart() const;
-		%feature("autodoc","VisiblePart(Standard_Integer Index) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","VisiblePart(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
 		void VisiblePart(const Standard_Integer Index, Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
 		%feature("autodoc", "1");
 		void Hide(const Standard_Real Start, const Standard_ShortReal TolStart, const Standard_Real End, const Standard_ShortReal TolEnd, const Standard_Boolean OnFace, const Standard_Boolean OnBoundary);
@@ -1981,6 +1988,7 @@ class HLRAlgo_Coincidence {
 		%feature("autodoc", "1");
 		void SetState3D(const TopAbs_State stbef, const TopAbs_State staft);
 		%feature("autodoc","Value2D() -> [Standard_Integer, Standard_Real]");
+
 		void Value2D(Standard_Integer &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void State3D(TopAbs_State & stbef, TopAbs_State & staft) const;

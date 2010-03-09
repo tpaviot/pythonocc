@@ -623,6 +623,7 @@ class NMTDS_PassKey {
 		%feature("autodoc", "1");
 		Standard_Integer Id(const Standard_Integer aIndex) const;
 		%feature("autodoc","Ids() -> [Standard_Integer, Standard_Integer]");
+
 		void Ids(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Dump(const Standard_Integer aHex=0) const;
@@ -1366,6 +1367,7 @@ class NMTDS_Iterator {
 		%feature("autodoc", "1");
 		void Next();
 		%feature("autodoc","Current() -> [Standard_Integer, Standard_Integer]");
+
 		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & aWithSubShape) const;
 		%feature("autodoc", "1");
 		virtual		void Prepare();

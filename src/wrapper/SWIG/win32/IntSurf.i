@@ -444,6 +444,7 @@ class IntSurf_Quadric {
 		%feature("autodoc", "1");
 		gp_Vec Gradient(const gp_Pnt &P) const;
 		%feature("autodoc","ValAndGrad(const P) -> Standard_Real");
+
 		void ValAndGrad(const gp_Pnt &P, Standard_Real &OutValue, gp_Vec & Grad) const;
 		%feature("autodoc", "1");
 		GeomAbs_SurfaceType TypeQuadric() const;
@@ -463,7 +464,8 @@ class IntSurf_Quadric {
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv) const;
 		%feature("autodoc", "1");
 		gp_Vec Normale(const Standard_Real U, const Standard_Real V) const;
-		%feature("autodoc","Parameters(const P) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Parameters(const P) -> [Standard_Real, Standard_Real]");
+
 		void Parameters(const gp_Pnt &P, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Vec Normale(const gp_Pnt &P) const;
@@ -564,10 +566,13 @@ class IntSurf_PntOn2S {
 		%feature("autodoc", "1");
 		const gp_Pnt & Value() const;
 		%feature("autodoc","ParametersOnS1() -> [Standard_Real, Standard_Real]");
+
 		void ParametersOnS1(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","ParametersOnS2() -> [Standard_Real, Standard_Real]");
+
 		void ParametersOnS2(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -672,6 +677,7 @@ class IntSurf_PathPoint {
 		%feature("autodoc", "1");
 		const gp_Pnt & Value() const;
 		%feature("autodoc","Value2d() -> [Standard_Real, Standard_Real]");
+
 		void Value2d(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsPassingPnt() const;
@@ -683,7 +689,8 @@ class IntSurf_PathPoint {
 		const gp_Dir2d & Direction2d() const;
 		%feature("autodoc", "1");
 		Standard_Integer Multiplicity() const;
-		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -776,7 +783,8 @@ class IntSurf_PathPointTool {
 		IntSurf_PathPointTool();
 		%feature("autodoc", "1");
 		gp_Pnt Value3d(const IntSurf_PathPoint &PStart);
-		%feature("autodoc","Value2d(const PStart) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Value2d(const PStart) -> [Standard_Real, Standard_Real]");
+
 		void Value2d(const IntSurf_PathPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsPassingPnt(const IntSurf_PathPoint &PStart);
@@ -788,7 +796,8 @@ class IntSurf_PathPointTool {
 		gp_Dir2d Direction2d(const IntSurf_PathPoint &PStart);
 		%feature("autodoc", "1");
 		Standard_Integer Multiplicity(const IntSurf_PathPoint &PStart);
-		%feature("autodoc","Parameters(const PStart, Standard_Integer Mult) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Parameters(const PStart, Standard_Integer Mult) -> [Standard_Real, Standard_Real]");
+
 		void Parameters(const IntSurf_PathPoint &PStart, const Standard_Integer Mult, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -857,6 +866,7 @@ class IntSurf_InteriorPoint {
 		%feature("autodoc", "1");
 		const gp_Pnt & Value() const;
 		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real]");
+
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real UParameter() const;
@@ -1113,7 +1123,8 @@ class IntSurf_InteriorPointTool {
 		IntSurf_InteriorPointTool();
 		%feature("autodoc", "1");
 		gp_Pnt Value3d(const IntSurf_InteriorPoint &PStart);
-		%feature("autodoc","Value2d(const PStart) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Value2d(const PStart) -> [Standard_Real, Standard_Real]");
+
 		void Value2d(const IntSurf_InteriorPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		gp_Vec Direction3d(const IntSurf_InteriorPoint &PStart);
@@ -1180,6 +1191,7 @@ class IntSurf_QuadricTool {
 		%feature("autodoc", "1");
 		void Gradient(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, gp_Vec & V);
 		%feature("autodoc","ValueAndGradient(const Quad, Standard_Real X, Standard_Real Y, Standard_Real Z) -> Standard_Real");
+
 		void ValueAndGradient(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, Standard_Real &OutValue, gp_Vec & V);
 		%feature("autodoc", "1");
 		Standard_Real Tolerance(const IntSurf_Quadric &Quad);

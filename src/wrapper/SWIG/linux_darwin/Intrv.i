@@ -258,6 +258,7 @@ class Intrv_Interval {
 		%feature("autodoc", "1");
 		Standard_ShortReal TolEnd() const;
 		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
+
 		void Bounds(Standard_Real &OutValue, Standard_ShortReal & TolStart, Standard_Real &OutValue, Standard_ShortReal & TolEnd) const;
 		%feature("autodoc", "1");
 		void SetStart(const Standard_Real Start, const Standard_ShortReal TolStart);

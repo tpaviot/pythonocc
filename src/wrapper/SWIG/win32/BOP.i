@@ -3518,6 +3518,7 @@ class BOP_SDFWESFiller {
 		%feature("autodoc", "1");
 		const BOPTools_IndexedDataMapOfIntegerState & StatesMap() const;
 		%feature("autodoc","Faces() -> [Standard_Integer, Standard_Integer]");
+
 		void Faces(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer SenseFlag() const;

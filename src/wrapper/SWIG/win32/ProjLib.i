@@ -274,16 +274,20 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 		%feature("autodoc", "1");
 		const Handle_Adaptor3d_HCurve & GetCurve() const;
 		%feature("autodoc","GetTolerance() -> [Standard_Real, Standard_Real]");
+
 		void GetTolerance(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbCurves() const;
-		%feature("autodoc","Bounds(Standard_Integer Index) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Bounds(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
 		void Bounds(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsSinglePnt(const Standard_Integer Index, gp_Pnt2d & P) const;
 		%feature("autodoc","IsUIso(Standard_Integer Index) -> Standard_Real");
+
 		Standard_Boolean IsUIso(const Standard_Integer Index, Standard_Real &OutValue) const;
 		%feature("autodoc","IsVIso(Standard_Integer Index) -> Standard_Real");
+
 		Standard_Boolean IsVIso(const Standard_Integer Index, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d Value(const Standard_Real U) const;

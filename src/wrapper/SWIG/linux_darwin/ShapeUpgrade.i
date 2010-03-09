@@ -1368,6 +1368,7 @@ class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Edge &theEdge, const TopoDS_Face &theFace);
 		%feature("autodoc","Approx() -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Approx(Handle_Geom_Curve & Curve3d, Handle_Geom2d_Curve & Curve2d, Handle_Geom2d_Curve & Curve2dR, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void SetSplitCurve3dTool(const Handle_ShapeUpgrade_SplitCurve3d &splitCurve3dTool);
@@ -1656,6 +1657,7 @@ class ShapeUpgrade_FixSmallBezierCurves : public ShapeUpgrade_FixSmallCurves {
 		%feature("autodoc", "1");
 		ShapeUpgrade_FixSmallBezierCurves();
 		%feature("autodoc","Approx() -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Approx(Handle_Geom_Curve & Curve3d, Handle_Geom2d_Curve & Curve2d, Handle_Geom2d_Curve & Curve2dR, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;

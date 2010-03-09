@@ -52,7 +52,8 @@ class LProp3d_SurfaceTool {
 		gp_Vec DN(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
 		%feature("autodoc", "1");
 		Standard_Integer Continuity(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc","Bounds(const S) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","Bounds(const S) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void Bounds(const Handle_Adaptor3d_HSurface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };

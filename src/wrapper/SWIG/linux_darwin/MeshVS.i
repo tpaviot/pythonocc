@@ -1422,22 +1422,27 @@ def __del__(self):
 class MeshVS_DataSource : public MMgt_TShared {
 	public:
 		%feature("autodoc","GetGeom(Standard_Integer ID, Standard_Boolean IsElement) -> Standard_Integer");
+
 		virtual		Standard_Boolean GetGeom(const Standard_Integer ID, const Standard_Boolean IsElement, TColStd_Array1OfReal & Coords, Standard_Integer &OutValue, MeshVS_EntityType & Type) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean GetGeomType(const Standard_Integer ID, const Standard_Boolean IsElement, MeshVS_EntityType & Type) const;
 		%feature("autodoc","Get3DGeom(Standard_Integer ID) -> Standard_Integer");
+
 		virtual		Standard_Boolean Get3DGeom(const Standard_Integer ID, Standard_Integer &OutValue, Handle_MeshVS_HArray1OfSequenceOfInteger & Data) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Address GetAddr(const Standard_Integer ID, const Standard_Boolean IsElement) const;
 		%feature("autodoc","GetNodesByElement(Standard_Integer ID) -> Standard_Integer");
+
 		virtual		Standard_Boolean GetNodesByElement(const Standard_Integer ID, TColStd_Array1OfInteger & NodeIDs, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const TColStd_PackedMapOfInteger & GetAllNodes() const;
 		%feature("autodoc", "1");
 		virtual		const TColStd_PackedMapOfInteger & GetAllElements() const;
-		%feature("autodoc","GetNormal(Standard_Integer Id, Standard_Integer Max) -> [Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","GetNormal(Standard_Integer Id, Standard_Integer Max) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean GetNormal(const Standard_Integer Id, const Standard_Integer Max, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","GetNodeNormal(Standard_Integer ranknode, Standard_Integer ElementId) -> [Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","GetNodeNormal(Standard_Integer ranknode, Standard_Integer ElementId) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean GetNodeNormal(const Standard_Integer ranknode, const Standard_Integer ElementId, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean GetNormalsByElement(const Standard_Integer Id, const Standard_Boolean IsNodal, const Standard_Integer MaxNodes, Handle_TColStd_HArray1OfReal & Normals) const;
@@ -1713,7 +1718,8 @@ class MeshVS_VectorPrsBuilder : public MeshVS_PrsBuilder {
 		Standard_Boolean GetVector(const Standard_Boolean IsElement, const Standard_Integer ID, gp_Vec & Vect) const;
 		%feature("autodoc", "1");
 		void SetVector(const Standard_Boolean IsElement, const Standard_Integer ID, const gp_Vec &Vect);
-		%feature("autodoc","GetMinMaxVectorValue(Standard_Boolean IsElement) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","GetMinMaxVectorValue(Standard_Boolean IsElement) -> [Standard_Real, Standard_Real]");
+
 		void GetMinMaxVectorValue(const Standard_Boolean IsElement, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetSimplePrsMode(const Standard_Boolean IsSimpleArrow);
@@ -2190,8 +2196,10 @@ class MeshVS_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetMaterial(const Standard_Integer Key, const Graphic3d_MaterialAspect &Value);
 		%feature("autodoc","GetInteger(Standard_Integer Key) -> Standard_Integer");
+
 		Standard_Boolean GetInteger(const Standard_Integer Key, Standard_Integer &OutValue) const;
 		%feature("autodoc","GetDouble(Standard_Integer Key) -> Standard_Real");
+
 		Standard_Boolean GetDouble(const Standard_Integer Key, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean GetBoolean(const Standard_Integer Key, Standard_Boolean & Value) const;
@@ -3238,6 +3246,7 @@ class MeshVS_SensitivePolyhedron : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &aLocation);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -3289,6 +3298,7 @@ class MeshVS_SensitiveMesh : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -4132,6 +4142,7 @@ class MeshVS_DummySensitiveEntity : public SelectBasics_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresult);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
@@ -4188,7 +4199,8 @@ class MeshVS_MeshPrsBuilder : public MeshVS_PrsBuilder {
 		virtual		void BuildHilightPrs(const Handle_Prs3d_Presentation &Prs, const TColStd_PackedMapOfInteger &IDs, const Standard_Boolean IsElement) const;
 		%feature("autodoc", "1");
 		void AddVolumePrs(const Handle_MeshVS_HArray1OfSequenceOfInteger &Topo, const TColStd_Array1OfReal &Nodes, const Standard_Integer NbNodes, const Handle_Graphic3d_ArrayOfPrimitives &Array, const Standard_Boolean IsReflected, const Standard_Boolean IsShrinked, const Standard_Boolean IsSelect, const Standard_Real ShrinkCoef);
-		%feature("autodoc","HowManyPrimitives(const Topo, Standard_Boolean AsPolygons, Standard_Boolean IsSelect, Standard_Integer NbNodes) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","HowManyPrimitives(const Topo, Standard_Boolean AsPolygons, Standard_Boolean IsSelect, Standard_Integer NbNodes) -> [Standard_Integer, Standard_Integer]");
+
 		void HowManyPrimitives(const Handle_MeshVS_HArray1OfSequenceOfInteger &Topo, const Standard_Boolean AsPolygons, const Standard_Boolean IsSelect, const Standard_Integer NbNodes, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;

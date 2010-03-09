@@ -2260,6 +2260,7 @@ class IGESGeom_ConicArc : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		Standard_Integer ComputedFormNumber() const;
 		%feature("autodoc","Equation() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void Equation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real ZPlane() const;
@@ -2284,10 +2285,13 @@ class IGESGeom_ConicArc : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		gp_Dir TransformedAxis() const;
 		%feature("autodoc","Definition() -> [Standard_Real, Standard_Real]");
+
 		void Definition(gp_Pnt & Center, gp_Dir & MainAxis, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","TransformedDefinition() -> [Standard_Real, Standard_Real]");
+
 		void TransformedDefinition(gp_Pnt & Center, gp_Dir & MainAxis, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","ComputedDefinition() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void ComputedDefinition(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -2329,8 +2333,10 @@ class IGESGeom_Plane : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		void SetFormNumber(const Standard_Integer form);
 		%feature("autodoc","Equation() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void Equation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","TransformedEquation() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void TransformedEquation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasBoundingCurve() const;
@@ -3080,17 +3086,23 @@ class IGESGeom_SplineCurve : public IGESData_IGESEntity {
 		Standard_Integer NbSegments() const;
 		%feature("autodoc", "1");
 		Standard_Real BreakPoint(const Standard_Integer Index) const;
-		%feature("autodoc","XCoordPolynomial(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","XCoordPolynomial(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void XCoordPolynomial(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","YCoordPolynomial(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","YCoordPolynomial(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void YCoordPolynomial(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ZCoordPolynomial(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","ZCoordPolynomial(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void ZCoordPolynomial(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","XValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void XValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","YValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void YValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","ZValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void ZValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -3714,6 +3726,7 @@ class IGESGeom_OffsetCurve : public IGESData_IGESEntity {
 		%feature("autodoc", "1");
 		gp_Vec TransformedNormalVector() const;
 		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real]");
+
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real StartParameter() const;

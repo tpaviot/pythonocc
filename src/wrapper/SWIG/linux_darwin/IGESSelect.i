@@ -2910,6 +2910,7 @@ class IGESSelect {
 		%feature("autodoc", "1");
 		void Run();
 		%feature("autodoc","WhatIges(const ent, const G) -> Standard_Integer");
+
 		Standard_Integer WhatIges(const Handle_IGESData_IGESEntity &ent, const Interface_Graph &G, Handle_IGESData_IGESEntity & sup, Standard_Integer &OutValue);
 
 };
@@ -3099,6 +3100,7 @@ class IGESSelect_FloatFormat : public IGESSelect_FileModifier {
 		%feature("autodoc", "1");
 		void SetFormatForRange(const char * format="%f", const Standard_Real Rmin=1.00000000000000005551115123125782702118158340454e-1, const Standard_Real Rmax=1.0e+3);
 		%feature("autodoc","Format() -> [Standard_Real, Standard_Real]");
+
 		void Format(Standard_Boolean & zerosup, TCollection_AsciiString & mainform, Standard_Boolean & hasrange, TCollection_AsciiString & forminrange, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Perform(IFSelect_ContextWrite & ctx, IGESData_IGESWriter & writer) const;

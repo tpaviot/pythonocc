@@ -411,6 +411,7 @@ class Bnd_Box {
 		%feature("autodoc", "1");
 		void Enlarge(const Standard_Real Tol);
 		%feature("autodoc","Get() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void Get(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void OpenXmin();
@@ -838,6 +839,7 @@ class Bnd_Box2d {
 		%feature("autodoc", "1");
 		void Enlarge(const Standard_Real Tol);
 		%feature("autodoc","Get() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void Get(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void OpenXmin();

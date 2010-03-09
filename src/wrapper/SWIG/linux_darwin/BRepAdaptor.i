@@ -372,6 +372,7 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 		%feature("autodoc", "1");
 		const TopoDS_Wire & Wire() const;
 		%feature("autodoc","Edge(Standard_Real U) -> Standard_Real");
+
 		void Edge(const Standard_Real U, TopoDS_Edge & E, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real FirstParameter() const;

@@ -109,7 +109,8 @@ class IGESConvGeom_GeomBuilder {
 		Standard_Boolean IsTranslation() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsZOnly() const;
-		%feature("autodoc","EvalXYZ(const val) -> [Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","EvalXYZ(const val) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void EvalXYZ(const gp_XYZ &val, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_IGESGeom_TransformationMatrix MakeTransformation(const Standard_Real unit=1) const;

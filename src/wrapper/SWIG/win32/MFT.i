@@ -858,8 +858,10 @@ class MFT_FontManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void DrawText(const Handle_MFT_TextManager &aTextManager, const Standard_ExtString aString, const Quantity_Length anX, const Quantity_Length anY, const Quantity_PlaneAngle anOrientation=0.0);
 		%feature("autodoc","BoundingBox() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		void BoundingBox(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","CharBoundingBox(Standard_Integer aPosition) -> [Standard_Integer, Standard_Integer, Standard_IntegerStandard_Integer]");
+		%feature("autodoc","CharBoundingBox(Standard_Integer aPosition) -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		void CharBoundingBox(const Standard_Integer aPosition, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer PaintType() const;
@@ -868,14 +870,19 @@ class MFT_FontManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Quantity_PlaneAngle ItalicAngle() const;
 		%feature("autodoc","FontAttribs() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		char * FontAttribs(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Quantity_PlaneAngle & aSlant, Quantity_Factor & aPrecision, Standard_Boolean & aCapsHeight);
-		%feature("autodoc","TextSize(Standard_CString aString) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","TextSize(Standard_CString aString) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void TextSize(const char * aString, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","TextSize(Standard_ExtString aString) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","TextSize(Standard_ExtString aString) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void TextSize(const Standard_ExtString aString, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","CharSize(Standard_Character aChar) -> [Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","CharSize(Standard_Character aChar) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		Standard_Boolean CharSize(const Standard_Character aChar, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","CharSize(Standard_ExtCharacter aChar) -> [Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","CharSize(Standard_ExtCharacter aChar) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		Standard_Boolean CharSize(const Standard_ExtCharacter aChar, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Aspect_FontStyle Font() const;

@@ -123,6 +123,7 @@ class Partition_Loop3d {
 		%feature("autodoc", "1");
 		const TopTools_ListOfShape & MakeShells(const TopTools_MapOfOrientedShape &AvoidFacesMap);
 		%feature("autodoc","IsInside(const E, const F1, const F2, Standard_Boolean CountDot) -> Standard_Real");
+
 		Standard_Boolean IsInside(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const Standard_Boolean CountDot, Standard_Real &OutValue, Standard_Boolean & GoodOri);
 		%feature("autodoc", "1");
 		gp_Vec Normal(const TopoDS_Edge &E, const TopoDS_Face &F);
@@ -242,6 +243,7 @@ class Partition_Inter2d {
 		%feature("autodoc", "1");
 		void CompletPart2d(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F, const TopTools_MapOfShape &NewEdges);
 		%feature("autodoc","FindEndVertex(const VertList, Standard_Real f, Standard_Real l, const E) -> Standard_Real");
+
 		TopoDS_Vertex FindEndVertex(const TopTools_ListOfShape &VertList, const Standard_Real f, const Standard_Real l, const TopoDS_Edge &E, Standard_Boolean & First, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		TopoDS_Vertex AddVonE(const TopoDS_Vertex &V, const TopoDS_Edge &E1, const TopoDS_Edge &E2, const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face &F);

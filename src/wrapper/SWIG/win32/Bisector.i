@@ -226,10 +226,13 @@ class Bisector_FunctionInter : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		void Perform(const Handle_Geom2d_Curve &C, const Handle_Bisector_Curve &Bis1, const Handle_Bisector_Curve &Bis2);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -327,9 +330,11 @@ class Bisector_BisecCC : public Bisector_Curve {
 		virtual		Standard_Boolean IsClosed() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc","ValueAndDist(Standard_Real U) -> [Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","ValueAndDist(Standard_Real U) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		gp_Pnt2d ValueAndDist(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ValueByInt(Standard_Real U) -> [Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","ValueByInt(Standard_Real U) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		gp_Pnt2d ValueByInt(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void D0(const Standard_Real U, gp_Pnt2d & P) const;
@@ -731,10 +736,13 @@ class Bisector_FunctionH : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		Bisector_FunctionH(const Handle_Geom2d_Curve &C2, const gp_Pnt2d &P1, const gp_Vec2d &T1);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };

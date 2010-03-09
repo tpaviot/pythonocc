@@ -2318,6 +2318,7 @@ class Prs2d_RadiusIndep : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Prs2d_RadiusIndep(const Handle_Graphic2d_GraphicObject &aGO, const gp_Pnt2d &anAttachPnt, const gp_Pnt2d &aCenter, const Standard_Real aRad, const TCollection_ExtendedString &aText, const Standard_Real aLength=1.0e+1, const Prs2d_TypeOfRadius aTypeRad=Prs2d_TOR_STANDARD, const Standard_Real aTxtScale=1.0e+0);
 		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Values(gp_Pnt2d & anAttPnt, gp_Pnt2d & aCenter, Standard_Real &OutValue, TCollection_ExtendedString & aText, Standard_Real &OutValue, Prs2d_TypeOfRadius & aTypeRad, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetText(const TCollection_ExtendedString &aTxt);
@@ -2649,6 +2650,7 @@ class Prs2d_AspectLine : public Prs2d_AspectRoot {
 		%feature("autodoc", "1");
 		void ValuesOfLine(Quantity_Color & aColor, Aspect_TypeOfLine & aType, Aspect_WidthOfLine & aWidth) const;
 		%feature("autodoc","ValuesOfPoly() -> Standard_Integer");
+
 		void ValuesOfPoly(Quantity_Color & aColor, Graphic2d_TypeOfPolygonFilling & aTypeFill, Standard_Integer &OutValue, Standard_Boolean & aDrawEdge) const;
 		%feature("autodoc", "1");
 		Standard_Integer ColorIndex() const;
@@ -2702,6 +2704,7 @@ class Prs2d_Angle : public Prs2d_Dimension {
 		%feature("autodoc", "1");
 		Prs2d_Angle(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Pnt2d &anAttachPnt1, const gp_Pnt2d &anAttachPnt2, const gp_Pnt2d &anAttachPnt3, const Quantity_Length aRadius, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=3.0e+0, const Standard_Real anArrAngle=1.5e+1, const Standard_Real anArrLength=1.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
 		%feature("autodoc","Values() -> Standard_Real");
+
 		void Values(gp_Pnt2d & aPnt1, gp_Pnt2d & aPnt2, gp_Pnt2d & aPnt3, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;

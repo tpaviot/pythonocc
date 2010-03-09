@@ -1922,10 +1922,12 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 		%feature("autodoc", "1");
 		Standard_Integer NextForComplex(const Standard_Integer num) const;
 		%feature("autodoc","NamedForComplex(Standard_CString name, Standard_Integer num0) -> Standard_Integer");
+
 		Standard_Boolean NamedForComplex(const char * name, const Standard_Integer num0, Standard_Integer &OutValue, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
 		Standard_Boolean CheckNbParams(const Standard_Integer num, const Standard_Integer nbreq, Handle_Interface_Check & ach, const char * mess="") const;
 		%feature("autodoc","ReadSubList(Standard_Integer num, Standard_Integer nump, Standard_CString mess, Standard_Boolean optional=0, Standard_Integer lenmin=0, Standard_Integer lenmax=0) -> Standard_Integer");
+
 		Standard_Boolean ReadSubList(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Integer &OutValue, const Standard_Boolean optional=0, const Standard_Integer lenmin=0, const Standard_Integer lenmax=0) const;
 		%feature("autodoc", "1");
 		Standard_Integer ReadSub(const Standard_Integer numsub, const char * mess, Handle_Interface_Check & ach, const Handle_StepData_PDescr &descr, Handle_Standard_Transient & val) const;
@@ -1937,17 +1939,21 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 		Standard_Boolean ReadList(const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepData_ESDescr &descr, StepData_FieldList & list) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ReadAny(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Handle_StepData_PDescr &descr, Handle_Standard_Transient & val) const;
-		%feature("autodoc","ReadXY(Standard_Integer num, Standard_Integer nump, Standard_CString mess) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","ReadXY(Standard_Integer num, Standard_Integer nump, Standard_CString mess) -> [Standard_Real, Standard_Real]");
+
 		Standard_Boolean ReadXY(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ReadXYZ(Standard_Integer num, Standard_Integer nump, Standard_CString mess) -> [Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","ReadXYZ(Standard_Integer num, Standard_Integer nump, Standard_CString mess) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		Standard_Boolean ReadXYZ(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","ReadReal(Standard_Integer num, Standard_Integer nump, Standard_CString mess) -> Standard_Real");
+
 		Standard_Boolean ReadReal(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ReadEntity(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Handle_Standard_Type &atype, Handle_Standard_Transient & ent) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ReadEntity(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, StepData_SelectType & sel) const;
 		%feature("autodoc","ReadInteger(Standard_Integer num, Standard_Integer nump, Standard_CString mess) -> Standard_Integer");
+
 		Standard_Boolean ReadInteger(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ReadBoolean(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Boolean & flag) const;
@@ -1958,8 +1964,10 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 		%feature("autodoc", "1");
 		void FailEnumValue(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach) const;
 		%feature("autodoc","ReadEnum(Standard_Integer num, Standard_Integer nump, Standard_CString mess, const enumtool) -> Standard_Integer");
+
 		Standard_Boolean ReadEnum(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const StepData_EnumTool &enumtool, Standard_Integer &OutValue) const;
-		%feature("autodoc","ReadTypedParam(Standard_Integer num, Standard_Integer nump, Standard_Boolean mustbetyped, Standard_CString mess) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","ReadTypedParam(Standard_Integer num, Standard_Integer nump, Standard_Boolean mustbetyped, Standard_CString mess) -> [Standard_Integer, Standard_Integer]");
+
 		Standard_Boolean ReadTypedParam(const Standard_Integer num, const Standard_Integer nump, const Standard_Boolean mustbetyped, const char * mess, Handle_Interface_Check & ach, Standard_Integer &OutValue, Standard_Integer &OutValue, TCollection_AsciiString & typ) const;
 		%feature("autodoc", "1");
 		Standard_Boolean CheckDerived(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Standard_Boolean errstat=0) const;
@@ -2797,6 +2805,7 @@ class StepData_WriterLib {
 		%feature("autodoc", "1");
 		void SetComplete();
 		%feature("autodoc","Select(const obj) -> Standard_Integer");
+
 		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_StepData_ReadWriteModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();

@@ -211,6 +211,7 @@ class Blend_AppFunction : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -224,7 +225,8 @@ class Blend_AppFunction : public math_FunctionSetWithDerivatives {
 		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real Parameter(const Blend_Point &P) const;
@@ -349,6 +351,7 @@ class Blend_RstRstFunction : public Blend_AppFunction {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -608,6 +611,7 @@ class Blend_Function : public Blend_AppFunction {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean TwistOnS2() const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -701,6 +705,7 @@ class Blend_SurfRstFunction : public Blend_AppFunction {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
@@ -780,8 +785,10 @@ class Blend_Point {
 		%feature("autodoc", "1");
 		const gp_Pnt & PointOnS2() const;
 		%feature("autodoc","ParametersOnS1() -> [Standard_Real, Standard_Real]");
+
 		void ParametersOnS1(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","ParametersOnS2() -> [Standard_Real, Standard_Real]");
+
 		void ParametersOnS2(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const gp_Vec & TangentOnS1() const;
@@ -796,6 +803,7 @@ class Blend_Point {
 		%feature("autodoc", "1");
 		const gp_Pnt & PointOnC() const;
 		%feature("autodoc","ParametersOnS() -> [Standard_Real, Standard_Real]");
+
 		void ParametersOnS(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real ParameterOnC() const;

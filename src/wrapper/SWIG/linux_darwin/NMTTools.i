@@ -401,6 +401,7 @@ class NMTTools_PaveFiller {
 		%feature("autodoc", "1");
 		const BOPTools_PaveBlock & RealPaveBlock(const BOPTools_PaveBlock &aPB);
 		%feature("autodoc","RealPaveBlock(const aPB) -> Standard_Integer");
+
 		const BOPTools_PaveBlock & RealPaveBlock(const BOPTools_PaveBlock &aPB, TColStd_ListOfInteger & aLB, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void RealSplitsFace(const Standard_Integer nF2, BOPTools_ListOfPaveBlock & aLs);
@@ -740,6 +741,7 @@ class NMTTools_IteratorOfCoupleOfShape : public BOPTools_IteratorOfCoupleOfShape
 		%feature("autodoc", "1");
 		virtual		void Initialize(const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
 		%feature("autodoc","Current() -> [Standard_Integer, Standard_Integer]");
+
 		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean More() const;

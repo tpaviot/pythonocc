@@ -174,10 +174,12 @@ class AppDef_ParFunctionOfTheGradient : public math_MultipleVarFunctionWithGradi
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
 		%feature("autodoc","Values(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -429,10 +431,12 @@ class AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute : public math_Multip
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
 		%feature("autodoc","Values(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -531,10 +535,12 @@ class AppDef_TheLeastSquares {
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
 		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -644,8 +650,10 @@ class AppDef_TheVariational {
 		%feature("autodoc", "1");
 		const Handle_TColStd_HArray1OfReal & Knots() const;
 		%feature("autodoc","Criterium() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Criterium(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","CriteriumWeight() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void CriteriumWeight(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer MaxDegree() const;
@@ -736,7 +744,8 @@ class AppDef_Compute {
 		Standard_Boolean IsAllApproximated() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
 		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbMultiCurves() const;
@@ -776,10 +785,12 @@ class AppDef_ParFunctionOfMyGradientbisOfBSplineCompute : public math_MultipleVa
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
 		%feature("autodoc","Values(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -878,10 +889,12 @@ class AppDef_ParLeastSquareOfTheGradient {
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
 		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -937,14 +950,17 @@ class AppDef_MyCriterionOfTheVariational : public AppParCurves_SmoothCriterion {
 				}
 		};
 		%feature("autodoc","GetEstimation() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		virtual		void GetEstimation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Handle_FEmTool_HAssemblyTable AssemblyTable() const;
 		%feature("autodoc", "1");
 		virtual		Handle_TColStd_HArray2OfInteger DependenceTable() const;
-		%feature("autodoc","QualityValues(Standard_Real J1min, Standard_Real J2min, Standard_Real J3min) -> [Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","QualityValues(Standard_Real J1min, Standard_Real J2min, Standard_Real J3min) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		virtual		Standard_Integer QualityValues(const Standard_Real J1min, const Standard_Real J2min, const Standard_Real J3min, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","ErrorValues() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		virtual		void ErrorValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Hessian(const Standard_Integer Element, const Standard_Integer Dimension1, const Standard_Integer Dimension2, math_Matrix & H);
@@ -955,6 +971,7 @@ class AppDef_MyCriterionOfTheVariational : public AppParCurves_SmoothCriterion {
 		%feature("autodoc", "1");
 		virtual		void SetWeight(const Standard_Real QuadraticWeight, const Standard_Real QualityWeight, const Standard_Real percentJ1, const Standard_Real percentJ2, const Standard_Real percentJ3);
 		%feature("autodoc","GetWeight() -> [Standard_Real, Standard_Real]");
+
 		virtual		void GetWeight(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void SetWeight(const TColStd_Array1OfReal &Weight);
@@ -1018,10 +1035,12 @@ class AppDef_ParLeastSquareOfMyGradientOfCompute {
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
 		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -1092,10 +1111,12 @@ class AppDef_TheFunction : public math_MultipleVarFunctionWithGradient {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
 		%feature("autodoc","Values(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;
@@ -1194,10 +1215,12 @@ class AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
 		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -1298,6 +1321,7 @@ class AppDef_BSplineCompute {
 		%feature("autodoc", "1");
 		Standard_Boolean IsToleranceReached() const;
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const AppParCurves_MultiBSpCurve & Value() const;
@@ -1353,10 +1377,12 @@ class AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
 		%feature("autodoc", "1");
 		const math_Matrix & DerivativeFunctionMatrix() const;
 		%feature("autodoc","ErrorGradient() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void ErrorGradient(math_Vector & Grad, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const math_Matrix & Distance();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real FirstLambda() const;
@@ -1569,10 +1595,12 @@ class AppDef_ParFunctionOfMyGradientOfCompute : public math_MultipleVarFunctionW
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
 		%feature("autodoc","Values(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc", "1");
 		const math_Vector & NewParameters() const;

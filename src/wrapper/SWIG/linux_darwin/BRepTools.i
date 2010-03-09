@@ -537,14 +537,19 @@ def __del__(self):
 class BRepTools_Modification : public MMgt_TShared {
 	public:
 		%feature("autodoc","NewSurface(const F) -> Standard_Real");
+
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
 		%feature("autodoc","NewCurve(const E) -> Standard_Real");
+
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
 		%feature("autodoc","NewPoint(const V) -> Standard_Real");
+
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
 		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
+
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc","NewParameter(const V, const E) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","NewParameter(const V, const E) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
@@ -618,11 +623,14 @@ class BRepTools {
 	public:
 		%feature("autodoc", "1");
 		BRepTools();
-		%feature("autodoc","UVBounds(const F) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","UVBounds(const F) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void UVBounds(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","UVBounds(const F, const W) -> [Standard_Real, Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","UVBounds(const F, const W) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void UVBounds(const TopoDS_Face &F, const TopoDS_Wire &W, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","UVBounds(const F, const E) -> [Standard_Real, Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","UVBounds(const F, const E) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void UVBounds(const TopoDS_Face &F, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void AddUVBounds(const TopoDS_Face &F, Bnd_Box2d & B);
@@ -702,14 +710,19 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 		%feature("autodoc", "1");
 		gp_GTrsf & GTrsf();
 		%feature("autodoc","NewSurface(const F) -> Standard_Real");
+
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
 		%feature("autodoc","NewCurve(const E) -> Standard_Real");
+
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
 		%feature("autodoc","NewPoint(const V) -> Standard_Real");
+
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
 		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
+
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc","NewParameter(const V, const E) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","NewParameter(const V, const E) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);
@@ -930,14 +943,19 @@ class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 		%feature("autodoc", "1");
 		BRepTools_NurbsConvertModification();
 		%feature("autodoc","NewSurface(const F) -> Standard_Real");
+
 		virtual		Standard_Boolean NewSurface(const TopoDS_Face &F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
 		%feature("autodoc","NewCurve(const E) -> Standard_Real");
+
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge &E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
 		%feature("autodoc","NewPoint(const V) -> Standard_Real");
+
 		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex &V, gp_Pnt & P, Standard_Real &OutValue);
 		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
+
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge &E, const TopoDS_Face &F, const TopoDS_Edge &NewE, const TopoDS_Face &NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc","NewParameter(const V, const E) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","NewParameter(const V, const E) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex &V, const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge &E, const TopoDS_Face &F1, const TopoDS_Face &F2, const TopoDS_Edge &NewE, const TopoDS_Face &NewF1, const TopoDS_Face &NewF2);

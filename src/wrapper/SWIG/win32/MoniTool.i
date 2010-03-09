@@ -856,6 +856,7 @@ class MoniTool_Timer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ComputeAmendments();
 		%feature("autodoc","GetAmendments() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void GetAmendments(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1389,11 +1390,14 @@ class MoniTool_CaseData : public MMgt_TShared {
 		Standard_Boolean XYZ(const Standard_Integer nd, gp_XYZ & val) const;
 		%feature("autodoc", "1");
 		Standard_Boolean XY(const Standard_Integer nd, gp_XY & val) const;
-		%feature("autodoc","Reals(Standard_Integer nd) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Reals(Standard_Integer nd) -> [Standard_Real, Standard_Real]");
+
 		Standard_Boolean Reals(const Standard_Integer nd, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","Real(Standard_Integer nd) -> Standard_Real");
+
 		Standard_Boolean Real(const Standard_Integer nd, Standard_Real &OutValue) const;
 		%feature("autodoc","Integer(Standard_Integer nd) -> Standard_Integer");
+
 		Standard_Boolean Integer(const Standard_Integer nd, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetDefWarning(const char * acode);
@@ -1564,10 +1568,12 @@ class MoniTool_TypedValue : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetIntegerLimit(const Standard_Boolean max, const Standard_Integer val);
 		%feature("autodoc","IntegerLimit(Standard_Boolean max) -> Standard_Integer");
+
 		Standard_Boolean IntegerLimit(const Standard_Boolean max, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetRealLimit(const Standard_Boolean max, const Standard_Real val);
 		%feature("autodoc","RealLimit(Standard_Boolean max) -> Standard_Real");
+
 		Standard_Boolean RealLimit(const Standard_Boolean max, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetUnitDef(const char * def);
@@ -1580,6 +1586,7 @@ class MoniTool_TypedValue : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void AddEnumValue(const char * val, const Standard_Integer num);
 		%feature("autodoc","EnumDef() -> [Standard_Integer, Standard_Integer]");
+
 		Standard_Boolean EnumDef(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & match) const;
 		%feature("autodoc", "1");
 		char * EnumVal(const Standard_Integer num) const;
@@ -1929,12 +1936,14 @@ class MoniTool_AttrList {
 		%feature("autodoc", "1");
 		void SetIntegerAttribute(const char * name, const Standard_Integer val);
 		%feature("autodoc","GetIntegerAttribute(Standard_CString name) -> Standard_Integer");
+
 		Standard_Boolean GetIntegerAttribute(const char * name, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer IntegerAttribute(const char * name) const;
 		%feature("autodoc", "1");
 		void SetRealAttribute(const char * name, const Standard_Real val);
 		%feature("autodoc","GetRealAttribute(Standard_CString name) -> Standard_Real");
+
 		Standard_Boolean GetRealAttribute(const char * name, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real RealAttribute(const char * name) const;

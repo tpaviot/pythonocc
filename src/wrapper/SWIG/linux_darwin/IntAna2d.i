@@ -108,10 +108,13 @@ class IntAna2d_Conic {
 		%feature("autodoc", "1");
 		gp_XY Grad(const Standard_Real X, const Standard_Real Y) const;
 		%feature("autodoc","ValAndGrad(Standard_Real X, Standard_Real Y) -> Standard_Real");
+
 		void ValAndGrad(const Standard_Real X, const Standard_Real Y, Standard_Real &OutValue, gp_XY & Grd) const;
 		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","NewCoefficients(const Axis) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","NewCoefficients(const Axis) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void NewCoefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const gp_Ax2d &Axis) const;
 
 };

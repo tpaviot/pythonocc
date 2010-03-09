@@ -1294,6 +1294,7 @@ class XCAFDoc_Volume : public TDF_Attribute {
 		%feature("autodoc", "1");
 		Standard_Real Get() const;
 		%feature("autodoc","Get(const label) -> Standard_Real");
+
 		Standard_Boolean Get(const TDF_Label &label, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Restore(const Handle_TDF_Attribute &With);
@@ -1727,6 +1728,7 @@ class XCAFDoc_DimTolTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		Standard_Boolean GetRefDGTLabels(const TDF_Label &ShapeL, TDF_LabelSequence & DimTols) const;
 		%feature("autodoc","GetDimTol(const DimTolL) -> Standard_Integer");
+
 		Standard_Boolean GetDimTol(const TDF_Label &DimTolL, Standard_Integer &OutValue, Handle_TColStd_HArray1OfReal & aVal, Handle_TCollection_HAsciiString & aName, Handle_TCollection_HAsciiString & aDescription) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDatum(const TDF_Label &lab) const;
@@ -1804,6 +1806,7 @@ class XCAFDoc_MaterialTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		void SetMaterial(const TDF_Label &L, const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Standard_Real aDensity, const Handle_TCollection_HAsciiString &aDensName, const Handle_TCollection_HAsciiString &aDensValType) const;
 		%feature("autodoc","GetMaterial(const MatL) -> Standard_Real");
+
 		Standard_Boolean GetMaterial(const TDF_Label &MatL, Handle_TCollection_HAsciiString & aName, Handle_TCollection_HAsciiString & aDescription, Standard_Real &OutValue, Handle_TCollection_HAsciiString & aDensName, Handle_TCollection_HAsciiString & aDensValType) const;
 		%feature("autodoc", "1");
 		Standard_Real GetDensityForShape(const TDF_Label &ShapeL);
@@ -1942,6 +1945,7 @@ class XCAFDoc_Color : public TDF_Attribute {
 		%feature("autodoc", "1");
 		Quantity_NameOfColor GetNOC() const;
 		%feature("autodoc","GetRGB() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void GetRGB(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
@@ -2052,6 +2056,7 @@ class XCAFDoc_Area : public TDF_Attribute {
 		%feature("autodoc", "1");
 		Standard_Real Get() const;
 		%feature("autodoc","Get(const label) -> Standard_Real");
+
 		Standard_Boolean Get(const TDF_Label &label, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Restore(const Handle_TDF_Attribute &With);

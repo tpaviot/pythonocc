@@ -558,8 +558,10 @@ class ShapeProcess_Context : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean IsParamSet(const char * param) const;
 		%feature("autodoc","GetReal(Standard_CString param) -> Standard_Real");
+
 		Standard_Boolean GetReal(const char * param, Standard_Real &OutValue) const;
 		%feature("autodoc","GetInteger(Standard_CString param) -> Standard_Integer");
+
 		Standard_Boolean GetInteger(const char * param, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean GetBoolean(const char * param, Standard_Boolean & val) const;

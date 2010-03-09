@@ -74,10 +74,13 @@ class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative 
 		%feature("autodoc", "1");
 		Geom2dLProp_FCurExtOfNumericCurInf2d(const Handle_Geom2d_Curve &C, const Standard_Real Tol);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsMinKC(const Standard_Real Param) const;
@@ -191,10 +194,13 @@ class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative 
 		%feature("autodoc", "1");
 		Geom2dLProp_FCurNulOfNumericCurInf2d(const Handle_Geom2d_Curve &C);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };

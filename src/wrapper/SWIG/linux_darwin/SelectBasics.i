@@ -511,7 +511,8 @@ class SelectBasics_BasicTool {
 		Standard_Boolean MatchSegments(const gp_Pnt2d &P1, const gp_Pnt2d &P2, const gp_Pnt2d &P3, const gp_Pnt2d &P4);
 		%feature("autodoc", "1");
 		Standard_Boolean AutoInter(const TColgp_Array1OfPnt2d &aPolyg2d);
-		%feature("autodoc","MatchPolyg2d(const tabpoint, Standard_Real X, Standard_Real Y, Standard_Real aTol) -> [Standard_RealStandard_Integer]");
+		%feature("autodoc","MatchPolyg2d(const tabpoint, Standard_Real X, Standard_Real Y, Standard_Real aTol) -> [Standard_Real, Standard_Integer]");
+
 		Standard_Boolean MatchPolyg2d(const TColgp_Array1OfPnt2d &tabpoint, const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue, Standard_Integer &OutValue);
 
 };
@@ -541,6 +542,7 @@ class SelectBasics_SensitiveEntity : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void Areas(SelectBasics_ListOfBox2d & aresult);
 		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
 		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);

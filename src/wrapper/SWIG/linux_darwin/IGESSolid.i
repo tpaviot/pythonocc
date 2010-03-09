@@ -3916,7 +3916,8 @@ class IGESSolid_TopoBuilder {
 		void AddEdge(const Handle_IGESData_IGESEntity &curve, const Standard_Integer vstart, const Standard_Integer vend);
 		%feature("autodoc", "1");
 		Standard_Integer NbEdges() const;
-		%feature("autodoc","Edge(Standard_Integer num) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","Edge(Standard_Integer num) -> [Standard_Integer, Standard_Integer]");
+
 		void Edge(const Standard_Integer num, Handle_IGESData_IGESEntity & curve, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_IGESSolid_EdgeList EdgeList() const;

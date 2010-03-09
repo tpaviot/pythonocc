@@ -2324,19 +2324,23 @@ class Graphic3d_ArrayOfPrimitives : public MMgt_TShared {
 		Standard_Integer VertexNumber() const;
 		%feature("autodoc", "1");
 		gp_Pnt Vertice(const Standard_Integer aRank) const;
-		%feature("autodoc","Vertice(Standard_Integer anIndex) -> [Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","Vertice(Standard_Integer anIndex) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Vertice(const Standard_Integer anIndex, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Color VertexColor(const Standard_Integer aRank) const;
-		%feature("autodoc","VertexColor(Standard_Integer anIndex) -> [Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","VertexColor(Standard_Integer anIndex) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void VertexColor(const Standard_Integer anIndex, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Dir VertexNormal(const Standard_Integer aRank) const;
-		%feature("autodoc","VertexNormal(Standard_Integer anIndex) -> [Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","VertexNormal(Standard_Integer anIndex) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void VertexNormal(const Standard_Integer anIndex, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt2d VertexTexel(const Standard_Integer aRank) const;
-		%feature("autodoc","VertexTexel(Standard_Integer anIndex) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","VertexTexel(Standard_Integer anIndex) -> [Standard_Real, Standard_Real]");
+
 		void VertexTexel(const Standard_Integer anIndex, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasEdgeInfos() const;
@@ -2354,7 +2358,8 @@ class Graphic3d_ArrayOfPrimitives : public MMgt_TShared {
 		Standard_Integer Bound(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
 		Quantity_Color BoundColor(const Standard_Integer aRank) const;
-		%feature("autodoc","BoundColor(Standard_Integer anIndex) -> [Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","BoundColor(Standard_Integer anIndex) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void BoundColor(const Standard_Integer anIndex, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer ItemNumber() const;
@@ -2568,6 +2573,7 @@ class Graphic3d_Structure : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectMarker3d Marker3dAspect() const;
 		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void PrimitivesAspect(Handle_Graphic3d_AspectLine3d & CTXL, Handle_Graphic3d_AspectText3d & CTXT, Handle_Graphic3d_AspectMarker3d & CTXM, Handle_Graphic3d_AspectFillArea3d & CTXF) const;
@@ -2639,7 +2645,8 @@ class Graphic3d_Structure : public MMgt_TShared {
 		void Remove(const Standard_Address APtr, const Graphic3d_TypeOfConnection AType);
 		%feature("autodoc", "1");
 		void SetComputeVisual(const Graphic3d_TypeOfStructure AVisual);
-		%feature("autodoc","Transforms(const ATrsf, Standard_Real X, Standard_Real Y, Standard_Real Z) -> [Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","Transforms(const ATrsf, Standard_Real X, Standard_Real Y, Standard_Real Z) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Transforms(const TColStd_Array2OfReal &ATrsf, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Graphic3d_Vector Transforms(const TColStd_Array2OfReal &ATrsf, const Graphic3d_Vector &Coord);
@@ -3950,6 +3957,7 @@ class Graphic3d_Vertex {
 		%feature("autodoc", "1");
 		void SetZCoord(const Standard_Real Znew);
 		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real X() const;
@@ -3989,6 +3997,7 @@ class Graphic3d_VertexN : public Graphic3d_Vertex {
 		%feature("autodoc", "1");
 		void SetNormal(const Standard_Real NXnew, const Standard_Real NYnew, const Standard_Real NZnew, const Standard_Boolean FlagNormalise=1);
 		%feature("autodoc","Normal() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Normal(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -4136,7 +4145,8 @@ class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
 		virtual		void DeactivateView(const Graphic3d_CView &ACView);
 		%feature("autodoc", "1");
 		virtual		void DepthCueing(const Graphic3d_CView &ACView, const Standard_Boolean AFlag);
-		%feature("autodoc","ProjectRaster(const ACView, Standard_ShortReal AX, Standard_ShortReal AY, Standard_ShortReal AZ) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","ProjectRaster(const ACView, Standard_ShortReal AX, Standard_ShortReal AY, Standard_ShortReal AZ) -> [Standard_Integer, Standard_Integer]");
+
 		virtual		Standard_Boolean ProjectRaster(const Graphic3d_CView &ACView, const Standard_ShortReal AX, const Standard_ShortReal AY, const Standard_ShortReal AZ, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean UnProjectRaster(const Graphic3d_CView &ACView, const Standard_Integer Axm, const Standard_Integer Aym, const Standard_Integer AXM, const Standard_Integer AYM, const Standard_Integer AU, const Standard_Integer AV, Standard_ShortReal & AX, Standard_ShortReal & AY, Standard_ShortReal & AZ);
@@ -4660,6 +4670,7 @@ class Graphic3d_StructureManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectMarker3d Marker3dAspect() const;
 		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void PrimitivesAspect(Handle_Graphic3d_AspectLine3d & CTXL, Handle_Graphic3d_AspectText3d & CTXT, Handle_Graphic3d_AspectMarker3d & CTXM, Handle_Graphic3d_AspectFillArea3d & CTXF) const;
@@ -5336,6 +5347,7 @@ class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 		%feature("autodoc", "1");
 		Aspect_TypeOfDegenerateModel DefaultDegenerateModel(Quantity_Ratio & aRatio);
 		%feature("autodoc","PolygonOffsets() -> [Standard_Integer, Standard_Real, Standard_Real]");
+
 		void PolygonOffsets(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -5410,6 +5422,7 @@ class Graphic3d_VertexNT : public Graphic3d_VertexN {
 		%feature("autodoc", "1");
 		void SetTextureCoordinate(const Standard_Real ATX, const Standard_Real ATY=0.0);
 		%feature("autodoc","TextureCoordinate() -> [Standard_Real, Standard_Real]");
+
 		void TextureCoordinate(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -6188,6 +6201,7 @@ class Graphic3d_Group : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Structure Structure() const;
@@ -6548,8 +6562,10 @@ class Graphic3d_AspectText3d : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetTextureMappedFont(const Standard_Boolean AFlag);
 		%feature("autodoc","Values() -> [Standard_Real, Standard_Real]");
+
 		void Values(Quantity_Color & AColor, Graphic3d_NameOfFont & AFont, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","Values() -> [Standard_Real, Standard_Real]");
+
 		void Values(Quantity_Color & AColor, Graphic3d_NameOfFont & AFont, Standard_Real &OutValue, Standard_Real &OutValue, Aspect_TypeOfStyleText & AStyle, Aspect_TypeOfDisplayText & ADisplayType, Quantity_Color & AColorSubTitle, Standard_Boolean & ATextureMappedFont) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -6589,14 +6605,18 @@ class Graphic3d_Strips {
 		%feature("autodoc", "1");
 		void STRIPT_INIT(const Standard_Integer NBVERTICES, const TColStd_Array1OfInteger &TABTRIANGLES);
 		%feature("autodoc","STRIPT_GET_STRIP() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		void STRIPT_GET_STRIP(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc","STRIPT_GET_VERTEX() -> [Standard_Integer, Standard_Integer]");
+
 		void STRIPT_GET_VERTEX(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void STRIPQ_INIT(const Standard_Integer NBVERTICES, const Standard_Integer NBQUADRANG, const TColStd_SequenceOfInteger &TABQUADRANGLES);
 		%feature("autodoc","STRIPQ_GET_STRIP() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		void STRIPQ_GET_STRIP(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc","STRIPQ_GET_NEXT() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		void STRIPQ_GET_NEXT(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 };
@@ -6800,6 +6820,7 @@ class Graphic3d_Vector {
 		%feature("autodoc", "1");
 		void SetZCoord(const Standard_Real Znew);
 		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsNormalized() const;
@@ -6845,6 +6866,7 @@ class Graphic3d_AspectMarker3d : public Aspect_AspectMarker {
 		%feature("autodoc", "1");
 		Graphic3d_AspectMarker3d(const Aspect_TypeOfMarker AType, const Quantity_Color &AColor, const Standard_Real AScaleOrId, const Standard_Integer AWidth, const Standard_Integer AHeight, const Handle_Graphic3d_HArray1OfBytes &ATexture);
 		%feature("autodoc","GetTextureSize() -> [Standard_Integer, Standard_Integer]");
+
 		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		const Handle_Graphic3d_HArray1OfBytes & GetTexture();

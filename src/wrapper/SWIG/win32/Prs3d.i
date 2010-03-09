@@ -1192,6 +1192,7 @@ class Prs3d {
 		%feature("autodoc", "1");
 		Prs3d();
 		%feature("autodoc","MatchSegment(Quantity_Length X, Quantity_Length Y, Quantity_Length Z, Quantity_Length aDistance, const p1, const p2) -> Standard_Real");
+
 		Standard_Boolean MatchSegment(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const gp_Pnt &p1, const gp_Pnt &p2, Standard_Real &OutValue);
 
 };
@@ -1294,6 +1295,7 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 			return s.str();}
 		};
 		%feature("autodoc","GetTextureSize() -> [Standard_Integer, Standard_Integer]");
+
 		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		const Handle_Graphic3d_HArray1OfBytes & GetTexture();
@@ -1856,8 +1858,10 @@ class Prs3d_PlaneSet : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Quantity_Length Offset() const;
 		%feature("autodoc","Location() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Location(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","Direction() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;

@@ -1386,6 +1386,7 @@ class Interface_ReaderLib {
 		%feature("autodoc", "1");
 		void SetComplete();
 		%feature("autodoc","Select(const obj) -> Standard_Integer");
+
 		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_Interface_ReaderModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
@@ -2128,6 +2129,7 @@ class Interface_BitMap {
 		%feature("autodoc", "1");
 		Interface_BitMap(const Interface_BitMap &other, const Standard_Boolean copied=0);
 		%feature("autodoc","Internals() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		void Internals(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Handle_TColStd_HArray1OfInteger & flags, Handle_TColStd_HSequenceOfAsciiString & names) const;
 		%feature("autodoc", "1");
 		void Reservate(const Standard_Integer moreflags);
@@ -2248,6 +2250,7 @@ class Interface_GeneralLib {
 		%feature("autodoc", "1");
 		void SetComplete();
 		%feature("autodoc","Select(const obj) -> Standard_Integer");
+
 		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_Interface_GeneralModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
@@ -2700,6 +2703,7 @@ class Interface_FloatWriter {
 		%feature("autodoc", "1");
 		void SetDefaults(const Standard_Integer chars=0);
 		%feature("autodoc","Options() -> [Standard_Real, Standard_Real]");
+
 		void Options(Standard_Boolean & zerosup, Standard_Boolean & range, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		char * MainFormat() const;
@@ -2929,6 +2933,7 @@ class Interface_IntList {
 		%feature("autodoc", "1");
 		void Initialize(const Standard_Integer nbe);
 		%feature("autodoc","Internals() -> Standard_Integer");
+
 		void Internals(Standard_Integer &OutValue, Handle_TColStd_HArray1OfInteger & ents, Handle_TColStd_HArray1OfInteger & refs) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbEntities() const;
@@ -3353,7 +3358,8 @@ class Interface_MSG {
 		Standard_Real Intervalled(const Standard_Real val, const Standard_Integer order=3, const Standard_Boolean upper=0);
 		%feature("autodoc", "1");
 		void TDate(const char * text, const Standard_Integer yy, const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const char * format="");
-		%feature("autodoc","NDate(Standard_CString text) -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_IntegerStandard_Integer]");
+		%feature("autodoc","NDate(Standard_CString text) -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		Standard_Boolean NDate(const char * text, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer CDate(const char * text1, const char * text2);
@@ -3846,6 +3852,7 @@ class Interface_GTool : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ClearEntities();
 		%feature("autodoc","Select(const ent, Standard_Boolean enforce=0) -> Standard_Integer");
+
 		Standard_Boolean Select(const Handle_Standard_Transient &ent, Handle_Interface_GeneralModule & gmod, Standard_Integer &OutValue, const Standard_Boolean enforce=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;

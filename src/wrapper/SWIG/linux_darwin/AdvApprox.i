@@ -112,6 +112,7 @@ class AdvApprox_Cutting {
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc","Value(Standard_Real a, Standard_Real b) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
 
 };
@@ -137,6 +138,7 @@ class AdvApprox_PrefAndRec : public AdvApprox_Cutting {
 		%feature("autodoc", "1");
 		AdvApprox_PrefAndRec(const TColStd_Array1OfReal &RecomendedCut, const TColStd_Array1OfReal &PrefferedCut, const Standard_Real Weight=5);
 		%feature("autodoc","Value(Standard_Real a, Standard_Real b) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
 
 };
@@ -162,6 +164,7 @@ class AdvApprox_PrefCutting : public AdvApprox_Cutting {
 		%feature("autodoc", "1");
 		AdvApprox_PrefCutting(const TColStd_Array1OfReal &CutPnts);
 		%feature("autodoc","Value(Standard_Real a, Standard_Real b) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
 
 };
@@ -187,6 +190,7 @@ class AdvApprox_DichoCutting : public AdvApprox_Cutting {
 		%feature("autodoc", "1");
 		AdvApprox_DichoCutting();
 		%feature("autodoc","Value(Standard_Real a, Standard_Real b) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
 
 };

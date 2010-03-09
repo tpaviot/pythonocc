@@ -92,10 +92,13 @@ class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDeriv
 		%feature("autodoc", "1");
 		IntCurve_MyImpParToolOfIntImpConicParConic(const IntCurve_IConicTool &IT, const IntCurve_PConic &PC);
 		%feature("autodoc","Value(Standard_Real Param) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
 		%feature("autodoc","Derivative(Standard_Real Param) -> Standard_Real");
+
 		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real Param) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real Param) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -129,6 +132,7 @@ class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
 		%feature("autodoc", "1");
 		Standard_Real FindV(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_IConicTool &TheImpTool, const IntCurve_PConic &ParCurve, const IntRes2d_Domain &TheParCurveDomain, const Standard_Real V0, const Standard_Real V1, const Standard_Real Tolerance) const;
 		%feature("autodoc","And_Domaine_Objet1_Intersections(const TheImpTool, const TheParCurve, const TheImpCurveDomain, const TheParCurveDomain, Standard_Real EpsNul) -> Standard_Integer");
+
 		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool &TheImpTool, const IntCurve_PConic &TheParCurve, const IntRes2d_Domain &TheImpCurveDomain, const IntRes2d_Domain &TheParCurveDomain, Standard_Integer &OutValue, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul) const;
 
 };

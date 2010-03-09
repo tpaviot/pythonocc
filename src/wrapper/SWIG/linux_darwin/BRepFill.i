@@ -1736,7 +1736,8 @@ class BRepFill_LocationLaw : public MMgt_TShared {
 		TopoDS_Vertex Vertex(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void PerformVertex(const Standard_Integer Index, const TopoDS_Vertex &InputVertex, const Standard_Real TolMin, TopoDS_Vertex & OutputVertex, const Standard_Integer Location=0) const;
-		%feature("autodoc","CurvilinearBounds(Standard_Integer Index) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","CurvilinearBounds(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
 		void CurvilinearBounds(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsClosed() const;
@@ -1744,7 +1745,8 @@ class BRepFill_LocationLaw : public MMgt_TShared {
 		Standard_Integer IsG1(const Standard_Integer Index, const Standard_Real SpatialTolerance=9.99999999999999954748111825886258685613938723691e-8, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4) const;
 		%feature("autodoc", "1");
 		void D0(const Standard_Real Abscissa, TopoDS_Shape & Section);
-		%feature("autodoc","Parameter(Standard_Real Abscissa) -> [Standard_IntegerStandard_Real]");
+		%feature("autodoc","Parameter(Standard_Real Abscissa) -> [Standard_Integer, Standard_Real]");
+
 		void Parameter(const Standard_Real Abscissa, Standard_Integer &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real Abscissa(const Standard_Integer Index, const Standard_Real Param);
@@ -2898,6 +2900,7 @@ class BRepFill_MyLeastSquareOfComputeCLine {
 		%feature("autodoc", "1");
 		const AppParCurves_MultiCurve & Value();
 		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -3242,13 +3245,15 @@ class BRepFill_ComputeCLine {
 		Standard_Boolean IsAllApproximated() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
 		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbMultiCurves() const;
 		%feature("autodoc", "1");
 		AppParCurves_MultiCurve Value(const Standard_Integer Index=1) const;
-		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };

@@ -1471,6 +1471,7 @@ class OSD_Real2String {
 		%feature("autodoc", "1");
 		Standard_Boolean RealToCString(const Standard_Real aReal, Standard_PCharacter & aString) const;
 		%feature("autodoc","CStringToReal(Standard_CString aString) -> Standard_Real");
+
 		Standard_Boolean CStringToReal(const char * aString, Standard_Real &OutValue);
 
 };
@@ -2403,8 +2404,10 @@ class OSD_File : public OSD_FileNode {
 		%feature("autodoc", "1");
 		void Read(TCollection_AsciiString & Buffer, const Standard_Integer Nbyte);
 		%feature("autodoc","ReadLine(Standard_Integer NByte) -> Standard_Integer");
+
 		void ReadLine(TCollection_AsciiString & Buffer, const Standard_Integer NByte, Standard_Integer &OutValue);
 		%feature("autodoc","Read(Standard_Integer Nbyte) -> Standard_Integer");
+
 		void Read(Standard_Address & Buffer, const Standard_Integer Nbyte, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void Write(const TCollection_AsciiString &Buffer, const Standard_Integer Nbyte);
@@ -2685,6 +2688,7 @@ class OSD {
 		%feature("autodoc", "1");
 		Standard_Boolean RealToCString(const Standard_Real aReal, Standard_PCharacter & aString);
 		%feature("autodoc","CStringToReal(Standard_CString aString) -> Standard_Real");
+
 		Standard_Boolean CStringToReal(const char * aString, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDivisible(const Standard_Real aDividend, const Standard_Real aDivisor);
@@ -2910,8 +2914,10 @@ class OSD_Chronometer {
 			return s.str();}
 		};
 		%feature("autodoc","Show() -> Standard_Real");
+
 		void Show(Standard_Real &OutValue);
 		%feature("autodoc","Show() -> [Standard_Real, Standard_Real]");
+
 		void Show(Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
@@ -3120,6 +3126,7 @@ class OSD_Timer : public OSD_Chronometer {
 			return s.str();}
 		};
 		%feature("autodoc","Show() -> [Standard_Real, Standard_Integer, Standard_Integer, Standard_Real]");
+
 		void Show(Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Stop();

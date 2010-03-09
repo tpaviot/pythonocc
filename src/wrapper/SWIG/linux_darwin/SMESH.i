@@ -246,20 +246,24 @@ class SMESH_MeshVSLink : public MeshVS_DataSource3D {
 		%feature("autodoc", "1");
 		SMESH_MeshVSLink(const SMESH_Mesh *aMesh);
 		%feature("autodoc","GetGeom(Standard_Integer ID, Standard_Boolean IsElement) -> Standard_Integer");
+
 		virtual		Standard_Boolean GetGeom(const Standard_Integer ID, const Standard_Boolean IsElement, TColStd_Array1OfReal & Coords, Standard_Integer &OutValue, MeshVS_EntityType & Type) const;
 		%feature("autodoc","Get3DGeom(Standard_Integer ID) -> Standard_Integer");
+
 		virtual		Standard_Boolean Get3DGeom(const Standard_Integer ID, Standard_Integer &OutValue, Handle_MeshVS_HArray1OfSequenceOfInteger & Data) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean GetGeomType(const Standard_Integer ID, const Standard_Boolean IsElement, MeshVS_EntityType & Type) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Address GetAddr(const Standard_Integer ID, const Standard_Boolean IsElement) const;
 		%feature("autodoc","GetNodesByElement(Standard_Integer ID) -> Standard_Integer");
+
 		virtual		Standard_Boolean GetNodesByElement(const Standard_Integer ID, TColStd_Array1OfInteger & NodeIDs, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const TColStd_PackedMapOfInteger & GetAllNodes() const;
 		%feature("autodoc", "1");
 		virtual		const TColStd_PackedMapOfInteger & GetAllElements() const;
-		%feature("autodoc","GetNormal(Standard_Integer Id, Standard_Integer Max) -> [Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","GetNormal(Standard_Integer Id, Standard_Integer Max) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean GetNormal(const Standard_Integer Id, const Standard_Integer Max, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void GetAllGroups(TColStd_PackedMapOfInteger & Ids) const;

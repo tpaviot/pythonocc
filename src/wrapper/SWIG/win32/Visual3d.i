@@ -1441,6 +1441,7 @@ class Visual3d_ViewMapping {
 		%feature("autodoc", "1");
 		Standard_Real ViewPlaneDistance() const;
 		%feature("autodoc","WindowLimit() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void WindowLimit(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsCustomMatrix() const;
@@ -2077,7 +2078,8 @@ class Visual3d_ViewManager : public Graphic3d_StructureManager {
 		virtual		void Update() const;
 		%feature("autodoc", "1");
 		Handle_Visual3d_HSetOfView ActivatedView() const;
-		%feature("autodoc","ConvertCoord(const AWindow, const AVertex) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","ConvertCoord(const AWindow, const AVertex) -> [Standard_Integer, Standard_Integer]");
+
 		void ConvertCoord(const Handle_Aspect_Window &AWindow, const Graphic3d_Vertex &AVertex, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Graphic3d_Vertex ConvertCoord(const Handle_Aspect_Window &AWindow, const Standard_Integer AU, const Standard_Integer AV) const;
@@ -2210,6 +2212,7 @@ class Visual3d_ClipPlane : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Limit();
 		%feature("autodoc","Plane() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void Plane(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -2434,7 +2437,8 @@ class Visual3d_Layer : public MMgt_TShared {
 		void DrawRectangle(const Standard_Real X, const Standard_Real Y, const Standard_Real Width, const Standard_Real Height);
 		%feature("autodoc", "1");
 		void DrawText(const char * AText, const Standard_Real X, const Standard_Real Y, const Standard_Real AHeight);
-		%feature("autodoc","TextSize(Standard_CString AText, Standard_Real AHeight) -> [Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","TextSize(Standard_CString AText, Standard_Real AHeight) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void TextSize(const char * AText, const Standard_Real AHeight, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetColor(const Quantity_Color &AColor);
@@ -2565,8 +2569,10 @@ class Visual3d_Light : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Values(Quantity_Color & Color, Graphic3d_Vector & Direction) const;
 		%feature("autodoc","Values() -> [Standard_Real, Standard_Real]");
+
 		void Values(Quantity_Color & Color, Graphic3d_Vertex & Position, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void Values(Quantity_Color & Color, Graphic3d_Vertex & Position, Graphic3d_Vector & Direction, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Limit();
@@ -2964,16 +2970,21 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDeleted() const;
 		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","MinMaxValues(const ASet) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","MinMaxValues(const ASet) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void MinMaxValues(const Graphic3d_MapOfStructure &ASet, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","MinMaxValues(const ASet) -> [Standard_Real, Standard_Real, Standard_RealStandard_Real]");
+		%feature("autodoc","MinMaxValues(const ASet) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void MinMaxValues(const Graphic3d_MapOfStructure &ASet, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfDisplayedStructures() const;
-		%feature("autodoc","Projects(Standard_Real AX, Standard_Real AY, Standard_Real AZ) -> [Standard_RealStandard_RealStandard_Real]");
+		%feature("autodoc","Projects(Standard_Real AX, Standard_Real AY, Standard_Real AZ) -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void Projects(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const TColStd_Array2OfReal & Transform() const;
@@ -3156,8 +3167,10 @@ class Visual3d_TransientManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetPrimitivesAspect(const Handle_Graphic3d_AspectMarker3d &CTX);
 		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void SetTransform(const TColStd_Array2OfReal &AMatrix, const Graphic3d_TypeOfComposition AType=Graphic3d_TOC_REPLACE);
@@ -3539,6 +3552,7 @@ class Visual3d_ViewOrientation {
 		%feature("autodoc", "1");
 		Graphic3d_Vector ViewReferenceUp() const;
 		%feature("autodoc","AxialScale() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void AxialScale(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsCustomMatrix() const;

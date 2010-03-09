@@ -176,10 +176,13 @@ class BRepToIGES_BRWire : public BRepToIGES_BREntity {
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex &myvertex);
 		%feature("autodoc","TransferVertex(const myvertex, const myedge) -> Standard_Real");
+
 		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex &myvertex, const TopoDS_Edge &myedge, Standard_Real &OutValue);
 		%feature("autodoc","TransferVertex(const myvertex, const myedge, const myface) -> Standard_Real");
+
 		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex &myvertex, const TopoDS_Edge &myedge, const TopoDS_Face &myface, Standard_Real &OutValue);
 		%feature("autodoc","TransferVertex(const myvertex, const myedge, const mysurface, const myloc) -> Standard_Real");
+
 		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex &myvertex, const TopoDS_Edge &myedge, const Handle_Geom_Surface &mysurface, const TopLoc_Location &myloc, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Handle_IGESData_IGESEntity TransferVertex(const TopoDS_Vertex &myvertex, const TopoDS_Face &myface, gp_Pnt2d & mypoint);

@@ -552,6 +552,7 @@ class FEmTool_Curve : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void D2(const Standard_Real U, TColStd_Array1OfReal & Vec);
 		%feature("autodoc","Length(Standard_Real FirstU, Standard_Real LastU) -> Standard_Real");
+
 		void Length(const Standard_Real FirstU, const Standard_Real LastU, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void GetElement(const Standard_Integer IndexOfElement, TColStd_Array2OfReal & Coeffs);
@@ -567,7 +568,8 @@ class FEmTool_Curve : public MMgt_TShared {
 		Standard_Integer Degree(const Standard_Integer IndexOfElement) const;
 		%feature("autodoc", "1");
 		void SetDegree(const Standard_Integer IndexOfElement, const Standard_Integer Degree);
-		%feature("autodoc","ReduceDegree(Standard_Integer IndexOfElement, Standard_Real Tol) -> [Standard_IntegerStandard_Real]");
+		%feature("autodoc","ReduceDegree(Standard_Integer IndexOfElement, Standard_Real Tol) -> [Standard_Integer, Standard_Real]");
+
 		void ReduceDegree(const Standard_Integer IndexOfElement, const Standard_Real Tol, Standard_Integer &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;

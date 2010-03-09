@@ -1831,13 +1831,15 @@ class IGESGraph_TextFontDef : public IGESData_IGESEntity {
 		Standard_Integer NbCharacters() const;
 		%feature("autodoc", "1");
 		Standard_Integer ASCIICode(const Standard_Integer Chnum) const;
-		%feature("autodoc","NextCharOrigin(Standard_Integer Chnum) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","NextCharOrigin(Standard_Integer Chnum) -> [Standard_Integer, Standard_Integer]");
+
 		void NextCharOrigin(const Standard_Integer Chnum, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPenMotions(const Standard_Integer Chnum) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsPenUp(const Standard_Integer Chnum, const Standard_Integer Motionnum) const;
-		%feature("autodoc","NextPenPosition(Standard_Integer Chnum, Standard_Integer Motionnum) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","NextPenPosition(Standard_Integer Chnum, Standard_Integer Motionnum) -> [Standard_Integer, Standard_Integer]");
+
 		void NextPenPosition(const Standard_Integer Chnum, const Standard_Integer Motionnum, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -2141,10 +2143,13 @@ class IGESGraph_Color : public IGESData_ColorEntity {
 		%feature("autodoc", "1");
 		void Init(const Standard_Real red, const Standard_Real green, const Standard_Real blue, const Handle_TCollection_HAsciiString &aColorName);
 		%feature("autodoc","RGBIntensity() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void RGBIntensity(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","CMYIntensity() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void CMYIntensity(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","HLSPercentage() -> [Standard_Real, Standard_Real, Standard_Real]");
+
 		void HLSPercentage(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasColorName() const;

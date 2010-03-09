@@ -92,6 +92,7 @@ class CPnts_MyGaussFunction : public math_Function {
 		%feature("autodoc", "1");
 		CPnts_MyGaussFunction();
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 
 };
@@ -196,10 +197,13 @@ class CPnts_MyRootFunction : public math_FunctionWithDerivative {
 		%feature("autodoc", "1");
 		void Init(const Standard_Real X0, const Standard_Real L, const Standard_Real Tol);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
 		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
 		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };

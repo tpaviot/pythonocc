@@ -580,6 +580,7 @@ class IntRes2d_Domain {
 		%feature("autodoc", "1");
 		Standard_Boolean IsClosed() const;
 		%feature("autodoc","EquivalentParameters() -> [Standard_Real, Standard_Real]");
+
 		void EquivalentParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };

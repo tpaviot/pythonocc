@@ -1019,6 +1019,7 @@ class BRep_GCurve : public BRep_CurveRepresentation {
 		%feature("autodoc", "1");
 		void SetRange(const Standard_Real First, const Standard_Real Last);
 		%feature("autodoc","Range() -> [Standard_Real, Standard_Real]");
+
 		void Range(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real First() const;
@@ -1309,19 +1310,25 @@ class BRep_Tool {
 		Standard_Boolean NaturalRestriction(const TopoDS_Face &F);
 		%feature("autodoc", "1");
 		Standard_Boolean IsGeometric(const TopoDS_Edge &E);
-		%feature("autodoc","Curve(const E) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Curve(const E) -> [Standard_Real, Standard_Real]");
+
 		const Handle_Geom_Curve & Curve(const TopoDS_Edge &E, TopLoc_Location & L, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","Curve(const E) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Curve(const E) -> [Standard_Real, Standard_Real]");
+
 		Handle_Geom_Curve Curve(const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		const Handle_Poly_Polygon3D & Polygon3D(const TopoDS_Edge &E, TopLoc_Location & L);
-		%feature("autodoc","CurveOnSurface(const E, const F) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","CurveOnSurface(const E, const F) -> [Standard_Real, Standard_Real]");
+
 		Handle_Geom2d_Curve CurveOnSurface(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","CurveOnSurface(const E, const S, const L) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","CurveOnSurface(const E, const S, const L) -> [Standard_Real, Standard_Real]");
+
 		Handle_Geom2d_Curve CurveOnSurface(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","CurveOnSurface(const E) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","CurveOnSurface(const E) -> [Standard_Real, Standard_Real]");
+
 		void CurveOnSurface(const TopoDS_Edge &E, Handle_Geom2d_Curve & C, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","CurveOnSurface(const E, Standard_Integer Index) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","CurveOnSurface(const E, Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
 		void CurveOnSurface(const TopoDS_Edge &E, Handle_Geom2d_Curve & C, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Integer Index);
 		%feature("autodoc", "1");
 		Handle_Poly_Polygon2D PolygonOnSurface(const TopoDS_Edge &E, const TopoDS_Face &F);
@@ -1351,11 +1358,14 @@ class BRep_Tool {
 		Standard_Boolean SameRange(const TopoDS_Edge &E);
 		%feature("autodoc", "1");
 		Standard_Boolean Degenerated(const TopoDS_Edge &E);
-		%feature("autodoc","Range(const E) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Range(const E) -> [Standard_Real, Standard_Real]");
+
 		void Range(const TopoDS_Edge &E, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","Range(const E, const S, const L) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Range(const E, const S, const L) -> [Standard_Real, Standard_Real]");
+
 		void Range(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","Range(const E, const F) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Range(const E, const F) -> [Standard_Real, Standard_Real]");
+
 		void Range(const TopoDS_Edge &E, const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void UVPoints(const TopoDS_Edge &E, const Handle_Geom_Surface &S, const TopLoc_Location &L, gp_Pnt2d & PFirst, gp_Pnt2d & PLast);

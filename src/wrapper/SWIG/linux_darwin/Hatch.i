@@ -289,11 +289,13 @@ class Hatch_Hatcher {
 		Standard_Integer NbIntervals(const Standard_Integer I) const;
 		%feature("autodoc", "1");
 		Standard_Real Start(const Standard_Integer I, const Standard_Integer J) const;
-		%feature("autodoc","StartIndex(Standard_Integer I, Standard_Integer J) -> [Standard_IntegerStandard_Real]");
+		%feature("autodoc","StartIndex(Standard_Integer I, Standard_Integer J) -> [Standard_Integer, Standard_Real]");
+
 		void StartIndex(const Standard_Integer I, const Standard_Integer J, Standard_Integer &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real End(const Standard_Integer I, const Standard_Integer J) const;
-		%feature("autodoc","EndIndex(Standard_Integer I, Standard_Integer J) -> [Standard_IntegerStandard_Real]");
+		%feature("autodoc","EndIndex(Standard_Integer I, Standard_Integer J) -> [Standard_Integer, Standard_Real]");
+
 		void EndIndex(const Standard_Integer I, const Standard_Integer J, Standard_Integer &OutValue, Standard_Real &OutValue) const;
 
 };

@@ -99,6 +99,7 @@ class FairCurve_Batten {
 		%feature("autodoc", "1");
 		void SetSlidingFactor(const Standard_Real SlidingFactor);
 		%feature("autodoc","Compute(Standard_Integer NbIterations=50, Standard_Real Tolerance=1.000000) -> FairCurve_AnalysisCode");
+
 		virtual		Standard_Boolean Compute(FairCurve_AnalysisCode &OutValue, const Standard_Integer NbIterations=50, const Standard_Real Tolerance=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
 		Standard_Real SlidingOfReference() const;
@@ -156,12 +157,15 @@ class FairCurve_Energy : public math_MultipleVarFunctionWithHessian {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc","Value(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
 		%feature("autodoc","Values(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
 		%feature("autodoc","Values(const X) -> Standard_Real");
+
 		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G, math_Matrix & H);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Variable(math_Vector & X) const;
@@ -276,6 +280,7 @@ class FairCurve_BattenLaw : public math_Function {
 		%feature("autodoc", "1");
 		void SetSlope(const Standard_Real Slope);
 		%feature("autodoc","Value(Standard_Real T) -> Standard_Real");
+
 		virtual		Standard_Boolean Value(const Standard_Real T, Standard_Real &OutValue);
 
 };
@@ -332,6 +337,7 @@ class FairCurve_MinimalVariation : public FairCurve_Batten {
 		%feature("autodoc", "1");
 		void SetPhysicalRatio(const Standard_Real Ratio);
 		%feature("autodoc","Compute(Standard_Integer NbIterations=50, Standard_Real Tolerance=1.000000) -> FairCurve_AnalysisCode");
+
 		virtual		Standard_Boolean Compute(FairCurve_AnalysisCode &OutValue, const Standard_Integer NbIterations=50, const Standard_Real Tolerance=1.0000000000000000208166817117216851329430937767e-3);
 		%feature("autodoc", "1");
 		Standard_Real GetCurvature1() const;

@@ -778,6 +778,7 @@ class TopOpeBRep_Hctxff2d : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetTolerances(const Standard_Real Tol1, const Standard_Real Tol2);
 		%feature("autodoc","GetTolerances() -> [Standard_Real, Standard_Real]");
+
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real GetMaxTolerance() const;
@@ -1041,6 +1042,7 @@ class TopOpeBRep_ShapeIntersector {
 		%feature("autodoc", "1");
 		const TopoDS_Shape & CurrentGeomShape(const Standard_Integer Index) const;
 		%feature("autodoc","GetTolerances() -> [Standard_Real, Standard_Real]");
+
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void DumpCurrent(const Standard_Integer K) const;
@@ -1169,20 +1171,24 @@ class TopOpeBRep_FacesFiller {
 		%feature("autodoc", "1");
 		void ProcessVPonclosingR(const TopOpeBRep_VPointInter &VP, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex, const TopOpeBRepDS_Transition &transEdge, const TopOpeBRepDS_Kind PVKind, const Standard_Integer PVIndex, const Standard_Boolean EPIfound, const Handle_TopOpeBRepDS_Interference &IEPI);
 		%feature("autodoc","ProcessVPondgE(const VP, Standard_Integer ShapeIndex) -> Standard_Integer");
+
 		Standard_Boolean ProcessVPondgE(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & PVKind, Standard_Integer &OutValue, Standard_Boolean & EPIfound, Handle_TopOpeBRepDS_Interference & IEPI, Standard_Boolean & CPIfound, Handle_TopOpeBRepDS_Interference & ICPI);
 		%feature("autodoc", "1");
 		void ProcessVPInotonR(TopOpeBRep_VPointInterIterator & VPI);
 		%feature("autodoc", "1");
 		void ProcessVPnotonR(const TopOpeBRep_VPointInter &VP);
 		%feature("autodoc","GetGeometry(const VP) -> Standard_Integer");
+
 		Standard_Boolean GetGeometry(TopOpeBRepDS_ListIteratorOfListOfInterference & IT, const TopOpeBRep_VPointInter &VP, Standard_Integer &OutValue, TopOpeBRepDS_Kind & K);
 		%feature("autodoc", "1");
 		Standard_Integer MakeGeometry(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & K);
 		%feature("autodoc", "1");
 		void StoreCurveInterference(const Handle_TopOpeBRepDS_Interference &I);
 		%feature("autodoc","GetFFGeometry(const DSP) -> Standard_Integer");
+
 		Standard_Boolean GetFFGeometry(const TopOpeBRepDS_Point &DSP, TopOpeBRepDS_Kind & K, Standard_Integer &OutValue) const;
 		%feature("autodoc","GetFFGeometry(const VP) -> Standard_Integer");
+
 		Standard_Boolean GetFFGeometry(const TopOpeBRep_VPointInter &VP, TopOpeBRepDS_Kind & K, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		TopOpeBRep_FacesIntersector & ChangeFacesIntersector();
@@ -1205,8 +1211,10 @@ class TopOpeBRep_FacesFiller {
 		%feature("autodoc", "1");
 		void SetTraceIndex(const Standard_Integer exF1, const Standard_Integer exF2);
 		%feature("autodoc","GetTraceIndex() -> [Standard_Integer, Standard_Integer]");
+
 		void GetTraceIndex(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","Lminmax(const L) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Lminmax(const L) -> [Standard_Real, Standard_Real]");
+
 		void Lminmax(const TopOpeBRep_LineInter &L, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean LSameDomainERL(const TopOpeBRep_LineInter &L, const TopTools_ListOfShape &ERL);
@@ -1376,10 +1384,13 @@ class TopOpeBRep_WPointInter {
 		%feature("autodoc", "1");
 		void Set(const IntSurf_PntOn2S &P);
 		%feature("autodoc","ParametersOnS1() -> [Standard_Real, Standard_Real]");
+
 		void ParametersOnS1(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","ParametersOnS2() -> [Standard_Real, Standard_Real]");
+
 		void ParametersOnS2(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt2d ValueOnS1() const;
@@ -1588,6 +1599,7 @@ class TopOpeBRep_FacesIntersector {
 		%feature("autodoc", "1");
 		void ForceTolerances(const Standard_Real tolarc, const Standard_Real toltang);
 		%feature("autodoc","GetTolerances() -> [Standard_Real, Standard_Real]");
+
 		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
@@ -1799,6 +1811,7 @@ class TopOpeBRep_VPointInter {
 		%feature("autodoc", "1");
 		void SetShapes(const Standard_Integer I1, const Standard_Integer I2);
 		%feature("autodoc","GetShapes() -> [Standard_Integer, Standard_Integer]");
+
 		void GetShapes(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		IntSurf_Transition TransitionOnS1() const;
@@ -1813,8 +1826,10 @@ class TopOpeBRep_VPointInter {
 		%feature("autodoc", "1");
 		Standard_Boolean IsOnDomS2() const;
 		%feature("autodoc","ParametersOnS1() -> [Standard_Real, Standard_Real]");
+
 		void ParametersOnS1(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","ParametersOnS2() -> [Standard_Real, Standard_Real]");
+
 		void ParametersOnS2(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		const gp_Pnt & Value() const;
@@ -1875,6 +1890,7 @@ class TopOpeBRep_VPointInter {
 		%feature("autodoc", "1");
 		Standard_Boolean EqualpP(const TopOpeBRep_VPointInter &VP) const;
 		%feature("autodoc","ParonE(const E) -> Standard_Real");
+
 		Standard_Boolean ParonE(const TopoDS_Edge &E, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Index(const Standard_Integer I);
@@ -1975,6 +1991,7 @@ class TopOpeBRep_EdgesIntersector {
 		%feature("autodoc", "1");
 		Standard_Real ToleranceMax() const;
 		%feature("autodoc","Tolerances() -> [Standard_Real, Standard_Real]");
+
 		void Tolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
@@ -2207,6 +2224,7 @@ class TopOpeBRep_Point2d {
 		%feature("autodoc", "1");
 		void SetSegmentAncestors(const Standard_Integer IP1, const Standard_Integer IP2);
 		%feature("autodoc","SegmentAncestors() -> [Standard_Integer, Standard_Integer]");
+
 		Standard_Boolean SegmentAncestors(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetStatus(const TopOpeBRep_P2Dstatus I);

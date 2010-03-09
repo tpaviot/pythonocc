@@ -805,6 +805,7 @@ class PrsMgr_PresentationManager2d : public PrsMgr_PresentationManager {
 		%feature("autodoc", "1");
 		void AddMinMax(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
 		%feature("autodoc","MinMax() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void MinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetHighlightColor(const Standard_Integer anIndex);

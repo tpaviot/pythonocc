@@ -929,7 +929,8 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 		virtual		void ClosePrimitive();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsKnownImage(const Handle_Standard_Transient &anImage);
-		%feature("autodoc","SizeOfImageFile(Standard_CString anImageFile) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","SizeOfImageFile(Standard_CString anImageFile) -> [Standard_Integer, Standard_Integer]");
+
 		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void ClearImage(const Handle_Standard_Transient &anImageId);
@@ -976,18 +977,23 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 		%feature("autodoc", "1");
 		TCollection_AsciiString SpoolDirectory() const;
 		%feature("autodoc","WorkSpace() -> [Standard_Real, Standard_Real]");
+
 		virtual		void WorkSpace(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Length Convert(const Standard_Integer PV) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Convert(const Quantity_Length DV) const;
-		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY) -> [Standard_RealStandard_Real]");
+		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY) -> [Standard_Real, Standard_Real]");
+
 		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Convert(Quantity_Length DX, Quantity_Length DY) -> [Standard_IntegerStandard_Integer]");
+		%feature("autodoc","Convert(Quantity_Length DX, Quantity_Length DY) -> [Standard_Integer, Standard_Integer]");
+
 		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc","LineAttrib() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
 		void LineAttrib(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc","PolyAttrib() -> [Standard_Integer, Standard_Integer]");
+
 		void PolyAttrib(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & EdgeFlag) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1135,12 +1141,16 @@ class PlotMgt_Plotter : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Real PaperLength();
 		%feature("autodoc","PaperSize() -> [Standard_Real, Standard_Real]");
+
 		void PaperSize(Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","HardMargins() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void HardMargins(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","Margins() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void Margins(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","HardMappings() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
 		void HardMappings(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real SpaceDrawing();
@@ -1467,6 +1477,7 @@ class PlotMgt {
 		%feature("autodoc", "1");
 		TCollection_AsciiString StringFromPaperFormat(const PlotMgt_PaperFormat aPaperFormat);
 		%feature("autodoc","PaperSize() -> [Standard_Real, Standard_Real]");
+
 		void PaperSize(TCollection_AsciiString & aFormat, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };

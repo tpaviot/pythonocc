@@ -2070,6 +2070,7 @@ class SelectMgr_SortCriterion {
 		%feature("autodoc", "1");
 		void SetMinDist(const Standard_Real Dist);
 		%feature("autodoc","Values() -> [Standard_Integer, Standard_Real, Standard_Real]");
+
 		void Values(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Priority() const;
@@ -2350,6 +2351,7 @@ class SelectMgr_ViewerSelector : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean HasStored();
 		%feature("autodoc","LastPosition() -> [Standard_Real, Standard_Real]");
+
 		void LastPosition(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Handle_SelectMgr_SelectableObject &aSelectableObject) const;
