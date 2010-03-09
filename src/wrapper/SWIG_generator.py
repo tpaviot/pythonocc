@@ -709,7 +709,6 @@ class ModularBuilder(object):
             elif function_name not in self.MEMBER_FUNCTIONS_TO_EXCLUDE[class_name]:
                  self.write_function(mem_fun,CURRENT_CLASS_IS_ABSTRACT)
         self.fp.write("\n};")
-
         #
         # Adding a method GetObject() to Handle_* classes
         #
@@ -804,6 +803,49 @@ class ModularBuilder(object):
             self.fp.write('\t\tthe_shape = ss.Shape(ss.NbShapes())\n')
             self.fp.write('\t\tself.this = the_shape.this\n')
             self.fp.write('\t}\n};\n')
+        #
+        # Node, Edge and Face iterator for SMDS_Mesh
+        #
+        if (class_name=='SMDS_Mesh'):
+            # Node iterator
+            self.fp.write('%extend SMDS_Mesh {\n')
+            self.fp.write('\tconst SMDS_MeshNode * nodeValue(int index) {\n')
+            self.fp.write('\t\tint i;\n')
+            self.fp.write('\t\tSMDS_NodeIteratorPtr iterator=$self->nodesIterator();\n')
+            self.fp.write('\t\tfor (i=0; i<=index-1; i++) {\n')
+            self.fp.write('\t\t\titerator->next();}\n')
+            self.fp.write('\t\treturn iterator->next();\n')
+            self.fp.write('\t}\n};\n')
+            # Edge iterator
+            self.fp.write('%extend SMDS_Mesh {\n')
+            self.fp.write('\tconst SMDS_MeshEdge * edgeValue(int index) {\n')
+            self.fp.write('\t\tint i;\n')
+            self.fp.write('\t\tSMDS_EdgeIteratorPtr iterator=$self->edgesIterator();\n')
+            self.fp.write('\t\tfor (i=0; i<=index-1; i++) {\n')
+            self.fp.write('\t\t\titerator->next();}\n')
+            self.fp.write('\t\treturn iterator->next();\n')
+            self.fp.write('\t}\n};\n')
+            # Face iterator
+            self.fp.write('%extend SMDS_Mesh {\n')
+            self.fp.write('\tconst SMDS_MeshFace * faceValue(int index) {\n')
+            self.fp.write('\t\tint i;\n')
+            self.fp.write('\t\tSMDS_FaceIteratorPtr iterator=$self->facesIterator();\n')
+            self.fp.write('\t\tfor (i=0; i<=index-1; i++) {\n')
+            self.fp.write('\t\t\titerator->next();}\n')
+            self.fp.write('\t\treturn iterator->next();\n')
+            self.fp.write('\t}\n};\n')
+          
+#            %extend SMDS_Mesh {
+#    const SMDS_MeshNode * nodesValue(int index) {
+#        int i;
+#        SMDS_NodeIteratorPtr node_iterator=$self->nodesIterator();
+#        for (i=0; i<index-1; i++) {
+#            node_iterator->next();
+#            }
+#        #SMDS_NodeIteratorPtr node_iterator=$self->nodesIterator();
+#        return node_iterator->next();
+#    }
+#};
         #
         # On l'ajoute a la liste des classes deja exposees
         #
