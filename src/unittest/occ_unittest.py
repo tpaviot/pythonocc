@@ -173,6 +173,37 @@ class Test(unittest.TestCase):
         # Create the shape
         box_shape = BRepPrimAPI_MakeBox(100,200,300).Shape()
         pickle.dumps(box_shape)
+    
+    def testSubClass(self):
+        '''
+        Checks that OCC objects can be subclassed, and passed as parameters. In this test, we create
+        a MyPoint and MyVec class, inheriting from gp_Pnt and gp_Vec.
+        '''
+        class MyPoint(gp_Pnt):
+            def __init__(self,*kargs):
+                gp_Pnt.__init__(self,*kargs)
+                self.x = 4
+            def get_x(self):
+                return self.x
+        class MyVec(gp_Vec):
+            def __init__(self,*kargs):
+                gp_Vec.__init__(self,*kargs)
+                self._an_attribute = "something"
+            def get_attribute(self):
+                return self._an_attribute
+        # Create the first point
+        point1 = MyPoint(1,2,3)
+        self.assertEqual(point1.Coord(),(1.,2.,3.))
+        self.assertEqual(point1.get_x(),4)
+        # Create the second point
+        point2 = MyPoint(2,2,3)
+        # Then create the vec from these two points
+        # The magnitude of the vector should equal 1.0
+        vec = MyVec(point1,point2)
+        self.assertEqual(vec.Magnitude(),1.)
+        self.assertEqual(vec.get_attribute(),"something")
+                         
+
 
 if __name__ == "__main__":
     unittest.main()
