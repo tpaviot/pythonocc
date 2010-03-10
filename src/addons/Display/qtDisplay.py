@@ -51,7 +51,6 @@ class qtBaseViewer(QtGui.QWidget):
         return int(self.winId())
     
     def resizeEvent(self, event):
-        print 'resize event for qtBaseViewer'
         if self._inited:
             self._display.OnResize()
             
