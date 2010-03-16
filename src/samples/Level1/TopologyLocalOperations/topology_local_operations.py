@@ -279,7 +279,7 @@ def brep_feat_rib(event=None):
        
     aplane = Geom_Plane(0.,1.,0.,-45.)
     
-    aform = BRepFeat_MakeLinearForm( S.Shape(), W.Wire(), aplane(),
+    aform = BRepFeat_MakeLinearForm( S.Shape(), W.Wire(), aplane.GetHandle(),
                                      gp_Vec(0.,10.,0.), gp_Vec(0.,0.,0.),
                                      1, True
                                      )
@@ -333,9 +333,8 @@ def brep_feat_local_pipe(event=None):
 
 def brep_feat_local_revolution(event=None):
     S = BRepPrimAPI_MakeBox(400.,250.,300.).Shape()
-    faces = Topo(S).faces()
-    faces.next()
-    F1 = faces.next()
+    faces = list(Topo(S).faces())
+    F1 = faces[2]
     surf = BRep_Tool().Surface(F1)
     Pl = Handle_Geom_Plane().DownCast(surf)
     
@@ -363,7 +362,7 @@ def brep_feat_local_revolution(event=None):
     FP = MKF1.Face()
     BRepLib().BuildCurves3d(FP)
     MKrev = BRepFeat_MakeRevol(S,FP,F1,D,1,True)
-    F2 = faces.next()
+    F2 = faces[4]
     MKrev.Perform(F2)
     display.EraseAll()
     display.DisplayShape(MKrev.Shape())
