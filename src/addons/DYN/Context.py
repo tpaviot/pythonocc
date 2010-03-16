@@ -65,9 +65,11 @@ class DynamicShape(ode.Body):
         # Get intertia properties of the shape
         cog = props.CentreOfMass().XYZ()
         x_cog,y_cog,z_cog = cog.X(),cog.Y(),cog.Z()
-        x_cog = round(x_cog,3)
-        y_cog = round(y_cog,3)
-        z_cog = round(z_cog,3)
+        import ipdb; ipdb.set_trace()
+        comma=3
+        x_cog = round(x_cog,comma)
+        y_cog = round(y_cog,comma)
+        z_cog = round(z_cog,comma)
         self.x_g = x_cog
         self.y_g = y_cog
         self.z_g = z_cog
@@ -88,12 +90,12 @@ class DynamicShape(ode.Body):
         i13 = inertia_matrix.Value(1,3)# I13
         i23 = inertia_matrix.Value(2,3)# I23
         #print mass
-        i11 = round(i11)
-        i22 = round(i22)
-        i33 = round(i33)
-        i12 = round(i12)
-        i13 = round(i13)
-        i23 = round(i23)
+        i11 = round(i11,comma)
+        i22 = round(i22,comma)
+        i33 = round(i33,comma)
+        i12 = round(i12,comma)
+        i13 = round(i13,comma)
+        i23 = round(i23,comma)
  
         M = ode.Mass()
         M.mass = 2.
