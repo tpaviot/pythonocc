@@ -65,7 +65,6 @@ class DynamicShape(ode.Body):
         # Get intertia properties of the shape
         cog = props.CentreOfMass().XYZ()
         x_cog,y_cog,z_cog = cog.X(),cog.Y(),cog.Z()
-        import ipdb; ipdb.set_trace()
         comma=3
         x_cog = round(x_cog,comma)
         y_cog = round(y_cog,comma)
