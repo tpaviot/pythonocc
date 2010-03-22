@@ -216,6 +216,14 @@ def interpolate_points_to_spline_no_tangency(list_of_points, filter=True, closed
 #            display.DisplayShape(make_vertex(i))
         # probably should do tangents too...
 
+#===============================================================================
+# --- RANDOMNESS ---
+#===============================================================================
+
+def random_vec():
+    import random
+    x,y,z = [random.uniform(-1,1) for i in range(3)]
+    return gp_Vec(x,y,z)
 
 def random_colored_material_aspect():
     from OCC import Graphic3d
