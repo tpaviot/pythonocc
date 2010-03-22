@@ -305,6 +305,16 @@ class ParametricModelingContext(object):
                 self.register_pre_solver_callback(relation.eval)
             else:
                 raise TypeError('%s is not a Relation object' % ( relation.__class__ ) )
+#
+#    def register_presentation(self, geomObject):
+#        '''
+#        returns the 
+#        @param geomObject: a GEOM_Object instance
+#        '''
+#        result_label = geomObject.GetLastFunction().GetObject().GetEntry().FindChild(RESULT_LABEL)
+#        prs_main = TPrsStd_AISPresentation().Set(result_label, TNaming_NamedShape().GetID()).GetObject()
+#        prs_main.Display(True)
+#        return prs_main
         
     def register_rules(self, rules):
         ''' Adds a rule to this parameter. Each time the parameter is updated,

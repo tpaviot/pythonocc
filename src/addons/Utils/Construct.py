@@ -1,4 +1,6 @@
 from __future__ import with_statement
+from OCC.Utils.Topology import Topo
+from OCC.BRep import BRep_Tool
 
 # -*- coding: iso-8859-1 -*-
 #!/usr/bin/env python
@@ -398,5 +400,6 @@ gp_Vec.as_pnt  = vector_to_point
 gp_Pnt.as_vec  = point_to_vector
 gp_Pnt.add_vec = add_vector_to_point
 gp_Dir.as_vec  = dir_to_vec 
+
 
 
