@@ -38,6 +38,39 @@ class GarbageCollector(object):
         self._transients = []
         self._misc = []
         
+        # The list for the prevented objects
+        self._prevent = []
+        
+        # define contexts lists
+        self._handles_contexts = []
+        self._transients_contexts = []
+        self._misc_contexts = []
+    
+    def prevent_object(self,obj):
+        ''' Prevent an object from being deleted. This object is temporary stored in a list
+        to increase its refecount
+        '''
+        self._prevent.append(obj)
+        
+    def push_context(self):
+        ''' Create a new context. When the push context method is called, objects are
+        collected in this new context. When the context is popped, erase the content of the
+        context
+        '''
+        # store the current objects in the contexts list
+        self._handles_contexts.append(self._handles)
+        self._transients_contexts.append(self._transients)
+        self._misc_contexts.append(self._misc)
+        # Then erase the content of the current lists
+        self._handles = []
+        self._transients = []
+        self._misc = []
+    
+    def pop_context(self):
+        self._handles = self._handles_contexts.pop()
+        self._transients = self._transients_contexts.pop()
+        self._misc = self._misc_contexts.pop()
+        
     def collect_object(self, obj_deleted):
         ''' This method is called whenever a pythonOCC instance is deleted.'''
         #self._collected_objects.append(obj_deleted)
