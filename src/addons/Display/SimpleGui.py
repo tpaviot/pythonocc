@@ -77,7 +77,14 @@ def get_bg_abs_filename():
         raise NameError('No image background file found.')
     else:
         return bg_abs_filename
-    
+
+def safe_yield():
+    if USED_BACKEND == 'wx':
+        wx.SafeYield()
+    elif USED_BACKEND == 'qt':
+        #QtCore.processEvents()
+        QtGui.QApplication.processEvents()
+            
 def init_display():
     global display, add_menu, add_function_to_menu, start_display, app, win
     # wxPython based simple GUI
@@ -95,7 +102,8 @@ def init_display():
                 _menu = wx.Menu()
                 self.menuBar.Append(_menu, "&"+menu_name)
                 self.SetMenuBar(self.menuBar)
-                self._menus[menu_name]=_menu        
+                self._menus[menu_name]=_menu
+
             def add_function_to_menu(self, menu_name, _callable):
                 # point on curve
                 _id = wx.NewId()
@@ -135,6 +143,7 @@ def init_display():
                 self.menuBar = self.menuBar()
                 self._menus = {}
                 self._menu_methods = {}
+
             def add_menu(self, menu_name):
                 _menu = self.menuBar.addMenu("&"+menu_name)
                 self._menus[menu_name]=_menu
