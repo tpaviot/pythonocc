@@ -35,10 +35,31 @@ from OCC.gp import *
 
 from OCC.KBE.TypesLookup import GeometryLookup, ShapeToTopology
 
-TOLERANCE = 1e-6
+EPSILON = TOLERANCE = 1e-6
 
 #===============================================================================
-# TOPOLOGY
+# ---MONKEY PATCH GP---
+#===============================================================================
+
+def point_to_vector(self):
+    return gp_Vec(self.XYZ())
+
+def vector_to_point(self):
+    return gp_Pnt(self.XYZ())
+
+def dir_to_vec(self):
+    return gp_Vec(self)
+
+def add_vector_to_point(self, vec):
+    return (self.as_vec() + vec).as_pnt() 
+
+gp_Vec.as_pnt  = vector_to_point
+gp_Pnt.as_vec  = point_to_vector
+gp_Pnt.add_vec = add_vector_to_point
+gp_Dir.as_vec  = dir_to_vec 
+
+#===============================================================================
+# ---TOPOLOGY---
 #===============================================================================
 
 def make_solid(*args):
@@ -124,45 +145,7 @@ def make_closed_polygon(*args):
         result = poly.Wire()
 #        wire.Delete()
         return result
-
-def add_wire_to_face(face, wire, reverse=False):
-    '''
-    apply a wire to a face
-    use reverse to set the orientation of the wire to opposite
-    @param face:
-    @param wire:
-    @param reverse:
-    '''
-    face = BRepBuilderAPI_MakeFace(face)
-    if reverse:
-        wire.Reverse()
-    face.Add(wire)
-    result = face.Face()
-    face.Delete()
-    return result
-
-def sew_shapes( shapes, tolerance=0.001 ):
-#    sew = BRepBuilderAPI_Sewing(tolerance, True, True, True, False)
-#    sew = BRepBuilderAPI_Sewing(1e-3, True, False, False, False)
-    sew = BRepBuilderAPI_Sewing(tolerance)
-    sew.SetFloatingEdgesMode(True)
-    for shp in shapes:
-        if isinstance(shp, list):
-            for i in shp:
-                sew.Add(i)
-        else:
-            sew.Add(shp)
-    sew.Perform()
-    print 'n degenerated shapes',sew.NbDegeneratedShapes()
-    print 'n deleted faces:',sew.NbDeletedFaces()
-    print 'n free edges',sew.NbFreeEdges()
-    print 'n multiple edges:',sew.NbMultipleEdges()
     
-    result = sew.SewedShape()
-    # This fucks up big time!
-#    sew.Delete()
-    return result
-
 #===============================================================================
 # PRIMITIVES
 #===============================================================================
@@ -186,7 +169,7 @@ def make_evolved(spine, profile):
     with assert_isdone(evol, 'failed buillding evolved'):
         evol.Build()
         return evol.Evolved()
-
+    
 def make_pipe(spine, profile):
     pipe = BRepOffsetAPI_MakePipe(spine, profile)
     with assert_isdone(pipe, 'failed building pipe'):
@@ -237,8 +220,89 @@ def make_loft(list_of_wires, ruled=False, tolerance=TOLERANCE):
         return loft
 
 #===============================================================================
-# ---FIXES---
+# ---CONVENIENCE---
 #===============================================================================
+
+def make_plane(center=gp_Pnt(0,0,0),
+                vec_normal=gp_Vec(0,0,1),
+                 extent_x_min=-100.,
+                  extent_x_max=100.,
+                   extent_y_min=-100.,
+                    extent_y_max=100.,
+                     depth=0.
+                ):
+    
+    if depth!=0:
+        P1 = center.add_vec(gp_Vec(0,0,depth))
+    
+    V1 = gp_Vec(0,0,1)
+    PL = gp_Pln(P1,gp_Dir(V1))                     
+    face = make_face(PL,
+                      extent_x_min,
+                       extent_x_max,
+                        extent_y_min,
+                         extent_y_max,
+                     )
+    return face
+
+
+def make_spline(pnts=[''],
+                 tangents=[''],
+                  epsilon=EPSILON
+                  ):
+    '''
+    
+    @param pnts:        list_of_gp_Pnts
+    @param tangents:    list_of_tangent_vecs_at_gp_Pnts
+    None where we do not care about tangency
+    None or empty list if we don't care about tangency at all
+    @param epsilon:     tolerence
+    '''
+    pass
+
+
+def add_wire_to_face(face, wire, reverse=False):
+    '''
+    apply a wire to a face
+    use reverse to set the orientation of the wire to opposite
+    @param face:
+    @param wire:
+    @param reverse:
+    '''
+    face = BRepBuilderAPI_MakeFace(face)
+    if reverse:
+        wire.Reverse()
+    face.Add(wire)
+    result = face.Face()
+    face.Delete()
+    return result
+
+def sew_shapes( shapes, tolerance=0.001 ):
+#    sew = BRepBuilderAPI_Sewing(tolerance, True, True, True, False)
+#    sew = BRepBuilderAPI_Sewing(1e-3, True, False, False, False)
+    sew = BRepBuilderAPI_Sewing(tolerance)
+    sew.SetFloatingEdgesMode(True)
+    for shp in shapes:
+        if isinstance(shp, list):
+            for i in shp:
+                sew.Add(i)
+        else:
+            sew.Add(shp)
+    sew.Perform()
+    print 'n degenerated shapes',sew.NbDegeneratedShapes()
+    print 'n deleted faces:',sew.NbDeletedFaces()
+    print 'n free edges',sew.NbFreeEdges()
+    print 'n multiple edges:',sew.NbMultipleEdges()
+    
+    result = sew.SewedShape()
+    # This fucks up big time!
+#    sew.Delete()
+    return result
+
+#===============================================================================
+# ---BOOL---
+#===============================================================================
+
 def boolean_cut(shapeToCutFrom, cuttingShape):
     try:
         from OCC.BRepAlgoAPI import BRepAlgoAPI_Cut
@@ -379,27 +443,6 @@ def scale(brep, pnt, scale, copy=False):
     with assert_isdone(brep_trns, 'could not produce scaling'):
         brep_trns.Build()
         return brep_trns.Shape()
-
-#===============================================================================
-# MONKEY PATCH GP
-# THIS SHOULD GO SOMEWHERE ELSE!!!
-#===============================================================================
-def point_to_vector(self):
-    return gp_Vec(self.XYZ())
-
-def vector_to_point(self):
-    return gp_Pnt(self.XYZ())
-
-def dir_to_vec(self):
-    return gp_Vec(self)
-
-def add_vector_to_point(self, vec):
-    return (self.as_vec() + vec).as_pnt() 
-
-gp_Vec.as_pnt  = vector_to_point
-gp_Pnt.as_vec  = point_to_vector
-gp_Pnt.add_vec = add_vector_to_point
-gp_Dir.as_vec  = dir_to_vec 
 
 
 
