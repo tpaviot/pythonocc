@@ -31,16 +31,17 @@ import ode
 from OCC.Display.SimpleGui import *
 from OCC.Utils.Construct import translate_topods_from_vector, make_face
 display, start_display, add_menu, add_function_to_menu = init_display()
-    
+
 def rotating_box(event=None):
     display.EraseAll()
     dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display)
+    dyn_context.set_display(display, safe_yield)
     # Create s shape and add it to the dynamic context
     s1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
     d = dyn_context.add_shape(s1)
     #d.enable_view_cog()
     d.setAngularVel([-1,0,0])
+    dyn_context.register_post_step_callback(safe_yield)
     dyn_context.start_open_loop()
 
 
@@ -49,7 +50,7 @@ def display_cog_trajectory(event=None):
     '''
     display.EraseAll()
     dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display)
+    dyn_context.set_display(display, safe_yield)
     dyn_context.enable_gravity()
     s1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
     d = dyn_context.add_shape(s1)
@@ -60,7 +61,7 @@ def display_cog_trajectory(event=None):
 def box_plane_collision(event=None):
     display.EraseAll()
     dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display)
+    dyn_context.set_display(display, safe_yield)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
     # The box
@@ -83,7 +84,7 @@ def box_plane_collision(event=None):
 def two_boxes_sphere_plane_collision(event=None):
     display.EraseAll()
     dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display)
+    dyn_context.set_display(display, safe_yield)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
     # The first box
@@ -121,7 +122,7 @@ def dominos(event=None):
     h_table = 15.
     # Create the dynamic context
     dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display)
+    dyn_context.set_display(display, safe_yield)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
     # Create the floor The floor is not visible
@@ -164,7 +165,7 @@ def dominos(event=None):
 def collisions(event=None):
     display.EraseAll()
     dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display)
+    dyn_context.set_display(display, safe_yield)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
     # The plane (note: this plane is not a dynamic shape, it's just displayed)

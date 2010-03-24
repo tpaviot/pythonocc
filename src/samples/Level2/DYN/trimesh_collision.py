@@ -36,7 +36,7 @@ display, start_display, add_menu, add_function_to_menu = init_display()
 def falling_torus(event=None):
     display.EraseAll()
     dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display)
+    dyn_context.set_display(display, safe_yield)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
     # test the post_register_callback feature
@@ -68,7 +68,7 @@ def falling_torus(event=None):
 def falling_torus_torus(event=None):
     display.EraseAll()
     dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display)
+    dyn_context.set_display(display, safe_yield)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
     # The torus
@@ -112,7 +112,7 @@ def falling_pump(event=None):
     # Just a copy/paste of the torus code
     display.EraseAll()
     dyn_context = DynamicSimulationContext()
-    dyn_context.set_display(display)
+    dyn_context.set_display(display, safe_yield)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
     

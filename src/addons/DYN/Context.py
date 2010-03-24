@@ -222,11 +222,15 @@ class DynamicSimulationContext(ode.World):
     def disable_collision_detection(self):
         self._COLLISION_DETECTION = False
         
-    def set_display(self,display):
+    def set_display(self,display, yield_function=None):
         ''' The renderer in which the scene will be displayed
         '''
         self._display = display
         self._DISPLAY_INITIALIZED = True
+        # Register a callback so that it's possible to move the view with the mouse
+        # during the simulation.
+        if yield_function is not None:
+            self.register_post_step_callback(yield_function)
     
     def add_shape(self, topods_shape, enable_collision_detection=False, use_boundingbox=False, use_sphere = False, use_trimesh=False):
         ''' Adds a TopoDS_Shape to the DYN context.
@@ -258,8 +262,7 @@ class DynamicSimulationContext(ode.World):
                 dynamic_shape.use_trimesh()
             else:
                 print('Warning : collision detection enabled for this shape but no geometry provided.')
-        
-        
+    
         if self._DISPLAY_INITIALIZED:
             ais_shape = self._display.DisplayShape(dynamic_shape.get_shape())
             dynamic_shape.set_ais_shape(ais_shape)
@@ -267,36 +270,7 @@ class DynamicSimulationContext(ode.World):
         self._dynamic_shapes.append(dynamic_shape)
 
         return dynamic_shape
-    
-#    def _add_dynamic_shape(self, dynamic_shape, topods_shape, use_bbox, use_mesh):
-#        '''
-#        THOMAS PLEASE CHECK... 
-#        when collision detection is enabled this method is also called
-#        I do not really understand why precisely... 
-#        Surely the user of this API should not be confronted with those details ;')
-#        '''
-#        self._shapes.append(dynamic_shape)
-#        if self._DISPLAY_INITIALIZED:
-#            ais_shape = self._display.DisplayShape(dynamic_shape.get_shape())
-#            dynamic_shape.set_ais_shape(ais_shape)
-#        
-#        if use_bbox:
-#            bbox = get_boundingbox(topods_shape, EPSILON)
-#            xmin,ymin,zmin, xmax,ymax,zmax = bbox.Get()
-#            dx,dy,dz = xmax-xmin, ymax-ymin, zmax-zmin
-#            geom_box = ode.GeomBox(self._space, lengths=(dx,dy,dz))
-#            geom_box.setBody(dynamic_shape)
-#            self._dyn_shapes.append(geom_box)
-#            '''
-#            d2 = DynamicShape(dyn_context)
-#            d2.set_shape(transformed_shape)
-#            geom_box2 = ode.GeomBox(dyn_context._space, lengths=(10,20,30))
-#            geom_box2.setBody(d2)
-#            '''
-#            
-#        if use_mesh:
-#            raise NotImplementedError
-    
+
     def set_time_step(self,delta_t):
         self._delta_t = delta_t
     
@@ -366,7 +340,7 @@ class DynamicSimulationContext(ode.World):
                         # Not necessary by default : shape.store_cog_position([x,y,z])
                     # Then update the viewer to show new shapes position
                 self._display.Context.UpdateCurrentViewer()
-                self._display.FitAll()
+                #self._display.FitAll()
             # Increment time
             self._perform_callbacks()
             # Then increment time and loop simulation
