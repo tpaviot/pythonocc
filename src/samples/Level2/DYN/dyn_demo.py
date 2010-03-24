@@ -29,6 +29,7 @@ from OCC.DYN.Context import DynamicSimulationContext, DynamicShape
 import ode
 
 from OCC.Display.SimpleGui import *
+from OCC.Utils.Construct import translate_topods_from_vector, make_face
 display, start_display, add_menu, add_function_to_menu = init_display()
     
 def rotating_box(event=None):
@@ -109,6 +110,8 @@ def two_boxes_sphere_plane_collision(event=None):
     d2.set_shape(transformed_shape)
     geom_box2 = ode.GeomBox(dyn_context._space, lengths=(10,20,30))
     geom_box2.setBody(d2)
+    
+    
     #d2.enable_view_cog()
     dyn_context.add_dynamic_shape(d2)
     # The sphere
@@ -131,6 +134,36 @@ def two_boxes_sphere_plane_collision(event=None):
     face = BRepBuilderAPI_MakeFace(aSurface.GetHandle())
     face.Build()
     display.DisplayColoredShape(face.Shape(),'RED')
+    display.FitAll()
+    # Then create a geom for this plane
+    # Create a plane geom which prevent the objects from falling forever
+    floor = ode.GeomPlane(dyn_context._space, (0,0,1), -100)
+    #Starts the simulation
+    #raw_input('Hit a key when ready to start simulation')
+    dyn_context.start_open_loop()
+
+def two_boxes_sphere_plane_collision_NEW(event=None):
+    display.EraseAll()
+    dyn_context = DynamicSimulationContext()
+    dyn_context.set_display(display)
+    dyn_context.enable_collision_detection()
+    dyn_context.enable_gravity()
+    # The fist box
+    s1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
+    d = dyn_context.add_shape(s1)
+    d.setAngularVel([-1,-0.5,0.3]) # the box is rotating
+    # The second box
+    box2 = BRepPrimAPI_MakeBox(10,20,30).Shape()
+    box2 = translate_topods_from_vector(box2, gp_Vec(5, 5, 100))
+    d2 = dyn_context.add_shape(box2)
+    # The sphere
+    sphere = BRepPrimAPI_MakeSphere(10).Shape()
+    sphere = translate_topods_from_vector(sphere, gp_Vec(0,0,250))
+    d3 = dyn_context.add_shape(sphere)
+    # Draw a plane (note: this plane is not a dynamic shape, it's just displayed)
+    PL = gp_Pln(gp_Pnt(0,0,-100),gp_Dir(gp_Vec(0,0,1)))
+    face = make_face(PL, -100., 100., -100., 100.)
+    display.DisplayColoredShape(face,'RED')
     display.FitAll()
     # Then create a geom for this plane
     # Create a plane geom which prevent the objects from falling forever
@@ -209,5 +242,6 @@ if __name__=='__main__':
     add_function_to_menu('rigid body simulation sample', box_plane_collision)
     add_function_to_menu('rigid body simulation sample', display_cog_trajectory)
     add_function_to_menu('rigid body simulation sample', two_boxes_sphere_plane_collision)
+    add_function_to_menu('rigid body simulation sample', two_boxes_sphere_plane_collision_NEW)
     add_function_to_menu('rigid body simulation sample', dominos)
     start_display()
